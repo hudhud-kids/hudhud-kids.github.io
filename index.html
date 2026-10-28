@@ -186,6 +186,28 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 @keyframes dot{50%{transform:translateY(-6px)}}
 .board-glow{opacity:0;transition:opacity .3s}
 .p-point .board-glow{opacity:1}
+.sway{transform-box:view-box;transform-origin:200px 440px;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-.9deg)}50%{transform:rotate(.9deg)}}
+.m-excited .sway{animation:hop .55s ease-out 1,sway 6s ease-in-out .55s infinite}
+@keyframes hop{30%{transform:translateY(-12px)}60%{transform:translateY(0)}}
+.hand-tap{transform-box:fill-box;transform-origin:center bottom;animation:tap 7s infinite}
+@keyframes tap{0%,86%,100%{transform:none}89%,95%{transform:translateY(-4px) rotate(-5deg)}92%,98%{transform:none}}
+.eyes-n{transform-box:view-box;transform-origin:200px 182px;transition:transform .2s}
+.m-surprised .eyes-n{transform:scale(1.13)}
+.m-laughing .t-head{animation:laugh .28s ease-in-out 5}
+@keyframes laugh{50%{transform:translateY(-5px) rotate(-1.5deg)}}
+.lw{opacity:0}
+.listening .lw{animation:lw 1.2s ease-out infinite}
+.listening .lw2{animation-delay:.2s}.listening .lw3{animation-delay:.4s}
+@keyframes lw{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+.clock-m{transform-box:view-box;transform-origin:64px 52px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bw-write{transform-box:fill-box;transform-origin:center}
+.bw-new{animation:write .6s cubic-bezier(.3,1.4,.5,1)}
+@keyframes write{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+.react{position:absolute;top:3%;left:3%;background:#fff;color:#FF6A00;font-weight:800;font-family:var(--en);font-size:1.35rem;padding:6px 16px;border-radius:20px 20px 20px 4px;box-shadow:0 6px 18px rgba(0,0,0,.14);animation:reactpop 1.9s ease-out forwards;pointer-events:none;direction:ltr;z-index:2}
+@keyframes reactpop{0%{opacity:0;transform:scale(.4) translateY(12px)}14%{opacity:1;transform:scale(1.12)}24%{transform:scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-16px)}}
+@media (prefers-reduced-motion:reduce){.sway,.hand-tap,.clock-m,.listening .lw{animation:none}}
 .burst{position:absolute;inset:0;pointer-events:none;overflow:visible}
 .burst span{position:absolute;left:50%;top:40%;font-size:1.7rem;animation:fly 1.2s ease-out forwards}
 @keyframes fly{from{transform:translate(-50%,-50%) scale(.4);opacity:1}to{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.25);opacity:0}}
@@ -480,51 +502,35 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
   <linearGradient id="g-hij" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B9BFF"/><stop offset="1" stop-color="#3D6AD6"/></linearGradient>
   <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A2E"/><stop offset="1" stop-color="#E85A00"/></linearGradient>
   <clipPath id="c-scene"><rect width="400" height="440" rx="40"/></clipPath>
+  <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D99A62"/><stop offset="1" stop-color="#B9773F"/></linearGradient>
  </defs>
  <g clip-path="url(#c-scene)">
   <rect width="400" height="440" fill="url(#g-wall)"/>
+  <rect x="0" y="300" width="400" height="140" fill="#C9DBF7" opacity=".5"/>
   <g>
-   <rect class="board-glow" x="244" y="28" width="142" height="104" rx="14" fill="#FFD25E"/>
-   <rect x="250" y="34" width="130" height="92" rx="9" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
-   <text x="264" y="72" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#FF6A00">A</text>
-   <text x="286" y="72" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#3B7BE8">B</text>
-   <text x="308" y="72" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#15803D">C</text>
-   <path d="M264 92 Q290 82 318 94 T362 90" stroke="#E9A100" stroke-width="4" fill="none" stroke-linecap="round"/>
-   <path d="M264 108 L330 108" stroke="#C9D6EA" stroke-width="4" stroke-linecap="round"/>
+   <rect x="14" y="126" width="104" height="8" rx="3" fill="#B9773F"/>
+   <rect x="22" y="94" width="12" height="32" rx="2" fill="#FF6A00"/><rect x="36" y="100" width="10" height="26" rx="2" fill="#3B7BE8"/>
+   <rect x="48" y="90" width="13" height="36" rx="2" fill="#15803D"/><rect x="63" y="104" width="22" height="22" rx="11" fill="#FFD25E"/>
+   <path d="M90 126 Q92 104 100 98 Q104 112 102 126Z" fill="#5DB36A"/><path d="M98 126 Q104 100 114 96 Q112 114 106 126Z" fill="#3E8A4A"/>
+   <circle cx="64" cy="52" r="20" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
+   <path class="clock-h" d="M64 52 L64 40" stroke="#2B1B0F" stroke-width="3" stroke-linecap="round"/><path class="clock-m" d="M64 52 L74 56" stroke="#FF6A00" stroke-width="3" stroke-linecap="round"/>
   </g>
   <g>
-   <path d="M30 330 Q18 280 44 262 Q40 300 52 318 Z" fill="#4E9F5A"/>
-   <path d="M52 330 Q48 270 78 252 Q70 296 66 326 Z" fill="#3E8A4A"/>
-   <path d="M60 332 Q84 290 100 296 Q84 314 74 336 Z" fill="#5DB36A"/>
-   <path d="M26 330 H92 L84 392 H34 Z" fill="#C8693A"/>
-   <rect x="22" y="324" width="74" height="12" rx="5" fill="#B05A30"/>
+   <rect class="board-glow" x="256" y="20" width="142" height="136" rx="14" fill="#FFD25E"/>
+   <rect x="262" y="26" width="130" height="124" rx="10" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
+   <text id="bwE" x="327" y="76" text-anchor="middle" font-size="34">👋</text>
+   <text id="bwT" class="bw-write" x="327" y="118" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#FF6A00">Hello!</text>
+   <path d="M282 134 Q310 126 340 136 T376 132" stroke="#E9A100" stroke-width="4" fill="none" stroke-linecap="round"/>
   </g>
   <circle class="ring" cx="200" cy="175" r="118"/>
-  <g class="t-body">
-   <path d="M180 236 H220 V300 Q200 318 180 300 Z" fill="#E9AE84"/>
-   <path d="M66 440 C70 352 124 310 200 310 C276 310 330 352 334 440 Z" fill="url(#g-top)"/>
-   <path d="M168 312 L200 362 L232 312 Z" fill="#FFF7EE"/>
-   <path d="M166 312 L186 340 L200 322 L214 340 L234 312 Z" fill="#FFFFFF"/>
-   <rect x="216" y="368" width="50" height="22" rx="5" fill="#FFFFFF"/>
-   <text x="241" y="384" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#E85A00">Noor</text>
-   <g class="arm-l"><path d="M96 352 C80 382 76 412 78 440 L118 440 C116 410 120 388 128 368 Z" fill="#E25500"/></g>
-   <g class="arm-r"><path d="M304 352 C320 382 324 412 322 440 L282 440 C284 410 280 388 272 368 Z" fill="#E25500"/></g>
-   <g class="pose pose-wave"><g class="wave-in">
-    <path d="M100 350 C70 336 56 292 62 246 L96 244 C96 282 110 314 132 332 Z" fill="#E25500"/>
-    <ellipse cx="78" cy="226" rx="20" ry="24" fill="url(#g-skin)"/>
-    <rect x="58" y="196" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(-14 62 209)"/>
-    <rect x="68" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
-    <rect x="79" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
-    <rect x="90" y="194" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(12 94 207)"/>
-    <ellipse cx="98" cy="234" rx="7" ry="12" fill="#F3C49E" transform="rotate(35 98 234)"/>
-   </g></g>
-   <g class="pose pose-thumb">
-    <path d="M98 352 C90 330 98 306 112 300 L138 306 C130 318 124 336 126 354 Z" fill="#E25500"/>
-    <rect x="104" y="276" width="38" height="32" rx="11" fill="url(#g-skin)"/>
-    <rect x="113" y="248" width="13" height="34" rx="6.5" fill="#F3C49E"/>
-    <path d="M108 288 H138 M108 297 H138" stroke="#D9A37C" stroke-width="2"/>
+  <g class="sway">
+   <g class="t-body">
+    <path d="M180 236 H220 V300 Q200 318 180 300 Z" fill="#E9AE84"/>
+    <path d="M66 440 C70 352 124 310 200 310 C276 310 330 352 334 440 Z" fill="url(#g-top)"/>
+    <path d="M166 312 L186 340 L200 322 L214 340 L234 312 Z" fill="#FFFFFF"/>
+    <rect x="216" y="352" width="50" height="22" rx="5" fill="#FFFFFF"/>
+    <text x="241" y="368" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#E85A00">Noor</text>
    </g>
-  </g>
   <g class="t-tilt"><g class="t-head">
    <path d="M120 196 C110 108 152 72 200 72 C248 72 290 108 280 196 C284 236 288 262 296 282 C266 296 240 290 230 270 L170 270 C160 290 134 296 104 282 C112 262 116 236 120 196Z" fill="#4A2A18"/>
    <circle cx="200" cy="70" r="27" fill="#4A2A18"/><path d="M178 86 Q200 96 222 86" stroke="#FF6A00" stroke-width="7" fill="none" stroke-linecap="round"/>
@@ -570,8 +576,36 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
    <rect x="114" y="162" width="28" height="46" rx="12" fill="#FF6A00"/><rect x="258" y="162" width="28" height="46" rx="12" fill="#FF6A00"/>
    <rect x="120" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/><rect x="264" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/>
    <path d="M132 204 Q138 240 172 242" stroke="#2B1B0F" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="176" cy="242" r="7.5" fill="#2B1B0F"/>
-   <g class="think-dots" fill="#3B7BE8"><circle cx="300" cy="96" r="8"/><circle cx="322" cy="74" r="10"/><circle cx="348" cy="50" r="13"/></g>
+   <g class="think-dots" fill="#3B7BE8"><circle cx="104" cy="96" r="8"/><circle cx="82" cy="72" r="10"/><circle cx="56" cy="46" r="13"/></g>
   </g></g>
+  </g>
+  <g>
+   <rect x="0" y="390" width="400" height="50" fill="url(#g-wood)"/>
+   <rect x="0" y="388" width="400" height="7" fill="#E8B27C"/>
+   <rect x="22" y="374" width="70" height="9" rx="2" fill="#3B7BE8"/><rect x="26" y="365" width="62" height="9" rx="2" fill="#15803D"/><rect x="30" y="356" width="56" height="9" rx="2" fill="#FF6A00"/>
+   <rect x="300" y="344" width="78" height="46" rx="5" fill="#2B2F3A"/><rect x="305" y="349" width="68" height="36" rx="3" fill="#3B7BE8"/>
+   <text x="339" y="373" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">51telk</text>
+   <rect x="292" y="388" width="94" height="6" rx="3" fill="#9AA3B5"/>
+  </g>
+  <g class="arm-l"><path d="M100 350 C84 372 96 394 126 400 L148 388 C130 382 120 370 120 358 Z" fill="#E25500"/>
+   <g class="hand-tap"><ellipse cx="150" cy="395" rx="19" ry="10" fill="url(#g-skin)"/><path d="M140 390 v8 M148 389 v9 M156 390 v8" stroke="#D9A37C" stroke-width="1.5"/></g></g>
+  <g class="arm-r"><path d="M300 350 C316 372 304 394 274 400 L252 388 C270 382 280 370 280 358 Z" fill="#E25500"/>
+   <ellipse cx="250" cy="395" rx="19" ry="10" fill="url(#g-skin)"/><path d="M244 390 v8 M252 389 v9 M260 390 v8" stroke="#D9A37C" stroke-width="1.5"/></g>
+   <g class="pose pose-wave"><g class="wave-in">
+    <path d="M100 350 C70 336 56 292 62 246 L96 244 C96 282 110 314 132 332 Z" fill="#E25500"/>
+    <ellipse cx="78" cy="226" rx="20" ry="24" fill="url(#g-skin)"/>
+    <rect x="58" y="196" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(-14 62 209)"/>
+    <rect x="68" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
+    <rect x="79" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
+    <rect x="90" y="194" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(12 94 207)"/>
+    <ellipse cx="98" cy="234" rx="7" ry="12" fill="#F3C49E" transform="rotate(35 98 234)"/>
+   </g></g>
+   <g class="pose pose-thumb">
+    <path d="M98 352 C90 330 98 306 112 300 L138 306 C130 318 124 336 126 354 Z" fill="#E25500"/>
+    <rect x="104" y="276" width="38" height="32" rx="11" fill="url(#g-skin)"/>
+    <rect x="113" y="248" width="13" height="34" rx="6.5" fill="#F3C49E"/>
+    <path d="M108 288 H138 M108 297 H138" stroke="#D9A37C" stroke-width="2"/>
+   </g>
   <g class="pose pose-chin">
    <path d="M302 352 C298 310 272 288 246 278 L236 298 C258 308 276 326 282 356 Z" fill="#E25500"/>
    <rect x="214" y="252" width="36" height="30" rx="11" fill="url(#g-skin)"/>
@@ -594,6 +628,9 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
    <path d="M302 352 C324 312 332 262 340 216 L362 222 C350 268 334 316 324 356 Z" fill="#E25500"/>
    <ellipse cx="352" cy="204" rx="17" ry="19" fill="url(#g-skin)"/>
    <rect x="355" y="160" width="10" height="36" rx="5" fill="#F3C49E" transform="rotate(22 360 178)"/>
+  </g>
+  <g stroke="#3B7BE8" stroke-width="4" fill="none" stroke-linecap="round">
+   <path class="lw lw1" d="M306 178 Q314 192 306 206"/><path class="lw lw2" d="M316 170 Q328 192 316 214"/><path class="lw lw3" d="M326 162 Q342 192 326 222"/>
   </g>
  </g>
 </svg>`;
@@ -768,6 +805,8 @@ function setState(s){ if(!L) return; L.state = s; const b = $('#tbox'); if(!b) r
   if(s !== 'speaking') restMouth(); }
 function setMood(m){ if(!L) return; const ok = ['happy','excited','proud','laughing','surprised','thinking','encouraging']; m = ok.includes(m) ? m : 'happy'; L.mood = m;
   const b = $('#tbox'); if(!b) return; ok.forEach(x => b.classList.toggle('m-'+x, x === m));
+  const RX = {proud:['Excellent!','Amazing!','Perfect!','Great job!'], excited:['Wow!','Yay!','Awesome!'], laughing:['Haha!','So funny!'], surprised:['Oh!','Really?!'], encouraging:['You can do it!','Nice try!','Almost!']};
+  if(RX[m] && (m === 'proud' || m === 'excited' || Math.random() < .6)) react(RX[m][Math.floor(Math.random()*RX[m].length)]);
   if(m === 'proud' || m === 'excited'){ burst(); setPose('thumb', 2600); }
   if(m === 'laughing') burst(); }
 function setMouth(n){ document.querySelectorAll('#tbox .mouth > *').forEach(p => p.classList.toggle('on', p.dataset.m === n)); }
@@ -789,6 +828,11 @@ function gestureLoop(){ if(!L) return; L.gestT = setTimeout(() => { L.gestT = nu
     if(!busy) setPose(b.classList.contains('p-open') || Math.random() < .35 ? null : 'open');
     gestureLoop(); }, 1800 + Math.random()*2200); }
 function emph(){ const b = $('#tbox'); if(!b) return; b.classList.add('emph'); clearTimeout(L && L.emphT); if(L) L.emphT = setTimeout(() => b.classList.remove('emph'), 280); }
+function react(txt){ const b = $('#tbox'); if(!b) return; const old = b.querySelector('.react'); if(old) old.remove();
+  const d = document.createElement('div'); d.className = 'react'; d.textContent = txt; b.appendChild(d); setTimeout(() => d.remove(), 2000); }
+function boardWrite(emoji, word){ const e = document.getElementById('bwE'), t = document.getElementById('bwT'); if(!t) return;
+  e.textContent = emoji || '✏️'; t.textContent = word; t.setAttribute('font-size', word.length > 10 ? 17 : word.length > 7 ? 21 : 26);
+  t.classList.remove('bw-new'); void t.getBoundingClientRect(); t.classList.add('bw-new'); }
 function nod(){ const b = $('#tbox'); if(!b || b.classList.contains('nod')) return; b.classList.add('nod'); setTimeout(() => b && b.classList.remove('nod'), 460); }
 
 /* ---- speaking queue ---- */
@@ -893,7 +937,7 @@ function teacherFinished(){
   if($('#typer') && !$('#typer').hidden){ setState('idle'); return; }
   startListening(false);
 }
-function showBoard(b){ const el = $('#boardBox'); if(!el) return; setPose('point', 3000); look(6,-5); setTimeout(() => { if(L) look(0,0); }, 3000);
+function showBoard(b){ const el = $('#boardBox'); if(!el) return; boardWrite(b.emoji, b.word); setPose('point', 3000); look(6,-5); setTimeout(() => { if(L) look(0,0); }, 3000);
   el.innerHTML = `<div class="board"><button id="bw" aria-label="اسمع الكلمة"><div class="emo">${esc(b.emoji)}</div><div class="w">${esc(b.word)}</div></button>${b.ar?`<div style="font-weight:700">${esc(b.ar)}</div>`:''}${b.example?`<div class="ex">${esc(b.example)}</div>`:''}<div class="small" style="opacity:.8">اضغط الكلمة لتسمعها ببطء</div></div>`;
   $('#bw').onclick = () => { interrupt(false); L.speaking = true; setState('speaking'); speakOne(b.word, true, () => { if(!L) return; L.speaking = false; teacherFinished(); }); }; }
 function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right){ return; }
