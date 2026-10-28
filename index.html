@@ -1038,7 +1038,9 @@ function narratorVoices(){
   const score = v => (/premium|استثنائي/i.test(v.name) ? 100 : /enhanced|neural|natural|online|محسّن|محسن/i.test(v.name) ? 70 : 0) + (/US|GB/i.test(v.lang) ? 5 : 0) + (/Ava|Zoe|Samantha|Allison|Aria|Jenny|Libby|Sonia|Evan|Nathan|Tom|Guy|Ryan/i.test(v.name) ? 10 : 0) - (/Fred|Albert|Bad|Bells|Boing|Bubbles|Cellos|Jester|Organ|Trinoids|Whisper|Wobble|Zarvox|Superstar|Grandma|Grandpa|Rocko|Shelley|Flo|Eddy|Reed|Sandy/i.test(v.name) ? 200 : 0);
   return vs.map(v => ({v, s:score(v)})).sort((a,b) => b.s - a.s);
 }
-function narratorVoice(){ const name = DB && DB.readVoice; const all = narratorVoices(); return (name && (all.find(x => x.v.name === name)||{}).v) || (all[0] && all[0].v) || voice; }
+const voiceByName = n => n ? (narratorVoices().find(x => x.v.name === n)||{}).v || null : null;
+const kidVoice = k => (k && DB.kids[k] && voiceByName(DB.kids[k].voice)) || null;
+function narratorVoice(){ if(typeof NARR_KID !== 'undefined' && kidVoice(NARR_KID)) return kidVoice(NARR_KID); const name = DB && DB.readVoice; const all = narratorVoices(); return (name && (all.find(x => x.v.name === name)||{}).v) || (all[0] && all[0].v) || voice; }
 function characterVoice(main){ const all = narratorVoices().map(x => x.v).filter(v => v !== main); return all.find(v => /premium|enhanced|استثنائي|محسّن|محسن/i.test(v.name)) || all[0] || main; }
 const hasPremiumVoice = () => narratorVoices().some(x => x.s >= 70);
 
@@ -1083,9 +1085,10 @@ function voiceTipHTML(){
   return `<div class="vtip">💡 لصوت قراءة طبيعي مثل البشر حمّل صوتاً مجانياً عالي الجودة على الجهاز: <b>الإعدادات ← تسهيلات الاستخدام ← المحتوى المنطوق ← الأصوات ← English ← Ava (Premium)</b>، ثم أعد فتح التطبيق.</div>`;
 }
 
+let NARR_KID = null;
 /* =============== STORY READER (Read to me / Listen to me) =============== */
 function openBook(k, book){
-  if(!book) return;
+  if(!book) return; NARR_KID = k;
   let pg = 0, mode = 'read', speedId = (DB.progress[k].readSpeed || 'normal'), ctl = null, rec = null, listening = false;
   const gl = {}; Object.entries(book.glossary || {}).forEach(([w, m]) => gl[w.toLowerCase()] = m);
   const results = {};
@@ -1373,7 +1376,7 @@ function kitCard(k){ const plan = lessonPlan(k), kit = kitFor(DB.kids[k].level, 
   return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🎒 حضّر لدرسك القادم</h2><button class="btn sm primary" id="kitGo">${done ? 'راجع مرة ثانية' : 'ابدأ (+15 نقطة)'}</button></div>
     <p class="small muted" style="margin:6px 0 0">6 كلمات وحوار قصير من درس <span class="en">${esc(plan.t)}</span>. اسمعها قبل الحصة لتتكلم بثقة.</p></section>`; }
 function openKit(k){
-  const plan = lessonPlan(k), kit = kitFor(DB.kids[k].level, plan.ui, plan.li); if(!kit) return;
+  const plan = lessonPlan(k), kit = kitFor(DB.kids[k].level, plan.ui, plan.li); if(!kit) return; NARR_KID = k;
   let ctl = null, playing = false;
   const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
   ov.innerHTML = `<div class="r-top"><button class="btn sm" id="kx">إغلاق</button><b class="en" style="direction:ltr">${esc(plan.t)}</b><span></span></div>
@@ -1985,7 +1988,7 @@ function speakOne(text, slow, done){
   const rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96);
   const perChar = Math.round(62 / rate);
   if(!('speechSynthesis' in window)){ mouthWalk(text, perChar); setTimeout(fin, 300*words); return; }
-  try{ const u = new SpeechSynthesisUtterance(text); const male = L && !teacherOf(L.kid).female; const vv = male && voiceM ? voiceM : voice; if(vv) u.voice = vv; u.lang = 'en-US'; u.rate = rate; u.pitch = male ? (voiceM ? 1 : .8) : 1.08;
+  try{ const u = new SpeechSynthesisUtterance(text); const male = L && !teacherOf(L.kid).female; const kv = L && kidVoice(L.kid); const vv = kv || (male && voiceM ? voiceM : voice); if(vv) u.voice = vv; u.lang = 'en-US'; u.rate = rate; u.pitch = kv ? 1 : male ? (voiceM ? 1 : .8) : 1.08;
     let gotBoundary = false;
     u.onstart = () => { setTimeout(() => { if(!gotBoundary && !finished) mouthWalk(text, perChar); }, 250); };
     u.onboundary = e => { if(e.name && e.name !== 'word') return; gotBoundary = true; const w = text.slice(e.charIndex).split(/\s/)[0] || ''; mouthWalk(w, perChar);
@@ -2306,6 +2309,7 @@ function kidForm(k){
       <div class="field"><label for="f_pass">كلمة المرور</label><input class="input ltr" id="f_pass" value="${esc(kid.pass)}"></div>
       <div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${levelTag(l)}</option>`).join('')}</select></div>
       <div class="field"><label for="f_b">تاريخ الميلاد</label><input class="input" type="date" id="f_b" value="${esc(kid.birth)}"></div>
+      <div class="field"><label for="f_v">صوت المعلم وقراءة القصص</label><div class="chips"><select class="input" id="f_v" style="flex:1;min-width:0"><option value="">تلقائي (أفضل صوت متاح)</option>${narratorVoices().map(x => `<option value="${esc(x.v.name)}" ${kid.voice === x.v.name ? 'selected' : ''}>${esc(x.v.name)}${x.s >= 100 ? ' ⭐' : x.s >= 70 ? ' ✓' : ''}</option>`).join('')}</select><button class="btn sm" type="button" id="f_vt">🔊</button></div></div>
       <div class="field"><label for="f_g">الجنس</label><select class="input" id="f_g"><option value="1" ${kid.boy?'selected':''}>ولد</option><option value="0" ${!kid.boy?'selected':''}>بنت</option></select></div>
       <div class="field"><label for="f_bal">مبلغ الاشتراك (ريال)</label><input class="input num" type="number" min="0" step="10" id="f_bal" value="${k ? DB.balance[k] : 2000}"></div>
     </div>
@@ -2315,6 +2319,7 @@ function kidForm(k){
     <div class="chips"><button class="btn primary" id="f_save">حفظ</button><button class="btn" id="f_cancel">رجوع</button>${k ? '<button class="btn danger" id="f_del">حذف الحساب</button>' : ''}</div>`);
   ov.querySelector('.card').classList.add('wide');
   ov.querySelector('#f_cancel').onclick = () => ov.remove();
+  ov.querySelector('#f_vt').onclick = () => { unlockAudio(); const n = ov.querySelector('#f_v').value; const keep = DB.readVoice; if(n) DB.readVoice = n; NARR_KID = null; narrate(`Hi ${ov.querySelector('#f_en').value || 'there'}! I'm your English teacher. Are you ready for an amazing story today?`, {speed:.95}); DB.readVoice = keep; };
   ov.querySelector('#f_save').onclick = () => {
     const v = id => ov.querySelector(id).value.trim(), err = ov.querySelector('#f_err');
     const ar = v('#f_ar'), en = v('#f_en'), user = v('#f_user').toLowerCase(), pass = v('#f_pass'), level = Number(v('#f_lv')), birth = v('#f_b'), boy = v('#f_g') === '1', bal = Math.max(0, Number(v('#f_bal'))||0), time = v('#f_t');
@@ -2326,7 +2331,7 @@ function kidForm(k){
     if(!days.length || !time){ err.textContent = 'اختر يوماً واحداً على الأقل ووقت الحصة.'; return; }
     if(!birth){ err.textContent = 'اختر تاريخ الميلاد.'; return; }
     if(k){
-      Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy});
+      Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy, voice:ov.querySelector('#f_v').value});
       setLevel(k, level);
       DB.balance[k] = bal;
       const cur = periodAt(k, new Date());
@@ -2337,7 +2342,7 @@ function kidForm(k){
       save(); toast('تم حفظ التعديلات');
     } else {
       let id = user.replace(/[^a-z0-9]/g,'') || 'kid'; while(DB.kids[id]) id += '1';
-      DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level]};
+      DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level], voice:ov.querySelector('#f_v').value};
       DB.balance[id] = bal;
       const t = new Date(); t.setDate(t.getDate()+1);
       DB.sched[id] = {periods:[{from:`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T00:00`, days, time}], cancel:[], extra:[]};
