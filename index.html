@@ -1073,6 +1073,7 @@ function tabHome(k){
     ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
     ${pushBtnHTML(true) ? `<div class="pushrow">${pushBtnHTML(true)}</div>` : ''}
     ${examCard(k)}
+    ${monthReviewCard(k)}
     ${familyCard(k)}
     <div class="g2e">${dailyCard(k)}${homeworkCard(k) || kitCard(k)}</div>
     <div class="segs" role="tablist">${[['play','🎮 العب'],['train','💪 تدرّب'],['journey','🗺️ رحلتي']].map(([id, t]) => `<button role="tab" aria-selected="${HOME_SEG === id}" class="seg2 ${HOME_SEG === id ? 'on' : ''}" data-seg="${id}">${t}</button>`).join('')}</div>
@@ -1104,7 +1105,8 @@ function tabHome(k){
     </div>
     </div>
     </div></div>`;
-  const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false); wirePushBtn();
+  const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false);
+  const mrv = $('#mrevGo'); if(mrv) mrv.onclick = () => startMonthReview(k); wirePushBtn();
   document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => { HOME_SEG = b.dataset.seg; try{ localStorage.setItem('hh:seg', HOME_SEG); }catch(e){}
     document.querySelectorAll('[data-seg]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
     document.querySelectorAll('[data-segp]').forEach(x => x.hidden = x.dataset.segp !== HOME_SEG); });
@@ -1381,6 +1383,9 @@ let NARR_KID = null;
 /* =============== STORY READER (Read to me / Listen to me) =============== */
 function openBook(k, book){
   if(!book) return; NARR_KID = k;
+  const orig = book; let view = book; try{ if(!DB.progress[k].heroOff) view = personalize(book, k); }catch(e){ console.warn(e); }
+  try{ Object.defineProperty(orig, '__view', {value:view, configurable:true, enumerable:false, writable:true}); }catch(e){}
+  book = view; const heroOn = !!view.__hero;
   let pg = 0, mode = 'read', speedId = (DB.progress[k].readSpeed || 'normal'), ctl = null, rec = null, listening = false;
   const gl = {}; Object.entries(book.glossary || {}).forEach(([w, m]) => gl[w.toLowerCase()] = m);
   const results = {};
@@ -1393,7 +1398,7 @@ function openBook(k, book){
     const p = book.pages[pg], text = String(p.text);
     const toks = []; text.replace(/\S+/g, (w, at) => { toks.push({w, at}); return w; });
     const st = results[pg] || {};
-    ov.innerHTML = `<div class="r-top"><button class="btn sm" id="rx">إغلاق</button><b class="en" style="direction:ltr">${esc(book.title)}</b><span class="small muted num">${pg+1}/${book.pages.length}</span></div>
+    ov.innerHTML = `<div class="r-top"><button class="btn sm" id="rx">إغلاق</button><b class="en" style="direction:ltr">${esc(book.title)}</b>${heroOn || DB.progress[k].heroOff ? `<button class="btn sm ${heroOn ? 'primary' : ''}" id="hero" title="أنا البطل">⭐ ${heroOn ? 'أنت البطل' : 'اجعلني البطل'}</button>` : ''}<span class="small muted num">${pg+1}/${book.pages.length}</span></div>
       <div class="modes"><button class="mode ${mode==='read'?'on':''}" data-mode="read">🔊 اقرأ لي</button><button class="mode ${mode==='listen'?'on':''}" data-mode="listen">🎤 استمع لي</button></div>
       <div class="r-page"><div class="r-art">${esc(p.emoji||book.emoji||'📖')}</div>
         <div class="r-text en" id="rt">${toks.map((t,i) => { const key = clean(t.w); const cls = ['w', gl[key] ? 'gl' : '', st[i] === 1 ? 'ok' : st[i] === 0 ? 'bad' : ''].join(' '); return `<span class="${cls}" data-i="${i}" data-at="${t.at}" data-w="${esc(t.w)}">${esc(t.w)}</span>`; }).join(' ')}</div>
@@ -1403,9 +1408,10 @@ function openBook(k, book){
       <div class="r-ctrl"><button class="btn" id="prev" ${pg===0?'disabled':''}>→ السابق</button><button class="btn" id="next">${pg === book.pages.length-1 ? 'الأسئلة ✓' : 'التالي ←'}</button></div>`;
     const spans = [...ov.querySelectorAll('#rt .w')];
     ov.querySelector('#rx').onclick = () => { stopAll(); ov.remove(); renderKid(k); };
+    const hb = ov.querySelector('#hero'); if(hb) hb.onclick = () => { stopAll(); DB.progress[k].heroOff = !DB.progress[k].heroOff; save(); ov.remove(); openBook(k, orig); };
     ov.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { stopAll(); mode = b.dataset.mode; draw(); });
     ov.querySelector('#prev').onclick = () => { stopAll(); pg--; draw(); };
-    ov.querySelector('#next').onclick = () => { stopAll(); if(pg < book.pages.length-1){ pg++; draw(); } else { ov.remove(); finishBook(k, book, results); } };
+    ov.querySelector('#next').onclick = () => { stopAll(); if(pg < book.pages.length-1){ pg++; draw(); } else { ov.remove(); finishBook(k, orig, results); } };
     spans.forEach(s => s.onclick = () => { if(listening) return; stopAll(); const key = clean(s.dataset.w); ctl = narrate(key, {speed:.75}); const tip = ov.querySelector('#tip'); tip.hidden = false; tip.innerHTML = `<b class="en">${esc(key)}</b>${gl[key] ? ` = ${esc(gl[key])}` : ''}`; });
     if(mode === 'read'){
       ov.querySelectorAll('[data-sp]').forEach(b => b.onclick = () => { speedId = b.dataset.sp; DB.progress[k].readSpeed = speedId; save(); const playing = !!ctl; stopAll(); draw(); if(playing) ov.querySelector('#read').click(); });
@@ -1457,9 +1463,10 @@ function openBook(k, book){
   draw();
 }
 function finishBook(k, book, results){
-  const qs = (book.questions||[]).map(q => ({type:'mc', q:q.q, options:q.options, answer:q.answer}));
+  const qv = book.__view || book;
+  const qs = (qv.questions||[]).map(q => ({type:'mc', q:q.q, options:q.options, answer:q.answer}));
   const readPages = Object.keys(results||{}).length, readOk = readPages ? Math.round(Object.values(results).reduce((a,st) => { const v = Object.values(st); return a + (v.length ? v.filter(x => x === 1).length / v.length : 0); }, 0) / readPages * 100) : null;
-  runQuiz(k, qs, book.title, res => {
+  runQuiz(k, qs, qv.title, res => {
     const isPre = /^L\d+s/.test(book.id||''); const first = isPre ? DB.progress[k].pre[book.id] == null : !book.read;
     if(isPre){ DB.progress[k].pre[book.id] = res ? res.score : 0; if(first){ DB.progress[k].preAt = DB.progress[k].preAt || {}; DB.progress[k].preAt[book.id] = new Date().toISOString(); } }
     else { if(first) book.readAt = new Date().toISOString(); book.read = true; book.score = res ? res.score : 0; }
@@ -2257,7 +2264,7 @@ function renderRoom(){
   $('#tbox').onclick = () => { if(L.state === 'speaking' || L.state === 'thinking') { interrupt(true); } };
   $('#kb').onclick = () => { const t = $('#typer'); t.hidden = !t.hidden; if(!t.hidden){ stopListening(); $('#msg').focus(); } };
   $('#typer').addEventListener('submit', e => { e.preventDefault(); const v = $('#msg').value.trim(); if(!v) return; $('#msg').value = ''; studentSaid(v); });
-  $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
+  $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } if(L.review){ finishReview(); return; } teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
   setState('idle'); setMood('happy');
   L.firstWave = true; blinkLoop(); idleGlance();
 }
@@ -2412,7 +2419,7 @@ async function teacherTurn(userText){
 }
 function teacherFinished(){
   if(!L) return;
-  if(L.endSeen){ L.mission ? finishMission() : finishLesson(); return; }
+  if(L.endSeen){ L.mission ? finishMission() : L.review ? finishReview() : finishLesson(); return; }
   if(L.state === 'listening') return;
   if($('#typer') && !$('#typer').hidden){ setState('idle'); return; }
   startListening(false);
@@ -3829,6 +3836,103 @@ async function speakAndAssess(ref, levelEl, maxMs){
   const rec = await recordWav(maxMs || 8000, rms => { if(levelEl) levelEl.style.setProperty('--lv', Math.min(1, rms * 8)); }, ctl);
   if(!rec.heard) return {ok:false, status:'Silence', acc:0, words:[], text:''};
   return await azAssess(rec.wav, ref);
+}
+
+/* =============== 7. STORIES WHERE THE CHILD IS THE HERO =============== */
+const NOT_NAMES = new Set(['The','A','An','I','He','She','It','We','They','You','His','Her','My','Our','Their','Then','But','And','So','When','After','Before','One','Every','Suddenly','Grandfather','Grandmother','Grandma','Grandpa','Mum','Mom','Dad','Father','Mother','Uncle','Aunt','Teacher','Mr','Mrs','Ms','Miss','Doctor','Captain','Today','Tomorrow','Yesterday','Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Eid','Ramadan','Riyadh','Jeddah','Makkah','Madinah','Saudi','Arabia','Red','Sea','English','Arabic','Oh','Wow','Yes','No','Please','Thank','Hello','Hi','What','Why','How','Where','Who','Let','Look','Come','This','That','There','Here','At','In','On','Of','To','With','As','If','Now','Soon','Finally','Later','Once','Mr.','Mrs.']);
+function storyNames(book){
+  const text = [book.title, ...book.pages.map(p => p.text)].join(' \n ');
+  const counts = {}, gender = {};
+  const toks = text.split(/\s+/);
+  toks.forEach((raw, i) => { const w = raw.replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, '').replace(/'s$/, ''); if(!/^[A-Z][a-z]{2,}$/.test(w) || NOT_NAMES.has(w)) return;
+    counts[w] = (counts[w] || 0) + 1;
+    for(let j = i + 1; j < Math.min(toks.length, i + 26); j++){ const t = toks[j].toLowerCase().replace(/[^a-z]/g, '');
+      if(t === 'he' || t === 'his' || t === 'him'){ gender[w] = (gender[w] || 0) + 1; break; } if(t === 'she' || t === 'her'){ gender[w] = (gender[w] || 0) - 1; break; } } });
+  const lower = new Set(text.toLowerCase().match(/\b[a-z]+\b/g) || []);
+  return Object.keys(counts).filter(n => counts[n] >= 2 && !text.includes(' ' + n.toLowerCase() + ' ')).sort((a, b) => counts[b] - counts[a])
+    .map(n => ({n, c:counts[n], boy:(gender[n] || 0) > 0 ? true : (gender[n] || 0) < 0 ? false : null}));
+}
+function personalize(book, k){
+  const kid = DB.kids[k]; if(!kid) return book;
+  const first = s => String(s || '').trim().split(/\s+/)[0].replace(/[^A-Za-z'-]/g, '');
+  const me = first(kid.en); if(!me) return book;
+  const names = storyNames(book); if(!names.length) return book;
+  const hero = names.find(x => x.boy === !!kid.boy && x.c >= Math.max(2, names[0].c * .5)); if(!hero) return book;
+  const map = {[hero.n]: me};
+  const sib = kidIds().filter(x => x !== k && DB.kids[x].en).map(x => DB.kids[x])[0];
+  if(sib){ const other = names.find(x => x !== hero && x.boy === !!sib.boy); const sn = first(sib.en); if(other && sn && sn !== me) map[other.n] = sn; }
+  const re = new RegExp('\\b(' + Object.keys(map).join('|') + ')\\b', 'g'), sw = s => String(s).replace(re, m => map[m]);
+  const out = JSON.parse(JSON.stringify(book)); out.title = sw(out.title); out.pages.forEach(p => p.text = sw(p.text));
+  (out.questions || []).forEach(q => { Object.keys(q).forEach(f => { if(typeof q[f] === 'string') q[f] = sw(q[f]); else if(Array.isArray(q[f])) q[f] = q[f].map(x => typeof x === 'string' ? sw(x) : x); }); });
+  out.__hero = map; return out;
+}
+
+/* =============== 8. MONTHLY REVIEW LESSON =============== */
+function reviewItems(k){
+  const since = Date.now() - 45 * DAY, cnt = {};
+  DB.reports.filter(r => r.kid === k && Date.parse(r.at) >= since).forEach(r => (r.mistakes || []).forEach(m => { const s = String(m.right || '').trim(); const n = s.split(/\s+/).length; if(n >= 3 && n <= 11) cnt[s] = cnt[s] || {right:s, wrong:m.wrong, n:0}, cnt[s].n++; }));
+  let items = Object.values(cnt).sort((a, b) => b.n - a.n).slice(0, 5);
+  if(items.length < 5) Object.values(DB.progress[k].srs || {}).filter(c => (c.box || 0) <= 1 && c.f.split(/\s+/).length >= 3 && c.f.split(/\s+/).length <= 11 && !items.find(x => x.right === c.f))
+    .slice(0, 5 - items.length).forEach(c => items.push({right:c.f, wrong:String(c.b || '').replace(/^كنت تقول: /, ''), n:1}));
+  return items;
+}
+function reviewDue(k){
+  const last = (DB.reviews || []).filter(r => r.kid === k).map(r => Date.parse(r.at)).sort().pop() || 0;
+  const att = DB.attendance.filter(a => a.kid === k && Date.parse(a.at) > last).length;
+  return att >= 4 && Date.now() - last > 25 * DAY && reviewItems(k).length >= 3;
+}
+function orderQuiz(items){ return items.map(it => ({type:'order', words:it.right.replace(/[.!?]$/, '').split(/\s+/), answer:it.right.replace(/[.!?]$/, ''), ar:'رتّب الكلمات لتكوّن الجملة الصحيحة'})); }
+function monthReviewCard(k){
+  if(!reviewDue(k)) return '';
+  return `<section class="card mrev"><div class="chips" style="justify-content:space-between"><h2>🔁 مراجعة الشهر مع المعلمة</h2><span class="chip good">مجانية · ما تنخصم</span></div>
+    <p class="small muted" style="margin:6px 0 10px">حصة قصيرة تراجع فيها مع المعلمة أكثر الأخطاء اللي تكررت معك هذا الشهر، مع اختبار قبل وبعد يبيّن لك ولولي أمرك كم تحسّنت.</p>
+    <button class="btn primary" id="mrevGo">ابدأ المراجعة</button></section>`;
+}
+function startMonthReview(k){
+  if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد.'); return; }
+  const items = reviewItems(k); if(items.length < 3) return;
+  const intro = overlay(`<div style="text-align:center">${hoopoeSVG('wow')}</div><h2>قبل ما نبدأ: اختبار صغير</h2><p style="margin:0">${items.length} جمل من أخطاء هذا الشهر. رتّبها بنفسك، وبعد الحصة نعيد نفس الاختبار ونشوف كم تحسّنت 💪</p><button class="btn primary big" id="rg">ابدأ</button>`);
+  intro.querySelector('#rg').onclick = () => { intro.remove();
+    runQuiz(k, orderQuiz(items), 'Monthly review · before', res => { const before = res ? Math.round(res.score / res.total * 100) : 0; unlockAudio(); startReviewLesson(k, items, before); }, items.length); };
+}
+function reviewRules(k, items){
+  const kid = DB.kids[k], cefr = LEVEL_CEFR[kid.level];
+  return `You are ${teacherOf(k).name}, a warm English teacher giving a SHORT one-to-one monthly REVIEW lesson by voice to ${kid.en} ("${nick(k)}"), a ${ageOf(kid.birth)}-year-old Saudi ${kid.boy ? 'boy' : 'girl'} at CEFR ${cefr}.
+This month the child kept making these mistakes (wrong -> right):
+${items.map((it, i) => `${i + 1}. "${it.wrong || '?'}" -> "${it.right}"`).join('\n')}
+GOAL: in about 10-12 minutes, make the child SAY each correct sentence pattern several times in their OWN sentences inside a friendly conversation (not drills). Work through the items one by one: create a natural situation, ask a question that needs the pattern, and if the child repeats the old mistake, recast it kindly and ask them to try again with a new example.
+Rules: English only in speech, 1-2 short sentences per turn, always end with a question. Add [FIX:wrong|right|very short Arabic tip] when you correct. When all items are practised, praise specifically what improved, say goodbye, and add [END].
+FORMAT: first line starts with [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Tags each on their own line: [FIX:...] [AR:word = Arabic] [END]. No markdown, no Arabic in the spoken text.`;
+}
+function startReviewLesson(k, items, before){
+  const plan = Object.assign({}, lessonPlan(k), {t:'Monthly Review'});
+  L = {kid:k, trial:true, review:{items, before}, slot:null, n:0, plan, history:[], startedAt:new Date(), state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
+       queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:0, typing:false, sw:0, tw:0, fixes:[]};
+  L.rules = reviewRules(k, items); demoN = 0;
+  renderRoom();
+  const side = document.querySelector('.side'); if(side){ const panel = document.createElement('div'); panel.className = 'mpanel';
+    panel.innerHTML = `<div class="small" style="font-weight:800">🔁 جمل المراجعة</div>${items.map(it => `<div class="mgoal"><span>•</span><div><div class="en">${esc(it.right)}</div>${it.wrong ? `<div class="small muted en"><s>${esc(it.wrong)}</s></div>` : ''}</div></div>`).join('')}`; side.prepend(panel); }
+  const ttl = document.querySelector('.ttl .chip'); if(ttl) ttl.textContent = 'مراجعة';
+  L.tick = setInterval(tickRoom, 1000);
+  teacherTurn('(The monthly review lesson starts now. Greet the child warmly, say we will practise the sentences that were tricky this month, and start with the first one.)');
+}
+function finishReview(){
+  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; stopListening(); setState('idle'); clearInterval(lesson.tick);
+  const k = lesson.kid, {items, before} = lesson.review; liveEnd(lesson);
+  (lesson.fixes || []).forEach(f => addSRS(k, f.right, 'كنت تقول: ' + f.wrong));
+  leaveRoomQuiet();
+  const intro = overlay(`<div style="text-align:center">${hoopoeSVG('cheer')}</div><h2>أحسنت! الحين الاختبار بعد المراجعة</h2><p style="margin:0">نفس الجمل، خلنا نشوف الفرق 🚀</p><button class="btn primary big" id="ra">ابدأ</button>`);
+  intro.querySelector('#ra').onclick = () => { intro.remove();
+    runQuiz(k, orderQuiz(items.slice().reverse()), 'Monthly review · after', res => {
+      const after = res ? Math.round(res.score / res.total * 100) : 0;
+      DB.reviews = DB.reviews || []; DB.reviews.push({kid:k, at:new Date().toISOString(), before, after, items:items.map(x => x.right), minutes:Math.round((Date.now() - lesson.startedAt) / 60e3)});
+      addXP(k, 60); save();
+      const up = after - before;
+      const ov = overlay(`<div class="bigbird">${hoopoeSVG(up >= 0 ? 'cheer' : 'happy')}</div><h2 style="text-align:center">نتيجة المراجعة</h2>
+        <div class="stat"><div><span class="small muted">قبل</span><b>${before}%</b></div><div><span class="small muted">بعد</span><b style="color:var(--good)">${after}%</b></div><div><span class="small muted">التحسن</span><b style="color:${up >= 0 ? 'var(--good)' : 'var(--bad)'}">${up >= 0 ? '+' : ''}${up}%</b></div></div>
+        <div class="chip good" style="justify-self:center">+60 نقطة · وصلت النتيجة لولي أمرك</div><button class="btn primary big" id="rd">تم</button>`);
+      ov.querySelector('#rd').onclick = () => { ov.remove(); go(k, 'home'); };
+    }, items.length); };
 }
 
 /* =============== BOOT =============== */
