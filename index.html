@@ -811,7 +811,7 @@ function setMood(m){ if(!L) return; const ok = ['happy','excited','proud','laugh
   const b = $('#tbox'); if(!b) return; ok.forEach(x => b.classList.toggle('m-'+x, x === m));
   const RX = {proud:['Excellent!','Amazing!','Perfect!','Great job!'], excited:['Wow!','Yay!','Awesome!'], laughing:['Haha!','So funny!'], surprised:['Oh!','Really?!'], encouraging:['You can do it!','Nice try!','Almost!']};
   if(RX[m] && (m === 'proud' || m === 'excited' || Math.random() < .6)) react(RX[m][Math.floor(Math.random()*RX[m].length)]);
-  if(m === 'proud' || m === 'excited'){ burst(); setPose('thumb', 2600); }
+  if(m === 'proud' || m === 'excited'){ burst(); setPose('wave', 2200); }
   if(m === 'laughing') burst(); }
 function setMouth(n){ document.querySelectorAll('#tbox .mouth > *').forEach(p => p.classList.toggle('on', p.dataset.m === n)); }
 function restMouth(){ stopMouth(); if(!L) return; setMouth(L.mood==='surprised' ? 'O' : (L.mood==='laughing'||L.mood==='excited'||L.mood==='proud') ? 'grin' : 'rest'); }
