@@ -516,6 +516,11 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .sibs{display:grid;gap:10px;margin-top:10px}.sibr{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:16px;background:var(--bg);border:2px solid transparent}.sibr.me{border-color:var(--brand)}
 .sibav{font-size:2.2rem;position:relative;line-height:1}.sibav i{position:absolute;top:-.55em;inset-inline-start:.2em;font-size:.6em;font-style:normal}.sibm{flex:1;min-width:0;display:grid;gap:4px}
 .sibbar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}.sibbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),#F59E0B);transition:width .6s}
+
+.avatar.ach{position:relative;display:grid;place-items:center;font-size:2rem;line-height:1;overflow:visible}.avatar.ach .ahat{position:absolute;top:-.42em;left:50%;transform:translateX(-50%);font-style:normal;font-size:.62em}
+.avatar.ach .apet{position:absolute;bottom:-.15em;inset-inline-end:-.3em;font-style:normal;font-size:.5em}
+.report .rph{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}.report .rpc{margin:6px 0}.report .rpc .chip{font-size:.8rem}
+bdi.num{unicode-bidi:isolate}
 </style>
 </head>
 <body>
@@ -807,7 +812,11 @@ function fmtDur(ms){ const m = Math.max(0, Math.round(ms/60000)); if(m < 60) ret
 const kidIds = () => Object.keys(DB.kids);
 const band = k => DB.kids[k].level <= 6 ? 'junior' : 'teen';
 const nick = k => (DB.profiles[k] && DB.profiles[k].nick) || DB.kids[k].ar;
-function avatarHTML(k, cls=''){ const p = DB.profiles[k] || {}; return p.avatar ? `<img class="avatar ${cls}" src="${esc(p.avatar)}" alt="">` : `<div class="avatar ${cls}">${esc(nick(k).slice(0,1))}</div>`; }
+function avatarHTML(k, cls=''){ const p = DB.profiles[k] || {}; if(p.avatar) return `<img class="avatar ${cls}" src="${esc(p.avatar)}" alt="">`;
+  try{ if(DB.progress && DB.progress[k] && typeof roomAvatar === 'function'){ const a = roomAvatar(k); return `<div class="avatar ach ${cls}" aria-label="${esc(nick(k))}">${a.hat ? `<i class="ahat">${a.hat}</i>` : ''}<span>${a.char}</span>${a.pet ? `<i class="apet">${a.pet}</i>` : ''}</div>`; } }catch(e){}
+  return `<div class="avatar ${cls}">${esc(nick(k).slice(0,1))}</div>`; }
+/* keep "46%" in the right order inside Arabic text */
+const pctFix = html => String(html).replace(/(\d+(?:\.\d+)?)\s?%/g, '<bdi class="num" dir="ltr">$1%</bdi>');
 const LOGO = `<span class="logo" aria-label="هدهد"><svg class="hh" viewBox="0 0 200 190" aria-hidden="true"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g><ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></svg><span class="t">هدهد</span></span>`;
 function decodeSetup(s){ const t = s.trim().replace(/\s+/g,''); return JSON.parse(decodeURIComponent(escape(atob(t)))); }
 const b64u = bytes => { let s = ''; for(let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000)); return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); };
@@ -2578,7 +2587,8 @@ function renderParent(){
       <details class="skills"><summary>📊 تقرير الأسبوع</summary>${weekReportHTML(k)}</details>
       <details class="skills"><summary>🕸️ خريطة المهارات${(() => { const w = weakestSkill(k); return w ? ` · الأضعف: ${SKILLS.find(x => x[0] === w)[1]}` : ''; })()}</summary><div class="radarw">${radarSVG(k, 340)}</div><div class="small muted">تُحسب من الحصص والاختبارات والقراءة بصوت عالٍ ومختبر النطق والواجب والمهمات. المعلمة تركّز تلقائياً على الأضعف.</div></details>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
-      ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة${r.talkPct != null ? ` · تحدّث ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
+      ${reps.length ? reps.map(r => `<div class="report"><div class="rph"><b class="en">${esc(r.title)}</b><span class="small muted">${new Date(r.at).toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})}</span></div>
+      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${r.score}%</bdi></span><span class="chip">⏱️ ${r.minutes||0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${r.talkPct}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><b>لوحة الإدارة</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
@@ -3659,7 +3669,7 @@ function renderGuardian(gid){
       <button class="pbtn gbell" id="gb" aria-label="الإشعارات">🔔${unread ? `<i>${unread > 9 ? '9+' : unread}</i>` : ''}</button><button class="btn sm" id="out">خروج</button></div></div>
     ${kids.length > 1 ? `<div class="chips">${kids.map(x => `<button class="topic ${x === k ? 'on' : ''}" data-gk="${x}">${esc(DB.kids[x].ar)}</button>`).join('')}</div>` : ''}
     <div class="grid">
-    ${live ? `<section class="card livec"><div class="chips" style="justify-content:space-between"><h2><span class="livedot"></span> ${esc(kid.ar)} في الحصة الآن</h2><span class="chip brand">🗣️ تكلّم ${live.talk == null ? '—' : live.talk + '%'}</span></div>
+    ${live ? `<section class="card livec"><div class="chips" style="justify-content:space-between"><h2><span class="livedot"></span> ${esc(kid.ar)} في الحصة الآن</h2><span class="chip brand">🗣️ تكلّم ${live.talk == null ? '—' : `<bdi class="num" dir="ltr">${live.talk}%</bdi>`}</span></div>
       <div class="small muted">${esc(live.title || '')}</div><div class="livelog" id="ll">${(live.lines || []).map(x => `<div class="${x.w === 'k' ? 'lk' : 'lt'}"><b>${x.w === 'k' ? esc(nick(k)) : 'المعلمة'}:</b> <span class="en">${esc(x.t)}</span></div>`).join('')}</div></section>` : ''}
     <section class="card ghero"><div style="display:flex;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2 style="margin:0">${esc(kid.ar)} <span class="small muted">(${esc(nick(k))})</span></h2>
       <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp || 0} نقطة</div></div></div>
@@ -3669,8 +3679,8 @@ function renderGuardian(gid){
     <section class="card"><h2>📊 تقرير الأسبوع</h2>${weekReportHTML(k)}</section>
     <div class="g2e">
       <section class="card" id="gnotes"><div class="chips" style="justify-content:space-between"><h2>🔔 الإشعارات</h2>${unread ? `<button class="btn sm" id="gread">تعليم الكل كمقروء</button>` : ''}</div>
-        <div class="gnl">${notes.length ? notes.slice(0, 12).map(n => `<div class="gn ${n.at.getTime() > seen ? 'new' : ''} ${n.kind}"><span class="gi">${n.ic}</span><div><div>${esc(n.text)}</div><div class="small muted">${n.at.toLocaleDateString(LOC, {day:'numeric', month:'short'})} · ${fmtTime(n.at)}</div></div></div>`).join('') : '<p class="muted small" style="margin:0">ما فيه إشعارات بعد. تطلع هنا أول ما يحضر أو يغيب أو يخلص اختبار.</p>'}</div>
-        ${notes.length > 12 ? '<button class="btn sm ghost" id="gall">عرض الكل</button>' : ''}${pushBtnHTML()}</section>
+        <div class="gnl">${notes.length ? notes.slice(0, 4).map(n => `<div class="gn ${n.at.getTime() > seen ? 'new' : ''} ${n.kind}"><span class="gi">${n.ic}</span><div><div>${pctFix(esc(n.text))}</div><div class="small muted">${n.at.toLocaleDateString(LOC, {day:'numeric', month:'short'})} · ${fmtTime(n.at)}</div></div></div>`).join('') : '<p class="muted small" style="margin:0">ما فيه إشعارات بعد. تطلع هنا أول ما يحضر أو يغيب أو يخلص اختبار.</p>'}</div>
+        ${notes.length > 4 ? `<button class="btn sm ghost" id="gall">عرض الكل (${notes.length})</button>` : ''}${pushBtnHTML()}</section>
       <section class="card"><h2>📅 الحضور هذا الشهر</h2>${monthGrid(k)}</section>
     </div>
     <section class="card"><h2>📈 التقدم آخر 8 أسابيع</h2>${weekChartSVG(k)}
@@ -3682,14 +3692,15 @@ function renderGuardian(gid){
         <div class="chips" style="margin-top:8px;flex-wrap:nowrap"><input class="input" id="cht" maxlength="120" placeholder="اكتب رسالتك…"><button class="btn primary" id="chs">إرسال</button></div>
         ${cheers.length ? `<div class="gnl" style="margin-top:10px">${cheers.map(c => `<div class="gn"><span class="gi">💌</span><div><div>${esc(c.text)}</div><div class="small muted">${fmtTime(new Date(c.at))} · ${cs.includes(c.id) ? '✓ قرأها' : 'لم يقرأها بعد'}</div></div></div>`).join('')}</div>` : ''}</section>
     </div>
-    <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes || 0} دقيقة${r.talkPct != null ? ` · تكلّم ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes || []).length ? `<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>` : ''}</div>`).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
+    <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(r => `<div class="report"><div class="rph"><b class="en">${esc(r.title)}</b><span class="small muted">${new Date(r.at).toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})}</span></div>
+      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${r.score}%</bdi></span><span class="chip">⏱️ ${r.minutes || 0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${r.talkPct}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes || []).length ? `<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>` : ''}</div>`).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
     </div></div>`;
   $('#out').onclick = logout;
   document.querySelectorAll('[data-gk]').forEach(b => b.onclick = () => { G_KID = b.dataset.gk; renderGuardian(gid); });
   $('#gb').onclick = () => document.getElementById('gnotes').scrollIntoView({behavior:'smooth'});
   const markRead = () => { DB.gseen = DB.gseen || {}; DB.gseen[gid] = Date.now(); save(); renderGuardian(gid); };
   const gr = $('#gread'); if(gr) gr.onclick = markRead;
-  const ga = $('#gall'); if(ga) ga.onclick = () => { const ov = overlay(`<h2>🔔 كل الإشعارات</h2><div class="gnl" style="max-height:60vh;overflow:auto">${notes.map(n => `<div class="gn"><span class="gi">${n.ic}</span><div><div>${esc(n.text)}</div><div class="small muted">${n.at.toLocaleDateString(LOC)} · ${fmtTime(n.at)}</div></div></div>`).join('')}</div><button class="btn" id="gx">إغلاق</button>`); ov.querySelector('#gx').onclick = () => ov.remove(); };
+  const ga = $('#gall'); if(ga) ga.onclick = () => { const ov = overlay(`<h2>🔔 كل الإشعارات</h2><div class="gnl" style="max-height:60vh;overflow:auto">${notes.map(n => `<div class="gn"><span class="gi">${n.ic}</span><div><div>${pctFix(esc(n.text))}</div><div class="small muted">${n.at.toLocaleDateString(LOC)} · ${fmtTime(n.at)}</div></div></div>`).join('')}</div><button class="btn" id="gx">إغلاق</button>`); ov.querySelector('#gx').onclick = () => ov.remove(); };
   const send = t => { t = String(t || '').trim(); if(!t) return; DB.cheers = DB.cheers || {}; DB.cheers[k] = (DB.cheers[k] || []).concat({id:'c' + Date.now().toString(36) + rnd(2), at:new Date().toISOString(), from:g.name, text:t.slice(0, 120)}).slice(-30); save(); toast('💌 وصلت رسالتك'); renderGuardian(gid); };
   document.querySelectorAll('[data-ch]').forEach(b => b.onclick = () => send(b.dataset.ch));
   $('#chs').onclick = () => send($('#cht').value);
