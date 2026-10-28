@@ -1805,10 +1805,11 @@ function listenFor(ms, onText, ctl){ return new Promise(res => {
   const cap = setTimeout(end, ms); if(ctl) ctl.stop = () => { try{ r.stop(); }catch(e){} setTimeout(end, 4000); }; try{ r.start(); }catch(e){ end(); }
   return {stop:end}; }); }
 
-let PLACE_RUNNING = false;
-async function placementTest(k, opt){
-  if(PLACE_RUNNING || document.querySelector('.reader .ptest')) return; PLACE_RUNNING = true;
-  try{ return await placementTestRun(k, opt); } finally { PLACE_RUNNING = false; }
+/* one placement test at a time: blocks a second start while the first is loading or open */
+let PLACE_STARTING = 0;
+function placementTest(k, opt){
+  if(Date.now() - PLACE_STARTING < 8000 || document.querySelector('.reader .ptest')) return;
+  PLACE_STARTING = Date.now(); return placementTestRun(k, opt);
 }
 async function placementTestRun(k, opt){
   opt = opt || {}; const KIDMODE = !!opt.kid;
@@ -1816,7 +1817,7 @@ async function placementTestRun(k, opt){
   const start = Math.max(1, Math.min(20, ageOf(kid.birth) - 5));
   const probe = await loadP(start);
   if(!probe){ return placementTestBasic(k); }
-  const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
+  const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov); PLACE_STARTING = 0;
   const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">${KIDMODE ? 'لاحقاً' : 'إلغاء'}</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); if(KIDMODE) renderPlaceGate(k); }; };
   frame('اختبار تحديد المستوى', `<div class="card" style="text-align:center;display:grid;gap:12px"><div style="font-size:3rem">🎯</div><h2>${KIDMODE ? `أهلاً ${esc(nick(k))}! قبل ما نبدأ، خلنا نعرف مستواك` : `اختبار تحديد المستوى: ${esc(kid.ar)}`}</h2>
     <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge: الأسئلة تصعب إذا أجبت صح وتسهل إذا أخطأت. خمسة أجزاء، ويأخذ تقريباً 20 دقيقة:</p>
