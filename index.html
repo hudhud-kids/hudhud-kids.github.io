@@ -778,7 +778,7 @@ function normalize(){
 /* one-time data changes requested by the parent (flag is synced, so each runs once per family) */
 function runMigrations(){
   if(DEMO || !DB || !DB.kids || !DB.balance) return; DB.migr = DB.migr || {};
-  if(!DB.migr.zeroBal1 && Date.now() < Date.parse('2026-11-05T00:00:00Z')){
+  if(false && !DB.migr.zeroBal1){ /* done on 2026-10-28; kept off so new devices (e.g. a guardian phone) never reset balances */
     DB.migr.zeroBal1 = new Date().toISOString();
     for(const k of Object.keys(DB.kids)){ try{ const l = ledger(k); DB.balance[k] = l.used; }catch(e){ DB.balance[k] = 0; } }
   }
@@ -3374,7 +3374,8 @@ async function cloudPull(full){
     if(!full && (CLOUD.vers[r.path] || 0) >= r.ver) return;
     const localJ = J(cur[r.path]), remoteJ = J(r.value);
     let val = r.value;
-    if(CLOUD.synced[r.path] != null && localJ !== CLOUD.synced[r.path] && localJ !== remoteJ){ val = merge3(JSON.parse(CLOUD.synced[r.path]), cur[r.path] === undefined ? null : cur[r.path], r.value); }
+    const readOnly = CLOUD.role === 'guardian' && !/^(cheers|gseen)\//.test(r.path);
+    if(!readOnly && CLOUD.synced[r.path] != null && localJ !== CLOUD.synced[r.path] && localJ !== remoteJ){ val = merge3(JSON.parse(CLOUD.synced[r.path]), cur[r.path] === undefined ? null : cur[r.path], r.value); }
     if(J(val) !== localJ){ setPath(DB, r.path, val === undefined ? null : val); changed = true; }
     CLOUD.vers[r.path] = r.ver; CLOUD.synced[r.path] = remoteJ;
   });
@@ -4109,7 +4110,8 @@ if(DEMO){
   try{ WHO = localStorage.getItem('51telk:who') || null; }catch(e){}
 }
 go(WHO);
-if(!DEMO && CLOUD.token){ cloudStart(); cloudPull(false).then(ch => { if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); if(cloudDirty()) cloudSchedule(); }); }
+let G_FIX = false; try{ G_FIX = CLOUD.role === 'guardian' && !localStorage.getItem('hh:gfix1'); if(G_FIX) localStorage.setItem('hh:gfix1', '1'); }catch(e){}
+if(!DEMO && CLOUD.token){ cloudStart(); cloudPull(G_FIX).then(ch => { if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); if(cloudDirty()) cloudSchedule(); }); }
 if(/^#setup=/.test(location.hash)){
   const raw = location.hash; try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
   decodeSetupAny(raw).then(cfg => { if(!cfg || !cfg.full || !cfg.full.kids) throw new Error('bad');
