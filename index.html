@@ -51,7 +51,8 @@ h2{font-size:1.2rem;font-weight:800}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
 .grid{display:grid;gap:16px}
 .g2{display:grid;gap:16px;grid-template-columns:1.25fr 1fr}
-@media (max-width:820px){.g2{grid-template-columns:1fr}}
+.g2e{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+@media (max-width:820px){.g2,.g2e{grid-template-columns:1fr}}
 .field{display:grid;gap:6px}
 .field label{font-weight:700;font-size:.92rem}
 .input{border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 14px;width:100%}
@@ -106,7 +107,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 @media (max-width:780px){.rbody{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
 .stage{display:grid;place-items:center;padding:12px 16px;position:relative}
 .tbox{position:relative;width:min(420px,100%);display:grid;justify-items:center}
-@media (max-width:780px){.tbox{width:min(250px,70vw)}}
+@media (max-width:780px){.tbox{width:min(190px,52vw)}.stage{padding:6px 16px}.sub{font-size:1.2rem;min-height:70px}}
 .tbox svg{width:100%;height:auto;display:block;overflow:visible}
 .tname{font-family:var(--en);font-weight:800;color:var(--sky);margin-top:-6px}
 .state{margin-top:4px;font-weight:700;font-size:.95rem;min-height:1.6em;color:var(--muted)}
@@ -867,10 +868,10 @@ function renderParent(){
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
         <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><span class="small" id="keyMsg"></span></div>
       </section>
-      <div class="g2" style="grid-template-columns:1fr 1fr">${ids.map(kidCard).join('')}</div>
+      <div class="g2e">${ids.map(kidCard).join('')}</div>
       <section class="card grid"><h2>الجدول والاشتراك</h2>
         ${firstFuture ? `<div class="field"><label for="sd">تاريخ بداية الحصص</label><input class="input" type="date" id="sd" value="${DB.periods[0].from.slice(0,10)}" style="max-width:220px"></div>` : '<p class="small muted" style="margin:0">أي تعديل على الأيام أو الوقت يبدأ من الآن، والحصص السابقة تبقى كما هي.</p>'}
-        <div class="g2" style="grid-template-columns:1fr 1fr">${ids.map(sched).join('')}</div>
+        <div class="g2e">${ids.map(sched).join('')}</div>
         <div class="field"><label for="pl">قيمة الحصة الواحدة (ريال)</label><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:180px"></div>
         <div class="chips"><button class="btn primary" id="save">حفظ</button><span class="small ok" id="saved"></span></div>
       </section>
