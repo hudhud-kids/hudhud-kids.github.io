@@ -384,6 +384,32 @@ html[dir=ltr] .ldots{justify-content:flex-start}
 .pbtn:hover{border-color:var(--brand)}
 .pbtn svg{width:20px;height:20px}
 .center .prefs{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-end:max(12px,env(safe-area-inset-right,0px))}
+.missions{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.mission{display:grid;gap:2px;justify-items:center;text-align:center;padding:12px 8px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit}
+.mission:hover{border-color:var(--brand)}.mission .me2{font-size:1.9rem}html[lang=en] .mission .small{display:none}.mission b{font-size:.95rem}.mstars{color:var(--gold);letter-spacing:2px}
+.mpanel{background:var(--surface);border:1.5px solid var(--brand);border-radius:16px;padding:10px 12px;display:grid;gap:8px}
+.mgoal{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:.92rem}.mgoal .en{direction:ltr;text-align:left}.mgoal.ok{opacity:.7}.mgoal.ok .en{text-decoration:line-through}
+.sound{display:grid;gap:2px;text-align:start;padding:12px 14px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit}
+.micbig{width:74px;height:74px;border-radius:50%;border:0;background:var(--brand);color:#fff;display:grid;place-items:center}.micbig svg{width:34px;height:34px}.micbig.on{animation:pulse 1s infinite;background:var(--bad)}
+.btn.on{box-shadow:0 0 0 3px rgba(255,106,0,.35)}
+.radarw{display:grid;place-items:center}.radar{width:100%;max-width:380px;height:auto}
+details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px;padding:8px 12px}details.skills summary{cursor:pointer;font-weight:800}
+.lmapw{display:grid;place-items:center}.lmap,.radar{direction:ltr}.lmap{width:100%;max-width:560px;height:auto;margin-top:8px}
+.mnode circle{stroke-width:3}.mnode.done circle{fill:var(--good);stroke:#fff}.mnode.done text{fill:#fff}.mnode.cur circle{fill:var(--brand);stroke:#fff;filter:drop-shadow(0 0 6px rgba(255,106,0,.6))}.mnode.cur text{fill:#fff}.mnode.lock circle{fill:#fff;stroke:#D9C5B3}.mnode.lock text{fill:#9A7F6B}
+.hero-mark{animation:bob 1.6s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-5px)}}
+.room2{position:relative;height:240px;border-radius:20px;overflow:hidden;border:1.5px solid var(--line)}.room2.big{height:300px}
+.room2 .floor{position:absolute;inset-inline:0;bottom:0;height:30%;background:linear-gradient(180deg,#E9C9A4,#D7AE84)}
+.shelf3{position:absolute;top:18px;inset-inline:18px;display:flex;justify-content:space-around;font-size:2rem;border-bottom:6px solid #B07B4F;padding-bottom:2px}
+.me3{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);display:grid;justify-items:center;line-height:1}.char3{font-size:5.4rem}.hat3{font-size:2.4rem;margin-bottom:-18px;z-index:1}
+.pet3{position:absolute;bottom:12%;left:calc(50% + 70px);font-size:2.8rem}.fdeco{position:absolute;bottom:12%;font-size:2.4rem}.fd0{left:12%}.fd1{right:12%}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.item{display:grid;gap:4px;justify-items:center;padding:10px 6px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit}.item.on{border-color:var(--good);background:var(--good-soft)}.item .ie{font-size:2rem}.item .sw{width:44px;height:30px;border-radius:8px;border:1px solid var(--line)}.item .ok{color:var(--good)}
+.league{display:grid;gap:6px;margin-top:8px}.lrow{display:grid;grid-template-columns:28px 1fr auto 26px;gap:8px;align-items:center;padding:8px 10px;border-radius:12px;background:var(--bg)}.lrow.me{background:var(--brand-soft);border:1.5px solid var(--brand);font-weight:800}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}.game{display:grid;gap:2px;justify-items:center;text-align:center;padding:12px 6px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit}.game>span:first-child{font-size:1.9rem}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:12px}.match>div{display:grid;gap:8px}.mt{padding:12px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-weight:700}.mt.sel{border-color:var(--brand);background:var(--brand-soft)}.mt.right{border-color:var(--good);background:var(--good-soft);opacity:.75}.mt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.right{border-color:var(--good)!important;background:var(--good-soft)!important}.opt.wrong{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+:root[data-theme="dark"] .lrow{background:var(--bg)}:root[data-theme="dark"] .mnode.lock circle{fill:#2B1B0F;stroke:#5A4535}
+@media (max-width:520px){.missions{grid-auto-flow:column;grid-auto-columns:140px;grid-template-columns:none;overflow-x:auto;padding-bottom:6px}.games{grid-template-columns:1fr 1fr 1fr}.game b{font-size:.85rem}.room2.big{height:250px}}
 </style>
 </head>
 <body>
@@ -598,7 +624,7 @@ document.addEventListener('click', e => { const b = e.target.closest && e.target
 let I18N = null, I18N_KEYS = [];
 function trText(str){ if(!I18N || !/[؀-ۿ]/.test(str)) return str; let out = str;
   for(const k of I18N_KEYS){ if(out.indexOf(k) >= 0) out = out.split(k).join(I18N[k]); if(!/[؀-ۿ]/.test(out)) break; } return out; }
-const SKIP_TR = el => el.closest && el.closest('.r-tip,.kword span,.gram,.wordchips,.vguide ol,.vguide > div,[data-notr],.report .small,#mnote');
+const SKIP_TR = el => el.closest && el.closest('.r-tip,.kword span,.gram,.wordchips,.vguide ol,.vguide > div,[data-notr],.match,.gloss,.mgoal .small,.report .small,#mnote');
 function trNode(root){
   if(!I18N) return;
   const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const nodes = []; let n; while((n = w.nextNode())) nodes.push(n);
@@ -786,7 +812,7 @@ function checkNewBadges(k){
   const p = DB.progress[k], now = earnedBadges(k), fresh = now.filter(b => !p.badgesSeen.includes(b));
   if(fresh.length){ p.badgesSeen = now; save(); fresh.forEach((id, i) => { const b = BADGES.find(x => x[0] === id); setTimeout(() => toast(`وسام جديد! ${b[2]} ${b[1]}`, 'gold'), 600 + i*1400); }); }
 }
-function addXP(k, n){ DB.progress[k].xp = (DB.progress[k].xp||0) + n; save(); }
+function addXP(k, n){ DB.progress[k].xp = (DB.progress[k].xp||0) + n; logXP(k, n); save(); }
 
 /* =============== ROUTER =============== */
 let homeTimer = null, TAB = 'home';
@@ -869,7 +895,7 @@ function renderProfile(k, first){
 }
 
 /* =============== KID SHELL + TABS =============== */
-const TABS = [['home','الرئيسية','🏠'],['plan','جدولي','📅'],['library','المكتبة','📚'],['wins','إنجازاتي','🏆'],['shop','المتجر','🎁']];
+const TABS = [['home','الرئيسية','🏠'],['plan','جدولي','📅'],['library','المكتبة','📚'],['wins','إنجازاتي','🏆'],['room','غرفتي','🧸'],['shop','المكافآت','🎁']];
 function renderEnded(k){
   const l = ledger(k), kid = DB.kids[k], req = (DB.renewReq||{})[k];
   $('#app').innerHTML = `<div class="center">${prefsHTML()}<div class="card panel" style="text-align:center;gap:14px">
@@ -884,6 +910,7 @@ function renderEnded(k){
 }
 function renderKid(k){
   if(ledger(k).ended && !L){ clearInterval(homeTimer); return renderEnded(k); }
+  try{ settleLeague(k); }catch(e){ console.warn(e); }
   if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
   const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
   $('#app').innerHTML = `<div class="wrap">
@@ -893,7 +920,7 @@ function renderKid(k){
     <div id="tabBody"></div></div>`;
   $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
   document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { TAB = b.dataset.tab; renderKid(k); });
-  ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins, shop:tabShop})[TAB](k);
+  ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins, room:tabRoom, shop:tabShop})[TAB](k);
   checkNewBadges(k); maybeCelebrate(k);
 }
 
@@ -916,10 +943,12 @@ function tabHome(k){
     ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
     ${examCard(k)}
     ${familyCard(k)}
-    <div class="g2e">${dailyCard(k)}${kitCard(k) || reviewCard(k) || practiceCard(k)}</div>
-    <div class="g2e">${kitCard(k) ? reviewCard(k) : ''}${(kitCard(k) || reviewCard(k)) ? practiceCard(k) : ''}</div>
-    ${units ? `<section class="card"><h2>رحلتك في المستوى ${DB.kids[k].level}</h2><div class="path">${units.map((u,ui) => { const start = units.slice(0,ui).reduce((a,x) => a+x.lessons.length, 0); const done = Math.max(0, Math.min(u.lessons.length, pos % plan.total - start));
-      return `<div class="unit ${done===u.lessons.length?'done':''} ${ui===plan.ui?'cur':''}"><div class="ue">${u.e}</div><div style="min-width:0"><div class="en" style="font-weight:800;direction:ltr;text-align:right">${esc(u.t)}</div><div class="small muted">${esc(u.ar||'')}</div><div class="ldots">${u.lessons.map((l,li) => `<i class="${li<done?'on':''} ${ui===plan.ui&&li===plan.li?'cur':''}" title="${esc(l[0])}"></i>`).join('')}</div></div></div>`; }).join('')}</div></section>` : ''}
+    <div class="g2e">${dailyCard(k)}${homeworkCard(k) || practiceCard(k)}</div>
+    <div class="g2e">${kitCard(k)}${homeworkCard(k) ? practiceCard(k) : ''}</div>
+    ${missionCard(k)}
+    <div class="g2e">${gamesCard()}<section class="card"><div class="chips" style="justify-content:space-between"><h2>🗣️ مختبر النطق</h2><button class="btn sm primary" id="pronGo">ادخل المختبر</button></div><p class="small muted" style="margin:6px 0 0">تمرّن على الأصوات الصعبة لمن يتكلم العربية مثل <span class="en">P/B</span> و <span class="en">TH</span> و <span class="en">ship/sheep</span>.</p><div class="chips" style="margin-top:8px">${SOUNDS.map(x => { const pc = soundPct(k, x.id); return `<span class="chip ${pc == null ? '' : pc >= 80 ? 'good' : pc >= 50 ? 'brand' : 'bad'} en">${x.t}${pc == null ? '' : ' ' + pc + '%'}</span>`; }).join('')}</div></section></div>
+    ${leagueCard(k, false)}
+    ${units ? `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🗺️ خريطة المستوى ${DB.kids[k].level}</h2><span class="small muted">الدرس ${pos % plan.total + 1} من ${plan.total}</span></div><div class="lmapw">${levelMap(k, units, plan)}</div></section>` : ''}
     <div class="g2">
       <section class="card"><h2>رصيد اشتراكك</h2>
         <div class="bal"><span class="v num">${L0.remaining.toLocaleString('en')}</span><span class="muted">ريال متبقي من ${L0.bal.toLocaleString('en')}</span></div>
@@ -939,6 +968,10 @@ function tabHome(k){
   const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false);
   const dg = $('#dailyGo'); if(dg) dg.onclick = () => { if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; } unlockAudio(); startDaily(k); };
   const rg = $('#revGo'); if(rg) rg.onclick = () => { unlockAudio(); startReview(k); };
+  const hw = $('#hwGo'); if(hw) hw.onclick = () => { unlockAudio(); startHomework(k); };
+  const pn = $('#pronGo'); if(pn) pn.onclick = () => { unlockAudio(); openPronLab(k); };
+  document.querySelectorAll('[data-mission]').forEach(b => b.onclick = () => startMission(k, b.dataset.mission));
+  document.querySelectorAll('[data-game]').forEach(b => b.onclick = () => startGame(k, b.dataset.game));
   const pg2 = $('#prGo'); if(pg2) pg2.onclick = () => startPractice(k);
   const kg = $('#kitGo'); if(kg) kg.onclick = () => { unlockAudio(); openKit(k); };
   const eg = $('#examGo'); if(eg) eg.onclick = () => startLevelExam(k);
@@ -1015,6 +1048,7 @@ function tabWins(k){
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card rank"><div class="rk-e">${rk.r[3]}</div><div style="min-width:0;flex:1"><div class="small muted">رتبتك</div><h2>${rk.r[2]} <span class="en muted small">${rk.r[1]}</span></h2>
       <div class="bar"><i style="width:${pct}%;background:var(--brand)"></i></div><div class="small"><b class="num">${p.xp}</b> نقطة${rk.nx ? ` · باقي <b class="num">${rk.nx[0]-p.xp}</b> نقطة لرتبة ${rk.nx[3]} ${rk.nx[2]}` : ' · أعلى رتبة!'}</div></div></section>
+    <div class="g2e"><section class="card"><h2>🕸️ خريطة مهاراتي</h2><div class="radarw">${radarSVG(k, 380)}</div>${(() => { const w = weakestSkill(k); return w ? `<p class="small" style="margin:6px 0 0">💪 ركّز هذا الأسبوع على: <b>${SKILLS.find(x => x[0] === w)[1]}</b>. المعلمة ستتدرب معك عليها أكثر.</p>` : '<p class="small muted" style="margin:6px 0 0">تمتلئ الخريطة كلما حضرت الحصص ولعبت وتدربت.</p>'; })()}</section>${leagueCard(k, true)}</div>
     <section class="card"><h2>أوسمتي <span class="muted small">${got.length} من ${BADGES.length}</span></h2>
       <div class="badges">${BADGES.map(b => `<div class="badge ${got.includes(b[0])?'on':''}"><div class="be">${b[2]}</div><b>${b[1]}</b><div class="small muted">${b[3]}</div></div>`).join('')}</div></section>
     <div class="g2">
@@ -1170,7 +1204,8 @@ function phrasesOf(text){
   return out;
 }
 /* Plays a text phrase by phrase. onWord(charIndex) for highlighting. Returns a controller {stop()}. */
-function narrate(text, opts){
+function narrate(text, opts){ const o = Object.assign({speed:.95, onWord:null, onEnd:null}, opts||{}); return azOn() ? narrateAZ(text, o) : narrateWS(text, o); }
+function narrateWS(text, opts){
   const o = Object.assign({speed:.95, onWord:null, onEnd:null}, opts||{});
   const main = narratorVoice(), other = characterVoice(main), ps = phrasesOf(text);
   let i = 0, stopped = false, timer = null;
@@ -1330,7 +1365,7 @@ function downloadICS(k){
 }
 
 /* =============== REWARDS SHOP =============== */
-const coinsOf = k => (DB.progress[k].xp||0) - DB.redeems.filter(r => r.kid === k).reduce((a,r) => a + r.cost, 0);
+const coinsOf = k => (DB.progress[k].xp||0) - DB.redeems.filter(r => r.kid === k).reduce((a,r) => a + r.cost, 0) - itemsSpent(k);
 function tabShop(k){
   const c = coinsOf(k), mine = DB.redeems.filter(r => r.kid === k).slice().reverse().slice(0,10);
   $('#tabBody').innerHTML = `<div class="grid">
@@ -1876,7 +1911,7 @@ function pickVoiceM(){ try{ const vs = speechSynthesis.getVoices().filter(v => /
 if('speechSynthesis' in window){ pickVoiceM(); try{ speechSynthesis.addEventListener('voiceschanged', pickVoiceM); }catch(e){} }
 if('speechSynthesis' in window){ try{ speechSynthesis.addEventListener('voiceschanged', () => { if(WHO === 'parent' && !document.querySelector('.ov,.reader') && document.getElementById('rv') && !document.getElementById('rv').options.length) renderParent(); }); }catch(e){} }
 if('speechSynthesis' in window){ pickVoice(); try{ speechSynthesis.onvoiceschanged = pickVoice; }catch(e){} }
-function unlockAudio(){ try{ const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); }catch(e){} }
+function unlockAudio(){ azUnlock(); try{ const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); }catch(e){} }
 
 /* =============== VOICE IN (STT) =============== */
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -1944,7 +1979,7 @@ STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'gir
 TODAY: Unit "${plan.unit}", lesson ${plan.li+1} of ${plan.perUnit||6}: "${plan.t}".
 Conversation goal: ${plan.goal}.
 Sentence patterns the child should build and use: ${plan.pattern}.${(() => { const kit = kitFor(kid.level, plan.ui, plan.li); return kit ? `\nThe child prepared these words before class: ${(kit.words||[]).map(w => w.w).join(', ')}. Use them as today's new words.` : ''; })()}${plan.round>1?' (Second time through this level: go deeper, use harder follow-up questions.)':''}
-Focus from the last lesson report: ${prog.focus || 'none yet'}.
+Focus from the last lesson report: ${prog.focus || 'none yet'}.${(() => { const w = weakestSkill(k); return w ? `\nWeakest skill on the child's skill map: ${w}. Give it extra practice today in a natural way.` : ''; })()}
 Recent mistakes to recycle naturally: ${mist}.
 What you know about the child from earlier lessons (bring it up naturally to make the conversation personal): ${(prog.interests||[]).join('; ') || 'nothing yet, find out what they love'}.
 Words from recent lessons: ${words}.
@@ -2002,7 +2037,7 @@ function startLesson(k, trial){
 function renderRoom(){
   $('#app').innerHTML = `<div class="room">
     <header class="rbar"><button class="btn sm" id="exit">خروج</button>
-      <div class="ttl">${L.trial ? '<span class="chip brand" style="font-family:var(--font)">تجريبي</span> ' : ''}${esc(L.plan.t)}</div>
+      <div class="ttl">${L.trial ? `<span class="chip brand" style="font-family:var(--font)">${L.mission ? 'مهمة' : 'تجريبي'}</span> ` : ''}${esc(L.plan.t)}</div>
       <div class="talk" id="talk"></div><div class="timer" id="timer">00:00</div></header>
     <div class="rbody">
       <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="selfcam" id="selfcam" hidden><video playsinline muted autoplay></video><span>${esc(nick(L.kid))}</span></div><div class="burst" id="burst"></div><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div></div></div>
@@ -2029,7 +2064,7 @@ function renderRoom(){
   $('#tbox').onclick = () => { if(L.state === 'speaking' || L.state === 'thinking') { interrupt(true); } };
   $('#kb').onclick = () => { const t = $('#typer'); t.hidden = !t.hidden; if(!t.hidden){ stopListening(); $('#msg').focus(); } };
   $('#typer').addEventListener('submit', e => { e.preventDefault(); const v = $('#msg').value.trim(); if(!v) return; $('#msg').value = ''; studentSaid(v); });
-  $('#wrap').onclick = () => { interrupt(false); teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
+  $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
   setState('idle'); setMood('happy');
   L.firstWave = true; blinkLoop(); idleGlance();
 }
@@ -2095,7 +2130,8 @@ function pump(){
   { const tb = $('#tbox'); if(tb) tb.classList.toggle('ask', /\?\s*$/.test(s)); }
   speakOne(s, false, () => { if(!L) return; L.speaking = false; pump(); });
 }
-function speakOne(text, slow, done){
+function speakOne(text, slow, done){ if(azOn() && L) return speakOneAZ(text, slow, done); return speakOneWS(text, slow, done); }
+function speakOneWS(text, slow, done){
   let finished = false; const fin = () => { if(finished) return; finished = true; clearTimeout(guard); stopMouth(); if(L) setMouth('rest'); done && done(); };
   const words = text.split(/\s+/).length; const guard = setTimeout(fin, (slow?700:420)*words + 2500);
   const rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96);
@@ -2119,16 +2155,16 @@ function interrupt(listenAfter){
 
 /* ---- teacher turn (streaming) ---- */
 function parseTags(full){
-  const out = {mood:null, board:null, fix:null, ar:'', stage:null, end:false};
+  const out = {mood:null, board:null, fix:null, ar:'', stage:null, end:false, goals:[]};
   const m = full.match(/^\s*\[MOOD:([a-z]+)\]/i); if(m) out.mood = m[1].toLowerCase();
-  const re = /\[(BOARD|FIX|AR|STAGE|END)(?::([^\]]*))?\]/gi; let x;
+  const re = /\[(BOARD|FIX|AR|STAGE|END|GOAL)(?::([^\]]*))?\]/gi; let x;
   while((x = re.exec(full))){ const tag = x[1].toUpperCase(), v = (x[2]||'').trim(), p = v.split('|').map(s => s.trim());
     if(tag === 'BOARD') out.board = {word:p[0], emoji:p[1]||'', ar:p[2]||'', example:p[3]||''};
     else if(tag === 'FIX') out.fix = {wrong:p[0]||'', right:p[1]||'', tip:p[2]||''};
-    else if(tag === 'AR') out.ar = v; else if(tag === 'STAGE') out.stage = v.toLowerCase(); else if(tag === 'END') out.end = true; }
+    else if(tag === 'AR') out.ar = v; else if(tag === 'STAGE') out.stage = v.toLowerCase(); else if(tag === 'END') out.end = true; else if(tag === 'GOAL') out.goals.push(Number(v)); }
   return out;
 }
-function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(BOARD|FIX|AR|STAGE|END)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
+function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(BOARD|FIX|AR|STAGE|END|GOAL)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
 function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
 async function teacherTurn(userText){
@@ -2163,6 +2199,8 @@ async function teacherTurn(userText){
     if(sub) sub.innerHTML = esc(spoken) + (tags.ar ? `<div class="ar">${esc(tags.ar)}</div>` : '');
     if(tags.board && tags.board.word) showBoard(tags.board);
     showFix(tags.fix);
+    if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
+    if(lesson.mission && tags.goals.length){ tags.goals.forEach(g => { if(g >= 1 && g <= 3 && !lesson.mission.done[g-1]){ lesson.mission.done[g-1] = true; burst(); toast(`🎯 حققت الهدف ${g}!`); } }); drawMissionPanel(); }
     if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
     lesson.ctl = null; lesson.streamDone = true; pump();
   }catch(e){
@@ -2181,7 +2219,7 @@ async function teacherTurn(userText){
 }
 function teacherFinished(){
   if(!L) return;
-  if(L.endSeen){ finishLesson(); return; }
+  if(L.endSeen){ L.mission ? finishMission() : finishLesson(); return; }
   if(L.state === 'listening') return;
   if($('#typer') && !$('#typer').hidden){ setState('idle'); return; }
   startListening(false);
@@ -2266,7 +2304,7 @@ Reply with ONLY one JSON object:
   if(!lesson.trial){
     const att = {kid:k, slot:lesson.slot, lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:mins};
     DB.attendance.push(att); DB.reports.push(Object.assign({}, att, report));
-    const p = DB.progress[k]; p.pos = (p.pos||0)+1; p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); p.focus = String(rep.nextFocus||'');
+    const p = DB.progress[k]; p.pos = (p.pos||0)+1; p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); p.focus = String(rep.nextFocus||''); seedSRS(k); report.mistakes.forEach(m => addSRS(k, m.right, 'كنت تقول: ' + m.wrong)); report.newWords.forEach(w => addSRS(k, w, ''));
     p.xp = (p.xp||0) + 50;
     if(plan.li === (plan.perUnit||6) - 1){ cert = {kid:k, unit:plan.unit, level:DB.kids[k].level, date:new Date().toISOString()}; DB.certs.push(cert); }
     DB.live[k] = null; save();
@@ -2317,6 +2355,7 @@ function renderParent(){
       <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
       <div class="stat"><div><span class="small muted">الرصيد المتبقي · الحصة ${l.price} ر.س</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
       <div class="chips" style="margin-top:12px"><button class="btn sm ${l.ended ? 'primary' : ''}" data-topup="${k}">💳 شحن الرصيد</button>${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-month="${k}">📅 التقرير الشهري</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
+      <details class="skills"><summary>🕸️ خريطة المهارات${(() => { const w = weakestSkill(k); return w ? ` · الأضعف: ${SKILLS.find(x => x[0] === w)[1]}` : ''; })()}</summary><div class="radarw">${radarSVG(k, 340)}</div><div class="small muted">تُحسب من الحصص والاختبارات والقراءة بصوت عالٍ ومختبر النطق والواجب والمهمات. المعلمة تركّز تلقائياً على الأضعف.</div></details>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
       ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة${r.talkPct != null ? ` · تحدّث ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
@@ -2339,6 +2378,13 @@ function renderParent(){
           <li><b>الأصوات</b> ← <b>English</b> ← <b>Ava</b> ← حمّل <b>Ava (استثنائي)</b> ☁️ واختره ✓</li>
           <li>أغلق المنصة وافتحها، ثم اضغط «تجربة الصوت» هنا.</li></ol>
           <button class="btn sm" id="rvt">🔊 تجربة الصوت</button></div></div>
+        <div class="field"><label>🎙️ صوت بشري طبيعي (Azure، اختياري)</label><div class="vguide">
+          <div>${DB.azure && DB.azure.key ? '✅ مفعّل: المعلمة والقصص تستخدم صوتاً عصبياً طبيعياً، ولو تعطّل يرجع لصوت الجهاز تلقائياً.' : 'يعطي المعلمة وقراءة القصص صوتاً بشرياً طبيعياً. الخطة المجانية F0 تكفي تقريباً 500 ألف حرف شهرياً.'}</div>
+          <ol><li>أنشئ حساباً مجانياً: <a href="https://azure.microsoft.com/free/" target="_blank" rel="noopener">azure.microsoft.com/free</a></li>
+          <li>أنشئ خدمة الكلام: <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank" rel="noopener">Speech service</a> · المنطقة <b class="en">East US</b> · الخطة <b class="en">Free F0</b></li>
+          <li>من «Keys and Endpoint» انسخ <b class="en">KEY 1</b> والصقه هنا.</li></ol>
+          <div class="chips"><input class="input ltr" id="azk" type="password" autocomplete="off" placeholder="${DB.azure && DB.azure.key ? '•••••• محفوظ' : 'Azure KEY 1'}" style="flex:1;min-width:180px"><input class="input ltr" id="azr" value="${esc((DB.azure && DB.azure.region) || 'eastus')}" style="max-width:130px" aria-label="region"></div>
+          <div class="chips"><button class="btn sm primary" id="azs">حفظ</button><button class="btn sm" id="azt">🔊 تجربة الصوت البشري</button>${DB.azure && DB.azure.key ? '<button class="btn sm danger" id="azx">إيقاف</button>' : ''}<span class="small" id="azm"></span></div></div></div>
         <div class="field"><label for="pl">قيمة الحصة الواحدة (ريال)</label><div class="chips"><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:140px"><button class="btn sm" id="savePl">حفظ</button></div></div>
       </section>
       <section class="card"><h2>الحسابات</h2><div style="overflow-x:auto"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th><th>المستوى</th></tr>
@@ -2397,6 +2443,10 @@ function renderParent(){
   };
   $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); toast('تم حفظ المفتاح'); };
   $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
+  $('#azs').onclick = () => { const kk = $('#azk').value.trim(), rg = $('#azr').value.trim().toLowerCase().replace(/\s+/g,'') || 'eastus'; if(!kk && !(DB.azure && DB.azure.key)){ $('#azm').textContent = 'الصق المفتاح أولاً.'; return; } DB.azure = {key: kk || DB.azure.key, region: rg}; AZ_DOWN = false; save(); renderParent(); toast('تم حفظ صوت Azure'); };
+  $('#azt').onclick = async () => { const m = $('#azm'); if(!(DB.azure && DB.azure.key)){ m.textContent = 'احفظ المفتاح أولاً.'; return; } AZ_DOWN = false; m.className = 'small'; m.textContent = 'جاري التجربة…'; azUnlock();
+    try{ await azTest(); m.className = 'small ok'; m.textContent = '✅ الصوت البشري يعمل'; }catch(e){ m.className = 'small err'; m.textContent = e && (e.status === 401 || e.status === 403) ? 'المفتاح أو المنطقة غير صحيحة.' : `فشل (${(e && e.status) || 'اتصال'}).`; } };
+  $('#azx') && ($('#azx').onclick = () => { DB.azure = null; save(); renderParent(); toast('رجعنا لصوت الجهاز'); });
   $('#savePl').onclick = () => { const v = Math.max(1, Math.round(Number($('#pl').value))||10); kidIds().forEach(k => setPrice(k, v)); DB.perLesson = v; save(); toast(`قيمة الحصة الآن ${v} ريال لكل الأطفال، من الآن فصاعداً`); renderParent(); };
   $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
     try{ await callClaude({model:LIVE_MODEL, max_tokens:20, messages:[{role:'user', content:'Say: ready'}]}); msg.textContent = '✅ المعلمة جاهزة'; msg.className = 'small ok'; }
@@ -2493,6 +2543,433 @@ function kidForm(k){
       save(); c.remove(); ov.remove(); toast('تم حذف الحساب'); renderParent(); };
   };
 }
+
+/* =====================================================================
+   WORLD FEATURES: missions, pronunciation lab, skills map, homework (SRS),
+   level map, avatar room, weekly league, mini-games
+   ===================================================================== */
+const DAY = 864e5;
+const todayKey = () => dayKey(new Date());
+
+/* ---------- XP log (for leagues) ---------- */
+function logXP(k, n){ const p = DB.progress[k]; p.xpLog = (p.xpLog || []); p.xpLog.push([Date.now(), n]); if(p.xpLog.length > 600) p.xpLog = p.xpLog.slice(-600); }
+function xpSince(k, t){ return (DB.progress[k].xpLog || []).filter(x => x[0] >= t).reduce((a,x) => a + x[1], 0); }
+
+/* ---------- 1. CONVERSATION MISSIONS ---------- */
+const MISSIONS = [
+  {id:'cafe', e:'☕', t:'At the Café', ar:'في المقهى', role:'a friendly café waiter', setting:'a busy café in Riyadh', min:1,
+   goals:[['Order a drink and something to eat','اطلب مشروباً وشيئاً للأكل'],['Ask how much it costs','اسأل عن السعر'],['Pay and say thank you politely','ادفع واشكره بأدب']]},
+  {id:'airport', e:'✈️', t:'Airport Check-in', ar:'في المطار', role:'an airline check-in agent', setting:'King Khalid International Airport', min:3,
+   goals:[['Say where you are flying to','قل إلى أين تسافر'],['Answer a question about your bags','أجب عن سؤال الحقائب'],['Ask which gate and what time boarding is','اسأل عن البوابة ووقت الصعود']]},
+  {id:'doctor', e:'🩺', t:'At the Doctor', ar:'عند الطبيب', role:'a kind doctor', setting:'a clinic', min:3,
+   goals:[['Explain what hurts or how you feel','اشرح ما يؤلمك أو كيف تشعر'],['Say since when you feel this way','قل منذ متى تشعر بهذا'],['Ask what you should do to get better','اسأل ماذا تفعل لتتحسن']]},
+  {id:'shop', e:'🛍️', t:'Buying New Shoes', ar:'شراء حذاء', role:'a shop assistant in a sports shop', setting:'a mall sports shop', min:2,
+   goals:[['Say what you want and your size','قل ماذا تريد ومقاسك'],['Ask for a different colour','اطلب لوناً آخر'],['Compare two pairs and choose one with a reason','قارن بين زوجين واختر مع السبب']]},
+  {id:'friend', e:'🤝', t:'Making a New Friend', ar:'صديق جديد', role:'a new student at school', setting:'the school playground', min:1,
+   goals:[['Introduce yourself','عرّف بنفسك'],['Ask 2 questions about them','اسأله سؤالين عنه'],['Invite them to play or do something together','ادعه ليلعب أو يشاركك نشاطاً']]},
+  {id:'lost', e:'🧭', t:'Lost in the City', ar:'ضائع في المدينة', role:'a helpful police officer', setting:'a street in a new city', min:4,
+   goals:[['Explain that you are lost and where you want to go','اشرح أنك ضائع وأين تريد الذهاب'],['Understand the directions and repeat them','افهم الاتجاهات وأعدها'],['Ask how long it takes to get there','اسأل كم يستغرق الوصول']]},
+  {id:'hotel', e:'🏨', t:'Hotel Problem', ar:'مشكلة في الفندق', role:'a hotel receptionist', setting:'a hotel front desk', min:6,
+   goals:[['Politely explain a problem with your room','اشرح بأدب مشكلة في غرفتك'],['Ask for a solution','اطلب حلاً'],['Agree on what will happen and thank them','اتفق على الحل واشكره']]},
+  {id:'interview', e:'🎤', t:'TV Interview', ar:'مقابلة تلفزيونية', role:'a TV presenter interviewing a young champion', setting:'a kids TV show studio', min:5,
+   goals:[['Describe what you achieved','صف ما أنجزته'],['Explain how you prepared','اشرح كيف استعددت'],['Give advice to other kids','انصح الأطفال الآخرين']]},
+  {id:'phone', e:'📞', t:'Phone Call to a Friend', ar:'مكالمة مع صديق', role:'your friend on the phone', setting:'a phone call on the weekend', min:2,
+   goals:[['Ask how they are and what they are doing','اسأله عن حاله وماذا يفعل'],['Suggest a plan for tomorrow','اقترح خطة لبكرة'],['Agree on a time and a place','اتفقوا على وقت ومكان']]},
+  {id:'museum', e:'🏛️', t:'Museum Guide', ar:'مرشد المتحف', role:'a curious tourist', setting:'the National Museum in Riyadh — the child is the guide', min:7,
+   goals:[['Welcome the tourist and introduce the museum','رحّب بالسائح وعرّف بالمتحف'],['Describe one object and its history','صف قطعة وتاريخها'],['Answer the tourist\'s question','أجب عن سؤال السائح']]},
+  {id:'chef', e:'👨‍🍳', t:'Cooking Show', ar:'برنامج طبخ', role:'a cooking show host', setting:'a TV kitchen — the child explains a recipe', min:5,
+   goals:[['Name the ingredients you need','سمِّ المكونات'],['Explain the steps in order','اشرح الخطوات بالترتيب'],['Say how it tastes and who should try it','قل طعمه ومن يجربه']]},
+  {id:'debate', e:'⚖️', t:'Friendly Debate', ar:'نقاش ودي', role:'a classmate who disagrees with you', setting:'a class debate: should kids have phones at school?', min:8,
+   goals:[['State your opinion clearly','اذكر رأيك بوضوح'],['Give two reasons with examples','أعطِ سببين مع أمثلة'],['Respond politely to the other side','رد بأدب على الرأي الآخر']]},
+  {id:'job', e:'💼', t:'Summer Job Interview', ar:'مقابلة عمل صيفي', role:'a manager hiring for a summer job at a science centre', setting:'a job interview', min:10,
+   goals:[['Introduce yourself and your strengths','عرّف بنفسك ونقاط قوتك'],['Describe a time you solved a problem','صف موقفاً حللت فيه مشكلة'],['Ask a smart question about the job','اسأل سؤالاً ذكياً عن الوظيفة']]},
+  {id:'news', e:'📰', t:'News Reporter', ar:'مراسل أخبار', role:'a news anchor in the studio', setting:'a live news report — the child is the reporter at an event', min:9,
+   goals:[['Report what is happening','انقل ما يحدث'],['Report what someone said (reported speech)','انقل ما قاله شخص'],['Predict what will happen next','توقّع ما سيحدث']]},
+  {id:'pitch', e:'🚀', t:'Invention Pitch', ar:'عرض اختراع', role:'an investor on a TV show', setting:'a Shark-Tank style show — the child pitches an invention', min:12,
+   goals:[['Explain the problem your invention solves','اشرح المشكلة التي يحلها اختراعك'],['Describe how it works','صف كيف يعمل'],['Persuade the investor with numbers or benefits','أقنع المستثمر بالفوائد']]},
+  {id:'climate', e:'🌍', t:'Youth Climate Summit', ar:'قمة الشباب للمناخ', role:'a summit moderator asking tough questions', setting:'an international youth summit', min:15,
+   goals:[['Present a clear position on one climate issue','قدّم موقفاً واضحاً من قضية مناخية'],['Support it with evidence and examples','ادعمه بأدلة وأمثلة'],['Handle a counter-argument diplomatically','تعامل مع رأي معارض بدبلوماسية']]}
+];
+function missionsFor(k){ const lv = DB.kids[k].level; return MISSIONS.filter(m => m.min <= lv); }
+function missionRules(k, m){
+  const kid = DB.kids[k], cefr = LEVEL_CEFR[kid.level], age = ageOf(kid.birth);
+  return `You are playing a ROLE in a short spoken English role-play mission with a ${age}-year-old Saudi ${kid.boy?'boy':'girl'} (CEFR ${cefr}). This is part of an English-learning app; you are an AI teacher playing a character.
+ROLE: you are ${m.role}. SETTING: ${m.setting}. MISSION: "${m.t}".
+The child's 3 goals (they can see them on screen):
+1. ${m.goals[0][0]}
+2. ${m.goals[1][0]}
+3. ${m.goals[2][0]}
+RULES:
+- Stay in character and keep the scene natural and fun. Speak English only, at CEFR ${cefr}, 1-2 short sentences, and always give the child a chance to speak.
+- Guide the scene so each goal becomes possible, but let the child do the talking. Do not do the goals for them.
+- When the child clearly achieves a goal with an understandable full sentence, add [GOAL:1], [GOAL:2] or [GOAL:3] on its own line.
+- If the child makes a mistake, stay in character and naturally say the correct version, and add [FIX:wrong|right|very short Arabic tip].
+- If you receive "(student asks for a hint)", step out of character for one sentence, give an example sentence they could say for the next goal, then continue.
+- When all 3 goals are done, end the scene warmly in character, then add [END].
+- Never ask for personal details. If asked, say you are an AI teacher playing a character.
+FORMAT: first line starts with [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Tags each on their own line after it: [GOAL:n] [FIX:...] [AR:word = Arabic] [END]. No markdown, no Arabic in the spoken text.`;
+}
+function missionCard(k){
+  const ms = missionsFor(k), best = DB.progress[k].missions || {}, stars = ms.reduce((a,m) => a + (best[m.id]||0), 0);
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🎯 مهمات المحادثة</h2><span class="chip brand">⭐ ${stars} / ${ms.length*3}</span></div>
+    <p class="small muted" style="margin:4px 0 10px">مواقف حقيقية تتكلم فيها مع شخصية، ولكل مهمة 3 أهداف تحققها بكلامك.</p>
+    <div class="missions">${ms.map(m => `<button class="mission" data-mission="${m.id}"><span class="me2">${m.e}</span><b class="en">${esc(m.t)}</b><span class="small muted">${esc(m.ar)}</span><span class="mstars">${'★'.repeat(best[m.id]||0)}${'☆'.repeat(3-(best[m.id]||0))}</span></button>`).join('')}</div></section>`;
+}
+function startMission(k, id){
+  const m = MISSIONS.find(x => x.id === id); if(!m) return;
+  if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
+  unlockAudio();
+  const plan = Object.assign({}, lessonPlan(k), {t:m.t});
+  L = {kid:k, trial:true, mission:{m, done:[false,false,false]}, slot:null, n:0, plan, history:[], startedAt:new Date(), state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
+       queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:0, typing:false, sw:0, tw:0, fixes:[]};
+  L.rules = missionRules(k, m); demoN = 0;
+  renderRoom();
+  const side = document.querySelector('.side'); const panel = document.createElement('div'); panel.className = 'mpanel'; panel.id = 'mpanel'; side.prepend(panel); drawMissionPanel();
+  const ctrl = document.querySelector('.ctrl'); const hb = document.createElement('button'); hb.className = 'btn sm'; hb.textContent = '💡 تلميح';
+  hb.onclick = () => { if(L && !L.busy){ interrupt(false); teacherTurn('(student asks for a hint)'); } }; ctrl.prepend(hb);
+  const tm = document.getElementById('timer'); if(tm) tm.hidden = true;
+  L.tick = setInterval(tickRoom, 1000);
+  teacherTurn(`(The mission starts now. In character as ${m.role}, greet the child and open the scene.)`);
+}
+function drawMissionPanel(){ const el = document.getElementById('mpanel'); if(!el || !L || !L.mission) return; const {m, done} = L.mission;
+  el.innerHTML = `<div class="small" style="font-weight:800">${m.e} ${esc(m.ar)} · أهدافك</div>${m.goals.map((g,i) => `<div class="mgoal ${done[i]?'ok':''}"><span>${done[i]?'✅':'⬜'}</span><div><div class="en">${esc(g[0])}</div><div class="small muted">${esc(g[1])}</div></div></div>`).join('')}`; }
+function finishMission(){
+  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; stopListening(); setState('idle'); clearInterval(lesson.tick);
+  const k = lesson.kid, {m, done} = lesson.mission, stars = done.filter(Boolean).length;
+  const p = DB.progress[k]; p.missions = p.missions || {}; const prev = p.missions[m.id] || 0; p.missions[m.id] = Math.max(prev, stars);
+  const xp = stars * 15 + (stars === 3 && prev < 3 ? 25 : 0); if(xp) addXP(k, xp);
+  (lesson.fixes||[]).forEach(f => addSRS(k, f.right, 'كنت تقول: ' + f.wrong));
+  save();
+  const ov = overlay(`<div style="text-align:center"><div style="font-size:3rem">${m.e}</div><div class="stars" style="font-size:2.3rem">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
+    <h2>${stars === 3 ? 'أنجزت المهمة كاملة! 🎉' : `حققت ${stars} من 3 أهداف`}</h2>${xp ? `<div class="chip good">+${xp} نقطة</div>` : ''}</div>
+    ${(lesson.fixes||[]).length ? `<div><b>تصحيحات أضفناها لواجبك:</b>${lesson.fixes.map(f => `<div class="ltr small" style="text-align:left"><s class="muted">${esc(f.wrong)}</s> → <b style="color:var(--good)">${esc(f.right)}</b></div>`).join('')}</div>` : ''}
+    <div class="chips" style="justify-content:center"><button class="btn primary" id="mback">رجوع</button>${stars < 3 ? '<button class="btn" id="magain">حاول مرة ثانية</button>' : ''}</div>`);
+  ov.querySelector('#mback').onclick = () => { ov.remove(); leaveRoomQuiet(); go(k, 'home'); };
+  const ag = ov.querySelector('#magain'); if(ag) ag.onclick = () => { ov.remove(); leaveRoomQuiet(); startMission(k, m.id); };
+}
+
+/* ---------- 3. PRONUNCIATION LAB (minimal pairs for Arabic speakers) ---------- */
+const SOUNDS = [
+  {id:'pb', t:'P / B', ar:'التفريق بين P و B', tip:'P: انفخ هواء قوي بدون صوت من الحنجرة. B: صوت من الحنجرة بدون نفخ.', pairs:[['pen','Ben'],['pig','big'],['pat','bat'],['pear','bear'],['park','bark'],['pull','bull']]},
+  {id:'fv', t:'F / V', ar:'التفريق بين F و V', tip:'الاثنان بالأسنان العليا على الشفة السفلى، لكن V فيها اهتزاز صوت.', pairs:[['fan','van'],['fine','vine'],['ferry','very'],['fail','veil'],['safe','save'],['few','view']]},
+  {id:'ths', t:'TH / S', ar:'صوت TH مثل «ث»', tip:'TH في think مثل «ث» العربية: طرف اللسان بين الأسنان.', pairs:[['think','sink'],['thick','sick'],['mouth','mouse'],['thing','sing'],['path','pass'],['thank','sank']]},
+  {id:'thd', t:'TH / D', ar:'صوت TH مثل «ذ»', tip:'TH في this مثل «ذ» العربية، وليست «د» ولا «ز».', pairs:[['they','day'],['then','den'],['those','doze'],['there','dare'],['though','dough'],['breathe','breed']]},
+  {id:'chsh', t:'CH / SH', ar:'التفريق بين CH و SH', tip:'CH مثل «تش» تبدأ بإغلاق، وSH مثل «ش» مستمرة.', pairs:[['chair','share'],['chip','ship'],['chop','shop'],['watch','wash'],['cheap','sheep'],['catch','cash']]},
+  {id:'iee', t:'i / ee', ar:'i قصيرة و ee طويلة', tip:'ee طويلة ومشدودة مثل «إي»، وi قصيرة ومرتخية.', pairs:[['ship','sheep'],['sit','seat'],['live','leave'],['fill','feel'],['hit','heat'],['bit','beat']]},
+  {id:'ea', t:'e / a', ar:'التفريق بين e و a', tip:'a في bad الفم مفتوح أكثر، وe في bed أقل انفتاحاً.', pairs:[['bed','bad'],['men','man'],['pen','pan'],['said','sad'],['set','sat'],['beg','bag']]},
+  {id:'ou', t:'o / u', ar:'التفريق بين o و u', tip:'o في hot الفم دائري ومفتوح، وu في hut قصيرة ومحايدة.', pairs:[['cot','cut'],['shot','shut'],['not','nut'],['hot','hut'],['cop','cup'],['lock','luck']]}
+];
+const soundStat = (k, id) => ((DB.progress[k].sounds || {})[id]) || {ok:0, n:0, lok:0, ln:0};
+function soundPct(k, id){ const s = soundStat(k, id); const tot = s.n + s.ln; return tot ? Math.round((s.ok + s.lok) / tot * 100) : null; }
+function openPronLab(k){
+  const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
+  const draw = () => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">إغلاق</button><b>🗣️ مختبر النطق</b><span></span></div>
+    <div style="max-width:760px;margin:0 auto;width:100%;display:grid;gap:12px">
+      <p class="small muted" style="margin:0">أصوات إنجليزية تتشابه على من يتكلم العربية. كل تمرين: تسمع وتختار، ثم تقول الكلمة والتطبيق يتحقق.</p>
+      ${SOUNDS.map(s => { const pc = soundPct(k, s.id); return `<button class="sound" data-snd="${s.id}"><b class="en">${s.t}</b><span class="small">${esc(s.ar)}</span><div class="bar" style="margin:6px 0 0"><i style="width:${pc||0}%;background:${pc==null?'var(--line)':pc>=80?'var(--good)':pc>=50?'var(--gold)':'var(--bad)'}"></i></div><span class="small muted">${pc==null ? 'لم تتدرب بعد' : pc + '% دقة'}</span></button>`; }).join('')}
+    </div>`;
+    ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); renderKid(k); };
+    ov.querySelectorAll('[data-snd]').forEach(b => b.onclick = () => runSound(k, SOUNDS.find(s => s.id === b.dataset.snd), ov, draw)); };
+  draw();
+}
+function runSound(k, S, ov, back){
+  const pairs = S.pairs.slice().sort(() => Math.random() - .5); let i = 0, score = 0; const total = 6;
+  const st = DB.progress[k].sounds = DB.progress[k].sounds || {}; const rec = st[S.id] = st[S.id] || {ok:0, n:0, lok:0, ln:0};
+  const say = w => narrate(w, {speed:.8});
+  const step = () => {
+    if(i >= total){ const xp = score * 5; if(xp) addXP(k, xp); save();
+      ov.innerHTML = `<div class="ptest"><div class="card" style="text-align:center;display:grid;gap:10px"><div style="font-size:2.6rem">🗣️</div><h2>${score} من ${total}</h2><p style="margin:0">${S.tip}</p>${xp ? `<div class="chip good" style="justify-self:center">+${xp} نقطة</div>` : ''}<button class="btn primary" id="sb">رجوع للمختبر</button></div></div>`;
+      ov.querySelector('#sb').onclick = back; return; }
+    const pr = pairs[i % pairs.length], tgt = Math.random() < .5 ? 0 : 1, word = pr[tgt], listenMode = i < 3;
+    if(listenMode){
+      ov.innerHTML = `<div class="r-top"><button class="btn sm" id="sb">رجوع</button><b class="en">${S.t}</b><span class="small muted num">${i+1}/${total}</span></div>
+        <div class="ptest"><div class="card quiz" style="text-align:center"><h2>👂 اسمع: أي كلمة قال؟</h2><button class="btn big primary" id="pl">🔊 استمع</button>
+        <div class="opts" style="grid-template-columns:1fr 1fr">${pr.map((w,x) => `<button class="opt en" style="text-align:center;font-size:1.4rem" data-o="${x}">${esc(w)}</button>`).join('')}</div><div id="fb"></div></div></div>`;
+      ov.querySelector('#sb').onclick = back; ov.querySelector('#pl').onclick = () => say(word); setTimeout(() => say(word), 300);
+      ov.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { const ok = Number(b.dataset.o) === tgt; rec.ln++; if(ok){ rec.lok++; score++; } save();
+        ov.querySelectorAll('[data-o]').forEach(o => { o.disabled = true; if(Number(o.dataset.o) === tgt) o.classList.add('right'); }); if(!ok) b.classList.add('wrong');
+        ov.querySelector('#fb').innerHTML = `<div class="qfb ${ok?'good':'bad'}">${ok ? '✓ صحيح!' : `✗ قال: <span class="en">${esc(word)}</span>`}</div><button class="btn primary" id="nx">التالي</button>`;
+        ov.querySelector('#nx').onclick = () => { i++; step(); }; });
+    } else {
+      ov.innerHTML = `<div class="r-top"><button class="btn sm" id="sb">رجوع</button><b class="en">${S.t}</b><span class="small muted num">${i+1}/${total}</span></div>
+        <div class="ptest"><div class="card quiz" style="text-align:center"><h2>🎤 قل هذه الكلمة بوضوح</h2><div class="aloud en">${esc(word)}</div><div class="small muted">لا تقل: <span class="en">${esc(pr[1-tgt])}</span></div>
+        <div class="chips" style="justify-content:center"><button class="btn" id="pl">🔊 اسمعها</button><button class="micbig" id="mk" aria-label="تكلم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button></div><div id="fb"></div></div></div>`;
+      ov.querySelector('#sb').onclick = back; ov.querySelector('#pl').onclick = () => say(word);
+      ov.querySelector('#mk').onclick = async () => { const mk = ov.querySelector('#mk'); mk.classList.add('on'); speechSynthesis.cancel();
+        if(!SR){ ov.querySelector('#fb').innerHTML = '<div class="qfb bad">الميكروفون غير متاح في هذا المتصفح.</div>'; return; }
+        const heard = (await listenFor(4500) || '').toLowerCase(); mk.classList.remove('on');
+        const ws = heard.split(/[^a-z']+/); const ok = ws.includes(word.toLowerCase()), other = ws.includes(pr[1-tgt].toLowerCase());
+        rec.n++; if(ok) { rec.ok++; score++; } save();
+        ov.querySelector('#fb').innerHTML = `<div class="qfb ${ok?'good':'bad'}">${ok ? '✓ نطق صحيح!' : other ? `✗ سمعتها: <span class="en">${esc(pr[1-tgt])}</span>. ${esc(S.tip)}` : `لم أسمعها بوضوح${heard ? ` (سمعت: <span class="en">${esc(heard)}</span>)` : ''}`}</div><button class="btn primary" id="nx">التالي</button>`;
+        ov.querySelector('#nx').onclick = () => { i++; step(); }; };
+    }
+  };
+  step();
+}
+
+/* ---------- 5. SKILLS MAP ---------- */
+const SKILLS = [['speaking','المحادثة'],['grammar','القواعد'],['vocabulary','المفردات'],['pronunciation','النطق'],['listening','الاستماع'],['reading','القراءة']];
+function skillScores(k){
+  const p = DB.progress[k], reps = DB.reports.filter(r => r.kid === k).slice(-6), avg = xs => xs.length ? Math.round(xs.reduce((a,b) => a+b, 0)/xs.length) : null;
+  const talk = reps.filter(r => r.talkPct != null).map(r => Math.min(100, Math.round(r.talkPct / talkGoal(k) * 100)));
+  const missions = Object.values(p.missions||{}).map(s => s/3*100);
+  const snd = SOUNDS.map(s => soundStat(k, s.id)), sOk = snd.reduce((a,s) => a + s.ok, 0), sN = snd.reduce((a,s) => a + s.n, 0), lOk = snd.reduce((a,s) => a + s.lok, 0), lN = snd.reduce((a,s) => a + s.ln, 0);
+  const aloud = (p.aloud||[]).slice(-6).map(a => a.pct);
+  const quizzes = (p.quizzes||[]).slice(-8).map(q => q.score/q.total*100);
+  const srs = Object.values(p.srs||{}); const srsPct = srs.length ? Math.round(srs.reduce((a,c) => a + Math.min(1,(c.box||0)/4), 0)/srs.length*100) : null;
+  return {
+    speaking: avg(talk.concat(missions)),
+    grammar: avg(reps.map(r => r.score).concat(quizzes)),
+    vocabulary: avg([srsPct, ...(quizzes.length ? [avg(quizzes)] : [])].filter(x => x != null)),
+    pronunciation: avg([sN ? Math.round(sOk/sN*100) : null, ...(aloud.length ? [avg(aloud)] : [])].filter(x => x != null)),
+    listening: lN ? Math.round(lOk/lN*100) : null,
+    reading: avg(aloud)
+  };
+}
+function weakestSkill(k){ const s = skillScores(k); const xs = SKILLS.filter(([id]) => s[id] != null).sort((a,b) => s[a[0]] - s[b[0]]); return xs.length ? xs[0][0] : null; }
+function radarSVG(k, size){
+  const s = skillScores(k), n = SKILLS.length, c = size/2, R = size/2 - 46;
+  const pt = (i, r) => { const a = -Math.PI/2 + i*2*Math.PI/n; return [c + r*Math.cos(a), c + r*Math.sin(a)]; };
+  const ring = f => SKILLS.map((_,i) => pt(i, R*f).join(',')).join(' ');
+  const poly = SKILLS.map(([id],i) => pt(i, R*((s[id] ?? 0)/100)).join(',')).join(' ');
+  return `<svg viewBox="0 0 ${size} ${size}" class="radar" role="img" aria-label="خريطة المهارات">
+    ${[.25,.5,.75,1].map(f => `<polygon points="${ring(f)}" fill="none" stroke="var(--line)" stroke-width="1.5"/>`).join('')}
+    ${SKILLS.map((_,i) => { const [x,y] = pt(i, R); return `<line x1="${c}" y1="${c}" x2="${x}" y2="${y}" stroke="var(--line)"/>`; }).join('')}
+    <polygon points="${poly}" fill="rgba(255,106,0,.25)" stroke="var(--brand)" stroke-width="3"/>
+    ${SKILLS.map(([id,ar],i) => { const [x,y] = pt(i, R + 26); const v = s[id]; return `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="700" fill="var(--fg)" font-family="Dubai,sans-serif">${ar}</text><text x="${x}" y="${y+17}" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="Dubai,sans-serif">${v == null ? '—' : v + '%'}</text>`; }).join('')}
+  </svg>`;
+}
+
+/* ---------- 6. HOMEWORK: spaced repetition ---------- */
+const BOX_DAYS = [0, 1, 2, 4, 8, 16, 32];
+function addSRS(k, front, back){ if(!front) return; const p = DB.progress[k]; p.srs = p.srs || {}; const id = String(front).toLowerCase().replace(/\s+/g,' ').trim().slice(0,80); if(!id || p.srs[id]) return;
+  p.srs[id] = {f:String(front).trim(), b:back ? String(back) : '', box:0, due:Date.now()}; const keys = Object.keys(p.srs); if(keys.length > 400) delete p.srs[keys[0]]; }
+function seedSRS(k){ const p = DB.progress[k]; if(p.srs) return; p.srs = {}; (p.mistakes||[]).forEach(m => addSRS(k, m.right, 'كنت تقول: ' + m.wrong)); (p.words||[]).forEach(w => addSRS(k, w, '')); }
+function dueCards(k){ const now = Date.now(); return Object.entries(DB.progress[k].srs || {}).filter(([,c]) => c.due <= now).sort((a,b) => a[1].box - b[1].box).slice(0, 15); }
+function homeworkCard(k){ seedSRS(k); const due = dueCards(k), all = Object.keys(DB.progress[k].srs||{}).length; if(!all) return '';
+  const doneToday = (DB.progress[k].hw||{})[todayKey()];
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>📝 واجب اليوم</h2>${due.length ? `<button class="btn sm primary" id="hwGo">ابدأ (${due.length} بطاقة)</button>` : `<span class="chip good">${doneToday ? '✓ أنجزته اليوم' : '✓ لا يوجد مستحق اليوم'}</span>`}</div>
+    <p class="small muted" style="margin:6px 0 0">جمل وكلمات من حصصك ترجع لك في الوقت المناسب حتى لا تنساها. اسمع، قل، وسجّل صوتك وقارنه.</p></section>`; }
+function startHomework(k){
+  const cards = dueCards(k); if(!cards.length) return; let i = 0, good = 0, rec = null, stream = null, myUrl = null;
+  const canRec = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
+  const stopStream = () => { if(stream){ stream.getTracks().forEach(t => t.stop()); stream = null; } };
+  const grade = ok => { const [id, c] = cards[i]; c.box = ok ? Math.min(BOX_DAYS.length-1, (c.box||0) + 1) : 0; c.due = Date.now() + BOX_DAYS[c.box]*DAY - 3600e3; if(ok) good++; DB.progress[k].srs[id] = c; save(); i++; draw(); };
+  const draw = () => {
+    if(i >= cards.length){ stopStream(); const xp = 10 + good*2; addXP(k, xp); DB.progress[k].hw = DB.progress[k].hw || {}; DB.progress[k].hw[todayKey()] = true; save();
+      ov.innerHTML = `<div class="card" style="text-align:center;display:grid;gap:10px"><div style="font-size:2.6rem">📝</div><h2>أنجزت واجب اليوم!</h2><p style="margin:0">${good} من ${cards.length} صحيحة</p><div class="chip good" style="justify-self:center">+${xp} نقطة</div><button class="btn primary" id="hd">تم</button></div>`;
+      ov.querySelector('#hd').onclick = () => { ov.remove(); renderKid(k); }; return; }
+    const c = cards[i][1]; myUrl = null; const isWord = c.f.split(' ').length <= 2;
+    ov.innerHTML = `<div class="card quiz"><div class="qhead"><span class="small muted">بطاقة ${i+1} من ${cards.length} · صندوق ${c.box||0}</span><div class="qbar"><i style="width:${i/cards.length*100}%"></i></div></div>
+      <div class="flash en"><span>${esc(c.f)}</span>${c.b ? `<small id="bk" hidden>${esc(c.b)}</small>` : ''}</div>
+      <div class="chips" style="justify-content:center"><button class="btn" id="ls">🔊 استمع</button><button class="btn" id="sy">🎤 قلها</button>${canRec ? '<button class="btn" id="rc">🎙️ سجّل</button><button class="btn" id="pl" disabled>▶️ صوتي</button>' : ''}${c.b ? '<button class="btn" id="sh">👁️ المعنى</button>' : ''}</div>
+      <div id="fb" class="small" style="text-align:center"></div>
+      <div class="chips" style="justify-content:center"><button class="btn danger" id="no">✗ ما عرفتها</button><button class="btn primary" id="ok">✓ عرفتها</button></div>
+      <button class="btn sm ghost" id="cl">إغلاق</button></div>`;
+    const say = () => narrate(c.f, {speed:.88});
+    ov.querySelector('#ls').onclick = say; setTimeout(say, 250);
+    const sh = ov.querySelector('#sh'); if(sh) sh.onclick = () => { ov.querySelector('#bk').hidden = false; };
+    ov.querySelector('#sy').onclick = async () => { const b = ov.querySelector('#sy'); b.classList.add('on'); speechSynthesis.cancel(); const h = await listenFor(isWord ? 4000 : 8000) || ''; b.classList.remove('on');
+      const acc = wordAccuracy(c.f, h); ov.querySelector('#fb').innerHTML = `<div class="qfb ${acc >= 80 ? 'good' : 'bad'}">${acc >= 80 ? '✓ ممتاز!' : 'حاول مرة ثانية'} · <span class="en">${esc(h || '…')}</span> (${acc}%)</div>`;
+      if(acc >= 80) setTimeout(() => grade(true), 900); };
+    if(canRec){ ov.querySelector('#rc').onclick = async () => { const b = ov.querySelector('#rc'); if(rec && rec.state === 'recording'){ rec.stop(); return; }
+        try{ stream = stream || await navigator.mediaDevices.getUserMedia({audio:true}); }catch(e){ ov.querySelector('#fb').textContent = 'اسمح للميكروفون لتسجيل صوتك.'; return; }
+        const chunks = []; rec = new MediaRecorder(stream); rec.ondataavailable = e => chunks.push(e.data);
+        rec.onstop = () => { myUrl = URL.createObjectURL(new Blob(chunks, {type:rec.mimeType || 'audio/mp4'})); b.textContent = '🎙️ سجّل'; ov.querySelector('#pl').disabled = false; };
+        rec.start(); b.textContent = '⏹️ إيقاف'; setTimeout(() => { if(rec && rec.state === 'recording') rec.stop(); }, 6000); };
+      ov.querySelector('#pl').onclick = () => { if(myUrl) new Audio(myUrl).play(); }; }
+    ov.querySelector('#ok').onclick = () => grade(true); ov.querySelector('#no').onclick = () => grade(false);
+    ov.querySelector('#cl').onclick = () => { stopStream(); speechSynthesis.cancel(); ov.remove(); renderKid(k); };
+  };
+  draw();
+}
+
+/* ---------- 7. LEVEL MAP ---------- */
+function levelMap(k, units, plan){
+  const pos = DB.progress[k].pos % plan.total, W = 420, rowH = 158, H = units.length * rowH + 16, av = roomAvatar(k);
+  let idx = 0, path = '', nodes = '', islands = '', hero = '';
+  units.forEach((u, ui) => {
+    const y0 = 10 + ui * rowH, per = u.lessons.length, done = u.lessons.every((_, li) => idx + li < pos);
+    islands += `<rect x="6" y="${y0}" width="${W-12}" height="${rowH-12}" rx="28" fill="${['#E3F4FF','#FFF1DC','#E5F8E8','#F3E8FF'][ui%4]}"/><text x="${W-22}" y="${y0+32}" text-anchor="end" font-size="24">${done ? '🏅' : (u.e||'📘')}</text><text x="${W-56}" y="${y0+31}" text-anchor="end" font-size="16" font-weight="800" fill="#2B1B0F" font-family="Dubai,sans-serif">${esc(u.t)}</text><text x="${W-56}" y="${y0+50}" text-anchor="end" font-size="12" fill="#86695A" font-family="Dubai,sans-serif">${esc(u.ar||'')}</text>`;
+    u.lessons.forEach((l, li) => {
+      const t = per > 1 ? li / (per-1) : .5, xx = 46 + t * (W - 92), x = ui % 2 ? xx : W - xx, y = y0 + 98 + Math.sin(li * 1.25) * 18;
+      path += (idx ? ' L ' : 'M ') + x.toFixed(1) + ' ' + y.toFixed(1);
+      const st = idx < pos ? 'done' : idx === pos ? 'cur' : 'lock';
+      nodes += `<g class="mnode ${st}"><circle cx="${x}" cy="${y}" r="${st==='cur'?21:17}"/><text x="${x}" y="${y+5.5}" text-anchor="middle" font-size="${st==='done'?17:14}" font-weight="800" font-family="Dubai,sans-serif">${st==='done' ? '✓' : idx+1}</text><title>${esc(l[0])}</title></g>`;
+      if(st === 'cur') hero = `<g class="hero-mark"><text x="${x}" y="${y-28}" text-anchor="middle" font-size="30">${av.char}</text>${av.hat ? `<text x="${x}" y="${y-52}" text-anchor="middle" font-size="19">${av.hat}</text>` : ''}${av.pet ? `<text x="${x+24}" y="${y-18}" text-anchor="middle" font-size="18">${av.pet}</text>` : ''}</g>`;
+      idx++;
+    });
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" class="lmap" role="img" aria-label="خريطة المستوى">${islands}<path d="${path}" fill="none" stroke="#E8B27C" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 15"/>${nodes}${hero}</svg>`;
+}
+
+/* ---------- 8. AVATAR & ROOM ---------- */
+const ITEMS = [
+  ...[['🧒',0],['👧',0],['👦',0],['🧑‍🚀',300],['🦸',400],['🧙',400],['🥷',500],['🧑‍🎤',350],['🤖',600],['🦁',450]].map(([e,c],i) => ({id:'c'+i, cat:'char', e, cost:c})),
+  ...[['🎩',150],['👑',500],['🧢',100],['🎓',250],['⛑️',150],['🪖',200],['🎀',100]].map(([e,c],i) => ({id:'h'+i, cat:'hat', e, cost:c})),
+  ...[['🐱',250],['🐶',250],['🐰',200],['🦜',300],['🐢',200],['🦊',350],['🐼',400],['🐎',500],['🦅',450],['🐪',300]].map(([e,c],i) => ({id:'p'+i, cat:'pet', e, cost:c})),
+  ...[['#E3EEFF,#FFFFFF','سماء',0],['#FFE8D6,#FFF7F0','غروب',0],['#DCFCE7,#F0FFF4','حديقة',150],['#1E1B4B,#4338CA','فضاء',300],['#FDE68A,#FCA5A5','صحراء',200],['#CFFAFE,#A5F3FC','بحر',250]].map(([e,n,c],i) => ({id:'w'+i, cat:'wall', e, name:n, cost:c})),
+  ...[['🪴',60],['🖼️',80],['🏆',200],['🎸',150],['🔭',180],['🛸',250],['🏀',90],['📚',60],['🧸',80],['🌍',120],['⚽',90],['🎨',100],['💡',70],['🕹️',160]].map(([e,c],i) => ({id:'d'+i, cat:'deco', e, cost:c}))
+];
+const CATS = [['char','الشخصية'],['hat','القبعة'],['pet','الحيوان'],['wall','الخلفية'],['deco','الزينة']];
+function roomOf(k){ const p = DB.progress[k]; p.room = p.room || {owned:['c0','c1','c2','w0','w1'], char:DB.kids[k].boy ? 'c2' : 'c1', hat:null, pet:null, wall:'w0', deco:[]}; return p.room; }
+const itemById = id => ITEMS.find(x => x.id === id);
+function roomAvatar(k){ const r = roomOf(k); return {char:(itemById(r.char)||{}).e || '🧒', hat:r.hat ? itemById(r.hat).e : '', pet:r.pet ? itemById(r.pet).e : ''}; }
+const itemsSpent = k => ((DB.progress[k].room||{}).spent || 0);
+function roomHTML(k, big){ const r = roomOf(k), a = roomAvatar(k), w = (itemById(r.wall)||ITEMS.find(x => x.cat === 'wall')).e.split(',');
+  return `<div class="room2 ${big?'big':''}" style="background:linear-gradient(180deg,${w[0]},${w[1]})"><div class="shelf3">${r.deco.slice(0,4).map(id => `<span>${itemById(id).e}</span>`).join('')}</div>
+    <div class="floor"></div><div class="me3"><span class="hat3">${a.hat}</span><span class="char3">${a.char}</span></div>${a.pet ? `<span class="pet3">${a.pet}</span>` : ''}${r.deco.slice(4,6).map((id,i) => `<span class="fdeco fd${i}">${itemById(id).e}</span>`).join('')}</div>`; }
+let ROOM_CAT = 'char';
+function tabRoom(k){
+  const r = roomOf(k), coins = coinsOf(k);
+  const list = ITEMS.filter(x => x.cat === ROOM_CAT);
+  $('#tabBody').innerHTML = `<div class="grid"><div class="g2e">
+    <section class="card" style="display:grid;gap:10px"><h2>🏠 غرفتي</h2>${roomHTML(k, true)}<div class="small muted">زيّن غرفتك وشخصيتك بالنقاط. شخصيتك تظهر على خريطة المستوى.</div></section>
+    <section class="card" style="display:grid;gap:10px"><div class="chips" style="justify-content:space-between"><h2>🛒 المتجر</h2><span class="chip brand">🪙 ${coins}</span></div>
+      <div class="chips">${CATS.map(([c,ar]) => `<button class="topic ${ROOM_CAT===c?'on':''}" data-rc="${c}">${ar}</button>`).join('')}</div>
+      <div class="items">${list.map(it => { const own = r.owned.includes(it.id), on = r[it.cat] === it.id || (it.cat === 'deco' && r.deco.includes(it.id));
+        return `<button class="item ${on?'on':''}" data-it="${it.id}">${it.cat === 'wall' ? `<span class="sw" style="background:linear-gradient(180deg,${it.e.split(',')[0]},${it.e.split(',')[1]})"></span><span class="small">${esc(it.name)}</span>` : `<span class="ie">${it.e}</span>`}
+          <span class="small ${own?'ok':''}">${on ? '✓ مستخدم' : own ? 'تملكه' : `🪙 ${it.cost}`}</span></button>`; }).join('')}</div></section></div></div>`;
+  document.querySelectorAll('[data-rc]').forEach(b => b.onclick = () => { ROOM_CAT = b.dataset.rc; tabRoom(k); });
+  document.querySelectorAll('[data-it]').forEach(b => b.onclick = () => { const it = itemById(b.dataset.it);
+    if(!r.owned.includes(it.id)){ if(coinsOf(k) < it.cost){ toast(`تحتاج ${it.cost - coinsOf(k)} نقطة إضافية`); return; } r.owned.push(it.id); r.spent = (r.spent||0) + it.cost; toast(`اشتريت ${it.cat === 'wall' ? it.name : it.e} 🎉`); }
+    if(it.cat === 'deco'){ r.deco = r.deco.includes(it.id) ? r.deco.filter(x => x !== it.id) : r.deco.concat(it.id).slice(-6); }
+    else if(it.cat === 'hat' || it.cat === 'pet'){ r[it.cat] = r[it.cat] === it.id ? null : it.id; }
+    else r[it.cat] = it.id;
+    save(); tabRoom(k); });
+}
+
+/* ---------- 9. WEEKLY LEAGUE ---------- */
+const RIVALS = [['Leo','🦁'],['Mia','🦋'],['Omar','🦅'],['Sara','🌸'],['Zain','⚡'],['Noura','⭐']];
+function seeded(n){ let x = Math.sin(n) * 10000; return x - Math.floor(x); }
+function leagueTable(k, now = Date.now()){
+  const ws = weekStart(new Date(now)).getTime(), we = ws + 7*DAY, frac = Math.min(1, Math.max(.03, (now - ws) / (7*DAY))), wk = Math.floor(ws / DAY);
+  const lastWeek = xpSince(k, ws - 7*DAY) - xpSince(k, ws), base = Math.max(250, lastWeek || 350);
+  const rows = kidIds().map(x => ({name:nick(x), e:'', xp:xpSince(x, ws) - xpSince(x, now + 1), me:x === k, real:true}));
+  RIVALS.forEach(([n,e],i) => { const f = .55 + seeded(wk*7 + i) * .9; const curve = Math.pow(frac, .85 + seeded(wk + i*3) * .3); rows.push({name:n, e, xp:Math.round(base * f * curve), me:false, real:false}); });
+  rows.sort((a,b) => b.xp - a.xp); return {rows, ws, we};
+}
+function settleLeague(k){
+  const p = DB.progress[k], ws = weekStart().getTime(), prevWs = ws - 7*DAY; p.leagues = p.leagues || {};
+  if(p.leagues[prevWs] != null || !(p.xpLog||[]).some(x => x[0] < ws)) return;
+  const t = leagueTable(k, ws - 1);
+  const rank = t.rows.findIndex(r => r.me) + 1; p.leagues[prevWs] = rank;
+  const prize = {1:100, 2:60, 3:30}[rank]; if(prize){ addXP(k, prize); setTimeout(() => toast(`🏆 أنهيت دوري الأسبوع الماضي بالمركز ${rank}! +${prize} نقطة`, 'gold'), 800); } save();
+}
+function leagueCard(k, full){
+  const t = leagueTable(k), rank = t.rows.findIndex(r => r.me) + 1, left = Math.ceil((t.we - Date.now()) / DAY);
+  const rows = full ? t.rows : t.rows.slice(Math.max(0, rank-3), Math.max(0, rank-3) + 4);
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🏆 دوري الأسبوع</h2><span class="chip brand">المركز ${rank} · باقي ${left} ${left === 1 ? 'يوم' : 'أيام'}</span></div>
+    <div class="league">${rows.map(r => { const i = t.rows.indexOf(r) + 1; return `<div class="lrow ${r.me?'me':''}"><b class="num">${i}</b><span>${r.e || (r.real ? '👤' : '')} ${esc(r.name)}${r.real ? '' : ' <span class="small muted">🤖</span>'}</span><span class="num">${r.xp} نقطة</span>${i <= 3 ? `<span>${['🥇','🥈','🥉'][i-1]}</span>` : '<span></span>'}</div>`; }).join('')}</div>
+    <p class="small muted" style="margin:6px 0 0">${full ? 'المتنافسون بعلامة 🤖 لاعبون افتراضيون يتحركون حسب مستواك. أول 3 مراكز يأخذون 100 و60 و30 نقطة عند نهاية الأسبوع (السبت).' : 'اجمع نقاطاً من الحصص والواجب والألعاب لتتقدم.'}</p></section>`;
+}
+
+/* ---------- 10. MINI-GAMES ---------- */
+function wordPool(k){
+  const lv = DB.kids[k].level, c = CONTENT[lv], pos = DB.progress[k].pos || 0, out = [], seen = new Set();
+  const push = (w, ar) => { const key = String(w).toLowerCase().trim(); if(!key || !ar || seen.has(key) || key.split(' ').length > 3) return; seen.add(key); out.push({w:String(w).trim(), ar:String(ar).trim()}); };
+  if(c && c.kits && c.units){ let idx = 0; c.units.forEach((u, ui) => u.lessons.forEach((_, li) => { if(idx <= pos + 1){ const kit = c.kits[`${ui}-${li}`]; (kit && kit.words || []).forEach(x => push(x.w, x.ar)); } idx++; })); }
+  if(out.length < 12 && c && c.stories) c.stories.filter(Boolean).slice(0, 6).forEach(s => Object.entries(s.glossary||{}).forEach(([w, ar]) => push(w, ar)));
+  if(out.length < 8) [['apple','تفاحة'],['school','مدرسة'],['happy','سعيد'],['friend','صديق'],['water','ماء'],['house','بيت'],['run','يجري'],['big','كبير'],['book','كتاب'],['family','عائلة']].forEach(([w,a]) => push(w,a));
+  return out.sort(() => Math.random() - .5);
+}
+function gameXP(k, id, n){ const p = DB.progress[k]; p.games = p.games || {}; const key = todayKey() + id; p.games[key] = (p.games[key] || 0) + 1; if(p.games[key] <= 3 && n){ addXP(k, n); return n; } save(); return 0; }
+function gamesCard(){ return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🎮 ألعاب الكلمات</h2><span class="small muted">أول 3 مرات يومياً لكل لعبة تعطي نقاطاً</span></div>
+  <div class="games"><button class="game" data-game="match"><span>🧩</span><b>طابق الكلمات</b><span class="small muted">الكلمة ومعناها</span></button><button class="game" data-game="race"><span>⚡</span><b>سباق الاستماع</b><span class="small muted">اسمع واختر بسرعة</span></button><button class="game" data-game="spell"><span>✏️</span><b>اكتبها صح</b><span class="small muted">اسمع واكتب الكلمة</span></button></div></section>`; }
+function startGame(k, g){ unlockAudio(); ({match:gameMatch, race:gameRace, spell:gameSpell})[g](k); }
+function gameShell(title){ const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov); return ov; }
+function gameEnd(ov, k, id, score, total, xpPer){ const xp = gameXP(k, id, Math.round(score * xpPer)); speechSynthesis.cancel();
+  ov.innerHTML = `<div class="card" style="text-align:center;display:grid;gap:10px"><div style="font-size:2.6rem">🎮</div><h2>${score} من ${total}</h2>${xp ? `<div class="chip good" style="justify-self:center">+${xp} نقطة</div>` : '<div class="small muted">استنفدت نقاط هذه اللعبة اليوم، لكن التدريب مفيد دائماً 💪</div>'}<div class="chips" style="justify-content:center"><button class="btn primary" id="ga">العب مرة ثانية</button><button class="btn" id="gx">إغلاق</button></div></div>`;
+  ov.querySelector('#gx').onclick = () => { ov.remove(); renderKid(k); }; ov.querySelector('#ga').onclick = () => { ov.remove(); startGame(k, id); }; }
+function gameMatch(k){
+  const ws = wordPool(k).slice(0, 6), ov = gameShell(); let sel = null, done = 0, mistakes = 0; const t0 = Date.now();
+  const left = ws.map((w,i) => ({i, t:w.w})).sort(() => Math.random() - .5), right = ws.map((w,i) => ({i, t:w.ar})).sort(() => Math.random() - .5);
+  ov.innerHTML = `<div class="card quiz"><div class="chips" style="justify-content:space-between"><h2>🧩 طابق الكلمات</h2><button class="btn sm" id="gx">إغلاق</button></div>
+    <div class="match"><div>${left.map(x => `<button class="mt en" data-l="${x.i}">${esc(x.t)}</button>`).join('')}</div><div>${right.map(x => `<button class="mt" data-r="${x.i}">${esc(x.t)}</button>`).join('')}</div></div></div>`;
+  ov.querySelector('#gx').onclick = () => { ov.remove(); };
+  ov.querySelectorAll('[data-l]').forEach(b => b.onclick = () => { if(b.disabled) return; ov.querySelectorAll('[data-l]').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); sel = Number(b.dataset.l); narrate(ws[sel].w, {speed:.85}); });
+  ov.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { if(sel == null || b.disabled) return; const ok = Number(b.dataset.r) === sel; const lb = ov.querySelector(`[data-l="${sel}"]`);
+    if(ok){ [b, lb].forEach(x => { x.disabled = true; x.classList.add('right'); x.classList.remove('sel'); }); done++; sel = null; if(done === ws.length) setTimeout(() => gameEnd(ov, k, 'match', Math.max(0, ws.length - mistakes), ws.length, 3), 500); }
+    else { mistakes++; b.classList.add('wrong'); setTimeout(() => b.classList.remove('wrong'), 500); } });
+}
+function gameRace(k){
+  const pool = wordPool(k), rounds = Math.min(8, pool.length); let i = 0, score = 0, timer = null; const ov = gameShell();
+  const step = () => { clearInterval(timer); if(i >= rounds) return gameEnd(ov, k, 'race', score, rounds, 3);
+    const w = pool[i], opts = [w].concat(pool.filter(x => x !== w).sort(() => Math.random() - .5).slice(0, 3)).sort(() => Math.random() - .5); let tl = 8;
+    ov.innerHTML = `<div class="card quiz" style="text-align:center"><div class="qhead"><span class="small muted">${i+1} من ${rounds} · <b id="tl">${tl}</b> ث</span><div class="qbar"><i id="tb" style="width:100%"></i></div></div><h2>⚡ أي كلمة سمعت؟</h2><button class="btn" id="pl">🔊 أعد</button>
+      <div class="opts" style="grid-template-columns:1fr 1fr">${opts.map(o => `<button class="opt en" style="text-align:center" data-w="${esc(o.w)}">${esc(o.w)}</button>`).join('')}</div><button class="btn sm ghost" id="gx">إغلاق</button></div>`;
+    ov.querySelector('#gx').onclick = () => { clearInterval(timer); speechSynthesis.cancel(); ov.remove(); };
+    ov.querySelector('#pl').onclick = () => narrate(w.w, {speed:.9}); narrate(w.w, {speed:.9});
+    timer = setInterval(() => { tl--; const a = ov.querySelector('#tl'), b = ov.querySelector('#tb'); if(a) a.textContent = tl; if(b) b.style.width = (tl/8*100) + '%'; if(tl <= 0){ i++; step(); } }, 1000);
+    ov.querySelectorAll('[data-w]').forEach(b => b.onclick = () => { clearInterval(timer); const ok = b.dataset.w === w.w; if(ok) score++; b.classList.add(ok ? 'right' : 'wrong'); setTimeout(() => { i++; step(); }, 450); }); };
+  step();
+}
+function gameSpell(k){
+  const pool = wordPool(k).filter(w => /^[a-z' -]+$/i.test(w.w) && w.w.length <= 12), rounds = Math.min(6, pool.length); let i = 0, score = 0; const ov = gameShell();
+  const step = () => { if(i >= rounds) return gameEnd(ov, k, 'spell', score, rounds, 4); const w = pool[i];
+    ov.innerHTML = `<div class="card quiz" style="text-align:center"><div class="qhead"><span class="small muted">${i+1} من ${rounds}</span><div class="qbar"><i style="width:${i/rounds*100}%"></i></div></div><h2>✏️ اسمع واكتب الكلمة</h2>
+      <div class="small muted gloss">${esc(w.ar)}</div><div class="chips" style="justify-content:center"><button class="btn" id="pl">🔊 استمع</button><button class="btn" id="slow">🐢 ببطء</button></div>
+      <input class="input en" id="sp" autocomplete="off" autocapitalize="none" spellcheck="false" style="text-align:center;font-size:1.4rem;direction:ltr"><div id="fb"></div><button class="btn primary" id="ck">تحقق</button><button class="btn sm ghost" id="gx">إغلاق</button></div>`;
+    ov.querySelector('#gx').onclick = () => { speechSynthesis.cancel(); ov.remove(); };
+    ov.querySelector('#pl').onclick = () => narrate(w.w, {speed:.9}); ov.querySelector('#slow').onclick = () => narrate(w.w, {speed:.6}); narrate(w.w, {speed:.9});
+    const check = () => { const v = ov.querySelector('#sp').value.trim().toLowerCase(), ok = v === w.w.toLowerCase(); if(ok) score++;
+      ov.querySelector('#fb').innerHTML = `<div class="qfb ${ok?'good':'bad'}">${ok ? '✓ صحيح!' : `✗ الصحيح: <span class="en">${esc(w.w)}</span>`}</div>`; const ck = ov.querySelector('#ck'); ck.textContent = 'التالي'; ck.onclick = () => { i++; step(); }; };
+    ov.querySelector('#ck').onclick = check; ov.querySelector('#sp').addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); ov.querySelector('#ck').click(); } }); setTimeout(() => ov.querySelector('#sp').focus(), 100); };
+  step();
+}
+
+/* ---------- 2. NATURAL HUMAN VOICE (Azure neural TTS, optional) ---------- */
+const AZ_VOICES = {f:'en-US-AvaMultilingualNeural', m:'en-US-AndrewMultilingualNeural', q:'en-US-EmmaMultilingualNeural'};
+let AZ_DOWN = false, AZ_GEN = 0, AZ_EL = null; const AZ_CACHE = new Map();
+const azOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !AZ_DOWN;
+const xmlEsc = s => String(s).replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]));
+function azEl(){ if(!AZ_EL){ AZ_EL = new Audio(); AZ_EL.preload = 'auto'; AZ_EL.setAttribute('playsinline', ''); } return AZ_EL; }
+async function azFetch(text, voiceName, rate, pitch){
+  const key = voiceName + '|' + rate + '|' + (pitch||0) + '|' + text; if(AZ_CACHE.has(key)) return AZ_CACHE.get(key);
+  const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US"><voice name="${voiceName}"><prosody rate="${Math.round((rate-1)*100)}%" pitch="${Math.round((pitch||0)*100)}%">${xmlEsc(text)}</prosody></voice></speak>`;
+  const r = await fetch(`https://${DB.azure.region}.tts.speech.microsoft.com/cognitiveservices/v1`, {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'application/ssml+xml', 'X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'}, body:ssml});
+  if(!r.ok){ const e = new Error('azure ' + r.status); e.status = r.status; throw e; }
+  const url = URL.createObjectURL(await r.blob()); AZ_CACHE.set(key, url);
+  if(AZ_CACHE.size > 150){ const f = AZ_CACHE.keys().next().value; URL.revokeObjectURL(AZ_CACHE.get(f)); AZ_CACHE.delete(f); }
+  return url;
+}
+let AZ_RES = null;
+function azPlay(url, onStart){ return new Promise(res => { const a = azEl(); AZ_RES = res; a.onended = () => { AZ_RES = null; res(true); }; a.onerror = () => { AZ_RES = null; res(false); };
+  a.onplaying = () => { onStart && onStart(isFinite(a.duration) ? a.duration : 0); a.onplaying = null; }; a.src = url; const p = a.play(); if(p && p.catch) p.catch(() => { AZ_RES = null; res(false); }); }); }
+function azStop(){ AZ_GEN++; if(AZ_EL){ try{ AZ_EL.pause(); }catch(e){} } if(AZ_RES){ const r = AZ_RES; AZ_RES = null; r(false); } }
+function azFail(e){ console.warn(e); if(!e || e.status === 401 || e.status === 403 || e.status === 404 || e.name === 'TypeError'){ AZ_DOWN = true; if(WHO === 'parent') toast('تعذّر الاتصال بصوت Azure، رجعنا لصوت الجهاز'); } }
+try{ const _cancel = speechSynthesis.cancel.bind(speechSynthesis); speechSynthesis.cancel = () => { azStop(); _cancel(); }; }catch(e){}
+function azUnlock(){ if(!azOn()) return; try{ const a = azEl(); a.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA='; const p = a.play(); if(p && p.catch) p.catch(() => {}); }catch(e){} }
+function speakOneAZ(text, slow, done){
+  const gen = ++AZ_GEN; let finished = false, guard = null;
+  const fin = () => { if(finished) return; finished = true; clearTimeout(guard); stopMouth(); if(L) setMouth('rest'); done && done(); };
+  const rate = slow ? .75 : (DB.kids[L.kid].level <= 6 ? .92 : 1), vn = !teacherOf(L.kid).female ? AZ_VOICES.m : AZ_VOICES.f;
+  guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; speakOneWS(text, slow, done); } }, 7000);
+  azFetch(text, vn, rate).then(url => { if(finished || gen !== AZ_GEN) return;
+    clearTimeout(guard);
+    return azPlay(url, dur => { if(dur){ clearTimeout(guard); guard = setTimeout(fin, dur*1000 + 1500); } mouthWalk(text, Math.max(35, Math.round((dur ? dur*1000 : text.length*65) / text.length))); }).then(fin);
+  }).catch(e => { azFail(e); if(!finished && gen === AZ_GEN){ finished = true; clearTimeout(guard); speakOneWS(text, slow, done); } });
+}
+function narrateAZ(text, o){
+  azStop(); const ps = phrasesOf(text); let i = 0, stopped = false, timer = null; const gen = AZ_GEN;
+  const urlOf = p => azFetch(p.text.trim(), p.quoted ? AZ_VOICES.q : AZ_VOICES.f, Math.max(.5, o.speed), p.kind === 'ex' ? .04 : 0);
+  let nextUrl = ps.length ? urlOf(ps[0]) : null;
+  const next = async () => {
+    if(stopped) return; if(i >= ps.length){ o.onEnd && o.onEnd(); return; }
+    const p = ps[i++]; let url;
+    try{ url = await nextUrl; }catch(e){ azFail(e); if(!stopped){ const rest = text.slice(p.start); narrateWS(rest, Object.assign({}, o, {onWord: o.onWord ? (ci => o.onWord(p.start + ci)) : null})); } return; }
+    if(stopped) return; nextUrl = i < ps.length ? urlOf(ps[i]) : null; if(nextUrl) nextUrl.catch(() => {});
+    const local = p.text.trim(), lead = p.text.length - p.text.trimStart().length; const words = []; let x = 0; for(const w of local.split(/\s+/)){ const at = local.indexOf(w, x); words.push(at); x = at + w.length; }
+    const ok = await azPlay(url, dur => { const per = (dur ? dur*1000 : local.length*60) / Math.max(1, local.length); let j = 0;
+      const tick = () => { if(stopped || j >= words.length) return; o.onWord && o.onWord(p.start + lead + words[j]); const nextAt = j + 1 < words.length ? words[j+1] : local.length; const wait = (nextAt - words[j]) * per; j++; timer = setTimeout(tick, wait); }; tick(); });
+    clearTimeout(timer); if(stopped) return; if(!ok && AZ_GEN !== gen) return;
+    timer = setTimeout(next, p.pause / o.speed);
+  };
+  next();
+  return {stop(){ stopped = true; clearTimeout(timer); azStop(); try{ speechSynthesis.cancel(); }catch(e){} }};
+}
+async function azTest(){ const url = await azFetch("Hello! I'm Teacher Noor. I can't wait to talk with you!", AZ_VOICES.f, .95); azEl(); await azPlay(url); }
 
 /* =============== BOOT =============== */
 setupLang();
