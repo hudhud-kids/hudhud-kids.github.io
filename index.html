@@ -696,6 +696,16 @@ const nick = k => (DB.profiles[k] && DB.profiles[k].nick) || DB.kids[k].ar;
 function avatarHTML(k, cls=''){ const p = DB.profiles[k] || {}; return p.avatar ? `<img class="avatar ${cls}" src="${esc(p.avatar)}" alt="">` : `<div class="avatar ${cls}">${esc(nick(k).slice(0,1))}</div>`; }
 const LOGO = `<span class="logo"><span class="b">51</span><span class="t">telk</span></span>`;
 function decodeSetup(s){ const t = s.trim().replace(/\s+/g,''); return JSON.parse(decodeURIComponent(escape(atob(t)))); }
+const b64u = bytes => { let s = ''; for(let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000)); return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); };
+const unb64u = t => { t = t.replace(/-/g,'+').replace(/_/g,'/'); while(t.length % 4) t += '='; const bin = atob(t), out = new Uint8Array(bin.length); for(let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i); return out; };
+async function encodeSetup(obj){ const json = JSON.stringify(obj);
+  if(window.CompressionStream){ try{ const buf = await new Response(new Blob([json]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer(); return 'z' + b64u(new Uint8Array(buf)); }catch(e){} }
+  return btoa(unescape(encodeURIComponent(json))); }
+async function decodeSetupAny(s){ let t = String(s || '').trim(); const m = t.match(/[#&?]setup=([^&\s]+)/); if(m) t = decodeURIComponent(m[1]); t = t.replace(/\s+/g,'');
+  if(t[0] === 'z' && window.DecompressionStream){ const txt = await new Response(new Blob([unb64u(t.slice(1))]).stream().pipeThrough(new DecompressionStream('gzip'))).text(); return JSON.parse(txt); }
+  return decodeSetup(t); }
+const setupLink = code => location.origin + location.pathname + '#setup=' + code;
+function applyFullSetup(cfg){ DB = cfg.full; normalize(); save(); try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){} }
 function toast(msg, kind){ const t = document.createElement('div'); t.className = 'toast ' + (kind||''); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
 function overlay(html){ const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = `<div class="card">${html}</div>`; document.body.appendChild(ov); return ov; }
 
@@ -829,14 +839,14 @@ function go(view, tab){
 function renderFirstRun(){
   $('#app').innerHTML = `<div class="center">${prefsHTML()}<form class="card panel" id="fr">
     <div style="text-align:center">${LOGO}<p class="muted" style="margin:.3em 0 0">تجهيز المنصة لأول مرة</p></div>
-    <div class="field"><label for="sc">رمز الإعداد</label><textarea class="input" id="sc" placeholder="الصق رمز الإعداد هنا"></textarea></div>
+    <div class="field"><label for="sc">رمز الإعداد</label><textarea class="input" id="sc" placeholder="الصق رابط أو رمز الإعداد هنا"></textarea></div>
     ${DB ? '<p class="small err" style="margin:0">⚠️ الرمز يستبدل بيانات هذا الجهاز ببيانات الجهاز الذي نسخت منه.</p>' : ''}<div class="err" id="fe"></div>
     <button class="btn primary big" type="submit">تجهيز</button>${DB ? '<button class="btn sm ghost" type="button" id="frBack">رجوع</button>' : ''}
   </form></div>`;
   $('#frBack') && ($('#frBack').onclick = () => renderLogin());
-  $('#fr').addEventListener('submit', e => {
+  $('#fr').addEventListener('submit', async e => {
     e.preventDefault();
-    let cfg; try{ cfg = decodeSetup($('#sc').value); }catch(err){ $('#fe').textContent = 'الرمز غير صحيح. انسخه كاملاً والصقه مرة ثانية.'; return; }
+    let cfg; try{ cfg = await decodeSetupAny($('#sc').value); }catch(err){ $('#fe').textContent = 'الرمز غير صحيح. انسخه كاملاً والصقه مرة ثانية.'; return; }
     if(cfg && cfg.full && cfg.full.kids){ DB = cfg.full; normalize(); save(); setWho('parent'); go('parent'); toast('تم نقل الإعداد لهذا الجهاز ✓'); return; }
     if(!cfg || !cfg.kids || !cfg.parent){ $('#fe').textContent = 'الرمز ناقص.'; return; }
     DB = {v:3, parent:cfg.parent, kids:{}, apiKey:cfg.apiKey || '', perLesson:cfg.perLesson || 10, balance:{}, profiles:{}, progress:{}, live:{}, attendance:[], reports:[], sched:{}, books:{}, curr:{}, certs:[]};
@@ -2447,15 +2457,19 @@ function renderParent(){
     const ov = overlay(`<h2>رفع ${esc(DB.kids[k].ar)} للمستوى ${to}؟</h2><p style="margin:0">يبدأ من أول درس في المستوى ${to} (<span class="en">${LEVEL_CEFR[to]}</span>). التقارير والنقاط والأوسمة تبقى كما هي.</p><div class="chips"><button class="btn primary" id="yes">نعم، ارفعه</button><button class="btn" id="no">رجوع</button></div>`);
     ov.querySelector('#no').onclick = () => ov.remove();
     ov.querySelector('#yes').onclick = () => { setLevel(k, to); ov.remove(); toast(`تم رفع ${DB.kids[k].ar} للمستوى ${to} 🚀`); renderParent(); }; });
-  $('#xfer').onclick = () => {
+  $('#xfer').onclick = async () => {
     const full = JSON.parse(JSON.stringify(DB)); Object.values(full.books||{}).forEach(arr => arr.length = 0);
-    const code = btoa(unescape(encodeURIComponent(JSON.stringify({full}))));
-    const ov = overlay(`<h2>📲 نقل الإعداد لجهاز آخر</h2><p style="margin:0">انسخ هذا الرمز، ثم افتح التطبيق على الجهاز الآخر والصقه في خانة «رمز الإعداد». ينقل الحسابات والتقدم ومفتاح التشغيل ومفتاح الصوت والأصوات المختارة، فلا تحتاج تلصق أي مفتاح مرة ثانية.</p>
-      <p class="small err" style="margin:0">⚠️ الرمز فيه مفتاح التشغيل، لا ترسله لأحد غيرك.</p><textarea class="input" id="xc" readonly style="min-height:120px">${esc(code)}</textarea>
-      <div class="chips"><button class="btn primary" id="xcopy">نسخ الرمز</button><button class="btn" id="xclose">إغلاق</button></div>
-      <p class="small muted" style="margin:0">ملاحظة: كل جهاز يحفظ تقدمه وحده بعد النقل. الأفضل أن يدرس الأطفال على جهاز واحد (الآيباد).</p>`);
+    const code = await encodeSetup({full}), link = setupLink(code);
+    const ov = overlay(`<h2>📲 تجهيز جهاز آخر</h2>
+      <p style="margin:0">أرسل هذا الرابط لنفسك (واتساب أو AirDrop أو الملاحظات) وافتحه مرة واحدة على الجهاز الجديد. يجهّز كل شيء: الحسابات والتقدم ومفتاح المعلمة ومفتاح الصوت والأصوات المختارة. بعدها يدخل كل طفل بيوزره وباسورده.</p>
+      <p class="small err" style="margin:0">⚠️ الرابط فيه مفاتيح التشغيل، أرسله لنفسك فقط ولا تشاركه مع أحد.</p>
+      <div class="chips">${navigator.share ? '<button class="btn primary" id="xshare">📤 مشاركة الرابط</button>' : ''}<button class="btn ${navigator.share ? '' : 'primary'}" id="xlink">🔗 نسخ الرابط</button><button class="btn" id="xcopy">نسخ الرمز فقط</button><button class="btn" id="xclose">إغلاق</button></div>
+      <p class="small muted" style="margin:0">كل جهاز يحفظ تقدمه وحده بعد التجهيز، فالأفضل أن يدرس كل طفل على جهاز واحد (الآيباد).</p>`);
+    const copy = (txt, msg) => (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast(msg), () => { const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} ta.remove(); toast(msg); });
     ov.querySelector('#xclose').onclick = () => ov.remove();
-    ov.querySelector('#xcopy').onclick = () => { const t = ov.querySelector('#xc'); t.select(); (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject()).then(() => toast('تم النسخ'), () => { document.execCommand && document.execCommand('copy'); toast('تم النسخ'); }); };
+    ov.querySelector('#xlink').onclick = () => copy(link, 'تم نسخ الرابط');
+    ov.querySelector('#xcopy').onclick = () => copy(code, 'تم نسخ الرمز');
+    const sh = ov.querySelector('#xshare'); if(sh) sh.onclick = () => navigator.share({title:'51telk', text:'رابط تجهيز 51telk', url:link}).catch(() => {});
   };
   $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); toast('تم حفظ المفتاح'); };
   $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
@@ -3007,6 +3021,15 @@ if(DEMO){
   try{ WHO = localStorage.getItem('51telk:who') || null; }catch(e){}
 }
 go(WHO);
+if(/^#setup=/.test(location.hash)){
+  const raw = location.hash; try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
+  decodeSetupAny(raw).then(cfg => { if(!cfg || !cfg.full || !cfg.full.kids) throw new Error('bad');
+    const names = Object.values(cfg.full.kids).map(x => x.ar).join(' و ');
+    const ov = overlay(`<h2>📲 تجهيز هذا الجهاز</h2><p style="margin:0">هذا رابط تجهيز 51telk للأطفال: <b>${esc(names)}</b>. يضيف الحسابات ومفاتيح التشغيل والصوت لهذا الجهاز.</p>${DB ? '<p class="small err" style="margin:0">⚠️ يستبدل بيانات هذا الجهاز الحالية.</p>' : ''}<div class="chips"><button class="btn primary" id="sy">تجهيز الآن</button><button class="btn" id="sn">إلغاء</button></div>`);
+    ov.querySelector('#sn').onclick = () => ov.remove();
+    ov.querySelector('#sy').onclick = () => { ov.remove(); applyFullSetup(cfg); setWho(null); go(null); toast('تم تجهيز الجهاز ✓ ادخل باليوزر والباسورد'); };
+  }).catch(() => alertBox('رابط التجهيز غير مكتمل. انسخه كاملاً من لوحة ولي الأمر وافتحه مرة ثانية.'));
+}
 
 </script>
 </body>
