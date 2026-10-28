@@ -446,8 +446,6 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 #splash .spark{position:absolute;width:10px;height:10px;border-radius:50%;opacity:0}
 #splash .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--teal);opacity:0;animation:sp-dot .9s ease-out forwards}
 #splash .skip{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-start:18px;border:0;background:rgba(255,255,255,.8);color:#7A4A3A;font-family:var(--font);font-weight:700;border-radius:99px;padding:8px 16px;font-size:.95rem;min-height:40px}
-#splash .snd{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;border:0;background:var(--brand);color:#fff;font-family:var(--font);font-weight:700;border-radius:99px;padding:8px 16px;font-size:.95rem;min-height:40px;display:none;animation:sp-in .3s .4s both}
-#splash.locked .snd{display:block}
 @keyframes sp-sun{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @keyframes sp-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes sp-cloud{to{transform:translateX(150vw)}}
@@ -937,16 +935,16 @@ function renderLogin(){
   $('#lf').addEventListener('submit', async e => {
     e.preventDefault();
     const u = $('#u').value.trim().toLowerCase(), p = $('#p').value.trim();
-    let who = null; const btn = $('#lf [type=submit]');
+    let who = null; const btn = $('#lf [type=submit]'); SFX.unlock(); unlockAudio();
     if(cloudOn() && navigator.onLine){ btn.disabled = true; btn.textContent = 'جاري الدخول…';
       try{ who = await cloudLogin(u, p); }catch(err){ console.warn(err); }
       btn.disabled = false; btn.textContent = 'دخول';
-      if(who){ setWho(who); TAB = 'home'; go(who); return; } }
+      if(who){ setWho(who); TAB = 'home'; go(who); showSplash(true); return; } }
     if(DB && DB.kids){ for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
       if(DB.parent && u === DB.parent.user && p === DB.parent.pass) who = 'parent'; }
     if(!who && !DB){ $('#le').textContent = navigator.onLine ? 'اسم المستخدم أو كلمة المرور غير صحيحة.' : 'أول دخول على هذا الجهاز يحتاج إنترنت.'; return; }
     if(!who){ $('#le').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة ثانية.'; return; }
-    setWho(who); TAB = 'home'; go(who);
+    setWho(who); TAB = 'home'; go(who); showSplash(true);
   });
 }
 function logout(){ setWho(null); go('login'); try{ cloudLogout(); }catch(e){} }
@@ -3349,9 +3347,9 @@ const SFX = (() => {
     sparkle(at){ const a = ctx(); if(!a) return; const t = a.currentTime + (at||0); for(let i = 0; i < 6; i++) tone(a, 'sine', 1800 + Math.random() * 1600, 0, t + i * .05, .12, .05); }
   };
 })();
-(function(){
+function showSplash(force){
   let seen = false; try{ seen = sessionStorage.getItem('hh:splash') === '1'; sessionStorage.setItem('hh:splash', '1'); }catch(e){}
-  if(seen || /setup=/.test(location.hash)) return;
+  if((seen && !force) || /setup=/.test(location.hash) || document.getElementById('splash')) return;
   const BIRD = `<svg class="bird" viewBox="0 0 200 190" aria-hidden="true">
     <g class="crest"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g></g>
     <g class="legs"><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></g>
@@ -3368,7 +3366,7 @@ const SFX = (() => {
     <div class="trail"></div>
     <div class="stage"><div class="shadow"></div><div class="flyer">${BIRD}</div><div class="bubble" dir="ltr">Hello!</div><div class="burst"></div></div>
     <div class="brand"><div class="word">هدهد</div><div class="tag">هدهد ينقل المعرفة</div></div>
-    <button class="skip" type="button">تخطي</button><button class="snd" type="button">🔊 شغّل الصوت</button>`;
+    <button class="skip" type="button">تخطي</button>`;
   document.body.appendChild(el);
   /* flight trail */
   const tr = el.querySelector('.trail');
@@ -3384,15 +3382,17 @@ const SFX = (() => {
     if(o < .4) SFX.whoosh(at(.15)); if(o < 1.5) SFX.flaps(at(Math.max(.2, o)), Math.max(1, Math.round((1.6 - Math.max(.2, o)) / .15)));
     if(o < 1.7) SFX.thud(at(1.65)); if(o < 1.85) SFX.pop(at(1.8)); if(o < 2.1) SFX.chirp(at(2.05)); if(o < 2.35){ SFX.chime(at(2.3)); SFX.sparkle(at(2.4)); } };
   const t0 = performance.now();
-  SFX.unlock(); setTimeout(() => { if(SFX.running()) playTrack(0); else el.classList.add('locked'); }, 60);
-  const unlockNow = () => { SFX.unlock(); setTimeout(() => { if(SFX.running()){ el.classList.remove('locked'); playTrack((performance.now() - t0) / 1000); } }, 30); };
+  SFX.unlock(); setTimeout(() => { if(SFX.running()) playTrack(0); }, 60);
+  const unlockNow = () => { SFX.unlock(); setTimeout(() => { if(SFX.running()) playTrack((performance.now() - t0) / 1000); }, 30); };
   let timer = null;
   const close = () => { if(el.classList.contains('out')) return; clearTimeout(timer); el.classList.add('out'); setTimeout(() => el.remove(), 550); };
   el.querySelector('.skip').onclick = e => { e.stopPropagation(); close(); };
-  el.querySelector('.snd').onclick = e => { e.stopPropagation(); unlockNow(); };
   el.addEventListener('pointerdown', () => { if(!SFX.running()) unlockNow(); });
   timer = setTimeout(close, matchMedia('(prefers-reduced-motion: reduce)').matches ? 900 : 3900);
-})();
+}
+showSplash(false);
+/* any first touch on the page unlocks sound for the rest of the session */
+['pointerdown','keydown'].forEach(ev => document.addEventListener(ev, () => SFX.unlock(), {once:true, capture:true}));
 
 /* =============== BOOT =============== */
 setupLang();
