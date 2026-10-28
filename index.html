@@ -138,14 +138,20 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .hint{margin:0;padding:8px 12px;border-radius:12px;background:var(--sky-soft);font-size:.9rem}
 
 /* teacher animation */
-.tbox svg .pose{display:none}
-.tbox.p-wave .pose-wave,.tbox.p-thumb .pose-thumb,.tbox.p-chin .pose-chin,.tbox.p-ear .pose-ear,.tbox.p-point .pose-point{display:inline}
-.p-wave .arm-l,.p-thumb .arm-l{display:none}
-.p-chin .arm-r,.p-ear .arm-r,.p-point .arm-r{display:none}
-.pose-wave{transform-box:view-box;transform-origin:104px 330px;animation:wave .45s ease-in-out infinite alternate}
-@keyframes wave{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
-.pose-thumb{transform-box:view-box;transform-origin:110px 330px;animation:pop .35s ease-out}
-@keyframes pop{from{transform:scale(.6) translateY(20px)}to{transform:none}}
+.tbox svg .pose{opacity:0;transform-box:view-box;transform:translateY(30px) rotate(var(--r,0deg)) scale(.9);transition:opacity .26s ease,transform .42s cubic-bezier(.3,1.35,.5,1)}
+.pose-wave,.pose-thumb{transform-origin:108px 345px;--r:-6deg}
+.pose-chin,.pose-ear,.pose-point,.pose-open{transform-origin:298px 345px;--r:6deg}
+.tbox.p-wave .pose-wave,.tbox.p-thumb .pose-thumb,.tbox.p-chin .pose-chin,.tbox.p-ear .pose-ear,.tbox.p-point .pose-point,.tbox.p-open .pose-open{opacity:1;transform:none}
+.arm-l,.arm-r{transition:opacity .22s ease}
+.p-wave .arm-l,.p-thumb .arm-l{opacity:0}
+.p-chin .arm-r,.p-ear .arm-r,.p-point .arm-r,.p-open .arm-r{opacity:0}
+.wave-in{transform-box:view-box;transform-origin:104px 330px;animation:wave .5s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-10deg)}to{transform:rotate(8deg)}}
+.open-in{transform-box:view-box;transform-origin:290px 340px;animation:talkhand 1.8s ease-in-out infinite}
+@keyframes talkhand{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg) translateY(-3px)}65%{transform:rotate(3deg)}}
+.t-tilt{transform-box:view-box;transform-origin:200px 300px;transition:transform .5s ease}
+.ask .t-tilt{transform:rotate(-4deg)}
+.emph .brows{transform:translateY(-6px)!important}
 .t-head{transform-box:view-box;transform-origin:200px 300px;transition:transform .35s ease}
 .speaking .t-head{animation:bob 1.7s ease-in-out infinite}
 .listening .t-head{transform:rotate(-5deg) translateX(-4px)}
@@ -157,13 +163,13 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 @keyframes breathe{50%{transform:scale(1.012,1.018)}}
 .lids ellipse{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .07s}
 .blink .lids ellipse{transform:scaleY(1)}
-.pupils{transition:transform .3s ease}
+.pupils{transition:transform .16s ease-out}
 .eyes-h{display:none}
 .m-happy .eyes-n,.m-laughing .eyes-n,.m-proud .eyes-n{display:none}
 .m-happy .eyes-h,.m-laughing .eyes-h,.m-proud .eyes-h{display:inline}
 .speaking.m-happy .eyes-n,.speaking.m-proud .eyes-n{display:inline}
 .speaking.m-happy .eyes-h,.speaking.m-proud .eyes-h{display:none}
-.brows{transform-box:view-box;transition:transform .25s}
+.brows{transform-box:view-box;transition:transform .16s ease-out}
 .m-surprised .brows,.m-excited .brows{transform:translateY(-8px)}
 .m-thinking .brows,.thinking .brows{transform:translateY(-4px)}
 .m-encouraging .brows{transform:translateY(-3px)}
@@ -493,16 +499,17 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
    <path d="M26 330 H92 L84 392 H34 Z" fill="#C8693A"/>
    <rect x="22" y="324" width="74" height="12" rx="5" fill="#B05A30"/>
   </g>
-  <circle class="ring" cx="200" cy="185" r="112"/>
+  <circle class="ring" cx="200" cy="175" r="118"/>
   <g class="t-body">
+   <path d="M180 236 H220 V300 Q200 318 180 300 Z" fill="#E9AE84"/>
    <path d="M66 440 C70 352 124 310 200 310 C276 310 330 352 334 440 Z" fill="url(#g-top)"/>
    <path d="M168 312 L200 362 L232 312 Z" fill="#FFF7EE"/>
-   <path d="M118 262 C108 312 152 336 200 338 C248 336 292 312 282 262 C268 298 238 312 200 312 C162 312 132 298 118 262Z" fill="url(#g-hij)"/>
+   <path d="M166 312 L186 340 L200 322 L214 340 L234 312 Z" fill="#FFFFFF"/>
    <rect x="216" y="368" width="50" height="22" rx="5" fill="#FFFFFF"/>
    <text x="241" y="384" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#E85A00">Noor</text>
    <g class="arm-l"><path d="M96 352 C80 382 76 412 78 440 L118 440 C116 410 120 388 128 368 Z" fill="#E25500"/></g>
    <g class="arm-r"><path d="M304 352 C320 382 324 412 322 440 L282 440 C284 410 280 388 272 368 Z" fill="#E25500"/></g>
-   <g class="pose pose-wave">
+   <g class="pose pose-wave"><g class="wave-in">
     <path d="M100 350 C70 336 56 292 62 246 L96 244 C96 282 110 314 132 332 Z" fill="#E25500"/>
     <ellipse cx="78" cy="226" rx="20" ry="24" fill="url(#g-skin)"/>
     <rect x="58" y="196" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(-14 62 209)"/>
@@ -510,7 +517,7 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <rect x="79" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
     <rect x="90" y="194" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(12 94 207)"/>
     <ellipse cx="98" cy="234" rx="7" ry="12" fill="#F3C49E" transform="rotate(35 98 234)"/>
-   </g>
+   </g></g>
    <g class="pose pose-thumb">
     <path d="M98 352 C90 330 98 306 112 300 L138 306 C130 318 124 336 126 354 Z" fill="#E25500"/>
     <rect x="104" y="276" width="38" height="32" rx="11" fill="url(#g-skin)"/>
@@ -518,16 +525,17 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <path d="M108 288 H138 M108 297 H138" stroke="#D9A37C" stroke-width="2"/>
    </g>
   </g>
-  <g class="t-head">
-   <path d="M108 196 C100 108 150 72 200 72 C250 72 300 108 292 196 C296 256 256 292 200 294 C144 292 104 256 108 196Z" fill="url(#g-hij)"/>
-   <ellipse cx="200" cy="186" rx="62" ry="70" fill="url(#g-skin)"/>
-   <ellipse cx="200" cy="184" rx="67" ry="75" fill="none" stroke="#4F80EA" stroke-width="10"/>
-   <path d="M134 150 C142 104 258 104 266 150 C246 126 154 126 134 150Z" fill="#3D6AD6"/>
-   <path d="M146 140 C170 118 230 118 254 140" stroke="#86AEFF" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
-   <circle cx="266" cy="232" r="6" fill="#FFD25E"/>
+  <g class="t-tilt"><g class="t-head">
+   <path d="M120 196 C110 108 152 72 200 72 C248 72 290 108 280 196 C284 236 288 262 296 282 C266 296 240 290 230 270 L170 270 C160 290 134 296 104 282 C112 262 116 236 120 196Z" fill="#4A2A18"/>
+   <circle cx="200" cy="70" r="27" fill="#4A2A18"/><path d="M178 86 Q200 96 222 86" stroke="#FF6A00" stroke-width="7" fill="none" stroke-linecap="round"/>
+   <ellipse cx="143" cy="190" rx="10" ry="14" fill="#EDB48A"/><ellipse cx="257" cy="190" rx="10" ry="14" fill="#EDB48A"/>
+   <ellipse cx="200" cy="182" rx="58" ry="66" fill="url(#g-skin)"/>
+   <path d="M141 176 C136 112 182 96 214 103 C248 110 266 138 260 178 C250 146 230 132 206 134 C190 154 166 166 141 176Z" fill="#5A3420"/>
+   <path d="M168 120 C186 108 220 108 238 122" stroke="#7A4A2C" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+   <circle cx="141" cy="210" r="5" fill="#FFD25E"/><circle cx="259" cy="210" r="5" fill="#FFD25E"/>
    <g class="brows">
-    <path d="M160 156 Q174 147 188 154" stroke="#3B2414" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M212 154 Q226 147 240 156" stroke="#3B2414" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M160 156 Q174 147 188 154" stroke="#4A2A18" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M212 154 Q226 147 240 156" stroke="#4A2A18" stroke-width="5" fill="none" stroke-linecap="round"/>
    </g>
    <g class="eyes-n">
     <ellipse cx="175" cy="182" rx="14" ry="16" fill="#FFFFFF"/>
@@ -563,7 +571,7 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
    <rect x="120" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/><rect x="264" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/>
    <path d="M132 204 Q138 240 172 242" stroke="#2B1B0F" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="176" cy="242" r="7.5" fill="#2B1B0F"/>
    <g class="think-dots" fill="#3B7BE8"><circle cx="300" cy="96" r="8"/><circle cx="322" cy="74" r="10"/><circle cx="348" cy="50" r="13"/></g>
-  </g>
+  </g></g>
   <g class="pose pose-chin">
    <path d="M302 352 C298 310 272 288 246 278 L236 298 C258 308 276 326 282 356 Z" fill="#E25500"/>
    <rect x="214" y="252" width="36" height="30" rx="11" fill="url(#g-skin)"/>
@@ -574,6 +582,14 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
    <ellipse cx="296" cy="214" rx="16" ry="26" fill="url(#g-skin)" transform="rotate(-12 296 214)"/>
    <path d="M286 200 Q280 214 288 228" stroke="#D9A37C" stroke-width="2.5" fill="none"/>
   </g>
+  <g class="pose pose-open"><g class="open-in">
+   <path d="M302 352 C306 326 298 306 280 298 L266 316 C278 322 282 336 280 356 Z" fill="#E25500"/>
+   <ellipse cx="262" cy="302" rx="23" ry="13" fill="url(#g-skin)" transform="rotate(-16 262 302)"/>
+   <rect x="236" y="284" width="8" height="22" rx="4" fill="#F3C49E" transform="rotate(-48 240 295)"/>
+   <rect x="242" y="278" width="8" height="24" rx="4" fill="#F3C49E" transform="rotate(-36 246 290)"/>
+   <rect x="250" y="275" width="8" height="24" rx="4" fill="#F3C49E" transform="rotate(-24 254 287)"/>
+   <ellipse cx="278" cy="290" rx="6" ry="11" fill="#F3C49E" transform="rotate(30 278 290)"/>
+  </g></g>
   <g class="pose pose-point">
    <path d="M302 352 C324 312 332 262 340 216 L362 222 C350 268 334 316 324 356 Z" fill="#E25500"/>
    <ellipse cx="352" cy="204" rx="17" ry="19" fill="url(#g-skin)"/>
@@ -735,7 +751,7 @@ function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt
   const w = $('#wrap'); if(w) w.hidden = !(s >= 24*60 && !L.done); }
 
 const STATE_TXT = {idle:'', thinking:'المعلمة تفكر…', speaking:'المعلمة تتكلم · اضغط عليها لتقاطعها', listening:'دورك! تكلم بالإنجليزي 🎤', tap:'اضغط زر الميكروفون الأزرق وتكلم'};
-const POSES = ['wave','thumb','chin','ear','point'];
+const POSES = ['wave','thumb','chin','ear','point','open'];
 function setPose(p, ms){ if(!L) return; const b = $('#tbox'); if(!b) return; clearTimeout(L.poseT);
   POSES.forEach(x => b.classList.toggle('p-'+x, x === p));
   if(ms) L.poseT = setTimeout(() => { if(L) setPose(L.state === 'thinking' ? 'chin' : L.state === 'listening' ? 'ear' : null); }, ms); }
@@ -746,7 +762,7 @@ function setState(s){ if(!L) return; L.state = s; const b = $('#tbox'); if(!b) r
   const m = $('#mic'); if(m){ m.classList.toggle('on', s==='listening'); m.classList.toggle('wait', s==='thinking'||s==='speaking'); }
   if(s === 'thinking'){ setPose('chin'); look(5,-6); }
   else if(s === 'listening'){ setPose('ear'); look(-2,3); }
-  else if(s === 'speaking'){ if(b.classList.contains('p-chin') || b.classList.contains('p-ear')) setPose(null); look(0,1); }
+  else if(s === 'speaking'){ if(b.classList.contains('p-chin') || b.classList.contains('p-ear')) setPose(null); look(0,1); if(!L.gestT) gestureLoop(); }
   else { setPose(null); look(0,0); }
   if(s !== 'speaking') restMouth(); }
 function setMood(m){ if(!L) return; const ok = ['happy','excited','proud','laughing','surprised','thinking','encouraging']; m = ok.includes(m) ? m : 'happy'; L.mood = m;
@@ -763,10 +779,15 @@ function burst(){ const b = $('#burst'); if(!b) return; b.innerHTML = ''; const 
   for(let i=0;i<12;i++){ const s = document.createElement('span'); s.textContent = em[i%em.length]; const a = Math.random()*Math.PI*2, d = 100+Math.random()*90;
     s.style.setProperty('--x', Math.cos(a)*d+'px'); s.style.setProperty('--y', Math.sin(a)*d+'px'); b.appendChild(s); }
   setTimeout(() => { if(b) b.innerHTML = ''; }, 1300); }
-function blinkLoop(){ if(!L) return; const b = $('#tbox'); if(b){ b.classList.add('blink'); setTimeout(() => b && b.classList.remove('blink'), 130); }
+function blinkLoop(){ if(!L) return; const b = $('#tbox'); if(b){ const once = () => { b.classList.add('blink'); setTimeout(() => b.classList.remove('blink'), 120); }; once(); if(Math.random() < .18) setTimeout(once, 260); }
   L.blinkT = setTimeout(blinkLoop, 2200 + Math.random()*3800); }
 function idleGlance(){ if(!L) return; if(L.state === 'idle' || L.state === 'speaking'){ const r = Math.random(); if(r < .25) look(-3,0); else if(r < .5) look(3,0); else look(0,1); }
   L.glanceT = setTimeout(idleGlance, 2500 + Math.random()*3000); }
+function gestureLoop(){ if(!L) return; L.gestT = setTimeout(() => { L.gestT = null; if(!L || L.state !== 'speaking') return; const b = $('#tbox');
+    const busy = b && ['p-wave','p-thumb','p-point'].some(c => b.classList.contains(c));
+    if(!busy) setPose(b.classList.contains('p-open') || Math.random() < .35 ? null : 'open');
+    gestureLoop(); }, 1800 + Math.random()*2200); }
+function emph(){ const b = $('#tbox'); if(!b) return; b.classList.add('emph'); clearTimeout(L && L.emphT); if(L) L.emphT = setTimeout(() => b.classList.remove('emph'), 280); }
 function nod(){ const b = $('#tbox'); if(!b || b.classList.contains('nod')) return; b.classList.add('nod'); setTimeout(() => b && b.classList.remove('nod'), 460); }
 
 /* ---- speaking queue ---- */
@@ -777,6 +798,7 @@ function pump(){
   if(!L.queue.length){ if(L.streamDone) teacherFinished(); return; }
   const s = L.queue.shift(); L.speaking = true; setState('speaking');
   if(L.firstWave){ L.firstWave = false; setPose('wave', 2800); }
+  { const tb = $('#tbox'); if(tb) tb.classList.toggle('ask', /\?\s*$/.test(s)); }
   speakOne(s, false, () => { if(!L) return; L.speaking = false; pump(); });
 }
 function speakOne(text, slow, done){
@@ -788,7 +810,8 @@ function speakOne(text, slow, done){
   try{ const u = new SpeechSynthesisUtterance(text); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = rate; u.pitch = 1.08;
     let gotBoundary = false;
     u.onstart = () => { setTimeout(() => { if(!gotBoundary && !finished) mouthWalk(text, perChar); }, 250); };
-    u.onboundary = e => { if(e.name && e.name !== 'word') return; gotBoundary = true; const w = text.slice(e.charIndex).split(/\s/)[0] || ''; mouthWalk(w, perChar); };
+    u.onboundary = e => { if(e.name && e.name !== 'word') return; gotBoundary = true; const w = text.slice(e.charIndex).split(/\s/)[0] || ''; mouthWalk(w, perChar);
+      const clean = w.replace(/[^A-Za-z]/g,''); if(clean.length >= 7 || /[!?]$/.test(w) || (/^[A-Z]/.test(clean) && clean !== 'I' && e.charIndex > 0)) emph(); };
     u.onend = fin; u.onerror = fin; speechSynthesis.speak(u); }catch(e){ fin(); }
 }
 function sayAll(text, slow){ L.queue = []; L.streamDone = true; L.speaking = true; setState('speaking'); speakOne(text, slow, () => { if(!L) return; L.speaking = false; teacherFinished(); }); }
@@ -951,7 +974,7 @@ Reply with ONLY one JSON object:
     <button class="btn primary big" id="back">رجوع للرئيسية</button></div>`;
   $('#back').onclick = () => { ov.remove(); leaveRoom(); };
 }
-function leaveRoom(){ if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
+function leaveRoom(){ if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
