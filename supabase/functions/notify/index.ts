@@ -5,7 +5,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.45.4";
 
 const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 let vapidOk = false;
-const TZ = 3 * 3600e3, OPEN_AFTER = 30, APP = "https://mohammedftouhi.github.io/hudhud/";
+const TZ = 3 * 3600e3, OPEN_AFTER = 30, APP = "https://hudhud-kids.github.io/";
 const pad = (n: number) => String(n).padStart(2, "0");
 // wall-clock helpers: a "local" Date stores Riyadh wall time in its UTC fields
 const toLocal = (ms: number) => new Date(ms + TZ);
