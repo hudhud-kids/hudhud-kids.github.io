@@ -510,6 +510,7 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .pa-w b{font-family:var(--en);font-size:1.05rem}.pa-w.good{border-color:#14B8A6}.pa-w.mid{border-color:#E9A100}.pa-w.bad{border-color:#EF4444}.pa-w.omit{opacity:.55;border-style:dashed}
 .pa-ph{display:flex;gap:2px}.pa-ph i{font-style:normal;font-size:.72rem;font-family:var(--en);padding:0 4px;border-radius:5px;color:#fff}.pa-ph i.good{background:#14B8A6}.pa-ph i.mid{background:#E9A100}.pa-ph i.bad{background:#EF4444}
 .micbig.on,.btn.on{box-shadow:0 0 0 calc(4px + var(--lv,0) * 14px) rgba(240,90,56,.25)}
+.kitlock{opacity:.85;background:repeating-linear-gradient(135deg,var(--surface) 0 14px,var(--bg) 14px 28px)}
 </style>
 </head>
 <body>
@@ -1118,6 +1119,7 @@ function tabHome(k){
   document.querySelectorAll('[data-game]').forEach(b => b.onclick = () => startGame(k, b.dataset.game));
   const pg2 = $('#prGo'); if(pg2) pg2.onclick = () => startPractice(k);
   const kg = $('#kitGo'); if(kg) kg.onclick = () => { unlockAudio(); openKit(k); };
+  const kl = $('#kitLock'); if(kl) kl.onclick = () => { const ps = prepState(k); if(ps.open){ renderKid(k); return; } hoopoeSays(ps.t ? `التحضير يفتح قبل الحصة بساعة، الساعة ${fmtTime(ps.at)} ⏳` : 'التحضير يفتح قبل حصتك القادمة بساعة ⏳', 'think', 3000); };
   const eg = $('#examGo'); if(eg) eg.onclick = () => startLevelExam(k);
   const fg = $('#famGo'); if(fg) fg.onclick = () => { claimFamily(); renderKid(k); };
   homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov')) renderKid(k); }, 30000);
@@ -1670,11 +1672,20 @@ ${mist.length ? '🔧 يحتاج تدريب: ' + mist.map(m => m.right).join(' |
 
 /* =============== LESSON KIT, LEVEL EXAM, PLACEMENT =============== */
 function kitFor(level, ui, li){ const c = CONTENT[level]; return c && c.kits ? c.kits[`${ui}-${li}`] || null : null; }
+/* lesson prep opens only within 1 hour of the next lesson (or right away if the lesson is booked sooner) */
+const PREP_BEFORE = 60;
+function prepState(k){ const l = ledger(k); if(l.open) return {open:true};
+  const t = l.next && l.next.t; if(!t) return {open:false, t:null};
+  const at = new Date(t.getTime() - PREP_BEFORE*60e3); return {open: Date.now() >= at.getTime(), t, at}; }
 function kitCard(k){ const plan = lessonPlan(k), kit = kitFor(DB.kids[k].level, plan.ui, plan.li); if(!kit) return '';
+  const ps = prepState(k);
+  if(!ps.open) return `<section class="card kitlock"><div class="chips" style="justify-content:space-between"><h2>🎒 حضّر لدرسك القادم</h2><button class="btn sm" id="kitLock">🔒 ${ps.t ? 'بعد ' + fmtDur(ps.at - Date.now()) : 'مقفل'}</button></div>
+    <p class="small muted" style="margin:6px 0 0">${ps.t ? `يفتح قبل الحصة بساعة: ${fmtDay(ps.at)} الساعة ${fmtTime(ps.at)}.` : 'يفتح قبل موعد حصتك القادمة بساعة.'} فيه 6 كلمات وحوار قصير من درس <span class="en">${esc(plan.t)}</span>.</p></section>`;
   const done = (DB.progress[k].kits||{})[plan.n];
   return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🎒 حضّر لدرسك القادم</h2><button class="btn sm primary" id="kitGo">${done ? 'راجع مرة ثانية' : 'ابدأ (+15 نقطة)'}</button></div>
     <p class="small muted" style="margin:6px 0 0">6 كلمات وحوار قصير من درس <span class="en">${esc(plan.t)}</span>. اسمعها قبل الحصة لتتكلم بثقة.</p></section>`; }
 function openKit(k){
+  if(!prepState(k).open){ renderKid(k); return; }
   const plan = lessonPlan(k), kit = kitFor(DB.kids[k].level, plan.ui, plan.li); if(!kit) return; NARR_KID = k;
   let ctl = null, playing = false;
   const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
