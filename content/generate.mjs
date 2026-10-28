@@ -128,10 +128,27 @@ Return ONLY JSON:
   const b = parseJSON(t); if(!b.mcq || !b.listen || !b.read || !b.speak) throw new Error('bad placement bank'); b.level = l; fs.writeFileSync(f, JSON.stringify(b));
 }
 
+async function i18n(){
+  const f = path.join(DIR, 'i18n-en.json'); const old = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f,'utf8')) : {};
+  const js = html.match(/<script>([\s\S]*)<\/script>/)[1];
+  const segs = [...new Set((js.match(/[؀-ۿ][^<>`'"${}\n]*/g) || []).map(x => x.trim()).filter(Boolean))].filter(x => !(x in old));
+  console.log('i18n segments to translate:', segs.length);
+  for(let i = 0; i < segs.length; i += 120){
+    const batch = segs.slice(i, i+120);
+    const t = await claude(`Translate these Arabic UI text fragments from a kids' English-learning app (51telk) into natural, friendly English UI text.
+They are FRAGMENTS cut from templates: keep leading/trailing words exactly as fragments (do not add words that complete the sentence), keep emojis, numbers and punctuation, keep English words as they are.
+Use: حصة = lesson/class, ولي الأمر = parent, رصيد = balance, ريال = SAR, نقطة/نقاط = points, وسام = badge, المعلمة/المعلم = the teacher.
+Return ONLY a JSON object mapping each Arabic fragment exactly as given to its English translation.
+${JSON.stringify(batch)}`, 8000);
+    Object.assign(old, parseJSON(t)); fs.writeFileSync(f, JSON.stringify(old, null, 0)); console.log('i18n batch', i/120+1);
+  }
+}
+
 // ---- queue: core content first, then stories round-robin across levels so every level fills evenly
 const core = [], stories = [];
-const ONLY_PLACEMENT = process.env.MODE === 'placement';
-for(const l of range) core.push(() => placementBank(l).then(() => console.log(`P${l} placement bank ready`)));
+const ONLY_PLACEMENT = process.env.MODE === 'placement' || process.env.MODE === 'i18n';
+if(process.env.MODE === 'i18n'){ core.push(() => i18n().then(() => console.log('i18n ready'))); }
+if(process.env.MODE !== 'i18n') for(const l of range) core.push(() => placementBank(l).then(() => console.log(`P${l} placement bank ready`)));
 if(!ONLY_PLACEMENT) core.push(() => placement().then(() => console.log('placement ready')));
 for(const l of (ONLY_PLACEMENT ? [] : range)){
   const d = load(l);
