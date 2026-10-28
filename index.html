@@ -503,6 +503,7 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .toast.gold{display:flex;align-items:center;gap:8px}.toast.gold .hoop{width:40px;height:auto;flex:none}
 .onb .hoop{width:150px;height:auto;margin:0 auto}.obd{display:flex;gap:6px;justify-content:center}.obd i{width:8px;height:8px;border-radius:50%;background:var(--line)}.obd i.on{background:var(--brand);width:22px;border-radius:6px}
 .mapbird .mbf{animation:hp-bob 1.6s ease-in-out infinite}
+.pushst{background:var(--sky-soft);border-radius:12px;padding:8px 12px;margin-top:8px}.pushrow .pushst{margin:0}.pushbtn{margin-top:8px}.pushrow .pushbtn{margin:0;width:100%}
 </style>
 </head>
 <body>
@@ -1064,6 +1065,7 @@ function tabHome(k){
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div class="herocol"><div class="herobird">${hoopoeSVG(L0.open ? "cheer" : "happy", true)}</div>${btn}</div></section>
     ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
+    ${pushBtnHTML(true) ? `<div class="pushrow">${pushBtnHTML(true)}</div>` : ''}
     ${examCard(k)}
     ${familyCard(k)}
     <div class="g2e">${dailyCard(k)}${homeworkCard(k) || kitCard(k)}</div>
@@ -1096,7 +1098,7 @@ function tabHome(k){
     </div>
     </div>
     </div></div>`;
-  const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false);
+  const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false); wirePushBtn();
   document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => { HOME_SEG = b.dataset.seg; try{ localStorage.setItem('hh:seg', HOME_SEG); }catch(e){}
     document.querySelectorAll('[data-seg]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
     document.querySelectorAll('[data-segp]').forEach(x => x.hidden = x.dataset.segp !== HOME_SEG); });
@@ -2545,7 +2547,7 @@ function renderParent(){
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><b>لوحة الإدارة</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
     <div class="grid">
-      ${cloudOn() ? `<div class="cloudbar">☁️ <b>المزامنة السحابية:</b> <span id="cloudSt">${cloudStatusHTML()}</span></div>` : ''}
+      ${cloudOn() ? `<div class="cloudbar">☁️ <b>المزامنة السحابية:</b> <span id="cloudSt">${cloudStatusHTML()}</span><div style="margin-top:6px">${pushBtnHTML(true)}</div></div>` : ''}
       <div class="chips" style="justify-content:space-between"><h2>الطلاب</h2><button class="btn primary" id="addKid">➕ إضافة طالب</button></div>
       <div class="g2e">${ids.map(kidCard).join('')}</div>
       <section class="card"><div class="chips" style="justify-content:space-between"><h2>🎁 المكافآت</h2><button class="btn sm primary" id="addRw">➕ مكافأة</button></div>
@@ -2583,7 +2585,7 @@ function renderParent(){
     cloudEnable().then(() => { cloudStart(); toast('☁️ تم تفعيل المزامنة السحابية'); if(cloudSafeToRender() && WHO === 'parent') renderParent(); })
       .catch(err => { console.warn(err); CLOUD.err = err.msg || err.message; cloudSave(); const s2 = $('#cloudSt'); if(s2) s2.textContent = err.msg === 'username_taken' ? '🟠 اسم مستخدم ولي الأمر محجوز، غيّره من الحسابات' : '🟠 تعذّر الاتصال بالسحابة، سنحاول لاحقاً'; })
       .finally(() => { window.__cloudEnabling = false; }); }
-  $('#addKid').onclick = () => kidForm(null);
+  $('#addKid').onclick = () => kidForm(null); wirePushBtn();
   $('#addRw').onclick = () => rewardForm(null);
   document.querySelectorAll('[data-editrw]').forEach(b => b.onclick = () => rewardForm(b.dataset.editrw));
   document.querySelectorAll('[data-delrw]').forEach(b => b.onclick = () => { DB.rewards = DB.rewards.filter(r => r.id !== b.dataset.delrw); save(); renderParent(); });
@@ -3304,7 +3306,7 @@ function cloudLost(){ CLOUD.token = null; cloudSave(); }
 async function cloudEnable(){
   if(!cloudOn() || !DB || !DB.parent) return false;
   const r = await rpc('tk_register', {u:DB.parent.user, p:DB.parent.pass});
-  CLOUD.token = r.token; CLOUD.role = 'parent'; CLOUD.kid = null; CLOUD.family = r.family;
+  CLOUD.token = r.token; CLOUD.role = 'parent'; CLOUD.kid = null; CLOUD.family = r.family; CLOUD.username = String(DB.parent.user).toLowerCase();
   if(r.created){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; cloudSave(); await cloudPush(); return true; }
   /* family exists: combine this device's data with the cloud copy */
   const local = JSON.parse(JSON.stringify(DB)); CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null;
@@ -3320,7 +3322,7 @@ function joinMerge(remote, local){
 async function cloudLogin(u, p){
   const r = await rpc('tk_login', {u, p}); if(!r) return null;
   const sameFamily = CLOUD.family && CLOUD.family === r.family && DB;
-  CLOUD.token = r.token; CLOUD.role = r.role; CLOUD.kid = r.kid || null; CLOUD.family = r.family;
+  CLOUD.token = r.token; CLOUD.role = r.role; CLOUD.kid = r.kid || null; CLOUD.family = r.family; CLOUD.username = String(u).toLowerCase();
   if(!sameFamily){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; DB = {}; await cloudPull(true); }
   else await cloudPull(false);
   if(!DB || !DB.kids){ DB = null; return null; }
@@ -3674,8 +3676,34 @@ function liveFeed(lesson, who, text){
 }
 function liveEnd(lesson){ if(!lesson || DEMO || !DB.livefeed || !DB.livefeed[lesson.kid]) return; DB.livefeed[lesson.kid].done = true; DB.livefeed[lesson.kid].at = Date.now(); save(); }
 
-function pushBtnHTML(){ return ''; }
-function wirePushBtn(){}
+/* =============== PUSH NOTIFICATIONS =============== */
+const VAPID_PUB = 'BCjFs-VsW7Xi268aTmxky7axCcnTkOGU3Cf59IzD24OJSYBHyLT2ajrmQF1dLgaVacyAic2inwj8b3t3E9qGitk';
+const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const isStandalone = () => (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+const pushSupported = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+const pushOn = () => { try{ return !!localStorage.getItem('hh:push:' + (CLOUD.username || CLOUD.role + ':' + (CLOUD.kid || ''))) && Notification.permission === 'granted'; }catch(e){ return false; } };
+function pushBtnHTML(compact){
+  if(!cloudOn() || !CLOUD.token) return '';
+  if(pushOn()) return compact ? '' : '<div class="pushst small">🔔 الإشعارات مفعّلة على هذا الجهاز ✓</div>';
+  if(isIOS && !isStandalone()) return `<div class="pushst small">🔔 لتصلك الإشعارات على الجوال: افتح هدهد من أيقونته على الشاشة الرئيسية (زر المشاركة ⬆️ ثم «إضافة إلى الشاشة الرئيسية»)، ثم فعّلها من هنا.</div>`;
+  if(!pushSupported()) return '';
+  if(Notification.permission === 'denied') return '<div class="pushst small">🔕 الإشعارات مرفوضة لهذا الموقع من إعدادات الجهاز.</div>';
+  return `<button class="btn ${compact ? 'sm' : ''} primary pushbtn" data-push="1">🔔 فعّل الإشعارات على هذا الجهاز</button>`;
+}
+function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.onclick = async () => {
+  b.disabled = true; b.textContent = '⏳ جاري التفعيل…';
+  try{
+    const perm = await Notification.requestPermission(); if(perm !== 'granted') throw new Error('denied');
+    const reg = await navigator.serviceWorker.ready;
+    const key = Uint8Array.from(atob(VAPID_PUB.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((VAPID_PUB.length + 3) % 4)), c => c.charCodeAt(0));
+    const sub = (await reg.pushManager.getSubscription()) || await reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:key});
+    await rpc('tk_push_sub', {t:CLOUD.token, sub:sub.toJSON()});
+    try{ localStorage.setItem('hh:push:' + (CLOUD.username || CLOUD.role + ':' + (CLOUD.kid || '')), sub.endpoint); }catch(e){}
+    toast('🔔 تم تفعيل الإشعارات'); try{ reg.showNotification('هدهد 🦜', {body:'ممتاز! الإشعارات شغّالة على هذا الجهاز.', icon:'icon-192.png', lang:'ar', dir:'rtl'}); }catch(e){}
+    if(WHO) go(WHO, TAB);
+  }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
+}); }
+if('serviceWorker' in navigator && !DEMO && location.protocol === 'https:'){ window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(e => console.warn('sw', e))); }
 
 const LOGO_BIRD = (LOGO.match(/<svg[\s\S]*<\/svg>/) || [''])[0];
 /* =============== HOOPOE MASCOT =============== */

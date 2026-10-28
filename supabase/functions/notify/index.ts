@@ -81,7 +81,9 @@ async function run() {
   for (const m of msgs) {
     const lk = m.fam + "|" + m.key; if (already.has(lk)) continue;
     const { error } = await sb.from("tk_push_log").insert({ key: lk }); if (error) continue; // another run took it
+    const eps = new Set<string>();
     for (const s of (subs || []).filter(m.to)) {
+      if (eps.has(s.endpoint)) continue; eps.add(s.endpoint);
       try { await webpush.sendNotification(s.sub, JSON.stringify({ title: m.title, body: m.body, url: m.url || APP, tag: m.key }), { TTL: 3600 }); sent++; }
       catch (e: any) { if (e && (e.statusCode === 404 || e.statusCode === 410)) await sb.from("tk_push_subs").delete().eq("endpoint", s.endpoint); }
     }
