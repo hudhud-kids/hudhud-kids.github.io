@@ -312,6 +312,14 @@ body.printing > *:not(.ov){display:none!important}
 .reward{background:var(--bg);border-radius:16px;padding:14px;display:grid;gap:8px;justify-items:center;text-align:center}
 .reward .re{font-size:2.4rem}
 .burst-big{font-size:3.4rem;animation:wob 1s ease-in-out infinite}
+.kwords{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:10px}
+.kword{border:2px solid var(--line);background:var(--surface);border-radius:14px;padding:12px;display:grid;gap:4px;text-align:right}
+.kword b{font-size:1.25rem;direction:ltr;text-align:left;color:var(--brand-ink)}
+.kword small{color:var(--muted);direction:ltr;text-align:left}
+.dlg{display:grid;gap:8px;margin-top:10px}
+.dl{max-width:85%;padding:10px 14px;border-radius:16px;direction:ltr;text-align:left;cursor:pointer;font-size:1.1rem}
+.dl.a{justify-self:start;background:var(--sky-soft)} .dl.b{justify-self:end;background:var(--brand-soft)}
+.gram{background:var(--sky-soft);border-radius:14px;padding:12px;display:grid;gap:6px}
 </style>
 </head>
 <body>
@@ -331,7 +339,14 @@ const DEMO = /demo/.test(location.hash) || /demo/.test(location.search);
 
 /* =============== CURRICULUM =============== */
 /* Each level: 4 units x 6 lessons. Lesson = [title, conversation goal / scenario, sentence patterns to build] */
-const LEVEL_CEFR = {1:'Pre-A1',2:'A1',3:'A1',4:'A1+',5:'A2',6:'A2',7:'A2+',8:'B1',9:'B1+',10:'B1+',11:'B2',12:'B2',13:'B2+',14:'B2+',15:'C1',16:'C1',17:'C1+',18:'C1+',19:'C2',20:'C2'};
+const LEVEL_INFO = {
+ 1:['Pre-A1','10-15','Pre A1 Starters'], 2:['Pre-A1','16-21','Pre A1 Starters'], 3:['A1','22-25','A1 Movers'], 4:['A1','26-29','A1 Movers'],
+ 5:['A2','30-32','A2 Flyers'], 6:['A2','33-35','A2 Flyers / A2 Key'], 7:['A2+','36-42','A2 Key'], 8:['B1','43-46','B1 Preliminary'],
+ 9:['B1','47-50','B1 Preliminary'], 10:['B1+','51-54','B1 Preliminary'], 11:['B1+','55-58','B1 Preliminary · IELTS 4.5-5'], 12:['B2','59-62','B2 First'],
+ 13:['B2','63-66','B2 First · IELTS 5.5-6'], 14:['B2+','67-71','B2 First'], 15:['B2+','72-75','B2 First · IELTS 6.5'], 16:['C1','76-80','C1 Advanced'],
+ 17:['C1','81-84','C1 Advanced · IELTS 7-7.5'], 18:['C2','85-87','C2 Proficiency · Academic'], 19:['C2','88-89','C2 Proficiency · Debate'], 20:['C2','90','C2 Proficiency · Mastery']};
+const LEVEL_CEFR = Object.fromEntries(Object.entries(LEVEL_INFO).map(([k,v]) => [k, v[0]]));
+const levelTag = l => `${LEVEL_INFO[l][0]} · GSE ${LEVEL_INFO[l][1]} · ${LEVEL_INFO[l][2]}`;
 const CURR_BUILTIN = {
  5:[
   {t:'All About Me',ar:'كل شيء عني',e:'🧒',lessons:[
@@ -645,13 +660,14 @@ const BADGES = [
   ['reader5','قارئ نشيط','📚','اقرأ 5 قصص', s => s.books >= 5],
   ['unit','خريج الوحدة','🎓','أكمل وحدة كاملة', s => s.units >= 1],
   ['levelup','صعود المستوى','🚀','انتقل لمستوى أعلى', s => s.levelUps >= 1],
+  ['exam','ناجح في المستوى','🎖️','انجح في اختبار نهاية المستوى', s => s.examsPassed >= 1],
   ['xp1000','ألف نقطة','💎','اجمع 1000 نقطة', s => s.xp >= 1000]
 ];
 function kidStats(k){
   const l = ledger(k), p = DB.progress[k];
   const extras = l.rows.filter(r => r.st === 'att' && r.extra).length;
   return {lessons:l.attended, best:l.best, early:p.early, extras, quizzes:p.quizzes.length, perfect:p.quizzes.filter(q => q.score === q.total && q.total > 0).length,
-    books:DB.books[k].filter(b => b.read).length + Object.keys(DB.progress[k].pre||{}).length, units:DB.certs.filter(c => c.kid === k).length, levelUps:p.levelUps, xp:p.xp};
+    books:DB.books[k].filter(b => b.read).length + Object.keys(DB.progress[k].pre||{}).length, units:DB.certs.filter(c => c.kid === k).length, levelUps:p.levelUps, xp:p.xp, examsPassed:Object.values(p.exams||{}).filter(e => e.pct >= 70).length};
 }
 function earnedBadges(k){ const s = kidStats(k); return BADGES.filter(b => b[4](s)).map(b => b[0]); }
 function checkNewBadges(k){
@@ -745,7 +761,7 @@ function renderKid(k){
   if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
   const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
   $('#app').innerHTML = `<div class="wrap">
-    <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(nick(k))}</div><div class="small muted"><span class="en">Level ${kid.level}</span> · ${rk.r[3]} ${rk.r[2]} · <span class="num">${xp}</span> نقطة</div></div>
+    <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(nick(k))}</div><div class="small muted"><span class="en">Level ${kid.level} · ${LEVEL_INFO[kid.level][0]}</span> · ${rk.r[3]} ${rk.r[2]} · <span class="num">${xp}</span> نقطة</div></div>
       <button class="btn ghost" id="edit" aria-label="تعديل ملفي" style="padding:0;border:0;min-height:0">${avatarHTML(k)}</button><button class="btn sm" id="out">خروج</button></div></div>
     <nav class="tabs" role="tablist">${TABS.map(t => `<button role="tab" class="tab ${TAB===t[0]?'on':''}" data-tab="${t[0]}"><span>${t[2]}</span> ${t[1]}</button>`).join('')}</nav>
     <div id="tabBody"></div></div>`;
@@ -771,7 +787,9 @@ function tabHome(k){
   const pos = DB.progress[k].pos;
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div>${btn}</div></section>
-    <div class="g2e">${dailyCard(k)}${reviewCard(k) || practiceCard(k)}</div>${reviewCard(k) && practiceCard(k) ? practiceCard(k) : ''}
+    ${examCard(k)}
+    <div class="g2e">${dailyCard(k)}${kitCard(k) || reviewCard(k) || practiceCard(k)}</div>
+    <div class="g2e">${kitCard(k) ? reviewCard(k) : ''}${(kitCard(k) || reviewCard(k)) ? practiceCard(k) : ''}</div>
     ${units ? `<section class="card"><h2>رحلتك في المستوى ${DB.kids[k].level}</h2><div class="path">${units.map((u,ui) => { const start = units.slice(0,ui).reduce((a,x) => a+x.lessons.length, 0); const done = Math.max(0, Math.min(u.lessons.length, pos % plan.total - start));
       return `<div class="unit ${done===u.lessons.length?'done':''} ${ui===plan.ui?'cur':''}"><div class="ue">${u.e}</div><div style="min-width:0"><div class="en" style="font-weight:800;direction:ltr;text-align:right">${esc(u.t)}</div><div class="small muted">${esc(u.ar||'')}</div><div class="ldots">${u.lessons.map((l,li) => `<i class="${li<done?'on':''} ${ui===plan.ui&&li===plan.li?'cur':''}" title="${esc(l[0])}"></i>`).join('')}</div></div></div>`; }).join('')}</div></section>` : ''}
     <div class="g2">
@@ -794,6 +812,8 @@ function tabHome(k){
   const dg = $('#dailyGo'); if(dg) dg.onclick = () => { if(!DB.apiKey && !DEMO){ alertBox('التحدي يحتاج مفتاح التشغيل. اطلب من ولي الأمر إضافته.'); return; } unlockAudio(); startDaily(k); };
   const rg = $('#revGo'); if(rg) rg.onclick = () => { unlockAudio(); startReview(k); };
   const pg2 = $('#prGo'); if(pg2) pg2.onclick = () => startPractice(k);
+  const kg = $('#kitGo'); if(kg) kg.onclick = () => { unlockAudio(); openKit(k); };
+  const eg = $('#examGo'); if(eg) eg.onclick = () => startLevelExam(k);
   homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov')) renderKid(k); }, 30000);
 }
 async function enterLesson(k, trial){
@@ -889,8 +909,8 @@ function showCert(c){
 }
 
 /* =============== QUIZ =============== */
-function runQuiz(k, quiz, title, onDone){
-  const items = (quiz||[]).filter(q => q && (q.type === 'order' ? Array.isArray(q.words) && q.answer : Array.isArray(q.options) && q.options.length > 1)).slice(0,6);
+function runQuiz(k, quiz, title, onDone, max){
+  const items = (quiz||[]).filter(q => q && (q.type === 'order' ? Array.isArray(q.words) && q.answer : Array.isArray(q.options) && q.options.length > 1)).slice(0, max || 6);
   if(!items.length){ onDone && onDone(null); return; }
   let i = 0, score = 0;
   const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
@@ -938,7 +958,7 @@ const TOPICS = [['adventure','مغامرة','🗺️'],['animals','حيوانا�
 function tabLibrary(k){
   const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)], pre = ((CONTENT[DB.kids[k].level]||{}).stories||[]).filter(Boolean), done = DB.progress[k].pre;
   $('#tabBody').innerHTML = `<div class="grid">
-    <section class="card"><h2>قصص تفاعلية لمستواك <span class="en muted small">Level ${DB.kids[k].level} · ${LEVEL_CEFR[DB.kids[k].level]}</span></h2>
+    <section class="card"><h2>قصص تفاعلية لمستواك <span class="en muted small">Level ${DB.kids[k].level} · ${levelTag(DB.kids[k].level)}</span></h2>
       <p class="small muted" style="margin:4px 0 10px">اختر موضوعاً وتكتب لك المعلمة قصة جديدة على مستواك. تقرأ لك بصوت، وتضغط على أي كلمة لتعرف معناها، وفي آخرها أسئلة.</p>
       <div class="topics">${TOPICS.map(t => `<button class="topic" data-topic="${t[0]}"><span>${t[2]}</span>${t[1]}</button>`).join('')}</div>
       <div class="shelf2">${books.length ? books.slice().reverse().map(b => `<button class="sbook" data-book="${b.id}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small ${b.read?'ok':'muted'}">${b.read ? `✓ قرأتها · ${b.score||0}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('') : '<p class="muted" style="margin:0">مكتبتك فارغة. اختر موضوعاً من الأعلى لتبدأ أول قصة.</p>'}</div>
@@ -1207,6 +1227,66 @@ ${mist.length ? '🔧 يحتاج تدريب: ' + mist.map(m => m.right).join(' |
   return {att, miss, mins, avg, qavg, daily, books, words, mist, text};
 }
 
+
+/* =============== LESSON KIT, LEVEL EXAM, PLACEMENT =============== */
+function kitFor(level, ui, li){ const c = CONTENT[level]; return c && c.kits ? c.kits[`${ui}-${li}`] || null : null; }
+function kitCard(k){ const plan = lessonPlan(k), kit = kitFor(DB.kids[k].level, plan.ui, plan.li); if(!kit) return '';
+  const done = (DB.progress[k].kits||{})[plan.n];
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🎒 حضّر لدرسك القادم</h2><button class="btn sm primary" id="kitGo">${done ? 'راجع مرة ثانية' : 'ابدأ (+15 نقطة)'}</button></div>
+    <p class="small muted" style="margin:6px 0 0">6 كلمات وحوار قصير من درس <span class="en">${esc(plan.t)}</span>. اسمعها قبل الحصة لتتكلم بثقة.</p></section>`; }
+function openKit(k){
+  const plan = lessonPlan(k), kit = kitFor(DB.kids[k].level, plan.ui, plan.li); if(!kit) return;
+  const male = !teacherOf(k).female;
+  const say = (t, alt, slow) => { try{ const u = new SpeechSynthesisUtterance(t); const vv = alt ? (male ? voice : voiceM) || voice : (male ? voiceM : voice) || voice; if(vv) u.voice = vv; u.lang = 'en-US'; u.rate = slow ? .7 : .9; speechSynthesis.speak(u); }catch(e){} };
+  const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
+  ov.innerHTML = `<div class="r-top"><button class="btn sm" id="kx">إغلاق</button><b class="en" style="direction:ltr">${esc(plan.t)}</b><span></span></div>
+    <div style="max-width:760px;margin:0 auto;width:100%;display:grid;gap:16px">
+      <section class="card"><h2>🔤 كلمات الدرس</h2><div class="kwords">${(kit.words||[]).map((w,i) => `<button class="kword" data-kw="${i}"><b class="en">${esc(w.w)}</b><span>${esc(w.ar)}</span><small class="en">${esc(w.ex)}</small></button>`).join('')}</div></section>
+      <section class="card"><div class="chips" style="justify-content:space-between"><h2>💬 حوار نموذجي</h2><button class="btn sm primary" id="kplay">🔊 شغّل الحوار</button></div>
+        <div class="dlg">${(kit.dialogue||[]).map((d,i) => `<div class="dl ${d.s === 'A' ? 'a' : 'b'}" data-dl="${i}"><span class="en">${esc(d.t)}</span></div>`).join('')}</div></section>
+      <button class="btn primary big" id="kdone">جاهز للحصة ✓</button></div>`;
+  ov.querySelector('#kx').onclick = () => { speechSynthesis.cancel(); ov.remove(); };
+  ov.querySelectorAll('[data-kw]').forEach(b => b.onclick = () => { speechSynthesis.cancel(); const w = kit.words[Number(b.dataset.kw)]; say(w.w, false, true); say(w.ex); });
+  ov.querySelectorAll('[data-dl]').forEach(b => b.onclick = () => { speechSynthesis.cancel(); const d = kit.dialogue[Number(b.dataset.dl)]; say(d.t, d.s !== 'A'); });
+  ov.querySelector('#kplay').onclick = () => { speechSynthesis.cancel(); (kit.dialogue||[]).forEach(d => say(d.t, d.s !== 'A')); };
+  ov.querySelector('#kdone').onclick = () => { speechSynthesis.cancel(); const p = DB.progress[k]; p.kits = p.kits || {}; if(!p.kits[plan.n]){ p.kits[plan.n] = 1; addXP(k, 15); toast('🎒 جاهز! +15 نقطة'); } save(); ov.remove(); renderKid(k); };
+}
+function examCard(k){
+  const plan = lessonPlan(k), c = CONTENT[DB.kids[k].level], p = DB.progress[k];
+  if(!c || !(c.exam||[]).length || p.pos < plan.total) return '';
+  const r = (p.exams||{})[DB.kids[k].level];
+  return `<section class="card gift" style="text-align:right"><div class="chips" style="justify-content:space-between"><div><h2>📝 اختبار نهاية المستوى ${DB.kids[k].level}</h2><div class="small">أنهيت كل دروس المستوى! انجح بـ 70% أو أكثر ليرفعك ولي أمرك للمستوى التالي.</div></div>
+    <button class="btn primary" id="examGo">${r ? `أعد الاختبار (آخر نتيجة ${r.pct}%)` : 'ابدأ الاختبار'}</button></div></section>`; }
+function startLevelExam(k){
+  const lv = DB.kids[k].level, qs = (CONTENT[lv]||{}).exam || [];
+  runQuiz(k, qs.slice(0, 20), `Level ${lv} exam`, res => { if(!res) return renderKid(k);
+    const p = DB.progress[k]; p.exams = p.exams || {}; const pct = Math.round(res.score/res.total*100); p.exams[lv] = {pct, at:new Date().toISOString()};
+    if(pct >= 70){ addXP(k, 100); toast('🎖️ نجحت في اختبار المستوى! +100 نقطة', 'gold'); } save(); renderKid(k); }, 20);
+}
+async function placementTest(k){
+  let bank = null; try{ const r = await fetch('content/placement.json', {cache:'no-cache'}); bank = r.ok ? await r.json() : null; }catch(e){}
+  if(!bank || !bank.length){ alertBox('اختبار تحديد المستوى لم يجهز بعد. يجهز تلقائياً خلال ساعات.'); return; }
+  const kid = DB.kids[k], byLv = {}; bank.forEach(q => (byLv[q.level] = byLv[q.level] || []).push(q));
+  let lv = Math.max(1, Math.min(20, ageOf(kid.birth) - 5)), asked = 0, best = 0; const wrong = {}, used = new Set();
+  const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
+  const next = () => {
+    if(asked >= 16 || (wrong[lv]||0) >= 2) return done();
+    const q = (byLv[lv]||[]).find(x => !used.has(x)); if(!q){ if(lv < 20 && byLv[lv+1]){ lv++; return next(); } return done(); }
+    used.add(q); asked++;
+    ov.innerHTML = `<div class="card quiz"><div class="qhead"><span class="small muted">🎯 تحديد المستوى · سؤال ${asked}</span><div class="qbar"><i style="width:${asked/16*100}%"></i></div></div>
+      <p class="small muted" style="margin:0">يجيب الطفل بنفسه بدون مساعدة.</p><h2 class="en" style="direction:ltr;text-align:left">${esc(q.q)}</h2>
+      <div class="opts">${q.options.map((o,x) => `<button class="opt en" data-o="${x}">${esc(o)}</button>`).join('')}</div><button class="btn" id="px">إلغاء</button></div>`;
+    ov.querySelector('#px').onclick = () => ov.remove();
+    ov.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { if(Number(b.dataset.o) === Number(q.answer)){ best = Math.max(best, lv); lv = Math.min(20, lv + 1); } else { wrong[lv] = (wrong[lv]||0) + 1; lv = Math.max(1, lv - 1); } next(); });
+  };
+  const done = () => { const rec = Math.max(1, best);
+    ov.innerHTML = `<div class="card" style="text-align:center"><div style="font-size:2.6rem">🎯</div><h2>المستوى المقترح لـ ${esc(kid.ar)}: ${rec}</h2><p class="en" style="margin:0">${levelTag(rec)}</p>
+      <p class="small muted" style="margin:0">المستوى الحالي: ${kid.level}</p><div class="chips" style="justify-content:center">${rec !== kid.level ? `<button class="btn primary" id="pa">اعتمد المستوى ${rec}</button>` : ''}<button class="btn" id="pc">إغلاق</button></div></div>`;
+    const a = ov.querySelector('#pa'); if(a) a.onclick = () => { setLevel(k, rec); ov.remove(); toast('تم تحديث المستوى'); renderParent(); };
+    ov.querySelector('#pc').onclick = () => ov.remove(); };
+  next();
+}
+
 /* =============== TEACHER SVG =============== */
 const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor">
  <defs>
@@ -1433,7 +1513,7 @@ function buildRules(k, plan){
 STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'girl'}, 51Talk level ${kid.level} (CEFR ${cefr}). First language Arabic.
 TODAY: Unit "${plan.unit}", lesson ${plan.li+1} of ${plan.perUnit||6}: "${plan.t}".
 Conversation goal: ${plan.goal}.
-Sentence patterns the child should build and use: ${plan.pattern}.${plan.round>1?' (Second time through this level: go deeper, use harder follow-up questions.)':''}
+Sentence patterns the child should build and use: ${plan.pattern}.${(() => { const kit = kitFor(kid.level, plan.ui, plan.li); return kit ? `\nThe child prepared these words before class: ${(kit.words||[]).map(w => w.w).join(', ')}. Use them as today's new words.` : ''; })()}${plan.round>1?' (Second time through this level: go deeper, use harder follow-up questions.)':''}
 Focus from the last lesson report: ${prog.focus || 'none yet'}.
 Recent mistakes to recycle naturally: ${mist}.
 Words from recent lessons: ${words}.
@@ -1742,6 +1822,7 @@ Reply with ONLY one JSON object:
     const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); rep = JSON.parse(txt.slice(a, b+1));
   }catch(e){ console.warn(e); }
   if(!rep) rep = {score:0, stars:2, newWords:[], mistakes:[], parentNote:'لم يُكتب التقرير بسبب مشكلة اتصال، لكن الحصة سُجّلت.', kidNote:'Great job today!', nextFocus:'', quiz:[]};
+  if(!(rep.quiz||[]).length) rep.quiz = lessonQuizFromBank(DB.kids[k].level, plan.ui, plan.li) || [];
   const report = {score:Math.max(0,Math.min(100,Number(rep.score)||0)), stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
     newWords:(Array.isArray(rep.newWords)?rep.newWords:[]).slice(0,12).map(String), mistakes:(Array.isArray(rep.mistakes)?rep.mistakes:[]).slice(0,8).map(m => ({wrong:String(m.wrong||''), right:String(m.right||'')})),
     parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!')};
@@ -1759,6 +1840,7 @@ Reply with ONLY one JSON object:
     ${lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${DB.perLesson} ريال صارت خضراء · +50 نقطة</div>`}
     ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
     ${book ? `<div class="gift">🎁 هدية جديدة! فتحت كتاب: <span class="en">${esc(book[0])}</span></div>` : ''}
+    ${(() => { const kit = kitFor(DB.kids[k].level, plan.ui, plan.li); return kit && kit.grammar ? `<div class="gram"><div style="font-weight:800">📘 قاعدة الدرس: <span class="en">${esc(kit.grammar.title)}</span></div><div class="small">${esc(kit.grammar.ar)}</div><div class="en small" style="direction:ltr;text-align:left">${(kit.grammar.examples||[]).map(esc).join('<br>')}</div></div>` : ''; })()}
     ${report.newWords.length ? `<div><div style="font-weight:800">كلمات تدربت عليها</div><div class="wordchips">${report.newWords.map(w => `<span>${esc(w)}</span>`).join('')}</div></div>` : ''}
     ${report.mistakes.length ? `<div><div style="font-weight:800">انتبه لهذه</div>${report.mistakes.map(m => `<div class="ltr small" style="text-align:left"><s class="muted">${esc(m.wrong)}</s> → <b style="color:var(--good)">${esc(m.right)}</b></div>`).join('')}</div>` : ''}
     <button class="btn primary big" id="back">${(rep.quiz||[]).length ? '📝 ابدأ اختبار الدرس' : 'رجوع للرئيسية'}</button></div>`;
@@ -1790,11 +1872,12 @@ function renderParent(){
     const nxt = l.open ? 'الحصة مفتوحة الآن' : l.next ? `${fmtDay(l.next.t)} · ${fmtTime(l.next.t)}` : '—';
     const levelDone = plan.total && p.pos >= plan.total;
     return `<section class="card"><div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2>${esc(kid.ar)} <span class="muted small">(${esc(nick(k))}) · ${ageOf(kid.birth)} سنة</span></h2>
-      <div class="small muted"><span class="en">Level ${kid.level} (${LEVEL_CEFR[kid.level]})</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><button class="btn sm" data-edit="${k}">تعديل</button></div>
+      <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><button class="btn sm" data-edit="${k}">تعديل</button></div>
+      ${(p.exams||{})[kid.level] ? `<div class="gift" style="margin-top:10px">📝 اختبار نهاية المستوى ${kid.level}: ${p.exams[kid.level].pct}% ${p.exams[kid.level].pct >= 70 ? '· ناجح، ننصح برفعه للمستوى التالي ✅' : '· يحتاج مراجعة قبل الرفع'}</div>` : ''}
       ${levelDone ? `<div class="gift" style="margin-top:10px">🎉 أنهى ${esc(kid.ar)} كل دروس المستوى ${kid.level}. تقدر ترفعه للمستوى التالي.</div>` : ''}
       <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
       <div class="stat"><div><span class="small muted">الرصيد المتبقي</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
-      <div class="chips" style="margin-top:12px">${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
+      <div class="chips" style="margin-top:12px">${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
       ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
@@ -1828,6 +1911,7 @@ function renderParent(){
   document.querySelectorAll('[data-delrw]').forEach(b => b.onclick = () => { DB.rewards = DB.rewards.filter(r => r.id !== b.dataset.delrw); save(); renderParent(); });
   document.querySelectorAll('[data-done]').forEach(b => b.onclick = () => { const r = DB.redeems.find(x => x.id === b.dataset.done); if(r){ r.status = 'done'; save(); } toast('تم ✓'); renderParent(); });
   document.querySelectorAll('[data-ics]').forEach(b => b.onclick = () => downloadICS(b.dataset.ics));
+  document.querySelectorAll('[data-place]').forEach(b => b.onclick = () => placementTest(b.dataset.place));
   document.querySelectorAll('[data-week]').forEach(b => b.onclick = () => { const k = b.dataset.week, w = weeklyReport(k);
     const ov = overlay(`<h2>📊 الأسبوع الماضي: ${esc(DB.kids[k].ar)}</h2>
       <div class="stat"><div><span class="small muted">حضر</span><b style="color:var(--good)">${w.att}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${w.miss}</b></div><div><span class="small muted">دقائق محادثة</span><b>${w.mins}</b></div><div><span class="small muted">متوسط الحصص</span><b>${w.avg == null ? '—' : w.avg + '%'}</b></div></div>
@@ -1859,7 +1943,7 @@ function kidForm(k){
       <div class="field"><label for="f_en">الاسم بالإنجليزي</label><input class="input ltr" id="f_en" value="${esc(kid.en)}"></div>
       <div class="field"><label for="f_user">اسم المستخدم</label><input class="input ltr" id="f_user" autocapitalize="none" value="${esc(kid.user)}"></div>
       <div class="field"><label for="f_pass">كلمة المرور</label><input class="input ltr" id="f_pass" value="${esc(kid.pass)}"></div>
-      <div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${LEVEL_CEFR[l]}</option>`).join('')}</select></div>
+      <div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${levelTag(l)}</option>`).join('')}</select></div>
       <div class="field"><label for="f_b">تاريخ الميلاد</label><input class="input" type="date" id="f_b" value="${esc(kid.birth)}"></div>
       <div class="field"><label for="f_g">الجنس</label><select class="input" id="f_g"><option value="1" ${kid.boy?'selected':''}>ولد</option><option value="0" ${!kid.boy?'selected':''}>بنت</option></select></div>
       <div class="field"><label for="f_bal">مبلغ الاشتراك (ريال)</label><input class="input num" type="number" min="0" step="10" id="f_bal" value="${k ? DB.balance[k] : 2000}"></div>
