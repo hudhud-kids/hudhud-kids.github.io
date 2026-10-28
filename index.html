@@ -445,6 +445,8 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 #splash .tag{font-family:var(--font);color:var(--teal-ink);font-weight:700;font-size:clamp(1.05rem,4.2vmin,1.5rem);opacity:0;animation:sp-up .5s 2.75s forwards}
 #splash .spark{position:absolute;width:10px;height:10px;border-radius:50%;opacity:0}
 #splash .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--teal);opacity:0;animation:sp-dot .9s ease-out forwards}
+#splash .snd{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;border:0;background:var(--brand);color:#fff;font-family:var(--font);font-weight:700;border-radius:99px;padding:8px 16px;font-size:.95rem;min-height:40px;display:none;animation:sp-in .3s .4s both}
+#splash.locked .snd{display:block}
 #splash .skip{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-start:18px;border:0;background:rgba(255,255,255,.8);color:#7A4A3A;font-family:var(--font);font-weight:700;border-radius:99px;padding:8px 16px;font-size:.95rem;min-height:40px}
 @keyframes sp-sun{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @keyframes sp-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
@@ -3372,7 +3374,7 @@ function showSplash(force){
     <div class="trail"></div>
     <div class="stage"><div class="shadow"></div><div class="flyer">${BIRD}</div><div class="bubble" dir="ltr">Hello!</div><div class="burst"></div></div>
     <div class="brand"><div class="word">هدهد</div><div class="tag">هدهد ينقل المعرفة</div></div>
-    <button class="skip" type="button">تخطي</button>`;
+    <button class="skip" type="button">تخطي</button><button class="snd" type="button">🔊 شغّل الصوت</button>`;
   document.body.appendChild(el);
   /* flight trail */
   const tr = el.querySelector('.trail');
@@ -3388,11 +3390,12 @@ function showSplash(force){
     if(o < .4) SFX.whoosh(at(.15)); if(o < 1.5) SFX.flaps(at(Math.max(.2, o)), Math.max(1, Math.round((1.6 - Math.max(.2, o)) / .15)));
     if(o < 1.7) SFX.thud(at(1.65)); if(o < 1.85) SFX.pop(at(1.8)); if(o < 2.1) SFX.chirp(at(2.05)); if(o < 2.35){ SFX.chime(at(2.3)); SFX.sparkle(at(2.4)); } };
   const t0 = performance.now();
-  SFX.unlock(); let tries = 0; const waitRun = () => { if(SFX.running()) playTrack((performance.now() - t0) / 1000); else if(++tries < 10) setTimeout(waitRun, 60); }; setTimeout(waitRun, 40);
-  const unlockNow = () => { SFX.unlock(); let n = 0; const w = () => { if(SFX.running()) playTrack((performance.now() - t0) / 1000); else if(++n < 10) setTimeout(w, 50); }; setTimeout(w, 30); };
+  SFX.unlock(); let tries = 0; const waitRun = () => { if(SFX.running()) playTrack((performance.now() - t0) / 1000); else if(++tries < 10) setTimeout(waitRun, 60); else el.classList.add('locked'); }; setTimeout(waitRun, 40);
+  const unlockNow = () => { SFX.unlock(); let n = 0; const w = () => { if(SFX.running()){ el.classList.remove('locked'); } if(SFX.running()) playTrack((performance.now() - t0) / 1000); else if(++n < 10) setTimeout(w, 50); }; setTimeout(w, 30); };
   let timer = null;
   const close = () => { if(el.classList.contains('out')) return; clearTimeout(timer); el.classList.add('out'); setTimeout(() => el.remove(), 550); };
   el.querySelector('.skip').onclick = e => { e.stopPropagation(); close(); };
+  el.querySelector('.snd').onclick = e => { e.stopPropagation(); unlockNow(); };
   ['touchend','click'].forEach(ev => el.addEventListener(ev, () => { if(!played) unlockNow(); }));
   timer = setTimeout(close, matchMedia('(prefers-reduced-motion: reduce)').matches ? 900 : 3900);
 }
