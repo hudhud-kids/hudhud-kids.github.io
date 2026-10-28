@@ -112,10 +112,26 @@ Return ONLY JSON: an array of 40 objects {"level":n,"q":"...","options":["...","
   const q = parseJSON(t, '['); if(q.length < 20) throw new Error('bad placement'); fs.writeFileSync(f, JSON.stringify(q));
 }
 
+
+async function placementBank(l){
+  const f = path.join(DIR, `P${l}.json`); if(fs.existsSync(f)) return;
+  const t = await claude(`You are a language-assessment expert (CEFR, Pearson GSE, Cambridge English). Write placement-test items that discriminate EXACTLY ${describe(l)}.
+Items must be calibrated to this band only: clearly too hard for the band below, easy for the band above. Original, culturally appropriate for Saudi learners.
+Return ONLY JSON:
+{"mcq":[4 grammar-or-vocabulary-in-context items {"q":"...","options":["...","...","...","..."],"answer":index,"skill":"grammar|vocabulary"}],
+ "listen":[2 items {"script":"what the examiner says aloud (length right for the band)","q":"question about it","options":["...","...","..."],"answer":index}],
+ "read":{"passage":"a short text right for the band","qs":[2 items {"q":"...","options":["...","...","..."],"answer":index}]},
+ "aloud":["2 sentences to read aloud that test pronunciation at this band (stress, connected speech, harder words at higher bands)"],
+ "speak":{"prompt":"an open speaking question right for the band","expect":"what a learner AT this band can do in their answer (CEFR spoken descriptors)"}}`, 4000);
+  const b = parseJSON(t); if(!b.mcq || !b.listen || !b.read || !b.speak) throw new Error('bad placement bank'); b.level = l; fs.writeFileSync(f, JSON.stringify(b));
+}
+
 // ---- queue: core content first, then stories round-robin across levels so every level fills evenly
 const core = [], stories = [];
-core.push(() => placement().then(() => console.log('placement ready')));
-for(const l of range){
+const ONLY_PLACEMENT = process.env.MODE === 'placement';
+for(const l of range) core.push(() => placementBank(l).then(() => console.log(`P${l} placement bank ready`)));
+if(!ONLY_PLACEMENT) core.push(() => placement().then(() => console.log('placement ready')));
+for(const l of (ONLY_PLACEMENT ? [] : range)){
   const d = load(l);
   core.push(async () => { await units(d); console.log(`L${l} units ready`);
     for(let ui = 0; ui < d.units.length; ui++){
@@ -124,7 +140,7 @@ for(const l of range){
     }
     core.push(() => exam(d).then(() => console.log(`L${l} exam ready`))); });
 }
-for(let i = 0; i < STORIES_PER_LEVEL; i++) for(const l of range) stories.push({l, i});
+if(!ONLY_PLACEMENT) for(let i = 0; i < STORIES_PER_LEVEL; i++) for(const l of range) stories.push({l, i});
 
 let failed = 0, active = 0, lastPush = Date.now();
 function checkpoint(){ if(Date.now() - lastPush < 15*60e3 || !process.env.GITHUB_ACTIONS) return; lastPush = Date.now();
@@ -140,6 +156,6 @@ async function worker(){
   }
 }
 await Promise.all(Array.from({length:Number(process.env.CONCURRENCY || 8)}, worker));
-const index = {}; for(const l of range){ const d = load(l); index[l] = {units:!!d.units, stories:d.stories.filter(Boolean).length, quizzes:Object.keys(d.quizzes).length, kits:Object.keys(d.kits).length, exam:(d.exam||[]).length}; }
-fs.writeFileSync(path.join(DIR, 'index.json'), JSON.stringify(index, null, 1));
+if(!ONLY_PLACEMENT){ const index = {}; for(const l of range){ const d = load(l); index[l] = {units:!!d.units, stories:d.stories.filter(Boolean).length, quizzes:Object.keys(d.quizzes).length, kits:Object.keys(d.kits).length, exam:(d.exam||[]).length}; }
+fs.writeFileSync(path.join(DIR, 'index.json'), JSON.stringify(index, null, 1)); }
 console.log(`done. spent ~$${spent.toFixed(2)}, failed tasks: ${failed}`);

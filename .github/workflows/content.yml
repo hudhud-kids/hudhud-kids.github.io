@@ -11,8 +11,14 @@ on:
       budget:
         description: 'Stop at this many USD'
         default: '65'
+      mode:
+        description: 'all or placement'
+        default: 'all'
 permissions:
   contents: write
+concurrency:
+  group: content-${{ github.event.inputs.mode }}
+  cancel-in-progress: false
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -28,6 +34,7 @@ jobs:
           LEVELS: ${{ github.event.inputs.levels }}
           STORIES: ${{ github.event.inputs.stories }}
           BUDGET: ${{ github.event.inputs.budget }}
+          MODE: ${{ github.event.inputs.mode }}
         run: node content/generate.mjs
       - name: Save content
         if: always()
