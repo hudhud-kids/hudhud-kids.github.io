@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>هدهد · تعلّم الإنجليزية بالكلام</title>
+<meta name="description" content="هدهد: معلمة إنجليزي تتكلم مع طفلك بالصوت، حصص على مستواه، ألعاب وقصص، وتقارير لولي الأمر على جواله.">
+<meta name="theme-color" content="#F05A38">
+<link rel="icon" href="../icon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<style>
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-medium.woff2) format("woff2");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-bold.woff2) format("woff2");font-weight:700 900;font-display:swap}
+:root{--brand:#F05A38;--brand-ink:#B2391C;--brand-soft:#FFE6DD;--teal:#14B8A6;--teal-ink:#0F766E;--teal-soft:#E6F7F4;--gold-soft:#FFF1CC;--gold-ink:#8A5A00;--sky-soft:#E3EEFF;--sky-ink:#2457B5;
+  --bg:#FFF6EE;--surface:#FFFFFF;--fg:#2B1B0F;--muted:#5C4334;--muted2:#86695A;--line:#F0DCCB;--ink:#2B1B0F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+main{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Dubai",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:var(--brand-ink)}
+button{font:inherit;cursor:pointer;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.en{direction:ltr;unicode-bidi:isolate}
+h1,h2,h3{margin:0}
+.eyebrow{font-weight:800;color:var(--teal-ink);font-size:16px}
+.h2{font-size:clamp(30px,4.2vw,48px);font-weight:900;line-height:1.2}
+.lead{color:var(--muted);font-size:clamp(17px,1.6vw,20px);line-height:1.8;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:800;font-size:18px;text-decoration:none;border:2px solid transparent;transition:transform .15s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 24px rgba(240,90,56,.35)}
+.btn-ghost{background:#fff;color:var(--fg);border-color:var(--line)}
+.btn-dark{background:var(--ink);color:#FFF6EE}
+.card{background:var(--surface);border:1.5px solid var(--line);border-radius:26px}
+.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;flex:none}
+.ico svg{width:27px;height:27px}
+.c-coral{background:var(--brand-soft);color:var(--brand-ink)}.c-teal{background:var(--teal-soft);color:var(--teal-ink)}.c-gold{background:var(--gold-soft);color:var(--gold-ink)}.c-sky{background:var(--sky-soft);color:var(--sky-ink)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;transition:background .25s,box-shadow .25s}
+.nav.scrolled{background:rgba(255,246,238,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 20px rgba(43,27,15,.06)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--brand)}
+.logo b{font-size:28px;font-weight:900}
+.links{display:flex;gap:4px;align-items:center}
+.links a{padding:10px 14px;border-radius:999px;text-decoration:none;color:var(--muted);font-weight:700}
+.links a:hover{background:#fff}
+.links .btn{padding:10px 20px;font-size:16px;min-height:44px}
+.links a.btn-dark{color:#FFF6EE}.links a.btn-dark:hover{background:#000}
+@media (max-width:860px){.links a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;padding:28px 0 70px}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:36px}
+.hero-txt{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:22px;position:relative;z-index:2}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:700;color:var(--teal-ink);font-size:15px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:blink 1.6s ease-in-out infinite}
+.hero h1{font-size:clamp(40px,6.2vw,74px);line-height:1.08;font-weight:900;letter-spacing:-1px}
+.hero h1 span{color:var(--brand)}
+.typed{display:inline-block;min-width:4ch;color:var(--teal-ink);border-inline-start:3px solid var(--teal);padding-inline-start:6px;animation:caret 1s step-end infinite}
+.ticks{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-weight:700;font-size:15px}
+.ticks span{display:inline-flex;align-items:center;gap:6px}
+.hero-art{flex:1 1 420px;min-width:0;position:relative;height:520px}
+.blob{position:absolute;inset:30px 10px 10px;border-radius:48% 52% 46% 54%/50% 44% 56% 50%;background:radial-gradient(circle at 40% 35%,#FFD9CC 0%,#FFE9E0 45%,rgba(255,246,238,0) 72%);animation:morph 12s ease-in-out infinite}
+.cloud{position:absolute;animation:drift 9s ease-in-out infinite alternate}
+.birdwrap{position:absolute;top:70px;left:50%;width:300px;margin-left:-150px;animation:fly 1.5s cubic-bezier(.2,.9,.3,1.2) both}
+.birdbtn{display:block;width:300px;padding:0;border:0;background:transparent;animation:bob 3.2s ease-in-out infinite;touch-action:manipulation}
+.birdbtn svg{width:100%;height:auto;overflow:visible;filter:drop-shadow(0 18px 24px rgba(178,57,28,.25))}
+.crest{transform-box:fill-box;transform-origin:50% 100%;animation:crest 2.6s ease-in-out infinite}
+.wing{transform-box:fill-box;transform-origin:90% 20%;animation:wing .45s ease-in-out infinite alternate}
+.eye{transform-box:fill-box;transform-origin:center;animation:blinkeye 4s infinite}
+.bubble{position:absolute;top:-24px;right:-46px;background:#fff;border:2.5px solid var(--brand);border-radius:22px 22px 22px 6px;padding:10px 18px;box-shadow:0 10px 22px rgba(0,0,0,.08);text-align:center;min-width:140px}
+.bubble b{display:block;font-size:26px;font-weight:900;color:var(--brand);direction:ltr}
+.bubble small{font-size:14px;color:var(--muted);font-weight:700}
+.hint{text-align:center;margin-top:4px;font-size:13px;color:var(--muted2);font-weight:700}
+.chipf{position:absolute;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:0 12px 30px rgba(43,27,15,.10);display:flex;align-items:center;gap:10px}
+.chipf .ico{width:40px;height:40px;border-radius:12px}.chipf .ico svg{width:22px;height:22px}
+.chipf small{display:block;font-size:12px;color:var(--muted2);font-weight:700}
+.chipf b{font-weight:800}
+.f1{top:150px;left:-6px;animation:float 4s ease-in-out infinite}
+.f2{bottom:130px;right:14px;animation:float 5s ease-in-out -1.5s infinite}
+.f3{bottom:20px;left:10px;background:var(--ink);color:#FFF6EE;max-width:260px;animation:float 4.6s ease-in-out -3s infinite}
+.f3 small{color:#E8D3C5}
+.ring{display:grid;animation:ring 2.4s ease-in-out infinite;transform-origin:50% 10%}
+@media (max-width:520px){.hero-art{height:430px}.birdwrap{width:220px;margin-left:-110px;top:70px}.birdbtn{width:220px}.bubble{right:-20px;top:-46px;min-width:120px}.bubble b{font-size:22px}.f1{top:auto;bottom:118px;left:0}.f2{display:none}.f3{bottom:20px;left:auto;right:0}}
+
+/* marquee */
+.marq{background:var(--brand);color:#fff;padding:16px 0;overflow:hidden;transform:rotate(-1.2deg);margin:0 -20px}
+.marq .track{display:flex;gap:40px;white-space:nowrap;width:max-content;font-size:24px;font-weight:800;direction:ltr;animation:marq 40s linear infinite}
+
+/* sections */
+section{scroll-margin-top:80px}
+.sec{padding:96px 0 40px}
+.center{text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:36px}
+.step{position:relative;padding:26px 22px 24px;display:flex;flex-direction:column;gap:12px}
+.step .n{position:absolute;top:16px;left:20px;font-size:56px;font-weight:900;color:var(--brand-soft);line-height:1}
+.step h3{font-size:21px;font-weight:800}.step p{margin:0;color:var(--muted);line-height:1.7}
+.lift{transition:transform .25s ease,box-shadow .25s ease}
+.lift:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(178,57,28,.14)}
+
+/* journey */
+.journey{background:var(--ink);color:#FFF6EE;border-radius:34px;padding:36px 28px;position:relative;overflow:hidden;margin-top:56px}
+.journey:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(240,90,56,.22);left:-120px;bottom:-220px}
+.jtop{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;position:relative}
+.jtop>div:first-child{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.jtop p{margin:0;color:#E8D3C5;line-height:1.7}
+.ages{display:flex;flex-wrap:wrap;gap:8px}
+.ages button{width:52px;height:52px;border-radius:16px;font-weight:900;font-size:19px;border:2px solid rgba(255,246,238,.25);background:transparent;color:#FFF6EE;transition:all .2s}
+.ages button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);transform:translateY(-3px)}
+.lvlbox{flex:0 1 300px;min-width:240px;background:var(--bg);color:var(--fg);border-radius:26px;padding:22px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.lvlbox .big{font-size:54px;font-weight:900;color:var(--brand);line-height:1.1;direction:ltr}
+.lvlbox .tag{font-weight:800;color:var(--teal-ink);direction:ltr}
+.path{position:relative;margin-top:30px;height:96px}
+.path svg{position:absolute;inset:0;width:100%;height:100%}
+.nodes{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;direction:ltr}
+.node{width:30px;height:30px;border-radius:50%;background:rgba(255,246,238,.12);border:2px solid rgba(255,246,238,.3);display:grid;place-items:center;font-size:12px;font-weight:900;color:#FFF6EE;transition:all .3s;position:relative}
+.node.done{background:var(--teal);border-color:var(--teal)}
+.node.cur{background:var(--brand);border-color:#fff;transform:scale(1.35);box-shadow:0 0 0 6px rgba(240,90,56,.35)}
+.node.cur:after{content:"";position:absolute;bottom:34px;left:50%;width:34px;height:32px;margin-left:-17px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 190'%3E%3Cg fill='%23FF6B4A'%3E%3Cellipse cx='70' cy='40' rx='9' ry='30' transform='rotate(-38 70 40)'/%3E%3Cellipse cx='88' cy='30' rx='9' ry='32' transform='rotate(-18 88 30)'/%3E%3Cellipse cx='108' cy='28' rx='9' ry='32' transform='rotate(2 108 28)'/%3E%3Cellipse cx='126' cy='34' rx='9' ry='30' transform='rotate(22 126 34)'/%3E%3C/g%3E%3Cellipse cx='100' cy='120' rx='64' ry='56' fill='%23FF6B4A'/%3E%3Cpath d='M60 128c20 34 70 40 98 10' fill='%2314B8A6'/%3E%3Ccircle cx='122' cy='100' r='13' fill='%23fff'/%3E%3Ccircle cx='125' cy='101' r='7' fill='%233B1F14'/%3E%3Cpath d='M156 104l42 8-42 10z' fill='%233B1F14'/%3E%3C/svg%3E") center/contain no-repeat;animation:bob 1.6s ease-in-out infinite}
+.cefr{display:flex;justify-content:space-between;direction:ltr;color:#E8D3C5;font-weight:800;font-size:13px;margin-top:6px}
+@media (max-width:640px){.node{width:13px;height:13px;font-size:0;border-width:1.5px}.node.cur{transform:scale(1.6)}.node.cur:after{bottom:20px;width:26px;height:24px;margin-left:-13px}}
+
+/* features */
+.feat-sec{background:#fff;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);margin-top:56px}
+.feat-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+.counter{display:flex;align-items:baseline;gap:10px}
+.counter b{font-size:64px;font-weight:900;color:var(--brand);line-height:1}
+.counter span{font-weight:800;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.filters button{border:1.5px solid var(--line);background:var(--bg);border-radius:999px;padding:10px 16px;font-weight:800;font-size:16px;min-height:44px;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.filters button i{font-style:normal;font-size:13px;background:#fff;border-radius:999px;padding:0 8px;color:var(--muted2)}
+.filters button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 6px 14px rgba(240,90,56,.3)}
+.filters button[aria-pressed=true] i{background:rgba(255,255,255,.25);color:#fff}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:22px}
+.fcard{background:var(--bg);border:1.5px solid var(--line);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.fcard h3{font-size:19px;font-weight:800}.fcard p{margin:0;color:var(--muted);line-height:1.7;font-size:15.5px}
+.fcard .cat{position:absolute;top:16px;left:16px;font-size:12px;font-weight:800;color:var(--muted2);background:#fff;border-radius:999px;padding:3px 10px}
+.fcard.new:after{content:"جديد";position:absolute;top:16px;left:16px;font-size:12px;font-weight:800;color:#fff;background:var(--teal);border-radius:999px;padding:3px 10px}
+.fcard.hide{display:none}
+.fcard.pop{animation:pop .45s cubic-bezier(.3,1.5,.5,1) both}
+
+/* words */
+.words{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:30px;perspective:900px}
+.wcard{position:relative;height:170px}
+.wflip{position:absolute;inset:0;border:0;padding:0;background:transparent;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.3,1.4,.5,1);border-radius:24px}
+.wcard.on .wflip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:2px solid var(--line)}
+.face b{font-size:30px;font-weight:900}
+.face small{font-size:14px;font-weight:700;opacity:.8}
+.back{transform:rotateY(180deg);color:#fff}
+.say{position:absolute;bottom:-14px;left:50%;margin-left:-22px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;display:grid;place-items:center;box-shadow:0 6px 14px rgba(0,0,0,.12);z-index:2;color:var(--brand)}
+.score{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:800}
+
+/* in-class demo */
+.classdemo{display:flex;flex-wrap:wrap;gap:30px;align-items:center;margin-top:30px}
+.chat{flex:1 1 420px;min-width:0;background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:10px;min-height:380px}
+.msg{max-width:85%;padding:12px 16px;border-radius:20px;line-height:1.6;font-size:16px;animation:pop .4s cubic-bezier(.3,1.5,.5,1) both;direction:ltr;text-align:left}
+.msg.t{align-self:flex-end;background:var(--sky-soft);border-bottom-left-radius:6px}
+.msg.k{align-self:flex-start;background:var(--brand-soft);border-bottom-right-radius:6px}
+.msg.fix{align-self:center;background:var(--teal-soft);color:var(--teal-ink);font-weight:700;direction:rtl;text-align:center;font-size:14px}
+.msg small{display:block;font-size:12px;font-weight:800;opacity:.7;direction:rtl;text-align:right}
+.talk{flex:0 1 320px;min-width:260px;display:flex;flex-direction:column;gap:14px}
+.meter{height:16px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--brand));transition:width .8s}
+
+/* parents */
+.parents{background:linear-gradient(180deg,var(--brand-soft) 0%,var(--bg) 100%);margin-top:70px}
+.parents .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:88px;padding-bottom:88px}
+.ptxt{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.pp{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:18px;padding:14px 16px;border:1.5px solid var(--line)}
+.pp .ico{width:38px;height:38px;border-radius:12px}.pp .ico svg{width:20px;height:20px}
+.pp b{display:block}.pp span{color:var(--muted);font-size:15px;line-height:1.6}
+.phone{flex:0 1 360px;min-width:280px;margin:0 auto}
+.phone .shell{background:var(--ink);border-radius:46px;padding:12px;box-shadow:0 30px 60px rgba(43,27,15,.25);animation:bob 5s ease-in-out infinite}
+.phone .scr{background:var(--bg);border-radius:36px;padding:22px 16px 18px;display:flex;flex-direction:column;gap:12px;min-height:600px}
+.pc{background:#fff;border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.pc.alert{border:2px solid var(--brand);flex-direction:row;align-items:center;gap:10px;padding:12px 14px}
+.stat2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.stat2 div{background:var(--bg);border-radius:14px;padding:10px}
+.stat2 small{display:block;font-size:12px;color:var(--muted2)}
+.stat2 b{font-size:20px;font-weight:900}
+.chs{display:flex;flex-wrap:wrap;gap:6px}
+.chs button{border:1.5px solid var(--line);background:var(--bg);border-radius:999px;padding:8px 12px;font-weight:700;font-size:14px;min-height:40px}
+.chs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sentmsg{background:var(--teal-soft);color:var(--teal-ink);border-radius:14px;padding:10px;font-weight:700;font-size:14px;animation:pop .4s cubic-bezier(.3,1.5,.5,1) both}
+
+/* faq */
+.faq{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:12px;margin-top:30px}
+.q{background:#fff;border:1.5px solid var(--line);border-radius:22px;overflow:hidden}
+.q button{width:100%;border:0;background:transparent;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:right;font-size:18px;font-weight:800;min-height:44px}
+.q .plus{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:#fff;transition:transform .25s,background .25s}
+.q.open .plus{transform:rotate(45deg);background:var(--teal)}
+.q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.q.open .a{grid-template-rows:1fr}
+.q .a>div{overflow:hidden}
+.q .a p{margin:0;padding:0 22px 20px;color:var(--muted);line-height:1.8}
+
+/* cta */
+.cta{background:var(--brand);color:#fff;border-radius:40px;padding:56px 28px;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center;position:relative;overflow:hidden;margin:80px 0 60px}
+.cta:before,.cta:after{content:"";position:absolute;border-radius:50%}
+.cta:before{width:300px;height:300px;background:rgba(255,255,255,.12);right:-80px;top:-120px}
+.cta:after{width:220px;height:220px;background:rgba(20,184,166,.35);left:-60px;bottom:-110px}
+.cta>*{position:relative;z-index:1}
+.cta p{margin:0;font-size:19px;max-width:560px;line-height:1.7;color:#FFF1EC}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--muted2);font-weight:700;font-size:14px;padding-bottom:40px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* confetti */
+.conf{position:fixed;top:-20px;width:10px;height:14px;border-radius:3px;z-index:50;pointer-events:none;animation:fall 1.8s ease-in forwards}
+
+@keyframes fly{0%{transform:translate(-140%,60px) rotate(-12deg);opacity:0}60%{transform:translate(6%,-10px) rotate(4deg);opacity:1}100%{transform:none;opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes crest{0%,70%,100%{transform:scaleY(1)}80%{transform:scaleY(1.18)}}
+@keyframes wing{from{transform:rotate(0)}to{transform:rotate(-16deg)}}
+@keyframes blinkeye{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-60px)}}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.05);opacity:1}100%{transform:scale(1)}}
+@keyframes ring{0%,60%,100%{transform:rotate(0)}66%{transform:rotate(14deg)}72%{transform:rotate(-12deg)}78%{transform:rotate(7deg)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(240,90,56,.45)}100%{box-shadow:0 0 0 18px rgba(240,90,56,0)}}
+@keyframes blink{50%{opacity:.3}}
+@keyframes caret{50%{border-color:transparent}}
+@keyframes morph{0%,100%{border-radius:48% 52% 46% 54%/50% 44% 56% 50%}50%{border-radius:56% 44% 52% 48%/44% 56% 46% 54%}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.6}}
+.pulse{animation:pulse 1.8s ease-out infinite}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+<div class="wrap">
+<a class="logo" href="#top" aria-label="هدهد">
+<svg width="44" height="42" viewBox="0 0 200 190" aria-hidden="true"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g><ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></svg>
+<b>هدهد</b>
+</a>
+<nav class="links" aria-label="أقسام الصفحة">
+<a href="#how">كيف تمشي</a>
+<a href="#features">المميزات</a>
+<a href="#class">داخل الحصة</a>
+<a href="#parents">للأهالي</a>
+<a href="#faq">أسئلة</a>
+<a class="btn btn-dark" href="../">ادخل هدهد</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+<div class="wrap">
+<div class="hero-txt">
+<span class="pill"><i></i>معلمة إنجليزي تتكلم مع طفلك بالصوت</span>
+<h1>هدهد ينقل المعرفة…<br><span>وطفلك يقول</span> <span class="typed en" id="typed">Hello!</span></h1>
+<p class="lead">حصص فردية بالصوت على مستوى طفلك بالضبط، وألعاب وقصص يكون هو بطلها، وأنت تتابع كل شي من جوالك: الحضور والتقدم وتقرير كل أسبوع.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a class="btn btn-primary pulse" href="../">ابدأ رحلة الهدهد
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<a class="btn btn-ghost" href="#features">شوف كل المميزات</a>
+</div>
+<div class="ticks">
+<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>اختبار مستوى أول دخول</span>
+<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>20 مستوى من Pre-A1 إلى C2</span>
+<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>على الآيباد والجوال</span>
+</div>
+</div>
+
+<div class="hero-art">
+<div class="blob" aria-hidden="true"></div>
+<svg class="cloud" aria-hidden="true" width="150" height="60" viewBox="0 0 150 60" style="top:24px;left:10px"><path d="M25 50h100a20 20 0 0 0 0-40 28 28 0 0 0-52-6A22 22 0 0 0 25 50z" fill="#fff"/></svg>
+<svg class="cloud" aria-hidden="true" width="110" height="46" viewBox="0 0 150 60" style="bottom:70px;right:0;animation-duration:12s"><path d="M25 50h100a20 20 0 0 0 0-40 28 28 0 0 0-52-6A22 22 0 0 0 25 50z" fill="#fff"/></svg>
+<div class="birdwrap">
+<button class="birdbtn" id="bird" aria-label="اضغط على الهدهد يسلّم عليك">
+<svg viewBox="0 0 200 190" role="img" aria-label="الهدهد">
+<g class="crest"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g></g>
+<ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/>
+<path class="wing" d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/>
+<path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+<circle cx="122" cy="100" r="13" fill="#fff"/><circle class="eye" cx="125" cy="101" r="7" fill="#3B1F14"/>
+<path d="M156 104l42 8-42 10z" fill="#3B1F14"/>
+<path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/>
+</svg>
+</button>
+<div class="bubble" id="bubble" aria-live="polite"><b>Hi!</b><small>هلا والله!</small></div>
+<div class="hint">اضغط على الهدهد</div>
+</div>
+<div class="chipf f1"><span class="ico c-teal" data-i="target"></span><div><small>مستواه</small><b class="en">Level 5 · A2</b></div></div>
+<div class="chipf f2"><span class="ico c-coral" data-i="mic"></span><div><small>تكلّم في الحصة</small><b>46% من الوقت</b></div></div>
+<div class="chipf f3"><span class="ring" data-i="bell" style="color:#FCC419;width:24px"></span><div style="font-size:14px;line-height:1.5"><b>رسالة من تيتا أمل</b><small>فخورة فيك يا بطل</small></div></div>
+</div>
+</div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+<!-- HOW -->
+<section class="sec" id="how">
+<div class="wrap">
+<div class="center rv"><span class="eyebrow">كيف تمشي الرحلة</span><h2 class="h2">أربع خطوات، وطفلك يتكلم</h2></div>
+<div class="grid4" id="steps"></div>
+
+<div class="journey rv">
+<div class="jtop">
+<div>
+<h2 style="font-size:30px;font-weight:900">كم عمر طفلك؟</h2>
+<p>اختر العمر ونقول لك من وين تبدأ رحلته تقريبًا. اختبار تحديد المستوى أول ما يدخل هو اللي يثبّت المستوى بدقة.</p>
+<div class="ages" id="ages"></div>
+</div>
+<div class="lvlbox"><span style="color:var(--muted2);font-weight:700">يبدأ تقريبًا من</span><span class="big" id="lvlBig">Level 3</span><span class="tag" id="lvlTag">A1 · A1 Movers</span><span style="color:var(--muted);font-size:15px;line-height:1.6">من أصل 20 مستوى، كل مستوى فيه وحدات ودروس وخريطة يمشي عليها مع الهدهد.</span></div>
+</div>
+<div class="path" aria-hidden="true">
+<svg viewBox="0 0 1000 96" preserveAspectRatio="none"><path d="M10 48 C 120 0, 220 96, 330 48 S 540 0, 660 48 S 880 96, 990 48" fill="none" stroke="rgba(255,246,238,.25)" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/></svg>
+<div class="nodes" id="nodes"></div>
+</div>
+<div class="cefr"><span>Pre-A1</span><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div>
+</div>
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="feat-sec" id="features">
+<div class="wrap" style="padding-top:88px;padding-bottom:88px">
+<div class="feat-head rv">
+<div style="display:flex;flex-direction:column;gap:10px"><span class="eyebrow">كل اللي داخل هدهد</span><h2 class="h2">ممتع للطفل، ومطمّن للأهل</h2></div>
+<div class="counter"><b id="count">0</b><span>ميزة</span></div>
+</div>
+<div class="filters" id="filters" role="group" aria-label="تصنيف المميزات"></div>
+<div class="fgrid" id="fgrid"></div>
+</div>
+</section>
+
+<!-- CLASS DEMO -->
+<section class="sec" id="class">
+<div class="wrap">
+<div class="center rv"><span class="eyebrow">داخل الحصة</span><h2 class="h2">كذا تتكلم المعلمة مع طفلك</h2><p class="lead" style="max-width:640px">تسأله، تسمعه، وإذا غلط تصحّح له بلطف وتخليه يعيد. وعدّاد الكلام يبيّن كم تكلّم هو.</p></div>
+<div class="classdemo">
+<div class="chat" id="chat" aria-live="polite"></div>
+<div class="talk card" style="padding:22px">
+<b style="font-size:19px">🗣️ نسبة كلام الطفل</b>
+<div class="meter"><i id="meter"></i></div>
+<div style="display:flex;justify-content:space-between;font-weight:800;color:var(--muted)"><span>هدفه <bdi class="en">40%</bdi></span><span class="en" id="meterTxt">0%</span></div>
+<p style="margin:0;color:var(--muted);line-height:1.7">بعد الحصة: اختبار قصير، والأخطاء تنضاف لبطاقات المراجعة، والتقرير يوصل لولي الأمر.</p>
+<button class="btn btn-primary" id="replay" style="font-size:16px">▶︎ شغّل الحصة مرة ثانية</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WORD GAME -->
+<section class="sec">
+<div class="wrap">
+<div class="center rv"><span class="eyebrow">جرّب بنفسك</span><h2 class="h2">اقلب البطاقة واسمع الكلمة</h2><p class="lead">نفس فكرة «ألعاب الكلمات» اللي يلعبها طفلك.</p><span class="score" id="score">قلبت 0 من 6</span></div>
+<div class="words" id="words"></div>
+</div>
+</section>
+
+<!-- PARENTS -->
+<section class="parents" id="parents">
+<div class="wrap">
+<div class="ptxt rv">
+<span class="eyebrow" style="color:var(--brand-ink)">لوحة ولي الأمر</span>
+<h2 class="h2">كل شي تحت يدك…<br>من جوالك</h2>
+<p class="lead">حساب خاص لك، تشوف فيه أطفالك فقط، وتنتقل بينهم بضغطة.</p>
+<div id="pps" style="display:flex;flex-direction:column;gap:12px"></div>
+</div>
+<div class="phone rv">
+<div class="shell"><div class="scr">
+<div style="display:flex;justify-content:space-between;align-items:center"><b style="color:var(--brand);font-size:20px;font-weight:900">هدهد</b><span style="font-size:13px;color:var(--muted2);font-weight:700">حساب ولي الأمر</span></div>
+<div class="pc alert"><span class="ring" data-i="bell" style="color:var(--brand);width:24px"></span><div style="font-size:14px;line-height:1.5"><b>حصة أحمد بعد ساعة</b><br><span style="color:var(--muted2)">الحصة الساعة 6:00 م</span></div></div>
+<div class="pc"><b>تقرير الأسبوع</b>
+<div class="stat2"><div><small>الحضور</small><b style="color:#15803D">3 من 3</b></div><div><small>معدل الحصص</small><b class="en">92% <span style="font-size:13px;color:#15803D">▲10</span></b></div></div>
+<small style="color:var(--muted2);font-weight:700">أكثر خطأ تكرر</small>
+<div style="background:var(--bg);border-radius:12px;padding:8px 10px;direction:ltr;text-align:left;font-size:14px"><s style="color:var(--muted2)">I go to school yesterday</s><br><b>I went to school yesterday</b></div>
+</div>
+<div class="pc"><b>شجّع أحمد</b>
+<div class="chs" id="signers"></div>
+<div class="chs" id="cheers"></div>
+<div id="sent"></div>
+</div>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+<div class="wrap">
+<div class="center rv"><span class="eyebrow">قبل ما تبدأ</span><h2 class="h2">أسئلة يسألها الأهالي</h2></div>
+<div class="faq" id="faqs"></div>
+
+<div class="cta rv">
+<svg width="120" height="114" viewBox="0 0 200 190" aria-hidden="true" style="animation:bob 3s ease-in-out infinite;overflow:visible"><g class="crest"><g fill="#FFD3C6"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g></g><ellipse cx="100" cy="120" rx="64" ry="56" fill="#fff"/><path class="wing" d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><circle cx="122" cy="100" r="13" fill="#FFE6DD"/><circle class="eye" cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></svg>
+<h2 style="font-size:clamp(30px,4.5vw,52px);font-weight:900">جاهز يطير مع الهدهد؟</h2>
+<p>أول دخول فيه اختبار تحديد مستوى قصير، وبعدها تبدأ الحصص على مستواه.</p>
+<a class="btn btn-dark" href="../" style="font-size:20px;padding:18px 34px">ادخل هدهد الآن</a>
+</div>
+<footer><span>هدهد ينقل المعرفة</span><span class="en">hudhud-kids.github.io</span></footer>
+</div>
+</section>
+</main>
+
+<script>
+const I = {
+  target:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10M12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2',
+  mic:'M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3',
+  book:'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16',
+  chart:'M4 20V4M4 20h16M8 16v-5M12 16V8M16 16v-3',
+  chat:'M4 5h16v11H8l-4 4z',
+  game:'M6 9h12a4 4 0 0 1 0 8l-3-2H9l-3 2a4 4 0 0 1 0-8zM8 12v3M6.5 13.5h3M15 13h.01M17 14h.01',
+  home:'M3 11l9-7 9 7v9H3zM9 20v-6h6v6',
+  trophy:'M7 4h10v4a5 5 0 0 1-10 0zM5 5H3v2a3 3 0 0 0 4 3M19 5h2v2a3 3 0 0 1-4 3M12 13v4M9 21h6',
+  eye:'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6',
+  bell:'M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 20a2 2 0 0 0 4 0',
+  heart:'M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z',
+  cal:'M4 6h16v14H4zM4 10h16M8 3v5M16 3v5',
+  speaker:'M4 9h4l5-4v14l-5-4H4zM16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11',
+  map:'M9 4l6 2 5-2v14l-5 2-6-2-5 2V6zM9 4v14M15 6v14',
+  bag:'M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2',
+  bolt:'M13 3L5 14h6l-1 7 8-11h-6z',
+  repeat:'M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2M20 4v5h-5M4 20v-5h5',
+  medal:'M8 3l4 6 4-6M12 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM12 13v4',
+  gift:'M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0',
+  users:'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21a7 7 0 0 1 14 0M17 11a3 3 0 1 0 0-6M22 21a6 6 0 0 0-5-6',
+  star:'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z',
+  camera:'M4 8h3l2-3h6l2 3h3v11H4zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+  pencil:'M4 20h4L19 9l-4-4L4 16zM14 6l4 4',
+  phone:'M7 3h10v18H7zM11 18h2',
+  globe:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18',
+  cloud:'M7 18h10a4 4 0 0 0 0-8 6 6 0 0 0-11.5 2A3 3 0 0 0 7 18z',
+  wifi:'M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01',
+  lock:'M6 11h12v10H6zM8 11V7a4 4 0 0 1 8 0v4',
+  moon:'M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z',
+  bird:'M4 14c4 6 12 6 16-2-4 2-8 1-10-3M14 6l3-3M10 5l1-3'
+};
+const svg = (d, w = 27) => `<svg width="${w}" height="${w}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+document.querySelectorAll('[data-i]').forEach(el => el.innerHTML = svg(I[el.dataset.i], el.classList.contains('ring') ? 24 : 22));
+const $ = s => document.querySelector(s);
+
+/* speech */
+function say(t){ try{ const s = speechSynthesis; s.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = .85; s.speak(u); }catch(e){} }
+
+/* nav shadow */
+addEventListener('scroll', () => $('#nav').classList.toggle('scrolled', scrollY > 10), {passive:true});
+
+/* typed words */
+(() => { const words = ['Hello!', 'I can do it!', 'Thank you!', 'Great job!', 'My best friend'], el = $('#typed'); let w = 0, i = 0, del = false;
+  const tick = () => { const t = words[w]; el.textContent = t.slice(0, i) || ' ';
+    if(!del && i < t.length) i++; else if(!del){ del = true; return setTimeout(tick, 1400); } else if(i > 0) i--; else { del = false; w = (w + 1) % words.length; }
+    setTimeout(tick, del ? 45 : 95); };
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) setTimeout(tick, 1600); })();
+
+/* bird greeting */
+const greets = [['Hi!','هلا والله!'],['Hello!','مرحبا!'],["Let's talk!",'يلا نتكلم!'],['Great job!','أحسنت!'],['You can do it!','أنت قدها!']]; let g = 0;
+$('#bird').onclick = () => { g = (g + 1) % greets.length; const b = $('#bubble'); b.innerHTML = `<b>${greets[g][0]}</b><small>${greets[g][1]}</small>`; b.style.animation = 'none'; b.offsetWidth; b.style.animation = 'pop .45s cubic-bezier(.3,1.5,.5,1)'; say(greets[g][0]); confetti(10); };
+
+/* marquee */
+(() => { const items = ['Hello!','I went to school yesterday','She has a cat','Great job!','My best friend',"Let's play",'Thank you, teacher!','I like pizza very much'];
+  const one = items.map(t => `<span>${t}</span><span>★</span>`).join(''); $('#marq').innerHTML = one + one; })();
+
+/* steps */
+const steps = [
+  ['اختبار تحديد المستوى','أول دخول: معرفة، تمييز أصوات، إملاء، نطق، وكلام. ويتحدد مستواه تلقائيًا.','target','c-teal'],
+  ['حصة صوتية مع المعلمة','25 دقيقة يتكلم فيها بصوته، والمعلمة تصحّح له بلطف وتطلب منه يعيد.','mic','c-coral'],
+  ['واجب ومراجعة ذكية','أخطاؤه تتحول لبطاقات مراجعة، ومراجعة شهرية مع اختبار قبل وبعد.','repeat','c-gold'],
+  ['تقرير يوصلك','بعد كل حصة ملاحظات المعلمة، وكل خميس ملخص الأسبوع على جوالك.','chart','c-sky']];
+$('#steps').innerHTML = steps.map((s, i) => `<article class="card step lift rv" style="transition-delay:${i * 90}ms"><span class="n">${i + 1}</span><span class="ico ${s[3]}">${svg(I[s[2]])}</span><h3>${s[0]}</h3><p>${s[1]}</p></article>`).join('');
+
+/* journey */
+const LV = {1:'Pre-A1 · Starters',2:'Pre-A1 · Starters',3:'A1 · Movers',4:'A1 · Movers',5:'A2 · Flyers',6:'A2 · Flyers / Key',7:'A2+ · Key',8:'B1 · Preliminary',9:'B1 · Preliminary',10:'B1+ · Preliminary',11:'B1+ · IELTS 4.5-5',12:'B2 · First',13:'B2 · IELTS 5.5-6',14:'B2+ · First',15:'B2+ · IELTS 6.5',16:'C1 · Advanced',17:'C1 · IELTS 7-7.5',18:'C2 · Proficiency',19:'C2 · Proficiency',20:'C2 · Mastery'};
+$('#nodes').innerHTML = Array.from({length:20}, (_, i) => `<span class="node" data-n="${i + 1}">${i + 1}</span>`).join('');
+function setAge(a){ const lv = Math.max(1, Math.min(20, a - 5));
+  document.querySelectorAll('#ages button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.a === a));
+  $('#lvlBig').textContent = 'Level ' + lv; $('#lvlTag').textContent = LV[lv];
+  const big = $('#lvlBig'); big.style.animation = 'none'; big.offsetWidth; big.style.animation = 'pop .45s cubic-bezier(.3,1.5,.5,1)';
+  document.querySelectorAll('.node').forEach(n => { const k = +n.dataset.n; n.className = 'node' + (k < lv ? ' done' : k === lv ? ' cur' : ''); }); }
+$('#ages').innerHTML = [5,6,7,8,9,10,11,12,13,14].map(a => `<button data-a="${a}" aria-pressed="false" aria-label="${a} سنوات">${a}</button>`).join('');
+document.querySelectorAll('#ages button').forEach(b => b.onclick = () => setAge(+b.dataset.a));
+setAge(8);
+
+/* features */
+const CATS = [['all','الكل'],['learn','الحصص والتعلّم'],['play','اللعب والتحفيز'],['read','القراءة والنطق'],['parents','للأهالي'],['app','سهولة الاستخدام']];
+const CC = {learn:'c-coral', play:'c-gold', read:'c-teal', parents:'c-sky', app:'c-teal'};
+const F = [
+  ['learn','mic','معلمة بالصوت','تسمع طفلك وترد عليه بصوت طبيعي، وتصحّح أخطاءه بلطف وتخليه يعيد الجملة صح.'],
+  ['learn','target','اختبار تحديد المستوى','5 أجزاء أول دخول: معرفة، تمييز أصوات، إملاء، نطق، وكلام. والمستوى يتحدد تلقائيًا.'],
+  ['learn','map','20 مستوى وخريطة','من Pre-A1 إلى C2، كل مستوى وحدات ودروس، والهدهد يمشي معه على الخريطة.'],
+  ['learn','bag','حضّر لدرسك القادم','6 كلمات وحوار قصير من درس الحصة، يفتح قبل الحصة بساعة عشان يدخل جاهز.'],
+  ['learn','chat','عدّاد الكلام','أثناء الحصة يشوف كم تكلّم هو مقابل المعلمة، وله هدف يوصل له.'],
+  ['learn','pencil','اختبار بعد كل حصة','أسئلة قصيرة من نفس الدرس تثبّت اللي تعلّمه.'],
+  ['learn','repeat','واجب ذكي يومي','أخطاؤه والكلمات الجديدة تصير بطاقات مراجعة ترجع له في وقتها المناسب.'],
+  ['learn','star','مراجعة الشهر','حصة مراجعة لأكثر أخطاء الشهر، مع اختبار قبل وبعد يبيّن كم تحسّن.'],
+  ['learn','medal','شهادات واختبار المستوى','شهادة لكل وحدة يكملها، واختبار نهاية المستوى قبل ما يرتفع للي بعده.'],
+  ['play','bolt','تحدي اليوم','جملة يقولها بنمط جديد كل يوم، وسلسلة أيام متتالية تشجعه ما يوقف.'],
+  ['play','chat','مهمات المحادثة','مواقف حقيقية: في المطار، عند الطبيب، في المقهى. كل مهمة لها 3 أهداف و3 نجوم.'],
+  ['play','game','ألعاب الكلمات','طابق الكلمات، وسباق الاستماع، واكتبها صح. يجمع منها نقاط كل يوم.'],
+  ['play','trophy','دوري الأسبوع','ينافس لاعبين على قد مستواه، وأول 3 مراكز ياخذون نقاط إضافية.'],
+  ['play','users','تحدي الإخوان','منافسة أسبوعية بين الإخوة، كل واحد على مستواه، والفائز ياخذ كأس حصري لغرفته.',1],
+  ['play','heart','هدف الفريق','الإخوة فريق واحد يكملون أهداف مشتركة، والكل ياخذ جائزة.'],
+  ['play','home','غرفتي ومتجر الشخصيات','يزيّن غرفته ويختار شخصيته وقبعته وحيوانه الأليف من نقاطه.'],
+  ['play','medal','16 وسام','أول حصة، شعلة الحماس، العلامة الكاملة، القارئ النشيط… وكل وسام له قصة.'],
+  ['play','gift','مكافآت حقيقية','يستبدل نقاطه بمكافآت يحددها الأهل: نزهة، آيس كريم، وقت لعب.'],
+  ['play','bird','الهدهد الرفيق','يطير معه في كل مكان: يمدحه إذا أصاب، ويشجعه إذا غلط.'],
+  ['read','book','مكتبة القصص','قصص على قد مستواه، فيها معاني الكلمات وأسئلة فهم بعد كل قصة.'],
+  ['read','star','قصص هو بطلها','القصة تتغير ويصير اسمه بطل الحكاية، واسم أخوه أو أخته معه.'],
+  ['read','speaker','قراءة بصوت طبيعي','القصص والمعلمة بأصوات بشرية طبيعية، وتقدر تختار صوت لكل طفل.'],
+  ['read','mic','مختبر النطق','يقول الكلمة ويشوف كل حرف ملوّن: أخضر صح، أصفر قريب، أحمر يحتاج تمرين.'],
+  ['read','target','الأصوات الصعبة','تمارين خاصة للأصوات اللي تصعب على العرب: P وB، TH، ship وsheep.'],
+  ['parents','users','حساب ولي الأمر','حساب خاص فيه أطفالك فقط، وتنتقل بينهم بأزرار بأسمائهم.'],
+  ['parents','chart','تقرير بعد كل حصة','النتيجة، المدة، نسبة كلامه، ملاحظة المعلمة، وأخطاؤه مع التصحيح.'],
+  ['parents','cal','التقرير الأسبوعي','كل خميس الساعة 8 مساءً: الحضور، المعدل، وأكثر 3 أخطاء تكررت.',1],
+  ['parents','eye','شاهد الحصة مباشرة','لما يكون في الحصة تشوف المحادثة لحظة بلحظة.'],
+  ['parents','heart','رسائل تشجيع بأسماء العائلة','«فخورة فيك» من ماما مرام، أو من جدو أحمد. توصله مع الهدهد وكإشعار.',1],
+  ['parents','bell','تذكير قبل الحصة','قبل ساعة، وقبل نص ساعة، وقبل 10 دقائق. لك على جوالك، وله على جهازه.',1],
+  ['parents','check','حضر أو غاب','إشعار فوري إذا حضر حصته، أو إذا فاتته.'],
+  ['parents','map','التقدم والمهارات','رسم آخر 8 أسابيع، وتقويم الشهر، وخريطة 6 مهارات تعرف منها وين يحتاج تركيز.'],
+  ['app','phone','تطبيق على الشاشة','يضاف كأيقونة على الآيباد والجوال ويفتح مثل أي تطبيق.'],
+  ['app','cloud','من أي جهاز','كل بياناته محفوظة بالسحابة، يدخل باسم المستخدم وكلمة المرور من أي جهاز.'],
+  ['app','globe','عربي وإنجليزي','الواجهة بالعربي، ويقدر يحوّلها للإنجليزي بضغطة.'],
+  ['app','moon','وضع ليلي','ألوان مريحة للعين في الليل.'],
+  ['app','wifi','يفتح والنت ضعيف','الصفحات تتحفظ على الجهاز وتفتح بسرعة، والحصص تحتاج إنترنت.'],
+  ['app','lock','خصوصية العائلة','كل عائلة لها حساباتها، وولي الأمر يشوف أطفاله المرتبطين بحسابه فقط.']
+];
+I.check = 'M5 12l5 5 9-10';
+let CAT = 'all';
+$('#filters').innerHTML = CATS.map(([id, t]) => `<button data-c="${id}" aria-pressed="${id === 'all'}">${t} <i>${id === 'all' ? F.length : F.filter(f => f[0] === id).length}</i></button>`).join('');
+$('#fgrid').innerHTML = F.map((f, i) => `<article class="fcard lift ${f[4] ? 'new' : ''}" data-c="${f[0]}"><span class="ico ${CC[f[0]]}">${svg(I[f[1]])}</span><h3>${f[2]}</h3><p>${f[3]}</p></article>`).join('');
+document.querySelectorAll('#filters button').forEach(b => b.onclick = () => { CAT = b.dataset.c;
+  document.querySelectorAll('#filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  let d = 0; document.querySelectorAll('.fcard').forEach(c => { const show = CAT === 'all' || c.dataset.c === CAT; c.classList.toggle('hide', !show); c.classList.remove('pop');
+    if(show){ c.style.animationDelay = (d++ * 40) + 'ms'; void c.offsetWidth; c.classList.add('pop'); } });
+  countTo(CAT === 'all' ? F.length : F.filter(f => f[0] === CAT).length); });
+let cnt = 0; function countTo(n){ const el = $('#count'), from = cnt, t0 = performance.now(); cnt = n;
+  const step = t => { const k = Math.min(1, (t - t0) / 700); el.textContent = Math.round(from + (n - from) * (1 - Math.pow(1 - k, 3))); if(k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
+
+/* class demo */
+const CHAT = [['t','Hi Ahmed! What did you bring today?'],['k','I bring my football.'],['fix','✏️ المعلمة صحّحت: <bdi class="en">brought</bdi> بدل <bdi class="en">bring</bdi> لأنه حصل أمس'],['k','I brought my football!'],['t','Great sentence! Who gave it to you?'],['k','My father gave it to me.'],['t','Wonderful! Do you play with your friends?'],['k','Yes, I play every Friday.']];
+let chatT = []; function runChat(){ chatT.forEach(clearTimeout); chatT = []; const box = $('#chat'); box.innerHTML = ''; let kw = 0, tw = 0;
+  CHAT.forEach((m, i) => chatT.push(setTimeout(() => { const d = document.createElement('div'); d.className = 'msg ' + m[0];
+    d.innerHTML = m[0] === 'fix' ? m[1] : `<small>${m[0] === 't' ? 'المعلمة' : 'أحمد'}</small>${m[1]}`; box.appendChild(d);
+    if(m[0] === 'k'){ kw += m[1].split(' ').length; if(i === 1 || i === 3) say(m[1]); } if(m[0] === 't') tw += m[1].split(' ').length;
+    const p = Math.round(kw / Math.max(1, kw + tw) * 100); $('#meter').style.width = p + '%'; $('#meterTxt').textContent = p + '%'; }, 700 + i * 1300))); }
+$('#replay').onclick = runChat;
+
+/* words */
+const W = [['Apple','تفاحة','#B2391C'],['School','مدرسة','#0F766E'],['Friend','صديق','#8A5A00'],['Happy','سعيد','#2457B5'],['Family','عائلة','#B2391C'],['Football','كرة قدم','#0F766E']];
+const BGS = {'#B2391C':'#FFE6DD','#0F766E':'#E6F7F4','#8A5A00':'#FFF1CC','#2457B5':'#E3EEFF'};
+$('#words').innerHTML = W.map(([en, ar, c], i) => `<div class="wcard" data-i="${i}"><button class="wflip" aria-label="اقلب بطاقة ${en}"><span class="face" style="background:${BGS[c]}"><b class="en">${en}</b><small>اضغط تشوف المعنى</small></span><span class="face back" style="background:${c};border-color:${c}"><b>${ar}</b><small class="en">${en}</small></span></button><button class="say" aria-label="اسمع ${en}">${svg(I.speaker, 22)}</button></div>`).join('');
+const flipped = new Set();
+document.querySelectorAll('.wcard').forEach(c => { const i = +c.dataset.i;
+  c.querySelector('.wflip').onclick = () => { c.classList.toggle('on'); if(c.classList.contains('on')){ flipped.add(i); say(W[i][0]); } $('#score').textContent = `قلبت ${flipped.size} من 6`; if(flipped.size === 6 && !c.__done){ c.__done = true; $('#score').textContent = 'كفو! قلبتها كلها 🎉'; confetti(40); } };
+  c.querySelector('.say').onclick = () => say(W[i][0]); });
+
+/* parents */
+const PP = [['chart','تقرير بعد كل حصة','النتيجة، مدة الحصة، نسبة كلامه، وملاحظة المعلمة وأخطاؤه مع التصحيح.'],['bell','إشعارات على جوالك','تذكير الحصة قبل ساعة ونص ساعة و10 دقائق، حضر أو غاب، وتقرير الخميس.'],['eye','شوف الحصة وهي شغالة','المحادثة تطلع لك مباشرة، وترسل له تشجيع وهو في الحصة.'],['heart','رسائل باسم العائلة','تطلع له مع الهدهد: «فخورة فيك» من ماما مرام، أو من جدو أحمد.'],['users','أكثر من طفل بحساب واحد','أزرار بأسماء أطفالك فوق الصفحة، وكل واحد بتقاريره.']];
+$('#pps').innerHTML = PP.map(p => `<div class="pp"><span class="ico c-teal">${svg(I[p[0]], 20)}</span><div><b>${p[1]}</b><span>${p[2]}</span></div></div>`).join('');
+const SG = ['بابا محمد','ماما مرام','تيتا أمل'], FEM = {'ماما مرام':1,'تيتا أمل':1}; let signer = SG[0];
+function drawCheers(){ $('#signers').innerHTML = SG.map(s => `<button data-s="${s}" aria-pressed="${s === signer}">${s}</button>`).join('');
+  $('#cheers').innerHTML = ['أحسنت يا بطل! 👏', FEM[signer] ? 'فخورة فيك ❤️' : 'فخور فيك ❤️', 'كمل، أنت قدها 💪'].map(t => `<button data-t="${t}">${t}</button>`).join('');
+  document.querySelectorAll('#signers button').forEach(b => b.onclick = () => { signer = b.dataset.s; drawCheers(); });
+  document.querySelectorAll('#cheers button').forEach(b => b.onclick = () => { $('#sent').innerHTML = `<div class="sentmsg">💌 وصلت لأحمد: «${b.dataset.t}» — من ${signer}</div>`; confetti(14); }); }
+drawCheers();
+
+/* faq */
+const Q = [['هل المعلمة إنسانة؟','لا، المعلمة ذكاء اصطناعي تتكلم بصوت طبيعي، تسمع طفلك وترد عليه، وتصحّح أخطاءه بلطف وتخليه يعيد الجملة صح.'],
+  ['كم مدة الحصة؟','الحصة 25 دقيقة، وتفتح قبل موعدها بـ10 دقائق. وقبلها بساعة يفتح «حضّر لدرسك القادم» عشان يدخل الحصة جاهز.'],
+  ['كيف يتحدد مستوى طفلي؟','أول ما يدخل يسوي اختبار من 5 أجزاء: معرفة، تمييز أصوات، إملاء، نطق، وكلام. ويتحدد مستواه من 20 مستوى تلقائيًا.'],
+  ['وش الجهاز اللي يحتاجه؟','آيباد أو جوال فيه مايك وسماعة. هدهد يفتح من المتصفح ويضاف كأيقونة على الشاشة الرئيسية.'],
+  ['كيف أتابع طفلي؟','من حساب ولي الأمر على جوالك: تقرير بعد كل حصة، وتقرير أسبوعي كل خميس، وإشعارات قبل الحصص، وتشوف الحصة مباشرة.'],
+  ['عندي أكثر من طفل؟','كل طفل له حسابه ومستواه، وولي الأمر يشوفهم كلهم من حساب واحد، ويتنافسون في «تحدي الإخوان».'],
+  ['مين يشوف بيانات طفلي؟','كل عائلة لها حساباتها. ولي الأمر يشوف أطفاله المرتبطين بحسابه فقط.']];
+$('#faqs').innerHTML = Q.map((q, i) => `<div class="q ${i === 0 ? 'open' : ''}"><button aria-expanded="${i === 0}"><span>${q[0]}</span><span class="plus">${svg('M12 5v14M5 12h14', 18)}</span></button><div class="a"><div><p>${q[1]}</p></div></div></div>`).join('');
+document.querySelectorAll('.q > button').forEach(b => b.onclick = () => { const q = b.parentElement, open = !q.classList.contains('open');
+  document.querySelectorAll('.q').forEach(x => { x.classList.remove('open'); x.querySelector('button').setAttribute('aria-expanded', 'false'); });
+  if(open){ q.classList.add('open'); b.setAttribute('aria-expanded', 'true'); } });
+
+/* confetti */
+function confetti(n){ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; const cs = ['#F05A38','#14B8A6','#FCC419','#3B7BE8','#FF6B4A'];
+  for(let i = 0; i < n; i++){ const c = document.createElement('i'); c.className = 'conf'; c.style.left = Math.random() * 100 + 'vw'; c.style.background = cs[i % cs.length]; c.style.animationDelay = Math.random() * .4 + 's'; c.style.animationDuration = 1.4 + Math.random() + 's'; document.body.appendChild(c); setTimeout(() => c.remove(), 2600); } }
+
+/* reveal on scroll */
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);
+  if(e.target.id === 'fgrid-anchor') countTo(F.length); if(e.target.classList.contains('chat-anchor')) runChat(); } }), {threshold:.15}) : null;
+const anchor = $('.feat-head'); anchor.id = 'fgrid-anchor'; $('#chat').classList.add('chat-anchor');
+document.querySelectorAll('.rv, #fgrid-anchor, .chat-anchor').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+if(!io){ countTo(F.length); runChat(); }
+</script>
+</body>
+</html>
