@@ -302,6 +302,16 @@ body.printing > *:not(.ov){display:none!important}
 .r-ctrl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
 .spin{display:inline-block;animation:wob 1s ease-in-out infinite}
 @keyframes wob{50%{transform:rotate(-12deg) translateY(-4px)}}
+.hair-m{display:none}.t-adam .hair-m{display:inline}.t-adam .hair-f{display:none}
+.daily{background:linear-gradient(135deg,#FFF6D8,#FFFFFF)}
+.pattern{background:var(--surface);border:2px dashed var(--brand);border-radius:14px;padding:10px 14px;font-weight:700;direction:ltr;text-align:left;margin:8px 0;font-size:1.1rem}
+.flash{border:2px solid var(--line);background:linear-gradient(160deg,#FFFFFF,#FFF1E3);border-radius:20px;min-height:150px;display:grid;place-items:center;gap:8px;padding:20px;font-size:1.6rem;font-weight:700;direction:ltr;text-align:center}
+.flash small{font-family:var(--font);font-size:.95rem;color:var(--muted);direction:rtl}
+.micbig.on{background:var(--bad)}
+.rewards{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:12px}
+.reward{background:var(--bg);border-radius:16px;padding:14px;display:grid;gap:8px;justify-items:center;text-align:center}
+.reward .re{font-size:2.4rem}
+.burst-big{font-size:3.4rem;animation:wob 1s ease-in-out infinite}
 </style>
 </head>
 <body>
@@ -311,7 +321,8 @@ body.printing > *:not(.ov){display:none!important}
 /* =============== CONSTANTS =============== */
 const STORE_KEY = '51telk:v2';
 const API = 'https://api.anthropic.com/v1/messages';
-const LIVE_MODEL = 'claude-sonnet-5-5';
+const PROMO_END = new Date('2026-11-07T23:00:00Z');
+const LIVE_MODEL = new Date() < PROMO_END ? 'claude-opus-5-5' : 'claude-sonnet-5-5';
 const REPORT_MODEL = 'claude-opus-5-5';
 const OPEN_BEFORE = 10, OPEN_AFTER = 30, MIN_MINUTES = 18, LESSON_MIN = 25;
 const SILENCE_MS = 1700, NUDGE_MS = 15000;
@@ -320,7 +331,7 @@ const DEMO = /demo/.test(location.hash) || /demo/.test(location.search);
 
 /* =============== CURRICULUM =============== */
 /* Each level: 4 units x 6 lessons. Lesson = [title, conversation goal / scenario, sentence patterns to build] */
-const LEVEL_CEFR = {1:'Pre-A1',2:'Pre-A1',3:'A1',4:'A1+',5:'A2',6:'A2',7:'A2+',8:'B1',9:'B1+',10:'B1+ to B2',11:'B2',12:'B2+'};
+const LEVEL_CEFR = {1:'Pre-A1',2:'A1',3:'A1',4:'A1+',5:'A2',6:'A2',7:'A2+',8:'B1',9:'B1+',10:'B1+',11:'B2',12:'B2',13:'B2+',14:'B2+',15:'C1',16:'C1',17:'C1+',18:'C1+',19:'C2',20:'C2'};
 const CURR_BUILTIN = {
  5:[
   {t:'All About Me',ar:'كل شيء عني',e:'🧒',lessons:[
@@ -496,7 +507,8 @@ function setWho(w){ WHO = w; if(DEMO) return; try{ localStorage.setItem('51telk:
 /* bring older saved data up to the current shape */
 function normalize(){
   if(!DB) return;
-  DB.sched = DB.sched || {}; DB.books = DB.books || {}; DB.curr = DB.curr || {}; DB.certs = DB.certs || [];
+  DB.sched = DB.sched || {}; DB.books = DB.books || {}; DB.curr = DB.curr || {}; DB.certs = DB.certs || []; DB.redeems = DB.redeems || [];
+  DB.rewards = DB.rewards || [{id:'w1',name:'نصف ساعة لعب إضافية',emoji:'🎮',cost:300},{id:'w2',name:'آيس كريم',emoji:'🍦',cost:500},{id:'w3',name:'نزهة يختارها',emoji:'🎡',cost:1200},{id:'w4',name:'هدية مفاجأة',emoji:'🎁',cost:2000}];
   for(const k of Object.keys(DB.kids)) ensureKidShape(k);
   delete DB.periods;
 }
@@ -505,7 +517,7 @@ function ensureKidShape(k){
   const p = DB.progress[k] = DB.progress[k] || {};
   if(p.pos == null) p.pos = Math.max(0, (p.lessonNo||1) - 1);
   p.mistakes = p.mistakes || []; p.words = p.words || []; p.focus = p.focus || ''; p.xp = p.xp || 0; p.quizzes = p.quizzes || [];
-  p.badgesSeen = p.badgesSeen || []; p.early = p.early || 0; p.levelUps = p.levelUps || 0;
+  p.badgesSeen = p.badgesSeen || []; p.early = p.early || 0; p.levelUps = p.levelUps || 0; p.daily = p.daily || {}; p.pre = p.pre || {};
   DB.live[k] = DB.live[k] || null;
   if(DB.balance[k] == null) DB.balance[k] = 2000;
   if(!DB.sched[k]){
@@ -540,13 +552,14 @@ function toast(msg, kind){ const t = document.createElement('div'); t.className 
 function overlay(html){ const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = `<div class="card">${html}</div>`; document.body.appendChild(ov); return ov; }
 
 /* =============== CURRICULUM ACCESS =============== */
-function levelUnits(level){ return CURR_BUILTIN[level] || (DB.curr && DB.curr[level]) || null; }
+function levelUnits(level){ return CURR_BUILTIN[level] || (CONTENT[level] && CONTENT[level].units) || (DB.curr && DB.curr[level]) || null; }
 async function ensureCurr(level){
+  await loadContent(level);
   if(levelUnits(level)) return true;
   if(DEMO || DB.apiKey === 'demo'){ DB.curr[level] = CURR_BUILTIN[level < 5 ? 5 : 9]; return true; }
   const txt = await callClaude({model:REPORT_MODEL, max_tokens:6000, messages:[{role:'user', content:
 `Design an English speaking curriculum for 51Talk-style one-to-one online classes for Saudi children.
-Level ${level} (CEFR ${LEVEL_CEFR[level]}). Make it age-appropriate and NOT too childish for this level; focus on conversation and sentence building, not word lists.
+Level ${level} of 20 (CEFR ${LEVEL_CEFR[level]}). Make it age-appropriate and NOT too childish for this level; focus on conversation and sentence building, not word lists.
 Return ONLY JSON: an array of 4 units. Each unit: {"t":"English unit title","ar":"Arabic unit title","e":"one emoji","lessons":[6 lessons, each an array of 3 strings: ["lesson title","conversation goal / scenario","target sentence patterns with ..."]]}`}]});
   const a = txt.indexOf('['), b = txt.lastIndexOf(']'); const units = JSON.parse(txt.slice(a, b+1));
   if(!Array.isArray(units) || !units.length) throw new Error('bad curriculum');
@@ -638,7 +651,7 @@ function kidStats(k){
   const l = ledger(k), p = DB.progress[k];
   const extras = l.rows.filter(r => r.st === 'att' && r.extra).length;
   return {lessons:l.attended, best:l.best, early:p.early, extras, quizzes:p.quizzes.length, perfect:p.quizzes.filter(q => q.score === q.total && q.total > 0).length,
-    books:DB.books[k].filter(b => b.read).length, units:DB.certs.filter(c => c.kid === k).length, levelUps:p.levelUps, xp:p.xp};
+    books:DB.books[k].filter(b => b.read).length + Object.keys(DB.progress[k].pre||{}).length, units:DB.certs.filter(c => c.kid === k).length, levelUps:p.levelUps, xp:p.xp};
 }
 function earnedBadges(k){ const s = kidStats(k); return BADGES.filter(b => b[4](s)).map(b => b[0]); }
 function checkNewBadges(k){
@@ -671,8 +684,8 @@ function renderFirstRun(){
     if(!cfg || !cfg.kids || !cfg.parent){ $('#fe').textContent = 'الرمز ناقص.'; return; }
     DB = {v:3, parent:cfg.parent, kids:{}, apiKey:'', perLesson:cfg.perLesson || 10, balance:{}, profiles:{}, progress:{}, live:{}, attendance:[], reports:[], sched:{}, books:{}, curr:{}, certs:[]};
     for(const k of cfg.kids){ DB.kids[k.id] = k; DB.balance[k.id] = cfg.balance || 2000;
-      DB.sched[k.id] = {periods:[{from:cfg.start + 'T00:00', days:cfg.days || [0,2,4], time:(cfg.times||{})[k.id] || '17:00'}], cancel:[], extra:[]}; ensureKidShape(k.id); }
-    save();
+      DB.sched[k.id] = {periods:[{from:cfg.start + 'T00:00', days:cfg.days || [0,2,4], time:(cfg.times||{})[k.id] || '17:00'}], cancel:[], extra:[]}; }
+    normalize(); save();
     try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){}
     setWho('parent'); go('parent');
   });
@@ -707,6 +720,7 @@ function renderProfile(k, first){
     <h2 style="text-align:center">${first ? `أهلاً ${esc(DB.kids[k].ar)}! جهّز ملفك` : 'تعديل ملفي'}</h2>
     <div style="display:grid;justify-items:center;gap:8px"><div id="pv">${tmp ? `<img class="avatar lg" src="${esc(tmp)}" alt="">` : `<div class="avatar lg">${esc(DB.kids[k].ar.slice(0,1))}</div>`}</div>
       <label class="btn sm" for="ph">اختر صورتك</label><input id="ph" type="file" accept="image/*" hidden></div>
+    <div class="field"><label for="tc">معلمك</label><select class="input" id="tc">${Object.entries(TEACHERS).map(([id,t]) => `<option value="${id}" ${(((DB.profiles[k]||{}).teacher) || (DB.kids[k].boy?'adam':'noor')) === id ? 'selected' : ''}>${t.ar} (${t.name})</option>`).join('')}</select></div>
     <div class="field"><label for="nk">اسمك المستعار</label><input class="input" id="nk" maxlength="20" value="${esc((DB.profiles[k]||{}).nick||'')}" placeholder="مثلاً: Captain ${esc(DB.kids[k].en)}"></div>
     <div class="err" id="pe"></div>
     <button class="btn primary big" type="submit">حفظ</button>
@@ -722,12 +736,13 @@ function renderProfile(k, first){
     img.src = url;
   });
   if(!first) $('#cn').onclick = () => go(k);
-  $('#pf').addEventListener('submit', e => { e.preventDefault(); const n = $('#nk').value.trim(); if(n.length < 2){ $('#pe').textContent = 'اكتب اسماً مستعاراً من حرفين على الأقل.'; return; } DB.profiles[k] = {nick:n, avatar:tmp}; save(); go(k); });
+  $('#pf').addEventListener('submit', e => { e.preventDefault(); const n = $('#nk').value.trim(); if(n.length < 2){ $('#pe').textContent = 'اكتب اسماً مستعاراً من حرفين على الأقل.'; return; } DB.profiles[k] = {nick:n, avatar:tmp, teacher:$('#tc').value}; save(); go(k); });
 }
 
 /* =============== KID SHELL + TABS =============== */
-const TABS = [['home','الرئيسية','🏠'],['plan','جدولي','📅'],['library','المكتبة','📚'],['wins','إنجازاتي','🏆']];
+const TABS = [['home','الرئيسية','🏠'],['plan','جدولي','📅'],['library','المكتبة','📚'],['wins','إنجازاتي','🏆'],['shop','المتجر','🎁']];
 function renderKid(k){
+  if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
   const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(nick(k))}</div><div class="small muted"><span class="en">Level ${kid.level}</span> · ${rk.r[3]} ${rk.r[2]} · <span class="num">${xp}</span> نقطة</div></div>
@@ -736,8 +751,8 @@ function renderKid(k){
     <div id="tabBody"></div></div>`;
   $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
   document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { TAB = b.dataset.tab; renderKid(k); });
-  ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins})[TAB](k);
-  checkNewBadges(k);
+  ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins, shop:tabShop})[TAB](k);
+  checkNewBadges(k); maybeCelebrate(k);
 }
 
 /* ----- home tab ----- */
@@ -756,6 +771,7 @@ function tabHome(k){
   const pos = DB.progress[k].pos;
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div>${btn}</div></section>
+    <div class="g2e">${dailyCard(k)}${reviewCard(k) || practiceCard(k)}</div>${reviewCard(k) && practiceCard(k) ? practiceCard(k) : ''}
     ${units ? `<section class="card"><h2>رحلتك في المستوى ${DB.kids[k].level}</h2><div class="path">${units.map((u,ui) => { const start = units.slice(0,ui).reduce((a,x) => a+x.lessons.length, 0); const done = Math.max(0, Math.min(u.lessons.length, pos % plan.total - start));
       return `<div class="unit ${done===u.lessons.length?'done':''} ${ui===plan.ui?'cur':''}"><div class="ue">${u.e}</div><div style="min-width:0"><div class="en" style="font-weight:800;direction:ltr;text-align:right">${esc(u.t)}</div><div class="small muted">${esc(u.ar||'')}</div><div class="ldots">${u.lessons.map((l,li) => `<i class="${li<done?'on':''} ${ui===plan.ui&&li===plan.li?'cur':''}" title="${esc(l[0])}"></i>`).join('')}</div></div></div>`; }).join('')}</div></section>` : ''}
     <div class="g2">
@@ -775,6 +791,9 @@ function tabHome(k){
       </section>
     </div></div>`;
   const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false);
+  const dg = $('#dailyGo'); if(dg) dg.onclick = () => { if(!DB.apiKey && !DEMO){ alertBox('التحدي يحتاج مفتاح التشغيل. اطلب من ولي الأمر إضافته.'); return; } unlockAudio(); startDaily(k); };
+  const rg = $('#revGo'); if(rg) rg.onclick = () => { unlockAudio(); startReview(k); };
+  const pg2 = $('#prGo'); if(pg2) pg2.onclick = () => startPractice(k);
   homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov')) renderKid(k); }, 30000);
 }
 async function enterLesson(k, trial){
@@ -796,7 +815,7 @@ function tabPlan(k){
   const monthCard = (key, c) => { const ex = monthExempt(k, key); const d = new Date(Number(key.slice(0,4)), Number(key.slice(5))-1, 1);
     return `<div class="mcount ${!ex && c < MIN_MONTH ? 'low' : ''}"><div class="small muted">${fmtMonth(d)}</div><b class="num">${c}</b><div class="small">${ex ? 'شهر البداية' : `الحد الأدنى ${MIN_MONTH}`}</div></div>`; };
   $('#tabBody').innerHTML = `<div class="grid">
-    <section class="card"><div class="chips" style="justify-content:space-between"><h2>حصصي القادمة</h2><button class="btn primary" id="book">➕ احجز حصة إضافية</button></div>
+    <section class="card"><div class="chips" style="justify-content:space-between"><h2>حصصي القادمة</h2><div class="chips"><button class="btn" id="ics">📲 أضف للتقويم مع تنبيهات</button><button class="btn primary" id="book">➕ احجز حصة إضافية</button></div></div>
       <div class="mcounts">${monthCard(mk,c1)}${monthCard(nmk,c2)}</div>
       <p class="small muted" style="margin:6px 0 0">تقدر تلغي حصة أو تغيّر موعدها قبل بدايتها بساعتين على الأقل، بشرط ألا تقل حصصك عن ${MIN_MONTH} في الشهر. الحصة الإضافية تُخصم من رصيدك مثل أي حصة.</p>
       <ul class="ledger">${up.length ? up.map(s => { const lock = s.t - now < 2*3600e3;
@@ -804,6 +823,7 @@ function tabPlan(k){
           <div class="chips">${lock ? '<span class="small muted">لا يمكن التعديل الآن</span>' : `<button class="btn sm" data-move="${s.key}">تغيير الموعد</button><button class="btn sm danger" data-cancel="${s.key}">إلغاء</button>`}</div></li>`; }).join('') : '<li><div class="muted">لا توجد حصص قادمة.</div><div></div></li>'}</ul>
     </section></div>`;
   $('#book').onclick = () => slotPicker(k, null);
+  $('#ics').onclick = () => downloadICS(k);
   document.querySelectorAll('[data-move]').forEach(b => b.onclick = () => slotPicker(k, b.dataset.move));
   document.querySelectorAll('[data-cancel]').forEach(b => b.onclick = () => {
     const key = b.dataset.cancel, t = fromKey(key);
@@ -916,18 +936,20 @@ function runQuiz(k, quiz, title, onDone){
 /* =============== LIBRARY =============== */
 const TOPICS = [['adventure','مغامرة','🗺️'],['animals','حيوانات','🐾'],['space','فضاء','🚀'],['football','كرة قدم','⚽'],['mystery','لغز','🔍'],['friendship','صداقة','🤝'],['science','علوم','🔬'],['desert','الصحراء','🐪'],['funny','مضحكة','😂']];
 function tabLibrary(k){
-  const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)];
+  const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)], pre = ((CONTENT[DB.kids[k].level]||{}).stories||[]).filter(Boolean), done = DB.progress[k].pre;
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card"><h2>قصص تفاعلية لمستواك <span class="en muted small">Level ${DB.kids[k].level} · ${LEVEL_CEFR[DB.kids[k].level]}</span></h2>
       <p class="small muted" style="margin:4px 0 10px">اختر موضوعاً وتكتب لك المعلمة قصة جديدة على مستواك. تقرأ لك بصوت، وتضغط على أي كلمة لتعرف معناها، وفي آخرها أسئلة.</p>
       <div class="topics">${TOPICS.map(t => `<button class="topic" data-topic="${t[0]}"><span>${t[2]}</span>${t[1]}</button>`).join('')}</div>
       <div class="shelf2">${books.length ? books.slice().reverse().map(b => `<button class="sbook" data-book="${b.id}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small ${b.read?'ok':'muted'}">${b.read ? `✓ قرأتها · ${b.score||0}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('') : '<p class="muted" style="margin:0">مكتبتك فارغة. اختر موضوعاً من الأعلى لتبدأ أول قصة.</p>'}</div>
     </section>
+    ${pre.length ? `<section class="card"><h2>مكتبة المستوى ${DB.kids[k].level} <span class="muted small">${pre.length} قصة جاهزة</span></h2><div class="shelf2">${pre.map(b => `<button class="sbook" data-pre="${esc(b.id)}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small">${done[b.id] != null ? `✓ قرأتها · ${done[b.id]}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('')}</div></section>` : ''}
     <section class="card"><h2>الكتب الكلاسيكية (هدايا الحضور)</h2><p class="small muted" style="margin:4px 0 0">كل 5 حصص متتالية تفتح كتاباً جديداً.</p>
       <div class="shelf">${classics.map((b,i) => i < gifts ? `<a class="book" href="https://www.gutenberg.org/ebooks/${b[2]}" target="_blank" rel="noopener" style="background:${b[3]}"><span class="bt">${esc(b[0])}</span><span class="ba">${esc(b[1])} · اقرأ الآن</span></a>` : `<div class="book locked"><span class="bt">${esc(b[0])}</span><span class="small" style="font-weight:700">مقفل · ${(i+1)*5} حصص متتالية</span></div>`).join('')}</div>
     </section></div>`;
   document.querySelectorAll('[data-topic]').forEach(b => b.onclick = () => newBook(k, b.dataset.topic));
   document.querySelectorAll('[data-book]').forEach(b => b.onclick = () => openBook(k, DB.books[k].find(x => x.id === b.dataset.book)));
+  document.querySelectorAll('[data-pre]').forEach(b => b.onclick = () => openBook(k, pre.find(x => x.id === b.dataset.pre)));
 }
 async function newBook(k, topic){
   if(!DB.apiKey && !DEMO){ alertBox('المكتبة تحتاج مفتاح التشغيل. اطلب من ولي الأمر إضافته.'); return; }
@@ -988,7 +1010,9 @@ function openBook(k, book){
 function finishBook(k, book){
   const qs = (book.questions||[]).map(q => ({type:'mc', q:q.q, options:q.options, answer:q.answer}));
   runQuiz(k, qs, book.title, res => {
-    const first = !book.read; book.read = true; book.score = res ? res.score : 0; if(first) addXP(k, 30); save();
+    const isPre = /^L\d+s/.test(book.id||''); const first = isPre ? DB.progress[k].pre[book.id] == null : !book.read;
+    if(isPre) DB.progress[k].pre[book.id] = res ? res.score : 0; else { book.read = true; book.score = res ? res.score : 0; }
+    if(first) addXP(k, 30); save();
     toast(first ? '📚 أنهيت القصة! +30 نقطة' : 'أحسنت!'); renderKid(k);
   });
 }
@@ -1001,6 +1025,187 @@ const DEMO_BOOK = {title:'The Lost Falcon', emoji:'🦅', pages:[
   questions:[{q:'Who did Sami live with?', options:['His grandfather','His teacher','His sister'], answer:0},
     {q:'Why didn\'t the falcon come back?', options:['It was hungry','A strong wind came','It was sleeping at home'], answer:1},
     {q:'What did Sami find near the rock?', options:['A camel','A feather','A map'], answer:1}]};
+
+/* =============== GENERATED CONTENT (content/L{n}.json) =============== */
+const CONTENT = {};
+async function loadContent(level){
+  if(CONTENT[level] !== undefined) return CONTENT[level];
+  try{ const r = await fetch(`content/L${level}.json`, {cache:'no-cache'}); CONTENT[level] = r.ok ? await r.json() : null; }catch(e){ CONTENT[level] = null; }
+  return CONTENT[level];
+}
+function lessonQuizFromBank(level, ui, li){ const c = CONTENT[level]; return c && c.quizzes ? c.quizzes[`${ui}-${li}`] || null : null; }
+
+/* =============== TEACHERS =============== */
+const TEACHERS = {noor:{name:'Teacher Noor', ar:'المعلمة نور', female:true}, adam:{name:'Teacher Adam', ar:'المعلم آدم', female:false}};
+const teacherOf = k => TEACHERS[(DB.profiles[k] && DB.profiles[k].teacher) || (DB.kids[k].boy ? 'adam' : 'noor')] || TEACHERS.noor;
+
+/* =============== CALENDAR (.ics) =============== */
+function downloadICS(k){
+  const now = new Date(), slots = slotsFor(k, new Date(now.getTime()+90*864e5)).filter(s => s.t > now);
+  const z = t => `${t.getFullYear()}${pad(t.getMonth()+1)}${pad(t.getDate())}T${pad(t.getHours())}${pad(t.getMinutes())}00`;
+  const url = location.href.split('#')[0];
+  const ev = slots.map(s => ['BEGIN:VEVENT', `UID:51telk-${k}-${s.key}@51telk`, `DTSTAMP:${z(now)}`, `DTSTART;TZID=Asia/Riyadh:${z(s.t)}`, 'DURATION:PT25M',
+    `SUMMARY:حصة 51telk - ${DB.kids[k].ar}${s.extra ? ' (إضافية)' : ''}`, `DESCRIPTION:ادخل الحصة من التطبيق: ${url}`, `URL:${url}`,
+    'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:حصة الإنجليزي بعد ساعة','TRIGGER:-PT60M','END:VALARM',
+    'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:حصة الإنجليزي بعد 10 دقائق! جهّز نفسك','TRIGGER:-PT10M','END:VALARM','END:VEVENT'].join('\r\n'));
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//51telk//AR','CALSCALE:GREGORIAN','X-WR-CALNAME:51telk ' + DB.kids[k].en,
+    'BEGIN:VTIMEZONE','TZID:Asia/Riyadh','BEGIN:STANDARD','DTSTART:19700101T000000','TZOFFSETFROM:+0300','TZOFFSETTO:+0300','TZNAME:AST','END:STANDARD','END:VTIMEZONE', ...ev, 'END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'})); a.download = `51telk-${DB.kids[k].en}.ics`;
+  document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+  alertBox('على الآيباد اضغط «إضافة الكل» عندما يفتح التقويم. إذا غيّرت الجدول لاحقاً، اضغط الزر مرة ثانية لتحديث التذكيرات.');
+}
+
+/* =============== REWARDS SHOP =============== */
+const coinsOf = k => (DB.progress[k].xp||0) - DB.redeems.filter(r => r.kid === k).reduce((a,r) => a + r.cost, 0);
+function tabShop(k){
+  const c = coinsOf(k), mine = DB.redeems.filter(r => r.kid === k).slice().reverse().slice(0,10);
+  $('#tabBody').innerHTML = `<div class="grid">
+    <section class="card rank"><div class="rk-e">🪙</div><div style="flex:1"><div class="small muted">نقاطك المتاحة للمكافآت</div><h2 class="num">${c}</h2><div class="small muted">تجمع النقاط من الحصص والاختبارات والقصص وتحدي اليوم.</div></div></section>
+    <section class="card"><h2>المكافآت</h2>
+      <div class="rewards">${DB.rewards.length ? DB.rewards.map(r => `<div class="reward"><div class="re">${esc(r.emoji||'🎁')}</div><b>${esc(r.name)}</b><div class="chip brand num">${r.cost} نقطة</div>
+        <button class="btn sm ${c >= r.cost ? 'primary' : ''}" data-redeem="${r.id}" ${c < r.cost ? 'disabled' : ''}>${c >= r.cost ? 'اطلبها' : `باقي ${r.cost - c}`}</button></div>`).join('') : '<p class="muted" style="margin:0">لا توجد مكافآت بعد. اطلب من ولي أمرك إضافتها.</p>'}</div></section>
+    <section class="card"><h2>طلباتي</h2>${mine.length ? `<ul class="ledger">${mine.map(r => `<li><div><b>${esc(r.emoji||'🎁')} ${esc(r.name)}</b><div class="small muted">${new Date(r.at).toLocaleDateString(LOC)}</div></div><span class="chip ${r.status==='done'?'good':'brand'}">${r.status==='done'?'تم التسليم ✓':'بانتظار ولي الأمر'}</span></li>`).join('')}</ul>` : '<p class="muted" style="margin:0">لم تطلب أي مكافأة بعد.</p>'}</section></div>`;
+  document.querySelectorAll('[data-redeem]').forEach(b => b.onclick = () => { const r = DB.rewards.find(x => x.id === b.dataset.redeem); if(!r || coinsOf(k) < r.cost) return;
+    const ov = overlay(`<h2>تطلب ${esc(r.emoji)} ${esc(r.name)}؟</h2><p style="margin:0">تُخصم ${r.cost} نقطة، ويصل الطلب لولي أمرك.</p><div class="chips"><button class="btn primary" id="yes">نعم</button><button class="btn" id="no">رجوع</button></div>`);
+    ov.querySelector('#no').onclick = () => ov.remove();
+    ov.querySelector('#yes').onclick = () => { DB.redeems.push({id:'r'+Date.now(), kid:k, rewardId:r.id, name:r.name, emoji:r.emoji, cost:r.cost, at:new Date().toISOString(), status:'pending'}); save(); ov.remove(); toast('🎉 وصل طلبك لولي الأمر'); renderKid(k); }; });
+}
+
+/* =============== DAILY CHALLENGE =============== */
+const dayKey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+function dailyStreak(k){ const done = DB.progress[k].daily || {}; let n = 0; const d = new Date(); if(!done[dayKey(d)]) d.setDate(d.getDate()-1); while(done[dayKey(d)]){ n++; d.setDate(d.getDate()-1); } return n; }
+function dailyPrompt(k){
+  const plan = lessonPlan(k), units = levelUnits(DB.kids[k].level), pool = [];
+  if(units) units.forEach(u => u.lessons.forEach(l => pool.push(l)));
+  const seed = Number(dayKey().replace(/-/g,'')) + k.length; const l = pool.length ? pool[seed % pool.length] : [plan.t, plan.goal, plan.pattern];
+  return {title:l[0], goal:l[1], pattern:l[2]};
+}
+function dailyCard(k){
+  const done = (DB.progress[k].daily||{})[dayKey()], st = dailyStreak(k), p = dailyPrompt(k);
+  return `<section class="card daily"><div class="chips" style="justify-content:space-between"><h2>⚡ تحدي اليوم</h2><span class="chip brand">🔥 ${st} ${st === 1 ? 'يوم' : 'أيام'} متتالية</span></div>
+    ${done ? `<p style="margin:6px 0 0">✓ أنجزت تحدي اليوم! رجع بكرة لتحدٍ جديد.</p><p class="small en muted" style="margin:4px 0 0;direction:ltr;text-align:left">${esc(done.sentence||'')}</p>`
+      : `<p class="small muted" style="margin:6px 0">قل جملة واحدة كاملة بالإنجليزي باستخدام هذا النمط، وتأخذ 20 نقطة:</p><div class="pattern en">${esc(p.pattern)}</div><button class="btn primary" id="dailyGo">🎤 ابدأ التحدي</button>`}</section>`;
+}
+function startDaily(k){
+  const p = dailyPrompt(k);
+  const ov = overlay(`<h2>⚡ تحدي اليوم</h2><p class="small muted" style="margin:0">اضغط الميكروفون وقل جملتك، أو اكتبها:</p><div class="pattern en">${esc(p.pattern)}</div>
+    <div class="chips"><button class="micbig" id="dm" aria-label="تكلم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      <input class="input en" id="dt" placeholder="Your sentence…" style="flex:1;min-width:0;direction:ltr"></div>
+    <div id="dfb"></div><div class="chips"><button class="btn primary" id="dsend">تحقق</button><button class="btn" id="dno">إغلاق</button></div>`);
+  ov.querySelector('#dno').onclick = () => { try{ rec2 && rec2.abort(); }catch(e){} ov.remove(); };
+  let rec2 = null;
+  ov.querySelector('#dm').onclick = () => { if(!SR){ ov.querySelector('#dt').focus(); return; } if(rec2){ try{ rec2.stop(); }catch(e){} return; }
+    rec2 = new SR(); rec2.lang = 'en-US'; rec2.interimResults = true; const b = ov.querySelector('#dm'); b.classList.add('on');
+    rec2.onresult = e => { let t = ''; for(const r of e.results) t += r[0].transcript; ov.querySelector('#dt').value = t; };
+    rec2.onend = () => { b.classList.remove('on'); rec2 = null; };
+    rec2.onerror = () => { b.classList.remove('on'); rec2 = null; };
+    try{ rec2.start(); }catch(e){ b.classList.remove('on'); rec2 = null; } };
+  ov.querySelector('#dsend').onclick = async () => {
+    const sentence = ov.querySelector('#dt').value.trim(), fb = ov.querySelector('#dfb'); if(sentence.split(/\s+/).length < 3){ fb.innerHTML = '<div class="qfb bad">قل جملة كاملة من 3 كلمات على الأقل.</div>'; return; }
+    fb.innerHTML = '<p class="muted" style="margin:0">المعلمة تراجع جملتك…</p>';
+    let r = null;
+    try{
+      if(DEMO || DB.apiKey === 'demo') r = {ok:true, corrected:sentence, feedback:'جملة ممتازة! استخدمت النمط بشكل صحيح.', praise:'Great sentence!'};
+      else { const t = await callClaude({model:LIVE_MODEL, max_tokens:300, messages:[{role:'user', content:
+`A ${ageOf(DB.kids[k].birth)}-year-old Arabic-speaking learner (CEFR ${LEVEL_CEFR[DB.kids[k].level]}) was asked to say one full English sentence using this pattern: "${p.pattern}". They said (speech-to-text, ignore punctuation/capitals): "${sentence}".
+Reply ONLY JSON: {"ok":true if it is a meaningful sentence that uses the pattern with no serious grammar mistake,"corrected":"the best corrected version of their sentence","feedback":"one short encouraging sentence in Arabic explaining any correction","praise":"2-4 cheerful English words"}`}]});
+        r = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); }
+    }catch(e){ fb.innerHTML = '<div class="qfb bad">ما قدرنا نتحقق الآن. حاول مرة ثانية.</div>'; return; }
+    DB.progress[k].daily = DB.progress[k].daily || {}; const first = !DB.progress[k].daily[dayKey()];
+    DB.progress[k].daily[dayKey()] = {sentence: r.corrected || sentence}; if(first) addXP(k, 20); save();
+    fb.innerHTML = `<div class="qfb ${r.ok?'good':'bad'}">${r.ok ? '✓ ' + esc(r.praise||'Great!') : 'قريب جداً!'} ${first ? '· +20 نقطة' : ''}</div>
+      ${r.corrected && r.corrected.toLowerCase().trim() !== sentence.toLowerCase().trim() ? `<div class="small">الأصح: <b class="en">${esc(r.corrected)}</b></div>` : ''}<div class="small muted">${esc(r.feedback||'')}</div>`;
+    try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(r.corrected || sentence); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .88; speechSynthesis.speak(u); }catch(e){}
+    ov.querySelector('#dsend').textContent = 'تم'; ov.querySelector('#dsend').onclick = () => { ov.remove(); renderKid(k); };
+  };
+}
+
+/* =============== QUICK REVIEW + RECORD & COMPARE =============== */
+function reviewCards(k){
+  const p = DB.progress[k], cards = [];
+  (p.mistakes||[]).slice(0,6).forEach(m => m.right && cards.push({front:m.right, back:'كنت تقول: ' + m.wrong}));
+  (p.words||[]).slice(0,8).forEach(w => cards.push({front:w, back:''}));
+  return cards;
+}
+function reviewCard(k){ const n = reviewCards(k).length; if(!n) return '';
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🃏 مراجعة سريعة</h2><button class="btn sm primary" id="revGo">ابدأ (${n} بطاقة)</button></div>
+    <p class="small muted" style="margin:6px 0 0">جمل وكلمات من حصصك السابقة. اسمعها، وسجّل صوتك، وقارن نطقك بنطق المعلمة.</p></section>`; }
+function startReview(k){
+  const cards = reviewCards(k); let i = 0, rec = null, chunks = [], myUrl = null, stream = null;
+  const canRec = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
+  const say = (t, slow) => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = slow ? .65 : .88; speechSynthesis.speak(u); }catch(e){} };
+  const stopStream = () => { if(stream){ stream.getTracks().forEach(t => t.stop()); stream = null; } };
+  const draw = () => {
+    const c = cards[i]; myUrl = null;
+    ov.innerHTML = `<div class="card quiz"><div class="qhead"><span class="small muted">بطاقة ${i+1} من ${cards.length}</span><div class="qbar"><i style="width:${(i+1)/cards.length*100}%"></i></div></div>
+      <button class="flash en" id="fl"><span>${esc(c.front)}</span>${c.back ? `<small id="bk" hidden>${esc(c.back)}</small>` : ''}</button>
+      <div class="chips" style="justify-content:center"><button class="btn" id="ls">🔊 استمع</button><button class="btn" id="lss">🐢 ببطء</button>
+        ${canRec ? '<button class="btn" id="rc">🎙️ سجّل صوتي</button><button class="btn" id="pl" disabled>▶️ صوتي</button>' : ''}</div>
+      <div class="small muted" id="rs" style="text-align:center"></div>
+      <div class="chips"><button class="btn primary" id="nx">${i+1 < cards.length ? 'التالية' : 'إنهاء (+15 نقطة)'}</button><button class="btn" id="cl">إغلاق</button></div></div>`;
+    ov.querySelector('#fl').onclick = () => { const b = ov.querySelector('#bk'); if(b) b.hidden = !b.hidden; say(c.front); };
+    ov.querySelector('#ls').onclick = () => say(c.front); ov.querySelector('#lss').onclick = () => say(c.front, true);
+    if(canRec){
+      ov.querySelector('#rc').onclick = async () => {
+        const btn = ov.querySelector('#rc'), rs = ov.querySelector('#rs');
+        if(rec && rec.state === 'recording'){ rec.stop(); return; }
+        try{ stream = stream || await navigator.mediaDevices.getUserMedia({audio:true}); }catch(e){ rs.textContent = 'اسمح للميكروفون من الإعدادات لتسجيل صوتك.'; return; }
+        chunks = []; rec = new MediaRecorder(stream); rec.ondataavailable = e => chunks.push(e.data);
+        rec.onstop = () => { myUrl = URL.createObjectURL(new Blob(chunks, {type:rec.mimeType || 'audio/mp4'})); btn.textContent = '🎙️ سجّل مرة ثانية'; ov.querySelector('#pl').disabled = false; rs.textContent = 'اضغط «صوتي» ثم «استمع» وقارن.'; };
+        rec.start(); btn.textContent = '⏹️ إيقاف'; rs.textContent = 'تكلم الآن…'; setTimeout(() => { if(rec && rec.state === 'recording') rec.stop(); }, 7000);
+      };
+      ov.querySelector('#pl').onclick = () => { if(myUrl) new Audio(myUrl).play(); };
+    }
+    ov.querySelector('#nx').onclick = () => { if(i+1 < cards.length){ i++; draw(); } else { stopStream(); addXP(k, 15); ov.remove(); toast('🃏 أنهيت المراجعة · +15 نقطة'); renderKid(k); } };
+    ov.querySelector('#cl').onclick = () => { stopStream(); ov.remove(); };
+    say(c.front);
+  };
+  draw();
+}
+
+/* =============== PRACTICE (bank quiz for the last lesson) =============== */
+function practiceCard(k){
+  const pos = DB.progress[k].pos; if(!pos) return '';
+  const prev = (() => { const save = DB.progress[k].pos; DB.progress[k].pos = save - 1; const p = lessonPlan(k); DB.progress[k].pos = save; return p; })();
+  const bank = lessonQuizFromBank(DB.kids[k].level, prev.ui, prev.li); if(!bank) return '';
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>✍️ تمارين درسك السابق</h2><button class="btn sm primary" id="prGo">تمرّن</button></div>
+    <p class="small muted" style="margin:6px 0 0"><span class="en">${esc(prev.t)}</span> · 5 أسئلة لبناء الجمل</p></section>`; }
+function startPractice(k){ const save = DB.progress[k].pos; DB.progress[k].pos = save - 1; const prev = lessonPlan(k); DB.progress[k].pos = save;
+  runQuiz(k, lessonQuizFromBank(DB.kids[k].level, prev.ui, prev.li), prev.t, () => renderKid(k)); }
+
+/* =============== LEVEL-UP CELEBRATION =============== */
+function maybeCelebrate(k){
+  const p = DB.progress[k]; if(!p.levelUpPending) return;
+  const {from, to} = p.levelUpPending; p.levelUpPending = null;
+  const cert = {kid:k, unit:`Level ${from} Complete`, level:from, date:new Date().toISOString()}; DB.certs.push(cert); save();
+  const ov = overlay(`<div style="text-align:center"><div class="burst-big">🚀🎉⭐</div><h2>مبروك! انتقلت للمستوى ${to}</h2>
+    <p style="margin:6px 0">أنهيت المستوى ${from} بنجاح، والآن تبدأ دروساً أقوى في <span class="en">Level ${to} · ${LEVEL_CEFR[to]}</span>.</p></div>
+    <div class="chips" style="justify-content:center"><button class="btn primary" id="cv">🎓 شهادتي</button><button class="btn" id="cx">يلا نبدأ!</button></div>`);
+  try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(`Congratulations! Welcome to level ${to}!`); if(voice) u.voice = voice; u.lang = 'en-US'; speechSynthesis.speak(u); }catch(e){}
+  ov.querySelector('#cv').onclick = () => { ov.remove(); showCert(cert); };
+  ov.querySelector('#cx').onclick = () => ov.remove();
+}
+
+/* =============== WEEKLY REPORT (parent) =============== */
+function weeklyReport(k){
+  const now = new Date(), from = new Date(now.getTime() - 7*864e5), l = ledger(k);
+  const rows = l.rows.filter(r => r.t >= from), att = rows.filter(r => r.st === 'att').length, miss = rows.length - att;
+  const reps = DB.reports.filter(r => r.kid === k && new Date(r.at) >= from), mins = reps.reduce((a,r) => a + (r.minutes||0), 0);
+  const avg = reps.length ? Math.round(reps.reduce((a,r) => a + r.score, 0)/reps.length) : null;
+  const qz = DB.progress[k].quizzes.filter(q => q.at && new Date(q.at) >= from), qavg = qz.length ? Math.round(qz.reduce((a,q) => a + q.score/q.total, 0)/qz.length*100) : null;
+  const words = [...new Set(reps.flatMap(r => r.newWords||[]))], mist = reps.flatMap(r => r.mistakes||[]).slice(0,4);
+  const daily = Object.keys(DB.progress[k].daily||{}).filter(d => new Date(d) >= from).length;
+  const books = DB.books[k].filter(b => b.read).length;
+  const text = `📊 تقرير 51telk الأسبوعي: ${DB.kids[k].ar}
+✅ حضر ${att} حصص${miss ? ` · ❌ غاب ${miss}` : ''} · ⏱️ ${mins} دقيقة محادثة
+⭐ متوسط الحصص: ${avg == null ? '—' : avg + '%'} · 📝 متوسط الاختبارات: ${qavg == null ? '—' : qavg + '%'}
+⚡ تحدي اليوم: ${daily} من 7 · 📚 قصص مقروءة: ${books}
+🆕 كلمات: ${words.slice(0,10).join(', ') || '—'}
+${mist.length ? '🔧 يحتاج تدريب: ' + mist.map(m => m.right).join(' | ') : ''}
+🏆 النقاط: ${DB.progress[k].xp} · المستوى ${DB.kids[k].level}`;
+  return {att, miss, mins, avg, qavg, daily, books, words, mist, text};
+}
 
 /* =============== TEACHER SVG =============== */
 const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor">
@@ -1037,16 +1242,17 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <path d="M66 440 C70 352 124 310 200 310 C276 310 330 352 334 440 Z" fill="url(#g-top)"/>
     <path d="M166 312 L186 340 L200 322 L214 340 L234 312 Z" fill="#FFFFFF"/>
     <rect x="216" y="352" width="50" height="22" rx="5" fill="#FFFFFF"/>
-    <text x="241" y="368" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#E85A00">Noor</text>
+    <text x="241" y="368" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#E85A00" id="tbadge">Noor</text>
    </g>
   <g class="t-tilt"><g class="t-head">
-   <path d="M120 196 C110 108 152 72 200 72 C248 72 290 108 280 196 C284 236 288 262 296 282 C266 296 240 290 230 270 L170 270 C160 290 134 296 104 282 C112 262 116 236 120 196Z" fill="#4A2A18"/>
-   <circle cx="200" cy="70" r="27" fill="#4A2A18"/><path d="M178 86 Q200 96 222 86" stroke="#FF6A00" stroke-width="7" fill="none" stroke-linecap="round"/>
+   <path class="hair-f" d="M120 196 C110 108 152 72 200 72 C248 72 290 108 280 196 C284 236 288 262 296 282 C266 296 240 290 230 270 L170 270 C160 290 134 296 104 282 C112 262 116 236 120 196Z" fill="#4A2A18"/>
+   <g class="hair-f"><circle cx="200" cy="70" r="27" fill="#4A2A18"/><path d="M178 86 Q200 96 222 86" stroke="#FF6A00" stroke-width="7" fill="none" stroke-linecap="round"/></g>
    <ellipse cx="143" cy="190" rx="10" ry="14" fill="#EDB48A"/><ellipse cx="257" cy="190" rx="10" ry="14" fill="#EDB48A"/>
    <ellipse cx="200" cy="182" rx="58" ry="66" fill="url(#g-skin)"/>
-   <path d="M141 176 C136 112 182 96 214 103 C248 110 266 138 260 178 C250 146 230 132 206 134 C190 154 166 166 141 176Z" fill="#5A3420"/>
-   <path d="M168 120 C186 108 220 108 238 122" stroke="#7A4A2C" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
-   <circle cx="141" cy="210" r="5" fill="#FFD25E"/><circle cx="259" cy="210" r="5" fill="#FFD25E"/>
+   <g class="hair-f"><path d="M141 176 C136 112 182 96 214 103 C248 110 266 138 260 178 C250 146 230 132 206 134 C190 154 166 166 141 176Z" fill="#5A3420"/>
+   <path d="M168 120 C186 108 220 108 238 122" stroke="#7A4A2C" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/></g>
+   <g class="hair-m"><path d="M138 178 C128 112 168 86 204 90 C246 94 272 124 262 178 C258 150 244 130 222 124 C198 130 170 130 152 142 C145 152 140 164 138 178Z" fill="#2E1D12"/><path d="M140 150 C137 170 139 188 146 200 L151 200 C147 182 147 166 151 150Z" fill="#2E1D12"/><path d="M260 150 C263 170 261 188 254 200 L249 200 C253 182 253 166 249 150Z" fill="#2E1D12"/></g>
+   <g class="hair-f"><circle cx="141" cy="210" r="5" fill="#FFD25E"/><circle cx="259" cy="210" r="5" fill="#FFD25E"/></g>
    <g class="brows">
     <path d="M160 156 Q174 147 188 154" stroke="#4A2A18" stroke-width="5" fill="none" stroke-linecap="round"/>
     <path d="M212 154 Q226 147 240 156" stroke="#4A2A18" stroke-width="5" fill="none" stroke-linecap="round"/>
@@ -1061,8 +1267,8 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     </g>
     <path d="M160 175 Q175 162 190 175" stroke="#1B120B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
     <path d="M210 175 Q225 162 240 175" stroke="#1B120B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M160 175 L154 170 M163 171 L159 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M240 175 L246 170 M237 171 L241 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="hair-f" d="M160 175 L154 170 M163 171 L159 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="hair-f" d="M240 175 L246 170 M237 171 L241 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
     <g class="lids"><ellipse cx="175" cy="182" rx="15" ry="17" fill="#F2C29C"/><ellipse cx="225" cy="182" rx="15" ry="17" fill="#F2C29C"/></g>
    </g>
    <g class="eyes-h">
@@ -1155,6 +1361,10 @@ function pickVoice(){ try{ const vs = speechSynthesis.getVoices().filter(v => /^
   const pref = [/Ava.*(Premium|Enhanced)/i,/Zoe.*(Premium|Enhanced)/i,/Samantha.*(Premium|Enhanced)/i,/(Premium|Enhanced)/i,/Ava/i,/Samantha/i,/Allison/i,/Aria|Jenny|Google US/i];
   for(const re of pref){ const v = vs.find(v => re.test(v.name) && /US/i.test(v.lang)) || vs.find(v => re.test(v.name)); if(v){ voice = v; return; } }
   voice = vs.find(v => /en[-_]US/i.test(v.lang)) || vs[0] || null; }catch(e){} }
+let voiceM = null;
+function pickVoiceM(){ try{ const vs = speechSynthesis.getVoices().filter(v => /^en[-_]/i.test(v.lang));
+  for(const re of [/(Evan|Nathan|Tom|Aaron|Alex).*(Premium|Enhanced)/i,/(Premium|Enhanced).*(Evan|Nathan|Tom|Aaron)/i,/Aaron|Evan|Nathan|Tom|Alex|Fred|Daniel|Arthur|Guy|Davis|Andrew|Brian|Male/i]){ const v = vs.find(v => re.test(v.name)); if(v){ voiceM = v; return; } } }catch(e){} }
+if('speechSynthesis' in window){ pickVoiceM(); try{ speechSynthesis.addEventListener('voiceschanged', pickVoiceM); }catch(e){} }
 if('speechSynthesis' in window){ pickVoice(); try{ speechSynthesis.onvoiceschanged = pickVoice; }catch(e){} }
 function unlockAudio(){ try{ const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); }catch(e){} }
 
@@ -1218,7 +1428,7 @@ function buildRules(k, plan){
     : kid.level <= 6
     ? 'Use clear CEFR ' + cefr + ' English. Treat the child as a smart ' + age + '-year-old, not a baby. Push for full sentences with "because", "and", "but", "so".'
     : 'Use natural CEFR ' + cefr + ' English like a real conversation partner for a teenager. Push for longer answers with reasons, examples and opinions; ask challenging follow-up questions.';
-  return `You are Teacher Noor, a real-feeling, warm, funny and energetic English teacher giving a LIVE one-to-one VOICE class (like 51Talk) to a Saudi child on an iPad. Everything you write in the spoken part is read aloud by a text-to-speech voice, and the child answers by speaking (speech-to-text).
+  return `You are ${teacherOf(k).name} (a ${teacherOf(k).female ? 'woman' : 'man'}), a real-feeling, warm, funny and energetic English teacher giving a LIVE one-to-one VOICE class (like 51Talk) to a Saudi child on an iPad. Everything you write in the spoken part is read aloud by a text-to-speech voice, and the child answers by speaking (speech-to-text).
 
 STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'girl'}, 51Talk level ${kid.level} (CEFR ${cefr}). First language Arabic.
 TODAY: Unit "${plan.unit}", lesson ${plan.li+1} of ${plan.perUnit||6}: "${plan.t}".
@@ -1245,7 +1455,7 @@ HOW TO TALK:
 - If the child does not understand a specific English word or phrase, keep speaking English and put its written Arabic translation in [AR] (format: word = translation). [AR] is never spoken, it is only shown as text.
 - If you get "(student was silent)", gently encourage: rephrase more simply.
 - Stay on English learning. Never ask for personal details (address, phone, school name, passwords, photos). If off-topic, kindly bring them back.
-- Never say you are an AI unless asked directly; you are Teacher Noor.
+- Never say you are an AI unless asked directly; you are ${teacherOf(k).name}.
 
 FORMAT (strict):
 Line 1 starts with a mood tag, then the spoken text: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] spoken text...
@@ -1284,7 +1494,7 @@ function renderRoom(){
       <div class="ttl">${L.trial ? '<span class="chip brand" style="font-family:var(--font)">تجريبي</span> ' : ''}${esc(L.plan.t)}</div>
       <div class="timer" id="timer">00:00</div></header>
     <div class="rbody">
-      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="burst" id="burst"></div><div class="tname">Teacher Noor</div><div class="state" id="state"></div></div></div>
+      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="burst" id="burst"></div><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div></div></div>
       <div class="side">
         <div class="sub" id="sub" aria-live="polite"><span class="muted" style="font-family:var(--font)">…</span></div>
         <div class="you" id="you" hidden></div>
@@ -1298,6 +1508,7 @@ function renderRoom(){
       <button class="btn sm" id="wrap" hidden>اختم الحصة</button>
       <form class="typer" id="typer" hidden><input class="input en" id="msg" placeholder="Type in English…" autocomplete="off" enterkeyhint="send"><button class="btn primary" type="submit">إرسال</button></form>
     </div></div>`;
+  if(!teacherOf(L.kid).female){ $('#tbox').classList.add('t-adam'); const tb = document.getElementById('tbadge'); if(tb) tb.textContent = 'Adam'; }
   $('#exit').onclick = confirmExit;
   $('#rep').onclick = () => { if(L.lastSay){ interrupt(false); sayAll(L.lastSay, true); } };
   $('#mic').onclick = onMicTap;
@@ -1376,7 +1587,7 @@ function speakOne(text, slow, done){
   const rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96);
   const perChar = Math.round(62 / rate);
   if(!('speechSynthesis' in window)){ mouthWalk(text, perChar); setTimeout(fin, 300*words); return; }
-  try{ const u = new SpeechSynthesisUtterance(text); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = rate; u.pitch = 1.08;
+  try{ const u = new SpeechSynthesisUtterance(text); const male = L && !teacherOf(L.kid).female; const vv = male && voiceM ? voiceM : voice; if(vv) u.voice = vv; u.lang = 'en-US'; u.rate = rate; u.pitch = male ? (voiceM ? 1 : .8) : 1.08;
     let gotBoundary = false;
     u.onstart = () => { setTimeout(() => { if(!gotBoundary && !finished) mouthWalk(text, perChar); }, 250); };
     u.onboundary = e => { if(e.name && e.name !== 'word') return; gotBoundary = true; const w = text.slice(e.charIndex).split(/\s/)[0] || ''; mouthWalk(w, perChar);
@@ -1583,7 +1794,7 @@ function renderParent(){
       ${levelDone ? `<div class="gift" style="margin-top:10px">🎉 أنهى ${esc(kid.ar)} كل دروس المستوى ${kid.level}. تقدر ترفعه للمستوى التالي.</div>` : ''}
       <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
       <div class="stat"><div><span class="small muted">الرصيد المتبقي</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
-      <div class="chips" style="margin-top:12px">${kid.level < 12 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button></div>
+      <div class="chips" style="margin-top:12px">${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
       ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
@@ -1592,6 +1803,10 @@ function renderParent(){
     <div class="grid">
       <div class="chips" style="justify-content:space-between"><h2>الأطفال</h2><button class="btn primary" id="addKid">➕ إضافة طفل</button></div>
       <div class="g2e">${ids.map(kidCard).join('')}</div>
+      <section class="card"><div class="chips" style="justify-content:space-between"><h2>🎁 المكافآت</h2><button class="btn sm primary" id="addRw">➕ مكافأة</button></div>
+        ${DB.redeems.filter(r => r.status === 'pending').length ? `<div class="gift" style="margin-top:10px;text-align:right">طلبات بانتظارك:<ul class="ledger">${DB.redeems.filter(r => r.status === 'pending').map(r => `<li><div><b>${esc(DB.kids[r.kid] ? DB.kids[r.kid].ar : '')}</b>: ${esc(r.emoji)} ${esc(r.name)}</div><button class="btn sm primary" data-done="${r.id}">تم التسليم ✓</button></li>`).join('')}</ul></div>` : ''}
+        <div class="rewards">${DB.rewards.map(r => `<div class="reward"><div class="re">${esc(r.emoji)}</div><b>${esc(r.name)}</b><div class="chip brand num">${r.cost} نقطة</div><button class="btn sm danger" data-delrw="${r.id}">حذف</button></div>`).join('')}</div>
+        <p class="small muted" style="margin:8px 0 0">الطفل يجمع تقريباً 70 إلى 100 نقطة من كل حصة مع اختبارها، و20 من تحدي اليوم، و30 من كل قصة.</p></section>
       <section class="card grid" style="gap:10px"><h2>تشغيل المعلمة</h2>
         <p class="small muted" style="margin:0">${DB.apiKey ? '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.' : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
@@ -1604,6 +1819,23 @@ function renderParent(){
     </div></div>`;
   $('#out').onclick = logout;
   $('#addKid').onclick = () => kidForm(null);
+  $('#addRw').onclick = () => { const ov = overlay(`<h2>مكافأة جديدة</h2><div class="field"><label for="rn">الاسم</label><input class="input" id="rn" placeholder="مثلاً: ساعة لعب"></div>
+      <div class="g2e" style="gap:10px"><div class="field"><label for="re">رمز</label><input class="input" id="re" value="🎁" maxlength="4"></div><div class="field"><label for="rc">السعر بالنقاط</label><input class="input num" type="number" id="rc" value="500" min="10" step="10"></div></div>
+      <div class="err" id="rerr"></div><div class="chips"><button class="btn primary" id="rs">إضافة</button><button class="btn" id="rx">رجوع</button></div>`);
+    ov.querySelector('#rx').onclick = () => ov.remove();
+    ov.querySelector('#rs').onclick = () => { const n = ov.querySelector('#rn').value.trim(), c = Number(ov.querySelector('#rc').value); if(!n || !(c > 0)){ ov.querySelector('#rerr').textContent = 'اكتب الاسم والسعر.'; return; }
+      DB.rewards.push({id:'w'+Date.now(), name:n, emoji:ov.querySelector('#re').value.trim() || '🎁', cost:Math.round(c)}); save(); ov.remove(); renderParent(); }; };
+  document.querySelectorAll('[data-delrw]').forEach(b => b.onclick = () => { DB.rewards = DB.rewards.filter(r => r.id !== b.dataset.delrw); save(); renderParent(); });
+  document.querySelectorAll('[data-done]').forEach(b => b.onclick = () => { const r = DB.redeems.find(x => x.id === b.dataset.done); if(r){ r.status = 'done'; save(); } toast('تم ✓'); renderParent(); });
+  document.querySelectorAll('[data-ics]').forEach(b => b.onclick = () => downloadICS(b.dataset.ics));
+  document.querySelectorAll('[data-week]').forEach(b => b.onclick = () => { const k = b.dataset.week, w = weeklyReport(k);
+    const ov = overlay(`<h2>📊 الأسبوع الماضي: ${esc(DB.kids[k].ar)}</h2>
+      <div class="stat"><div><span class="small muted">حضر</span><b style="color:var(--good)">${w.att}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${w.miss}</b></div><div><span class="small muted">دقائق محادثة</span><b>${w.mins}</b></div><div><span class="small muted">متوسط الحصص</span><b>${w.avg == null ? '—' : w.avg + '%'}</b></div></div>
+      <div class="stat"><div><span class="small muted">الاختبارات</span><b>${w.qavg == null ? '—' : w.qavg + '%'}</b></div><div><span class="small muted">تحدي اليوم</span><b>${w.daily}/7</b></div><div><span class="small muted">قصص</span><b>${w.books}</b></div><div><span class="small muted">كلمات</span><b>${w.words.length}</b></div></div>
+      ${w.mist.length ? `<div class="small"><b>يحتاج تدريب:</b><div class="en" style="direction:ltr;text-align:left">${w.mist.map(m => esc(m.right)).join('<br>')}</div></div>` : ''}
+      <div class="chips"><a class="btn primary" href="https://wa.me/?text=${encodeURIComponent(w.text)}" target="_blank" rel="noopener">مشاركة على واتساب</a><button class="btn" id="wc">نسخ</button><button class="btn" id="wx">إغلاق</button></div>`);
+    ov.querySelector('#wx').onclick = () => ov.remove();
+    ov.querySelector('#wc').onclick = () => { navigator.clipboard && navigator.clipboard.writeText(w.text).then(() => toast('تم النسخ'), () => {}); }; });
   document.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => kidForm(b.dataset.edit));
   document.querySelectorAll('[data-trial]').forEach(b => b.onclick = () => enterLesson(b.dataset.trial, true));
   document.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const k = b.dataset.up, to = DB.kids[k].level + 1;
@@ -1617,7 +1849,7 @@ function renderParent(){
     catch(e){ msg.className = 'small err'; msg.textContent = e && e.status === 401 ? 'المفتاح غير صحيح.' : `فشل الاتصال (${(e&&e.status)||'؟'}).`; } };
   $('#testVoice').onclick = () => { unlockAudio(); try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance("Hello! I'm Teacher Noor. I can't wait to talk with you!"); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); $('#keyMsg').textContent = 'الصوت: ' + (voice ? voice.name : 'الافتراضي'); }catch(e){} };
 }
-function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level) DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
+function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level){ DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; DB.progress[k].levelUpPending = {from:kid.level, to:lv}; } kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
 function kidForm(k){
   const kid = k ? DB.kids[k] : {ar:'', en:'', user:'', pass:'', level:5, birth:'2015-01-01', boy:true};
   const per = k ? periodAt(k, new Date()) : {days:[0,2,4], time:'17:00'};
