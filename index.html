@@ -648,7 +648,7 @@ applyTheme();
 /* =============== STORAGE =============== */
 let DB = null;
 function loadDB(){ try{ DB = JSON.parse(localStorage.getItem(STORE_KEY)); }catch(e){ DB = null; } }
-function save(){ if(DEMO) return; try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){ console.warn(e); alertBox('مساحة التخزين ممتلئة. احذف بعض القصص من المكتبة.'); } }
+function save(){ if(DEMO) return; try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){ console.warn(e); alertBox('مساحة التخزين ممتلئة. احذف بعض القصص من المكتبة.'); } try{ cloudSchedule(); }catch(e){} }
 let WHO = null;
 function setWho(w){ WHO = w; if(DEMO) return; try{ localStorage.setItem('51telk:who', w||''); }catch(e){} }
 
@@ -705,7 +705,7 @@ async function decodeSetupAny(s){ let t = String(s || '').trim(); const m = t.ma
   if(t[0] === 'z' && window.DecompressionStream){ const txt = await new Response(new Blob([unb64u(t.slice(1))]).stream().pipeThrough(new DecompressionStream('gzip'))).text(); return JSON.parse(txt); }
   return decodeSetup(t); }
 const setupLink = code => location.origin + location.pathname + '#setup=' + code;
-function applyFullSetup(cfg){ DB = cfg.full; normalize(); save(); try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){} }
+function applyFullSetup(cfg){ DB = cfg.full; try{ CLOUD.token = null; CLOUD.family = null; CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; cloudSave(); }catch(e){} normalize(); save(); try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){} }
 function toast(msg, kind){ const t = document.createElement('div'); t.className = 'toast ' + (kind||''); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
 function overlay(html){ const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = `<div class="card">${html}</div>`; document.body.appendChild(ov); return ov; }
 
@@ -829,7 +829,7 @@ function addXP(k, n){ DB.progress[k].xp = (DB.progress[k].xp||0) + n; logXP(k, n
 let homeTimer = null, TAB = 'home';
 function go(view, tab){
   clearInterval(homeTimer); homeTimer = null;
-  if(!DB) return renderFirstRun();
+  if(!DB) return cloudOn() ? renderLogin() : renderFirstRun();
   if(view === 'parent') return renderParent();
   if(view && DB.kids[view]){ const p = DB.profiles[view]; if(!p || !p.nick) return renderProfile(view, true); if(tab) TAB = tab; return renderKid(view); }
   renderLogin();
@@ -869,17 +869,22 @@ function renderLogin(){
     <button class="btn sm ghost" type="button" id="toSetup">📲 عندي رمز إعداد من جهاز آخر</button>
   </form></div>`;
   $('#toSetup').onclick = () => renderFirstRun();
-  $('#lf').addEventListener('submit', e => {
+  $('#lf').addEventListener('submit', async e => {
     e.preventDefault();
     const u = $('#u').value.trim().toLowerCase(), p = $('#p').value.trim();
-    let who = null;
-    for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
-    if(u === DB.parent.user && p === DB.parent.pass) who = 'parent';
+    let who = null; const btn = $('#lf [type=submit]');
+    if(cloudOn() && navigator.onLine){ btn.disabled = true; btn.textContent = 'جاري الدخول…';
+      try{ who = await cloudLogin(u, p); }catch(err){ console.warn(err); }
+      btn.disabled = false; btn.textContent = 'دخول';
+      if(who){ setWho(who); TAB = 'home'; go(who); return; } }
+    if(DB && DB.kids){ for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
+      if(DB.parent && u === DB.parent.user && p === DB.parent.pass) who = 'parent'; }
+    if(!who && !DB){ $('#le').textContent = navigator.onLine ? 'اسم المستخدم أو كلمة المرور غير صحيحة.' : 'أول دخول على هذا الجهاز يحتاج إنترنت.'; return; }
     if(!who){ $('#le').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة ثانية.'; return; }
     setWho(who); TAB = 'home'; go(who);
   });
 }
-function logout(){ setWho(null); go('login'); }
+function logout(){ setWho(null); go('login'); try{ cloudLogout(); }catch(e){} }
 
 /* =============== PROFILE =============== */
 function renderProfile(k, first){
@@ -2384,7 +2389,8 @@ function renderParent(){
         <div class="rewards">${DB.rewards.map(r => `<div class="reward">${rewardArt(r)}<b>${esc(r.name)}</b><div class="chip brand num">${r.cost} نقطة</div><div class="chips" style="justify-content:center"><button class="btn sm" data-editrw="${r.id}">تعديل</button><button class="btn sm danger" data-delrw="${r.id}">حذف</button></div></div>`).join('')}</div>
         <p class="small muted" style="margin:8px 0 0">الطفل يجمع تقريباً 70 إلى 100 نقطة من كل حصة مع اختبارها، و20 من تحدي اليوم، و30 من كل قصة.</p></section>
       <section class="card grid" style="gap:10px"><h2>تشغيل المعلمة</h2>
-        <p class="small muted" style="margin:0">${DB.apiKey ? '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.' : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
+        ${cloudOn() ? `<div class="vguide"><div><b>☁️ المزامنة السحابية</b> · <span id="cloudSt">${cloudStatusHTML()}</span></div><div class="small">الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.</div></div>` : ''}
+        <p class="small muted" style="margin:0">${DB.apiKey ? (CLOUD.token ? '✅ مفتاح التشغيل محفوظ ومتزامن مع كل الأجهزة.' : '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.') : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
         <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><span class="small" id="keyMsg"></span></div>
         <div class="field"><label>🔊 صوت المعلم وقراءة القصص</label><div class="vguide">
@@ -2407,6 +2413,11 @@ function renderParent(){
         <tr><td>ولي الأمر</td><td><code>${esc(DB.parent.user)}</code></td><td><code>${esc(DB.parent.pass)}</code></td><td></td></tr></table></div></section>
     </div></div>`;
   $('#out').onclick = logout;
+  if(cloudOn() && !CLOUD.token && navigator.onLine && !window.__cloudEnabling){ window.__cloudEnabling = true;
+    const st = $('#cloudSt'); if(st) st.textContent = '⏳ جاري رفع بياناتك للسحابة…';
+    cloudEnable().then(() => { cloudStart(); toast('☁️ تم تفعيل المزامنة السحابية'); if(cloudSafeToRender() && WHO === 'parent') renderParent(); })
+      .catch(err => { console.warn(err); CLOUD.err = err.msg || err.message; cloudSave(); const s2 = $('#cloudSt'); if(s2) s2.textContent = err.msg === 'username_taken' ? '🟠 اسم مستخدم ولي الأمر محجوز، غيّره من الحسابات' : '🟠 تعذّر الاتصال بالسحابة، سنحاول لاحقاً'; })
+      .finally(() => { window.__cloudEnabling = false; }); }
   $('#addKid').onclick = () => kidForm(null);
   $('#addRw').onclick = () => rewardForm(null);
   document.querySelectorAll('[data-editrw]').forEach(b => b.onclick = () => rewardForm(b.dataset.editrw));
@@ -3006,6 +3017,152 @@ function narrateAZ(text, o){
 }
 async function azTest(){ const url = await azFetch("Hello! I'm Teacher Noor. I can't wait to talk with you!", AZ_VOICES.f, .95); azEl(); await azPlay(url); }
 
+/* =============== CLOUD SYNC (Supabase) =============== */
+const SUPA_URL = 'https://muhfgviqdjysjzkbwlph.supabase.co', SUPA_KEY = 'sb_publishable_uNs9sj1LzyZkefmjmhbQ-g_bfGTL2PP';
+const CLOUD_KEY = '51telk:cloud';
+let CLOUD = (() => { try{ return JSON.parse(localStorage.getItem(CLOUD_KEY)) || {}; }catch(e){ return {}; } })();
+CLOUD.vers = CLOUD.vers || {}; CLOUD.synced = CLOUD.synced || {};
+let cloudBusy = false, cloudAgain = false, cloudT = null, cloudPullT = null, cloudApplying = false;
+const cloudOn = () => !DEMO && !!SUPA_URL && !/^__/.test(SUPA_URL);
+function cloudSave(){ try{ localStorage.setItem(CLOUD_KEY, JSON.stringify(CLOUD)); }catch(e){} }
+async function rpc(fn, args){
+  const r = await fetch(`${SUPA_URL}/rest/v1/rpc/${fn}`, {method:'POST', headers:{'apikey':SUPA_KEY, 'Content-Type':'application/json'}, body:JSON.stringify(args)});
+  const txt = await r.text(); let j = null; try{ j = txt ? JSON.parse(txt) : null; }catch(e){}
+  if(!r.ok){ const e = new Error((j && j.message) || ('rpc ' + r.status)); e.status = r.status; e.msg = (j && j.message) || ''; throw e; }
+  return j;
+}
+const isObj = v => v && typeof v === 'object' && !Array.isArray(v);
+const NO_SPLIT = new Set(['parent', 'azure']);
+const LOCAL_ONLY = new Set(['voiceTipSeen']);
+function pathsOf(db){ const out = {};
+  for(const [k, v] of Object.entries(db || {})){ if(LOCAL_ONLY.has(k) || v === undefined) continue;
+    if(isObj(v) && !NO_SPLIT.has(k)){ out[k + '/'] = true; for(const [s, w] of Object.entries(v)) if(w !== undefined) out[k + '/' + s] = w; }
+    else out[k] = v; }
+  return out; }
+function setPath(db, path, val){
+  const i = path.indexOf('/');
+  if(i < 0){ if(val === null) delete db[path]; else db[path] = val; return; }
+  const k = path.slice(0, i), s = path.slice(i + 1); if(!isObj(db[k])) db[k] = {};
+  if(s === '') return; if(val === null) delete db[k][s]; else db[k][s] = val; }
+const J = v => JSON.stringify(v === undefined ? null : v);
+/* 3-way merge: base = last value both sides agreed on */
+function merge3(base, local, remote){
+  if(J(local) === J(remote)) return remote;
+  if(J(local) === J(base)) return remote;
+  if(J(remote) === J(base)) return local;
+  if(Array.isArray(local) && Array.isArray(remote)){
+    const b = new Set((Array.isArray(base) ? base : []).map(J)), r = new Set(remote.map(J)), l = new Set(local.map(J));
+    const out = remote.filter(x => !(b.has(J(x)) && !l.has(J(x))));
+    local.forEach(x => { if(!r.has(J(x)) && !b.has(J(x))) out.push(x); });
+    return out; }
+  if(isObj(local) && isObj(remote)){
+    const out = {}, bb = isObj(base) ? base : {};
+    new Set([...Object.keys(local), ...Object.keys(remote)]).forEach(k => {
+      const v = merge3(bb[k], local[k], remote[k]); if(v !== undefined && v !== null) out[k] = v; });
+    return out; }
+  if(typeof local === 'number' && typeof remote === 'number' && typeof base === 'number') return remote + (local - base);
+  return local;
+}
+function cloudDirty(){ const cur = pathsOf(DB); for(const [p, v] of Object.entries(cur)) if(CLOUD.synced[p] !== J(v)) return true;
+  for(const p of Object.keys(CLOUD.synced)) if(!(p in cur) && CLOUD.synced[p] !== 'null') return true; return false; }
+function cloudSchedule(){ if(!cloudOn() || !CLOUD.token || cloudApplying) return; clearTimeout(cloudT); cloudT = setTimeout(cloudPush, 1200); }
+async function cloudPush(){
+  if(!cloudOn() || !CLOUD.token || !DB) return;
+  if(cloudBusy){ cloudAgain = true; return; } cloudBusy = true;
+  try{
+    for(let round = 0; round < 4; round++){
+      const cur = pathsOf(DB), changes = [];
+      for(const [p, v] of Object.entries(cur)){ const j = J(v); if(CLOUD.synced[p] !== j) changes.push({path:p, value:v, base:CLOUD.vers[p] || null}); }
+      for(const p of Object.keys(CLOUD.synced)) if(!(p in cur) && CLOUD.synced[p] !== 'null') changes.push({path:p, value:null, base:CLOUD.vers[p] || null});
+      if(!changes.length) break;
+      const res = await rpc('tk_push', {t:CLOUD.token, changes});
+      const sent = Object.fromEntries(changes.map(c => [c.path, J(c.value)]));
+      (res.ok || []).forEach(o => { CLOUD.vers[o.path] = o.ver; CLOUD.synced[o.path] = sent[o.path]; });
+      if(!(res.conflicts || []).length) break;
+      cloudApplying = true;
+      (res.conflicts || []).forEach(c => { const base = CLOUD.synced[c.path] != null ? JSON.parse(CLOUD.synced[c.path]) : undefined;
+        const local = cur[c.path]; const merged = merge3(base, local === undefined ? null : local, c.value);
+        setPath(DB, c.path, merged === undefined ? null : merged); CLOUD.vers[c.path] = c.ver; CLOUD.synced[c.path] = J(c.value); });
+      cloudApplying = false; normalize(); localSaveOnly();
+    }
+    CLOUD.err = ''; CLOUD.lastOk = Date.now(); cloudSave(); await cloudAccounts();
+  }catch(e){ cloudApplying = false; CLOUD.err = e.msg || e.message; cloudSave(); if(e.msg === 'bad_session') cloudLost(); else console.warn('cloud push', e); }
+  finally{ cloudBusy = false; if(cloudAgain){ cloudAgain = false; cloudSchedule(); } cloudBadge(); }
+}
+async function cloudPull(full){
+  if(!cloudOn() || !CLOUD.token) return false;
+  let res; try{ res = await rpc('tk_pull', {t:CLOUD.token, since: full ? null : (CLOUD.since || null)}); }
+  catch(e){ if(e.msg === 'bad_session') cloudLost(); else console.warn('cloud pull', e); return false; }
+  let changed = false; cloudApplying = true;
+  if(!DB) DB = {};
+  const cur = pathsOf(DB);
+  (res.rows || []).sort((a, b) => a.path.length - b.path.length).forEach(r => {
+    if(!full && (CLOUD.vers[r.path] || 0) >= r.ver) return;
+    const localJ = J(cur[r.path]), remoteJ = J(r.value);
+    let val = r.value;
+    if(CLOUD.synced[r.path] != null && localJ !== CLOUD.synced[r.path] && localJ !== remoteJ){ val = merge3(JSON.parse(CLOUD.synced[r.path]), cur[r.path] === undefined ? null : cur[r.path], r.value); }
+    if(J(val) !== localJ){ setPath(DB, r.path, val === undefined ? null : val); changed = true; }
+    CLOUD.vers[r.path] = r.ver; CLOUD.synced[r.path] = remoteJ;
+  });
+  cloudApplying = false;
+  CLOUD.since = res.now; CLOUD.lastOk = Date.now(); cloudSave();
+  if(changed){ normalize(); localSaveOnly(); }
+  if(cloudDirty()) cloudSchedule();
+  return changed;
+}
+function localSaveOnly(){ if(DEMO) return; try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){ console.warn(e); } }
+function acctList(){ const a = [{u:DB.parent.user, p:DB.parent.pass, role:'parent'}]; kidIds().forEach(k => a.push({u:DB.kids[k].user, p:DB.kids[k].pass, role:'kid', kid:k})); return a; }
+async function cloudAccounts(){
+  if(CLOUD.role !== 'parent' || !DB || !DB.parent) return; const list = acctList(), sig = J(list);
+  if(CLOUD.acctSig === sig) return;
+  const r = await rpc('tk_accounts_set', {t:CLOUD.token, accts:list}); CLOUD.acctSig = sig; cloudSave();
+  if(r && (r.skipped || []).length) alertBox(`اسم المستخدم «${r.skipped.join('، ')}» محجوز في السحابة لحساب آخر. اختر اسم مستخدم مختلفاً من «تعديل».`);
+}
+function cloudLost(){ CLOUD.token = null; cloudSave(); }
+/* first-time: register the family from this device's data, or join it if it already exists */
+async function cloudEnable(){
+  if(!cloudOn() || !DB || !DB.parent) return false;
+  const r = await rpc('tk_register', {u:DB.parent.user, p:DB.parent.pass});
+  CLOUD.token = r.token; CLOUD.role = 'parent'; CLOUD.kid = null; CLOUD.family = r.family;
+  if(r.created){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; cloudSave(); await cloudPush(); return true; }
+  /* family exists: combine this device's data with the cloud copy */
+  const local = JSON.parse(JSON.stringify(DB)); CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null;
+  DB = {}; await cloudPull(true); const remote = DB; DB = joinMerge(remote, local); normalize(); localSaveOnly(); cloudSave(); await cloudPush(); return true;
+}
+function joinMerge(remote, local){
+  if(Array.isArray(remote) && Array.isArray(local)){ const s = new Set(remote.map(J)); return remote.concat(local.filter(x => !s.has(J(x)))); }
+  if(isObj(remote) && isObj(local)){ const out = Object.assign({}, remote); Object.keys(local).forEach(k => { out[k] = k in remote ? joinMerge(remote[k], local[k]) : local[k]; }); return out; }
+  if(typeof remote === 'number' && typeof local === 'number') return Math.max(remote, local);
+  return remote === undefined || remote === null ? local : remote;
+}
+async function cloudLogin(u, p){
+  const r = await rpc('tk_login', {u, p}); if(!r) return null;
+  const sameFamily = CLOUD.family && CLOUD.family === r.family && DB;
+  CLOUD.token = r.token; CLOUD.role = r.role; CLOUD.kid = r.kid || null; CLOUD.family = r.family;
+  if(!sameFamily){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; DB = {}; await cloudPull(true); }
+  else await cloudPull(false);
+  if(!DB || !DB.kids){ DB = null; return null; }
+  normalize(); localSaveOnly(); cloudSave(); cloudStart();
+  return r.role === 'parent' ? 'parent' : r.kid;
+}
+async function cloudLogout(){ const t = CLOUD.token; if(t){ try{ await cloudPush(); }catch(e){} try{ await rpc('tk_logout', {t}); }catch(e){} } CLOUD.token = null; cloudSave(); }
+function cloudSafeToRender(){ return !L && !document.querySelector('.ov,.reader') && !(document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)); }
+function cloudStart(){
+  if(!cloudOn()) return; clearInterval(cloudPullT);
+  cloudPullT = setInterval(async () => { if(document.hidden || !CLOUD.token) return; const ch = await cloudPull(false); if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); }, 25000);
+}
+document.addEventListener('visibilitychange', () => { if(!document.hidden && CLOUD.token){ cloudPull(false).then(ch => { if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); }); }
+  else if(document.hidden && CLOUD.token && cloudDirty()) cloudPush(); });
+window.addEventListener('online', () => { if(CLOUD.token) cloudPush(); });
+function cloudBadge(){ const el = document.getElementById('cloudSt'); if(el) el.innerHTML = cloudStatusHTML(); }
+function cloudStatusHTML(){
+  if(!cloudOn()) return '';
+  if(!CLOUD.token) return '⚪ غير متصلة بالسحابة';
+  if(CLOUD.err && !navigator.onLine) return '🟠 بدون إنترنت، تُحفظ على الجهاز وتُرفع لاحقاً';
+  if(CLOUD.err) return '🟠 تعذّرت آخر مزامنة، سنحاول تلقائياً';
+  return `🟢 متزامنة مع السحابة${CLOUD.lastOk ? ' · آخر مزامنة ' + new Date(CLOUD.lastOk).toLocaleTimeString(LOC, {hour:'numeric', minute:'2-digit'}) : ''}`;
+}
+
 /* =============== BOOT =============== */
 setupLang();
 loadDB();
@@ -3021,6 +3178,7 @@ if(DEMO){
   try{ WHO = localStorage.getItem('51telk:who') || null; }catch(e){}
 }
 go(WHO);
+if(!DEMO && CLOUD.token){ cloudStart(); cloudPull(false).then(ch => { if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); if(cloudDirty()) cloudSchedule(); }); }
 if(/^#setup=/.test(location.hash)){
   const raw = location.hash; try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
   decodeSetupAny(raw).then(cfg => { if(!cfg || !cfg.full || !cfg.full.kids) throw new Error('bad');

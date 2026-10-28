@@ -870,5 +870,22 @@
 "تجهيز الآن": "Set up now",
 "تم تجهيز الجهاز ✓ ادخل باليوزر والباسورد": "Device ready ✓ Log in with username and password",
 "رابط التجهيز غير مكتمل. انسخه كاملاً من لوحة ولي الأمر وافتحه مرة ثانية.": "The setup link is incomplete. Copy it fully from the parent dashboard and open it again.",
-"الصق رابط أو رمز الإعداد هنا": "Paste the setup link or code here"
+"الصق رابط أو رمز الإعداد هنا": "Paste the setup link or code here",
+"جاري الدخول…": "Signing in…",
+"أول دخول على هذا الجهاز يحتاج إنترنت.": "The first sign-in on this device needs internet.",
+"اسم المستخدم أو كلمة المرور غير صحيحة.": "Wrong username or password.",
+"المزامنة السحابية": "Cloud sync",
+"الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.": "Accounts, keys and progress are saved in the cloud. Any child can sign in with their username and password on any device and continue where they left off.",
+"مفتاح التشغيل محفوظ ومتزامن مع كل الأجهزة.": "The teacher key is saved and synced to all devices.",
+"جاري رفع بياناتك للسحابة…": "Uploading your data to the cloud…",
+"تم تفعيل المزامنة السحابية": "Cloud sync is on",
+"اسم مستخدم ولي الأمر محجوز، غيّره من الحسابات": "Parent username is taken; change it in accounts",
+"تعذّر الاتصال بالسحابة، سنحاول لاحقاً": "Couldn't reach the cloud; will retry later",
+"غير متصلة بالسحابة": "Not connected to the cloud",
+"بدون إنترنت، تُحفظ على الجهاز وتُرفع لاحقاً": "Offline; saved on this device and uploaded later",
+"تعذّرت آخر مزامنة، سنحاول تلقائياً": "Last sync failed; retrying automatically",
+"متزامنة مع السحابة": "Synced with the cloud",
+"آخر مزامنة": "last sync",
+"محجوز في السحابة لحساب آخر. اختر اسم مستخدم مختلفاً من «تعديل».": "is taken in the cloud by another account. Choose a different username via «Edit».",
+"اسم المستخدم «": "Username «"
 }
