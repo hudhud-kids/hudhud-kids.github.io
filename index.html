@@ -354,6 +354,8 @@ body.printing > *:not(.ov){display:none!important}
 .icons{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .ico{width:44px;height:44px;border-radius:12px;border:2px solid var(--line);background:var(--surface);font-size:1.4rem}
 .ico.on{border-color:var(--brand);background:var(--brand-soft)}
+.vguide{background:var(--sky-soft);border-radius:14px;padding:12px 14px;display:grid;gap:6px;font-size:.92rem}
+.vguide ol{margin:0;padding-inline-start:20px;display:grid;gap:4px}
 </style>
 </head>
 <body>
@@ -977,7 +979,7 @@ function runQuiz(k, quiz, title, onDone, max){
   };
   const feedback = (ok, right) => { if(ok) score++; const fb = ov.querySelector('#fb'); ov.querySelectorAll('#chk,#rst').forEach(b => b.disabled = true);
     fb.innerHTML = `<div class="qfb ${ok?'good':'bad'}">${ok ? '✓ إجابة صحيحة! +10 نقاط' : `✗ الإجابة الصحيحة: <span class="en">${esc(right)}</span>`}</div><button class="btn primary" id="nx">${i+1 < items.length ? 'التالي' : 'النتيجة'}</button>`;
-    try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(ok ? 'Great job!' : String(right)); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .9; speechSynthesis.speak(u); }catch(e){}
+    try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(ok ? 'Great job!' : String(right)); u.lang = 'en-US'; u.rate = .9; speechSynthesis.speak(u); }catch(e){}
     fb.querySelector('#nx').onclick = () => { i++; show(); }; };
   const finish = () => {
     const total = items.length, stars = score === total ? 3 : score >= total*0.6 ? 2 : 1, xp = score*10 + (score === total ? 20 : 0);
@@ -1040,8 +1042,8 @@ function narratorVoices(){
 }
 const voiceByName = n => n ? (narratorVoices().find(x => x.v.name === n)||{}).v || null : null;
 const kidVoice = k => (k && DB.kids[k] && voiceByName(DB.kids[k].voice)) || null;
-function narratorVoice(){ if(typeof NARR_KID !== 'undefined' && kidVoice(NARR_KID)) return kidVoice(NARR_KID); const name = DB && DB.readVoice; const all = narratorVoices(); return (name && (all.find(x => x.v.name === name)||{}).v) || (all[0] && all[0].v) || voice; }
-function characterVoice(main){ const all = narratorVoices().map(x => x.v).filter(v => v !== main); return all.find(v => /premium|enhanced|استثنائي|محسّن|محسن/i.test(v.name)) || all[0] || main; }
+function narratorVoice(){ return null; if(typeof NARR_KID !== 'undefined' && kidVoice(NARR_KID)) return kidVoice(NARR_KID); const name = DB && DB.readVoice; const all = narratorVoices(); return (name && (all.find(x => x.v.name === name)||{}).v) || (all[0] && all[0].v) || voice; }
+function characterVoice(main){ return null; const all = narratorVoices().map(x => x.v).filter(v => v !== main); return all.find(v => /premium|enhanced|استثنائي|محسّن|محسن/i.test(v.name)) || all[0] || main; }
 const hasPremiumVoice = () => narratorVoices().some(x => x.s >= 70);
 
 /* Split text into phrases with natural pauses; dialogue gets its own voice. */
@@ -1064,10 +1066,10 @@ function narrate(text, opts){
   const next = () => {
     if(stopped) return; if(i >= ps.length){ o.onEnd && o.onEnd(); return; }
     const p = ps[i++]; let u; try{ u = new SpeechSynthesisUtterance(p.text.trim()); }catch(e){ o.onEnd && o.onEnd(); return; }
-    const v = p.quoted ? other : main; if(v) u.voice = v; u.lang = (v && v.lang) || 'en-US';
+    u.lang = 'en-US';
     const jitter = (Math.random() - .5) * .04;
     u.rate = Math.max(.5, o.speed * (p.kind === 'ex' ? 1.04 : p.kind === 'q' ? .97 : 1) + jitter);
-    u.pitch = (p.quoted ? 1.12 : 1) * (p.kind === 'ex' ? 1.06 : p.kind === 'q' ? 1.04 : 1);
+    u.pitch = (p.quoted ? 1.1 : 1) * (p.kind === 'ex' ? 1.05 : p.kind === 'q' ? 1.03 : 1);
     const local = p.text.trim(), lead = p.text.length - p.text.trimStart().length;
     let got = false; const words = []; let x = 0; for(const w of local.split(/\s+/)){ const at = local.indexOf(w, x); words.push(at); x = at + w.length; }
     u.onboundary = e => { if(e.name && e.name !== 'word') return; got = true; o.onWord && o.onWord(p.start + lead + e.charIndex); };
@@ -1081,8 +1083,8 @@ function narrate(text, opts){
   return {stop(){ stopped = true; clearTimeout(timer); try{ speechSynthesis.cancel(); }catch(e){} }};
 }
 function voiceTipHTML(){
-  if(hasPremiumVoice()) return '';
-  return `<div class="vtip">💡 لصوت قراءة طبيعي مثل البشر حمّل صوتاً مجانياً عالي الجودة على الجهاز: <b>الإعدادات ← تسهيلات الاستخدام ← المحتوى المنطوق ← الأصوات ← English ← Ava (Premium)</b>، ثم أعد فتح التطبيق.</div>`;
+  if(DB && DB.voiceTipSeen) return '';
+  return `<div class="vtip">💡 لصوت قراءة طبيعي مثل البشر حمّل صوتاً مجانياً عالي الجودة على الجهاز: <b>الإعدادات ← تسهيلات الاستخدام ← القراءة والنطق ← الأصوات ← English ← Ava ← Ava (استثنائي)</b>، ثم أعد فتح التطبيق. <button class="btn sm" onclick="DB.voiceTipSeen=1;save();this.parentNode.remove()">تم ✓</button></div>`;
 }
 
 let NARR_KID = null;
@@ -1276,7 +1278,7 @@ Reply ONLY JSON: {"ok":true if it is a meaningful sentence that uses the pattern
     DB.progress[k].daily[dayKey()] = {sentence: r.corrected || sentence}; if(first) addXP(k, 20); save();
     fb.innerHTML = `<div class="qfb ${r.ok?'good':'bad'}">${r.ok ? '✓ ' + esc(r.praise||'Great!') : 'قريب جداً!'} ${first ? '· +20 نقطة' : ''}</div>
       ${r.corrected && r.corrected.toLowerCase().trim() !== sentence.toLowerCase().trim() ? `<div class="small">الأصح: <b class="en">${esc(r.corrected)}</b></div>` : ''}<div class="small muted">${esc(r.feedback||'')}</div>`;
-    try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(r.corrected || sentence); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .88; speechSynthesis.speak(u); }catch(e){}
+    try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(r.corrected || sentence); u.lang = 'en-US'; u.rate = .88; speechSynthesis.speak(u); }catch(e){}
     ov.querySelector('#dsend').textContent = 'تم'; ov.querySelector('#dsend').onclick = () => { ov.remove(); renderKid(k); };
   };
 }
@@ -1295,7 +1297,7 @@ function startReview(k){
   const cards = reviewCards(k); let i = 0, rec = null, chunks = [], myUrl = null, stream = null;
   const canRec = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
   const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
-  const say = (t, slow) => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = slow ? .65 : .88; speechSynthesis.speak(u); }catch(e){} };
+  const say = (t, slow) => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = slow ? .65 : .88; speechSynthesis.speak(u); }catch(e){} };
   const stopStream = () => { if(stream){ stream.getTracks().forEach(t => t.stop()); stream = null; } };
   const draw = () => {
     const c = cards[i]; myUrl = null;
@@ -1343,7 +1345,7 @@ function maybeCelebrate(k){
   const ov = overlay(`<div style="text-align:center"><div class="burst-big">🚀🎉⭐</div><h2>مبروك! انتقلت للمستوى ${to}</h2>
     <p style="margin:6px 0">أنهيت المستوى ${from} بنجاح، والآن تبدأ دروساً أقوى في <span class="en">Level ${to} · ${LEVEL_CEFR[to]}</span>.</p></div>
     <div class="chips" style="justify-content:center"><button class="btn primary" id="cv">🎓 شهادتي</button><button class="btn" id="cx">يلا نبدأ!</button></div>`);
-  try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(`Congratulations! Welcome to level ${to}!`); if(voice) u.voice = voice; u.lang = 'en-US'; speechSynthesis.speak(u); }catch(e){}
+  try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(`Congratulations! Welcome to level ${to}!`); u.lang = 'en-US'; speechSynthesis.speak(u); }catch(e){}
   ov.querySelector('#cv').onclick = () => { ov.remove(); showCert(cert); };
   ov.querySelector('#cx').onclick = () => ov.remove();
 }
@@ -1441,7 +1443,7 @@ function wordAccuracy(target, said){ const a = normWords(target), b = normWords(
   const dp = Array.from({length:a.length+1}, () => new Array(b.length+1).fill(0));
   for(let i=1;i<=a.length;i++) for(let j=1;j<=b.length;j++) dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1]+1 : Math.max(dp[i-1][j], dp[i][j-1]);
   return Math.round(dp[a.length][b.length] / a.length * 100); }
-function speakText(t, rate){ return new Promise(res => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = rate || .9; u.onend = res; u.onerror = res; speechSynthesis.speak(u); setTimeout(res, t.split(' ').length*600 + 3000); }catch(e){ res(); } }); }
+function speakText(t, rate){ return new Promise(res => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = rate || .9; u.onend = res; u.onerror = res; speechSynthesis.speak(u); setTimeout(res, t.split(' ').length*600 + 3000); }catch(e){ res(); } }); }
 function listenFor(ms, onText){ return new Promise(res => {
   if(!SR){ res(null); return; } let text = '', done = false; const r = new SR(); r.lang = 'en-US'; r.continuous = true; r.interimResults = true;
   let sil = null; const end = () => { if(done) return; done = true; clearTimeout(sil); clearTimeout(cap); try{ r.stop(); }catch(e){} res(text.trim()); };
@@ -1988,7 +1990,7 @@ function speakOne(text, slow, done){
   const rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96);
   const perChar = Math.round(62 / rate);
   if(!('speechSynthesis' in window)){ mouthWalk(text, perChar); setTimeout(fin, 300*words); return; }
-  try{ const u = new SpeechSynthesisUtterance(text); const male = L && !teacherOf(L.kid).female; const kv = L && kidVoice(L.kid); const vv = kv || (male && voiceM ? voiceM : voice); if(vv) u.voice = vv; u.lang = 'en-US'; u.rate = rate; u.pitch = kv ? 1 : male ? (voiceM ? 1 : .8) : 1.08;
+  try{ const u = new SpeechSynthesisUtterance(text); const male = L && !teacherOf(L.kid).female; u.lang = 'en-US'; u.rate = rate; u.pitch = male ? .88 : 1.04;
     let gotBoundary = false;
     u.onstart = () => { setTimeout(() => { if(!gotBoundary && !finished) mouthWalk(text, perChar); }, 250); };
     u.onboundary = e => { if(e.name && e.name !== 'word') return; gotBoundary = true; const w = text.slice(e.charIndex).split(/\s/)[0] || ''; mouthWalk(w, perChar);
@@ -2219,7 +2221,12 @@ function renderParent(){
         <p class="small muted" style="margin:0">${DB.apiKey ? '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.' : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
         <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><span class="small" id="keyMsg"></span></div>
-        <div class="field"><label for="rv">صوت قراءة القصص</label><div class="chips"><select class="input" id="rv" style="max-width:320px">${narratorVoices().map(x => `<option value="${esc(x.v.name)}" ${(DB.readVoice ? DB.readVoice === x.v.name : x === narratorVoices()[0]) ? 'selected' : ''}>${esc(x.v.name)}${x.s >= 100 ? ' ⭐' : x.s >= 70 ? ' ✓' : ''}</option>`).join('')}</select><button class="btn sm" id="rvt">🔊 تجربة</button></div>${voiceTipHTML()}</div>
+        <div class="field"><label>🔊 صوت المعلم وقراءة القصص</label><div class="vguide">
+          <div>المنصة تستخدم صوت الجهاز الإنجليزي تلقائياً. لصوت طبيعي قريب من البشر، اضبطه مرة واحدة على كل جهاز (الآيباد والآيفون):</div>
+          <ol><li>افتح <b>الإعدادات</b> ← <b>تسهيلات الاستخدام</b> ← <b>القراءة والنطق</b> (أو <b>المحتوى المنطوق</b>)</li>
+          <li><b>الأصوات</b> ← <b>English</b> ← <b>Ava</b> ← حمّل <b>Ava (استثنائي)</b> ☁️ واختره ✓</li>
+          <li>أغلق المنصة وافتحها، ثم اضغط «تجربة الصوت» هنا.</li></ol>
+          <button class="btn sm" id="rvt">🔊 تجربة الصوت</button></div></div>
         <div class="field"><label for="pl">قيمة الحصة الواحدة (ريال)</label><div class="chips"><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:140px"><button class="btn sm" id="savePl">حفظ</button></div></div>
       </section>
       <section class="card"><h2>الحسابات</h2><div style="overflow-x:auto"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th><th>المستوى</th></tr>
@@ -2260,13 +2267,12 @@ function renderParent(){
     ov.querySelector('#xcopy').onclick = () => { const t = ov.querySelector('#xc'); t.select(); (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject()).then(() => toast('تم النسخ'), () => { document.execCommand && document.execCommand('copy'); toast('تم النسخ'); }); };
   };
   $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); toast('تم حفظ المفتاح'); };
-  $('#rv') && ($('#rv').onchange = () => { DB.readVoice = $('#rv').value; save(); toast('تم اختيار الصوت'); });
-  $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); DB.readVoice = $('#rv').value; narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
+  $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
   $('#savePl').onclick = () => { DB.perLesson = Math.max(1, Number($('#pl').value)||10); save(); toast('تم الحفظ'); renderParent(); };
   $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
     try{ await callClaude({model:LIVE_MODEL, max_tokens:20, messages:[{role:'user', content:'Say: ready'}]}); msg.textContent = '✅ المعلمة جاهزة'; msg.className = 'small ok'; }
     catch(e){ msg.className = 'small err'; msg.textContent = e && e.status === 401 ? 'المفتاح غير صحيح.' : `فشل الاتصال (${(e&&e.status)||'؟'}).`; } };
-  $('#testVoice').onclick = () => { unlockAudio(); try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance("Hello! I'm Teacher Noor. I can't wait to talk with you!"); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); $('#keyMsg').textContent = 'الصوت: ' + (voice ? voice.name : 'الافتراضي'); }catch(e){} };
+  $('#testVoice').onclick = () => { unlockAudio(); try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance("Hello! I'm Teacher Noor. I can't wait to talk with you!"); u.lang = 'en-US'; u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); $('#keyMsg').textContent = 'الصوت: ' + (voice ? voice.name : 'الافتراضي'); }catch(e){} };
 }
 const REWARD_ICONS = ['🎁','🎮','🍦','🍕','🍫','🧸','⚽','🚲','🎡','🏖️','🎬','📱','🎧','📚','🎨','🧩','🛹','🏊','🐎','✈️','🍔','🍩','💰','👟','⌚','🎂','🛍️','🏆','⭐','💎'];
 function rewardArt(r){ return r.img ? `<img class="rimg" src="${esc(r.img)}" alt="">` : `<div class="re">${esc(r.emoji||'🎁')}</div>`; }
@@ -2309,7 +2315,6 @@ function kidForm(k){
       <div class="field"><label for="f_pass">كلمة المرور</label><input class="input ltr" id="f_pass" value="${esc(kid.pass)}"></div>
       <div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${levelTag(l)}</option>`).join('')}</select></div>
       <div class="field"><label for="f_b">تاريخ الميلاد</label><input class="input" type="date" id="f_b" value="${esc(kid.birth)}"></div>
-      <div class="field"><label for="f_v">صوت المعلم وقراءة القصص</label><div class="chips"><select class="input" id="f_v" style="flex:1;min-width:0"><option value="">تلقائي (أفضل صوت متاح)</option>${narratorVoices().map(x => `<option value="${esc(x.v.name)}" ${kid.voice === x.v.name ? 'selected' : ''}>${esc(x.v.name)}${x.s >= 100 ? ' ⭐' : x.s >= 70 ? ' ✓' : ''}</option>`).join('')}</select><button class="btn sm" type="button" id="f_vt">🔊</button></div></div>
       <div class="field"><label for="f_g">الجنس</label><select class="input" id="f_g"><option value="1" ${kid.boy?'selected':''}>ولد</option><option value="0" ${!kid.boy?'selected':''}>بنت</option></select></div>
       <div class="field"><label for="f_bal">مبلغ الاشتراك (ريال)</label><input class="input num" type="number" min="0" step="10" id="f_bal" value="${k ? DB.balance[k] : 2000}"></div>
     </div>
@@ -2319,7 +2324,7 @@ function kidForm(k){
     <div class="chips"><button class="btn primary" id="f_save">حفظ</button><button class="btn" id="f_cancel">رجوع</button>${k ? '<button class="btn danger" id="f_del">حذف الحساب</button>' : ''}</div>`);
   ov.querySelector('.card').classList.add('wide');
   ov.querySelector('#f_cancel').onclick = () => ov.remove();
-  ov.querySelector('#f_vt').onclick = () => { unlockAudio(); const n = ov.querySelector('#f_v').value; const keep = DB.readVoice; if(n) DB.readVoice = n; NARR_KID = null; narrate(`Hi ${ov.querySelector('#f_en').value || 'there'}! I'm your English teacher. Are you ready for an amazing story today?`, {speed:.95}); DB.readVoice = keep; };
+
   ov.querySelector('#f_save').onclick = () => {
     const v = id => ov.querySelector(id).value.trim(), err = ov.querySelector('#f_err');
     const ar = v('#f_ar'), en = v('#f_en'), user = v('#f_user').toLowerCase(), pass = v('#f_pass'), level = Number(v('#f_lv')), birth = v('#f_b'), boy = v('#f_g') === '1', bal = Math.max(0, Number(v('#f_bal'))||0), time = v('#f_t');
@@ -2331,7 +2336,7 @@ function kidForm(k){
     if(!days.length || !time){ err.textContent = 'اختر يوماً واحداً على الأقل ووقت الحصة.'; return; }
     if(!birth){ err.textContent = 'اختر تاريخ الميلاد.'; return; }
     if(k){
-      Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy, voice:ov.querySelector('#f_v').value});
+      Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy});
       setLevel(k, level);
       DB.balance[k] = bal;
       const cur = periodAt(k, new Date());
@@ -2342,7 +2347,7 @@ function kidForm(k){
       save(); toast('تم حفظ التعديلات');
     } else {
       let id = user.replace(/[^a-z0-9]/g,'') || 'kid'; while(DB.kids[id]) id += '1';
-      DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level], voice:ov.querySelector('#f_v').value};
+      DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level]};
       DB.balance[id] = bal;
       const t = new Date(); t.setDate(t.getDate()+1);
       DB.sched[id] = {periods:[{from:`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T00:00`, days, time}], cancel:[], extra:[]};
