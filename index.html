@@ -138,39 +138,52 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .hint{margin:0;padding:8px 12px;border-radius:12px;background:var(--sky-soft);font-size:.9rem}
 
 /* teacher animation */
-.t-head{transform-box:view-box;transform-origin:150px 250px;transition:transform .3s}
-.speaking .t-head{animation:bob 1.6s ease-in-out infinite}
-.listening .t-head{transform:rotate(-6deg)}
+.tbox svg .pose{display:none}
+.p-wave .pose-wave,.p-thumb .pose-thumb,.p-chin .pose-chin,.p-ear .pose-ear,.p-point .pose-point{display:inline}
+.p-wave .arm-l,.p-thumb .arm-l{display:none}
+.p-chin .arm-r,.p-ear .arm-r,.p-point .arm-r{display:none}
+.pose-wave{transform-box:view-box;transform-origin:104px 330px;animation:wave .45s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.pose-thumb{transform-box:view-box;transform-origin:110px 330px;animation:pop .35s ease-out}
+@keyframes pop{from{transform:scale(.6) translateY(20px)}to{transform:none}}
+.t-head{transform-box:view-box;transform-origin:200px 300px;transition:transform .35s ease}
+.speaking .t-head{animation:bob 1.7s ease-in-out infinite}
+.listening .t-head{transform:rotate(-5deg) translateX(-4px)}
 .thinking .t-head{transform:rotate(4deg)}
-@keyframes bob{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(-2.5deg) translateY(-2px)}75%{transform:rotate(2.5deg) translateY(1px)}}
-.t-body{transform-box:view-box;transform-origin:150px 320px;animation:breathe 4s ease-in-out infinite}
-@keyframes breathe{50%{transform:scaleY(1.015)}}
-.eyes-n{transform-box:view-box;transform-origin:150px 150px;animation:blink 4.6s infinite}
-@keyframes blink{0%,93%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
-.pupils{transition:transform .25s}
-.thinking .pupils{transform:translate(4px,-5px)}
-.listening .pupils{transform:translate(-3px,1px)}
+.nod .t-head{animation:nod .45s ease-in-out}
+@keyframes bob{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(-2.4deg) translateY(-3px)}50%{transform:rotate(.5deg) translateY(0)}75%{transform:rotate(2.4deg) translateY(-1px)}}
+@keyframes nod{0%,100%{transform:rotate(-5deg) translateY(0)}45%{transform:rotate(-5deg) translateY(7px)}}
+.t-body{transform-box:view-box;transform-origin:200px 440px;animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.012,1.018)}}
+.lids ellipse{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .07s}
+.blink .lids ellipse{transform:scaleY(1)}
+.pupils{transition:transform .3s ease}
 .eyes-h{display:none}
 .m-happy .eyes-n,.m-laughing .eyes-n,.m-proud .eyes-n{display:none}
 .m-happy .eyes-h,.m-laughing .eyes-h,.m-proud .eyes-h{display:inline}
+.speaking.m-happy .eyes-n,.speaking.m-proud .eyes-n{display:inline}
+.speaking.m-happy .eyes-h,.speaking.m-proud .eyes-h{display:none}
 .brows{transform-box:view-box;transition:transform .25s}
-.m-surprised .brows,.m-excited .brows{transform:translateY(-7px)}
-.m-thinking .brows{transform:translateY(-3px) rotate(-3deg)}
-.m-encouraging .brows{transform:translateY(-2px)}
-.mouth path{display:none}
-.mouth .on{display:inline}
-.ring{fill:none;stroke:var(--sky);stroke-width:5;opacity:0}
-.listening .ring{animation:ring 1.4s ease-out infinite}
-@keyframes ring{0%{opacity:.6;r:120}100%{opacity:0;r:150}}
+.m-surprised .brows,.m-excited .brows{transform:translateY(-8px)}
+.m-thinking .brows,.thinking .brows{transform:translateY(-4px)}
+.m-encouraging .brows{transform:translateY(-3px)}
+.mouth > *{display:none}
+.mouth > .on{display:inline}
+.ring{fill:none;stroke:#3B7BE8;stroke-width:6;opacity:0}
+.listening .ring{animation:ring 1.3s ease-out infinite}
+@keyframes ring{0%{opacity:.55;transform:scale(.92)}100%{opacity:0;transform:scale(1.08)}}
+.ring{transform-box:fill-box;transform-origin:center}
 .think-dots{opacity:0;transition:opacity .2s}
 .thinking .think-dots{opacity:1}
 .think-dots circle{animation:dot 1s infinite}
 .think-dots circle:nth-child(2){animation-delay:.15s}.think-dots circle:nth-child(3){animation-delay:.3s}
 @keyframes dot{50%{transform:translateY(-6px)}}
+.board-glow{opacity:0;transition:opacity .3s}
+.p-point .board-glow{opacity:1}
 .burst{position:absolute;inset:0;pointer-events:none;overflow:visible}
-.burst span{position:absolute;left:50%;top:40%;font-size:1.6rem;animation:fly 1.2s ease-out forwards}
-@keyframes fly{from{transform:translate(-50%,-50%) scale(.4);opacity:1}to{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.2);opacity:0}}
-@media (prefers-reduced-motion:reduce){.speaking .t-head,.t-body,.eyes-n,.listening .ring,.think-dots circle{animation:none}}
+.burst span{position:absolute;left:50%;top:40%;font-size:1.7rem;animation:fly 1.2s ease-out forwards}
+@keyframes fly{from{transform:translate(-50%,-50%) scale(.4);opacity:1}to{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.25);opacity:0}}
+@media (prefers-reduced-motion:reduce){.speaking .t-head,.t-body,.listening .ring,.think-dots circle,.pose-wave{animation:none}}
 
 .ov{position:fixed;inset:0;background:rgba(43,27,15,.5);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));z-index:50}
 .ov .card{width:min(560px,100%);max-height:100%;overflow:auto;display:grid;gap:14px}
@@ -454,38 +467,118 @@ function renderHome(k){
 }
 
 /* =============== TEACHER SVG =============== */
-const TEACHER = `<svg viewBox="0 0 300 330" role="img" aria-label="Teacher Noor">
- <circle cx="150" cy="160" r="135" fill="#E3EEFF"/>
- <circle class="ring" cx="150" cy="160" r="120"/>
- <g class="t-body">
-  <path d="M42 330 C48 262 92 236 150 236 C208 236 252 262 258 330 Z" fill="#FF6A00"/>
-  <path d="M118 236 L150 276 L182 236 Z" fill="#FFFFFF"/>
-  <path d="M150 276 L150 330" stroke="#B84A00" stroke-width="3"/>
-  <circle cx="150" cy="295" r="4" fill="#B84A00"/><circle cx="150" cy="315" r="4" fill="#B84A00"/>
- </g>
- <g class="t-head">
-  <path d="M70 168 C60 80 102 38 150 38 C198 38 240 80 230 168 C234 226 196 250 150 250 C104 250 66 226 70 168Z" fill="#4C7FE0"/>
-  <path d="M92 200 C96 238 120 252 150 252 C180 252 204 238 208 200 C196 226 176 238 150 238 C124 238 104 226 92 200Z" fill="#3E6CCB"/>
-  <ellipse cx="150" cy="150" rx="56" ry="62" fill="#F6CBA6"/>
-  <path d="M96 118 C104 82 196 82 204 118 C190 100 110 100 96 118Z" fill="#3E6CCB"/>
-  <g class="brows"><path d="M117 122 Q128 114 139 121" stroke="#3B2414" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M161 121 Q172 114 183 122" stroke="#3B2414" stroke-width="4" fill="none" stroke-linecap="round"/></g>
-  <g class="eyes-n"><ellipse cx="128" cy="142" rx="10" ry="12" fill="#fff"/><ellipse cx="172" cy="142" rx="10" ry="12" fill="#fff"/>
-   <g class="pupils"><circle cx="129" cy="144" r="7" fill="#2B1B0F"/><circle cx="173" cy="144" r="7" fill="#2B1B0F"/><circle cx="131" cy="141" r="2.4" fill="#fff"/><circle cx="175" cy="141" r="2.4" fill="#fff"/></g></g>
-  <g class="eyes-h"><path d="M118 145 Q128 133 138 145" stroke="#2B1B0F" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M162 145 Q172 133 182 145" stroke="#2B1B0F" stroke-width="5" fill="none" stroke-linecap="round"/></g>
-  <path d="M150 150 Q146 166 152 168" stroke="#D89A72" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <circle cx="113" cy="168" r="10" fill="#F28B82" opacity=".45"/><circle cx="187" cy="168" r="10" fill="#F28B82" opacity=".45"/>
-  <g class="mouth">
-   <path data-m="smile" class="on" d="M132 182 Q150 196 168 182 Q150 190 132 182Z" fill="#B23F33"/>
-   <path data-m="grin" d="M128 180 Q150 206 172 180 Z" fill="#B23F33"/>
-   <path data-m="a" d="M134 180 Q150 210 166 180 Q150 186 134 180Z" fill="#7A2620"/>
-   <path data-m="o" d="M142 182 Q150 172 158 182 Q158 198 150 198 Q142 198 142 182Z" fill="#7A2620"/>
-   <path data-m="e" d="M128 182 Q150 196 172 182 Q150 188 128 182Z" fill="#7A2620"/>
-   <path data-m="flat" d="M136 186 L164 186" stroke="#B23F33" stroke-width="4" stroke-linecap="round"/>
+const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor">
+ <defs>
+  <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF2FF"/><stop offset="1" stop-color="#D3E3FF"/></linearGradient>
+  <radialGradient id="g-skin" cx=".5" cy=".4" r=".65"><stop offset="0" stop-color="#FCDDBF"/><stop offset="1" stop-color="#EDB48A"/></radialGradient>
+  <linearGradient id="g-hij" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B9BFF"/><stop offset="1" stop-color="#3D6AD6"/></linearGradient>
+  <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A2E"/><stop offset="1" stop-color="#E85A00"/></linearGradient>
+  <clipPath id="c-scene"><rect width="400" height="440" rx="40"/></clipPath>
+ </defs>
+ <g clip-path="url(#c-scene)">
+  <rect width="400" height="440" fill="url(#g-wall)"/>
+  <g>
+   <rect class="board-glow" x="244" y="28" width="142" height="104" rx="14" fill="#FFD25E"/>
+   <rect x="250" y="34" width="130" height="92" rx="9" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
+   <text x="264" y="72" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#FF6A00">A</text>
+   <text x="286" y="72" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#3B7BE8">B</text>
+   <text x="308" y="72" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#15803D">C</text>
+   <path d="M264 92 Q290 82 318 94 T362 90" stroke="#E9A100" stroke-width="4" fill="none" stroke-linecap="round"/>
+   <path d="M264 108 L330 108" stroke="#C9D6EA" stroke-width="4" stroke-linecap="round"/>
   </g>
-  <path d="M86 150 C86 70 214 70 214 150" stroke="#2B1B0F" stroke-width="7" fill="none"/>
-  <rect x="76" y="138" width="20" height="34" rx="9" fill="#FF6A00"/><rect x="204" y="138" width="20" height="34" rx="9" fill="#FF6A00"/>
-  <path d="M90 168 Q96 196 124 198" stroke="#2B1B0F" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="127" cy="198" r="6" fill="#2B1B0F"/>
-  <g class="think-dots" fill="#3B7BE8"><circle cx="232" cy="70" r="7"/><circle cx="252" cy="52" r="9"/><circle cx="276" cy="30" r="11"/></g>
+  <g>
+   <path d="M30 330 Q18 280 44 262 Q40 300 52 318 Z" fill="#4E9F5A"/>
+   <path d="M52 330 Q48 270 78 252 Q70 296 66 326 Z" fill="#3E8A4A"/>
+   <path d="M60 332 Q84 290 100 296 Q84 314 74 336 Z" fill="#5DB36A"/>
+   <path d="M26 330 H92 L84 392 H34 Z" fill="#C8693A"/>
+   <rect x="22" y="324" width="74" height="12" rx="5" fill="#B05A30"/>
+  </g>
+  <circle class="ring" cx="200" cy="185" r="112"/>
+  <g class="t-body">
+   <path d="M66 440 C70 352 124 310 200 310 C276 310 330 352 334 440 Z" fill="url(#g-top)"/>
+   <path d="M168 312 L200 362 L232 312 Z" fill="#FFF7EE"/>
+   <path d="M118 262 C108 312 152 336 200 338 C248 336 292 312 282 262 C268 298 238 312 200 312 C162 312 132 298 118 262Z" fill="url(#g-hij)"/>
+   <rect x="240" y="364" width="52" height="22" rx="5" fill="#FFFFFF"/>
+   <text x="266" y="380" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#E85A00">Noor</text>
+   <g class="arm-l"><path d="M96 352 C80 382 76 412 78 440 L118 440 C116 410 120 388 128 368 Z" fill="#E25500"/></g>
+   <g class="arm-r"><path d="M304 352 C320 382 324 412 322 440 L282 440 C284 410 280 388 272 368 Z" fill="#E25500"/></g>
+   <g class="pose pose-wave">
+    <path d="M100 350 C70 336 56 292 62 246 L96 244 C96 282 110 314 132 332 Z" fill="#E25500"/>
+    <ellipse cx="78" cy="226" rx="20" ry="24" fill="url(#g-skin)"/>
+    <rect x="58" y="196" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(-14 62 209)"/>
+    <rect x="68" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
+    <rect x="79" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
+    <rect x="90" y="194" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(12 94 207)"/>
+    <ellipse cx="98" cy="234" rx="7" ry="12" fill="#F3C49E" transform="rotate(35 98 234)"/>
+   </g>
+   <g class="pose pose-thumb">
+    <path d="M98 352 C90 330 98 306 112 300 L138 306 C130 318 124 336 126 354 Z" fill="#E25500"/>
+    <rect x="104" y="276" width="38" height="32" rx="11" fill="url(#g-skin)"/>
+    <rect x="113" y="248" width="13" height="34" rx="6.5" fill="#F3C49E"/>
+    <path d="M108 288 H138 M108 297 H138" stroke="#D9A37C" stroke-width="2"/>
+   </g>
+  </g>
+  <g class="t-head">
+   <path d="M108 196 C100 108 150 72 200 72 C250 72 300 108 292 196 C296 256 256 292 200 294 C144 292 104 256 108 196Z" fill="url(#g-hij)"/>
+   <ellipse cx="200" cy="186" rx="62" ry="70" fill="url(#g-skin)"/>
+   <ellipse cx="200" cy="184" rx="67" ry="75" fill="none" stroke="#4F80EA" stroke-width="10"/>
+   <path d="M134 150 C142 104 258 104 266 150 C246 126 154 126 134 150Z" fill="#3D6AD6"/>
+   <path d="M146 140 C170 118 230 118 254 140" stroke="#86AEFF" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+   <circle cx="266" cy="232" r="6" fill="#FFD25E"/>
+   <g class="brows">
+    <path d="M160 156 Q174 147 188 154" stroke="#3B2414" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M212 154 Q226 147 240 156" stroke="#3B2414" stroke-width="5" fill="none" stroke-linecap="round"/>
+   </g>
+   <g class="eyes-n">
+    <ellipse cx="175" cy="182" rx="14" ry="16" fill="#FFFFFF"/>
+    <ellipse cx="225" cy="182" rx="14" ry="16" fill="#FFFFFF"/>
+    <g class="pupils">
+     <circle cx="176" cy="184" r="9.5" fill="#6B4423"/><circle cx="226" cy="184" r="9.5" fill="#6B4423"/>
+     <circle cx="176" cy="184" r="5.5" fill="#1B120B"/><circle cx="226" cy="184" r="5.5" fill="#1B120B"/>
+     <circle cx="179.5" cy="180" r="3.2" fill="#FFFFFF"/><circle cx="229.5" cy="180" r="3.2" fill="#FFFFFF"/>
+    </g>
+    <path d="M160 175 Q175 162 190 175" stroke="#1B120B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M210 175 Q225 162 240 175" stroke="#1B120B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M160 175 L154 170 M163 171 L159 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M240 175 L246 170 M237 171 L241 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
+    <g class="lids"><ellipse cx="175" cy="182" rx="15" ry="17" fill="#F2C29C"/><ellipse cx="225" cy="182" rx="15" ry="17" fill="#F2C29C"/></g>
+   </g>
+   <g class="eyes-h">
+    <path d="M161 186 Q175 170 189 186" stroke="#1B120B" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M211 186 Q225 170 239 186" stroke="#1B120B" stroke-width="5" fill="none" stroke-linecap="round"/>
+   </g>
+   <path d="M200 190 Q194 208 202 211" stroke="#D08C62" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+   <circle cx="157" cy="210" r="12" fill="#FF8F86" opacity=".42"/><circle cx="243" cy="210" r="12" fill="#FF8F86" opacity=".42"/>
+   <g class="mouth">
+    <path data-m="rest" class="on" d="M182 226 Q200 240 218 226 Q200 233 182 226Z" fill="#C2483C"/>
+    <g data-m="A"><path d="M184 223 Q200 254 216 223 Q200 229 184 223Z" fill="#7A2620"/><path d="M190 246 Q200 240 210 246 Q200 251 190 246Z" fill="#E86F6F"/></g>
+    <g data-m="E"><path d="M178 225 Q200 244 222 225 Q200 231 178 225Z" fill="#7A2620"/><path d="M183 226 Q200 231 217 226 L216 230 Q200 234 184 230Z" fill="#FFFFFF"/></g>
+    <g data-m="O"><ellipse cx="200" cy="232" rx="10" ry="13" fill="#7A2620"/><ellipse cx="200" cy="238" rx="6" ry="4" fill="#E86F6F"/></g>
+    <path data-m="M" d="M184 229 Q200 233 216 229" stroke="#B23F33" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <g data-m="F"><path d="M186 226 Q200 236 214 226 Q200 230 186 226Z" fill="#7A2620"/><rect x="190" y="224" width="20" height="5" rx="2" fill="#FFFFFF"/></g>
+    <g data-m="grin"><path d="M176 220 Q200 258 224 220 Z" fill="#7A2620"/><path d="M180 221 Q200 227 220 221 L218 227 Q200 232 182 227Z" fill="#FFFFFF"/><path d="M190 246 Q200 238 210 246 Q200 252 190 246Z" fill="#E86F6F"/></g>
+   </g>
+   <path d="M128 182 C128 90 272 90 272 182" stroke="#2B1B0F" stroke-width="9" fill="none" stroke-linecap="round"/>
+   <rect x="114" y="162" width="28" height="46" rx="12" fill="#FF6A00"/><rect x="258" y="162" width="28" height="46" rx="12" fill="#FF6A00"/>
+   <rect x="120" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/><rect x="264" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/>
+   <path d="M132 204 Q138 240 172 242" stroke="#2B1B0F" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="176" cy="242" r="7.5" fill="#2B1B0F"/>
+   <g class="think-dots" fill="#3B7BE8"><circle cx="300" cy="96" r="8"/><circle cx="322" cy="74" r="10"/><circle cx="348" cy="50" r="13"/></g>
+  </g>
+  <g class="pose pose-chin">
+   <path d="M302 352 C298 310 272 288 246 278 L236 298 C258 308 276 326 282 356 Z" fill="#E25500"/>
+   <rect x="214" y="252" width="36" height="30" rx="11" fill="url(#g-skin)"/>
+   <rect x="238" y="224" width="11" height="34" rx="5.5" fill="#F3C49E"/>
+  </g>
+  <g class="pose pose-ear">
+   <path d="M304 352 C326 312 322 262 304 232 L284 242 C296 272 296 312 282 352 Z" fill="#E25500"/>
+   <ellipse cx="296" cy="214" rx="16" ry="26" fill="url(#g-skin)" transform="rotate(-12 296 214)"/>
+   <path d="M286 200 Q280 214 288 228" stroke="#D9A37C" stroke-width="2.5" fill="none"/>
+  </g>
+  <g class="pose pose-point">
+   <path d="M302 352 C324 312 332 262 340 216 L362 222 C350 268 334 316 324 356 Z" fill="#E25500"/>
+   <ellipse cx="352" cy="204" rx="17" ry="19" fill="url(#g-skin)"/>
+   <rect x="355" y="160" width="10" height="36" rx="5" fill="#F3C49E" transform="rotate(22 360 178)"/>
+  </g>
  </g>
 </svg>`;
 
@@ -635,27 +728,46 @@ function renderRoom(){
   $('#typer').addEventListener('submit', e => { e.preventDefault(); const v = $('#msg').value.trim(); if(!v) return; $('#msg').value = ''; studentSaid(v); });
   $('#wrap').onclick = () => { interrupt(false); teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
   setState('idle'); setMood('happy');
+  L.firstWave = true; blinkLoop(); idleGlance();
 }
 function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt.getTime())/1000), t = $('#timer');
   if(t){ t.textContent = `${pad(Math.floor(s/60))}:${pad(s%60)} / 25:00`; t.classList.toggle('over', s > LESSON_MIN*60); }
   const w = $('#wrap'); if(w) w.hidden = !(s >= 24*60 && !L.done); }
 
 const STATE_TXT = {idle:'', thinking:'المعلمة تفكر…', speaking:'المعلمة تتكلم · اضغط عليها لتقاطعها', listening:'دورك! تكلم بالإنجليزي 🎤', tap:'اضغط زر الميكروفون الأزرق وتكلم'};
+const POSES = ['wave','thumb','chin','ear','point'];
+function setPose(p, ms){ if(!L) return; const b = $('#tbox'); if(!b) return; clearTimeout(L.poseT);
+  POSES.forEach(x => b.classList.toggle('p-'+x, x === p));
+  if(ms) L.poseT = setTimeout(() => { if(L) setPose(L.state === 'thinking' ? 'chin' : L.state === 'listening' ? 'ear' : null); }, ms); }
+function look(x, y){ const p = document.querySelector('#tbox .pupils'); if(p) p.style.transform = `translate(${x}px,${y}px)`; }
 function setState(s){ if(!L) return; L.state = s; const b = $('#tbox'); if(!b) return;
   b.classList.toggle('speaking', s==='speaking'); b.classList.toggle('listening', s==='listening'); b.classList.toggle('thinking', s==='thinking');
   $('#state').textContent = STATE_TXT[s] || '';
   const m = $('#mic'); if(m){ m.classList.toggle('on', s==='listening'); m.classList.toggle('wait', s==='thinking'||s==='speaking'); }
-  if(s === 'speaking') startMouth(); else { stopMouth(); setMouth(L.mood==='surprised'?'o':(L.mood==='laughing'||L.mood==='excited')?'grin':'smile'); } }
+  if(s === 'thinking'){ setPose('chin'); look(5,-6); }
+  else if(s === 'listening'){ setPose('ear'); look(-2,3); }
+  else if(s === 'speaking'){ if(b.classList.contains('p-chin') || b.classList.contains('p-ear')) setPose(null); look(0,1); }
+  else { setPose(null); look(0,0); }
+  if(s !== 'speaking') restMouth(); }
 function setMood(m){ if(!L) return; const ok = ['happy','excited','proud','laughing','surprised','thinking','encouraging']; m = ok.includes(m) ? m : 'happy'; L.mood = m;
-  const b = $('#tbox'); if(!b) return; ok.forEach(x => b.classList.toggle('m-'+x, x === m)); if(m === 'proud' || m === 'excited') burst(); }
-function setMouth(n){ document.querySelectorAll('.mouth path').forEach(p => p.classList.toggle('on', p.dataset.m === n)); }
-function startMouth(){ stopMouth(); const seq = ['a','e','o','smile','a','e','flat','o']; let i = 0;
-  L.mouthT = setInterval(() => { i = (i + 1 + Math.floor(Math.random()*3)) % seq.length; setMouth(seq[i]); }, 110); }
+  const b = $('#tbox'); if(!b) return; ok.forEach(x => b.classList.toggle('m-'+x, x === m));
+  if(m === 'proud' || m === 'excited'){ burst(); setPose('thumb', 2600); }
+  if(m === 'laughing') burst(); }
+function setMouth(n){ document.querySelectorAll('#tbox .mouth > *').forEach(p => p.classList.toggle('on', p.dataset.m === n)); }
+function restMouth(){ stopMouth(); if(!L) return; setMouth(L.mood==='surprised' ? 'O' : (L.mood==='laughing'||L.mood==='excited'||L.mood==='proud') ? 'grin' : 'rest'); }
+const VIS = c => /[ah]/.test(c) ? 'A' : /[eiy]/.test(c) ? 'E' : /[ouwq]/.test(c) ? 'O' : /[mbp]/.test(c) ? 'M' : /[fv]/.test(c) ? 'F' : /[a-z]/.test(c) ? (Math.random() < .5 ? 'E' : 'A') : 'rest';
+function mouthWalk(str, perChar){ stopMouth(); if(!L) return; let i = 0; const chars = str.toLowerCase();
+  L.mouthT = setInterval(() => { if(i >= chars.length){ stopMouth(); setMouth('rest'); return; } const c = chars[i++]; if(c === ' ' && Math.random() < .5) setMouth('M'); else setMouth(VIS(c)); }, perChar); }
 function stopMouth(){ if(L && L.mouthT){ clearInterval(L.mouthT); L.mouthT = null; } }
-function burst(){ const b = $('#burst'); if(!b) return; b.innerHTML = ''; const em = ['⭐','✨','🌟','👏'];
-  for(let i=0;i<10;i++){ const s = document.createElement('span'); s.textContent = em[i%em.length]; const a = Math.random()*Math.PI*2, d = 90+Math.random()*80;
+function burst(){ const b = $('#burst'); if(!b) return; b.innerHTML = ''; const em = ['⭐','✨','🌟','👏','💛'];
+  for(let i=0;i<12;i++){ const s = document.createElement('span'); s.textContent = em[i%em.length]; const a = Math.random()*Math.PI*2, d = 100+Math.random()*90;
     s.style.setProperty('--x', Math.cos(a)*d+'px'); s.style.setProperty('--y', Math.sin(a)*d+'px'); b.appendChild(s); }
   setTimeout(() => { if(b) b.innerHTML = ''; }, 1300); }
+function blinkLoop(){ if(!L) return; const b = $('#tbox'); if(b){ b.classList.add('blink'); setTimeout(() => b && b.classList.remove('blink'), 130); }
+  L.blinkT = setTimeout(blinkLoop, 2200 + Math.random()*3800); }
+function idleGlance(){ if(!L) return; if(L.state === 'idle' || L.state === 'speaking'){ const r = Math.random(); if(r < .25) look(-3,0); else if(r < .5) look(3,0); else look(0,1); }
+  L.glanceT = setTimeout(idleGlance, 2500 + Math.random()*3000); }
+function nod(){ const b = $('#tbox'); if(!b || b.classList.contains('nod')) return; b.classList.add('nod'); setTimeout(() => b && b.classList.remove('nod'), 460); }
 
 /* ---- speaking queue ---- */
 function enqueue(s){ s = s.replace(/\s+/g,' ').trim(); if(!s) return; L.queue.push(s); pump(); }
@@ -664,14 +776,19 @@ function pump(){
   if(L.speaking) return;
   if(!L.queue.length){ if(L.streamDone) teacherFinished(); return; }
   const s = L.queue.shift(); L.speaking = true; setState('speaking');
+  if(L.firstWave){ L.firstWave = false; setPose('wave', 2800); }
   speakOne(s, false, () => { if(!L) return; L.speaking = false; pump(); });
 }
 function speakOne(text, slow, done){
-  let finished = false; const fin = () => { if(finished) return; finished = true; clearTimeout(guard); done && done(); };
+  let finished = false; const fin = () => { if(finished) return; finished = true; clearTimeout(guard); stopMouth(); if(L) setMouth('rest'); done && done(); };
   const words = text.split(/\s+/).length; const guard = setTimeout(fin, (slow?700:420)*words + 2500);
-  if(!('speechSynthesis' in window)){ setTimeout(fin, 300*words); return; }
-  try{ const u = new SpeechSynthesisUtterance(text); if(voice) u.voice = voice; u.lang = 'en-US';
-    u.rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96); u.pitch = 1.08;
+  const rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96);
+  const perChar = Math.round(62 / rate);
+  if(!('speechSynthesis' in window)){ mouthWalk(text, perChar); setTimeout(fin, 300*words); return; }
+  try{ const u = new SpeechSynthesisUtterance(text); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = rate; u.pitch = 1.08;
+    let gotBoundary = false;
+    u.onstart = () => { setTimeout(() => { if(!gotBoundary && !finished) mouthWalk(text, perChar); }, 250); };
+    u.onboundary = e => { if(e.name && e.name !== 'word') return; gotBoundary = true; const w = text.slice(e.charIndex).split(/\s/)[0] || ''; mouthWalk(w, perChar); };
     u.onend = fin; u.onerror = fin; speechSynthesis.speak(u); }catch(e){ fin(); }
 }
 function sayAll(text, slow){ L.queue = []; L.streamDone = true; L.speaking = true; setState('speaking'); speakOne(text, slow, () => { if(!L) return; L.speaking = false; teacherFinished(); }); }
@@ -752,7 +869,7 @@ function teacherFinished(){
   if($('#typer') && !$('#typer').hidden){ setState('idle'); return; }
   startListening(false);
 }
-function showBoard(b){ const el = $('#boardBox'); if(!el) return;
+function showBoard(b){ const el = $('#boardBox'); if(!el) return; setPose('point', 3000); look(6,-5); setTimeout(() => { if(L) look(0,0); }, 3000);
   el.innerHTML = `<div class="board"><button id="bw" aria-label="اسمع الكلمة"><div class="emo">${esc(b.emoji)}</div><div class="w">${esc(b.word)}</div></button>${b.ar?`<div style="font-weight:700">${esc(b.ar)}</div>`:''}${b.example?`<div class="ex">${esc(b.example)}</div>`:''}<div class="small" style="opacity:.8">اضغط الكلمة لتسمعها ببطء</div></div>`;
   $('#bw').onclick = () => { interrupt(false); L.speaking = true; setState('speaking'); speakOne(b.word, true, () => { if(!L) return; L.speaking = false; teacherFinished(); }); }; }
 function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right){ return; }
@@ -772,7 +889,7 @@ function startListening(fromTap){
   let text = '';
   const rec = new SR(); L.rec = rec; rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = true; rec.maxAlternatives = 1;
   const you = $('#you');
-  rec.onresult = e => { let t = ''; for(const r of e.results) t += r[0].transcript; text = t;
+  rec.onresult = e => { let t = ''; for(const r of e.results) t += r[0].transcript; if(t.split(' ').length !== text.split(' ').length && Math.random() < .5) nod(); text = t;
     if(you){ you.hidden = false; you.classList.add('live'); you.textContent = t; }
     clearTimeout(L.silT); L.silT = setTimeout(() => { try{ rec.stop(); }catch(x){} }, SILENCE_MS); };
   rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); } };
@@ -834,7 +951,7 @@ Reply with ONLY one JSON object:
     <button class="btn primary big" id="back">رجوع للرئيسية</button></div>`;
   $('#back').onclick = () => { ov.remove(); leaveRoom(); };
 }
-function leaveRoom(){ if(L){ clearInterval(L.tick); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
+function leaveRoom(){ if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
