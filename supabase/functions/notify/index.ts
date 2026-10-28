@@ -44,12 +44,13 @@ async function run() {
     if (sub === undefined) f[top] = r.value; else f[top][sub] = r.value; }
   const msgs: { fam: string; key: string; to: (s: any) => boolean; title: string; body: string; url?: string }[] = [];
   for (const [fid, f] of Object.entries(fam)) {
-    const gOf = (k: string) => Object.values(f.guardians).filter((g: any) => (g.kids || []).includes(k)).map((g: any) => g.id);
+    const gOf = (k: string) => Object.values(f.guardians).filter((g: any) => g && (g.kids || []).includes(k)).map((g: any) => g.id);
     const toKid = (k: string) => (s: any) => s.family_id === fid && s.role === "kid" && s.kid_id === k;
     const toGuard = (k: string) => { const gs = gOf(k); return (s: any) => s.family_id === fid && ((s.role === "guardian" && gs.includes(s.kid_id)) || s.role === "parent"); };
     const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
     const yday = new Date(today.getTime() - 864e5);
     for (const [k, kid] of Object.entries<any>(f.kids)) {
+      if (!kid || typeof kid !== 'object') continue;
       const name = kid.ar || kid.en || k;
       const slots = [...slotsOn(f.sched[k], yday), ...slotsOn(f.sched[k], today)];
       for (const s of slots) {
@@ -68,7 +69,7 @@ async function run() {
       }
       for (const c of (f.cheers[k] || []).filter((c: any) => nowMs - Date.parse(c.at) < 3600e3))
         msgs.push({ fam: fid, key: `cheer:${c.id}`, to: toKid(k), title: `💌 رسالة من ${c.from || "ولي أمرك"}`, body: c.text });
-      const lf = f.livefeed[k];
+      const lf = f.livefeed[k] || null;
       if (lf && lf.start && !lf.done && nowMs - lf.start < 20 * 60e3)
         msgs.push({ fam: fid, key: `live:${k}:${lf.start}`, to: (s: any) => toGuard(k)(s) && s.role === "guardian", title: `🔴 ${name} في الحصة الآن`, body: "افتح هدهد وشاهد المحادثة مباشرة، وأرسل له تشجيع 💪" });
     }
