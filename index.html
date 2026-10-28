@@ -415,24 +415,52 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .cloudbar{background:var(--sky-soft);border-radius:14px;padding:10px 14px;font-size:.95rem}
 .mc{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start}.mci{font-size:1.2rem}.meter{height:10px;border-radius:6px;background:var(--line);overflow:hidden}.meter i{display:block;height:100%;width:0;background:var(--good);transition:width .08s}
 
-#splash{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;overflow:hidden;transition:opacity .45s ease}
-#splash.out{opacity:0;pointer-events:none}
-#splash .sp{display:grid;justify-items:center;gap:6px}
-#splash .bird{width:min(46vw,220px);height:auto;animation:sp-fly 1.5s cubic-bezier(.22,.9,.25,1) both;transform-origin:50% 60%}
-#splash .wing{transform-box:view-box;transform-origin:96px 118px;animation:sp-flap .16s ease-in-out 8 alternate}
-#splash .crest{transform-box:view-box;transform-origin:100px 66px;animation:sp-crest .55s 1.35s cubic-bezier(.3,1.6,.5,1) both}
-#splash .legs{opacity:0;animation:sp-in .2s 1.3s forwards}
-#splash .word{font-family:var(--font);font-weight:800;font-size:clamp(2.6rem,9vw,4.2rem);color:var(--brand);opacity:0;animation:sp-up .5s 1.45s forwards;line-height:1.1}
-#splash .tag{font-family:var(--font);color:var(--teal-ink);font-weight:700;font-size:clamp(1rem,3.4vw,1.3rem);opacity:0;animation:sp-up .5s 1.7s forwards}
-#splash .trail{position:absolute;inset:0;pointer-events:none}
-#splash .trail i{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--teal);opacity:0;animation:sp-dot .9s ease-out forwards}
-@keyframes sp-fly{0%{transform:translate(-75vw,38vh) scale(.45) rotate(-14deg)}55%{transform:translate(6vw,-8vh) scale(1.06) rotate(6deg)}78%{transform:translate(-1vw,1vh) scale(.98) rotate(-2deg)}100%{transform:none}}
-@keyframes sp-flap{from{transform:rotate(0)}to{transform:rotate(-46deg) scaleY(.75)}}
-@keyframes sp-crest{0%{transform:scale(.4)}100%{transform:scale(1)}}
+#splash{position:fixed;inset:0;z-index:9999;overflow:hidden;transition:opacity .5s ease,transform .5s ease;background:linear-gradient(180deg,#FFE3D6 0%,#FFF3E8 55%,#FFF8F0 100%)}
+#splash.out{opacity:0;transform:scale(1.06);pointer-events:none}
+#splash .sun{position:absolute;width:38vmin;height:38vmin;border-radius:50%;left:50%;top:38%;transform:translate(-50%,-50%) scale(.6);background:radial-gradient(circle,#FFD37A 0%,rgba(255,211,122,.55) 45%,rgba(255,211,122,0) 70%);opacity:0;animation:sp-sun 1.2s .1s ease-out forwards}
+#splash .rays{position:absolute;left:50%;top:38%;width:80vmin;height:80vmin;transform:translate(-50%,-50%);opacity:0;animation:sp-in .6s 1.6s forwards,sp-spin 14s 1.6s linear infinite;background:repeating-conic-gradient(from 0deg,rgba(255,180,120,.18) 0 8deg,transparent 8deg 22deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000 35%,transparent 70%);mask:radial-gradient(circle,#000 35%,transparent 70%)}
+#splash .cloud{position:absolute;height:9vmin;width:24vmin;border-radius:9vmin;background:#fff;opacity:.9;filter:drop-shadow(0 4px 10px rgba(240,90,56,.08))}
+#splash .cloud::before,#splash .cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+#splash .cloud::before{width:11vmin;height:11vmin;left:4vmin;top:-5vmin}#splash .cloud::after{width:8vmin;height:8vmin;left:12vmin;top:-3.5vmin}
+#splash .c1{top:14%;left:-30vmin;animation:sp-cloud 9s linear forwards}
+#splash .c2{top:66%;right:-30vmin;transform:scale(.75);animation:sp-cloud2 11s linear forwards}
+#splash .float{position:absolute;font-family:var(--en);font-weight:800;color:#fff;border-radius:14px;padding:.15em .45em;font-size:clamp(1rem,4vmin,1.8rem);opacity:0;animation:sp-float 2.6s ease-out forwards;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+#splash .stage{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:min(52vmin,250px);aspect-ratio:200/190}
+#splash .flyer{position:absolute;inset:0;animation:sp-fly 1.55s .15s cubic-bezier(.25,.85,.3,1) both}
+#splash .bird{width:100%;height:100%;overflow:visible;animation:sp-land .5s 1.65s ease-out forwards}
+#splash .wing{transform-box:view-box;transform-origin:96px 118px;animation:sp-flap .15s .15s ease-in-out 10 alternate,sp-fold .3s 1.65s ease-out forwards}
+#splash .crest{transform-box:view-box;transform-origin:100px 66px;animation:sp-crest .6s 1.75s cubic-bezier(.3,1.7,.5,1) both}
+#splash .legs{opacity:0;animation:sp-in .15s 1.6s forwards}
+#splash .eye{transform-box:view-box;transform-origin:124px 100px;animation:sp-blink .25s 2.5s ease-in-out}
+#splash .bubble{position:absolute;right:-22%;top:-14%;background:#fff;color:var(--teal-ink);font-family:var(--en);font-weight:800;font-size:clamp(1rem,4.6vmin,1.6rem);padding:.3em .7em;border-radius:1em 1em 1em .25em;box-shadow:0 8px 20px rgba(15,118,110,.18);transform:scale(0);transform-origin:0 100%;animation:sp-pop .45s 2.05s cubic-bezier(.3,1.6,.5,1) forwards}
+#splash .shadow{position:absolute;left:50%;bottom:-8%;width:46%;height:7%;transform:translateX(-50%) scale(0);background:rgba(59,31,20,.18);border-radius:50%;animation:sp-shadow .4s 1.6s ease-out forwards}
+#splash .brand{position:absolute;left:0;right:0;top:calc(38% + min(30vmin,150px));display:grid;justify-items:center;gap:4px}
+#splash .word{font-family:var(--font);font-weight:800;font-size:clamp(3rem,13vmin,5.4rem);line-height:1;color:var(--brand);transform:scale(0);animation:sp-word .6s 2.3s cubic-bezier(.3,1.7,.5,1) forwards;text-shadow:0 6px 0 rgba(240,90,56,.15)}
+#splash .tag{font-family:var(--font);color:var(--teal-ink);font-weight:700;font-size:clamp(1.05rem,4.2vmin,1.5rem);opacity:0;animation:sp-up .5s 2.75s forwards}
+#splash .spark{position:absolute;width:10px;height:10px;border-radius:50%;opacity:0}
+#splash .dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--teal);opacity:0;animation:sp-dot .9s ease-out forwards}
+#splash .skip{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-start:18px;border:0;background:rgba(255,255,255,.8);color:#7A4A3A;font-family:var(--font);font-weight:700;border-radius:99px;padding:8px 16px;font-size:.95rem;min-height:40px}
+#splash .snd{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;border:0;background:var(--brand);color:#fff;font-family:var(--font);font-weight:700;border-radius:99px;padding:8px 16px;font-size:.95rem;min-height:40px;display:none;animation:sp-in .3s .4s both}
+#splash.locked .snd{display:block}
+@keyframes sp-sun{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes sp-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes sp-cloud{to{transform:translateX(150vw)}}
+@keyframes sp-cloud2{to{transform:translateX(-150vw) scale(.75)}}
+@keyframes sp-float{0%{opacity:0;transform:translateY(30px) scale(.6) rotate(var(--r,0deg))}25%{opacity:1;transform:translateY(0) scale(1) rotate(var(--r,0deg))}100%{opacity:0;transform:translateY(-60px) scale(1) rotate(var(--r,0deg))}}
+@keyframes sp-fly{0%{transform:translate(-95vw,40vh) scale(.35) rotate(-18deg)}35%{transform:translate(-30vw,-8vh) scale(.7) rotate(-6deg)}62%{transform:translate(18vw,-14vh) scale(.95) rotate(12deg)}82%{transform:translate(4vw,-6vh) scale(1.05) rotate(-4deg)}100%{transform:none}}
+@keyframes sp-land{0%{transform:scale(1.05,.92)}45%{transform:scale(.96,1.05) translateY(-4%)}100%{transform:none}}
+@keyframes sp-flap{from{transform:rotate(0)}to{transform:rotate(-52deg) scaleY(.7)}}
+@keyframes sp-fold{from{transform:rotate(-20deg)}to{transform:rotate(0)}}
+@keyframes sp-crest{0%{transform:scale(.3) rotate(-10deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes sp-blink{50%{transform:scaleY(.1)}}
+@keyframes sp-pop{to{transform:scale(1)}}
+@keyframes sp-shadow{to{transform:translateX(-50%) scale(1)}}
+@keyframes sp-word{to{transform:scale(1)}}
 @keyframes sp-in{to{opacity:1}}
-@keyframes sp-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes sp-dot{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(.2)}}
-@media (prefers-reduced-motion: reduce){#splash *{animation-duration:.01s!important;animation-delay:0s!important}}
+@keyframes sp-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes sp-dot{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(.2)}}
+@keyframes sp-burst{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(.3)}}
+@media (prefers-reduced-motion: reduce){#splash *{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}}
 </style>
 </head>
 <body>
@@ -3296,25 +3324,68 @@ function micCheck(){
   };
 }
 
-/* =============== SPLASH: the hoopoe flies in =============== */
+/* =============== SPLASH: the hoopoe flies in (with sound) =============== */
+const SFX = (() => {
+  let ac = null;
+  const ctx = () => { if(!ac){ try{ ac = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){} } return ac; };
+  const noise = (a, dur) => { const b = a.createBuffer(1, Math.ceil(a.sampleRate * dur), a.sampleRate), d = b.getChannelData(0); for(let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; const s = a.createBufferSource(); s.buffer = b; return s; };
+  const env = (a, g, t, peak, att, dec) => { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + att); g.gain.exponentialRampToValueAtTime(0.0001, t + att + dec); };
+  const tone = (a, type, f0, f1, t, dur, peak) => { const o = a.createOscillator(), g = a.createGain(); o.type = type; o.frequency.setValueAtTime(f0, t); if(f1) o.frequency.exponentialRampToValueAtTime(f1, t + dur); env(a, g, t, peak, .01, dur); o.connect(g).connect(a.destination); o.start(t); o.stop(t + dur + .05); };
+  return {
+    unlock(){ const a = ctx(); if(a && a.state !== 'running') a.resume().catch(() => {}); return a && a.state === 'running'; },
+    running(){ return !!(ac && ac.state === 'running'); },
+    whoosh(at){ const a = ctx(); if(!a) return; const t = a.currentTime + (at||0), s = noise(a, .9), f = a.createBiquadFilter(), g = a.createGain(); f.type = 'bandpass'; f.Q.value = 1.2; f.frequency.setValueAtTime(300, t); f.frequency.exponentialRampToValueAtTime(2400, t + .7); env(a, g, t, .22, .25, .6); s.connect(f).connect(g).connect(a.destination); s.start(t); s.stop(t + .9); },
+    flaps(at, n){ const a = ctx(); if(!a) return; for(let i = 0; i < n; i++){ const t = a.currentTime + (at||0) + i * .15, s = noise(a, .08), f = a.createBiquadFilter(), g = a.createGain(); f.type = 'bandpass'; f.frequency.value = 700 + Math.random() * 300; f.Q.value = 2; env(a, g, t, .18, .008, .07); s.connect(f).connect(g).connect(a.destination); s.start(t); s.stop(t + .1); } },
+    thud(at){ const a = ctx(); if(!a) return; tone(a, 'sine', 180, 70, a.currentTime + (at||0), .18, .35); },
+    pop(at){ const a = ctx(); if(!a) return; tone(a, 'sine', 520, 1250, a.currentTime + (at||0), .09, .25); },
+    chirp(at){ const a = ctx(); if(!a) return; const t = a.currentTime + (at||0); [[2300, 3600, 0], [2600, 3900, .14], [3000, 2400, .3]].forEach(([f0, f1, d]) => tone(a, 'sine', f0, f1, t + d, .09, .16)); },
+    chime(at){ const a = ctx(); if(!a) return; const t = a.currentTime + (at||0); [523.25, 659.25, 783.99, 1046.5, 1318.5].forEach((f, i) => { tone(a, 'triangle', f, 0, t + i * .08, .7, .12); tone(a, 'sine', f * 2, 0, t + i * .08, .35, .03); }); },
+    sparkle(at){ const a = ctx(); if(!a) return; const t = a.currentTime + (at||0); for(let i = 0; i < 6; i++) tone(a, 'sine', 1800 + Math.random() * 1600, 0, t + i * .05, .12, .05); }
+  };
+})();
 (function(){
   let seen = false; try{ seen = sessionStorage.getItem('hh:splash') === '1'; sessionStorage.setItem('hh:splash', '1'); }catch(e){}
   if(seen || /setup=/.test(location.hash)) return;
-  const el = document.createElement('div'); el.id = 'splash'; el.setAttribute('role', 'img'); el.setAttribute('aria-label', 'هدهد ينقل المعرفة');
-  el.innerHTML = `<div class="trail"></div><div class="sp"><svg class="bird" viewBox="0 0 200 190" aria-hidden="true">
+  const BIRD = `<svg class="bird" viewBox="0 0 200 190" aria-hidden="true">
     <g class="crest"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g></g>
+    <g class="legs"><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></g>
     <ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/>
+    <ellipse cx="96" cy="140" rx="38" ry="22" fill="#FF8A6B" opacity=".55"/>
     <g class="wing"><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>
-    <circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/>
-    <g class="legs"><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></g></svg>
-    <div class="word">هدهد</div><div class="tag">هدهد ينقل المعرفة</div></div>`;
+    <g class="eye"><circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><circle cx="127.5" cy="98.5" r="2.2" fill="#fff"/></g>
+    <circle cx="140" cy="118" r="7" fill="#FF9B80" opacity=".8"/>
+    <path d="M156 104l42 8-42 10z" fill="#3B1F14"/></svg>`;
+  const el = document.createElement('div'); el.id = 'splash'; el.setAttribute('role', 'img'); el.setAttribute('aria-label', 'هدهد ينقل المعرفة');
+  const floats = [['A','#F05A38','12%','70%','-8deg',.2],['b','#14B8A6','80%','64%','10deg',.45],['C','#FFB020','20%','24%','6deg',.7],['Hi','#7C3AED','74%','20%','-6deg',.95],['ب','#14B8A6','8%','46%','8deg',1.2],['Z','#F05A38','86%','42%','-10deg',1.45]];
+  el.innerHTML = `<div class="sun"></div><div class="rays"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+    ${floats.map(([t, c, x, y, r, d]) => `<span class="float" style="left:${x};top:${y};background:${c};--r:${r};animation-delay:${d}s">${t}</span>`).join('')}
+    <div class="trail"></div>
+    <div class="stage"><div class="shadow"></div><div class="flyer">${BIRD}</div><div class="bubble" dir="ltr">Hello!</div><div class="burst"></div></div>
+    <div class="brand"><div class="word">هدهد</div><div class="tag">هدهد ينقل المعرفة</div></div>
+    <button class="skip" type="button">تخطي</button><button class="snd" type="button">🔊 شغّل الصوت</button>`;
   document.body.appendChild(el);
+  /* flight trail */
   const tr = el.querySelector('.trail');
-  for(let i = 0; i < 9; i++){ const d = document.createElement('i'); const t = i / 9;
-    d.style.left = (8 + t * 42) + '%'; d.style.top = (82 - Math.sin(t * Math.PI * .9) * 40) + '%'; d.style.animationDelay = (t * .8) + 's'; tr.appendChild(d); }
-  const close = () => { if(el.classList.contains('out')) return; el.classList.add('out'); setTimeout(() => el.remove(), 500); };
-  el.addEventListener('click', close);
-  setTimeout(close, matchMedia('(prefers-reduced-motion: reduce)').matches ? 600 : 2600);
+  [[4, 88], [12, 78], [21, 66], [30, 56], [39, 47], [48, 40], [57, 34], [64, 30], [68, 31]].forEach(([x, y], i) => {
+    const d = document.createElement('i'); d.className = 'dot'; d.style.left = x + '%'; d.style.top = y + '%'; d.style.animationDelay = (.2 + i * .14) + 's'; tr.appendChild(d); });
+  /* sparkle burst when the logo lands */
+  const bu = el.querySelector('.burst'); const cols = ['#F05A38', '#14B8A6', '#FFB020', '#7C3AED'];
+  for(let i = 0; i < 14; i++){ const s = document.createElement('i'); s.className = 'spark'; const a = i / 14 * Math.PI * 2, r = 90 + Math.random() * 60;
+    s.style.cssText = `left:50%;top:55%;background:${cols[i % 4]};--x:${Math.cos(a) * r}px;--y:${Math.sin(a) * r}px;animation:sp-burst .8s ${2.3 + Math.random() * .1}s ease-out forwards`; bu.appendChild(s); }
+  /* sound track (needs a touch on iPhone/iPad: Safari blocks sound before the first tap) */
+  let played = false;
+  const playTrack = offset => { if(played) return; played = true; const o = offset || 0, at = t => Math.max(0, t - o);
+    if(o < .4) SFX.whoosh(at(.15)); if(o < 1.5) SFX.flaps(at(Math.max(.2, o)), Math.max(1, Math.round((1.6 - Math.max(.2, o)) / .15)));
+    if(o < 1.7) SFX.thud(at(1.65)); if(o < 1.85) SFX.pop(at(1.8)); if(o < 2.1) SFX.chirp(at(2.05)); if(o < 2.35){ SFX.chime(at(2.3)); SFX.sparkle(at(2.4)); } };
+  const t0 = performance.now();
+  SFX.unlock(); setTimeout(() => { if(SFX.running()) playTrack(0); else el.classList.add('locked'); }, 60);
+  const unlockNow = () => { SFX.unlock(); setTimeout(() => { if(SFX.running()){ el.classList.remove('locked'); playTrack((performance.now() - t0) / 1000); } }, 30); };
+  let timer = null;
+  const close = () => { if(el.classList.contains('out')) return; clearTimeout(timer); el.classList.add('out'); setTimeout(() => el.remove(), 550); };
+  el.querySelector('.skip').onclick = e => { e.stopPropagation(); close(); };
+  el.querySelector('.snd').onclick = e => { e.stopPropagation(); unlockNow(); };
+  el.addEventListener('pointerdown', () => { if(!SFX.running()) unlockNow(); });
+  timer = setTimeout(close, matchMedia('(prefers-reduced-motion: reduce)').matches ? 900 : 3900);
 })();
 
 /* =============== BOOT =============== */
