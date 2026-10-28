@@ -3336,7 +3336,13 @@ const SFX = (() => {
   const env = (a, g, t, peak, att, dec) => { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + att); g.gain.exponentialRampToValueAtTime(0.0001, t + att + dec); };
   const tone = (a, type, f0, f1, t, dur, peak) => { const o = a.createOscillator(), g = a.createGain(); o.type = type; o.frequency.setValueAtTime(f0, t); if(f1) o.frequency.exponentialRampToValueAtTime(f1, t + dur); env(a, g, t, peak, .01, dur); o.connect(g).connect(a.destination); o.start(t); o.stop(t + dur + .05); };
   return {
-    unlock(){ const a = ctx(); if(a && a.state !== 'running') a.resume().catch(() => {}); return a && a.state === 'running'; },
+    unlock(){
+      /* iOS: let web audio play even when the side switch is on silent, and unlock inside the tap */
+      try{ if(navigator.audioSession) navigator.audioSession.type = 'playback'; }catch(e){}
+      const a = ctx(); if(!a) return false;
+      try{ if(a.state !== 'running') a.resume().catch(() => {}); const b = a.createBuffer(1, 1, 22050), s = a.createBufferSource(); s.buffer = b; s.connect(a.destination); s.start(0); }catch(e){}
+      try{ if(!SFX._el){ SFX._el = new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA='); SFX._el.setAttribute('playsinline', ''); } const pr = SFX._el.play(); if(pr && pr.catch) pr.catch(() => {}); }catch(e){}
+      return a.state === 'running'; },
     running(){ return !!(ac && ac.state === 'running'); },
     whoosh(at){ const a = ctx(); if(!a) return; const t = a.currentTime + (at||0), s = noise(a, .9), f = a.createBiquadFilter(), g = a.createGain(); f.type = 'bandpass'; f.Q.value = 1.2; f.frequency.setValueAtTime(300, t); f.frequency.exponentialRampToValueAtTime(2400, t + .7); env(a, g, t, .22, .25, .6); s.connect(f).connect(g).connect(a.destination); s.start(t); s.stop(t + .9); },
     flaps(at, n){ const a = ctx(); if(!a) return; for(let i = 0; i < n; i++){ const t = a.currentTime + (at||0) + i * .15, s = noise(a, .08), f = a.createBiquadFilter(), g = a.createGain(); f.type = 'bandpass'; f.frequency.value = 700 + Math.random() * 300; f.Q.value = 2; env(a, g, t, .18, .008, .07); s.connect(f).connect(g).connect(a.destination); s.start(t); s.stop(t + .1); } },
@@ -3382,17 +3388,18 @@ function showSplash(force){
     if(o < .4) SFX.whoosh(at(.15)); if(o < 1.5) SFX.flaps(at(Math.max(.2, o)), Math.max(1, Math.round((1.6 - Math.max(.2, o)) / .15)));
     if(o < 1.7) SFX.thud(at(1.65)); if(o < 1.85) SFX.pop(at(1.8)); if(o < 2.1) SFX.chirp(at(2.05)); if(o < 2.35){ SFX.chime(at(2.3)); SFX.sparkle(at(2.4)); } };
   const t0 = performance.now();
-  SFX.unlock(); setTimeout(() => { if(SFX.running()) playTrack(0); }, 60);
-  const unlockNow = () => { SFX.unlock(); setTimeout(() => { if(SFX.running()) playTrack((performance.now() - t0) / 1000); }, 30); };
+  SFX.unlock(); let tries = 0; const waitRun = () => { if(SFX.running()) playTrack((performance.now() - t0) / 1000); else if(++tries < 10) setTimeout(waitRun, 60); }; setTimeout(waitRun, 40);
+  const unlockNow = () => { SFX.unlock(); let n = 0; const w = () => { if(SFX.running()) playTrack((performance.now() - t0) / 1000); else if(++n < 10) setTimeout(w, 50); }; setTimeout(w, 30); };
   let timer = null;
   const close = () => { if(el.classList.contains('out')) return; clearTimeout(timer); el.classList.add('out'); setTimeout(() => el.remove(), 550); };
   el.querySelector('.skip').onclick = e => { e.stopPropagation(); close(); };
-  el.addEventListener('pointerdown', () => { if(!SFX.running()) unlockNow(); });
+  ['touchend','click'].forEach(ev => el.addEventListener(ev, () => { if(!played) unlockNow(); }));
   timer = setTimeout(close, matchMedia('(prefers-reduced-motion: reduce)').matches ? 900 : 3900);
 }
 showSplash(false);
 /* any first touch on the page unlocks sound for the rest of the session */
-['pointerdown','keydown'].forEach(ev => document.addEventListener(ev, () => SFX.unlock(), {once:true, capture:true}));
+const sfxFirstTouch = () => { SFX.unlock(); setTimeout(() => { if(SFX.running()) ['touchend','click','keydown'].forEach(ev => document.removeEventListener(ev, sfxFirstTouch, true)); }, 50); };
+['touchend','click','keydown'].forEach(ev => document.addEventListener(ev, sfxFirstTouch, true));
 
 /* =============== BOOT =============== */
 setupLang();
