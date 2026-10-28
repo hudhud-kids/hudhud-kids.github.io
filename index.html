@@ -226,6 +226,82 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .acc{width:100%;border-collapse:collapse}
 .acc td,.acc th{padding:8px;border-top:1px solid var(--line);text-align:right}
 .acc code{direction:ltr;unicode-bidi:isolate;background:var(--bg);padding:2px 8px;border-radius:6px;font-weight:700}
+/* ===== kid app: tabs, path, schedule, wins, quiz, library ===== */
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}
+.tab{flex:none;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:700;min-height:42px}
+.tab.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn.danger{border-color:var(--bad);color:var(--bad)}
+.btn.danger:hover{background:var(--bad-soft)}
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}
+.unit{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;padding:12px;border-radius:16px;background:var(--bg);border:2px solid transparent}
+.unit.cur{border-color:var(--brand);background:var(--brand-soft)}
+.unit.done{background:var(--good-soft)}
+.ue{font-size:2rem}
+.ldots{display:flex;gap:5px;margin-top:6px;direction:ltr;justify-content:flex-end}
+.ldots i{width:14px;height:14px;border-radius:50%;background:var(--line)}
+.ldots i.on{background:var(--good)}
+.ldots i.cur{background:var(--brand);box-shadow:0 0 0 3px rgba(255,106,0,.25)}
+.mcounts{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.mcount{background:var(--bg);border-radius:14px;padding:10px 16px;min-width:140px}
+.mcount b{display:block;font-size:1.8rem;line-height:1.2}
+.mcount.low{background:var(--bad-soft)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;z-index:90;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:tin .3s ease-out;max-width:calc(100% - 32px);text-align:center}
+.toast.gold{background:linear-gradient(135deg,#FFD25E,#FF9A3D);color:#3A2100}
+@keyframes tin{from{opacity:0;transform:translate(-50%,20px)}}
+.rank{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,#FFF1E3,#FFFFFF)}
+.rk-e{font-size:3.4rem}
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:12px}
+.badge{border-radius:16px;padding:12px;background:var(--bg);text-align:center;opacity:.45;filter:grayscale(1)}
+.badge.on{opacity:1;filter:none;background:linear-gradient(160deg,#FFF6D8,#FFE7D4);box-shadow:0 4px 14px rgba(233,161,0,.18)}
+.badge .be{font-size:2.2rem}
+.cert-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;width:100%;border:0;background:var(--bg);border-radius:12px;padding:10px 12px;margin-top:8px}
+.card.wide{width:min(760px,100%)}
+.cert{border:10px solid #FF6A00;border-radius:18px;padding:6px;background:#fff}
+.cert-in{border:2px dashed #FFB27A;border-radius:12px;padding:22px 16px;display:grid;gap:6px;justify-items:center;text-align:center}
+.cert-t{font-size:1.7rem;font-weight:800;color:#B84A00}
+.cert-n{font-size:2.2rem;font-weight:800;color:#2B1B0F;border-bottom:3px solid #FFD25E;padding:0 20px}
+.cert-u{font-size:1.4rem;font-weight:800;color:#3B7BE8}
+.cert-s{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:10px}
+.sig{font-size:1.3rem;font-style:italic;border-bottom:1.5px solid var(--muted)}
+body.printing > *:not(.ov){display:none!important}
+@media print{body *{visibility:hidden}#certBox,#certBox *{visibility:visible}#certBox{position:fixed;inset:0;margin:auto}}
+.quiz{display:grid;gap:14px}
+.qhead{display:grid;gap:6px}
+.qbar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.qbar i{display:block;height:100%;background:var(--brand)}
+.built{min-height:64px;border:2px dashed var(--line);border-radius:14px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;direction:ltr;align-items:center}
+.pool{display:flex;flex-wrap:wrap;gap:8px;direction:ltr;min-height:48px}
+.wtile{border:2px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 14px;font-weight:700;font-size:1.1rem;font-family:var(--en)}
+.wtile.on{background:var(--sky-soft);border-color:var(--sky)}
+.opts{display:grid;gap:8px}
+.opt{border:2px solid var(--line);background:var(--surface);border-radius:14px;padding:12px 16px;text-align:left;direction:ltr;font-size:1.1rem;font-weight:600}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.qfb{padding:10px 14px;border-radius:12px;font-weight:700;margin-bottom:10px}
+.qfb.good{background:var(--good-soft);color:var(--good)} .qfb.bad{background:var(--bad-soft);color:var(--bad)}
+.topics{display:flex;flex-wrap:wrap;gap:8px}
+.topic{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-weight:700;display:inline-flex;gap:6px;align-items:center;min-height:42px}
+.topic:hover{border-color:var(--brand)}
+.shelf2{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
+.sbook{border:0;border-radius:14px 6px 6px 14px;background:linear-gradient(160deg,#3B7BE8,#2A5FC0);color:#fff;padding:14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;gap:6px;box-shadow:inset 6px 0 0 rgba(0,0,0,.15)}
+.sbook:nth-child(3n+2){background:linear-gradient(160deg,#FF8A2E,#E25500)}
+.sbook:nth-child(3n+3){background:linear-gradient(160deg,#2E9E62,#1F7A49)}
+.sbook .sb-e{font-size:2.2rem}
+.sbook b{direction:ltr;line-height:1.3}
+.sbook .small{color:#fff;opacity:.9}
+.reader{position:fixed;inset:0;background:#FFF9F2;z-index:60;display:flex;flex-direction:column;gap:10px;padding:max(12px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));overflow:auto}
+.r-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.r-page{flex:1;display:grid;align-content:center;justify-items:center;gap:18px;max-width:760px;margin:0 auto;width:100%;position:relative}
+.r-art{font-size:5rem;line-height:1.2;text-align:center}
+.r-text{font-size:1.7rem;line-height:1.8;direction:ltr;text-align:left;font-weight:600}
+@media (max-width:600px){.r-text{font-size:1.3rem}.r-art{font-size:3.6rem}}
+.w{border-radius:6px;padding:0 2px;cursor:pointer;transition:background .15s}
+.w.gl{color:var(--sky);border-bottom:2px dotted var(--sky)}
+.w.hl{background:#FFD25E;color:#2B1B0F}
+.r-tip{background:var(--fg);color:#fff;padding:8px 16px;border-radius:12px;font-weight:700}
+.r-ctrl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.spin{display:inline-block;animation:wob 1s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-12deg) translateY(-4px)}}
 </style>
 </head>
 <body>
@@ -242,60 +318,157 @@ const SILENCE_MS = 1700, NUDGE_MS = 15000;
 const DAYS_AR = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
 const DEMO = /demo/.test(location.hash) || /demo/.test(location.search);
 
-const CURR = {
-  junior:[
-    ['My Daily Routine','present simple (I / he / she)','wake up, brush, breakfast, school, homework, bedtime'],
-    ['At the Zoo','can / can\'t for abilities','elephant, giraffe, climb, swim, fly, jump'],
-    ['My Family','have / has and possessive \'s','uncle, aunt, cousin, grandparents, older, younger'],
-    ['Food I Like','like / don\'t like, some / any','rice, bread, vegetables, juice, delicious, hungry'],
-    ['Weather and Seasons','What\'s the weather like? It is ...','sunny, rainy, windy, hot, cold, season'],
-    ['My House','there is / there are, in / on / under / next to','kitchen, bedroom, sofa, shelf, between, behind'],
-    ['Going Shopping','How much is / are ...? numbers to 100','price, cheap, expensive, cashier, buy, pay'],
-    ['Sports Day','present continuous','running, kicking, throwing, team, win, race'],
-    ['Jobs','What does he do? present simple questions','doctor, pilot, teacher, engineer, chef, firefighter'],
-    ['Telling Time','What time is it? at + time','o\'clock, half past, quarter, minute, early, late'],
-    ['Last Weekend','past simple regular verbs','played, visited, watched, cleaned, stayed, walked'],
-    ['A Trip to the Park','past simple irregular verbs','went, saw, ate, had, ran, bought'],
-    ['Animals Around the World','comparatives (-er / more)','bigger, faster, taller, stronger, dangerous, desert'],
-    ['My Body and Health','should / shouldn\'t','headache, fever, medicine, rest, healthy, exercise'],
-    ['Celebrations','going to for plans','Eid, gift, celebrate, visit, wear, decorate'],
-    ['Hobbies','love / enjoy + -ing','drawing, reading, cycling, collecting, building, puzzle'],
-    ['Directions in Town','imperatives: turn left / go straight','street, corner, straight, opposite, bank, mosque'],
-    ['Transport','How do you get to ...? by car / by bus','train, plane, ship, ride, ticket, station'],
-    ['Record Breakers','superlatives','the biggest, the tallest, the fastest, the longest, planet, ocean'],
-    ['Clothes','this / these, wearing','jacket, trousers, shoes, cap, size, try on'],
-    ['At the Restaurant','I would like ... polite requests','menu, order, waiter, dessert, bill, thirsty'],
-    ['The Ocean','adverbs of frequency','shark, coral, deep, always, usually, never'],
-    ['Space Adventure','will for predictions','rocket, astronaut, moon, planet, star, gravity'],
-    ['Tell a Story','past simple storytelling: first, then, finally','once upon a time, suddenly, brave, scared, happy ending, finally']
-  ],
-  teen:[
-    ['Introducing Myself','present simple vs present continuous','personality, ambitious, curious, routine, currently, prefer'],
-    ['Friendship','adjectives of character, because / so','loyal, honest, trust, argue, support, rely on'],
-    ['School Life','have to / don\'t have to','subject, exam, uniform, timetable, revise, assignment'],
-    ['Healthy Lifestyle','should / ought to for advice','balanced diet, nutrients, sleep, habit, stress, hydrated'],
-    ['Technology in Our Lives','present perfect with ever / never','device, app, download, screen time, online, privacy'],
-    ['Travel Experiences','present perfect vs past simple','destination, abroad, passport, luggage, sightseeing, culture'],
-    ['Our Environment','will vs going to for predictions','pollution, recycle, climate, waste, protect, renewable'],
-    ['Famous People','past continuous + past simple (when / while)','inventor, achievement, discover, award, inspire, career'],
-    ['Shopping and Money','comparatives, superlatives, as ... as','discount, budget, afford, receipt, refund, bargain'],
-    ['Movies and Books','relative clauses: who / which / that','plot, character, genre, review, recommend, ending'],
-    ['Future Dreams','will / might / going to','goal, university, profession, achieve, skill, ambition'],
-    ['Problems and Solutions','first conditional, unless','solve, consequence, decision, option, if, unless'],
-    ['Social Media','quantifiers: much / many / a few / a little','follower, post, share, comment, influencer, fake news'],
-    ['Food Around the World','present simple passive','ingredient, recipe, spicy, traditional, is made from, dish'],
-    ['Sports and Teamwork','could / was able to','compete, coach, practice, defeat, champion, teamwork'],
-    ['Feelings','-ed vs -ing adjectives','bored / boring, excited / exciting, frustrated, confident, nervous, proud'],
-    ['Great Inventions','past simple passive','invented, was created, electricity, device, engineer, discovery'],
-    ['Saudi Heritage and Tourism','describing places, adjective order','heritage, ancient, modern, landmark, desert, hospitality'],
-    ['Giving Opinions','I think / in my opinion / agree / disagree','opinion, agree, disagree, point of view, however, argument'],
-    ['Unusual Jobs','second conditional','would, imagine, salary, responsible, risky, rewarding'],
-    ['Reported Speech','reported statements: said that / told me that','said, told, asked, explained, promised, replied'],
-    ['Mysteries','must / might / can\'t for deduction','clue, evidence, mysterious, solve, suspect, possible'],
-    ['Volunteering','gerunds and infinitives','volunteer, charity, donate, community, help out, make a difference'],
-    ['Presentation Skills','linking words for a short talk','firstly, moreover, in conclusion, audience, confident, summarize']
-  ]
+/* =============== CURRICULUM =============== */
+/* Each level: 4 units x 6 lessons. Lesson = [title, conversation goal / scenario, sentence patterns to build] */
+const LEVEL_CEFR = {1:'Pre-A1',2:'Pre-A1',3:'A1',4:'A1+',5:'A2',6:'A2',7:'A2+',8:'B1',9:'B1+',10:'B1+ to B2',11:'B2',12:'B2+'};
+const CURR_BUILTIN = {
+ 5:[
+  {t:'All About Me',ar:'كل شيء عني',e:'🧒',lessons:[
+   ['Meet My Family','Describe family members, what they look like and what they like doing','My brother is older than me. He likes ... because ...'],
+   ['My Best Friend','Talk about a best friend and explain why you are friends','She is my best friend because ... We usually ... together.'],
+   ['A Day in My Life','Tell your daily routine in order with times','First I ..., then I ... at seven o\'clock. After that ...'],
+   ['My Favourite Things','Explain favourite things with reasons and examples','My favourite ... is ... because ... For example ...'],
+   ['My Home','Describe your home and your room in detail','There is a ... next to ... There are ... in my room.'],
+   ['Show and Tell','Present something special and answer the teacher\'s questions','This is my ... I got it from ... I love it because ...']]},
+  {t:'Weekends and Adventures',ar:'العطلات والمغامرات',e:'🏕️',lessons:[
+   ['Last Weekend','Tell a story about last weekend using past simple','Last Friday I went to ... We played ... It was ...'],
+   ['A Trip to the Desert','Describe a trip and how you felt','We drove to ... I saw ... I felt excited because ...'],
+   ['At the Mall','Role-play shopping: ask for things, prices and sizes','Can I have ...? How much is it? Do you have a bigger one?'],
+   ['Eid Celebrations','Talk about family traditions and what people usually do','On Eid we usually ... My grandmother always ...'],
+   ['A Funny Thing Happened','Build a funny story together with time words','One day ... Suddenly ... Then ... In the end ...'],
+   ['Plan Our Weekend','Make plans together and agree or suggest ideas','We are going to ... Let\'s ... How about ...?']]},
+  {t:'Animals and Nature',ar:'الحيوانات والطبيعة',e:'🦁',lessons:[
+   ['Wild Animals','Compare animals and give opinions','A cheetah is faster than a lion. I think ... is the most ...'],
+   ['Pets','Talk about caring for a pet and responsibilities','You should feed it every day. You must not ...'],
+   ['Where Animals Live','Describe habitats: where animals live and what they eat','Camels live in the desert. They can ... because ...'],
+   ['Weather Around the World','Compare weather in different places','In Buraidah it is usually ... but in London it is ...'],
+   ['Save Our Planet','Give ideas to protect nature','We should ... We shouldn\'t ... because ...'],
+   ['My Dream Zoo','Design an imaginary zoo and explain choices','I would put ... next to ... because ...']]},
+  {t:'Food and Health',ar:'الطعام والصحة',e:'🍎',lessons:[
+   ['At the Restaurant','Role-play ordering food politely','I\'d like ..., please. Could I have ...? Can I see the menu?'],
+   ['Healthy or Unhealthy?','Give opinions about food with reasons','I think ... is healthy because ... I don\'t agree because ...'],
+   ['Let\'s Cook','Explain how to make a simple dish step by step','First, wash ... Then cut ... Finally, mix ...'],
+   ['Sports I Love','Talk about sports, skills and practice','I\'m good at ... I can ... but I can\'t ... yet.'],
+   ['At the Doctor','Role-play a visit to the doctor','What\'s the matter? I have a ... You should ...'],
+   ['My Healthy Week','Make a healthy plan for the week','I\'m going to ... every day. On Monday I will ...']]}],
+ 6:[
+  {t:'School and Learning',ar:'المدرسة والتعلم',e:'🏫',lessons:[
+   ['My School Day','Compare usual school days with what is happening now','I usually ..., but today I am ...'],
+   ['Favourite Subjects','Discuss subjects with opinions and reasons','I prefer ... to ... because ... It\'s more interesting than ...'],
+   ['School Rules','Talk about rules and give opinions about them','We have to ... We mustn\'t ... I think this rule is fair because ...'],
+   ['A School Trip','Tell a trip story with past continuous','We were walking when ... While we were ..., the teacher ...'],
+   ['The Science Fair','Explain how a project works','It works like this: first ..., then ... so ...'],
+   ['If I Were the Teacher','Imagine being the teacher for a day','If I were the teacher, I would ... I wouldn\'t ...']]},
+  {t:'Travel and Places',ar:'السفر والأماكن',e:'✈️',lessons:[
+   ['Packing for a Trip','Decide what to pack and why','I need to take ... because ... I will also bring ...'],
+   ['At the Airport','Role-play check-in and asking questions','Where is gate ...? What time does the flight leave?'],
+   ['Amazing Saudi Places','Describe famous places using superlatives','AlUla is one of the most beautiful places ... You can ...'],
+   ['Asking for Directions','Give and follow directions in a city','Go straight, then turn left. It\'s opposite the ...'],
+   ['Have You Ever...?','Share travel experiences with present perfect','Have you ever been to ...? Yes, I have. I went there in ...'],
+   ['My Dream Holiday','Plan a dream trip and persuade the teacher','I would love to go to ... because ... We could ...']]},
+  {t:'Stories and Imagination',ar:'القصص والخيال',e:'📚',lessons:[
+   ['Fairy Tales','Retell and change a famous story','Once upon a time ... but in my story ...'],
+   ['Superheroes','Create a superhero and describe powers','My hero can ... He could ... when he was young.'],
+   ['The Detective Game','Ask and answer questions to solve a mystery','Where were you at ...? I was ... Who did you see?'],
+   ['Story Builders','Build a story together sentence by sentence','First ... Then ... Suddenly ... Because of that ...'],
+   ['Cool Inventions','Describe an invention and what it is used for','It is used for ... It can ... It helps people to ...'],
+   ['The Time Machine','Imagine travelling in time','If I could go back in time, I would ... I would like to see ...']]},
+  {t:'Technology and Games',ar:'التقنية والألعاب',e:'🎮',lessons:[
+   ['My Favourite Game','Explain the rules of a game clearly','You have to ... If you ..., you win. You can\'t ...'],
+   ['Screen Time','Discuss how much screen time is OK','I agree that ... but I think ... In my opinion ...'],
+   ['Robots at Home','Predict what robots will do in the future','In the future robots will ... They won\'t ...'],
+   ['Staying Safe Online','Give advice about internet safety','You should never ... It\'s a good idea to ...'],
+   ['Design an App','Describe an app idea and its features','My app can ... It has a button that ... People will ...'],
+   ['The Big Gaming Debate','Debate games: good or bad?','On one hand ... On the other hand ... I believe ...']]}],
+ 7:[
+  {t:'Friends and Feelings',ar:'الأصدقاء والمشاعر',e:'💬',lessons:[
+   ['Making New Friends','Practise starting and keeping a conversation','Nice to meet you. What do you like doing? Me too! / Really?'],
+   ['How Do You Feel?','Explain feelings and their reasons','I felt nervous when ... I was excited because ...'],
+   ['Solving Problems','Give suggestions to solve a friend problem','Why don\'t you ...? You could ... Maybe you should ...'],
+   ['Acts of Kindness','Share kind things you have done','I have helped ... I\'ve never ... but I want to ...'],
+   ['Teamwork','Talk about working in a team','We worked together to ... My job was to ...'],
+   ['Give Me Advice','Ask for and give advice in different situations','If I were you, I would ... You ought to ...']]},
+  {t:'The World Around Us',ar:'العالم من حولنا',e:'🌎',lessons:[
+   ['Countries and Cultures','Compare cultures and customs','In Japan people usually ..., but in Saudi Arabia we ...'],
+   ['Festivals of the World','Describe a festival in detail','It takes place in ... People celebrate by ...'],
+   ['City or Village?','Compare city life and village life','Life in the city is much busier than ... I would rather ...'],
+   ['Transport of the Future','Predict future transport','Cars might fly ... We will probably ...'],
+   ['Amazing Buildings','Describe buildings using the passive','It was built in ... It is made of ... It was designed by ...'],
+   ['The Travel Interview','Interview each other about travel','Where would you like to go? Why? What would you do there?']]},
+  {t:'Science and Discovery',ar:'العلوم والاكتشاف',e:'🔬',lessons:[
+   ['Space Exploration','Discuss space and astronauts','Astronauts have to ... I would like to ... because ...'],
+   ['The Human Body','Explain how parts of the body work','The heart pumps ... so that ... We need ... to ...'],
+   ['Wild Weather','Tell a story about extreme weather','It was raining heavily when ... Suddenly the wind ...'],
+   ['Fun Experiments','Explain an experiment with cause and effect','When you add ..., it ... because ... so ...'],
+   ['Great Scientists','Talk about a scientist\'s life','He was born in ... He discovered ... It changed ...'],
+   ['Science Quiz Show','Host and answer a quiz show','Here\'s the next question ... I think the answer is ... because ...']]},
+  {t:'Media and Entertainment',ar:'الإعلام والترفيه',e:'🎬',lessons:[
+   ['Movies I Like','Review a film and recommend it','It\'s about ... The best part was ... I recommend it because ...'],
+   ['Music and Talents','Talk about talents and practice','I\'ve been learning ... for ... I\'m getting better at ...'],
+   ['Video Creators','Discuss online creators','I\'ve watched ... Their videos are ... because ...'],
+   ['Make an Advert','Create and present an advertisement','Are you tired of ...? Try ...! It\'s the best ...'],
+   ['News Reporter','Report news using reported speech','The man said that ... He told us that ...'],
+   ['Talk Show Host','Run a talk-show interview','Welcome to the show! Tell us about ... How did you feel when ...?']]}],
+ 8:[
+  {t:'Identity and Ambitions',ar:'الهوية والطموح',e:'🎯',lessons:[
+   ['Who Am I?','Describe your personality with examples','I\'d describe myself as ... For example, when ... I ...'],
+   ['Dream Jobs','Discuss future careers and reasons','I\'d like to become ... because ... To do that I\'ll need to ...'],
+   ['Role Models','Talk about someone who inspires you','She has achieved ... What I admire most is ...'],
+   ['Skills for the Future','Discuss important skills','It\'s important to ... because ... One skill I want to improve is ...'],
+   ['Goals and Habits','Make a plan to reach a goal','I\'m planning to ... I\'ve decided to ... so that ...'],
+   ['The Job Interview','Role-play a real job interview','Why do you want this job? My strengths are ... I\'m good at ...']]},
+  {t:'Society and Community',ar:'المجتمع',e:'🤝',lessons:[
+   ['Volunteering','Talk about helping others','I enjoy helping ... I\'d like to volunteer to ... because ...'],
+   ['Rules and Freedom','Discuss what teenagers should be allowed to do','I think teenagers should be allowed to ... However ...'],
+   ['Caring for Elders','Discuss how to help older people','If we visit them more often, they will ... Unless we ...'],
+   ['Social Media','Discuss pros and cons','On the one hand ... On the other hand ... Overall, I think ...'],
+   ['Online Friendships','Agree and disagree politely','I see your point, but ... I partly agree because ...'],
+   ['Community Project Pitch','Present a project to improve your neighbourhood','Our idea is to ... This would help ... We need ...']]},
+  {t:'Mysteries and Stories',ar:'الألغاز والقصص',e:'🔍',lessons:[
+   ['Unsolved Mysteries','Speculate about mysteries','It must have been ... It might be ... It can\'t be ...'],
+   ['Strange Coincidences','Tell a story with past perfect','When I arrived, the door had already ... I realised that ...'],
+   ['The Detective\'s Interview','Question suspects and check alibis','What were you doing at nine? I was ... Can anyone prove it?'],
+   ['Story Time','Create a story together with narrative tenses','It was a dark night ... While ... suddenly ... had ...'],
+   ['Legends and Rumours','Report what people say','People say that ... According to the story ... He claimed that ...'],
+   ['Storytelling Show','Tell a full story to an audience','Let me tell you about ... You won\'t believe what happened next ...']]},
+  {t:'Our Planet\'s Future',ar:'مستقبل كوكبنا',e:'🌱',lessons:[
+   ['Climate Change','Explain causes and effects','... causes ..., which leads to ... As a result ...'],
+   ['Green Saudi Projects','Describe big green projects','Millions of trees are being planted ... It is designed to ...'],
+   ['The Plastic Problem','Discuss waste and solutions','There is too much ... We use too many ... Instead, we could ...'],
+   ['Cities of Tomorrow','Imagine future cities','In 2050 cities will be ... People might ... There won\'t be ...'],
+   ['Cars or Trains?','Debate transport choices','I strongly believe ... One reason is ... Another reason is ...'],
+   ['My Environmental Speech','Give a short persuasive speech','Today I want to talk about ... We must ... Thank you for listening.']]}],
+ 9:[
+  {t:'Debate Club',ar:'نادي المناظرات',e:'⚖️',lessons:[
+   ['How to Debate','Learn to state and defend an opinion','In my view ... The main reason is ... For instance ...'],
+   ['School Uniforms','Debate school uniforms','Supporters argue that ... However, critics say ...'],
+   ['Homework: Yes or No?','Debate homework','I\'d argue that ... What\'s more ... Nevertheless ...'],
+   ['Phones in School','Debate phone rules','If phones were allowed, students would ... On balance ...'],
+   ['Zoos','Debate whether animals should live in zoos','It could be argued that ... I disagree, because ...'],
+   ['The Final Debate','Hold a full debate with opening and closing statements','To sum up ... For all these reasons ...']]},
+  {t:'Business and Money',ar:'الأعمال والمال',e:'💼',lessons:[
+   ['Start a Business','Imagine starting your own business','If I started a business, I would ... I\'d need ...'],
+   ['Saving and Spending','Discuss money habits','I tend to ... It\'s worth saving for ... I wish I had ...'],
+   ['Tricks in Advertising','Analyse adverts','This advert is trying to make us ... It uses ...'],
+   ['The Big Pitch','Pitch a product to investors','Our product solves ... We are asking for ... in return for ...'],
+   ['Customer Service','Role-play complaints and solutions','I\'m afraid there\'s a problem with ... Would it be possible to ...?'],
+   ['Young Entrepreneurs','Interview a young entrepreneur','How did you get started? What was the hardest part?']]},
+  {t:'Cultures and Journeys',ar:'الثقافات والرحلات',e:'🗺️',lessons:[
+   ['Culture Shock','Talk about adapting to new places','I used to ..., but now I ... It took me a while to get used to ...'],
+   ['Food Traditions','Explain how traditional dishes are made','It is cooked for hours ... It is usually served with ...'],
+   ['Languages of the World','Discuss learning languages','Learning a language helps you ... The hardest thing about English is ...'],
+   ['Travel Problems','Solve problems while travelling','I was wondering if you could ... Would you mind ...?'],
+   ['Tour Guide','Guide a tour of a Saudi city','On your left you can see ... It dates back to ...'],
+   ['Travel Vlog','Present a travel vlog','Hi everyone! Today we\'re in ... The best thing here is ...']]},
+  {t:'Innovation and AI',ar:'الابتكار والذكاء الاصطناعي',e:'🤖',lessons:[
+   ['AI in Our Lives','Discuss how AI is used every day','AI is used to ... It makes ... easier, but ...'],
+   ['World-Changing Inventions','Discuss inventions using passive voice','The internet was invented ... It has changed the way we ...'],
+   ['Future Careers','Predict jobs of the future','By 2040 many jobs will have ... New jobs might ...'],
+   ['Technology and Ethics','Discuss right and wrong in technology','Companies shouldn\'t be allowed to ... because ...'],
+   ['Gadget Presentation','Present an invented gadget','Let me introduce ... It features ... What makes it special is ...'],
+   ['Panel Discussion','Take part in an expert panel','I\'d like to add that ... Building on what you said ...']]}]
 };
+
 const BOOKS = {
   junior:[
     ['The Tale of Peter Rabbit','بيتر الأرنب',14838,'#4E8F3A'],['The Tale of Benjamin Bunny','الأرنب بنجامين',14407,'#7A5C3E'],
@@ -316,18 +489,45 @@ const BOOKS = {
 /* =============== STORAGE =============== */
 let DB = null;
 function loadDB(){ try{ DB = JSON.parse(localStorage.getItem(STORE_KEY)); }catch(e){ DB = null; } }
-function save(){ if(DEMO) return; try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){ console.warn(e); } }
+function save(){ if(DEMO) return; try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){ console.warn(e); alertBox('مساحة التخزين ممتلئة. احذف بعض القصص من المكتبة.'); } }
 let WHO = null;
 function setWho(w){ WHO = w; if(DEMO) return; try{ localStorage.setItem('51telk:who', w||''); }catch(e){} }
+
+/* bring older saved data up to the current shape */
+function normalize(){
+  if(!DB) return;
+  DB.sched = DB.sched || {}; DB.books = DB.books || {}; DB.curr = DB.curr || {}; DB.certs = DB.certs || [];
+  for(const k of Object.keys(DB.kids)) ensureKidShape(k);
+  delete DB.periods;
+}
+function ensureKidShape(k){
+  DB.profiles[k] = DB.profiles[k] || {};
+  const p = DB.progress[k] = DB.progress[k] || {};
+  if(p.pos == null) p.pos = Math.max(0, (p.lessonNo||1) - 1);
+  p.mistakes = p.mistakes || []; p.words = p.words || []; p.focus = p.focus || ''; p.xp = p.xp || 0; p.quizzes = p.quizzes || [];
+  p.badgesSeen = p.badgesSeen || []; p.early = p.early || 0; p.levelUps = p.levelUps || 0;
+  DB.live[k] = DB.live[k] || null;
+  if(DB.balance[k] == null) DB.balance[k] = 2000;
+  if(!DB.sched[k]){
+    const per = [];
+    for(const q of (DB.periods || [])) if(q[k]) per.push({from:q.from, days:q[k].days, time:q[k].time});
+    DB.sched[k] = {periods: per.length ? per : [{from:todayISO()+'T00:00', days:[0,2,4], time:'17:00'}], cancel:[], extra:[]};
+  }
+  DB.books[k] = DB.books[k] || [];
+}
 
 /* =============== HELPERS =============== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pad = n => String(n).padStart(2,'0');
 const keyOf = t => `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T${pad(t.getHours())}${pad(t.getMinutes())}`;
+const fromKey = k => { const [d, hm] = k.split('T'); const [y,mo,da] = d.split('-').map(Number); return new Date(y, mo-1, da, Number(hm.slice(0,2)), Number(hm.slice(2,4))); };
+const todayISO = () => { const d = new Date(); return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; };
+const nowLocal = () => { const f = new Date(); return `${f.getFullYear()}-${pad(f.getMonth()+1)}-${pad(f.getDate())}T${pad(f.getHours())}:${pad(f.getMinutes())}`; };
 const LOC = 'ar-SA-u-ca-gregory-nu-latn';
 const fmtDay = t => t.toLocaleDateString(LOC,{weekday:'long', day:'numeric', month:'long'});
 const fmtTime = t => t.toLocaleTimeString(LOC,{hour:'numeric', minute:'2-digit'});
+const fmtMonth = t => t.toLocaleDateString(LOC,{month:'long', year:'numeric'});
 function ageOf(b){ const d = new Date(b+'T00:00:00'), n = new Date(); let a = n.getFullYear()-d.getFullYear(); if(n.getMonth()<d.getMonth()||(n.getMonth()===d.getMonth()&&n.getDate()<d.getDate())) a--; return a; }
 function fmtDur(ms){ const m = Math.max(0, Math.round(ms/60000)); if(m < 60) return `${m} دقيقة`; const h = Math.floor(m/60), d = Math.floor(h/24); if(d >= 1) return `${d} يوم و ${h%24} ساعة`; return `${h} ساعة و ${m%60} دقيقة`; }
 const kidIds = () => Object.keys(DB.kids);
@@ -336,49 +536,124 @@ const nick = k => (DB.profiles[k] && DB.profiles[k].nick) || DB.kids[k].ar;
 function avatarHTML(k, cls=''){ const p = DB.profiles[k] || {}; return p.avatar ? `<img class="avatar ${cls}" src="${esc(p.avatar)}" alt="">` : `<div class="avatar ${cls}">${esc(nick(k).slice(0,1))}</div>`; }
 const LOGO = `<span class="logo"><span class="b">51</span><span class="t">telk</span></span>`;
 function decodeSetup(s){ const t = s.trim().replace(/\s+/g,''); return JSON.parse(decodeURIComponent(escape(atob(t)))); }
+function toast(msg, kind){ const t = document.createElement('div'); t.className = 'toast ' + (kind||''); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
+function overlay(html){ const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = `<div class="card">${html}</div>`; document.body.appendChild(ov); return ov; }
+
+/* =============== CURRICULUM ACCESS =============== */
+function levelUnits(level){ return CURR_BUILTIN[level] || (DB.curr && DB.curr[level]) || null; }
+async function ensureCurr(level){
+  if(levelUnits(level)) return true;
+  if(DEMO || DB.apiKey === 'demo'){ DB.curr[level] = CURR_BUILTIN[level < 5 ? 5 : 9]; return true; }
+  const txt = await callClaude({model:REPORT_MODEL, max_tokens:6000, messages:[{role:'user', content:
+`Design an English speaking curriculum for 51Talk-style one-to-one online classes for Saudi children.
+Level ${level} (CEFR ${LEVEL_CEFR[level]}). Make it age-appropriate and NOT too childish for this level; focus on conversation and sentence building, not word lists.
+Return ONLY JSON: an array of 4 units. Each unit: {"t":"English unit title","ar":"Arabic unit title","e":"one emoji","lessons":[6 lessons, each an array of 3 strings: ["lesson title","conversation goal / scenario","target sentence patterns with ..."]]}`}]});
+  const a = txt.indexOf('['), b = txt.lastIndexOf(']'); const units = JSON.parse(txt.slice(a, b+1));
+  if(!Array.isArray(units) || !units.length) throw new Error('bad curriculum');
+  DB.curr[level] = units; save(); return true;
+}
+function lessonPlan(k){
+  const level = DB.kids[k].level, units = levelUnits(level), pos = DB.progress[k].pos || 0;
+  if(!units) return {n:pos+1, u:0, ui:0, li:0, unit:'', t:'English Conversation', goal:'Free conversation at the right level', pattern:'', round:1, total:24};
+  const per = units.map(u => u.lessons.length), total = per.reduce((a,b) => a+b, 0);
+  let i = pos % total, ui = 0; while(i >= per[ui]){ i -= per[ui]; ui++; }
+  const r = units[ui].lessons[i];
+  return {n:pos+1, ui, li:i, unit:units[ui].t, unitAr:units[ui].ar, unitE:units[ui].e, t:r[0], goal:r[1], pattern:r[2], round:Math.floor(pos/total)+1, total, perUnit:per[ui]};
+}
 
 /* =============== SCHEDULE + WALLET =============== */
-function periodAt(t){ let p = DB.periods[0]; for(const q of DB.periods){ if(new Date(q.from) <= t) p = q; } return p; }
+function periodAt(k, t){ const ps = DB.sched[k].periods; let p = ps[0]; for(const q of ps){ if(new Date(q.from) <= t) p = q; } return p; }
 function slotsFor(k, until){
-  const out = [], ps = DB.periods; const d = new Date(ps[0].from); d.setHours(0,0,0,0);
+  const S = DB.sched[k], ps = S.periods, out = [], cancel = new Set(S.cancel);
+  const start = new Date(ps[0].from); const d = new Date(start); d.setHours(0,0,0,0);
   while(d <= until){
     for(const p of ps){
-      const s = p[k]; if(!s || !s.days.includes(d.getDay())) continue;
-      const [h,m] = s.time.split(':').map(Number); const t = new Date(d); t.setHours(h,m,0,0);
-      if(t <= until && t >= new Date(ps[0].from) && periodAt(t) === p) out.push(t);
+      if(!p.days.includes(d.getDay())) continue;
+      const [h,m] = p.time.split(':').map(Number); const t = new Date(d); t.setHours(h,m,0,0);
+      if(t <= until && t >= start && periodAt(k, t) === p && !cancel.has(keyOf(t))) out.push({t, key:keyOf(t), extra:false});
     }
     d.setDate(d.getDate()+1);
   }
-  return out.sort((a,b) => a-b);
+  for(const x of S.extra){ const t = fromKey(x); if(t <= until && !cancel.has(x)) out.push({t, key:x, extra:true}); }
+  const seen = new Set(); return out.filter(s => !seen.has(s.key) && seen.add(s.key)).sort((a,b) => a.t - b.t);
 }
 function ledger(k){
   const now = new Date(), per = DB.perLesson, bal = DB.balance[k], maxLessons = Math.floor(bal/per);
-  const all = slotsFor(k, new Date(now.getTime()+21*864e5));
+  const all = slotsFor(k, new Date(now.getTime()+62*864e5));
   const att = new Set(DB.attendance.filter(a => a.kid === k).map(a => a.slot));
   const lv = DB.live[k];
-  const rows = []; let open = null, next = null;
-  for(const t of all){
-    if(rows.length >= maxLessons) break;
-    const key = keyOf(t);
-    if(att.has(key)){ rows.push({t,key,st:'att'}); continue; }
+  const rows = []; let open = null, next = null; const upcoming = [];
+  for(const s of all){
+    const {t, key} = s;
+    if(att.has(key)){ if(rows.length < maxLessons) rows.push({t,key,st:'att',extra:s.extra}); continue; }
     if(now - t > OPEN_AFTER*60e3){
-      if(lv && lv.slot === key && now - new Date(lv.startedAt) < 60*60e3){ if(!open) open = {t,key,resumed:true}; }
-      else rows.push({t,key,st:'miss'});
-    } else if(now >= t - OPEN_BEFORE*60e3){ if(!open) open = {t,key}; }
-    else if(!next) next = {t,key};
+      if(lv && lv.slot === key && now - new Date(lv.startedAt) < 60*60e3){ if(!open) open = s; }
+      else if(rows.length < maxLessons) rows.push({t,key,st:'miss',extra:s.extra});
+    } else if(now >= t - OPEN_BEFORE*60e3){ if(!open) open = s; }
+    else { if(!next) next = s; upcoming.push(s); }
   }
+  if(open && DB.live[k] && DB.live[k].slot === open.key) open.resumed = true;
   const attended = rows.filter(r => r.st==='att').length, missed = rows.length - attended;
-  let run = 0, gifts = 0; for(const r of rows){ if(r.st==='att'){ run++; if(run%5===0) gifts++; } else run = 0; }
-  return {rows, open, next, attended, missed, green:attended*per, red:missed*per, remaining:bal-rows.length*per, bal, run, gifts, ended: rows.length >= maxLessons};
+  let run = 0, gifts = 0, best = 0; for(const r of rows){ if(r.st==='att'){ run++; best = Math.max(best, run); if(run%5===0) gifts++; } else run = 0; }
+  const ended = rows.length >= maxLessons;
+  return {rows, open: ended ? null : open, next: ended ? null : next, upcoming, attended, missed, green:attended*per, red:missed*per, remaining:bal-rows.length*per, bal, run, best, gifts, ended};
 }
+/* months: the minimum of 12 applies to every full month after the start month */
+function monthKey(t){ return `${t.getFullYear()}-${pad(t.getMonth()+1)}`; }
+function monthCount(k, mk){ const [y,m] = mk.split('-').map(Number); const end = new Date(y, m, 0, 23, 59); return slotsFor(k, end).filter(s => monthKey(s.t) === mk).length; }
+function monthExempt(k, mk){ return monthKey(new Date(DB.sched[k].periods[0].from)) === mk; }
+const MIN_MONTH = 12;
+function canDrop(k, t){ const mk = monthKey(t); if(monthExempt(k, mk)) return true; return monthCount(k, mk) - 1 >= MIN_MONTH; }
+function conflict(k, t, ignoreKey){
+  for(const other of kidIds()){
+    const near = slotsFor(other, new Date(t.getTime()+864e5)).filter(s => s.key !== ignoreKey && Math.abs(s.t - t) < (other === k ? 45 : 30)*60e3);
+    if(near.length) return other;
+  }
+  return null;
+}
+function cancelSlot(k, key){ const S = DB.sched[k]; if(S.extra.includes(key)) S.extra = S.extra.filter(x => x !== key); else S.cancel.push(key); save(); }
+function addExtra(k, t){ DB.sched[k].extra.push(keyOf(t)); DB.sched[k].cancel = DB.sched[k].cancel.filter(x => x !== keyOf(t)); save(); }
+
+/* =============== XP, RANKS, BADGES =============== */
+const RANKS = [[0,'Beginner','مبتدئ','🌱'],[300,'Explorer','مستكشف','🧭'],[800,'Speaker','متحدث','🎤'],[1500,'Star Speaker','متحدث نجم','⭐'],[3000,'Champion','بطل','🏆'],[6000,'Legend','أسطورة','👑']];
+function rankOf(xp){ let r = RANKS[0], nx = null; for(let i=0;i<RANKS.length;i++){ if(xp >= RANKS[i][0]){ r = RANKS[i]; nx = RANKS[i+1] || null; } } return {r, nx}; }
+const BADGES = [
+  ['first','أول حصة','🎒','احضر أول حصة', s => s.lessons >= 1],
+  ['l5','5 حصص','🏅','احضر 5 حصص', s => s.lessons >= 5],
+  ['l20','20 حصة','🏆','احضر 20 حصة', s => s.lessons >= 20],
+  ['streak5','شعلة الحماس','🔥','5 حصص متتالية بدون غياب', s => s.best >= 5],
+  ['streak10','لا يتوقف','⚡','10 حصص متتالية', s => s.best >= 10],
+  ['early','الحاضر المبكر','⏰','ادخل الحصة قبل موعدها 3 مرات', s => s.early >= 3],
+  ['extra','محب للتعلم','➕','احضر حصة إضافية حجزتها بنفسك', s => s.extras >= 1],
+  ['quiz1','أول اختبار','📝','حل أول اختبار', s => s.quizzes >= 1],
+  ['perfect','العلامة الكاملة','💯','احصل على العلامة الكاملة في اختبار', s => s.perfect >= 1],
+  ['quiz10','عقل ذهبي','🧠','حل 10 اختبارات', s => s.quizzes >= 10],
+  ['reader1','أول قصة','📖','اقرأ أول قصة في المكتبة', s => s.books >= 1],
+  ['reader5','قارئ نشيط','📚','اقرأ 5 قصص', s => s.books >= 5],
+  ['unit','خريج الوحدة','🎓','أكمل وحدة كاملة', s => s.units >= 1],
+  ['levelup','صعود المستوى','🚀','انتقل لمستوى أعلى', s => s.levelUps >= 1],
+  ['xp1000','ألف نقطة','💎','اجمع 1000 نقطة', s => s.xp >= 1000]
+];
+function kidStats(k){
+  const l = ledger(k), p = DB.progress[k];
+  const extras = l.rows.filter(r => r.st === 'att' && r.extra).length;
+  return {lessons:l.attended, best:l.best, early:p.early, extras, quizzes:p.quizzes.length, perfect:p.quizzes.filter(q => q.score === q.total && q.total > 0).length,
+    books:DB.books[k].filter(b => b.read).length, units:DB.certs.filter(c => c.kid === k).length, levelUps:p.levelUps, xp:p.xp};
+}
+function earnedBadges(k){ const s = kidStats(k); return BADGES.filter(b => b[4](s)).map(b => b[0]); }
+function checkNewBadges(k){
+  const p = DB.progress[k], now = earnedBadges(k), fresh = now.filter(b => !p.badgesSeen.includes(b));
+  if(fresh.length){ p.badgesSeen = now; save(); fresh.forEach((id, i) => { const b = BADGES.find(x => x[0] === id); setTimeout(() => toast(`وسام جديد! ${b[2]} ${b[1]}`, 'gold'), 600 + i*1400); }); }
+}
+function addXP(k, n){ DB.progress[k].xp = (DB.progress[k].xp||0) + n; save(); }
 
 /* =============== ROUTER =============== */
-let homeTimer = null;
-function go(view){
+let homeTimer = null, TAB = 'home';
+function go(view, tab){
   clearInterval(homeTimer); homeTimer = null;
   if(!DB) return renderFirstRun();
   if(view === 'parent') return renderParent();
-  if(view && DB.kids[view]){ const p = DB.profiles[view]; if(!p || !p.nick) return renderProfile(view, true); return renderHome(view); }
+  if(view && DB.kids[view]){ const p = DB.profiles[view]; if(!p || !p.nick) return renderProfile(view, true); if(tab) TAB = tab; return renderKid(view); }
   renderLogin();
 }
 
@@ -394,9 +669,9 @@ function renderFirstRun(){
     e.preventDefault();
     let cfg; try{ cfg = decodeSetup($('#sc').value); }catch(err){ $('#fe').textContent = 'الرمز غير صحيح. انسخه كاملاً والصقه مرة ثانية.'; return; }
     if(!cfg || !cfg.kids || !cfg.parent){ $('#fe').textContent = 'الرمز ناقص.'; return; }
-    const kids = {}, balance = {}, period = {from: cfg.start + 'T00:00'}, profiles = {}, progress = {}, live = {};
-    for(const k of cfg.kids){ kids[k.id] = k; balance[k.id] = cfg.balance || 2000; period[k.id] = {days: cfg.days || [0,2,4], time: (cfg.times||{})[k.id] || '17:00'}; profiles[k.id] = {}; progress[k.id] = {lessonNo:1, mistakes:[], words:[], focus:''}; live[k.id] = null; }
-    DB = {v:2, parent:cfg.parent, kids, apiKey:'', perLesson:cfg.perLesson || 10, balance, periods:[period], profiles, progress, live, attendance:[], reports:[]};
+    DB = {v:3, parent:cfg.parent, kids:{}, apiKey:'', perLesson:cfg.perLesson || 10, balance:{}, profiles:{}, progress:{}, live:{}, attendance:[], reports:[], sched:{}, books:{}, curr:{}, certs:[]};
+    for(const k of cfg.kids){ DB.kids[k.id] = k; DB.balance[k.id] = cfg.balance || 2000;
+      DB.sched[k.id] = {periods:[{from:cfg.start + 'T00:00', days:cfg.days || [0,2,4], time:(cfg.times||{})[k.id] || '17:00'}], cancel:[], extra:[]}; ensureKidShape(k.id); }
     save();
     try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){}
     setWho('parent'); go('parent');
@@ -419,7 +694,7 @@ function renderLogin(){
     for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
     if(u === DB.parent.user && p === DB.parent.pass) who = 'parent';
     if(!who){ $('#le').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة ثانية.'; return; }
-    setWho(who); go(who);
+    setWho(who); TAB = 'home'; go(who);
   });
 }
 function logout(){ setWho(null); go('login'); }
@@ -450,47 +725,282 @@ function renderProfile(k, first){
   $('#pf').addEventListener('submit', e => { e.preventDefault(); const n = $('#nk').value.trim(); if(n.length < 2){ $('#pe').textContent = 'اكتب اسماً مستعاراً من حرفين على الأقل.'; return; } DB.profiles[k] = {nick:n, avatar:tmp}; save(); go(k); });
 }
 
-/* =============== KID HOME =============== */
-function lessonPlan(k, n){ const c = CURR[band(k)]; const r = c[(n-1)%c.length]; return {n, round:Math.floor((n-1)/c.length)+1, t:r[0], g:r[1], w:r[2]}; }
-function renderHome(k){
-  const L0 = ledger(k), kid = DB.kids[k], plan = lessonPlan(k, DB.progress[k].lessonNo), now = new Date();
+/* =============== KID SHELL + TABS =============== */
+const TABS = [['home','الرئيسية','🏠'],['plan','جدولي','📅'],['library','المكتبة','📚'],['wins','إنجازاتي','🏆']];
+function renderKid(k){
+  const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
+  $('#app').innerHTML = `<div class="wrap">
+    <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(nick(k))}</div><div class="small muted"><span class="en">Level ${kid.level}</span> · ${rk.r[3]} ${rk.r[2]} · <span class="num">${xp}</span> نقطة</div></div>
+      <button class="btn ghost" id="edit" aria-label="تعديل ملفي" style="padding:0;border:0;min-height:0">${avatarHTML(k)}</button><button class="btn sm" id="out">خروج</button></div></div>
+    <nav class="tabs" role="tablist">${TABS.map(t => `<button role="tab" class="tab ${TAB===t[0]?'on':''}" data-tab="${t[0]}"><span>${t[2]}</span> ${t[1]}</button>`).join('')}</nav>
+    <div id="tabBody"></div></div>`;
+  $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
+  document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { TAB = b.dataset.tab; renderKid(k); });
+  ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins})[TAB](k);
+  checkNewBadges(k);
+}
+
+/* ----- home tab ----- */
+function tabHome(k){
+  const L0 = ledger(k), plan = lessonPlan(k), now = new Date(), units = levelUnits(DB.kids[k].level);
   let when, btn, cnt = '';
   if(L0.ended){ when = 'انتهى رصيد الاشتراك. اطلب من ولي أمرك التجديد.'; btn = '<button class="btn big" disabled>انتهى الاشتراك</button>'; }
   else if(L0.open){ const left = L0.open.t.getTime()+OPEN_AFTER*60e3-now;
     when = L0.open.resumed ? 'حصتك بدأت، ارجع وكمّلها الآن' : (now < L0.open.t ? `تبدأ الساعة ${fmtTime(L0.open.t)}، المعلمة بانتظارك` : `الحصة مفتوحة الآن · تُغلق بعد ${fmtDur(left)}`);
     btn = '<button class="btn big" id="enter">ادخل الحصة</button>'; }
-  else if(L0.next){ when = `${fmtDay(L0.next.t)} · ${fmtTime(L0.next.t)}`; cnt = `<div class="count num">${fmtDur(L0.next.t-now)}</div><div class="small" style="opacity:.92">على بداية الحصة · تُفتح قبلها بـ ${OPEN_BEFORE} دقائق</div>`; btn = '<button class="btn big" disabled>الحصة مقفلة</button>'; }
-  else { when = 'لا توجد حصص مجدولة'; btn = ''; }
+  else if(L0.next){ when = `${fmtDay(L0.next.t)} · ${fmtTime(L0.next.t)}${L0.next.extra?' · حصة إضافية':''}`; cnt = `<div class="count num">${fmtDur(L0.next.t-now)}</div><div class="small" style="opacity:.92">على بداية الحصة · تُفتح قبلها بـ ${OPEN_BEFORE} دقائق</div>`; btn = '<button class="btn big" disabled>الحصة مقفلة</button>'; }
+  else { when = 'لا توجد حصص قادمة. احجز حصة من «جدولي».'; btn = ''; }
   const pg = L0.bal ? L0.green/L0.bal*100 : 0, pr = L0.bal ? L0.red/L0.bal*100 : 0;
-  const recent = L0.rows.slice().reverse().slice(0,12), books = BOOKS[band(k)];
-  const reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,6);
-  $('#app').innerHTML = `<div class="wrap">
-    <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(nick(k))}</div><div class="small muted en">Level ${kid.level}</div></div>
-      <button class="btn ghost" id="edit" aria-label="تعديل ملفي" style="padding:0;border:0;min-height:0">${avatarHTML(k)}</button><button class="btn sm" id="out">خروج</button></div></div>
-    <div class="grid">
-      <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">الحصة القادمة · درس ${plan.n} · مع Teacher Noor</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div>${when}</div>${cnt}</div><div>${btn}</div></section>
-      <div class="g2">
-        <section class="card"><h2>رصيد اشتراكك</h2>
-          <div class="bal"><span class="v num">${L0.remaining.toLocaleString('en')}</span><span class="muted">ريال متبقي من ${L0.bal.toLocaleString('en')}</span></div>
-          <div class="bar" aria-hidden="true"><i style="width:${pg}%;background:var(--good)"></i><i style="width:${pr}%;background:var(--bad)"></i></div>
-          <div class="chips"><span class="chip good">استفدنا: ${L0.green} ريال</span><span class="chip bad">خسرنا: ${L0.red} ريال</span></div>
-          <p class="small muted" style="margin:10px 0 0">كل حصة قيمتها ${DB.perLesson} ريال. إذا حضرتها تصير خضراء لأننا استفدنا منها، وإذا غبت تصير حمراء لأنها ضاعت علينا.</p>
-          <ul class="ledger">${recent.length ? recent.map(r => `<li><div><div style="font-weight:700">${fmtDay(r.t)}</div><div class="small muted">${fmtTime(r.t)} · ${r.st==='att'?'حضرت الحصة':'غبت عن الحصة'}</div></div><div class="amt ${r.st==='att'?'good':'bad'}">${r.st==='att'?'✓ ':'−'}${DB.perLesson} <span class="small">ر.س</span></div></li>`).join('') : '<li><div class="muted">سجل حصصك يظهر هنا بعد أول حصة.</div><div></div></li>'}</ul>
-        </section>
-        <section class="card"><h2>سلسلة الحضور</h2>
-          <p class="muted" style="margin:4px 0 0">احضر 5 حصص متتالية بدون غياب وتفتح لك هدية: كتاب جديد.</p>
-          <div class="dots">${[1,2,3,4,5].map(i => `<span class="${i<=L0.run%5?'on':''}">${i}</span>`).join('')}</div>
-          <div class="small"><b>${L0.run}</b> حصة متتالية الآن · فتحت <b>${L0.gifts}</b> من ${books.length} هدايا</div>
-          <h2 style="margin-top:18px">مكتبة هداياك</h2>
-          <div class="shelf">${books.map((b,i) => i < L0.gifts ? `<a class="book" href="https://www.gutenberg.org/ebooks/${b[2]}" target="_blank" rel="noopener" style="background:${b[3]}"><span class="bt">${esc(b[0])}</span><span class="ba">${esc(b[1])} · اقرأ الآن</span></a>` : `<div class="book locked"><span class="bt">${esc(b[0])}</span><span class="small" style="font-weight:700">مقفل · ${(i+1)*5} حصص متتالية</span></div>`).join('')}</div>
-        </section>
-      </div>
-      <section class="card"><h2>دروسي السابقة</h2><div class="hist">${reps.length ? reps.map(r => `<div class="row"><span class="stars">${'★'.repeat(r.stars||1)}${'☆'.repeat(3-(r.stars||1))}</span><div style="min-width:0"><div class="ltr en" style="text-align:right;font-weight:700">Lesson ${r.lessonNo} · ${esc(r.title)}</div><div class="small muted ltr" style="text-align:right">${esc((r.newWords||[]).join(', '))}</div></div><span class="chip brand num">${r.score||0}%</span></div>`).join('') : `<p class="muted" style="margin:0">لم تحضر أي حصة بعد. أول درس: <span class="en">${esc(lessonPlan(k,1).t)}</span>.</p>`}</div></section>
+  const recent = L0.rows.slice().reverse().slice(0,10);
+  const reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,5);
+  const pos = DB.progress[k].pos;
+  $('#tabBody').innerHTML = `<div class="grid">
+    <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div>${btn}</div></section>
+    ${units ? `<section class="card"><h2>رحلتك في المستوى ${DB.kids[k].level}</h2><div class="path">${units.map((u,ui) => { const start = units.slice(0,ui).reduce((a,x) => a+x.lessons.length, 0); const done = Math.max(0, Math.min(u.lessons.length, pos % plan.total - start));
+      return `<div class="unit ${done===u.lessons.length?'done':''} ${ui===plan.ui?'cur':''}"><div class="ue">${u.e}</div><div style="min-width:0"><div class="en" style="font-weight:800;direction:ltr;text-align:right">${esc(u.t)}</div><div class="small muted">${esc(u.ar||'')}</div><div class="ldots">${u.lessons.map((l,li) => `<i class="${li<done?'on':''} ${ui===plan.ui&&li===plan.li?'cur':''}" title="${esc(l[0])}"></i>`).join('')}</div></div></div>`; }).join('')}</div></section>` : ''}
+    <div class="g2">
+      <section class="card"><h2>رصيد اشتراكك</h2>
+        <div class="bal"><span class="v num">${L0.remaining.toLocaleString('en')}</span><span class="muted">ريال متبقي من ${L0.bal.toLocaleString('en')}</span></div>
+        <div class="bar" aria-hidden="true"><i style="width:${pg}%;background:var(--good)"></i><i style="width:${pr}%;background:var(--bad)"></i></div>
+        <div class="chips"><span class="chip good">استفدنا: ${L0.green} ريال</span><span class="chip bad">خسرنا: ${L0.red} ريال</span></div>
+        <p class="small muted" style="margin:10px 0 0">كل حصة قيمتها ${DB.perLesson} ريال. إذا حضرتها تصير خضراء لأننا استفدنا منها، وإذا غبت تصير حمراء لأنها ضاعت علينا.</p>
+        <ul class="ledger">${recent.length ? recent.map(r => `<li><div><div style="font-weight:700">${fmtDay(r.t)}${r.extra?' <span class="chip brand small">إضافية</span>':''}</div><div class="small muted">${fmtTime(r.t)} · ${r.st==='att'?'حضرت الحصة':'غبت عن الحصة'}</div></div><div class="amt ${r.st==='att'?'good':'bad'}">${r.st==='att'?'✓ ':'−'}${DB.perLesson} <span class="small">ر.س</span></div></li>`).join('') : '<li><div class="muted">سجل حصصك يظهر هنا بعد أول حصة.</div><div></div></li>'}</ul>
+      </section>
+      <section class="card"><h2>سلسلة الحضور</h2>
+        <p class="muted" style="margin:4px 0 0">احضر 5 حصص متتالية بدون غياب وتفتح لك هدية من مكتبة الكتب الكلاسيكية.</p>
+        <div class="dots">${[1,2,3,4,5].map(i => `<span class="${i<=L0.run%5?'on':''}">${i}</span>`).join('')}</div>
+        <div class="small"><b>${L0.run}</b> حصة متتالية الآن · فتحت <b>${L0.gifts}</b> هدايا</div>
+        <h2 style="margin-top:18px">آخر حصصي</h2>
+        <div class="hist">${reps.length ? reps.map(r => `<div class="row"><span class="stars">${'★'.repeat(r.stars||1)}${'☆'.repeat(3-(r.stars||1))}</span><div style="min-width:0"><div class="ltr en" style="text-align:right;font-weight:700">${esc(r.title)}</div><div class="small muted ltr" style="text-align:right">${esc((r.newWords||[]).join(', '))}</div></div><span class="chip brand num">${r.score||0}%</span></div>`).join('') : '<p class="muted" style="margin:0">لم تحضر أي حصة بعد.</p>'}</div>
+      </section>
     </div></div>`;
-  $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
-  const en = $('#enter'); if(en) en.onclick = () => startLesson(k, false);
-  homeTimer = setInterval(() => { if(!L && WHO === k) renderHome(k); }, 30000);
+  const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false);
+  homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov')) renderKid(k); }, 30000);
 }
+async function enterLesson(k, trial){
+  unlockAudio();
+  if(!levelUnits(DB.kids[k].level)){
+    const ov = overlay('<p style="margin:0">المعلمة تجهّز منهج المستوى الجديد…</p>');
+    try{ await ensureCurr(DB.kids[k].level); }catch(e){ ov.remove(); alertBox('ما قدرنا نجهّز المنهج. تأكد من الإنترنت وحاول مرة ثانية.'); return; }
+    ov.remove();
+  }
+  startLesson(k, trial);
+}
+
+/* ----- schedule tab ----- */
+function tabPlan(k){
+  const now = new Date(), L0 = ledger(k);
+  const mk = monthKey(now), nmk = monthKey(new Date(now.getFullYear(), now.getMonth()+1, 1));
+  const c1 = monthCount(k, mk), c2 = monthCount(k, nmk);
+  const up = L0.upcoming.concat(L0.open ? [L0.open] : []).sort((a,b) => a.t-b.t).slice(0,24);
+  const monthCard = (key, c) => { const ex = monthExempt(k, key); const d = new Date(Number(key.slice(0,4)), Number(key.slice(5))-1, 1);
+    return `<div class="mcount ${!ex && c < MIN_MONTH ? 'low' : ''}"><div class="small muted">${fmtMonth(d)}</div><b class="num">${c}</b><div class="small">${ex ? 'شهر البداية' : `الحد الأدنى ${MIN_MONTH}`}</div></div>`; };
+  $('#tabBody').innerHTML = `<div class="grid">
+    <section class="card"><div class="chips" style="justify-content:space-between"><h2>حصصي القادمة</h2><button class="btn primary" id="book">➕ احجز حصة إضافية</button></div>
+      <div class="mcounts">${monthCard(mk,c1)}${monthCard(nmk,c2)}</div>
+      <p class="small muted" style="margin:6px 0 0">تقدر تلغي حصة أو تغيّر موعدها قبل بدايتها بساعتين على الأقل، بشرط ألا تقل حصصك عن ${MIN_MONTH} في الشهر. الحصة الإضافية تُخصم من رصيدك مثل أي حصة.</p>
+      <ul class="ledger">${up.length ? up.map(s => { const lock = s.t - now < 2*3600e3;
+        return `<li><div><div style="font-weight:700">${fmtDay(s.t)} ${s.extra?'<span class="chip brand small">إضافية</span>':''}</div><div class="small muted">${fmtTime(s.t)}</div></div>
+          <div class="chips">${lock ? '<span class="small muted">لا يمكن التعديل الآن</span>' : `<button class="btn sm" data-move="${s.key}">تغيير الموعد</button><button class="btn sm danger" data-cancel="${s.key}">إلغاء</button>`}</div></li>`; }).join('') : '<li><div class="muted">لا توجد حصص قادمة.</div><div></div></li>'}</ul>
+    </section></div>`;
+  $('#book').onclick = () => slotPicker(k, null);
+  document.querySelectorAll('[data-move]').forEach(b => b.onclick = () => slotPicker(k, b.dataset.move));
+  document.querySelectorAll('[data-cancel]').forEach(b => b.onclick = () => {
+    const key = b.dataset.cancel, t = fromKey(key);
+    if(!canDrop(k, t)){ alertBox(`ما تقدر تلغي هذه الحصة، لأن حصصك في ${fmtMonth(t)} ستصير أقل من ${MIN_MONTH}. تقدر تغيّر موعدها بدل الإلغاء.`); return; }
+    const ov = overlay(`<h2>إلغاء الحصة؟</h2><p style="margin:0">${fmtDay(t)} · ${fmtTime(t)}</p><div class="chips"><button class="btn danger" id="yes">نعم، ألغِها</button><button class="btn" id="no">رجوع</button></div>`);
+    ov.querySelector('#no').onclick = () => ov.remove();
+    ov.querySelector('#yes').onclick = () => { cancelSlot(k, key); ov.remove(); toast('تم إلغاء الحصة'); renderKid(k); };
+  });
+}
+function slotPicker(k, moveKey){
+  const now = new Date(), times = []; for(let h=8; h<=21; h++) for(const m of [0,30]) times.push(`${pad(h)}:${pad(m)}`);
+  const old = moveKey ? fromKey(moveKey) : null;
+  const ov = overlay(`<h2>${moveKey ? 'تغيير موعد الحصة' : 'حجز حصة إضافية'}</h2>
+    ${old ? `<p class="small muted" style="margin:0">الموعد الحالي: ${fmtDay(old)} · ${fmtTime(old)}</p>` : `<p class="small muted" style="margin:0">تُخصم ${DB.perLesson} ريال من رصيدك، وإذا ما حضرتها تصير حمراء.</p>`}
+    <div class="field"><label for="pd">اليوم</label><input class="input" type="date" id="pd" min="${todayISO()}" value="${todayISO()}"></div>
+    <div class="field"><label for="pt">الوقت</label><select class="input" id="pt">${times.map(t => `<option ${t==='17:00'?'selected':''}>${t}</option>`).join('')}</select></div>
+    <div class="err" id="pe"></div>
+    <div class="chips"><button class="btn primary" id="ok">${moveKey ? 'تأكيد الموعد الجديد' : 'احجز'}</button><button class="btn" id="no">رجوع</button></div>`);
+  ov.querySelector('#no').onclick = () => ov.remove();
+  ov.querySelector('#ok').onclick = () => {
+    const d = ov.querySelector('#pd').value, tm = ov.querySelector('#pt').value, err = ov.querySelector('#pe');
+    if(!d){ err.textContent = 'اختر اليوم.'; return; }
+    const [y,mo,da] = d.split('-').map(Number), [h,mi] = tm.split(':').map(Number), t = new Date(y, mo-1, da, h, mi);
+    if(t - now < 60*60e3){ err.textContent = 'اختر موعداً بعد ساعة على الأقل من الآن.'; return; }
+    const cf = conflict(k, t, moveKey); if(cf){ err.textContent = cf === k ? 'عندك حصة قريبة من هذا الوقت.' : `هذا الوقت قريب من حصة ${DB.kids[cf].ar}، اختر وقتاً آخر.`; return; }
+    if(moveKey){ if(monthKey(t) !== monthKey(old) && !canDrop(k, old)){ err.textContent = `نقل الحصة لشهر آخر يجعل حصص ${fmtMonth(old)} أقل من ${MIN_MONTH}. اختر يوماً في نفس الشهر.`; return; }
+      cancelSlot(k, moveKey); addExtra(k, t); toast('تم تغيير الموعد'); }
+    else { if(ledger(k).remaining < DB.perLesson){ err.textContent = 'رصيدك لا يكفي لحصة إضافية.'; return; } addExtra(k, t); toast('تم حجز الحصة الإضافية 🎉'); }
+    ov.remove(); renderKid(k);
+  };
+}
+
+/* ----- achievements tab ----- */
+function tabWins(k){
+  const p = DB.progress[k], rk = rankOf(p.xp), got = earnedBadges(k);
+  const pct = rk.nx ? Math.round((p.xp - rk.r[0]) / (rk.nx[0] - rk.r[0]) * 100) : 100;
+  const certs = DB.certs.filter(c => c.kid === k).slice().reverse();
+  const qz = p.quizzes.slice().reverse().slice(0,8);
+  $('#tabBody').innerHTML = `<div class="grid">
+    <section class="card rank"><div class="rk-e">${rk.r[3]}</div><div style="min-width:0;flex:1"><div class="small muted">رتبتك</div><h2>${rk.r[2]} <span class="en muted small">${rk.r[1]}</span></h2>
+      <div class="bar"><i style="width:${pct}%;background:var(--brand)"></i></div><div class="small"><b class="num">${p.xp}</b> نقطة${rk.nx ? ` · باقي <b class="num">${rk.nx[0]-p.xp}</b> نقطة لرتبة ${rk.nx[3]} ${rk.nx[2]}` : ' · أعلى رتبة!'}</div></div></section>
+    <section class="card"><h2>أوسمتي <span class="muted small">${got.length} من ${BADGES.length}</span></h2>
+      <div class="badges">${BADGES.map(b => `<div class="badge ${got.includes(b[0])?'on':''}"><div class="be">${b[2]}</div><b>${b[1]}</b><div class="small muted">${b[3]}</div></div>`).join('')}</div></section>
+    <div class="g2">
+      <section class="card"><h2>شهاداتي</h2>${certs.length ? certs.map((c,i) => `<button class="row cert-row" data-cert="${DB.certs.indexOf(c)}"><span style="font-size:1.6rem">🎓</span><div style="min-width:0;text-align:right"><b class="en">${esc(c.unit)}</b><div class="small muted">المستوى ${c.level} · ${new Date(c.date).toLocaleDateString(LOC)}</div></div><span class="chip brand">عرض</span></button>`).join('') : '<p class="muted" style="margin:0">أكمل وحدة كاملة (6 دروس) لتحصل على أول شهادة.</p>'}</section>
+      <section class="card"><h2>نتائج الاختبارات</h2>${qz.length ? `<div class="hist">${qz.map(q => `<div class="row"><span class="stars">${'★'.repeat(q.stars)}${'☆'.repeat(3-q.stars)}</span><div class="en" style="min-width:0;text-align:right">${esc(q.title)}</div><span class="chip ${q.score===q.total?'good':'brand'} num">${q.score}/${q.total}</span></div>`).join('')}</div>` : '<p class="muted" style="margin:0">بعد كل حصة يظهر اختبار قصير، ونتائجك تُحفظ هنا.</p>'}</section>
+    </div></div>`;
+  document.querySelectorAll('[data-cert]').forEach(b => b.onclick = () => showCert(DB.certs[Number(b.dataset.cert)]));
+}
+function showCert(c){
+  const k = c.kid;
+  const ov = overlay(`<div class="cert" id="certBox"><div class="cert-in">
+      <div class="logo" style="justify-content:center;font-size:1.6rem"><span class="b">51</span><span class="t">telk</span></div>
+      <div class="en cert-t">Certificate of Achievement</div><div class="small muted">شهادة إنجاز</div>
+      <div class="cert-n">${esc(DB.kids[k].en)}</div><div class="en">has successfully completed</div>
+      <div class="en cert-u">${esc(c.unit)}</div><div class="en small">Level ${c.level} · ${new Date(c.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</div>
+      <div class="cert-s"><div><div class="en sig">Teacher Noor</div><div class="small muted en">Teacher</div></div><div style="font-size:2.4rem">🏅</div></div>
+    </div></div>
+    <div class="chips"><button class="btn primary" id="pr">طباعة</button><button class="btn" id="cl">إغلاق</button></div>`);
+  ov.querySelector('.card').classList.add('wide');
+  ov.querySelector('#cl').onclick = () => ov.remove();
+  ov.querySelector('#pr').onclick = () => { document.body.classList.add('printing'); window.print(); setTimeout(() => document.body.classList.remove('printing'), 500); };
+}
+
+/* =============== QUIZ =============== */
+function runQuiz(k, quiz, title, onDone){
+  const items = (quiz||[]).filter(q => q && (q.type === 'order' ? Array.isArray(q.words) && q.answer : Array.isArray(q.options) && q.options.length > 1)).slice(0,6);
+  if(!items.length){ onDone && onDone(null); return; }
+  let i = 0, score = 0;
+  const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
+  const norm = s => String(s).toLowerCase().replace(/[^a-z' ]/g,'').replace(/\s+/g,' ').trim();
+  const show = () => {
+    if(i >= items.length) return finish();
+    const q = items[i];
+    const head = `<div class="qhead"><span class="small muted">سؤال ${i+1} من ${items.length}</span><div class="qbar"><i style="width:${i/items.length*100}%"></i></div></div>`;
+    if(q.type === 'order'){
+      const pool = q.words.map((w,j) => ({w, j})).sort(() => Math.random() - .5); let built = [];
+      ov.innerHTML = `<div class="card quiz">${head}<h2>رتّب الكلمات لتكوّن جملة صحيحة</h2>${q.ar?`<p class="small muted" style="margin:0">${esc(q.ar)}</p>`:''}
+        <div class="built en" id="built"></div><div class="pool en" id="pool"></div><div class="chips"><button class="btn primary" id="chk">تحقق</button><button class="btn sm" id="rst">مسح</button></div><div id="fb"></div></div>`;
+      const draw = () => { ov.querySelector('#built').innerHTML = built.map((b,x) => `<button class="wtile on" data-b="${x}">${esc(b.w)}</button>`).join('') || '<span class="muted small" style="font-family:var(--font)">اضغط الكلمات بالترتيب</span>';
+        ov.querySelector('#pool').innerHTML = pool.map((p,x) => built.includes(p) ? '' : `<button class="wtile" data-p="${x}">${esc(p.w)}</button>`).join('');
+        ov.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { built.push(pool[Number(b.dataset.p)]); draw(); });
+        ov.querySelectorAll('[data-b]').forEach(b => b.onclick = () => { built.splice(Number(b.dataset.b),1); draw(); }); };
+      draw();
+      ov.querySelector('#rst').onclick = () => { built = []; draw(); };
+      ov.querySelector('#chk').onclick = () => { if(built.length < pool.length) return; const ok = norm(built.map(b => b.w).join(' ')) === norm(q.answer); feedback(ok, q.answer); };
+    } else {
+      ov.innerHTML = `<div class="card quiz">${head}<h2 class="en" style="direction:ltr;text-align:left">${esc(q.q)}</h2>${q.ar?`<p class="small muted" style="margin:0">${esc(q.ar)}</p>`:''}
+        <div class="opts">${q.options.map((o,x) => `<button class="opt en" data-o="${x}">${esc(o)}</button>`).join('')}</div><div id="fb"></div></div>`;
+      ov.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { const x = Number(b.dataset.o), ok = x === Number(q.answer);
+        ov.querySelectorAll('[data-o]').forEach(o => { o.disabled = true; if(Number(o.dataset.o) === Number(q.answer)) o.classList.add('right'); });
+        if(!ok) b.classList.add('wrong'); feedback(ok, q.options[Number(q.answer)]); });
+    }
+  };
+  const feedback = (ok, right) => { if(ok) score++; const fb = ov.querySelector('#fb'); ov.querySelectorAll('#chk,#rst').forEach(b => b.disabled = true);
+    fb.innerHTML = `<div class="qfb ${ok?'good':'bad'}">${ok ? '✓ إجابة صحيحة! +10 نقاط' : `✗ الإجابة الصحيحة: <span class="en">${esc(right)}</span>`}</div><button class="btn primary" id="nx">${i+1 < items.length ? 'التالي' : 'النتيجة'}</button>`;
+    try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(ok ? 'Great job!' : String(right)); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .9; speechSynthesis.speak(u); }catch(e){}
+    fb.querySelector('#nx').onclick = () => { i++; show(); }; };
+  const finish = () => {
+    const total = items.length, stars = score === total ? 3 : score >= total*0.6 ? 2 : 1, xp = score*10 + (score === total ? 20 : 0);
+    addXP(k, xp);
+    ov.innerHTML = `<div class="card quiz" style="text-align:center"><div class="stars" style="font-size:2.6rem">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div><h2>${score} من ${total}</h2>
+      <p style="margin:0">${score === total ? 'علامة كاملة! أنت بطل 🏆' : score >= total*0.6 ? 'ممتاز! استمر 💪' : 'محاولة جيدة، راجع الدرس وستتحسن 🌱'}</p><div class="chip good" style="justify-self:center">+${xp} نقطة</div>
+      <button class="btn primary big" id="qd">تم</button></div>`;
+    ov.querySelector('#qd').onclick = () => { ov.remove(); onDone && onDone({score, total, stars, xp}); };
+  };
+  show();
+}
+
+/* =============== LIBRARY =============== */
+const TOPICS = [['adventure','مغامرة','🗺️'],['animals','حيوانات','🐾'],['space','فضاء','🚀'],['football','كرة قدم','⚽'],['mystery','لغز','🔍'],['friendship','صداقة','🤝'],['science','علوم','🔬'],['desert','الصحراء','🐪'],['funny','مضحكة','😂']];
+function tabLibrary(k){
+  const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)];
+  $('#tabBody').innerHTML = `<div class="grid">
+    <section class="card"><h2>قصص تفاعلية لمستواك <span class="en muted small">Level ${DB.kids[k].level} · ${LEVEL_CEFR[DB.kids[k].level]}</span></h2>
+      <p class="small muted" style="margin:4px 0 10px">اختر موضوعاً وتكتب لك المعلمة قصة جديدة على مستواك. تقرأ لك بصوت، وتضغط على أي كلمة لتعرف معناها، وفي آخرها أسئلة.</p>
+      <div class="topics">${TOPICS.map(t => `<button class="topic" data-topic="${t[0]}"><span>${t[2]}</span>${t[1]}</button>`).join('')}</div>
+      <div class="shelf2">${books.length ? books.slice().reverse().map(b => `<button class="sbook" data-book="${b.id}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small ${b.read?'ok':'muted'}">${b.read ? `✓ قرأتها · ${b.score||0}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('') : '<p class="muted" style="margin:0">مكتبتك فارغة. اختر موضوعاً من الأعلى لتبدأ أول قصة.</p>'}</div>
+    </section>
+    <section class="card"><h2>الكتب الكلاسيكية (هدايا الحضور)</h2><p class="small muted" style="margin:4px 0 0">كل 5 حصص متتالية تفتح كتاباً جديداً.</p>
+      <div class="shelf">${classics.map((b,i) => i < gifts ? `<a class="book" href="https://www.gutenberg.org/ebooks/${b[2]}" target="_blank" rel="noopener" style="background:${b[3]}"><span class="bt">${esc(b[0])}</span><span class="ba">${esc(b[1])} · اقرأ الآن</span></a>` : `<div class="book locked"><span class="bt">${esc(b[0])}</span><span class="small" style="font-weight:700">مقفل · ${(i+1)*5} حصص متتالية</span></div>`).join('')}</div>
+    </section></div>`;
+  document.querySelectorAll('[data-topic]').forEach(b => b.onclick = () => newBook(k, b.dataset.topic));
+  document.querySelectorAll('[data-book]').forEach(b => b.onclick = () => openBook(k, DB.books[k].find(x => x.id === b.dataset.book)));
+}
+async function newBook(k, topic){
+  if(!DB.apiKey && !DEMO){ alertBox('المكتبة تحتاج مفتاح التشغيل. اطلب من ولي الأمر إضافته.'); return; }
+  const kid = DB.kids[k], cefr = LEVEL_CEFR[kid.level], age = ageOf(kid.birth);
+  const ov = overlay(`<div style="text-align:center"><div style="font-size:2.6rem" class="spin">✍️</div><h2>المعلمة تكتب قصتك…</h2><p class="small muted" style="margin:0">ثوانٍ قليلة</p></div>`);
+  let book = null;
+  try{
+    let txt;
+    if(DEMO || DB.apiKey === 'demo') txt = JSON.stringify(DEMO_BOOK);
+    else txt = await callClaude({model:LIVE_MODEL, max_tokens:3500, messages:[{role:'user', content:
+`Write an original illustrated graded reader in English for a ${age}-year-old Saudi ${kid.boy?'boy':'girl'} at CEFR ${cefr} (51Talk level ${kid.level}). Topic: ${topic}.
+It must feel exciting and age-appropriate (not babyish), with natural dialogue, and use vocabulary and grammar right at this level.
+${kid.level <= 6 ? '7 pages, 2-4 short sentences per page.' : '8 pages, 3-5 sentences per page.'}
+Return ONLY JSON:
+{"title":"...","emoji":"one emoji","pages":[{"emoji":"2-3 emojis that illustrate the page","text":"..."}],"glossary":{"word":"Arabic meaning"},"questions":[{"q":"comprehension question","options":["...","...","..."],"answer":0}]}
+glossary: 12-18 useful or harder words from the story (lowercase, as they appear). questions: 5 questions, mixing detail, vocabulary and "why" questions.`}]});
+    const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); book = JSON.parse(txt.slice(a, b+1));
+    if(!book || !Array.isArray(book.pages) || !book.pages.length) throw new Error('bad book');
+  }catch(e){ console.warn(e); ov.remove(); alertBox('ما قدرنا نكتب القصة الآن. تأكد من الإنترنت وحاول مرة ثانية.'); return; }
+  ov.remove();
+  book.id = 'b' + Date.now(); book.topic = topic; book.level = kid.level; book.read = false;
+  DB.books[k].push(book); if(DB.books[k].length > 40) DB.books[k].shift(); save();
+  openBook(k, book);
+}
+function openBook(k, book){
+  if(!book) return;
+  let pg = 0; const gl = {}; Object.entries(book.glossary || {}).forEach(([w, m]) => gl[w.toLowerCase()] = m);
+  const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
+  let reading = false;
+  const stop = () => { reading = false; try{ speechSynthesis.cancel(); }catch(e){} ov.querySelectorAll('.w.hl').forEach(w => w.classList.remove('hl')); };
+  const draw = () => {
+    const p = book.pages[pg];
+    const words = String(p.text).split(/(\s+)/).map(tok => /\s+/.test(tok) ? tok : `<span class="w${gl[tok.toLowerCase().replace(/[^a-z'-]/g,'')]?' gl':''}" data-w="${esc(tok)}">${esc(tok)}</span>`).join('');
+    ov.innerHTML = `<div class="r-top"><button class="btn sm" id="rx">إغلاق</button><b class="en" style="direction:ltr">${esc(book.title)}</b><span class="small muted num">${pg+1}/${book.pages.length}</span></div>
+      <div class="r-page"><div class="r-art">${esc(p.emoji||book.emoji||'📖')}</div><div class="r-text en" id="rt">${words}</div><div class="r-tip" id="tip" hidden></div></div>
+      <div class="r-ctrl"><button class="btn" id="prev" ${pg===0?'disabled':''}>→ السابق</button><button class="btn primary" id="read">🔊 اقرأ لي</button><button class="btn" id="next">${pg === book.pages.length-1 ? 'الأسئلة ✓' : 'التالي ←'}</button></div>
+      <p class="small muted" style="text-align:center;margin:0">اضغط على أي كلمة لتسمعها، والكلمات الملوّنة لها ترجمة.</p>`;
+    ov.querySelector('#rx').onclick = () => { stop(); ov.remove(); renderKid(k); };
+    ov.querySelector('#prev').onclick = () => { stop(); pg--; draw(); };
+    ov.querySelector('#next').onclick = () => { stop(); if(pg < book.pages.length-1){ pg++; draw(); } else { ov.remove(); finishBook(k, book); } };
+    ov.querySelector('#read').onclick = () => readPage(p.text);
+    ov.querySelectorAll('.w').forEach(w => w.onclick = () => { stop(); const raw = w.dataset.w, key = raw.toLowerCase().replace(/[^a-z'-]/g,'');
+      sayWord(key); const tip = ov.querySelector('#tip'); tip.hidden = false; tip.innerHTML = `<b class="en">${esc(key)}</b>${gl[key] ? ` = ${esc(gl[key])}` : ''}`; });
+  };
+  const sayWord = w => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(w); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .7; speechSynthesis.speak(u); }catch(e){} };
+  const readPage = text => {
+    stop(); reading = true; const spans = [...ov.querySelectorAll('#rt .w')];
+    const starts = []; let idx = 0; for(const s of spans){ const at = text.indexOf(s.dataset.w, idx); starts.push(at); idx = at + s.dataset.w.length; }
+    try{ const u = new SpeechSynthesisUtterance(text); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = DB.kids[k].level <= 6 ? .82 : .9;
+      let fallbackT = null, got = false;
+      u.onboundary = e => { got = true; const i = starts.findIndex((s,j) => e.charIndex >= s && (j === starts.length-1 || e.charIndex < starts[j+1])); spans.forEach((s,j) => s.classList.toggle('hl', j === i)); };
+      u.onstart = () => { let j = 0; fallbackT = setInterval(() => { if(got || !reading){ clearInterval(fallbackT); return; } spans.forEach((s,x) => s.classList.toggle('hl', x === j)); j++; if(j > spans.length) clearInterval(fallbackT); }, 340 / u.rate); };
+      u.onend = () => { clearInterval(fallbackT); spans.forEach(s => s.classList.remove('hl')); reading = false; };
+      speechSynthesis.speak(u); }catch(e){}
+  };
+  draw();
+}
+function finishBook(k, book){
+  const qs = (book.questions||[]).map(q => ({type:'mc', q:q.q, options:q.options, answer:q.answer}));
+  runQuiz(k, qs, book.title, res => {
+    const first = !book.read; book.read = true; book.score = res ? res.score : 0; if(first) addXP(k, 30); save();
+    toast(first ? '📚 أنهيت القصة! +30 نقطة' : 'أحسنت!'); renderKid(k);
+  });
+}
+const DEMO_BOOK = {title:'The Lost Falcon', emoji:'🦅', pages:[
+  {emoji:'🏜️🦅', text:'Sami lived near the desert with his grandfather. Every morning they watched a beautiful falcon called Noor fly over the dunes.'},
+  {emoji:'🌪️😟', text:'One day, a strong wind came. The falcon did not come back. Sami was worried. "We have to find her!" he said.'},
+  {emoji:'🐪🔍', text:'They rode a camel across the sand. Sami looked carefully and suddenly he saw a feather near a rock.'},
+  {emoji:'🦅❤️', text:'Behind the rock, Noor was resting. She was tired but safe. Sami smiled and gently called her name. She flew to his arm!'}],
+  glossary:{desert:'صحراء', falcon:'صقر', dunes:'كثبان رملية', worried:'قلق', feather:'ريشة', carefully:'بعناية', resting:'تستريح', gently:'بلطف'},
+  questions:[{q:'Who did Sami live with?', options:['His grandfather','His teacher','His sister'], answer:0},
+    {q:'Why didn\'t the falcon come back?', options:['It was hungry','A strong wind came','It was sleeping at home'], answer:1},
+    {q:'What did Sami find near the rock?', options:['A camel','A feather','A map'], answer:1}]};
 
 /* =============== TEACHER SVG =============== */
 const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor">
@@ -690,39 +1200,48 @@ const DEMO_LINES = [
   "[MOOD:happy] What a great lesson today! You talked so well. See you next time, superstar!\n[STAGE:wrapup]\n[END]"
 ];
 async function* demoStream(){ const t = DEMO_LINES[Math.min(demoN++, DEMO_LINES.length-1)]; await new Promise(r => setTimeout(r, 600)); for(const w of t.match(/\S+\s*/g)){ await new Promise(r => setTimeout(r, 35)); yield w; } }
-function demoReport(){ return JSON.stringify({score:86,stars:3,newWords:['giraffe','played'],mistakes:[{wrong:'I play football yesterday',right:'I played football yesterday'}],parentNote:'هذا تقرير تجريبي. في الحصة الحقيقية تكتب المعلمة هنا ما تعلّمه الطفل ونقاط قوته وما يحتاج تدريباً.',kidNote:'You were amazing today!',nextFocus:'past simple'}); }
+function demoReport(){ return JSON.stringify({score:86,stars:3,newWords:['giraffe','played'],mistakes:[{wrong:'I play football yesterday',right:'I played football yesterday'}],parentNote:'هذا تقرير تجريبي. في الحصة الحقيقية تكتب المعلمة هنا ما تعلّمه الطفل ونقاط قوته وما يحتاج تدريباً.',kidNote:'You were amazing today!',nextFocus:'past simple',
+  quiz:[{type:'order',words:['I','played','football','with','my','brother'],answer:'I played football with my brother',ar:'رتّب الجملة'},
+        {type:'mc',q:'Yesterday I ___ to the park.',options:['go','went','going'],answer:1},
+        {type:'mc',q:'Which sentence is correct?',options:['She like pizza.','She likes pizza.','She liking pizza.'],answer:1},
+        {type:'order',words:['A','giraffe','is','taller','than','a','horse'],answer:'A giraffe is taller than a horse'},
+        {type:'mc',q:'"How was your weekend?" Choose the best answer:',options:['It was great, thanks!','Yes, I am.','At seven.'],answer:0}]}); }
 
 /* =============== LESSON =============== */
 let L = null;
 function buildRules(k, plan){
-  const kid = DB.kids[k], prog = DB.progress[k], age = ageOf(kid.birth), nk = nick(k);
+  const kid = DB.kids[k], prog = DB.progress[k], age = ageOf(kid.birth), nk = nick(k), cefr = LEVEL_CEFR[kid.level] || 'A2';
   const mist = (prog.mistakes||[]).slice(0,6).map(m => `"${m.wrong}" -> "${m.right}"`).join('; ') || 'none yet';
   const words = (prog.words||[]).slice(0,15).join(', ') || 'none yet';
-  const lvl = kid.level <= 6
-    ? 'Use simple, clear English (CEFR A1-A2): short sentences, everyday words, lots of warmth and praise. Ask ONE question at a time.'
-    : 'Use natural CEFR A2-B1 English. Push for longer answers with reasons and examples. Ask interesting follow-up questions like a real conversation partner.';
+  const lvl = kid.level <= 4
+    ? 'Use simple, clear English (CEFR ' + cefr + '): short sentences, everyday words, lots of warmth. Ask ONE question at a time.'
+    : kid.level <= 6
+    ? 'Use clear CEFR ' + cefr + ' English. Treat the child as a smart ' + age + '-year-old, not a baby. Push for full sentences with "because", "and", "but", "so".'
+    : 'Use natural CEFR ' + cefr + ' English like a real conversation partner for a teenager. Push for longer answers with reasons, examples and opinions; ask challenging follow-up questions.';
   return `You are Teacher Noor, a real-feeling, warm, funny and energetic English teacher giving a LIVE one-to-one VOICE class (like 51Talk) to a Saudi child on an iPad. Everything you write in the spoken part is read aloud by a text-to-speech voice, and the child answers by speaking (speech-to-text).
 
-STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'girl'}, 51Talk level ${kid.level} (about CEFR ${kid.cefr || (kid.level<=6?'A1-A2':'A2-B1')}). First language Arabic.
-TODAY: Lesson ${plan.n} "${plan.t}". Language to weave in: ${plan.g}. Useful words: ${plan.w}.${plan.round>1?' (Second round of this topic: go deeper with new related words.)':''}
+STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'girl'}, 51Talk level ${kid.level} (CEFR ${cefr}). First language Arabic.
+TODAY: Unit "${plan.unit}", lesson ${plan.li+1} of ${plan.perUnit||6}: "${plan.t}".
+Conversation goal: ${plan.goal}.
+Sentence patterns the child should build and use: ${plan.pattern}.${plan.round>1?' (Second time through this level: go deeper, use harder follow-up questions.)':''}
 Focus from the last lesson report: ${prog.focus || 'none yet'}.
 Recent mistakes to recycle naturally: ${mist}.
 Words from recent lessons: ${words}.
 
-THE MOST IMPORTANT THING: a REAL CONVERSATION. Not word drills, not lists. Talk WITH the child like a real teacher who is genuinely curious about their life, opinions and imagination. The child should speak much more than you.
+THE MOST IMPORTANT THING: CONVERSATION AND SENTENCE BUILDING, much more than vocabulary. The child must speak in full sentences and speak much more than you.
 How the 25 minutes flow (each student message starts with [minute X]):
-- chat (0-4): warm greeting by nickname, real small talk about their day.
-- topic (4-20): a natural conversation about today's topic. Bring today's words and grammar INTO the conversation (stories, "imagine you are...", role-plays like shop/restaurant/interview, opinions, "what would you do if..."). When a new word appears, put it on the board once and keep chatting.
-- game (20-23): a quick fun speaking challenge (guess the word, finish my story, 20 questions...).
-- wrapup (23-25): specific praise, 1-2 things learned, goodbye, then [END].
+- words (0-4): warm greeting by nickname and one quick personal question. Then teach 4 or 5 NEW useful words for today's conversation, one at a time: put each on the board with [BOARD], say it, and ask the child to use it in a short sentence. Keep this part quick.
+- talk (4-21): the heart of the lesson. A real, interesting conversation about today's goal, using today's sentence patterns. First model a pattern in a natural sentence, then ask open questions so the child builds their OWN sentences. When an answer is short (one word), help them expand it: "Can you say that in a full sentence?", "Why?", "Tell me more", "Add because...". Use role-plays, "imagine..." situations, stories and opinions. Mix in today's new words naturally.
+- review (21-23): a quick speaking challenge: the child makes 2-3 of their own sentences with today's patterns.
+- wrapup (23-25): specific praise about the sentences they built, goodbye, then [END].
 
 HOW TO TALK:
 - ${lvl}
 - Spoken part: 1 to 3 short, natural sentences, like real speech (contractions, "Wow!", "Hmm", "Oh really?", laughter words). Always finish with a question or a clear invitation to speak.
 - React to WHAT the child said (content first), like a real person, then continue.
-- Correct mistakes the way great teachers do: first react to the meaning, then recast the correct sentence naturally, and about half the time ask them to say it again. One correction at a time, never a list. Also add a [FIX] tag.
+- Correct mistakes the way great teachers do: react to the meaning, then recast the correct sentence naturally, and about half the time ask them to say it again. One correction at a time, never a list. Also add a [FIX] tag.
 - The child's words come from speech recognition: ignore punctuation/capitals. If a word looks like a mishearing of an English word, it is probably a pronunciation problem: say the word slowly with syllables (e.g. "gi-RAFFE") and ask them to try again.
-- You NEVER speak Arabic. Every spoken word is English, always, even if the child speaks Arabic or is stuck. If the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example, or offer two choices.
+- You NEVER speak Arabic. Every spoken word is English, always, even if the child speaks Arabic or is stuck. If the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example sentence to copy, or offer two choices.
 - If the child does not understand a specific English word or phrase, keep speaking English and put its written Arabic translation in [AR] (format: word = translation). [AR] is never spoken, it is only shown as text.
 - If you get "(student was silent)", gently encourage: rephrase more simply.
 - Stay on English learning. Never ask for personal details (address, phone, school name, passwords, photos). If off-topic, kindly bring them back.
@@ -734,7 +1253,7 @@ After the spoken text, optional tags each on its own line:
 [BOARD:word|one emoji|Arabic meaning|short example sentence]
 [FIX:what the child said wrong|correct version|very short Arabic explanation]
 [AR:English word = Arabic translation]  (written only, for a word the child did not understand)
-[STAGE:chat|topic|game|wrapup]
+[STAGE:words|talk|review|wrapup]
 [END]  (only in wrapup, after minute 23)
 No markdown, no emojis, and no Arabic letters in the spoken text, no other text outside this format.`;
 }
@@ -745,8 +1264,9 @@ function startLesson(k, trial){
   const led = ledger(k);
   if(!trial && (!led.open || led.ended)) return go(k);
   if(!DB.apiKey && !DEMO){ alertBox('المعلمة غير مفعّلة بعد. اطلب من ولي الأمر إضافة مفتاح التشغيل من لوحته.'); return; }
-  const n = DB.progress[k].lessonNo, plan = lessonPlan(k, n);
+  const plan = lessonPlan(k), n = plan.n;
   let startedAt = new Date();
+  if(!trial && !led.open.resumed && new Date() < led.open.t){ DB.progress[k].early = (DB.progress[k].early||0) + 1; }
   if(!trial && led.open.resumed && DB.live[k] && DB.live[k].startedAt) startedAt = new Date(DB.live[k].startedAt);
   L = {kid:k, trial, slot:trial?null:led.open.key, n, plan, history:[], startedAt, state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
        queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:led.gifts, typing:false};
@@ -761,7 +1281,7 @@ function startLesson(k, trial){
 function renderRoom(){
   $('#app').innerHTML = `<div class="room">
     <header class="rbar"><button class="btn sm" id="exit">خروج</button>
-      <div class="ttl">${L.trial ? '<span class="chip brand" style="font-family:var(--font)">تجريبي</span> ' : ''}Lesson ${L.n} · ${esc(L.plan.t)}</div>
+      <div class="ttl">${L.trial ? '<span class="chip brand" style="font-family:var(--font)">تجريبي</span> ' : ''}${esc(L.plan.t)}</div>
       <div class="timer" id="timer">00:00</div></header>
     <div class="rbody">
       <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="burst" id="burst"></div><div class="tname">Teacher Noor</div><div class="state" id="state"></div></div></div>
@@ -986,43 +1506,59 @@ function studentSaid(text){
 /* ---- finish ---- */
 async function finishLesson(){
   const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; stopListening(); setState('idle'); clearInterval(lesson.tick);
-  const k = lesson.kid, mins = elapsedMin();
+  const k = lesson.kid, mins = elapsedMin(), plan = lesson.plan;
   const ov = document.createElement('div'); ov.className = 'ov';
-  ov.innerHTML = `<div class="card" style="text-align:center"><h2>انتهت الحصة 🎉</h2><p class="muted" style="margin:0">المعلمة تكتب تقريرك…</p></div>`;
+  ov.innerHTML = `<div class="card" style="text-align:center"><h2>انتهت الحصة 🎉</h2><p class="muted" style="margin:0">المعلمة تكتب تقريرك وتجهّز اختبار الدرس…</p></div>`;
   document.body.appendChild(ov);
   const transcript = lesson.history.map(h => (h.role==='user' ? 'STUDENT ' : 'TEACHER: ') + h.content.replace(/\[(MOOD|STAGE|END)[^\]]*\]/gi,'').trim()).join('\n').slice(-40000);
   let rep = null;
   try{
-    const txt = await callClaude({model:REPORT_MODEL, max_tokens:1500, messages:[{role:'user', content:
-`You are an expert English teacher for Arab children. Assess this one-to-one speaking lesson.
-Student: ${DB.kids[k].en}, ${ageOf(DB.kids[k].birth)} years old, level ${DB.kids[k].level}. Lesson: "${lesson.plan.t}" (${lesson.plan.g}).
+    const txt = await callClaude({model:REPORT_MODEL, max_tokens:3000, messages:[{role:'user', content:
+`You are an expert English teacher for Arab children. Assess this one-to-one speaking lesson and write a short quiz.
+Student: ${DB.kids[k].en}, ${ageOf(DB.kids[k].birth)} years old, level ${DB.kids[k].level} (CEFR ${LEVEL_CEFR[DB.kids[k].level]}).
+Lesson: "${plan.t}" (unit "${plan.unit}"). Goal: ${plan.goal}. Sentence patterns: ${plan.pattern}.
 Transcript (STUDENT lines are speech-to-text):
 ${transcript}
 
 Reply with ONLY one JSON object:
-{"score":0-100,"stars":1-3,"newWords":["words the student practised"],"mistakes":[{"wrong":"...","right":"..."}],"parentNote":"3-4 sentences in Arabic for the parent: what was covered, how well the child spoke, strengths, exactly what to practise at home","kidNote":"one short cheerful English sentence for the child","nextFocus":"one short line in English: what the next lesson should focus on for this child"}`}]});
+{"score":0-100,"stars":1-3,"newWords":["words practised"],"mistakes":[{"wrong":"...","right":"..."}],
+"parentNote":"3-4 sentences in Arabic for the parent: what was covered, how well the child built sentences and spoke, strengths, exactly what to practise at home",
+"kidNote":"one short cheerful English sentence for the child","nextFocus":"one short line in English: what the next lesson should focus on",
+"quiz":[5 questions about THIS lesson at the child's level, mainly sentence building:
+  2 of {"type":"order","words":["the","words","of","a","correct","sentence","in","order"],"answer":"the full correct sentence","ar":"short Arabic instruction"} (5-9 words, using today's patterns),
+  2 of {"type":"mc","q":"fill the gap or choose the best reply","options":["...","...","..."],"answer":index},
+  1 of {"type":"mc","q":"Which sentence is correct?","options":["...","...","..."],"answer":index}]}`}]});
     const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); rep = JSON.parse(txt.slice(a, b+1));
   }catch(e){ console.warn(e); }
-  if(!rep) rep = {score:0, stars:2, newWords:[], mistakes:[], parentNote:'لم يُكتب التقرير بسبب مشكلة اتصال، لكن الحصة سُجّلت.', kidNote:'Great job today!', nextFocus:''};
+  if(!rep) rep = {score:0, stars:2, newWords:[], mistakes:[], parentNote:'لم يُكتب التقرير بسبب مشكلة اتصال، لكن الحصة سُجّلت.', kidNote:'Great job today!', nextFocus:'', quiz:[]};
   const report = {score:Math.max(0,Math.min(100,Number(rep.score)||0)), stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
     newWords:(Array.isArray(rep.newWords)?rep.newWords:[]).slice(0,12).map(String), mistakes:(Array.isArray(rep.mistakes)?rep.mistakes:[]).slice(0,8).map(m => ({wrong:String(m.wrong||''), right:String(m.right||'')})),
     parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!')};
-  let book = null;
+  let book = null, cert = null;
   if(!lesson.trial){
-    const att = {kid:k, slot:lesson.slot, lessonNo:lesson.n, title:lesson.plan.t, at:new Date().toISOString(), minutes:mins};
+    const att = {kid:k, slot:lesson.slot, lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:mins};
     DB.attendance.push(att); DB.reports.push(Object.assign({}, att, report));
-    const p = DB.progress[k]; p.lessonNo = (p.lessonNo||1)+1; p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); p.focus = String(rep.nextFocus||'');
+    const p = DB.progress[k]; p.pos = (p.pos||0)+1; p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); p.focus = String(rep.nextFocus||'');
+    p.xp = (p.xp||0) + 50;
+    if(plan.li === (plan.perUnit||6) - 1){ cert = {kid:k, unit:plan.unit, level:DB.kids[k].level, date:new Date().toISOString()}; DB.certs.push(cert); }
     DB.live[k] = null; save();
     const g = ledger(k).gifts; if(g > lesson.giftsBefore) book = BOOKS[band(k)][g-1];
   }
   ov.innerHTML = `<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
-    ${lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${DB.perLesson} ريال صارت خضراء: استفدنا من الحصة</div>`}
+    ${lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${DB.perLesson} ريال صارت خضراء · +50 نقطة</div>`}
+    ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
     ${book ? `<div class="gift">🎁 هدية جديدة! فتحت كتاب: <span class="en">${esc(book[0])}</span></div>` : ''}
     ${report.newWords.length ? `<div><div style="font-weight:800">كلمات تدربت عليها</div><div class="wordchips">${report.newWords.map(w => `<span>${esc(w)}</span>`).join('')}</div></div>` : ''}
     ${report.mistakes.length ? `<div><div style="font-weight:800">انتبه لهذه</div>${report.mistakes.map(m => `<div class="ltr small" style="text-align:left"><s class="muted">${esc(m.wrong)}</s> → <b style="color:var(--good)">${esc(m.right)}</b></div>`).join('')}</div>` : ''}
-    <button class="btn primary big" id="back">رجوع للرئيسية</button></div>`;
-  $('#back').onclick = () => { ov.remove(); leaveRoom(); };
+    <button class="btn primary big" id="back">${(rep.quiz||[]).length ? '📝 ابدأ اختبار الدرس' : 'رجوع للرئيسية'}</button></div>`;
+  $('#back').onclick = () => { ov.remove(); const wasTrial = lesson.trial; leaveRoomQuiet();
+    runQuiz(k, rep.quiz, plan.t, res => {
+      if(res && !wasTrial){ DB.progress[k].quizzes.push({slot:lesson.slot, title:plan.t, score:res.score, total:res.total, stars:res.stars, at:new Date().toISOString()}); save(); }
+      if(cert) showCert(cert);
+      go(WHO === 'parent' ? 'parent' : k, 'home');
+    }); };
 }
+function leaveRoomQuiet(){ if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
 function leaveRoom(){ if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
@@ -1036,63 +1572,126 @@ function alertBox(msg){ const ov = document.createElement('div'); ov.className =
 
 /* =============== PARENT =============== */
 function renderParent(){
-  const now = new Date(), cur = periodAt(now) || DB.periods[DB.periods.length-1];
   const ids = kidIds();
-  const kidCard = k => { const l = ledger(k), kid = DB.kids[k], reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,5);
+  const kidCard = k => { const l = ledger(k), kid = DB.kids[k], plan = lessonPlan(k), p = DB.progress[k], rk = rankOf(p.xp);
+    const reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,4);
+    const qz = p.quizzes.slice(-5); const qavg = qz.length ? Math.round(qz.reduce((a,q) => a + q.score/q.total, 0)/qz.length*100) : null;
     const nxt = l.open ? 'الحصة مفتوحة الآن' : l.next ? `${fmtDay(l.next.t)} · ${fmtTime(l.next.t)}` : '—';
-    return `<section class="card"><div style="display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2>${esc(kid.ar)} <span class="muted small">(${esc(nick(k))}) · Level ${kid.level} · ${ageOf(kid.birth)} سنة</span></h2>
-      <div class="small muted">الدرس ${DB.progress[k].lessonNo}: <span class="en">${esc(lessonPlan(k,DB.progress[k].lessonNo).t)}</span> · ${nxt}</div></div></div>
-      <div class="stat"><div><span class="small muted">الرصيد المتبقي</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">حضور متتالي</span><b>${l.run}</b></div></div>
-      <div class="chips" style="margin-top:12px"><button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button></div>
+    const levelDone = plan.total && p.pos >= plan.total;
+    return `<section class="card"><div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2>${esc(kid.ar)} <span class="muted small">(${esc(nick(k))}) · ${ageOf(kid.birth)} سنة</span></h2>
+      <div class="small muted"><span class="en">Level ${kid.level} (${LEVEL_CEFR[kid.level]})</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><button class="btn sm" data-edit="${k}">تعديل</button></div>
+      ${levelDone ? `<div class="gift" style="margin-top:10px">🎉 أنهى ${esc(kid.ar)} كل دروس المستوى ${kid.level}. تقدر ترفعه للمستوى التالي.</div>` : ''}
+      <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
+      <div class="stat"><div><span class="small muted">الرصيد المتبقي</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
+      <div class="chips" style="margin-top:12px">${kid.level < 12 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button></div>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
-      ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">Lesson ${r.lessonNo} · ${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
+      ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
-  const sched = k => `<div class="field"><label>${esc(DB.kids[k].ar)}: الأيام والوقت</label><div class="days">${DAYS_AR.map((d,i) => `<label><input type="checkbox" id="d_${k}_${i}" ${cur[k].days.includes(i)?'checked':''}> ${d}</label>`).join('')}</div>
-      <input class="input" type="time" id="t_${k}" value="${cur[k].time}" style="max-width:180px"><label for="b_${k}" class="small">مبلغ الاشتراك (ريال)</label><input class="input num" type="number" min="0" step="10" id="b_${k}" value="${DB.balance[k]}" style="max-width:180px"></div>`;
-  const firstFuture = new Date(DB.periods[0].from) > now && DB.periods.length === 1;
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><b>لوحة ولي الأمر</b><button class="btn sm" id="out">خروج</button></div></div>
     <div class="grid">
+      <div class="chips" style="justify-content:space-between"><h2>الأطفال</h2><button class="btn primary" id="addKid">➕ إضافة طفل</button></div>
+      <div class="g2e">${ids.map(kidCard).join('')}</div>
       <section class="card grid" style="gap:10px"><h2>تشغيل المعلمة</h2>
         <p class="small muted" style="margin:0">${DB.apiKey ? '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.' : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
         <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><span class="small" id="keyMsg"></span></div>
+        <div class="field"><label for="pl">قيمة الحصة الواحدة (ريال)</label><div class="chips"><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:140px"><button class="btn sm" id="savePl">حفظ</button></div></div>
       </section>
-      <div class="g2e">${ids.map(kidCard).join('')}</div>
-      <section class="card grid"><h2>الجدول والاشتراك</h2>
-        ${firstFuture ? `<div class="field"><label for="sd">تاريخ بداية الحصص</label><input class="input" type="date" id="sd" value="${DB.periods[0].from.slice(0,10)}" style="max-width:220px"></div>` : '<p class="small muted" style="margin:0">أي تعديل على الأيام أو الوقت يبدأ من الآن، والحصص السابقة تبقى كما هي.</p>'}
-        <div class="g2e">${ids.map(sched).join('')}</div>
-        <div class="field"><label for="pl">قيمة الحصة الواحدة (ريال)</label><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:180px"></div>
-        <div class="chips"><button class="btn primary" id="save">حفظ</button><span class="small ok" id="saved"></span></div>
-      </section>
-      <section class="card"><h2>الحسابات</h2><div style="overflow-x:auto"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th></tr>
-        ${ids.map(k => `<tr><td>${esc(DB.kids[k].ar)}</td><td><code>${esc(DB.kids[k].user)}</code></td><td><code>${esc(DB.kids[k].pass)}</code></td></tr>`).join('')}
-        <tr><td>ولي الأمر</td><td><code>${esc(DB.parent.user)}</code></td><td><code>${esc(DB.parent.pass)}</code></td></tr></table></div></section>
+      <section class="card"><h2>الحسابات</h2><div style="overflow-x:auto"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th><th>المستوى</th></tr>
+        ${ids.map(k => `<tr><td>${esc(DB.kids[k].ar)}</td><td><code>${esc(DB.kids[k].user)}</code></td><td><code>${esc(DB.kids[k].pass)}</code></td><td class="en">${DB.kids[k].level}</td></tr>`).join('')}
+        <tr><td>ولي الأمر</td><td><code>${esc(DB.parent.user)}</code></td><td><code>${esc(DB.parent.pass)}</code></td><td></td></tr></table></div></section>
     </div></div>`;
   $('#out').onclick = logout;
-  document.querySelectorAll('[data-trial]').forEach(b => b.onclick = () => startLesson(b.dataset.trial, true));
-  $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); $('#keyMsg').textContent = 'تم حفظ المفتاح.'; };
-  $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…';
-    try{ const t = await callClaude({model:LIVE_MODEL, max_tokens:20, messages:[{role:'user', content:'Say: ready'}]}); msg.textContent = '✅ المعلمة جاهزة'; msg.className = 'small ok'; }
+  $('#addKid').onclick = () => kidForm(null);
+  document.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => kidForm(b.dataset.edit));
+  document.querySelectorAll('[data-trial]').forEach(b => b.onclick = () => enterLesson(b.dataset.trial, true));
+  document.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const k = b.dataset.up, to = DB.kids[k].level + 1;
+    const ov = overlay(`<h2>رفع ${esc(DB.kids[k].ar)} للمستوى ${to}؟</h2><p style="margin:0">يبدأ من أول درس في المستوى ${to} (<span class="en">${LEVEL_CEFR[to]}</span>). التقارير والنقاط والأوسمة تبقى كما هي.</p><div class="chips"><button class="btn primary" id="yes">نعم، ارفعه</button><button class="btn" id="no">رجوع</button></div>`);
+    ov.querySelector('#no').onclick = () => ov.remove();
+    ov.querySelector('#yes').onclick = () => { setLevel(k, to); ov.remove(); toast(`تم رفع ${DB.kids[k].ar} للمستوى ${to} 🚀`); renderParent(); }; });
+  $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); toast('تم حفظ المفتاح'); };
+  $('#savePl').onclick = () => { DB.perLesson = Math.max(1, Number($('#pl').value)||10); save(); toast('تم الحفظ'); renderParent(); };
+  $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
+    try{ await callClaude({model:LIVE_MODEL, max_tokens:20, messages:[{role:'user', content:'Say: ready'}]}); msg.textContent = '✅ المعلمة جاهزة'; msg.className = 'small ok'; }
     catch(e){ msg.className = 'small err'; msg.textContent = e && e.status === 401 ? 'المفتاح غير صحيح.' : `فشل الاتصال (${(e&&e.status)||'؟'}).`; } };
   $('#testVoice').onclick = () => { unlockAudio(); try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance("Hello! I'm Teacher Noor. I can't wait to talk with you!"); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); $('#keyMsg').textContent = 'الصوت: ' + (voice ? voice.name : 'الافتراضي'); }catch(e){} };
-  $('#save').onclick = () => { const np = {};
-    for(const k of ids){ const days = []; for(let i=0;i<7;i++) if($(`#d_${k}_${i}`).checked) days.push(i); np[k] = {days, time:$(`#t_${k}`).value || cur[k].time}; DB.balance[k] = Math.max(0, Number($(`#b_${k}`).value)||0); }
-    DB.perLesson = Math.max(1, Number($('#pl').value)||10);
-    if(firstFuture){ const sd = $('#sd').value || DB.periods[0].from.slice(0,10); DB.periods = [Object.assign({from:sd+'T00:00'}, np)]; }
-    else if(ids.some(k => JSON.stringify(np[k]) !== JSON.stringify(cur[k]))){ const f = new Date(); DB.periods.push(Object.assign({from:`${f.getFullYear()}-${pad(f.getMonth()+1)}-${pad(f.getDate())}T${pad(f.getHours())}:${pad(f.getMinutes())}`}, np)); }
-    save(); renderParent(); $('#saved').textContent = 'تم الحفظ'; };
+}
+function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level) DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
+function kidForm(k){
+  const kid = k ? DB.kids[k] : {ar:'', en:'', user:'', pass:'', level:5, birth:'2015-01-01', boy:true};
+  const per = k ? periodAt(k, new Date()) : {days:[0,2,4], time:'17:00'};
+  const ov = overlay(`<h2>${k ? 'تعديل ' + esc(kid.ar) : 'إضافة طفل جديد'}</h2>
+    <div class="g2e" style="gap:10px">
+      <div class="field"><label for="f_ar">الاسم بالعربي</label><input class="input" id="f_ar" value="${esc(kid.ar)}"></div>
+      <div class="field"><label for="f_en">الاسم بالإنجليزي</label><input class="input ltr" id="f_en" value="${esc(kid.en)}"></div>
+      <div class="field"><label for="f_user">اسم المستخدم</label><input class="input ltr" id="f_user" autocapitalize="none" value="${esc(kid.user)}"></div>
+      <div class="field"><label for="f_pass">كلمة المرور</label><input class="input ltr" id="f_pass" value="${esc(kid.pass)}"></div>
+      <div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${LEVEL_CEFR[l]}</option>`).join('')}</select></div>
+      <div class="field"><label for="f_b">تاريخ الميلاد</label><input class="input" type="date" id="f_b" value="${esc(kid.birth)}"></div>
+      <div class="field"><label for="f_g">الجنس</label><select class="input" id="f_g"><option value="1" ${kid.boy?'selected':''}>ولد</option><option value="0" ${!kid.boy?'selected':''}>بنت</option></select></div>
+      <div class="field"><label for="f_bal">مبلغ الاشتراك (ريال)</label><input class="input num" type="number" min="0" step="10" id="f_bal" value="${k ? DB.balance[k] : 2000}"></div>
+    </div>
+    <div class="field"><label>أيام الحصص</label><div class="days">${DAYS_AR.map((d,i) => `<label><input type="checkbox" id="f_d${i}" ${per.days.includes(i)?'checked':''}> ${d}</label>`).join('')}</div></div>
+    <div class="field"><label for="f_t">وقت الحصة</label><input class="input" type="time" id="f_t" value="${per.time}" style="max-width:180px"></div>
+    <div class="err" id="f_err"></div>
+    <div class="chips"><button class="btn primary" id="f_save">حفظ</button><button class="btn" id="f_cancel">رجوع</button>${k ? '<button class="btn danger" id="f_del">حذف الحساب</button>' : ''}</div>`);
+  ov.querySelector('.card').classList.add('wide');
+  ov.querySelector('#f_cancel').onclick = () => ov.remove();
+  ov.querySelector('#f_save').onclick = () => {
+    const v = id => ov.querySelector(id).value.trim(), err = ov.querySelector('#f_err');
+    const ar = v('#f_ar'), en = v('#f_en'), user = v('#f_user').toLowerCase(), pass = v('#f_pass'), level = Number(v('#f_lv')), birth = v('#f_b'), boy = v('#f_g') === '1', bal = Math.max(0, Number(v('#f_bal'))||0), time = v('#f_t');
+    const days = []; for(let i=0;i<7;i++) if(ov.querySelector('#f_d'+i).checked) days.push(i);
+    if(!ar || !en){ err.textContent = 'اكتب الاسم بالعربي والإنجليزي.'; return; }
+    if(!/^[a-z0-9_.-]{3,20}$/.test(user)){ err.textContent = 'اسم المستخدم: 3 أحرف إنجليزية أو أرقام على الأقل، بدون مسافات.'; return; }
+    if(pass.length < 4){ err.textContent = 'كلمة المرور 4 أحرف على الأقل.'; return; }
+    if(kidIds().some(x => x !== k && DB.kids[x].user === user) || user === DB.parent.user){ err.textContent = 'اسم المستخدم مستخدم من قبل.'; return; }
+    if(!days.length || !time){ err.textContent = 'اختر يوماً واحداً على الأقل ووقت الحصة.'; return; }
+    if(!birth){ err.textContent = 'اختر تاريخ الميلاد.'; return; }
+    if(k){
+      Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy});
+      setLevel(k, level);
+      DB.balance[k] = bal;
+      const cur = periodAt(k, new Date());
+      if(JSON.stringify(cur.days.slice().sort()) !== JSON.stringify(days.slice().sort()) || cur.time !== time){
+        const ps = DB.sched[k].periods;
+        if(ps.length === 1 && new Date(ps[0].from) > new Date()) ps[0] = {from:ps[0].from, days, time}; else ps.push({from:nowLocal(), days, time});
+      }
+      save(); toast('تم حفظ التعديلات');
+    } else {
+      let id = user.replace(/[^a-z0-9]/g,'') || 'kid'; while(DB.kids[id]) id += '1';
+      DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level]};
+      DB.balance[id] = bal;
+      const t = new Date(); t.setDate(t.getDate()+1);
+      DB.sched[id] = {periods:[{from:`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T00:00`, days, time}], cancel:[], extra:[]};
+      ensureKidShape(id); save(); toast(`تم إنشاء حساب ${ar} 🎉`);
+    }
+    ov.remove(); renderParent();
+  };
+  if(k) ov.querySelector('#f_del').onclick = () => {
+    const c = overlay(`<h2>حذف حساب ${esc(kid.ar)}؟</h2><p style="margin:0">تُحذف كل بياناته من هذا الجهاز: الجدول والتقارير والنقاط والمكتبة. لا يمكن التراجع.</p><div class="chips"><button class="btn danger" id="yes">نعم، احذف</button><button class="btn" id="no">رجوع</button></div>`);
+    c.querySelector('#no').onclick = () => c.remove();
+    c.querySelector('#yes').onclick = () => { ['kids','balance','profiles','progress','live','sched','books'].forEach(f => { if(DB[f]) delete DB[f][k]; });
+      DB.attendance = DB.attendance.filter(a => a.kid !== k); DB.reports = DB.reports.filter(r => r.kid !== k); DB.certs = DB.certs.filter(r => r.kid !== k);
+      save(); c.remove(); ov.remove(); toast('تم حذف الحساب'); renderParent(); };
+  };
 }
 
 /* =============== BOOT =============== */
 loadDB();
-if(DEMO && !DB){
-  DB = {v:2, parent:{user:'demo',pass:'demo'}, kids:{kid:{id:'kid',ar:'تجربة',en:'Sam',user:'kid',pass:'kid',level:5,birth:'2016-01-01',boy:true}}, apiKey:'demo', perLesson:10, balance:{kid:2000},
-    periods:[{from:'2026-10-01T00:00', kid:{days:[0,1,2,3,4,5,6], time:'00:00'}}], profiles:{kid:{nick:'Sam'}}, progress:{kid:{lessonNo:1,mistakes:[],words:[],focus:''}}, live:{kid:null}, attendance:[], reports:[]};
+if(DEMO){
+  const today = todayISO();
+  DB = {v:3, parent:{user:'demo',pass:'demo'}, kids:{kid:{id:'kid',ar:'سامي',en:'Sam',user:'kid',pass:'kid',level:5,birth:'2016-01-01',boy:true}}, apiKey:'demo', perLesson:10, balance:{kid:2000},
+    profiles:{kid:{nick:'Sam'}}, progress:{kid:{pos:5,xp:420,quizzes:[{title:'My Home',score:4,total:5,stars:2}],badgesSeen:['first','l5','quiz1']}}, live:{kid:null},
+    attendance:[], reports:[], sched:{kid:{periods:[{from:'2026-10-01T00:00', days:[0,1,2,3,4,5,6], time:'00:00'}], cancel:[], extra:[]}}, books:{kid:[]}, curr:{}, certs:[]};
+  normalize();
+  WHO = /kid/.test(location.hash) ? 'kid' : 'parent';
+} else {
+  normalize();
+  try{ WHO = localStorage.getItem('51telk:who') || null; }catch(e){}
 }
-try{ WHO = localStorage.getItem('51telk:who') || null; }catch(e){}
-if(DEMO){ WHO = 'parent'; }
 go(WHO);
+
 </script>
 </body>
 </html>
