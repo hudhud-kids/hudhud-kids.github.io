@@ -997,12 +997,12 @@ const TOPICS = [['adventure','مغامرة','🗺️'],['animals','حيوانا�
 function tabLibrary(k){
   const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)], pre = ((CONTENT[DB.kids[k].level]||{}).stories||[]).filter(Boolean).filter((b, i, a) => a.findIndex(x => x.title === b.title) === i), done = DB.progress[k].pre;
   $('#tabBody').innerHTML = `<div class="grid">
-    <section class="card"><h2>قصص تفاعلية لمستواك <span class="en muted small">Level ${DB.kids[k].level} · ${levelTag(DB.kids[k].level)}</span></h2>
-      <p class="small muted" style="margin:4px 0 10px">اختر موضوعاً وتكتب لك المعلمة قصة جديدة على مستواك. تقرأ لك بصوت، وتضغط على أي كلمة لتعرف معناها، وفي آخرها أسئلة.</p>
+    ${pre.length ? `<section class="card"><h2>📚 مكتبة المستوى ${DB.kids[k].level} <span class="muted small">${pre.length} قصة جاهزة · <span class="en">${levelTag(DB.kids[k].level)}</span></span></h2><p class="small muted" style="margin:4px 0 10px">قصص مكتوبة لمستواك. تُفتح فوراً، وتقدر تسمعها أو تقرأها بصوتك.</p><div class="shelf2">${pre.map(b => `<button class="sbook" data-pre="${esc(b.id)}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small">${done[b.id] != null ? `✓ قرأتها · ${done[b.id]}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('')}</div></section>` : ''}
+    <section class="card"><h2>✨ قصة خاصة لك <span class="muted small">يكتبها ${teacherOf(k).name} الآن على موضوع تختاره</span></h2>
+      <p class="small muted" style="margin:4px 0 10px">تأخذ كتابتها تقريباً 20 إلى 40 ثانية. القصص التي تطلبها تُحفظ هنا.</p>
       <div class="topics">${TOPICS.map(t => `<button class="topic" data-topic="${t[0]}"><span>${t[2]}</span>${t[1]}</button>`).join('')}</div>
-      <div class="shelf2">${books.length ? books.slice().reverse().map(b => `<button class="sbook" data-book="${b.id}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small ${b.read?'ok':'muted'}">${b.read ? `✓ قرأتها · ${b.score||0}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('') : '<p class="muted" style="margin:0">مكتبتك فارغة. اختر موضوعاً من الأعلى لتبدأ أول قصة.</p>'}</div>
+      ${books.length ? `<div class="shelf2">${books.slice().reverse().map(b => `<button class="sbook" data-book="${b.id}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small ${b.read?'ok':'muted'}">${b.read ? `✓ قرأتها · ${b.score||0}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('')}</div>` : ''}
     </section>
-    ${pre.length ? `<section class="card"><h2>مكتبة المستوى ${DB.kids[k].level} <span class="muted small">${pre.length} قصة جاهزة</span></h2><div class="shelf2">${pre.map(b => `<button class="sbook" data-pre="${esc(b.id)}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small">${done[b.id] != null ? `✓ قرأتها · ${done[b.id]}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('')}</div></section>` : ''}
     <section class="card"><h2>الكتب الكلاسيكية (هدايا الحضور)</h2><p class="small muted" style="margin:4px 0 0">كل 5 حصص متتالية تفتح كتاباً جديداً.</p>
       <div class="shelf">${classics.map((b,i) => i < gifts ? `<a class="book" href="https://www.gutenberg.org/ebooks/${b[2]}" target="_blank" rel="noopener" style="background:${b[3]}"><span class="bt">${esc(b[0])}</span><span class="ba">${esc(b[1])} · اقرأ الآن</span></a>` : `<div class="book locked"><span class="bt">${esc(b[0])}</span><span class="small" style="font-weight:700">مقفل · ${(i+1)*5} حصص متتالية</span></div>`).join('')}</div>
     </section></div>`;
@@ -1013,22 +1013,26 @@ function tabLibrary(k){
 async function newBook(k, topic){
   if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
   const kid = DB.kids[k], cefr = LEVEL_CEFR[kid.level], age = ageOf(kid.birth);
-  const ov = overlay(`<div style="text-align:center"><div style="font-size:2.6rem" class="spin">✍️</div><h2>المعلمة تكتب قصتك…</h2><p class="small muted" style="margin:0">ثوانٍ قليلة</p></div>`);
+  const ctl = new AbortController(); let secs = 0;
+  const ov = overlay(`<div style="text-align:center;display:grid;gap:8px"><div style="font-size:2.6rem" class="spin">✍️</div><h2>${teacherOf(k).name} يكتب قصتك…</h2><p class="small muted" style="margin:0">تقريباً 20 إلى 40 ثانية · <span class="num" id="bsec">0</span> ث</p><button class="btn sm" id="bcancel" style="justify-self:center">إلغاء</button></div>`);
+  if(teacherOf(k).female) ov.querySelector('h2').textContent = `${teacherOf(k).name} تكتب قصتك…`;
+  const tmr = setInterval(() => { secs++; const el = ov.querySelector('#bsec'); if(el) el.textContent = secs; }, 1000);
+  ov.querySelector('#bcancel').onclick = () => { ctl.abort(); };
   let book = null;
   try{
     let txt;
     if(DEMO || DB.apiKey === 'demo') txt = JSON.stringify(DEMO_BOOK);
-    else txt = await callClaude({model:LIVE_MODEL, max_tokens:3500, messages:[{role:'user', content:
+    else txt = await callClaude({model:'claude-sonnet-5-5', max_tokens:3000, messages:[{role:'user', content:
 `Write an original illustrated graded reader in English for a ${age}-year-old Saudi ${kid.boy?'boy':'girl'} at CEFR ${cefr} (51Talk level ${kid.level}). Topic: ${topic}.
 It must feel exciting and age-appropriate (not babyish), with natural dialogue, and use vocabulary and grammar right at this level.
 ${kid.level <= 6 ? '7 pages, 2-4 short sentences per page.' : '8 pages, 3-5 sentences per page.'}
 Return ONLY JSON:
 {"title":"...","emoji":"one emoji","pages":[{"emoji":"2-3 emojis that illustrate the page","text":"..."}],"glossary":{"word":"Arabic meaning"},"questions":[{"q":"comprehension question","options":["...","...","..."],"answer":0}]}
-glossary: 12-18 useful or harder words from the story (lowercase, as they appear). questions: 5 questions, mixing detail, vocabulary and "why" questions.`}]});
+glossary: 12-18 useful or harder words from the story (lowercase, as they appear). questions: 5 questions, mixing detail, vocabulary and "why" questions.`}]}, ctl.signal);
     const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); book = JSON.parse(txt.slice(a, b+1));
     if(!book || !Array.isArray(book.pages) || !book.pages.length) throw new Error('bad book');
-  }catch(e){ console.warn(e); ov.remove(); alertBox('ما قدرنا نكتب القصة الآن. تأكد من الإنترنت وحاول مرة ثانية.'); return; }
-  ov.remove();
+  }catch(e){ clearInterval(tmr); console.warn(e); ov.remove(); if(e && e.name === 'AbortError') return; alertBox('ما قدرنا نكتب القصة الآن. تأكد من الإنترنت وحاول مرة ثانية.'); return; }
+  clearInterval(tmr); ov.remove();
   book.id = 'b' + Date.now(); book.topic = topic; book.level = kid.level; book.read = false;
   DB.books[k].push(book); if(DB.books[k].length > 40) DB.books[k].shift(); save();
   openBook(k, book);
@@ -1792,9 +1796,9 @@ async function* streamClaude(body, signal){
     }
   }
 }
-async function callClaude(body){
+async function callClaude(body, signal){
   if(DEMO || DB.apiKey === 'demo') return demoReport();
-  const r = await fetch(API,{method:'POST',headers:apiHeaders(),body:JSON.stringify(body)});
+  const r = await fetch(API,{method:'POST',headers:apiHeaders(),body:JSON.stringify(body),signal});
   if(!r.ok){ let t = ''; try{ t = await r.text(); }catch(e){} throw {status:r.status, body:t}; }
   const j = await r.json(); return (j.content||[]).filter(c => c.type === 'text').map(c => c.text).join('');
 }
