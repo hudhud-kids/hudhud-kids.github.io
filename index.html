@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>51telk</title>
-<meta name="theme-color" content="#FF6A00">
-<meta name="apple-mobile-web-app-title" content="51telk">
-<link rel="apple-touch-icon" href="icon-180.png">
+<title>هدهد · Hudhud</title>
+<meta name="theme-color" content="#F05A38">
+<meta name="apple-mobile-web-app-title" content="هدهد">
+<link rel="apple-touch-icon" href="icon-180.png?v=2">
+<link rel="icon" href="icon-180.png?v=2">
 <link rel="icon" href="icon-180.png">
 <link rel="preload" href="fonts/dubai-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/dubai-bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -17,8 +18,8 @@
 @font-face{font-family:"Dubai";src:url(fonts/dubai-bold.woff2) format("woff2");font-weight:700 900;font-display:swap}
 :root{
   color-scheme: light;
-  --brand:#FF6A00; --brand-ink:#B84A00; --brand-soft:#FFE8D6;
-  --bg:#FFF7F0; --surface:#FFFFFF; --fg:#2B1B0F; --muted:#86695A; --line:#F0DCCB;
+  --brand:#F05A38; --brand-ink:#B2391C; --brand-soft:#FFE6DD; --teal:#14B8A6; --teal-ink:#0F766E;
+  --bg:#FFF6EE; --surface:#FFFFFF; --fg:#2B1B0F; --muted:#86695A; --line:#F0DCCB;
   --good:#15803D; --good-soft:#DCFCE7; --bad:#DC2626; --bad-soft:#FEE2E2;
   --sky:#3B7BE8; --sky-soft:#E3EEFF; --gold:#E9A100;
   --font:"Dubai",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -26,7 +27,7 @@
   --r:20px;
 }
 :root[data-theme="dark"]{color-scheme:dark;
-  --brand:#FF8533; --brand-ink:#FFB27A; --brand-soft:#3A2414;
+  --brand:#FF7657; --brand-ink:#FFB4A0; --brand-soft:#3A1E16; --teal:#2DD4BF; --teal-ink:#5EEAD4;
   --bg:#15100C; --surface:#211912; --fg:#FBEEE3; --muted:#B99B86; --line:#3A2B1F;
   --good:#4ADE80; --good-soft:#123321; --bad:#F87171; --bad-soft:#3B1515;
   --sky:#7FA8F5; --sky-soft:#1C2A44; --gold:#FCC419}
@@ -35,8 +36,8 @@
 :root[data-theme="dark"] .rank,:root[data-theme="dark"] .daily{background:var(--surface)}
 :root[data-theme="dark"] .badge.on{background:linear-gradient(160deg,#3A2E12,#3A2414)}
 :root[data-theme="dark"] .flash{background:var(--surface)}
-:root[data-theme="dark"] .hero .btn{background:#2B1B0F;color:#FFD9BD;border-color:#2B1B0F}
-:root[data-theme="dark"] .react{background:#2B1B0F;color:#FFB27A}
+:root[data-theme="dark"] .hero .btn{background:#2B1B0F;color:#FFD3C6;border-color:#2B1B0F}
+:root[data-theme="dark"] .react{background:#2B1B0F;color:#FFB4A0}
 :root[data-theme="dark"] .ov{background:rgba(0,0,0,.65)}
 :root[data-theme="dark"] .avatar{border-color:var(--surface)}
 :root[data-theme="dark"] .tbox svg{filter:brightness(.92)}
@@ -55,9 +56,9 @@ img{max-width:100%}
 h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
 h2{font-size:1.2rem;font-weight:800}
 .muted{color:var(--muted)} .small{font-size:.86rem} .num{font-variant-numeric:tabular-nums}
-.logo{display:inline-flex;align-items:center;gap:6px;direction:ltr;font-family:var(--en);font-weight:800}
-.logo .b{background:var(--brand);color:#fff;border-radius:12px 12px 12px 4px;padding:0 8px;font-size:1.3em;line-height:1.45}
-.logo .t{color:var(--brand);font-size:1.35em}
+.logo{display:inline-flex;align-items:center;gap:6px;direction:rtl;font-family:var(--font);font-weight:800}
+.logo .hh{width:1.9em;height:1.8em;flex:none}
+.logo .t{color:var(--brand);font-size:1.45em;font-family:var(--font);line-height:1}
 .btn{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 18px;font-weight:700;display:inline-flex;align-items:center;gap:8px;justify-content:center;min-height:44px}
 .btn:hover{border-color:var(--brand)}
 .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
@@ -85,7 +86,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .me{display:flex;align-items:center;gap:10px}
 .avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;background:var(--brand-soft);color:var(--brand-ink);display:grid;place-items:center;font-weight:800;flex:none;border:2px solid #fff;box-shadow:0 0 0 2px var(--brand)}
 .avatar.lg{width:100px;height:100px;font-size:2.2rem}
-.hero{background:linear-gradient(135deg,#FF6A00,#FF9A3D);color:#fff;border:0;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hero{background:linear-gradient(135deg,#F05A38,#FF8A63);color:#fff;border:0;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
 .hero .eyebrow{font-size:.88rem;opacity:.92}
 .hero h1{font-size:1.65rem;font-family:var(--en)}
 .hero .btn{background:#fff;color:var(--brand-ink);border-color:#fff}
@@ -221,7 +222,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .bw-write{transform-box:fill-box;transform-origin:center}
 .bw-new{animation:write .6s cubic-bezier(.3,1.4,.5,1)}
 @keyframes write{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
-.react{position:absolute;top:3%;left:3%;background:#fff;color:#FF6A00;font-weight:800;font-family:var(--en);font-size:1.35rem;padding:6px 16px;border-radius:20px 20px 20px 4px;box-shadow:0 6px 18px rgba(0,0,0,.14);animation:reactpop 1.9s ease-out forwards;pointer-events:none;direction:ltr;z-index:2}
+.react{position:absolute;top:3%;left:3%;background:#fff;color:#F05A38;font-weight:800;font-family:var(--en);font-size:1.35rem;padding:6px 16px;border-radius:20px 20px 20px 4px;box-shadow:0 6px 18px rgba(0,0,0,.14);animation:reactpop 1.9s ease-out forwards;pointer-events:none;direction:ltr;z-index:2}
 @keyframes reactpop{0%{opacity:0;transform:scale(.4) translateY(12px)}14%{opacity:1;transform:scale(1.12)}24%{transform:scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-16px)}}
 @media (prefers-reduced-motion:reduce){.sway,.hand-tap,.clock-m,.listening .lw{animation:none}}
 .burst{position:absolute;inset:0;pointer-events:none;overflow:visible}
@@ -233,7 +234,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .ov .card{width:min(560px,100%);max-height:100%;overflow:auto;display:grid;gap:14px}
 .wordchips{display:flex;flex-wrap:wrap;gap:6px;direction:ltr}
 .wordchips span{background:var(--sky-soft);color:var(--sky);border-radius:99px;padding:2px 10px;font-weight:700}
-.gift{background:linear-gradient(135deg,#FFD25E,#FF9A3D);color:#3A2100;border-radius:var(--r);padding:14px;font-weight:800;text-align:center}
+.gift{background:linear-gradient(135deg,#FFD25E,#FF8A63);color:#3A2100;border-radius:var(--r);padding:14px;font-weight:800;text-align:center}
 .stat{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
 @media (max-width:560px){.stat{grid-template-columns:repeat(2,1fr)}}
 .stat div{background:var(--bg);border-radius:12px;padding:10px}
@@ -260,13 +261,13 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .ldots{display:flex;gap:5px;margin-top:6px;direction:ltr;justify-content:flex-end}
 .ldots i{width:14px;height:14px;border-radius:50%;background:var(--line)}
 .ldots i.on{background:var(--good)}
-.ldots i.cur{background:var(--brand);box-shadow:0 0 0 3px rgba(255,106,0,.25)}
+.ldots i.cur{background:var(--brand);box-shadow:0 0 0 3px rgba(240,90,56,.25)}
 .mcounts{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
 .mcount{background:var(--bg);border-radius:14px;padding:10px 16px;min-width:140px}
 .mcount b{display:block;font-size:1.8rem;line-height:1.2}
 .mcount.low{background:var(--bad-soft)}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:700;z-index:90;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:tin .3s ease-out;max-width:calc(100% - 32px);text-align:center}
-.toast.gold{background:linear-gradient(135deg,#FFD25E,#FF9A3D);color:#3A2100}
+.toast.gold{background:linear-gradient(135deg,#FFD25E,#FF8A63);color:#3A2100}
 @keyframes tin{from{opacity:0;transform:translate(-50%,20px)}}
 .rank{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,#FFF1E3,#FFFFFF)}
 .rk-e{font-size:3.4rem}
@@ -276,9 +277,9 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .badge .be{font-size:2.2rem}
 .cert-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;width:100%;border:0;background:var(--bg);border-radius:12px;padding:10px 12px;margin-top:8px}
 .card.wide{width:min(760px,100%)}
-.cert{border:10px solid #FF6A00;border-radius:18px;padding:6px;background:#fff}
-.cert-in{border:2px dashed #FFB27A;border-radius:12px;padding:22px 16px;display:grid;gap:6px;justify-items:center;text-align:center}
-.cert-t{font-size:1.7rem;font-weight:800;color:#B84A00}
+.cert{border:10px solid #F05A38;border-radius:18px;padding:6px;background:#fff}
+.cert-in{border:2px dashed #FF9B80;border-radius:12px;padding:22px 16px;display:grid;gap:6px;justify-items:center;text-align:center}
+.cert-t{font-size:1.7rem;font-weight:800;color:#B2391C}
 .cert{color:#2B1B0F}
 .cert .muted{color:#86695A}
 .cert-n{font-size:2.2rem;font-weight:800;color:#2B1B0F;border-bottom:3px solid #FFD25E;padding:0 20px}
@@ -308,7 +309,7 @@ body.printing > *:not(.ov){display:none!important}
 .topic .cnt{font-size:.78rem;opacity:.75;font-variant-numeric:tabular-nums}
 .shelf2{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
 .sbook{border:0;border-radius:14px 6px 6px 14px;background:linear-gradient(160deg,#3B7BE8,#2A5FC0);color:#fff;padding:14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;gap:6px;box-shadow:inset 6px 0 0 rgba(0,0,0,.15)}
-.sbook:nth-child(3n+2){background:linear-gradient(160deg,#FF8A2E,#E25500)}
+.sbook:nth-child(3n+2){background:linear-gradient(160deg,#FF7A55,#D9482A)}
 .sbook:nth-child(3n+3){background:linear-gradient(160deg,#2E9E62,#1F7A49)}
 .sbook .sb-e{font-size:2.2rem}
 .sbook b{direction:ltr;line-height:1.3}
@@ -391,11 +392,11 @@ html[dir=ltr] .ldots{justify-content:flex-start}
 .mgoal{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:.92rem}.mgoal .en{direction:ltr;text-align:left}.mgoal.ok{opacity:.7}.mgoal.ok .en{text-decoration:line-through}
 .sound{display:grid;gap:2px;text-align:start;padding:12px 14px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit}
 .micbig{width:74px;height:74px;border-radius:50%;border:0;background:var(--brand);color:#fff;display:grid;place-items:center}.micbig svg{width:34px;height:34px}.micbig.on{animation:pulse 1s infinite;background:var(--bad)}
-.btn.on{box-shadow:0 0 0 3px rgba(255,106,0,.35)}
+.btn.on{box-shadow:0 0 0 3px rgba(240,90,56,.35)}
 .radarw{display:grid;place-items:center}.radar{width:100%;max-width:380px;height:auto}
 details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px;padding:8px 12px}details.skills summary{cursor:pointer;font-weight:800}
 .lmapw{display:grid;place-items:center}.lmap,.radar{direction:ltr}.lmap{width:100%;max-width:560px;height:auto;margin-top:8px}
-.mnode circle{stroke-width:3}.mnode.done circle{fill:var(--good);stroke:#fff}.mnode.done text{fill:#fff}.mnode.cur circle{fill:var(--brand);stroke:#fff;filter:drop-shadow(0 0 6px rgba(255,106,0,.6))}.mnode.cur text{fill:#fff}.mnode.lock circle{fill:#fff;stroke:#D9C5B3}.mnode.lock text{fill:#9A7F6B}
+.mnode circle{stroke-width:3}.mnode.done circle{fill:var(--good);stroke:#fff}.mnode.done text{fill:#fff}.mnode.cur circle{fill:var(--brand);stroke:#fff;filter:drop-shadow(0 0 6px rgba(240,90,56,.6))}.mnode.cur text{fill:#fff}.mnode.lock circle{fill:#fff;stroke:#D9C5B3}.mnode.lock text{fill:#9A7F6B}
 .hero-mark{animation:bob 1.6s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-5px)}}
 .room2{position:relative;height:240px;border-radius:20px;overflow:hidden;border:1.5px solid var(--line)}.room2.big{height:300px}
 .room2 .floor{position:absolute;inset-inline:0;bottom:0;height:30%;background:linear-gradient(180deg,#E9C9A4,#D7AE84)}
@@ -413,6 +414,25 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 @media (max-width:520px){.missions{grid-auto-flow:column;grid-auto-columns:140px;grid-template-columns:none;overflow-x:auto;padding-bottom:6px}.games{grid-template-columns:1fr 1fr 1fr}.game b{font-size:.85rem}.room2.big{height:250px}}
 .cloudbar{background:var(--sky-soft);border-radius:14px;padding:10px 14px;font-size:.95rem}
 .mc{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start}.mci{font-size:1.2rem}.meter{height:10px;border-radius:6px;background:var(--line);overflow:hidden}.meter i{display:block;height:100%;width:0;background:var(--good);transition:width .08s}
+
+#splash{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;overflow:hidden;transition:opacity .45s ease}
+#splash.out{opacity:0;pointer-events:none}
+#splash .sp{display:grid;justify-items:center;gap:6px}
+#splash .bird{width:min(46vw,220px);height:auto;animation:sp-fly 1.5s cubic-bezier(.22,.9,.25,1) both;transform-origin:50% 60%}
+#splash .wing{transform-box:view-box;transform-origin:96px 118px;animation:sp-flap .16s ease-in-out 8 alternate}
+#splash .crest{transform-box:view-box;transform-origin:100px 66px;animation:sp-crest .55s 1.35s cubic-bezier(.3,1.6,.5,1) both}
+#splash .legs{opacity:0;animation:sp-in .2s 1.3s forwards}
+#splash .word{font-family:var(--font);font-weight:800;font-size:clamp(2.6rem,9vw,4.2rem);color:var(--brand);opacity:0;animation:sp-up .5s 1.45s forwards;line-height:1.1}
+#splash .tag{font-family:var(--font);color:var(--teal-ink);font-weight:700;font-size:clamp(1rem,3.4vw,1.3rem);opacity:0;animation:sp-up .5s 1.7s forwards}
+#splash .trail{position:absolute;inset:0;pointer-events:none}
+#splash .trail i{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--teal);opacity:0;animation:sp-dot .9s ease-out forwards}
+@keyframes sp-fly{0%{transform:translate(-75vw,38vh) scale(.45) rotate(-14deg)}55%{transform:translate(6vw,-8vh) scale(1.06) rotate(6deg)}78%{transform:translate(-1vw,1vh) scale(.98) rotate(-2deg)}100%{transform:none}}
+@keyframes sp-flap{from{transform:rotate(0)}to{transform:rotate(-46deg) scaleY(.75)}}
+@keyframes sp-crest{0%{transform:scale(.4)}100%{transform:scale(1)}}
+@keyframes sp-in{to{opacity:1}}
+@keyframes sp-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes sp-dot{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(.2)}}
+@media (prefers-reduced-motion: reduce){#splash *{animation-duration:.01s!important;animation-delay:0s!important}}
 </style>
 </head>
 <body>
@@ -613,7 +633,7 @@ function savePref(){ try{ localStorage.setItem('51telk:prefs', JSON.stringify(PR
 const mqDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 function applyTheme(){ const dark = PREF.theme === 'dark' || (PREF.theme === 'auto' && mqDark && mqDark.matches);
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
-  const m = document.querySelector('meta[name=theme-color]'); if(m) m.content = dark ? '#15100C' : '#FF6A00'; }
+  const m = document.querySelector('meta[name=theme-color]'); if(m) m.content = dark ? '#15100C' : '#F05A38'; }
 if(mqDark && mqDark.addEventListener) mqDark.addEventListener('change', applyTheme);
 const THEME_ICON = {auto:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>',
   light:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
@@ -705,7 +725,7 @@ const kidIds = () => Object.keys(DB.kids);
 const band = k => DB.kids[k].level <= 6 ? 'junior' : 'teen';
 const nick = k => (DB.profiles[k] && DB.profiles[k].nick) || DB.kids[k].ar;
 function avatarHTML(k, cls=''){ const p = DB.profiles[k] || {}; return p.avatar ? `<img class="avatar ${cls}" src="${esc(p.avatar)}" alt="">` : `<div class="avatar ${cls}">${esc(nick(k).slice(0,1))}</div>`; }
-const LOGO = `<span class="logo"><span class="b">51</span><span class="t">telk</span></span>`;
+const LOGO = `<span class="logo" aria-label="هدهد"><svg class="hh" viewBox="0 0 200 190" aria-hidden="true"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g><ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></svg><span class="t">هدهد</span></span>`;
 function decodeSetup(s){ const t = s.trim().replace(/\s+/g,''); return JSON.parse(decodeURIComponent(escape(atob(t)))); }
 const b64u = bytes => { let s = ''; for(let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000)); return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); };
 const unb64u = t => { t = t.replace(/-/g,'+').replace(/_/g,'/'); while(t.length % 4) t += '='; const bin = atob(t), out = new Uint8Array(bin.length); for(let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i); return out; };
@@ -872,7 +892,7 @@ function renderFirstRun(){
 /* =============== LOGIN =============== */
 function renderLogin(){
   $('#app').innerHTML = `<div class="center">${prefsHTML()}<form class="card panel" id="lf" autocomplete="off">
-    <div style="text-align:center">${LOGO}<p class="muted" style="margin:.3em 0 0">منصتك لتعلّم الإنجليزية</p></div>
+    <div style="text-align:center">${LOGO}<p class="muted" style="margin:.3em 0 0">هدهد ينقل المعرفة · منصتك لتعلّم الإنجليزية</p></div>
     <div class="field"><label for="u">اسم المستخدم</label><input class="input ltr" id="u" autocapitalize="none" autocorrect="off" spellcheck="false"></div>
     <div class="field"><label for="p">كلمة المرور</label><input class="input ltr" id="p" type="password"></div>
     <div class="err" id="le"></div>
@@ -1090,7 +1110,7 @@ function tabWins(k){
 function showCert(c){
   const k = c.kid;
   const ov = overlay(`<div class="cert" id="certBox"><div class="cert-in">
-      <div class="logo" style="justify-content:center;font-size:1.6rem"><span class="b">51</span><span class="t">telk</span></div>
+      <div style="text-align:center;font-size:1.6rem">${LOGO}</div><div class="small muted" style="margin-top:-6px">هدهد ينقل المعرفة</div>
       <div class="en cert-t">Certificate of Achievement</div><div class="small muted">شهادة إنجاز</div>
       <div class="cert-n">${esc(DB.kids[k].en)}</div><div class="en">has successfully completed</div>
       <div class="en cert-u">${esc(c.unit)}</div><div class="en small">Level ${c.level} · ${new Date(c.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</div>
@@ -1384,12 +1404,12 @@ function downloadICS(k){
   const z = t => `${t.getFullYear()}${pad(t.getMonth()+1)}${pad(t.getDate())}T${pad(t.getHours())}${pad(t.getMinutes())}00`;
   const url = location.href.split('#')[0];
   const ev = slots.map(s => ['BEGIN:VEVENT', `UID:51telk-${k}-${s.key}@51telk`, `DTSTAMP:${z(now)}`, `DTSTART;TZID=Asia/Riyadh:${z(s.t)}`, 'DURATION:PT25M',
-    `SUMMARY:حصة 51telk - ${DB.kids[k].ar}${s.extra ? ' (إضافية)' : ''}`, `DESCRIPTION:ادخل الحصة من التطبيق: ${url}`, `URL:${url}`,
+    `SUMMARY:حصة هدهد - ${DB.kids[k].ar}${s.extra ? ' (إضافية)' : ''}`, `DESCRIPTION:ادخل الحصة من التطبيق: ${url}`, `URL:${url}`,
     'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:حصة الإنجليزي بعد ساعة','TRIGGER:-PT60M','END:VALARM',
     'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:حصة الإنجليزي بعد 10 دقائق! جهّز نفسك','TRIGGER:-PT10M','END:VALARM','END:VEVENT'].join('\r\n'));
-  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//51telk//AR','CALSCALE:GREGORIAN','X-WR-CALNAME:51telk ' + DB.kids[k].en,
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//51telk//AR','CALSCALE:GREGORIAN','X-WR-CALNAME:هدهد ' + DB.kids[k].en,
     'BEGIN:VTIMEZONE','TZID:Asia/Riyadh','BEGIN:STANDARD','DTSTART:19700101T000000','TZOFFSETFROM:+0300','TZOFFSETTO:+0300','TZNAME:AST','END:STANDARD','END:VTIMEZONE', ...ev, 'END:VCALENDAR'].join('\r\n');
-  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'})); a.download = `51telk-${DB.kids[k].en}.ics`;
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'})); a.download = `hudhud-${DB.kids[k].en}.ics`;
   document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
   alertBox('على الآيباد اضغط «إضافة الكل» عندما يفتح التقويم. إذا غيّرت الجدول لاحقاً، اضغط الزر مرة ثانية لتحديث التذكيرات.');
 }
@@ -1536,7 +1556,7 @@ function weeklyReport(k){
   const words = [...new Set(reps.flatMap(r => r.newWords||[]))], mist = reps.flatMap(r => r.mistakes||[]).slice(0,4);
   const daily = Object.keys(DB.progress[k].daily||{}).filter(d => new Date(d) >= from).length;
   const books = DB.books[k].filter(b => b.read).length;
-  const text = `📊 تقرير 51telk الأسبوعي: ${DB.kids[k].ar}
+  const text = `📊 تقرير هدهد الأسبوعي: ${DB.kids[k].ar}
 ✅ حضر ${att} حصص${miss ? ` · ❌ غاب ${miss}` : ''} · ⏱️ ${mins} دقيقة محادثة
 ⭐ متوسط الحصص: ${avg == null ? '—' : avg + '%'} · 📝 متوسط الاختبارات: ${qavg == null ? '—' : qavg + '%'}
 ⚡ تحدي اليوم: ${daily} من 7 · 📚 قصص مقروءة: ${books}
@@ -1809,7 +1829,7 @@ async function monthlyReport(k){
   const books = DB.books[k].filter(b => b.readAt && new Date(b.readAt) >= m0).length + Object.values(DB.progress[k].preAt||{}).filter(d => new Date(d) >= m0).length;
   const mkey = `${now.getFullYear()}-${pad(now.getMonth()+1)}`; DB.monthly = DB.monthly || {}; DB.monthly[k] = DB.monthly[k] || {};
   const ov = overlay(`<div class="cert" id="certBox"><div class="cert-in" style="text-align:right;justify-items:stretch">
-      <div class="chips" style="justify-content:space-between"><div class="logo"><span class="b">51</span><span class="t">telk</span></div><div class="small muted">${fmtMonth(now)}</div></div>
+      <div class="chips" style="justify-content:space-between">${LOGO}<div class="small muted">${fmtMonth(now)}</div></div>
       <div style="text-align:center"><div class="cert-t" style="font-size:1.4rem">التقرير الشهري · Monthly Progress</div><div class="cert-n" style="font-size:1.8rem">${esc(DB.kids[k].ar)} · <span class="en">${esc(DB.kids[k].en)}</span></div><div class="en small">Level ${DB.kids[k].level} · ${levelTag(DB.kids[k].level)}</div></div>
       <div class="stat"><div><span class="small muted">حضر</span><b style="color:var(--good)">${att}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${miss}</b></div><div><span class="small muted">دقائق محادثة</span><b>${mins}</b></div><div><span class="small muted">وقت تحدثه</span><b>${tavg==null?'—':tavg+'%'}</b></div></div>
       <div class="stat"><div><span class="small muted">مستوى الحصص: النصف الأول</span><b>${avg(h1)==null?'—':avg(h1)+'%'}</b></div><div><span class="small muted">النصف الثاني</span><b>${avg(h2)==null?'—':avg(h2)+'%'}</b></div><div><span class="small muted">الاختبارات</span><b>${qavg==null?'—':qavg+'%'}</b></div><div><span class="small muted">كلمات جديدة</span><b>${words.length}</b></div></div>
@@ -1832,7 +1852,7 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
   <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF2FF"/><stop offset="1" stop-color="#D3E3FF"/></linearGradient>
   <radialGradient id="g-skin" cx=".5" cy=".4" r=".65"><stop offset="0" stop-color="#FCDDBF"/><stop offset="1" stop-color="#EDB48A"/></radialGradient>
   <linearGradient id="g-hij" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B9BFF"/><stop offset="1" stop-color="#3D6AD6"/></linearGradient>
-  <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A2E"/><stop offset="1" stop-color="#E85A00"/></linearGradient>
+  <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2DD4BF"/><stop offset="1" stop-color="#0F9E8E"/></linearGradient>
   <clipPath id="c-scene"><rect width="400" height="440" rx="40"/></clipPath>
   <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D99A62"/><stop offset="1" stop-color="#B9773F"/></linearGradient>
  </defs>
@@ -1841,17 +1861,17 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
   <rect x="0" y="300" width="400" height="140" fill="#C9DBF7" opacity=".5"/>
   <g>
    <rect x="14" y="126" width="104" height="8" rx="3" fill="#B9773F"/>
-   <rect x="22" y="94" width="12" height="32" rx="2" fill="#FF6A00"/><rect x="36" y="100" width="10" height="26" rx="2" fill="#3B7BE8"/>
+   <rect x="22" y="94" width="12" height="32" rx="2" fill="#F05A38"/><rect x="36" y="100" width="10" height="26" rx="2" fill="#3B7BE8"/>
    <rect x="48" y="90" width="13" height="36" rx="2" fill="#15803D"/><rect x="63" y="104" width="22" height="22" rx="11" fill="#FFD25E"/>
    <path d="M90 126 Q92 104 100 98 Q104 112 102 126Z" fill="#5DB36A"/><path d="M98 126 Q104 100 114 96 Q112 114 106 126Z" fill="#3E8A4A"/>
    <circle cx="64" cy="52" r="20" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
-   <path class="clock-h" d="M64 52 L64 40" stroke="#2B1B0F" stroke-width="3" stroke-linecap="round"/><path class="clock-m" d="M64 52 L74 56" stroke="#FF6A00" stroke-width="3" stroke-linecap="round"/>
+   <path class="clock-h" d="M64 52 L64 40" stroke="#2B1B0F" stroke-width="3" stroke-linecap="round"/><path class="clock-m" d="M64 52 L74 56" stroke="#F05A38" stroke-width="3" stroke-linecap="round"/>
   </g>
   <g>
    <rect class="board-glow" x="256" y="20" width="142" height="136" rx="14" fill="#FFD25E"/>
    <rect x="262" y="26" width="130" height="124" rx="10" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
    <text id="bwE" x="327" y="76" text-anchor="middle" font-size="34">👋</text>
-   <text id="bwT" class="bw-write" x="327" y="118" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#FF6A00">Hello!</text>
+   <text id="bwT" class="bw-write" x="327" y="118" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#F05A38">Hello!</text>
    <path d="M282 134 Q310 126 340 136 T376 132" stroke="#E9A100" stroke-width="4" fill="none" stroke-linecap="round"/>
   </g>
   <circle class="ring" cx="200" cy="175" r="118"/>
@@ -1861,11 +1881,11 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <path d="M66 440 C70 352 124 310 200 310 C276 310 330 352 334 440 Z" fill="url(#g-top)"/>
     <path d="M166 312 L186 340 L200 322 L214 340 L234 312 Z" fill="#FFFFFF"/>
     <rect x="216" y="352" width="50" height="22" rx="5" fill="#FFFFFF"/>
-    <text x="241" y="368" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#E85A00" id="tbadge">Noor</text>
+    <text x="241" y="368" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#0F766E" id="tbadge">Noor</text>
    </g>
   <g class="t-tilt"><g class="t-head">
    <path class="hair-f" d="M120 196 C110 108 152 72 200 72 C248 72 290 108 280 196 C284 236 288 262 296 282 C266 296 240 290 230 270 L170 270 C160 290 134 296 104 282 C112 262 116 236 120 196Z" fill="#4A2A18"/>
-   <g class="hair-f"><circle cx="200" cy="70" r="27" fill="#4A2A18"/><path d="M178 86 Q200 96 222 86" stroke="#FF6A00" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+   <g class="hair-f"><circle cx="200" cy="70" r="27" fill="#4A2A18"/><path d="M178 86 Q200 96 222 86" stroke="#F05A38" stroke-width="7" fill="none" stroke-linecap="round"/></g>
    <ellipse cx="143" cy="190" rx="10" ry="14" fill="#EDB48A"/><ellipse cx="257" cy="190" rx="10" ry="14" fill="#EDB48A"/>
    <ellipse cx="200" cy="182" rx="58" ry="66" fill="url(#g-skin)"/>
    <g class="hair-f"><path d="M141 176 C136 112 182 96 214 103 C248 110 266 138 260 178 C250 146 230 132 206 134 C190 154 166 166 141 176Z" fill="#5A3420"/>
@@ -1906,8 +1926,8 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <g data-m="grin"><path d="M176 220 Q200 258 224 220 Z" fill="#7A2620"/><path d="M180 221 Q200 227 220 221 L218 227 Q200 232 182 227Z" fill="#FFFFFF"/><path d="M190 246 Q200 238 210 246 Q200 252 190 246Z" fill="#E86F6F"/></g>
    </g>
    <path d="M128 182 C128 90 272 90 272 182" stroke="#2B1B0F" stroke-width="9" fill="none" stroke-linecap="round"/>
-   <rect x="114" y="162" width="28" height="46" rx="12" fill="#FF6A00"/><rect x="258" y="162" width="28" height="46" rx="12" fill="#FF6A00"/>
-   <rect x="120" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/><rect x="264" y="170" width="16" height="30" rx="7" fill="#FF9A4D"/>
+   <rect x="114" y="162" width="28" height="46" rx="12" fill="#F05A38"/><rect x="258" y="162" width="28" height="46" rx="12" fill="#F05A38"/>
+   <rect x="120" y="170" width="16" height="30" rx="7" fill="#FF6B4A"/><rect x="264" y="170" width="16" height="30" rx="7" fill="#FF6B4A"/>
    <path d="M132 204 Q138 240 172 242" stroke="#2B1B0F" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="176" cy="242" r="7.5" fill="#2B1B0F"/>
    <g class="think-dots" fill="#3B7BE8"><circle cx="104" cy="96" r="8"/><circle cx="82" cy="72" r="10"/><circle cx="56" cy="46" r="13"/></g>
   </g></g>
@@ -1915,17 +1935,17 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
   <g>
    <rect x="0" y="390" width="400" height="50" fill="url(#g-wood)"/>
    <rect x="0" y="388" width="400" height="7" fill="#E8B27C"/>
-   <rect x="22" y="374" width="70" height="9" rx="2" fill="#3B7BE8"/><rect x="26" y="365" width="62" height="9" rx="2" fill="#15803D"/><rect x="30" y="356" width="56" height="9" rx="2" fill="#FF6A00"/>
+   <rect x="22" y="374" width="70" height="9" rx="2" fill="#3B7BE8"/><rect x="26" y="365" width="62" height="9" rx="2" fill="#15803D"/><rect x="30" y="356" width="56" height="9" rx="2" fill="#F05A38"/>
    <rect x="300" y="344" width="78" height="46" rx="5" fill="#2B2F3A"/><rect x="305" y="349" width="68" height="36" rx="3" fill="#3B7BE8"/>
-   <text x="339" y="373" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">51telk</text>
+   <text x="339" y="373" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">هدهد</text>
    <rect x="292" y="388" width="94" height="6" rx="3" fill="#9AA3B5"/>
   </g>
-  <g class="arm-l"><path d="M100 350 C84 372 96 394 126 400 L148 388 C130 382 120 370 120 358 Z" fill="#E25500"/>
+  <g class="arm-l"><path d="M100 350 C84 372 96 394 126 400 L148 388 C130 382 120 370 120 358 Z" fill="#0F9E8E"/>
    <g class="hand-tap"><ellipse cx="150" cy="395" rx="19" ry="10" fill="url(#g-skin)"/></g></g>
-  <g class="arm-r"><path d="M300 350 C316 372 304 394 274 400 L252 388 C270 382 280 370 280 358 Z" fill="#E25500"/>
+  <g class="arm-r"><path d="M300 350 C316 372 304 394 274 400 L252 388 C270 382 280 370 280 358 Z" fill="#0F9E8E"/>
    <ellipse cx="250" cy="395" rx="19" ry="10" fill="url(#g-skin)"/></g>
    <g class="pose pose-wave"><g class="wave-in">
-    <path d="M100 350 C70 336 56 292 62 246 L96 244 C96 282 110 314 132 332 Z" fill="#E25500"/>
+    <path d="M100 350 C70 336 56 292 62 246 L96 244 C96 282 110 314 132 332 Z" fill="#0F9E8E"/>
     <ellipse cx="78" cy="226" rx="20" ry="24" fill="url(#g-skin)"/>
     <rect x="58" y="196" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(-14 62 209)"/>
     <rect x="68" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
@@ -1934,7 +1954,7 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <ellipse cx="98" cy="234" rx="7" ry="12" fill="#F3C49E" transform="rotate(35 98 234)"/>
    </g></g>
    <g class="pose pose-thumb">
-    <path d="M98 352 C90 330 98 306 112 300 L138 306 C130 318 124 336 126 354 Z" fill="#E25500"/>
+    <path d="M98 352 C90 330 98 306 112 300 L138 306 C130 318 124 336 126 354 Z" fill="#0F9E8E"/>
     <rect x="108" y="278" width="36" height="34" rx="12" fill="url(#g-skin)"/>
     <rect x="128" y="280" width="18" height="8" rx="4" fill="#F3C49E"/><rect x="128" y="288" width="18" height="8" rx="4" fill="#F3C49E"/>
     <rect x="128" y="296" width="18" height="8" rx="4" fill="#F3C49E"/><rect x="127" y="304" width="16" height="7" rx="3.5" fill="#F3C49E"/>
@@ -1942,17 +1962,17 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <ellipse cx="110" cy="254" rx="5" ry="4" fill="#FBE3CF" transform="rotate(-10 110 254)"/>
    </g>
   <g class="pose pose-chin">
-   <path d="M302 352 C298 312 274 290 250 282 L238 302 C260 310 276 328 282 356 Z" fill="#E25500"/>
+   <path d="M302 352 C298 312 274 290 250 282 L238 302 C260 310 276 328 282 356 Z" fill="#0F9E8E"/>
    <ellipse cx="230" cy="266" rx="24" ry="15" fill="url(#g-skin)" transform="rotate(-14 230 266)"/>
    <circle cx="210" cy="258" r="7" fill="#F3C49E"/><circle cx="220" cy="254" r="7" fill="#F3C49E"/><circle cx="231" cy="252" r="7" fill="#F3C49E"/><circle cx="242" cy="253" r="7" fill="#F3C49E"/>
   </g>
   <g class="pose pose-ear">
-   <path d="M304 352 C324 314 316 262 294 236 L276 248 C292 274 294 312 282 352 Z" fill="#E25500"/>
+   <path d="M304 352 C324 314 316 262 294 236 L276 248 C292 274 294 312 282 352 Z" fill="#0F9E8E"/>
    <ellipse cx="280" cy="206" rx="15" ry="25" fill="url(#g-skin)" transform="rotate(-18 280 206)"/>
    <path d="M272 192 Q266 206 274 220" stroke="#D9A37C" stroke-width="2.5" fill="none"/>
   </g>
   <g class="pose pose-open"><g class="open-in">
-   <path d="M302 352 C306 326 298 306 280 298 L266 316 C278 322 282 336 280 356 Z" fill="#E25500"/>
+   <path d="M302 352 C306 326 298 306 280 298 L266 316 C278 322 282 336 280 356 Z" fill="#0F9E8E"/>
    <ellipse cx="262" cy="302" rx="23" ry="13" fill="url(#g-skin)" transform="rotate(-16 262 302)"/>
    <rect x="236" y="284" width="8" height="22" rx="4" fill="#F3C49E" transform="rotate(-48 240 295)"/>
    <rect x="242" y="278" width="8" height="24" rx="4" fill="#F3C49E" transform="rotate(-36 246 290)"/>
@@ -1960,7 +1980,7 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
    <ellipse cx="278" cy="290" rx="6" ry="11" fill="#F3C49E" transform="rotate(30 278 290)"/>
   </g></g>
   <g class="pose pose-point">
-   <path d="M302 352 C322 314 330 268 336 230 L358 236 C348 278 334 318 324 356 Z" fill="#E25500"/>
+   <path d="M302 352 C322 314 330 268 336 230 L358 236 C348 278 334 318 324 356 Z" fill="#0F9E8E"/>
    <g transform="rotate(-38 350 214)">
     <ellipse cx="350" cy="214" rx="20" ry="13" fill="url(#g-skin)"/>
     <rect x="364" y="203" width="26" height="7" rx="3.5" fill="#F3C49E"/><rect x="366" y="210" width="28" height="7" rx="3.5" fill="#F3C49E"/>
@@ -2541,7 +2561,7 @@ function renderParent(){
     ov.querySelector('#xclose').onclick = () => ov.remove();
     ov.querySelector('#xlink').onclick = () => copy(link, 'تم نسخ الرابط');
     ov.querySelector('#xcopy').onclick = () => copy(code, 'تم نسخ الرمز');
-    const sh = ov.querySelector('#xshare'); if(sh) sh.onclick = () => navigator.share({title:'51telk', text:'رابط تجهيز 51telk', url:link}).catch(() => {});
+    const sh = ov.querySelector('#xshare'); if(sh) sh.onclick = () => navigator.share({title:'هدهد', text:'رابط تجهيز هدهد', url:link}).catch(() => {});
   };
   $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); toast('تم حفظ المفتاح'); };
   $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
@@ -2839,7 +2859,7 @@ function radarSVG(k, size){
   return `<svg viewBox="0 0 ${size} ${size}" class="radar" role="img" aria-label="خريطة المهارات">
     ${[.25,.5,.75,1].map(f => `<polygon points="${ring(f)}" fill="none" stroke="var(--line)" stroke-width="1.5"/>`).join('')}
     ${SKILLS.map((_,i) => { const [x,y] = pt(i, R); return `<line x1="${c}" y1="${c}" x2="${x}" y2="${y}" stroke="var(--line)"/>`; }).join('')}
-    <polygon points="${poly}" fill="rgba(255,106,0,.25)" stroke="var(--brand)" stroke-width="3"/>
+    <polygon points="${poly}" fill="rgba(240,90,56,.25)" stroke="var(--brand)" stroke-width="3"/>
     ${SKILLS.map(([id,ar],i) => { const [x,y] = pt(i, R + 26); const v = s[id]; return `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="700" fill="var(--fg)" font-family="Dubai,sans-serif">${ar}</text><text x="${x}" y="${y+17}" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="Dubai,sans-serif">${v == null ? '—' : v + '%'}</text>`; }).join('')}
   </svg>`;
 }
@@ -3275,6 +3295,28 @@ function micCheck(){
     go.disabled = false; go.textContent = 'أعد الفحص';
   };
 }
+
+/* =============== SPLASH: the hoopoe flies in =============== */
+(function(){
+  let seen = false; try{ seen = sessionStorage.getItem('hh:splash') === '1'; sessionStorage.setItem('hh:splash', '1'); }catch(e){}
+  if(seen || /setup=/.test(location.hash)) return;
+  const el = document.createElement('div'); el.id = 'splash'; el.setAttribute('role', 'img'); el.setAttribute('aria-label', 'هدهد ينقل المعرفة');
+  el.innerHTML = `<div class="trail"></div><div class="sp"><svg class="bird" viewBox="0 0 200 190" aria-hidden="true">
+    <g class="crest"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g></g>
+    <ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/>
+    <g class="wing"><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>
+    <circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/>
+    <g class="legs"><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></g></svg>
+    <div class="word">هدهد</div><div class="tag">هدهد ينقل المعرفة</div></div>`;
+  document.body.appendChild(el);
+  const tr = el.querySelector('.trail');
+  for(let i = 0; i < 9; i++){ const d = document.createElement('i'); const t = i / 9;
+    d.style.left = (8 + t * 42) + '%'; d.style.top = (82 - Math.sin(t * Math.PI * .9) * 40) + '%'; d.style.animationDelay = (t * .8) + 's'; tr.appendChild(d); }
+  const close = () => { if(el.classList.contains('out')) return; el.classList.add('out'); setTimeout(() => el.remove(), 500); };
+  el.addEventListener('click', close);
+  setTimeout(close, matchMedia('(prefers-reduced-motion: reduce)').matches ? 600 : 2600);
+})();
+
 /* =============== BOOT =============== */
 setupLang();
 loadDB();
@@ -3295,7 +3337,7 @@ if(/^#setup=/.test(location.hash)){
   const raw = location.hash; try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
   decodeSetupAny(raw).then(cfg => { if(!cfg || !cfg.full || !cfg.full.kids) throw new Error('bad');
     const names = Object.values(cfg.full.kids).map(x => x.ar).join(' و ');
-    const ov = overlay(`<h2>📲 تجهيز هذا الجهاز</h2><p style="margin:0">هذا رابط تجهيز 51telk للأطفال: <b>${esc(names)}</b>. يضيف الحسابات ومفاتيح التشغيل والصوت لهذا الجهاز.</p>${DB ? '<p class="small err" style="margin:0">⚠️ يستبدل بيانات هذا الجهاز الحالية.</p>' : ''}<div class="chips"><button class="btn primary" id="sy">تجهيز الآن</button><button class="btn" id="sn">إلغاء</button></div>`);
+    const ov = overlay(`<h2>📲 تجهيز هذا الجهاز</h2><p style="margin:0">هذا رابط تجهيز هدهد للأطفال: <b>${esc(names)}</b>. يضيف الحسابات ومفاتيح التشغيل والصوت لهذا الجهاز.</p>${DB ? '<p class="small err" style="margin:0">⚠️ يستبدل بيانات هذا الجهاز الحالية.</p>' : ''}<div class="chips"><button class="btn primary" id="sy">تجهيز الآن</button><button class="btn" id="sn">إلغاء</button></div>`);
     ov.querySelector('#sn').onclick = () => ov.remove();
     ov.querySelector('#sy').onclick = () => { ov.remove(); applyFullSetup(cfg); setWho(null); go(null); toast('تم تجهيز الجهاز ✓ ادخل باليوزر والباسورد'); };
   }).catch(() => alertBox('رابط التجهيز غير مكتمل. انسخه كاملاً من لوحة ولي الأمر وافتحه مرة ثانية.'));
