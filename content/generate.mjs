@@ -6,6 +6,8 @@ import path from 'node:path';
 import {execSync} from 'node:child_process';
 
 const KEY = process.env.ANTHROPIC_API_KEY;
+// a push of content/request.json can carry the run settings
+try{ if(process.env.GITHUB_EVENT_NAME === 'push'){ const rq = JSON.parse(fs.readFileSync(new URL('./request.json', import.meta.url), 'utf8')); for(const [k,v] of Object.entries(rq)) process.env[k] = String(v); } }catch(e){}
 if(!KEY){ console.error('Missing ANTHROPIC_API_KEY'); process.exit(1); }
 const MODEL = process.env.MODEL || 'claude-opus-5-5';
 const PRICE_IN = 4, PRICE_OUT = 20;                 // USD per million tokens (Opus 5.5)

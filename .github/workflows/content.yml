@@ -1,5 +1,8 @@
 name: Generate content
 on:
+  push:
+    paths:
+      - 'content/request.json'
   workflow_dispatch:
     inputs:
       levels:
@@ -17,7 +20,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: content-${{ github.event.inputs.mode }}
+  group: content-${{ github.event.inputs.mode || github.sha }}
   cancel-in-progress: false
 jobs:
   generate:
