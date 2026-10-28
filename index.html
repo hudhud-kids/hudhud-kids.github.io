@@ -109,7 +109,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 @media (max-width:780px){.rbody{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
 .stage{display:grid;place-items:center;padding:12px 16px;position:relative}
 .tbox{position:relative;width:min(420px,100%);display:grid;justify-items:center}
-@media (max-width:780px){.tbox{width:min(190px,52vw)}.stage{padding:6px 16px}.sub{font-size:1.2rem;min-height:70px}}
+@media (max-width:780px){.tbox{width:min(240px,62vw)}.stage{padding:6px 16px}.sub{font-size:1.2rem;min-height:70px}}
 .tbox svg{width:100%;height:auto;display:block;overflow:visible}
 .tname{font-family:var(--en);font-weight:800;color:var(--sky);margin-top:-6px}
 .state{margin-top:4px;font-weight:700;font-size:.95rem;min-height:1.6em;color:var(--muted)}
@@ -139,7 +139,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 
 /* teacher animation */
 .tbox svg .pose{display:none}
-.p-wave .pose-wave,.p-thumb .pose-thumb,.p-chin .pose-chin,.p-ear .pose-ear,.p-point .pose-point{display:inline}
+.tbox.p-wave .pose-wave,.tbox.p-thumb .pose-thumb,.tbox.p-chin .pose-chin,.tbox.p-ear .pose-ear,.tbox.p-point .pose-point{display:inline}
 .p-wave .arm-l,.p-thumb .arm-l{display:none}
 .p-chin .arm-r,.p-ear .arm-r,.p-point .arm-r{display:none}
 .pose-wave{transform-box:view-box;transform-origin:104px 330px;animation:wave .45s ease-in-out infinite alternate}
