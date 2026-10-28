@@ -2891,7 +2891,7 @@ function rewardForm(id){
 }
 function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level){ DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; DB.progress[k].levelUpPending = {from:kid.level, to:lv}; } kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
 function kidForm(k, pre){
-  const kid = k ? DB.kids[k] : {ar:pre ? pre.ar : '', en:pre ? pre.en : '', user:'', pass:rnd(6), level:5, birth:(pre && pre.birth) || '2015-01-01', boy:pre ? pre.boy : true};
+  const kid = k ? DB.kids[k] : {ar:pre ? pre.ar : '', en:pre ? pre.en : '', user:'', pass:rnd(4), level:5, birth:(pre && pre.birth) || '2015-01-01', boy:pre ? pre.boy : true};
   const per = k ? periodAt(k, new Date()) : {days:(pre && pre.days) || [0,2,4], time:'17:00'};
   const ov = overlay(`<h2>${k ? 'تعديل ' + esc(kid.ar) : 'إضافة طفل جديد'}</h2>
     <div class="g2e" style="gap:10px">
