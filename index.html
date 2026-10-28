@@ -2704,7 +2704,7 @@ function kidForm(k){
       <div class="field"><label for="f_en">الاسم بالإنجليزي</label><input class="input ltr" id="f_en" value="${esc(kid.en)}"></div>
       <div class="field"><label for="f_user">اسم المستخدم</label><input class="input ltr" id="f_user" autocapitalize="none" value="${esc(kid.user)}"></div>
       <div class="field"><label for="f_pass">كلمة المرور</label><input class="input ltr" id="f_pass" value="${esc(kid.pass)}"></div>
-      <div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${levelTag(l)}</option>`).join('')}</select></div>
+      ${k ? '' : '<!--'}<div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${levelTag(l)}</option>`).join('')}</select></div>${k ? '' : '-->'}
       <div class="field"><label for="f_b">تاريخ الميلاد</label><input class="input" type="date" id="f_b" value="${esc(kid.birth)}"></div>
       <div class="field"><label for="f_g">الجنس</label><select class="input" id="f_g"><option value="1" ${kid.boy?'selected':''}>ولد</option><option value="0" ${!kid.boy?'selected':''}>بنت</option></select></div>
       <div class="field"><label for="f_price">قيمة الحصة (ريال)</label><input class="input num" type="number" min="1" id="f_price" value="${k ? priceNow(k) : DB.perLesson}"></div>
@@ -2713,7 +2713,7 @@ function kidForm(k){
     <div class="field"><label>أيام الحصص</label><div class="days">${DAYS_AR.map((d,i) => `<label><input type="checkbox" id="f_d${i}" ${per.days.includes(i)?'checked':''}> ${d}</label>`).join('')}</div></div>
     <div class="field"><label for="f_t">وقت الحصة</label><input class="input" type="time" id="f_t" value="${per.time}" style="max-width:180px"></div>
     ${guardianFields(k)}
-    <label class="small" style="display:flex;gap:8px;align-items:center;font-weight:700"><input type="checkbox" id="f_place" ${!k || kid.needPlace ? 'checked' : ''}> 🎯 اختبار تحديد المستوى أول ما يدخل الطفل، والمستوى يتحدد تلقائياً من النتيجة</label>
+    ${k ? `<label class="small" style="display:flex;gap:8px;align-items:center;font-weight:700"><input type="checkbox" id="f_place" ${!k || kid.needPlace ? 'checked' : ''}> 🎯 اختبار تحديد المستوى أول ما يدخل الطفل، والمستوى يتحدد تلقائياً من النتيجة</label>` : `<div class="gift small" style="text-align:right">🎯 المستوى يتحدد تلقائياً: أول ما يدخل الطالب يطلع له اختبار تحديد المستوى، ومستواه ينضبط من النتيجة.</div>`}
     <div class="err" id="f_err"></div>
     <div class="chips"><button class="btn primary" id="f_save">حفظ</button><button class="btn" id="f_cancel">رجوع</button>${k ? '<button class="btn danger" id="f_del">حذف الحساب</button>' : ''}</div>`);
   ov.querySelector('.card').classList.add('wide');
@@ -2724,7 +2724,7 @@ function kidForm(k){
     en.addEventListener('input', () => { if(!touched){ us.value = en.value.trim() ? suggestUser(en.value.split(' ')[0]) : ''; if(ov.querySelector('#g_sel').value === 'new') ov.querySelector('#g_user').value = suggestUser((us.value || 'family') + 'p'); } }); }
   ov.querySelector('#f_save').onclick = () => {
     const v = id => ov.querySelector(id).value.trim(), err = ov.querySelector('#f_err');
-    const ar = v('#f_ar'), en = v('#f_en'), user = v('#f_user').toLowerCase(), pass = v('#f_pass'), level = Number(v('#f_lv')), birth = v('#f_b'), boy = v('#f_g') === '1', bal = Math.max(0, Number(v('#f_bal'))||0), time = v('#f_t');
+    const ar = v('#f_ar'), en = v('#f_en'), user = v('#f_user').toLowerCase(), pass = v('#f_pass'), level = k ? Number(v('#f_lv')) : Math.max(1, Math.min(20, ageOf(v('#f_b') || '2015-01-01') - 5)), birth = v('#f_b'), boy = v('#f_g') === '1', bal = Math.max(0, Number(v('#f_bal'))||0), time = v('#f_t');
     const days = []; for(let i=0;i<7;i++) if(ov.querySelector('#f_d'+i).checked) days.push(i);
     if(!ar || !en){ err.textContent = 'اكتب الاسم بالعربي والإنجليزي.'; return; }
     if(!/^[a-z0-9_.-]{3,20}$/.test(user)){ err.textContent = 'اسم المستخدم: 3 أحرف إنجليزية أو أرقام على الأقل، بدون مسافات.'; return; }
@@ -2746,7 +2746,7 @@ function kidForm(k){
       save(); toast('تم حفظ التعديلات');
     } else {
       let id = user.replace(/[^a-z0-9]/g,'') || 'kid'; while(DB.kids[id]) id += '1';
-      DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level]}; if($('#f_place').checked) DB.kids[id].needPlace = true;
+      DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level]}; DB.kids[id].needPlace = true;
       { const gErr = saveGuardianFields(ov, id, ar); if(gErr){ delete DB.kids[id]; err.textContent = gErr; return; } }
       DB.balance[id] = bal; DB.prices = DB.prices || {}; DB.prices[id] = [{from:'2000-01-01T00:00:00Z', price:Math.max(1, Math.round(Number(ov.querySelector('#f_price').value)) || DB.perLesson)}];
       const t = new Date(); t.setDate(t.getDate()+1);
