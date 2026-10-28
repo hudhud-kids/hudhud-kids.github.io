@@ -409,6 +409,7 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .match{display:grid;grid-template-columns:1fr 1fr;gap:12px}.match>div{display:grid;gap:8px}.mt{padding:12px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-weight:700}.mt.sel{border-color:var(--brand);background:var(--brand-soft)}.mt.right{border-color:var(--good);background:var(--good-soft);opacity:.75}.mt.wrong{border-color:var(--bad);background:var(--bad-soft)}
 .opt.right{border-color:var(--good)!important;background:var(--good-soft)!important}.opt.wrong{border-color:var(--bad)!important;background:var(--bad-soft)!important}
 :root[data-theme="dark"] .lrow{background:var(--bg)}:root[data-theme="dark"] .mnode.lock circle{fill:#2B1B0F;stroke:#5A4535}
+.vrow{display:grid;gap:6px;margin-top:10px}
 @media (max-width:520px){.missions{grid-auto-flow:column;grid-auto-columns:140px;grid-template-columns:none;overflow-x:auto;padding-bottom:6px}.games{grid-template-columns:1fr 1fr 1fr}.game b{font-size:.85rem}.room2.big{height:250px}}
 </style>
 </head>
@@ -2355,6 +2356,7 @@ function renderParent(){
       <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
       <div class="stat"><div><span class="small muted">الرصيد المتبقي · الحصة ${l.price} ر.س</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
       <div class="chips" style="margin-top:12px"><button class="btn sm ${l.ended ? 'primary' : ''}" data-topup="${k}">💳 شحن الرصيد</button>${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-month="${k}">📅 التقرير الشهري</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
+      <details class="skills"><summary>🎙️ أصوات ${esc(kid.ar)}</summary>${DB.azure && DB.azure.key ? (() => { const v = kidVoices(k); const sel = (role, cur) => `<div class="vrow"><label class="small" style="font-weight:800">${role === 'teacher' ? '👩‍🏫 صوت المعلم في الحصص' : '📖 صوت قراءة القصص'}</label><div class="chips"><select class="input" data-voice="${role}" data-k="${k}" style="flex:1;min-width:180px">${AZ_LIST.map(([id,n,d]) => `<option value="${id}" ${id === cur ? 'selected' : ''}>${n} · ${d}</option>`).join('')}</select><button class="btn sm" data-vprev="${role}" data-k="${k}">▶️ تجربة</button></div></div>`; return sel('teacher', v.teacher) + sel('story', v.story); })() : '<p class="small muted" style="margin:8px 0 0">اختيار الأصوات يحتاج تفعيل «الصوت البشري الطبيعي» في قسم تشغيل المعلمة تحت. بدونه يُستخدم صوت الجهاز.</p>'}</details>
       <details class="skills"><summary>🕸️ خريطة المهارات${(() => { const w = weakestSkill(k); return w ? ` · الأضعف: ${SKILLS.find(x => x[0] === w)[1]}` : ''; })()}</summary><div class="radarw">${radarSVG(k, 340)}</div><div class="small muted">تُحسب من الحصص والاختبارات والقراءة بصوت عالٍ ومختبر النطق والواجب والمهمات. المعلمة تركّز تلقائياً على الأضعف.</div></details>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
       ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة${r.talkPct != null ? ` · تحدّث ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
@@ -2415,6 +2417,17 @@ function renderParent(){
       else DB.balance[k] += a;
       DB.topups = DB.topups || []; DB.topups.push({kid:k, amount:a, at:new Date().toISOString()});
       if(DB.renewReq) delete DB.renewReq[k]; save(); ov.remove(); toast(`تم شحن ${a.toLocaleString('en')} ريال ✓`); renderParent(); }; });
+  document.querySelectorAll('[data-voice]').forEach(sl => sl.onchange = () => { const k = sl.dataset.k; DB.voices = DB.voices || {}; DB.voices[k] = Object.assign(kidVoices(k), {[sl.dataset.voice]: sl.value}); save(); toast('تم حفظ الصوت ✓'); });
+  let vPlay = null;
+  document.querySelectorAll('[data-vprev]').forEach(b => b.onclick = () => {
+    const reset = () => { document.querySelectorAll('[data-vprev]').forEach(x => x.textContent = '▶️ تجربة'); };
+    if(vPlay && vPlay.btn === b){ vPlay.c.stop(); vPlay = null; reset(); return; }
+    if(vPlay){ vPlay.c.stop(); vPlay = null; reset(); }
+    const k = b.dataset.k, role = b.dataset.vprev, voiceId = b.parentNode.querySelector('select').value, nm = esc(nick(k));
+    const txt = role === 'teacher' ? `Hello ${DB.kids[k].en || 'there'}! I'm so happy to see you today. Tell me, what did you do this weekend?` : `Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.`;
+    unlockAudio(); b.textContent = '⏹️ إيقاف';
+    const c = narrateAZ(txt, {speed:.95, voice:voiceId, onWord:null, onEnd:() => { if(vPlay && vPlay.btn === b){ vPlay = null; reset(); } }});
+    vPlay = {btn:b, c}; });
   document.querySelectorAll('[data-place]').forEach(b => b.onclick = () => placementTest(b.dataset.place));
   document.querySelectorAll('[data-month]').forEach(b => b.onclick = () => monthlyReport(b.dataset.month));
   document.querySelectorAll('[data-week]').forEach(b => b.onclick = () => { const k = b.dataset.week, w = weeklyReport(k);
@@ -2921,6 +2934,10 @@ function gameSpell(k){
 
 /* ---------- 2. NATURAL HUMAN VOICE (Azure neural TTS, optional) ---------- */
 const AZ_VOICES = {f:'en-US-AvaMultilingualNeural', m:'en-US-AndrewMultilingualNeural', q:'en-US-EmmaMultilingualNeural'};
+const AZ_LIST = [['en-US-AvaMultilingualNeural','Ava','أنثى · أمريكية · دافئ وواضح'],['en-US-AndrewMultilingualNeural','Andrew','ذكر · أمريكية · هادئ وودود'],['en-US-EmmaMultilingualNeural','Emma','أنثى · أمريكية · حيوي ومرح'],['en-US-BrianMultilingualNeural','Brian','ذكر · أمريكية · شبابي وحماسي'],['en-GB-SoniaNeural','Sonia','أنثى · بريطانية'],['en-GB-RyanNeural','Ryan','ذكر · بريطانية']];
+const azFemale = v => /Ava|Emma|Sonia/.test(v);
+function kidVoices(k){ const v = (DB.voices || {})[k] || {}; return {teacher: v.teacher || (teacherOf(k).female ? AZ_VOICES.f : AZ_VOICES.m), story: v.story || AZ_VOICES.f}; }
+const kidCtx = () => (L && L.kid) || (DB && DB.kids && DB.kids[WHO] ? WHO : null);
 let AZ_DOWN = false, AZ_GEN = 0, AZ_EL = null; const AZ_CACHE = new Map();
 const azOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !AZ_DOWN;
 const xmlEsc = s => String(s).replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]));
@@ -2944,7 +2961,7 @@ function azUnlock(){ if(!azOn()) return; try{ const a = azEl(); a.src = 'data:au
 function speakOneAZ(text, slow, done){
   const gen = ++AZ_GEN; let finished = false, guard = null;
   const fin = () => { if(finished) return; finished = true; clearTimeout(guard); stopMouth(); if(L) setMouth('rest'); done && done(); };
-  const rate = slow ? .75 : (DB.kids[L.kid].level <= 6 ? .92 : 1), vn = !teacherOf(L.kid).female ? AZ_VOICES.m : AZ_VOICES.f;
+  const rate = slow ? .75 : (DB.kids[L.kid].level <= 6 ? .92 : 1), vn = kidVoices(L.kid).teacher;
   guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; speakOneWS(text, slow, done); } }, 7000);
   azFetch(text, vn, rate).then(url => { if(finished || gen !== AZ_GEN) return;
     clearTimeout(guard);
@@ -2953,7 +2970,8 @@ function speakOneAZ(text, slow, done){
 }
 function narrateAZ(text, o){
   azStop(); const ps = phrasesOf(text); let i = 0, stopped = false, timer = null; const gen = AZ_GEN;
-  const urlOf = p => azFetch(p.text.trim(), p.quoted ? AZ_VOICES.q : AZ_VOICES.f, Math.max(.5, o.speed), p.kind === 'ex' ? .04 : 0);
+  const kc = kidCtx(), main = o.voice || (kc ? kidVoices(kc).story : AZ_VOICES.f), alt = main === AZ_VOICES.q ? AZ_VOICES.f : azFemale(main) ? AZ_VOICES.q : AZ_VOICES.m === main ? 'en-US-BrianMultilingualNeural' : AZ_VOICES.m;
+  const urlOf = p => azFetch(p.text.trim(), p.quoted ? alt : main, Math.max(.5, o.speed), p.kind === 'ex' ? .04 : 0);
   let nextUrl = ps.length ? urlOf(ps[0]) : null;
   const next = async () => {
     if(stopped) return; if(i >= ps.length){ o.onEnd && o.onEnd(); return; }
