@@ -320,6 +320,19 @@ body.printing > *:not(.ov){display:none!important}
 .dl{max-width:85%;padding:10px 14px;border-radius:16px;direction:ltr;text-align:left;cursor:pointer;font-size:1.1rem}
 .dl.a{justify-self:start;background:var(--sky-soft)} .dl.b{justify-self:end;background:var(--brand-soft)}
 .gram{background:var(--sky-soft);border-radius:14px;padding:12px;display:grid;gap:6px}
+.selfcam{position:absolute;left:4%;bottom:12%;width:24%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.18);background:#2B1B0F;max-width:100%}
+.selfcam video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1);display:block}
+.selfcam span{position:absolute;left:6px;bottom:4px;color:#fff;font-size:.72rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.talk{background:var(--bg);border-radius:99px;padding:4px 12px;font-weight:700;font-size:.9rem}
+.talk.ok{background:var(--good-soft);color:var(--good)}
+.ptest{max-width:720px;margin:0 auto;width:100%;display:grid;gap:14px;align-content:center;flex:1}
+.psecs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;text-align:right}
+.psecs div{background:var(--bg);border-radius:14px;padding:12px;display:grid;gap:4px}
+.ppass{background:var(--bg);border-radius:14px;padding:14px;direction:ltr;text-align:left;line-height:1.7;font-size:1.05rem}
+.aloud{font-size:1.6rem;font-weight:700;direction:ltr;background:var(--brand-soft);border-radius:16px;padding:16px}
+.skills{display:grid;gap:8px}
+.sk,.fam{display:grid;grid-template-columns:90px 1fr 48px;gap:10px;align-items:center}
+.sk .bar,.fam .bar{margin:0}
 </style>
 </head>
 <body>
@@ -788,6 +801,7 @@ function tabHome(k){
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div>${btn}</div></section>
     ${examCard(k)}
+    ${familyCard(k)}
     <div class="g2e">${dailyCard(k)}${kitCard(k) || reviewCard(k) || practiceCard(k)}</div>
     <div class="g2e">${kitCard(k) ? reviewCard(k) : ''}${(kitCard(k) || reviewCard(k)) ? practiceCard(k) : ''}</div>
     ${units ? `<section class="card"><h2>رحلتك في المستوى ${DB.kids[k].level}</h2><div class="path">${units.map((u,ui) => { const start = units.slice(0,ui).reduce((a,x) => a+x.lessons.length, 0); const done = Math.max(0, Math.min(u.lessons.length, pos % plan.total - start));
@@ -814,6 +828,7 @@ function tabHome(k){
   const pg2 = $('#prGo'); if(pg2) pg2.onclick = () => startPractice(k);
   const kg = $('#kitGo'); if(kg) kg.onclick = () => { unlockAudio(); openKit(k); };
   const eg = $('#examGo'); if(eg) eg.onclick = () => startLevelExam(k);
+  const fg = $('#famGo'); if(fg) fg.onclick = () => { claimFamily(); renderKid(k); };
   homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov')) renderKid(k); }, 30000);
 }
 async function enterLesson(k, trial){
@@ -1031,7 +1046,7 @@ function finishBook(k, book){
   const qs = (book.questions||[]).map(q => ({type:'mc', q:q.q, options:q.options, answer:q.answer}));
   runQuiz(k, qs, book.title, res => {
     const isPre = /^L\d+s/.test(book.id||''); const first = isPre ? DB.progress[k].pre[book.id] == null : !book.read;
-    if(isPre) DB.progress[k].pre[book.id] = res ? res.score : 0; else { book.read = true; book.score = res ? res.score : 0; }
+    if(isPre){ DB.progress[k].pre[book.id] = res ? res.score : 0; if(first){ DB.progress[k].preAt = DB.progress[k].preAt || {}; DB.progress[k].preAt[book.id] = new Date().toISOString(); } } else { if(first) book.readAt = new Date().toISOString(); book.read = true; book.score = res ? res.score : 0; }
     if(first) addXP(k, 30); save();
     toast(first ? '📚 أنهيت القصة! +30 نقطة' : 'أحسنت!'); renderKid(k);
   });
@@ -1263,7 +1278,7 @@ function startLevelExam(k){
     const p = DB.progress[k]; p.exams = p.exams || {}; const pct = Math.round(res.score/res.total*100); p.exams[lv] = {pct, at:new Date().toISOString()};
     if(pct >= 70){ addXP(k, 100); toast('🎖️ نجحت في اختبار المستوى! +100 نقطة', 'gold'); } save(); renderKid(k); }, 20);
 }
-async function placementTest(k){
+async function placementTestBasic(k){
   let bank = null; try{ const r = await fetch('content/placement.json', {cache:'no-cache'}); bank = r.ok ? await r.json() : null; }catch(e){}
   if(!bank || !bank.length){ alertBox('اختبار تحديد المستوى لم يجهز بعد. يجهز تلقائياً خلال ساعات.'); return; }
   const kid = DB.kids[k], byLv = {}; bank.forEach(q => (byLv[q.level] = byLv[q.level] || []).push(q));
@@ -1285,6 +1300,176 @@ async function placementTest(k){
     const a = ov.querySelector('#pa'); if(a) a.onclick = () => { setLevel(k, rec); ov.remove(); toast('تم تحديث المستوى'); renderParent(); };
     ov.querySelector('#pc').onclick = () => ov.remove(); };
   next();
+}
+
+/* =============== PROFESSIONAL PLACEMENT TEST (adaptive, 4 skills) =============== */
+const PBANK = {};
+async function loadP(l){ if(PBANK[l] !== undefined) return PBANK[l]; try{ const r = await fetch(`content/P${l}.json`, {cache:'no-cache'}); PBANK[l] = r.ok ? await r.json() : null; }catch(e){ PBANK[l] = null; } return PBANK[l]; }
+const normWords = s => String(s).toLowerCase().replace(/[^a-z' ]/g,' ').split(/\s+/).filter(Boolean);
+function wordAccuracy(target, said){ const a = normWords(target), b = normWords(said); if(!a.length) return 0;
+  const dp = Array.from({length:a.length+1}, () => new Array(b.length+1).fill(0));
+  for(let i=1;i<=a.length;i++) for(let j=1;j<=b.length;j++) dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1]+1 : Math.max(dp[i-1][j], dp[i][j-1]);
+  return Math.round(dp[a.length][b.length] / a.length * 100); }
+function speakText(t, rate){ return new Promise(res => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); if(voice) u.voice = voice; u.lang = 'en-US'; u.rate = rate || .9; u.onend = res; u.onerror = res; speechSynthesis.speak(u); setTimeout(res, t.split(' ').length*600 + 3000); }catch(e){ res(); } }); }
+function listenFor(ms, onText){ return new Promise(res => {
+  if(!SR){ res(null); return; } let text = '', done = false; const r = new SR(); r.lang = 'en-US'; r.continuous = true; r.interimResults = true;
+  let sil = null; const end = () => { if(done) return; done = true; clearTimeout(sil); clearTimeout(cap); try{ r.stop(); }catch(e){} res(text.trim()); };
+  r.onresult = e => { let t = ''; for(const x of e.results) t += x[0].transcript; text = t; onText && onText(t); clearTimeout(sil); sil = setTimeout(end, 3000); };
+  r.onerror = () => end(); r.onend = () => end();
+  const cap = setTimeout(end, ms); try{ r.start(); }catch(e){ end(); }
+  return {stop:end}; }); }
+
+async function placementTest(k){
+  const kid = DB.kids[k];
+  const start = Math.max(1, Math.min(20, ageOf(kid.birth) - 5));
+  const probe = await loadP(start);
+  if(!probe){ return placementTestBasic(k); }
+  const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
+  const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">إلغاء</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); }; };
+  frame('اختبار تحديد المستوى', `<div class="card" style="text-align:center;display:grid;gap:12px"><div style="font-size:3rem">🎯</div><h2>اختبار تحديد المستوى: ${esc(kid.ar)}</h2>
+    <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge، من ثلاثة أجزاء، ويأخذ تقريباً 15 دقيقة:</p>
+    <div class="psecs"><div>📖 <b>المعرفة</b><span class="small muted">قواعد ومفردات واستماع وقراءة · 16 سؤالاً</span></div><div>🔊 <b>النطق</b><span class="small muted">قراءة جملتين بصوت عالٍ</span></div><div>🗣️ <b>التحدث</b><span class="small muted">3 أسئلة يجيب عليها بالكلام</span></div></div>
+    <p class="small muted" style="margin:0">مهم: يجيب الطفل بنفسه بدون مساعدة، في مكان هادئ.</p><button class="btn primary big" id="pgo">ابدأ</button></div>`);
+  await new Promise(r => ov.querySelector('#pgo').onclick = r); unlockAudio();
+
+  /* --- Part 1: adaptive knowledge (staircase with shrinking steps) --- */
+  let theta = start, step = 3, lastDir = 0; const log = [], used = new Set(); const kinds = ['mcq','listen','mcq','read','mcq','listen'];
+  for(let n = 0; n < 16; n++){
+    const lv = Math.max(1, Math.min(20, Math.round(theta))); const b = await loadP(lv); if(!b) break;
+    const kind = kinds[n % kinds.length]; let item = null, passage = null, script = null;
+    if(kind === 'mcq') item = (b.mcq||[]).find(q => !used.has(q));
+    if(kind === 'listen'){ item = (b.listen||[]).find(q => !used.has(q)); if(item) script = item.script; }
+    if(kind === 'read' && b.read){ item = (b.read.qs||[]).find(q => !used.has(q)); if(item) passage = b.read.passage; }
+    if(!item) item = (b.mcq||[]).find(q => !used.has(q)); if(!item) continue; used.add(item);
+    frame('الجزء 1: المعرفة', `<div class="card quiz"><div class="qhead"><span class="small muted">سؤال ${n+1} من 16</span><div class="qbar"><i style="width:${n/16*100}%"></i></div></div>
+      ${script ? `<div style="text-align:center"><button class="btn primary big" id="pl">🔊 استمع</button><div class="small muted">تقدر تسمعه مرتين</div></div>` : ''}
+      ${passage ? `<div class="ppass en">${esc(passage)}</div>` : ''}
+      <h2 class="en" style="direction:ltr;text-align:left">${esc(item.q)}</h2><div class="opts">${item.options.map((o,x) => `<button class="opt en" data-o="${x}">${esc(o)}</button>`).join('')}</div></div>`);
+    if(script){ let plays = 0; const pl = ov.querySelector('#pl'); const play = async () => { if(plays >= 2) return; plays++; pl.disabled = true; await speakText(script, .9); pl.disabled = plays >= 2; }; pl.onclick = play; play(); }
+    const choice = await new Promise(r => ov.querySelectorAll('[data-o]').forEach(bt => bt.onclick = () => r(Number(bt.dataset.o))));
+    speechSynthesis.cancel();
+    const ok = choice === Number(item.answer); log.push({lv, kind, ok, skill: kind === 'mcq' ? (item.skill || 'grammar') : kind === 'listen' ? 'listening' : 'reading'});
+    const dir = ok ? 1 : -1; if(lastDir && dir !== lastDir) step = Math.max(1, step/2); lastDir = dir; theta = Math.max(1, Math.min(20, theta + dir*step));
+  }
+  const okLv = log.filter(x => x.ok).map(x => x.lv), knowLevel = Math.max(1, Math.min(20, Math.round((theta + (okLv.length ? Math.max(...okLv) : 1)) / 2)));
+  const skillPct = s => { const xs = log.filter(x => x.skill === s); return xs.length ? Math.round(xs.filter(x => x.ok).length / xs.length * 100) : null; };
+
+  /* --- Part 2: read aloud (pronunciation, measured word by word) --- */
+  const pb = await loadP(knowLevel), aloud = [];
+  if(SR && pb && pb.aloud){
+    for(const [i, sent] of pb.aloud.slice(0,2).entries()){
+      frame('الجزء 2: النطق', `<div class="card quiz" style="text-align:center"><div class="small muted">جملة ${i+1} من 2: اضغط الميكروفون واقرأها بصوت واضح</div><div class="aloud en">${esc(sent)}</div>
+        <button class="micbig" id="am" style="justify-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><div class="en muted" id="al"></div></div>`);
+      await new Promise(r => ov.querySelector('#am').onclick = r); ov.querySelector('#am').classList.add('on');
+      const said = await listenFor(15000, t => { const el = ov.querySelector('#al'); if(el) el.textContent = t; });
+      aloud.push({target:sent, said:said||'', acc:wordAccuracy(sent, said||'')});
+    }
+  }
+  /* --- Part 3: speaking (3 prompts around the estimated level) --- */
+  const speak = [];
+  for(const [i, lv] of [knowLevel-2, knowLevel, knowLevel+2].map(x => Math.max(1, Math.min(20, x))).entries()){
+    const b = await loadP(lv); if(!b || !b.speak) continue;
+    frame('الجزء 3: التحدث', `<div class="card quiz" style="text-align:center"><div class="small muted">سؤال ${i+1} من 3: اسمع السؤال ثم اضغط الميكروفون وأجب بأكبر قدر تقدر عليه (حتى دقيقة)</div>
+      <h2 class="en" style="direction:ltr">${esc(b.speak.prompt)}</h2><button class="btn" id="sp">🔊 اسمع السؤال</button>
+      <button class="micbig" id="sm" style="justify-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      <div class="en" id="st" style="direction:ltr;text-align:left;min-height:3em"></div>${SR ? '' : '<textarea class="input en" id="stt" placeholder="Type your answer…"></textarea>'}<button class="btn primary" id="sn" hidden>التالي</button></div>`);
+    ov.querySelector('#sp').onclick = () => speakText(b.speak.prompt, .9); await speakText(b.speak.prompt, .9);
+    let ans = '';
+    if(SR){ await new Promise(r => ov.querySelector('#sm').onclick = r); ov.querySelector('#sm').classList.add('on'); ans = await listenFor(60000, t => { const el = ov.querySelector('#st'); if(el) el.textContent = t; }) || ''; }
+    else { ov.querySelector('#sn').hidden = false; await new Promise(r => ov.querySelector('#sn').onclick = r); ans = ov.querySelector('#stt').value; }
+    speak.push({level:lv, prompt:b.speak.prompt, expect:b.speak.expect, answer:ans});
+  }
+  /* --- Scoring --- */
+  frame('النتيجة', `<div class="card" style="text-align:center"><div style="font-size:2.6rem" class="spin">🧮</div><h2>نحلل الإجابات حسب معايير CEFR…</h2></div>`);
+  const pron = aloud.length ? Math.round(aloud.reduce((a,x) => a + x.acc, 0) / aloud.length) : null;
+  let res = null;
+  try{
+    if(DEMO || DB.apiKey === 'demo') res = {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:60, pronunciation:pron}, summary:'نتيجة تجريبية.', strengths:'—', focus:'—'};
+    else { const t = await callClaude({model:REPORT_MODEL, max_tokens:1500, messages:[{role:'user', content:
+`You are a certified English assessment expert (CEFR, Pearson GSE, Cambridge). Place this learner on a 20-level scale:
+${Object.entries(LEVEL_INFO).map(([n,v]) => `${n}: ${v[0]}, GSE ${v[1]}`).join('; ')}.
+Learner: ${ageOf(kid.birth)}-year-old Arabic speaker.
+PART 1 adaptive knowledge test (16 items; each: level of item, skill, correct?): ${JSON.stringify(log)}. Staircase estimate: level ${knowLevel}.
+PART 2 read-aloud (speech-to-text word accuracy, a proxy for pronunciation/intelligibility): ${JSON.stringify(aloud)}.
+PART 3 spoken answers (speech-to-text; ignore punctuation). For each: level of prompt, what a learner at that level can do, and the answer: ${JSON.stringify(speak)}.
+Judge speaking with CEFR spoken descriptors (range, accuracy, fluency, coherence). Weight: knowledge 45%, speaking 40%, pronunciation 15%. If speaking is clearly weaker than knowledge, place lower (this is a speaking course).
+Reply ONLY JSON: {"level":1-20,"cefr":"...","gse":"range","skills":{"grammar":0-100,"vocabulary":0-100,"listening":0-100,"reading":0-100,"speaking":0-100,"pronunciation":0-100},"summary":"3 sentences in Arabic for the parent","strengths":"Arabic, one line","focus":"Arabic, one line: what to work on first"}`}]});
+      res = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); }
+  }catch(e){ res = {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:null, pronunciation:pron}, summary:'تعذّر تحليل جزء التحدث بسبب الاتصال، فالنتيجة مبنية على جزء المعرفة والنطق.', strengths:'', focus:''}; }
+  const rec = Math.max(1, Math.min(20, Number(res.level) || knowLevel));
+  DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:rec, skills:res.skills, summary:res.summary}); save();
+  const SK = [['grammar','القواعد'],['vocabulary','المفردات'],['listening','الاستماع'],['reading','القراءة'],['speaking','التحدث'],['pronunciation','النطق']];
+  frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:2.6rem">🎯</div><h2>المستوى المقترح لـ ${esc(kid.ar)}: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div><div class="small muted">المستوى الحالي: ${kid.level}</div></div>
+    <div class="skills">${SK.map(([id,ar]) => { const v = (res.skills||{})[id]; return `<div class="sk"><span>${ar}</span><div class="bar"><i style="width:${v==null?0:v}%;background:${v==null?'var(--line)':v>=70?'var(--good)':v>=45?'var(--gold)':'var(--bad)'}"></i></div><b class="num">${v==null?'—':v+'%'}</b></div>`; }).join('')}</div>
+    <p style="margin:0">${esc(res.summary||'')}</p>${res.strengths?`<p class="small" style="margin:0">💪 ${esc(res.strengths)}</p>`:''}${res.focus?`<p class="small" style="margin:0">🎯 ${esc(res.focus)}</p>`:''}
+    <div class="chips" style="justify-content:center">${rec !== kid.level ? `<button class="btn primary" id="pa">اعتمد المستوى ${rec}</button>` : '<span class="chip good">المستوى الحالي مناسب ✓</span>'}<button class="btn" id="pc">إغلاق</button></div></div>`);
+  const a = ov.querySelector('#pa'); if(a) a.onclick = () => { setLevel(k, rec); ov.remove(); toast('تم تحديث المستوى'); renderParent(); };
+  ov.querySelector('#pc').onclick = () => { ov.remove(); renderParent(); };
+}
+
+/* =============== SIBLING CHALLENGE =============== */
+function weekStart(d = new Date()){ const x = new Date(d); x.setHours(0,0,0,0); x.setDate(x.getDate() - x.getDay()); return x; }
+const FAMILY_GOAL = {lessons:6, stories:4, daily:6};
+function familyProgress(){
+  const ws = weekStart(), ids = kidIds();
+  const lessons = DB.attendance.filter(a => new Date(a.at) >= ws).length;
+  const stories = ids.reduce((n,k) => n + DB.books[k].filter(b => b.readAt && new Date(b.readAt) >= ws).length + Object.values(DB.progress[k].preAt||{}).filter(d => new Date(d) >= ws).length, 0);
+  const daily = ids.reduce((n,k) => n + Object.keys(DB.progress[k].daily||{}).filter(d => new Date(d+'T12:00') >= ws).length, 0);
+  const wk = dayKey(ws), claimed = (DB.family||{})[wk];
+  return {lessons, stories, daily, wk, claimed, done: lessons >= FAMILY_GOAL.lessons && stories >= FAMILY_GOAL.stories && daily >= FAMILY_GOAL.daily};
+}
+function familyCard(k){
+  if(kidIds().length < 2) return '';
+  const f = familyProgress(), others = kidIds().filter(x => x !== k).map(x => DB.kids[x].ar).join(' و');
+  const row = (ar, v, g) => `<div class="fam"><span>${ar}</span><div class="bar"><i style="width:${Math.min(100, v/g*100)}%;background:var(--good)"></i></div><b class="num">${Math.min(v,g)}/${g}</b></div>`;
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🤝 تحدي الإخوة هذا الأسبوع</h2><span class="small muted">أنت و${esc(others)} فريق واحد</span></div>
+    ${row('حصص', f.lessons, FAMILY_GOAL.lessons)}${row('قصص', f.stories, FAMILY_GOAL.stories)}${row('تحدي اليوم', f.daily, FAMILY_GOAL.daily)}
+    ${f.claimed ? '<div class="chip good">🏆 أنجزتم التحدي! +100 نقطة لكل واحد</div>' : f.done ? '<button class="btn primary" id="famGo">🎉 استلموا الجائزة: +100 نقطة لكل واحد</button>' : '<div class="small muted">إذا أكملتم الأهداف الثلاثة قبل نهاية السبت، يأخذ كل واحد 100 نقطة.</div>'}</section>`;
+}
+function claimFamily(){ const f = familyProgress(); if(!f.done || f.claimed) return; DB.family = DB.family || {}; DB.family[f.wk] = true; kidIds().forEach(k => addXP(k, 100)); save(); toast('🏆 جائزة الفريق! +100 نقطة لكل واحد', 'gold'); }
+
+/* =============== SELF CAMERA IN CLASS =============== */
+let camStream = null;
+async function startCam(){ const box = $('#selfcam'); if(!box) return;
+  if(!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)){ box.hidden = true; return; }
+  try{ camStream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'user', width:{ideal:320}, height:{ideal:240}}, audio:false});
+    const v = box.querySelector('video'); v.srcObject = camStream; box.hidden = false; await v.play().catch(() => {}); }catch(e){ box.hidden = true; } }
+function stopCam(){ if(camStream){ camStream.getTracks().forEach(t => t.stop()); camStream = null; } const box = $('#selfcam'); if(box) box.hidden = true; }
+
+/* =============== TALK TIME =============== */
+function talkPctOf(l){ const t = l.sw + l.tw; return t ? Math.round(l.sw / t * 100) : null; }
+const countWords = s => (String(s).match(/[A-Za-z']+/g) || []).length;
+function talkPct(){ if(!L) return 0; const t = L.sw + L.tw; return t ? Math.round(L.sw / t * 100) : 0; }
+function talkGoal(k){ return Math.min(75, 55 + Math.floor(DB.attendance.filter(a => a.kid === k).length / 2)); }
+function updateTalk(){ const el = $('#talk'); if(!el || !L) return; const p = talkPct(), g = talkGoal(L.kid); el.innerHTML = `🗣️ أنت <b class="num">${p}%</b> <span class="small">(هدفك ${g}%)</span>`; el.classList.toggle('ok', p >= g); }
+
+/* =============== MONTHLY REPORT =============== */
+async function monthlyReport(k){
+  const now = new Date(), m0 = new Date(now.getFullYear(), now.getMonth(), 1), mid = new Date(now.getFullYear(), now.getMonth(), 16);
+  const reps = DB.reports.filter(r => r.kid === k && new Date(r.at) >= m0), h1 = reps.filter(r => new Date(r.at) < mid), h2 = reps.filter(r => new Date(r.at) >= mid);
+  const avg = xs => xs.length ? Math.round(xs.reduce((a,r) => a + r.score, 0)/xs.length) : null;
+  const l = ledger(k), rows = l.rows.filter(r => r.t >= m0), att = rows.filter(r => r.st === 'att').length, miss = rows.length - att;
+  const mins = reps.reduce((a,r) => a + (r.minutes||0), 0), talk = reps.filter(r => r.talkPct != null), tavg = talk.length ? Math.round(talk.reduce((a,r) => a + r.talkPct, 0)/talk.length) : null;
+  const qz = DB.progress[k].quizzes.filter(q => q.at && new Date(q.at) >= m0), qavg = qz.length ? Math.round(qz.reduce((a,q) => a + q.score/q.total, 0)/qz.length*100) : null;
+  const words = [...new Set(reps.flatMap(r => r.newWords||[]))], daily = Object.keys(DB.progress[k].daily||{}).filter(d => new Date(d+'T12:00') >= m0).length;
+  const books = DB.books[k].filter(b => b.readAt && new Date(b.readAt) >= m0).length + Object.values(DB.progress[k].preAt||{}).filter(d => new Date(d) >= m0).length;
+  const mkey = `${now.getFullYear()}-${pad(now.getMonth()+1)}`; DB.monthly = DB.monthly || {}; DB.monthly[k] = DB.monthly[k] || {};
+  const ov = overlay(`<div class="cert" id="certBox"><div class="cert-in" style="text-align:right;justify-items:stretch">
+      <div class="chips" style="justify-content:space-between"><div class="logo"><span class="b">51</span><span class="t">telk</span></div><div class="small muted">${fmtMonth(now)}</div></div>
+      <div style="text-align:center"><div class="cert-t" style="font-size:1.4rem">التقرير الشهري · Monthly Progress</div><div class="cert-n" style="font-size:1.8rem">${esc(DB.kids[k].ar)} · <span class="en">${esc(DB.kids[k].en)}</span></div><div class="en small">Level ${DB.kids[k].level} · ${levelTag(DB.kids[k].level)}</div></div>
+      <div class="stat"><div><span class="small muted">حضر</span><b style="color:var(--good)">${att}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${miss}</b></div><div><span class="small muted">دقائق محادثة</span><b>${mins}</b></div><div><span class="small muted">وقت تحدثه</span><b>${tavg==null?'—':tavg+'%'}</b></div></div>
+      <div class="stat"><div><span class="small muted">مستوى الحصص: النصف الأول</span><b>${avg(h1)==null?'—':avg(h1)+'%'}</b></div><div><span class="small muted">النصف الثاني</span><b>${avg(h2)==null?'—':avg(h2)+'%'}</b></div><div><span class="small muted">الاختبارات</span><b>${qavg==null?'—':qavg+'%'}</b></div><div><span class="small muted">كلمات جديدة</span><b>${words.length}</b></div></div>
+      <div class="stat"><div><span class="small muted">قصص</span><b>${books}</b></div><div><span class="small muted">تحدي اليوم</span><b>${daily}</b></div><div><span class="small muted">النقاط</span><b>${DB.progress[k].xp}</b></div><div><span class="small muted">الأوسمة</span><b>${earnedBadges(k).length}</b></div></div>
+      <div class="gram" id="mnote">${DB.monthly[k][mkey] ? esc(DB.monthly[k][mkey]) : '<span class="muted small">جاري كتابة ملاحظة المعلم…</span>'}</div>
+      <div class="cert-s"><div><div class="en sig">${teacherOf(k).name}</div><div class="small muted en">Teacher</div></div><div style="font-size:2.2rem">🏅</div></div></div></div>
+    <div class="chips"><button class="btn primary" id="pr">طباعة</button><button class="btn" id="cl">إغلاق</button></div>`);
+  ov.querySelector('.card').classList.add('wide');
+  ov.querySelector('#cl').onclick = () => ov.remove();
+  ov.querySelector('#pr').onclick = () => { document.body.classList.add('printing'); window.print(); setTimeout(() => document.body.classList.remove('printing'), 500); };
+  if(!DB.monthly[k][mkey] && reps.length && !(DEMO || DB.apiKey === 'demo')){
+    try{ const t = await callClaude({model:LIVE_MODEL, max_tokens:400, messages:[{role:'user', content:`Write a warm, specific monthly progress note in Arabic (4 sentences) from the English teacher to the parent of ${DB.kids[k].en} (level ${DB.kids[k].level}, ${LEVEL_INFO[DB.kids[k].level][0]}). Data: attended ${att}, missed ${miss}, lesson scores first half ${avg(h1)}, second half ${avg(h2)}, quiz average ${qavg}, talk share ${tavg}%, new words ${words.slice(0,15).join(', ')}. Teacher notes from lessons: ${reps.map(r => r.parentNote).join(' | ').slice(0,3000)}. Mention progress, strengths and one clear goal for next month. Reply with the note only.`}]});
+      DB.monthly[k][mkey] = t.trim(); save(); const n = ov.querySelector('#mnote'); if(n) n.textContent = DB.monthly[k][mkey]; }catch(e){ const n = ov.querySelector('#mnote'); if(n) n.textContent = 'لم نتمكن من كتابة ملاحظة المعلم الآن.'; }
+  } else if(!reps.length){ const n = ov.querySelector('#mnote'); if(n) n.textContent = 'لا توجد حصص هذا الشهر بعد.'; }
 }
 
 /* =============== TEACHER SVG =============== */
@@ -1516,6 +1701,7 @@ Conversation goal: ${plan.goal}.
 Sentence patterns the child should build and use: ${plan.pattern}.${(() => { const kit = kitFor(kid.level, plan.ui, plan.li); return kit ? `\nThe child prepared these words before class: ${(kit.words||[]).map(w => w.w).join(', ')}. Use them as today's new words.` : ''; })()}${plan.round>1?' (Second time through this level: go deeper, use harder follow-up questions.)':''}
 Focus from the last lesson report: ${prog.focus || 'none yet'}.
 Recent mistakes to recycle naturally: ${mist}.
+What you know about the child from earlier lessons (bring it up naturally to make the conversation personal): ${(prog.interests||[]).join('; ') || 'nothing yet, find out what they love'}.
 Words from recent lessons: ${words}.
 
 THE MOST IMPORTANT THING: CONVERSATION AND SENTENCE BUILDING, much more than vocabulary. The child must speak in full sentences and speak much more than you.
@@ -1559,7 +1745,7 @@ function startLesson(k, trial){
   if(!trial && !led.open.resumed && new Date() < led.open.t){ DB.progress[k].early = (DB.progress[k].early||0) + 1; }
   if(!trial && led.open.resumed && DB.live[k] && DB.live[k].startedAt) startedAt = new Date(DB.live[k].startedAt);
   L = {kid:k, trial, slot:trial?null:led.open.key, n, plan, history:[], startedAt, state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
-       queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:led.gifts, typing:false};
+       queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:led.gifts, typing:false, sw:0, tw:0};
   if(!trial){ DB.live[k] = {slot:L.slot, startedAt:startedAt.toISOString()}; save(); }
   L.rules = buildRules(k, plan);
   demoN = 0;
@@ -1572,9 +1758,9 @@ function renderRoom(){
   $('#app').innerHTML = `<div class="room">
     <header class="rbar"><button class="btn sm" id="exit">خروج</button>
       <div class="ttl">${L.trial ? '<span class="chip brand" style="font-family:var(--font)">تجريبي</span> ' : ''}${esc(L.plan.t)}</div>
-      <div class="timer" id="timer">00:00</div></header>
+      <div class="talk" id="talk"></div><div class="timer" id="timer">00:00</div></header>
     <div class="rbody">
-      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="burst" id="burst"></div><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div></div></div>
+      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="selfcam" id="selfcam" hidden><video playsinline muted autoplay></video><span>${esc(nick(L.kid))}</span></div><div class="burst" id="burst"></div><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div></div></div>
       <div class="side">
         <div class="sub" id="sub" aria-live="polite"><span class="muted" style="font-family:var(--font)">…</span></div>
         <div class="you" id="you" hidden></div>
@@ -1584,12 +1770,15 @@ function renderRoom(){
     <div class="ctrl">
       <button class="btn sm" id="rep">🔊 أعيدي</button>
       <button class="micbig wait" id="mic" aria-label="تكلم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
-      <button class="btn sm" id="kb">⌨️ كتابة</button>
+      <button class="btn sm" id="kb">⌨️ كتابة</button><button class="btn sm" id="cam">📷</button>
       <button class="btn sm" id="wrap" hidden>اختم الحصة</button>
       <form class="typer" id="typer" hidden><input class="input en" id="msg" placeholder="Type in English…" autocomplete="off" enterkeyhint="send"><button class="btn primary" type="submit">إرسال</button></form>
     </div></div>`;
   if(!teacherOf(L.kid).female){ $('#tbox').classList.add('t-adam'); const tb = document.getElementById('tbadge'); if(tb) tb.textContent = 'Adam'; }
   $('#exit').onclick = confirmExit;
+  $('#cam').onclick = () => { const p = DB.profiles[L.kid]; if(camStream){ stopCam(); p.camOff = true; } else { p.camOff = false; startCam(); } save(); };
+  if(!(DB.profiles[L.kid]||{}).camOff) startCam();
+  updateTalk();
   $('#rep').onclick = () => { if(L.lastSay){ interrupt(false); sayAll(L.lastSay, true); } };
   $('#mic').onclick = onMicTap;
   $('#tbox').onclick = () => { if(L.state === 'speaking' || L.state === 'thinking') { interrupt(true); } };
@@ -1724,7 +1913,7 @@ async function teacherTurn(userText){
     const spoken = spokenRaw.trim();
     const tags = parseTags(full);
     if(!moodSet && tags.mood) setMood(tags.mood);
-    lesson.lastSay = spoken;
+    lesson.lastSay = spoken; lesson.tw += countWords(spoken); updateTalk();
     lesson.history.push({role:'assistant', content:cleanForHistory(full)});
     if(sub) sub.innerHTML = esc(spoken) + (tags.ar ? `<div class="ar">${esc(tags.ar)}</div>` : '');
     if(tags.board && tags.board.word) showBoard(tags.board);
@@ -1790,6 +1979,7 @@ function stopListening(submit){
   if(L.state === 'listening') setState('idle');
 }
 function studentSaid(text){
+  if(L){ L.sw += countWords(text); updateTalk(); }
   const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live'); you.textContent = text; }
   teacherTurn(`Student: ${text}`);
 }
@@ -1814,7 +2004,7 @@ ${transcript}
 Reply with ONLY one JSON object:
 {"score":0-100,"stars":1-3,"newWords":["words practised"],"mistakes":[{"wrong":"...","right":"..."}],
 "parentNote":"3-4 sentences in Arabic for the parent: what was covered, how well the child built sentences and spoke, strengths, exactly what to practise at home",
-"kidNote":"one short cheerful English sentence for the child","nextFocus":"one short line in English: what the next lesson should focus on",
+"kidNote":"one short cheerful English sentence for the child","nextFocus":"one short line in English: what the next lesson should focus on","interests":["short English phrases about the child's life, likes and hobbies they mentioned (empty if none)"],
 "quiz":[5 questions about THIS lesson at the child's level, mainly sentence building:
   2 of {"type":"order","words":["the","words","of","a","correct","sentence","in","order"],"answer":"the full correct sentence","ar":"short Arabic instruction"} (5-9 words, using today's patterns),
   2 of {"type":"mc","q":"fill the gap or choose the best reply","options":["...","...","..."],"answer":index},
@@ -1825,7 +2015,8 @@ Reply with ONLY one JSON object:
   if(!(rep.quiz||[]).length) rep.quiz = lessonQuizFromBank(DB.kids[k].level, plan.ui, plan.li) || [];
   const report = {score:Math.max(0,Math.min(100,Number(rep.score)||0)), stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
     newWords:(Array.isArray(rep.newWords)?rep.newWords:[]).slice(0,12).map(String), mistakes:(Array.isArray(rep.mistakes)?rep.mistakes:[]).slice(0,8).map(m => ({wrong:String(m.wrong||''), right:String(m.right||'')})),
-    parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!')};
+    parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!'), talkPct:talkPctOf(lesson)};
+  if(Array.isArray(rep.interests) && !lesson.trial){ const p0 = DB.progress[k]; p0.interests = [...new Set(rep.interests.map(String).concat(p0.interests||[]))].slice(0,15); }
   let book = null, cert = null;
   if(!lesson.trial){
     const att = {kid:k, slot:lesson.slot, lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:mins};
@@ -1837,6 +2028,7 @@ Reply with ONLY one JSON object:
     const g = ledger(k).gifts; if(g > lesson.giftsBefore) book = BOOKS[band(k)][g-1];
   }
   ov.innerHTML = `<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
+    ${report.talkPct != null ? `<div class="chip ${report.talkPct >= talkGoal(k) ? 'good' : 'brand'}" style="text-align:center">🗣️ تكلمت ${report.talkPct}% من وقت الحصة · هدفك ${talkGoal(k)}%</div>` : ''}
     ${lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${DB.perLesson} ريال صارت خضراء · +50 نقطة</div>`}
     ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
     ${book ? `<div class="gift">🎁 هدية جديدة! فتحت كتاب: <span class="en">${esc(book[0])}</span></div>` : ''}
@@ -1851,8 +2043,8 @@ Reply with ONLY one JSON object:
       go(WHO === 'parent' ? 'parent' : k, 'home');
     }); };
 }
-function leaveRoomQuiet(){ if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
-function leaveRoom(){ if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
+function leaveRoomQuiet(){ stopCam(); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
+function leaveRoom(){ stopCam(); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
@@ -1873,13 +2065,14 @@ function renderParent(){
     const levelDone = plan.total && p.pos >= plan.total;
     return `<section class="card"><div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2>${esc(kid.ar)} <span class="muted small">(${esc(nick(k))}) · ${ageOf(kid.birth)} سنة</span></h2>
       <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><button class="btn sm" data-edit="${k}">تعديل</button></div>
+      ${((DB.placements||{})[k]||[]).length ? (() => { const pl = DB.placements[k][DB.placements[k].length-1]; return `<div class="small" style="margin-top:8px">🎯 آخر تحديد مستوى (${new Date(pl.at).toLocaleDateString(LOC)}): المستوى ${pl.level}</div>`; })() : ''}
       ${(p.exams||{})[kid.level] ? `<div class="gift" style="margin-top:10px">📝 اختبار نهاية المستوى ${kid.level}: ${p.exams[kid.level].pct}% ${p.exams[kid.level].pct >= 70 ? '· ناجح، ننصح برفعه للمستوى التالي ✅' : '· يحتاج مراجعة قبل الرفع'}</div>` : ''}
       ${levelDone ? `<div class="gift" style="margin-top:10px">🎉 أنهى ${esc(kid.ar)} كل دروس المستوى ${kid.level}. تقدر ترفعه للمستوى التالي.</div>` : ''}
       <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
       <div class="stat"><div><span class="small muted">الرصيد المتبقي</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
-      <div class="chips" style="margin-top:12px">${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
+      <div class="chips" style="margin-top:12px">${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-month="${k}">📅 التقرير الشهري</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
-      ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
+      ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة${r.talkPct != null ? ` · تحدّث ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><b>لوحة ولي الأمر</b><button class="btn sm" id="out">خروج</button></div></div>
@@ -1912,6 +2105,7 @@ function renderParent(){
   document.querySelectorAll('[data-done]').forEach(b => b.onclick = () => { const r = DB.redeems.find(x => x.id === b.dataset.done); if(r){ r.status = 'done'; save(); } toast('تم ✓'); renderParent(); });
   document.querySelectorAll('[data-ics]').forEach(b => b.onclick = () => downloadICS(b.dataset.ics));
   document.querySelectorAll('[data-place]').forEach(b => b.onclick = () => placementTest(b.dataset.place));
+  document.querySelectorAll('[data-month]').forEach(b => b.onclick = () => monthlyReport(b.dataset.month));
   document.querySelectorAll('[data-week]').forEach(b => b.onclick = () => { const k = b.dataset.week, w = weeklyReport(k);
     const ov = overlay(`<h2>📊 الأسبوع الماضي: ${esc(DB.kids[k].ar)}</h2>
       <div class="stat"><div><span class="small muted">حضر</span><b style="color:var(--good)">${w.att}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${w.miss}</b></div><div><span class="small muted">دقائق محادثة</span><b>${w.mins}</b></div><div><span class="small muted">متوسط الحصص</span><b>${w.avg == null ? '—' : w.avg + '%'}</b></div></div>
