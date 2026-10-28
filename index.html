@@ -374,6 +374,9 @@ body.printing > *:not(.ov){display:none!important}
 .ico.on{border-color:var(--brand);background:var(--brand-soft)}
 .vguide{background:var(--sky-soft);border-radius:14px;padding:12px 14px;display:grid;gap:6px;font-size:.92rem}
 .vguide ol{margin:0;padding-inline-start:20px;display:grid;gap:4px}
+html[dir=ltr] [style*="text-align:right"]{text-align:left!important}
+html[dir=ltr] .unit .small.muted{display:none}
+html[dir=ltr] .ldots{justify-content:flex-start}
 .prefs{display:inline-flex;gap:6px}
 .pbtn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);display:grid;place-items:center;font-size:1rem;font-weight:800;padding:0;line-height:1}
 .pbtn:hover{border-color:var(--brand)}
@@ -593,7 +596,7 @@ document.addEventListener('click', e => { const b = e.target.closest && e.target
 let I18N = null, I18N_KEYS = [];
 function trText(str){ if(!I18N || !/[؀-ۿ]/.test(str)) return str; let out = str;
   for(const k of I18N_KEYS){ if(out.indexOf(k) >= 0) out = out.split(k).join(I18N[k]); if(!/[؀-ۿ]/.test(out)) break; } return out; }
-const SKIP_TR = el => el.closest && el.closest('.r-tip,.kword span,.gram,.wordchips,.vguide,[data-notr],.report .small,#mnote');
+const SKIP_TR = el => el.closest && el.closest('.r-tip,.kword span,.gram,.wordchips,.vguide ol,.vguide > div,[data-notr],.report .small,#mnote');
 function trNode(root){
   if(!I18N) return;
   const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const nodes = []; let n; while((n = w.nextNode())) nodes.push(n);
