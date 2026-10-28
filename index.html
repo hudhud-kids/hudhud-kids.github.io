@@ -2199,25 +2199,41 @@ async function micStream(){
 }
 /* release the mic a little after the last use so iOS switches audio back to the speaker */
 function micRelease(){ clearTimeout(MIC_IDLE_T); MIC_IDLE_T = setTimeout(() => { if(MIC_STREAM){ MIC_STREAM.getTracks().forEach(t => t.stop()); MIC_STREAM = null; } }, 1500); }
-/* records one utterance: waits for speech, keeps ~0.4 s before it, stops after `silence` seconds of quiet, at maxMs, or on ctl.stop() */
-function recordUtterance(ctl, maxMs, silence){
+/* ONE shared AudioContext for the mic. iOS keeps a new AudioContext "suspended" unless it is resumed inside a tap; the lesson
+   starts listening by itself after the teacher speaks (no tap), so a fresh context never ran there and the mic "froze".
+   This one is resumed on every touch, and recording has a real timer + watchdog instead of relying on audio callbacks. */
+let REC_AC = null;
+function recAC(){ if(!REC_AC){ const AC = window.AudioContext || window.webkitAudioContext; REC_AC = new AC(); } if(REC_AC.state !== 'running'){ try{ REC_AC.resume(); }catch(e){} } return REC_AC; }
+['touchstart','touchend','pointerdown','click','keydown'].forEach(ev => document.addEventListener(ev, () => { try{ if(REC_AC && REC_AC.state !== 'running') REC_AC.resume(); else if(!REC_AC) recAC(); }catch(e){} }, {passive:true, capture:true}));
+document.addEventListener('visibilitychange', () => { if(!document.hidden && REC_AC && REC_AC.state !== 'running'){ try{ REC_AC.resume(); }catch(e){} } });
+/* core recorder: waits for speech (adaptive to the room/mic level), keeps ~0.4 s before it, stops after `silence` s of quiet,
+   at maxMs, or on ctl.stop(). On a manual stop it still returns what was said even if it was quiet. */
+function captureAudio(o){
+  const {maxMs = 15000, silence = 1.3, onLevel = null, ctl = null} = o || {};
   return new Promise(async (resolve, reject) => {
     let stream; try{ stream = await micStream(); }catch(e){ reject(e); return; }
-    const AC = window.AudioContext || window.webkitAudioContext, ac = new AC(); try{ await ac.resume(); }catch(e){}
-    const src = ac.createMediaStreamSource(stream), proc = ac.createScriptProcessor(4096, 1, 1), pre = [], chunks = [];
-    let heard = false, quiet = 0, done = false, noise = .012; const t0 = Date.now(), rate = ac.sampleRate, preMax = Math.ceil(rate * .4 / 4096);
-    const finish = () => { if(done) return; done = true; try{ proc.disconnect(); src.disconnect(); }catch(e){} try{ ac.close(); }catch(e){} micRelease();
-      resolve({heard, wav: heard ? encodeWav(downsample(chunks, rate, 16000), 16000) : null}); };
-    ctl.stop = finish;
-    proc.onaudioprocess = ev => { if(done) return; const d = new Float32Array(ev.inputBuffer.getChannelData(0));
+    const ac = recAC(); try{ await Promise.race([ac.resume(), new Promise(r => setTimeout(r, 600))]); }catch(e){}
+    const rate = ac.sampleRate, src = ac.createMediaStreamSource(stream), proc = ac.createScriptProcessor(4096, 1, 1), pre = [], chunks = [], all = [];
+    let heard = false, quiet = 0, done = false, noise = .004, peak = 0, frames = 0; const preMax = Math.ceil(rate * .4 / 4096);
+    let maxT = null, dogT = null;
+    const finish = manual => { if(done) return; done = true; clearTimeout(maxT); clearTimeout(dogT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease();
+      let use = heard ? chunks : (manual && peak > Math.max(.006, noise * 2.5) ? all : null);
+      resolve({heard: !!use, wav: use ? encodeWav(downsample(use, rate, 16000), 16000) : null, frames}); };
+    if(ctl) ctl.stop = () => finish(true);
+    maxT = setTimeout(() => finish(true), maxMs);
+    // watchdog: no audio frames → the context is still suspended; report it instead of hanging
+    dogT = setTimeout(() => { if(!frames && !done){ try{ ac.resume(); }catch(e){} dogT = setTimeout(() => { if(!frames && !done){ done = true; clearTimeout(maxT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease(); const e = new Error('audio_suspended'); e.name = 'AudioSuspended'; reject(e); } }, 1500); } }, 1500);
+    proc.onaudioprocess = ev => { if(done) return; frames++; const d = new Float32Array(ev.inputBuffer.getChannelData(0));
       let s2 = 0; for(let i = 0; i < d.length; i += 4) s2 += d[i] * d[i]; const rms = Math.sqrt(s2 / (d.length / 4));
-      if(!heard){ noise = noise * .95 + Math.min(rms, .05) * .05; pre.push(d); if(pre.length > preMax) pre.shift();
-        if(rms > Math.max(.025, noise * 3)){ heard = true; chunks.push(...pre); } }
-      else { chunks.push(d); if(rms > Math.max(.02, noise * 2.2)) quiet = 0; else quiet += d.length / rate; if(quiet > silence) finish(); }
-      if(Date.now() - t0 > maxMs || chunks.length * 4096 / rate > 30) finish(); };
+      onLevel && onLevel(rms); if(rms > peak) peak = rms; if(all.length < Math.ceil(rate * 30 / 4096)) all.push(d);
+      if(!heard){ noise = noise * .9 + Math.min(rms, .03) * .1; pre.push(d); if(pre.length > preMax) pre.shift();
+        if(frames > 2 && rms > Math.max(.008, noise * 3.2)){ heard = true; chunks.push(...pre); } }
+      else { chunks.push(d); if(rms > Math.max(.006, noise * 2)) quiet = 0; else quiet += d.length / rate;
+        if(quiet > silence || chunks.length * 4096 / rate > 30) finish(false); } };
     src.connect(proc); proc.connect(ac.destination);
   });
 }
+function recordUtterance(ctl, maxMs, silence){ return captureAudio({ctl, maxMs, silence}); }
 async function azRecognize(wav, lang){
   const r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
     {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav});
@@ -3966,23 +3982,7 @@ function onboarding(k){
 /* =============== PHONEME PRONUNCIATION SCORING (Azure) =============== */
 const paOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !DEMO;
 /* record mono PCM from the mic; stops after ~1.2s of silence once speech started, on stopRef.stop(), or at maxMs */
-function recordWav(maxMs, onLevel, ctl){
-  return new Promise(async (resolve, reject) => {
-    let stream; try{ stream = await navigator.mediaDevices.getUserMedia({audio:{channelCount:1, echoCancellation:true, noiseSuppression:true}}); }catch(e){ reject(e); return; }
-    const ac = new (window.AudioContext || window.webkitAudioContext)(); try{ await ac.resume(); }catch(e){}
-    const src = ac.createMediaStreamSource(stream), proc = ac.createScriptProcessor(4096, 1, 1), chunks = [];
-    let heard = false, quietFor = 0, done = false; const t0 = Date.now();
-    const finish = () => { if(done) return; done = true; try{ proc.disconnect(); src.disconnect(); }catch(e){} stream.getTracks().forEach(t => t.stop());
-      const rate = ac.sampleRate; try{ ac.close(); }catch(e){}
-      resolve({wav: encodeWav(downsample(chunks, rate, 16000), 16000), heard}); };
-    if(ctl) ctl.stop = finish;
-    proc.onaudioprocess = ev => { if(done) return; const d = ev.inputBuffer.getChannelData(0); chunks.push(new Float32Array(d));
-      let s = 0; for(let i = 0; i < d.length; i += 4) s += d[i] * d[i]; const rms = Math.sqrt(s / (d.length / 4)); onLevel && onLevel(rms);
-      if(rms > .03){ heard = true; quietFor = 0; } else if(heard) quietFor += d.length / ac.sampleRate;
-      if((heard && quietFor > 1.2) || Date.now() - t0 > maxMs) finish(); };
-    src.connect(proc); proc.connect(ac.destination);
-  });
-}
+function recordWav(maxMs, onLevel, ctl){ return captureAudio({maxMs, onLevel, ctl, silence:1.2}); }
 function downsample(chunks, from, to){
   const len = chunks.reduce((a, c) => a + c.length, 0), all = new Float32Array(len); let o = 0; chunks.forEach(c => { all.set(c, o); o += c.length; });
   if(from === to) return all; const ratio = from / to, out = new Float32Array(Math.floor(len / ratio));
