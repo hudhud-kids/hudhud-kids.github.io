@@ -711,26 +711,32 @@ function slotsFor(k, until){
   for(const x of S.extra){ const t = fromKey(x); if(t <= until && !cancel.has(x)) out.push({t, key:x, extra:true}); }
   const seen = new Set(); return out.filter(s => !seen.has(s.key) && seen.add(s.key)).sort((a,b) => a.t - b.t);
 }
+/* lesson price history per child: a change applies from the moment it is made, past lessons keep their price */
+function priceAt(k, t){ const h = (DB.prices && DB.prices[k]) || []; let p = DB.perLesson; for(const x of h){ if(new Date(x.from) <= t) p = x.price; } return p; }
+const priceNow = k => priceAt(k, new Date(Date.now() + 365*864e5));
+function setPrice(k, price){ DB.prices = DB.prices || {}; const h = DB.prices[k] = DB.prices[k] || []; if(priceNow(k) === price) return; if(!h.length) h.push({from:'2000-01-01T00:00:00Z', price:DB.perLesson}); h.push({from:new Date().toISOString(), price}); }
 function ledger(k){
-  const now = new Date(), per = DB.perLesson, bal = DB.balance[k], maxLessons = Math.floor(bal/per);
+  const now = new Date(), bal = DB.balance[k];
   const all = slotsFor(k, new Date(now.getTime()+62*864e5));
   const att = new Set(DB.attendance.filter(a => a.kid === k).map(a => a.slot));
   const lv = DB.live[k];
-  const rows = []; let open = null, next = null; const upcoming = [];
+  const rows = []; let open = null, next = null, used = 0, ended = false; const upcoming = [];
+  const charge = (s, st) => { const price = priceAt(k, s.t); if(used + price > bal){ ended = true; return; } used += price; rows.push({t:s.t, key:s.key, st, extra:s.extra, price}); };
   for(const s of all){
     const {t, key} = s;
-    if(att.has(key)){ if(rows.length < maxLessons) rows.push({t,key,st:'att',extra:s.extra}); continue; }
+    if(att.has(key)){ if(!ended) charge(s, 'att'); continue; }
     if(now - t > OPEN_AFTER*60e3){
       if(lv && lv.slot === key && now - new Date(lv.startedAt) < 60*60e3){ if(!open) open = s; }
-      else if(rows.length < maxLessons) rows.push({t,key,st:'miss',extra:s.extra});
+      else if(!ended) charge(s, 'miss');
     } else if(now >= t - OPEN_BEFORE*60e3){ if(!open) open = s; }
     else { if(!next) next = s; upcoming.push(s); }
   }
+  if(!ended && bal - used < priceNow(k)) ended = true;
   if(open && DB.live[k] && DB.live[k].slot === open.key) open.resumed = true;
   const attended = rows.filter(r => r.st==='att').length, missed = rows.length - attended;
+  const green = rows.filter(r => r.st==='att').reduce((a,r) => a + r.price, 0), red = used - green;
   let run = 0, gifts = 0, best = 0; for(const r of rows){ if(r.st==='att'){ run++; best = Math.max(best, run); if(run%5===0) gifts++; } else run = 0; }
-  const ended = rows.length >= maxLessons;
-  return {rows, open: ended ? null : open, next: ended ? null : next, upcoming, attended, missed, green:attended*per, red:missed*per, remaining:bal-rows.length*per, bal, run, best, gifts, ended};
+  return {rows, open: ended ? null : open, next: ended ? null : next, upcoming, attended, missed, green, red, remaining:bal-used, used, bal, run, best, gifts, ended, price:priceNow(k), left:Math.floor((bal-used)/priceNow(k))};
 }
 /* months: the minimum of 12 applies to every full month after the start month */
 function monthKey(t){ return `${t.getFullYear()}-${pad(t.getMonth()+1)}`; }
@@ -907,7 +913,7 @@ function tabHome(k){
   const pos = DB.progress[k].pos;
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div>${btn}</div></section>
-    ${(() => { const left = Math.floor(L0.remaining / DB.perLesson); return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
+    ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
     ${examCard(k)}
     ${familyCard(k)}
     <div class="g2e">${dailyCard(k)}${kitCard(k) || reviewCard(k) || practiceCard(k)}</div>
@@ -919,8 +925,8 @@ function tabHome(k){
         <div class="bal"><span class="v num">${L0.remaining.toLocaleString('en')}</span><span class="muted">ريال متبقي من ${L0.bal.toLocaleString('en')}</span></div>
         <div class="bar" aria-hidden="true"><i style="width:${pg}%;background:var(--good)"></i><i style="width:${pr}%;background:var(--bad)"></i></div>
         <div class="chips"><span class="chip good">استفدنا: ${L0.green} ريال</span><span class="chip bad">خسرنا: ${L0.red} ريال</span></div>
-        <p class="small muted" style="margin:10px 0 0">كل حصة قيمتها ${DB.perLesson} ريال. إذا حضرتها تصير خضراء لأننا استفدنا منها، وإذا غبت تصير حمراء لأنها ضاعت علينا.</p>
-        <ul class="ledger">${recent.length ? recent.map(r => `<li><div><div style="font-weight:700">${fmtDay(r.t)}${r.extra?' <span class="chip brand small">إضافية</span>':''}</div><div class="small muted">${fmtTime(r.t)} · ${r.st==='att'?'حضرت الحصة':'غبت عن الحصة'}</div></div><div class="amt ${r.st==='att'?'good':'bad'}">${r.st==='att'?'✓ ':'−'}${DB.perLesson} <span class="small">ر.س</span></div></li>`).join('') : '<li><div class="muted">سجل حصصك يظهر هنا بعد أول حصة.</div><div></div></li>'}</ul>
+        <p class="small muted" style="margin:10px 0 0">كل حصة قيمتها ${L0.price} ريال. إذا حضرتها تصير خضراء لأننا استفدنا منها، وإذا غبت تصير حمراء لأنها ضاعت علينا.</p>
+        <ul class="ledger">${recent.length ? recent.map(r => `<li><div><div style="font-weight:700">${fmtDay(r.t)}${r.extra?' <span class="chip brand small">إضافية</span>':''}</div><div class="small muted">${fmtTime(r.t)} · ${r.st==='att'?'حضرت الحصة':'غبت عن الحصة'}</div></div><div class="amt ${r.st==='att'?'good':'bad'}">${r.st==='att'?'✓ ':'−'}${r.price} <span class="small">ر.س</span></div></li>`).join('') : '<li><div class="muted">سجل حصصك يظهر هنا بعد أول حصة.</div><div></div></li>'}</ul>
       </section>
       <section class="card"><h2>سلسلة الحضور</h2>
         <p class="muted" style="margin:4px 0 0">احضر 5 حصص متتالية بدون غياب وتفتح لك هدية من مكتبة الكتب الكلاسيكية.</p>
@@ -981,7 +987,7 @@ function slotPicker(k, moveKey){
   const now = new Date(), times = []; for(let h=8; h<=21; h++) for(const m of [0,30]) times.push(`${pad(h)}:${pad(m)}`);
   const old = moveKey ? fromKey(moveKey) : null;
   const ov = overlay(`<h2>${moveKey ? 'تغيير موعد الحصة' : 'حجز حصة إضافية'}</h2>
-    ${old ? `<p class="small muted" style="margin:0">الموعد الحالي: ${fmtDay(old)} · ${fmtTime(old)}</p>` : `<p class="small muted" style="margin:0">تُخصم ${DB.perLesson} ريال من رصيدك، وإذا ما حضرتها تصير حمراء.</p>`}
+    ${old ? `<p class="small muted" style="margin:0">الموعد الحالي: ${fmtDay(old)} · ${fmtTime(old)}</p>` : `<p class="small muted" style="margin:0">تُخصم ${priceNow(k)} ريال من رصيدك، وإذا ما حضرتها تصير حمراء.</p>`}
     <div class="field"><label for="pd">اليوم</label><input class="input" type="date" id="pd" min="${todayISO()}" value="${todayISO()}"></div>
     <div class="field"><label for="pt">الوقت</label><select class="input" id="pt">${times.map(t => `<option ${t==='17:00'?'selected':''}>${t}</option>`).join('')}</select></div>
     <div class="err" id="pe"></div>
@@ -995,7 +1001,7 @@ function slotPicker(k, moveKey){
     const cf = conflict(k, t, moveKey); if(cf){ err.textContent = cf === k ? 'عندك حصة قريبة من هذا الوقت.' : `هذا الوقت قريب من حصة ${DB.kids[cf].ar}، اختر وقتاً آخر.`; return; }
     if(moveKey){ if(monthKey(t) !== monthKey(old) && !canDrop(k, old)){ err.textContent = `نقل الحصة لشهر آخر يجعل حصص ${fmtMonth(old)} أقل من ${MIN_MONTH}. اختر يوماً في نفس الشهر.`; return; }
       cancelSlot(k, moveKey); addExtra(k, t); toast('تم تغيير الموعد'); }
-    else { if(ledger(k).remaining < DB.perLesson){ err.textContent = 'رصيدك لا يكفي لحصة إضافية.'; return; } addExtra(k, t); toast('تم حجز الحصة الإضافية 🎉'); }
+    else { if(ledger(k).remaining < priceNow(k)){ err.textContent = 'رصيدك لا يكفي لحصة إضافية.'; return; } addExtra(k, t); toast('تم حجز الحصة الإضافية 🎉'); }
     ov.remove(); renderKid(k);
   };
 }
@@ -2268,7 +2274,7 @@ Reply with ONLY one JSON object:
   }
   ov.innerHTML = `<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
     ${report.talkPct != null ? `<div class="chip ${report.talkPct >= talkGoal(k) ? 'good' : 'brand'}" style="text-align:center">🗣️ تكلمت ${report.talkPct}% من وقت الحصة · هدفك ${talkGoal(k)}%</div>` : ''}
-    ${lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${DB.perLesson} ريال صارت خضراء · +50 نقطة</div>`}
+    ${lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${priceNow(k)} ريال صارت خضراء · +50 نقطة</div>`}
     ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
     ${book ? `<div class="gift">🎁 هدية جديدة! فتحت كتاب: <span class="en">${esc(book[0])}</span></div>` : ''}
     ${(() => { const kit = kitFor(DB.kids[k].level, plan.ui, plan.li); return kit && kit.grammar ? `<div class="gram"><div style="font-weight:800">📘 قاعدة الدرس: <span class="en">${esc(kit.grammar.title)}</span></div><div class="small">${esc(kit.grammar.ar)}</div><div class="en small" style="direction:ltr;text-align:left">${(kit.grammar.examples||[]).map(esc).join('<br>')}</div></div>` : ''; })()}
@@ -2287,7 +2293,7 @@ function leaveRoom(){ stopCam(); if(L){ clearInterval(L.tick); clearTimeout(L.bl
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
-  ov.innerHTML = `<div class="card"><h2>تبي تطلع من الحصة؟</h2><p style="margin:0">${counts ? `إذا طلعت الآن لن تُحتسب الحصة. تقدر ترجع وتكمل خلال وقت الحصة، وإذا ما رجعت تصير الـ ${DB.perLesson} ريال حمراء.` : 'تقدر ترجع لاحقاً.'}</p><div class="chips"><button class="btn primary" id="stay">أكمل الحصة</button><button class="btn" id="leave">اطلع</button></div></div>`;
+  ov.innerHTML = `<div class="card"><h2>تبي تطلع من الحصة؟</h2><p style="margin:0">${counts ? `إذا طلعت الآن لن تُحتسب الحصة. تقدر ترجع وتكمل خلال وقت الحصة، وإذا ما رجعت تصير الـ ${priceNow(L.kid)} ريال حمراء.` : 'تقدر ترجع لاحقاً.'}</p><div class="chips"><button class="btn primary" id="stay">أكمل الحصة</button><button class="btn" id="leave">اطلع</button></div></div>`;
   document.body.appendChild(ov);
   $('#stay').onclick = () => ov.remove();
   $('#leave').onclick = () => { ov.remove(); leaveRoom(); };
@@ -2306,10 +2312,10 @@ function renderParent(){
       <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><button class="btn sm" data-edit="${k}">تعديل</button></div>
       ${((DB.placements||{})[k]||[]).length ? (() => { const pl = DB.placements[k][DB.placements[k].length-1]; return `<div class="small" style="margin-top:8px">🎯 آخر تحديد مستوى (${new Date(pl.at).toLocaleDateString(LOC)}): المستوى ${pl.level}</div>`; })() : ''}
       ${(p.exams||{})[kid.level] ? `<div class="gift" style="margin-top:10px">📝 اختبار نهاية المستوى ${kid.level}: ${p.exams[kid.level].pct}% ${p.exams[kid.level].pct >= 70 ? '· ناجح، ننصح برفعه للمستوى التالي ✅' : '· يحتاج مراجعة قبل الرفع'}</div>` : ''}
-      ${l.ended ? `<div class="gift" style="margin-top:10px;background:var(--bad-soft);color:var(--bad)">🔒 انتهى رصيد ${esc(kid.ar)} وتوقفت المنصة عنده${(DB.renewReq||{})[k] ? ' · طلب إعادة الشحن 📩' : ''}.</div>` : Math.floor(l.remaining / DB.perLesson) <= 3 ? `<div class="gift" style="margin-top:10px">⚠️ باقي ${Math.floor(l.remaining / DB.perLesson)} حصص فقط في رصيد ${esc(kid.ar)}.</div>` : ''}
+      ${l.ended ? `<div class="gift" style="margin-top:10px;background:var(--bad-soft);color:var(--bad)">🔒 انتهى رصيد ${esc(kid.ar)} وتوقفت المنصة عنده${(DB.renewReq||{})[k] ? ' · طلب إعادة الشحن 📩' : ''}.</div>` : l.left <= 3 ? `<div class="gift" style="margin-top:10px">⚠️ باقي ${l.left} حصص فقط في رصيد ${esc(kid.ar)}.</div>` : ''}
       ${levelDone ? `<div class="gift" style="margin-top:10px">🎉 أنهى ${esc(kid.ar)} كل دروس المستوى ${kid.level}. تقدر ترفعه للمستوى التالي.</div>` : ''}
       <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
-      <div class="stat"><div><span class="small muted">الرصيد المتبقي</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
+      <div class="stat"><div><span class="small muted">الرصيد المتبقي · الحصة ${l.price} ر.س</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
       <div class="chips" style="margin-top:12px"><button class="btn sm ${l.ended ? 'primary' : ''}" data-topup="${k}">💳 شحن الرصيد</button>${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-month="${k}">📅 التقرير الشهري</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
       ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة${r.talkPct != null ? ` · تحدّث ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
@@ -2348,16 +2354,16 @@ function renderParent(){
   document.querySelectorAll('[data-ics]').forEach(b => b.onclick = () => downloadICS(b.dataset.ics));
   document.querySelectorAll('[data-topup]').forEach(b => b.onclick = () => { const k = b.dataset.topup, l = ledger(k);
     const ov = overlay(`<h2>💳 شحن رصيد ${esc(DB.kids[k].ar)}</h2>
-      <p style="margin:0">الرصيد المتبقي الآن: <b>${l.remaining}</b> ريال (${Math.floor(l.remaining/DB.perLesson)} حصص). قيمة الحصة ${DB.perLesson} ريال.</p>
+      <p style="margin:0">الرصيد المتبقي الآن: <b>${l.remaining}</b> ريال (${l.left} حصص). قيمة الحصة ${l.price} ريال.</p>
       <div class="chips">${[500,1000,2000].map(v => `<button class="btn" data-amt="${v}">+${v.toLocaleString('en')}</button>`).join('')}</div>
       <div class="field"><label for="tamt">أو مبلغ آخر (ريال)</label><input class="input num" type="number" id="tamt" min="10" step="10" value="2000" style="max-width:180px"></div>
       <div class="err" id="terr"></div><div class="chips"><button class="btn primary" id="tok">شحن</button><button class="btn" id="tno">رجوع</button></div>`);
     ov.querySelectorAll('[data-amt]').forEach(x => x.onclick = () => { ov.querySelector('#tamt').value = x.dataset.amt; });
     ov.querySelector('#tno').onclick = () => ov.remove();
-    ov.querySelector('#tok').onclick = () => { const a = Math.round(Number(ov.querySelector('#tamt').value)); if(!(a >= DB.perLesson)){ ov.querySelector('#terr').textContent = `أقل مبلغ ${DB.perLesson} ريال.`; return; }
+    ov.querySelector('#tok').onclick = () => { const a = Math.round(Number(ov.querySelector('#tamt').value)); if(!(a >= l.price)){ ov.querySelector('#terr').textContent = `أقل مبلغ ${l.price} ريال.`; return; }
       const wasEnded = l.ended;
       if(wasEnded){ /* restart from today so missed future slots don't eat the new balance */
-        const used = l.rows.length * DB.perLesson; DB.balance[k] = used + a;
+        DB.balance[k] = l.used + a;
         const counted = new Set(l.rows.map(r => r.key)), now = new Date();
         slotsFor(k, now).forEach(sl => { if(!counted.has(sl.key) && sl.t < now) DB.sched[k].cancel.push(sl.key); }); }
       else DB.balance[k] += a;
@@ -2391,7 +2397,7 @@ function renderParent(){
   };
   $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); toast('تم حفظ المفتاح'); };
   $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
-  $('#savePl').onclick = () => { DB.perLesson = Math.max(1, Number($('#pl').value)||10); save(); toast('تم الحفظ'); renderParent(); };
+  $('#savePl').onclick = () => { const v = Math.max(1, Math.round(Number($('#pl').value))||10); kidIds().forEach(k => setPrice(k, v)); DB.perLesson = v; save(); toast(`قيمة الحصة الآن ${v} ريال لكل الأطفال، من الآن فصاعداً`); renderParent(); };
   $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
     try{ await callClaude({model:LIVE_MODEL, max_tokens:20, messages:[{role:'user', content:'Say: ready'}]}); msg.textContent = '✅ المعلمة جاهزة'; msg.className = 'small ok'; }
     catch(e){ msg.className = 'small err'; msg.textContent = e && e.status === 401 ? 'المفتاح غير صحيح.' : `فشل الاتصال (${(e&&e.status)||'؟'}).`; } };
@@ -2439,6 +2445,7 @@ function kidForm(k){
       <div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${levelTag(l)}</option>`).join('')}</select></div>
       <div class="field"><label for="f_b">تاريخ الميلاد</label><input class="input" type="date" id="f_b" value="${esc(kid.birth)}"></div>
       <div class="field"><label for="f_g">الجنس</label><select class="input" id="f_g"><option value="1" ${kid.boy?'selected':''}>ولد</option><option value="0" ${!kid.boy?'selected':''}>بنت</option></select></div>
+      <div class="field"><label for="f_price">قيمة الحصة (ريال)</label><input class="input num" type="number" min="1" id="f_price" value="${k ? priceNow(k) : DB.perLesson}"></div>
       <div class="field"><label for="f_bal">مبلغ الاشتراك (ريال)</label><input class="input num" type="number" min="0" step="10" id="f_bal" value="${k ? DB.balance[k] : 2000}"></div>
     </div>
     <div class="field"><label>أيام الحصص</label><div class="days">${DAYS_AR.map((d,i) => `<label><input type="checkbox" id="f_d${i}" ${per.days.includes(i)?'checked':''}> ${d}</label>`).join('')}</div></div>
@@ -2461,7 +2468,7 @@ function kidForm(k){
     if(k){
       Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy});
       setLevel(k, level);
-      DB.balance[k] = bal;
+      DB.balance[k] = bal; setPrice(k, Math.max(1, Math.round(Number(ov.querySelector('#f_price').value)) || priceNow(k)));
       const cur = periodAt(k, new Date());
       if(JSON.stringify(cur.days.slice().sort()) !== JSON.stringify(days.slice().sort()) || cur.time !== time){
         const ps = DB.sched[k].periods;
@@ -2471,7 +2478,7 @@ function kidForm(k){
     } else {
       let id = user.replace(/[^a-z0-9]/g,'') || 'kid'; while(DB.kids[id]) id += '1';
       DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level]};
-      DB.balance[id] = bal;
+      DB.balance[id] = bal; DB.prices = DB.prices || {}; DB.prices[id] = [{from:'2000-01-01T00:00:00Z', price:Math.max(1, Math.round(Number(ov.querySelector('#f_price').value)) || DB.perLesson)}];
       const t = new Date(); t.setDate(t.getDate()+1);
       DB.sched[id] = {periods:[{from:`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T00:00`, days, time}], cancel:[], extra:[]};
       ensureKidShape(id); save(); toast(`تم إنشاء حساب ${ar} 🎉`);
