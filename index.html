@@ -504,6 +504,12 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .onb .hoop{width:150px;height:auto;margin:0 auto}.obd{display:flex;gap:6px;justify-content:center}.obd i{width:8px;height:8px;border-radius:50%;background:var(--line)}.obd i.on{background:var(--brand);width:22px;border-radius:6px}
 .mapbird .mbf{animation:hp-bob 1.6s ease-in-out infinite}
 .pushst{background:var(--sky-soft);border-radius:12px;padding:8px 12px;margin-top:8px}.pushrow .pushst{margin:0}.pushbtn{margin-top:8px}.pushrow .pushbtn{margin:0;width:100%}
+
+.pa{background:var(--bg);border-radius:14px;padding:10px 12px;margin:8px 0;text-align:start}.pa-top{display:flex;align-items:baseline;gap:8px}.pa-top b{font-size:1.6rem;color:var(--brand)}
+.pa-words{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.pa-w{display:grid;gap:2px;justify-items:center;padding:4px 8px;border-radius:10px;background:var(--surface);border:1.5px solid var(--line)}
+.pa-w b{font-family:var(--en);font-size:1.05rem}.pa-w.good{border-color:#14B8A6}.pa-w.mid{border-color:#E9A100}.pa-w.bad{border-color:#EF4444}.pa-w.omit{opacity:.55;border-style:dashed}
+.pa-ph{display:flex;gap:2px}.pa-ph i{font-style:normal;font-size:.72rem;font-family:var(--en);padding:0 4px;border-radius:5px;color:#fff}.pa-ph i.good{background:#14B8A6}.pa-ph i.mid{background:#E9A100}.pa-ph i.bad{background:#EF4444}
+.micbig.on,.btn.on{box-shadow:0 0 0 calc(4px + var(--lv,0) * 14px) rgba(240,90,56,.25)}
 </style>
 </head>
 <body>
@@ -1799,11 +1805,13 @@ async function placementTest(k, opt){
   }
   /* --- Part 4: read aloud (pronunciation, measured word by word) --- */
   const pb = await loadP(knowLevel), aloud = [];
-  if(SR && pb && pb.aloud){
+  if((SR || paOn()) && pb && pb.aloud){
     for(const [i, sent] of pb.aloud.slice(0,2).entries()){
       frame('الجزء 4: النطق', `<div class="card quiz" style="text-align:center"><div class="small muted">جملة ${i+1} من 2: اضغط الميكروفون واقرأها بصوت واضح</div><div class="aloud en">${esc(sent)}</div>
         <button class="micbig" id="am" style="justify-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><div class="en muted" id="al"></div></div>`);
       await new Promise(r => ov.querySelector('#am').onclick = r); ov.querySelector('#am').classList.add('on');
+      if(paOn()){ let res = null; try{ res = await speakAndAssess(sent, ov.querySelector('#am'), 15000); }catch(e){ console.warn(e); }
+        if(res){ aloud.push({target:sent, said:res.text, acc:res.ok ? res.acc : 0, fluency:res.flu, completeness:res.comp, phonemes:res.words.map(w => w.w + ':' + w.acc).join(' ')}); continue; } }
       const said = await listenFor(15000, t => { const el = ov.querySelector('#al'); if(el) el.textContent = t; });
       aloud.push({target:sent, said:said||'', acc:wordAccuracy(sent, said||'')});
     }
@@ -1812,8 +1820,10 @@ async function placementTest(k, opt){
       frame('الجزء 4: النطق', `<div class="card quiz" style="text-align:center"><div class="small muted">كلمة ${i+1} من 2: اضغط الميكروفون وقل الكلمة بوضوح</div><div class="aloud en">${esc(word)}</div><div class="small muted">انتبه: ليست <span class="en">${esc(pr[1-tgt])}</span></div>
         <button class="micbig" id="am" style="justify-self:center">${MIC}</button><div class="en muted" id="al"></div></div>`);
       await new Promise(r => ov.querySelector('#am').onclick = r); ov.querySelector('#am').classList.add('on');
-      const heard = (await listenFor(5000, t => { const el = ov.querySelector('#al'); if(el) el.textContent = t; }) || '').toLowerCase();
-      const ok = heard.split(/[^a-z']+/).includes(word.toLowerCase()); sounds.push({sound:S.t, word, said:heard, ok, spoken:true});
+      let heard = '', ok = false, done = false;
+      if(paOn()){ try{ const res = await speakAndAssess(word, ov.querySelector('#am'), 5000); const wd = res.words.find(x => x.w.toLowerCase() === word.toLowerCase()); heard = res.text; ok = res.ok && (wd ? wd.acc : res.acc) >= 70; done = true; }catch(e){ console.warn(e); } }
+      if(!done){ heard = (await listenFor(5000, t => { const el = ov.querySelector('#al'); if(el) el.textContent = t; }) || '').toLowerCase(); ok = heard.split(/[^a-z']+/).includes(word.toLowerCase()); }
+      sounds.push({sound:S.t, word, said:heard, ok, spoken:true});
       const st = stS[S.id] = stS[S.id] || {ok:0, n:0, lok:0, ln:0}; st.n++; if(ok) st.ok++;
     }
   }
@@ -1847,7 +1857,7 @@ Learner: ${ageOf(kid.birth)}-year-old Arabic speaker.
 PART 1 adaptive knowledge test (16 items; each: level of item, skill, correct?): ${JSON.stringify(log)}. Staircase estimate: level ${knowLevel}.
 PART 2 sound discrimination (English minimal pairs that Arabic speakers confuse; heard a word, chose between the pair): ${JSON.stringify(sounds.filter(x => !x.spoken))}.
 PART 3 dictation (heard a sentence, typed it; acc = % of words written correctly in order): ${JSON.stringify(dict)}.
-PART 4 read-aloud (speech-to-text word accuracy, a proxy for pronunciation/intelligibility): ${JSON.stringify(aloud)}; minimal-pair words said aloud: ${JSON.stringify(sounds.filter(x => x.spoken))}.
+PART 4 read-aloud (acc = Azure phoneme-level pronunciation accuracy when phonemes are present, otherwise speech-to-text word accuracy): ${JSON.stringify(aloud)}; minimal-pair words said aloud: ${JSON.stringify(sounds.filter(x => x.spoken))}.
 PART 5 spoken answers (speech-to-text; ignore punctuation). For each: level of prompt, what a learner at that level can do, and the answer: ${JSON.stringify(speak)}.
 Judge speaking with CEFR spoken descriptors (range, accuracy, fluency, coherence). Weight: knowledge 40%, speaking 35%, pronunciation and sound discrimination 15%, dictation 10%. If speaking is clearly weaker than knowledge, place lower (this is a speaking course).
 Reply ONLY JSON: {"level":1-20,"cefr":"...","gse":"range","skills":{"grammar":0-100,"vocabulary":0-100,"listening":0-100,"reading":0-100,"speaking":0-100,"pronunciation":0-100,"writing":0-100,"phonics":0-100},"summary":"3 sentences in Arabic for the parent","strengths":"Arabic, one line","focus":"Arabic, one line: what to work on first"}`}]});
@@ -2919,6 +2929,11 @@ function runSound(k, S, ov, back){
         <div class="chips" style="justify-content:center"><button class="btn" id="pl">🔊 اسمعها</button><button class="micbig" id="mk" aria-label="تكلم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button></div><div id="fb"></div></div></div>`;
       ov.querySelector('#sb').onclick = back; ov.querySelector('#pl').onclick = () => say(word);
       ov.querySelector('#mk').onclick = async () => { const mk = ov.querySelector('#mk'); mk.classList.add('on'); speechSynthesis.cancel();
+        if(paOn()){ let res = null; try{ res = await speakAndAssess(word, mk, 5000); }catch(e){ console.warn(e); } mk.classList.remove('on');
+          if(res){ const wd = res.words.find(x => x.w.toLowerCase() === word.toLowerCase()); const a = wd ? wd.acc : res.acc, ok = res.ok && a >= 70;
+            rec.n++; if(ok){ rec.ok++; score++; } save();
+            ov.querySelector('#fb').innerHTML = `<div class="qfb ${ok ? 'good' : 'bad'}">${ok ? '✓ نطق صحيح!' : '✗ قربت! ' + esc(S.tip)}</div>${assessHTML(res)}<button class="btn primary" id="nx">التالي</button>`;
+            ov.querySelector('#nx').onclick = () => { i++; step(); }; return; } }
         if(!SR){ ov.querySelector('#fb').innerHTML = '<div class="qfb bad">الميكروفون غير متاح في هذا المتصفح.</div>'; return; }
         const heard = (await listenFor(4500) || '').toLowerCase(); mk.classList.remove('on');
         const ws = heard.split(/[^a-z']+/); const ok = ws.includes(word.toLowerCase()), other = ws.includes(pr[1-tgt].toLowerCase());
@@ -2993,7 +3008,10 @@ function startHomework(k){
     const say = () => narrate(c.f, {speed:.88});
     ov.querySelector('#ls').onclick = say; setTimeout(say, 250);
     const sh = ov.querySelector('#sh'); if(sh) sh.onclick = () => { ov.querySelector('#bk').hidden = false; };
-    ov.querySelector('#sy').onclick = async () => { const b = ov.querySelector('#sy'); b.classList.add('on'); speechSynthesis.cancel(); const h = await listenFor(isWord ? 4000 : 8000) || ''; b.classList.remove('on');
+    ov.querySelector('#sy').onclick = async () => { const b = ov.querySelector('#sy'); b.classList.add('on'); speechSynthesis.cancel();
+      if(paOn()){ let res = null; try{ res = await speakAndAssess(c.f, b, isWord ? 5000 : 10000); }catch(e){ console.warn(e); } b.classList.remove('on');
+        if(res){ const ok = res.ok && res.acc >= 75; ov.querySelector('#fb').innerHTML = `<div class="qfb ${ok ? 'good' : 'bad'}">${ok ? '✓ ممتاز!' : 'حاول مرة ثانية، ركّز على الأحمر'}</div>${assessHTML(res)}`; if(ok) setTimeout(() => grade(true), 1600); return; } }
+      const h = await listenFor(isWord ? 4000 : 8000) || ''; b.classList.remove('on');
       const acc = wordAccuracy(c.f, h); ov.querySelector('#fb').innerHTML = `<div class="qfb ${acc >= 80 ? 'good' : 'bad'}">${acc >= 80 ? '✓ ممتاز!' : 'حاول مرة ثانية'} · <span class="en">${esc(h || '…')}</span> (${acc}%)</div>`;
       if(acc >= 80) setTimeout(() => grade(true), 900); };
     if(canRec){ ov.querySelector('#rc').onclick = async () => { const b = ov.querySelector('#rc'); if(rec && rec.state === 'recording'){ rec.stop(); return; }
@@ -3748,6 +3766,69 @@ function onboarding(k){
     ov.querySelector('#on').onclick = () => { if(++i >= steps.length) end(); else draw(); };
     const s = ov.querySelector('#os'); if(s) s.onclick = end; };
   draw();
+}
+
+/* =============== PHONEME PRONUNCIATION SCORING (Azure) =============== */
+const paOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !DEMO;
+/* record mono PCM from the mic; stops after ~1.2s of silence once speech started, on stopRef.stop(), or at maxMs */
+function recordWav(maxMs, onLevel, ctl){
+  return new Promise(async (resolve, reject) => {
+    let stream; try{ stream = await navigator.mediaDevices.getUserMedia({audio:{channelCount:1, echoCancellation:true, noiseSuppression:true}}); }catch(e){ reject(e); return; }
+    const ac = new (window.AudioContext || window.webkitAudioContext)(); try{ await ac.resume(); }catch(e){}
+    const src = ac.createMediaStreamSource(stream), proc = ac.createScriptProcessor(4096, 1, 1), chunks = [];
+    let heard = false, quietFor = 0, done = false; const t0 = Date.now();
+    const finish = () => { if(done) return; done = true; try{ proc.disconnect(); src.disconnect(); }catch(e){} stream.getTracks().forEach(t => t.stop());
+      const rate = ac.sampleRate; try{ ac.close(); }catch(e){}
+      resolve({wav: encodeWav(downsample(chunks, rate, 16000), 16000), heard}); };
+    if(ctl) ctl.stop = finish;
+    proc.onaudioprocess = ev => { if(done) return; const d = ev.inputBuffer.getChannelData(0); chunks.push(new Float32Array(d));
+      let s = 0; for(let i = 0; i < d.length; i += 4) s += d[i] * d[i]; const rms = Math.sqrt(s / (d.length / 4)); onLevel && onLevel(rms);
+      if(rms > .03){ heard = true; quietFor = 0; } else if(heard) quietFor += d.length / ac.sampleRate;
+      if((heard && quietFor > 1.2) || Date.now() - t0 > maxMs) finish(); };
+    src.connect(proc); proc.connect(ac.destination);
+  });
+}
+function downsample(chunks, from, to){
+  const len = chunks.reduce((a, c) => a + c.length, 0), all = new Float32Array(len); let o = 0; chunks.forEach(c => { all.set(c, o); o += c.length; });
+  if(from === to) return all; const ratio = from / to, out = new Float32Array(Math.floor(len / ratio));
+  for(let i = 0; i < out.length; i++){ const a = Math.floor(i * ratio), b = Math.min(len, Math.floor((i + 1) * ratio)); let s = 0; for(let j = a; j < b; j++) s += all[j]; out[i] = s / Math.max(1, b - a); }
+  return out;
+}
+function encodeWav(samples, rate){
+  const buf = new ArrayBuffer(44 + samples.length * 2), v = new DataView(buf), w = (o, s) => { for(let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, 'RIFF'); v.setUint32(4, 36 + samples.length * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, samples.length * 2, true);
+  for(let i = 0; i < samples.length; i++){ const x = Math.max(-1, Math.min(1, samples[i])); v.setInt16(44 + i * 2, x < 0 ? x * 0x8000 : x * 0x7FFF, true); }
+  return new Blob([buf], {type:'audio/wav'});
+}
+async function azAssess(wav, ref){
+  const pa = btoa(unescape(encodeURIComponent(JSON.stringify({ReferenceText:ref, GradingSystem:'HundredMark', Granularity:'Phoneme', Dimension:'Comprehensive', EnableMiscue:true}))));
+  const r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed`,
+    {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Pronunciation-Assessment':pa, 'Accept':'application/json'}, body:wav});
+  if(!r.ok){ const e = new Error('assess ' + r.status); e.status = r.status; throw e; }
+  const j = await r.json(), nb = (j.NBest || [])[0];
+  if(!nb || j.RecognitionStatus !== 'Success') return {ok:false, status:j.RecognitionStatus || 'NoMatch', acc:0, words:[], text:''};
+  const P = nb.PronunciationAssessment || nb;
+  return {ok:true, text:nb.Display || '', acc:Math.round(P.AccuracyScore || 0), flu:Math.round(P.FluencyScore || 0), comp:Math.round(P.CompletenessScore || 0), pron:Math.round(P.PronScore || 0),
+    words:(nb.Words || []).map(x => { const W = x.PronunciationAssessment || x; return {w:x.Word, acc:Math.round(W.AccuracyScore || 0), err:W.ErrorType || 'None', ph:(x.Phonemes || []).map(p => ({p:p.Phoneme, acc:Math.round((p.PronunciationAssessment || p).AccuracyScore || 0)}))}; })};
+}
+const PH_TIP = {th:'TH مثل «ث»: طرف اللسان بين الأسنان', dh:'TH مثل «ذ»: اللسان بين الأسنان مع صوت', p:'P: انفخ هواء بدون صوت من الحنجرة', b:'B: صوت من الحنجرة بدون نفخ',
+  v:'V: الأسنان على الشفة مع اهتزاز', f:'F: الأسنان على الشفة بدون صوت', ch:'CH مثل «تش»', sh:'SH مثل «ش»', iy:'ee طويلة مثل «إي»', ih:'i قصيرة ومرتخية', ae:'a في cat: افتح فمك أكثر',
+  eh:'e في bed', ah:'u في cup: قصيرة ومحايدة', aa:'o في hot: فم مفتوح', r:'R الإنجليزية: لا تلمس سقف الفم باللسان', ng:'NG: من الأنف بدون G واضحة', zh:'ZH مثل j في الفرنسية', w:'W: دوّر شفايفك', l:'L', z:'Z', s:'S', t:'T', d:'D', k:'K', g:'G', er:'ER مثل bird'};
+const phColor = a => a >= 80 ? 'good' : a >= 60 ? 'mid' : 'bad';
+function assessHTML(res){
+  if(!res.ok) return `<div class="qfb bad">ما وصلني كلام واضح. اقترب من الجهاز وقلها بصوت أعلى.</div>`;
+  const weak = []; res.words.forEach(w => w.ph.forEach(p => { if(p.acc < 60 && PH_TIP[p.p] && !weak.find(x => x.p === p.p)) weak.push(p); }));
+  return `<div class="pa"><div class="pa-top"><b class="num">${res.acc}%</b><span class="small muted">دقة النطق${res.flu ? ` · الطلاقة ${res.flu}%` : ''}${res.comp != null ? ` · الاكتمال ${res.comp}%` : ''}</span></div>
+    <div class="pa-words" dir="ltr">${res.words.map(w => `<span class="pa-w ${w.err === 'Omission' ? 'omit' : phColor(w.acc)}"><b>${esc(w.w)}</b><span class="pa-ph">${w.ph.map(p => `<i class="${phColor(p.acc)}" title="${p.acc}%">${esc(p.p)}</i>`).join('')}</span></span>`).join('')}</div>
+    ${weak.length ? `<div class="small" style="margin-top:6px">💡 ${weak.slice(0, 2).map(p => `<span class="en">/${esc(p.p)}/</span> ${esc(PH_TIP[p.p])}`).join(' · ')}</div>` : ''}</div>`;
+}
+/* one-shot UI helper: records, assesses and returns the result (or null on failure) */
+async function speakAndAssess(ref, levelEl, maxMs){
+  const ctl = {}; levelEl && (levelEl.__stop = () => ctl.stop && ctl.stop());
+  const rec = await recordWav(maxMs || 8000, rms => { if(levelEl) levelEl.style.setProperty('--lv', Math.min(1, rms * 8)); }, ctl);
+  if(!rec.heard) return {ok:false, status:'Silence', acc:0, words:[], text:''};
+  return await azAssess(rec.wav, ref);
 }
 
 /* =============== BOOT =============== */
