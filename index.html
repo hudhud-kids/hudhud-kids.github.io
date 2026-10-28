@@ -304,6 +304,8 @@ body.printing > *:not(.ov){display:none!important}
 .topics{display:flex;flex-wrap:wrap;gap:8px}
 .topic{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-weight:700;display:inline-flex;gap:6px;align-items:center;min-height:42px}
 .topic:hover{border-color:var(--brand)}
+.topic.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.topic .cnt{font-size:.78rem;opacity:.75;font-variant-numeric:tabular-nums}
 .shelf2{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
 .sbook{border:0;border-radius:14px 6px 6px 14px;background:linear-gradient(160deg,#3B7BE8,#2A5FC0);color:#fff;padding:14px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;gap:6px;box-shadow:inset 6px 0 0 rgba(0,0,0,.15)}
 .sbook:nth-child(3n+2){background:linear-gradient(160deg,#FF8A2E,#E25500)}
@@ -1062,20 +1064,36 @@ function runQuiz(k, quiz, title, onDone, max){
 
 /* =============== LIBRARY =============== */
 const TOPICS = [['adventure','مغامرة','🗺️'],['animals','حيوانات','🐾'],['space','فضاء','🚀'],['football','كرة قدم','⚽'],['mystery','لغز','🔍'],['friendship','صداقة','🤝'],['science','علوم','🔬'],['desert','الصحراء','🐪'],['funny','مضحكة','😂']];
+const STORY_CATS = [
+  ['adventure','مغامرة','🗺️',['adventure','camping','travel','time travel']],
+  ['animals','حيوانات وطبيعة','🐾',['animals','nature','ocean','desert','environment','weather']],
+  ['mystery','ألغاز','🔍',['mystery','detective']],
+  ['science','علوم واختراعات','🔬',['science','inventions','space','technology','robots']],
+  ['sports','رياضة','⚽',['football','sports']],
+  ['friends','صداقة وعائلة','🤝',['friendship','family','kindness','school life']],
+  ['heroes','أبطال وتاريخ','🦸',['superheroes','heroes of history','history']],
+  ['funny','مضحكة','😂',['funny']],
+  ['arts','فنون وطبخ','🎨',['art','music','cooking']]];
+const catOf = topic => (STORY_CATS.find(c => c[3].includes(topic)) || STORY_CATS[0])[0];
+let LIB_CAT = 'all';
 function tabLibrary(k){
-  const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)], pre = ((CONTENT[DB.kids[k].level]||{}).stories||[]).filter(Boolean).filter((b, i, a) => a.findIndex(x => x.title === b.title) === i), done = DB.progress[k].pre;
+  const gifts = ledger(k).gifts, classics = BOOKS[band(k)], done = DB.progress[k].pre;
+  const pre = ((CONTENT[DB.kids[k].level]||{}).stories||[]).filter(Boolean).filter((b, i, a) => a.findIndex(x => x.title === b.title) === i);
+  const cats = STORY_CATS.map(c => [c, pre.filter(b => catOf(b.topic) === c[0]).length]).filter(x => x[1]);
+  if(LIB_CAT !== 'all' && !cats.some(x => x[0][0] === LIB_CAT)) LIB_CAT = 'all';
+  const shown = LIB_CAT === 'all' ? pre : pre.filter(b => catOf(b.topic) === LIB_CAT);
+  const readN = pre.filter(b => done[b.id] != null).length;
   $('#tabBody').innerHTML = `<div class="grid">
-    ${pre.length ? `<section class="card"><h2>📚 مكتبة المستوى ${DB.kids[k].level} <span class="muted small">${pre.length} قصة جاهزة · <span class="en">${levelTag(DB.kids[k].level)}</span></span></h2><p class="small muted" style="margin:4px 0 10px">قصص مكتوبة لمستواك. تُفتح فوراً، وتقدر تسمعها أو تقرأها بصوتك.</p><div class="shelf2">${pre.map(b => `<button class="sbook" data-pre="${esc(b.id)}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small">${done[b.id] != null ? `✓ قرأتها · ${done[b.id]}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('')}</div></section>` : ''}
-    <section class="card"><h2>✨ قصة خاصة لك <span class="muted small">يكتبها ${teacherOf(k).name} الآن على موضوع تختاره</span></h2>
-      <p class="small muted" style="margin:4px 0 10px">تأخذ كتابتها تقريباً 20 إلى 40 ثانية. القصص التي تطلبها تُحفظ هنا.</p>
-      <div class="topics">${TOPICS.map(t => `<button class="topic" data-topic="${t[0]}"><span>${t[2]}</span>${t[1]}</button>`).join('')}</div>
-      ${books.length ? `<div class="shelf2">${books.slice().reverse().map(b => `<button class="sbook" data-book="${b.id}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small ${b.read?'ok':'muted'}">${b.read ? `✓ قرأتها · ${b.score||0}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('')}</div>` : ''}
+    <section class="card"><h2>📚 مكتبة المستوى ${DB.kids[k].level} <span class="muted small">${pre.length} قصة · قرأت ${readN} · <span class="en">${levelTag(DB.kids[k].level)}</span></span></h2>
+      <p class="small muted" style="margin:4px 0 10px">قصص مكتوبة لمستواك. اختر تصنيفاً، وتقدر تسمع القصة أو تقرأها بصوتك.</p>
+      ${pre.length ? `<div class="topics"><button class="topic ${LIB_CAT==='all'?'on':''}" data-cat="all"><span>📖</span>الكل <span class="cnt">${pre.length}</span></button>${cats.map(([c,n]) => `<button class="topic ${LIB_CAT===c[0]?'on':''}" data-cat="${c[0]}"><span>${c[2]}</span>${c[1]} <span class="cnt">${n}</span></button>`).join('')}</div>
+      <div class="shelf2">${shown.map(b => `<button class="sbook" data-pre="${esc(b.id)}"><span class="sb-e">${esc(b.emoji||'📘')}</span><b class="en">${esc(b.title)}</b><span class="small">${done[b.id] != null ? `✓ قرأتها · ${done[b.id]}/${(b.questions||[]).length}` : 'جديدة'}</span></button>`).join('')}</div>`
+      : `<p class="muted" style="margin:0">${CONTENT[DB.kids[k].level] === undefined ? 'جاري تحميل المكتبة…' : 'مكتبة هذا المستوى قيد التجهيز.'}</p>`}
     </section>
     <section class="card"><h2>الكتب الكلاسيكية (هدايا الحضور)</h2><p class="small muted" style="margin:4px 0 0">كل 5 حصص متتالية تفتح كتاباً جديداً.</p>
       <div class="shelf">${classics.map((b,i) => i < gifts ? `<a class="book" href="https://www.gutenberg.org/ebooks/${b[2]}" target="_blank" rel="noopener" style="background:${b[3]}"><span class="bt">${esc(b[0])}</span><span class="ba">${esc(b[1])} · اقرأ الآن</span></a>` : `<div class="book locked"><span class="bt">${esc(b[0])}</span><span class="small" style="font-weight:700">مقفل · ${(i+1)*5} حصص متتالية</span></div>`).join('')}</div>
     </section></div>`;
-  document.querySelectorAll('[data-topic]').forEach(b => b.onclick = () => newBook(k, b.dataset.topic));
-  document.querySelectorAll('[data-book]').forEach(b => b.onclick = () => openBook(k, DB.books[k].find(x => x.id === b.dataset.book)));
+  document.querySelectorAll('[data-cat]').forEach(b => b.onclick = () => { LIB_CAT = b.dataset.cat; tabLibrary(k); });
   document.querySelectorAll('[data-pre]').forEach(b => b.onclick = () => openBook(k, pre.find(x => x.id === b.dataset.pre)));
 }
 async function newBook(k, topic){
