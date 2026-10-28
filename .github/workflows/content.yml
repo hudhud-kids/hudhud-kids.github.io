@@ -7,7 +7,10 @@ on:
         default: '1-20'
       stories:
         description: 'Stories per level'
-        default: '15'
+        default: '30'
+      budget:
+        description: 'Stop at this many USD'
+        default: '65'
 permissions:
   contents: write
 jobs:
@@ -24,6 +27,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           LEVELS: ${{ github.event.inputs.levels }}
           STORIES: ${{ github.event.inputs.stories }}
+          BUDGET: ${{ github.event.inputs.budget }}
         run: node content/generate.mjs
       - name: Save content
         if: always()
