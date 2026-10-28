@@ -106,9 +106,11 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .timer{font-weight:800;font-variant-numeric:tabular-nums;direction:ltr;background:var(--brand-soft);color:var(--brand-ink);border-radius:99px;padding:4px 14px}
 .timer.over{background:var(--bad-soft);color:var(--bad)}
 .rbody{flex:1;min-height:0;display:grid;grid-template-columns:minmax(300px,46%) 1fr;gap:0}
-@media (max-width:780px){.rbody{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
+@media (max-width:780px), (orientation:portrait) and (max-width:1100px){.rbody{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
+.tbox{width:min(520px,100%)}
+@media (orientation:portrait) and (min-width:700px) and (max-width:1100px){.tbox{width:min(500px,72vw)!important}.stage{padding:16px}.side{padding-top:4px}.sub{font-size:1.6rem}}
 .stage{display:grid;place-items:center;padding:12px 16px;position:relative}
-.tbox{position:relative;width:min(420px,100%);display:grid;justify-items:center}
+.tbox{position:relative;display:grid;justify-items:center}
 @media (max-width:780px){.tbox{width:min(240px,62vw)}.stage{padding:6px 16px}.sub{font-size:1.2rem;min-height:70px}}
 .tbox svg{width:100%;height:auto;display:block;overflow:visible;direction:ltr}
 .tname{font-family:var(--en);font-weight:800;color:var(--sky);margin-top:-6px}
@@ -232,7 +234,9 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .tab.on{background:var(--brand);border-color:var(--brand);color:#fff}
 .btn.danger{border-color:var(--bad);color:var(--bad)}
 .btn.danger:hover{background:var(--bad-soft)}
-.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+@media (max-width:1100px){.path{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.path{grid-template-columns:1fr}}
 .unit{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;padding:12px;border-radius:16px;background:var(--bg);border:2px solid transparent}
 .unit.cur{border-color:var(--brand);background:var(--brand-soft)}
 .unit.done{background:var(--good-soft)}
@@ -971,7 +975,7 @@ function runQuiz(k, quiz, title, onDone, max){
 /* =============== LIBRARY =============== */
 const TOPICS = [['adventure','مغامرة','🗺️'],['animals','حيوانات','🐾'],['space','فضاء','🚀'],['football','كرة قدم','⚽'],['mystery','لغز','🔍'],['friendship','صداقة','🤝'],['science','علوم','🔬'],['desert','الصحراء','🐪'],['funny','مضحكة','😂']];
 function tabLibrary(k){
-  const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)], pre = ((CONTENT[DB.kids[k].level]||{}).stories||[]).filter(Boolean), done = DB.progress[k].pre;
+  const books = DB.books[k], gifts = ledger(k).gifts, classics = BOOKS[band(k)], pre = ((CONTENT[DB.kids[k].level]||{}).stories||[]).filter(Boolean).filter((b, i, a) => a.findIndex(x => x.title === b.title) === i), done = DB.progress[k].pre;
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card"><h2>قصص تفاعلية لمستواك <span class="en muted small">Level ${DB.kids[k].level} · ${levelTag(DB.kids[k].level)}</span></h2>
       <p class="small muted" style="margin:4px 0 10px">اختر موضوعاً وتكتب لك المعلمة قصة جديدة على مستواك. تقرأ لك بصوت، وتضغط على أي كلمة لتعرف معناها، وفي آخرها أسئلة.</p>
@@ -1667,7 +1671,7 @@ async function callClaude(body){
 /* demo mode: canned teacher so the parent can preview without a key */
 let demoN = 0;
 const DEMO_LINES = [
-  "[MOOD:excited] Hello there! I'm Teacher Noor, and I'm so happy to see you today! How are you feeling right now?\n[STAGE:chat]",
+  "[MOOD:excited] Hello there! I'm your teacher, and I'm so happy to see you today! How are you feeling right now?\n[STAGE:chat]",
   "[MOOD:happy] That's wonderful to hear! Tell me, what did you do after school yesterday?",
   "[MOOD:encouraging] Nice try! We say: I played football yesterday. Can you say that for me?\n[FIX:I play football yesterday|I played football yesterday|نستخدم الماضي played لأن الحدث صار أمس]",
   "[MOOD:proud] Perfect! You said it beautifully. Now, let's learn a new word. This animal has a very long neck. Do you know what it is?\n[BOARD:giraffe|🦒|زرافة|The giraffe is very tall.]\n[STAGE:topic]",
