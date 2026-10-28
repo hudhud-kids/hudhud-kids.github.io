@@ -8,19 +8,21 @@
 <meta name="apple-mobile-web-app-title" content="51telk">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Baloo+2:wght@600;800&display=swap">
+<link rel="preload" href="fonts/dubai-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dubai-bold.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* One bright classroom look: warm orange brand, sky-blue teacher, white boards */
+@font-face{font-family:"Dubai";src:url(fonts/dubai-regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Dubai";src:url(fonts/dubai-medium.woff2) format("woff2");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Dubai";src:url(fonts/dubai-bold.woff2) format("woff2");font-weight:700 900;font-display:swap}
 :root{
   color-scheme: light;
   --brand:#FF6A00; --brand-ink:#B84A00; --brand-soft:#FFE8D6;
   --bg:#FFF7F0; --surface:#FFFFFF; --fg:#2B1B0F; --muted:#86695A; --line:#F0DCCB;
   --good:#15803D; --good-soft:#DCFCE7; --bad:#DC2626; --bad-soft:#FEE2E2;
   --sky:#3B7BE8; --sky-soft:#E3EEFF; --gold:#E9A100;
-  --font:"Dubai","Tajawal",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --en:"Baloo 2","Dubai","Tajawal",system-ui,sans-serif;
+  --font:"Dubai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --en:"Dubai",system-ui,-apple-system,sans-serif;
   --r:20px;
 }
 *{box-sizing:border-box}
