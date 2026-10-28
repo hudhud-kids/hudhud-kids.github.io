@@ -3188,7 +3188,8 @@ async function cloudEnable(){
   if(r.created){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; cloudSave(); await cloudPush(); return true; }
   /* family exists: combine this device's data with the cloud copy */
   const local = JSON.parse(JSON.stringify(DB)); CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null;
-  DB = {}; await cloudPull(true); const remote = DB; DB = joinMerge(remote, local); normalize(); localSaveOnly(); cloudSave(); await cloudPush(); return true;
+  DB = {}; await cloudPull(true); const remote = DB; DB = joinMerge(remote, local); normalize();
+  if(DB.migr && DB.migr.zeroBal1 && Date.now() < Date.parse('2026-11-05T00:00:00Z') && !(DB.topups||[]).some(t => t.at > DB.migr.zeroBal1)) kidIds().forEach(k => { try{ DB.balance[k] = ledger(k).used; }catch(e){} }); localSaveOnly(); cloudSave(); await cloudPush(); return true;
 }
 function joinMerge(remote, local){
   if(Array.isArray(remote) && Array.isArray(local)){ const s = new Set(remote.map(J)); return remote.concat(local.filter(x => !s.has(J(x)))); }
