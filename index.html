@@ -521,6 +521,10 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .avatar.ach .apet{position:absolute;bottom:-.15em;inset-inline-end:-.3em;font-style:normal;font-size:.5em}
 .report .rph{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}.report .rpc{margin:6px 0}.report .rpc .chip{font-size:.8rem}
 bdi.num{unicode-bidi:isolate}
+.pushcard{border:2px solid var(--brand);background:linear-gradient(135deg,var(--surface),var(--brand-soft,#FFE9E2));display:grid;gap:10px}
+.pushcard .pch{display:flex;gap:12px;align-items:center}.pushcard .pcb{font-size:2rem;animation:pc-ring 2.4s ease-in-out infinite;transform-origin:50% 10%}
+.pushcard .pushbtn{width:100%;margin:0}.pcsteps{margin:0;padding-inline-start:22px;display:grid;gap:6px;font-weight:700}
+@keyframes pc-ring{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(14deg)}70%{transform:rotate(-12deg)}75%{transform:rotate(8deg)}80%{transform:rotate(-4deg)}}
 </style>
 </head>
 <body>
@@ -1085,9 +1089,9 @@ function tabHome(k){
   const reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,5);
   const pos = DB.progress[k].pos;
   $('#tabBody').innerHTML = `<div class="grid">
+    ${pushCard('k')}
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div class="herocol"><div class="herobird">${hoopoeSVG(L0.open ? "cheer" : "happy", true)}</div>${btn}</div></section>
     ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
-    ${pushBtnHTML(true) ? `<div class="pushrow">${pushBtnHTML(true)}</div>` : ''}
     ${examCard(k)}
     ${monthReviewCard(k)}
     ${familyCard(k)}
@@ -3683,6 +3687,7 @@ function renderGuardian(gid){
       <button class="pbtn gbell" id="gb" aria-label="الإشعارات">🔔${unread ? `<i>${unread > 9 ? '9+' : unread}</i>` : ''}</button><button class="btn sm" id="out">خروج</button></div></div>
     ${kids.length > 1 ? `<div class="chips">${kids.map(x => `<button class="topic ${x === k ? 'on' : ''}" data-gk="${x}">${esc(DB.kids[x].ar)}</button>`).join('')}</div>` : ''}
     <div class="grid">
+    ${pushCard('g')}
     ${live ? `<section class="card livec"><div class="chips" style="justify-content:space-between"><h2><span class="livedot"></span> ${esc(kid.ar)} في الحصة الآن</h2><span class="chip brand">🗣️ تكلّم ${live.talk == null ? '—' : `<bdi class="num" dir="ltr">${live.talk}%</bdi>`}</span></div>
       <div class="small muted">${esc(live.title || '')}</div><div class="livelog" id="ll">${(live.lines || []).map(x => `<div class="${x.w === 'k' ? 'lk' : 'lt'}"><b>${x.w === 'k' ? esc(nick(k)) : 'المعلمة'}:</b> <span class="en">${esc(x.t)}</span></div>`).join('')}</div></section>` : ''}
     <section class="card ghero"><div style="display:flex;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2 style="margin:0">${esc(kid.ar)} <span class="small muted">(${esc(nick(k))})</span></h2>
@@ -3764,6 +3769,17 @@ const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform 
 const isStandalone = () => (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
 const pushSupported = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
 const pushOn = () => { try{ return !!localStorage.getItem('hh:push:' + (CLOUD.username || CLOUD.role + ':' + (CLOUD.kid || ''))) && Notification.permission === 'granted'; }catch(e){ return false; } };
+/* a clear card at the top of the page until notifications are on for this device */
+function pushCard(kind){
+  if(!cloudOn() || !CLOUD.token || pushOn()) return '';
+  const why = kind === 'g' ? 'عشان توصلك تذكيرات الحصص، وإشعار الحضور والغياب، وتقرير الخميس الأسبوعي.' : 'عشان يذكّرك الهدهد بحصتك، وتوصلك رسائل التشجيع من أهلك 💌';
+  let body;
+  if(isIOS && !isStandalone()) body = `<ol class="pcsteps"><li>اضغط زر المشاركة <b>⬆️</b> أسفل سفاري</li><li>اختر <b>«إضافة إلى الشاشة الرئيسية»</b></li><li>افتح هدهد من الأيقونة الجديدة واضغط زر التفعيل هنا</li></ol>`;
+  else if(!pushSupported()) return '';
+  else if(Notification.permission === 'denied') body = '<p class="small" style="margin:6px 0 0">الإشعارات مقفلة لهذا الموقع. افتح <b>الإعدادات ← الإشعارات</b> في جهازك واسمح لهدهد، ثم ارجع هنا.</p>';
+  else body = `<button class="btn primary big pushbtn" data-push="1">🔔 فعّل الإشعارات</button>`;
+  return `<section class="card pushcard"><div class="pch"><span class="pcb">🔔</span><div><h2 style="margin:0">فعّل الإشعارات على هذا الجهاز</h2><p class="small muted" style="margin:2px 0 0">${why}</p></div></div>${body}</section>`;
+}
 function pushBtnHTML(compact){
   if(!cloudOn() || !CLOUD.token) return '';
   if(pushOn()) return compact ? '' : '<div class="pushst small">🔔 الإشعارات مفعّلة على هذا الجهاز ✓</div>';
