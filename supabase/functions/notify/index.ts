@@ -35,11 +35,11 @@ Deno.serve(async (req) => {
 async function run() {
   if (!vapidOk) { webpush.setVapidDetails("mailto:info@sahla-sa.com", Deno.env.get("VAPID_PUBLIC")!, Deno.env.get("VAPID_PRIVATE")!); vapidOk = true; }
   const nowMs = Date.now(), now = toLocal(nowMs);
-  const { data: rows, error: e1 } = await sb.from("tk_rows").select("family_id,path,value,updated_at").or("path.like.kids/%,path.like.sched/%,path.like.guardians/%,path.like.cheers/%,path.like.livefeed/%,path.eq.attendance,path.eq.reports");
+  const { data: rows, error: e1 } = await sb.from("tk_rows").select("family_id,path,value,updated_at").or("path.like.kids/%,path.like.sched/%,path.like.guardians/%,path.like.cheers/%,path.like.livefeed/%,path.like.progress/%,path.eq.attendance,path.eq.reports");
   if (e1) throw new Error("rows: " + e1.message);
   const { data: subs, error: e2 } = await sb.from("tk_push_subs").select("*"); if (e2) throw new Error("subs: " + e2.message);
   const fam: Record<string, any> = {};
-  for (const r of rows || []) { const f = fam[r.family_id] = fam[r.family_id] || { kids: {}, sched: {}, guardians: {}, cheers: {}, livefeed: {}, attendance: [], reports: [] };
+  for (const r of rows || []) { const f = fam[r.family_id] = fam[r.family_id] || { kids: {}, sched: {}, guardians: {}, cheers: {}, livefeed: {}, progress: {}, attendance: [], reports: [] };
     const [top, sub] = r.path.split("/"); if (sub === "") continue;
     if (sub === undefined) f[top] = r.value; else f[top][sub] = r.value; }
   const msgs: { fam: string; key: string; to: (s: any) => boolean; title: string; body: string; url?: string }[] = [];
@@ -49,6 +49,23 @@ async function run() {
     const toGuard = (k: string) => { const gs = gOf(k); return (s: any) => s.family_id === fid && ((s.role === "guardian" && gs.includes(s.kid_id)) || s.role === "parent"); };
     const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
     const yday = new Date(today.getTime() - 864e5);
+    const toG1 = (k: string) => (x: any) => toGuard(k)(x) && (x.role === "guardian" || gOf(k).length === 0);
+    const dow = now.getUTCDay(), hr = now.getUTCHours(), mn = now.getUTCMinutes(), dkey = keyOf(today).slice(0, 10);
+    // siblings challenge result: Sunday 09:00 Riyadh, for the week Sunday..Saturday that just ended
+    const activeKids = Object.entries<any>(f.kids).filter(([_, v]) => v && typeof v === "object" && !v.needPlace).map(([k]) => k);
+    if (dow === 0 && hr === 9 && mn < 10 && activeKids.length >= 2) {
+      const we = today.getTime() - TZ, ws = we - 7 * 864e5;
+      const sc = activeKids.map((k) => ({ k, xp: ((f.progress[k] || {}).xpLog || []).filter((x: any) => x[0] >= ws && x[0] < we).reduce((a: number, x: any) => a + x[1], 0) })).sort((a, b) => b.xp - a.xp);
+      if (sc[0].xp > 0) {
+        const win = sc.filter((x) => x.xp === sc[0].xp).map((x) => x.k), nm = (k: string) => (f.kids[k].ar || f.kids[k].en || k);
+        const wn = win.map(nm).join(" و ");
+        for (const x of sc) {
+          const won = win.includes(x.k);
+          msgs.push({ fam: fid, key: `sib:${x.k}:${dkey}`, to: toKid(x.k), title: won ? "🏆 فزت بتحدي الإخوان!" : `⚔️ فاز ${wn} بتحدي الإخوان`, body: won ? `جمعت ${x.xp} نقطة الأسبوع الماضي. افتح هدهد واستلم كأسك الحصري 🎉` : `جمعت ${x.xp} نقطة. تحدي جديد بدأ اليوم، هالأسبوع فرصتك 💪` });
+        }
+        msgs.push({ fam: fid, key: `sibp:${dkey}`, to: (x: any) => x.family_id === fid && x.role === "parent", title: `⚔️ نتيجة تحدي الإخوان: ${wn}`, body: sc.map((x) => `${nm(x.k)} ${x.xp}`).join(" · ") + " نقطة" });
+      }
+    }
     for (const [k, kid] of Object.entries<any>(f.kids)) {
       if (!kid || typeof kid !== 'object') continue;
       const name = kid.ar || kid.en || k;
@@ -75,6 +92,24 @@ async function run() {
       }
       for (const c of (f.cheers[k] || []).filter((c: any) => nowMs - Date.parse(c.at) < 3600e3))
         msgs.push({ fam: fid, key: `cheer:${c.id}`, to: toKid(k), title: `💌 رسالة من ${c.from || "ولي أمرك"}`, body: c.text });
+      // weekly report: Thursday 20:00 Riyadh, last 7 days vs the 7 before
+      if (dow === 4 && hr === 20 && mn < 10) {
+        const end = nowMs, start = end - 7 * 864e5, pst = start - 7 * 864e5, inR = (t: number, a: number, b: number) => t >= a && t < b;
+        const att = (f.attendance || []).filter((a: any) => a.kid === k && a.at && inR(Date.parse(a.at), start, end)).length;
+        let sched = 0; for (let i = 0; i < 8; i++) for (const s of slotsOn(f.sched[k], new Date(today.getTime() - i * 864e5))) { const t = s.t.getTime() - TZ; if (inR(t, start, end) && t + OPEN_AFTER * 60e3 < nowMs) sched++; }
+        sched = Math.max(sched, att);
+        const reps = (f.reports || []).filter((r: any) => r.kid === k && inR(Date.parse(r.at), start, end)), prev = (f.reports || []).filter((r: any) => r.kid === k && inR(Date.parse(r.at), pst, start));
+        const avg = (a: any[]) => a.length ? Math.round(a.reduce((s, r) => s + (r.score || 0), 0) / a.length) : null;
+        const av = avg(reps), pv = avg(prev), cnt: Record<string, any> = {};
+        reps.forEach((r: any) => (r.mistakes || []).forEach((m: any) => { const key = String(m.right || "").trim(); if (!key) return; cnt[key] = cnt[key] || { wrong: m.wrong, right: key, n: 0 }; cnt[key].n++; }));
+        const top = Object.values(cnt).sort((a: any, b: any) => b.n - a.n).slice(0, 3) as any[];
+        if (sched || reps.length) {
+          const parts = [`حضر ${att} من ${sched}`];
+          if (av != null) parts.push(`المعدل ${av}%${pv != null ? ` (${av - pv >= 0 ? "+" : ""}${av - pv})` : ""}`);
+          const body = parts.join(" · ") + (top.length ? `\nأكثر الأخطاء: ${top.map((m) => m.right).join(" | ")}` : "\nما تكررت أخطاء 👏");
+          msgs.push({ fam: fid, key: `wk:${k}:${dkey}`, to: toG1(k), title: `📊 تقرير ${name} الأسبوعي`, body });
+        }
+      }
       const lf = f.livefeed[k] || null;
       if (lf && lf.start && !lf.done && nowMs - lf.start < 20 * 60e3)
         msgs.push({ fam: fid, key: `live:${k}:${lf.start}`, to: (s: any) => toGuard(k)(s) && s.role === "guardian", title: `🔴 ${name} في الحصة الآن`, body: "افتح هدهد وشاهد المحادثة مباشرة، وأرسل له تشجيع 💪" });

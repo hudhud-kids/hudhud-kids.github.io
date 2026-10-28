@@ -511,6 +511,11 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .pa-ph{display:flex;gap:2px}.pa-ph i{font-style:normal;font-size:.72rem;font-family:var(--en);padding:0 4px;border-radius:5px;color:#fff}.pa-ph i.good{background:#14B8A6}.pa-ph i.mid{background:#E9A100}.pa-ph i.bad{background:#EF4444}
 .micbig.on,.btn.on{box-shadow:0 0 0 calc(4px + var(--lv,0) * 14px) rgba(240,90,56,.25)}
 .kitlock{opacity:.85;background:repeating-linear-gradient(135deg,var(--surface) 0 14px,var(--bg) 14px 28px)}
+
+.wtop{display:grid;gap:6px}.wtm{display:flex;gap:10px;align-items:center;background:var(--bg);border-radius:12px;padding:8px 10px}.wtm>div{direction:ltr;text-align:left;min-width:0;flex:1}
+.sibs{display:grid;gap:10px;margin-top:10px}.sibr{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:16px;background:var(--bg);border:2px solid transparent}.sibr.me{border-color:var(--brand)}
+.sibav{font-size:2.2rem;position:relative;line-height:1}.sibav i{position:absolute;top:-.55em;inset-inline-start:.2em;font-size:.6em;font-style:normal}.sibm{flex:1;min-width:0;display:grid;gap:4px}
+.sibbar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}.sibbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),#F59E0B);transition:width .6s}
 </style>
 </head>
 <body>
@@ -1041,6 +1046,7 @@ function renderEnded(k){
 function renderKid(k){
   if(ledger(k).ended && !L){ clearInterval(homeTimer); return renderEnded(k); }
   try{ settleLeague(k); }catch(e){ console.warn(e); }
+  try{ settleSib(k); }catch(e){ console.warn(e); }
   if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
   const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
   $('#app').innerHTML = `<div class="wrap">
@@ -1080,6 +1086,7 @@ function tabHome(k){
     <div class="segs" role="tablist">${[['play','🎮 العب'],['train','💪 تدرّب'],['journey','🗺️ رحلتي']].map(([id, t]) => `<button role="tab" aria-selected="${HOME_SEG === id}" class="seg2 ${HOME_SEG === id ? 'on' : ''}" data-seg="${id}">${t}</button>`).join('')}</div>
     <div class="segp" data-segp="play" ${HOME_SEG === 'play' ? '' : 'hidden'}><div class="grid">
     ${missionCard(k)}
+    ${sibCard(k)}
     <div class="g2e">${gamesCard()}${leagueCard(k, false)}</div>
     </div></div>
     <div class="segp" data-segp="train" ${HOME_SEG === 'train' ? '' : 'hidden'}><div class="grid">
@@ -1912,7 +1919,7 @@ function familyCard(k){
   if(kidIds().length < 2) return '';
   const f = familyProgress(), others = kidIds().filter(x => x !== k).map(x => DB.kids[x].ar).join(' و');
   const row = (ar, v, g) => `<div class="fam"><span>${ar}</span><div class="bar"><i style="width:${Math.min(100, v/g*100)}%;background:var(--good)"></i></div><b class="num">${Math.min(v,g)}/${g}</b></div>`;
-  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🤝 تحدي الإخوة هذا الأسبوع</h2><span class="small muted">أنت و${esc(others)} فريق واحد</span></div>
+  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🤝 هدف الفريق هذا الأسبوع</h2><span class="small muted">أنت و${esc(others)} فريق واحد</span></div>
     ${row('حصص', f.lessons, FAMILY_GOAL.lessons)}${row('قصص', f.stories, FAMILY_GOAL.stories)}${row('تحدي اليوم', f.daily, FAMILY_GOAL.daily)}
     ${f.claimed ? '<div class="chip good">🏆 أنجزتم التحدي! +100 نقطة لكل واحد</div>' : f.done ? '<button class="btn primary" id="famGo">🎉 استلموا الجائزة: +100 نقطة لكل واحد</button>' : '<div class="small muted">إذا أكملتم الأهداف الثلاثة قبل نهاية السبت، يأخذ كل واحد 100 نقطة.</div>'}</section>`;
 }
@@ -2568,6 +2575,7 @@ function renderParent(){
       <div class="stat"><div><span class="small muted">الرصيد المتبقي · الحصة ${l.price} ر.س</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
       <div class="chips" style="margin-top:12px"><button class="btn sm ${l.ended ? 'primary' : ''}" data-topup="${k}">💳 شحن الرصيد</button>${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}${kid.level > 1 ? `<button class="btn sm" data-down="${k}">⬇️ خفض للمستوى ${kid.level-1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-month="${k}">📅 التقرير الشهري</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
       <details class="skills"><summary>🎙️ أصوات ${esc(kid.ar)}</summary>${DB.azure && DB.azure.key ? (() => { const v = kidVoices(k); const sel = (role, cur) => `<div class="vrow"><label class="small" style="font-weight:800">${role === 'teacher' ? '👩‍🏫 صوت المعلم في الحصص' : '📖 صوت قراءة القصص'}</label><div class="chips"><select class="input" data-voice="${role}" data-k="${k}" style="flex:1;min-width:180px">${AZ_LIST.map(([id,n,d]) => `<option value="${id}" ${id === cur ? 'selected' : ''}>${n} · ${d}</option>`).join('')}</select><button class="btn sm" data-vprev="${role}" data-k="${k}">▶️ تجربة</button></div></div>`; return sel('teacher', v.teacher) + sel('story', v.story); })() : '<p class="small muted" style="margin:8px 0 0">اختيار الأصوات يحتاج تفعيل «الصوت البشري الطبيعي» في قسم تشغيل المعلمة تحت. بدونه يُستخدم صوت الجهاز.</p>'}</details>
+      <details class="skills"><summary>📊 تقرير الأسبوع</summary>${weekReportHTML(k)}</details>
       <details class="skills"><summary>🕸️ خريطة المهارات${(() => { const w = weakestSkill(k); return w ? ` · الأضعف: ${SKILLS.find(x => x[0] === w)[1]}` : ''; })()}</summary><div class="radarw">${radarSVG(k, 340)}</div><div class="small muted">تُحسب من الحصص والاختبارات والقراءة بصوت عالٍ ومختبر النطق والواجب والمهمات. المعلمة تركّز تلقائياً على الأضعف.</div></details>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
       ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة${r.talkPct != null ? ` · تحدّث ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
@@ -3069,6 +3077,7 @@ const ITEMS = [
   ...[['🎩',150],['👑',500],['🧢',100],['🎓',250],['⛑️',150],['🪖',200],['🎀',100]].map(([e,c],i) => ({id:'h'+i, cat:'hat', e, cost:c})),
   ...[['🐱',250],['🐶',250],['🐰',200],['🦜',300],['🐢',200],['🦊',350],['🐼',400],['🐎',500],['🦅',450],['🐪',300]].map(([e,c],i) => ({id:'p'+i, cat:'pet', e, cost:c})),
   ...[['#E3EEFF,#FFFFFF','سماء',0],['#FFE8D6,#FFF7F0','غروب',0],['#DCFCE7,#F0FFF4','حديقة',150],['#1E1B4B,#4338CA','فضاء',300],['#FDE68A,#FCA5A5','صحراء',200],['#CFFAFE,#A5F3FC','بحر',250]].map(([e,n,c],i) => ({id:'w'+i, cat:'wall', e, name:n, cost:c})),
+  ...[['🏅','ميدالية التحدي'],['🥇','ذهبية الإخوان'],['🎖️','وسام البطل'],['💎','جوهرة الأبطال'],['🌟','نجمة الأسطورة']].map(([e,n],i) => ({id:'x'+i, cat:'deco', e, name:n, cost:0, x:true})),
   ...[['🪴',60],['🖼️',80],['🏆',200],['🎸',150],['🔭',180],['🛸',250],['🏀',90],['📚',60],['🧸',80],['🌍',120],['⚽',90],['🎨',100],['💡',70],['🕹️',160]].map(([e,c],i) => ({id:'d'+i, cat:'deco', e, cost:c}))
 ];
 const CATS = [['char','الشخصية'],['hat','القبعة'],['pet','الحيوان'],['wall','الخلفية'],['deco','الزينة']];
@@ -3082,14 +3091,14 @@ function roomHTML(k, big){ const r = roomOf(k), a = roomAvatar(k), w = (itemById
 let ROOM_CAT = 'char';
 function tabRoom(k){
   const r = roomOf(k), coins = coinsOf(k);
-  const list = ITEMS.filter(x => x.cat === ROOM_CAT);
+  const list = ITEMS.filter(x => x.cat === ROOM_CAT && (!x.x || r.owned.includes(x.id)));
   $('#tabBody').innerHTML = `<div class="grid"><div class="g2e">
     <section class="card" style="display:grid;gap:10px"><h2>🏠 غرفتي</h2>${roomHTML(k, true)}<div class="small muted">زيّن غرفتك وشخصيتك بالنقاط. شخصيتك تظهر على خريطة المستوى.</div></section>
     <section class="card" style="display:grid;gap:10px"><div class="chips" style="justify-content:space-between"><h2>🛒 المتجر</h2><span class="chip brand">🪙 ${coins}</span></div>
       <div class="chips">${CATS.map(([c,ar]) => `<button class="topic ${ROOM_CAT===c?'on':''}" data-rc="${c}">${ar}</button>`).join('')}</div>
       <div class="items">${list.map(it => { const own = r.owned.includes(it.id), on = r[it.cat] === it.id || (it.cat === 'deco' && r.deco.includes(it.id));
         return `<button class="item ${on?'on':''}" data-it="${it.id}">${it.cat === 'wall' ? `<span class="sw" style="background:linear-gradient(180deg,${it.e.split(',')[0]},${it.e.split(',')[1]})"></span><span class="small">${esc(it.name)}</span>` : `<span class="ie">${it.e}</span>`}
-          <span class="small ${own?'ok':''}">${on ? '✓ مستخدم' : own ? 'تملكه' : `🪙 ${it.cost}`}</span></button>`; }).join('')}</div></section></div></div>`;
+          <span class="small ${own?'ok':''}">${on ? '✓ مستخدم' : it.x ? '🏆 جائزة' : own ? 'تملكه' : `🪙 ${it.cost}`}</span></button>`; }).join('')}</div></section></div></div>`;
   document.querySelectorAll('[data-rc]').forEach(b => b.onclick = () => { ROOM_CAT = b.dataset.rc; tabRoom(k); });
   document.querySelectorAll('[data-it]').forEach(b => b.onclick = () => { const it = itemById(b.dataset.it);
     if(!r.owned.includes(it.id)){ if(coinsOf(k) < it.cost){ toast(`تحتاج ${it.cost - coinsOf(k)} نقطة إضافية`); return; } r.owned.push(it.id); r.spent = (r.spent||0) + it.cost; toast(`اشتريت ${it.cat === 'wall' ? it.name : it.e} 🎉`); }
@@ -3657,6 +3666,7 @@ function renderGuardian(gid){
       <div class="stat"><div><span class="small muted">الحصة القادمة</span><b style="font-size:1rem">${l.ended ? '🔒 الرصيد انتهى' : l.open ? '🟢 مفتوحة الآن' : l.next ? `${fmtDay(l.next.t)} · ${fmtTime(l.next.t)}` : '—'}</b></div>
       <div><span class="small muted">حضر</span><b style="color:var(--good)">${l.rows.filter(r => r.st === 'att').length}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${l.rows.filter(r => r.st !== 'att').length}</b></div>
       <div><span class="small muted">الحصص المتبقية</span><b>${l.left}</b></div></div></section>
+    <section class="card"><h2>📊 تقرير الأسبوع</h2>${weekReportHTML(k)}</section>
     <div class="g2e">
       <section class="card" id="gnotes"><div class="chips" style="justify-content:space-between"><h2>🔔 الإشعارات</h2>${unread ? `<button class="btn sm" id="gread">تعليم الكل كمقروء</button>` : ''}</div>
         <div class="gnl">${notes.length ? notes.slice(0, 12).map(n => `<div class="gn ${n.at.getTime() > seen ? 'new' : ''} ${n.kind}"><span class="gi">${n.ic}</span><div><div>${esc(n.text)}</div><div class="small muted">${n.at.toLocaleDateString(LOC, {day:'numeric', month:'short'})} · ${fmtTime(n.at)}</div></div></div>`).join('') : '<p class="muted small" style="margin:0">ما فيه إشعارات بعد. تطلع هنا أول ما يحضر أو يغيب أو يخلص اختبار.</p>'}</div>
@@ -3944,6 +3954,60 @@ function finishReview(){
         <div class="chip good" style="justify-self:center">+60 نقطة · وصلت النتيجة لولي أمرك</div><button class="btn primary big" id="rd">تم</button>`);
       ov.querySelector('#rd').onclick = () => { ov.remove(); go(k, 'home'); };
     }, items.length); };
+}
+
+/* =============== WEEKLY REPORT FOR THE GUARDIAN =============== */
+function weekReport(k, end = Date.now()){
+  const start = end - 7*DAY, pstart = start - 7*DAY, inR = (t, a, b) => t >= a && t < b, now = Date.now();
+  const sched = slotsFor(k, new Date(end)).filter(s => inR(s.t.getTime(), start, end) && (s.t.getTime() + OPEN_AFTER*60e3 < now || DB.attendance.some(a => a.kid === k && a.slot === s.key))).length;
+  const att = DB.attendance.filter(a => a.kid === k && inR(Date.parse(a.at), start, end)).length;
+  const reps = DB.reports.filter(r => r.kid === k && inR(Date.parse(r.at), start, end)), prev = DB.reports.filter(r => r.kid === k && inR(Date.parse(r.at), pstart, start));
+  const avg = a => a.length ? Math.round(a.reduce((s, r) => s + (r.score || 0), 0) / a.length) : null;
+  const tk = reps.filter(r => r.talkPct != null), cnt = {};
+  reps.forEach(r => (r.mistakes || []).forEach(m => { const key = String(m.right || '').trim(); if(!key) return; cnt[key] = cnt[key] || {wrong:m.wrong, right:key, n:0}; cnt[key].n++; }));
+  return {start, end, sched:Math.max(sched, att), att, lessons:reps.length, avg:avg(reps), prevAvg:avg(prev), talk:tk.length ? Math.round(tk.reduce((s, r) => s + r.talkPct, 0) / tk.length) : null,
+    xp:xpSince(k, start) - xpSince(k, end), words:new Set(reps.flatMap(r => r.newWords || [])).size, top:Object.values(cnt).sort((a, b) => b.n - a.n).slice(0, 3)};
+}
+function weekReportHTML(k){
+  const w = weekReport(k), d = w.avg != null && w.prevAvg != null ? w.avg - w.prevAvg : null, fd = t => new Date(t).toLocaleDateString(LOC, {day:'numeric', month:'short'});
+  return `<div class="small muted" style="margin:-4px 0 8px">من ${fd(w.start)} إلى ${fd(w.end - 1)} · يوصلك ملخصه كإشعار كل خميس الساعة 8 مساءً</div>
+    <div class="stat"><div><span class="small muted">الحضور</span><b style="color:${w.att >= w.sched ? 'var(--good)' : 'var(--bad)'}">${w.att} من ${w.sched}</b></div>
+      <div><span class="small muted">معدل الحصص</span><b>${w.avg == null ? '—' : w.avg + '%'}${d == null ? '' : ` <span class="small" style="color:${d >= 0 ? 'var(--good)' : 'var(--bad)'}">${d >= 0 ? '▲' : '▼'}${Math.abs(d)}</span>`}</b></div>
+      <div><span class="small muted">نسبة كلامه</span><b>${w.talk == null ? '—' : w.talk + '%'}</b></div><div><span class="small muted">نقاط الأسبوع</span><b>${w.xp}</b></div></div>
+    <h3 style="margin:12px 0 6px;font-size:1rem">🔁 أكثر 3 أخطاء تكررت</h3>
+    ${w.top.length ? `<div class="wtop">${w.top.map(m => `<div class="wtm"><span class="chip">×${m.n}</span><div>${m.wrong ? `<div class="en small muted"><s>${esc(m.wrong)}</s></div>` : ''}<div class="en"><b>${esc(m.right)}</b></div></div></div>`).join('')}</div>
+      <p class="small muted" style="margin:6px 0 0">هذي الجمل تنضاف تلقائياً لبطاقات المراجعة عنده.</p>` : `<p class="small muted" style="margin:0">${w.lessons ? 'ما تكررت أخطاء هذا الأسبوع 👏' : 'ما فيه حصص هذا الأسبوع بعد.'}</p>`}`;
+}
+
+/* =============== SIBLINGS CHALLENGE (weekly, Sunday -> Saturday) =============== */
+const SIB_PRIZE = 80;
+function sibOn(){ return kidIds().filter(x => DB.kids[x] && !DB.kids[x].needPlace).length >= 2; }
+function sibScores(ws, we){ return kidIds().filter(x => DB.kids[x] && !DB.kids[x].needPlace).map(x => ({k:x, xp:xpSince(x, ws) - xpSince(x, we)})).sort((a, b) => b.xp - a.xp); }
+function settleSib(k){
+  if(!sibOn()) return; const p = DB.progress[k], ws = weekStart().getTime(), prevWs = ws - 7*DAY; p.sib = p.sib || {};
+  if(p.sib[prevWs] != null || !(p.xpLog || []).some(x => x[0] < ws)) return;
+  const sc = sibScores(prevWs, ws), top = sc[0] ? sc[0].xp : 0, me = sc.find(x => x.k === k);
+  if(!me || top <= 0){ p.sib[prevWs] = {won:false, xp:me ? me.xp : 0}; save(); return; }
+  const won = me.xp === top, winners = sc.filter(x => x.xp === top).map(x => x.k);
+  p.sib[prevWs] = {won, xp:me.xp, winners};
+  if(won){ const r = roomOf(k), tr = ITEMS.find(x => x.x && !r.owned.includes(x.id));
+    if(tr){ r.owned.push(tr.id); if(!r.deco.includes(tr.id)) r.deco = r.deco.concat(tr.id).slice(-6); }
+    p.xp = (p.xp || 0) + SIB_PRIZE; p.sibWins = (p.sibWins || 0) + 1; save();
+    setTimeout(() => { if(document.querySelector('.ov')) return; const ov = overlay(`<div class="bigbird">${hoopoeSVG('cheer')}</div><h2 style="text-align:center">🏆 فزت بتحدي الإخوان!</h2>
+      <p style="margin:0;text-align:center">جمعت <b>${me.xp}</b> نقطة الأسبوع الماضي${winners.length > 1 ? ' (تعادل)' : ''}.</p>
+      <div class="chips" style="justify-content:center">${tr ? `<span class="chip good">${tr.e} ${esc(tr.name)} انضافت لغرفتك</span>` : ''}<span class="chip good">+${SIB_PRIZE} نقطة</span></div>
+      <button class="btn primary big" id="sbok">رائع!</button>`); try{ SFX.running() && SFX.sparkle(0); }catch(e){} ov.querySelector('#sbok').onclick = () => ov.remove(); }, 900);
+  } else { save(); const wn = winners.map(x => nick(x)).join(' و '); setTimeout(() => hoopoeSays(`فاز ${wn} بتحدي الإخوان الأسبوع الماضي. هالأسبوع فرصتك 💪`, 'think', 4200), 1200); }
+}
+function sibCard(k){
+  if(!sibOn()) return '';
+  const ws = weekStart().getTime(), we = ws + 7*DAY, sc = sibScores(ws, Date.now() + 1), top = Math.max(1, ...sc.map(x => x.xp)), left = Math.max(1, Math.ceil((we - Date.now()) / DAY));
+  const last = (DB.progress[k].sib || {})[ws - 7*DAY];
+  return `<section class="card sibc"><div class="chips" style="justify-content:space-between"><h2>⚔️ تحدي الإخوان</h2><span class="chip brand">باقي ${left} ${left === 1 ? 'يوم' : left <= 10 ? 'أيام' : 'يوم'}</span></div>
+    <div class="sibs">${sc.map((x, i) => { const a = roomAvatar(x.k), w = DB.progress[x.k].sibWins || 0;
+      return `<div class="sibr ${x.k === k ? 'me' : ''}"><span class="sibav">${a.hat ? `<i>${a.hat}</i>` : ''}${a.char}</span><div class="sibm"><div class="chips" style="justify-content:space-between"><b>${esc(nick(x.k))}${i === 0 && x.xp > 0 ? ' 👑' : ''}</b><span class="num"><b>${x.xp}</b> <span class="small muted">نقطة</span></span></div>
+        <div class="sibbar"><i style="width:${Math.round(x.xp / top * 100)}%"></i></div><div class="small muted">🏆 فاز ${w} ${w === 1 ? 'مرة' : 'مرات'} · <span class="en">Level ${DB.kids[x.k].level}</span></div></div></div>`; }).join('')}</div>
+    <p class="small muted" style="margin:8px 0 0">كل واحد يتدرّب على مستواه، والنقاط من الحصص والواجب والألعاب. ينتهي التحدي ليلة السبت، والفائز ياخذ كأس حصري لغرفته + ${SIB_PRIZE} نقطة.${last ? (last.won ? ' · 🏆 فزت الأسبوع الماضي!' : last.winners ? ` · الأسبوع الماضي فاز ${last.winners.map(x => nick(x)).join(' و ')}` : '') : ''}</p></section>`;
 }
 
 /* =============== BOOT =============== */
