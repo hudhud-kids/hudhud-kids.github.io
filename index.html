@@ -411,6 +411,7 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 :root[data-theme="dark"] .lrow{background:var(--bg)}:root[data-theme="dark"] .mnode.lock circle{fill:#2B1B0F;stroke:#5A4535}
 .vrow{display:grid;gap:6px;margin-top:10px}
 @media (max-width:520px){.missions{grid-auto-flow:column;grid-auto-columns:140px;grid-template-columns:none;overflow-x:auto;padding-bottom:6px}.games{grid-template-columns:1fr 1fr 1fr}.game b{font-size:.85rem}.room2.big{height:250px}}
+.cloudbar{background:var(--sky-soft);border-radius:14px;padding:10px 14px;font-size:.95rem}
 </style>
 </head>
 <body>
@@ -2436,6 +2437,7 @@ function renderParent(){
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><b>لوحة ولي الأمر</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
     <div class="grid">
+      ${cloudOn() ? `<div class="cloudbar">☁️ <b>المزامنة السحابية:</b> <span id="cloudSt">${cloudStatusHTML()}</span></div>` : ''}
       <div class="chips" style="justify-content:space-between"><h2>الأطفال</h2><button class="btn primary" id="addKid">➕ إضافة طفل</button></div>
       <div class="g2e">${ids.map(kidCard).join('')}</div>
       <section class="card"><div class="chips" style="justify-content:space-between"><h2>🎁 المكافآت</h2><button class="btn sm primary" id="addRw">➕ مكافأة</button></div>
@@ -2443,7 +2445,7 @@ function renderParent(){
         <div class="rewards">${DB.rewards.map(r => `<div class="reward">${rewardArt(r)}<b>${esc(r.name)}</b><div class="chip brand num">${r.cost} نقطة</div><div class="chips" style="justify-content:center"><button class="btn sm" data-editrw="${r.id}">تعديل</button><button class="btn sm danger" data-delrw="${r.id}">حذف</button></div></div>`).join('')}</div>
         <p class="small muted" style="margin:8px 0 0">الطفل يجمع تقريباً 70 إلى 100 نقطة من كل حصة مع اختبارها، و20 من تحدي اليوم، و30 من كل قصة.</p></section>
       <section class="card grid" style="gap:10px"><h2>تشغيل المعلمة</h2>
-        ${cloudOn() ? `<div class="vguide"><div><b>☁️ المزامنة السحابية</b> · <span id="cloudSt">${cloudStatusHTML()}</span></div><div class="small">الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.</div></div>` : ''}
+        ${cloudOn() ? `<div class="vguide"><div><b>☁️ المزامنة السحابية</b></div><div class="small">الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.</div></div>` : ''}
         <p class="small muted" style="margin:0">${DB.apiKey ? (CLOUD.token ? '✅ مفتاح التشغيل محفوظ ومتزامن مع كل الأجهزة.' : '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.') : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
         <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><span class="small" id="keyMsg"></span></div>
