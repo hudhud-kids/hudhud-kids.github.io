@@ -1045,6 +1045,19 @@ function renderProfile(k, first){
 
 /* =============== KID SHELL + TABS =============== */
 const TABS = [['home','الرئيسية','🏠'],['plan','جدولي','📅'],['library','المكتبة','📚'],['wins','إنجازاتي','🏆'],['room','غرفتي','🧸'],['shop','المكافآت','🎁']];
+/* a new child must finish the placement test before reaching the home page */
+function renderPlaceGate(k){
+  const kid = DB.kids[k];
+  $('#app').innerHTML = `<div class="center">${prefsHTML()}<div class="card panel" style="text-align:center;gap:14px">
+    <div style="text-align:center">${LOGO}</div><div class="bigbird">${hoopoeSVG('wow')}</div>
+    <h2>أهلاً ${esc(nick(k))}! باقي خطوة وحدة</h2>
+    <p style="margin:0">قبل ما تدخل هدهد لازم تكمل <b>اختبار تحديد المستوى</b>، عشان نعرف مستواك ونجهّز لك الدروس المناسبة. ما فيه نجاح ورسوب 💪</p>
+    <p class="small muted" style="margin:0">خمسة أجزاء وتقريباً 20 دقيقة. اختر مكان هادئ وجهّز السماعة.</p>
+    <button class="btn primary big" id="placeGo">🎯 ${(DB.placements || {})[k] ? 'ابدأ الاختبار' : 'ابدأ الاختبار الآن'}</button>
+    <div class="chips" style="justify-content:center"><button class="btn sm" id="out">خروج</button></div></div></div>`;
+  $('#out').onclick = logout;
+  $('#placeGo').onclick = () => { unlockAudio(); placementTest(k, {kid:true}); };
+}
 function renderEnded(k){
   const l = ledger(k), kid = DB.kids[k], req = (DB.renewReq||{})[k];
   $('#app').innerHTML = `<div class="center">${prefsHTML()}<div class="card panel" style="text-align:center;gap:14px">
@@ -1059,6 +1072,7 @@ function renderEnded(k){
 }
 function renderKid(k){
   if(ledger(k).ended && !L){ clearInterval(homeTimer); return renderEnded(k); }
+  if(DB.kids[k].needPlace && !L && !DEMO){ clearInterval(homeTimer); return renderPlaceGate(k); }
   try{ settleLeague(k); }catch(e){ console.warn(e); }
   try{ settleSib(k); }catch(e){ console.warn(e); }
   if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
@@ -1788,12 +1802,12 @@ async function placementTest(k, opt){
   const probe = await loadP(start);
   if(!probe){ return placementTestBasic(k); }
   const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov);
-  const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">${KIDMODE ? 'لاحقاً' : 'إلغاء'}</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); if(KIDMODE) renderKid(k); }; };
+  const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">${KIDMODE ? 'لاحقاً' : 'إلغاء'}</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); if(KIDMODE) renderPlaceGate(k); }; };
   frame('اختبار تحديد المستوى', `<div class="card" style="text-align:center;display:grid;gap:12px"><div style="font-size:3rem">🎯</div><h2>${KIDMODE ? `أهلاً ${esc(nick(k))}! قبل ما نبدأ، خلنا نعرف مستواك` : `اختبار تحديد المستوى: ${esc(kid.ar)}`}</h2>
     <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge: الأسئلة تصعب إذا أجبت صح وتسهل إذا أخطأت. خمسة أجزاء، ويأخذ تقريباً 20 دقيقة:</p>
     <div class="psecs"><div>📖 <b>المعرفة</b><span class="small muted">قواعد ومفردات واستماع وقراءة · 16 سؤالاً</span></div><div>👂 <b>تمييز الأصوات</b><span class="small muted">أصوات متشابهة مثل P/B وTH · 4 أسئلة</span></div><div>✍️ <b>الإملاء</b><span class="small muted">يسمع جملة ويكتبها · جملتان</span></div><div>🔊 <b>النطق</b><span class="small muted">قراءة جملتين وكلمتين بصوت عالٍ</span></div><div>🗣️ <b>التحدث</b><span class="small muted">3 أسئلة يجيب عليها بالكلام</span></div></div>
     <p class="small muted" style="margin:0">${KIDMODE ? 'أجب بنفسك بدون مساعدة، وفي مكان هادئ. لا تقلق، ما فيه نجاح ورسوب، الاختبار يختار لك المستوى المناسب 💪' : 'مهم: يجيب الطفل بنفسه بدون مساعدة، في مكان هادئ.'}</p><button class="btn primary big" id="pgo">ابدأ</button>${KIDMODE ? '<button class="btn sm ghost" id="plater">لاحقاً</button>' : ''}</div>`);
-  if(KIDMODE){ ov.querySelector('#px').hidden = true; const lt = ov.querySelector('#plater'); lt.onclick = () => { ov.remove(); renderKid(k); }; }
+  if(KIDMODE){ ov.querySelector('#px').hidden = true; const lt = ov.querySelector('#plater'); lt.onclick = () => { speechSynthesis.cancel(); ov.remove(); renderPlaceGate(k); }; }
   await new Promise(r => ov.querySelector('#pgo').onclick = r); unlockAudio();
 
   /* --- Part 1: adaptive knowledge (staircase with shrinking steps) --- */
@@ -1806,10 +1820,10 @@ async function placementTest(k, opt){
     if(kind === 'read' && b.read){ item = (b.read.qs||[]).find(q => !used.has(q)); if(item) passage = b.read.passage; }
     if(!item) item = (b.mcq||[]).find(q => !used.has(q)); if(!item) continue; used.add(item);
     frame('الجزء 1: المعرفة', `<div class="card quiz"><div class="qhead"><span class="small muted">سؤال ${n+1} من 16</span><div class="qbar"><i style="width:${n/16*100}%"></i></div></div>
-      ${script ? `<div style="text-align:center"><button class="btn primary big" id="pl">🔊 استمع</button><div class="small muted">تقدر تسمعه مرتين</div></div>` : ''}
+      ${script ? `<div style="text-align:center"><button class="btn primary big" id="pl">🔊 استمع</button><div class="small muted">تقدر تسمعه أكثر من مرة</div></div>` : ''}
       ${passage ? `<div class="ppass en">${esc(passage)}</div>` : ''}
       <h2 class="en" style="direction:ltr;text-align:left">${esc(item.q)}</h2><div class="opts">${item.options.map((o,x) => `<button class="opt en" data-o="${x}">${esc(o)}</button>`).join('')}</div></div>`);
-    if(script){ let plays = 0; const pl = ov.querySelector('#pl'); const play = async () => { if(plays >= 2) return; plays++; pl.disabled = true; await speakText(script, .9); pl.disabled = plays >= 2; }; pl.onclick = play; play(); }
+    if(script){ const pl = ov.querySelector('#pl'); const play = async () => { pl.disabled = true; speechSynthesis.cancel(); try{ await speakText(script, .9); }finally{ pl.disabled = false; } }; pl.onclick = play; play(); }
     const choice = await new Promise(r => ov.querySelectorAll('[data-o]').forEach(bt => bt.onclick = () => r(Number(bt.dataset.o))));
     speechSynthesis.cancel();
     const ok = choice === Number(item.answer); log.push({lv, kind, ok, skill: kind === 'mcq' ? (item.skill || 'grammar') : kind === 'listen' ? 'listening' : 'reading'});
@@ -1834,10 +1848,10 @@ async function placementTest(k, opt){
   for(const [i, lv] of [Math.max(1, knowLevel - 1), knowLevel].entries()){
     const b = await loadP(lv); let sent = b && ((b.aloud || [])[1] || (b.aloud || [])[0]); if(!sent) continue;
     sent = String(sent).split(/(?<=[.!?])\s+/)[0]; if(sent.split(' ').length > 14) sent = sent.split(' ').slice(0, 14).join(' ');
-    frame('الجزء 3: الإملاء', `<div class="card quiz" style="text-align:center"><div class="small muted">جملة ${i+1} من 2: اسمع الجملة واكتبها كما سمعتها (تقدر تسمعها 3 مرات)</div>
+    frame('الجزء 3: الإملاء', `<div class="card quiz" style="text-align:center"><div class="small muted">جملة ${i+1} من 2: اسمع الجملة واكتبها كما سمعتها (تقدر تسمعها أكثر من مرة)</div>
       <div class="chips" style="justify-content:center"><button class="btn primary" id="pl">🔊 استمع</button><button class="btn" id="slow">🐢 ببطء</button></div>
       <textarea class="input en" id="dt" autocomplete="off" autocapitalize="none" spellcheck="false" style="direction:ltr;text-align:left;min-height:90px;font-size:1.2rem" placeholder="Type what you hear…"></textarea><button class="btn primary" id="dn">التالي</button></div>`);
-    let plays = 0; const play = async rate => { if(plays >= 3) return; plays++; await speakText(sent, rate); if(plays >= 3){ ov.querySelector('#pl').disabled = true; ov.querySelector('#slow').disabled = true; } };
+    const play = async rate => { speechSynthesis.cancel(); await speakText(sent, rate); };
     ov.querySelector('#pl').onclick = () => play(.85); ov.querySelector('#slow').onclick = () => play(.6); play(.85);
     await new Promise(r => ov.querySelector('#dn').onclick = r); speechSynthesis.cancel();
     const typed = ov.querySelector('#dt').value.trim(); dict.push({level:lv, target:sent, typed, acc:wordAccuracy(sent, typed)});
