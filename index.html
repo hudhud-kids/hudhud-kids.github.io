@@ -3566,6 +3566,9 @@ function showCreds(k){
   ov.querySelector('#cx').onclick = () => { ov.remove(); renderParent(); };
 }
 /* guardian section inside the student form */
+const RELS = [['بابا',0],['ماما',1],['جدو',0],['تيتا',1],['عمو',0],['عمتو',1],['خالو',0],['خالتو',1],['أخوك',0],['أختك',1],['',0]];
+const relFemale = r => !!(RELS.find(x => x[0] === r) || [])[1];
+const gLabel = g => { if(!g) return 'ولي أمرك'; const f = String(g.first || '').trim(); return g.rel ? (f ? g.rel + ' ' + f : g.rel) : (f || g.name || 'ولي أمرك'); };
 function guardianFields(k){
   const cur = k ? (DB.kids[k].guardian || 'none') : 'new';
   const opts = [['new', '➕ ولي أمر جديد'], ...gIds().map(g => [g, `${DB.guardians[g].name} (${gKids(g).map(x => DB.kids[x].ar).join('، ') || 'بدون أطفال'})`]), ['none', 'بدون حساب ولي أمر']];
@@ -3573,6 +3576,8 @@ function guardianFields(k){
     <div class="field"><label for="g_sel">الحساب</label><select class="input" id="g_sel">${opts.map(([v, t]) => `<option value="${v}" ${v === cur ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></div>
     <div id="g_f" class="g2e" style="gap:10px">
       <div class="field"><label for="g_name">اسم ولي الأمر</label><input class="input" id="g_name" placeholder="مثلاً: أبو أحمد"></div>
+      <div class="field"><label for="g_rel">صلة القرابة بالطفل</label><select class="input" id="g_rel">${RELS.map(([r]) => `<option value="${r}">${r || 'أخرى (الاسم فقط)'}</option>`).join('')}</select></div>
+      <div class="field"><label for="g_first">الاسم اللي يشوفه الطفل</label><input class="input" id="g_first" placeholder="مثلاً: محمد"><div class="small muted" id="g_prev" style="margin-top:4px"></div></div>
       <div class="field"><label for="g_phone">الجوال (اختياري)</label><input class="input ltr" id="g_phone" inputmode="tel" placeholder="05xxxxxxxx"></div>
       <div class="field"><label for="g_user">اسم مستخدم ولي الأمر</label><div class="chips" style="flex-wrap:nowrap"><input class="input ltr" id="g_user" autocapitalize="none"><button class="btn sm" type="button" id="g_gen" aria-label="اقترح">🎲</button></div></div>
       <div class="field"><label for="g_pass">كلمة مرور ولي الأمر</label><input class="input ltr" id="g_pass"></div>
@@ -3582,8 +3587,11 @@ function wireGuardianFields(ov, k){
   const sel = ov.querySelector('#g_sel'), box = ov.querySelector('#g_f');
   const kidUser = () => (ov.querySelector('#f_user').value || '').trim().toLowerCase();
   const fill = () => { const v = sel.value; box.hidden = v === 'none';
+    const gr = ov.querySelector('#g_rel'), gf = ov.querySelector('#g_first'); const g0 = v !== 'new' && v !== 'none' ? DB.guardians[v] : null; gr.value = g0 ? (g0.rel || '') : 'بابا'; gf.value = g0 ? (g0.first || '') : ''; prev();
     if(v === 'new'){ ov.querySelector('#g_name').value = ''; ov.querySelector('#g_phone').value = ''; ov.querySelector('#g_user').value = suggestUser((kidUser() || 'family') + 'p'); ov.querySelector('#g_pass').value = rnd(6); }
     else if(v !== 'none'){ const g = DB.guardians[v]; ov.querySelector('#g_name').value = g.name || ''; ov.querySelector('#g_phone').value = g.phone || ''; ov.querySelector('#g_user').value = g.user; ov.querySelector('#g_pass').value = g.pass; } };
+  function prev(){ const el = ov.querySelector('#g_prev'); if(el) el.textContent = '💌 تطلع رسائله للطفل: «فخور فيك ❤️ — من ' + gLabel({rel:ov.querySelector('#g_rel').value, first:ov.querySelector('#g_first').value, name:ov.querySelector('#g_name').value}) + '»'; }
+  ov.querySelector('#g_rel').onchange = prev; ov.querySelector('#g_first').oninput = prev; ov.querySelector('#g_name').addEventListener('input', prev);
   sel.onchange = fill; fill();
   ov.querySelector('#g_gen').onclick = () => { ov.querySelector('#g_user').value = suggestUser((kidUser() || 'family') + 'p', null, sel.value); ov.querySelector('#g_pass').value = rnd(6); };
 }
@@ -3600,7 +3608,7 @@ function saveGuardianFields(ov, k, kidName){
   const gid = v === 'new' ? 'g' + Date.now().toString(36) + rnd(2) : v;
   if(userTaken(user, k, gid)) return 'اسم مستخدم ولي الأمر مستخدم من قبل.';
   if(prev !== gid) detach(prev);
-  const g = DB.guardians[gid] = Object.assign(DB.guardians[gid] || {id:gid, kids:[], created:new Date().toISOString()}, {name, phone, user, pass});
+  const g = DB.guardians[gid] = Object.assign(DB.guardians[gid] || {id:gid, kids:[], created:new Date().toISOString()}, {name, phone, user, pass, rel:ov.querySelector('#g_rel').value, first:ov.querySelector('#g_first').value.trim()});
   if(!g.kids.includes(k)) g.kids.push(k);
   DB.kids[k].guardian = gid;
   return null;
@@ -3662,6 +3670,12 @@ function renderGuardian(gid){
   const seen = ((DB.gseen || {})[gid] || 0), notes = gNotes(k), unread = notes.filter(n => n.at.getTime() > seen).length;
   const reps = DB.reports.filter(r => r.kid === k).slice().sort((a, b) => Date.parse(b.at) - Date.parse(a.at)).slice(0, 5);
   const cheers = ((DB.cheers || {})[k] || []).slice(-6).reverse(), cs = p.cheersSeen || [];
+  const own = gLabel(g), past = [...new Set(Object.values(DB.cheers || {}).flat().filter(c => c && c.gid === gid && c.from).map(c => c.from))];
+  let extra = []; try{ extra = JSON.parse(localStorage.getItem('hh:signers:' + gid)) || []; }catch(e){}
+  const signers = [...new Set([own, ...past, ...extra])].slice(0, 8);
+  let SIGNER = (() => { try{ return localStorage.getItem('hh:signer:' + gid); }catch(e){ return null; } })(); if(!signers.includes(SIGNER)) SIGNER = own;
+  const relOf = lbl => lbl === own ? (g.rel || '') : (RELS.map(r => r[0]).find(r => r && String(lbl).startsWith(r + ' ')) || (RELS.find(r => r[0] && r[0] === lbl) || [''])[0]);
+  const SIGNER_REL = relOf(SIGNER);
   const st = kidStats(k), badges = earnedBadges(k).length, srs = Object.keys(p.srs || {}).length;
   const words = new Set(DB.reports.filter(r => r.kid === k).flatMap(r => r.newWords || [])).size;
   $('#app').innerHTML = `<div class="wrap">
@@ -3687,10 +3701,11 @@ function renderGuardian(gid){
       <div class="stat" style="margin-top:10px"><div><span class="small muted">كلمات تعلّمها</span><b>${words}</b></div><div><span class="small muted">قصص قرأها</span><b>${st.books || 0}</b></div><div><span class="small muted">بطاقات الواجب</span><b>${srs}</b></div><div><span class="small muted">أوسمة</span><b>${badges}</b></div></div></section>
     <div class="g2e">
       <section class="card"><h2>🕸️ المهارات</h2><div class="radarw">${radarSVG(k, 340)}</div>${(() => { const w = weakestSkill(k); return w ? `<p class="small" style="margin:6px 0 0">💪 يحتاج تركيز على: <b>${SKILLS.find(x => x[0] === w)[1]}</b>. المعلمة تتدرب معه عليها أكثر.</p>` : ''; })()}</section>
-      <section class="card"><h2>💌 شجّع ${esc(nick(k))}</h2><p class="small muted" style="margin:0 0 8px">رسالتك تطلع له مع الهدهد في الصفحة الرئيسية، وأثناء الحصة إذا كان فيها.</p>
-        <div class="chips">${['أحسنت يا بطل! 👏', 'فخور فيك ❤️', 'كمل، أنت قدها 💪', 'ركّز وتكلّم كثير 🗣️'].map(t => `<button class="btn sm" data-ch="${esc(t)}">${t}</button>`).join('')}</div>
+      <section class="card"><h2>💌 شجّع ${esc(nick(k))}</h2><p class="small muted" style="margin:0 0 8px">رسالتك تطلع ${kid.boy ? 'له' : 'لها'} مع الهدهد في الصفحة الرئيسية وكإشعار، وأثناء الحصة إذا ${kid.boy ? 'كان' : 'كانت'} فيها.</p>
+        <div class="field" style="margin-bottom:8px"><label class="small" style="font-weight:800">✍️ من؟</label><div class="chips">${signers.map(x => `<button class="topic ${x === SIGNER ? 'on' : ''}" data-sg="${esc(x)}">${esc(x)}</button>`).join('')}<button class="topic" id="sgAdd">➕ شخص آخر</button></div></div>
+        <div class="chips">${(kid.boy ? ['أحسنت يا بطل! 👏', relFemale(SIGNER_REL) ? 'فخورة فيك ❤️' : 'فخور فيك ❤️', 'كمل، أنت قدها 💪', 'ركّز وتكلّم كثير 🗣️'] : ['أحسنتِ يا بطلة! 👏', relFemale(SIGNER_REL) ? 'فخورة فيكِ ❤️' : 'فخور فيكِ ❤️', 'كملي، أنتِ قدها 💪', 'ركّزي وتكلّمي كثير 🗣️']).map(t => `<button class="btn sm" data-ch="${esc(t)}">${t}</button>`).join('')}</div>
         <div class="chips" style="margin-top:8px;flex-wrap:nowrap"><input class="input" id="cht" maxlength="120" placeholder="اكتب رسالتك…"><button class="btn primary" id="chs">إرسال</button></div>
-        ${cheers.length ? `<div class="gnl" style="margin-top:10px">${cheers.map(c => `<div class="gn"><span class="gi">💌</span><div><div>${esc(c.text)}</div><div class="small muted">${fmtTime(new Date(c.at))} · ${cs.includes(c.id) ? '✓ قرأها' : 'لم يقرأها بعد'}</div></div></div>`).join('')}</div>` : ''}</section>
+        ${cheers.length ? `<div class="gnl" style="margin-top:10px">${cheers.map(c => `<div class="gn"><span class="gi">💌</span><div><div>${esc(c.text)}</div><div class="small muted">من ${esc(c.from || '')} · ${fmtTime(new Date(c.at))} · ${cs.includes(c.id) ? (kid.boy ? '✓ قرأها' : '✓ قرأتها') : (kid.boy ? 'لم يقرأها بعد' : 'لم تقرأها بعد')}</div></div></div>`).join('')}</div>` : ''}</section>
     </div>
     <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(r => `<div class="report"><div class="rph"><b class="en">${esc(r.title)}</b><span class="small muted">${new Date(r.at).toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})}</span></div>
       <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${r.score}%</bdi></span><span class="chip">⏱️ ${r.minutes || 0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${r.talkPct}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes || []).length ? `<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>` : ''}</div>`).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
@@ -3701,9 +3716,18 @@ function renderGuardian(gid){
   const markRead = () => { DB.gseen = DB.gseen || {}; DB.gseen[gid] = Date.now(); save(); renderGuardian(gid); };
   const gr = $('#gread'); if(gr) gr.onclick = markRead;
   const ga = $('#gall'); if(ga) ga.onclick = () => { const ov = overlay(`<h2>🔔 كل الإشعارات</h2><div class="gnl" style="max-height:60vh;overflow:auto">${notes.map(n => `<div class="gn"><span class="gi">${n.ic}</span><div><div>${pctFix(esc(n.text))}</div><div class="small muted">${n.at.toLocaleDateString(LOC)} · ${fmtTime(n.at)}</div></div></div>`).join('')}</div><button class="btn" id="gx">إغلاق</button>`); ov.querySelector('#gx').onclick = () => ov.remove(); };
-  const send = t => { t = String(t || '').trim(); if(!t) return; DB.cheers = DB.cheers || {}; DB.cheers[k] = (DB.cheers[k] || []).concat({id:'c' + Date.now().toString(36) + rnd(2), at:new Date().toISOString(), from:g.name, text:t.slice(0, 120)}).slice(-30); save(); toast('💌 وصلت رسالتك'); renderGuardian(gid); };
+  const send = t => { t = String(t || '').trim(); if(!t) return; DB.cheers = DB.cheers || {}; DB.cheers[k] = (DB.cheers[k] || []).concat({id:'c' + Date.now().toString(36) + rnd(2), at:new Date().toISOString(), from:SIGNER, gid, text:t.slice(0, 120)}).slice(-30); save(); toast('💌 وصلت رسالتك'); renderGuardian(gid); };
   document.querySelectorAll('[data-ch]').forEach(b => b.onclick = () => send(b.dataset.ch));
   $('#chs').onclick = () => send($('#cht').value);
+  const pickSigner = x => { try{ localStorage.setItem('hh:signer:' + gid, x); }catch(e){} renderGuardian(gid); };
+  document.querySelectorAll('[data-sg]').forEach(b => b.onclick = () => pickSigner(b.dataset.sg));
+  $('#sgAdd').onclick = () => { const ov = overlay(`<h2>✍️ مين يرسل الرسالة؟</h2><p class="small muted" style="margin:0">مثلاً: تيتا أمل، جدو أحمد، خالو سعيد. يطلع الاسم ${kid.boy ? 'للطفل' : 'للطفلة'} مع الرسالة.</p>
+      <div class="field"><label for="sr">صلة القرابة</label><select class="input" id="sr">${RELS.map(([r]) => `<option value="${r}">${r || 'أخرى (الاسم فقط)'}</option>`).join('')}</select></div>
+      <div class="field"><label for="sn">الاسم</label><input class="input" id="sn" maxlength="20" placeholder="مثلاً: أمل"></div>
+      <div class="chips"><button class="btn primary" id="sok">إضافة</button><button class="btn" id="sx">إلغاء</button></div>`);
+    ov.querySelector('#sr').value = 'تيتا'; ov.querySelector('#sx').onclick = () => ov.remove();
+    ov.querySelector('#sok').onclick = () => { const lbl = gLabel({rel:ov.querySelector('#sr').value, first:ov.querySelector('#sn').value}); if(!lbl || lbl === 'ولي أمرك') return;
+      try{ localStorage.setItem('hh:signers:' + gid, JSON.stringify([...new Set([...extra, lbl])].slice(-8))); }catch(e){} ov.remove(); pickSigner(lbl); }; };
   wirePushBtn();
   const ll = $('#ll'); if(ll) ll.scrollTop = ll.scrollHeight;
   clearInterval(homeTimer); homeTimer = setInterval(() => { if(WHO === 'g:' + gid && !document.querySelector('.ov') && !(document.activeElement && /INPUT|TEXTAREA/.test(document.activeElement.tagName))) renderGuardian(gid); }, 30000);
