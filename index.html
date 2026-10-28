@@ -2182,7 +2182,70 @@ if('speechSynthesis' in window){ pickVoice(); try{ speechSynthesis.onvoiceschang
 function unlockAudio(){ azUnlock(); try{ const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); }catch(e){} }
 
 /* =============== VOICE IN (STT) =============== */
-const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+/* Speech-to-text. The browser's own recognizer is used where it works well. On iPad/iPhone it is missing in the
+   home-screen app and sluggish in Safari, so there (when the Azure key is set) we record the child with the mic and
+   send each utterance to Azure Speech instead. AzSR mimics the parts of the SpeechRecognition API the app uses. */
+const NativeSR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const azSttOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !DEMO && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+const useAzSR = () => azSttOn() && (!NativeSR || (typeof isIOS !== 'undefined' && isIOS));
+let MIC_STREAM = null, MIC_IDLE_T = null;
+async function micStream(){
+  clearTimeout(MIC_IDLE_T);
+  if(MIC_STREAM && MIC_STREAM.getAudioTracks().some(t => t.readyState === 'live')) return MIC_STREAM;
+  MIC_STREAM = await navigator.mediaDevices.getUserMedia({audio:{channelCount:1, echoCancellation:true, noiseSuppression:true, autoGainControl:true}});
+  return MIC_STREAM;
+}
+/* release the mic a little after the last use so iOS switches audio back to the speaker */
+function micRelease(){ clearTimeout(MIC_IDLE_T); MIC_IDLE_T = setTimeout(() => { if(MIC_STREAM){ MIC_STREAM.getTracks().forEach(t => t.stop()); MIC_STREAM = null; } }, 1500); }
+/* records one utterance: waits for speech, keeps ~0.4 s before it, stops after `silence` seconds of quiet, at maxMs, or on ctl.stop() */
+function recordUtterance(ctl, maxMs, silence){
+  return new Promise(async (resolve, reject) => {
+    let stream; try{ stream = await micStream(); }catch(e){ reject(e); return; }
+    const AC = window.AudioContext || window.webkitAudioContext, ac = new AC(); try{ await ac.resume(); }catch(e){}
+    const src = ac.createMediaStreamSource(stream), proc = ac.createScriptProcessor(4096, 1, 1), pre = [], chunks = [];
+    let heard = false, quiet = 0, done = false, noise = .012; const t0 = Date.now(), rate = ac.sampleRate, preMax = Math.ceil(rate * .4 / 4096);
+    const finish = () => { if(done) return; done = true; try{ proc.disconnect(); src.disconnect(); }catch(e){} try{ ac.close(); }catch(e){} micRelease();
+      resolve({heard, wav: heard ? encodeWav(downsample(chunks, rate, 16000), 16000) : null}); };
+    ctl.stop = finish;
+    proc.onaudioprocess = ev => { if(done) return; const d = new Float32Array(ev.inputBuffer.getChannelData(0));
+      let s2 = 0; for(let i = 0; i < d.length; i += 4) s2 += d[i] * d[i]; const rms = Math.sqrt(s2 / (d.length / 4));
+      if(!heard){ noise = noise * .95 + Math.min(rms, .05) * .05; pre.push(d); if(pre.length > preMax) pre.shift();
+        if(rms > Math.max(.025, noise * 3)){ heard = true; chunks.push(...pre); } }
+      else { chunks.push(d); if(rms > Math.max(.02, noise * 2.2)) quiet = 0; else quiet += d.length / rate; if(quiet > silence) finish(); }
+      if(Date.now() - t0 > maxMs || chunks.length * 4096 / rate > 30) finish(); };
+    src.connect(proc); proc.connect(ac.destination);
+  });
+}
+async function azRecognize(wav, lang){
+  const r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
+    {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav});
+  if(!r.ok){ const e = new Error('stt ' + r.status); e.status = r.status; throw e; }
+  const j = await r.json(); return j.RecognitionStatus === 'Success' ? String(j.DisplayText || '').trim() : '';
+}
+class AzSR {
+  constructor(){ this.lang = 'en-US'; this.continuous = false; this.interimResults = false; this.maxAlternatives = 1; this.onresult = null; this.onerror = null; this.onend = null; this._ctl = {}; this._aborted = false; this._ended = false; this._started = false; }
+  start(){ if(this._started) throw new Error('already started'); this._started = true; this._run(); }
+  stop(){ this._ctl.stop && this._ctl.stop(); }
+  abort(){ this._aborted = true; this._ctl.stop && this._ctl.stop(); }
+  async _run(){
+    let rec;
+    try{ rec = await recordUtterance(this._ctl, 60000, 1.4); }
+    catch(e){ this._err(e && e.name === 'NotAllowedError' ? 'not-allowed' : 'audio-capture'); return this._end(); }
+    if(this._aborted || !rec.heard) return this._end();
+    try{
+      const text = await azRecognize(rec.wav, this.lang);
+      if(!this._aborted && text){ const alt = [{transcript:text, confidence:.9}]; alt.isFinal = true; const results = [alt]; try{ this.onresult && this.onresult({results, resultIndex:0}); }catch(e){ console.warn(e); } }
+    }catch(e){ console.warn('stt', e); this._err(e.status === 401 || e.status === 403 ? 'service-not-allowed' : 'network'); }
+    this._end();
+  }
+  _err(code){ try{ this.onerror && this.onerror({error:code}); }catch(e){} }
+  _end(){ if(this._ended) return; this._ended = true; try{ this.onend && this.onend(); }catch(e){} }
+}
+const SR = (NativeSR || (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) ? function SRAuto(){
+  if(useAzSR()) return new AzSR();
+  if(NativeSR) return new NativeSR();
+  const dead = new AzSR(); dead.start = function(){ setTimeout(() => { this._err('service-not-allowed'); this._end(); }, 0); }; return dead;
+} : null;
 let micOK = !!SR;
 
 /* =============== CLAUDE API =============== */
