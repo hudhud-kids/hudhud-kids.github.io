@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>التسجيل في هدهد</title>
+<meta name="description" content="سجّل طفلك في هدهد: معلمة إنجليزي تتكلم مع طفلك بالصوت.">
+<meta name="theme-color" content="#F05A38">
+<link rel="icon" href="../icon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<style>
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-medium.woff2) format("woff2");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-bold.woff2) format("woff2");font-weight:700 900;font-display:swap}
+:root{--brand:#F05A38;--brand-ink:#B2391C;--brand-soft:#FFE6DD;--teal:#14B8A6;--teal-ink:#0F766E;--teal-soft:#E6F7F4;--bg:#FFF6EE;--fg:#2B1B0F;--muted:#5C4334;--muted2:#86695A;--line:#F0DCCB;--bad:#C81E1E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Dubai",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+.top{max-width:760px;margin:0 auto;padding:18px 20px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:8px;color:var(--brand);text-decoration:none}.logo b{font-size:26px;font-weight:900}
+.top a.more{color:var(--muted);font-weight:700;text-decoration:none;padding:10px 12px;border-radius:999px}
+.wrap{max-width:760px;margin:0 auto;padding:10px 20px 60px}
+.hero{display:flex;align-items:center;gap:16px;margin:10px 0 18px}
+.hero svg{flex:none;width:96px;height:auto;animation:bob 3s ease-in-out infinite;overflow:visible}
+.hero h1{margin:0;font-size:clamp(28px,5vw,40px);font-weight:900;line-height:1.2}
+.hero p{margin:6px 0 0;color:var(--muted);line-height:1.7}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:22px;margin-bottom:16px}
+.card h2{margin:0 0 4px;font-size:21px;font-weight:900;display:flex;align-items:center;gap:10px}
+.card h2 .n{width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:15px;flex:none}
+.card .sub{margin:0 0 14px;color:var(--muted2);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:560px){.grid{grid-template-columns:minmax(0,1fr)}}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f label{font-weight:800;font-size:15px}
+.f label i{color:var(--brand);font-style:normal}
+.in{width:100%;min-height:50px;border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;background:var(--bg);font-size:17px;outline:none;transition:border-color .15s,box-shadow .15s}
+.in:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(240,90,56,.15);background:#fff}
+.in.bad{border-color:var(--bad);box-shadow:0 0 0 4px rgba(200,30,30,.10)}
+.ltr{direction:ltr;text-align:left}
+textarea.in{min-height:90px;resize:vertical}
+.hintx{font-size:13px;color:var(--muted2)}
+.seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.seg.c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:561px){.seg.c4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.seg label{position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0;inset:0}
+.seg span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:50px;padding:8px 10px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);font-weight:800;transition:all .15s;line-height:1.3}
+.seg input:checked+span{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 6px 14px rgba(240,90,56,.25)}
+.seg input:focus-visible+span{outline:3px solid var(--teal);outline-offset:2px}
+.days{display:flex;flex-wrap:wrap;gap:8px}
+.days label{position:relative;cursor:pointer}
+.days input{position:absolute;opacity:0;inset:0}
+.days span{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:64px;padding:6px 12px;border:1.5px solid var(--line);border-radius:999px;background:var(--bg);font-weight:800}
+.days input:checked+span{background:var(--teal);border-color:var(--teal);color:#fff}
+.days input:focus-visible+span{outline:3px solid var(--brand);outline-offset:2px}
+.kid{border:1.5px dashed var(--line);border-radius:20px;padding:16px;margin-bottom:12px;position:relative;animation:pop .35s cubic-bezier(.3,1.5,.5,1)}
+.kid .kh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.kid .kh b{font-size:17px}
+.rm{border:0;background:var(--brand-soft);color:var(--brand-ink);border-radius:999px;padding:8px 14px;font-weight:800;min-height:40px;cursor:pointer}
+.age{font-size:13px;color:var(--teal-ink);font-weight:800;min-height:18px}
+.add{width:100%;min-height:52px;border:2px dashed var(--brand);background:#fff;color:var(--brand-ink);border-radius:16px;font-weight:900;font-size:17px;cursor:pointer}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:700;line-height:1.6;cursor:pointer}
+.consent input{width:22px;height:22px;margin-top:3px;accent-color:var(--brand);flex:none}
+.send{width:100%;min-height:58px;border:0;border-radius:999px;background:var(--brand);color:#fff;font-weight:900;font-size:20px;cursor:pointer;box-shadow:0 10px 24px rgba(240,90,56,.35);transition:transform .15s}
+.send:active{transform:scale(.98)}.send[disabled]{opacity:.6;cursor:wait}
+.err{color:var(--bad);font-weight:800;min-height:24px;margin:10px 0;text-align:center}
+.hp{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip-path:inset(50%);pointer-events:none;border:0;padding:0}
+html,body{overflow-x:hidden}
+.done{text-align:center;display:none;flex-direction:column;align-items:center;gap:14px;padding:30px 22px}
+.done.show{display:flex;animation:pop .5s cubic-bezier(.3,1.5,.5,1)}
+.done svg{width:150px;height:auto;animation:bob 2.4s ease-in-out infinite;overflow:visible}
+.done h2{margin:0;font-size:30px;font-weight:900}
+.done p{margin:0;color:var(--muted);line-height:1.8;font-size:17px}
+.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 24px;border-radius:999px;background:var(--fg);color:#FFF6EE;text-decoration:none;font-weight:800}
+.conf{position:fixed;top:-20px;width:10px;height:14px;border-radius:3px;z-index:50;pointer-events:none;animation:fall 1.8s ease-in forwards}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pop{0%{transform:scale(.92);opacity:0}100%{transform:none;opacity:1}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.6}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+<a class="logo" href="../welcome/"><svg width="40" height="38" viewBox="0 0 200 190" aria-hidden="true"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g><ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/></svg><b>هدهد</b></a>
+<a class="more" href="../welcome/">تعرّف على هدهد</a>
+</header>
+
+<main class="wrap">
+<form id="form" novalidate>
+<div class="hero">
+<svg viewBox="0 0 200 190" aria-hidden="true"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g><ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></svg>
+<div><h1>سجّل طفلك في هدهد</h1><p>عبّ البيانات، ونتواصل معك ونرسل لك اسم المستخدم وكلمة المرور بعد الموافقة.</p></div>
+</div>
+
+<section class="card">
+<h2><span class="n">1</span>بيانات الطفل</h2>
+<p class="sub">تقدر تضيف أكثر من طفل في نفس الطلب.</p>
+<div id="kids"></div>
+<button type="button" class="add" id="addKid">➕ أضف طفل آخر</button>
+</section>
+
+<section class="card">
+<h2><span class="n">2</span>بيانات ولي الأمر</h2>
+<p class="sub">عشان نتواصل معك ونرسل لك بيانات الدخول.</p>
+<div class="grid">
+<div class="f"><label for="g_name">الاسم <i>*</i></label><input class="in" id="g_name" autocomplete="name" placeholder="مثلاً: محمد العتيبي"></div>
+<div class="f"><label for="rel">صلة القرابة بالطفل <i>*</i></label><select class="in" id="rel"><option value="">اختر</option><option>الأب</option><option>الأم</option><option>الجد</option><option>الجدة</option><option>العم / العمة</option><option>الخال / الخالة</option><option>أخرى</option></select></div>
+<div class="f"><label for="phone">رقم الجوال <i>*</i></label><input class="in ltr" id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xxxxxxxx"><span class="hintx">نتواصل معك عليه بالواتساب</span></div>
+<div class="f"><label for="email">البريد الإلكتروني</label><input class="in ltr" id="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com"></div>
+<div class="f"><label for="city">المدينة</label><input class="in" id="city" autocomplete="address-level2" placeholder="مثلاً: بريدة"></div>
+<div class="f"><label for="device">الجهاز اللي بيستخدمه الطفل</label><select class="in" id="device"><option value="">اختر</option><option>آيباد</option><option>جوال آيفون</option><option>جوال أندرويد</option><option>كمبيوتر</option></select></div>
+</div>
+</section>
+
+<section class="card">
+<h2><span class="n">3</span>المواعيد المناسبة</h2>
+<p class="sub">اختر الأيام والوقت اللي تناسبكم، ونرتّب الجدول معك.</p>
+<div class="f" style="margin-bottom:14px"><label>الأيام</label><div class="days" id="days"></div></div>
+<div class="f" style="margin-bottom:14px"><label>الوقت المفضّل</label>
+<div class="seg c4" id="times"></div></div>
+<div class="f"><label for="notes">ملاحظات</label><textarea class="in" id="notes" placeholder="أي شي تحب نعرفه عن طفلك: اهتماماته، صعوبات، هدفك من التعلّم…"></textarea></div>
+</section>
+
+<section class="card">
+<label class="consent"><input type="checkbox" id="ok"> <span>أوافق على تواصل فريق هدهد معي بخصوص التسجيل، وأن تُحفظ هذه البيانات لإنشاء حساب الطفل.</span></label>
+<input class="hp" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="err" id="err" role="alert"></div>
+<button class="send" id="send" type="submit">إرسال طلب التسجيل</button>
+</section>
+</form>
+
+<section class="card done" id="done" aria-live="polite">
+<svg viewBox="0 0 200 190" aria-hidden="true"><g fill="#FF6B4A"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g><ellipse cx="100" cy="120" rx="64" ry="56" fill="#FF6B4A"/><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/><path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/></svg>
+<h2>وصل طلبك! 🎉</h2>
+<p>شكراً لك. بنراجع الطلب ونتواصل معك على الجوال اللي كتبته، ونرسل لك اسم المستخدم وكلمة المرور لكل طفل.</p>
+<a class="btn2" href="../welcome/">تعرّف على هدهد</a>
+</section>
+</main>
+
+<script>
+const SUPA_URL = 'https://muhfgviqdjysjzkbwlph.supabase.co', SUPA_KEY = 'sb_publishable_uNs9sj1LzyZkefmjmhbQ-g_bfGTL2PP';
+const FAM = new URLSearchParams(location.search).get('f') || 'b7a66661-3d9f-4e49-806f-d9c8670aeb6f';
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const DAYS = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+$('#days').innerHTML = DAYS.map((d, i) => `<label><input type="checkbox" value="${i}"><span>${d}</span></label>`).join('');
+$('#times').innerHTML = ['العصر 3–5','المغرب 5–7','العشاء 7–9','أي وقت'].map((t, i) => `<label><input type="radio" name="time" value="${t}" ${i === 1 ? 'checked' : ''}><span>${t}</span></label>`).join('');
+
+let kidN = 0;
+function addKid(){
+  const i = ++kidN, box = document.createElement('div'); box.className = 'kid'; box.dataset.i = i;
+  box.innerHTML = `<div class="kh"><b>الطفل ${document.querySelectorAll('.kid').length + 1}</b>${i > 1 ? '<button type="button" class="rm">حذف</button>' : ''}</div>
+  <div class="grid">
+    <div class="f"><label for="ar${i}">الاسم بالعربي <i>*</i></label><input class="in" id="ar${i}" data-k="ar" placeholder="مثلاً: أحمد"></div>
+    <div class="f"><label for="en${i}">الاسم بالإنجليزي</label><input class="in ltr" id="en${i}" data-k="en" placeholder="Ahmed" autocapitalize="words"></div>
+    <div class="f"><label>الجنس <i>*</i></label><div class="seg"><label><input type="radio" name="g${i}" value="1" data-k="boy"><span>ولد</span></label><label><input type="radio" name="g${i}" value="0" data-k="boy"><span>بنت</span></label></div></div>
+    <div class="f"><label for="b${i}">تاريخ الميلاد <i>*</i></label><input class="in" type="date" id="b${i}" data-k="birth" max="${new Date().toISOString().slice(0, 10)}"><span class="age" id="age${i}"></span></div>
+    <div class="f"><label for="gr${i}">الصف الدراسي</label><select class="in" id="gr${i}" data-k="grade"><option value="">اختر</option>${['روضة','أول ابتدائي','ثاني ابتدائي','ثالث ابتدائي','رابع ابتدائي','خامس ابتدائي','سادس ابتدائي','أول متوسط','ثاني متوسط','ثالث متوسط','ثانوي'].map(g => `<option>${g}</option>`).join('')}</select></div>
+    <div class="f"><label for="lv${i}">مستواه في الإنجليزي (تقريباً)</label><select class="in" id="lv${i}" data-k="eng"><option value="">اختر</option><option>ما يعرف شي تقريباً</option><option>يعرف كلمات وحروف</option><option>يقول جمل بسيطة</option><option>يتكلم ويفهم بشكل جيد</option></select></div>
+  </div>`;
+  $('#kids').appendChild(box);
+  const rm = box.querySelector('.rm'); if(rm) rm.onclick = () => { box.remove(); renum(); };
+  box.querySelector(`#b${i}`).addEventListener('change', e => { const v = e.target.value; if(!v) return $('#age' + i).textContent = '';
+    const b = new Date(v), n = new Date(); let a = n.getFullYear() - b.getFullYear(); if(n < new Date(n.getFullYear(), b.getMonth(), b.getDate())) a--;
+    $('#age' + i).textContent = a >= 0 ? `العمر: ${a} ${a >= 3 && a <= 10 ? 'سنوات' : 'سنة'}` : ''; });
+}
+function renum(){ document.querySelectorAll('.kid').forEach((k, x) => k.querySelector('.kh b').textContent = 'الطفل ' + (x + 1)); }
+$('#addKid').onclick = () => { addKid(); const last = [...document.querySelectorAll('.kid')].pop(); last.scrollIntoView({behavior:'smooth', block:'center'}); last.querySelector('input').focus({preventScroll:true}); };
+addKid();
+
+const normPhone = p => { let d = String(p).replace(/[^\d+]/g, '').replace(/^\+?966/, '0').replace(/^00966/, '0'); if(/^5\d{8}$/.test(d)) d = '0' + d; return d; };
+function fail(msg, el){ $('#err').textContent = msg; if(el){ el.classList.add('bad'); el.focus(); el.addEventListener('input', () => el.classList.remove('bad'), {once:true}); } }
+
+$('#form').addEventListener('submit', async e => {
+  e.preventDefault(); $('#err').textContent = '';
+  const kids = [];
+  for(const box of document.querySelectorAll('.kid')){
+    const i = box.dataset.i, ar = $('#ar' + i).value.trim(), en = $('#en' + i).value.trim(), g = box.querySelector(`input[name=g${i}]:checked`), birth = $('#b' + i).value;
+    if(!ar) return fail('اكتب اسم الطفل بالعربي.', $('#ar' + i));
+    if(!g) return fail(`اختر جنس ${ar}.`);
+    if(!birth) return fail(`اختر تاريخ ميلاد ${ar}.`, $('#b' + i));
+    kids.push({ar, en, boy:g.value === '1', birth, grade:$('#gr' + i).value, eng:$('#lv' + i).value});
+  }
+  const g_name = $('#g_name').value.trim(), rel = $('#rel').value, phone = normPhone($('#phone').value), email = $('#email').value.trim();
+  if(!g_name) return fail('اكتب اسم ولي الأمر.', $('#g_name'));
+  if(!rel) return fail('اختر صلة القرابة.', $('#rel'));
+  if(!/^05\d{8}$/.test(phone) && !/^\+?\d{9,15}$/.test(phone)) return fail('اكتب رقم جوال صحيح مثل 05xxxxxxxx.', $('#phone'));
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('البريد الإلكتروني غير صحيح.', $('#email'));
+  if(!$('#ok').checked) return fail('لازم توافق على التواصل وحفظ البيانات.');
+  const data = {kids, kid_ar:kids.map(k => k.ar).join('، '), g_name, rel, phone, email, city:$('#city').value.trim(), device:$('#device').value,
+    days:[...document.querySelectorAll('#days input:checked')].map(x => Number(x.value)), time:(document.querySelector('input[name=time]:checked') || {}).value || '',
+    notes:$('#notes').value.trim().slice(0, 800), hp:$('#hp').value};
+  const btn = $('#send'); btn.disabled = true; btn.textContent = 'جاري الإرسال…';
+  try{
+    const r = await fetch(`${SUPA_URL}/rest/v1/rpc/tk_signup_submit`, {method:'POST', headers:{apikey:SUPA_KEY, 'Content-Type':'application/json'}, body:JSON.stringify({fam:FAM, d:data})});
+    if(!r.ok){ const t = await r.text(); throw new Error(/rate_limited/.test(t) ? 'rate' : 'x'); }
+    $('#form').style.display = 'none'; $('#done').classList.add('show'); scrollTo({top:0, behavior:'smooth'}); confetti();
+  }catch(err){ btn.disabled = false; btn.textContent = 'إرسال طلب التسجيل'; fail(err.message === 'rate' ? 'وصلنا طلبك قبل شوي، انتظر دقائق قبل ما ترسل مرة ثانية.' : 'ما قدرنا نرسل الطلب. تأكد من الإنترنت وحاول مرة ثانية.'); }
+});
+function confetti(){ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; const cs = ['#F05A38','#14B8A6','#FCC419','#3B7BE8'];
+  for(let i = 0; i < 50; i++){ const c = document.createElement('i'); c.className = 'conf'; c.style.left = Math.random() * 100 + 'vw'; c.style.background = cs[i % 4]; c.style.animationDelay = Math.random() * .5 + 's'; document.body.appendChild(c); setTimeout(() => c.remove(), 2800); } }
+</script>
+</body>
+</html>

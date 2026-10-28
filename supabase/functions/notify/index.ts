@@ -115,6 +115,12 @@ async function run() {
         msgs.push({ fam: fid, key: `live:${k}:${lf.start}`, to: (s: any) => toGuard(k)(s) && s.role === "guardian", title: `🔴 ${name} في الحصة الآن`, body: "افتح هدهد وشاهد المحادثة مباشرة، وأرسل له تشجيع 💪" });
     }
   }
+  // new sign-up requests from the public join link -> the family's admin (parent)
+  const { data: sus } = await sb.from("tk_signups").select("id,family_id,data,created_at").eq("status", "pending").gt("created_at", new Date(nowMs - 30 * 60e3).toISOString());
+  for (const su of sus || []) {
+    const d: any = su.data || {}, names = (d.kids || []).map((k: any) => k.ar).filter(Boolean).join("، ");
+    msgs.push({ fam: su.family_id, key: `signup:${su.id}`, to: (x: any) => x.family_id === su.family_id && x.role === "parent", title: "📥 طلب تسجيل جديد", body: `${d.g_name || "ولي أمر"} يبي يسجّل: ${names || "طفل"}. افتح لوحة الإدارة للقبول أو الرفض.` });
+  }
   if (!msgs.length) return Response.json({ sent: 0 });
   const { data: done } = await sb.from("tk_push_log").select("key").in("key", msgs.map((m) => m.fam + "|" + m.key));
   const already = new Set((done || []).map((d: any) => d.key));

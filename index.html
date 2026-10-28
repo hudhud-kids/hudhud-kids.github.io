@@ -525,6 +525,11 @@ bdi.num{unicode-bidi:isolate}
 .pushcard .pch{display:flex;gap:12px;align-items:center}.pushcard .pcb{font-size:2rem;animation:pc-ring 2.4s ease-in-out infinite;transform-origin:50% 10%}
 .pushcard .pushbtn{width:100%;margin:0}.pcsteps{margin:0;padding-inline-start:22px;display:grid;gap:6px;font-weight:700}
 @keyframes pc-ring{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(14deg)}70%{transform:rotate(-12deg)}75%{transform:rotate(8deg)}80%{transform:rotate(-4deg)}}
+.sucard{border:2px solid var(--brand)}.suitem{border:1.5px solid var(--line);border-radius:18px;padding:14px;margin-top:10px;background:var(--surface)}
+.suitem.rejected{opacity:.7}.suhead{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;flex-wrap:wrap}
+.sunote{background:var(--bg);border-radius:12px;padding:8px 10px;margin-top:8px;font-size:.92rem;line-height:1.6}
+.sukids{display:grid;gap:8px;margin-top:10px}.sukid{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--bg);border-radius:14px;padding:10px 12px}
+.sukav{font-size:1.8rem;line-height:1}
 </style>
 </head>
 <body>
@@ -2630,6 +2635,7 @@ function renderParent(){
     <div class="topbar">${LOGO}<div class="me"><b>لوحة الإدارة</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
     <div class="grid">
       ${cloudOn() ? `<div class="cloudbar">☁️ <b>المزامنة السحابية:</b> <span id="cloudSt">${cloudStatusHTML()}</span><div style="margin-top:6px">${pushBtnHTML(true)}</div></div>` : ''}
+      ${signupsCardHTML()}
       <div class="chips" style="justify-content:space-between"><h2>الطلاب</h2><button class="btn primary" id="addKid">➕ إضافة طالب</button></div>
       <div class="g2e">${ids.map(kidCard).join('')}</div>
       <section class="card"><div class="chips" style="justify-content:space-between"><h2>🎁 المكافآت</h2><button class="btn sm primary" id="addRw">➕ مكافأة</button></div>
@@ -2713,6 +2719,9 @@ function renderParent(){
     ov.querySelector('#wc').onclick = () => { navigator.clipboard && navigator.clipboard.writeText(w.text).then(() => toast('تم النسخ'), () => {}); }; });
   document.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => kidForm(b.dataset.edit));
   document.querySelectorAll('[data-creds]').forEach(b => b.onclick = () => showCreds(b.dataset.creds));
+  if(document.getElementById('suCard')){ fillSignups(false);
+    $('#suCopy').onclick = () => { copyText(joinLink()); toast('📋 نسخت رابط التسجيل'); };
+    $('#suRe').onclick = () => { const l = document.getElementById('suList'); if(l) l.innerHTML = '<span class="small muted">جاري التحديث…</span>'; fillSignups(true); }; }
   document.querySelectorAll('[data-trial]').forEach(b => b.onclick = () => enterLesson(b.dataset.trial, true));
   document.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const k = b.dataset.up, to = DB.kids[k].level + 1;
     const ov = overlay(`<h2>رفع ${esc(DB.kids[k].ar)} للمستوى ${to}؟</h2><p style="margin:0">يبدأ من أول درس في المستوى ${to} (<span class="en">${LEVEL_CEFR[to]}</span>). التقارير والنقاط والأوسمة تبقى كما هي.</p><div class="chips"><button class="btn primary" id="yes">نعم، ارفعه</button><button class="btn" id="no">رجوع</button></div>`);
@@ -2779,9 +2788,9 @@ function rewardForm(id){
     save(); ov.remove(); toast('تم حفظ الهدية 🎁'); renderParent(); };
 }
 function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level){ DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; DB.progress[k].levelUpPending = {from:kid.level, to:lv}; } kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
-function kidForm(k){
-  const kid = k ? DB.kids[k] : {ar:'', en:'', user:'', pass:rnd(4), level:5, birth:'2015-01-01', boy:true};
-  const per = k ? periodAt(k, new Date()) : {days:[0,2,4], time:'17:00'};
+function kidForm(k, pre){
+  const kid = k ? DB.kids[k] : {ar:pre ? pre.ar : '', en:pre ? pre.en : '', user:'', pass:rnd(4), level:5, birth:(pre && pre.birth) || '2015-01-01', boy:pre ? pre.boy : true};
+  const per = k ? periodAt(k, new Date()) : {days:(pre && pre.days) || [0,2,4], time:'17:00'};
   const ov = overlay(`<h2>${k ? 'تعديل ' + esc(kid.ar) : 'إضافة طفل جديد'}</h2>
     <div class="g2e" style="gap:10px">
       <div class="field"><label for="f_ar">الاسم بالعربي</label><input class="input" id="f_ar" value="${esc(kid.ar)}"></div>
@@ -2804,8 +2813,16 @@ function kidForm(k){
   ov.querySelector('#f_cancel').onclick = () => ov.remove();
 
   wireGuardianFields(ov, k);
+  if(pre){ ov.querySelector('h2').textContent = 'قبول طلب تسجيل: ' + (pre.ar || '');
+    const bal = ov.querySelector('#f_bal'); bal.value = ''; bal.placeholder = 'اكتب مبلغ الاشتراك'; bal.style.borderColor = 'var(--brand)';
+    const sel = ov.querySelector('#g_sel'), ph = String((pre.g || {}).phone || '').replace(/\D/g, '').slice(-9);
+    const same = ph && gIds().find(g => String(DB.guardians[g].phone || '').replace(/\D/g, '').slice(-9) === ph);
+    if(same){ sel.value = same; sel.dispatchEvent(new Event('change')); }
+    else if(pre.g){ sel.value = 'new'; sel.dispatchEvent(new Event('change')); ov.querySelector('#g_name').value = pre.g.name; ov.querySelector('#g_phone').value = pre.g.phone;
+      ov.querySelector('#g_rel').value = pre.g.rel || ''; ov.querySelector('#g_first').value = pre.g.first; ov.querySelector('#g_first').dispatchEvent(new Event('input')); } }
   if(!k){ const en = ov.querySelector('#f_en'), us = ov.querySelector('#f_user'); let touched = false; us.addEventListener('input', () => touched = true);
     en.addEventListener('input', () => { if(!touched){ us.value = en.value.trim() ? suggestUser(en.value.split(' ')[0]) : ''; if(ov.querySelector('#g_sel').value === 'new') ov.querySelector('#g_user').value = suggestUser((us.value || 'family') + 'p'); } }); }
+  if(pre && pre.en){ ov.querySelector('#f_en').dispatchEvent(new Event('input')); }
   ov.querySelector('#f_save').onclick = () => {
     const v = id => ov.querySelector(id).value.trim(), err = ov.querySelector('#f_err');
     const ar = v('#f_ar'), en = v('#f_en'), user = v('#f_user').toLowerCase(), pass = v('#f_pass'), level = k ? Number(v('#f_lv')) : Math.max(1, Math.min(20, ageOf(v('#f_b') || '2015-01-01') - 5)), birth = v('#f_b'), boy = v('#f_g') === '1', bal = Math.max(0, Number(v('#f_bal'))||0), time = v('#f_t');
@@ -2835,7 +2852,7 @@ function kidForm(k){
       DB.balance[id] = bal; DB.prices = DB.prices || {}; DB.prices[id] = [{from:'2000-01-01T00:00:00Z', price:Math.max(1, Math.round(Number(ov.querySelector('#f_price').value)) || DB.perLesson)}];
       const t = new Date(); t.setDate(t.getDate()+1);
       DB.sched[id] = {periods:[{from:`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T00:00`, days, time}], cancel:[], extra:[]};
-      ensureKidShape(id); save(); ov.remove(); showCreds(id); return;
+      ensureKidShape(id); save(); ov.remove(); if(pre && pre.onDone) pre.onDone(id); showCreds(id); return;
     }
     ov.remove(); renderParent();
   };
@@ -4093,6 +4110,69 @@ function sibCard(k){
       return `<div class="sibr ${x.k === k ? 'me' : ''}"><span class="sibav">${a.hat ? `<i>${a.hat}</i>` : ''}${a.char}</span><div class="sibm"><div class="chips" style="justify-content:space-between"><b>${esc(nick(x.k))}${i === 0 && x.xp > 0 ? ' 👑' : ''}</b><span class="num"><b>${x.xp}</b> <span class="small muted">نقطة</span></span></div>
         <div class="sibbar"><i style="width:${Math.round(x.xp / top * 100)}%"></i></div><div class="small muted">🏆 فاز ${w} ${w === 1 ? 'مرة' : 'مرات'} · <span class="en">Level ${DB.kids[x.k].level}</span></div></div></div>`; }).join('')}</div>
     <p class="small muted" style="margin:8px 0 0">كل واحد يتدرّب على مستواه، والنقاط من الحصص والواجب والألعاب. ينتهي التحدي ليلة السبت، والفائز ياخذ كأس حصري لغرفته + ${SIB_PRIZE} نقطة.${last ? (last.won ? ' · 🏆 فزت الأسبوع الماضي!' : last.winners ? ` · الأسبوع الماضي فاز ${last.winners.map(x => nick(x)).join(' و ')}` : '') : ''}</p></section>`;
+}
+
+/* =============== SIGN-UP REQUESTS (public join link → admin accepts / rejects) =============== */
+let SIGNUPS = null, SIGNUPS_AT = 0;
+const joinLink = () => location.origin + location.pathname.replace(/[^/]*$/, '') + 'join/';
+const suOn = () => cloudOn() && !!CLOUD.token && CLOUD.role === 'parent';
+async function loadSignups(force){
+  if(!suOn()) return null;
+  if(!force && SIGNUPS && Date.now() - SIGNUPS_AT < 20000) return SIGNUPS;
+  try{ SIGNUPS = (await rpc('tk_signups_list', {t:CLOUD.token})) || []; SIGNUPS_AT = Date.now(); }catch(e){ console.warn('signups', e); }
+  return SIGNUPS;
+}
+function signupsCardHTML(){
+  if(!suOn()) return '';
+  return `<section class="card sucard" id="suCard"><div class="chips" style="justify-content:space-between;align-items:center"><h2>📥 طلبات التسجيل <span class="chip brand" id="suN" hidden></span></h2>
+    <div class="chips"><button class="btn sm" id="suCopy">🔗 نسخ رابط التسجيل</button><button class="btn sm ghost" id="suRe" aria-label="تحديث">↻</button></div></div>
+    <div class="small muted" style="margin:4px 0 10px">أرسل الرابط لأي شخص يبي يسجّل: <span class="en" style="direction:ltr;unicode-bidi:isolate">${esc(joinLink())}</span></div>
+    <div id="suList" class="small muted">جاري التحميل…</div></section>`;
+}
+const RELMAP = {'الأب':'بابا','الأم':'ماما','الجد':'جدو','الجدة':'تيتا','العم / العمة':'عمو','الخال / الخالة':'خالو'};
+const suAccepted = s => { try{ return JSON.parse(s.kid || '{}') || {}; }catch(e){ return {}; } };
+function suAge(b){ const a = ageOf(b); return isFinite(a) ? a + (a >= 3 && a <= 10 ? ' سنوات' : ' سنة') : ''; }
+function suItemHTML(s){
+  const d = s.data || {}, kids = d.kids || [], acc = suAccepted(s), st = s.status;
+  const wa = String(d.phone || '').replace(/^0/, '966').replace(/[^\d]/g, '');
+  const when = new Date(s.at), dayNames = (d.days || []).map(i => DAYS_AR[i]).join('، ');
+  return `<div class="suitem ${st}">
+    <div class="suhead"><div><b style="font-size:1.05rem">${esc(d.g_name || '')}</b> <span class="small muted">${esc(d.rel || '')}${d.city ? ' · ' + esc(d.city) : ''}</span></div>
+      <span class="chip ${st === 'pending' ? 'brand' : st === 'accepted' ? 'good' : ''}">${st === 'pending' ? 'بانتظار القرار' : st === 'accepted' ? '✓ مقبول' : 'مرفوض'}</span></div>
+    <div class="chips" style="margin:6px 0"><a class="btn sm" href="tel:${esc(d.phone || '')}">📞 <span class="en">${esc(d.phone || '')}</span></a>${wa ? `<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">💬 واتساب</a>` : ''}${d.email ? `<a class="btn sm" href="mailto:${esc(d.email)}">✉️ <span class="en">${esc(d.email)}</span></a>` : ''}</div>
+    <div class="small muted">${when.toLocaleDateString(LOC)} · ${fmtTime(when)}${d.device ? ' · الجهاز: ' + esc(d.device) : ''}${dayNames ? ' · الأيام: ' + esc(dayNames) : ''}${d.time ? ' · الوقت: ' + esc(d.time) : ''}</div>
+    ${d.notes ? `<div class="sunote">📝 ${esc(d.notes)}</div>` : ''}
+    <div class="sukids">${kids.map((k, i) => `<div class="sukid"><span class="sukav">${k.boy ? '👦' : '👧'}</span><div style="min-width:0;flex:1"><b>${esc(k.ar || '')}</b>${k.en ? ` <span class="en small muted">${esc(k.en)}</span>` : ''}
+        <div class="small muted">${k.boy ? 'ولد' : 'بنت'} · ${esc(suAge(k.birth))}${k.grade ? ' · ' + esc(k.grade) : ''}${k.eng ? ' · ' + esc(k.eng) : ''}</div></div>
+        ${acc[i] ? `<span class="chip good">✓ حسابه: <span class="en">${esc((DB.kids[acc[i]] || {}).user || acc[i])}</span></span>` : st === 'rejected' ? '' : `<button class="btn sm primary" data-suacc="${s.id}" data-suk="${i}">✅ قبول وإنشاء حساب</button>`}</div>`).join('')}</div>
+    <div class="chips" style="margin-top:8px">${st === 'pending' ? `<button class="btn sm danger" data-surej="${s.id}">❌ رفض الطلب</button>` : st === 'rejected' ? `<button class="btn sm" data-suback="${s.id}">↩︎ إرجاع للانتظار</button>` : ''}</div>
+  </div>`;
+}
+async function fillSignups(force){
+  const box = document.getElementById('suList'); if(!box) return;
+  const list = await loadSignups(force); if(!document.getElementById('suList')) return;
+  if(!list){ box.textContent = 'تعذّر تحميل الطلبات. تأكد من الاتصال.'; return; }
+  const pend = list.filter(s => s.status === 'pending'), done = list.filter(s => s.status !== 'pending');
+  const n = document.getElementById('suN'); if(n){ n.hidden = !pend.length; n.textContent = pend.length; }
+  box.classList.remove('muted', 'small');
+  box.innerHTML = (pend.length ? pend.map(suItemHTML).join('') : '<p class="small muted" style="margin:0">ما فيه طلبات جديدة.</p>')
+    + (done.length ? `<details class="skills" style="margin-top:10px"><summary>الطلبات السابقة (${done.length})</summary>${done.map(suItemHTML).join('')}</details>` : '');
+  box.querySelectorAll('[data-suacc]').forEach(b => b.onclick = () => suAccept(b.dataset.suacc, Number(b.dataset.suk)));
+  box.querySelectorAll('[data-surej]').forEach(b => b.onclick = () => { const ov = overlay(`<h2>رفض الطلب؟</h2><p style="margin:0">ينتقل الطلب للطلبات السابقة، وتقدر ترجعه لاحقاً.</p><div class="chips"><button class="btn danger" id="y">رفض</button><button class="btn" id="n">رجوع</button></div>`);
+    ov.querySelector('#n').onclick = () => ov.remove(); ov.querySelector('#y').onclick = async () => { ov.remove(); await suSet(b.dataset.surej, 'rejected'); }; });
+  box.querySelectorAll('[data-suback]').forEach(b => b.onclick = () => suSet(b.dataset.suback, 'pending'));
+}
+async function suSet(id, st, kidMap){
+  const s = (SIGNUPS || []).find(x => x.id === id); const kid = kidMap ? JSON.stringify(kidMap) : (s ? s.kid : null);
+  try{ await rpc('tk_signup_set', {t:CLOUD.token, sid:id, st, kid}); if(s){ s.status = st; s.kid = kid; } toast(st === 'rejected' ? 'تم رفض الطلب' : st === 'accepted' ? '✓ تم قبول الطلب' : 'رجع الطلب للانتظار'); }
+  catch(e){ toast('ما قدرت أحفظ القرار، حاول مرة ثانية'); }
+  fillSignups(false);
+}
+function suAccept(id, i){
+  const s = (SIGNUPS || []).find(x => x.id === id); if(!s) return; const d = s.data || {}, k = (d.kids || [])[i]; if(!k) return;
+  kidForm(null, {ar:k.ar || '', en:k.en || '', birth:k.birth || '', boy:!!k.boy, days:(d.days || []).length ? d.days : null,
+    g:{name:d.g_name || '', phone:d.phone || '', rel:RELMAP[d.rel] || '', first:/^(أم|ام|أبو|ابو)\s/.test(String(d.g_name || '').trim()) ? '' : (String(d.g_name || '').trim().split(/\s+/)[0] || '')},
+    onDone: async kidId => { const acc = suAccepted(s); acc[i] = kidId; const all = (d.kids || []).every((_, x) => acc[x]); await suSet(id, all ? 'accepted' : 'pending', acc); } });
 }
 
 /* =============== BOOT =============== */
