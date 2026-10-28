@@ -483,6 +483,26 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .cheerpop{position:fixed;z-index:9000;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(92vw,460px);background:var(--surface);border:2px solid var(--brand);border-radius:20px;box-shadow:0 14px 40px rgba(0,0,0,.18);padding:12px 14px;display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;animation:cp-in .5s cubic-bezier(.3,1.5,.5,1)}
 .cheerpop.out{opacity:0;transform:translate(-50%,20px);transition:all .35s}.cheerpop .cpb svg{width:60px;height:56px;animation:bob 1.4s ease-in-out infinite}
 @keyframes cp-in{from{transform:translate(-50%,40px) scale(.9);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+
+.segs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:5px;position:sticky;top:calc(6px + env(safe-area-inset-top,0px));z-index:5;box-shadow:0 6px 16px rgba(0,0,0,.05)}
+.seg2{border:0;background:transparent;border-radius:999px;padding:10px 6px;font:inherit;font-weight:800;color:var(--muted);min-height:44px}
+.seg2.on{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(240,90,56,.3)}
+.segp[hidden]{display:none}
+.hero{position:relative}.herocol{display:grid;justify-items:center;gap:6px}.herobird .hoop{width:clamp(64px,14vw,92px);height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.12))}
+.hoop{overflow:visible}.hoop .hc{transform-box:fill-box;transform-origin:50% 100%;animation:hp-crest 2.6s ease-in-out infinite}
+.hoop.cheer{animation:hp-jump 1.1s ease-in-out infinite}.hoop.cheer .hw{transform-box:fill-box;transform-origin:90% 90%;animation:hp-wave .35s ease-in-out infinite alternate}
+.hoop.happy{animation:hp-bob 1.8s ease-in-out infinite}.hoop.think{animation:hp-tilt 2.2s ease-in-out infinite}.hoop.wow{animation:hp-jump 1.6s ease-in-out infinite}
+@keyframes hp-jump{0%,100%{transform:translateY(0)}40%{transform:translateY(-10%) rotate(-3deg)}60%{transform:translateY(0) scale(1.03,.97)}}
+@keyframes hp-bob{50%{transform:translateY(-5%)}}@keyframes hp-tilt{50%{transform:rotate(-6deg)}}
+@keyframes hp-wave{from{transform:rotate(0)}to{transform:rotate(-14deg)}}@keyframes hp-crest{0%,80%,100%{transform:scaleY(1)}88%{transform:scaleY(1.15)}}
+.bigbird .hoop{width:120px;height:auto;margin:0 auto;display:block}
+.hsay{position:fixed;z-index:9500;inset-inline-start:max(12px,env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;align-items:flex-end;gap:6px;animation:cp-up .4s cubic-bezier(.3,1.5,.5,1);pointer-events:auto}
+.hsay.out{opacity:0;transform:translateY(16px);transition:all .3s}.hsay .hoop{width:74px;height:auto}
+.hsb{background:var(--surface);border:2px solid var(--brand);border-radius:16px 16px 16px 4px;padding:8px 12px;font-weight:800;max-width:220px;margin-bottom:46px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+@keyframes cp-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.toast.gold{display:flex;align-items:center;gap:8px}.toast.gold .hoop{width:40px;height:auto;flex:none}
+.onb .hoop{width:150px;height:auto;margin:0 auto}.obd{display:flex;gap:6px;justify-content:center}.obd i{width:8px;height:8px;border-radius:50%;background:var(--line)}.obd i.on{background:var(--brand);width:22px;border-radius:6px}
+.mapbird .mbf{animation:hp-bob 1.6s ease-in-out infinite}
 </style>
 </head>
 <body>
@@ -787,7 +807,7 @@ async function decodeSetupAny(s){ let t = String(s || '').trim(); const m = t.ma
   return decodeSetup(t); }
 const setupLink = code => location.origin + location.pathname + '#setup=' + code;
 function applyFullSetup(cfg){ DB = cfg.full; try{ CLOUD.token = null; CLOUD.family = null; CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; cloudSave(); }catch(e){} normalize(); save(); try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){} }
-function toast(msg, kind){ const t = document.createElement('div'); t.className = 'toast ' + (kind||''); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
+function toast(msg, kind){ const t = document.createElement('div'); t.className = 'toast ' + (kind||''); if(kind === 'gold' && typeof hoopoeSVG === 'function'){ t.innerHTML = hoopoeSVG('cheer') + '<span></span>'; t.querySelector('span').textContent = msg; } else t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
 function overlay(html){ const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = `<div class="card">${html}</div>`; document.body.appendChild(ov); return ov; }
 
 /* =============== CURRICULUM ACCESS =============== */
@@ -913,7 +933,7 @@ function go(view, tab){
   if(!DB) return cloudOn() ? renderLogin() : renderFirstRun();
   if(view === 'parent') return renderParent();
   if(typeof view === 'string' && view.startsWith('g:')) return renderGuardian(view.slice(2));
-  if(view && DB.kids[view]){ const p = DB.profiles[view]; if(!p || !p.nick) return renderProfile(view, true); if(tab) TAB = tab; renderKid(view); if(DB.kids[view].needPlace && !L && !document.querySelector('.ov,.reader') && !ledger(view).ended) placementTest(view, {kid:true}); return; }
+  if(view && DB.kids[view]){ const p = DB.profiles[view]; if(!p || !p.nick) return renderProfile(view, true); if(tab) TAB = tab; renderKid(view); if(DB.kids[view].needPlace && !L && !document.querySelector('.ov,.reader') && !ledger(view).ended) placementTest(view, {kid:true}); else if(!DEMO && !DB.progress[view].onboarded && !L && !document.querySelector('.ov,.reader')) setTimeout(() => onboarding(view), document.getElementById('splash') ? 3600 : 300); return; }
   renderLogin();
 }
 
@@ -1027,6 +1047,7 @@ function renderKid(k){
 }
 
 /* ----- home tab ----- */
+let HOME_SEG = (() => { try{ return localStorage.getItem('hh:seg') || 'play'; }catch(e){ return 'play'; } })();
 function tabHome(k){
   const L0 = ledger(k), plan = lessonPlan(k), now = new Date(), units = levelUnits(DB.kids[k].level);
   let when, btn, cnt = '';
@@ -1041,15 +1062,21 @@ function tabHome(k){
   const reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,5);
   const pos = DB.progress[k].pos;
   $('#tabBody').innerHTML = `<div class="grid">
-    <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div>${btn}</div></section>
+    <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div class="herocol"><div class="herobird">${hoopoeSVG(L0.open ? "cheer" : "happy", true)}</div>${btn}</div></section>
     ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
     ${examCard(k)}
     ${familyCard(k)}
-    <div class="g2e">${dailyCard(k)}${homeworkCard(k) || practiceCard(k)}</div>
-    <div class="g2e">${kitCard(k)}${homeworkCard(k) ? practiceCard(k) : ''}</div>
+    <div class="g2e">${dailyCard(k)}${homeworkCard(k) || kitCard(k)}</div>
+    <div class="segs" role="tablist">${[['play','🎮 العب'],['train','💪 تدرّب'],['journey','🗺️ رحلتي']].map(([id, t]) => `<button role="tab" aria-selected="${HOME_SEG === id}" class="seg2 ${HOME_SEG === id ? 'on' : ''}" data-seg="${id}">${t}</button>`).join('')}</div>
+    <div class="segp" data-segp="play" ${HOME_SEG === 'play' ? '' : 'hidden'}><div class="grid">
     ${missionCard(k)}
-    <div class="g2e">${gamesCard()}<section class="card"><div class="chips" style="justify-content:space-between"><h2>🗣️ مختبر النطق</h2><button class="btn sm primary" id="pronGo">ادخل المختبر</button></div><p class="small muted" style="margin:6px 0 0">تمرّن على الأصوات الصعبة لمن يتكلم العربية مثل <span class="en">P/B</span> و <span class="en">TH</span> و <span class="en">ship/sheep</span>.</p><div class="chips" style="margin-top:8px">${SOUNDS.map(x => { const pc = soundPct(k, x.id); return `<span class="chip ${pc == null ? '' : pc >= 80 ? 'good' : pc >= 50 ? 'brand' : 'bad'} en">${x.t}${pc == null ? '' : ' ' + pc + '%'}</span>`; }).join('')}</div></section></div>
-    ${leagueCard(k, false)}
+    <div class="g2e">${gamesCard()}${leagueCard(k, false)}</div>
+    </div></div>
+    <div class="segp" data-segp="train" ${HOME_SEG === 'train' ? '' : 'hidden'}><div class="grid">
+    <div class="g2e">${homeworkCard(k) ? kitCard(k) : ''}${practiceCard(k)}</div>
+    <section class="card"><div class="chips" style="justify-content:space-between"><h2>🗣️ مختبر النطق</h2><button class="btn sm primary" id="pronGo">ادخل المختبر</button></div><p class="small muted" style="margin:6px 0 0">تمرّن على الأصوات الصعبة لمن يتكلم العربية مثل <span class="en">P/B</span> و <span class="en">TH</span> و <span class="en">ship/sheep</span>.</p><div class="chips" style="margin-top:8px">${SOUNDS.map(x => { const pc = soundPct(k, x.id); return `<span class="chip ${pc == null ? '' : pc >= 80 ? 'good' : pc >= 50 ? 'brand' : 'bad'} en">${x.t}${pc == null ? '' : ' ' + pc + '%'}</span>`; }).join('')}</div></section>
+    </div></div>
+    <div class="segp" data-segp="journey" ${HOME_SEG === 'journey' ? '' : 'hidden'}><div class="grid">
     ${units ? `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🗺️ خريطة المستوى ${DB.kids[k].level}</h2><span class="small muted">الدرس ${pos % plan.total + 1} من ${plan.total}</span></div><div class="lmapw">${levelMap(k, units, plan)}</div></section>` : ''}
     <div class="g2">
       <section class="card"><h2>رصيد اشتراكك</h2>
@@ -1066,8 +1093,13 @@ function tabHome(k){
         <h2 style="margin-top:18px">آخر حصصي</h2>
         <div class="hist">${reps.length ? reps.map(r => `<div class="row"><span class="stars">${'★'.repeat(r.stars||1)}${'☆'.repeat(3-(r.stars||1))}</span><div style="min-width:0"><div class="ltr en" style="text-align:right;font-weight:700">${esc(r.title)}</div><div class="small muted ltr" style="text-align:right">${esc((r.newWords||[]).join(', '))}</div></div><span class="chip brand num">${r.score||0}%</span></div>`).join('') : '<p class="muted" style="margin:0">لم تحضر أي حصة بعد.</p>'}</div>
       </section>
+    </div>
+    </div>
     </div></div>`;
   const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false);
+  document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => { HOME_SEG = b.dataset.seg; try{ localStorage.setItem('hh:seg', HOME_SEG); }catch(e){}
+    document.querySelectorAll('[data-seg]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+    document.querySelectorAll('[data-segp]').forEach(x => x.hidden = x.dataset.segp !== HOME_SEG); });
   const dg = $('#dailyGo'); if(dg) dg.onclick = () => { if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; } unlockAudio(); startDaily(k); };
   const rg = $('#revGo'); if(rg) rg.onclick = () => { unlockAudio(); startReview(k); };
   const hw = $('#hwGo'); if(hw) hw.onclick = () => { unlockAudio(); startHomework(k); };
@@ -1205,13 +1237,15 @@ function runQuiz(k, quiz, title, onDone, max){
     }
   };
   const feedback = (ok, right) => { if(ok) score++; const fb = ov.querySelector('#fb'); ov.querySelectorAll('#chk,#rst').forEach(b => b.disabled = true);
+    if(!ok) hoopoeSays(pick(NUDGE), 'think', 2600); else if(Math.random() < .35) hoopoeSays(pick(PRAISE), 'happy', 1800);
     fb.innerHTML = `<div class="qfb ${ok?'good':'bad'}">${ok ? '✓ إجابة صحيحة! +10 نقاط' : `✗ الإجابة الصحيحة: <span class="en">${esc(right)}</span>`}</div><button class="btn primary" id="nx">${i+1 < items.length ? 'التالي' : 'النتيجة'}</button>`;
     try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(ok ? 'Great job!' : String(right)); u.lang = 'en-US'; u.rate = .9; speechSynthesis.speak(u); }catch(e){}
     fb.querySelector('#nx').onclick = () => { i++; show(); }; };
   const finish = () => {
     const total = items.length, stars = score === total ? 3 : score >= total*0.6 ? 2 : 1, xp = score*10 + (score === total ? 20 : 0);
     addXP(k, xp);
-    ov.innerHTML = `<div class="card quiz" style="text-align:center"><div class="stars" style="font-size:2.6rem">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div><h2>${score} من ${total}</h2>
+    try{ if(SFX.running()){ SFX.chime(0); if(score === total) SFX.sparkle(.3); } }catch(e){}
+    ov.innerHTML = `<div class="card quiz" style="text-align:center"><div class="bigbird">${hoopoeSVG(score === total ? 'cheer' : score >= total*0.6 ? 'happy' : 'think')}</div><div class="stars" style="font-size:2.6rem">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div><h2>${score} من ${total}</h2>
       <p style="margin:0">${score === total ? 'علامة كاملة! أنت بطل 🏆' : score >= total*0.6 ? 'ممتاز! استمر 💪' : 'محاولة جيدة، راجع الدرس وستتحسن 🌱'}</p><div class="chip good" style="justify-self:center">+${xp} نقطة</div>
       <button class="btn primary big" id="qd">تم</button></div>`;
     ov.querySelector('#qd').onclick = () => { ov.remove(); onDone && onDone({score, total, stars, xp}); };
@@ -1590,7 +1624,7 @@ function maybeCelebrate(k){
   const p = DB.progress[k]; if(!p.levelUpPending) return;
   const {from, to} = p.levelUpPending; p.levelUpPending = null;
   const cert = {kid:k, unit:`Level ${from} Complete`, level:from, date:new Date().toISOString()}; DB.certs.push(cert); save();
-  const ov = overlay(`<div style="text-align:center"><div class="burst-big">🚀🎉⭐</div><h2>مبروك! انتقلت للمستوى ${to}</h2>
+  const ov = overlay(`<div style="text-align:center"><div class="bigbird">${hoopoeSVG("cheer")}</div><div class="burst-big">🚀🎉⭐</div><h2>مبروك! انتقلت للمستوى ${to}</h2>
     <p style="margin:6px 0">أنهيت المستوى ${from} بنجاح، والآن تبدأ دروساً أقوى في <span class="en">Level ${to} · ${LEVEL_CEFR[to]}</span>.</p></div>
     <div class="chips" style="justify-content:center"><button class="btn primary" id="cv">🎓 شهادتي</button><button class="btn" id="cx">يلا نبدأ!</button></div>`);
   try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(`Congratulations! Welcome to level ${to}!`); u.lang = 'en-US'; speechSynthesis.speak(u); }catch(e){}
@@ -1824,7 +1858,7 @@ Reply ONLY JSON: {"level":1-20,"cefr":"...","gse":"range","skills":{"grammar":0-
     frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:3rem">🎉</div><h2>أحسنت يا ${esc(nick(k))}! مستواك: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div></div>
       <div class="skills">${SK.map(([id,ar]) => { const v = (res.skills||{})[id]; return `<div class="sk"><span>${ar}</span><div class="bar"><i style="width:${v==null?0:v}%;background:${v==null?'var(--line)':v>=70?'var(--good)':v>=45?'var(--gold)':'var(--bad)'}"></i></div><b class="num">${v==null?'—':v+'%'}</b></div>`; }).join('')}</div>
       <p class="small muted" style="margin:0">حصصك وقصصك وألعابك صارت على مستواك الجديد. أرسلنا النتيجة لولي أمرك.</p><div class="chip good" style="justify-self:center">+50 نقطة</div><button class="btn primary big" id="pgo2">🚀 ابدأ رحلتك</button></div>`);
-    ov.querySelector('#px').hidden = true; ov.querySelector('#pgo2').onclick = () => { ov.remove(); TAB = 'home'; renderKid(k); }; return; }
+    ov.querySelector('#px').hidden = true; ov.querySelector('#pgo2').onclick = () => { ov.remove(); TAB = 'home'; renderKid(k); if(!DB.progress[k].onboarded) onboarding(k); }; return; }
   frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:2.6rem">🎯</div><h2>المستوى المقترح لـ ${esc(kid.ar)}: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div><div class="small muted">المستوى الحالي: ${kid.level}</div></div>
     <div class="skills">${SK.map(([id,ar]) => { const v = (res.skills||{})[id]; return `<div class="sk"><span>${ar}</span><div class="bar"><i style="width:${v==null?0:v}%;background:${v==null?'var(--line)':v>=70?'var(--good)':v>=45?'var(--gold)':'var(--bad)'}"></i></div><b class="num">${v==null?'—':v+'%'}</b></div>`; }).join('')}</div>
     <p style="margin:0">${esc(res.summary||'')}</p>${res.strengths?`<p class="small" style="margin:0">💪 ${esc(res.strengths)}</p>`:''}${res.focus?`<p class="small" style="margin:0">🎯 ${esc(res.focus)}</p>`:''}
@@ -2827,7 +2861,7 @@ function finishMission(){
   const xp = stars * 15 + (stars === 3 && prev < 3 ? 25 : 0); if(xp) addXP(k, xp);
   (lesson.fixes||[]).forEach(f => addSRS(k, f.right, 'كنت تقول: ' + f.wrong));
   save();
-  const ov = overlay(`<div style="text-align:center"><div style="font-size:3rem">${m.e}</div><div class="stars" style="font-size:2.3rem">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
+  const ov = overlay(`<div style="text-align:center"><div class="bigbird">${hoopoeSVG(stars === 3 ? "cheer" : stars ? "happy" : "think")}</div><div style="font-size:2rem">${m.e}</div><div class="stars" style="font-size:2.3rem">${'★'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
     <h2>${stars === 3 ? 'أنجزت المهمة كاملة! 🎉' : `حققت ${stars} من 3 أهداف`}</h2>${xp ? `<div class="chip good">+${xp} نقطة</div>` : ''}</div>
     ${(lesson.fixes||[]).length ? `<div><b>تصحيحات أضفناها لواجبك:</b>${lesson.fixes.map(f => `<div class="ltr small" style="text-align:left"><s class="muted">${esc(f.wrong)}</s> → <b style="color:var(--good)">${esc(f.right)}</b></div>`).join('')}</div>` : ''}
     <div class="chips" style="justify-content:center"><button class="btn primary" id="mback">رجوع</button>${stars < 3 ? '<button class="btn" id="magain">حاول مرة ثانية</button>' : ''}</div>`);
@@ -2945,7 +2979,7 @@ function startHomework(k){
   const grade = ok => { const [id, c] = cards[i]; c.box = ok ? Math.min(BOX_DAYS.length-1, (c.box||0) + 1) : 0; c.due = Date.now() + BOX_DAYS[c.box]*DAY - 3600e3; if(ok) good++; DB.progress[k].srs[id] = c; save(); i++; draw(); };
   const draw = () => {
     if(i >= cards.length){ stopStream(); const xp = 10 + good*2; addXP(k, xp); DB.progress[k].hw = DB.progress[k].hw || {}; DB.progress[k].hw[todayKey()] = true; save();
-      ov.innerHTML = `<div class="card" style="text-align:center;display:grid;gap:10px"><div style="font-size:2.6rem">📝</div><h2>أنجزت واجب اليوم!</h2><p style="margin:0">${good} من ${cards.length} صحيحة</p><div class="chip good" style="justify-self:center">+${xp} نقطة</div><button class="btn primary" id="hd">تم</button></div>`;
+      ov.innerHTML = `<div class="card" style="text-align:center;display:grid;gap:10px"><div class="bigbird">${hoopoeSVG("cheer")}</div><h2>أنجزت واجب اليوم!</h2><p style="margin:0">${good} من ${cards.length} صحيحة</p><div class="chip good" style="justify-self:center">+${xp} نقطة</div><button class="btn primary" id="hd">تم</button></div>`;
       ov.querySelector('#hd').onclick = () => { ov.remove(); renderKid(k); }; return; }
     const c = cards[i][1]; myUrl = null; const isWord = c.f.split(' ').length <= 2;
     ov.innerHTML = `<div class="card quiz"><div class="qhead"><span class="small muted">بطاقة ${i+1} من ${cards.length} · صندوق ${c.box||0}</span><div class="qbar"><i style="width:${i/cards.length*100}%"></i></div></div>
@@ -2984,7 +3018,7 @@ function levelMap(k, units, plan){
       path += (idx ? ' L ' : 'M ') + x.toFixed(1) + ' ' + y.toFixed(1);
       const st = idx < pos ? 'done' : idx === pos ? 'cur' : 'lock';
       nodes += `<g class="mnode ${st}"><circle cx="${x}" cy="${y}" r="${st==='cur'?21:17}"/><text x="${x}" y="${y+5.5}" text-anchor="middle" font-size="${st==='done'?17:14}" font-weight="800" font-family="Dubai,sans-serif">${st==='done' ? '✓' : idx+1}</text><title>${esc(l[0])}</title></g>`;
-      if(st === 'cur') hero = `<g class="hero-mark"><text x="${x}" y="${y-28}" text-anchor="middle" font-size="30">${av.char}</text>${av.hat ? `<text x="${x}" y="${y-52}" text-anchor="middle" font-size="19">${av.hat}</text>` : ''}${av.pet ? `<text x="${x+24}" y="${y-18}" text-anchor="middle" font-size="18">${av.pet}</text>` : ''}</g>`;
+      if(st === 'cur') hero = `<g class="mapbird" transform="translate(${Math.min(W - 48, Math.max(2, x + 18))} ${y - 74})"><g class="mbf">${hoopoeSVG('happy').replace('<svg class="hoop ', '<svg width="42" height="40" class="hoop ')}</g></g><g class="hero-mark"><text x="${x}" y="${y-28}" text-anchor="middle" font-size="30">${av.char}</text>${av.hat ? `<text x="${x}" y="${y-52}" text-anchor="middle" font-size="19">${av.hat}</text>` : ''}${av.pet ? `<text x="${x+24}" y="${y-18}" text-anchor="middle" font-size="18">${av.pet}</text>` : ''}</g>`;
       idx++;
     });
   });
@@ -3067,7 +3101,7 @@ function gamesCard(){ return `<section class="card"><div class="chips" style="ju
 function startGame(k, g){ unlockAudio(); ({match:gameMatch, race:gameRace, spell:gameSpell})[g](k); }
 function gameShell(title){ const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov); return ov; }
 function gameEnd(ov, k, id, score, total, xpPer){ const xp = gameXP(k, id, Math.round(score * xpPer)); speechSynthesis.cancel();
-  ov.innerHTML = `<div class="card" style="text-align:center;display:grid;gap:10px"><div style="font-size:2.6rem">🎮</div><h2>${score} من ${total}</h2>${xp ? `<div class="chip good" style="justify-self:center">+${xp} نقطة</div>` : '<div class="small muted">استنفدت نقاط هذه اللعبة اليوم، لكن التدريب مفيد دائماً 💪</div>'}<div class="chips" style="justify-content:center"><button class="btn primary" id="ga">العب مرة ثانية</button><button class="btn" id="gx">إغلاق</button></div></div>`;
+  ov.innerHTML = `<div class="card" style="text-align:center;display:grid;gap:10px"><div class="bigbird">${hoopoeSVG(score >= total * .7 ? "cheer" : "happy")}</div><h2>${score} من ${total}</h2>${xp ? `<div class="chip good" style="justify-self:center">+${xp} نقطة</div>` : '<div class="small muted">استنفدت نقاط هذه اللعبة اليوم، لكن التدريب مفيد دائماً 💪</div>'}<div class="chips" style="justify-content:center"><button class="btn primary" id="ga">العب مرة ثانية</button><button class="btn" id="gx">إغلاق</button></div></div>`;
   ov.querySelector('#gx').onclick = () => { ov.remove(); renderKid(k); }; ov.querySelector('#ga').onclick = () => { ov.remove(); startGame(k, id); }; }
 function gameMatch(k){
   const ws = wordPool(k).slice(0, 6), ov = gameShell(); let sel = null, done = 0, mistakes = 0; const t0 = Date.now();
@@ -3644,6 +3678,50 @@ function pushBtnHTML(){ return ''; }
 function wirePushBtn(){}
 
 const LOGO_BIRD = (LOGO.match(/<svg[\s\S]*<\/svg>/) || [''])[0];
+/* =============== HOOPOE MASCOT =============== */
+function hoopoeSVG(mood, light){
+  const body = light ? '#FFF4E6' : '#FF6B4A', crest = light ? '#FFF4E6' : '#FF6B4A';
+  const eye = mood === 'happy' || mood === 'cheer'
+    ? '<path d="M112 102q12-12 24 0" fill="none" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/>'
+    : mood === 'wow' ? '<circle cx="122" cy="100" r="16" fill="#fff"/><circle cx="125" cy="100" r="9" fill="#3B1F14"/><circle cx="128" cy="96" r="3" fill="#fff"/>'
+    : mood === 'think' ? '<circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="128" cy="95" r="7" fill="#3B1F14"/>'
+    : '<circle cx="122" cy="100" r="13" fill="#fff"/><circle cx="125" cy="101" r="7" fill="#3B1F14"/><circle cx="127.5" cy="98.5" r="2.2" fill="#fff"/>';
+  const wing = mood === 'cheer' ? '<g class="hw up"><path d="M58 112c-6-40 20-70 52-70-6 30-18 52-52 70z" fill="#14B8A6"/><path d="M70 88l14-6M74 76l16-8" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>'
+    : '<g class="hw"><path d="M60 128c20 34 70 40 98 10" fill="#14B8A6"/><path d="M78 150l12-10M98 158l12-12M118 160l12-14" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>';
+  return `<svg class="hoop ${mood || ''}" viewBox="-10 -10 220 210" aria-hidden="true"><g class="hc"><g fill="${crest}"><ellipse cx="70" cy="40" rx="9" ry="30" transform="rotate(-38 70 40)"/><ellipse cx="88" cy="30" rx="9" ry="32" transform="rotate(-18 88 30)"/><ellipse cx="108" cy="28" rx="9" ry="32" transform="rotate(2 108 28)"/><ellipse cx="126" cy="34" rx="9" ry="30" transform="rotate(22 126 34)"/></g><g fill="#3B1F14"><circle cx="54" cy="18" r="6"/><circle cx="80" cy="4" r="6"/><circle cx="109" cy="2" r="6"/><circle cx="138" cy="10" r="6"/></g></g>
+    <path d="M84 176v12M108 176v12" stroke="#3B1F14" stroke-width="6" stroke-linecap="round"/><ellipse cx="100" cy="120" rx="64" ry="56" fill="${body}"/>${wing}${eye}<circle cx="140" cy="122" r="7" fill="#FF9B80" opacity=".7"/><path d="M156 104l42 8-42 10z" fill="#3B1F14"/></svg>`;
+}
+/* a speech bubble from the hoopoe, used for praise and hints */
+function hoopoeSays(text, mood, ms){
+  document.querySelectorAll('.hsay').forEach(x => x.remove());
+  const el = document.createElement('div'); el.className = 'hsay'; el.setAttribute('role', 'status');
+  el.innerHTML = `${hoopoeSVG(mood || 'happy')}<div class="hsb">${esc(text)}</div>`;
+  document.body.appendChild(el); try{ if(SFX.running()) (mood === 'think' ? SFX.pop : SFX.chirp)(0); }catch(e){}
+  const close = () => { el.classList.add('out'); setTimeout(() => el.remove(), 350); };
+  el.onclick = close; setTimeout(close, ms || 3200);
+}
+const PRAISE = ['ممتاز! 🌟', 'أحسنت يا بطل!', 'رائع، كمّل كذا!', 'واو! إنجليزيك يتحسن', 'هدهد فخور فيك!'];
+const NUDGE = ['قريب جداً! جرّب مرة ثانية', 'لا بأس، كلنا نتعلم من الخطأ', 'ركّز شوي وبتجيبها', 'خطأ بسيط، تقدر عليها!'];
+const pick = a => a[Math.floor(Math.random() * a.length)];
+/* first visit: the hoopoe introduces the app (3 short cards) */
+function onboarding(k){
+  const steps = [
+    ['wave', `أهلاً ${nick(k)}! أنا هدهد 👋`, 'أنا اللي بنقل لك المعرفة. كل يوم بنتعلم إنجليزي بالكلام والألعاب والقصص.'],
+    ['cheer', 'حصصك مع المعلمة', 'من «الرئيسية» تدخل حصتك في موعدها وتتكلم مع المعلمة بالصوت. كل حصة تحضرها تعطيك نقاط.'],
+    ['happy', 'العب وتدرّب ورحلتي', '«العب» فيه مهمات وألعاب ودوري الأسبوع، و«تدرّب» فيه النطق وتحضير الدرس، و«رحلتي» فيها خريطة المستوى.'],
+    ['wow', 'جاهز؟ يلا نبدأ! 🚀', 'اجمع النقاط وزيّن غرفتك واكسب الأوسمة. وإذا احتجتني تلقاني في كل مكان.']];
+  let i = 0; const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
+  const draw = () => { const [m, t, d] = steps[i];
+    ov.innerHTML = `<div class="card onb" style="text-align:center;display:grid;gap:10px;max-width:440px">${hoopoeSVG(m === 'wave' ? 'cheer' : m)}<h2 style="margin:0">${esc(t)}</h2><p style="margin:0">${esc(d)}</p>
+      <div class="obd">${steps.map((_, x) => `<i class="${x === i ? 'on' : ''}"></i>`).join('')}</div>
+      <div class="chips" style="justify-content:center"><button class="btn primary" id="on">${i < steps.length - 1 ? 'التالي' : 'يلا نبدأ'}</button>${i < steps.length - 1 ? '<button class="btn ghost sm" id="os">تخطي</button>' : ''}</div></div>`;
+    try{ if(SFX.running()) SFX.chirp(0); }catch(e){}
+    const end = () => { DB.progress[k].onboarded = true; save(); ov.remove(); };
+    ov.querySelector('#on').onclick = () => { if(++i >= steps.length) end(); else draw(); };
+    const s = ov.querySelector('#os'); if(s) s.onclick = end; };
+  draw();
+}
+
 /* =============== BOOT =============== */
 setupLang();
 loadDB();
