@@ -626,7 +626,6 @@ function renderRoom(){
       <button class="btn sm" id="kb">⌨️ كتابة</button>
       <button class="btn sm" id="wrap" hidden>اختم الحصة</button>
       <form class="typer" id="typer" hidden><input class="input en" id="msg" placeholder="Type in English…" autocomplete="off" enterkeyhint="send"><button class="btn primary" type="submit">إرسال</button></form>
-      <p class="hint" id="micHint" ${micOK?'hidden':''}>إذا ما اشتغل الميكروفون: اضغط «كتابة» ثم ميكروفون الكيبورد وتكلم.</p>
     </div></div>`;
   $('#exit').onclick = confirmExit;
   $('#rep').onclick = () => { if(L.lastSay){ interrupt(false); sayAll(L.lastSay, true); } };
@@ -641,7 +640,7 @@ function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt
   if(t){ t.textContent = `${pad(Math.floor(s/60))}:${pad(s%60)} / 25:00`; t.classList.toggle('over', s > LESSON_MIN*60); }
   const w = $('#wrap'); if(w) w.hidden = !(s >= 24*60 && !L.done); }
 
-const STATE_TXT = {idle:'', thinking:'المعلمة تفكر…', speaking:'المعلمة تتكلم · اضغط عليها لتقاطعها', listening:'دورك! تكلم بالإنجليزي 🎤', tap:'اضغط الميكروفون وتكلم'};
+const STATE_TXT = {idle:'', thinking:'المعلمة تفكر…', speaking:'المعلمة تتكلم · اضغط عليها لتقاطعها', listening:'دورك! تكلم بالإنجليزي 🎤', tap:'اضغط زر الميكروفون الأزرق وتكلم'};
 function setState(s){ if(!L) return; L.state = s; const b = $('#tbox'); if(!b) return;
   b.classList.toggle('speaking', s==='speaking'); b.classList.toggle('listening', s==='listening'); b.classList.toggle('thinking', s==='thinking');
   $('#state').textContent = STATE_TXT[s] || '';
@@ -767,7 +766,7 @@ function onMicTap(){
 }
 function startListening(fromTap){
   if(!L || L.done) return;
-  if(!SR || !micOK){ setState('tap'); const h = $('#micHint'); if(h) h.hidden = false; return; }
+  if(!SR || !micOK){ setState('tap'); return; }
   stopListening();
   if(!L.listenStart) L.listenStart = Date.now();
   let text = '';
@@ -776,7 +775,7 @@ function startListening(fromTap){
   rec.onresult = e => { let t = ''; for(const r of e.results) t += r[0].transcript; text = t;
     if(you){ you.hidden = false; you.classList.add('live'); you.textContent = t; }
     clearTimeout(L.silT); L.silT = setTimeout(() => { try{ rec.stop(); }catch(x){} }, SILENCE_MS); };
-  rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; const h = $('#micHint'); if(h) h.hidden = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); } };
+  rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); } };
   rec.onend = () => { if(!L || L.rec !== rec) return; L.rec = null; clearTimeout(L.silT);
     if(text.trim()){ L.listenStart = 0; clearTimeout(L.nudgeT); studentSaid(text.trim()); return; }
     if(L.state === 'listening'){ if(Date.now() - L.listenStart > NUDGE_MS){ L.listenStart = 0; teacherTurn('(student was silent)'); } else startListening(false); } };
