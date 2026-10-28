@@ -55,9 +55,15 @@ async function run() {
       const slots = [...slotsOn(f.sched[k], yday), ...slotsOn(f.sched[k], today)];
       for (const s of slots) {
         const mins = (s.t.getTime() - now.getTime()) / 60e3;
-        if (mins > 0 && mins <= 11) {
-          msgs.push({ fam: fid, key: `rem:${k}:${s.key}`, to: toKid(k), title: "🦜 حصتك بعد شوي!", body: `يا ${name}، حصتك الساعة ${hhmm(s.t)}. المعلمة بانتظارك 👩‍🏫` });
-          msgs.push({ fam: fid, key: `remg:${k}:${s.key}`, to: toGuard(k), title: `⏰ حصة ${name} بعد ${Math.round(mins)} دقائق`, body: `الحصة الساعة ${hhmm(s.t)}. تأكد إنه جاهز ومعه الآيباد.` });
+        for (const T of [60, 30, 10]) {
+          if (mins > 0 && mins <= T && mins > T - 8) {
+            const when = T === 60 ? "بعد ساعة" : T === 30 ? "بعد نص ساعة" : "بعد 10 دقائق";
+            const kidBody = T === 60 ? `يا ${name}، حصتك ${when} الساعة ${hhmm(s.t)}. جهّز الآيباد والسماعة 🎧`
+              : T === 30 ? `يا ${name}، باقي نص ساعة على حصتك. راجع كلمات «حضّر لدرسك القادم» 📚`
+              : `يا ${name}، حصتك تبدأ الساعة ${hhmm(s.t)}. ادخل الحين، المعلمة بانتظارك 👩‍🏫`;
+            msgs.push({ fam: fid, key: `rem${T}:${k}:${s.key}`, to: toKid(k), title: T === 10 ? "🦜 حصتك بعد 10 دقائق!" : `🦜 حصتك ${when}`, body: kidBody });
+            msgs.push({ fam: fid, key: `remg${T}:${k}:${s.key}`, to: (x: any) => toGuard(k)(x) && x.role === "guardian", title: `⏰ حصة ${name} ${when}`, body: `الحصة الساعة ${hhmm(s.t)}.${T === 10 ? " تأكد إنه دخل الحصة." : " تأكد إنه جاهز ومعه الآيباد."}` });
+          }
         }
         const attended = (f.attendance || []).some((a: any) => a.kid === k && a.slot === s.key);
         if (!attended && mins <= -OPEN_AFTER && mins > -OPEN_AFTER - 90)
