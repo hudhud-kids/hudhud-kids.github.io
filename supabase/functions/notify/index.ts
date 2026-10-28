@@ -35,11 +35,11 @@ Deno.serve(async (req) => {
 async function run() {
   if (!vapidOk) { webpush.setVapidDetails("mailto:info@sahla-sa.com", Deno.env.get("VAPID_PUBLIC")!, Deno.env.get("VAPID_PRIVATE")!); vapidOk = true; }
   const nowMs = Date.now(), now = toLocal(nowMs);
-  const { data: rows, error: e1 } = await sb.from("tk_rows").select("family_id,path,value,updated_at").or("path.like.kids/%,path.like.sched/%,path.like.guardians/%,path.like.cheers/%,path.like.livefeed/%,path.like.progress/%,path.eq.attendance,path.eq.reports");
+  const { data: rows, error: e1 } = await sb.from("tk_rows").select("family_id,path,value,updated_at").or("path.like.kids/%,path.like.sched/%,path.like.guardians/%,path.like.cheers/%,path.like.livefeed/%,path.like.progress/%,path.like.balance/%,path.like.prices/%,path.like.live/%,path.eq.perLesson,path.eq.attendance,path.eq.reports");
   if (e1) throw new Error("rows: " + e1.message);
   const { data: subs, error: e2 } = await sb.from("tk_push_subs").select("*"); if (e2) throw new Error("subs: " + e2.message);
   const fam: Record<string, any> = {};
-  for (const r of rows || []) { const f = fam[r.family_id] = fam[r.family_id] || { kids: {}, sched: {}, guardians: {}, cheers: {}, livefeed: {}, progress: {}, attendance: [], reports: [] };
+  for (const r of rows || []) { const f = fam[r.family_id] = fam[r.family_id] || { kids: {}, sched: {}, guardians: {}, cheers: {}, livefeed: {}, progress: {}, balance: {}, prices: {}, live: {}, perLesson: 10, attendance: [], reports: [] };
     const [top, sub] = r.path.split("/"); if (sub === "") continue;
     if (sub === undefined) f[top] = r.value; else f[top][sub] = r.value; }
   const msgs: { fam: string; key: string; to: (s: any) => boolean; title: string; body: string; url?: string }[] = [];
@@ -70,8 +70,18 @@ async function run() {
       if (!kid || typeof kid !== 'object') continue;
       const name = kid.ar || kid.en || k;
       const slots = [...slotsOn(f.sched[k], yday), ...slotsOn(f.sched[k], today)];
+      const priceAt = (t: Date) => { let pr = Number(f.perLesson) || 10; for (const x of (f.prices[k] || [])) if (parseLocal(String(x.from).slice(0, 16).replace("Z", "")) <= t) pr = Number(x.price) || pr; return pr; };
+      // money already used by lessons before a slot (attended, or ended without attendance), like the app's ledger
+      const usedBefore = (t: Date) => { const sc = f.sched[k]; if (!sc || !sc.periods || !sc.periods.length) return 0; let used = 0;
+        const start = parseLocal(sc.periods[0].from); const d0 = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+        const attSet = new Set((f.attendance || []).filter((a: any) => a.kid === k).map((a: any) => a.slot));
+        for (let d = d0; d <= t; d = new Date(d.getTime() + 864e5)) for (const x of slotsOn(sc, d)) { if (x.t >= t) continue;
+          if (attSet.has(x.key) || (now.getTime() - x.t.getTime()) / 60e3 > OPEN_AFTER) used += priceAt(x.t); }
+        return used; };
+      const bal = Number(f.balance[k]); const payable = (t: Date) => !isFinite(bal) || usedBefore(t) + priceAt(t) <= bal;
       for (const s of slots) {
         const mins = (s.t.getTime() - now.getTime()) / 60e3;
+        if (!payable(s.t)) continue; // balance finished: no reminders and no "absent" alerts
         for (const T of [60, 30, 10]) {
           if (mins > 0 && mins <= T && mins > T - 8) {
             const when = T === 60 ? "بعد ساعة" : T === 30 ? "بعد نص ساعة" : "بعد 10 دقائق";
@@ -83,7 +93,8 @@ async function run() {
           }
         }
         const attended = (f.attendance || []).some((a: any) => a.kid === k && a.slot === s.key);
-        if (!attended && mins <= -OPEN_AFTER && mins > -OPEN_AFTER - 90)
+        const inClass = f.live[k] && f.live[k].slot === s.key && nowMs - Date.parse(f.live[k].startedAt) < 60 * 60e3;
+        if (!attended && !inClass && mins <= -60 && mins > -150)
           msgs.push({ fam: fid, key: `miss:${k}:${s.key}`, to: toGuard(k), title: `❌ ${name} غاب عن حصته`, body: `حصة ${hhmm(s.t)} انتهى وقتها بدون حضور، وانخصمت قيمتها من الرصيد.` });
       }
       for (const a of (f.attendance || []).filter((a: any) => a.kid === k && a.at && nowMs - Date.parse(a.at) < 3 * 3600e3)) {
@@ -118,7 +129,7 @@ async function run() {
   // new sign-up requests from the public join link -> the family's admin (parent)
   const { data: sus } = await sb.from("tk_signups").select("id,family_id,data,created_at").eq("status", "pending").gt("created_at", new Date(nowMs - 30 * 60e3).toISOString());
   for (const su of sus || []) {
-    const d: any = su.data || {}, names = (d.kids || []).map((k: any) => k.ar).filter(Boolean).join("، ");
+    const d: any = (su.data && typeof su.data === "object") ? su.data : {}, names = (Array.isArray(d.kids) ? d.kids : []).map((k: any) => k && k.ar).filter(Boolean).map(String).join("، ");
     msgs.push({ fam: su.family_id, key: `signup:${su.id}`, to: (x: any) => x.family_id === su.family_id && x.role === "parent", title: "📥 طلب تسجيل جديد", body: `${d.g_name || "ولي أمر"} يبي يسجّل: ${names || "طفل"}. افتح لوحة الإدارة للقبول أو الرفض.` });
   }
   if (!msgs.length) return Response.json({ sent: 0 });

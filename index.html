@@ -1010,7 +1010,7 @@ function renderLogin(){
     const u = $('#u').value.trim().toLowerCase(), p = $('#p').value.trim();
     let who = null; const btn = $('#lf [type=submit]'); SFX.unlock(); unlockAudio();
     if(cloudOn() && navigator.onLine){ btn.disabled = true; btn.textContent = 'جاري الدخول…';
-      try{ who = await cloudLogin(u, p); }catch(err){ console.warn(err); }
+      try{ who = await cloudLogin(u, p); }catch(err){ console.warn(err); if(err && /locked/.test(err.msg || err.message || '')){ btn.disabled = false; btn.textContent = 'دخول'; $('#le').textContent = 'محاولات دخول خاطئة كثيرة. حاول بعد ربع ساعة.'; return; } }
       btn.disabled = false; btn.textContent = 'دخول';
       if(who){ setWho(who); TAB = 'home'; go(who); showSplash(true); return; } }
     if(DB && DB.kids){ for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
@@ -1078,10 +1078,12 @@ function renderEnded(k){
   const a = $('#askRenew'); if(a) a.onclick = () => { DB.renewReq = DB.renewReq || {}; DB.renewReq[k] = new Date().toISOString(); save(); toast('📩 وصل طلبك لولي الأمر'); renderEnded(k); };
 }
 function renderKid(k){
+  clearInterval(homeTimer); homeTimer = null;
   if(ledger(k).ended && !L){ clearInterval(homeTimer); return renderEnded(k); }
   if(DB.kids[k].needPlace && !L && !DEMO){ clearInterval(homeTimer); return renderPlaceGate(k); }
   try{ settleLeague(k); }catch(e){ console.warn(e); }
   try{ settleSib(k); }catch(e){ console.warn(e); }
+  try{ payFamily(k); }catch(e){ console.warn(e); }
   if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
   const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
   $('#app').innerHTML = `<div class="wrap">
@@ -1164,7 +1166,7 @@ function tabHome(k){
   const kl = $('#kitLock'); if(kl) kl.onclick = () => { const ps = prepState(k); if(ps.open){ renderKid(k); return; } hoopoeSays(ps.t ? `التحضير يفتح قبل الحصة بساعة، الساعة ${fmtTime(ps.at)} ⏳` : 'التحضير يفتح قبل حصتك القادمة بساعة ⏳', 'think', 3000); };
   const eg = $('#examGo'); if(eg) eg.onclick = () => startLevelExam(k);
   const fg = $('#famGo'); if(fg) fg.onclick = () => { claimFamily(); renderKid(k); };
-  homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov')) renderKid(k); }, 30000);
+  clearInterval(homeTimer); homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov,.reader')) renderKid(k); }, 30000);
 }
 async function enterLesson(k, trial){
   unlockAudio();
@@ -1222,7 +1224,8 @@ function slotPicker(k, moveKey){
     const cf = conflict(k, t, moveKey); if(cf){ err.textContent = cf === k ? 'عندك حصة قريبة من هذا الوقت.' : `هذا الوقت قريب من حصة ${DB.kids[cf].ar}، اختر وقتاً آخر.`; return; }
     if(moveKey){ if(monthKey(t) !== monthKey(old) && !canDrop(k, old)){ err.textContent = `نقل الحصة لشهر آخر يجعل حصص ${fmtMonth(old)} أقل من ${MIN_MONTH}. اختر يوماً في نفس الشهر.`; return; }
       cancelSlot(k, moveKey); addExtra(k, t); toast('تم تغيير الموعد'); }
-    else { if(ledger(k).remaining < priceNow(k)){ err.textContent = 'رصيدك لا يكفي لحصة إضافية.'; return; } addExtra(k, t); toast('تم حجز الحصة الإضافية 🎉'); }
+    else { const L1 = ledger(k), booked = L1.upcoming.concat(L1.open ? [L1.open] : []).filter(s => s.t < new Date(Date.now() + 35*864e5)).reduce((a, s) => a + priceAt(k, s.t), 0);
+      if(L1.remaining - booked < priceAt(k, t)){ err.textContent = 'رصيدك ما يكفي لحصة إضافية فوق حصصك المحجوزة. اطلب من ولي أمرك شحن الرصيد.'; return; } addExtra(k, t); toast('تم حجز الحصة الإضافية 🎉'); }
     ov.remove(); renderKid(k);
   };
 }
@@ -1794,15 +1797,20 @@ function wordAccuracy(target, said){ const a = normWords(target), b = normWords(
   for(let i=1;i<=a.length;i++) for(let j=1;j<=b.length;j++) dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1]+1 : Math.max(dp[i-1][j], dp[i][j-1]);
   return Math.round(dp[a.length][b.length] / a.length * 100); }
 function speakText(t, rate){ return new Promise(res => { try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = rate || .9; u.onend = res; u.onerror = res; speechSynthesis.speak(u); setTimeout(res, t.split(' ').length*600 + 3000); }catch(e){ res(); } }); }
-function listenFor(ms, onText){ return new Promise(res => {
+function listenFor(ms, onText, ctl){ return new Promise(res => {
   if(!SR){ res(null); return; } let text = '', done = false; const r = new SR(); r.lang = 'en-US'; r.continuous = true; r.interimResults = true;
   let sil = null; const end = () => { if(done) return; done = true; clearTimeout(sil); clearTimeout(cap); try{ r.stop(); }catch(e){} res(text.trim()); };
   r.onresult = e => { let t = ''; for(const x of e.results) t += x[0].transcript; text = t; onText && onText(t); clearTimeout(sil); sil = setTimeout(end, 3000); };
   r.onerror = () => end(); r.onend = () => end();
-  const cap = setTimeout(end, ms); try{ r.start(); }catch(e){ end(); }
+  const cap = setTimeout(end, ms); if(ctl) ctl.stop = () => { try{ r.stop(); }catch(e){} setTimeout(end, 4000); }; try{ r.start(); }catch(e){ end(); }
   return {stop:end}; }); }
 
+let PLACE_RUNNING = false;
 async function placementTest(k, opt){
+  if(PLACE_RUNNING || document.querySelector('.reader .ptest')) return; PLACE_RUNNING = true;
+  try{ return await placementTestRun(k, opt); } finally { PLACE_RUNNING = false; }
+}
+async function placementTestRun(k, opt){
   opt = opt || {}; const KIDMODE = !!opt.kid;
   const kid = DB.kids[k];
   const start = Math.max(1, Math.min(20, ageOf(kid.birth) - 5));
@@ -1914,7 +1922,9 @@ async function placementTest(k, opt){
       <div class="en" id="st" style="direction:ltr;text-align:left;min-height:3em"></div>${SR ? '' : '<textarea class="input en" id="stt" placeholder="Type your answer…"></textarea>'}<button class="btn primary" id="sn" hidden>التالي</button></div>`);
     ov.querySelector('#sp').onclick = () => speakText(b.speak.prompt, .9); await speakText(b.speak.prompt, .9);
     let ans = '';
-    if(SR){ await new Promise(r => ov.querySelector('#sm').onclick = r); ov.querySelector('#sm').classList.add('on'); ans = await listenFor(60000, t => { const el = ov.querySelector('#st'); if(el) el.textContent = t; }) || ''; }
+    if(SR){ await new Promise(r => ov.querySelector('#sm').onclick = r); ov.querySelector('#sm').classList.add('on');
+      const ctl = {}, sn = ov.querySelector('#sn'); sn.hidden = false; sn.textContent = '✓ انتهيت'; sn.onclick = () => ctl.stop && ctl.stop(); ov.querySelector('#sm').onclick = () => ctl.stop && ctl.stop();
+      ans = await listenFor(60000, t => { const el = ov.querySelector('#st'); if(el) el.textContent = t; }, ctl) || ''; }
     else { ov.querySelector('#sn').hidden = false; await new Promise(r => ov.querySelector('#sn').onclick = r); ans = ov.querySelector('#stt').value; }
     speak.push({level:lv, prompt:b.speak.prompt, expect:b.speak.expect, answer:ans});
   }
@@ -1975,7 +1985,10 @@ function familyCard(k){
     ${row('حصص', f.lessons, FAMILY_GOAL.lessons)}${row('قصص', f.stories, FAMILY_GOAL.stories)}${row('تحدي اليوم', f.daily, FAMILY_GOAL.daily)}
     ${f.claimed ? '<div class="chip good">🏆 أنجزتم التحدي! +100 نقطة لكل واحد</div>' : f.done ? '<button class="btn primary" id="famGo">🎉 استلموا الجائزة: +100 نقطة لكل واحد</button>' : '<div class="small muted">إذا أكملتم الأهداف الثلاثة قبل نهاية السبت، يأخذ كل واحد 100 نقطة.</div>'}</section>`;
 }
-function claimFamily(){ const f = familyProgress(); if(!f.done || f.claimed) return; DB.family = DB.family || {}; DB.family[f.wk] = true; kidIds().forEach(k => addXP(k, 100)); save(); toast('🏆 جائزة الفريق! +100 نقطة لكل واحد', 'gold'); }
+/* the team prize: the claim is shared, but each child's device adds the points to its own child only (once) */
+function claimFamily(){ const f = familyProgress(); if(!f.done || f.claimed) return; DB.family = DB.family || {}; DB.family[f.wk] = true; save(); payFamily(WHO); toast('🏆 جائزة الفريق! +100 نقطة لكل واحد', 'gold'); }
+function payFamily(k){ if(!k || !DB.kids[k] || !DB.family) return; const p = DB.progress[k]; p.famPaid = p.famPaid || {}; const ws = weekStart();
+  [dayKey(ws), dayKey(new Date(ws.getTime() - 7*DAY))].forEach(wk => { if(DB.family[wk] && !p.famPaid[wk]){ p.famPaid[wk] = 1; addXP(k, 100); } }); }
 
 /* =============== SELF CAMERA IN CLASS =============== */
 let camStream = null;
@@ -2198,7 +2211,8 @@ async function micStream(){
   return MIC_STREAM;
 }
 /* release the mic a little after the last use so iOS switches audio back to the speaker */
-function micRelease(){ clearTimeout(MIC_IDLE_T); MIC_IDLE_T = setTimeout(() => { if(MIC_STREAM){ MIC_STREAM.getTracks().forEach(t => t.stop()); MIC_STREAM = null; } }, 1500); }
+function micRelease(){ clearTimeout(MIC_IDLE_T); const busy = (typeof L !== 'undefined' && L) || document.querySelector('.reader, .ov');
+  MIC_IDLE_T = setTimeout(() => { if((typeof L !== 'undefined' && L) || document.querySelector('.reader, .ov')){ micRelease(); return; } if(MIC_STREAM){ MIC_STREAM.getTracks().forEach(t => t.stop()); MIC_STREAM = null; } }, busy ? 20000 : 1500); }
 /* ONE shared AudioContext for the mic. iOS keeps a new AudioContext "suspended" unless it is resumed inside a tap; the lesson
    starts listening by itself after the teacher speaks (no tap), so a fresh context never ran there and the mic "froze".
    This one is resumed on every touch, and recording has a real timer + watchdog instead of relying on audio callbacks. */
@@ -2219,7 +2233,7 @@ function captureAudio(o){
     const finish = manual => { if(done) return; done = true; clearTimeout(maxT); clearTimeout(dogT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease();
       let use = heard ? chunks : (manual && peak > Math.max(.006, noise * 2.5) ? all : null);
       resolve({heard: !!use, wav: use ? encodeWav(downsample(use, rate, 16000), 16000) : null, frames}); };
-    if(ctl) ctl.stop = () => finish(true);
+    if(ctl){ ctl.stop = () => finish(true); if(ctl.pending){ setTimeout(() => finish(true), 0); } }
     maxT = setTimeout(() => finish(true), maxMs);
     // watchdog: no audio frames → the context is still suspended; report it instead of hanging
     dogT = setTimeout(() => { if(!frames && !done){ try{ ac.resume(); }catch(e){} dogT = setTimeout(() => { if(!frames && !done){ done = true; clearTimeout(maxT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease(); const e = new Error('audio_suspended'); e.name = 'AudioSuspended'; reject(e); } }, 1500); } }, 1500);
@@ -2243,8 +2257,8 @@ async function azRecognize(wav, lang){
 class AzSR {
   constructor(){ this.lang = 'en-US'; this.continuous = false; this.interimResults = false; this.maxAlternatives = 1; this.onresult = null; this.onerror = null; this.onend = null; this._ctl = {}; this._aborted = false; this._ended = false; this._started = false; }
   start(){ if(this._started) throw new Error('already started'); this._started = true; this._run(); }
-  stop(){ this._ctl.stop && this._ctl.stop(); }
-  abort(){ this._aborted = true; this._ctl.stop && this._ctl.stop(); }
+  stop(){ this._ctl.pending = true; this._ctl.stop && this._ctl.stop(); }
+  abort(){ this._aborted = true; this._ctl.pending = true; this._ctl.stop && this._ctl.stop(); }
   async _run(){
     let rec;
     try{ rec = await recordUtterance(this._ctl, 60000, 1.4); }
@@ -2456,7 +2470,7 @@ function blinkLoop(){ if(!L) return; const b = $('#tbox'); if(b){ const once = (
   L.blinkT = setTimeout(blinkLoop, 2200 + Math.random()*3800); }
 function idleGlance(){ if(!L) return; if(L.state === 'idle' || L.state === 'speaking'){ const r = Math.random(); if(r < .25) look(-3,0); else if(r < .5) look(3,0); else look(0,1); }
   L.glanceT = setTimeout(idleGlance, 2500 + Math.random()*3000); }
-function gestureLoop(){ if(!L) return; L.gestT = setTimeout(() => { L.gestT = null; if(!L || L.state !== 'speaking') return; const b = $('#tbox');
+function gestureLoop(){ if(!L) return; L.gestT = setTimeout(() => { if(!L) return; L.gestT = null; const b = $('#tbox'); if(!b){ return; } if(L.state !== 'speaking'){ gestureLoop(); return; }
     const busy = b && ['p-wave','p-thumb','p-point'].some(c => b.classList.contains(c));
     if(!busy) setPose(b.classList.contains('p-open') || Math.random() < .35 ? null : 'open');
     gestureLoop(); }, 1800 + Math.random()*2200); }
@@ -2624,6 +2638,11 @@ async function finishLesson(){
   ov.innerHTML = `<div class="card" style="text-align:center"><h2>انتهت الحصة 🎉</h2><p class="muted" style="margin:0">المعلمة تكتب تقريرك وتجهّز اختبار الدرس…</p></div>`;
   document.body.appendChild(ov);
   const transcript = lesson.history.map(h => (h.role==='user' ? 'STUDENT ' : 'TEACHER: ') + h.content.replace(/\[(MOOD|STAGE|END)[^\]]*\]/gi,'').trim()).join('\n').slice(-40000);
+  /* record the attendance first, so closing the app or a slow network during the report never loses the lesson */
+  let att0 = null;
+  if(!lesson.trial){ att0 = {kid:k, slot:lesson.slot, lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:mins};
+    if(!DB.attendance.some(a => a.kid === k && a.slot === lesson.slot)) DB.attendance.push(att0); DB.live[k] = null; save(); }
+  const repAbort = new AbortController(), repTimer = setTimeout(() => repAbort.abort(), 75000);
   let rep = null;
   try{
     const txt = await callClaude({model:REPORT_MODEL, max_tokens:3000, messages:[{role:'user', content:
@@ -2640,9 +2659,10 @@ Reply with ONLY one JSON object:
 "quiz":[5 questions about THIS lesson at the child's level, mainly sentence building:
   2 of {"type":"order","words":["the","words","of","a","correct","sentence","in","order"],"answer":"the full correct sentence","ar":"short Arabic instruction"} (5-9 words, using today's patterns),
   2 of {"type":"mc","q":"fill the gap or choose the best reply","options":["...","...","..."],"answer":index},
-  1 of {"type":"mc","q":"Which sentence is correct?","options":["...","...","..."],"answer":index}]}`}]});
+  1 of {"type":"mc","q":"Which sentence is correct?","options":["...","...","..."],"answer":index}]}`}]}, repAbort.signal);
     const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); rep = JSON.parse(txt.slice(a, b+1));
   }catch(e){ console.warn(e); }
+  clearTimeout(repTimer);
   if(!rep) rep = {score:0, stars:2, newWords:[], mistakes:[], parentNote:'لم يُكتب التقرير بسبب مشكلة اتصال، لكن الحصة سُجّلت.', kidNote:'Great job today!', nextFocus:'', quiz:[]};
   if(!(rep.quiz||[]).length) rep.quiz = lessonQuizFromBank(DB.kids[k].level, plan.ui, plan.li) || [];
   const report = {score:Math.max(0,Math.min(100,Number(rep.score)||0)), stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
@@ -2651,8 +2671,8 @@ Reply with ONLY one JSON object:
   if(Array.isArray(rep.interests) && !lesson.trial){ const p0 = DB.progress[k]; p0.interests = [...new Set(rep.interests.map(String).concat(p0.interests||[]))].slice(0,15); }
   let book = null, cert = null;
   if(!lesson.trial){
-    const att = {kid:k, slot:lesson.slot, lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:mins};
-    DB.attendance.push(att); DB.reports.push(Object.assign({}, att, report));
+    const att = att0;
+    DB.reports.push(Object.assign({}, att, report));
     const p = DB.progress[k]; p.pos = (p.pos||0)+1; p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); p.focus = String(rep.nextFocus||''); seedSRS(k); report.mistakes.forEach(m => addSRS(k, m.right, 'كنت تقول: ' + m.wrong)); report.newWords.forEach(w => addSRS(k, w, ''));
     p.xp = (p.xp||0) + 50;
     if(plan.li === (plan.perUnit||6) - 1){ cert = {kid:k, unit:plan.unit, level:DB.kids[k].level, date:new Date().toISOString()}; DB.certs.push(cert); }
@@ -2710,7 +2730,7 @@ function renderParent(){
       <details class="skills"><summary>🕸️ خريطة المهارات${(() => { const w = weakestSkill(k); return w ? ` · الأضعف: ${SKILLS.find(x => x[0] === w)[1]}` : ''; })()}</summary><div class="radarw">${radarSVG(k, 340)}</div><div class="small muted">تُحسب من الحصص والاختبارات والقراءة بصوت عالٍ ومختبر النطق والواجب والمهمات. المعلمة تركّز تلقائياً على الأضعف.</div></details>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
       ${reps.length ? reps.map(r => `<div class="report"><div class="rph"><b class="en">${esc(r.title)}</b><span class="small muted">${new Date(r.at).toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})}</span></div>
-      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${r.score}%</bdi></span><span class="chip">⏱️ ${r.minutes||0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${r.talkPct}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
+      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${Number(r.score) || 0}%</bdi></span><span class="chip">⏱️ ${Number(r.minutes) || 0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${Number(r.talkPct) || 0}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><b>لوحة الإدارة</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
@@ -2773,7 +2793,7 @@ function renderParent(){
       if(wasEnded){ /* restart from today so missed future slots don't eat the new balance */
         DB.balance[k] = l.used + a;
         const counted = new Set(l.rows.map(r => r.key)), now = new Date();
-        slotsFor(k, now).forEach(sl => { if(!counted.has(sl.key) && sl.t < now) DB.sched[k].cancel.push(sl.key); }); }
+        slotsFor(k, now).forEach(sl => { if(!counted.has(sl.key) && sl.t < now - OPEN_AFTER*60e3) DB.sched[k].cancel.push(sl.key); }); }
       else DB.balance[k] += a;
       DB.topups = DB.topups || []; DB.topups.push({kid:k, amount:a, at:new Date().toISOString()});
       if(DB.renewReq) delete DB.renewReq[k]; save(); ov.remove(); toast(`تم شحن ${a.toLocaleString('en')} ريال ✓`); renderParent(); }; });
@@ -2870,7 +2890,7 @@ function rewardForm(id){
 }
 function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level){ DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; DB.progress[k].levelUpPending = {from:kid.level, to:lv}; } kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
 function kidForm(k, pre){
-  const kid = k ? DB.kids[k] : {ar:pre ? pre.ar : '', en:pre ? pre.en : '', user:'', pass:rnd(4), level:5, birth:(pre && pre.birth) || '2015-01-01', boy:pre ? pre.boy : true};
+  const kid = k ? DB.kids[k] : {ar:pre ? pre.ar : '', en:pre ? pre.en : '', user:'', pass:rnd(6), level:5, birth:(pre && pre.birth) || '2015-01-01', boy:pre ? pre.boy : true};
   const per = k ? periodAt(k, new Date()) : {days:(pre && pre.days) || [0,2,4], time:'17:00'};
   const ov = overlay(`<h2>${k ? 'تعديل ' + esc(kid.ar) : 'إضافة طفل جديد'}</h2>
     <div class="g2e" style="gap:10px">
@@ -2915,6 +2935,7 @@ function kidForm(k, pre){
     { const gu = ov.querySelector('#g_sel').value !== 'none' ? ov.querySelector('#g_user').value.trim().toLowerCase() : ''; if(gu && gu === user){ err.textContent = 'اسم مستخدم ولي الأمر لازم يختلف عن اسم مستخدم الطالب.'; return; } }
     if(!days.length || !time){ err.textContent = 'اختر يوماً واحداً على الأقل ووقت الحصة.'; return; }
     if(!birth){ err.textContent = 'اختر تاريخ الميلاد.'; return; }
+    if(!k && ov.querySelector('#f_bal').value.trim() === ''){ err.textContent = 'اكتب مبلغ الاشتراك (يقدر يكون 0).'; ov.querySelector('#f_bal').focus(); return; }
     if(k){
       { const gErr = saveGuardianFields(ov, k, ar); if(gErr){ err.textContent = gErr; return; } }
       Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy}); if($('#f_place').checked) DB.kids[k].needPlace = true; else delete DB.kids[k].needPlace;
@@ -2940,7 +2961,9 @@ function kidForm(k, pre){
   if(k) ov.querySelector('#f_del').onclick = () => {
     const c = overlay(`<h2>حذف حساب ${esc(kid.ar)}؟</h2><p style="margin:0">تُحذف كل بياناته من هذا الجهاز: الجدول والتقارير والنقاط والمكتبة. لا يمكن التراجع.</p><div class="chips"><button class="btn danger" id="yes">نعم، احذف</button><button class="btn" id="no">رجوع</button></div>`);
     c.querySelector('#no').onclick = () => c.remove();
-    c.querySelector('#yes').onclick = () => { ['kids','balance','profiles','progress','live','sched','books'].forEach(f => { if(DB[f]) delete DB[f][k]; });
+    c.querySelector('#yes').onclick = () => { ['kids','balance','profiles','progress','live','sched','books','prices','placements','renewReq','cheers','voices','monthly','livefeed'].forEach(f => { if(DB[f] && typeof DB[f] === 'object') delete DB[f][k]; });
+      ['redeems','topups','reviews'].forEach(f => { if(Array.isArray(DB[f])) DB[f] = DB[f].filter(x => x.kid !== k); });
+      Object.values(DB.guardians || {}).forEach(g => { if(g && g.kids) g.kids = g.kids.filter(x => x !== k); });
       DB.attendance = DB.attendance.filter(a => a.kid !== k); DB.reports = DB.reports.filter(r => r.kid !== k); DB.certs = DB.certs.filter(r => r.kid !== k);
       Object.keys(DB.guardians || {}).forEach(g => { DB.guardians[g].kids = DB.guardians[g].kids.filter(x => x !== k); if(!DB.guardians[g].kids.length) delete DB.guardians[g]; });
       save(); c.remove(); ov.remove(); toast('تم حذف الحساب'); renderParent(); };
@@ -3453,7 +3476,7 @@ async function cloudPush(){
       if(!(res.conflicts || []).length) break;
       cloudApplying = true;
       (res.conflicts || []).forEach(c => { const base = CLOUD.synced[c.path] != null ? JSON.parse(CLOUD.synced[c.path]) : undefined;
-        const local = cur[c.path]; const merged = merge3(base, local === undefined ? null : local, c.value);
+        const local = pathsOf(DB)[c.path]; const merged = merge3(base, local === undefined ? null : local, c.value);
         setPath(DB, c.path, merged === undefined ? null : merged); CLOUD.vers[c.path] = c.ver; CLOUD.synced[c.path] = J(c.value); });
       cloudApplying = false; normalize(); localSaveOnly();
     }
@@ -3480,6 +3503,9 @@ async function cloudPull(full){
   cloudApplying = false;
   CLOUD.since = res.now; CLOUD.lastOk = Date.now(); cloudSave();
   if(changed){ normalize(); localSaveOnly(); }
+  /* a guardian who was just linked to another child only receives that child's rows that changed recently: fetch everything once */
+  if(!full && CLOUD.role === 'guardian' && DB && DB.guardians){ const g = DB.guardians[CLOUD.kid];
+    if(g && (g.kids || []).some(x => !CLOUD.vers['balance/' + x] || !CLOUD.vers['sched/' + x])) return (await cloudPull(true)) || changed; }
   if(cloudDirty()) cloudSchedule();
   return changed;
 }
@@ -3491,7 +3517,9 @@ async function cloudAccounts(){
   const r = await rpc('tk_accounts_set', {t:CLOUD.token, accts:list}); CLOUD.acctSig = sig; cloudSave();
   if(r && (r.skipped || []).length) alertBox(`اسم المستخدم «${r.skipped.join('، ')}» محجوز في السحابة لحساب آخر. اختر اسم مستخدم مختلفاً من «تعديل».`);
 }
-function cloudLost(){ CLOUD.token = null; cloudSave(); }
+function cloudLost(){ CLOUD.token = null; cloudSave();
+  const out = () => { if(L){ setTimeout(out, 30000); return; } if(WHO){ setWho(null); go('login'); setTimeout(() => { const le = document.getElementById('le'); if(le) le.textContent = 'انتهت جلسة الدخول. سجّل دخولك مرة ثانية عشان تتزامن بياناتك.'; }, 50); } };
+  out(); }
 /* first-time: register the family from this device's data, or join it if it already exists */
 async function cloudEnable(){
   if(!cloudOn() || !DB || !DB.parent) return false;
@@ -3501,21 +3529,23 @@ async function cloudEnable(){
   /* family exists: combine this device's data with the cloud copy */
   const local = JSON.parse(JSON.stringify(DB)); CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null;
   DB = {}; await cloudPull(true); const remote = DB; DB = joinMerge(remote, local); normalize();
-  if(DB.migr && DB.migr.zeroBal1 && Date.now() < Date.parse('2026-11-05T00:00:00Z') && !(DB.topups||[]).some(t => t.at > DB.migr.zeroBal1)) kidIds().forEach(k => { try{ DB.balance[k] = ledger(k).used; }catch(e){} }); localSaveOnly(); cloudSave(); await cloudPush(); return true;
+  localSaveOnly(); cloudSave(); await cloudPush(); return true;
 }
 function joinMerge(remote, local){
-  if(Array.isArray(remote) && Array.isArray(local)){ const s = new Set(remote.map(J)); return remote.concat(local.filter(x => !s.has(J(x)))); }
+  if(Array.isArray(remote) && Array.isArray(local)){ const s = new Set(remote.map(J)), ids = new Set(remote.filter(x => x && x.id != null).map(x => x.id));
+    return remote.concat(local.filter(x => !s.has(J(x)) && !(x && x.id != null && ids.has(x.id)))); }
   if(isObj(remote) && isObj(local)){ const out = Object.assign({}, remote); Object.keys(local).forEach(k => { out[k] = k in remote ? joinMerge(remote[k], local[k]) : local[k]; }); return out; }
-  if(typeof remote === 'number' && typeof local === 'number') return Math.max(remote, local);
   return remote === undefined || remote === null ? local : remote;
 }
 async function cloudLogin(u, p){
   const r = await rpc('tk_login', {u, p}); if(!r) return null;
-  const sameFamily = CLOUD.family && CLOUD.family === r.family && DB;
+  const prevRole = CLOUD.role, prevKid = CLOUD.kid;
+  const sameFamily = CLOUD.family && CLOUD.family === r.family && DB && prevRole === r.role && (r.role !== 'guardian' || prevKid === r.kid);
+  const backupDB = DB, backupCloud = JSON.stringify(CLOUD);
   CLOUD.token = r.token; CLOUD.role = r.role; CLOUD.kid = r.kid || null; CLOUD.family = r.family; CLOUD.username = String(u).toLowerCase();
   if(!sameFamily){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; DB = {}; await cloudPull(true); }
   else await cloudPull(false);
-  if(!DB || !DB.kids){ DB = null; return null; }
+  if(!DB || !DB.kids){ DB = backupDB; try{ Object.assign(CLOUD, JSON.parse(backupCloud)); }catch(e){} const e = new Error('pull_failed'); e.msg = 'pull_failed'; throw e; }
   normalize(); localSaveOnly(); cloudSave(); cloudStart();
   return r.role === 'parent' ? 'parent' : r.role === 'guardian' ? 'g:' + r.kid : r.kid;
 }
@@ -3845,7 +3875,7 @@ function renderGuardian(gid){
 
     </div>
     <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(r => `<div class="report"><div class="rph"><b class="en">${esc(r.title)}</b><span class="small muted">${new Date(r.at).toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})}</span></div>
-      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${r.score}%</bdi></span><span class="chip">⏱️ ${r.minutes || 0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${r.talkPct}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes || []).length ? `<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>` : ''}</div>`).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
+      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${Number(r.score) || 0}%</bdi></span><span class="chip">⏱️ ${Number(r.minutes) || 0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${Number(r.talkPct) || 0}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes || []).length ? `<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>` : ''}</div>`).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
     </div></div>`;
   $('#out').onclick = logout;
   document.querySelectorAll('[data-gk]').forEach(b => b.onclick = () => { G_KID = b.dataset.gk; renderGuardian(gid); });
@@ -4198,9 +4228,9 @@ const RELMAP = {'الأب':'بابا','الأم':'ماما','الجد':'جدو',
 const suAccepted = s => { try{ return JSON.parse(s.kid || '{}') || {}; }catch(e){ return {}; } };
 function suAge(b){ const a = ageOf(b); return isFinite(a) ? a + (a >= 3 && a <= 10 ? ' سنوات' : ' سنة') : ''; }
 function suItemHTML(s){
-  const d = s.data || {}, kids = d.kids || [], acc = suAccepted(s), st = s.status;
+  const d = (s.data && typeof s.data === 'object') ? s.data : {}, kids = (Array.isArray(d.kids) ? d.kids : []).filter(x => x && typeof x === 'object'), acc = suAccepted(s), st = s.status;
   const wa = String(d.phone || '').replace(/^0/, '966').replace(/[^\d]/g, '');
-  const when = new Date(s.at), dayNames = (d.days || []).map(i => DAYS_AR[i]).join('، ');
+  const when = new Date(s.at), dayNames = (Array.isArray(d.days) ? d.days : []).map(i => DAYS_AR[i]).filter(Boolean).join('، ');
   return `<div class="suitem ${st}">
     <div class="suhead"><div><b style="font-size:1.05rem">${esc(d.g_name || '')}</b> <span class="small muted">${esc(d.rel || '')}${d.city ? ' · ' + esc(d.city) : ''}</span></div>
       <span class="chip ${st === 'pending' ? 'brand' : st === 'accepted' ? 'good' : ''}">${st === 'pending' ? 'بانتظار القرار' : st === 'accepted' ? '✓ مقبول' : 'مرفوض'}</span></div>
@@ -4234,10 +4264,10 @@ async function suSet(id, st, kidMap){
   fillSignups(false);
 }
 function suAccept(id, i){
-  const s = (SIGNUPS || []).find(x => x.id === id); if(!s) return; const d = s.data || {}, k = (d.kids || [])[i]; if(!k) return;
-  kidForm(null, {ar:k.ar || '', en:k.en || '', birth:k.birth || '', boy:!!k.boy, days:(d.days || []).length ? d.days : null,
+  const s = (SIGNUPS || []).find(x => x.id === id); if(!s) return; const d = s.data || {}, k = (Array.isArray(d.kids) ? d.kids : [])[i]; if(!k || typeof k !== 'object') return;
+  kidForm(null, {ar:k.ar || '', en:k.en || '', birth:k.birth || '', boy:!!k.boy, days:Array.isArray(d.days) && d.days.length ? d.days.filter(x => Number.isInteger(x) && x >= 0 && x < 7) : null,
     g:{name:d.g_name || '', phone:d.phone || '', rel:RELMAP[d.rel] || '', first:/^(أم|ام|أبو|ابو)\s/.test(String(d.g_name || '').trim()) ? '' : (String(d.g_name || '').trim().split(/\s+/)[0] || '')},
-    onDone: async kidId => { const acc = suAccepted(s); acc[i] = kidId; const all = (d.kids || []).every((_, x) => acc[x]); await suSet(id, all ? 'accepted' : 'pending', acc); } });
+    onDone: async kidId => { const acc = suAccepted(s); acc[i] = kidId; const all = (Array.isArray(d.kids) ? d.kids : []).every((_, x) => acc[x]); await suSet(id, all ? 'accepted' : 'pending', acc); } });
 }
 
 /* =============== BOOT =============== */
