@@ -37,6 +37,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 .in:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(240,90,56,.15);background:#fff}
 .in.bad{border-color:var(--bad);box-shadow:0 0 0 4px rgba(200,30,30,.10)}
 .ltr{direction:ltr;text-align:left}
+input[type=date].in{-webkit-appearance:none;appearance:none;display:block;min-width:0;max-width:100%;width:100%;text-align:right;line-height:28px}
+input[type=date].in::-webkit-date-and-time-value{text-align:right;margin:0}
+input[type=date].in::-webkit-calendar-picker-indicator{margin-inline-start:auto}
+input[type=date].in:invalid,input[type=date].in.empty{color:var(--muted2)}
 textarea.in{min-height:90px;resize:vertical}
 .hintx{font-size:13px;color:var(--muted2)}
 .seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -162,7 +166,7 @@ function addKid(){
   const rm = box.querySelector('.rm'); if(rm) rm.onclick = () => { box.remove(); renum(); };
   box.querySelector(`#b${i}`).addEventListener('change', e => { const v = e.target.value; if(!v) return $('#age' + i).textContent = '';
     const b = new Date(v), n = new Date(); let a = n.getFullYear() - b.getFullYear(); if(n < new Date(n.getFullYear(), b.getMonth(), b.getDate())) a--;
-    $('#age' + i).textContent = a >= 0 ? `العمر: ${a} ${a >= 3 && a <= 10 ? 'سنوات' : 'سنة'}` : ''; });
+    $('#age' + i).textContent = a >= 2 ? `العمر: ${a} ${a >= 3 && a <= 10 ? 'سنوات' : 'سنة'}` : a >= 0 ? 'تأكد من سنة الميلاد' : ''; });
 }
 function renum(){ document.querySelectorAll('.kid').forEach((k, x) => k.querySelector('.kh b').textContent = 'الطفل ' + (x + 1)); }
 $('#addKid').onclick = () => { addKid(); const last = [...document.querySelectorAll('.kid')].pop(); last.scrollIntoView({behavior:'smooth', block:'center'}); last.querySelector('input').focus({preventScroll:true}); };
@@ -179,6 +183,7 @@ $('#form').addEventListener('submit', async e => {
     if(!ar) return fail('اكتب اسم الطفل بالعربي.', $('#ar' + i));
     if(!g) return fail(`اختر جنس ${ar}.`);
     if(!birth) return fail(`اختر تاريخ ميلاد ${ar}.`, $('#b' + i));
+    { const y = (Date.now() - Date.parse(birth)) / 31557600000; if(y < 2 || y > 25) return fail(`تأكد من تاريخ ميلاد ${ar}.`, $('#b' + i)); }
     kids.push({ar, en, boy:g.value === '1', birth, grade:$('#gr' + i).value, eng:$('#lv' + i).value});
   }
   const g_name = $('#g_name').value.trim(), rel = $('#rel').value, phone = normPhone($('#phone').value), email = $('#email').value.trim();
