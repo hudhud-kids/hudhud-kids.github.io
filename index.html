@@ -830,14 +830,15 @@ function renderFirstRun(){
   $('#app').innerHTML = `<div class="center">${prefsHTML()}<form class="card panel" id="fr">
     <div style="text-align:center">${LOGO}<p class="muted" style="margin:.3em 0 0">تجهيز المنصة لأول مرة</p></div>
     <div class="field"><label for="sc">رمز الإعداد</label><textarea class="input" id="sc" placeholder="الصق رمز الإعداد هنا"></textarea></div>
-    <div class="err" id="fe"></div>
-    <button class="btn primary big" type="submit">تجهيز</button>
+    ${DB ? '<p class="small err" style="margin:0">⚠️ الرمز يستبدل بيانات هذا الجهاز ببيانات الجهاز الذي نسخت منه.</p>' : ''}<div class="err" id="fe"></div>
+    <button class="btn primary big" type="submit">تجهيز</button>${DB ? '<button class="btn sm ghost" type="button" id="frBack">رجوع</button>' : ''}
   </form></div>`;
+  $('#frBack') && ($('#frBack').onclick = () => renderLogin());
   $('#fr').addEventListener('submit', e => {
     e.preventDefault();
     let cfg; try{ cfg = decodeSetup($('#sc').value); }catch(err){ $('#fe').textContent = 'الرمز غير صحيح. انسخه كاملاً والصقه مرة ثانية.'; return; }
+    if(cfg && cfg.full && cfg.full.kids){ DB = cfg.full; normalize(); save(); setWho('parent'); go('parent'); toast('تم نقل الإعداد لهذا الجهاز ✓'); return; }
     if(!cfg || !cfg.kids || !cfg.parent){ $('#fe').textContent = 'الرمز ناقص.'; return; }
-    if(cfg.full){ DB = cfg.full; normalize(); save(); setWho('parent'); go('parent'); toast('تم نقل الإعداد لهذا الجهاز ✓'); return; }
     DB = {v:3, parent:cfg.parent, kids:{}, apiKey:cfg.apiKey || '', perLesson:cfg.perLesson || 10, balance:{}, profiles:{}, progress:{}, live:{}, attendance:[], reports:[], sched:{}, books:{}, curr:{}, certs:[]};
     for(const k of cfg.kids){ DB.kids[k.id] = k; DB.balance[k.id] = cfg.balance || 2000;
       DB.sched[k.id] = {periods:[{from:cfg.start + 'T00:00', days:cfg.days || [0,2,4], time:(cfg.times||{})[k.id] || '17:00'}], cancel:[], extra:[]}; }
@@ -855,7 +856,9 @@ function renderLogin(){
     <div class="field"><label for="p">كلمة المرور</label><input class="input ltr" id="p" type="password"></div>
     <div class="err" id="le"></div>
     <button class="btn primary big" type="submit">دخول</button>
+    <button class="btn sm ghost" type="button" id="toSetup">📲 عندي رمز إعداد من جهاز آخر</button>
   </form></div>`;
+  $('#toSetup').onclick = () => renderFirstRun();
   $('#lf').addEventListener('submit', e => {
     e.preventDefault();
     const u = $('#u').value.trim().toLowerCase(), p = $('#p').value.trim();
@@ -2447,7 +2450,7 @@ function renderParent(){
   $('#xfer').onclick = () => {
     const full = JSON.parse(JSON.stringify(DB)); Object.values(full.books||{}).forEach(arr => arr.length = 0);
     const code = btoa(unescape(encodeURIComponent(JSON.stringify({full}))));
-    const ov = overlay(`<h2>📲 نقل الإعداد لجهاز آخر</h2><p style="margin:0">انسخ هذا الرمز، ثم افتح التطبيق على الجهاز الآخر والصقه في خانة «رمز الإعداد». ينقل الحسابات والتقدم ومفتاح التشغيل، فلا تحتاج تلصق المفتاح مرة ثانية.</p>
+    const ov = overlay(`<h2>📲 نقل الإعداد لجهاز آخر</h2><p style="margin:0">انسخ هذا الرمز، ثم افتح التطبيق على الجهاز الآخر والصقه في خانة «رمز الإعداد». ينقل الحسابات والتقدم ومفتاح التشغيل ومفتاح الصوت والأصوات المختارة، فلا تحتاج تلصق أي مفتاح مرة ثانية.</p>
       <p class="small err" style="margin:0">⚠️ الرمز فيه مفتاح التشغيل، لا ترسله لأحد غيرك.</p><textarea class="input" id="xc" readonly style="min-height:120px">${esc(code)}</textarea>
       <div class="chips"><button class="btn primary" id="xcopy">نسخ الرمز</button><button class="btn" id="xclose">إغلاق</button></div>
       <p class="small muted" style="margin:0">ملاحظة: كل جهاز يحفظ تقدمه وحده بعد النقل. الأفضل أن يدرس الأطفال على جهاز واحد (الآيباد).</p>`);
