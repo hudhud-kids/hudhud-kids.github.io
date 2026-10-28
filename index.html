@@ -412,6 +412,7 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 .vrow{display:grid;gap:6px;margin-top:10px}
 @media (max-width:520px){.missions{grid-auto-flow:column;grid-auto-columns:140px;grid-template-columns:none;overflow-x:auto;padding-bottom:6px}.games{grid-template-columns:1fr 1fr 1fr}.game b{font-size:.85rem}.room2.big{height:250px}}
 .cloudbar{background:var(--sky-soft);border-radius:14px;padding:10px 14px;font-size:.95rem}
+.mc{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start}.mci{font-size:1.2rem}.meter{height:10px;border-radius:6px;background:var(--line);overflow:hidden}.meter i{display:block;height:100%;width:0;background:var(--good);transition:width .08s}
 </style>
 </head>
 <body>
@@ -2448,7 +2449,7 @@ function renderParent(){
         ${cloudOn() ? `<div class="vguide"><div><b>☁️ المزامنة السحابية</b></div><div class="small">الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.</div></div>` : ''}
         <p class="small muted" style="margin:0">${DB.apiKey ? (CLOUD.token ? '✅ مفتاح التشغيل محفوظ ومتزامن مع كل الأجهزة.' : '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.') : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
-        <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><span class="small" id="keyMsg"></span></div>
+        <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><button class="btn sm primary" id="micCheck">🎤 فحص الميكروفون</button><span class="small" id="keyMsg"></span></div>
         <div class="field"><label>🔊 صوت المعلم وقراءة القصص</label><div class="vguide">
           <div>المنصة تستخدم صوت الجهاز الإنجليزي تلقائياً. لصوت طبيعي قريب من البشر، اضبطه مرة واحدة على كل جهاز (الآيباد والآيفون):</div>
           <ol><li>افتح <b>الإعدادات</b> ← <b>تسهيلات الاستخدام</b> ← <b>القراءة والنطق</b> (أو <b>المحتوى المنطوق</b>)</li>
@@ -2549,6 +2550,7 @@ function renderParent(){
     try{ await azTest(); m.className = 'small ok'; m.textContent = '✅ الصوت البشري يعمل'; }catch(e){ m.className = 'small err'; m.textContent = e && (e.status === 401 || e.status === 403) ? 'المفتاح أو المنطقة غير صحيحة.' : `فشل (${(e && e.status) || 'اتصال'}).`; } };
   $('#azx') && ($('#azx').onclick = () => { DB.azure = null; save(); renderParent(); toast('رجعنا لصوت الجهاز'); });
   $('#savePl').onclick = () => { const v = Math.max(1, Math.round(Number($('#pl').value))||10); kidIds().forEach(k => setPrice(k, v)); DB.perLesson = v; save(); toast(`قيمة الحصة الآن ${v} ريال لكل الأطفال، من الآن فصاعداً`); renderParent(); };
+  $('#micCheck').onclick = () => micCheck();
   $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
     try{ await callClaude({model:LIVE_MODEL, max_tokens:20, messages:[{role:'user', content:'Say: ready'}]}); msg.textContent = '✅ المعلمة جاهزة'; msg.className = 'small ok'; }
     catch(e){ msg.className = 'small err'; msg.textContent = e && e.status === 401 ? 'المفتاح غير صحيح.' : `فشل الاتصال (${(e&&e.status)||'؟'}).`; } };
@@ -3225,6 +3227,54 @@ function cloudStatusHTML(){
   return `🟢 متزامنة مع السحابة${CLOUD.lastOk ? ' · آخر مزامنة ' + new Date(CLOUD.lastOk).toLocaleTimeString(LOC, {hour:'numeric', minute:'2-digit'}) : ''}`;
 }
 
+/* =============== MIC CHECK =============== */
+function micCheck(){
+  const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
+  let stream = null, ac = null, raf = null, rec = null, url = null;
+  const stopAll = () => { cancelAnimationFrame(raf); if(rec && rec.state === 'recording') try{ rec.stop(); }catch(e){} if(stream) stream.getTracks().forEach(t => t.stop()); stream = null; if(ac) try{ ac.close(); }catch(e){} ac = null; speechSynthesis.cancel(); };
+  const row = (id, t) => `<div class="mc" id="${id}"><span class="mci">⏳</span><div><b>${t}</b><div class="small muted mcs"></div></div></div>`;
+  ov.innerHTML = `<div class="card" style="display:grid;gap:12px;max-width:560px"><h2>🎤 فحص الميكروفون والصوت</h2>
+    <p class="small muted" style="margin:0">افحص على الجهاز اللي يدرس عليه الطفل (الآيباد)، في مكان هادئ.</p>
+    ${row('m1','1. إذن الميكروفون ومستوى الصوت')}<div class="meter"><i id="lvl"></i></div>
+    ${row('m2','2. التعرّف على الكلام الإنجليزي')}<div class="en" id="heard" style="direction:ltr;text-align:left;min-height:1.6em;font-weight:700"></div>
+    ${row('m3','3. تسجيل صوتك وسماعه')}
+    ${row('m4','4. صوت المعلمة (السماعة)')}
+    <div class="chips"><button class="btn primary" id="go">ابدأ الفحص</button><button class="btn" id="cl">إغلاق</button></div></div>`;
+  const set = (id, ok, msg) => { const el = ov.querySelector('#' + id); el.querySelector('.mci').textContent = ok === true ? '✅' : ok === false ? '❌' : ok; el.querySelector('.mcs').innerHTML = msg || ''; };
+  ov.querySelector('#cl').onclick = () => { stopAll(); ov.remove(); };
+  ov.querySelector('#go').onclick = async () => {
+    const go = ov.querySelector('#go'); go.disabled = true; unlockAudio();
+    /* 1. permission + level */
+    try{ stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+    catch(e){ set('m1', false, 'المتصفح رفض الميكروفون. على الآيباد: الإعدادات ← Safari ← الميكروفون ← اسمح، ثم أعد الفحص.'); go.disabled = false; return; }
+    set('m1', '🎚️', 'تكلّم الحين… لازم يتحرك الشريط'); let peak = 0;
+    try{ ac = new (window.AudioContext || window.webkitAudioContext)(); const an = ac.createAnalyser(); an.fftSize = 512; ac.createMediaStreamSource(stream).connect(an); const d = new Uint8Array(an.fftSize);
+      const tick = () => { an.getByteTimeDomainData(d); let m = 0; for(const v of d) m = Math.max(m, Math.abs(v - 128)); peak = Math.max(peak, m); const el = ov.querySelector('#lvl'); if(el) el.style.width = Math.min(100, m / 64 * 100) + '%'; raf = requestAnimationFrame(tick); }; tick(); }catch(e){}
+    /* 2. speech recognition */
+    set('m2', '🗣️', 'قل بالإنجليزي: <b class="en">Hello, my name is Ahmed and I love football</b>');
+    let heard = '';
+    if(SR){ heard = await listenFor(9000, t => { ov.querySelector('#heard').textContent = t; }) || ''; }
+    set('m1', peak > 6 ? true : false, peak > 6 ? 'الميكروفون يلتقط الصوت بشكل جيد' : 'الصوت ضعيف جداً أو ما وصل. تأكد إن ما فيه شيء يغطي الميكروفون.');
+    const acc = wordAccuracy('Hello my name is Ahmed and I love football', heard);
+    if(!SR) set('m2', false, 'هذا المتصفح ما يدعم التعرّف على الكلام. استخدم Safari على الآيباد أو الآيفون.');
+    else set('m2', heard ? (acc >= 50 ? true : '⚠️') : false, heard ? `فهم ${acc}% من الجملة${acc < 50 ? ' · تكلّم أقرب للجهاز وبوضوح' : ''}` : 'ما وصل أي كلام. تأكد من الإنترنت، وإن «الإملاء» (Dictation) مفعّل: الإعدادات ← عام ← لوحة المفاتيح ← تفعيل الإملاء.');
+    /* 3. record & playback */
+    if(window.MediaRecorder && stream){ set('m3', '⏺️', 'نسجّل 4 ثواني… قل أي شيء');
+      try{ const chunks = []; rec = new MediaRecorder(stream); rec.ondataavailable = e => chunks.push(e.data);
+        await new Promise(r => { rec.onstop = r; rec.start(); setTimeout(() => { try{ rec.stop(); }catch(e){ r(); } }, 4000); });
+        url = URL.createObjectURL(new Blob(chunks, {type:rec.mimeType || 'audio/mp4'}));
+        set('m3', true, `<button class="btn sm" id="pb">▶️ اسمع تسجيلك</button> إذا سمعت صوتك بوضوح فالتسجيل سليم`); ov.querySelector('#pb').onclick = () => new Audio(url).play(); }
+      catch(e){ set('m3', false, 'تعذّر التسجيل على هذا الجهاز.'); } }
+    else set('m3', '—', 'التسجيل غير مدعوم هنا (غير ضروري للحصص)');
+    cancelAnimationFrame(raf); if(stream) stream.getTracks().forEach(t => t.stop()); stream = null;
+    /* 4. speaker / teacher voice */
+    set('m4', '🔊', azOn() ? 'نشغّل صوت المعلمة البشري (Azure)…' : 'نشغّل صوت الجهاز…');
+    await new Promise(r => { narrate("Great job! I can hear you clearly. Let's start our lesson!", {speed:.95, onEnd:r}); setTimeout(r, 9000); });
+    set('m4', true, `${azOn() ? 'صوت Azure البشري' : 'صوت الجهاز'} · إذا ما سمعت شيئاً ارفع الصوت وتأكد إن زر الصامت مطفي. <button class="btn sm" id="rp">🔁 أعد</button>`);
+    ov.querySelector('#rp').onclick = () => narrate("Great job! I can hear you clearly. Let's start our lesson!", {speed:.95});
+    go.disabled = false; go.textContent = 'أعد الفحص';
+  };
+}
 /* =============== BOOT =============== */
 setupLang();
 loadDB();
