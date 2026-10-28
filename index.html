@@ -1035,11 +1035,11 @@ glossary: 12-18 useful or harder words from the story (lowercase, as they appear
 const SPEEDS = [['slow','بطيء',.78],['normal','عادي',.95],['fast','سريع',1.12]];
 function narratorVoices(){
   let vs = []; try{ vs = speechSynthesis.getVoices().filter(v => /^en[-_]/i.test(v.lang)); }catch(e){}
-  const score = v => (/premium/i.test(v.name) ? 100 : /enhanced|neural|natural|online/i.test(v.name) ? 70 : 0) + (/US|GB/i.test(v.lang) ? 5 : 0) + (/Ava|Zoe|Samantha|Allison|Aria|Jenny|Libby|Sonia|Evan|Nathan|Tom|Guy|Ryan/i.test(v.name) ? 10 : 0) - (/Fred|Albert|Bad|Bells|Boing|Bubbles|Cellos|Jester|Organ|Trinoids|Whisper|Wobble|Zarvox|Superstar|Grandma|Grandpa|Rocko|Shelley|Flo|Eddy|Reed|Sandy/i.test(v.name) ? 200 : 0);
+  const score = v => (/premium|استثنائي/i.test(v.name) ? 100 : /enhanced|neural|natural|online|محسّن|محسن/i.test(v.name) ? 70 : 0) + (/US|GB/i.test(v.lang) ? 5 : 0) + (/Ava|Zoe|Samantha|Allison|Aria|Jenny|Libby|Sonia|Evan|Nathan|Tom|Guy|Ryan/i.test(v.name) ? 10 : 0) - (/Fred|Albert|Bad|Bells|Boing|Bubbles|Cellos|Jester|Organ|Trinoids|Whisper|Wobble|Zarvox|Superstar|Grandma|Grandpa|Rocko|Shelley|Flo|Eddy|Reed|Sandy/i.test(v.name) ? 200 : 0);
   return vs.map(v => ({v, s:score(v)})).sort((a,b) => b.s - a.s);
 }
 function narratorVoice(){ const name = DB && DB.readVoice; const all = narratorVoices(); return (name && (all.find(x => x.v.name === name)||{}).v) || (all[0] && all[0].v) || voice; }
-function characterVoice(main){ const all = narratorVoices().map(x => x.v).filter(v => v !== main); return all.find(v => /premium|enhanced/i.test(v.name)) || all[0] || main; }
+function characterVoice(main){ const all = narratorVoices().map(x => x.v).filter(v => v !== main); return all.find(v => /premium|enhanced|استثنائي|محسّن|محسن/i.test(v.name)) || all[0] || main; }
 const hasPremiumVoice = () => narratorVoices().some(x => x.s >= 70);
 
 /* Split text into phrases with natural pauses; dialogue gets its own voice. */
@@ -1751,12 +1751,12 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
 /* =============== VOICE OUT (TTS) =============== */
 let voice = null;
 function pickVoice(){ try{ const vs = speechSynthesis.getVoices().filter(v => /^en[-_]/i.test(v.lang));
-  const pref = [/Ava.*(Premium|Enhanced)/i,/Zoe.*(Premium|Enhanced)/i,/Samantha.*(Premium|Enhanced)/i,/(Premium|Enhanced)/i,/Ava/i,/Samantha/i,/Allison/i,/Aria|Jenny|Google US/i];
+  const pref = [/Ava.*(Premium|استثنائي)/i,/Zoe.*(Premium|استثنائي)/i,/Ava.*(Enhanced|محسّن|محسن)/i,/Samantha.*(Premium|Enhanced|محسّن)/i,/(Premium|Enhanced|استثنائي|محسّن|محسن)/i,/Ava/i,/Samantha/i,/Allison/i,/Aria|Jenny|Google US/i];
   for(const re of pref){ const v = vs.find(v => re.test(v.name) && /US/i.test(v.lang)) || vs.find(v => re.test(v.name)); if(v){ voice = v; return; } }
   voice = vs.find(v => /en[-_]US/i.test(v.lang)) || vs[0] || null; }catch(e){} }
 let voiceM = null;
 function pickVoiceM(){ try{ const vs = speechSynthesis.getVoices().filter(v => /^en[-_]/i.test(v.lang));
-  for(const re of [/(Evan|Nathan|Tom|Aaron|Alex).*(Premium|Enhanced)/i,/(Premium|Enhanced).*(Evan|Nathan|Tom|Aaron)/i,/Aaron|Evan|Nathan|Tom|Alex|Fred|Daniel|Arthur|Guy|Davis|Andrew|Brian|Male/i]){ const v = vs.find(v => re.test(v.name)); if(v){ voiceM = v; return; } } }catch(e){} }
+  for(const re of [/(Evan|Nathan|Tom|Aaron|Alex).*(Premium|Enhanced|استثنائي|محسّن|محسن)/i,/(Premium|Enhanced).*(Evan|Nathan|Tom|Aaron)/i,/Aaron|Evan|Nathan|Tom|Alex|Fred|Daniel|Arthur|Guy|Davis|Andrew|Brian|Male/i]){ const v = vs.find(v => re.test(v.name)); if(v){ voiceM = v; return; } } }catch(e){} }
 if('speechSynthesis' in window){ pickVoiceM(); try{ speechSynthesis.addEventListener('voiceschanged', pickVoiceM); }catch(e){} }
 if('speechSynthesis' in window){ try{ speechSynthesis.addEventListener('voiceschanged', () => { if(WHO === 'parent' && !document.querySelector('.ov,.reader') && document.getElementById('rv') && !document.getElementById('rv').options.length) renderParent(); }); }catch(e){} }
 if('speechSynthesis' in window){ pickVoice(); try{ speechSynthesis.onvoiceschanged = pickVoice; }catch(e){} }
