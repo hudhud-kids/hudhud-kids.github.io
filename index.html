@@ -467,6 +467,22 @@ details.skills{margin-top:12px;border:1.5px solid var(--line);border-radius:14px
 @keyframes sp-dot{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(.2)}}
 @keyframes sp-burst{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(.3)}}
 @media (prefers-reduced-motion: reduce){#splash *{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}}
+
+.gbox{border:1.5px dashed var(--line);border-radius:16px;padding:12px;display:grid;gap:8px;margin-top:4px}
+.credc{border:1.5px solid var(--line);border-radius:16px;padding:12px;display:grid;gap:6px}
+.credrow{display:flex;justify-content:space-between;gap:10px;align-items:center}.credrow code{font-size:1.05rem;direction:ltr}
+.gbell{position:relative;font-size:1.05rem}.gbell i{position:absolute;top:-4px;inset-inline-start:-4px;background:var(--bad);color:#fff;border-radius:99px;font-size:.68rem;font-style:normal;min-width:18px;height:18px;display:grid;place-items:center;padding:0 4px}
+.gnl{display:grid;gap:6px}.gn{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start;padding:8px 10px;border-radius:12px;background:var(--bg)}
+.gn.new{background:var(--brand-soft);font-weight:700}.gn.miss .gi,.gn.ended .gi{filter:none}.gi{font-size:1.2rem;line-height:1.4}
+.mgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center;font-size:.85rem}.mgrid b{font-size:.75rem;color:var(--muted);font-weight:700}
+.md{padding:6px 0;border-radius:10px;background:var(--bg)}.md.att{background:#14B8A6;color:#fff;font-weight:800}.md.miss{background:#F87171;color:#fff;font-weight:800}.md.next{outline:2px dashed var(--teal);outline-offset:-2px}.md.today{box-shadow:0 0 0 2px var(--brand)}
+.wchart{width:100%;height:auto}.lg{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px}
+.livec{border:2px solid var(--teal)}.livedot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#EF4444;margin-inline-end:6px;animation:pulse 1.2s infinite}
+.livelog{max-height:260px;overflow:auto;display:grid;gap:6px;margin-top:8px;direction:ltr;text-align:left}.livelog>div{padding:8px 10px;border-radius:12px;font-size:.95rem}.lt{background:var(--sky-soft)}.lk{background:var(--brand-soft)}
+.ghero .stat b{font-size:1.4rem}
+.cheerpop{position:fixed;z-index:9000;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(92vw,460px);background:var(--surface);border:2px solid var(--brand);border-radius:20px;box-shadow:0 14px 40px rgba(0,0,0,.18);padding:12px 14px;display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;animation:cp-in .5s cubic-bezier(.3,1.5,.5,1)}
+.cheerpop.out{opacity:0;transform:translate(-50%,20px);transition:all .35s}.cheerpop .cpb svg{width:60px;height:56px;animation:bob 1.4s ease-in-out infinite}
+@keyframes cp-in{from{transform:translate(-50%,40px) scale(.9);opacity:0}to{transform:translate(-50%,0);opacity:1}}
 </style>
 </head>
 <body>
@@ -896,6 +912,7 @@ function go(view, tab){
   clearInterval(homeTimer); homeTimer = null;
   if(!DB) return cloudOn() ? renderLogin() : renderFirstRun();
   if(view === 'parent') return renderParent();
+  if(typeof view === 'string' && view.startsWith('g:')) return renderGuardian(view.slice(2));
   if(view && DB.kids[view]){ const p = DB.profiles[view]; if(!p || !p.nick) return renderProfile(view, true); if(tab) TAB = tab; renderKid(view); if(DB.kids[view].needPlace && !L && !document.querySelector('.ov,.reader') && !ledger(view).ended) placementTest(view, {kid:true}); return; }
   renderLogin();
 }
@@ -943,7 +960,8 @@ function renderLogin(){
       btn.disabled = false; btn.textContent = 'دخول';
       if(who){ setWho(who); TAB = 'home'; go(who); showSplash(true); return; } }
     if(DB && DB.kids){ for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
-      if(DB.parent && u === DB.parent.user && p === DB.parent.pass) who = 'parent'; }
+      if(DB.parent && u === DB.parent.user && p === DB.parent.pass) who = 'parent';
+      for(const g of Object.keys(DB.guardians || {})) if(DB.guardians[g].user === u && DB.guardians[g].pass === p) who = 'g:' + g; }
     if(!who && !DB){ $('#le').textContent = navigator.onLine ? 'اسم المستخدم أو كلمة المرور غير صحيحة.' : 'أول دخول على هذا الجهاز يحتاج إنترنت.'; return; }
     if(!who){ $('#le').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة ثانية.'; return; }
     setWho(who); TAB = 'home'; go(who); showSplash(true);
@@ -1005,7 +1023,7 @@ function renderKid(k){
   $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
   document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { TAB = b.dataset.tab; renderKid(k); });
   ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins, room:tabRoom, shop:tabShop})[TAB](k);
-  checkNewBadges(k); maybeCelebrate(k);
+  checkNewBadges(k); maybeCelebrate(k); setTimeout(() => checkCheers(k), 1200);
 }
 
 /* ----- home tab ----- */
@@ -2300,7 +2318,7 @@ async function teacherTurn(userText){
   if(!L || L.done) return;
   stopListening();
   const lesson = L, m = elapsedMin();
-  lesson.history.push({role:'user', content:`[minute ${m}] ${userText}`});
+  lesson.history.push({role:'user', content:`[minute ${m}] ${userText}`}); liveFeed(lesson, 'k', userText);
   setState('thinking');
   const msgs = lesson.history.slice(-40); while(msgs.length && msgs[0].role !== 'user') msgs.shift();
   const apiMsgs = msgs.map((x,i) => i === msgs.length-1 ? {role:x.role, content:[{type:'text', text:x.content, cache_control:{type:'ephemeral'}}]} : {role:x.role, content:x.content});
@@ -2324,7 +2342,7 @@ async function teacherTurn(userText){
     const tags = parseTags(full);
     if(!moodSet && tags.mood) setMood(tags.mood);
     lesson.lastSay = spoken; lesson.tw += countWords(spoken); updateTalk();
-    lesson.history.push({role:'assistant', content:cleanForHistory(full)});
+    lesson.history.push({role:'assistant', content:cleanForHistory(full)}); liveFeed(lesson, 't', spoken);
     if(sub) sub.innerHTML = esc(spoken) + (tags.ar ? `<div class="ar">${esc(tags.ar)}</div>` : '');
     if(tags.board && tags.board.word) showBoard(tags.board);
     showFix(tags.fix);
@@ -2455,8 +2473,8 @@ Reply with ONLY one JSON object:
       go(WHO === 'parent' ? 'parent' : k, 'home');
     }); };
 }
-function leaveRoomQuiet(){ stopCam(); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
-function leaveRoom(){ stopCam(); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
+function leaveRoomQuiet(){ stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
+function leaveRoom(){ stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
@@ -2476,7 +2494,8 @@ function renderParent(){
     const nxt = l.open ? 'الحصة مفتوحة الآن' : l.next ? `${fmtDay(l.next.t)} · ${fmtTime(l.next.t)}` : '—';
     const levelDone = plan.total && p.pos >= plan.total;
     return `<section class="card"><div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2>${esc(kid.ar)} <span class="muted small">(${esc(nick(k))}) · ${ageOf(kid.birth)} سنة</span></h2>
-      <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><button class="btn sm" data-edit="${k}">تعديل</button></div>
+      <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><div class="chips" style="flex-direction:column;gap:6px"><button class="btn sm" data-edit="${k}">تعديل</button><button class="btn sm" data-creds="${k}">🔑 الدخول</button></div></div>
+      <div class="small" style="margin-top:6px">👨‍👩‍👧 ${guardianOf(k) ? `ولي الأمر: <b>${esc(guardianOf(k).name)}</b> <code>${esc(guardianOf(k).user)}</code>` : '<span class="muted">بدون حساب ولي أمر · اربطه من «تعديل»</span>'}</div>
       ${((DB.placements||{})[k]||[]).length ? (() => { const pl = DB.placements[k][DB.placements[k].length-1]; return `<div class="small" style="margin-top:8px">🎯 آخر تحديد مستوى (${new Date(pl.at).toLocaleDateString(LOC)}): المستوى ${pl.level}</div>`; })() : ''}
       ${(p.exams||{})[kid.level] ? `<div class="gift" style="margin-top:10px">📝 اختبار نهاية المستوى ${kid.level}: ${p.exams[kid.level].pct}% ${p.exams[kid.level].pct >= 70 ? '· ناجح، ننصح برفعه للمستوى التالي ✅' : '· يحتاج مراجعة قبل الرفع'}</div>` : ''}
       ${l.ended ? `<div class="gift" style="margin-top:10px;background:var(--bad-soft);color:var(--bad)">🔒 انتهى رصيد ${esc(kid.ar)} وتوقفت المنصة عنده${(DB.renewReq||{})[k] ? ' · طلب إعادة الشحن 📩' : ''}.</div>` : l.left <= 3 ? `<div class="gift" style="margin-top:10px">⚠️ باقي ${l.left} حصص فقط في رصيد ${esc(kid.ar)}.</div>` : ''}
@@ -2490,10 +2509,10 @@ function renderParent(){
       ${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes||0} دقيقة${r.talkPct != null ? ` · تحدّث ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
   $('#app').innerHTML = `<div class="wrap">
-    <div class="topbar">${LOGO}<div class="me"><b>لوحة ولي الأمر</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
+    <div class="topbar">${LOGO}<div class="me"><b>لوحة الإدارة</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
     <div class="grid">
       ${cloudOn() ? `<div class="cloudbar">☁️ <b>المزامنة السحابية:</b> <span id="cloudSt">${cloudStatusHTML()}</span></div>` : ''}
-      <div class="chips" style="justify-content:space-between"><h2>الأطفال</h2><button class="btn primary" id="addKid">➕ إضافة طفل</button></div>
+      <div class="chips" style="justify-content:space-between"><h2>الطلاب</h2><button class="btn primary" id="addKid">➕ إضافة طالب</button></div>
       <div class="g2e">${ids.map(kidCard).join('')}</div>
       <section class="card"><div class="chips" style="justify-content:space-between"><h2>🎁 المكافآت</h2><button class="btn sm primary" id="addRw">➕ مكافأة</button></div>
         ${DB.redeems.filter(r => r.status === 'pending').length ? `<div class="gift" style="margin-top:10px;text-align:right">طلبات بانتظارك:<ul class="ledger">${DB.redeems.filter(r => r.status === 'pending').map(r => `<li><div><b>${esc(DB.kids[r.kid] ? DB.kids[r.kid].ar : '')}</b>: ${esc(r.emoji)} ${esc(r.name)}</div><button class="btn sm primary" data-done="${r.id}">تم التسليم ✓</button></li>`).join('')}</ul></div>` : ''}
@@ -2519,9 +2538,10 @@ function renderParent(){
           <div class="chips"><button class="btn sm primary" id="azs">حفظ</button><button class="btn sm" id="azt">🔊 تجربة الصوت البشري</button>${DB.azure && DB.azure.key ? '<button class="btn sm danger" id="azx">إيقاف</button>' : ''}<span class="small" id="azm"></span></div></div></div>
         <div class="field"><label for="pl">قيمة الحصة الواحدة (ريال)</label><div class="chips"><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:140px"><button class="btn sm" id="savePl">حفظ</button></div></div>
       </section>
-      <section class="card"><h2>الحسابات</h2><div style="overflow-x:auto"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th><th>المستوى</th></tr>
+      <section class="card"><h2>الحسابات</h2><div style="overflow-x:auto"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th><th>المستوى / الأطفال</th></tr>
         ${ids.map(k => `<tr><td>${esc(DB.kids[k].ar)}</td><td><code>${esc(DB.kids[k].user)}</code></td><td><code>${esc(DB.kids[k].pass)}</code></td><td class="en">${DB.kids[k].level}</td></tr>`).join('')}
-        <tr><td>ولي الأمر</td><td><code>${esc(DB.parent.user)}</code></td><td><code>${esc(DB.parent.pass)}</code></td><td></td></tr></table></div></section>
+        ${Object.values(DB.guardians || {}).map(g => `<tr><td>👨‍👩‍👧 ${esc(g.name)}</td><td><code>${esc(g.user)}</code></td><td><code>${esc(g.pass)}</code></td><td class="small">${gKids(g.id).map(x => esc(DB.kids[x].ar)).join('، ')}</td></tr>`).join('')}
+        <tr><td>🛠️ الإدارة</td><td><code>${esc(DB.parent.user)}</code></td><td><code>${esc(DB.parent.pass)}</code></td><td></td></tr></table></div></section>
     </div></div>`;
   $('#out').onclick = logout;
   if(cloudOn() && !CLOUD.token && navigator.onLine && !window.__cloudEnabling){ window.__cloudEnabling = true;
@@ -2574,6 +2594,7 @@ function renderParent(){
     ov.querySelector('#wx').onclick = () => ov.remove();
     ov.querySelector('#wc').onclick = () => { navigator.clipboard && navigator.clipboard.writeText(w.text).then(() => toast('تم النسخ'), () => {}); }; });
   document.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => kidForm(b.dataset.edit));
+  document.querySelectorAll('[data-creds]').forEach(b => b.onclick = () => showCreds(b.dataset.creds));
   document.querySelectorAll('[data-trial]').forEach(b => b.onclick = () => enterLesson(b.dataset.trial, true));
   document.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const k = b.dataset.up, to = DB.kids[k].level + 1;
     const ov = overlay(`<h2>رفع ${esc(DB.kids[k].ar)} للمستوى ${to}؟</h2><p style="margin:0">يبدأ من أول درس في المستوى ${to} (<span class="en">${LEVEL_CEFR[to]}</span>). التقارير والنقاط والأوسمة تبقى كما هي.</p><div class="chips"><button class="btn primary" id="yes">نعم، ارفعه</button><button class="btn" id="no">رجوع</button></div>`);
@@ -2641,7 +2662,7 @@ function rewardForm(id){
 }
 function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level){ DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; DB.progress[k].levelUpPending = {from:kid.level, to:lv}; } kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
 function kidForm(k){
-  const kid = k ? DB.kids[k] : {ar:'', en:'', user:'', pass:'', level:5, birth:'2015-01-01', boy:true};
+  const kid = k ? DB.kids[k] : {ar:'', en:'', user:'', pass:rnd(4), level:5, birth:'2015-01-01', boy:true};
   const per = k ? periodAt(k, new Date()) : {days:[0,2,4], time:'17:00'};
   const ov = overlay(`<h2>${k ? 'تعديل ' + esc(kid.ar) : 'إضافة طفل جديد'}</h2>
     <div class="g2e" style="gap:10px">
@@ -2657,12 +2678,16 @@ function kidForm(k){
     </div>
     <div class="field"><label>أيام الحصص</label><div class="days">${DAYS_AR.map((d,i) => `<label><input type="checkbox" id="f_d${i}" ${per.days.includes(i)?'checked':''}> ${d}</label>`).join('')}</div></div>
     <div class="field"><label for="f_t">وقت الحصة</label><input class="input" type="time" id="f_t" value="${per.time}" style="max-width:180px"></div>
+    ${guardianFields(k)}
     <label class="small" style="display:flex;gap:8px;align-items:center;font-weight:700"><input type="checkbox" id="f_place" ${!k || kid.needPlace ? 'checked' : ''}> 🎯 اختبار تحديد المستوى أول ما يدخل الطفل، والمستوى يتحدد تلقائياً من النتيجة</label>
     <div class="err" id="f_err"></div>
     <div class="chips"><button class="btn primary" id="f_save">حفظ</button><button class="btn" id="f_cancel">رجوع</button>${k ? '<button class="btn danger" id="f_del">حذف الحساب</button>' : ''}</div>`);
   ov.querySelector('.card').classList.add('wide');
   ov.querySelector('#f_cancel').onclick = () => ov.remove();
 
+  wireGuardianFields(ov, k);
+  if(!k){ const en = ov.querySelector('#f_en'), us = ov.querySelector('#f_user'); let touched = false; us.addEventListener('input', () => touched = true);
+    en.addEventListener('input', () => { if(!touched){ us.value = en.value.trim() ? suggestUser(en.value.split(' ')[0]) : ''; if(ov.querySelector('#g_sel').value === 'new') ov.querySelector('#g_user').value = suggestUser((us.value || 'family') + 'p'); } }); }
   ov.querySelector('#f_save').onclick = () => {
     const v = id => ov.querySelector(id).value.trim(), err = ov.querySelector('#f_err');
     const ar = v('#f_ar'), en = v('#f_en'), user = v('#f_user').toLowerCase(), pass = v('#f_pass'), level = Number(v('#f_lv')), birth = v('#f_b'), boy = v('#f_g') === '1', bal = Math.max(0, Number(v('#f_bal'))||0), time = v('#f_t');
@@ -2670,10 +2695,12 @@ function kidForm(k){
     if(!ar || !en){ err.textContent = 'اكتب الاسم بالعربي والإنجليزي.'; return; }
     if(!/^[a-z0-9_.-]{3,20}$/.test(user)){ err.textContent = 'اسم المستخدم: 3 أحرف إنجليزية أو أرقام على الأقل، بدون مسافات.'; return; }
     if(pass.length < 4){ err.textContent = 'كلمة المرور 4 أحرف على الأقل.'; return; }
-    if(kidIds().some(x => x !== k && DB.kids[x].user === user) || user === DB.parent.user){ err.textContent = 'اسم المستخدم مستخدم من قبل.'; return; }
+    if(userTaken(user, k)){ err.textContent = 'اسم المستخدم مستخدم من قبل.'; return; }
+    { const gu = ov.querySelector('#g_sel').value !== 'none' ? ov.querySelector('#g_user').value.trim().toLowerCase() : ''; if(gu && gu === user){ err.textContent = 'اسم مستخدم ولي الأمر لازم يختلف عن اسم مستخدم الطالب.'; return; } }
     if(!days.length || !time){ err.textContent = 'اختر يوماً واحداً على الأقل ووقت الحصة.'; return; }
     if(!birth){ err.textContent = 'اختر تاريخ الميلاد.'; return; }
     if(k){
+      { const gErr = saveGuardianFields(ov, k, ar); if(gErr){ err.textContent = gErr; return; } }
       Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy}); if($('#f_place').checked) DB.kids[k].needPlace = true; else delete DB.kids[k].needPlace;
       setLevel(k, level);
       DB.balance[k] = bal; setPrice(k, Math.max(1, Math.round(Number(ov.querySelector('#f_price').value)) || priceNow(k)));
@@ -2686,10 +2713,11 @@ function kidForm(k){
     } else {
       let id = user.replace(/[^a-z0-9]/g,'') || 'kid'; while(DB.kids[id]) id += '1';
       DB.kids[id] = {id, ar, en, user, pass, level, birth, boy, cefr:LEVEL_CEFR[level]}; if($('#f_place').checked) DB.kids[id].needPlace = true;
+      { const gErr = saveGuardianFields(ov, id, ar); if(gErr){ delete DB.kids[id]; err.textContent = gErr; return; } }
       DB.balance[id] = bal; DB.prices = DB.prices || {}; DB.prices[id] = [{from:'2000-01-01T00:00:00Z', price:Math.max(1, Math.round(Number(ov.querySelector('#f_price').value)) || DB.perLesson)}];
       const t = new Date(); t.setDate(t.getDate()+1);
       DB.sched[id] = {periods:[{from:`${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T00:00`, days, time}], cancel:[], extra:[]};
-      ensureKidShape(id); save(); toast(`تم إنشاء حساب ${ar} 🎉`);
+      ensureKidShape(id); save(); ov.remove(); showCreds(id); return;
     }
     ov.remove(); renderParent();
   };
@@ -2698,6 +2726,7 @@ function kidForm(k){
     c.querySelector('#no').onclick = () => c.remove();
     c.querySelector('#yes').onclick = () => { ['kids','balance','profiles','progress','live','sched','books'].forEach(f => { if(DB[f]) delete DB[f][k]; });
       DB.attendance = DB.attendance.filter(a => a.kid !== k); DB.reports = DB.reports.filter(r => r.kid !== k); DB.certs = DB.certs.filter(r => r.kid !== k);
+      Object.keys(DB.guardians || {}).forEach(g => { DB.guardians[g].kids = DB.guardians[g].kids.filter(x => x !== k); if(!DB.guardians[g].kids.length) delete DB.guardians[g]; });
       save(); c.remove(); ov.remove(); toast('تم حذف الحساب'); renderParent(); };
   };
 }
@@ -3195,6 +3224,7 @@ async function cloudPush(){
       const res = await rpc('tk_push', {t:CLOUD.token, changes});
       const sent = Object.fromEntries(changes.map(c => [c.path, J(c.value)]));
       (res.ok || []).forEach(o => { CLOUD.vers[o.path] = o.ver; CLOUD.synced[o.path] = sent[o.path]; });
+      (res.denied || []).forEach(pth => { CLOUD.synced[pth] = sent[pth]; });
       if(!(res.conflicts || []).length) break;
       cloudApplying = true;
       (res.conflicts || []).forEach(c => { const base = CLOUD.synced[c.path] != null ? JSON.parse(CLOUD.synced[c.path]) : undefined;
@@ -3228,7 +3258,7 @@ async function cloudPull(full){
   return changed;
 }
 function localSaveOnly(){ if(DEMO) return; try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){ console.warn(e); } }
-function acctList(){ const a = [{u:DB.parent.user, p:DB.parent.pass, role:'parent'}]; kidIds().forEach(k => a.push({u:DB.kids[k].user, p:DB.kids[k].pass, role:'kid', kid:k})); return a; }
+function acctList(){ const a = [{u:DB.parent.user, p:DB.parent.pass, role:'parent'}]; kidIds().forEach(k => a.push({u:DB.kids[k].user, p:DB.kids[k].pass, role:'kid', kid:k})); Object.values(DB.guardians || {}).forEach(g => a.push({u:g.user, p:g.pass, role:'guardian', kid:g.id})); return a; }
 async function cloudAccounts(){
   if(CLOUD.role !== 'parent' || !DB || !DB.parent) return; const list = acctList(), sig = J(list);
   if(CLOUD.acctSig === sig) return;
@@ -3261,13 +3291,20 @@ async function cloudLogin(u, p){
   else await cloudPull(false);
   if(!DB || !DB.kids){ DB = null; return null; }
   normalize(); localSaveOnly(); cloudSave(); cloudStart();
-  return r.role === 'parent' ? 'parent' : r.kid;
+  return r.role === 'parent' ? 'parent' : r.role === 'guardian' ? 'g:' + r.kid : r.kid;
 }
 async function cloudLogout(){ const t = CLOUD.token; if(t){ try{ await cloudPush(); }catch(e){} try{ await rpc('tk_logout', {t}); }catch(e){} } CLOUD.token = null; cloudSave(); }
 function cloudSafeToRender(){ return !L && !document.querySelector('.ov,.reader') && !(document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)); }
 function cloudStart(){
   if(!cloudOn()) return; clearInterval(cloudPullT);
-  cloudPullT = setInterval(async () => { if(document.hidden || !CLOUD.token) return; const ch = await cloudPull(false); if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); }, 25000);
+  cloudPullT = setInterval(async () => { if(document.hidden || !CLOUD.token) return; const ch = await cloudPull(false); if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); if(WHO && DB && DB.kids && DB.kids[WHO] && !L) checkCheers(WHO); }, 25000);
+  clearInterval(window.__fastT); window.__fastT = setInterval(async () => { if(document.hidden || !CLOUD.token || !DB) return;
+    const watching = typeof WHO === 'string' && WHO.startsWith('g:') && G_KID && (liveOf(G_KID) || ((DB.sched || {})[G_KID] && ledger(G_KID).open));
+    const inClass = L && !L.done;
+    if(!watching && !inClass) return;
+    const ch = await cloudPull(false);
+    if(ch && watching && !document.querySelector('.ov') && !(document.activeElement && /INPUT|TEXTAREA/.test(document.activeElement.tagName))) renderGuardian(WHO.slice(2));
+    if(ch && inClass) checkCheers(L.kid); }, 6000);
 }
 document.addEventListener('visibilitychange', () => { if(!document.hidden && CLOUD.token){ cloudPull(false).then(ch => { if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); }); }
   else if(document.hidden && CLOUD.token && cloudDirty()) cloudPush(); });
@@ -3404,6 +3441,209 @@ showSplash(false);
 const sfxFirstTouch = () => { SFX.unlock(); setTimeout(() => { if(SFX.running()) ['touchend','click','keydown'].forEach(ev => document.removeEventListener(ev, sfxFirstTouch, true)); }, 50); };
 ['touchend','click','keydown'].forEach(ev => document.addEventListener(ev, sfxFirstTouch, true));
 
+/* =============== GUARDIANS (ولي الأمر) =============== */
+const gIds = () => Object.keys(DB.guardians || {});
+const guardianOf = k => { const g = (DB.kids[k] || {}).guardian; return g && DB.guardians && DB.guardians[g] ? DB.guardians[g] : null; };
+const gKids = gid => ((DB.guardians || {})[gid] || {kids:[]}).kids.filter(k => DB.kids[k]);
+const rnd = n => Array.from({length:n}, () => Math.floor(Math.random() * 10)).join('');
+function userTaken(u, exceptKid, exceptG){
+  u = String(u || '').toLowerCase();
+  return (DB.parent && DB.parent.user === u) || kidIds().some(x => x !== exceptKid && DB.kids[x].user === u) || gIds().some(g => g !== exceptG && DB.guardians[g].user === u);
+}
+function suggestUser(base, exceptKid, exceptG){
+  base = String(base || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 14) || 'user';
+  if(base.length < 3) base = base + 'kid';
+  let u = base; while(userTaken(u, exceptKid, exceptG)) u = base + rnd(2);
+  return u;
+}
+function credsMessage(kind, name, user, pass){
+  const link = location.origin + location.pathname;
+  return kind === 'kid'
+    ? `أهلاً ${name}! 🎉 هذا حسابك في «هدهد» لتعلّم الإنجليزي\n\n1) افتح الرابط من Safari:\n${link}\n\n2) ادخل بـ:\nاسم المستخدم: ${user}\nكلمة المرور: ${pass}\n\n3) عشان يصير تطبيق: زر المشاركة ⬆️ ثم «إضافة إلى الشاشة الرئيسية».\n\nأول دخول يطلع لك اختبار تحديد المستوى، سوّه بنفسك في مكان هادئ 💪`
+    : `أهلاً ${name} 👋 هذا حساب ولي الأمر في «هدهد»\nتتابع منه حضور طفلك وغيابه وتقدّمه وتقارير المعلمة، وتشوف الحصة مباشرة وترسل له تشجيع.\n\nالرابط:\n${link}\n\nاسم المستخدم: ${user}\nكلمة المرور: ${pass}\n\nلتصلك الإشعارات: أضف الصفحة للشاشة الرئيسية (زر المشاركة ⬆️ ثم «إضافة إلى الشاشة الرئيسية») ثم فعّل الإشعارات من داخلها.`;
+}
+function copyText(txt, msg){ (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast(msg || 'تم النسخ'), () => { const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} ta.remove(); toast(msg || 'تم النسخ'); }); }
+function showCreds(k){
+  const kid = DB.kids[k], g = guardianOf(k);
+  const card = (title, kind, name, user, pass) => { const m = credsMessage(kind, name, user, pass);
+    return `<div class="credc"><b>${title}</b><div class="credrow"><span>اسم المستخدم</span><code>${esc(user)}</code></div><div class="credrow"><span>كلمة المرور</span><code>${esc(pass)}</code></div>
+      <div class="chips"><button class="btn sm primary" data-cc="${esc(kind)}">📋 نسخ الرسالة</button><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(m)}">واتساب</a></div></div>`; };
+  const ov = overlay(`<h2>🎉 حسابات ${esc(kid.ar)} جاهزة</h2><p class="small muted" style="margin:0">أرسل لكل واحد رسالته. الحسابات تشتغل من أي جهاز بعد ثواني من الحفظ.</p>
+    ${card('👦 حساب الطالب', 'kid', kid.ar, kid.user, kid.pass)}${g ? card('👨‍👩‍👧 حساب ولي الأمر', 'g', g.name, g.user, g.pass) : ''}
+    <button class="btn" id="cx">تم</button>`);
+  ov.querySelectorAll('[data-cc]').forEach(b => b.onclick = () => copyText(b.dataset.cc === 'kid' ? credsMessage('kid', kid.ar, kid.user, kid.pass) : credsMessage('g', g.name, g.user, g.pass), 'تم نسخ الرسالة'));
+  ov.querySelector('#cx').onclick = () => { ov.remove(); renderParent(); };
+}
+/* guardian section inside the student form */
+function guardianFields(k){
+  const cur = k ? (DB.kids[k].guardian || 'none') : 'new';
+  const opts = [['new', '➕ ولي أمر جديد'], ...gIds().map(g => [g, `${DB.guardians[g].name} (${gKids(g).map(x => DB.kids[x].ar).join('، ') || 'بدون أطفال'})`]), ['none', 'بدون حساب ولي أمر']];
+  return `<div class="gbox"><div style="font-weight:800">👨‍👩‍👧 ولي الأمر</div>
+    <div class="field"><label for="g_sel">الحساب</label><select class="input" id="g_sel">${opts.map(([v, t]) => `<option value="${v}" ${v === cur ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></div>
+    <div id="g_f" class="g2e" style="gap:10px">
+      <div class="field"><label for="g_name">اسم ولي الأمر</label><input class="input" id="g_name" placeholder="مثلاً: أبو أحمد"></div>
+      <div class="field"><label for="g_phone">الجوال (اختياري)</label><input class="input ltr" id="g_phone" inputmode="tel" placeholder="05xxxxxxxx"></div>
+      <div class="field"><label for="g_user">اسم مستخدم ولي الأمر</label><div class="chips" style="flex-wrap:nowrap"><input class="input ltr" id="g_user" autocapitalize="none"><button class="btn sm" type="button" id="g_gen" aria-label="اقترح">🎲</button></div></div>
+      <div class="field"><label for="g_pass">كلمة مرور ولي الأمر</label><input class="input ltr" id="g_pass"></div>
+    </div></div>`;
+}
+function wireGuardianFields(ov, k){
+  const sel = ov.querySelector('#g_sel'), box = ov.querySelector('#g_f');
+  const kidUser = () => (ov.querySelector('#f_user').value || '').trim().toLowerCase();
+  const fill = () => { const v = sel.value; box.hidden = v === 'none';
+    if(v === 'new'){ ov.querySelector('#g_name').value = ''; ov.querySelector('#g_phone').value = ''; ov.querySelector('#g_user').value = suggestUser((kidUser() || 'family') + 'p'); ov.querySelector('#g_pass').value = rnd(6); }
+    else if(v !== 'none'){ const g = DB.guardians[v]; ov.querySelector('#g_name').value = g.name || ''; ov.querySelector('#g_phone').value = g.phone || ''; ov.querySelector('#g_user').value = g.user; ov.querySelector('#g_pass').value = g.pass; } };
+  sel.onchange = fill; fill();
+  ov.querySelector('#g_gen').onclick = () => { ov.querySelector('#g_user').value = suggestUser((kidUser() || 'family') + 'p', null, sel.value); ov.querySelector('#g_pass').value = rnd(6); };
+}
+/* returns an error string, or null after applying */
+function saveGuardianFields(ov, k, kidName){
+  const v = ov.querySelector('#g_sel').value; DB.guardians = DB.guardians || {};
+  const prev = DB.kids[k].guardian;
+  const detach = gid => { if(gid && DB.guardians[gid]){ DB.guardians[gid].kids = DB.guardians[gid].kids.filter(x => x !== k); } };
+  if(v === 'none'){ detach(prev); delete DB.kids[k].guardian; return null; }
+  const name = ov.querySelector('#g_name').value.trim() || ('ولي أمر ' + kidName), phone = ov.querySelector('#g_phone').value.trim();
+  const user = ov.querySelector('#g_user').value.trim().toLowerCase(), pass = ov.querySelector('#g_pass').value.trim();
+  if(!/^[a-z0-9_.-]{3,24}$/.test(user)) return 'اسم مستخدم ولي الأمر: 3 أحرف إنجليزية أو أرقام على الأقل.';
+  if(pass.length < 4) return 'كلمة مرور ولي الأمر 4 أحرف على الأقل.';
+  const gid = v === 'new' ? 'g' + Date.now().toString(36) + rnd(2) : v;
+  if(userTaken(user, k, gid)) return 'اسم مستخدم ولي الأمر مستخدم من قبل.';
+  if(prev !== gid) detach(prev);
+  const g = DB.guardians[gid] = Object.assign(DB.guardians[gid] || {id:gid, kids:[], created:new Date().toISOString()}, {name, phone, user, pass});
+  if(!g.kids.includes(k)) g.kids.push(k);
+  DB.kids[k].guardian = gid;
+  return null;
+}
+
+/* ---------- guardian notifications (built from the child's data) ---------- */
+function gNotes(k){
+  const out = [], l = ledger(k), rep = {}; DB.reports.filter(r => r.kid === k).forEach(r => rep[r.slot] = r);
+  l.rows.forEach(r => { const rp = rep[r.key];
+    out.push(r.st === 'att' ? {at:r.t, ic:'✅', kind:'att', text:`حضر حصة ${fmtDay(r.t)} ${fmtTime(r.t)}${rp ? ` · النتيجة ${rp.score}%` : ''}${rp && rp.talkPct != null ? ` · تكلّم ${rp.talkPct}%` : ''}`}
+                            : {at:r.t, ic:'❌', kind:'miss', text:`غاب عن حصة ${fmtDay(r.t)} ${fmtTime(r.t)} (−${r.price} ريال)`}); });
+  DB.certs.filter(c => c.kid === k).forEach(c => out.push({at:new Date(c.date), ic:'🎓', kind:'cert', text:`أكمل وحدة «${c.unit}» وحصل على شهادة`}));
+  ((DB.placements || {})[k] || []).forEach(p => out.push({at:new Date(p.at), ic:'🎯', kind:'place', text:`نتيجة اختبار تحديد المستوى: المستوى ${p.level} (${levelTag(p.level)})`}));
+  (DB.progress[k].quizzes || []).filter(q => q.at).forEach(q => out.push({at:new Date(q.at), ic:'📝', kind:'quiz', text:`اختبار الدرس «${q.title}»: ${q.score} من ${q.total}`}));
+  Object.keys(DB.progress[k].hw || {}).forEach(d => out.push({at:new Date(d + 'T20:00'), ic:'📚', kind:'hw', text:'أنجز واجب اليوم'}));
+  (DB.reviews || []).filter(r => r.kid === k).forEach(r => out.push({at:new Date(r.at), ic:'🔁', kind:'review', text:`المراجعة الشهرية: ${r.before}% ← ${r.after}%`}));
+  ((DB.cheers || {})[k] || []).forEach(c => { const seen = (DB.progress[k].cheersSeen || []).includes(c.id); if(seen) out.push({at:new Date(c.at), ic:'👀', kind:'seen', text:`قرأ رسالتك: «${c.text}»`}); });
+  if(l.ended) out.push({at:new Date(), ic:'🔒', kind:'ended', text:'انتهى رصيد الاشتراك وتوقفت الحصص. تواصل مع الإدارة للشحن.'});
+  else if(l.left <= 3) out.push({at:new Date(), ic:'⚠️', kind:'low', text:`باقي ${l.left} ${l.left === 1 ? 'حصة' : 'حصص'} فقط في الرصيد.`});
+  return out.filter(x => x.at && !isNaN(x.at) && x.at <= new Date(Date.now() + 60e3)).sort((a, b) => b.at - a.at).slice(0, 60);
+}
+function liveOf(k){ const f = (DB.livefeed || {})[k]; return f && !f.done && Date.now() - (f.at || 0) < 3 * 60e3 ? f : null; }
+function weekSeries(k, n){
+  const ws = weekStart().getTime(), out = [], l = ledger(k);
+  for(let i = n - 1; i >= 0; i--){ const a = ws - i * 7 * DAY, b = a + 7 * DAY;
+    const rows = l.rows.filter(r => r.t.getTime() >= a && r.t.getTime() < b), reps = DB.reports.filter(r => r.kid === k && Date.parse(r.at) >= a && Date.parse(r.at) < b);
+    out.push({from:new Date(a), att:rows.filter(r => r.st === 'att').length, miss:rows.filter(r => r.st !== 'att').length, score:reps.length ? Math.round(reps.reduce((x, r) => x + (r.score || 0), 0) / reps.length) : null}); }
+  return out;
+}
+function weekChartSVG(k){
+  const s = weekSeries(k, 8), W = 560, H = 200, pl = 34, pr = 10, pt = 14, pb = 30, cw = (W - pl - pr) / s.length, maxB = Math.max(3, ...s.map(x => x.att + x.miss));
+  const y = v => pt + (H - pt - pb) * (1 - v / 100);
+  const bars = s.map((x, i) => { const bx = pl + i * cw + cw * .22, bw = cw * .56, hh = H - pt - pb, ha = hh * x.att / maxB, hm = hh * x.miss / maxB;
+    return `<rect x="${bx}" y="${H - pb - ha}" width="${bw}" height="${ha}" rx="4" fill="#14B8A6" opacity=".85"/><rect x="${bx}" y="${H - pb - ha - hm}" width="${bw}" height="${hm}" rx="4" fill="#F87171" opacity=".85"/>
+      <text x="${bx + bw / 2}" y="${H - 10}" text-anchor="middle" font-size="11" fill="var(--muted)">${x.from.getDate()}/${x.from.getMonth() + 1}</text>`; }).join('');
+  const pts = s.map((x, i) => x.score == null ? null : [pl + i * cw + cw / 2, y(x.score)]).filter(Boolean);
+  const line = pts.length > 1 ? `<polyline points="${pts.map(p => p.join(',')).join(' ')}" fill="none" stroke="#F05A38" stroke-width="3" stroke-linejoin="round"/>` : '';
+  const dots = pts.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="#F05A38" stroke="#fff" stroke-width="2"/>`).join('');
+  const grid = [0, 50, 100].map(v => `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${pl - 6}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="var(--muted)">${v}%</text>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" class="wchart" role="img" aria-label="الحضور والدرجات آخر 8 أسابيع" style="direction:ltr">${grid}${bars}${line}${dots}</svg>
+    <div class="chips small" style="justify-content:center"><span><i class="lg" style="background:#14B8A6"></i> حضور</span><span><i class="lg" style="background:#F87171"></i> غياب</span><span><i class="lg" style="background:#F05A38"></i> متوسط الدرجة</span></div>`;
+}
+function monthGrid(k){
+  const now = new Date(), y = now.getFullYear(), m = now.getMonth(), first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate(), l = ledger(k), map = {};
+  l.rows.forEach(r => { if(r.t.getMonth() === m && r.t.getFullYear() === y){ const d = r.t.getDate(); map[d] = (map[d] === 'att' || r.st === 'att') ? 'att' : 'miss'; } });
+  (l.upcoming || []).forEach(u => { if(u.t.getMonth() === m && u.t.getFullYear() === y && !map[u.t.getDate()]) map[u.t.getDate()] = 'next'; });
+  const cells = []; for(let i = 0; i < first.getDay(); i++) cells.push('<span></span>');
+  for(let d = 1; d <= days; d++) cells.push(`<span class="md ${map[d] || ''} ${d === now.getDate() ? 'today' : ''}">${d}</span>`);
+  const att = Object.values(map).filter(v => v === 'att').length, miss = Object.values(map).filter(v => v === 'miss').length;
+  return `<div class="mgrid">${['أحد','إثن','ثلا','أرب','خمي','جمع','سبت'].map(d => `<b>${d}</b>`).join('')}${cells.join('')}</div>
+    <div class="chips" style="margin-top:8px"><span class="chip good">✅ حضر ${att}</span><span class="chip bad">❌ غاب ${miss}</span><span class="chip">🗓️ قادمة</span></div>`;
+}
+let G_KID = null;
+function renderGuardian(gid){
+  const g = (DB.guardians || {})[gid]; if(!g){ setWho(null); return renderLogin(); }
+  const kids = gKids(gid); if(!kids.length){ $('#app').innerHTML = `<div class="center">${prefsHTML()}<div class="card panel" style="text-align:center">${LOGO}<h2>لا يوجد أطفال مرتبطون بحسابك بعد</h2><button class="btn" id="out">خروج</button></div></div>`; $('#out').onclick = logout; return; }
+  if(!kids.includes(G_KID)) G_KID = kids[0];
+  const k = G_KID, kid = DB.kids[k], p = DB.progress[k], l = ledger(k), rk = rankOf(p.xp || 0), live = liveOf(k);
+  const seen = ((DB.gseen || {})[gid] || 0), notes = gNotes(k), unread = notes.filter(n => n.at.getTime() > seen).length;
+  const reps = DB.reports.filter(r => r.kid === k).slice().sort((a, b) => Date.parse(b.at) - Date.parse(a.at)).slice(0, 5);
+  const cheers = ((DB.cheers || {})[k] || []).slice(-6).reverse(), cs = p.cheersSeen || [];
+  const st = kidStats(k), badges = earnedBadges(k).length, srs = Object.keys(p.srs || {}).length;
+  const words = new Set(DB.reports.filter(r => r.kid === k).flatMap(r => r.newWords || [])).size;
+  $('#app').innerHTML = `<div class="wrap">
+    <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(g.name)}</div><div class="small muted">حساب ولي الأمر</div></div>${prefsHTML()}
+      <button class="pbtn gbell" id="gb" aria-label="الإشعارات">🔔${unread ? `<i>${unread > 9 ? '9+' : unread}</i>` : ''}</button><button class="btn sm" id="out">خروج</button></div></div>
+    ${kids.length > 1 ? `<div class="chips">${kids.map(x => `<button class="topic ${x === k ? 'on' : ''}" data-gk="${x}">${esc(DB.kids[x].ar)}</button>`).join('')}</div>` : ''}
+    <div class="grid">
+    ${live ? `<section class="card livec"><div class="chips" style="justify-content:space-between"><h2><span class="livedot"></span> ${esc(kid.ar)} في الحصة الآن</h2><span class="chip brand">🗣️ تكلّم ${live.talk == null ? '—' : live.talk + '%'}</span></div>
+      <div class="small muted">${esc(live.title || '')}</div><div class="livelog" id="ll">${(live.lines || []).map(x => `<div class="${x.w === 'k' ? 'lk' : 'lt'}"><b>${x.w === 'k' ? esc(nick(k)) : 'المعلمة'}:</b> <span class="en">${esc(x.t)}</span></div>`).join('')}</div></section>` : ''}
+    <section class="card ghero"><div style="display:flex;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2 style="margin:0">${esc(kid.ar)} <span class="small muted">(${esc(nick(k))})</span></h2>
+      <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp || 0} نقطة</div></div></div>
+      <div class="stat"><div><span class="small muted">الحصة القادمة</span><b style="font-size:1rem">${l.ended ? '🔒 الرصيد انتهى' : l.open ? '🟢 مفتوحة الآن' : l.next ? `${fmtDay(l.next.t)} · ${fmtTime(l.next.t)}` : '—'}</b></div>
+      <div><span class="small muted">حضر</span><b style="color:var(--good)">${l.rows.filter(r => r.st === 'att').length}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${l.rows.filter(r => r.st !== 'att').length}</b></div>
+      <div><span class="small muted">الحصص المتبقية</span><b>${l.left}</b></div></div></section>
+    <div class="g2e">
+      <section class="card" id="gnotes"><div class="chips" style="justify-content:space-between"><h2>🔔 الإشعارات</h2>${unread ? `<button class="btn sm" id="gread">تعليم الكل كمقروء</button>` : ''}</div>
+        <div class="gnl">${notes.length ? notes.slice(0, 12).map(n => `<div class="gn ${n.at.getTime() > seen ? 'new' : ''} ${n.kind}"><span class="gi">${n.ic}</span><div><div>${esc(n.text)}</div><div class="small muted">${n.at.toLocaleDateString(LOC, {day:'numeric', month:'short'})} · ${fmtTime(n.at)}</div></div></div>`).join('') : '<p class="muted small" style="margin:0">ما فيه إشعارات بعد. تطلع هنا أول ما يحضر أو يغيب أو يخلص اختبار.</p>'}</div>
+        ${notes.length > 12 ? '<button class="btn sm ghost" id="gall">عرض الكل</button>' : ''}${pushBtnHTML()}</section>
+      <section class="card"><h2>📅 الحضور هذا الشهر</h2>${monthGrid(k)}</section>
+    </div>
+    <section class="card"><h2>📈 التقدم آخر 8 أسابيع</h2>${weekChartSVG(k)}
+      <div class="stat" style="margin-top:10px"><div><span class="small muted">كلمات تعلّمها</span><b>${words}</b></div><div><span class="small muted">قصص قرأها</span><b>${st.books || 0}</b></div><div><span class="small muted">بطاقات الواجب</span><b>${srs}</b></div><div><span class="small muted">أوسمة</span><b>${badges}</b></div></div></section>
+    <div class="g2e">
+      <section class="card"><h2>🕸️ المهارات</h2><div class="radarw">${radarSVG(k, 340)}</div>${(() => { const w = weakestSkill(k); return w ? `<p class="small" style="margin:6px 0 0">💪 يحتاج تركيز على: <b>${SKILLS.find(x => x[0] === w)[1]}</b>. المعلمة تتدرب معه عليها أكثر.</p>` : ''; })()}</section>
+      <section class="card"><h2>💌 شجّع ${esc(nick(k))}</h2><p class="small muted" style="margin:0 0 8px">رسالتك تطلع له مع الهدهد في الصفحة الرئيسية، وأثناء الحصة إذا كان فيها.</p>
+        <div class="chips">${['أحسنت يا بطل! 👏', 'فخور فيك ❤️', 'كمل، أنت قدها 💪', 'ركّز وتكلّم كثير 🗣️'].map(t => `<button class="btn sm" data-ch="${esc(t)}">${t}</button>`).join('')}</div>
+        <div class="chips" style="margin-top:8px;flex-wrap:nowrap"><input class="input" id="cht" maxlength="120" placeholder="اكتب رسالتك…"><button class="btn primary" id="chs">إرسال</button></div>
+        ${cheers.length ? `<div class="gnl" style="margin-top:10px">${cheers.map(c => `<div class="gn"><span class="gi">💌</span><div><div>${esc(c.text)}</div><div class="small muted">${fmtTime(new Date(c.at))} · ${cs.includes(c.id) ? '✓ قرأها' : 'لم يقرأها بعد'}</div></div></div>`).join('')}</div>` : ''}</section>
+    </div>
+    <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(r => `<div class="report"><div><b class="en">${esc(r.title)}</b> <span class="chip brand num">${r.score}%</span> <span class="small muted">${r.minutes || 0} دقيقة${r.talkPct != null ? ` · تكلّم ${r.talkPct}%` : ''} · ${new Date(r.at).toLocaleDateString(LOC)}</span></div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes || []).length ? `<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>` : ''}</div>`).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
+    </div></div>`;
+  $('#out').onclick = logout;
+  document.querySelectorAll('[data-gk]').forEach(b => b.onclick = () => { G_KID = b.dataset.gk; renderGuardian(gid); });
+  $('#gb').onclick = () => document.getElementById('gnotes').scrollIntoView({behavior:'smooth'});
+  const markRead = () => { DB.gseen = DB.gseen || {}; DB.gseen[gid] = Date.now(); save(); renderGuardian(gid); };
+  const gr = $('#gread'); if(gr) gr.onclick = markRead;
+  const ga = $('#gall'); if(ga) ga.onclick = () => { const ov = overlay(`<h2>🔔 كل الإشعارات</h2><div class="gnl" style="max-height:60vh;overflow:auto">${notes.map(n => `<div class="gn"><span class="gi">${n.ic}</span><div><div>${esc(n.text)}</div><div class="small muted">${n.at.toLocaleDateString(LOC)} · ${fmtTime(n.at)}</div></div></div>`).join('')}</div><button class="btn" id="gx">إغلاق</button>`); ov.querySelector('#gx').onclick = () => ov.remove(); };
+  const send = t => { t = String(t || '').trim(); if(!t) return; DB.cheers = DB.cheers || {}; DB.cheers[k] = (DB.cheers[k] || []).concat({id:'c' + Date.now().toString(36) + rnd(2), at:new Date().toISOString(), from:g.name, text:t.slice(0, 120)}).slice(-30); save(); toast('💌 وصلت رسالتك'); renderGuardian(gid); };
+  document.querySelectorAll('[data-ch]').forEach(b => b.onclick = () => send(b.dataset.ch));
+  $('#chs').onclick = () => send($('#cht').value);
+  wirePushBtn();
+  const ll = $('#ll'); if(ll) ll.scrollTop = ll.scrollHeight;
+  clearInterval(homeTimer); homeTimer = setInterval(() => { if(WHO === 'g:' + gid && !document.querySelector('.ov') && !(document.activeElement && /INPUT|TEXTAREA/.test(document.activeElement.tagName))) renderGuardian(gid); }, 30000);
+}
+/* the child's device: show new cheers with the hoopoe */
+function cheersSeenLocal(k){ try{ return JSON.parse(localStorage.getItem('hh:cheers:' + k)) || []; }catch(e){ return []; } }
+function checkCheers(k){
+  if(!DB || !DB.kids[k] || document.querySelector('.cheerpop')) return;
+  const list = (DB.cheers || {})[k] || [], p = DB.progress[k]; p.cheersSeen = p.cheersSeen || [];
+  const local = cheersSeenLocal(k), c = list.find(x => !p.cheersSeen.includes(x.id) && !local.includes(x.id) && Date.now() - Date.parse(x.at) < 7 * DAY);
+  if(!c) return;
+  try{ localStorage.setItem('hh:cheers:' + k, JSON.stringify(local.concat(c.id).slice(-60))); }catch(e){}
+  p.cheersSeen = p.cheersSeen.concat(c.id).slice(-60); save();
+  const el = document.createElement('div'); el.className = 'cheerpop'; el.setAttribute('role', 'status');
+  el.innerHTML = `<span class="cpb">${LOGO_BIRD}</span><div><div class="small" style="font-weight:800">💌 رسالة من ${esc(c.from || 'ولي أمرك')}</div><div>${esc(c.text)}</div></div><button class="btn sm" aria-label="إغلاق">✓</button>`;
+  document.body.appendChild(el); try{ SFX.chirp(0); }catch(e){}
+  const close = () => { el.classList.add('out'); setTimeout(() => { el.remove(); checkCheers(k); }, 400); };
+  el.querySelector('button').onclick = close; setTimeout(close, 9000);
+}
+/* live lesson feed for the guardian */
+function liveFeed(lesson, who, text){
+  if(!lesson || !text || DEMO) return; const k = lesson.kid; text = String(text).replace(/^\[minute \d+\]\s*/, '').trim(); if(!text || /^\(/.test(text)) return;
+  DB.livefeed = DB.livefeed || {};
+  const f = DB.livefeed[k] && DB.livefeed[k].start === lesson.startedAt.getTime() ? DB.livefeed[k] : {start:lesson.startedAt.getTime(), title:(lesson.mission ? '🎯 ' + lesson.mission.m.t : lesson.plan.t), lines:[]};
+  f.lines = (f.lines || []).concat({w:who, t:text.slice(0, 220)}).slice(-14); f.at = Date.now(); f.talk = talkPctOf(lesson); f.done = false;
+  DB.livefeed[k] = f; save();
+}
+function liveEnd(lesson){ if(!lesson || DEMO || !DB.livefeed || !DB.livefeed[lesson.kid]) return; DB.livefeed[lesson.kid].done = true; DB.livefeed[lesson.kid].at = Date.now(); save(); }
+
+function pushBtnHTML(){ return ''; }
+function wirePushBtn(){}
+
+const LOGO_BIRD = (LOGO.match(/<svg[\s\S]*<\/svg>/) || [''])[0];
 /* =============== BOOT =============== */
 setupLang();
 loadDB();
