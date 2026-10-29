@@ -285,6 +285,30 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .days{display:flex;gap:6px;flex-wrap:wrap}
 .days label{display:inline-flex;gap:4px;align-items:center;background:var(--bg);border-radius:99px;padding:4px 10px;font-size:.9rem}
 .report{border-top:1px solid var(--line);padding-top:10px;display:grid;gap:4px}
+/* teacher report card (parent + guardian pages) */
+.rcard{border:1.5px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden;margin-top:12px;box-shadow:0 4px 14px rgba(43,27,15,.06)}
+.rc-h{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:14px 16px;background:linear-gradient(135deg,#F05A38,#FF8A63);color:#fff}
+.rc-h .rc-bird{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.2);display:grid;place-items:center}.rc-h .rc-bird svg{width:34px;height:34px}
+.rc-t{font-family:var(--en);font-weight:800;font-size:1.15rem;direction:ltr;text-align:right;line-height:1.3}
+.rc-d{font-size:.82rem;opacity:.92}
+.rc-ring{--p:0;width:62px;height:62px;border-radius:50%;background:conic-gradient(#fff calc(var(--p)*1%),rgba(255,255,255,.28) 0);display:grid;place-items:center}
+.rc-ring>div{width:50px;height:50px;border-radius:50%;background:#F26843;display:grid;place-items:center;line-height:1.05;text-align:center}
+.rc-ring b{font-size:1.05rem;direction:ltr}.rc-ring small{font-size:.6rem;opacity:.9}
+.rc-stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.rc-stats>div{padding:10px 6px;text-align:center;display:grid;gap:0}.rc-stats>div+div{border-inline-start:1px solid var(--line)}
+.rc-stats b{font-size:1.05rem}.rc-stats span{font-size:.75rem;color:var(--muted)}
+.rc-sec{padding:12px 16px;display:grid;gap:8px}.rc-sec+.rc-sec{border-top:1px dashed var(--line)}
+.rc-sec h4{margin:0;font-size:.92rem;color:var(--brand-ink)}
+.rc-note{margin:0;line-height:1.9;font-size:.95rem}
+.enr{unicode-bidi:isolate;direction:ltr;font-family:var(--en);background:var(--brand-soft);color:var(--brand-ink);border-radius:6px;padding:0 5px;margin:0 1px;font-size:.92em;white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rc-words{display:flex;flex-wrap:wrap;gap:6px}.rc-words span{font-family:var(--en);direction:ltr;background:var(--sky-soft);color:var(--sky);border-radius:99px;padding:2px 10px;font-size:.85rem;font-weight:700}
+.rc-fix{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rc-fix li{border-radius:14px;background:var(--bg);padding:8px 12px;display:grid;gap:3px;direction:ltr;text-align:left;font-family:var(--en);font-size:.92rem;line-height:1.45}
+.rc-fix .w{color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(220,38,38,.5);opacity:.85}
+.rc-fix .r{color:var(--good);font-weight:700}
+.rc-fix .w::before{content:'✗  ';text-decoration:none;display:inline-block}.rc-fix .r::before{content:'✓  '}
+.rcard details summary{cursor:pointer;color:var(--brand);font-weight:700;font-size:.85rem;list-style:none}.rcard details summary::-webkit-details-marker{display:none}
+.rcard details[open] summary{display:none}
 .acc{width:100%;border-collapse:collapse}
 .acc td,.acc th{padding:8px;border-top:1px solid var(--line);text-align:right}
 .acc code{direction:ltr;unicode-bidi:isolate;background:var(--bg);padding:2px 8px;border-radius:6px;font-weight:700}
@@ -791,7 +815,7 @@ document.addEventListener('click', e => { const b = e.target.closest && e.target
 let I18N = null, I18N_KEYS = [];
 function trText(str){ if(!I18N || !/[؀-ۿ]/.test(str)) return str; let out = str;
   for(const k of I18N_KEYS){ if(out.indexOf(k) >= 0) out = out.split(k).join(I18N[k]); if(!/[؀-ۿ]/.test(out)) break; } return out; }
-const SKIP_TR = el => el.closest && el.closest('.r-tip,.kword span,.gram,.wordchips,.vguide ol,.vguide > div,[data-notr],.match,.gloss,.mgoal .small,.report .small,#mnote');
+const SKIP_TR = el => el.closest && el.closest('.r-tip,.kword span,.gram,.wordchips,.vguide ol,.vguide > div,[data-notr],.match,.gloss,.mgoal .small,.report .small,.rcard,#mnote');
 function trNode(root){
   if(!I18N) return;
   const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const nodes = []; let n; while((n = w.nextNode())) nodes.push(n);
@@ -854,6 +878,24 @@ function ensureKidShape(k){
 /* =============== HELPERS =============== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* teacher report card shared by the parent and guardian pages: brand header with score ring, three stats,
+   the note (English phrases isolated so they never scramble the Arabic), new words, and corrections as before/after rows */
+function bidiAr(t){ return String(t || '').split(/([A-Za-z](?:[A-Za-z0-9'’,.!?…:;"\-\s]*[A-Za-z0-9.!?…'’"])?)/).map((p, i) => i % 2 ? `<bdi dir="ltr" class="enr">${esc(p.trim())}</bdi>${/\s$/.test(p) ? ' ' : ''}` : esc(p)).join(''); }
+function reportCardHTML(r){
+  const sc = Math.max(0, Math.min(100, Number(r.score) || 0)), fx = (r.mistakes || []).filter(m => m && m.right), words = (r.newWords || []).filter(Boolean);
+  const fixLi = m => `<li><div class="w">${esc(m.wrong)}</div><div class="r">${esc(m.right)}</div></li>`;
+  const date = new Date(r.at).toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'long'});
+  return `<article class="rcard">
+    <header class="rc-h"><div class="rc-bird">${typeof hoopoeSVG === 'function' ? hoopoeSVG('happy') : '🐦'}</div>
+      <div><div class="rc-t">${esc(r.title || '')}</div><div class="rc-d">${date}${r.lessonNo ? ` · الحصة ${Number(r.lessonNo)}` : ''}</div></div>
+      <div class="rc-ring" style="--p:${sc}"><div><b>${sc}%</b><small>النتيجة</small></div></div></header>
+    <div class="rc-stats"><div><b>⏱️ ${Number(r.minutes) || 0}</b><span>دقيقة</span></div><div><b><bdi dir="ltr">${r.talkPct != null ? (Number(r.talkPct) || 0) + '%' : '—'}</bdi></b><span>🗣️ نسبة كلامه</span></div><div><b style="color:var(--gold);direction:ltr">${'★'.repeat(Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)))}${'☆'.repeat(3 - Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)))}</b><span>التقييم</span></div></div>
+    ${r.parentNote ? `<div class="rc-sec"><h4>💬 ملاحظة المعلمة</h4><p class="rc-note">${bidiAr(r.parentNote)}</p></div>` : ''}
+    ${words.length ? `<div class="rc-sec"><h4>📚 كلمات تعلّمها</h4><div class="rc-words">${words.slice(0, 12).map(w => `<span>${esc(w)}</span>`).join('')}</div></div>` : ''}
+    ${fx.length ? `<div class="rc-sec"><h4>✏️ تصحيحات للتدريب في البيت (${fx.length})</h4><ul class="rc-fix">${fx.slice(0, 3).map(fixLi).join('')}</ul>${fx.length > 3 ? `<details><summary>عرض الباقي (${fx.length - 3}) ▾</summary><ul class="rc-fix" style="margin-top:8px">${fx.slice(3).map(fixLi).join('')}</ul></details>` : ''}</div>` : ''}
+  </article>`;
+}
 const pad = n => String(n).padStart(2,'0');
 const keyOf = t => `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}T${pad(t.getHours())}${pad(t.getMinutes())}`;
 const fromKey = k => { const [d, hm] = k.split('T'); const [y,mo,da] = d.split('-').map(Number); return new Date(y, mo-1, da, Number(hm.slice(0,2)), Number(hm.slice(2,4))); };
@@ -2836,8 +2878,7 @@ function renderParent(){
       <details class="skills"><summary>📊 تقرير الأسبوع</summary>${weekReportHTML(k)}</details>
       <details class="skills"><summary>🕸️ خريطة المهارات${(() => { const w = weakestSkill(k); return w ? ` · الأضعف: ${SKILLS.find(x => x[0] === w)[1]}` : ''; })()}</summary><div class="radarw">${radarSVG(k, 340)}</div><div class="small muted">تُحسب من الحصص والاختبارات والقراءة بصوت عالٍ ومختبر النطق والواجب والمهمات. المعلمة تركّز تلقائياً على الأضعف.</div></details>
       <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
-      ${reps.length ? reps.map(r => `<div class="report"><div class="rph"><b class="en">${esc(r.title)}</b><span class="small muted">${new Date(r.at).toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})}</span></div>
-      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${Number(r.score) || 0}%</bdi></span><span class="chip">⏱️ ${Number(r.minutes) || 0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${Number(r.talkPct) || 0}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes||[]).length?`<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>`:''}</div>`).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
+      ${reps.length ? reps.map(reportCardHTML).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
     </section>`; };
   $('#app').innerHTML = `<div class="wrap">
     <div class="topbar">${LOGO}<div class="me"><b>لوحة الإدارة</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
@@ -4224,8 +4265,7 @@ function renderGuardian(gid){
       <section class="card"><h2>🕸️ المهارات</h2><div class="radarw">${radarSVG(k, 340)}</div>${(() => { const w = weakestSkill(k); return w ? `<p class="small" style="margin:6px 0 0">💪 يحتاج تركيز على: <b>${SKILLS.find(x => x[0] === w)[1]}</b>. المعلمة تتدرب معه عليها أكثر.</p>` : ''; })()}</section>
 
     </div>
-    <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(r => `<div class="report"><div class="rph"><b class="en">${esc(r.title)}</b><span class="small muted">${new Date(r.at).toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})}</span></div>
-      <div class="chips rpc"><span class="chip brand">⭐ النتيجة <bdi class="num" dir="ltr">${Number(r.score) || 0}%</bdi></span><span class="chip">⏱️ ${Number(r.minutes) || 0} دقيقة</span>${r.talkPct != null ? `<span class="chip">🗣️ تكلّم <bdi class="num" dir="ltr">${Number(r.talkPct) || 0}%</bdi></span>` : ''}</div><div class="small">${esc(r.parentNote)}</div>${(r.mistakes || []).length ? `<div class="small ltr" style="text-align:left">${r.mistakes.map(m => `<s class="muted">${esc(m.wrong)}</s> → ${esc(m.right)}`).join(' · ')}</div>` : ''}</div>`).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
+    <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(reportCardHTML).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
     </div></div>`;
   $('#out').onclick = logout;
   document.querySelectorAll('[data-gk]').forEach(b => b.onclick = () => { G_KID = b.dataset.gk; renderGuardian(gid); });
