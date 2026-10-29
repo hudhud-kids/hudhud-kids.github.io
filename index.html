@@ -300,7 +300,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .rc-sec{padding:12px 16px;display:grid;gap:8px}.rc-sec+.rc-sec{border-top:1px dashed var(--line)}
 .rc-sec h4{margin:0;font-size:.92rem;color:var(--brand-ink)}
 .rc-note{margin:0;line-height:1.9;font-size:.95rem}
-.enr{unicode-bidi:isolate;direction:ltr;font-family:var(--en);background:var(--brand-soft);color:var(--brand-ink);border-radius:6px;padding:0 5px;margin:0 1px;font-size:.92em;white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.enr{unicode-bidi:isolate;direction:ltr;font-family:var(--en);color:var(--brand-ink);font-weight:700;font-size:.95em}
 .rc-words{display:flex;flex-wrap:wrap;gap:6px}.rc-words span{font-family:var(--en);direction:ltr;background:var(--sky-soft);color:var(--sky);border-radius:99px;padding:2px 10px;font-size:.85rem;font-weight:700}
 .rc-fix{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .rc-fix li{border-radius:14px;background:var(--bg);padding:8px 12px;display:grid;gap:3px;direction:ltr;text-align:left;font-family:var(--en);font-size:.92rem;line-height:1.45}
@@ -309,6 +309,21 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .rc-fix .w::before{content:'✗  ';text-decoration:none;display:inline-block}.rc-fix .r::before{content:'✓  '}
 .rcard details summary{cursor:pointer;color:var(--brand);font-weight:700;font-size:.85rem;list-style:none}.rcard details summary::-webkit-details-marker{display:none}
 .rcard details[open] summary{display:none}
+.rc-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:14px 8px 10px;border-bottom:1px solid var(--line)}
+.rc-kpi{display:grid;justify-items:center;gap:2px;text-align:center}.rc-kpi b{font-size:.88rem}
+.rc-donut{width:min(84px,24vw);height:auto}
+.rc-dl{font-size:.7rem;font-weight:700;border-radius:99px;padding:1px 8px}.rc-dl.up{background:var(--good-soft,#E3F5EA);color:var(--good)}.rc-dl.down{background:var(--bad-soft);color:var(--bad)}.rc-dl.flat{background:var(--bg);color:var(--muted)}
+.rc-goal{font-size:.68rem;color:var(--muted)}
+.rc-fit{justify-self:start;font-weight:800}
+.rc-trend{display:flex;gap:8px;align-items:flex-end;height:120px;padding:6px 4px 0;border-bottom:1.5px solid var(--line)}
+.rc-col{flex:1;display:grid;grid-template-rows:1fr auto;height:100%;gap:4px;justify-items:center;min-width:0}
+.rc-bars{display:flex;gap:2px;align-items:flex-end;height:100%;width:100%;justify-content:center}.rc-bars i{width:30%;max-width:12px;border-radius:5px 5px 0 0;display:block;transition:height .5s}
+.rc-col span{font-size:.66rem;color:var(--muted);white-space:nowrap}.rc-col.cur span{color:var(--brand);font-weight:800}
+.rc-col.cur .rc-bars{background:var(--brand-soft);border-radius:8px 8px 0 0}
+.rc-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.72rem;color:var(--muted)}.rc-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}
+.rc-list{margin:0;padding-inline-start:18px;display:grid;gap:4px;font-size:.93rem;line-height:1.8}
+.rc-home{background:var(--brand-soft)}
+.rc-foot{padding:8px 16px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--line);display:flex;align-items:center;gap:6px}
 .acc{width:100%;border-collapse:collapse}
 .acc td,.acc th{padding:8px;border-top:1px solid var(--line);text-align:right}
 .acc code{direction:ltr;unicode-bidi:isolate;background:var(--bg);padding:2px 8px;border-radius:6px;font-weight:700}
@@ -886,14 +901,43 @@ function reportCardHTML(r){
   const sc = Math.max(0, Math.min(100, Number(r.score) || 0)), fx = (r.mistakes || []).filter(m => m && m.right), words = (r.newWords || []).filter(Boolean);
   const fixLi = m => `<li><div class="w">${esc(m.wrong)}</div><div class="r">${esc(m.right)}</div></li>`;
   const date = new Date(r.at).toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'long'});
+  // the child's earlier lessons, for "compared with last lesson" and the trend chart
+  const hist = (DB.reports || []).filter(x => x.kid === r.kid && Date.parse(x.at) <= Date.parse(r.at)).sort((a, b) => Date.parse(a.at) - Date.parse(b.at)).slice(-6);
+  const prev = hist.length > 1 ? hist[hist.length - 2] : null;
+  const num = v => v == null || v === '' || isNaN(Number(v)) ? null : Number(v);
+  const delta = (cur, old, unit = '') => { cur = num(cur); old = num(old); if(cur == null || old == null) return `<span class="rc-dl flat">أول قياس</span>`; const d = Math.round((cur - old) * 10) / 10;
+    return d === 0 ? `<span class="rc-dl flat">= مثل السابقة</span>` : `<span class="rc-dl ${d > 0 ? 'up' : 'down'}">${d > 0 ? '▲' : '▼'} <bdi dir="ltr">${Math.abs(d)}${unit}</bdi> عن السابقة</span>`; };
+  const ring = (val, label, color, sub, goal) => { const v = num(val); const p = v == null ? 0 : Math.max(0, Math.min(100, v)), R = 34, C = 2 * Math.PI * R;
+    const g = goal != null ? `<line x1="40" y1="2" x2="40" y2="12" stroke="var(--fg)" stroke-width="2.5" stroke-linecap="round" transform="rotate(${goal * 3.6} 40 40)"/>` : '';
+    return `<div class="rc-kpi"><svg viewBox="0 0 80 80" class="rc-donut"><circle cx="40" cy="40" r="${R}" fill="none" stroke="var(--line)" stroke-width="9"/><circle cx="40" cy="40" r="${R}" fill="none" stroke="${color}" stroke-width="9" stroke-linecap="round" stroke-dasharray="${(p / 100 * C).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 40 40)"/>${g}<text x="40" y="45" text-anchor="middle" font-size="17" font-weight="800" fill="var(--fg)" style="direction:ltr">${v == null ? '—' : Math.round(v) + '%'}</text></svg>
+      <b>${label}</b>${sub || ''}</div>`; };
+  const fitTxt = {easy:['سهل عليه', 'good', '🟢'], right:['مناسب لمستواه', 'brand', '🎯'], hard:['صعب عليه شوي', 'bad', '🟠']}[r.levelFit] || null;
+  // trend: last lessons, talk share and confidence as paired bars
+  const trend = hist.length >= 2 ? `<div class="rc-sec"><h4>📈 التطور في آخر ${hist.length} حصص</h4><div class="rc-trend">${hist.map((x, i) => { const t = num(x.talkPct), c = num(x.confidence), s2 = num(x.score);
+      return `<div class="rc-col ${i === hist.length - 1 ? 'cur' : ''}"><div class="rc-bars"><i style="height:${s2 == null ? 2 : Math.max(4, s2)}%;background:#F05A38" title="النتيجة"></i><i style="height:${t == null ? 2 : Math.max(4, t)}%;background:#3B7BE8" title="الكلام"></i><i style="height:${c == null ? 2 : Math.max(4, c)}%;background:#E8A317" title="الثقة"></i></div><span>${i === hist.length - 1 ? 'اليوم' : new Date(x.at).toLocaleDateString(LOC, {day:'numeric', month:'numeric'})}</span></div>`; }).join('')}</div>
+      <div class="rc-legend"><span><i style="background:#F05A38"></i>النتيجة</span><span><i style="background:#3B7BE8"></i>نسبة الكلام</span><span><i style="background:#E8A317"></i>الثقة</span></div></div>` : '';
+  const sec = (icon, title, body) => body ? `<div class="rc-sec"><h4>${icon} ${title}</h4>${body}</div>` : '';
+  const p = t => t ? `<p class="rc-note">${bidiAr(t)}</p>` : '';
   return `<article class="rcard">
     <header class="rc-h"><div class="rc-bird">${typeof hoopoeSVG === 'function' ? hoopoeSVG('happy') : '🐦'}</div>
-      <div><div class="rc-t">${esc(r.title || '')}</div><div class="rc-d">${date}${r.lessonNo ? ` · الحصة ${Number(r.lessonNo)}` : ''}</div></div>
+      <div><div class="rc-t">${esc(r.title || '')}</div><div class="rc-d">${date}${r.lessonNo ? ` · الحصة ${Number(r.lessonNo)}` : ''}${r.level ? ` · المستوى ${Number(r.level)}` : ''}</div></div>
       <div class="rc-ring" style="--p:${sc}"><div><b>${sc}%</b><small>النتيجة</small></div></div></header>
-    <div class="rc-stats"><div><b>⏱️ ${Number(r.minutes) || 0}</b><span>دقيقة</span></div><div><b><bdi dir="ltr">${r.talkPct != null ? (Number(r.talkPct) || 0) + '%' : '—'}</bdi></b><span>🗣️ نسبة كلامه</span></div><div><b style="color:var(--gold);direction:ltr">${'★'.repeat(Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)))}${'☆'.repeat(3 - Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)))}</b><span>التقييم</span></div></div>
-    ${r.parentNote ? `<div class="rc-sec"><h4>💬 ملاحظة المعلمة</h4><p class="rc-note">${bidiAr(r.parentNote)}</p></div>` : ''}
-    ${words.length ? `<div class="rc-sec"><h4>📚 كلمات تعلّمها</h4><div class="rc-words">${words.slice(0, 12).map(w => `<span>${esc(w)}</span>`).join('')}</div></div>` : ''}
-    ${fx.length ? `<div class="rc-sec"><h4>✏️ تصحيحات للتدريب في البيت (${fx.length})</h4><ul class="rc-fix">${fx.slice(0, 3).map(fixLi).join('')}</ul>${fx.length > 3 ? `<details><summary>عرض الباقي (${fx.length - 3}) ▾</summary><ul class="rc-fix" style="margin-top:8px">${fx.slice(3).map(fixLi).join('')}</ul></details>` : ''}</div>` : ''}
+    <div class="rc-kpis">
+      ${ring(r.score, 'النتيجة', '#F05A38', delta(r.score, prev && prev.score))}
+      ${ring(r.talkPct, 'نسبة كلامه', '#3B7BE8', `<span class="rc-goal">الهدف <bdi dir="ltr">${num(r.talkGoal) || 55}%</bdi></span>${delta(r.talkPct, prev && prev.talkPct)}`, num(r.talkGoal) || 55)}
+      ${ring(r.confidence, 'الثقة', '#E8A317', delta(r.confidence, prev && prev.confidence))}
+    </div>
+    <div class="rc-stats"><div><b>⏱️ ${Number(r.minutes) || 0}</b><span>دقيقة</span></div><div><b>${num(r.avgWords) != null ? `<bdi dir="ltr">${num(r.avgWords)}</bdi>` : '—'}</b><span>كلمة في كل رد</span></div><div><b style="color:var(--gold);direction:ltr">${(() => { const st = Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)); return '★'.repeat(st) + '☆'.repeat(3 - st); })()}</b><span>التقييم</span></div></div>
+    ${sec('💬', 'ملخص المعلمة', p(r.parentNote))}
+    ${sec('🗣️', 'نسبة الكلام', p(r.talkNote))}
+    ${sec('💪', 'الثقة في الكلام', p(r.confidenceNote))}
+    ${fitTxt || r.levelNote ? sec('🎯', 'هل الدرس مناسب لمستواه؟', `${fitTxt ? `<span class="chip ${fitTxt[1]} rc-fit">${fitTxt[2]} ${fitTxt[0]}</span>` : ''}${p(r.levelNote)}`) : ''}
+    ${trend}
+    ${(r.strengths || []).length ? sec('🌟', 'نقاط القوة', `<ul class="rc-list">${r.strengths.map(x => `<li>${bidiAr(x)}</li>`).join('')}</ul>`) : ''}
+    ${words.length ? sec('📚', 'كلمات تعلّمها', `<div class="rc-words">${words.slice(0, 12).map(w => `<span>${esc(w)}</span>`).join('')}</div>`) : ''}
+    ${fx.length ? sec('✏️', `تصحيحات (${fx.length})`, `<ul class="rc-fix">${fx.slice(0, 3).map(fixLi).join('')}</ul>${fx.length > 3 ? `<details><summary>عرض الباقي (${fx.length - 3}) ▾</summary><ul class="rc-fix" style="margin-top:8px">${fx.slice(3).map(fixLi).join('')}</ul></details>` : ''}`) : ''}
+    ${r.homePractice ? `<div class="rc-sec rc-home"><h4>🏠 تدريب البيت هذا الأسبوع</h4>${p(r.homePractice)}</div>` : ''}
+    <footer class="rc-foot"><b style="color:var(--brand)">هدهد</b> · تقرير المعلمة بعد الحصة · يُحدَّث تلقائياً</footer>
   </article>`;
 }
 const pad = n => String(n).padStart(2,'0');
@@ -2500,6 +2544,13 @@ How the 25 minutes flow (each student message starts with [minute X]):
 - review (21-23): a quick speaking challenge: the child makes 2-3 of their own sentences with today's patterns.
 - wrapup (23-25): specific praise about the sentences they built, goodbye, then [END].
 
+GIVE THE CHILD THE SPEAKING TIME (very important):
+- Every student message starts with [minute X · child talk Y% · goal Z%]. Y is how much of the lesson the CHILD has spoken so far. Your job is to get Y above Z.
+- Keep your turns SHORT: one reaction (a few words) + ONE question. Maximum about 20 words, never a speech. If Y is below Z, be even shorter (under 12 words) and ask questions that need a long answer ("Tell me about...", "Why...?", "What happened next?").
+- Make the child FINISH: when a sentence is incomplete, or the child skips the pattern, or changes the topic before finishing, do not move on. Say "Finish your sentence: I'd describe myself as... because..." or give the first words and wait. Only ask a new question after the child has said one complete sentence.
+- Ask for one more sentence before you add anything: "Great! Can you give me an example?", "And then?", "Say it again with because".
+- Never answer your own question, never give two questions at once, and never fill a silence with a long explanation.
+
 HOW TO TALK:
 - ${lvl}
 - Spoken part: 1 to 3 short, natural sentences, like real speech (contractions, "Wow!", "Hmm", "Oh really?", laughter words). Always finish with a question or a clear invitation to speak.
@@ -2680,7 +2731,7 @@ async function teacherTurn(userText){
   if(!L || L.done) return;
   stopListening();
   const lesson = L, m = elapsedMin();
-  lesson.history.push({role:'user', content:`[minute ${m}] ${userText}`}); liveFeed(lesson, 'k', userText);
+  lesson.history.push({role:'user', content:`[minute ${m} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%] ${userText}`}); liveFeed(lesson, 'k', userText);
   setState('thinking');
   const msgs = lesson.history.slice(-40); while(msgs.length && msgs[0].role !== 'user') msgs.shift();
   const apiMsgs = msgs.map((x,i) => i === msgs.length-1 ? {role:x.role, content:[{type:'text', text:x.content, cache_control:{type:'ephemeral'}}]} : {role:x.role, content:x.content});
@@ -2804,6 +2855,12 @@ ${transcript}
 Reply with ONLY one JSON object:
 {"score":0-100,"stars":1-3,"newWords":["words practised"],"mistakes":[{"wrong":"...","right":"..."}],
 "parentNote":"3-4 sentences in Arabic for the parent: what was covered, how well the child built sentences and spoke, strengths, exactly what to practise at home",
+"talkNote":"1-2 Arabic sentences for the parent about how much the child spoke (the app measured the child's share of words: ${talkPctOf(lesson)}%, goal ${talkGoal(k)}%) and what it means",
+"confidence":0-100 (how confidently the child spoke: answer length, starting sentences alone, few long pauses, little Arabic, willingness to try; 50 = average for this level),
+"confidenceNote":"1-2 Arabic sentences explaining the confidence score with a concrete example from the lesson",
+"levelFit":"easy" or "right" or "hard" (was this lesson's level right for the child?),"levelNote":"1-2 Arabic sentences explaining why",
+"strengths":["2-3 short Arabic phrases: what the child did well today"],
+"homePractice":"one or two concrete Arabic sentences: exactly what to practise at home this week, with an English example sentence",
 "kidNote":"one short cheerful English sentence for the child","nextFocus":"one short line in English: what the next lesson should focus on","interests":["short English phrases about the child's life, likes and hobbies they mentioned (empty if none)"],
 "quiz":[5 questions about THIS lesson at the child's level, mainly sentence building:
   2 of {"type":"order","words":["the","words","of","a","correct","sentence","in","order"],"answer":"the full correct sentence","ar":"short Arabic instruction"} (5-9 words, using today's patterns),
@@ -2816,7 +2873,10 @@ Reply with ONLY one JSON object:
   if(!(rep.quiz||[]).length) rep.quiz = lessonQuizFromBank(DB.kids[k].level, plan.ui, plan.li) || [];
   const report = {score:Math.max(0,Math.min(100,Number(rep.score)||0)), stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
     newWords:(Array.isArray(rep.newWords)?rep.newWords:[]).slice(0,12).map(String), mistakes:(Array.isArray(rep.mistakes)?rep.mistakes:[]).slice(0,8).map(m => ({wrong:String(m.wrong||''), right:String(m.right||'')})),
-    parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!'), talkPct:talkPctOf(lesson)};
+    parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!'), talkPct:talkPctOf(lesson), talkGoal:talkGoal(k),
+    avgWords:(() => { const t = lesson.history.filter(h => h.role === 'user' && !/\]\s*\(/.test(h.content)).length; return t ? Math.round(lesson.sw / t * 10) / 10 : null; })(),
+    confidence:rep.confidence == null ? null : Math.max(0, Math.min(100, Number(rep.confidence) || 0)), confidenceNote:String(rep.confidenceNote||''), talkNote:String(rep.talkNote||''),
+    levelFit:['easy','right','hard'].includes(rep.levelFit) ? rep.levelFit : null, levelNote:String(rep.levelNote||''), strengths:(Array.isArray(rep.strengths)?rep.strengths:[]).slice(0,4).map(String), homePractice:String(rep.homePractice||'')};
   if(Array.isArray(rep.interests) && !lesson.trial){ const p0 = DB.progress[k]; p0.interests = [...new Set(rep.interests.map(String).concat(p0.interests||[]))].slice(0,15); }
   let book = null, cert = null;
   if(!lesson.trial){
@@ -3423,7 +3483,8 @@ The child's 3 goals (they can see them on screen):
 2. ${m.goals[1][0]}
 3. ${m.goals[2][0]}
 RULES:
-- Stay in character and keep the scene natural and fun. Speak English only, at CEFR ${cefr}, 1-2 short sentences, and always give the child a chance to speak.
+- Stay in character and keep the scene natural and fun. Speak English only, at CEFR ${cefr}, 1-2 short sentences (max ~20 words), and always give the child a chance to speak. The child should talk more than you.
+- If the child's sentence is incomplete or they change the subject, do not move on: ask them to finish the sentence (give the first words if needed). Only continue after one complete sentence.
 - Guide the scene so each goal becomes possible, but let the child do the talking. Do not do the goals for them.
 - When the child clearly achieves a goal with an understandable full sentence, add [GOAL:1], [GOAL:2] or [GOAL:3] on its own line.
 - If the child makes a mistake, stay in character and naturally say the correct version, and add [FIX:wrong|right|very short Arabic tip].
@@ -4306,7 +4367,7 @@ function checkCheers(k){
 }
 /* live lesson feed for the guardian */
 function liveFeed(lesson, who, text){
-  if(!lesson || !text || DEMO) return; const k = lesson.kid; text = String(text).replace(/^\[minute \d+\]\s*/, '').trim(); if(!text || /^\(/.test(text)) return;
+  if(!lesson || !text || DEMO) return; const k = lesson.kid; text = String(text).replace(/^\[minute[^\]]*\]\s*/, '').trim(); if(!text || /^\(/.test(text)) return;
   DB.livefeed = DB.livefeed || {};
   const f = DB.livefeed[k] && DB.livefeed[k].start === lesson.startedAt.getTime() ? DB.livefeed[k] : {start:lesson.startedAt.getTime(), title:(lesson.mission ? '🎯 ' + lesson.mission.m.t : lesson.plan.t), lines:[]};
   f.lines = (f.lines || []).concat({w:who, t:text.slice(0, 220)}).slice(-14); f.at = Date.now(); f.talk = talkPctOf(lesson); f.done = false;
