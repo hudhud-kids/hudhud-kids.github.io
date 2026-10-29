@@ -1821,55 +1821,61 @@ function placementTest(k, opt){
 async function placementTestRun(k, opt){
   opt = opt || {}; const KIDMODE = !!opt.kid;
   const kid = DB.kids[k];
-  const start = Math.max(1, Math.min(20, ageOf(kid.birth) - 5));
+  /* always start EASY (level 2, or 1 for little ones) and climb only on real correct answers, whatever the age */
+  const start = ageOf(kid.birth) <= 6 ? 1 : 2;
   const probe = await loadP(start);
   if(!probe){ return placementTestBasic(k); }
   const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov); PLACE_STARTING = 0;
   const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">${KIDMODE ? 'لاحقاً' : 'إلغاء'}</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); if(KIDMODE) renderPlaceGate(k); }; };
   frame('اختبار تحديد المستوى', `<div class="card" style="text-align:center;display:grid;gap:12px"><div style="font-size:3rem">🎯</div><h2>${KIDMODE ? `أهلاً ${esc(nick(k))}! قبل ما نبدأ، خلنا نعرف مستواك` : `اختبار تحديد المستوى: ${esc(kid.ar)}`}</h2>
-    <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge: الأسئلة تصعب إذا أجبت صح وتسهل إذا أخطأت. خمسة أجزاء، ويأخذ تقريباً 20 دقيقة:</p>
+    <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge: يبدأ بأسئلة سهلة جداً، ويصعب تدريجياً كلما أجبت صح، ويسهل إذا أخطأت. إذا ما تعرف الجواب اضغط «ما أعرف» ولا تخمّن. خمسة أجزاء، ويأخذ تقريباً 20 دقيقة:</p>
     <div class="psecs"><div>📖 <b>المعرفة</b><span class="small muted">قواعد ومفردات واستماع وقراءة · 16 سؤالاً</span></div><div>👂 <b>تمييز الأصوات</b><span class="small muted">أصوات متشابهة مثل P/B وTH · 4 أسئلة</span></div><div>✍️ <b>الإملاء</b><span class="small muted">يسمع جملة ويكتبها · جملتان</span></div><div>🔊 <b>النطق</b><span class="small muted">قراءة جملتين وكلمتين بصوت عالٍ</span></div><div>🗣️ <b>التحدث</b><span class="small muted">3 أسئلة يجيب عليها بالكلام</span></div></div>
     <p class="small muted" style="margin:0">${KIDMODE ? 'أجب بنفسك بدون مساعدة، وفي مكان هادئ. لا تقلق، ما فيه نجاح ورسوب، الاختبار يختار لك المستوى المناسب 💪' : 'مهم: يجيب الطفل بنفسه بدون مساعدة، في مكان هادئ.'}</p><button class="btn primary big" id="pgo">ابدأ</button>${KIDMODE ? '<button class="btn sm ghost" id="plater">لاحقاً</button>' : ''}</div>`);
   if(KIDMODE){ ov.querySelector('#px').hidden = true; const lt = ov.querySelector('#plater'); lt.onclick = () => { speechSynthesis.cancel(); ov.remove(); renderPlaceGate(k); }; }
   await new Promise(r => ov.querySelector('#pgo').onclick = r); unlockAudio();
 
-  /* --- Part 1: adaptive knowledge (computer-adaptive, maximum-likelihood level with guessing correction) ---
-     each item at level b; P(correct | theta) = g + (1-g) / (1 + e^(-1.1 (theta - b))), g = 1/options (lucky guesses count less);
-     a weak prior around the age-based start keeps the first answers from swinging the estimate. Options are shuffled and
-     items the child saw in an earlier placement are avoided, so a retake is not easier by memory. */
+  /* --- Part 1: adaptive knowledge ---
+     Routing: start easy; a correct answer moves up (+2 while the child has not missed yet, then +1), a miss or "I don't know"
+     moves down one level. Scoring: maximum likelihood with guessing correction, P(correct | theta) = g + (1-g) / (1 + e^(-1.1 (theta - b))),
+     g = 1/options, and a prior that leans to the BOTTOM, so random tapping lands at level 1-2 instead of high.
+     Very fast correct answers (under 1.2 s, too fast to read) count half and do not move up. The result can never be more than
+     one level above the highest level the child actually answered correctly. Options are shuffled and items seen before are avoided. */
   const log = [], used = new Set(), N1 = 18; const kinds = ['mcq','listen','mcq','read','mcq','listen'];
   const pSeen = new Set(DB.progress[k].pSeen || []);
-  const est = () => { let best = start, bl = -1e9;
-    for(let th = 1; th <= 20.001; th += .25){ let ll = -Math.pow(th - start, 2) / (2 * 16);
-      for(const x of log){ const g = 1 / (x.nopt || 4), pc = g + (1 - g) / (1 + Math.exp(-1.1 * (th - x.lv))); ll += Math.log(x.ok ? pc : 1 - pc); }
+  const est = () => { let best = 1, bl = -1e9;
+    for(let th = 1; th <= 20.001; th += .25){ let ll = -Math.pow(th - 1, 2) / (2 * 100);
+      for(const x of log){ const g = x.idk ? 0 : 1 / (x.nopt || 4), pc = Math.min(.999, g + (1 - g) / (1 + Math.exp(-1.1 * (th - x.lv)))); ll += (x.w || 1) * Math.log(x.ok ? pc : 1 - pc); }
       if(ll > bl){ bl = ll; best = th; } } return best; };
-  let theta = start;
+  let next = start, climbing = true;
   for(let n = 0; n < N1; n++){
-    let lv = Math.max(1, Math.min(20, Math.round(theta)));
-    // never ask the very same level 3 times in a row when the child keeps failing/passing it: step one level toward the trend
-    const last2 = log.slice(-2); if(last2.length === 2 && last2.every(x => x.lv === lv)){ lv = Math.max(1, Math.min(20, lv + (last2.every(x => x.ok) ? 1 : last2.every(x => !x.ok) ? -1 : 0))); }
+    const lv = Math.max(1, Math.min(20, next));
     const b = await loadP(lv); if(!b) break;
     const kind = kinds[n % kinds.length]; let item = null, passage = null, script = null;
     const pickFrom = arr => { const fresh = (arr || []).filter(q => !used.has(q)); if(!fresh.length) return null; const unseen = fresh.filter(q => !pSeen.has(q.q)); const pool = unseen.length ? unseen : fresh; return pool[Math.floor(Math.random() * pool.length)]; };
     if(kind === 'mcq') item = pickFrom(b.mcq);
     if(kind === 'listen'){ item = pickFrom(b.listen); if(item) script = item.script; }
     if(kind === 'read' && b.read){ item = pickFrom(b.read.qs); if(item) passage = b.read.passage; }
-    if(!item) item = pickFrom(b.mcq) || pickFrom(b.listen) || pickFrom(b.read && b.read.qs); if(!item){ theta = theta + (Math.random() < .5 ? -1 : 1); continue; }
+    if(!item) item = pickFrom(b.mcq) || pickFrom(b.listen) || pickFrom(b.read && b.read.qs); if(!item){ next = lv + (Math.random() < .5 ? -1 : 1); continue; }
     if(item && b.listen && b.listen.includes(item)) script = item.script; if(item && b.read && (b.read.qs || []).includes(item)) passage = b.read.passage;
     used.add(item);
     const order = item.options.map((o, x) => x).sort(() => Math.random() - .5);
     frame('الجزء 1: المعرفة', `<div class="card quiz"><div class="qhead"><span class="small muted">سؤال ${n+1} من ${N1}</span><div class="qbar"><i style="width:${n/N1*100}%"></i></div></div>
       ${script ? `<div style="text-align:center"><button class="btn primary big" id="pl">🔊 استمع</button><div class="small muted">تقدر تسمعه أكثر من مرة</div></div>` : ''}
       ${passage ? `<div class="ppass en">${esc(passage)}</div>` : ''}
-      <h2 class="en" style="direction:ltr;text-align:left">${esc(item.q)}</h2><div class="opts">${order.map(x => `<button class="opt en" data-o="${x}">${esc(item.options[x])}</button>`).join('')}</div></div>`);
+      <h2 class="en" style="direction:ltr;text-align:left">${esc(item.q)}</h2><div class="opts">${order.map(x => `<button class="opt en" data-o="${x}">${esc(item.options[x])}</button>`).join('')}</div>
+      <button class="btn ghost" data-o="-1" style="justify-self:center">🤷 ما أعرف</button></div>`);
     if(script){ const pl = ov.querySelector('#pl'); const play = async () => { pl.disabled = true; speechSynthesis.cancel(); try{ await speakText(script, .9); }finally{ pl.disabled = false; } }; pl.onclick = play; play(); }
+    const shownAt = Date.now();
     const choice = await new Promise(r => ov.querySelectorAll('[data-o]').forEach(bt => bt.onclick = () => r(Number(bt.dataset.o))));
     speechSynthesis.cancel();
-    const ok = choice === Number(item.answer); log.push({lv, kind: script ? 'listen' : passage ? 'read' : 'mcq', ok, nopt:item.options.length, skill: script ? 'listening' : passage ? 'reading' : (item.skill || 'grammar')});
-    theta = est();
+    const idk = choice < 0, ok = !idk && choice === Number(item.answer), fast = ok && !script && Date.now() - shownAt < 1200;
+    log.push({lv, kind: script ? 'listen' : passage ? 'read' : 'mcq', ok, idk, w: fast ? .5 : 1, nopt:item.options.length, skill: script ? 'listening' : passage ? 'reading' : (item.skill || 'grammar')});
+    if(ok && !fast) next = lv + (climbing ? 2 : 1);
+    else if(!ok){ climbing = false; next = lv - 1; }
   }
   DB.progress[k].pSeen = [...new Set([...(DB.progress[k].pSeen || []), ...[...used].map(q => q.q)])].slice(-300);
-  const knowLevel = Math.max(1, Math.min(20, Math.round(est())));
+  const maxOk = Math.max(0, ...log.filter(x => x.ok).map(x => x.lv));
+  const knowLevel = Math.max(1, Math.min(20, Math.round(est()), maxOk + 1));
   const skillPct = s => { const xs = log.filter(x => x.skill === s); return xs.length ? Math.round(xs.filter(x => x.ok).length / xs.length * 100) : null; };
 
   /* --- Part 2: sound discrimination (minimal pairs common for Arabic speakers) --- */
@@ -1949,7 +1955,7 @@ async function placementTestRun(k, opt){
 `You are a certified English assessment expert (CEFR, Pearson GSE, Cambridge). Place this learner on a 20-level scale:
 ${Object.entries(LEVEL_INFO).map(([n,v]) => `${n}: ${v[0]}, GSE ${v[1]}`).join('; ')}.
 Learner: ${ageOf(kid.birth)}-year-old Arabic speaker.
-PART 1 adaptive knowledge test (${log.length} items, 4 options each so 25% can be lucky guesses; each: level of item, skill, correct?): ${JSON.stringify(log)}. Maximum-likelihood estimate (guessing-corrected): level ${knowLevel}. Your level must stay within ${Math.max(1, knowLevel - 3)}..${Math.min(20, knowLevel + 1)}.
+PART 1 adaptive knowledge test (${log.length} items, 4 options each so 25% can be lucky guesses; idk:true = the child pressed "I don't know"; w:0.5 = answered too fast to have read it; each: level of item, skill, correct?): ${JSON.stringify(log)}. Maximum-likelihood estimate (guessing-corrected): level ${knowLevel}. Your level must stay within ${Math.max(1, knowLevel - 3)}..${Math.min(20, knowLevel + 1)}.
 PART 2 sound discrimination (English minimal pairs that Arabic speakers confuse; heard a word, chose between the pair): ${JSON.stringify(sounds.filter(x => !x.spoken))}.
 PART 3 dictation (heard a sentence, typed it; acc = % of words written correctly in order): ${JSON.stringify(dict)}.
 PART 4 read-aloud (acc = Azure phoneme-level pronunciation accuracy when phonemes are present, otherwise speech-to-text word accuracy): ${JSON.stringify(aloud)}; minimal-pair words said aloud: ${JSON.stringify(sounds.filter(x => x.spoken))}.
@@ -1959,7 +1965,7 @@ Reply ONLY JSON: {"level":1-20,"cefr":"...","gse":"range","skills":{"grammar":0-
       res = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); }
   }catch(e){ res = {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:null, pronunciation:pron, writing, phonics}, summary:'تعذّر تحليل جزء التحدث بسبب الاتصال، فالنتيجة مبنية على جزء المعرفة والنطق.', strengths:'', focus:''}; }
   const rec = Math.max(1, Math.min(20, Math.max(knowLevel - 3, Math.min(knowLevel + 1, Number(res.level) || knowLevel))));
-  DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:rec, know:knowLevel, ai:Number(res.level) || null, items:log.map(x => x.lv + (x.ok ? '+' : '-')).join(' '), skills:res.skills, summary:res.summary}); save();
+  DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:rec, know:knowLevel, ai:Number(res.level) || null, items:log.map(x => x.lv + (x.idk ? '?' : x.ok ? '+' : '-')).join(' '), skills:res.skills, summary:res.summary}); save();
   const SK = [['grammar','القواعد'],['vocabulary','المفردات'],['listening','الاستماع'],['reading','القراءة'],['speaking','التحدث'],['pronunciation','النطق'],['phonics','تمييز الأصوات'],['writing','الإملاء والكتابة']];
   if(KIDMODE){ const from = kid.level; setLevel(k, rec); DB.progress[k].levelUpPending = null; DB.progress[k].levelUps = Math.max(0, (DB.progress[k].levelUps||0) - (rec > from ? 1 : 0)); delete kid.needPlace; addXP(k, 50); save();
     frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:3rem">🎉</div><h2>أحسنت يا ${esc(nick(k))}! مستواك: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div></div>
@@ -2212,50 +2218,82 @@ const NativeSR = window.SpeechRecognition || window.webkitSpeechRecognition;
 const azSttOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !DEMO && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
 const useAzSR = () => azSttOn() && (!NativeSR || (typeof isIOS !== 'undefined' && isIOS));
 let MIC_STREAM = null, MIC_IDLE_T = null;
-async function micStream(){
+/* iOS audio session. The app sets the session to "playback" (so sounds play with the silent switch on). A "playback" session
+   cannot record, so on iPhone/iPad the mic stream stayed "live" but delivered silence: the app waited for speech that never
+   came and looked frozen. Before using the mic the session must be "play-and-record" (WebKit routes it to the loud speaker),
+   and it stays that way while the mic may be needed so switching back and forth does not cut the stream. */
+let AUDIO_SESS = '';
+function setAudioSession(t){ try{ if(navigator.audioSession && AUDIO_SESS !== t){ navigator.audioSession.type = t; AUDIO_SESS = t; } }catch(e){} }
+const micLive = st => !!st && st.getAudioTracks().some(t => t.readyState === 'live' && !t.muted && t.enabled);
+function micDrop(){ if(MIC_STREAM){ try{ MIC_STREAM.getTracks().forEach(t => t.stop()); }catch(e){} MIC_STREAM = null; } }
+async function micStream(fresh){
   clearTimeout(MIC_IDLE_T);
-  if(MIC_STREAM && MIC_STREAM.getAudioTracks().some(t => t.readyState === 'live')) return MIC_STREAM;
-  MIC_STREAM = await navigator.mediaDevices.getUserMedia({audio:{channelCount:1, echoCancellation:true, noiseSuppression:true, autoGainControl:true}});
-  return MIC_STREAM;
+  setAudioSession('play-and-record');
+  if(fresh) micDrop();
+  if(micLive(MIC_STREAM)) return MIC_STREAM;
+  micDrop();
+  const st = await navigator.mediaDevices.getUserMedia({audio:{channelCount:1, echoCancellation:true, noiseSuppression:true, autoGainControl:true}});
+  // iOS mutes or ends the track on a phone call, Siri, another app taking the mic, or when the app goes to the background
+  st.getAudioTracks().forEach(t => { t.onended = () => { if(MIC_STREAM === st) MIC_STREAM = null; }; t.onmute = () => { if(MIC_STREAM === st) micDrop(); }; });
+  MIC_STREAM = st; return st;
 }
 /* release the mic a little after the last use so iOS switches audio back to the speaker */
 function micRelease(){ clearTimeout(MIC_IDLE_T); const busy = (typeof L !== 'undefined' && L) || document.querySelector('.reader, .ov');
-  MIC_IDLE_T = setTimeout(() => { if((typeof L !== 'undefined' && L) || document.querySelector('.reader, .ov')){ micRelease(); return; } if(MIC_STREAM){ MIC_STREAM.getTracks().forEach(t => t.stop()); MIC_STREAM = null; } }, busy ? 20000 : 1500); }
+  MIC_IDLE_T = setTimeout(() => { if((typeof L !== 'undefined' && L) || document.querySelector('.reader, .ov')){ micRelease(); return; } micDrop(); setAudioSession('playback'); }, busy ? 20000 : 1500); }
+document.addEventListener('visibilitychange', () => { if(document.hidden) micDrop(); });
 /* ONE shared AudioContext for the mic. iOS keeps a new AudioContext "suspended" unless it is resumed inside a tap; the lesson
    starts listening by itself after the teacher speaks (no tap), so a fresh context never ran there and the mic "froze".
    This one is resumed on every touch, and recording has a real timer + watchdog instead of relying on audio callbacks. */
 let REC_AC = null;
-function recAC(){ if(!REC_AC){ const AC = window.AudioContext || window.webkitAudioContext; REC_AC = new AC(); } if(REC_AC.state !== 'running'){ try{ REC_AC.resume(); }catch(e){} } return REC_AC; }
+function recAC(fresh){
+  if(REC_AC && (fresh || REC_AC.state === 'closed')){ try{ REC_AC.close(); }catch(e){} REC_AC = null; }
+  if(!REC_AC){ const AC = window.AudioContext || window.webkitAudioContext; REC_AC = new AC(); }
+  // iOS also has a non-standard "interrupted" state (after a call, Siri, an alarm): anything but running gets resumed
+  if(REC_AC.state !== 'running'){ try{ const p = REC_AC.resume(); if(p && p.catch) p.catch(() => {}); }catch(e){} } return REC_AC; }
 ['touchstart','touchend','pointerdown','click','keydown'].forEach(ev => document.addEventListener(ev, () => { try{ if(REC_AC && REC_AC.state !== 'running') REC_AC.resume(); else if(!REC_AC) recAC(); }catch(e){} }, {passive:true, capture:true}));
 document.addEventListener('visibilitychange', () => { if(!document.hidden && REC_AC && REC_AC.state !== 'running'){ try{ REC_AC.resume(); }catch(e){} } });
 /* core recorder: waits for speech (adaptive to the room/mic level), keeps ~0.4 s before it, stops after `silence` s of quiet,
    at maxMs, or on ctl.stop(). On a manual stop it still returns what was said even if it was quiet. */
-function captureAudio(o){
-  const {maxMs = 15000, silence = 1.3, onLevel = null, ctl = null} = o || {};
+async function captureAudio(o){
+  try{ return await captureOnce(o, false); }
+  catch(e){
+    if(e && (e.name === 'AudioSuspended' || e.name === 'DeadMic') && !(o && o.ctl && o.ctl.pending)){ console.warn('mic: restarting audio', e.name); return captureOnce(o, true); }
+    throw e;
+  }
+}
+function captureOnce(o, fresh){
+  const {maxMs = 15000, silence = 1.3, onLevel = null, ctl = null, waitMs = 0, onSpeech = null} = o || {};
   return new Promise(async (resolve, reject) => {
-    let stream; try{ stream = await micStream(); }catch(e){ reject(e); return; }
-    const ac = recAC(); try{ await Promise.race([ac.resume(), new Promise(r => setTimeout(r, 600))]); }catch(e){}
+    let stream; try{ stream = await micStream(fresh); }catch(e){ reject(e); return; }
+    let ac = recAC(fresh); try{ await Promise.race([ac.resume(), new Promise(r => setTimeout(r, 600))]); }catch(e){}
+    if(ac.state !== 'running' && !fresh){ ac = recAC(true); try{ await Promise.race([ac.resume(), new Promise(r => setTimeout(r, 600))]); }catch(e){} }
     const rate = ac.sampleRate, src = ac.createMediaStreamSource(stream), proc = ac.createScriptProcessor(4096, 1, 1), pre = [], chunks = [], all = [];
-    let heard = false, quiet = 0, done = false, noise = .004, peak = 0, frames = 0; const preMax = Math.ceil(rate * .4 / 4096);
+    let heard = false, quiet = 0, done = false, noise = .004, peak = 0, frames = 0, speechPeak = 0, zero = 0, waited = 0; const preMax = Math.ceil(rate * .4 / 4096);
     let maxT = null, dogT = null;
+    const fail = name => { if(done) return; done = true; clearTimeout(maxT); clearTimeout(dogT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micDrop(); const e = new Error(name); e.name = name; reject(e); };
     const finish = manual => { if(done) return; done = true; clearTimeout(maxT); clearTimeout(dogT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease();
       let use = heard ? chunks : (manual && peak > Math.max(.006, noise * 2.5) ? all : null);
       resolve({heard: !!use, wav: use ? encodeWav(downsample(use, rate, 16000), 16000) : null, frames}); };
     if(ctl){ ctl.stop = () => finish(true); if(ctl.pending){ setTimeout(() => finish(true), 0); } }
     maxT = setTimeout(() => finish(true), maxMs);
     // watchdog: no audio frames → the context is still suspended; report it instead of hanging
-    dogT = setTimeout(() => { if(!frames && !done){ try{ ac.resume(); }catch(e){} dogT = setTimeout(() => { if(!frames && !done){ done = true; clearTimeout(maxT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease(); const e = new Error('audio_suspended'); e.name = 'AudioSuspended'; reject(e); } }, 1500); } }, 1500);
-    proc.onaudioprocess = ev => { if(done) return; frames++; const d = new Float32Array(ev.inputBuffer.getChannelData(0));
+    dogT = setTimeout(() => { if(!frames && !done){ try{ ac.resume(); }catch(e){} dogT = setTimeout(() => { if(!frames && !done) fail('AudioSuspended'); }, 1500); } }, 1500);
+    proc.onaudioprocess = ev => { if(done) return; frames++; const d = new Float32Array(ev.inputBuffer.getChannelData(0)), dt = d.length / rate;
       let s2 = 0; for(let i = 0; i < d.length; i += 4) s2 += d[i] * d[i]; const rms = Math.sqrt(s2 / (d.length / 4));
       onLevel && onLevel(rms); if(rms > peak) peak = rms; if(all.length < Math.ceil(rate * 30 / 4096)) all.push(d);
-      if(!heard){ noise = noise * .9 + Math.min(rms, .03) * .1; pre.push(d); if(pre.length > preMax) pre.shift();
-        if(frames > 2 && rms > Math.max(.008, noise * 3.2)){ heard = true; chunks.push(...pre); } }
-      else { chunks.push(d); if(rms > Math.max(.006, noise * 2)) quiet = 0; else quiet += d.length / rate;
-        if(quiet > silence || chunks.length * 4096 / rate > 30) finish(false); } };
+      // a real mic always has some hiss; pure digital zeros for 1.5 s mean iOS gave us a muted/dead stream
+      if(rms === 0){ zero += dt; if(zero > 1.5 && peak === 0){ fail('DeadMic'); return; } } else zero = 0;
+      if(!heard){ waited += dt; noise = noise * .9 + Math.min(rms, .03) * .1; pre.push(d); if(pre.length > preMax) pre.shift();
+        if(frames > 2 && rms > Math.max(.008, noise * 3.2)){ heard = true; chunks.push(...pre); onSpeech && onSpeech(); }
+        else if(waitMs && waited * 1000 > waitMs){ finish(false); } }
+      else { chunks.push(d); if(rms > speechPeak) speechPeak = rms;
+        // end of speech: quiet relative to the room AND to how loud the child spoke (a noisy room no longer keeps it recording)
+        if(rms > Math.max(.006, noise * 2, speechPeak * .12)) quiet = 0; else quiet += dt;
+        if(quiet > silence || chunks.length * 4096 / rate > 20) finish(false); } };
     src.connect(proc); proc.connect(ac.destination);
   });
 }
-function recordUtterance(ctl, maxMs, silence){ return captureAudio({ctl, maxMs, silence}); }
+function recordUtterance(ctl, maxMs, silence, waitMs, onSpeech){ return captureAudio({ctl, maxMs, silence, waitMs, onSpeech}); }
 async function azRecognize(wav, lang){
   const r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
     {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav});
@@ -2269,9 +2307,11 @@ class AzSR {
   abort(){ this._aborted = true; this._ctl.pending = true; this._ctl.stop && this._ctl.stop(); }
   async _run(){
     let rec;
-    try{ rec = await recordUtterance(this._ctl, 60000, 1.4); }
+    // wait up to 12 s for the child to start talking (the caller simply listens again), 25 s cap for one answer
+    try{ rec = await recordUtterance(this._ctl, 25000, 1.2, 12000, () => { try{ this.onspeechstart && this.onspeechstart(); }catch(e){} }); }
     catch(e){ this._err(e && e.name === 'NotAllowedError' ? 'not-allowed' : 'audio-capture'); return this._end(); }
     if(this._aborted || !rec.heard) return this._end();
+    try{ this.onspeechend && this.onspeechend(); }catch(e){}
     try{
       const text = await azRecognize(rec.wav, this.lang);
       if(!this._aborted && text){ const alt = [{transcript:text, confidence:.9}]; alt.isFinal = true; const results = [alt]; try{ this.onresult && this.onresult({results, resultIndex:0}); }catch(e){ console.warn(e); } }
@@ -2615,6 +2655,7 @@ function startListening(fromTap){
   let text = '';
   const rec = new SR(); L.rec = rec; rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = true; rec.maxAlternatives = 1;
   const you = $('#you');
+  rec.onspeechend = () => { if(L && L.rec === rec && you){ you.hidden = false; you.classList.add('live'); you.textContent = '… 👂'; } };
   rec.onresult = e => { let t = ''; for(const r of e.results) t += r[0].transcript; if(t.split(' ').length !== text.split(' ').length && Math.random() < .5) nod(); text = t;
     if(you){ you.hidden = false; you.classList.add('live'); you.textContent = t; }
     clearTimeout(L.silT); L.silT = setTimeout(() => { try{ rec.stop(); }catch(x){} }, SILENCE_MS); };
@@ -3884,7 +3925,7 @@ const SFX = (() => {
   return {
     unlock(){
       /* iOS: let web audio play even when the side switch is on silent, and unlock inside the tap */
-      try{ if(navigator.audioSession) navigator.audioSession.type = 'playback'; }catch(e){}
+      if(!MIC_STREAM) setAudioSession('playback');
       const a = ctx(); if(!a) return false;
       try{ if(a.state !== 'running') a.resume().catch(() => {}); const b = a.createBuffer(1, 1, 22050), s = a.createBufferSource(); s.buffer = b; s.connect(a.destination); s.start(0); }catch(e){}
       try{ if(!SFX._el){ SFX._el = new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA='); SFX._el.setAttribute('playsinline', ''); } const pr = SFX._el.play(); if(pr && pr.catch) pr.catch(() => {}); }catch(e){}
