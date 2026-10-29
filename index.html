@@ -532,6 +532,13 @@ bdi.num{unicode-bidi:isolate}
 .sukav{font-size:1.8rem;line-height:1}
 input[type=date].input{-webkit-appearance:none;appearance:none;display:block;min-width:0;max-width:100%;width:100%;text-align:right}
 input[type=date].input::-webkit-date-and-time-value{text-align:right;margin:0}
+.mcats{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}.mcats::-webkit-scrollbar{display:none}
+.mcat{flex:none;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);border-radius:999px;padding:8px 12px;font:inherit;font-weight:800;font-size:.9rem;min-height:40px;display:inline-flex;gap:6px;align-items:center}
+.mcat i{font-style:normal;font-size:.75rem;background:var(--surface);border-radius:999px;padding:0 7px;color:var(--muted)}
+.mcat.on{background:var(--brand);border-color:var(--brand);color:#fff}.mcat.on i{background:rgba(255,255,255,.25);color:#fff}
+.mtoday{width:100%;display:flex;gap:12px;align-items:center;border:2px solid var(--brand);background:linear-gradient(135deg,var(--surface),var(--brand-soft));border-radius:18px;padding:10px 14px;margin-bottom:10px;font:inherit;color:var(--fg);text-align:start}
+.mtoday .me2{font-size:2.2rem}
+.mission.mlock{opacity:.55}.mission.mdone{border-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -1159,7 +1166,7 @@ function tabHome(k){
   const rg = $('#revGo'); if(rg) rg.onclick = () => { unlockAudio(); startReview(k); };
   const hw = $('#hwGo'); if(hw) hw.onclick = () => { unlockAudio(); startHomework(k); };
   const pn = $('#pronGo'); if(pn) pn.onclick = () => { unlockAudio(); openPronLab(k); };
-  document.querySelectorAll('[data-mission]').forEach(b => b.onclick = () => startMission(k, b.dataset.mission));
+  wireMissionCard(k);
   document.querySelectorAll('[data-game]').forEach(b => b.onclick = () => startGame(k, b.dataset.game));
   const pg2 = $('#prGo'); if(pg2) pg2.onclick = () => startPractice(k);
   const kg = $('#kitGo'); if(kg) kg.onclick = () => { unlockAudio(); openKit(k); };
@@ -3017,6 +3024,138 @@ const MISSIONS = [
   {id:'climate', e:'🌍', t:'Youth Climate Summit', ar:'قمة الشباب للمناخ', role:'a summit moderator asking tough questions', setting:'an international youth summit', min:15,
    goals:[['Present a clear position on one climate issue','قدّم موقفاً واضحاً من قضية مناخية'],['Support it with evidence and examples','ادعمه بأدلة وأمثلة'],['Handle a counter-argument diplomatically','تعامل مع رأي معارض بدبلوماسية']]}
 ];
+/* =============== EVERYDAY-LIFE MISSIONS (more role-plays, grouped by place) =============== */
+const MCATS = [['all','الكل','✨'],['food','أكل وشرب','☕'],['shop','تسوّق','🛒'],['travel','سفر ومواصلات','✈️'],['health','صحة','🩺'],['school','مدرسة وأصدقاء','🏫'],['home','بيت وعائلة','🏠'],['town','أماكن وخدمات','🏙️'],['fun','ترفيه ورياضة','⚽'],['help','مواقف مهمة','🆘'],['pro','تحديات متقدمة','🎤']];
+const MISSION_CAT = {cafe:'food', airport:'travel', doctor:'health', shop:'shop', friend:'school', lost:'help', hotel:'travel', interview:'pro', phone:'home', museum:'fun', chef:'pro', debate:'pro', job:'pro', news:'pro', pitch:'pro', climate:'pro'};
+const M = (id, e, t, ar, cat, min, role, setting, g) => ({id, e, t, ar, cat, min, role, setting, goals:g});
+MISSIONS.push(
+  /* ---- food & drinks ---- */
+  M('coffee','☕','Ordering Coffee','طلب قهوة','food',1,'a cheerful barista','a modern coffee shop',[['Order a coffee and say the size','اطلب قهوة وحدد الحجم'],['Ask for milk or sugar','اطلب حليب أو سكر'],['Ask how much it is and pay','اسأل عن السعر وادفع']]),
+  M('karak','🫖','A Cup of Tea','طلب شاي','food',1,'a friendly tea seller','a small tea stand in the park',[['Ask for a cup of tea','اطلب كوب شاي'],['Say how much sugar you want','قل كم ملعقة سكر تبي'],['Ask for something to eat with it','اطلب شيئاً تأكله معه']]),
+  M('juice','🧃','Juice Shop','محل العصير','food',1,'a juice shop worker','a juice shop at the mall',[['Choose a juice flavor','اختر نكهة العصير'],['Ask for it with or without ice','اطلبه بثلج أو بدون'],['Say thank you and goodbye','اشكره وودّعه']]),
+  M('restaurant','🍽️','At the Restaurant','في المطعم','food',2,'a polite waiter','a family restaurant',[['Ask for a table for your family','اطلب طاولة لعائلتك'],['Order a main dish and a drink','اطلب طبقاً رئيسياً ومشروباً'],['Ask for the bill','اطلب الفاتورة']]),
+  M('pizza','🍕','Pizza by Phone','طلب بيتزا بالهاتف','food',2,'a pizza shop worker on the phone','a phone call to a pizza place',[['Say which pizza and size you want','قل نوع البيتزا وحجمها'],['Give your address','أعطه عنوانك'],['Ask how long it will take','اسأل كم تأخذ من الوقت']]),
+  M('burger','🍔','Fast Food Counter','مطعم الوجبات السريعة','food',1,'a fast food cashier','a burger restaurant',[['Order a meal','اطلب وجبة'],['Change something (no onions, extra cheese)','غيّر شيئاً مثل بدون بصل'],['Choose eat here or take away','اختر محلي أو سفري']]),
+  M('drivethru','🚗','Drive-Through','طلب من السيارة','food',2,'a drive-through worker on the speaker','a drive-through with your dad driving',[['Order for two people','اطلب لشخصين'],['Repeat the order to check it','أعد الطلب لتتأكد'],['Ask for napkins and ketchup','اطلب مناديل وكاتشب']]),
+  M('bakery','🥐','At the Bakery','في المخبز','food',1,'a baker','a bakery in the morning',[['Ask what is fresh today','اسأل ما الطازج اليوم'],['Buy bread and something sweet','اشترِ خبزاً وشيئاً حلواً'],['Ask the price of each','اسأل عن سعر كل واحد']]),
+  M('icecream','🍦','Ice Cream Shop','محل الآيس كريم','food',1,'an ice cream seller','an ice cream shop on a hot day',[['Ask to taste a flavor','اطلب تذوق نكهة'],['Order two scoops in a cone or cup','اطلب كرتين في بسكوت أو كوب'],['Ask for toppings','اطلب إضافات']]),
+  M('allergy','🥜','Food Allergy','حساسية من الأكل','food',4,'a careful waiter','a restaurant',[['Tell the waiter about your allergy','أخبر النادل عن حساسيتك'],['Ask what is inside a dish','اسأل عن مكونات طبق'],['Order something safe','اطلب شيئاً آمناً لك']]),
+  M('complain','🥶','My Food Is Cold','الأكل بارد','food',5,'a restaurant manager','a restaurant',[['Politely say there is a problem with your food','قل بأدب إن فيه مشكلة في أكلك'],['Explain what is wrong','اشرح المشكلة'],['Ask them to fix it and thank them','اطلب الحل واشكرهم']]),
+  M('foodtruck','🌮','Food Truck','عربة الأكل','food',2,'a food truck cook','a food truck festival',[['Ask what is the most popular dish','اسأل عن أشهر طبق'],['Order and ask if it is spicy','اطلب واسأل إذا كان حاراً'],['Pay and ask for a bag','ادفع واطلب كيساً']]),
+  M('picnic','🧺','Planning a Picnic','نخطط لنزهة','food',3,'your friend planning a picnic','a phone call before the weekend',[['Suggest a place and time','اقترح مكاناً ووقتاً'],['Decide what food to bring','قرروا أي أكل تجيبون'],['Agree who brings what','اتفقوا مين يجيب ايش']]),
+  /* ---- shopping ---- */
+  M('supermarket','🛒','Supermarket','في السوبرماركت','shop',1,'a supermarket worker','a big supermarket',[['Ask where to find milk and eggs','اسأل وين الحليب والبيض'],['Ask if something is on sale','اسأل إذا فيه تخفيض'],['Pay at the cashier','ادفع عند الكاشير']]),
+  M('fruits','🍉','Fruit Market','سوق الفواكه','shop',2,'a fruit seller','an outdoor fruit and vegetable market',[['Ask the price of a kilo','اسأل عن سعر الكيلو'],['Choose fresh fruit','اختر فواكه طازجة'],['Ask for a small discount politely','اطلب تخفيضاً بسيطاً بأدب']]),
+  M('toys','🧸','Toy Store','محل الألعاب','shop',1,'a toy store helper','a toy store',[['Say what toy you are looking for','قل أي لعبة تبحث عنها'],['Ask about the age or batteries','اسأل عن العمر المناسب أو البطاريات'],['Ask for gift wrapping','اطلب تغليفها هدية']]),
+  M('clothes','👕','Changing a Size','تبديل مقاس','shop',3,'a clothing shop assistant','a clothes shop',[['Explain the shirt is too small','اشرح إن القميص صغير'],['Ask for a bigger size','اطلب مقاساً أكبر'],['Ask where the fitting room is','اسأل عن غرفة القياس']]),
+  M('returnitem','🔁','Returning a Toy','إرجاع لعبة','shop',4,'a customer service worker','a toy store service desk',[['Say you want to return something','قل إنك تبي ترجع شيئاً'],['Explain what is wrong with it','اشرح المشكلة فيها'],['Ask for a refund or exchange','اطلب استرجاع المبلغ أو تبديلها']]),
+  M('bookstore','📚','Bookstore','مكتبة الكتب','shop',2,'a bookstore worker','a bookstore',[['Ask for a book about a topic you like','اطلب كتاباً عن موضوع تحبه'],['Ask if it is good for your age','اسأل إذا يناسب عمرك'],['Ask if they have it in English','اسأل إذا متوفر بالإنجليزي']]),
+  M('electronics','🎧','Buying Headphones','شراء سماعات','shop',3,'an electronics shop assistant','an electronics store',[['Say what you need headphones for','قل لأي شيء تحتاج السماعات'],['Compare two choices','قارن بين خيارين'],['Ask about the warranty','اسأل عن الضمان']]),
+  M('giftshop','🎁','Gift for Mom','هدية لأمي','shop',2,'a gift shop assistant','a gift shop',[['Say who the gift is for','قل لمن الهدية'],['Describe what she likes','صف ايش تحب'],['Choose a gift and ask for a card','اختر هدية واطلب بطاقة']]),
+  M('stationery','✏️','School Supplies','أدوات المدرسة','shop',1,'a stationery shop worker','a stationery shop before school starts',[['Ask for pencils and a notebook','اطلب أقلاماً ودفتراً'],['Ask about colors','اسأل عن الألوان'],['Count and pay','احسب وادفع']]),
+  M('mall','🏬','Lost in the Mall','ضعت في المول','shop',2,'a mall security guard','a busy shopping mall',[['Say you cannot find your family','قل إنك ما تلقى أهلك'],['Describe where you saw them last','صف وين شفتهم آخر مرة'],['Give a phone number to call','أعطه رقماً يتصل عليه']]),
+  /* ---- travel & transport ---- */
+  M('security','🛂','Passport Control','الجوازات','travel',4,'a passport officer','the airport passport control',[['Say why you are visiting','قل سبب زيارتك'],['Say how long you will stay','قل كم ستبقى'],['Say where you will stay','قل وين بتسكن']]),
+  M('luggage','🧳','Lost Luggage','حقيبة ضائعة','travel',5,'an airport baggage officer','the lost baggage desk',[['Explain your bag did not arrive','اشرح إن حقيبتك ما وصلت'],['Describe your bag','صف حقيبتك'],['Ask when they will find it','اسأل متى يلقونها']]),
+  M('plane','🛫','On the Plane','في الطائرة','travel',2,'a flight attendant','on a plane during a flight',[['Ask for water or juice','اطلب ماء أو عصير'],['Ask for a blanket','اطلب بطانية'],['Ask how long until landing','اسأل كم باقي على الهبوط']]),
+  M('taxi','🚕','Taking a Taxi','ركوب تاكسي','travel',2,'a taxi driver','a taxi in a new city',[['Tell the driver where to go','قل للسائق وين تبي تروح'],['Ask how long it takes','اسأل كم يأخذ الطريق'],['Ask the price and pay','اسأل عن السعر وادفع']]),
+  M('metro','🚇','Metro Ticket','تذكرة المترو','travel',2,'a metro station worker','a metro station',[['Ask for a ticket to a station','اطلب تذكرة لمحطة'],['Ask which line to take','اسأل أي خط تأخذ'],['Ask how many stops','اسأل كم محطة']]),
+  M('bus','🚌','School Trip Bus','باص الرحلة','travel',1,'a bus driver','a school trip bus',[['Say good morning and find a seat','صبّح عليه وابحث عن مقعد'],['Ask when you will arrive','اسأل متى توصلون'],['Ask to stop for a break','اطلب وقفة استراحة']]),
+  M('train','🚆','Train Station','محطة القطار','travel',3,'a ticket office worker','a train station',[['Buy a return ticket','اشترِ تذكرة ذهاب وعودة'],['Ask the time of the next train','اسأل عن وقت القطار الجاي'],['Ask which platform','اسأل أي رصيف']]),
+  M('checkin','🏨','Hotel Check-in','تسجيل الدخول للفندق','travel',3,'a hotel receptionist','a hotel lobby',[['Say you have a booking','قل إن عندك حجز'],['Ask about breakfast time','اسأل عن وقت الفطور'],['Ask for the Wi-Fi password','اطلب كلمة سر الواي فاي']]),
+  M('roomservice','🛎️','Room Service','خدمة الغرف','travel',4,'a hotel room service worker','a phone call from your hotel room',[['Order food to your room','اطلب أكلاً لغرفتك'],['Ask for extra towels','اطلب مناشف زيادة'],['Say your room number','قل رقم غرفتك']]),
+  M('directions','🗺️','Asking for Directions','السؤال عن الطريق','travel',2,'a helpful person on the street','a street in a new city',[['Ask how to get to a place','اسأل كيف توصل لمكان'],['Ask if it is far','اسأل إذا كان بعيداً'],['Repeat the directions to check','أعد الوصف لتتأكد']]),
+  M('tourist','📸','Helping a Tourist','مساعدة سائح','travel',4,'a tourist visiting your city','a famous place in your city',[['Say hello and offer help','سلّم واعرض المساعدة'],['Give simple directions','أعطه وصفاً بسيطاً للطريق'],['Recommend a place to visit','اقترح مكاناً يزوره']]),
+  M('exchange','💱','Changing Money','صرف العملة','travel',5,'a money exchange worker','a currency exchange at the airport',[['Say which money you want','قل أي عملة تبيها'],['Ask the exchange rate','اسأل عن سعر الصرف'],['Count the money and say thanks','عدّ الفلوس واشكره']]),
+  M('carrent','🚙','Renting a Car (with Dad)','استئجار سيارة مع أبوي','travel',6,'a car rental agent','a car rental desk',[['Help Dad ask for a family car','ساعد أبوك يطلب سيارة عائلية'],['Ask about the price per day','اسأل عن السعر لليوم'],['Ask where to return it','اسأل وين يرجعونها']]),
+  /* ---- health ---- */
+  M('pharmacy','💊','At the Pharmacy','في الصيدلية','health',2,'a pharmacist','a pharmacy',[['Say what is wrong (a cold, a headache)','قل ايش فيك مثل زكام أو صداع'],['Ask how to take the medicine','اسأل كيف تأخذ الدواء'],['Ask if it is OK for kids','اسأل إذا يناسب الأطفال']]),
+  M('dentist','🦷','At the Dentist','عند طبيب الأسنان','health',2,'a friendly dentist','a dental clinic',[['Say which tooth hurts','قل أي سن يوجعك'],['Answer how often you brush','جاوب كم مرة تفرش'],['Ask what you should eat or avoid','اسأل ايش تاكل وايش تتجنب']]),
+  M('eyes','👓','Eye Test','فحص النظر','health',3,'an eye doctor','an eye clinic',[['Read the letters on the chart','اقرأ الحروف في اللوحة'],['Say if things are blurry','قل إذا الأشياء مو واضحة'],['Choose glasses frames','اختر إطار النظارة']]),
+  M('pe_injury','🤕','Hurt in PE Class','إصابة في الرياضة','health',3,'the school nurse','the school clinic',[['Explain how you got hurt','اشرح كيف تعورت'],['Say where it hurts','قل وين يوجعك'],['Ask to call your parents','اطلب يتصلون بأهلك']]),
+  M('checkup','🩺','Health Check-up','فحص طبي','health',4,'a school doctor','a yearly health check',[['Say your age, height and weight','قل عمرك وطولك ووزنك'],['Talk about your sleep and food','تكلم عن نومك وأكلك'],['Ask a question about staying healthy','اسأل سؤالاً عن الصحة']]),
+  M('vet','🐶','At the Vet','عند الطبيب البيطري','health',3,'a kind vet','a pet clinic',[['Say what pet you have','قل أي حيوان عندك'],['Explain what is wrong with it','اشرح ايش فيه'],['Ask how to take care of it','اسأل كيف تهتم فيه']]),
+  /* ---- school & friends ---- */
+  M('newstudent','🎒','New Student','طالب جديد','school',1,'a new student in your class','the school playground',[['Say hello and ask their name','سلّم واسأل عن اسمه'],['Ask where they are from','اسأل من وين هو'],['Invite them to play','اعزمه يلعب معكم']]),
+  M('borrow','✏️','Borrowing a Pencil','استعارة قلم','school',1,'your classmate','a classroom',[['Ask to borrow a pencil politely','اطلب قلماً بأدب'],['Say you will give it back','قل إنك بترجعه'],['Thank them','اشكره']]),
+  M('teacherhelp','🙋','Asking the Teacher','سؤال المعلمة','school',2,'your English teacher','a classroom after the lesson',[['Say you did not understand something','قل إنك ما فهمت شيئاً'],['Ask the teacher to explain again','اطلب تشرح مرة ثانية'],['Ask about the homework','اسأل عن الواجب']]),
+  M('late','⏰','Late for School','تأخرت على المدرسة','school',3,'the school principal','the school office',[['Say sorry for being late','اعتذر عن التأخير'],['Explain why you were late','اشرح سبب التأخير'],['Promise to be on time','وعد إنك تجي بدري']]),
+  M('project','🧪','Group Project','مشروع جماعي','school',4,'a classmate in your group','the school library',[['Suggest an idea for the project','اقترح فكرة للمشروع'],['Divide the work','قسّموا الشغل'],['Agree on a time to meet','اتفقوا على وقت تجتمعون فيه']]),
+  M('canteen','🥪','School Canteen','مقصف المدرسة','school',1,'the canteen worker','the school canteen at break time',[['Ask what is there today','اسأل ايش فيه اليوم'],['Buy a snack and a drink','اشترِ وجبة خفيفة ومشروباً'],['Ask for your change','اطلب الباقي']]),
+  M('birthday','🎂','Birthday Invitation','دعوة عيد ميلاد','school',2,'your best friend','a phone call',[['Invite your friend to your party','اعزم صديقك على حفلتك'],['Tell them the day, time and place','قل له اليوم والوقت والمكان'],['Tell them what you will do there','قل له ايش بتسوون']]),
+  M('apology','🙏','Saying Sorry to a Friend','الاعتذار لصديق','school',3,'your friend who is upset','the playground',[['Say sorry clearly','اعتذر بوضوح'],['Explain what happened','اشرح ايش صار'],['Suggest how to fix it','اقترح كيف تصلحون الموضوع']]),
+  M('club','🎨','Joining a Club','الانضمام لنادي','school',3,'the club leader','the school activity fair',[['Ask what the club does','اسأل ايش يسوي النادي'],['Talk about your skills','تكلم عن مهاراتك'],['Ask when they meet','اسأل متى يجتمعون']]),
+  M('sciencefair','🔬','Science Fair','معرض العلوم','school',6,'a judge at the science fair','a school science fair',[['Explain your project','اشرح مشروعك'],['Say what you found out','قل ايش اكتشفت'],['Answer a question about it','جاوب على سؤال عنه']]),
+  M('library','📖','School Library','مكتبة المدرسة','school',2,'the librarian','the school library',[['Ask to borrow a book','اطلب استعارة كتاب'],['Ask when to return it','اسأل متى ترجعه'],['Ask for a book recommendation','اطلب اقتراح كتاب']]),
+  /* ---- home & family ---- */
+  M('grandma','👵','Calling Grandma','مكالمة مع جدتي','home',1,'your loving grandmother','a video call',[['Ask how she is','اسألها عن حالها'],['Tell her about your day','احكِ لها عن يومك'],['Tell her you miss her','قل لها إنك مشتاق لها']]),
+  M('guest','🏡','A Guest at Home','ضيف في البيت','home',2,'a family friend visiting','your living room',[['Welcome the guest','رحّب بالضيف'],['Offer coffee, tea or dates','اعرض قهوة أو شاي أو تمر'],['Ask about their family','اسأل عن أهله']]),
+  M('cooking','🍳','Cooking with Mom','الطبخ مع أمي','home',2,'your mom in the kitchen','your kitchen',[['Ask what you are cooking','اسأل ايش بتطبخون'],['Ask what you can do to help','اسأل كيف تساعد'],['Describe the taste','صف الطعم']]),
+  M('chores','🧹','Helping at Home','أساعد في البيت','home',2,'your dad','your house on the weekend',[['Offer to help','اعرض المساعدة'],['Ask what to do first','اسأل ايش تسوي أول'],['Say when you finish','قل لما تخلص']]),
+  M('neighbor','🚪','New Neighbor','الجار الجديد','home',3,'your new neighbor','outside your house',[['Say hello and welcome them','سلّم ورحّب فيهم'],['Tell them about the area','احكِ لهم عن الحي'],['Offer help if they need anything','اعرض المساعدة إذا احتاجوا شيئاً']]),
+  M('cousin','🌍','Video Call with a Cousin Abroad','مكالمة مع ابن عمي بالخارج','home',3,'your cousin who lives in another country','a video call',[['Ask about the weather there','اسأل عن الطقس عندهم'],['Compare your schools','قارنوا بين مدارسكم'],['Plan something for the next visit','خططوا لشيء في الزيارة الجاية']]),
+  M('eid','🎉','Eid Visit','زيارة العيد','home',1,'your uncle','an Eid family gathering',[['Say Eid greetings','قل تهنئة العيد'],['Talk about your new clothes or gift','تكلم عن ملابسك الجديدة أو العيدية'],['Say what you will do today','قل ايش بتسوون اليوم']]),
+  M('iftar','🌙','Ramadan Iftar Invitation','دعوة إفطار رمضان','home',3,'a neighbor family','a Ramadan evening',[['Invite them for iftar','اعزمهم على الإفطار'],['Say what food you will have','قل ايش الأكل'],['Agree on the time','اتفقوا على الوقت']]),
+  M('pet','🐱','Taking Care of a Pet','الاهتمام بحيوان أليف','home',2,'your friend who has a cat','your friend’s house',[['Ask about their pet','اسأل عن حيوانه'],['Ask how to feed it','اسأل كيف يأكلونه'],['Say what pet you want and why','قل أي حيوان تبي وليش']]),
+  M('weekend','🗓️','Planning the Weekend','نخطط لنهاية الأسبوع','home',3,'your mom','your house on Thursday evening',[['Suggest an activity','اقترح نشاطاً'],['Give reasons','أعطِ أسباباً'],['Decide together','قرروا مع بعض']]),
+  /* ---- town & services ---- */
+  M('barber','💈','At the Barber','عند الحلاق','town',2,'a barber','a barber shop',[['Say how you want your hair','قل كيف تبي شعرك'],['Say shorter or longer','قل أقصر أو أطول'],['Ask how much and say thanks','اسأل عن السعر واشكره']]),
+  M('salon','💇','At the Hair Salon','في صالون الشعر','town',2,'a hair stylist','a hair salon',[['Say what style you want','قولي أي تسريحة تبين'],['Ask how long it takes','اسألي كم تأخذ'],['Say if you like it','قولي إذا عجبتك']]),
+  M('bank','🏦','Opening a Kids Account','فتح حساب للأطفال','town',6,'a bank employee','a bank with your parent',[['Say you want to save money','قل إنك تبي تدّخر'],['Ask how the account works','اسأل كيف يشتغل الحساب'],['Ask about a bank card','اسأل عن البطاقة']]),
+  M('post','📮','Sending a Package','إرسال طرد','town',4,'a post office worker','a post office',[['Say where you want to send it','قل وين تبي ترسله'],['Ask how long it takes','اسأل كم يأخذ'],['Ask the price','اسأل عن السعر']]),
+  M('carwash','🧽','Car Wash with Dad','غسيل السيارة مع أبوي','town',2,'a car wash worker','a car wash',[['Ask for a full wash','اطلب غسيلاً كاملاً'],['Ask how long it will take','اسأل كم بياخذ'],['Ask if they clean inside too','اسأل إذا ينظفون من داخل']]),
+  M('gas','⛽','Gas Station Shop','محل محطة البنزين','town',1,'a gas station shop worker','a gas station shop on a road trip',[['Buy snacks for the trip','اشترِ وجبات خفيفة للطريق'],['Ask where the restroom is','اسأل وين دورة المياه'],['Pay and say goodbye','ادفع وودّع']]),
+  M('lostfound','🔎','Lost and Found','المفقودات','town',3,'a lost and found officer','a park office',[['Say what you lost','قل ايش ضيّعت'],['Describe it (color, size)','صفه: لونه وحجمه'],['Say where and when you lost it','قل وين ومتى ضاع']]),
+  M('photo','📷','Asking for a Photo','طلب تصوير','town',1,'a stranger at a famous place','a famous landmark',[['Politely ask someone to take a photo','اطلب بأدب من شخص يصوركم'],['Explain how to use the camera','اشرح كيف يستخدم الكاميرا'],['Thank them','اشكره']]),
+  M('repair','🔧','Fixing My Bike','تصليح الدراجة','town',3,'a bike shop mechanic','a bike repair shop',[['Explain what is broken','اشرح ايش الخربان'],['Ask how long it will take','اسأل كم ياخذ'],['Ask the price','اسأل عن السعر']]),
+  M('booktable','📞','Booking a Table','حجز طاولة','town',3,'a restaurant host on the phone','a phone call',[['Book a table for a day and time','احجز طاولة ليوم ووقت'],['Say how many people','قل كم شخص'],['Ask for a family section or window seat','اطلب قسم عائلات أو جنب الشباك']]),
+  /* ---- fun & sports ---- */
+  M('cinema','🎬','Cinema Tickets','تذاكر السينما','fun',2,'a cinema ticket seller','a cinema',[['Ask what movies are showing','اسأل ايش الأفلام المعروضة'],['Buy tickets for a time','اشترِ تذاكر لوقت معين'],['Order popcorn and a drink','اطلب فشار ومشروب']]),
+  M('themepark','🎢','Theme Park','مدينة الألعاب','fun',2,'a theme park worker','a theme park',[['Ask which rides are good for your age','اسأل أي ألعاب تناسب عمرك'],['Ask how long the line is','اسأل كم طول الطابور'],['Ask where the food area is','اسأل وين منطقة الأكل']]),
+  M('zoo','🦁','At the Zoo','في حديقة الحيوان','fun',1,'a zoo keeper','a zoo',[['Ask about your favorite animal','اسأل عن حيوانك المفضل'],['Ask what it eats','اسأل ايش يأكل'],['Ask when feeding time is','اسأل متى وقت الأكل']]),
+  M('football','⚽','Football Tryout','اختبار فريق الكرة','fun',3,'a football coach','a football field',[['Say what position you play','قل أي مركز تلعب'],['Talk about your skills','تكلم عن مهاراتك'],['Ask about training times','اسأل عن أوقات التمرين']]),
+  M('swim','🏊','Swimming Lesson','درس سباحة','fun',2,'a swimming coach','a swimming pool',[['Say how well you can swim','قل كم تعرف تسبح'],['Say if you feel scared or OK','قل إذا خايف أو مرتاح'],['Ask what you will learn today','اسأل ايش بتتعلم اليوم']]),
+  M('gaming','🎮','Gaming with a Friend','نلعب ألعاب مع صديق','fun',2,'your friend who loves video games','your friend’s house',[['Ask what game they like','اسأل أي لعبة يحب'],['Explain the rules of a game','اشرح قوانين لعبة'],['Decide who plays first','قرروا مين يلعب أول']]),
+  M('camping','🏕️','Desert Camping','كشتة في البر','fun',3,'your older cousin','a desert camp at night',[['Talk about what you see (stars, sand, fire)','تكلم عن اللي تشوفه: نجوم ورمل ونار'],['Help plan dinner','ساعد في تخطيط العشاء'],['Tell a short story','احكِ قصة قصيرة']]),
+  M('beach','🏖️','A Day at the Beach','يوم في البحر','fun',2,'a lifeguard','a beach',[['Ask where it is safe to swim','اسأل وين آمن تسبح'],['Ask about the weather today','اسأل عن الطقس اليوم'],['Say what you will do','قل ايش بتسوي']]),
+  M('bowling','🎳','Bowling','البولينج','fun',3,'a bowling alley worker','a bowling alley',[['Ask for a lane for your friends','اطلب ممراً لك ولأصحابك'],['Ask for shoes in your size','اطلب حذاء بمقاسك'],['Ask how to keep score','اسأل كيف تنحسب النقاط']]),
+  M('karate','🥋','Karate Class','حصة الكاراتيه','fun',3,'a karate coach','a karate class',[['Introduce yourself','عرّف بنفسك'],['Say why you want to learn','قل ليش تبي تتعلم'],['Ask about the belt colors','اسأل عن ألوان الأحزمة']]),
+  M('art','🖌️','Art Class','حصة الرسم','fun',2,'an art teacher','an art studio',[['Describe what you want to draw','صف ايش تبي ترسم'],['Ask for colors you need','اطلب الألوان اللي تحتاجها'],['Talk about your picture','تكلم عن رسمتك']]),
+  M('gym','🏋️','At the Gym','في النادي الرياضي','fun',5,'a gym trainer','a gym',[['Say your fitness goal','قل هدفك الرياضي'],['Ask how to use a machine','اسأل كيف تستخدم جهازاً'],['Ask how often to train','اسأل كم مرة تتمرن']]),
+  /* ---- important situations ---- */
+  M('lostpet','🐕','Lost Pet','حيوان أليف ضائع','help',3,'a neighbor','your street',[['Say your pet is missing','قل إن حيوانك ضايع'],['Describe your pet','صف حيوانك'],['Ask them to call you if they see it','اطلب منهم يتصلون إذا شافوه']]),
+  M('help_lost','🧒','Helping a Lost Child','مساعدة طفل ضائع','help',4,'a little child who is lost','a shopping mall',[['Calm the child and ask their name','طمّن الطفل واسأله عن اسمه'],['Ask where their parents are','اسأله وين أهله'],['Take them to a security guard','ودّه لرجل الأمن']]),
+  M('fire_drill','🚨','Fire Drill at School','تمرين الإخلاء','help',3,'your teacher during a fire drill','your school',[['Ask what to do','اسأل ايش تسوون'],['Repeat the safety rules','أعد قواعد السلامة'],['Help a classmate','ساعد زميلك']]),
+  M('phone_lost','📱','Lost Phone','جوال ضائع','help',4,'a café worker','a café',[['Say you left your phone here','قل إنك نسيت جوالك هنا'],['Describe it','صفه'],['Leave your contact information','اترك رقم تواصل']]),
+  M('stranger','🚫','Saying No Politely','الرفض بأدب','help',4,'a pushy salesperson','a mall',[['Say no politely','ارفض بأدب'],['Give a reason','أعطِ سبباً'],['End the talk and walk away','أنهِ الكلام وامشِ']])
+);
+Object.keys(MISSION_CAT).forEach(id => { const m = MISSIONS.find(x => x.id === id); if(m && !m.cat) m.cat = MISSION_CAT[id]; });
+let MCAT = (() => { try{ return localStorage.getItem('hh:mcat') || 'all'; }catch(e){ return 'all'; } })(), MALL = false;
+function missionOfDay(k){ const lv = DB.kids[k].level, best = DB.progress[k].missions || {};
+  const pool = MISSIONS.filter(m => m.min <= lv && (best[m.id] || 0) < 3); const list = pool.length ? pool : MISSIONS.filter(m => m.min <= lv); if(!list.length) return null;
+  const d = new Date(), seed = d.getFullYear() * 400 + d.getMonth() * 32 + d.getDate() + k.length * 7; return list[seed % list.length]; }
+function missionCardInner(k){
+  const lv = DB.kids[k].level, best = DB.progress[k].missions || {}, open = MISSIONS.filter(m => m.min <= lv), stars = open.reduce((a, m) => a + (best[m.id] || 0), 0);
+  const inCat = MISSIONS.filter(m => MCAT === 'all' || m.cat === MCAT).sort((a, b) => (a.min > lv) - (b.min > lv) || ((best[a.id] || 0) >= 3) - ((best[b.id] || 0) >= 3) || a.min - b.min);
+  const shown = MALL ? inCat : inCat.slice(0, 12), today = missionOfDay(k);
+  return `<div class="chips" style="justify-content:space-between"><h2>🎯 مهمات المحادثة</h2><span class="chip brand">⭐ ${stars} / ${open.length * 3}</span></div>
+    <p class="small muted" style="margin:4px 0 10px">${MISSIONS.length} موقف من الحياة اليومية تتكلم فيها مع شخصية: تطلب قهوة، تشتري، تسافر، تتعرف على صديق… ولكل مهمة 3 أهداف تحققها بكلامك.</p>
+    ${today ? `<button class="mtoday" data-mission="${today.id}"><span class="me2">${today.e}</span><span style="min-width:0;flex:1;text-align:start"><span class="small" style="font-weight:800;color:var(--brand-ink)">⭐ مهمة اليوم</span><b class="en" style="display:block">${esc(today.t)}</b><span class="small muted">${esc(today.ar)}</span></span><span class="btn sm primary" aria-hidden="true">ابدأ</span></button>` : ''}
+    <div class="mcats" role="tablist">${MCATS.map(([id, t, e]) => { const n = id === 'all' ? MISSIONS.length : MISSIONS.filter(m => m.cat === id).length; return n ? `<button role="tab" aria-selected="${MCAT === id}" class="mcat ${MCAT === id ? 'on' : ''}" data-mcat="${id}">${e} ${t} <i>${n}</i></button>` : ''; }).join('')}</div>
+    <div class="missions">${shown.map(m => { const lock = m.min > lv, s = best[m.id] || 0;
+      return `<button class="mission ${lock ? 'mlock' : ''} ${s >= 3 ? 'mdone' : ''}" ${lock ? `data-mlock="${m.min}"` : `data-mission="${m.id}"`}><span class="me2">${lock ? '🔒' : m.e}</span><b class="en">${esc(m.t)}</b><span class="small muted">${esc(m.ar)}</span>${lock ? `<span class="small muted">من المستوى ${m.min}</span>` : `<span class="mstars">${'★'.repeat(s)}${'☆'.repeat(3 - s)}</span>`}</button>`; }).join('')}</div>
+    <div class="chips" style="margin-top:10px;justify-content:center">${inCat.length > 12 ? `<button class="btn sm" id="mAll">${MALL ? 'عرض أقل' : `عرض الكل (${inCat.length})`}</button>` : ''}<button class="btn sm primary" id="mRand">🎲 مهمة عشوائية</button></div>`;
+}
+function missionCard(k){ return `<section class="card" id="mcard">${missionCardInner(k)}</section>`; }
+function wireMissionCard(k){
+  const c = document.getElementById('mcard'); if(!c) return;
+  c.querySelectorAll('[data-mission]').forEach(b => b.onclick = () => startMission(k, b.dataset.mission));
+  c.querySelectorAll('[data-mlock]').forEach(b => b.onclick = () => hoopoeSays(`هذي المهمة تفتح لك من المستوى ${b.dataset.mlock} 🔒`, 'think', 2600));
+  c.querySelectorAll('[data-mcat]').forEach(b => b.onclick = () => { MCAT = b.dataset.mcat; MALL = false; try{ localStorage.setItem('hh:mcat', MCAT); }catch(e){} c.innerHTML = missionCardInner(k); wireMissionCard(k); });
+  const a = c.querySelector('#mAll'); if(a) a.onclick = () => { MALL = !MALL; c.innerHTML = missionCardInner(k); wireMissionCard(k); if(!MALL) c.scrollIntoView({block:'start', behavior:'smooth'}); };
+  const r = c.querySelector('#mRand'); if(r) r.onclick = () => { const lv = DB.kids[k].level, pool = MISSIONS.filter(m => m.min <= lv && (MCAT === 'all' || m.cat === MCAT)); if(pool.length) startMission(k, pool[Math.floor(Math.random() * pool.length)].id); };
+}
+
 function missionsFor(k){ const lv = DB.kids[k].level; return MISSIONS.filter(m => m.min <= lv); }
 function missionRules(k, m){
   const kid = DB.kids[k], cefr = LEVEL_CEFR[kid.level], age = ageOf(kid.birth);
@@ -3035,12 +3174,6 @@ RULES:
 - When all 3 goals are done, end the scene warmly in character, then add [END].
 - Never ask for personal details. If asked, say you are an AI teacher playing a character.
 FORMAT: first line starts with [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Tags each on their own line after it: [GOAL:n] [FIX:...] [AR:word = Arabic] [END]. No markdown, no Arabic in the spoken text.`;
-}
-function missionCard(k){
-  const ms = missionsFor(k), best = DB.progress[k].missions || {}, stars = ms.reduce((a,m) => a + (best[m.id]||0), 0);
-  return `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🎯 مهمات المحادثة</h2><span class="chip brand">⭐ ${stars} / ${ms.length*3}</span></div>
-    <p class="small muted" style="margin:4px 0 10px">مواقف حقيقية تتكلم فيها مع شخصية، ولكل مهمة 3 أهداف تحققها بكلامك.</p>
-    <div class="missions">${ms.map(m => `<button class="mission" data-mission="${m.id}"><span class="me2">${m.e}</span><b class="en">${esc(m.t)}</b><span class="small muted">${esc(m.ar)}</span><span class="mstars">${'★'.repeat(best[m.id]||0)}${'☆'.repeat(3-(best[m.id]||0))}</span></button>`).join('')}</div></section>`;
 }
 function startMission(k, id){
   const m = MISSIONS.find(x => x.id === id); if(!m) return;
