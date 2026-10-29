@@ -2644,7 +2644,8 @@ function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right)
 /* ---- listening ---- */
 function onMicTap(){
   if(!L || L.done) return;
-  if(L.state === 'listening'){ stopListening(true); return; }
+  // second tap while listening = stop now: send what was said, or (if nothing) stop and wait for the next tap
+  if(L.state === 'listening'){ L.manualStop = true; stopListening(true); setState('thinking'); return; }
   interrupt(true);
 }
 function startListening(fromTap){
@@ -2652,7 +2653,7 @@ function startListening(fromTap){
   if(!SR || !micOK){ setState('tap'); return; }
   stopListening();
   if(!L.listenStart) L.listenStart = Date.now();
-  let text = '';
+  L.manualStop = false; let text = '';
   const rec = new SR(); L.rec = rec; rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = true; rec.maxAlternatives = 1;
   const you = $('#you');
   rec.onspeechend = () => { if(L && L.rec === rec && you){ you.hidden = false; you.classList.add('live'); you.textContent = '… 👂'; } };
@@ -2662,6 +2663,7 @@ function startListening(fromTap){
   rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); } };
   rec.onend = () => { if(!L || L.rec !== rec) return; L.rec = null; clearTimeout(L.silT);
     if(text.trim()){ L.listenStart = 0; clearTimeout(L.nudgeT); studentSaid(text.trim()); return; }
+    if(L.manualStop){ L.manualStop = false; L.listenStart = 0; clearTimeout(L.nudgeT); setState('tap'); return; }
     if(L.state === 'listening'){ if(Date.now() - L.listenStart > NUDGE_MS){ L.listenStart = 0; teacherTurn('(student was silent)'); } else startListening(false); } };
   try{ rec.start(); setState('listening'); }catch(e){ L.rec = null; setState('tap'); }
   clearTimeout(L.nudgeT); L.nudgeT = setTimeout(() => { if(L && L.state === 'listening' && !text.trim()){ try{ rec.stop(); }catch(x){} } }, NUDGE_MS + 500);
