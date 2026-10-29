@@ -1959,21 +1959,23 @@ function placementTest(k, opt){
   PLACE_STARTING = Date.now(); return placementTestRun(k, opt);
 }
 async function placementTestRun(k, opt){
-  opt = opt || {}; const KIDMODE = !!opt.kid;
+  opt = opt || {}; const KIDMODE = !!opt.kid; let hadNeed = null;
   const kid = DB.kids[k];
   /* always start EASY (level 2, or 1 for little ones) and climb only on real correct answers, whatever the age */
   const start = ageOf(kid.birth) <= 6 ? 1 : 2;
   const probe = await loadP(start);
   if(!probe){ return placementTestBasic(k); }
   const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov); PLACE_STARTING = 0;
-  const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">${KIDMODE ? 'لاحقاً' : 'إلغاء'}</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); if(KIDMODE) renderPlaceGate(k); else { placeRunClear(); renderParent(); } }; };
+  const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">${KIDMODE ? 'لاحقاً' : 'إلغاء'}</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); if(KIDMODE) renderPlaceGate(k); else { placeRunClear(); if(hadNeed === false && DB.kids[k]){ delete DB.kids[k].needPlace; save(); } renderParent(); } }; };
   frame('اختبار تحديد المستوى', `<div class="card" style="text-align:center;display:grid;gap:12px"><div style="font-size:3rem">🎯</div><h2>${KIDMODE ? `أهلاً ${esc(nick(k))}! قبل ما نبدأ، خلنا نعرف مستواك` : `اختبار تحديد المستوى: ${esc(kid.ar)}`}</h2>
     <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge: يبدأ بأسئلة سهلة جداً، ويصعب تدريجياً كلما أجبت صح، ويسهل إذا أخطأت. إذا ما تعرف الجواب اضغط «ما أعرف» ولا تخمّن. خمسة أجزاء، ويأخذ تقريباً 20 دقيقة:</p>
     <div class="psecs"><div>📖 <b>المعرفة</b><span class="small muted">قواعد ومفردات واستماع وقراءة · 16 سؤالاً</span></div><div>👂 <b>تمييز الأصوات</b><span class="small muted">أصوات متشابهة مثل P/B وTH · 4 أسئلة</span></div><div>✍️ <b>الإملاء</b><span class="small muted">يسمع جملة ويكتبها · جملتان</span></div><div>🔊 <b>النطق</b><span class="small muted">قراءة جملتين وكلمتين بصوت عالٍ</span></div><div>🗣️ <b>التحدث</b><span class="small muted">3 أسئلة يجيب عليها بالكلام</span></div></div>
     <p class="small muted" style="margin:0">${KIDMODE ? 'أجب بنفسك بدون مساعدة، وفي مكان هادئ. لا تقلق، ما فيه نجاح ورسوب، الاختبار يختار لك المستوى المناسب 💪' : 'مهم: يجيب الطفل بنفسه بدون مساعدة، في مكان هادئ.'}</p><button class="btn primary big" id="pgo">ابدأ</button>${KIDMODE ? '<button class="btn sm ghost" id="plater">لاحقاً</button>' : ''}</div>`);
   if(KIDMODE){ ov.querySelector('#px').hidden = true; const lt = ov.querySelector('#plater'); lt.onclick = () => { speechSynthesis.cancel(); ov.remove(); renderPlaceGate(k); }; }
   await new Promise(r => ov.querySelector('#pgo').onclick = r); unlockAudio();
-  placeRunSet(k, KIDMODE); if(KIDMODE && !kid.needPlace){ kid.needPlace = true; save(); }
+  // from the moment the test starts it must be finished: the kid's account is locked to the test (on every device, via sync)
+  // until the result is in, even when the parent started it from the dashboard and the app was closed half-way
+  hadNeed = !!kid.needPlace; placeRunSet(k, KIDMODE); if(!kid.needPlace){ kid.needPlace = true; save(); }
 
   /* --- Part 1: adaptive knowledge ---
      Routing: start easy; a correct answer moves up one level (two after two correct in a row, until the first miss), a miss or "I don't know"
@@ -2108,7 +2110,7 @@ Reply ONLY JSON: {"level":1-20,"cefr":"...","gse":"range","skills":{"grammar":0-
       res = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); }
   }catch(e){ res = {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:null, pronunciation:pron, writing, phonics}, summary:'تعذّر تحليل جزء التحدث بسبب الاتصال، فالنتيجة مبنية على جزء المعرفة والنطق.', strengths:'', focus:''}; }
   const rec = Math.max(1, Math.min(20, Math.max(knowLevel - 3, Math.min(knowLevel + 1, Number(res.level) || knowLevel))));
-  placeRunClear();
+  placeRunClear(); delete kid.needPlace;
   DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:rec, know:knowLevel, ai:Number(res.level) || null, items:log.map(x => x.lv + (x.idk ? '?' : x.ok ? '+' : '-')).join(' '), skills:res.skills, summary:res.summary}); save();
   const SK = [['grammar','القواعد'],['vocabulary','المفردات'],['listening','الاستماع'],['reading','القراءة'],['speaking','التحدث'],['pronunciation','النطق'],['phonics','تمييز الأصوات'],['writing','الإملاء والكتابة']];
   if(KIDMODE){ const from = kid.level; setLevel(k, rec); DB.progress[k].levelUpPending = null; DB.progress[k].levelUps = Math.max(0, (DB.progress[k].levelUps||0) - (rec > from ? 1 : 0)); delete kid.needPlace; addXP(k, 50); save();
