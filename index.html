@@ -1976,7 +1976,7 @@ async function placementTestRun(k, opt){
   placeRunSet(k, KIDMODE); if(KIDMODE && !kid.needPlace){ kid.needPlace = true; save(); }
 
   /* --- Part 1: adaptive knowledge ---
-     Routing: start easy; a correct answer moves up (+2 while the child has not missed yet, then +1), a miss or "I don't know"
+     Routing: start easy; a correct answer moves up one level (two after two correct in a row, until the first miss), a miss or "I don't know"
      moves down one level. Scoring: maximum likelihood with guessing correction, P(correct | theta) = g + (1-g) / (1 + e^(-1.1 (theta - b))),
      g = 1/options, and a prior that leans to the BOTTOM, so random tapping lands at level 1-2 instead of high.
      Very fast correct answers (under 1.2 s, too fast to read) count half and do not move up. The result can never be more than
@@ -1987,7 +1987,7 @@ async function placementTestRun(k, opt){
     for(let th = 1; th <= 20.001; th += .25){ let ll = -Math.pow(th - 1, 2) / (2 * 100);
       for(const x of log){ const g = x.idk ? 0 : 1 / (x.nopt || 4), pc = Math.min(.999, g + (1 - g) / (1 + Math.exp(-1.1 * (th - x.lv)))); ll += (x.w || 1) * Math.log(x.ok ? pc : 1 - pc); }
       if(ll > bl){ bl = ll; best = th; } } return best; };
-  let next = start, climbing = true;
+  let next = start, climbing = true, streak = 0;
   for(let n = 0; n < N1; n++){
     const lv = Math.max(1, Math.min(20, next));
     const b = await loadP(lv); if(!b) break;
@@ -2011,7 +2011,9 @@ async function placementTestRun(k, opt){
     speechSynthesis.cancel();
     const idk = choice < 0, ok = !idk && choice === Number(item.answer), fast = ok && !script && Date.now() - shownAt < 1200;
     log.push({lv, kind: script ? 'listen' : passage ? 'read' : 'mcq', ok, idk, w: fast ? .5 : 1, nopt:item.options.length, skill: script ? 'listening' : passage ? 'reading' : (item.skill || 'grammar')});
-    if(ok && !fast) next = lv + (climbing ? 2 : 1);
+    streak = ok && !fast ? streak + 1 : 0;
+    // gentle climb: one level per correct answer; two levels only after two correct in a row before the first miss
+    if(ok && !fast) next = lv + (climbing && streak >= 2 ? 2 : 1);
     else if(!ok){ climbing = false; next = lv - 1; }
   }
   DB.progress[k].pSeen = [...new Set([...(DB.progress[k].pSeen || []), ...[...used].map(q => q.q)])].slice(-300);
