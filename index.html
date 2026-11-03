@@ -1347,7 +1347,7 @@ function tabHome(k){
     ${pushCard('k')}
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div class="herocol"><div class="herobird">${hoopoeSVG(L0.open ? "cheer" : "happy", true)}</div>${btn}</div></section>
     ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
-    ${unitTestCard(k)}${examCard(k)}
+    ${confirmCard(k)}${unitTestCard(k)}${examCard(k)}
     ${monthReviewCard(k)}
     ${familyCard(k)}
     <div class="g2e">${dailyCard(k)}${homeworkCard(k) || kitCard(k)}</div>
@@ -1397,6 +1397,7 @@ function tabHome(k){
   const kl = $('#kitLock'); if(kl) kl.onclick = () => { const ps = prepState(k); if(ps.open){ renderKid(k); return; } hoopoeSays(ps.t ? `التحضير يفتح قبل الحصة بساعة، الساعة ${fmtTime(ps.at)} ⏳` : 'التحضير يفتح قبل حصتك القادمة بساعة ⏳', 'think', 3000); };
   const eg = $('#examGo'); if(eg) eg.onclick = () => startLevelExam(k);
   const ug = $('#unitGo'); if(ug) ug.onclick = () => startUnitTest(k);
+  const cg = $('#confGo'); if(cg) cg.onclick = () => startConfirm(k);
   const fg = $('#famGo'); if(fg) fg.onclick = () => { claimFamily(); renderKid(k); };
   clearInterval(homeTimer); homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov,.reader')) renderKid(k); }, 30000);
 }
@@ -1991,6 +1992,18 @@ function examCard(k){
   const r = (p.exams||{})[DB.kids[k].level];
   return `<section class="card gift" style="text-align:right"><div class="chips" style="justify-content:space-between"><div><h2>📝 اختبار نهاية المستوى ${DB.kids[k].level}</h2><div class="small">أنهيت كل دروس المستوى! انجح بـ 70% أو أكثر ليرفعك ولي أمرك للمستوى التالي.</div></div>
     <button class="btn primary" id="examGo">${r ? `أعد الاختبار (آخر نتيجة ${r.pct}%)` : 'ابدأ الاختبار'}</button></div></section>`; }
+/* after a move to a new level the child takes a short check (10 questions of the level test); under 50% → one level down */
+function confirmCard(k){ const cf = DB.kids[k].confirm, c = CONTENT[DB.kids[k].level];
+  if(!cf || cf.level !== DB.kids[k].level || !c || c.v !== 2 || !((c.levelTest||{}).items||[]).length) return '';
+  return `<section class="card gift" style="text-align:right"><div class="chips" style="justify-content:space-between"><div><h2>🎯 اختبار قصير لمستواك الجديد</h2><div class="small">انتقلت للمستوى ${DB.kids[k].level}. جاوب 10 أسئلة سريعة عشان نتأكد إنه مناسب لك.</div></div>
+    <button class="btn primary" id="confGo">ابدأ</button></div></section>`; }
+function startConfirm(k){ const kid = DB.kids[k], lv = kid.level, c = CONTENT[lv] || {}, items = ((c.levelTest||{}).items||[]).slice().sort(() => Math.random() - .5).slice(0, 10);
+  runQuiz(k, items, `Level ${lv} check`, res => { if(!res) return renderKid(k); const pct = Math.round(res.score/res.total*100);
+    (DB.placements = DB.placements || {}); (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:lv, know:lv, ai:null, items:'confirm ' + pct + '%', skills:{}, summary:`اختبار تأكيد المستوى ${lv}: ${pct}%`});
+    delete kid.confirm;
+    if(pct < 50 && lv > 1){ setLevel(k, lv - 1); toast(`نتيجتك ${pct}%. رجعناك للمستوى ${lv - 1} عشان تبني أساس قوي 💪`); loadContent(lv - 1); }
+    else toast(`ممتاز! ${pct}% — المستوى ${lv} مناسب لك 🎉`, 'gold');
+    save(); renderKid(k); }, 10); }
 function unitTestCard(k){
   const p = DB.progress[k], ut = p.unitTest, c = CONTENT[DB.kids[k].level]; if(!ut || ut.passed || !c || ut.level !== DB.kids[k].level) return '';
   const t = (c.unitTests||{})[ut.ui], u = (c.units||[])[ut.ui] || {}; if(!t) return '';
@@ -2040,7 +2053,10 @@ async function placementTestBasic(k){
 
 /* =============== PROFESSIONAL PLACEMENT TEST (adaptive, 4 skills) =============== */
 const PBANK = {};
-async function loadP(l){ if(PBANK[l] !== undefined) return PBANK[l]; try{ const r = await fetch(`content/P${l}.json`, {cache:'no-cache'}); PBANK[l] = r.ok ? await r.json() : null; }catch(e){ PBANK[l] = null; } return PBANK[l]; }
+async function loadP(l){ if(PBANK[l] !== undefined) return PBANK[l]; try{ const r = await fetch(`content/P${l}.json`, {cache:'no-cache'}); PBANK[l] = r.ok ? await r.json() : null; }catch(e){ PBANK[l] = null; }
+  // v2 banks list several speaking questions; the test uses one of them
+  const b = PBANK[l]; if(b && Array.isArray(b.speak)){ const q = b.speak[Math.floor(Math.random() * b.speak.length)]; b.speakAll = b.speak; b.speak = {prompt:q, expect:`Answers at CEFR ${LEVEL_CEFR[l]} (Hudhud level ${l}) using this level's language functions, in connected sentences.`}; }
+  return PBANK[l]; }
 const normWords = s => String(s).toLowerCase().replace(/[^a-z' ]/g,' ').split(/\s+/).filter(Boolean);
 function wordAccuracy(target, said){ const a = normWords(target), b = normWords(said); if(!a.length) return 0;
   const dp = Array.from({length:a.length+1}, () => new Array(b.length+1).fill(0));
@@ -3239,7 +3255,7 @@ function rewardForm(id){
     if(id) Object.assign(r, data); else DB.rewards.push(Object.assign({id:'w'+Date.now()}, data));
     save(); ov.remove(); toast('تم حفظ الهدية 🎁'); renderParent(); };
 }
-function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level){ DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; DB.progress[k].levelUpPending = {from:kid.level, to:lv}; } kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].focus = ''; save(); }
+function setLevel(k, lv){ const kid = DB.kids[k]; if(lv === kid.level) return; if(lv > kid.level){ DB.progress[k].levelUps = (DB.progress[k].levelUps||0) + 1; DB.progress[k].levelUpPending = {from:kid.level, to:lv}; } kid.level = lv; kid.cefr = LEVEL_CEFR[lv]; DB.progress[k].pos = 0; DB.progress[k].unitTest = null; DB.progress[k].repeatOf = null; DB.progress[k].focus = ''; save(); }
 function kidForm(k, pre){
   const kid = k ? DB.kids[k] : {ar:pre ? pre.ar : '', en:pre ? pre.en : '', user:'', pass:rnd(4), level:5, birth:(pre && pre.birth) || '2015-01-01', boy:pre ? pre.boy : true};
   const per = k ? periodAt(k, new Date()) : {days:(pre && pre.days) || [0,2,4], time:'17:00'};
