@@ -581,7 +581,7 @@
      },
      {
       "s": "Lama",
-      "t": "Calm down. Let's retrace your steps. Where did you use it last?"
+      "t": "Calm down, you've just misplaced it. Let's retrace your steps. Where did you use it last?"
      },
      {
       "s": "Omar",
@@ -607,7 +607,7 @@
      },
      {
       "s": "Lama",
-      "t": "See? I told you it was bound to turn up. Let's put two and two together next time!"
+      "t": "See? It was under the cushion! I told you it was bound to turn up."
      }
     ],
     "focus": "Then it can't be in the kitchen. It might be in the car.",
@@ -752,7 +752,7 @@
    "culture": {
     "title": "Around Saudi Arabia: Results day",
     "points": [
-     "In Saudi Arabia, students can see their results online on the Madrasati platform.",
+     "In Saudi Arabia, students can see their results online through the Noor system.",
      "Many families celebrate good results with a special dinner or a small gift.",
      "Students in their last year also take national tests before university."
     ],
@@ -1102,7 +1102,7 @@
     "points": [
      "In a book club, people read the same book and meet to talk about it.",
      "Many schools in Saudi Arabia have reading challenges and libraries with Arabic and English books.",
-     "The Arab Reading Challenge has millions of students from many countries every year."
+     "Millions of students from many countries take part in the Arab Reading Challenge every year."
     ],
     "qs": [
      "Would you like to join a book club? Why or why not?",
@@ -1411,7 +1411,7 @@
      },
      {
       "s": "Noura",
-      "t": "It reminds you before every deadline. It's been a game changer for me."
+      "t": "It reminds you before every deadline and saves so much time. It's been a game changer for me."
      },
      {
       "s": "Fahad",
@@ -1531,7 +1531,7 @@
      },
      {
       "s": "Faisal",
-      "t": "The school will pay for the bus, so it's worth every riyal. You can't go wrong with Jeddah."
+      "t": "The school will pay for the bus, so it won't cost families much. You can't go wrong with Jeddah."
      },
      {
       "s": "Sam",
@@ -1935,7 +1935,7 @@
     },
     {
      "w": "burn a hole in your pocket",
-     "def": "money you want to spend very quickly",
+     "def": "(of money) to make you want to spend it quickly",
      "ar": "المال لا يبقى في جيبه",
      "frame": "My Eid money always burns a hole in my pocket, so I ___."
     },
@@ -2915,7 +2915,7 @@
     "p2": [
      {
       "s": "Ms Emma",
-      "t": "When is the rice put in?"
+      "t": "I think I get the gist. When is the rice put in?"
      },
      {
       "s": "Omar",
@@ -3240,7 +3240,7 @@
     },
     {
      "s": "Lama",
-     "t": "Calm down. Let's retrace your steps. Where did you use it last?"
+     "t": "Calm down, you've just misplaced it. Let's retrace your steps. Where did you use it last?"
     },
     {
      "s": "Omar",
@@ -3264,7 +3264,7 @@
     },
     {
      "s": "Lama",
-     "t": "See? I told you it was bound to turn up. Let's put two and two together next time!"
+     "t": "See? It was under the cushion! I told you it was bound to turn up."
     }
    ],
    "grammar": {
@@ -3795,7 +3795,7 @@
     },
     {
      "s": "Noura",
-     "t": "It reminds you before every deadline. It's been a game changer for me."
+     "t": "It reminds you before every deadline and saves so much time. It's been a game changer for me."
     },
     {
      "s": "Fahad",
@@ -3876,7 +3876,7 @@
     },
     {
      "s": "Faisal",
-     "t": "The school will pay for the bus, so it's worth every riyal. You can't go wrong with Jeddah."
+     "t": "The school will pay for the bus, so it won't cost families much. You can't go wrong with Jeddah."
     },
     {
      "s": "Sam",
@@ -4792,7 +4792,7 @@
     },
     {
      "s": "Ms Emma",
-     "t": "When is the rice put in?"
+     "t": "I think I get the gist. When is the rice put in?"
     },
     {
      "s": "Omar",
@@ -5008,7 +5008,7 @@
   "0-3": [
    {
     "type": "mc",
-    "q": "Dad took the car this morning, so my phone ___ be in the car.",
+    "q": "I used my phone after lunch, but Dad took the car this morning, so my phone ___ be in the car.",
     "options": [
      "must",
      "might",
@@ -5759,7 +5759,7 @@
    },
    {
     "type": "mc",
-    "q": "I'm keeping my money every week because I'm ___ a new phone.",
+    "q": "I'm not spending any of my pocket money because I'm ___ a new phone.",
     "options": [
      "splashing out",
      "burning out",
@@ -6562,7 +6562,7 @@
     },
     {
      "type": "mc",
-     "q": "I'm keeping my money because I'm ___ for a bike.",
+     "q": "I'm not buying any snacks this month because I'm ___ for a bike.",
      "options": [
       "running out",
       "cutting off",
@@ -6698,7 +6698,7 @@
     },
     {
      "type": "mc",
-     "q": "Dirt and sand are ___ before the water is cleaned.",
+     "q": "Dirt and sand are ___ before the salt is removed.",
      "options": [
       "thrown up",
       "set up",
@@ -6813,7 +6813,7 @@
    },
    {
     "type": "mc",
-    "q": "Nobody is answering the phone. They ___ be asleep.",
+    "q": "It's three in the morning and nobody is answering the phone. They ___ be asleep.",
     "options": [
      "must",
      "can't",
