@@ -644,6 +644,7 @@ const API = 'https://api.anthropic.com/v1/messages';
 const PROMO_END = new Date('2026-11-07T23:00:00Z');
 const LIVE_MODEL = new Date() < PROMO_END ? 'claude-opus-5-5' : 'claude-sonnet-5-5';
 const REPORT_MODEL = 'claude-opus-5-5';
+const BOOK_LEAD = 15*60e3; /* booking, moving and cancelling close 15 minutes before a lesson */
 const OPEN_BEFORE = 10, OPEN_AFTER = 30, MIN_MINUTES = 18, LESSON_MIN = 25;
 const SILENCE_MS = 1700, NUDGE_MS = 15000;
 const DAYS_AR = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
@@ -1423,8 +1424,8 @@ function tabPlan(k){
   $('#tabBody').innerHTML = `<div class="grid">
     <section class="card"><div class="chips" style="justify-content:space-between"><h2>حصصي القادمة</h2><div class="chips"><button class="btn" id="ics">📲 أضف للتقويم مع تنبيهات</button><button class="btn primary" id="book">➕ احجز حصة إضافية</button></div></div>
       <div class="mcounts">${monthCard(mk,c1)}${monthCard(nmk,c2)}</div>
-      <p class="small muted" style="margin:6px 0 0">تقدر تلغي حصة أو تغيّر موعدها قبل بدايتها بساعتين على الأقل، بشرط ألا تقل حصصك عن ${MIN_MONTH} في الشهر. الحصة الإضافية تُخصم من رصيدك مثل أي حصة.</p>
-      <ul class="ledger">${up.length ? up.map(s => { const lock = s.t - now < 2*3600e3;
+      <p class="small muted" style="margin:6px 0 0">تقدر تحجز حصة إضافية أو تغيّر موعد حصة أو تلغيها قبل بدايتها بربع ساعة على الأقل، بشرط ألا تقل حصصك عن ${MIN_MONTH} في الشهر. الحصة الإضافية تُخصم من رصيدك مثل أي حصة.</p>
+      <ul class="ledger">${up.length ? up.map(s => { const lock = s.t - now < BOOK_LEAD;
         return `<li><div><div style="font-weight:700">${fmtDay(s.t)} ${s.extra?'<span class="chip brand small">إضافية</span>':''}</div><div class="small muted">${fmtTime(s.t)}</div></div>
           <div class="chips">${lock ? '<span class="small muted">لا يمكن التعديل الآن</span>' : `<button class="btn sm" data-move="${s.key}">تغيير الموعد</button><button class="btn sm danger" data-cancel="${s.key}">إلغاء</button>`}</div></li>`; }).join('') : '<li><div class="muted">لا توجد حصص قادمة.</div><div></div></li>'}</ul>
     </section></div>`;
@@ -1440,12 +1441,14 @@ function tabPlan(k){
   });
 }
 function slotPicker(k, moveKey){
-  const now = new Date(), times = []; for(let h=8; h<=21; h++) for(const m of [0,30]) times.push(`${pad(h)}:${pad(m)}`);
+  const now = new Date(), times = []; for(let h=8; h<=22; h++) for(const m of [0,15,30,45]) times.push(`${pad(h)}:${pad(m)}`);
+  // first time that is at least 15 minutes from now (today), else 17:00
+  const firstOk = times.find(t => { const [h, m] = t.split(':').map(Number); const d = new Date(); d.setHours(h, m, 0, 0); return d - now >= BOOK_LEAD; }) || '17:00';
   const old = moveKey ? fromKey(moveKey) : null;
   const ov = overlay(`<h2>${moveKey ? 'تغيير موعد الحصة' : 'حجز حصة إضافية'}</h2>
     ${old ? `<p class="small muted" style="margin:0">الموعد الحالي: ${fmtDay(old)} · ${fmtTime(old)}</p>` : `<p class="small muted" style="margin:0">تُخصم ${priceNow(k)} ريال من رصيدك، وإذا ما حضرتها تصير حمراء.</p>`}
     <div class="field"><label for="pd">اليوم</label><input class="input" type="date" id="pd" min="${todayISO()}" value="${todayISO()}"></div>
-    <div class="field"><label for="pt">الوقت</label><select class="input" id="pt">${times.map(t => `<option ${t==='17:00'?'selected':''}>${t}</option>`).join('')}</select></div>
+    <div class="field"><label for="pt">الوقت</label><select class="input" id="pt">${times.map(t => `<option ${t===firstOk?'selected':''}>${t}</option>`).join('')}</select></div>
     <div class="err" id="pe"></div>
     <div class="chips"><button class="btn primary" id="ok">${moveKey ? 'تأكيد الموعد الجديد' : 'احجز'}</button><button class="btn" id="no">رجوع</button></div>`);
   ov.querySelector('#no').onclick = () => ov.remove();
@@ -1453,7 +1456,8 @@ function slotPicker(k, moveKey){
     const d = ov.querySelector('#pd').value, tm = ov.querySelector('#pt').value, err = ov.querySelector('#pe');
     if(!d){ err.textContent = 'اختر اليوم.'; return; }
     const [y,mo,da] = d.split('-').map(Number), [h,mi] = tm.split(':').map(Number), t = new Date(y, mo-1, da, h, mi);
-    if(t - now < 60*60e3){ err.textContent = 'اختر موعداً بعد ساعة على الأقل من الآن.'; return; }
+    if(t - Date.now() < BOOK_LEAD){ err.textContent = 'اختر موعداً بعد ربع ساعة على الأقل من الآن.'; return; }
+    if(moveKey && old - Date.now() < BOOK_LEAD){ err.textContent = 'الحصة تبدأ بعد أقل من ربع ساعة، ما يمكن تغيير موعدها الآن.'; return; }
     const cf = conflict(k, t, moveKey); if(cf){ err.textContent = cf === k ? 'عندك حصة قريبة من هذا الوقت.' : `هذا الوقت قريب من حصة ${DB.kids[cf].ar}، اختر وقتاً آخر.`; return; }
     if(moveKey){ if(monthKey(t) !== monthKey(old) && !canDrop(k, old)){ err.textContent = `نقل الحصة لشهر آخر يجعل حصص ${fmtMonth(old)} أقل من ${MIN_MONTH}. اختر يوماً في نفس الشهر.`; return; }
       cancelSlot(k, moveKey); addExtra(k, t); toast('تم تغيير الموعد'); }
