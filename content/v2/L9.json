@@ -1,0 +1,7327 @@
+{
+ "level": 9,
+ "cefr": "B1",
+ "gse": "47-50",
+ "exam": "Cambridge B1 Preliminary for Schools",
+ "v": 2,
+ "units": [
+  {
+   "t": "Just Checking",
+   "ar": "للتأكد فقط",
+   "e": "✅",
+   "fn": "Checking and confirming understanding",
+   "fnAr": "التحقق من الفهم وتأكيده",
+   "cando": "Can check that they have understood information and confirm details using question tags and clarifying questions.",
+   "grammar": [
+    "question tags (isn't it? / don't you? / won't we? / didn't you?)",
+    "Do you mean …? / So you're saying … / Sorry, did you say …?"
+   ],
+   "lessons": [
+    [
+     "Getting the Instructions Right",
+     "Check and confirm your teacher's instructions for a project",
+     "Do you mean …? / So you're saying … / …, don't we?"
+    ],
+    [
+     "Making Plans with Friends",
+     "Confirm the time and place of a plan with a friend",
+     "We're meeting at …, aren't we? / So you're saying … / Let me get it straight …"
+    ],
+    [
+     "On the Phone",
+     "Take a phone message and check that you have understood it",
+     "Sorry, did you say …? / Could you spell that? / So you're saying …"
+    ],
+    [
+     "Finding Your Way",
+     "Check directions to a place you don't know",
+     "Go past …, then turn right. Is that right? / Do you mean the … ? / It's on the second floor, isn't it?"
+    ],
+    [
+     "Cooking Together",
+     "Check the steps of a recipe while cooking with someone",
+     "Do you mean …? / So you're saying first we …, then …? / We don't …, do we?"
+    ],
+    [
+     "The Big Trip Briefing",
+     "Check and confirm all the details of a school trip",
+     "Question tags (won't we? / didn't you?) / Do you mean …? / So you're saying … / Just to double-check …"
+    ]
+   ]
+  },
+  {
+   "t": "The News",
+   "ar": "الأخبار",
+   "e": "📰",
+   "fn": "Reporting what others said",
+   "fnAr": "نقل كلام الآخرين",
+   "cando": "Can report what other people said, told them and asked them, using reported speech.",
+   "grammar": [
+    "reported statements: said (that) / told me (that) + tense change",
+    "reported questions and commands: asked if / asked where / told me (not) to"
+   ],
+   "lessons": [
+    [
+     "What the Teacher Said",
+     "Report school announcements to a friend who missed them",
+     "He said (that) … / She told us (that) … / She told us to …"
+    ],
+    [
+     "Family News",
+     "Report family news from a phone call",
+     "She said (that) they were … / She told me (that) they had … / She said they would …"
+    ],
+    [
+     "After the Match",
+     "Report what football players and coaches said in interviews",
+     "He said (that) he was … / He admitted that … / He told reporters (that) …"
+    ],
+    [
+     "What Did They Ask?",
+     "Report questions that someone asked you",
+     "He asked me if/whether … / She asked me where … / He wanted to know what …"
+    ],
+    [
+     "In the News",
+     "Report a news story you heard or read",
+     "The reporter said (that) … / They warned people (not) to … / According to the news, …"
+    ],
+    [
+     "Our Class News Report",
+     "Prepare and present a short news report about your school",
+     "said (that) … / told me (that) … / asked (me) if … / told us (not) to …"
+    ]
+   ]
+  },
+  {
+   "t": "Would You Mind?",
+   "ar": "هل تمانع؟",
+   "e": "🙏",
+   "fn": "Making polite requests and asking permission",
+   "fnAr": "تقديم الطلبات المهذبة وطلب الإذن",
+   "cando": "Can make polite requests, ask for permission and answer requests politely, choosing the right form for the situation.",
+   "grammar": [
+    "Would you mind + -ing? / Would you mind if I + past?",
+    "Do you mind if I …? / Is it OK if I …? / Could I possibly …? / Would it be possible to …?"
+   ],
+   "lessons": [
+    [
+     "Please, Brother!",
+     "Make polite requests to your family at home",
+     "Would you mind …ing? / Could you possibly …? / No, not at all."
+    ],
+    [
+     "May I, Teacher?",
+     "Ask your teacher for permission politely",
+     "Is it OK if I …? / Do you mind if I …? / Would it be possible to …?"
+    ],
+    [
+     "Being a Good Guest",
+     "Make polite requests when you are a guest in someone's home",
+     "Do you mind if I …? / Could I possibly …? / Would you mind telling me …?"
+    ],
+    [
+     "Out and About",
+     "Make polite requests to people you don't know in public places",
+     "Sorry to bother you, but would you mind …ing? / Excuse me, would it be possible to …?"
+    ],
+    [
+     "Screens and Games",
+     "Ask for permission about screens, games and photos",
+     "Is it OK if I …? / Would you mind if I + past? / Do you mind if I post …? – Actually, I'd rather you didn't."
+    ],
+    [
+     "Planning an Eid Gathering",
+     "Plan a family Eid gathering by making polite requests and asking permission",
+     "Would you mind …ing? / Could you possibly …? / Is it OK if we …? / I'd be happy to."
+    ]
+   ]
+  },
+  {
+   "t": "Making Decisions",
+   "ar": "اتخاذ القرارات",
+   "e": "🤔",
+   "fn": "Comparing options and deciding",
+   "fnAr": "المقارنة بين الخيارات واتخاذ القرار",
+   "cando": "Can compare two or more options, give reasons, and reach a decision with other people.",
+   "grammar": [
+    "(not) as … as / just as … as / not nearly as … as; much + comparative",
+    "It would be better to … / Let's go for … / … would suit me better"
+   ],
+   "lessons": [
+    [
+     "Weekend Choices",
+     "Compare two weekend activities and decide what to do",
+     "… isn't as … as … / It would be better to … / Let's go for …"
+    ],
+    [
+     "Choosing a Gift",
+     "Compare gift ideas and choose the best one",
+     "… is much more … than … / … isn't as … as … / Let's go for …"
+    ],
+    [
+     "Choosing a Club",
+     "Compare school clubs and choose the one that suits you",
+     "… is just as … as … / … would suit me better / I'll go for …"
+    ],
+    [
+     "Where Shall We Go?",
+     "Compare holiday places and agree on where to go",
+     "… isn't nearly as … as … / It would be better to go to … / You have a point."
+    ],
+    [
+     "What Shall We Order?",
+     "Compare food options and decide what to order",
+     "… isn't as healthy as … / It would be better to … / Let's get one … between us."
+    ],
+    [
+     "Our Class Project",
+     "Discuss options with a group and reach a final decision",
+     "not as … as / much more … than / It would be better to … / Let's go for … / I'll go along with …"
+    ]
+   ]
+  }
+ ],
+ "scripts": {
+  "0-0": {
+   "objective": "Today you will check and confirm your teacher's instructions for a project.",
+   "warmup": "Have you ever misunderstood your homework? What happened?",
+   "expressions": [
+    {
+     "w": "hand in",
+     "def": "to give your finished work to a teacher",
+     "ar": "يسلّم (الواجب)",
+     "frame": "We have to hand in our ___ by ___."
+    },
+    {
+     "w": "due date",
+     "def": "the day when work must be finished",
+     "ar": "موعد التسليم",
+     "frame": "The due date for our ___ is ___."
+    },
+    {
+     "w": "work in pairs",
+     "def": "to do a task together with one other student",
+     "ar": "يعمل في ثنائيات",
+     "frame": "I like to work in pairs when ___."
+    },
+    {
+     "w": "get it straight",
+     "def": "to understand something clearly and correctly",
+     "ar": "أفهم الأمر بوضوح",
+     "frame": "Let me get it straight: we need to ___, right?"
+    },
+    {
+     "w": "clarify",
+     "def": "to make something clearer and easier to understand",
+     "ar": "يوضّح",
+     "frame": "Could you clarify what you mean by ___?"
+    },
+    {
+     "w": "word limit",
+     "def": "the largest number of words you are allowed to write",
+     "ar": "الحد الأقصى للكلمات",
+     "frame": "The word limit for ___ is ___ words."
+    }
+   ],
+   "dialogue": {
+    "scene": "Ms Huda explains a science project to her class. Reem checks the details.",
+    "p1": [
+     {
+      "s": "Ms Huda",
+      "t": "For this project, you'll work in pairs and make a poster about saving water."
+     },
+     {
+      "s": "Reem",
+      "t": "Sorry, Ms Huda, can I just get it straight? We choose our own partner, don't we?"
+     },
+     {
+      "s": "Ms Huda",
+      "t": "Yes, you do. Each poster also needs a short report with a word limit of two hundred words."
+     },
+     {
+      "s": "Reem",
+      "t": "Do you mean a written report, not a spoken one?"
+     },
+     {
+      "s": "Ms Huda",
+      "t": "Yes, a written one, please."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ms Huda",
+      "t": "The due date is the fifteenth of March."
+     },
+     {
+      "s": "Reem",
+      "t": "So you're saying we hand in the poster and the report together?"
+     },
+     {
+      "s": "Ms Huda",
+      "t": "Exactly. Bring both to class on that day."
+     },
+     {
+      "s": "Reem",
+      "t": "Could you clarify one more thing? We can use photos from the internet, can't we?"
+     },
+     {
+      "s": "Ms Huda",
+      "t": "Yes, but you must write where each photo comes from."
+     }
+    ],
+    "focus": "So you're saying we hand in the poster and the report together?",
+    "qs": [
+     "How many words can the report have?",
+     "What must the students write about each photo?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher has just explained a homework task very quickly, and you are not sure about the details. I am your teacher. Check everything with me.",
+    "prompts": [
+     {
+      "q": "Your homework is a presentation about your favourite Saudi city. Any questions?",
+      "hint": "Check one detail with 'Do you mean …?' (for example, how long it should be)."
+     },
+     {
+      "q": "Please hand it in next week.",
+      "hint": "Confirm the day with a question tag, for example '…, isn't it?'"
+     },
+     {
+      "q": "You can work in pairs or alone.",
+      "hint": "Repeat the information with 'So you're saying …' to check you understood."
+     }
+    ]
+   },
+   "culture": {
+    "title": "School Projects in Saudi Arabia",
+    "points": [
+     "Many Saudi schools now ask students to do projects, not just exams.",
+     "Students often present their work to the class, and some show it at school science fairs.",
+     "The Mawhiba programme supports talented Saudi students with special projects and competitions."
+    ],
+    "qs": [
+     "Do you prefer projects or exams? Why?",
+     "What project would you like to do this year?"
+    ]
+   },
+   "exit": "Imagine your teacher has given you new homework. Say two sentences to check the details, for example with a question tag and 'Do you mean …?'"
+  },
+  "0-1": {
+   "objective": "Today you will confirm the time and place of a plan with a friend.",
+   "warmup": "When did you last meet your friends outside school? Where did you go?",
+   "expressions": [
+    {
+     "w": "meet up",
+     "def": "to meet someone, usually a friend, at a planned time",
+     "ar": "نلتقي",
+     "frame": "Let's meet up at ___ after ___."
+    },
+    {
+     "w": "pick (someone) up",
+     "def": "to collect someone, usually in a car",
+     "ar": "يُقلّ / يمرّ لأخذ أحد",
+     "frame": "My dad can pick us up at ___."
+    },
+    {
+     "w": "on time",
+     "def": "not late; at the planned time",
+     "ar": "في الموعد",
+     "frame": "I'm always on time for ___."
+    },
+    {
+     "w": "confirm",
+     "def": "to say that something is definitely true or will happen",
+     "ar": "يؤكّد",
+     "frame": "Can you confirm that we're meeting at ___?"
+    },
+    {
+     "w": "change of plan",
+     "def": "a new plan instead of the old one",
+     "ar": "تغيير في الخطة",
+     "frame": "There's a change of plan: we're going to ___ instead."
+    },
+    {
+     "w": "count me in",
+     "def": "said when you want to join an activity",
+     "ar": "احسبني معكم",
+     "frame": "If you're going to ___, count me in!"
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar and Sam are planning a trip to the trampoline park on Friday with some friends.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "Are you free on Friday? A few of us want to meet up at the trampoline park."
+     },
+     {
+      "s": "Sam",
+      "t": "Count me in! It's the new one near the mall, isn't it?"
+     },
+     {
+      "s": "Omar",
+      "t": "That's right. We're meeting there at four o'clock."
+     },
+     {
+      "s": "Sam",
+      "t": "Let me get it straight: four in the afternoon, not four in the morning?"
+     },
+     {
+      "s": "Omar",
+      "t": "Ha! Of course in the afternoon. Don't worry."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Omar",
+      "t": "Oh, there's a change of plan. Khalid can't come until five."
+     },
+     {
+      "s": "Sam",
+      "t": "So you're saying we should meet at five instead?"
+     },
+     {
+      "s": "Omar",
+      "t": "Yes. My dad can pick you up at half past four."
+     },
+     {
+      "s": "Sam",
+      "t": "Great. Could you send me a message later to confirm the time?"
+     },
+     {
+      "s": "Omar",
+      "t": "Sure. Just make sure you're on time!"
+     }
+    ],
+    "focus": "So you're saying we should meet at five instead?",
+    "qs": [
+     "Why is there a change of plan?",
+     "Who will pick Sam up?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your friend calls to invite you to play football at the park this weekend. I am your friend. Check all the details before you agree.",
+    "prompts": [
+     {
+      "q": "We're playing football on Saturday. Do you want to come?",
+      "hint": "Say you want to join ('Count me in!') and check the day with a question tag."
+     },
+     {
+      "q": "We're meeting at the park near the school at seven.",
+      "hint": "Check if it's seven in the morning or the evening with 'Do you mean …?'"
+     },
+     {
+      "q": "Actually, there's a change of plan. We're meeting at eight now.",
+      "hint": "Repeat the new time with 'So you're saying …?' to confirm it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Evenings Out in Saudi Cities",
+    "points": [
+     "In summer, many Saudi families go out in the evening because it is cooler.",
+     "Parks, malls and seafronts like the Jeddah Corniche stay busy until late at night.",
+     "Friends often use group chats to agree on a time and place to meet up."
+    ],
+    "qs": [
+     "What time of day do you prefer to go out with friends? Why?",
+     "Do group chats make plans easier or more confusing?"
+    ]
+   },
+   "exit": "Tell me about a plan with a friend and check two details with question tags."
+  },
+  "0-2": {
+   "objective": "Today you will take a phone message and check that you have understood it.",
+   "warmup": "Who do you talk to on the phone most often? What do you talk about?",
+   "expressions": [
+    {
+     "w": "take a message",
+     "def": "to write down what a caller wants to tell someone",
+     "ar": "يأخذ رسالة",
+     "frame": "She's out. Can I take a message for ___?"
+    },
+    {
+     "w": "hold on",
+     "def": "to wait for a short time, especially on the phone",
+     "ar": "انتظر لحظة",
+     "frame": "Hold on a second, I need to find ___."
+    },
+    {
+     "w": "call (someone) back",
+     "def": "to phone someone again later",
+     "ar": "يعاود الاتصال",
+     "frame": "Can you call me back after ___?"
+    },
+    {
+     "w": "a bad line",
+     "def": "a phone call where you can't hear well",
+     "ar": "خط ضعيف / صوت غير واضح",
+     "frame": "Sorry, it's a bad line. Could you repeat ___?"
+    },
+    {
+     "w": "spell",
+     "def": "to say the letters of a word in the right order",
+     "ar": "يتهجّى",
+     "frame": "Could you spell your ___, please?"
+    },
+    {
+     "w": "pass on",
+     "def": "to give a message to another person",
+     "ar": "يوصل (رسالة)",
+     "frame": "I'll pass on your message to ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura answers the home phone. A man from a furniture shop wants to speak to her mother.",
+    "p1": [
+     {
+      "s": "Yazeed",
+      "t": "Good morning. Could I speak to Mrs Al-Harbi, please?"
+     },
+     {
+      "s": "Noura",
+      "t": "I'm sorry, she's out at the moment. Can I take a message?"
+     },
+     {
+      "s": "Yazeed",
+      "t": "Yes, please. It's about the sofa she ordered. We can deliver it on Tuesday between ten and twelve."
+     },
+     {
+      "s": "Noura",
+      "t": "Sorry, it's a bad line. Did you say Tuesday or Thursday?"
+     },
+     {
+      "s": "Yazeed",
+      "t": "Tuesday, the day after Monday."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Yazeed",
+      "t": "Please ask her to call me back. My name is Yazeed."
+     },
+     {
+      "s": "Noura",
+      "t": "Hold on, let me get a pen. Could you spell your name, please?"
+     },
+     {
+      "s": "Yazeed",
+      "t": "Y-A-Z-E-E-D. And could she confirm her address, too?"
+     },
+     {
+      "s": "Noura",
+      "t": "So you're saying the sofa arrives on Tuesday morning and she should call you back?"
+     },
+     {
+      "s": "Yazeed",
+      "t": "That's right. Thank you for passing on the message."
+     }
+    ],
+    "focus": "So you're saying the sofa arrives on Tuesday morning and she should call you back?",
+    "qs": [
+     "When will the sofa arrive?",
+     "What should Noura's mother do?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your uncle calls, but your father is busy. I am your uncle. Take a message and check every detail.",
+    "prompts": [
+     {
+      "q": "Hi! Is your dad there? I need to tell him something.",
+      "hint": "Say he's busy and offer to take a message."
+     },
+     {
+      "q": "Tell him the family dinner is at my house on Thursday at nine.",
+      "hint": "Check the day or the time with 'Sorry, did you say …?'"
+     },
+     {
+      "q": "And he should bring the dessert.",
+      "hint": "Repeat the whole message with 'So you're saying …' to confirm it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Phone Manners Around the World",
+    "points": [
+     "In Saudi Arabia, many people answer the phone with a friendly 'Hala' or 'Alo'.",
+     "In Japan, people say 'Moshi moshi' when they answer the phone.",
+     "In the UK, some people answer the phone by saying their name."
+    ],
+    "qs": [
+     "How do people in your family answer the phone?",
+     "Do you prefer calling or sending messages? Why?"
+    ]
+   },
+   "exit": "Imagine someone gave you a phone message for your mother. Say two sentences to check the message."
+  },
+  "0-3": {
+   "objective": "Today you will check directions to a place you don't know.",
+   "warmup": "Have you ever got lost? Where were you, and what did you do?",
+   "expressions": [
+    {
+     "w": "get lost",
+     "def": "to not know where you are or how to find the way",
+     "ar": "يضيع (الطريق)",
+     "frame": "I once got lost in ___."
+    },
+    {
+     "w": "go past",
+     "def": "to walk or drive beyond something",
+     "ar": "يتجاوز / يمرّ بجانب",
+     "frame": "Go past the ___ and then turn right."
+    },
+    {
+     "w": "on your left",
+     "def": "on the left side as you walk",
+     "ar": "على يسارك",
+     "frame": "The ___ is on your left."
+    },
+    {
+     "w": "take the escalator",
+     "def": "to use moving stairs to go up or down",
+     "ar": "يستخدم السلّم الكهربائي",
+     "frame": "Take the escalator to the ___ floor."
+    },
+    {
+     "w": "landmark",
+     "def": "a building or place that is easy to see and remember",
+     "ar": "معلَم بارز",
+     "frame": "A famous landmark in my city is ___."
+    },
+    {
+     "w": "you can't miss it",
+     "def": "said when something is very easy to find",
+     "ar": "لن يفوتك / واضح جداً",
+     "frame": "The ___ is huge. You can't miss it!"
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal is at a huge new mall in Riyadh. He can't find the cinema, so he asks a guard for directions.",
+    "p1": [
+     {
+      "s": "Faisal",
+      "t": "Excuse me, I think I've got lost. How do I get to the cinema?"
+     },
+     {
+      "s": "Guard",
+      "t": "No problem. Go past the fountain and turn right at the bookshop."
+     },
+     {
+      "s": "Faisal",
+      "t": "Go past the fountain, then turn right at the bookshop. Is that right?"
+     },
+     {
+      "s": "Guard",
+      "t": "Yes. Then take the escalator up to the second floor."
+     },
+     {
+      "s": "Faisal",
+      "t": "OK, thanks. That sounds easy."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Faisal",
+      "t": "Sorry, one more question. The cinema is right next to the escalator, isn't it?"
+     },
+     {
+      "s": "Guard",
+      "t": "Not quite. When you get off the escalator, it's on your left, next to the food court."
+     },
+     {
+      "s": "Faisal",
+      "t": "Let me get it straight. Do you mean the food court with the big clock?"
+     },
+     {
+      "s": "Guard",
+      "t": "Exactly. The clock is a good landmark. You can't miss it!"
+     },
+     {
+      "s": "Faisal",
+      "t": "Perfect. Thank you very much for your help."
+     }
+    ],
+    "focus": "Go past the fountain, then turn right at the bookshop. Is that right?",
+    "qs": [
+     "Which floor is the cinema on?",
+     "What landmark helps Faisal find the cinema?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are visiting a new city with your family. You ask a local person (me) how to get to a museum. Check the directions carefully.",
+    "prompts": [
+     {
+      "q": "The museum? Go straight on and go past the hospital.",
+      "hint": "Repeat the direction and check it with 'Is that right?'"
+     },
+     {
+      "q": "Then turn left at the traffic lights. It's on your right.",
+      "hint": "Check with 'Do you mean …?' (for example, which traffic lights)."
+     },
+     {
+      "q": "It's about ten minutes on foot.",
+      "hint": "Confirm with a question tag, for example 'It isn't far, is it?'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Finding the Way: Old and New",
+    "points": [
+     "Long ago, Arab travellers used the stars to find their way across the desert.",
+     "Today, most people use map apps, but signs and landmarks still help a lot.",
+     "In Riyadh, tall buildings like Kingdom Centre are famous landmarks."
+    ],
+    "qs": [
+     "Do you think people should still learn to read a paper map? Why?",
+     "What is a good landmark near your home?"
+    ]
+   },
+   "exit": "Tell me the way from your home to a nearby shop, then check one direction with 'Is that right?'"
+  },
+  "0-4": {
+   "objective": "Today you will check the steps of a recipe while cooking with someone.",
+   "warmup": "Do you ever help in the kitchen? What can you cook?",
+   "expressions": [
+    {
+     "w": "preheat the oven",
+     "def": "to make the oven hot before you cook",
+     "ar": "يسخّن الفرن مسبقاً",
+     "frame": "Preheat the oven before you ___."
+    },
+    {
+     "w": "tablespoon",
+     "def": "a big spoon used to measure food",
+     "ar": "ملعقة كبيرة",
+     "frame": "Add two tablespoons of ___."
+    },
+    {
+     "w": "a pinch of",
+     "def": "a very small amount you hold between two fingers",
+     "ar": "رشّة",
+     "frame": "You only need a pinch of ___."
+    },
+    {
+     "w": "stir in",
+     "def": "to add something and mix it with a spoon",
+     "ar": "يضيف مع التحريك",
+     "frame": "Stir in the ___ slowly."
+    },
+    {
+     "w": "roll out",
+     "def": "to make dough flat and thin",
+     "ar": "يفرد (العجين)",
+     "frame": "First, roll out the ___."
+    },
+    {
+     "w": "make sense",
+     "def": "to be clear and easy to understand",
+     "ar": "يكون مفهوماً / منطقياً",
+     "frame": "It makes sense to ___ first."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem is helping her grandmother make kleija, a date biscuit from the Qassim region.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "What are we making today, Grandma? It's kleija, isn't it?"
+     },
+     {
+      "s": "Grandma",
+      "t": "Yes! First, preheat the oven to one hundred and eighty degrees."
+     },
+     {
+      "s": "Reem",
+      "t": "Done. And then we mix flour, butter and two tablespoons of sugar?"
+     },
+     {
+      "s": "Grandma",
+      "t": "That's right. Then stir in a pinch of cardamom. Just a pinch, because it's very strong."
+     },
+     {
+      "s": "Reem",
+      "t": "Mmm, it smells lovely already."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "What's next? Could you clarify how we add the dates?"
+     },
+     {
+      "s": "Grandma",
+      "t": "First, roll out the dough. Then spread the date paste on top."
+     },
+     {
+      "s": "Reem",
+      "t": "So you're saying we put the dates on the flat dough and then roll it up like a carpet?"
+     },
+     {
+      "s": "Grandma",
+      "t": "Exactly, and then we cut it into small pieces. It'll make sense when you see it."
+     },
+     {
+      "s": "Reem",
+      "t": "Let's try it! I'll wash my hands."
+     }
+    ],
+    "focus": "So you're saying we put the dates on the flat dough and then roll it up like a carpet?",
+    "qs": [
+     "Why does Grandma use only a pinch of cardamom?",
+     "What do they do after they roll out the dough?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your friend is teaching you to make a simple dessert on a video call. I am your friend. Check each step so you get it right.",
+    "prompts": [
+     {
+      "q": "First, melt fifty grams of butter.",
+      "hint": "Check the amount with 'Sorry, did you say …?'"
+     },
+     {
+      "q": "Then add two tablespoons of honey and stir it in.",
+      "hint": "Check with 'Do you mean …?' (tablespoons or teaspoons?)."
+     },
+     {
+      "q": "Finally, put it in the fridge for an hour.",
+      "hint": "Confirm the step with a question tag, for example 'We don't bake it, do we?'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Kleija: A Taste of Qassim",
+    "points": [
+     "Kleija is a traditional biscuit from Qassim, made with flour, dates and spices.",
+     "Every year, Buraidah holds a kleija festival where families sell homemade kleija.",
+     "Many families have their own special recipe that grandparents pass on to children."
+    ],
+    "qs": [
+     "What traditional food does your family make together?",
+     "Is it better to learn a recipe from a person or from a video? Why?"
+    ]
+   },
+   "exit": "Tell me two steps of a recipe you know, and check one step with 'Do you mean …?' or a question tag."
+  },
+  "0-5": {
+   "objective": "Today you will check and confirm all the details of a school trip.",
+   "warmup": "What's the best school trip you've ever been on?",
+   "expressions": [
+    {
+     "w": "set off",
+     "def": "to start a journey",
+     "ar": "ينطلق (في رحلة)",
+     "frame": "We'll set off at ___ in the morning."
+    },
+    {
+     "w": "head back",
+     "def": "to start going back to where you came from",
+     "ar": "يعود / يرجع",
+     "frame": "We'll head back to school at ___."
+    },
+    {
+     "w": "permission slip",
+     "def": "a paper parents sign to say a child can go",
+     "ar": "ورقة موافقة ولي الأمر",
+     "frame": "I need my ___ to sign my permission slip."
+    },
+    {
+     "w": "packed lunch",
+     "def": "food you bring from home in a box or bag",
+     "ar": "وجبة غداء من البيت",
+     "frame": "In my packed lunch, I usually have ___."
+    },
+    {
+     "w": "make sure",
+     "def": "to check that something is true or done",
+     "ar": "يتأكّد",
+     "frame": "Make sure you bring ___."
+    },
+    {
+     "w": "just to double-check",
+     "def": "said before you check something again",
+     "ar": "فقط للتأكد مرة أخرى",
+     "frame": "Just to double-check, we need ___, don't we?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Mr Adel tells his class about a trip to AlUla. Omar asks questions to check the details.",
+    "p1": [
+     {
+      "s": "Mr Adel",
+      "t": "Great news! Next month our class is going on a two-day trip to AlUla."
+     },
+     {
+      "s": "Omar",
+      "t": "Amazing! Just to double-check, we'll stay there for one night, won't we?"
+     },
+     {
+      "s": "Mr Adel",
+      "t": "Yes. We'll set off from school at six on Wednesday morning and head back on Thursday evening."
+     },
+     {
+      "s": "Omar",
+      "t": "Six in the morning! I'll need to go to bed early."
+     },
+     {
+      "s": "Mr Adel",
+      "t": "Ha! You certainly will."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Mr Adel",
+      "t": "Please hand in your permission slips by Sunday, and make sure you bring a packed lunch for the bus."
+     },
+     {
+      "s": "Omar",
+      "t": "Let me get it straight. Do you mean a packed lunch for the first day only?"
+     },
+     {
+      "s": "Mr Adel",
+      "t": "Exactly. All the other meals are included in the price."
+     },
+     {
+      "s": "Omar",
+      "t": "So you're saying we only need pocket money for souvenirs. Great!"
+     },
+     {
+      "s": "Mr Adel",
+      "t": "That's right. And bring a warm jacket. The desert gets cold at night!"
+     }
+    ],
+    "focus": "Just to double-check, we'll stay there for one night, won't we?",
+    "qs": [
+     "When will the class set off for AlUla?",
+     "What must the students hand in by Sunday?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your class is going on a trip to the National Museum in Riyadh. I am your teacher. Check every detail so you can tell your parents correctly.",
+    "prompts": [
+     {
+      "q": "We'll set off at half past seven and head back at two.",
+      "hint": "Check both times with a question tag or 'Sorry, did you say …?'"
+     },
+     {
+      "q": "Bring a packed lunch and your permission slip.",
+      "hint": "Use 'Do you mean …?' to check something, for example when to hand in the slip."
+     },
+     {
+      "q": "The trip costs fifty riyals, but lunch is not included.",
+      "hint": "Sum up the information with 'So you're saying …' and check it is right."
+     }
+    ]
+   },
+   "culture": {
+    "title": "AlUla: An Open-Air Museum",
+    "points": [
+     "AlUla in north-west Saudi Arabia has rocks and tombs that are thousands of years old.",
+     "Hegra was the first place in Saudi Arabia to become a UNESCO World Heritage Site.",
+     "Visitors can see Elephant Rock and enjoy concerts in Maraya, a building covered in mirrors."
+    ],
+    "qs": [
+     "Which place in AlUla would you most like to visit? Why?",
+     "Why is it important to protect old places like Hegra?"
+    ]
+   },
+   "exit": "Imagine your teacher has just told you about a trip. Check three details without looking at the slides."
+  },
+  "1-0": {
+   "objective": "Today you will report school announcements to a friend who missed them.",
+   "warmup": "How do you find out school news: from teachers, friends or online?",
+   "expressions": [
+    {
+     "w": "announcement",
+     "def": "important information that someone tells a group of people",
+     "ar": "إعلان",
+     "frame": "This morning there was an announcement about ___."
+    },
+    {
+     "w": "catch up on",
+     "def": "to learn about or do things you missed",
+     "ar": "يلحق / يعوّض ما فاته",
+     "frame": "I need to catch up on ___ because I was away."
+    },
+    {
+     "w": "fill (someone) in",
+     "def": "to tell someone the news they don't know",
+     "ar": "يُطلع أحداً على التفاصيل",
+     "frame": "Can you fill me in on ___?"
+    },
+    {
+     "w": "take place",
+     "def": "to happen at a planned time",
+     "ar": "يُقام / يحدث",
+     "frame": "The ___ will take place on ___."
+    },
+    {
+     "w": "according to",
+     "def": "as someone said or wrote",
+     "ar": "وفقاً لـ / حسب",
+     "frame": "According to ___, the test is ___."
+    },
+    {
+     "w": "sign up for",
+     "def": "to put your name on a list to join something",
+     "ar": "يسجّل في",
+     "frame": "I want to sign up for ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam was ill yesterday. His friend Faisal tells him what the teachers said at school.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "I missed school yesterday. Can you fill me in? Was there any news?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Yes, there was a big announcement. Mr Khalid said that sports day would take place next Thursday."
+     },
+     {
+      "s": "Sam",
+      "t": "Next Thursday? That's soon! Did he say anything about the races?"
+     },
+     {
+      "s": "Faisal",
+      "t": "He told us that everyone had to sign up for at least one race."
+     },
+     {
+      "s": "Sam",
+      "t": "Great. I'll sign up for the 100 metres."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "What else did I miss? I need to catch up on everything."
+     },
+     {
+      "s": "Faisal",
+      "t": "Ms Huda said that our science test would be on Monday."
+     },
+     {
+      "s": "Sam",
+      "t": "Oh no! Did she say which pages we need to study?"
+     },
+     {
+      "s": "Faisal",
+      "t": "According to Ms Huda, it's pages twenty to thirty-five. She told us to bring a calculator, too."
+     },
+     {
+      "s": "Sam",
+      "t": "Thanks, Faisal. You're a lifesaver!"
+     }
+    ],
+    "focus": "Mr Khalid said that sports day would take place next Thursday.",
+    "qs": [
+     "When will sports day take place?",
+     "What did Ms Huda tell the students to bring?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your friend was absent today and calls you to ask about the school news. I am your friend. Report what the teachers said.",
+    "prompts": [
+     {
+      "q": "Hi! I wasn't at school today. Did the teacher say anything about homework?",
+      "hint": "Report it with 'She/He said that …' (remember: is → was, will → would)."
+     },
+     {
+      "q": "Was there any news in assembly?",
+      "hint": "Use 'The head teacher told us that …'"
+     },
+     {
+      "q": "Did anyone tell us to bring anything tomorrow?",
+      "hint": "Report an instruction with 'He/She told us to …'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "School Radio in Saudi Arabia",
+    "points": [
+     "Many Saudi schools have a morning school radio programme.",
+     "Students read news, poems and interesting facts to the whole school.",
+     "Taking part in the school radio helps students become confident speakers."
+    ],
+    "qs": [
+     "Would you like to read the news on your school radio? Why or why not?",
+     "What kind of news do students enjoy hearing?"
+    ]
+   },
+   "exit": "Tell me two things a teacher said to your class this week, using 'said that' and 'told us'."
+  },
+  "1-1": {
+   "objective": "Today you will report family news from a phone call.",
+   "warmup": "Do you have relatives who live in another city? How do you keep in touch?",
+   "expressions": [
+    {
+     "w": "keep in touch",
+     "def": "to keep talking or writing to someone",
+     "ar": "يبقى على تواصل",
+     "frame": "I keep in touch with ___ by ___."
+    },
+    {
+     "w": "guess what?",
+     "def": "said before you tell someone surprising news",
+     "ar": "خمّن ماذا حدث!",
+     "frame": "Guess what? ___!"
+    },
+    {
+     "w": "move house",
+     "def": "to go and live in a different home",
+     "ar": "ينتقل إلى بيت جديد",
+     "frame": "We moved house when ___."
+    },
+    {
+     "w": "new arrival",
+     "def": "a baby who has just been born",
+     "ar": "مولود جديد",
+     "frame": "We have a new arrival in our ___!"
+    },
+    {
+     "w": "get together",
+     "def": "to meet as a group, often to have fun",
+     "ar": "يجتمع",
+     "frame": "Our family gets together every ___."
+    },
+    {
+     "w": "send (your) love",
+     "def": "to send kind wishes to someone through another person",
+     "ar": "يُرسل سلامه / محبته",
+     "frame": "___ sends her love to everyone."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura's mother has just finished a video call with Aunt Maha, who lives in the Eastern Province. Noura wants to know the news.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Was that Aunt Maha? Fill me in! What did she say?"
+     },
+     {
+      "s": "Mum",
+      "t": "Guess what? She said that her family was moving house next month."
+     },
+     {
+      "s": "Noura",
+      "t": "Really? Where are they going?"
+     },
+     {
+      "s": "Mum",
+      "t": "She told me they had bought a flat near the sea in Khobar."
+     },
+     {
+      "s": "Noura",
+      "t": "Lucky them! I love the sea."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "Did she say anything about Cousin Lulwa?"
+     },
+     {
+      "s": "Mum",
+      "t": "Yes! She said there was a new arrival in the family. Lulwa had a baby brother called Hamad."
+     },
+     {
+      "s": "Noura",
+      "t": "That's wonderful! Are we going to visit them?"
+     },
+     {
+      "s": "Mum",
+      "t": "She said we would all get together at Eid. And she sends her love to you."
+     },
+     {
+      "s": "Noura",
+      "t": "Please tell her I said congratulations. We should keep in touch more often!"
+     }
+    ],
+    "focus": "She said that her family was moving house next month.",
+    "qs": [
+     "Where is Aunt Maha's family moving to?",
+     "When will the family get together?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your grandfather called while your brother was out. I am your brother. Tell me the news from the call.",
+    "prompts": [
+     {
+      "q": "Was that Grandpa on the phone? What did he say?",
+      "hint": "Start with 'He said that …' and change the tense (am → was, are → were)."
+     },
+     {
+      "q": "Did he say anything about the weekend?",
+      "hint": "Use 'He told me (that) we would …'"
+     },
+     {
+      "q": "Did he say anything about me?",
+      "hint": "Report his message, for example 'He sends his love' or 'He told me to tell you …'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Keeping in Touch with Family",
+    "points": [
+     "In Saudi Arabia, many big families meet at the grandparents' house every week.",
+     "Family group chats help relatives in different cities share news every day.",
+     "In some countries, families live far apart and only meet once or twice a year."
+    ],
+    "qs": [
+     "How often does your big family get together?",
+     "Is a video call as good as a real visit? Why?"
+    ]
+   },
+   "exit": "Tell me two pieces of news a relative told you recently, using reported speech."
+  },
+  "1-2": {
+   "objective": "Today you will report what football players and coaches said in interviews.",
+   "warmup": "Do you watch interviews with players after a match? Which players do you follow?",
+   "expressions": [
+    {
+     "w": "score a goal",
+     "def": "to get the ball into the net",
+     "ar": "يسجّل هدفاً",
+     "frame": "My favourite player scored a goal against ___."
+    },
+    {
+     "w": "be proud of",
+     "def": "to feel very pleased about someone's success",
+     "ar": "فخور بـ",
+     "frame": "I'm really proud of ___."
+    },
+    {
+     "w": "give up",
+     "def": "to stop trying",
+     "ar": "يستسلم",
+     "frame": "I never give up when ___."
+    },
+    {
+     "w": "press conference",
+     "def": "a meeting where reporters ask someone questions",
+     "ar": "مؤتمر صحفي",
+     "frame": "At the press conference, the coach talked about ___."
+    },
+    {
+     "w": "admit",
+     "def": "to say that something bad or difficult is true",
+     "ar": "يعترف",
+     "frame": "I have to admit that ___."
+    },
+    {
+     "w": "the final whistle",
+     "def": "the sound that ends a football match",
+     "ar": "صافرة النهاية",
+     "frame": "After the final whistle, the players ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem and Emma are talking about a big match between Saudi Arabia and Japan, and what the players said afterwards.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "Did you watch the match last night? Saudi Arabia beat Japan two-one!"
+     },
+     {
+      "s": "Reem",
+      "t": "Yes! I watched the press conference afterwards, too."
+     },
+     {
+      "s": "Emma",
+      "t": "What did the captain say?"
+     },
+     {
+      "s": "Reem",
+      "t": "He said that he was proud of the team because they hadn't given up."
+     },
+     {
+      "s": "Emma",
+      "t": "That's true. They were losing until the eightieth minute!"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "And what about the player who scored the winning goal?"
+     },
+     {
+      "s": "Reem",
+      "t": "He told reporters that it was the best moment of his life. He said he would never forget it."
+     },
+     {
+      "s": "Emma",
+      "t": "What did the coach say?"
+     },
+     {
+      "s": "Reem",
+      "t": "He admitted that the team had played badly in the first half, but he said they would get better."
+     },
+     {
+      "s": "Emma",
+      "t": "Well, after the final whistle, nobody cared about the first half!"
+     }
+    ],
+    "focus": "He said that he was proud of the team because they hadn't given up.",
+    "qs": [
+     "Why was the captain proud of the team?",
+     "What did the coach admit?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your friend missed the end of a big match. You watched the interviews on TV. I am your friend. Tell me what the players and the coach said.",
+    "prompts": [
+     {
+      "q": "I missed the end! What did the goalkeeper say?",
+      "hint": "Use 'He said that …' and change the tense."
+     },
+     {
+      "q": "Was the coach happy?",
+      "hint": "Use 'He admitted that …' or 'He told reporters that …'"
+     },
+     {
+      "q": "What's the team going to do next?",
+      "hint": "Report a future plan: 'He said they would …'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Football Fever in Saudi Arabia",
+    "points": [
+     "Football is the most popular sport in Saudi Arabia, and big matches fill the stadiums.",
+     "In the 2022 World Cup, Saudi Arabia surprised the world by beating Argentina two-one.",
+     "Saudi Arabia will host the FIFA World Cup in 2034."
+    ],
+    "qs": [
+     "Why do you think football is so popular in Saudi Arabia?",
+     "How should Saudi Arabia prepare for the 2034 World Cup?"
+    ]
+   },
+   "exit": "Report two things a famous player or coach said, using 'said that' or 'told reporters that'."
+  },
+  "1-3": {
+   "objective": "Today you will report questions that someone asked you.",
+   "warmup": "When you meet someone new, what questions do they usually ask you?",
+   "expressions": [
+    {
+     "w": "show (someone) around",
+     "def": "to take someone on a tour of a place",
+     "ar": "يأخذ أحداً في جولة",
+     "frame": "I'd love to show you around ___."
+    },
+    {
+     "w": "want to know",
+     "def": "to ask about something because you are curious",
+     "ar": "يريد أن يعرف",
+     "frame": "My friend wanted to know ___."
+    },
+    {
+     "w": "wonder",
+     "def": "to want to know something and think about it",
+     "ar": "يتساءل",
+     "frame": "I wonder if ___."
+    },
+    {
+     "w": "settle in",
+     "def": "to start to feel happy and relaxed in a new place",
+     "ar": "يتأقلم / يستقر",
+     "frame": "It took me ___ to settle in at my new school."
+    },
+    {
+     "w": "get on with",
+     "def": "to have a good, friendly relationship with someone",
+     "ar": "يتفاهم مع",
+     "frame": "I get on well with ___."
+    },
+    {
+     "w": "make friends",
+     "def": "to start being friends with someone",
+     "ar": "يكوّن صداقات",
+     "frame": "It's easy to make friends when ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Youssef, a new student from Cairo, joined Omar's class today. Omar tells his mother what Youssef asked.",
+    "p1": [
+     {
+      "s": "Mum",
+      "t": "How was school? I heard there's a new student in your class."
+     },
+     {
+      "s": "Omar",
+      "t": "Yes, his name's Youssef. He's from Cairo. The teacher asked me to show him around."
+     },
+     {
+      "s": "Mum",
+      "t": "That's kind of you. What did he want to know?"
+     },
+     {
+      "s": "Omar",
+      "t": "He asked me where the library was, and he asked if we had a football team."
+     },
+     {
+      "s": "Mum",
+      "t": "I'm sure you told him all about the football team!"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Mum",
+      "t": "Is he settling in well? I wonder if he misses Cairo."
+     },
+     {
+      "s": "Omar",
+      "t": "I think he's fine. He asked me whether the teachers were strict."
+     },
+     {
+      "s": "Mum",
+      "t": "And what did you say?"
+     },
+     {
+      "s": "Omar",
+      "t": "I told him they were strict but kind. He also wanted to know what time school finished."
+     },
+     {
+      "s": "Mum",
+      "t": "It sounds like you'll get on well. It's great to make friends from other countries."
+     }
+    ],
+    "focus": "He asked me where the library was",
+    "qs": [
+     "What did the teacher ask Omar to do?",
+     "What did Youssef want to know about the teachers?"
+    ]
+   },
+   "speakout": {
+    "scene": "A visitor from the UK came to your school today and asked you lots of questions. I am your parent, and I want to hear all about it.",
+    "prompts": [
+     {
+      "q": "So, what did the visitor ask you?",
+      "hint": "Use 'She/He asked me if …' for a yes/no question."
+     },
+     {
+      "q": "Did the visitor ask about Saudi food?",
+      "hint": "Use 'She/He asked me what …' or 'wanted to know which …' (normal word order: what I liked)."
+     },
+     {
+      "q": "And what did you ask the visitor?",
+      "hint": "Report your own question: 'I asked her/him where …'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Welcoming Newcomers",
+    "points": [
+     "Saudi Arabia is home to people from many countries, so many classes have international students.",
+     "In Saudi culture, welcoming guests with Arabic coffee and dates is a proud tradition.",
+     "In many schools around the world, a 'buddy' helps new students settle in."
+    ],
+    "qs": [
+     "How can a class help a new student settle in?",
+     "What questions would you ask a new student from another country?"
+    ]
+   },
+   "exit": "Tell me two questions someone asked you this week, using 'asked me if' and 'asked me where/what'."
+  },
+  "1-4": {
+   "objective": "Today you will report a news story you heard or read.",
+   "warmup": "What kind of news do you find interesting: science, sports or weather?",
+   "expressions": [
+    {
+     "w": "heavy rain",
+     "def": "a lot of rain in a short time",
+     "ar": "أمطار غزيرة",
+     "frame": "When there's heavy rain, I like to ___."
+    },
+    {
+     "w": "stay indoors",
+     "def": "to remain inside a building",
+     "ar": "يبقى في الداخل",
+     "frame": "On very hot days, I stay indoors and ___."
+    },
+    {
+     "w": "warn",
+     "def": "to tell people about a possible danger",
+     "ar": "يحذّر",
+     "frame": "My parents always warn me about ___."
+    },
+    {
+     "w": "headline",
+     "def": "the title of a news story in large letters",
+     "ar": "عنوان الخبر",
+     "frame": "Today's top headline was about ___."
+    },
+    {
+     "w": "come across",
+     "def": "to find something by chance",
+     "ar": "يصادف / يعثر على",
+     "frame": "I came across an interesting story about ___."
+    },
+    {
+     "w": "make a discovery",
+     "def": "to find something new for the first time",
+     "ar": "يكتشف شيئاً",
+     "frame": "Scientists made a discovery about ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal tells his sister Reem about two news stories he saw this morning.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "You look excited. What's happening?"
+     },
+     {
+      "s": "Faisal",
+      "t": "I saw the weather report. The reporter said there would be heavy rain in Riyadh tomorrow."
+     },
+     {
+      "s": "Reem",
+      "t": "Really? Rain in Riyadh? Did they say anything else?"
+     },
+     {
+      "s": "Faisal",
+      "t": "They warned people to stay indoors if possible, and they said schools might close."
+     },
+     {
+      "s": "Reem",
+      "t": "No school? I hope it's true!"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "What was the other story?"
+     },
+     {
+      "s": "Faisal",
+      "t": "I came across an amazing headline online. According to the article, Saudi scientists have made a discovery in the Red Sea."
+     },
+     {
+      "s": "Reem",
+      "t": "What kind of discovery?"
+     },
+     {
+      "s": "Faisal",
+      "t": "The scientists said that they had found a new type of coral. They told reporters it could live in very warm water."
+     },
+     {
+      "s": "Reem",
+      "t": "That's brilliant news for the sea!"
+     }
+    ],
+    "focus": "The reporter said there would be heavy rain in Riyadh tomorrow.",
+    "qs": [
+     "What did the reporter warn people to do?",
+     "What did the scientists say about the new coral?"
+    ]
+   },
+   "speakout": {
+    "scene": "You read an interesting news story this morning, but your friend didn't see it. I am your friend. Tell me what the reporter said.",
+    "prompts": [
+     {
+      "q": "Did you see any interesting news today?",
+      "hint": "Start with 'I came across a story …' and say what it was about."
+     },
+     {
+      "q": "What exactly did the reporter say?",
+      "hint": "Use 'The reporter said that …' and change the tense."
+     },
+     {
+      "q": "Did anyone warn people about anything?",
+      "hint": "Use 'They warned people to …' or 'They told people not to …'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Rain in the Desert",
+    "points": [
+     "Saudi Arabia is mostly desert, but some cities sometimes get heavy rain and floods.",
+     "When a storm is coming, the authorities send warning messages to people's phones.",
+     "After the rain, many families go out to enjoy the green valleys and fresh air."
+    ],
+    "qs": [
+     "What do you and your family do on a rainy day?",
+     "Why is it important to listen to weather warnings?"
+    ]
+   },
+   "exit": "Report two things you heard on the news recently, using 'said that' and 'warned'."
+  },
+  "1-5": {
+   "objective": "Today you will prepare and present a short news report about your school.",
+   "warmup": "If you were a news reporter, what would you like to report on?",
+   "expressions": [
+    {
+     "w": "interview",
+     "def": "to ask someone questions to find out about them",
+     "ar": "يجري مقابلة",
+     "frame": "I'd like to interview ___ about ___."
+    },
+    {
+     "w": "take notes",
+     "def": "to write down the important points",
+     "ar": "يدوّن ملاحظات",
+     "frame": "I take notes when ___."
+    },
+    {
+     "w": "find out",
+     "def": "to learn a fact or piece of information",
+     "ar": "يكتشف / يعرف",
+     "frame": "I want to find out why ___."
+    },
+    {
+     "w": "quote",
+     "def": "the exact words that someone said",
+     "ar": "اقتباس",
+     "frame": "My favourite quote is '___'."
+    },
+    {
+     "w": "breaking news",
+     "def": "very new and important news",
+     "ar": "خبر عاجل",
+     "frame": "Breaking news: ___!"
+    },
+    {
+     "w": "go live",
+     "def": "to start broadcasting a programme as it happens",
+     "ar": "يبدأ البث المباشر",
+     "frame": "We go live from ___ in five minutes."
+    }
+   ],
+   "dialogue": {
+    "scene": "Emma and Omar are preparing a news report for the school radio about the new school garden.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "We go live on the school radio tomorrow. Did you interview the head teacher?"
+     },
+     {
+      "s": "Omar",
+      "t": "Yes, and I took notes. He said that the new garden would open next week."
+     },
+     {
+      "s": "Emma",
+      "t": "Great! Did you find out who planted the trees?"
+     },
+     {
+      "s": "Omar",
+      "t": "He told me that students from every class had helped. He also asked if we could write a poem for the opening."
+     },
+     {
+      "s": "Emma",
+      "t": "Perfect. We can read it at the end."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "I interviewed Uncle Salem, the gardener. I asked him what his favourite plant was."
+     },
+     {
+      "s": "Omar",
+      "t": "What did he say? We need a good quote."
+     },
+     {
+      "s": "Emma",
+      "t": "He said, \"Every plant needs love and water.\" Then he told me to remind everyone not to walk on the grass."
+     },
+     {
+      "s": "Omar",
+      "t": "According to him, the grass is still very young. OK, let's start the report with \"Breaking news\"!"
+     },
+     {
+      "s": "Emma",
+      "t": "Ha! It's a garden, not a football match, but why not?"
+     }
+    ],
+    "focus": "He said that the new garden would open next week.",
+    "qs": [
+     "What did the head teacher ask Omar?",
+     "What did the gardener tell Emma to remind everyone?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are a reporter for the school radio. Yesterday you interviewed your sports teacher. Now present your news report to me, the listener.",
+    "prompts": [
+     {
+      "q": "Good morning! What's today's top story?",
+      "hint": "Start with 'Breaking news!' and say what happened."
+     },
+     {
+      "q": "What did the sports teacher tell you in the interview?",
+      "hint": "Use 'He/She told me that …' and 'He/She said that …' with tense changes."
+     },
+     {
+      "q": "Did you ask any questions? What did you ask?",
+      "hint": "Report your question: 'I asked him/her if …' or 'what …'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Young Reporters",
+    "points": [
+     "Around the world, many schools have student newspapers, radio shows or video channels.",
+     "Young reporters learn to ask good questions, take notes and check facts.",
+     "In Saudi Arabia, school radio and media clubs give students a chance to share their news."
+    ],
+    "qs": [
+     "What story about your school would you like to report?",
+     "Why is it important for reporters to check facts?"
+    ]
+   },
+   "exit": "Give me a short news report: say two things someone told you and one question you asked them."
+  },
+  "2-0": {
+   "objective": "Today you will make polite requests to your family at home.",
+   "warmup": "What do you often ask your family to help you with?",
+   "expressions": [
+    {
+     "w": "turn down",
+     "def": "to make a sound quieter",
+     "ar": "يخفض (الصوت)",
+     "frame": "Would you mind turning down ___?"
+    },
+    {
+     "w": "give (someone) a hand",
+     "def": "to help someone",
+     "ar": "يساعد",
+     "frame": "Could you give me a hand with ___?"
+    },
+    {
+     "w": "not at all",
+     "def": "a polite answer meaning 'no problem, I don't mind'",
+     "ar": "لا مانع أبداً",
+     "frame": "Would you mind ___? – Not at all!"
+    },
+    {
+     "w": "borrow",
+     "def": "to use something that belongs to someone and give it back",
+     "ar": "يستعير",
+     "frame": "Could I borrow your ___ for a while?"
+    },
+    {
+     "w": "in a minute",
+     "def": "very soon",
+     "ar": "بعد قليل / حالاً",
+     "frame": "I'll ___ in a minute."
+    },
+    {
+     "w": "tidy up",
+     "def": "to make a place clean and neat",
+     "ar": "يرتّب",
+     "frame": "I need to tidy up my ___ before ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal is studying for an exam. His older brother Nasser is watching a match in the same room.",
+    "p1": [
+     {
+      "s": "Faisal",
+      "t": "Nasser, would you mind turning down the TV? I've got a maths exam tomorrow."
+     },
+     {
+      "s": "Nasser",
+      "t": "Oh, sorry! Not at all. Is that better?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Much better, thanks. Could you possibly give me a hand with this question?"
+     },
+     {
+      "s": "Nasser",
+      "t": "Sure, in a minute. The match is nearly over."
+     },
+     {
+      "s": "Faisal",
+      "t": "No problem. I'll try the next one while I wait."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Faisal",
+      "t": "Can I ask one more thing? Do you mind if I borrow your calculator?"
+     },
+     {
+      "s": "Nasser",
+      "t": "Not at all, but please give it back tonight."
+     },
+     {
+      "s": "Faisal",
+      "t": "Of course. And would you mind not telling Mum about my messy room? I'll tidy up later!"
+     },
+     {
+      "s": "Nasser",
+      "t": "Ha! I won't tell her, but you'd better tidy up today."
+     },
+     {
+      "s": "Faisal",
+      "t": "Deal!"
+     }
+    ],
+    "focus": "would you mind turning down the TV?",
+    "qs": [
+     "Why does Faisal ask Nasser to turn down the TV?",
+     "What does Faisal want to borrow?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your older cousin is staying at your house, and you need some help. I am your cousin. Make polite requests.",
+    "prompts": [
+     {
+      "q": "Hi! What's up? You look busy.",
+      "hint": "Ask for help politely with 'Would you mind …ing?' or 'Could you possibly …?'"
+     },
+     {
+      "q": "Sure, I can help. Anything else?",
+      "hint": "Ask to borrow something with 'Do you mind if I borrow …?'"
+     },
+     {
+      "q": "Hmm, I'm a bit busy now. Can it wait?",
+      "hint": "Answer politely: say 'in a minute' is fine, or ask 'Is it OK if …' for another time."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Respect at Home",
+    "points": [
+     "In Saudi families, younger people usually speak very politely to older brothers, sisters and parents.",
+     "Many families share the housework, like tidying up after meals.",
+     "In English, words like 'would', 'could' and 'possibly' make a request sound softer."
+    ],
+    "qs": [
+     "Who do you ask for help most at home? How do you ask?",
+     "Do you think children should help with housework? Why?"
+    ]
+   },
+   "exit": "Make two polite requests to someone in your family, using 'Would you mind …ing?' and 'Could you possibly …?'"
+  },
+  "2-1": {
+   "objective": "Today you will ask your teacher for permission politely.",
+   "warmup": "What do students usually need to ask their teacher for permission to do?",
+   "expressions": [
+    {
+     "w": "leave early",
+     "def": "to go before the usual time",
+     "ar": "يغادر مبكراً",
+     "frame": "Is it OK if I leave early on ___?"
+    },
+    {
+     "w": "extra time",
+     "def": "more time than usual",
+     "ar": "وقت إضافي",
+     "frame": "I need some extra time to finish my ___."
+    },
+    {
+     "w": "feel unwell",
+     "def": "to feel a little bit ill",
+     "ar": "يشعر بتوعّك",
+     "frame": "When I feel unwell, I ___."
+    },
+    {
+     "w": "swap seats",
+     "def": "to change seats with someone",
+     "ar": "يتبادل المقاعد",
+     "frame": "Is it OK if I swap seats with ___?"
+    },
+    {
+     "w": "go ahead",
+     "def": "said to give someone permission",
+     "ar": "تفضّل",
+     "frame": "'Can I ___?' – 'Sure, go ahead!'"
+    },
+    {
+     "w": "I'm afraid not",
+     "def": "a polite way to say no",
+     "ar": "للأسف لا",
+     "frame": "'Can I ___?' – 'I'm afraid not, because ___.'"
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem needs to talk to her English teacher, Ms Sarah, at the end of the lesson.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Excuse me, Ms Sarah. Is it OK if I leave early on Thursday? I have a dentist appointment."
+     },
+     {
+      "s": "Ms Sarah",
+      "t": "Of course. Please bring a note from your parents."
+     },
+     {
+      "s": "Reem",
+      "t": "Thank you. Also, would it be possible to have some extra time for the essay?"
+     },
+     {
+      "s": "Ms Sarah",
+      "t": "I'm afraid not. Everyone has to hand it in on Sunday. But I can help you at break time."
+     },
+     {
+      "s": "Reem",
+      "t": "That would be great, thanks."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "One more thing. Do you mind if I swap seats with Noura? I can't see the board very well."
+     },
+     {
+      "s": "Ms Sarah",
+      "t": "Not at all. Go ahead."
+     },
+     {
+      "s": "Reem",
+      "t": "Thanks. And I'm feeling a bit unwell. Is it OK if I go to the nurse?"
+     },
+     {
+      "s": "Ms Sarah",
+      "t": "Yes, of course. I hope you feel better soon."
+     },
+     {
+      "s": "Reem",
+      "t": "Thank you, Ms Sarah."
+     }
+    ],
+    "focus": "Is it OK if I leave early on Thursday?",
+    "qs": [
+     "Why does Reem need to leave early on Thursday?",
+     "Why does Reem want to swap seats?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are at school and you need permission for three different things. I am your teacher.",
+    "prompts": [
+     {
+      "q": "Yes? How can I help you?",
+      "hint": "Ask permission with 'Is it OK if I …?' (for example, to leave early)."
+     },
+     {
+      "q": "Hmm, why do you need that?",
+      "hint": "Give a reason with 'because' and say thank you."
+     },
+     {
+      "q": "I'm afraid you can't use your phone in class.",
+      "hint": "Accept politely and ask for something else with 'Would it be possible to …?'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Teachers Around the World",
+    "points": [
+     "In Saudi Arabia, students often call their teacher 'Ustadh' or 'Ustadha' to show respect.",
+     "In the UK, students usually call their teachers 'Sir' or 'Miss'.",
+     "In Finland, many students call their teachers by their first names."
+    ],
+    "qs": [
+     "How do you think students should speak to teachers?",
+     "Would you like to call your teachers by their first names? Why or why not?"
+    ]
+   },
+   "exit": "Ask me for permission for two things at school, using 'Is it OK if I …?' and 'Do you mind if I …?'"
+  },
+  "2-2": {
+   "objective": "Today you will make polite requests when you are a guest in someone's home.",
+   "warmup": "When you visit a friend's house, what do you do to be a good guest?",
+   "expressions": [
+    {
+     "w": "make yourself at home",
+     "def": "said to a guest: relax and be comfortable",
+     "ar": "البيت بيتك",
+     "frame": "Come in and make yourself at home! Would you like some ___?"
+    },
+    {
+     "w": "help yourself",
+     "def": "said to a guest: take what you want, especially food",
+     "ar": "تفضّل خذ ما تريد",
+     "frame": "Help yourself to some ___."
+    },
+    {
+     "w": "take off",
+     "def": "to remove clothes or shoes",
+     "ar": "يخلع",
+     "frame": "In our home, we take off our ___ at the door."
+    },
+    {
+     "w": "charge (your) phone",
+     "def": "to put electricity into a phone battery",
+     "ar": "يشحن جواله",
+     "frame": "Do you mind if I charge my phone? It's only ___ percent."
+    },
+    {
+     "w": "stay for dinner",
+     "def": "to remain at someone's house and eat dinner",
+     "ar": "يبقى للعشاء",
+     "frame": "I'd love to stay for dinner, but I have to ___."
+    },
+    {
+     "w": "it's very kind of you",
+     "def": "a polite way to say thank you",
+     "ar": "هذا لطف كبير منك",
+     "frame": "It's very kind of you to ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam is visiting his friend Omar's house for the first time. Omar's mother welcomes him.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Hello, Mrs Al-Qahtani. Thank you for inviting me."
+     },
+     {
+      "s": "Mrs Al-Qahtani",
+      "t": "You're welcome, Sam. Come in and make yourself at home."
+     },
+     {
+      "s": "Sam",
+      "t": "Thank you. Do you mind if I take off my shoes here?"
+     },
+     {
+      "s": "Mrs Al-Qahtani",
+      "t": "That's fine. Please help yourself to some dates and Arabic coffee."
+     },
+     {
+      "s": "Sam",
+      "t": "It's very kind of you. They look delicious."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "Omar, could I possibly charge my phone? The battery's almost dead."
+     },
+     {
+      "s": "Omar",
+      "t": "Of course. There's a charger next to the sofa."
+     },
+     {
+      "s": "Sam",
+      "t": "Thanks. Would you mind telling me the Wi-Fi password? I need to message my dad."
+     },
+     {
+      "s": "Omar",
+      "t": "Sure, it's on the card by the TV. Mum says you can stay for dinner, too."
+     },
+     {
+      "s": "Sam",
+      "t": "Really? I'd love to stay for dinner. I'll ask my dad first."
+     }
+    ],
+    "focus": "Do you mind if I take off my shoes here?",
+    "qs": [
+     "What does Omar's mum offer Sam?",
+     "Why does Sam want the Wi-Fi password?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are spending the afternoon at your friend's house. I am your friend's parent. Be a polite guest.",
+    "prompts": [
+     {
+      "q": "Welcome! Please come in.",
+      "hint": "Thank me, and ask a polite question, for example 'Do you mind if I …?'"
+     },
+     {
+      "q": "Would you like something to drink?",
+      "hint": "Accept politely and use 'It's very kind of you …'"
+     },
+     {
+      "q": "Is there anything else you need?",
+      "hint": "Ask for something with 'Could I possibly …?' (for example, charge your phone)."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Saudi Hospitality",
+    "points": [
+     "In Saudi Arabia, guests are usually welcomed with Arabic coffee and dates.",
+     "Hosts often say 'Hayyakum' or 'Ahlan wa sahlan' to make guests feel at home.",
+     "In Japan and many other countries, guests take off their shoes before they go into a home."
+    ],
+    "qs": [
+     "What does your family offer guests when they visit?",
+     "What makes someone a good guest?"
+    ]
+   },
+   "exit": "Imagine you are a guest. Make two polite requests to your host, using 'Do you mind if I …?' and 'Could I possibly …?'"
+  },
+  "2-3": {
+   "objective": "Today you will make polite requests to people you don't know in public places.",
+   "warmup": "Have you ever needed to ask a stranger for something? What happened?",
+   "expressions": [
+    {
+     "w": "sorry to bother you",
+     "def": "a polite way to start talking to a stranger",
+     "ar": "آسف على الإزعاج",
+     "frame": "Sorry to bother you, but could you ___?"
+    },
+    {
+     "w": "swap seats",
+     "def": "to change seats with someone",
+     "ar": "يتبادل المقاعد",
+     "frame": "Would you mind swapping seats with ___?"
+    },
+    {
+     "w": "window seat",
+     "def": "a seat next to a window on a plane or bus",
+     "ar": "مقعد بجانب النافذة",
+     "frame": "I always ask for a window seat because ___."
+    },
+    {
+     "w": "no problem at all",
+     "def": "said when you are happy to help",
+     "ar": "لا مشكلة أبداً",
+     "frame": "'Could you ___?' – 'No problem at all!'"
+    },
+    {
+     "w": "take a photo of",
+     "def": "to use a camera to make a picture of someone or something",
+     "ar": "يلتقط صورة لـ",
+     "frame": "Would you mind taking a photo of ___?"
+    },
+    {
+     "w": "move over",
+     "def": "to change position to make space for someone",
+     "ar": "يفسح المكان",
+     "frame": "Would you mind moving over a bit so ___?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura and her family are on a trip to Abha. First they are on the plane, and then at a mountain viewpoint.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Sorry to bother you, but would you mind swapping seats with my little brother? He wants to sit next to me."
+     },
+     {
+      "s": "Passenger",
+      "t": "Not at all. Where's his seat?"
+     },
+     {
+      "s": "Noura",
+      "t": "It's the window seat in row twelve, just behind us."
+     },
+     {
+      "s": "Passenger",
+      "t": "Oh, a window seat! That's no problem at all."
+     },
+     {
+      "s": "Noura",
+      "t": "Thank you so much. That's very kind of you."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "Excuse me, would you mind taking a photo of my family? We'd like the mountains behind us."
+     },
+     {
+      "s": "Man",
+      "t": "No problem at all. Could you all move over a little to the left? I can't see everyone."
+     },
+     {
+      "s": "Noura",
+      "t": "Is this better?"
+     },
+     {
+      "s": "Man",
+      "t": "Perfect. Smile! … Here you are. I took two, just in case."
+     },
+     {
+      "s": "Noura",
+      "t": "Thank you! They're great."
+     }
+    ],
+    "focus": "Sorry to bother you, but would you mind swapping seats with my little brother?",
+    "qs": [
+     "Why is the passenger happy to swap seats?",
+     "What does the man ask the family to do before he takes the photo?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are at a busy café in Jeddah with your family, and you need help from people around you. I will play different people.",
+    "prompts": [
+     {
+      "q": "(A stranger) Oh, hello. Is this your chair? Sorry, my bag is on it.",
+      "hint": "Ask politely with 'Would you mind moving your bag?'"
+     },
+     {
+      "q": "(The waiter) Good evening. How can I help you?",
+      "hint": "Ask for something with 'Would it be possible to …?' (for example, a table by the window)."
+     },
+     {
+      "q": "(A person with a camera) What a beautiful view of the sea!",
+      "hint": "Ask them to take a photo with 'Sorry to bother you, but would you mind …ing?'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Abha in the Mountains",
+    "points": [
+     "Abha is a city in the Asir mountains in south-west Saudi Arabia.",
+     "In summer, it is much cooler than Riyadh, so many families go there on holiday.",
+     "Visitors love the colourful traditional houses and the cable cars."
+    ],
+    "qs": [
+     "Would you prefer a holiday in the mountains or by the sea? Why?",
+     "What polite requests might a tourist need to make on holiday?"
+    ]
+   },
+   "exit": "Imagine you are on a plane. Make two polite requests: one to a passenger and one to the flight attendant."
+  },
+  "2-4": {
+   "objective": "Today you will ask for permission about screens, games and photos.",
+   "warmup": "How much time do you spend online every day? What do you do?",
+   "expressions": [
+    {
+     "w": "screen time",
+     "def": "the time you spend looking at phones, tablets or TVs",
+     "ar": "وقت الشاشة",
+     "frame": "My screen time is about ___ hours a day."
+    },
+    {
+     "w": "log in",
+     "def": "to enter a website or app with your name and password",
+     "ar": "يسجّل الدخول",
+     "frame": "I log in to ___ to ___."
+    },
+    {
+     "w": "just this once",
+     "def": "only one time, not usually",
+     "ar": "هذه المرة فقط",
+     "frame": "Could I ___, just this once?"
+    },
+    {
+     "w": "post",
+     "def": "to put a photo or message online for others to see",
+     "ar": "ينشر",
+     "frame": "Is it OK if I post a photo of ___?"
+    },
+    {
+     "w": "ask permission",
+     "def": "to ask if you are allowed to do something",
+     "ar": "يستأذن",
+     "frame": "I always ask permission before I ___."
+    },
+    {
+     "w": "join in",
+     "def": "to take part in an activity with other people",
+     "ar": "يشارك",
+     "frame": "Can I join in when you ___?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar wants to play an online game with his cousins. First he asks his father, then he talks to his sister Reem.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "Dad, is it OK if I log in to my game for an hour? My cousins are playing right now."
+     },
+     {
+      "s": "Dad",
+      "t": "You've already had a lot of screen time today, Omar."
+     },
+     {
+      "s": "Omar",
+      "t": "I know. Would you mind if I played for thirty minutes, just this once? I've finished my homework."
+     },
+     {
+      "s": "Dad",
+      "t": "All right, thirty minutes. Then come and help me in the garden."
+     },
+     {
+      "s": "Omar",
+      "t": "Thanks, Dad! I promise."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Omar",
+      "t": "Reem, I took a funny photo of you at the picnic. Do you mind if I post it in the family group?"
+     },
+     {
+      "s": "Reem",
+      "t": "Yes, I do mind! Actually, I'd rather you didn't. You should always ask permission first."
+     },
+     {
+      "s": "Omar",
+      "t": "Sorry! I won't post it. Would you like to join in our game instead?"
+     },
+     {
+      "s": "Reem",
+      "t": "Maybe later. And would you mind not using my headphones without asking?"
+     },
+     {
+      "s": "Omar",
+      "t": "Oops. OK, sorry!"
+     }
+    ],
+    "focus": "is it OK if I log in to my game for an hour?",
+    "qs": [
+     "Why doesn't Dad want Omar to play for an hour?",
+     "Why is Reem unhappy about the photo?"
+    ]
+   },
+   "speakout": {
+    "scene": "You want to do some things online this weekend, and you need permission. I am your parent.",
+    "prompts": [
+     {
+      "q": "What are you doing on the tablet?",
+      "hint": "Ask permission with 'Is it OK if I …?'"
+     },
+     {
+      "q": "Hmm. You've had a lot of screen time this week.",
+      "hint": "Ask again more politely: 'Would you mind if I …, just this once?' and give a reason."
+     },
+     {
+      "q": "OK. But what about the photos from our trip?",
+      "hint": "Ask before posting: 'Do you mind if I post …?'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Staying Safe Online",
+    "points": [
+     "Many families in Saudi Arabia agree on screen time rules for children.",
+     "Experts say we should always ask permission before we post a photo of someone else.",
+     "Around the world, schools teach students never to share their passwords."
+    ],
+    "qs": [
+     "What screen time rules do you think are fair?",
+     "Why should we ask permission before posting a photo of a friend?"
+    ]
+   },
+   "exit": "Ask me for permission for two things you want to do online, using 'Is it OK if I …?' and 'Would you mind if I …?'"
+  },
+  "2-5": {
+   "objective": "Today you will plan a family Eid gathering by making polite requests and asking permission.",
+   "warmup": "What does your family usually do at Eid?",
+   "expressions": [
+    {
+     "w": "be in charge of",
+     "def": "to be responsible for something",
+     "ar": "مسؤول عن",
+     "frame": "At our party, I'll be in charge of ___."
+    },
+    {
+     "w": "I'd be happy to",
+     "def": "a polite way to say yes to a request",
+     "ar": "يسعدني ذلك",
+     "frame": "'Could you ___?' – 'I'd be happy to!'"
+    },
+    {
+     "w": "run out of",
+     "def": "to have no more of something",
+     "ar": "ينفد",
+     "frame": "We've run out of ___, so we need to buy more."
+    },
+    {
+     "w": "set up",
+     "def": "to prepare and arrange things for an event",
+     "ar": "يجهّز / يرتّب",
+     "frame": "We need to set up the ___ before the guests arrive."
+    },
+    {
+     "w": "decorations",
+     "def": "pretty things you put up for a special day",
+     "ar": "زينة",
+     "frame": "We put up ___ decorations for Eid."
+    },
+    {
+     "w": "lend",
+     "def": "to give something to someone for a short time",
+     "ar": "يُعير",
+     "frame": "Could you lend me your ___ for the party?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura and her brother Faisal are planning a surprise Eid gathering for their grandparents with help from Aunt Hessa.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Aunt Hessa, would you mind helping us with the Eid gathering this year?"
+     },
+     {
+      "s": "Aunt Hessa",
+      "t": "I'd be happy to! What do you need?"
+     },
+     {
+      "s": "Noura",
+      "t": "Could you possibly be in charge of the food? Your kabsa is the best in the family."
+     },
+     {
+      "s": "Aunt Hessa",
+      "t": "Of course. But I've run out of rice, so someone will have to buy some."
+     },
+     {
+      "s": "Noura",
+      "t": "No problem. Faisal can go to the shop."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Faisal",
+      "t": "Aunt Hessa, is it OK if we set up the decorations in your garden? It's bigger than ours."
+     },
+     {
+      "s": "Aunt Hessa",
+      "t": "Not at all. But would you mind cleaning up afterwards?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Of course. And could you lend us your big carpet? Grandma and Grandpa can sit on it."
+     },
+     {
+      "s": "Aunt Hessa",
+      "t": "Sure. Do you need a hand with the balloons, too?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Yes, please! That would be amazing."
+     }
+    ],
+    "focus": "would you mind helping us with the Eid gathering this year?",
+    "qs": [
+     "What will Aunt Hessa be in charge of?",
+     "What does Aunt Hessa ask Faisal to do after the gathering?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school is having an Eid celebration, and you are organising it. I am the head teacher. Ask for my help and permission.",
+    "prompts": [
+     {
+      "q": "So, how can I help with the celebration?",
+      "hint": "Make a polite request: 'Would you mind …ing?' or 'Could you possibly …?'"
+     },
+     {
+      "q": "What else do you need?",
+      "hint": "Ask for permission: 'Is it OK if we …?' (for example, use the school hall)."
+     },
+     {
+      "q": "I'm afraid the hall is busy on Thursday.",
+      "hint": "Answer politely and ask for another option with 'Would it be possible to …?'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Eid Around the World",
+    "points": [
+     "In Saudi Arabia, families visit relatives, wear new clothes and give children 'Eidiya' money.",
+     "Many Saudi cities have fireworks and festivals during Eid.",
+     "In Indonesia, millions of people travel back to their home towns for Eid."
+    ],
+    "qs": [
+     "What is your favourite part of Eid? Why?",
+     "How could you make Eid special for someone who lives alone?"
+    ]
+   },
+   "exit": "Make three polite requests to plan a party, each with a different form, without looking at the slides."
+  },
+  "3-0": {
+   "objective": "Today you will compare two weekend activities and decide what to do.",
+   "warmup": "What did you do last weekend? Was it a good choice?",
+   "expressions": [
+    {
+     "w": "make up your mind",
+     "def": "to decide",
+     "ar": "يحسم أمره / يقرّر",
+     "frame": "I can't make up my mind between ___ and ___."
+    },
+    {
+     "w": "on the other hand",
+     "def": "used to give the opposite idea",
+     "ar": "من ناحية أخرى",
+     "frame": "___ is fun. On the other hand, ___."
+    },
+    {
+     "w": "crowded",
+     "def": "full of people",
+     "ar": "مزدحم",
+     "frame": "___ is always crowded at the weekend."
+    },
+    {
+     "w": "it's up to you",
+     "def": "said when someone else can decide",
+     "ar": "القرار لك",
+     "frame": "We can go to ___ or ___. It's up to you."
+    },
+    {
+     "w": "worth it",
+     "def": "good enough to spend time or money on",
+     "ar": "يستحق",
+     "frame": "___ is expensive, but it's worth it."
+    },
+    {
+     "w": "go for",
+     "def": "to choose something",
+     "ar": "يختار",
+     "frame": "Let's go for ___. It sounds fun!"
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam and Faisal are deciding what to do on Saturday: go karting or visit the science museum.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "I can't make up my mind. Should we go karting or visit the science museum on Saturday?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Go-karting is more exciting, but it isn't as cheap as the museum."
+     },
+     {
+      "s": "Sam",
+      "t": "That's true. On the other hand, the museum is always crowded at the weekend."
+     },
+     {
+      "s": "Faisal",
+      "t": "Well, the karting track is crowded too. It's up to you, really."
+     },
+     {
+      "s": "Sam",
+      "t": "Hmm, let me think about it."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "OK, I've decided. I think it would be better to go karting. We've been to the museum before."
+     },
+     {
+      "s": "Faisal",
+      "t": "Good point. It's expensive, but it's worth it."
+     },
+     {
+      "s": "Sam",
+      "t": "Great. Let's go for the evening session. It won't be as hot as the afternoon."
+     },
+     {
+      "s": "Faisal",
+      "t": "Perfect. I'll ask my dad to book it."
+     },
+     {
+      "s": "Sam",
+      "t": "Brilliant! I can't wait."
+     }
+    ],
+    "focus": "I think it would be better to go karting.",
+    "qs": [
+     "Why does Sam choose go-karting?",
+     "Why do they choose the evening session?"
+    ]
+   },
+   "speakout": {
+    "scene": "It's the weekend, and you and your friend have two choices: a bowling alley or a picnic in the desert. I am your friend. Compare them and decide together.",
+    "prompts": [
+     {
+      "q": "So, bowling or a desert picnic? What do you think?",
+      "hint": "Compare them with 'Bowling isn't as … as …' or a comparative."
+     },
+     {
+      "q": "But the desert is so far away!",
+      "hint": "Give the other side with 'On the other hand, …'"
+     },
+     {
+      "q": "OK, it's up to you. What shall we do?",
+      "hint": "Decide with 'Let's go for …' or 'It would be better to …' and give a reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Weekends in Saudi Arabia",
+    "points": [
+     "In Saudi Arabia, the weekend is Friday and Saturday.",
+     "In winter, many families enjoy a 'kashta', camping in the desert with a fire and tea.",
+     "In big cities, new places like theme parks and karting tracks are very popular."
+    ],
+    "qs": [
+     "Do you prefer spending the weekend outdoors or indoors? Why?",
+     "What is the best weekend activity in your city?"
+    ]
+   },
+   "exit": "Compare two things you could do this weekend and say which one you'll go for."
+  },
+  "3-1": {
+   "objective": "Today you will compare gift ideas and choose the best one.",
+   "warmup": "What's the best gift you've ever given someone?",
+   "expressions": [
+    {
+     "w": "come up with",
+     "def": "to think of an idea or plan",
+     "ar": "يبتكر / تخطر له فكرة",
+     "frame": "I came up with a great idea for ___."
+    },
+    {
+     "w": "can't afford",
+     "def": "to not have enough money to buy something",
+     "ar": "لا يستطيع تحمّل ثمنه",
+     "frame": "I'd love to buy ___, but I can't afford it."
+    },
+    {
+     "w": "split the cost",
+     "def": "to share the price between two or more people",
+     "ar": "يتقاسم التكلفة",
+     "frame": "We could split the cost of ___."
+    },
+    {
+     "w": "thoughtful",
+     "def": "showing that you care about other people's feelings",
+     "ar": "يدلّ على الاهتمام",
+     "frame": "The most thoughtful gift I've received was ___."
+    },
+    {
+     "w": "good value for money",
+     "def": "worth the price you pay",
+     "ar": "يستحق سعره",
+     "frame": "___ is good value for money."
+    },
+    {
+     "w": "in the end",
+     "def": "finally, after thinking about it",
+     "ar": "في النهاية",
+     "frame": "In the end, we decided to ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem and her brother Omar want to buy a present for their mother's birthday.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Mum's birthday is next week. Have you come up with any ideas for a present?"
+     },
+     {
+      "s": "Omar",
+      "t": "What about a new handbag? She'd love one."
+     },
+     {
+      "s": "Reem",
+      "t": "She would, but a good handbag is really expensive. I can't afford one."
+     },
+     {
+      "s": "Omar",
+      "t": "We could split the cost. Or perfume? It isn't as expensive, but it's not very personal."
+     },
+     {
+      "s": "Reem",
+      "t": "True. Let's keep thinking."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "What about a photo book with pictures of the family? It's much cheaper than a handbag, and it's more thoughtful."
+     },
+     {
+      "s": "Omar",
+      "t": "I love that idea! It's good value for money, too."
+     },
+     {
+      "s": "Reem",
+      "t": "So it would be better to make a photo book than to buy a bag?"
+     },
+     {
+      "s": "Omar",
+      "t": "Definitely. Let's go for the photo book. Mum will cry happy tears!"
+     },
+     {
+      "s": "Reem",
+      "t": "In the end, the best gifts come from the heart."
+     }
+    ],
+    "focus": "Let's go for the photo book.",
+    "qs": [
+     "Why don't they buy a handbag?",
+     "Why is the photo book a better gift?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your best friend's birthday is next week. You and another friend want to buy a gift together. I am your other friend. Compare ideas and decide.",
+    "prompts": [
+     {
+      "q": "I think we should buy a football shirt. What do you think?",
+      "hint": "Compare it with another idea, using 'isn't as … as' or 'much more … than'."
+     },
+     {
+      "q": "But we only have one hundred riyals.",
+      "hint": "Talk about money: 'We can't afford …' or 'We could split the cost.'"
+     },
+     {
+      "q": "So, what's our final decision?",
+      "hint": "Decide with 'Let's go for …' and say why it's good value for money or thoughtful."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Gift-Giving Traditions",
+    "points": [
+     "In Saudi Arabia, people often give perfume, oud or sweets as gifts.",
+     "In Japan, the way a gift is wrapped is almost as important as the gift itself.",
+     "In some countries, people open gifts later, not in front of the person who gave them."
+    ],
+    "qs": [
+     "Do you prefer giving or receiving gifts? Why?",
+     "Is an expensive gift always better than a cheap one?"
+    ]
+   },
+   "exit": "Compare two gift ideas for someone in your family and say which one you'd go for and why."
+  },
+  "3-2": {
+   "objective": "Today you will compare school clubs and choose the one that suits you.",
+   "warmup": "Which after-school clubs or activities have you tried?",
+   "expressions": [
+    {
+     "w": "be into",
+     "def": "to like something a lot",
+     "ar": "يحب / مهتم جداً بـ",
+     "frame": "I'm really into ___ at the moment."
+    },
+    {
+     "w": "weigh up",
+     "def": "to think carefully about the good and bad points",
+     "ar": "يوازن بين",
+     "frame": "I need to weigh up ___ and ___ before I decide."
+    },
+    {
+     "w": "pros and cons",
+     "def": "the good and bad points of something",
+     "ar": "الإيجابيات والسلبيات",
+     "frame": "One of the pros of ___ is ___."
+    },
+    {
+     "w": "suit",
+     "def": "to be right for someone",
+     "ar": "يناسب",
+     "frame": "The ___ club would suit me because ___."
+    },
+    {
+     "w": "take up",
+     "def": "to start a new hobby or activity",
+     "ar": "يبدأ (هواية)",
+     "frame": "This year I'd like to take up ___."
+    },
+    {
+     "w": "stick with",
+     "def": "to continue doing something",
+     "ar": "يستمر في",
+     "frame": "I'm going to stick with ___ because ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Emma's school has three new clubs: robotics, drama and photography. Emma talks to her friend Noura.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Have you made up your mind about the clubs yet?"
+     },
+     {
+      "s": "Emma",
+      "t": "Not yet. I'm weighing up the pros and cons. I'm really into robotics, but it's on Thursdays."
+     },
+     {
+      "s": "Noura",
+      "t": "What's wrong with Thursdays?"
+     },
+     {
+      "s": "Emma",
+      "t": "I have swimming then. Drama is on Mondays, and it's just as fun as robotics."
+     },
+     {
+      "s": "Noura",
+      "t": "I'm sure you'll find the right one."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "What about photography? You love taking pictures."
+     },
+     {
+      "s": "Emma",
+      "t": "True, but I think drama would suit me better. I want to be more confident when I speak."
+     },
+     {
+      "s": "Noura",
+      "t": "And you're already good at photography. Why not take up something new?"
+     },
+     {
+      "s": "Emma",
+      "t": "Exactly! So I'll go for drama and stick with swimming on Thursdays."
+     },
+     {
+      "s": "Noura",
+      "t": "Great choice. Maybe I'll join drama too!"
+     }
+    ],
+    "focus": "I think drama would suit me better.",
+    "qs": [
+     "Why can't Emma join the robotics club?",
+     "Why does Emma choose drama?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school offers three new clubs: chess, cooking and coding. You can join only one. I am your teacher. Tell me about your choice.",
+    "prompts": [
+     {
+      "q": "Which clubs are you interested in?",
+      "hint": "Say what you're into and compare two clubs with 'just as … as' or 'not as … as'."
+     },
+     {
+      "q": "What are the pros and cons of each one?",
+      "hint": "Give one pro and one con, using 'On the other hand, …'"
+     },
+     {
+      "q": "So, have you made up your mind?",
+      "hint": "Decide with 'I'll go for …' or '… would suit me better' and give a reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "After-School Activities",
+    "points": [
+     "In Saudi Arabia, more and more schools offer clubs like robotics, art and sports.",
+     "In the USA, many students join clubs or teams after school, from chess to music.",
+     "Experts say clubs help students make friends and learn skills they can't learn in class."
+    ],
+    "qs": [
+     "Which new club would you like your school to start?",
+     "Do you think after-school clubs are as important as lessons? Why?"
+    ]
+   },
+   "exit": "Tell me about two clubs or activities, compare them, and say which one would suit you better."
+  },
+  "3-3": {
+   "objective": "Today you will compare holiday places and agree on where to go.",
+   "warmup": "Where would you like to go on your next family holiday?",
+   "expressions": [
+    {
+     "w": "get away",
+     "def": "to go on holiday to have a break from normal life",
+     "ar": "يأخذ إجازة / يبتعد قليلاً",
+     "frame": "I'd love to get away to ___ for a few days."
+    },
+    {
+     "w": "see the sights",
+     "def": "to visit the famous places as a tourist",
+     "ar": "يزور المعالم",
+     "frame": "In ___, I'd like to see the sights, like ___."
+    },
+    {
+     "w": "in the middle of nowhere",
+     "def": "very far from towns and people",
+     "ar": "في مكان ناءٍ",
+     "frame": "I'd like to stay in a camp in the middle of nowhere because ___."
+    },
+    {
+     "w": "it depends on",
+     "def": "the answer changes because of something",
+     "ar": "يعتمد على",
+     "frame": "Where we go depends on ___."
+    },
+    {
+     "w": "budget",
+     "def": "the amount of money you can spend",
+     "ar": "الميزانية",
+     "frame": "Our budget for the trip is ___."
+    },
+    {
+     "w": "have a point",
+     "def": "to say something that is true or sensible",
+     "ar": "معه حق",
+     "frame": "You have a point. ___ is better because ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal's family are choosing between Jeddah and AlUla for the mid-year holiday.",
+    "p1": [
+     {
+      "s": "Dad",
+      "t": "We need to get away for a few days. Should we go to Jeddah or AlUla?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Jeddah! We can swim in the Red Sea and see the sights in Al-Balad."
+     },
+     {
+      "s": "Dad",
+      "t": "That's true. But AlUla isn't nearly as busy as Jeddah, and the rocks are amazing."
+     },
+     {
+      "s": "Faisal",
+      "t": "Yes, but AlUla is in the middle of nowhere. There's not much to do in the evening."
+     },
+     {
+      "s": "Dad",
+      "t": "Ha! There's more than you think."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Mum",
+      "t": "It depends on our budget, too. The hotels in AlUla are expensive, but maybe it's worth it."
+     },
+     {
+      "s": "Faisal",
+      "t": "You have a point. So it would be better to go to Jeddah this time, wouldn't it?"
+     },
+     {
+      "s": "Mum",
+      "t": "I think so. And we can visit AlUla in spring, when it isn't as cold at night."
+     },
+     {
+      "s": "Faisal",
+      "t": "Perfect. Let's go for Jeddah! I'll pack my swimming goggles."
+     },
+     {
+      "s": "Mum",
+      "t": "Great. Then it's decided."
+     }
+    ],
+    "focus": "it would be better to go to Jeddah this time, wouldn't it?",
+    "qs": [
+     "Why does Dad like AlUla?",
+     "Why does the family decide to go to Jeddah?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your family has a long weekend. You can go to Abha, the Red Sea coast or a desert camp. I am your parent. Help us make up our minds.",
+    "prompts": [
+     {
+      "q": "So, where should we go this time?",
+      "hint": "Compare two places with 'isn't as … as' or 'much more … than'."
+     },
+     {
+      "q": "But our budget isn't very big.",
+      "hint": "Answer with 'It depends on …' or 'You have a point, but …'"
+     },
+     {
+      "q": "OK, what's your final choice?",
+      "hint": "Decide with 'It would be better to go to …' or 'Let's go for …' and give a reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Holidays by the Red Sea",
+    "points": [
+     "The Red Sea coast has some of the most beautiful coral reefs in the world.",
+     "Saudi Arabia is building new eco-friendly resorts on islands in the Red Sea.",
+     "Al-Balad, the old part of Jeddah, is a UNESCO World Heritage Site with old coral houses."
+    ],
+    "qs": [
+     "Would you rather visit a beach or a historical place? Why?",
+     "Why do you think eco-friendly hotels are important?"
+    ]
+   },
+   "exit": "Compare two holiday places in Saudi Arabia and tell me which one you'd go for and why."
+  },
+  "3-4": {
+   "objective": "Today you will compare food options and decide what to order.",
+   "warmup": "What's your favourite restaurant? What do you usually order?",
+   "expressions": [
+    {
+     "w": "fancy",
+     "def": "to want to have or do something",
+     "ar": "يرغب في / يشتهي",
+     "frame": "I really fancy some ___ tonight."
+    },
+    {
+     "w": "can't decide between",
+     "def": "to find it hard to choose one of two things",
+     "ar": "محتار بين",
+     "frame": "I can't decide between ___ and ___."
+    },
+    {
+     "w": "either is fine",
+     "def": "both choices are OK for me",
+     "ar": "أيّهما مناسب",
+     "frame": "Pizza or ___? Either is fine with me."
+    },
+    {
+     "w": "filling",
+     "def": "making your stomach feel full",
+     "ar": "مُشبِع",
+     "frame": "___ is very filling, so I can't eat much of it."
+    },
+    {
+     "w": "go easy on",
+     "def": "to not eat or use too much of something",
+     "ar": "يُقلّل من",
+     "frame": "I'm trying to go easy on ___."
+    },
+    {
+     "w": "between us",
+     "def": "shared by two or more people",
+     "ar": "نتقاسمه بيننا",
+     "frame": "Let's get one ___ between us."
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar and his sister Reem are at a food court with their uncle, choosing dinner.",
+    "p1": [
+     {
+      "s": "Uncle",
+      "t": "So, what do you fancy tonight? Burgers, shawarma or Japanese?"
+     },
+     {
+      "s": "Omar",
+      "t": "I can't decide between burgers and shawarma. Either is fine with me."
+     },
+     {
+      "s": "Uncle",
+      "t": "Well, a burger meal is very filling, and it isn't as healthy as the shawarma plate with salad."
+     },
+     {
+      "s": "Omar",
+      "t": "That's true. And I had burgers yesterday, so I should go easy on fast food."
+     },
+     {
+      "s": "Uncle",
+      "t": "Good thinking, Omar."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Uncle",
+      "t": "What about you, Reem? It's up to you."
+     },
+     {
+      "s": "Reem",
+      "t": "Hmm, sushi looks good, but it's more expensive than the other places."
+     },
+     {
+      "s": "Uncle",
+      "t": "Don't worry about the price today. You choose."
+     },
+     {
+      "s": "Reem",
+      "t": "Then it would be better to get one big plate between us. It's cheaper than two small ones."
+     },
+     {
+      "s": "Uncle",
+      "t": "Great idea. Let's go for the big sushi plate, and the shawarma for Omar!"
+     }
+    ],
+    "focus": "it would be better to get one big plate between us.",
+    "qs": [
+     "Why does Omar decide not to have a burger?",
+     "Why does Reem want one big sushi plate?"
+    ]
+   },
+   "speakout": {
+    "scene": "You and your friend are at a restaurant with a small budget. The menu has pizza, grills and salads. I am your friend. Decide what to order together.",
+    "prompts": [
+     {
+      "q": "Everything looks good! What do you fancy?",
+      "hint": "Say what you can't decide between, and compare them with 'isn't as … as'."
+     },
+     {
+      "q": "Pizza is very filling, though.",
+      "hint": "Agree or disagree, and suggest something with 'It would be better to …'"
+     },
+     {
+      "q": "OK, so what shall we order?",
+      "hint": "Make the final decision with 'Let's go for …' or 'Let's get one … between us.'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Eating Out in Saudi Arabia",
+    "points": [
+     "Eating out with family and friends is a popular activity in Saudi Arabia, especially at night.",
+     "Food trucks selling coffee, burgers and desserts are now common in many Saudi cities.",
+     "Saudi restaurants show calories on their menus to help people choose healthier food."
+    ],
+    "qs": [
+     "Do you look at the calories on menus? Why or why not?",
+     "Is home-made food better than restaurant food? Why?"
+    ]
+   },
+   "exit": "Tell me about two dishes you can't decide between, compare them, and make your choice."
+  },
+  "3-5": {
+   "objective": "Today you will discuss options with a group and reach a final decision.",
+   "warmup": "Have you ever had to make a decision with a group? How did you decide?",
+   "expressions": [
+    {
+     "w": "reach a decision",
+     "def": "to finally decide after discussing",
+     "ar": "يتوصّل إلى قرار",
+     "frame": "After a long talk, we reached a decision to ___."
+    },
+    {
+     "w": "the best option",
+     "def": "the best choice",
+     "ar": "الخيار الأفضل",
+     "frame": "I think the best option is ___ because ___."
+    },
+    {
+     "w": "raise money",
+     "def": "to collect money for a good reason",
+     "ar": "يجمع المال / التبرعات",
+     "frame": "We could raise money for ___ by ___."
+    },
+    {
+     "w": "make a difference",
+     "def": "to have a good effect on people or things",
+     "ar": "يُحدث فرقاً",
+     "frame": "I want to make a difference by ___."
+    },
+    {
+     "w": "take a vote",
+     "def": "to decide by counting what most people want",
+     "ar": "يُجري تصويتاً",
+     "frame": "Let's take a vote on ___."
+    },
+    {
+     "w": "go along with",
+     "def": "to agree with an idea or decision",
+     "ar": "يوافق على / يمشي مع",
+     "frame": "I'll go along with ___ because ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam, Noura and Khalid must choose a class project: a bake sale for charity, a school garden or a beach clean-up.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "OK, we need to reach a decision today. Bake sale, garden or beach clean-up?"
+     },
+     {
+      "s": "Noura",
+      "t": "I think a bake sale is the best option. We could raise money for the children's hospital."
+     },
+     {
+      "s": "Khalid",
+      "t": "Good idea, but a garden would last much longer. It isn't as quick as a bake sale, though."
+     },
+     {
+      "s": "Sam",
+      "t": "Let's weigh up the pros and cons. A beach clean-up would make a difference, but the beach is far away."
+     },
+     {
+      "s": "Noura",
+      "t": "That's true. Transport would be a problem."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Khalid",
+      "t": "So it's between the bake sale and the garden. Why don't we take a vote?"
+     },
+     {
+      "s": "Sam",
+      "t": "Good idea. I vote for the garden. It would be better to make something the whole school can enjoy."
+     },
+     {
+      "s": "Noura",
+      "t": "Hmm, I still prefer the bake sale, but I'll go along with the group."
+     },
+     {
+      "s": "Khalid",
+      "t": "Then let's go for the garden! Maybe we can do a bake sale next term to buy the plants."
+     },
+     {
+      "s": "Sam",
+      "t": "Perfect. That's a decision everyone can be happy with."
+     }
+    ],
+    "focus": "let's go for the garden!",
+    "qs": [
+     "Why doesn't the group choose the beach clean-up?",
+     "How do they finally reach a decision?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your class has 2,000 riyals to improve the school. The options are new sports equipment, a reading corner or a water fountain. Discuss them with me and reach a decision.",
+    "prompts": [
+     {
+      "q": "So, which option do you think is best?",
+      "hint": "Choose one and compare it with another, using 'not as … as' or 'much more … than'."
+     },
+     {
+      "q": "But a reading corner would be useful for everyone.",
+      "hint": "Weigh up the pros and cons: give one good and one bad point, using 'On the other hand'."
+     },
+     {
+      "q": "We need to decide now. What's your final answer?",
+      "hint": "Reach a decision with 'Let's go for …' or 'It would be better to …', or say you'll go along with my idea."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Young People Making a Difference",
+    "points": [
+     "In Saudi Arabia, many young people volunteer at big events, for example during Ramadan or Riyadh Season.",
+     "Saudi Vision 2030 aims to have one million volunteers every year.",
+     "Around the world, students organise beach clean-ups, bake sales and tree-planting days."
+    ],
+    "qs": [
+     "What problem in your neighbourhood would you like to solve?",
+     "Is it better to give money or to give your time? Why?"
+    ]
+   },
+   "exit": "Tell me about two project ideas, compare them, and say what decision you would reach and why."
+  }
+ },
+ "kits": {
+  "0-0": {
+   "words": [
+    {
+     "w": "hand in",
+     "ar": "يسلّم (الواجب)",
+     "ex": "Please hand in your essays on Sunday."
+    },
+    {
+     "w": "due date",
+     "ar": "موعد التسليم",
+     "ex": "The due date is next Thursday, isn't it?"
+    },
+    {
+     "w": "work in pairs",
+     "ar": "يعمل في ثنائيات",
+     "ex": "Today we're going to work in pairs."
+    },
+    {
+     "w": "get it straight",
+     "ar": "أفهم الأمر بوضوح",
+     "ex": "Let me get it straight: the test is on Monday?"
+    },
+    {
+     "w": "clarify",
+     "ar": "يوضّح",
+     "ex": "Could you clarify the last question, please?"
+    },
+    {
+     "w": "word limit",
+     "ar": "الحد الأقصى للكلمات",
+     "ex": "The word limit for the story is 150 words."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Ms Huda",
+     "t": "For this project, you'll work in pairs and make a poster about saving water."
+    },
+    {
+     "s": "Reem",
+     "t": "Sorry, Ms Huda, can I just get it straight? We choose our own partner, don't we?"
+    },
+    {
+     "s": "Ms Huda",
+     "t": "Yes, you do. Each poster also needs a short report with a word limit of two hundred words."
+    },
+    {
+     "s": "Reem",
+     "t": "Do you mean a written report, not a spoken one?"
+    },
+    {
+     "s": "Ms Huda",
+     "t": "Yes, a written one, please."
+    },
+    {
+     "s": "Ms Huda",
+     "t": "The due date is the fifteenth of March."
+    },
+    {
+     "s": "Reem",
+     "t": "So you're saying we hand in the poster and the report together?"
+    },
+    {
+     "s": "Ms Huda",
+     "t": "Exactly. Bring both to class on that day."
+    }
+   ],
+   "grammar": {
+    "title": "Question tags with be and do",
+    "ar": "ذيل السؤال: نضيف سؤالاً قصيراً في آخر الجملة للتأكد من المعلومة. إذا كانت الجملة مثبتة يكون الذيل منفياً، وإذا كانت منفية يكون مثبتاً.",
+    "examples": [
+     "The due date is Thursday, isn't it?",
+     "We choose our own partners, don't we?",
+     "It isn't a group project, is it?"
+    ]
+   }
+  },
+  "0-1": {
+   "words": [
+    {
+     "w": "meet up",
+     "ar": "نلتقي",
+     "ex": "We usually meet up at the park on Fridays."
+    },
+    {
+     "w": "pick (someone) up",
+     "ar": "يُقلّ / يمرّ لأخذ أحد",
+     "ex": "My mum will pick me up at five."
+    },
+    {
+     "w": "on time",
+     "ar": "في الموعد",
+     "ex": "Please be on time for the game."
+    },
+    {
+     "w": "confirm",
+     "ar": "يؤكّد",
+     "ex": "Can you confirm the time tonight?"
+    },
+    {
+     "w": "change of plan",
+     "ar": "تغيير في الخطة",
+     "ex": "There's a change of plan. We're meeting at six."
+    },
+    {
+     "w": "count me in",
+     "ar": "احسبني معكم",
+     "ex": "A picnic on Friday? Count me in!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Omar",
+     "t": "Are you free on Friday? A few of us want to meet up at the trampoline park."
+    },
+    {
+     "s": "Sam",
+     "t": "Count me in! It's the new one near the mall, isn't it?"
+    },
+    {
+     "s": "Omar",
+     "t": "That's right. We're meeting there at four o'clock."
+    },
+    {
+     "s": "Sam",
+     "t": "Let me get it straight: four in the afternoon, not four in the morning?"
+    },
+    {
+     "s": "Omar",
+     "t": "Oh, there's a change of plan. Khalid can't come until five."
+    },
+    {
+     "s": "Sam",
+     "t": "So you're saying we should meet at five instead?"
+    },
+    {
+     "s": "Omar",
+     "t": "Yes. My dad can pick you up at half past four."
+    },
+    {
+     "s": "Sam",
+     "t": "Great. Could you send me a message later to confirm the time?"
+    }
+   ],
+   "grammar": {
+    "title": "Question tags with the present continuous and can",
+    "ar": "إذا كان في الجملة فعل مساعد مثل is / are / can نكرّره في الذيل: We're meeting at four, aren't we?",
+    "examples": [
+     "We're meeting at four, aren't we?",
+     "Your dad can pick us up, can't he?",
+     "Khalid isn't coming, is he?"
+    ]
+   }
+  },
+  "0-2": {
+   "words": [
+    {
+     "w": "take a message",
+     "ar": "يأخذ رسالة",
+     "ex": "Dad is busy. Can I take a message?"
+    },
+    {
+     "w": "hold on",
+     "ar": "انتظر لحظة",
+     "ex": "Hold on, I'll get my mum."
+    },
+    {
+     "w": "call (someone) back",
+     "ar": "يعاود الاتصال",
+     "ex": "I'll call you back in ten minutes."
+    },
+    {
+     "w": "a bad line",
+     "ar": "خط ضعيف / صوت غير واضح",
+     "ex": "It's a bad line. I can't hear you."
+    },
+    {
+     "w": "spell",
+     "ar": "يتهجّى",
+     "ex": "Could you spell your family name, please?"
+    },
+    {
+     "w": "pass on",
+     "ar": "يوصل (رسالة)",
+     "ex": "I'll pass on the message to my brother."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Yazeed",
+     "t": "Good morning. Could I speak to Mrs Al-Harbi, please?"
+    },
+    {
+     "s": "Noura",
+     "t": "I'm sorry, she's out at the moment. Can I take a message?"
+    },
+    {
+     "s": "Yazeed",
+     "t": "Yes, please. It's about the sofa she ordered. We can deliver it on Tuesday between ten and twelve."
+    },
+    {
+     "s": "Noura",
+     "t": "Sorry, it's a bad line. Did you say Tuesday or Thursday?"
+    },
+    {
+     "s": "Yazeed",
+     "t": "Please ask her to call me back. My name is Yazeed."
+    },
+    {
+     "s": "Noura",
+     "t": "Hold on, let me get a pen. Could you spell your name, please?"
+    },
+    {
+     "s": "Yazeed",
+     "t": "Y-A-Z-E-E-D. And could she confirm her address, too?"
+    },
+    {
+     "s": "Noura",
+     "t": "So you're saying the sofa arrives on Tuesday morning and she should call you back?"
+    }
+   ],
+   "grammar": {
+    "title": "Checking questions: Did you say …? / So you're saying …",
+    "ar": "نستخدم Did you say …? لنسأل عن كلمة لم نسمعها جيداً، ونستخدم So you're saying … لنعيد المعلومة بكلماتنا ونتأكد منها.",
+    "examples": [
+     "Sorry, did you say Tuesday or Thursday?",
+     "So you're saying she should call you back?",
+     "Could you spell that, please?"
+    ]
+   }
+  },
+  "0-3": {
+   "words": [
+    {
+     "w": "get lost",
+     "ar": "يضيع (الطريق)",
+     "ex": "Don't worry if you get lost. Just ask someone."
+    },
+    {
+     "w": "go past",
+     "ar": "يتجاوز / يمرّ بجانب",
+     "ex": "Go past the bank and turn left."
+    },
+    {
+     "w": "on your left",
+     "ar": "على يسارك",
+     "ex": "The pharmacy is on your left."
+    },
+    {
+     "w": "take the escalator",
+     "ar": "يستخدم السلّم الكهربائي",
+     "ex": "Take the escalator up to the food court."
+    },
+    {
+     "w": "landmark",
+     "ar": "معلَم بارز",
+     "ex": "Kingdom Centre is a famous landmark in Riyadh."
+    },
+    {
+     "w": "you can't miss it",
+     "ar": "لن يفوتك / واضح جداً",
+     "ex": "It's a huge red building. You can't miss it!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Faisal",
+     "t": "Excuse me, I think I've got lost. How do I get to the cinema?"
+    },
+    {
+     "s": "Guard",
+     "t": "No problem. Go past the fountain and turn right at the bookshop."
+    },
+    {
+     "s": "Faisal",
+     "t": "Go past the fountain, then turn right at the bookshop. Is that right?"
+    },
+    {
+     "s": "Guard",
+     "t": "Yes. Then take the escalator up to the second floor."
+    },
+    {
+     "s": "Faisal",
+     "t": "Sorry, one more question. The cinema is right next to the escalator, isn't it?"
+    },
+    {
+     "s": "Guard",
+     "t": "Not quite. When you get off the escalator, it's on your left, next to the food court."
+    },
+    {
+     "s": "Faisal",
+     "t": "Let me get it straight. Do you mean the food court with the big clock?"
+    },
+    {
+     "s": "Guard",
+     "t": "Exactly. The clock is a good landmark. You can't miss it!"
+    }
+   ],
+   "grammar": {
+    "title": "Checking directions",
+    "ar": "عندما يعطيك أحد الاتجاهات، كرّر ما سمعته ثم اسأل Is that right? أو استخدم Do you mean …? للتأكد من المكان.",
+    "examples": [
+     "Turn left at the bookshop. Is that right?",
+     "Do you mean the bookshop next to the bank?",
+     "It's on the second floor, isn't it?"
+    ]
+   }
+  },
+  "0-4": {
+   "words": [
+    {
+     "w": "preheat the oven",
+     "ar": "يسخّن الفرن مسبقاً",
+     "ex": "Preheat the oven to 180 degrees."
+    },
+    {
+     "w": "tablespoon",
+     "ar": "ملعقة كبيرة",
+     "ex": "Add two tablespoons of honey."
+    },
+    {
+     "w": "a pinch of",
+     "ar": "رشّة",
+     "ex": "Add a pinch of salt to the soup."
+    },
+    {
+     "w": "stir in",
+     "ar": "يضيف مع التحريك",
+     "ex": "Stir in the milk slowly."
+    },
+    {
+     "w": "roll out",
+     "ar": "يفرد (العجين)",
+     "ex": "Roll out the dough on the table."
+    },
+    {
+     "w": "make sense",
+     "ar": "يكون مفهوماً / منطقياً",
+     "ex": "Now the recipe makes sense to me."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "What are we making today, Grandma? It's kleija, isn't it?"
+    },
+    {
+     "s": "Grandma",
+     "t": "Yes! First, preheat the oven to one hundred and eighty degrees."
+    },
+    {
+     "s": "Reem",
+     "t": "Done. And then we mix flour, butter and two tablespoons of sugar?"
+    },
+    {
+     "s": "Grandma",
+     "t": "That's right. Then stir in a pinch of cardamom. Just a pinch, because it's very strong."
+    },
+    {
+     "s": "Reem",
+     "t": "What's next? Could you clarify how we add the dates?"
+    },
+    {
+     "s": "Grandma",
+     "t": "First, roll out the dough. Then spread the date paste on top."
+    },
+    {
+     "s": "Reem",
+     "t": "So you're saying we put the dates on the flat dough and then roll it up like a carpet?"
+    },
+    {
+     "s": "Grandma",
+     "t": "Exactly, and then we cut it into small pieces. It'll make sense when you see it."
+    }
+   ],
+   "grammar": {
+    "title": "Question tags with the present simple",
+    "ar": "مع المضارع البسيط نستخدم do / does / don't / doesn't في الذيل: We add sugar, don't we? / It comes from Qassim, doesn't it?",
+    "examples": [
+     "We add sugar, don't we?",
+     "Kleija comes from Qassim, doesn't it?",
+     "We don't need eggs, do we?"
+    ]
+   }
+  },
+  "0-5": {
+   "words": [
+    {
+     "w": "set off",
+     "ar": "ينطلق (في رحلة)",
+     "ex": "We set off early to avoid the traffic."
+    },
+    {
+     "w": "head back",
+     "ar": "يعود / يرجع",
+     "ex": "It's getting dark. Let's head back."
+    },
+    {
+     "w": "permission slip",
+     "ar": "ورقة موافقة ولي الأمر",
+     "ex": "Don't forget your permission slip!"
+    },
+    {
+     "w": "packed lunch",
+     "ar": "وجبة غداء من البيت",
+     "ex": "I made a packed lunch for the trip."
+    },
+    {
+     "w": "make sure",
+     "ar": "يتأكّد",
+     "ex": "Make sure you bring a hat."
+    },
+    {
+     "w": "just to double-check",
+     "ar": "فقط للتأكد مرة أخرى",
+     "ex": "Just to double-check, the bus leaves at six, doesn't it?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Mr Adel",
+     "t": "Great news! Next month our class is going on a two-day trip to AlUla."
+    },
+    {
+     "s": "Omar",
+     "t": "Amazing! Just to double-check, we'll stay there for one night, won't we?"
+    },
+    {
+     "s": "Mr Adel",
+     "t": "Yes. We'll set off from school at six on Wednesday morning and head back on Thursday evening."
+    },
+    {
+     "s": "Omar",
+     "t": "Six in the morning! I'll need to go to bed early."
+    },
+    {
+     "s": "Mr Adel",
+     "t": "Please hand in your permission slips by Sunday, and make sure you bring a packed lunch for the bus."
+    },
+    {
+     "s": "Omar",
+     "t": "Let me get it straight. Do you mean a packed lunch for the first day only?"
+    },
+    {
+     "s": "Mr Adel",
+     "t": "Exactly. All the other meals are included in the price."
+    },
+    {
+     "s": "Omar",
+     "t": "So you're saying we only need pocket money for souvenirs. Great!"
+    }
+   ],
+   "grammar": {
+    "title": "Question tags with will and the past simple",
+    "ar": "مع will يكون الذيل won't، ومع الماضي البسيط نستخدم didn't / did: We'll stay one night, won't we? / You said six, didn't you?",
+    "examples": [
+     "We'll stay one night, won't we?",
+     "You said six o'clock, didn't you?",
+     "We won't need much money, will we?"
+    ]
+   }
+  },
+  "1-0": {
+   "words": [
+    {
+     "w": "announcement",
+     "ar": "إعلان",
+     "ex": "There was an announcement about the school trip."
+    },
+    {
+     "w": "catch up on",
+     "ar": "يلحق / يعوّض ما فاته",
+     "ex": "I need to catch up on my homework."
+    },
+    {
+     "w": "fill (someone) in",
+     "ar": "يُطلع أحداً على التفاصيل",
+     "ex": "I was away. Can you fill me in?"
+    },
+    {
+     "w": "take place",
+     "ar": "يُقام / يحدث",
+     "ex": "The final will take place on Friday."
+    },
+    {
+     "w": "according to",
+     "ar": "وفقاً لـ / حسب",
+     "ex": "According to Ms Huda, the test is easy."
+    },
+    {
+     "w": "sign up for",
+     "ar": "يسجّل في",
+     "ex": "I signed up for the chess club."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "I missed school yesterday. Can you fill me in? Was there any news?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Yes, there was a big announcement. Mr Khalid said that sports day would take place next Thursday."
+    },
+    {
+     "s": "Sam",
+     "t": "Next Thursday? That's soon! Did he say anything about the races?"
+    },
+    {
+     "s": "Faisal",
+     "t": "He told us that everyone had to sign up for at least one race."
+    },
+    {
+     "s": "Sam",
+     "t": "What else did I miss? I need to catch up on everything."
+    },
+    {
+     "s": "Faisal",
+     "t": "Ms Huda said that our science test would be on Monday."
+    },
+    {
+     "s": "Sam",
+     "t": "Oh no! Did she say which pages we need to study?"
+    },
+    {
+     "s": "Faisal",
+     "t": "According to Ms Huda, it's pages twenty to thirty-five. She told us to bring a calculator, too."
+    }
+   ],
+   "grammar": {
+    "title": "Reported statements: say and tell",
+    "ar": "نستخدم said بدون ذكر الشخص: He said that…، ونستخدم told مع الشخص: He told us that…. ويرجع الزمن خطوة إلى الماضي: is → was، will → would.",
+    "examples": [
+     "'Sports day is on Thursday.' → He said that sports day was on Thursday.",
+     "'The test will be on Monday.' → She told us that the test would be on Monday.",
+     "'Bring a calculator.' → She told us to bring a calculator."
+    ]
+   }
+  },
+  "1-1": {
+   "words": [
+    {
+     "w": "keep in touch",
+     "ar": "يبقى على تواصل",
+     "ex": "I keep in touch with my cousins online."
+    },
+    {
+     "w": "guess what?",
+     "ar": "خمّن ماذا حدث!",
+     "ex": "Guess what? We're going to Abha!"
+    },
+    {
+     "w": "move house",
+     "ar": "ينتقل إلى بيت جديد",
+     "ex": "My friend moved house last summer."
+    },
+    {
+     "w": "new arrival",
+     "ar": "مولود جديد",
+     "ex": "There's a new arrival in our family."
+    },
+    {
+     "w": "get together",
+     "ar": "يجتمع",
+     "ex": "We get together at Grandpa's every Friday."
+    },
+    {
+     "w": "send (your) love",
+     "ar": "يُرسل سلامه / محبته",
+     "ex": "Grandma sends her love to you."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Noura",
+     "t": "Was that Aunt Maha? Fill me in! What did she say?"
+    },
+    {
+     "s": "Mum",
+     "t": "Guess what? She said that her family was moving house next month."
+    },
+    {
+     "s": "Noura",
+     "t": "Really? Where are they going?"
+    },
+    {
+     "s": "Mum",
+     "t": "She told me they had bought a flat near the sea in Khobar."
+    },
+    {
+     "s": "Noura",
+     "t": "Did she say anything about Cousin Lulwa?"
+    },
+    {
+     "s": "Mum",
+     "t": "Yes! She said there was a new arrival in the family. Lulwa had a baby brother called Hamad."
+    },
+    {
+     "s": "Noura",
+     "t": "That's wonderful! Are we going to visit them?"
+    },
+    {
+     "s": "Mum",
+     "t": "She said we would all get together at Eid. And she sends her love to you."
+    }
+   ],
+   "grammar": {
+    "title": "Changing tenses in reported speech",
+    "ar": "عند نقل الكلام: المضارع يصبح ماضياً (are moving → were moving)، والمضارع التام أو الماضي يصبح ماضياً تاماً (have bought → had bought)، وwill تصبح would.",
+    "examples": [
+     "'We are moving house.' → She said they were moving house.",
+     "'We have bought a flat.' → She told me they had bought a flat.",
+     "'We will visit at Eid.' → She said they would visit at Eid."
+    ]
+   }
+  },
+  "1-2": {
+   "words": [
+    {
+     "w": "score a goal",
+     "ar": "يسجّل هدفاً",
+     "ex": "He scored a goal in the last minute."
+    },
+    {
+     "w": "be proud of",
+     "ar": "فخور بـ",
+     "ex": "I'm proud of my little sister."
+    },
+    {
+     "w": "give up",
+     "ar": "يستسلم",
+     "ex": "Don't give up. You can do it!"
+    },
+    {
+     "w": "press conference",
+     "ar": "مؤتمر صحفي",
+     "ex": "The coach spoke at the press conference."
+    },
+    {
+     "w": "admit",
+     "ar": "يعترف",
+     "ex": "He admitted that he was nervous."
+    },
+    {
+     "w": "the final whistle",
+     "ar": "صافرة النهاية",
+     "ex": "Everyone cheered at the final whistle."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Emma",
+     "t": "Did you watch the match last night? Saudi Arabia beat Japan two-one!"
+    },
+    {
+     "s": "Reem",
+     "t": "Yes! I watched the press conference afterwards, too."
+    },
+    {
+     "s": "Emma",
+     "t": "What did the captain say?"
+    },
+    {
+     "s": "Reem",
+     "t": "He said that he was proud of the team because they hadn't given up."
+    },
+    {
+     "s": "Emma",
+     "t": "And what about the player who scored the winning goal?"
+    },
+    {
+     "s": "Reem",
+     "t": "He told reporters that it was the best moment of his life. He said he would never forget it."
+    },
+    {
+     "s": "Emma",
+     "t": "What did the coach say?"
+    },
+    {
+     "s": "Reem",
+     "t": "He admitted that the team had played badly in the first half, but he said they would get better."
+    }
+   ],
+   "grammar": {
+    "title": "Reporting verbs: say, tell, admit",
+    "ar": "نستخدم أفعالاً لنقل الكلام: said (قال)، told + شخص (أخبر)، admitted (اعترف)، وبعدها that مع تغيير الزمن.",
+    "examples": [
+     "'I'm proud of the team.' → He said he was proud of the team.",
+     "'We played badly.' → He admitted that they had played badly.",
+     "'I'll never forget it.' → He told reporters he would never forget it."
+    ]
+   }
+  },
+  "1-3": {
+   "words": [
+    {
+     "w": "show (someone) around",
+     "ar": "يأخذ أحداً في جولة",
+     "ex": "Let me show you around the school."
+    },
+    {
+     "w": "want to know",
+     "ar": "يريد أن يعرف",
+     "ex": "He wanted to know my name."
+    },
+    {
+     "w": "wonder",
+     "ar": "يتساءل",
+     "ex": "I wonder if it will rain tomorrow."
+    },
+    {
+     "w": "settle in",
+     "ar": "يتأقلم / يستقر",
+     "ex": "She settled in quickly at her new school."
+    },
+    {
+     "w": "get on with",
+     "ar": "يتفاهم مع",
+     "ex": "I get on well with my classmates."
+    },
+    {
+     "w": "make friends",
+     "ar": "يكوّن صداقات",
+     "ex": "I made friends with a boy from Egypt."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Mum",
+     "t": "How was school? I heard there's a new student in your class."
+    },
+    {
+     "s": "Omar",
+     "t": "Yes, his name's Youssef. He's from Cairo. The teacher asked me to show him around."
+    },
+    {
+     "s": "Mum",
+     "t": "That's kind of you. What did he want to know?"
+    },
+    {
+     "s": "Omar",
+     "t": "He asked me where the library was, and he asked if we had a football team."
+    },
+    {
+     "s": "Mum",
+     "t": "Is he settling in well? I wonder if he misses Cairo."
+    },
+    {
+     "s": "Omar",
+     "t": "I think he's fine. He asked me whether the teachers were strict."
+    },
+    {
+     "s": "Mum",
+     "t": "And what did you say?"
+    },
+    {
+     "s": "Omar",
+     "t": "I told him they were strict but kind. He also wanted to know what time school finished."
+    }
+   ],
+   "grammar": {
+    "title": "Reported questions",
+    "ar": "في السؤال المنقول نستخدم asked + if/whether لأسئلة نعم/لا، وasked + كلمة السؤال (where/what). ونرتّب الجملة مثل الجملة العادية بدون do/does وبدون علامة استفهام.",
+    "examples": [
+     "'Do you have a football team?' → He asked if we had a football team.",
+     "'Where is the library?' → He asked me where the library was.",
+     "'What time does school finish?' → He wanted to know what time school finished."
+    ]
+   }
+  },
+  "1-4": {
+   "words": [
+    {
+     "w": "heavy rain",
+     "ar": "أمطار غزيرة",
+     "ex": "Heavy rain is expected tomorrow."
+    },
+    {
+     "w": "stay indoors",
+     "ar": "يبقى في الداخل",
+     "ex": "We stayed indoors because of the storm."
+    },
+    {
+     "w": "warn",
+     "ar": "يحذّر",
+     "ex": "They warned us about the strong wind."
+    },
+    {
+     "w": "headline",
+     "ar": "عنوان الخبر",
+     "ex": "The headline said 'Big Win for Saudi Team!'"
+    },
+    {
+     "w": "come across",
+     "ar": "يصادف / يعثر على",
+     "ex": "I came across an old photo of my dad."
+    },
+    {
+     "w": "make a discovery",
+     "ar": "يكتشف شيئاً",
+     "ex": "The team made an amazing discovery."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "You look excited. What's happening?"
+    },
+    {
+     "s": "Faisal",
+     "t": "I saw the weather report. The reporter said there would be heavy rain in Riyadh tomorrow."
+    },
+    {
+     "s": "Reem",
+     "t": "Really? Rain in Riyadh? Did they say anything else?"
+    },
+    {
+     "s": "Faisal",
+     "t": "They warned people to stay indoors if possible, and they said schools might close."
+    },
+    {
+     "s": "Reem",
+     "t": "What was the other story?"
+    },
+    {
+     "s": "Faisal",
+     "t": "I came across an amazing headline online. According to the article, Saudi scientists have made a discovery in the Red Sea."
+    },
+    {
+     "s": "Reem",
+     "t": "What kind of discovery?"
+    },
+    {
+     "s": "Faisal",
+     "t": "The scientists said that they had found a new type of coral. They told reporters it could live in very warm water."
+    }
+   ],
+   "grammar": {
+    "title": "Reporting commands and warnings",
+    "ar": "لنقل الأوامر والتحذيرات: told / warned + شخص + to + الفعل، وفي النفي not to + الفعل. وتصبح may → might و can → could.",
+    "examples": [
+     "'Stay indoors.' → They warned people to stay indoors.",
+     "'Don't drive in the rain.' → They told people not to drive in the rain.",
+     "'Schools may close.' → The reporter said schools might close."
+    ]
+   }
+  },
+  "1-5": {
+   "words": [
+    {
+     "w": "interview",
+     "ar": "يجري مقابلة",
+     "ex": "We interviewed the head teacher."
+    },
+    {
+     "w": "take notes",
+     "ar": "يدوّن ملاحظات",
+     "ex": "I always take notes in science lessons."
+    },
+    {
+     "w": "find out",
+     "ar": "يكتشف / يعرف",
+     "ex": "Let's find out who planted the trees."
+    },
+    {
+     "w": "quote",
+     "ar": "اقتباس",
+     "ex": "We need a good quote for the report."
+    },
+    {
+     "w": "breaking news",
+     "ar": "خبر عاجل",
+     "ex": "Breaking news: our team won the cup!"
+    },
+    {
+     "w": "go live",
+     "ar": "يبدأ البث المباشر",
+     "ex": "We go live on the school radio at seven."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Emma",
+     "t": "We go live on the school radio tomorrow. Did you interview the head teacher?"
+    },
+    {
+     "s": "Omar",
+     "t": "Yes, and I took notes. He said that the new garden would open next week."
+    },
+    {
+     "s": "Emma",
+     "t": "Great! Did you find out who planted the trees?"
+    },
+    {
+     "s": "Omar",
+     "t": "He told me that students from every class had helped. He also asked if we could write a poem for the opening."
+    },
+    {
+     "s": "Emma",
+     "t": "I interviewed Uncle Salem, the gardener. I asked him what his favourite plant was."
+    },
+    {
+     "s": "Omar",
+     "t": "What did he say? We need a good quote."
+    },
+    {
+     "s": "Emma",
+     "t": "He said, \"Every plant needs love and water.\" Then he told me to remind everyone not to walk on the grass."
+    },
+    {
+     "s": "Omar",
+     "t": "According to him, the grass is still very young. OK, let's start the report with \"Breaking news\"!"
+    }
+   ],
+   "grammar": {
+    "title": "Statements, questions and commands together",
+    "ar": "في التقرير الإخباري نجمع: said that للجمل، وasked if/what للأسئلة، وtold … (not) to للأوامر.",
+    "examples": [
+     "He said that the garden would open next week.",
+     "I asked him what his favourite plant was.",
+     "He told us not to walk on the grass."
+    ]
+   }
+  },
+  "2-0": {
+   "words": [
+    {
+     "w": "turn down",
+     "ar": "يخفض (الصوت)",
+     "ex": "Could you turn down the TV, please?"
+    },
+    {
+     "w": "give (someone) a hand",
+     "ar": "يساعد",
+     "ex": "Can you give me a hand with these bags?"
+    },
+    {
+     "w": "not at all",
+     "ar": "لا مانع أبداً",
+     "ex": "'Would you mind waiting?' – 'Not at all.'"
+    },
+    {
+     "w": "borrow",
+     "ar": "يستعير",
+     "ex": "Can I borrow your pen for a minute?"
+    },
+    {
+     "w": "in a minute",
+     "ar": "بعد قليل / حالاً",
+     "ex": "I'll help you in a minute."
+    },
+    {
+     "w": "tidy up",
+     "ar": "يرتّب",
+     "ex": "Please tidy up your room before dinner."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Faisal",
+     "t": "Nasser, would you mind turning down the TV? I've got a maths exam tomorrow."
+    },
+    {
+     "s": "Nasser",
+     "t": "Oh, sorry! Not at all. Is that better?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Much better, thanks. Could you possibly give me a hand with this question?"
+    },
+    {
+     "s": "Nasser",
+     "t": "Sure, in a minute. The match is nearly over."
+    },
+    {
+     "s": "Faisal",
+     "t": "Can I ask one more thing? Do you mind if I borrow your calculator?"
+    },
+    {
+     "s": "Nasser",
+     "t": "Not at all, but please give it back tonight."
+    },
+    {
+     "s": "Faisal",
+     "t": "Of course. And would you mind not telling Mum about my messy room? I'll tidy up later!"
+    },
+    {
+     "s": "Nasser",
+     "t": "Ha! I won't tell her, but you'd better tidy up today."
+    }
+   ],
+   "grammar": {
+    "title": "Would you mind + -ing?",
+    "ar": "بعد Would you mind يأتي الفعل مع ing. وللموافقة نقول: No, not at all / Of course not (أي: لا أمانع). وللنفي: Would you mind not …ing?",
+    "examples": [
+     "Would you mind turning down the TV?",
+     "Would you mind not shouting, please?",
+     "– No, not at all. / – Of course not."
+    ]
+   }
+  },
+  "2-1": {
+   "words": [
+    {
+     "w": "leave early",
+     "ar": "يغادر مبكراً",
+     "ex": "I have to leave early today."
+    },
+    {
+     "w": "extra time",
+     "ar": "وقت إضافي",
+     "ex": "Could I have some extra time, please?"
+    },
+    {
+     "w": "feel unwell",
+     "ar": "يشعر بتوعّك",
+     "ex": "I feel unwell. Can I see the nurse?"
+    },
+    {
+     "w": "swap seats",
+     "ar": "يتبادل المقاعد",
+     "ex": "Can we swap seats? I can't see."
+    },
+    {
+     "w": "go ahead",
+     "ar": "تفضّل",
+     "ex": "'Can I open the window?' – 'Go ahead.'"
+    },
+    {
+     "w": "I'm afraid not",
+     "ar": "للأسف لا",
+     "ex": "'Can I use my phone?' – 'I'm afraid not.'"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "Excuse me, Ms Sarah. Is it OK if I leave early on Thursday? I have a dentist appointment."
+    },
+    {
+     "s": "Ms Sarah",
+     "t": "Of course. Please bring a note from your parents."
+    },
+    {
+     "s": "Reem",
+     "t": "Thank you. Also, would it be possible to have some extra time for the essay?"
+    },
+    {
+     "s": "Ms Sarah",
+     "t": "I'm afraid not. Everyone has to hand it in on Sunday. But I can help you at break time."
+    },
+    {
+     "s": "Reem",
+     "t": "One more thing. Do you mind if I swap seats with Noura? I can't see the board very well."
+    },
+    {
+     "s": "Ms Sarah",
+     "t": "Not at all. Go ahead."
+    },
+    {
+     "s": "Reem",
+     "t": "Thanks. And I'm feeling a bit unwell. Is it OK if I go to the nurse?"
+    },
+    {
+     "s": "Ms Sarah",
+     "t": "Yes, of course. I hope you feel better soon."
+    }
+   ],
+   "grammar": {
+    "title": "Asking for permission",
+    "ar": "لطلب الإذن: Is it OK if I + فعل؟ / Do you mind if I + فعل؟ / Would it be possible to + فعل؟ وللرفض بلطف: I'm afraid not.",
+    "examples": [
+     "Is it OK if I leave early?",
+     "Do you mind if I open the window?",
+     "Would it be possible to have extra time?"
+    ]
+   }
+  },
+  "2-2": {
+   "words": [
+    {
+     "w": "make yourself at home",
+     "ar": "البيت بيتك",
+     "ex": "Come in and make yourself at home."
+    },
+    {
+     "w": "help yourself",
+     "ar": "تفضّل خذ ما تريد",
+     "ex": "Help yourself to some dates."
+    },
+    {
+     "w": "take off",
+     "ar": "يخلع",
+     "ex": "Please take off your shoes here."
+    },
+    {
+     "w": "charge (your) phone",
+     "ar": "يشحن جواله",
+     "ex": "Can I charge my phone here?"
+    },
+    {
+     "w": "stay for dinner",
+     "ar": "يبقى للعشاء",
+     "ex": "Would you like to stay for dinner?"
+    },
+    {
+     "w": "it's very kind of you",
+     "ar": "هذا لطف كبير منك",
+     "ex": "It's very kind of you to help me."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "Hello, Mrs Al-Qahtani. Thank you for inviting me."
+    },
+    {
+     "s": "Mrs Al-Qahtani",
+     "t": "You're welcome, Sam. Come in and make yourself at home."
+    },
+    {
+     "s": "Sam",
+     "t": "Thank you. Do you mind if I take off my shoes here?"
+    },
+    {
+     "s": "Mrs Al-Qahtani",
+     "t": "That's fine. Please help yourself to some dates and Arabic coffee."
+    },
+    {
+     "s": "Sam",
+     "t": "Omar, could I possibly charge my phone? The battery's almost dead."
+    },
+    {
+     "s": "Omar",
+     "t": "Of course. There's a charger next to the sofa."
+    },
+    {
+     "s": "Sam",
+     "t": "Thanks. Would you mind telling me the Wi-Fi password? I need to message my dad."
+    },
+    {
+     "s": "Omar",
+     "t": "Sure, it's on the card by the TV. Mum says you can stay for dinner, too."
+    }
+   ],
+   "grammar": {
+    "title": "Do you mind if I …? or Would you mind …ing?",
+    "ar": "Do you mind if I …? نطلب بها الإذن لنفعل نحن الشيء، أما Would you mind …ing? فنطلب بها من الشخص الآخر أن يفعل الشيء.",
+    "examples": [
+     "Do you mind if I charge my phone? (I do it.)",
+     "Would you mind telling me the password? (You do it.)",
+     "Could I possibly stay a bit longer?"
+    ]
+   }
+  },
+  "2-3": {
+   "words": [
+    {
+     "w": "sorry to bother you",
+     "ar": "آسف على الإزعاج",
+     "ex": "Sorry to bother you, but is this seat free?"
+    },
+    {
+     "w": "swap seats",
+     "ar": "يتبادل المقاعد",
+     "ex": "Would you mind swapping seats with me?"
+    },
+    {
+     "w": "window seat",
+     "ar": "مقعد بجانب النافذة",
+     "ex": "I love a window seat on the plane."
+    },
+    {
+     "w": "no problem at all",
+     "ar": "لا مشكلة أبداً",
+     "ex": "'Can you help me?' – 'No problem at all.'"
+    },
+    {
+     "w": "take a photo of",
+     "ar": "يلتقط صورة لـ",
+     "ex": "Could you take a photo of us, please?"
+    },
+    {
+     "w": "move over",
+     "ar": "يفسح المكان",
+     "ex": "Could you move over a little, please?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Noura",
+     "t": "Sorry to bother you, but would you mind swapping seats with my little brother? He wants to sit next to me."
+    },
+    {
+     "s": "Passenger",
+     "t": "Not at all. Where's his seat?"
+    },
+    {
+     "s": "Noura",
+     "t": "It's the window seat in row twelve, just behind us."
+    },
+    {
+     "s": "Passenger",
+     "t": "Oh, a window seat! That's no problem at all."
+    },
+    {
+     "s": "Noura",
+     "t": "Excuse me, would you mind taking a photo of my family? We'd like the mountains behind us."
+    },
+    {
+     "s": "Man",
+     "t": "No problem at all. Could you all move over a little to the left? I can't see everyone."
+    },
+    {
+     "s": "Noura",
+     "t": "Is this better?"
+    },
+    {
+     "s": "Man",
+     "t": "Perfect. Smile! … Here you are. I took two, just in case."
+    }
+   ],
+   "grammar": {
+    "title": "Polite openers with strangers",
+    "ar": "مع الغرباء نبدأ بعبارة مهذبة: Excuse me / Sorry to bother you, but … ثم نطلب: would you mind …ing? أو would it be possible to …?",
+    "examples": [
+     "Sorry to bother you, but would you mind moving over?",
+     "Excuse me, would it be possible to have some water?",
+     "Would you mind taking a photo of us?"
+    ]
+   }
+  },
+  "2-4": {
+   "words": [
+    {
+     "w": "screen time",
+     "ar": "وقت الشاشة",
+     "ex": "My parents check my screen time."
+    },
+    {
+     "w": "log in",
+     "ar": "يسجّل الدخول",
+     "ex": "I can't log in. I forgot my password."
+    },
+    {
+     "w": "just this once",
+     "ar": "هذه المرة فقط",
+     "ex": "Can I stay up late, just this once?"
+    },
+    {
+     "w": "post",
+     "ar": "ينشر",
+     "ex": "Don't post my photo without asking!"
+    },
+    {
+     "w": "ask permission",
+     "ar": "يستأذن",
+     "ex": "Always ask permission before you post a photo."
+    },
+    {
+     "w": "join in",
+     "ar": "يشارك",
+     "ex": "Come and join in the game!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Omar",
+     "t": "Dad, is it OK if I log in to my game for an hour? My cousins are playing right now."
+    },
+    {
+     "s": "Dad",
+     "t": "You've already had a lot of screen time today, Omar."
+    },
+    {
+     "s": "Omar",
+     "t": "I know. Would you mind if I played for thirty minutes, just this once? I've finished my homework."
+    },
+    {
+     "s": "Dad",
+     "t": "All right, thirty minutes. Then come and help me in the garden."
+    },
+    {
+     "s": "Omar",
+     "t": "Reem, I took a funny photo of you at the picnic. Do you mind if I post it in the family group?"
+    },
+    {
+     "s": "Reem",
+     "t": "Yes, I do mind! Actually, I'd rather you didn't. You should always ask permission first."
+    },
+    {
+     "s": "Omar",
+     "t": "Sorry! I won't post it. Would you like to join in our game instead?"
+    },
+    {
+     "s": "Reem",
+     "t": "Maybe later. And would you mind not using my headphones without asking?"
+    }
+   ],
+   "grammar": {
+    "title": "Would you mind if I + past simple?",
+    "ar": "Would you mind if I + فعل في الماضي؟ أكثر تهذيباً من Do you mind if I + مضارع. وللموافقة: No, not at all، وللرفض بلطف: Actually, I'd rather you didn't.",
+    "examples": [
+     "Would you mind if I played for thirty minutes?",
+     "Do you mind if I post this photo?",
+     "– Actually, I'd rather you didn't."
+    ]
+   }
+  },
+  "2-5": {
+   "words": [
+    {
+     "w": "be in charge of",
+     "ar": "مسؤول عن",
+     "ex": "Who is in charge of the food?"
+    },
+    {
+     "w": "I'd be happy to",
+     "ar": "يسعدني ذلك",
+     "ex": "'Can you help?' – 'I'd be happy to.'"
+    },
+    {
+     "w": "run out of",
+     "ar": "ينفد",
+     "ex": "We've run out of milk."
+    },
+    {
+     "w": "set up",
+     "ar": "يجهّز / يرتّب",
+     "ex": "Let's set up the chairs in the garden."
+    },
+    {
+     "w": "decorations",
+     "ar": "زينة",
+     "ex": "The decorations look beautiful."
+    },
+    {
+     "w": "lend",
+     "ar": "يُعير",
+     "ex": "Could you lend me your pen?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Noura",
+     "t": "Aunt Hessa, would you mind helping us with the Eid gathering this year?"
+    },
+    {
+     "s": "Aunt Hessa",
+     "t": "I'd be happy to! What do you need?"
+    },
+    {
+     "s": "Noura",
+     "t": "Could you possibly be in charge of the food? Your kabsa is the best in the family."
+    },
+    {
+     "s": "Aunt Hessa",
+     "t": "Of course. But I've run out of rice, so someone will have to buy some."
+    },
+    {
+     "s": "Faisal",
+     "t": "Aunt Hessa, is it OK if we set up the decorations in your garden? It's bigger than ours."
+    },
+    {
+     "s": "Aunt Hessa",
+     "t": "Not at all. But would you mind cleaning up afterwards?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Of course. And could you lend us your big carpet? Grandma and Grandpa can sit on it."
+    },
+    {
+     "s": "Aunt Hessa",
+     "t": "Sure. Do you need a hand with the balloons, too?"
+    }
+   ],
+   "grammar": {
+    "title": "Choosing the right polite form",
+    "ar": "كلما كان الطلب أكبر أو كان الشخص أكبر سناً نختار صيغة أكثر تهذيباً: Can you…? ← Could you possibly…? ← Would you mind …ing? ← Would it be possible to…?",
+    "examples": [
+     "Can you pass the dates? (a friend, a small request)",
+     "Could you possibly lend us your carpet? (a bigger request)",
+     "Would it be possible to use the hall? (very polite, to an adult)"
+    ]
+   }
+  },
+  "3-0": {
+   "words": [
+    {
+     "w": "make up your mind",
+     "ar": "يحسم أمره / يقرّر",
+     "ex": "Have you made up your mind yet?"
+    },
+    {
+     "w": "on the other hand",
+     "ar": "من ناحية أخرى",
+     "ex": "It's cheap. On the other hand, it's far."
+    },
+    {
+     "w": "crowded",
+     "ar": "مزدحم",
+     "ex": "The mall was very crowded on Friday."
+    },
+    {
+     "w": "it's up to you",
+     "ar": "القرار لك",
+     "ex": "Pizza or burgers? It's up to you."
+    },
+    {
+     "w": "worth it",
+     "ar": "يستحق",
+     "ex": "The ticket was expensive, but it was worth it."
+    },
+    {
+     "w": "go for",
+     "ar": "يختار",
+     "ex": "I'll go for the blue one."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "I can't make up my mind. Should we go karting or visit the science museum on Saturday?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Go-karting is more exciting, but it isn't as cheap as the museum."
+    },
+    {
+     "s": "Sam",
+     "t": "That's true. On the other hand, the museum is always crowded at the weekend."
+    },
+    {
+     "s": "Faisal",
+     "t": "Well, the karting track is crowded too. It's up to you, really."
+    },
+    {
+     "s": "Sam",
+     "t": "OK, I've decided. I think it would be better to go karting. We've been to the museum before."
+    },
+    {
+     "s": "Faisal",
+     "t": "Good point. It's expensive, but it's worth it."
+    },
+    {
+     "s": "Sam",
+     "t": "Great. Let's go for the evening session. It won't be as hot as the afternoon."
+    },
+    {
+     "s": "Faisal",
+     "t": "Perfect. I'll ask my dad to book it."
+    }
+   ],
+   "grammar": {
+    "title": "as … as and not as … as",
+    "ar": "نستخدم as + صفة + as للمساواة، وnot as … as لنقول إن الشيء أقل: The museum isn't as exciting as karting = الكارتينغ أكثر إثارة.",
+    "examples": [
+     "Karting isn't as cheap as the museum.",
+     "The museum is as interesting as the zoo.",
+     "The evening won't be as hot as the afternoon."
+    ]
+   }
+  },
+  "3-1": {
+   "words": [
+    {
+     "w": "come up with",
+     "ar": "يبتكر / تخطر له فكرة",
+     "ex": "She came up with a brilliant idea."
+    },
+    {
+     "w": "can't afford",
+     "ar": "لا يستطيع تحمّل ثمنه",
+     "ex": "I can't afford a new phone."
+    },
+    {
+     "w": "split the cost",
+     "ar": "يتقاسم التكلفة",
+     "ex": "Let's split the cost of the cake."
+    },
+    {
+     "w": "thoughtful",
+     "ar": "يدلّ على الاهتمام",
+     "ex": "What a thoughtful present!"
+    },
+    {
+     "w": "good value for money",
+     "ar": "يستحق سعره",
+     "ex": "This bag is good value for money."
+    },
+    {
+     "w": "in the end",
+     "ar": "في النهاية",
+     "ex": "In the end, we bought flowers."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "Mum's birthday is next week. Have you come up with any ideas for a present?"
+    },
+    {
+     "s": "Omar",
+     "t": "What about a new handbag? She'd love one."
+    },
+    {
+     "s": "Reem",
+     "t": "She would, but a good handbag is really expensive. I can't afford one."
+    },
+    {
+     "s": "Omar",
+     "t": "We could split the cost. Or perfume? It isn't as expensive, but it's not very personal."
+    },
+    {
+     "s": "Reem",
+     "t": "What about a photo book with pictures of the family? It's much cheaper than a handbag, and it's more thoughtful."
+    },
+    {
+     "s": "Omar",
+     "t": "I love that idea! It's good value for money, too."
+    },
+    {
+     "s": "Reem",
+     "t": "So it would be better to make a photo book than to buy a bag?"
+    },
+    {
+     "s": "Omar",
+     "t": "Definitely. Let's go for the photo book. Mum will cry happy tears!"
+    }
+   ],
+   "grammar": {
+    "title": "Comparing options: much more … than / not as … as",
+    "ar": "لنقوّي المقارنة نضع much قبل صيغة المقارنة: much cheaper / much more thoughtful. ولنقول إن الشيء أقل نستخدم not as … as.",
+    "examples": [
+     "A photo book is much more thoughtful than perfume.",
+     "Perfume isn't as expensive as a handbag.",
+     "It would be better to make something than to buy something."
+    ]
+   }
+  },
+  "3-2": {
+   "words": [
+    {
+     "w": "be into",
+     "ar": "يحب / مهتم جداً بـ",
+     "ex": "My brother is really into robots."
+    },
+    {
+     "w": "weigh up",
+     "ar": "يوازن بين",
+     "ex": "Let's weigh up the two options."
+    },
+    {
+     "w": "pros and cons",
+     "ar": "الإيجابيات والسلبيات",
+     "ex": "We talked about the pros and cons of each club."
+    },
+    {
+     "w": "suit",
+     "ar": "يناسب",
+     "ex": "This club would really suit you."
+    },
+    {
+     "w": "take up",
+     "ar": "يبدأ (هواية)",
+     "ex": "I took up chess last year."
+    },
+    {
+     "w": "stick with",
+     "ar": "يستمر في",
+     "ex": "I'll stick with football this year."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Noura",
+     "t": "Have you made up your mind about the clubs yet?"
+    },
+    {
+     "s": "Emma",
+     "t": "Not yet. I'm weighing up the pros and cons. I'm really into robotics, but it's on Thursdays."
+    },
+    {
+     "s": "Noura",
+     "t": "What's wrong with Thursdays?"
+    },
+    {
+     "s": "Emma",
+     "t": "I have swimming then. Drama is on Mondays, and it's just as fun as robotics."
+    },
+    {
+     "s": "Noura",
+     "t": "What about photography? You love taking pictures."
+    },
+    {
+     "s": "Emma",
+     "t": "True, but I think drama would suit me better. I want to be more confident when I speak."
+    },
+    {
+     "s": "Noura",
+     "t": "And you're already good at photography. Why not take up something new?"
+    },
+    {
+     "s": "Emma",
+     "t": "Exactly! So I'll go for drama and stick with swimming on Thursdays."
+    }
+   ],
+   "grammar": {
+    "title": "just as … as / would suit me better",
+    "ar": "just as … as تعني (بالقدر نفسه تماماً). ونستخدم would + فعل + better لنقول ما هو الأنسب لنا.",
+    "examples": [
+     "Drama is just as fun as robotics.",
+     "Photography isn't as challenging as robotics.",
+     "Drama would suit me better."
+    ]
+   }
+  },
+  "3-3": {
+   "words": [
+    {
+     "w": "get away",
+     "ar": "يأخذ إجازة / يبتعد قليلاً",
+     "ex": "We need to get away for a weekend."
+    },
+    {
+     "w": "see the sights",
+     "ar": "يزور المعالم",
+     "ex": "We saw the sights of Jeddah in one day."
+    },
+    {
+     "w": "in the middle of nowhere",
+     "ar": "في مكان ناءٍ",
+     "ex": "The farm is in the middle of nowhere."
+    },
+    {
+     "w": "it depends on",
+     "ar": "يعتمد على",
+     "ex": "It depends on the weather."
+    },
+    {
+     "w": "budget",
+     "ar": "الميزانية",
+     "ex": "Our budget is two thousand riyals."
+    },
+    {
+     "w": "have a point",
+     "ar": "معه حق",
+     "ex": "You have a point. It is too hot."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Dad",
+     "t": "We need to get away for a few days. Should we go to Jeddah or AlUla?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Jeddah! We can swim in the Red Sea and see the sights in Al-Balad."
+    },
+    {
+     "s": "Dad",
+     "t": "That's true. But AlUla isn't nearly as busy as Jeddah, and the rocks are amazing."
+    },
+    {
+     "s": "Faisal",
+     "t": "Yes, but AlUla is in the middle of nowhere. There's not much to do in the evening."
+    },
+    {
+     "s": "Mum",
+     "t": "It depends on our budget, too. The hotels in AlUla are expensive, but maybe it's worth it."
+    },
+    {
+     "s": "Faisal",
+     "t": "You have a point. So it would be better to go to Jeddah this time, wouldn't it?"
+    },
+    {
+     "s": "Mum",
+     "t": "I think so. And we can visit AlUla in spring, when it isn't as cold at night."
+    },
+    {
+     "s": "Faisal",
+     "t": "Perfect. Let's go for Jeddah! I'll pack my swimming goggles."
+    }
+   ],
+   "grammar": {
+    "title": "not nearly as … as / a bit / much",
+    "ar": "لنقارن بدقة: not nearly as … as = أقل بكثير، وnot quite as … as = أقل قليلاً، وa bit / much + صيغة المقارنة.",
+    "examples": [
+     "AlUla isn't nearly as busy as Jeddah.",
+     "The hotel is a bit more expensive than the camp.",
+     "In spring, AlUla isn't as cold at night."
+    ]
+   }
+  },
+  "3-4": {
+   "words": [
+    {
+     "w": "fancy",
+     "ar": "يرغب في / يشتهي",
+     "ex": "Do you fancy pizza tonight?"
+    },
+    {
+     "w": "can't decide between",
+     "ar": "محتار بين",
+     "ex": "I can't decide between the red and the blue."
+    },
+    {
+     "w": "either is fine",
+     "ar": "أيّهما مناسب",
+     "ex": "Tea or juice? Either is fine."
+    },
+    {
+     "w": "filling",
+     "ar": "مُشبِع",
+     "ex": "Rice is very filling."
+    },
+    {
+     "w": "go easy on",
+     "ar": "يُقلّل من",
+     "ex": "I'm going easy on sweets this week."
+    },
+    {
+     "w": "between us",
+     "ar": "نتقاسمه بيننا",
+     "ex": "Let's get one big salad between us."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Uncle",
+     "t": "So, what do you fancy tonight? Burgers, shawarma or Japanese?"
+    },
+    {
+     "s": "Omar",
+     "t": "I can't decide between burgers and shawarma. Either is fine with me."
+    },
+    {
+     "s": "Uncle",
+     "t": "Well, a burger meal is very filling, and it isn't as healthy as the shawarma plate with salad."
+    },
+    {
+     "s": "Omar",
+     "t": "That's true. And I had burgers yesterday, so I should go easy on fast food."
+    },
+    {
+     "s": "Reem",
+     "t": "Hmm, sushi looks good, but it's more expensive than the other places."
+    },
+    {
+     "s": "Uncle",
+     "t": "Don't worry about the price today. You choose."
+    },
+    {
+     "s": "Reem",
+     "t": "Then it would be better to get one big plate between us. It's cheaper than two small ones."
+    },
+    {
+     "s": "Uncle",
+     "t": "Great idea. Let's go for the big sushi plate, and the shawarma for Omar!"
+    }
+   ],
+   "grammar": {
+    "title": "It would be better (not) to … / Let's go for …",
+    "ar": "نستخدم It would be better to + فعل لنقترح الخيار الأفضل بلطف، وIt would be better not to للنفي، وLet's go for + اسم لنتخذ القرار النهائي.",
+    "examples": [
+     "It would be better to share one big plate.",
+     "It would be better not to have fast food again.",
+     "Let's go for the shawarma plate."
+    ]
+   }
+  },
+  "3-5": {
+   "words": [
+    {
+     "w": "reach a decision",
+     "ar": "يتوصّل إلى قرار",
+     "ex": "We need to reach a decision by Friday."
+    },
+    {
+     "w": "the best option",
+     "ar": "الخيار الأفضل",
+     "ex": "The bus is the best option."
+    },
+    {
+     "w": "raise money",
+     "ar": "يجمع المال / التبرعات",
+     "ex": "We raised money for the hospital."
+    },
+    {
+     "w": "make a difference",
+     "ar": "يُحدث فرقاً",
+     "ex": "Small actions can make a difference."
+    },
+    {
+     "w": "take a vote",
+     "ar": "يُجري تصويتاً",
+     "ex": "Let's take a vote on the trip."
+    },
+    {
+     "w": "go along with",
+     "ar": "يوافق على / يمشي مع",
+     "ex": "I'll go along with your plan."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "OK, we need to reach a decision today. Bake sale, garden or beach clean-up?"
+    },
+    {
+     "s": "Noura",
+     "t": "I think a bake sale is the best option. We could raise money for the children's hospital."
+    },
+    {
+     "s": "Khalid",
+     "t": "Good idea, but a garden would last much longer. It isn't as quick as a bake sale, though."
+    },
+    {
+     "s": "Sam",
+     "t": "Let's weigh up the pros and cons. A beach clean-up would make a difference, but the beach is far away."
+    },
+    {
+     "s": "Khalid",
+     "t": "So it's between the bake sale and the garden. Why don't we take a vote?"
+    },
+    {
+     "s": "Sam",
+     "t": "Good idea. I vote for the garden. It would be better to make something the whole school can enjoy."
+    },
+    {
+     "s": "Noura",
+     "t": "Hmm, I still prefer the bake sale, but I'll go along with the group."
+    },
+    {
+     "s": "Khalid",
+     "t": "Then let's go for the garden! Maybe we can do a bake sale next term to buy the plants."
+    }
+   ],
+   "grammar": {
+    "title": "Language for group decisions",
+    "ar": "عند اتخاذ قرار جماعي: نقارن (as … as / much more … than)، ثم نقترح (It would be better to …)، ثم نقرّر (Let's go for … / I'll go along with …).",
+    "examples": [
+     "A garden would last much longer than a bake sale.",
+     "It would be better to make something everyone can enjoy.",
+     "Let's take a vote and go for the garden."
+    ]
+   }
+  }
+ },
+ "quizzes": {
+  "0-0": [
+   {
+    "type": "order",
+    "words": [
+     "So",
+     "you're",
+     "saying",
+     "we",
+     "hand",
+     "it",
+     "in",
+     "on",
+     "Sunday?"
+    ],
+    "answer": "So you're saying we hand it in on Sunday?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "word",
+     "limit",
+     "is",
+     "two",
+     "hundred",
+     "words,",
+     "isn't",
+     "it?"
+    ],
+    "answer": "The word limit is two hundred words, isn't it?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: We work in pairs, ___?",
+    "options": [
+     "aren't we",
+     "do we",
+     "don't we",
+     "isn't it"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "What does 'due date' mean?",
+    "options": [
+     "the day work must be finished",
+     "the day a lesson starts",
+     "the date of a school trip",
+     "the day you get your marks"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "You don't understand what the teacher means. What do you say?",
+    "options": [
+     "I'll hand it in.",
+     "That's the word limit.",
+     "Yes, that's right.",
+     "Could you clarify that, please?"
+    ],
+    "answer": 3
+   }
+  ],
+  "0-1": [
+   {
+    "type": "order",
+    "words": [
+     "We're",
+     "meeting",
+     "at",
+     "the",
+     "park,",
+     "aren't",
+     "we?"
+    ],
+    "answer": "We're meeting at the park, aren't we?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "There's",
+     "a",
+     "change",
+     "of",
+     "plan",
+     "for",
+     "Friday."
+    ],
+    "answer": "There's a change of plan for Friday.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Your dad can pick us up, ___?",
+    "options": [
+     "doesn't he",
+     "can't he",
+     "isn't he",
+     "can he"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Your friend invites you to a game and you want to go. You say:",
+    "options": [
+     "Pick me up.",
+     "Count me in!",
+     "It's a change of plan.",
+     "I'm on time."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence confirms a plan?",
+    "options": [
+     "I don't like the park.",
+     "Where do you live?",
+     "I'm very tired today.",
+     "So we're meeting at five, right?"
+    ],
+    "answer": 3
+   }
+  ],
+  "0-2": [
+   {
+    "type": "order",
+    "words": [
+     "Sorry,",
+     "did",
+     "you",
+     "say",
+     "Tuesday",
+     "or",
+     "Thursday?"
+    ],
+    "answer": "Sorry, did you say Tuesday or Thursday?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Can",
+     "I",
+     "take",
+     "a",
+     "message",
+     "for",
+     "her?"
+    ],
+    "answer": "Can I take a message for her?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The line is bad and you can't hear the time. You say:",
+    "options": [
+     "Sorry, did you say ten or two?",
+     "I'll call you back yesterday.",
+     "Can I spell you?",
+     "Hold on the message."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "What does 'hold on' mean on the phone?",
+    "options": [
+     "end the call",
+     "speak louder",
+     "wait for a moment",
+     "call again tomorrow"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Please ask her to call me ___.",
+    "options": [
+     "on",
+     "up",
+     "off",
+     "back"
+    ],
+    "answer": 3
+   }
+  ],
+  "0-3": [
+   {
+    "type": "order",
+    "words": [
+     "Do",
+     "you",
+     "mean",
+     "the",
+     "bookshop",
+     "next",
+     "to",
+     "the",
+     "bank?"
+    ],
+    "answer": "Do you mean the bookshop next to the bank?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Go",
+     "past",
+     "the",
+     "fountain",
+     "and",
+     "turn",
+     "right."
+    ],
+    "answer": "Go past the fountain and turn right.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "What does 'you can't miss it' mean?",
+    "options": [
+     "You must not be late.",
+     "It is very far away.",
+     "It is very easy to find.",
+     "You cannot go there."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Complete: The cinema is on the second floor, ___?",
+    "options": [
+     "is it",
+     "isn't it",
+     "doesn't it",
+     "aren't they"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which word means 'a building that is easy to see and remember'?",
+    "options": [
+     "landmark",
+     "escalator",
+     "traffic",
+     "corner"
+    ],
+    "answer": 0
+   }
+  ],
+  "0-4": [
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "don't",
+     "need",
+     "eggs,",
+     "do",
+     "we?"
+    ],
+    "answer": "We don't need eggs, do we?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Roll",
+     "out",
+     "the",
+     "dough",
+     "and",
+     "add",
+     "the",
+     "dates."
+    ],
+    "answer": "Roll out the dough and add the dates.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Grandma makes kleija every Eid, ___?",
+    "options": [
+     "isn't she",
+     "doesn't she",
+     "does she",
+     "don't she"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "What does 'preheat the oven' mean?",
+    "options": [
+     "turn the oven off",
+     "clean the oven",
+     "make the oven hot before cooking",
+     "open the oven door"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Your friend explains something clearly. You say:",
+    "options": [
+     "That makes sense.",
+     "Hold on a pinch.",
+     "Roll it out.",
+     "You can't miss it."
+    ],
+    "answer": 0
+   }
+  ],
+  "0-5": [
+   {
+    "type": "order",
+    "words": [
+     "Just",
+     "to",
+     "double-check,",
+     "we'll",
+     "set",
+     "off",
+     "at",
+     "six,",
+     "won't",
+     "we?"
+    ],
+    "answer": "Just to double-check, we'll set off at six, won't we?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Make",
+     "sure",
+     "you",
+     "bring",
+     "a",
+     "packed",
+     "lunch."
+    ],
+    "answer": "Make sure you bring a packed lunch.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: You signed the permission slip, ___?",
+    "options": [
+     "don't you",
+     "haven't you",
+     "did you",
+     "didn't you"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "What does 'set off' mean?",
+    "options": [
+     "arrive late",
+     "pack a bag",
+     "start a journey",
+     "sign a paper"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence checks information?",
+    "options": [
+     "So you're saying lunch is included?",
+     "I love school trips.",
+     "AlUla is beautiful.",
+     "Let's go next year."
+    ],
+    "answer": 0
+   }
+  ],
+  "1-0": [
+   {
+    "type": "order",
+    "words": [
+     "He",
+     "told",
+     "us",
+     "that",
+     "the",
+     "test",
+     "would",
+     "be",
+     "on",
+     "Monday."
+    ],
+    "answer": "He told us that the test would be on Monday.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Can",
+     "you",
+     "fill",
+     "me",
+     "in",
+     "on",
+     "the",
+     "news?"
+    ],
+    "answer": "Can you fill me in on the news?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Ms Huda ___ us to bring a calculator.",
+    "options": [
+     "said",
+     "spoke",
+     "talked",
+     "told"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'Sports day is on Thursday,' he said. → He said that sports day ___ on Thursday.",
+    "options": [
+     "was",
+     "is being",
+     "will",
+     "were"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "What does 'catch up on' mean?",
+    "options": [
+     "run faster than someone",
+     "forget something",
+     "learn about or do things you missed",
+     "write your name"
+    ],
+    "answer": 2
+   }
+  ],
+  "1-1": [
+   {
+    "type": "order",
+    "words": [
+     "She",
+     "said",
+     "that",
+     "they",
+     "were",
+     "moving",
+     "house."
+    ],
+    "answer": "She said that they were moving house.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "always",
+     "keep",
+     "in",
+     "touch",
+     "with",
+     "our",
+     "cousins."
+    ],
+    "answer": "We always keep in touch with our cousins.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'We have bought a flat,' she said. → She said they ___ a flat.",
+    "options": [
+     "have buy",
+     "buying",
+     "has bought",
+     "had bought"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Guess ___? We have a new baby in the family!",
+    "options": [
+     "who",
+     "how",
+     "what",
+     "where"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Your aunt says 'Say hello to everyone for me.' What can you report?",
+    "options": [
+     "She moved house.",
+     "She sends her love to everyone.",
+     "She got together.",
+     "She kept in touch yesterday."
+    ],
+    "answer": 1
+   }
+  ],
+  "1-2": [
+   {
+    "type": "order",
+    "words": [
+     "He",
+     "admitted",
+     "that",
+     "they",
+     "had",
+     "played",
+     "badly."
+    ],
+    "answer": "He admitted that they had played badly.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "captain",
+     "said",
+     "he",
+     "was",
+     "proud",
+     "of",
+     "the",
+     "team."
+    ],
+    "answer": "The captain said he was proud of the team.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'We will win next time,' the coach said. → The coach said they ___ next time.",
+    "options": [
+     "would win",
+     "will won",
+     "win",
+     "are winning"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "What does 'give up' mean?",
+    "options": [
+     "score again",
+     "stop trying",
+     "start a match",
+     "clap loudly"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Complete: He told ___ that it was the best day of his life.",
+    "options": [
+     "to reporters",
+     "for reporters",
+     "reporters",
+     "at reporters"
+    ],
+    "answer": 2
+   }
+  ],
+  "1-3": [
+   {
+    "type": "order",
+    "words": [
+     "He",
+     "asked",
+     "me",
+     "where",
+     "the",
+     "library",
+     "was."
+    ],
+    "answer": "He asked me where the library was.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "She",
+     "wanted",
+     "to",
+     "know",
+     "if",
+     "I",
+     "liked",
+     "kabsa."
+    ],
+    "answer": "She wanted to know if I liked kabsa.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Are the teachers strict?' → He asked me ___.",
+    "options": [
+     "whether the teachers were strict",
+     "are the teachers strict",
+     "whether were the teachers strict",
+     "if are the teachers strict"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'Where do you live?' → She asked me where ___.",
+    "options": [
+     "did I live",
+     "do you live",
+     "I am live",
+     "I lived"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "What does 'settle in' mean?",
+    "options": [
+     "sit down quickly",
+     "leave a place",
+     "start to feel happy in a new place",
+     "stay at home all day"
+    ],
+    "answer": 2
+   }
+  ],
+  "1-4": [
+   {
+    "type": "order",
+    "words": [
+     "They",
+     "warned",
+     "people",
+     "not",
+     "to",
+     "drive",
+     "in",
+     "the",
+     "rain."
+    ],
+    "answer": "They warned people not to drive in the rain.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "reporter",
+     "said",
+     "there",
+     "would",
+     "be",
+     "heavy",
+     "rain."
+    ],
+    "answer": "The reporter said there would be heavy rain.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Don't go near the valley,' the police said. → The police told people ___ near the valley.",
+    "options": [
+     "not to go",
+     "don't go",
+     "to not going",
+     "not go"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "What does 'come across' mean?",
+    "options": [
+     "walk to the other side",
+     "forget something",
+     "cry about something",
+     "find something by chance"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'Schools may close,' he said. → He said schools ___ close.",
+    "options": [
+     "may to",
+     "might",
+     "will",
+     "can't"
+    ],
+    "answer": 1
+   }
+  ],
+  "1-5": [
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "asked",
+     "him",
+     "what",
+     "his",
+     "favourite",
+     "plant",
+     "was."
+    ],
+    "answer": "I asked him what his favourite plant was.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "He",
+     "told",
+     "us",
+     "not",
+     "to",
+     "walk",
+     "on",
+     "the",
+     "grass."
+    ],
+    "answer": "He told us not to walk on the grass.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Can you write a poem?' → He asked if we ___ a poem.",
+    "options": [
+     "can wrote",
+     "could write",
+     "could writing",
+     "will write"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "What is a 'quote'?",
+    "options": [
+     "a short holiday",
+     "a type of news channel",
+     "a question with no answer",
+     "the exact words someone said"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence is correct?",
+    "options": [
+     "She told me that she was busy.",
+     "She said me that she was busy.",
+     "She told that she was busy.",
+     "She said to me she is busy yesterday."
+    ],
+    "answer": 0
+   }
+  ],
+  "2-0": [
+   {
+    "type": "order",
+    "words": [
+     "Would",
+     "you",
+     "mind",
+     "turning",
+     "down",
+     "the",
+     "TV?"
+    ],
+    "answer": "Would you mind turning down the TV?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Could",
+     "you",
+     "possibly",
+     "give",
+     "me",
+     "a",
+     "hand?"
+    ],
+    "answer": "Could you possibly give me a hand?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Would you mind ___ the door?",
+    "options": [
+     "close",
+     "to close",
+     "closing",
+     "closed"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'Would you mind helping me?' You are happy to help. You say:",
+    "options": [
+     "Yes, I would.",
+     "No, not at all.",
+     "Yes, I mind.",
+     "No, I don't help."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "What does 'give someone a hand' mean?",
+    "options": [
+     "help someone",
+     "say hello",
+     "hold hands",
+     "clap for someone"
+    ],
+    "answer": 0
+   }
+  ],
+  "2-1": [
+   {
+    "type": "order",
+    "words": [
+     "Is",
+     "it",
+     "OK",
+     "if",
+     "I",
+     "leave",
+     "early",
+     "today?"
+    ],
+    "answer": "Is it OK if I leave early today?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Do",
+     "you",
+     "mind",
+     "if",
+     "I",
+     "open",
+     "the",
+     "window?"
+    ],
+    "answer": "Do you mind if I open the window?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The teacher says 'I'm afraid not.' This means:",
+    "options": [
+     "Yes, go ahead.",
+     "No, sorry.",
+     "I'm scared.",
+     "Ask me tomorrow."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Would it be possible ___ some extra time?",
+    "options": [
+     "having",
+     "have",
+     "to have",
+     "to having"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Your friend asks 'Can I sit here?' and you agree. You say:",
+    "options": [
+     "Sure, go ahead.",
+     "I'm afraid not.",
+     "I feel unwell.",
+     "I'm leaving early."
+    ],
+    "answer": 0
+   }
+  ],
+  "2-2": [
+   {
+    "type": "order",
+    "words": [
+     "Do",
+     "you",
+     "mind",
+     "if",
+     "I",
+     "charge",
+     "my",
+     "phone?"
+    ],
+    "answer": "Do you mind if I charge my phone?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Please",
+     "help",
+     "yourself",
+     "to",
+     "some",
+     "dates."
+    ],
+    "answer": "Please help yourself to some dates.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "You want your friend to open the window. You say:",
+    "options": [
+     "Do you mind if I open you the window?",
+     "Would you mind open the window?",
+     "Do you mind opening I the window?",
+     "Would you mind opening the window?"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "What does 'make yourself at home' mean?",
+    "options": [
+     "clean the house",
+     "go back home",
+     "relax and be comfortable",
+     "build a house"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Complete: It's very kind ___ you to invite me.",
+    "options": [
+     "of",
+     "for",
+     "to",
+     "with"
+    ],
+    "answer": 0
+   }
+  ],
+  "2-3": [
+   {
+    "type": "order",
+    "words": [
+     "Sorry",
+     "to",
+     "bother",
+     "you,",
+     "but",
+     "could",
+     "you",
+     "help",
+     "me?"
+    ],
+    "answer": "Sorry to bother you, but could you help me?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Would",
+     "you",
+     "mind",
+     "taking",
+     "a",
+     "photo",
+     "of",
+     "us?"
+    ],
+    "answer": "Would you mind taking a photo of us?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Would you mind ___ over a little?",
+    "options": [
+     "move",
+     "to move",
+     "moved",
+     "moving"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Which is the most polite request to a stranger?",
+    "options": [
+     "Give me that seat.",
+     "Excuse me, would it be possible to sit here?",
+     "I sit here now.",
+     "Move, quickly."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "What does 'no problem at all' mean?",
+    "options": [
+     "There is a big problem.",
+     "I'm happy to do it.",
+     "I can't help you.",
+     "Please ask again."
+    ],
+    "answer": 1
+   }
+  ],
+  "2-4": [
+   {
+    "type": "order",
+    "words": [
+     "Would",
+     "you",
+     "mind",
+     "if",
+     "I",
+     "played",
+     "for",
+     "thirty",
+     "minutes?"
+    ],
+    "answer": "Would you mind if I played for thirty minutes?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Is",
+     "it",
+     "OK",
+     "if",
+     "I",
+     "post",
+     "this",
+     "photo?"
+    ],
+    "answer": "Is it OK if I post this photo?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Would you mind if I ___ your headphones?",
+    "options": [
+     "use",
+     "using",
+     "to use",
+     "used"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Your friend asks 'Do you mind if I post this photo of you?' You don't want it online. You say:",
+    "options": [
+     "Actually, I'd rather you didn't.",
+     "No, not at all.",
+     "Sure, go ahead.",
+     "No problem at all."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "What does 'screen time' mean?",
+    "options": [
+     "time at the cinema",
+     "a type of video game",
+     "time spent looking at phones, tablets or TVs",
+     "the time on a clock"
+    ],
+    "answer": 2
+   }
+  ],
+  "2-5": [
+   {
+    "type": "order",
+    "words": [
+     "Could",
+     "you",
+     "possibly",
+     "lend",
+     "us",
+     "your",
+     "carpet?"
+    ],
+    "answer": "Could you possibly lend us your carpet?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Is",
+     "it",
+     "OK",
+     "if",
+     "we",
+     "set",
+     "up",
+     "the",
+     "decorations",
+     "here?"
+    ],
+    "answer": "Is it OK if we set up the decorations here?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: We've run ___ of rice.",
+    "options": [
+     "off",
+     "away",
+     "over",
+     "out"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "What does 'be in charge of' mean?",
+    "options": [
+     "pay money for",
+     "be angry about",
+     "be responsible for",
+     "be afraid of"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which request is the most polite to a head teacher?",
+    "options": [
+     "Give us the hall on Thursday.",
+     "Would it be possible to use the hall on Thursday?",
+     "We want the hall.",
+     "The hall on Thursday, OK?"
+    ],
+    "answer": 1
+   }
+  ],
+  "3-0": [
+   {
+    "type": "order",
+    "words": [
+     "It",
+     "isn't",
+     "as",
+     "cheap",
+     "as",
+     "the",
+     "museum."
+    ],
+    "answer": "It isn't as cheap as the museum.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "think",
+     "it",
+     "would",
+     "be",
+     "better",
+     "to",
+     "go",
+     "karting."
+    ],
+    "answer": "I think it would be better to go karting.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'The park is cheaper than the cinema.' Which sentence means the same?",
+    "options": [
+     "The cinema isn't as cheap as the park.",
+     "The park isn't as cheap as the cinema.",
+     "The cinema is as cheap as the park.",
+     "The park is as expensive as the cinema."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "What does 'make up your mind' mean?",
+    "options": [
+     "forget",
+     "invent a story",
+     "feel worried",
+     "decide"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Complete: We can go bowling or swimming. It's ___ to you.",
+    "options": [
+     "on",
+     "over",
+     "up",
+     "down"
+    ],
+    "answer": 2
+   }
+  ],
+  "3-1": [
+   {
+    "type": "order",
+    "words": [
+     "Let's",
+     "go",
+     "for",
+     "the",
+     "photo",
+     "book."
+    ],
+    "answer": "Let's go for the photo book.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "could",
+     "split",
+     "the",
+     "cost",
+     "of",
+     "the",
+     "present."
+    ],
+    "answer": "We could split the cost of the present.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: A handbag is ___ more expensive than a photo book.",
+    "options": [
+     "much",
+     "very",
+     "as",
+     "so"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "What does 'come up with' mean?",
+    "options": [
+     "climb up quickly",
+     "arrive late",
+     "give a present",
+     "think of an idea"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Your friend says the gift is too expensive for one person. You say:",
+    "options": [
+     "It's very cheap, isn't it?",
+     "We could split the cost.",
+     "I've already wrapped it.",
+     "It's the same as last year."
+    ],
+    "answer": 1
+   }
+  ],
+  "3-2": [
+   {
+    "type": "order",
+    "words": [
+     "Drama",
+     "would",
+     "suit",
+     "me",
+     "better."
+    ],
+    "answer": "Drama would suit me better.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "weighing",
+     "up",
+     "the",
+     "pros",
+     "and",
+     "cons."
+    ],
+    "answer": "I'm weighing up the pros and cons.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Chess is just as interesting ___ coding.",
+    "options": [
+     "than",
+     "as",
+     "like",
+     "to"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "What does 'take up' mean?",
+    "options": [
+     "stop a hobby",
+     "pick something up from the floor",
+     "win a prize",
+     "start a new hobby"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "What are 'pros and cons'?",
+    "options": [
+     "good and bad points",
+     "teachers and students",
+     "questions and answers",
+     "winners and losers"
+    ],
+    "answer": 0
+   }
+  ],
+  "3-3": [
+   {
+    "type": "order",
+    "words": [
+     "AlUla",
+     "isn't",
+     "nearly",
+     "as",
+     "busy",
+     "as",
+     "Jeddah."
+    ],
+    "answer": "AlUla isn't nearly as busy as Jeddah.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "It",
+     "depends",
+     "on",
+     "our",
+     "budget."
+    ],
+    "answer": "It depends on our budget.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: You ___ a point. Jeddah is better for swimming.",
+    "options": [
+     "make",
+     "do",
+     "have",
+     "take"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "What does 'in the middle of nowhere' mean?",
+    "options": [
+     "in the city centre",
+     "in the middle of a road",
+     "near the airport",
+     "very far from towns and people"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'Jeddah is much busier than AlUla.' Which sentence means the same?",
+    "options": [
+     "Jeddah isn't as busy as AlUla.",
+     "AlUla is as busy as Jeddah.",
+     "AlUla isn't nearly as busy as Jeddah.",
+     "AlUla is much busier than Jeddah."
+    ],
+    "answer": 2
+   }
+  ],
+  "3-4": [
+   {
+    "type": "order",
+    "words": [
+     "Let's",
+     "get",
+     "one",
+     "big",
+     "plate",
+     "between",
+     "us."
+    ],
+    "answer": "Let's get one big plate between us.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "can't",
+     "decide",
+     "between",
+     "burgers",
+     "and",
+     "shawarma."
+    ],
+    "answer": "I can't decide between burgers and shawarma.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: It would be better ___ fast food again.",
+    "options": [
+     "to not having",
+     "not to have",
+     "don't have",
+     "not having"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "What does 'go easy on' mean?",
+    "options": [
+     "not eat or use too much of",
+     "eat very quickly",
+     "cook something easily",
+     "order a lot of"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Your friend asks 'Pizza or pasta?' Both are OK for you. You say:",
+    "options": [
+     "Neither is filling.",
+     "Either is fine with me.",
+     "I can't afford either.",
+     "Between us, please."
+    ],
+    "answer": 1
+   }
+  ],
+  "3-5": [
+   {
+    "type": "order",
+    "words": [
+     "Let's",
+     "take",
+     "a",
+     "vote",
+     "on",
+     "the",
+     "project."
+    ],
+    "answer": "Let's take a vote on the project.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'll",
+     "go",
+     "along",
+     "with",
+     "the",
+     "group."
+    ],
+    "answer": "I'll go along with the group.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: We need to ___ a decision today.",
+    "options": [
+     "do",
+     "say",
+     "reach",
+     "put"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "What does 'make a difference' mean?",
+    "options": [
+     "have a good effect",
+     "change your clothes",
+     "find two different things",
+     "make a mistake"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence makes a final decision?",
+    "options": [
+     "What do you think?",
+     "On the other hand, it's expensive.",
+     "I can't make up my mind.",
+     "Let's go for the garden."
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "unitTests": {
+  "0": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "What does 'hand in' mean?",
+     "options": [
+      "take a book home",
+      "raise your hand",
+      "finish early",
+      "give your work to a teacher"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Complete: Hold ___, I need to find a pen.",
+     "options": [
+      "up",
+      "on",
+      "off",
+      "in"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'Make sure you bring water.' 'Make sure' means:",
+     "options": [
+      "maybe do it",
+      "check that you do it",
+      "never do it",
+      "forget to do it"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "Complete: We'll set ___ at six in the morning.",
+     "options": [
+      "up",
+      "on",
+      "down",
+      "off"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Complete: You live near the school, ___?",
+     "options": [
+      "don't you",
+      "do you",
+      "aren't you",
+      "isn't it"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Complete: She can't come on Friday, ___?",
+     "options": [
+      "can't she",
+      "does she",
+      "can she",
+      "is she"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Your friend says 'Meet me at the gate.' You aren't sure which gate. You say:",
+     "options": [
+      "I don't mean the gate.",
+      "The gate means yes.",
+      "Meet me at the gate.",
+      "Do you mean the main gate?"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "order",
+     "words": [
+      "So",
+      "you're",
+      "saying",
+      "we",
+      "meet",
+      "at",
+      "five?"
+     ],
+     "answer": "So you're saying we meet at five?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "Sorry,",
+      "did",
+      "you",
+      "say",
+      "Tuesday",
+      "or",
+      "Thursday?"
+     ],
+     "answer": "Sorry, did you say Tuesday or Thursday?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "It's",
+      "on",
+      "your",
+      "left,",
+      "isn't",
+      "it?"
+     ],
+     "answer": "It's on your left, isn't it?",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Your friend tells you about a party. Check three details: the day, the time and the place.",
+    "Your teacher explains a new project. Use a question tag and 'So you're saying …' to check you understood."
+   ]
+  },
+  "1": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "What does 'fill someone in' mean?",
+     "options": [
+      "fill a glass with water",
+      "write on a form",
+      "tell someone the news they missed",
+      "meet someone new"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Complete: We keep in ___ with our cousins in Jeddah.",
+     "options": [
+      "contact",
+      "call",
+      "news",
+      "touch"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "What does 'come across' mean?",
+     "options": [
+      "cross the road",
+      "come back home",
+      "find by chance",
+      "agree with someone"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Complete: The match will take ___ on Friday.",
+     "options": [
+      "part",
+      "place",
+      "time",
+      "off"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'I am tired,' Omar said. → Omar said that he ___ tired.",
+     "options": [
+      "was",
+      "is",
+      "be",
+      "has"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "'Where do you live?' she asked. → She asked me where ___.",
+     "options": [
+      "did I live",
+      "I lived",
+      "do I live",
+      "lived I"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'Don't be late,' the teacher said. → The teacher told us ___ late.",
+     "options": [
+      "don't be",
+      "to not being",
+      "not to be",
+      "not be"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "order",
+     "words": [
+      "She",
+      "told",
+      "me",
+      "that",
+      "she",
+      "was",
+      "moving",
+      "house."
+     ],
+     "answer": "She told me that she was moving house.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "He",
+      "asked",
+      "me",
+      "if",
+      "I",
+      "liked",
+      "football."
+     ],
+     "answer": "He asked me if I liked football.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "They",
+      "warned",
+      "people",
+      "to",
+      "stay",
+      "indoors."
+     ],
+     "answer": "They warned people to stay indoors.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Tell me about something a teacher or a friend said to you this week.",
+    "Imagine you interviewed a famous person. Report two things they said and one question you asked."
+   ]
+  },
+  "2": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "'Please turn down the music.' What does 'turn down' mean here?",
+     "options": [
+      "make it quieter",
+      "make it louder",
+      "switch it on",
+      "choose new music"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "What does 'go ahead' mean?",
+     "options": [
+      "walk in front",
+      "yes, you can do it",
+      "go home now",
+      "wait a moment"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "Complete: Please help ___ to some dates.",
+     "options": [
+      "you",
+      "yours",
+      "yourself",
+      "your"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Complete: We've run ___ of sugar.",
+     "options": [
+      "out",
+      "off",
+      "away",
+      "down"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Complete: Would you mind ___ me with my bag?",
+     "options": [
+      "help",
+      "to help",
+      "helped",
+      "helping"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Complete: Do you mind if I ___ the window?",
+     "options": [
+      "opening",
+      "to open",
+      "open",
+      "opened"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Someone asks 'Would you mind waiting here?' You agree. You say:",
+     "options": [
+      "No, not at all.",
+      "Yes, I would.",
+      "Yes, I mind it.",
+      "I'm afraid yes."
+     ],
+     "answer": 0
+    },
+    {
+     "type": "order",
+     "words": [
+      "Is",
+      "it",
+      "OK",
+      "if",
+      "I",
+      "leave",
+      "early",
+      "today?"
+     ],
+     "answer": "Is it OK if I leave early today?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "Would",
+      "you",
+      "mind",
+      "turning",
+      "down",
+      "the",
+      "TV?"
+     ],
+     "answer": "Would you mind turning down the TV?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "Sorry",
+      "to",
+      "bother",
+      "you,",
+      "but",
+      "could",
+      "you",
+      "help",
+      "me?"
+     ],
+     "answer": "Sorry to bother you, but could you help me?",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "You are a guest at a friend's house. Make two polite requests and ask permission for one thing.",
+    "Ask your teacher for permission to do two things, using different polite forms."
+   ]
+  },
+  "3": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "What does 'make up your mind' mean?",
+     "options": [
+      "tell a story",
+      "change your clothes",
+      "decide",
+      "be angry"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "What does 'good value for money' mean?",
+     "options": [
+      "worth the price",
+      "very expensive",
+      "free",
+      "a lot of coins"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Complete: I'm weighing ___ the pros and cons.",
+     "options": [
+      "on",
+      "in",
+      "over",
+      "up"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Complete: We could raise ___ for the hospital.",
+     "options": [
+      "a vote",
+      "money",
+      "a difference",
+      "a decision"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'Jeddah is busier than AlUla.' Which sentence means the same?",
+     "options": [
+      "Jeddah isn't as busy as AlUla.",
+      "AlUla isn't as busy as Jeddah.",
+      "AlUla is as busy as Jeddah.",
+      "AlUla is busier than Jeddah."
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "Complete: It would be better ___ the bus.",
+     "options": [
+      "taking",
+      "take",
+      "to taking",
+      "to take"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Complete: Chess is just as fun ___ football.",
+     "options": [
+      "as",
+      "than",
+      "like",
+      "so"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "order",
+     "words": [
+      "Let's",
+      "go",
+      "for",
+      "the",
+      "photo",
+      "book."
+     ],
+     "answer": "Let's go for the photo book.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "It",
+      "isn't",
+      "as",
+      "expensive",
+      "as",
+      "the",
+      "handbag."
+     ],
+     "answer": "It isn't as expensive as the handbag.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "I",
+      "think",
+      "it",
+      "would",
+      "be",
+      "better",
+      "to",
+      "stay",
+      "at",
+      "home."
+     ],
+     "answer": "I think it would be better to stay at home.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Compare two places for a school trip and decide which one is better.",
+    "Your family can't decide what to eat tonight. Compare two options and make a decision."
+   ]
+  }
+ },
+ "levelTest": {
+  "items": [
+   {
+    "type": "mc",
+    "q": "Complete: You're coming to the party, ___?",
+    "options": [
+     "don't you",
+     "aren't you",
+     "isn't it",
+     "are you"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Complete: He didn't call you, ___?",
+    "options": [
+     "didn't he",
+     "did he",
+     "does he",
+     "was he"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "You want to check some information. You say:",
+    "options": [
+     "The test is on Monday.",
+     "I said Monday.",
+     "Monday is a test.",
+     "So you're saying the test is on Monday?"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "Do",
+     "you",
+     "mean",
+     "the",
+     "bookshop",
+     "next",
+     "to",
+     "the",
+     "bank?"
+    ],
+    "answer": "Do you mean the bookshop next to the bank?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We're",
+     "meeting",
+     "at",
+     "four,",
+     "aren't",
+     "we?"
+    ],
+    "answer": "We're meeting at four, aren't we?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'I can swim,' Sam said. → Sam said he ___ swim.",
+    "options": [
+     "could",
+     "can to",
+     "could to",
+     "cans"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Complete: She ___ me that the shop was closed.",
+    "options": [
+     "said",
+     "spoke",
+     "told",
+     "talked"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'Are you ready?' → He asked me ___ ready.",
+    "options": [
+     "was I",
+     "if was I",
+     "am I",
+     "if I was"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "coach",
+     "said",
+     "they",
+     "would",
+     "win",
+     "next",
+     "time."
+    ],
+    "answer": "The coach said they would win next time.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "She",
+     "asked",
+     "me",
+     "where",
+     "I",
+     "lived."
+    ],
+    "answer": "She asked me where I lived.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: Would you mind ___ more quietly?",
+    "options": [
+     "speak",
+     "to speak",
+     "speaking",
+     "spoke"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Your teacher asks 'Do you mind if I close the door?' You agree. You say:",
+    "options": [
+     "Yes, I do.",
+     "Not at all.",
+     "I'm afraid not.",
+     "Yes, please mind."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which request is the most polite?",
+    "options": [
+     "Would it be possible to change my seat?",
+     "Change my seat.",
+     "I want a new seat.",
+     "My seat, now."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "Would",
+     "you",
+     "mind",
+     "if",
+     "I",
+     "used",
+     "your",
+     "phone?"
+    ],
+    "answer": "Would you mind if I used your phone?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Could",
+     "you",
+     "possibly",
+     "give",
+     "me",
+     "a",
+     "hand?"
+    ],
+    "answer": "Could you possibly give me a hand?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Complete: The camp isn't ___ expensive as the hotel.",
+    "options": [
+     "so much",
+     "as",
+     "more",
+     "than"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Complete: It would be better ___ early.",
+    "options": [
+     "leaving",
+     "leave",
+     "to leave",
+     "left"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence makes a decision?",
+    "options": [
+     "Let's go for the cheaper one.",
+     "I can't make up my mind.",
+     "What do you think?",
+     "It depends on the price."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "Drama",
+     "would",
+     "suit",
+     "me",
+     "better",
+     "than",
+     "robotics."
+    ],
+    "answer": "Drama would suit me better than robotics.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "need",
+     "to",
+     "reach",
+     "a",
+     "decision",
+     "today."
+    ],
+    "answer": "We need to reach a decision today.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "speak": [
+   "Your friend explains how to get to their house. Check the directions and confirm the details.",
+   "Tell me some news from your family or school. Report what people said and asked.",
+   "You and I are planning a class trip. Make polite requests and help us decide between two places."
+  ]
+ }
+}

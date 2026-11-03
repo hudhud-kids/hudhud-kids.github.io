@@ -1,0 +1,208 @@
+{
+ "level": 9,
+ "mcq": [
+  {
+   "q": "Complete: You've finished your homework, ___?",
+   "options": [
+    "haven't you",
+    "didn't you",
+    "don't you",
+    "have you"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "'I'm busy,' she said. → She said that she ___ busy.",
+   "options": [
+    "is",
+    "was",
+    "were",
+    "has been"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "'Where do you live?' → He asked me where ___.",
+   "options": [
+    "did I live",
+    "I lived",
+    "do I live",
+    "I am living?"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "Complete: Would you mind ___ the window?",
+   "options": [
+    "close",
+    "to close",
+    "closing",
+    "closed"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "Complete: The bus isn't ___ fast ___ the train.",
+   "options": [
+    "so / than",
+    "more / as",
+    "as / than",
+    "as / as"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "I missed the meeting. Can you fill me ___?",
+   "options": [
+    "on",
+    "in",
+    "up",
+    "out"
+   ],
+   "answer": 1,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Before we choose, let's weigh ___ the pros and cons.",
+   "options": [
+    "up",
+    "in",
+    "off",
+    "on"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "You didn't hear the time clearly on the phone. What do you say?",
+   "options": [
+    "I said five.",
+    "Five is a good time.",
+    "Let's go for five.",
+    "Sorry, did you say five or nine?"
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "Which is the most polite way to ask a stranger?",
+   "options": [
+    "Give me your pen.",
+    "I want your pen now.",
+    "Sorry to bother you, but could I borrow your pen?",
+    "Pen, please, quick."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "Your group must choose. Which sentence makes the final decision?",
+   "options": [
+    "It depends on the weather.",
+    "OK, let's go for the museum.",
+    "On the other hand, it's far.",
+    "What do you think?"
+   ],
+   "answer": 1,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Teacher: Listen carefully, everyone. The science project is due on the twelfth, not the twentieth. You can work alone or in pairs, but the report must be under three hundred words.",
+   "q": "When is the project due?",
+   "options": [
+    "on the twentieth",
+    "on the twelfth",
+    "on the third"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "Noura: I've just spoken to Aunt Maha. She said they were coming to visit on Friday, and she told me to remind Mum to buy dates. She also asked if we still had the big carpet.",
+   "q": "What did Aunt Maha tell Noura to do?",
+   "options": [
+    "buy a new carpet",
+    "visit her on Friday",
+    "remind her mother to buy dates"
+   ],
+   "answer": 2
+  },
+  {
+   "script": "Omar: Excuse me, would you mind moving your bag? I'd like to sit here. Man: Oh, not at all. Sorry about that. There you go.",
+   "q": "What does the man do?",
+   "options": [
+    "He moves his bag.",
+    "He says no.",
+    "He gives Omar his ticket."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Reem: The mountains are lovely, but the beach isn't as far, and it's much cheaper. Dad: You have a point. It would be better to save money this time. Let's go for the beach.",
+   "q": "Why does the family choose the beach?",
+   "options": [
+    "It's cooler there.",
+    "It's closer and cheaper.",
+    "It's Reem's birthday."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Last week, our school radio team interviewed Mr Salem, the head teacher, about the new reading corner. He told us that the corner would open after the mid-year holiday. He said that students had chosen most of the books themselves. When we asked him whether students could borrow the books, he said they could take two books home every week. However, he asked everyone to look after the books and return them on time. The team also spoke to Huda in Year 8. She said the reading corner was a great idea because the library was often too crowded. She admitted that she didn't read much before, but she wanted to take up reading this year.",
+  "qs": [
+   {
+    "q": "When will the reading corner open?",
+    "options": [
+     "next week",
+     "after the mid-year holiday",
+     "at the end of the year"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "How many books can students take home each week?",
+    "options": [
+     "two",
+     "one",
+     "five"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "Why does Huda like the idea?",
+    "options": [
+     "She works in the library.",
+     "The library is often crowded.",
+     "She has read all the books."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "What did Mr Salem ask students to do?",
+    "options": [
+     "choose new books",
+     "read only in the library",
+     "return the books on time"
+    ],
+    "answer": 2
+   }
+  ]
+ },
+ "aloud": [
+  "Just to double-check, we're meeting at the main gate at half past four, aren't we?",
+  "Would you mind turning the music down a little? I'm trying to study.",
+  "The coach told reporters that the team had played well and would try harder next time."
+ ],
+ "speak": [
+  "Tell me about some news you heard recently. What did people say about it?",
+  "Imagine you're staying at a friend's house. What polite requests might you make?",
+  "You can go to the beach or the mountains next holiday. Compare them and decide."
+ ]
+}

@@ -1,0 +1,208 @@
+{
+ "level": 11,
+ "mcq": [
+  {
+   "q": "She's wearing a red team shirt and holding a flag. She ___ be going to the match.",
+   "options": [
+    "needn't",
+    "must",
+    "can't",
+    "shouldn't"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "That can't ___ Ahmed at the door. He's travelling in Jeddah.",
+   "options": [
+    "be",
+    "being",
+    "been",
+    "is"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "I failed the test. I ___ harder.",
+   "options": [
+    "had studied",
+    "should study",
+    "should have studied",
+    "must study"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "In the factory, the dates ___ by size before they are packed.",
+   "options": [
+    "are sorting",
+    "are sorted",
+    "sorted",
+    "sort"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "The old fort is well worth ___.",
+   "options": [
+    "visited",
+    "to visit",
+    "visit",
+    "visiting"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "Our small club beat the champions. Nobody expected us to come out on ___.",
+   "options": [
+    "up",
+    "top",
+    "first",
+    "high"
+   ],
+   "answer": 1,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "I spent all my money on impulse. It burned a hole in my ___.",
+   "options": [
+    "hand",
+    "box",
+    "bag",
+    "pocket"
+   ],
+   "answer": 3,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "I said something unkind by mistake and really put my ___ in it.",
+   "options": [
+    "foot",
+    "mouth",
+    "hand",
+    "head"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Your friend can't decide whether to try a new sport. What do you say to persuade them?",
+   "options": [
+    "The sport is played outside.",
+    "I tried it in 2020.",
+    "Give it a shot. It's worth the effort.",
+    "It might have been difficult."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "Which sentence shows the speaker is almost certain?",
+   "options": [
+    "It's a long shot, but they could win.",
+    "I doubt they'll win.",
+    "It's a safe bet that they'll win.",
+    "They might win, I suppose."
+   ],
+   "answer": 2,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Noura: Have you seen my glasses? I can't find them anywhere. Fahad: You were reading in the garden this morning. They must be out there. Noura: No, I've already looked high and low in the garden. Fahad: Then they might be in the car.",
+   "q": "Where has Noura already looked?",
+   "options": [
+    "in the kitchen",
+    "in the car",
+    "in the garden"
+   ],
+   "answer": 2
+  },
+  {
+   "script": "If you ask me, the best place to visit in winter is AlUla. The rocks will take your breath away, and you can try a balloon ride at sunrise. It's not cheap, but it's worth every riyal. You really should book early because hotels fill up fast.",
+   "q": "Why does the speaker say you should book early?",
+   "options": [
+    "The weather is bad in summer.",
+    "The balloon ride is free.",
+    "Hotels fill up fast."
+   ],
+   "answer": 2
+  },
+  {
+   "script": "I wish I had planned our desert trip better. We ran out of water by lunchtime, and the car nearly ran out of fuel too. We should have filled up in the last town. Still, it could have been worse. A kind family stopped and helped us.",
+   "q": "What does the speaker regret?",
+   "options": [
+    "not planning the trip well",
+    "visiting the desert at night",
+    "travelling with a family"
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Here's how the bottles are recycled. First, they're collected and taken to a plant. Then they're separated from paper and metal and washed. After that, they're broken down into tiny pieces. Finally, the pieces are melted down and made into new things like T-shirts.",
+   "q": "What happens straight after the bottles are washed?",
+   "options": [
+    "They are collected.",
+    "They are broken down into pieces.",
+    "They are made into T-shirts."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Last year, Reem left her science project to the last minute. The night before the deadline, her laptop crashed, and she lost everything. 'I could kick myself,' she says. 'I should have saved my work online.' She had to start again and finished at three in the morning. In hindsight, Reem thinks the problem was a blessing in disguise. Her teacher noticed how tired she was and walked her through a better way to plan her work, step by step. Now Reem uses a planner app, which she says has been a game changer. 'If you ask me, every student should try it,' she says. 'It's easier than it sounds, and you'll get the hang of it in a day.'",
+  "qs": [
+   {
+    "q": "What should Reem have done, according to her?",
+    "options": [
+     "bought a new laptop",
+     "saved her work online",
+     "asked her friend to help"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "Why does Reem call the problem a blessing in disguise?",
+    "options": [
+     "She didn't have to finish the project.",
+     "She got a better mark than before.",
+     "Her teacher taught her a better way to plan."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "What does Reem recommend to other students?",
+    "options": [
+     "using a planner app",
+     "working until three in the morning",
+     "buying a stronger laptop"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "The phrase 'get the hang of it' means …",
+    "options": [
+     "to learn how to use it",
+     "to keep it in a safe place",
+     "to stop using it"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "aloud": [
+  "I'm fairly sure our team will come out on top, but the other side might give us a run for our money.",
+  "If you ask me, the old town of Al-Balad is well worth a visit, so you really should go.",
+  "First of all, the beans are roasted, and once they're ground, the coffee is left to simmer."
+ ],
+ "speak": [
+  "Who do you think will win the next big match or competition, and how sure are you?",
+  "Tell me about something you regret doing or not doing. What should you have done?",
+  "Choose something you know how to make or do, and explain the process step by step."
+ ]
+}

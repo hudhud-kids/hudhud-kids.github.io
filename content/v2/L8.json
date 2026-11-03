@@ -1,0 +1,7153 @@
+{
+ "level": 8,
+ "cefr": "B1",
+ "gse": "43-46",
+ "exam": "Cambridge B1 Preliminary for Schools",
+ "v": 2,
+ "units": [
+  {
+   "t": "In My Opinion",
+   "ar": "في رأيي",
+   "e": "💬",
+   "fn": "Giving and asking for opinions",
+   "fnAr": "إبداء الرأي والسؤال عن آراء الآخرين",
+   "cando": "Can give and ask for opinions on familiar topics and support them with reasons.",
+   "grammar": [
+    "I think / I believe (that) + clause",
+    "In my opinion / Personally / If you ask me",
+    "What do you think about …? / How do you feel about …?"
+   ],
+   "lessons": [
+    [
+     "Screens and Games",
+     "give your opinion about video games and screen time and ask for other people's opinions",
+     "I think … because … / In my opinion, … / What do you think about …?"
+    ],
+    [
+     "School Food",
+     "give your opinion about school food and ask what others think of it",
+     "Personally, I … / I believe (that) … / What's your opinion of …?"
+    ],
+    [
+     "Films and Series",
+     "ask friends what they thought of a film or series and give your own opinion",
+     "What did you think of …? / How do you feel about …? / I found it …"
+    ],
+    [
+     "Big Matches",
+     "give strong opinions about a football match and ask others to make guesses",
+     "If you ask me, … / The way I see it, … / Who do you think will …?"
+    ],
+    [
+     "Big City or Small Town?",
+     "give careful opinions about places to live and ask others what they think",
+     "It seems to me that … / I'm not sure, but I think …"
+    ],
+    [
+     "School Radio Debate",
+     "share your opinions on a school question with clear reasons and ask for other people's views",
+     "From my point of view, … / The main reason is … / What's your view on …?"
+    ]
+   ]
+  },
+  {
+   "t": "I Agree … or Not",
+   "ar": "أوافق … أو لا",
+   "e": "🤝",
+   "fn": "Agreeing and disagreeing politely",
+   "fnAr": "الموافقة والاعتراض بأدب",
+   "cando": "Can agree and disagree politely in a discussion and explain their own point of view.",
+   "grammar": [
+    "So do I / Neither do I (short agreement)",
+    "So am I / Neither can I / So have I",
+    "I see your point, but … / I'm afraid I don't agree"
+   ],
+   "lessons": [
+    [
+     "Food Talk",
+     "agree and disagree with friends about food you like and don't like",
+     "So do I. / Neither do I. / Really? I don't."
+    ],
+    [
+     "Holiday Plans",
+     "agree and disagree with short answers while planning a family holiday",
+     "So am I. / Neither can I. / So have I. / Really? I have."
+    ],
+    [
+     "Learning Online",
+     "disagree politely about online lessons by agreeing with part of an idea first",
+     "I see your point, but … / That's true, but … / You've got a point."
+    ],
+    [
+     "Family Rules",
+     "agree strongly or disagree politely about rules and responsibilities at home",
+     "I totally agree. / Exactly! / I'm afraid I don't agree."
+    ],
+    [
+     "Our Green Planet",
+     "agree and disagree in a discussion about protecting the environment",
+     "I couldn't agree more. / You may be right, but … / Not necessarily."
+    ],
+    [
+     "Planning the Class Trip",
+     "discuss choices for a class trip, agree and disagree politely, and reach an agreement",
+     "I'm with you on that. / I'm not so sure about that. / Fair enough."
+    ]
+   ]
+  },
+  {
+   "t": "What Should I Do?",
+   "ar": "ماذا أفعل؟",
+   "e": "🧭",
+   "fn": "Asking for and giving advice",
+   "fnAr": "طلب النصيحة وتقديمها",
+   "cando": "Can ask for and give advice about everyday problems and explain what will happen if someone follows it.",
+   "grammar": [
+    "Why don't you …? / You could … / Have you tried …ing?",
+    "If I were you, I'd …",
+    "First conditional: If + present simple, will / won't …",
+    "You'd better … / unless"
+   ],
+   "lessons": [
+    [
+     "Friendship Problems",
+     "give a friend advice about a problem with another friend",
+     "Why don't you …? / You could … / Have you tried …ing?"
+    ],
+    [
+     "Exam Stress",
+     "give advice to someone who is stressed about exams using 'If I were you'",
+     "If I were you, I'd … / If I were you, I wouldn't …"
+    ],
+    [
+     "Healthy Habits",
+     "give advice about sleep and food and say what will happen if someone follows it",
+     "If you …, you'll … / If you don't …, you won't …"
+    ],
+    [
+     "Pocket Money",
+     "give advice about saving and spending money and warn about what will happen",
+     "You'd better … / It's a good idea to … / … unless …"
+    ],
+    [
+     "A New School",
+     "ask someone for advice politely when you are in a new situation",
+     "Can I ask your advice? / What do you suggest? / My advice is to …"
+    ],
+    [
+     "The Advice Show",
+     "be the expert on an advice podcast and give helpful advice for different problems",
+     "It might help to … / Whatever you do, don't … / If I were you, I'd …"
+    ]
+   ]
+  },
+  {
+   "t": "People and Places in Detail",
+   "ar": "وصف الأشخاص والأماكن بالتفصيل",
+   "e": "🏛️",
+   "fn": "Describing in detail",
+   "fnAr": "الوصف بالتفصيل",
+   "cando": "Can describe people, things and places in detail, using relative clauses to add information.",
+   "grammar": [
+    "Relative clauses with who (people)",
+    "which / that (things)",
+    "where (places)",
+    "whose (possession)"
+   ],
+   "lessons": [
+    [
+     "People I Admire",
+     "describe a person you admire using 'who' to add information",
+     "He's / She's the person who … / someone who …"
+    ],
+    [
+     "Clever Inventions",
+     "describe gadgets and inventions using 'which' and 'that'",
+     "It's a gadget which / that … / It's used for …ing."
+    ],
+    [
+     "Places I Love",
+     "describe interesting places in detail using 'where'",
+     "It's the place where … / … is famous for …"
+    ],
+    [
+     "Whose Is It?",
+     "describe people in your family or class using 'whose' and other details",
+     "He's the boy whose … / She's the one whose …"
+    ],
+    [
+     "Lost and Found",
+     "describe a lost thing and the place where you lost it in detail",
+     "It's a … which / that … / It's made of … / … the place where …"
+    ],
+    [
+     "Be a Tour Guide",
+     "show a visitor around your city and describe people, places and things in detail",
+     "… which is located … / It's the place where … / Someone who …"
+    ]
+   ]
+  }
+ ],
+ "scripts": {
+  "0-0": {
+   "objective": "Today you will give your opinion about video games and screen time and ask for other people's opinions.",
+   "warmup": "How much time do you spend on screens on a school day?",
+   "expressions": [
+    {
+     "w": "in my opinion",
+     "def": "used before you say what you think about something",
+     "ar": "في رأيي",
+     "frame": "In my opinion, ___ is the best game ever."
+    },
+    {
+     "w": "addictive",
+     "def": "so enjoyable that it is hard to stop",
+     "ar": "يجعلك تتعلّق به / يسبب الإدمان",
+     "frame": "___ is really addictive, so I only play it at weekends."
+    },
+    {
+     "w": "a waste of time",
+     "def": "something that is not useful or not worth doing",
+     "ar": "مضيعة للوقت",
+     "frame": "I think ___ is a waste of time."
+    },
+    {
+     "w": "screen time",
+     "def": "the time you spend looking at phones, tablets, TV or computers",
+     "ar": "وقت الشاشة",
+     "frame": "My screen time is about ___ hours a day."
+    },
+    {
+     "w": "to be honest",
+     "def": "used before you say what you really think",
+     "ar": "بصراحة",
+     "frame": "To be honest, I don't really like ___."
+    },
+    {
+     "w": "What do you think about …?",
+     "def": "used to ask for someone's opinion",
+     "ar": "ما رأيك في ...؟",
+     "frame": "What do you think about ___?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar and his sister Reem are talking about a new football video game at home.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Omar, you've been playing that game for three hours! What do you think about your screen time today?"
+     },
+     {
+      "s": "Omar",
+      "t": "To be honest, it's a bit too much. But this new football game is really addictive."
+     },
+     {
+      "s": "Reem",
+      "t": "In my opinion, three hours is a waste of time. It's a beautiful day outside."
+     },
+     {
+      "s": "Omar",
+      "t": "Maybe, but it isn't a complete waste. I'm learning to work with my team online."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "That's interesting. What do you think about playing real football instead?"
+     },
+     {
+      "s": "Omar",
+      "t": "Well, I think real football is better for my health, because I actually move."
+     },
+     {
+      "s": "Reem",
+      "t": "Exactly. So let's go to the park after Asr. Dad can take us."
+     },
+     {
+      "s": "Omar",
+      "t": "Fine! I'll save the game and come with you."
+     }
+    ],
+    "focus": "I think real football is better for my health, because I actually move.",
+    "qs": [
+     "Why does Reem think three hours of gaming is a waste of time?",
+     "What does Omar think about real football?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school magazine is asking students: should children have a daily screen-time limit? I'm a reporter, and I want to interview you.",
+    "prompts": [
+     {
+      "q": "What do you think about having a daily screen-time limit?",
+      "hint": "Start with 'I think' or 'In my opinion' and give one reason with 'because'."
+     },
+     {
+      "q": "Which games or apps are a waste of time, in your opinion?",
+      "hint": "Name one and explain why you think so."
+     },
+     {
+      "q": "And what do your parents think about your screen time?",
+      "hint": "Say 'My parents think …' and then give your own opinion with 'To be honest, …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Gaming in Saudi Arabia",
+    "points": [
+     "Saudi Arabia has millions of gamers, and many of them are young people.",
+     "Riyadh hosts the Esports World Cup, one of the biggest gaming events in the world.",
+     "Many families now have screen-time rules, such as no phones at dinner."
+    ],
+    "qs": [
+     "What do you think about esports? Is it a real sport?",
+     "In your opinion, what is a good screen-time rule for families?"
+    ]
+   },
+   "exit": "Give me your opinion about video games in two sentences, and use 'because' in one of them."
+  },
+  "0-1": {
+   "objective": "Today you will give your opinion about school food and ask what others think of it.",
+   "warmup": "What do you usually eat at break time?",
+   "expressions": [
+    {
+     "w": "personally",
+     "def": "used when you give your own opinion, not other people's",
+     "ar": "شخصياً",
+     "frame": "Personally, I think ___ is delicious."
+    },
+    {
+     "w": "I'm not keen on …",
+     "def": "I don't like something very much",
+     "ar": "لا أحبّ ... كثيراً",
+     "frame": "I'm not keen on ___, so I usually bring my own lunch."
+    },
+    {
+     "w": "a healthy option",
+     "def": "a food or drink choice that is good for your body",
+     "ar": "خيار صحي",
+     "frame": "A healthy option for breakfast is ___."
+    },
+    {
+     "w": "What's your opinion of …?",
+     "def": "a polite way to ask what someone thinks about something",
+     "ar": "ما رأيك في ...؟",
+     "frame": "What's your opinion of ___?"
+    },
+    {
+     "w": "I believe (that) …",
+     "def": "to think that something is true or right",
+     "ar": "أعتقد أن ...",
+     "frame": "I believe that schools should sell ___."
+    },
+    {
+     "w": "tasteless",
+     "def": "having no flavour",
+     "ar": "بلا طعم",
+     "frame": "The ___ was tasteless, so I added some salt."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura and her classmate Sara are in the school canteen at break time.",
+    "p1": [
+     {
+      "s": "Sara",
+      "t": "Noura, what's your opinion of the new canteen menu?"
+     },
+     {
+      "s": "Noura",
+      "t": "Personally, I'm not keen on it. The pasta was tasteless yesterday."
+     },
+     {
+      "s": "Sara",
+      "t": "Really? I liked the chicken wrap. I believe it's a healthy option too."
+     },
+     {
+      "s": "Noura",
+      "t": "Maybe, but they stopped selling samosas! That's a real shame."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sara",
+      "t": "In my opinion, it's good that they sell less fried food."
+     },
+     {
+      "s": "Noura",
+      "t": "I suppose so. But I believe students should be able to choose."
+     },
+     {
+      "s": "Sara",
+      "t": "What do you think about writing to the head teacher about it?"
+     },
+     {
+      "s": "Noura",
+      "t": "That's a great idea! Let's ask her to add fresh juice and dates."
+     }
+    ],
+    "focus": "I believe students should be able to choose.",
+    "qs": [
+     "Why isn't Noura keen on the new menu?",
+     "What do the girls want to ask the head teacher to add?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school wants to change the canteen menu. I'm the head teacher, and I'd like to hear your opinion before we decide.",
+    "prompts": [
+     {
+      "q": "What's your opinion of the food in our canteen?",
+      "hint": "Give your opinion with 'Personally, I think …' and one example."
+     },
+     {
+      "q": "Do you believe we should stop selling sweets and fizzy drinks?",
+      "hint": "Say 'I believe that …' and give a reason."
+     },
+     {
+      "q": "What healthy options would you like to see on the menu?",
+      "hint": "Name two foods and say why students would like them."
+     }
+    ]
+   },
+   "culture": {
+    "title": "School Lunches Around the World",
+    "points": [
+     "In Japan, students often serve lunch to their classmates and clean up afterwards.",
+     "In France, a school lunch can have four parts, including a starter and cheese.",
+     "In many Saudi schools, students buy snacks from the canteen or bring food from home."
+    ],
+    "qs": [
+     "What do you think about students serving lunch, like in Japan?",
+     "In your opinion, should schools give free lunch to every student?"
+    ]
+   },
+   "exit": "Tell me your opinion of your school food in two sentences. Start one of them with 'Personally'."
+  },
+  "0-2": {
+   "objective": "Today you will ask friends what they thought of a film or series and give your own opinion.",
+   "warmup": "What's the last film or series you watched?",
+   "expressions": [
+    {
+     "w": "What did you think of …?",
+     "def": "used to ask for someone's opinion about something they saw or did",
+     "ar": "ما رأيك في ... (بعد أن شاهدته)؟",
+     "frame": "What did you think of ___?"
+    },
+    {
+     "w": "I found it …",
+     "def": "used to say how something seemed to you",
+     "ar": "وجدته ...",
+     "frame": "I found the ending ___."
+    },
+    {
+     "w": "overrated",
+     "def": "thought to be better than it really is",
+     "ar": "مبالغ في مدحه",
+     "frame": "In my opinion, ___ is a bit overrated."
+    },
+    {
+     "w": "plot",
+     "def": "the story of a film or book",
+     "ar": "حبكة القصة",
+     "frame": "The plot of ___ was really clever."
+    },
+    {
+     "w": "How do you feel about …?",
+     "def": "used to ask someone's opinion or feelings about something",
+     "ar": "ما شعورك تجاه ...؟",
+     "frame": "How do you feel about ___?"
+    },
+    {
+     "w": "worth watching",
+     "def": "good enough to spend time watching",
+     "ar": "يستحق المشاهدة",
+     "frame": "___ is definitely worth watching."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal and his cousin Sam have just watched an animated film at a cinema in Jeddah.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "So, Faisal, what did you think of the film?"
+     },
+     {
+      "s": "Faisal",
+      "t": "I found it really funny, but the plot was a bit confusing in the middle."
+     },
+     {
+      "s": "Sam",
+      "t": "Really? I thought the plot was clever. The ending surprised me."
+     },
+     {
+      "s": "Faisal",
+      "t": "True, the ending was great. But was the first film better?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "To be honest, I think the first one is a bit overrated. This one was better."
+     },
+     {
+      "s": "Faisal",
+      "t": "I'm not sure. How do you feel about films with so many songs?"
+     },
+     {
+      "s": "Sam",
+      "t": "I usually skip the songs at home! But overall, it was worth watching."
+     },
+     {
+      "s": "Faisal",
+      "t": "In my opinion, it's the best film this year. Let's tell everyone at school!"
+     }
+    ],
+    "focus": "I found it really funny, but the plot was a bit confusing in the middle.",
+    "qs": [
+     "What did Faisal find confusing?",
+     "What does Sam think about the first film?"
+    ]
+   },
+   "speakout": {
+    "scene": "You've just watched a film or series that everyone is talking about. I'm your friend, and I haven't seen it yet.",
+    "prompts": [
+     {
+      "q": "What did you think of it?",
+      "hint": "Say 'I found it …' and give one reason."
+     },
+     {
+      "q": "How do you feel about the main character?",
+      "hint": "Describe the character and say if you liked them."
+     },
+     {
+      "q": "Is it worth watching, or is it overrated?",
+      "hint": "Give your opinion and say who would enjoy it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Cinema in Saudi Arabia",
+    "points": [
+     "Cinemas opened again in Saudi Arabia in 2018, and many families now go often.",
+     "The Red Sea International Film Festival takes place in Jeddah every year.",
+     "Young Saudi filmmakers are now making films about local life and stories."
+    ],
+    "qs": [
+     "What do you think about watching films at the cinema instead of at home?",
+     "How do you feel about Saudi films? Have you seen one?"
+    ]
+   },
+   "exit": "Tell me what you thought of the last film or series you watched, in two sentences."
+  },
+  "0-3": {
+   "objective": "Today you will give strong opinions about a football match and ask others to make guesses.",
+   "warmup": "Which team do you support, and why?",
+   "expressions": [
+    {
+     "w": "if you ask me",
+     "def": "used to give your honest opinion",
+     "ar": "لو تسألني",
+     "frame": "If you ask me, ___ will win the league."
+    },
+    {
+     "w": "the way I see it",
+     "def": "used to explain how you understand a situation",
+     "ar": "من وجهة نظري",
+     "frame": "The way I see it, ___ is the most important player."
+    },
+    {
+     "w": "deserve to win",
+     "def": "to play well enough to win",
+     "ar": "يستحق الفوز",
+     "frame": "___ deserved to win because ___."
+    },
+    {
+     "w": "unfair",
+     "def": "not right, or not equal for everyone",
+     "ar": "غير عادل",
+     "frame": "I think it's unfair when ___."
+    },
+    {
+     "w": "referee",
+     "def": "the person who controls a match and makes sure players follow the rules",
+     "ar": "الحَكَم",
+     "frame": "The referee made a bad decision when ___."
+    },
+    {
+     "w": "Who do you think will …?",
+     "def": "used to ask someone to guess or give an opinion",
+     "ar": "مَن تظن أنه سـ...؟",
+     "frame": "Who do you think will win ___?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Khalid and his friend Daniel, who lives in Riyadh, are watching Al-Hilal play Al-Nassr on TV.",
+    "p1": [
+     {
+      "s": "Daniel",
+      "t": "That was never a penalty! The referee made a terrible mistake."
+     },
+     {
+      "s": "Khalid",
+      "t": "If you ask me, it was a penalty. The defender pushed him."
+     },
+     {
+      "s": "Daniel",
+      "t": "Well, it seems unfair. Al-Nassr played much better in the first half."
+     },
+     {
+      "s": "Khalid",
+      "t": "Maybe, but they missed so many chances."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Daniel",
+      "t": "So who do you think will win the league this year?"
+     },
+     {
+      "s": "Khalid",
+      "t": "The way I see it, Al-Hilal has the strongest team, so they deserve to win."
+     },
+     {
+      "s": "Daniel",
+      "t": "I'm not sure. In my opinion, the league is very close this season."
+     },
+     {
+      "s": "Khalid",
+      "t": "We'll see! Quick, the second half is starting."
+     }
+    ],
+    "focus": "The way I see it, Al-Hilal has the strongest team, so they deserve to win.",
+    "qs": [
+     "Why does Daniel think the decision was unfair?",
+     "Which team does Khalid think will win the league?"
+    ]
+   },
+   "speakout": {
+    "scene": "You and I are presenters on a kids' sports channel. Tonight we're talking about a big match that happened this week.",
+    "prompts": [
+     {
+      "q": "Who do you think deserved to win the match?",
+      "hint": "Name the team and use 'deserved to win because …'."
+     },
+     {
+      "q": "If you ask me, the referee was terrible. What do you think?",
+      "hint": "Give your own opinion with 'The way I see it, …'."
+     },
+     {
+      "q": "Who do you think will win the next big tournament?",
+      "hint": "Make a guess and give one reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Football Fever in Saudi Arabia",
+    "points": [
+     "Saudi Arabia will host the FIFA World Cup in 2034.",
+     "Famous players from around the world now play in the Saudi Pro League.",
+     "Saudi fans still remember the national team's surprise win against Argentina in 2022."
+    ],
+    "qs": [
+     "What do you think about famous players coming to the Saudi league?",
+     "In your opinion, how will the 2034 World Cup change Saudi Arabia?"
+    ]
+   },
+   "exit": "Give me your opinion about your favourite team in two sentences. Use 'If you ask me' or 'The way I see it'."
+  },
+  "0-4": {
+   "objective": "Today you will give careful opinions about places to live and ask others what they think.",
+   "warmup": "Do you live in a big city or a small town?",
+   "expressions": [
+    {
+     "w": "it seems to me that",
+     "def": "used to give an opinion in a careful way",
+     "ar": "يبدو لي أن",
+     "frame": "It seems to me that ___ is more relaxing."
+    },
+    {
+     "w": "crowded",
+     "def": "full of too many people",
+     "ar": "مزدحم",
+     "frame": "___ gets really crowded at the weekend."
+    },
+    {
+     "w": "peaceful",
+     "def": "quiet and calm",
+     "ar": "هادئ ومريح",
+     "frame": "The most peaceful place I know is ___."
+    },
+    {
+     "w": "traffic jam",
+     "def": "a long line of cars that can't move quickly",
+     "ar": "زحمة سير",
+     "frame": "I was stuck in a traffic jam on the way to ___."
+    },
+    {
+     "w": "I'm not sure, but …",
+     "def": "used when your opinion is not very strong",
+     "ar": "لست متأكداً، لكن ...",
+     "frame": "I'm not sure, but I think ___ is better for families."
+    },
+    {
+     "w": "a lot to do",
+     "def": "many activities or places to enjoy",
+     "ar": "الكثير من الأشياء لتفعلها",
+     "frame": "There's a lot to do in ___, like ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem lives in Riyadh. Her friend Lama lives in a small town in Qassim. They are talking on a video call.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Lama, what do you think about living in a small town?"
+     },
+     {
+      "s": "Lama",
+      "t": "I love it. It's peaceful, and my grandparents live next door."
+     },
+     {
+      "s": "Reem",
+      "t": "It seems to me that small towns are a bit boring. In Riyadh there's a lot to do."
+     },
+     {
+      "s": "Lama",
+      "t": "That's true, but Riyadh is so crowded. How long does it take you to get to school?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "About forty minutes, because of the traffic jams every morning."
+     },
+     {
+      "s": "Lama",
+      "t": "Forty minutes! I walk to school in five."
+     },
+     {
+      "s": "Reem",
+      "t": "OK, you win! But we have Riyadh Season, the Boulevard and huge malls."
+     },
+     {
+      "s": "Lama",
+      "t": "I'm not sure, but I think a small town is still better for me. I'll visit you in winter, though!"
+     }
+    ],
+    "focus": "It seems to me that small towns are a bit boring.",
+    "qs": [
+     "Why does Lama love her town?",
+     "Why does it take Reem forty minutes to get to school?"
+    ]
+   },
+   "speakout": {
+    "scene": "A family from another country is moving to Saudi Arabia. I'm the father, and I want your opinion about where we should live.",
+    "prompts": [
+     {
+      "q": "What do you think about living in a big city like Riyadh or Jeddah?",
+      "hint": "Give your opinion with 'It seems to me that …' and one reason."
+     },
+     {
+      "q": "Is there a lot to do for children in your town?",
+      "hint": "Give two examples of places or activities."
+     },
+     {
+      "q": "What's the biggest problem in big cities, in your opinion?",
+      "hint": "Talk about traffic, noise or crowds, and give an example."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Cities Around the World",
+    "points": [
+     "About 37 million people live in and around Tokyo, one of the biggest cities in the world.",
+     "Some cities, like Amsterdam, have more bicycles than people.",
+     "NEOM is a new project in north-west Saudi Arabia with plans for clean, modern cities."
+    ],
+    "qs": [
+     "In your opinion, is a city without cars a good idea?",
+     "What do you think is the perfect size for a city?"
+    ]
+   },
+   "exit": "Tell me your opinion about where you live, in two sentences. Give one good thing and one problem."
+  },
+  "0-5": {
+   "objective": "Today you will share your opinions on a school question with clear reasons and ask for other people's views.",
+   "warmup": "Is there a school rule you would like to change?",
+   "expressions": [
+    {
+     "w": "from my point of view",
+     "def": "used to say how you personally see a situation",
+     "ar": "من وجهة نظري",
+     "frame": "From my point of view, ___."
+    },
+    {
+     "w": "I'm convinced that …",
+     "def": "I'm completely sure that something is true",
+     "ar": "أنا مقتنع بأن ...",
+     "frame": "I'm convinced that ___ is good for students."
+    },
+    {
+     "w": "What's your view on …?",
+     "def": "a slightly formal way to ask someone's opinion",
+     "ar": "ما وجهة نظرك في ...؟",
+     "frame": "What's your view on ___?"
+    },
+    {
+     "w": "make sense",
+     "def": "to seem a good or reasonable idea",
+     "ar": "يكون منطقياً",
+     "frame": "It makes sense to ___ before an exam."
+    },
+    {
+     "w": "pressure",
+     "def": "a feeling that you must do a lot, which makes you worried",
+     "ar": "ضغط",
+     "frame": "Students feel a lot of pressure when ___."
+    },
+    {
+     "w": "the main reason",
+     "def": "the most important reason",
+     "ar": "السبب الرئيسي",
+     "frame": "The main reason I like ___ is ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Students are recording a show for the school radio. Today's question is: 'Should students get homework every day?' Sultan is the presenter, and Majed is his guest.",
+    "p1": [
+     {
+      "s": "Sultan",
+      "t": "Welcome to School Radio! Should we get homework every day? Majed, what's your view on this?"
+     },
+     {
+      "s": "Majed",
+      "t": "From my point of view, a little homework every day makes sense. It helps us remember the lesson."
+     },
+     {
+      "s": "Sultan",
+      "t": "But many students say it's a waste of time. What do you think about that?"
+     },
+     {
+      "s": "Majed",
+      "t": "To be honest, some homework is boring. But the main reason we need it is practice."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sultan",
+      "t": "Some parents say their children feel too much pressure. Is that true?"
+     },
+     {
+      "s": "Majed",
+      "t": "Sometimes, yes, especially before exams. If you ask me, twenty minutes a day is enough."
+     },
+     {
+      "s": "Sultan",
+      "t": "Interesting! So you're not against homework?"
+     },
+     {
+      "s": "Majed",
+      "t": "No. I'm convinced that short homework is better than no homework at all."
+     }
+    ],
+    "focus": "From my point of view, a little homework every day makes sense.",
+    "qs": [
+     "Why does Majed think homework makes sense?",
+     "How much homework is enough, in Majed's opinion?"
+    ]
+   },
+   "speakout": {
+    "scene": "You're a guest on the school radio show, and I'm the presenter. Today's question is: 'Should students be allowed to bring phones to school?' Give your opinions with reasons, and ask for mine too.",
+    "prompts": [
+     {
+      "q": "What's your view on phones at school?",
+      "hint": "Give a clear opinion with 'From my point of view' or 'In my opinion' and the main reason."
+     },
+     {
+      "q": "Some teachers say phones are a waste of time in class. What do you think?",
+      "hint": "Give your opinion and an example from school life."
+     },
+     {
+      "q": "Now it's your turn to ask me a question.",
+      "hint": "Ask for my opinion with 'What do you think about …?' or 'What's your view on …?'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Student Voices Around the World",
+    "points": [
+     "In many countries, schools have a student council that shares students' ideas with teachers.",
+     "Debate clubs are popular in schools in the UK, the USA and Saudi Arabia.",
+     "Saudi students take part in international debate and science competitions every year."
+    ],
+    "qs": [
+     "What's your view on having a student council at your school?",
+     "Do you think debates help students to think more clearly? Why?"
+    ]
+   },
+   "exit": "Give me your opinion on one school rule in two sentences, and then ask me what I think."
+  },
+  "1-0": {
+   "objective": "Today you will agree and disagree with friends about food you like and don't like.",
+   "warmup": "What's your favourite dish, and what food do you never eat?",
+   "expressions": [
+    {
+     "w": "So do I.",
+     "def": "I do too (to agree with a positive sentence)",
+     "ar": "وأنا كذلك",
+     "frame": "A: I love ___. B: So do I!"
+    },
+    {
+     "w": "Neither do I.",
+     "def": "I don't either (to agree with a negative sentence)",
+     "ar": "ولا أنا",
+     "frame": "A: I don't like ___. B: Neither do I."
+    },
+    {
+     "w": "spicy",
+     "def": "having a hot, strong taste",
+     "ar": "حارّ (فيه شطة)",
+     "frame": "I can't eat ___ because it's too spicy."
+    },
+    {
+     "w": "I'm in the mood for …",
+     "def": "I want to do or have something now",
+     "ar": "لديّ رغبة في ...",
+     "frame": "I'm in the mood for ___ tonight."
+    },
+    {
+     "w": "a matter of taste",
+     "def": "something people have different opinions about",
+     "ar": "مسألة ذوق",
+     "frame": "Liking ___ is just a matter of taste."
+    },
+    {
+     "w": "I feel the same way.",
+     "def": "I have the same opinion or feeling",
+     "ar": "أشعر بالشيء نفسه",
+     "frame": "I feel the same way about ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal and Omar are choosing what to eat at a food court in a mall in Dammam.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "I'm in the mood for kabsa. I love the chicken kabsa here."
+     },
+     {
+      "s": "Faisal",
+      "t": "So do I! It's the best kabsa in Dammam."
+     },
+     {
+      "s": "Omar",
+      "t": "But I don't like it when the sauce is too spicy."
+     },
+     {
+      "s": "Faisal",
+      "t": "Neither do I. Last time my mouth was on fire!"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Faisal",
+      "t": "What about dessert? I really like kunafa."
+     },
+     {
+      "s": "Omar",
+      "t": "Really? I don't. It's too sweet for me. I prefer ice cream."
+     },
+     {
+      "s": "Faisal",
+      "t": "I can't believe it! Everyone likes kunafa."
+     },
+     {
+      "s": "Omar",
+      "t": "Well, it's just a matter of taste. My sister feels the same way."
+     },
+     {
+      "s": "Faisal",
+      "t": "OK, fair enough. Let's order the kabsa and decide on dessert later."
+     }
+    ],
+    "focus": "So do I! It's the best kabsa in Dammam.",
+    "qs": [
+     "What do both boys not like about the sauce?",
+     "Why doesn't Omar like kunafa?"
+    ]
+   },
+   "speakout": {
+    "scene": "We're on a school trip, and we stop to eat. I'll tell you what I like and don't like. Agree or disagree with me.",
+    "prompts": [
+     {
+      "q": "I love burgers and fries.",
+      "hint": "Agree with 'So do I' or disagree politely with 'Really? I don't.' and say why."
+     },
+     {
+      "q": "I don't like vegetables very much.",
+      "hint": "Use 'Neither do I' or 'Really? I do.' and give an example."
+     },
+     {
+      "q": "I'm in the mood for something spicy. What about you?",
+      "hint": "Say what you're in the mood for, and agree or disagree."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Saudi Dishes",
+    "points": [
+     "Kabsa is a rice dish with chicken or lamb, and it's one of the most famous Saudi meals.",
+     "Jareesh is made from crushed wheat and is popular in Najd and Qassim.",
+     "Many Saudi families serve Arabic coffee with dates when guests visit."
+    ],
+    "qs": [
+     "Which Saudi dish do you like most? Does your family feel the same way?",
+     "Do you think food is just a matter of taste? Why or why not?"
+    ]
+   },
+   "exit": "Listen: 'I love dates.' 'I don't drink coffee.' Agree or disagree with both sentences without looking at the slides."
+  },
+  "1-1": {
+   "objective": "Today you will agree and disagree with short answers while planning a family holiday.",
+   "warmup": "Where would you like to go in the next holidays?",
+   "expressions": [
+    {
+     "w": "So am I.",
+     "def": "I am too (to agree with 'I'm …')",
+     "ar": "وأنا كذلك",
+     "frame": "A: I'm excited about ___. B: So am I!"
+    },
+    {
+     "w": "Neither can I.",
+     "def": "I can't either (to agree with 'I can't …')",
+     "ar": "ولا أنا أستطيع",
+     "frame": "A: I can't ___. B: Neither can I."
+    },
+    {
+     "w": "So have I.",
+     "def": "I have too (to agree with 'I've …')",
+     "ar": "وأنا أيضاً (فعلتُ ذلك)",
+     "frame": "A: I've been to ___. B: So have I."
+    },
+    {
+     "w": "can't wait",
+     "def": "to be very excited about something that will happen soon",
+     "ar": "متشوّق جداً",
+     "frame": "I can't wait for ___."
+    },
+    {
+     "w": "cool weather",
+     "def": "weather that is a little cold and pleasant",
+     "ar": "جو بارد لطيف",
+     "frame": "I love the cool weather in ___."
+    },
+    {
+     "w": "go camping",
+     "def": "to stay outdoors in a tent for fun",
+     "ar": "يذهب للتخييم",
+     "frame": "My family likes to go camping in ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura and her brother Saud are talking about where the family should go in the summer holidays.",
+    "p1": [
+     {
+      "s": "Saud",
+      "t": "I'm so tired of the heat in Riyadh. I can't wait for the summer holidays!"
+     },
+     {
+      "s": "Noura",
+      "t": "So am I! Dad says we can choose between Abha and Jeddah."
+     },
+     {
+      "s": "Saud",
+      "t": "Hmm. I've been to Jeddah twice already."
+     },
+     {
+      "s": "Noura",
+      "t": "So have I. Let's choose Abha this time. The cool weather there is amazing."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Saud",
+      "t": "We could go camping in the mountains near Abha."
+     },
+     {
+      "s": "Noura",
+      "t": "I'm not keen on that. I can't sleep well in a tent."
+     },
+     {
+      "s": "Saud",
+      "t": "Neither can I, to be honest! Let's stay in a hotel and go camping for one night only."
+     },
+     {
+      "s": "Noura",
+      "t": "Good idea. I can't wait to tell Mum and Dad."
+     }
+    ],
+    "focus": "So have I. Let's choose Abha this time.",
+    "qs": [
+     "Why does Noura want to go to Abha?",
+     "Where will the family sleep, according to their plan?"
+    ]
+   },
+   "speakout": {
+    "scene": "We're cousins planning a family trip for Eid. I'll tell you about myself. Agree with me using short answers, or disagree politely.",
+    "prompts": [
+     {
+      "q": "I'm really excited about the trip!",
+      "hint": "Agree with 'So am I!' and say why you're excited."
+     },
+     {
+      "q": "I've never been to AlUla.",
+      "hint": "Use 'Neither have I' or 'Really? I have.' and add one detail."
+     },
+     {
+      "q": "I can't stand very hot weather.",
+      "hint": "Use 'Neither can I' or disagree, and then suggest a place with cool weather."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Summer in the South",
+    "points": [
+     "Abha is in the Asir mountains, more than 2,000 metres above the sea.",
+     "Summer days in Abha are much cooler than in Riyadh or Jeddah.",
+     "Visitors enjoy the green mountains, the cable car and the colourful houses of Rijal Almaa."
+    ],
+    "qs": [
+     "Have you been to Abha? Would you like to go camping there?",
+     "Which is better for a summer holiday: the mountains or the beach?"
+    ]
+   },
+   "exit": "Listen: 'I'm hungry.' 'I can't swim very well.' Answer both sentences with a short agreement, then add one more idea."
+  },
+  "1-2": {
+   "objective": "Today you will disagree politely about online lessons by agreeing with part of an idea first.",
+   "warmup": "Have you ever had lessons online? Did you like them?",
+   "expressions": [
+    {
+     "w": "I see your point, but …",
+     "def": "I understand your idea, but I think differently",
+     "ar": "أفهم وجهة نظرك، لكن ...",
+     "frame": "I see your point, but I think ___."
+    },
+    {
+     "w": "That's true, but …",
+     "def": "used to agree with part of an idea and then add a different one",
+     "ar": "هذا صحيح، لكن ...",
+     "frame": "That's true, but ___."
+    },
+    {
+     "w": "You've got a point.",
+     "def": "what you said is partly right or is a good idea",
+     "ar": "معك حق في هذه النقطة",
+     "frame": "You've got a point about ___."
+    },
+    {
+     "w": "face to face",
+     "def": "together in the same place",
+     "ar": "وجهاً لوجه",
+     "frame": "I prefer to talk to ___ face to face."
+    },
+    {
+     "w": "concentrate",
+     "def": "to think carefully about one thing only",
+     "ar": "يركّز",
+     "frame": "I can't concentrate when ___."
+    },
+    {
+     "w": "distraction",
+     "def": "something that stops you thinking about what you are doing",
+     "ar": "شيء يشتّت الانتباه",
+     "frame": "My biggest distraction when I study is ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem and her classmate Emma are talking about last week's online lessons.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "I loved the online lessons last week. I could learn in my pyjamas!"
+     },
+     {
+      "s": "Reem",
+      "t": "Ha! I see your point, but I couldn't concentrate at all."
+     },
+     {
+      "s": "Emma",
+      "t": "Why not? It was so quiet at home."
+     },
+     {
+      "s": "Reem",
+      "t": "Not in my house! My little brothers were a big distraction."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "OK, you've got a point. But we didn't waste time in traffic."
+     },
+     {
+      "s": "Reem",
+      "t": "That's true, but I missed my friends. I prefer learning face to face."
+     },
+     {
+      "s": "Emma",
+      "t": "To be honest, I feel the same way. Seeing everyone at school is more fun."
+     },
+     {
+      "s": "Reem",
+      "t": "So online lessons are good sometimes, but not every day."
+     }
+    ],
+    "focus": "I see your point, but I couldn't concentrate at all.",
+    "qs": [
+     "Why couldn't Reem concentrate at home?",
+     "What does Emma agree with at the end?"
+    ]
+   },
+   "speakout": {
+    "scene": "I think all school lessons should be online. You don't agree. Let's discuss it politely.",
+    "prompts": [
+     {
+      "q": "Online lessons are better because you can stay at home.",
+      "hint": "Start with 'I see your point, but …' and give your reason."
+     },
+     {
+      "q": "Students don't waste time travelling to school.",
+      "hint": "Agree with part of it: 'That's true, but …'."
+     },
+     {
+      "q": "At home there are no noisy classmates.",
+      "hint": "Say 'You've got a point' or disagree, and talk about distractions at home."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Learning Around the World",
+    "points": [
+     "In 2020, millions of students around the world studied online from home.",
+     "Saudi Arabia's Madrasati platform helped millions of students learn online.",
+     "In Australia, some children who live far from towns have lessons over the internet."
+    ],
+    "qs": [
+     "In your opinion, what's the best thing about online lessons?",
+     "Do you think face-to-face lessons are better? Why?"
+    ]
+   },
+   "exit": "I'll say: 'All homework should be online.' Disagree with me politely in two sentences."
+  },
+  "1-3": {
+   "objective": "Today you will agree strongly or disagree politely about rules and responsibilities at home.",
+   "warmup": "What's one rule in your house that you think is fair?",
+   "expressions": [
+    {
+     "w": "I totally agree.",
+     "def": "I agree 100 percent",
+     "ar": "أوافق تماماً",
+     "frame": "I totally agree that ___."
+    },
+    {
+     "w": "I'm afraid I don't agree.",
+     "def": "a polite way to say you have a different opinion",
+     "ar": "آسف، لا أوافق",
+     "frame": "I'm afraid I don't agree. I think ___."
+    },
+    {
+     "w": "Exactly!",
+     "def": "used to say that something is completely right",
+     "ar": "بالضبط!",
+     "frame": "A: ___ is really important. B: Exactly!"
+    },
+    {
+     "w": "take care of",
+     "def": "to look after someone or something",
+     "ar": "يعتني بـ",
+     "frame": "I can take care of ___ by myself."
+    },
+    {
+     "w": "responsibility",
+     "def": "something that it is your job to do",
+     "ar": "مسؤولية",
+     "frame": "It's my responsibility to ___ at home."
+    },
+    {
+     "w": "make a mess",
+     "def": "to make a place dirty or untidy",
+     "ar": "يُحدث فوضى",
+     "frame": "My little brother always makes a mess in ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sara wants a pet cat. She and her dad are talking about it at dinner.",
+    "p1": [
+     {
+      "s": "Sara",
+      "t": "Dad, can we get a cat? All my friends have one!"
+     },
+     {
+      "s": "Dad",
+      "t": "Hmm. A cat is a big responsibility, Sara."
+     },
+     {
+      "s": "Sara",
+      "t": "I totally agree. That's why I'll take care of it every day."
+     },
+     {
+      "s": "Dad",
+      "t": "Every day? Even during exams?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sara",
+      "t": "Yes! And I'll clean its box. It won't make a mess, I promise."
+     },
+     {
+      "s": "Dad",
+      "t": "I'm afraid I don't agree. Cats often make a mess with their hair and toys."
+     },
+     {
+      "s": "Sara",
+      "t": "That's true, but we can brush it every week."
+     },
+     {
+      "s": "Dad",
+      "t": "Well, you've got a point. Let's ask your mum first. Her opinion matters too."
+     },
+     {
+      "s": "Sara",
+      "t": "Exactly! I'll go and ask her now."
+     }
+    ],
+    "focus": "I'm afraid I don't agree. Cats often make a mess with their hair and toys.",
+    "qs": [
+     "Why does Dad say a cat is a big responsibility?",
+     "What does Sara promise to do?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your parents are making a new family rule: 'No phones in bedrooms after 9 p.m.' I'm your mum or dad. Tell me if you agree or not.",
+    "prompts": [
+     {
+      "q": "I think phones in bedrooms are bad for sleep.",
+      "hint": "Say 'I totally agree' or 'I'm afraid I don't agree' and give a reason."
+     },
+     {
+      "q": "Everyone in the family should follow this rule, even me.",
+      "hint": "React with 'Exactly!' or disagree politely, and explain."
+     },
+     {
+      "q": "When you're older, you'll have more responsibility at home. Do you agree?",
+      "hint": "Give your opinion and an example of a job you can do."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Family Life in Saudi Arabia",
+    "points": [
+     "Many Saudi families have a big lunch together on Fridays at the grandparents' house.",
+     "Children often help by serving coffee, tea and dates to guests.",
+     "Some Saudi families keep cats, birds or even falcons."
+    ],
+    "qs": [
+     "What responsibilities do you have at home?",
+     "Do you agree that families should eat together every day? Why?"
+    ]
+   },
+   "exit": "I'll say: 'Children should help to cook dinner.' Agree or disagree with me politely in two sentences."
+  },
+  "1-4": {
+   "objective": "Today you will agree and disagree in a discussion about protecting the environment.",
+   "warmup": "What do you do with plastic bottles after you use them?",
+   "expressions": [
+    {
+     "w": "I couldn't agree more.",
+     "def": "I agree completely",
+     "ar": "أوافقك تماماً",
+     "frame": "I couldn't agree more! ___ is really important."
+    },
+    {
+     "w": "You may be right, but …",
+     "def": "maybe your idea is correct, but I'm not sure",
+     "ar": "ربما تكون محقاً، لكن ...",
+     "frame": "You may be right, but ___."
+    },
+    {
+     "w": "Not necessarily.",
+     "def": "not always true",
+     "ar": "ليس بالضرورة",
+     "frame": "A: ___ is always better. B: Not necessarily."
+    },
+    {
+     "w": "recycle",
+     "def": "to make used things like paper and plastic into new things",
+     "ar": "يعيد التدوير",
+     "frame": "We recycle ___ at home."
+    },
+    {
+     "w": "make a difference",
+     "def": "to have a good effect on something",
+     "ar": "يُحدث فرقاً",
+     "frame": "Small things like ___ can make a difference."
+    },
+    {
+     "w": "single-use plastic",
+     "def": "plastic that you use once and then throw away",
+     "ar": "بلاستيك يُستخدم مرة واحدة",
+     "frame": "We could use ___ instead of single-use plastic."
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar and Sam are cleaning a beach in Jeddah with their school's environment club.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Look at all these plastic bottles! We should stop using single-use plastic."
+     },
+     {
+      "s": "Omar",
+      "t": "I couldn't agree more. It's terrible for the fish and turtles."
+     },
+     {
+      "s": "Sam",
+      "t": "But one small club can't make a difference."
+     },
+     {
+      "s": "Omar",
+      "t": "You may be right, but if every school does this, it will help."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "True. My family recycles paper and bottles now."
+     },
+     {
+      "s": "Omar",
+      "t": "So does mine! But recycling isn't enough. We need to use less plastic."
+     },
+     {
+      "s": "Sam",
+      "t": "Do you think paper bags are always better than plastic ones?"
+     },
+     {
+      "s": "Omar",
+      "t": "Not necessarily. If you ask me, bags you can use again and again are the best."
+     }
+    ],
+    "focus": "You may be right, but if every school does this, it will help.",
+    "qs": [
+     "Why does Omar think single-use plastic is terrible?",
+     "What kind of bag does Omar think is the best?"
+    ]
+   },
+   "speakout": {
+    "scene": "Our class is choosing one green project for this year. I have some ideas. Agree or disagree with each one politely.",
+    "prompts": [
+     {
+      "q": "Let's stop using plastic bottles at school.",
+      "hint": "React with 'I couldn't agree more' or 'You may be right, but …'."
+     },
+     {
+      "q": "Planting trees is the only thing that really helps.",
+      "hint": "Answer with 'Not necessarily' and give another idea."
+     },
+     {
+      "q": "Kids are too young to make a difference.",
+      "hint": "Disagree politely and give an example of what kids can do."
+     }
+    ]
+   },
+   "culture": {
+    "title": "A Greener Saudi Arabia",
+    "points": [
+     "The Saudi Green Initiative plans to plant 10 billion trees across the country.",
+     "Mangrove trees on the Red Sea coast give a home to fish and birds.",
+     "Many Saudi schools now have clubs that clean beaches and parks."
+    ],
+    "qs": [
+     "Do you think planting trees in the desert is a good idea? Why?",
+     "What can your family do to make a difference?"
+    ]
+   },
+   "exit": "I'll say: 'Recycling is a waste of time.' Disagree with me politely in two sentences."
+  },
+  "1-5": {
+   "objective": "Today you will discuss choices for a class trip, agree and disagree politely, and reach an agreement.",
+   "warmup": "What's the best school trip you've ever been on?",
+   "expressions": [
+    {
+     "w": "I'm with you on that.",
+     "def": "I agree with you",
+     "ar": "أنا معك في هذا",
+     "frame": "I'm with you on that. ___ sounds great."
+    },
+    {
+     "w": "I'm not so sure about that.",
+     "def": "a polite way to show you doubt an idea",
+     "ar": "لست متأكداً من ذلك",
+     "frame": "I'm not so sure about ___."
+    },
+    {
+     "w": "Fair enough.",
+     "def": "used to accept that someone's idea is reasonable",
+     "ar": "معقول / حسناً، كلامك منطقي",
+     "frame": "Fair enough. Let's ___ then."
+    },
+    {
+     "w": "the majority",
+     "def": "more than half of a group",
+     "ar": "الأغلبية",
+     "frame": "The majority of my class wants to ___."
+    },
+    {
+     "w": "change my mind",
+     "def": "to have a different opinion or plan from before",
+     "ar": "أغيّر رأيي",
+     "frame": "I changed my mind about ___ when ___."
+    },
+    {
+     "w": "come to an agreement",
+     "def": "to decide something together after a discussion",
+     "ar": "نتوصّل إلى اتفاق",
+     "frame": "We came to an agreement about ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "The class can choose one trip this term. Khalid, the class leader, and Ali are discussing three choices.",
+    "p1": [
+     {
+      "s": "Khalid",
+      "t": "OK, we have three choices: Ithra, the beach in Al-Khobar or a farm trip. What do you think?"
+     },
+     {
+      "s": "Ali",
+      "t": "Ithra, definitely. It has a library, a museum and a cinema."
+     },
+     {
+      "s": "Khalid",
+      "t": "I'm with you on that. But some students say it's boring."
+     },
+     {
+      "s": "Ali",
+      "t": "I'm not so sure about that. They have fun science shows for kids."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Khalid",
+      "t": "The beach is fun too. Lots of students love swimming."
+     },
+     {
+      "s": "Ali",
+      "t": "That's true, but it's very hot this month. We can go to the beach in winter."
+     },
+     {
+      "s": "Khalid",
+      "t": "Fair enough. Let's ask the class and see what the majority wants."
+     },
+     {
+      "s": "Ali",
+      "t": "Good idea. And if they choose the farm, maybe I'll change my mind!"
+     },
+     {
+      "s": "Khalid",
+      "t": "Ha! OK, let's vote, and then we can come to an agreement."
+     }
+    ],
+    "focus": "I'm not so sure about that. They have fun science shows for kids.",
+    "qs": [
+     "Why does Ali want to go to Ithra?",
+     "Why does Ali think the beach isn't a good idea this month?"
+    ]
+   },
+   "speakout": {
+    "scene": "You and I are on the class committee. We must choose one place for the end-of-year trip. I'll give my opinions; agree or disagree politely, and help us reach an agreement.",
+    "prompts": [
+     {
+      "q": "I think we should go to the zoo. Everyone likes animals.",
+      "hint": "Agree or disagree with 'I'm with you on that' or 'I'm not so sure about that', and give a reason."
+     },
+     {
+      "q": "The water park is too expensive for some students.",
+      "hint": "React with 'Fair enough' or 'That's true, but …', and suggest another idea."
+     },
+     {
+      "q": "So, what should we tell the class? Have we come to an agreement?",
+      "hint": "Sum up: say the place you both agree on and why."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Ithra in Dhahran",
+    "points": [
+     "Ithra, the King Abdulaziz Center for World Culture, is in Dhahran in the Eastern Province.",
+     "It has a library, a museum, a cinema and a special area for children.",
+     "Its unusual building looks like a group of large, smooth stones."
+    ],
+    "qs": [
+     "Would you like to visit Ithra? Why or why not?",
+     "When your class can't agree, what's the fairest way to decide?"
+    ]
+   },
+   "exit": "I'll suggest: 'Let's go to the desert for our class trip.' Agree or disagree in two sentences, and give a reason."
+  },
+  "2-0": {
+   "objective": "Today you will give a friend advice about a problem with another friend.",
+   "warmup": "Who do you talk to when you have a problem?",
+   "expressions": [
+    {
+     "w": "fall out with",
+     "def": "to argue with someone and stop being friendly",
+     "ar": "يتخاصم مع",
+     "frame": "I once fell out with ___ because ___."
+    },
+    {
+     "w": "Why don't you …?",
+     "def": "used to make a friendly suggestion",
+     "ar": "لماذا لا ...؟ (اقتراح)",
+     "frame": "Why don't you ___?"
+    },
+    {
+     "w": "make up",
+     "def": "to become friends again after an argument",
+     "ar": "يتصالح",
+     "frame": "We made up after ___."
+    },
+    {
+     "w": "apologise",
+     "def": "to say sorry for something you did",
+     "ar": "يعتذر",
+     "frame": "I'd like to apologise for ___."
+    },
+    {
+     "w": "Have you tried …ing?",
+     "def": "used to suggest something the person may not have done yet",
+     "ar": "هل جرّبت أن ...؟",
+     "frame": "Have you tried ___?"
+    },
+    {
+     "w": "upset",
+     "def": "unhappy or worried because something bad happened",
+     "ar": "منزعج / حزين",
+     "frame": "I feel upset when ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar is upset because he fell out with his best friend, Yousef. He talks to his older brother, Fahad.",
+    "p1": [
+     {
+      "s": "Fahad",
+      "t": "What's wrong, Omar? You look upset."
+     },
+     {
+      "s": "Omar",
+      "t": "I fell out with Yousef. I laughed when he missed a penalty, and now he won't talk to me."
+     },
+     {
+      "s": "Fahad",
+      "t": "Oh no. Have you tried talking to him?"
+     },
+     {
+      "s": "Omar",
+      "t": "Yes, but he walked away. What should I do?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Fahad",
+      "t": "Why don't you apologise? Tell him you're really sorry you laughed."
+     },
+     {
+      "s": "Omar",
+      "t": "But it was just a joke!"
+     },
+     {
+      "s": "Fahad",
+      "t": "Maybe for you, but not for him. You could send him a message tonight."
+     },
+     {
+      "s": "Omar",
+      "t": "OK, I'll try. I really want to make up with him before Thursday's match."
+     }
+    ],
+    "focus": "Why don't you apologise? Tell him you're really sorry you laughed.",
+    "qs": [
+     "Why did Yousef stop talking to Omar?",
+     "What two pieces of advice does Fahad give?"
+    ]
+   },
+   "speakout": {
+    "scene": "I'm your friend, and I have a problem: my best friend is always with a new student now, and I feel left out. Give me advice.",
+    "prompts": [
+     {
+      "q": "I feel so upset. What should I do?",
+      "hint": "Give advice with 'Why don't you …?'."
+     },
+     {
+      "q": "We haven't talked for three days.",
+      "hint": "Suggest something with 'Have you tried …ing?'."
+     },
+     {
+      "q": "What if my friend doesn't want to make up?",
+      "hint": "Give one more idea with 'You could …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Friendship Around the World",
+    "points": [
+     "In some countries, friends make bracelets for each other as a sign of friendship.",
+     "The United Nations' International Day of Friendship is on 30 July.",
+     "Many Saudi friends meet at a rest house, or istiraha, at the weekend."
+    ],
+    "qs": [
+     "What's the best way to make up with a friend?",
+     "What advice can you give to a new student who has no friends yet?"
+    ]
+   },
+   "exit": "Give me two pieces of advice for a friend who fell out with a classmate. Use 'Why don't you …?' once."
+  },
+  "2-1": {
+   "objective": "Today you will give advice to someone who is stressed about exams using 'If I were you'.",
+   "warmup": "How do you feel the night before a big test?",
+   "expressions": [
+    {
+     "w": "If I were you, I'd …",
+     "def": "used to give advice by imagining you are the other person",
+     "ar": "لو كنت مكانك، لـ ...",
+     "frame": "If I were you, I'd ___."
+    },
+    {
+     "w": "stressed out",
+     "def": "very worried and tired because of too much work",
+     "ar": "متوتر جداً",
+     "frame": "I get stressed out when ___."
+    },
+    {
+     "w": "revise",
+     "def": "to study again before an exam",
+     "ar": "يراجع (للاختبار)",
+     "frame": "I need to revise ___ for my test."
+    },
+    {
+     "w": "take a break",
+     "def": "to stop working for a short time and rest",
+     "ar": "يأخذ استراحة",
+     "frame": "I usually take a break after ___ minutes."
+    },
+    {
+     "w": "fall behind",
+     "def": "to do work more slowly than others or than planned",
+     "ar": "يتأخر عن الآخرين",
+     "frame": "I don't want to fall behind in ___."
+    },
+    {
+     "w": "make a timetable",
+     "def": "to write a plan of what you will do and when",
+     "ar": "يضع جدولاً",
+     "frame": "I made a timetable for ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "It's the week before the final exams. Lama is stressed out, so she calls her cousin Hind, who is in high school.",
+    "p1": [
+     {
+      "s": "Lama",
+      "t": "Hind, I'm so stressed out. I have four exams next week!"
+     },
+     {
+      "s": "Hind",
+      "t": "Don't worry, that's normal. Have you started to revise?"
+     },
+     {
+      "s": "Lama",
+      "t": "A bit, but I'm falling behind in maths. I don't know where to start."
+     },
+     {
+      "s": "Hind",
+      "t": "If I were you, I'd make a timetable. Write which subject you'll study each day."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Lama",
+      "t": "Good idea. But I study for hours and still forget everything."
+     },
+     {
+      "s": "Hind",
+      "t": "Then take a break every forty minutes. Your brain needs rest."
+     },
+     {
+      "s": "Lama",
+      "t": "Really? I thought breaks were a waste of time."
+     },
+     {
+      "s": "Hind",
+      "t": "Not at all! And if I were you, I'd ask your teacher for extra maths exercises."
+     },
+     {
+      "s": "Lama",
+      "t": "Thanks, Hind. I feel better already."
+     }
+    ],
+    "focus": "If I were you, I'd make a timetable.",
+    "qs": [
+     "Which subject is Lama falling behind in?",
+     "How often does Hind say Lama should take a break?"
+    ]
+   },
+   "speakout": {
+    "scene": "I'm a student in your class. Our science exam is next Sunday, and I haven't started revising. I'm really stressed out. Give me advice.",
+    "prompts": [
+     {
+      "q": "I don't know where to start. What should I do?",
+      "hint": "Start with 'If I were you, I'd …'."
+     },
+     {
+      "q": "I always get sleepy when I revise at night.",
+      "hint": "Give advice about when to study and when to take a break."
+     },
+     {
+      "q": "My phone keeps distracting me.",
+      "hint": "Give advice with 'If I were you, I wouldn't …' or 'Why don't you …?'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Study Tips from Around the World",
+    "points": [
+     "In Finland, students have short school days and long breaks, but they still do well in tests.",
+     "Scientists say that sleeping well helps your brain remember what you studied.",
+     "Many students use the 'Pomodoro' method: 25 minutes of work, then a 5-minute break."
+    ],
+    "qs": [
+     "Which study tip do you think works best? Why?",
+     "What do you tell a friend who is stressed out before exams?"
+    ]
+   },
+   "exit": "Give me two pieces of advice for exam week. Start one of them with 'If I were you, I'd …'."
+  },
+  "2-2": {
+   "objective": "Today you will give advice about sleep and food and say what will happen if someone follows it.",
+   "warmup": "What time do you usually go to bed on a school night?",
+   "expressions": [
+    {
+     "w": "get enough sleep",
+     "def": "to sleep as many hours as your body needs",
+     "ar": "ينام ما يكفي",
+     "frame": "If I don't get enough sleep, I ___."
+    },
+    {
+     "w": "stay up late",
+     "def": "to go to bed later than usual",
+     "ar": "يسهر",
+     "frame": "I stay up late when ___."
+    },
+    {
+     "w": "junk food",
+     "def": "unhealthy food like crisps, sweets and fast food",
+     "ar": "الأكل غير الصحي",
+     "frame": "I try not to eat ___ because it's junk food."
+    },
+    {
+     "w": "exhausted",
+     "def": "very, very tired",
+     "ar": "مُنهَك جداً",
+     "frame": "I feel exhausted after ___."
+    },
+    {
+     "w": "get into the habit of",
+     "def": "to start doing something regularly",
+     "ar": "يعتاد على",
+     "frame": "I want to get into the habit of ___."
+    },
+    {
+     "w": "in the long run",
+     "def": "after a long time; in the future",
+     "ar": "على المدى البعيد",
+     "frame": "In the long run, ___ will help me."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal plays video games until midnight. In the morning, his PE teacher, Mr Saleh, notices he looks tired.",
+    "p1": [
+     {
+      "s": "Mr Saleh",
+      "t": "Faisal, you look exhausted. Are you OK?"
+     },
+     {
+      "s": "Faisal",
+      "t": "I stayed up late again, sir. I was playing online with my cousins."
+     },
+     {
+      "s": "Mr Saleh",
+      "t": "If you don't get enough sleep, you won't play well in the match on Thursday."
+     },
+     {
+      "s": "Faisal",
+      "t": "I know. But I can't sleep early. I'm not tired at ten."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Mr Saleh",
+      "t": "Why don't you put your phone away an hour before bed? You'll fall asleep faster."
+     },
+     {
+      "s": "Faisal",
+      "t": "OK. And what about breakfast? I usually just eat crisps."
+     },
+     {
+      "s": "Mr Saleh",
+      "t": "That's junk food! If you eat eggs or labneh and bread, you'll have more energy."
+     },
+     {
+      "s": "Faisal",
+      "t": "Fine, I'll try to get into the habit of eating a proper breakfast."
+     },
+     {
+      "s": "Mr Saleh",
+      "t": "Good. In the long run, you'll feel much better, I promise."
+     }
+    ],
+    "focus": "If you don't get enough sleep, you won't play well in the match on Thursday.",
+    "qs": [
+     "Why does Faisal look exhausted?",
+     "What will happen if Faisal eats a proper breakfast, according to Mr Saleh?"
+    ]
+   },
+   "speakout": {
+    "scene": "I'm your younger cousin. I eat sweets all day, I go to bed at midnight, and I never exercise. Give me advice and tell me what will happen.",
+    "prompts": [
+     {
+      "q": "I always stay up late. Is that a problem?",
+      "hint": "Use 'If you …, you'll …' or 'If you don't …, you won't …'."
+     },
+     {
+      "q": "But I love junk food! What should I eat instead?",
+      "hint": "Suggest two healthy foods and say what will happen if I eat them."
+     },
+     {
+      "q": "How can I get more exercise?",
+      "hint": "Give one piece of advice and explain how it will help in the long run."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Healthy Living in Saudi Arabia",
+    "points": [
+     "Many people in Saudi cities walk on walking tracks in the evening, when it's cooler.",
+     "Doctors advise children to be active for at least one hour every day.",
+     "Dates are a healthy snack, and they give you lots of energy."
+    ],
+    "qs": [
+     "What healthy habit do you want to get into?",
+     "What will happen if children don't get enough sleep before school?"
+    ]
+   },
+   "exit": "Tell me two healthy habits and what will happen if I follow them. Use 'If you …, you'll …'."
+  },
+  "2-3": {
+   "objective": "Today you will give advice about saving and spending money and warn about what will happen.",
+   "warmup": "What do you usually spend your pocket money on?",
+   "expressions": [
+    {
+     "w": "save up for",
+     "def": "to keep money so you can buy something later",
+     "ar": "يدّخر من أجل",
+     "frame": "I'm saving up for ___."
+    },
+    {
+     "w": "pocket money",
+     "def": "money that parents give children every week or month",
+     "ar": "المصروف",
+     "frame": "I spend my pocket money on ___."
+    },
+    {
+     "w": "You'd better …",
+     "def": "you should do this, or there will be a problem",
+     "ar": "من الأفضل لك أن ...",
+     "frame": "You'd better ___, or you'll ___."
+    },
+    {
+     "w": "can't afford",
+     "def": "to not have enough money to buy something",
+     "ar": "لا يملك ثمنه",
+     "frame": "I can't afford ___ yet."
+    },
+    {
+     "w": "a bargain",
+     "def": "something that costs less than usual",
+     "ar": "صفقة رابحة",
+     "frame": "___ was a real bargain."
+    },
+    {
+     "w": "unless",
+     "def": "if not",
+     "ar": "إلا إذا / ما لم",
+     "frame": "I won't buy it unless ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Saud wants a pair of football boots that cost 400 riyals. He is talking to his uncle Majed at the mall.",
+    "p1": [
+     {
+      "s": "Saud",
+      "t": "Look at those football boots, Uncle! But they cost 400 riyals. I can't afford them."
+     },
+     {
+      "s": "Majed",
+      "t": "How much pocket money do you get?"
+     },
+     {
+      "s": "Saud",
+      "t": "Fifty riyals a week, but I usually spend it all on snacks and games."
+     },
+     {
+      "s": "Majed",
+      "t": "Well, you'd better stop that if you really want those boots."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Saud",
+      "t": "So, what should I do?"
+     },
+     {
+      "s": "Majed",
+      "t": "It's a good idea to save up for them. If you save forty riyals a week, you'll have enough in ten weeks."
+     },
+     {
+      "s": "Saud",
+      "t": "Ten weeks! That's so long."
+     },
+     {
+      "s": "Majed",
+      "t": "Maybe, but you won't get them unless you save. And wait for the sale. They might be a bargain then."
+     },
+     {
+      "s": "Saud",
+      "t": "OK, I'll start saving today."
+     }
+    ],
+    "focus": "It's a good idea to save up for them.",
+    "qs": [
+     "Why can't Saud buy the boots now?",
+     "How long will it take Saud to save enough money?"
+    ]
+   },
+   "speakout": {
+    "scene": "I'm your friend. I get 100 riyals a month, but I always spend it in the first week. I want to buy a new bike before the summer. Give me advice.",
+    "prompts": [
+     {
+      "q": "I spend all my money on snacks. What should I do?",
+      "hint": "Use 'You'd better …' or 'It's a good idea to …'."
+     },
+     {
+      "q": "The bike costs 800 riyals. How can I save up for it?",
+      "hint": "Make a simple plan and use 'If you …, you'll …'."
+     },
+     {
+      "q": "Should I buy a cheaper bike now?",
+      "hint": "Give your advice with 'unless' or 'If I were you, I'd …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Money Around the World",
+    "points": [
+     "In many countries, children get pocket money for helping at home.",
+     "Some Saudi banks now have special accounts and cards for children.",
+     "Long ago, people in many places used salt, shells or gold instead of paper money."
+    ],
+    "qs": [
+     "Do you think children should earn their pocket money by helping at home?",
+     "What are you saving up for at the moment?"
+    ]
+   },
+   "exit": "Give me two pieces of advice about saving money. Use 'You'd better' or 'unless'."
+  },
+  "2-4": {
+   "objective": "Today you will ask someone for advice politely when you are in a new situation.",
+   "warmup": "Have you ever started at a new school or moved to a new place?",
+   "expressions": [
+    {
+     "w": "Can I ask your advice?",
+     "def": "a polite way to ask someone to help you with a problem",
+     "ar": "هل أستطيع أن أطلب نصيحتك؟",
+     "frame": "Can I ask your advice about ___?"
+    },
+    {
+     "w": "What do you suggest?",
+     "def": "used to ask what someone thinks you should do",
+     "ar": "ماذا تقترح؟",
+     "frame": "I want to ___. What do you suggest?"
+    },
+    {
+     "w": "My advice is to …",
+     "def": "used to give clear advice",
+     "ar": "نصيحتي هي أن ...",
+     "frame": "My advice is to ___."
+    },
+    {
+     "w": "fit in",
+     "def": "to feel that you belong to a group",
+     "ar": "يندمج مع الآخرين",
+     "frame": "It's easy to fit in when ___."
+    },
+    {
+     "w": "get used to",
+     "def": "to become comfortable with something new",
+     "ar": "يتعوّد على",
+     "frame": "It took me a while to get used to ___."
+    },
+    {
+     "w": "nervous",
+     "def": "a bit afraid or worried about something",
+     "ar": "متوتر / قلق",
+     "frame": "I feel nervous before ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Emma's family has just moved from London to Riyadh. She starts at a new school next week and asks her neighbour Noura for help.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "Noura, can I ask your advice? I start at my new school on Sunday."
+     },
+     {
+      "s": "Noura",
+      "t": "Of course! Are you nervous?"
+     },
+     {
+      "s": "Emma",
+      "t": "Very! I don't know anyone, and I'm worried I won't fit in."
+     },
+     {
+      "s": "Noura",
+      "t": "Don't worry. My advice is to join a club. You'll meet people who like the same things."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "Good idea. And what do you suggest for the weekend? Everything is so different here."
+     },
+     {
+      "s": "Noura",
+      "t": "Why don't you come with us to Diriyah on Friday evening? It's beautiful at night."
+     },
+     {
+      "s": "Emma",
+      "t": "I'd love to! But the weekend is on Friday and Saturday here. It feels so strange."
+     },
+     {
+      "s": "Noura",
+      "t": "You'll get used to it quickly, I promise!"
+     }
+    ],
+    "focus": "My advice is to join a club.",
+    "qs": [
+     "Why is Emma worried about her new school?",
+     "What does Noura invite Emma to do on Friday?"
+    ]
+   },
+   "speakout": {
+    "scene": "You've just moved to a new city, and you're starting at a new school. I'm your new neighbour. Ask me for advice, and listen to my ideas.",
+    "prompts": [
+     {
+      "q": "Hi! You look worried. Is everything OK?",
+      "hint": "Explain your problem and ask: 'Can I ask your advice?'."
+     },
+     {
+      "q": "I'm sure you'll love it here. What do you want to know?",
+      "hint": "Ask 'What do you suggest …?' about making friends or getting to school."
+     },
+     {
+      "q": "My advice is to join the school football team. What do you think?",
+      "hint": "React to the advice and ask one more question for advice."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Moving to a New Place",
+    "points": [
+     "Millions of people from other countries live and work in Saudi Arabia.",
+     "In Saudi Arabia, the weekend is on Friday and Saturday.",
+     "In big Saudi cities, you can meet classmates from many different countries."
+    ],
+    "qs": [
+     "What's the hardest thing about moving to a new school?",
+     "What advice can you give to a visitor who is coming to Saudi Arabia?"
+    ]
+   },
+   "exit": "Imagine you have a problem with your homework. Ask me for advice in two different ways."
+  },
+  "2-5": {
+   "objective": "Today you will be the expert on an advice podcast and give helpful advice for different problems.",
+   "warmup": "Who gives the best advice in your family?",
+   "expressions": [
+    {
+     "w": "deal with",
+     "def": "to do something to solve a problem",
+     "ar": "يتعامل مع",
+     "frame": "The best way to deal with ___ is to ___."
+    },
+    {
+     "w": "Whatever you do, don't …",
+     "def": "used to give a strong warning",
+     "ar": "مهما فعلت، لا ...",
+     "frame": "Whatever you do, don't ___."
+    },
+    {
+     "w": "It might help to …",
+     "def": "a gentle way to give advice",
+     "ar": "قد يساعدك أن ...",
+     "frame": "It might help to ___."
+    },
+    {
+     "w": "give up",
+     "def": "to stop trying to do something",
+     "ar": "يستسلم",
+     "frame": "Don't give up on ___."
+    },
+    {
+     "w": "look on the bright side",
+     "def": "to think about the good parts of a bad situation",
+     "ar": "انظر إلى الجانب المشرق",
+     "frame": "Look on the bright side: ___."
+    },
+    {
+     "w": "sort it out",
+     "def": "to solve a problem",
+     "ar": "يحلّ المشكلة",
+     "frame": "If you talk to ___, you'll sort it out."
+    }
+   ],
+   "dialogue": {
+    "scene": "Majed and Sultan present a kids' podcast called 'Ask Us'. Today they are answering a message from a listener.",
+    "p1": [
+     {
+      "s": "Majed",
+      "t": "Welcome back to 'Ask Us'! Today's message is from Turki, who's 11. He says: 'I'm terrible at swimming, and my friends laugh at me.'"
+     },
+     {
+      "s": "Sultan",
+      "t": "Poor Turki! Well, Turki, whatever you do, don't give up."
+     },
+     {
+      "s": "Majed",
+      "t": "I agree. It might help to take lessons at a sports club. If you practise every week, you'll improve quickly."
+     },
+     {
+      "s": "Sultan",
+      "t": "And look on the bright side: you're trying something new, and that's brave."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Majed",
+      "t": "What about his friends? How should he deal with them?"
+     },
+     {
+      "s": "Sultan",
+      "t": "If I were you, Turki, I'd tell them how you feel. Real friends will understand."
+     },
+     {
+      "s": "Majed",
+      "t": "Exactly. Why don't you invite them to practise with you? You could sort it out together."
+     },
+     {
+      "s": "Sultan",
+      "t": "Great advice! Send us your problems, everyone, and we'll try to help."
+     }
+    ],
+    "focus": "Well, Turki, whatever you do, don't give up.",
+    "qs": [
+     "What is Turki's problem?",
+     "What does Sultan say Turki should tell his friends?"
+    ]
+   },
+   "speakout": {
+    "scene": "You're the expert on a kids' advice podcast. I'll read you three messages from listeners. Give each listener clear advice.",
+    "prompts": [
+     {
+      "q": "Message 1: 'My little brother always breaks my things. What should I do?'",
+      "hint": "Use 'Why don't you …?' or 'It might help to …'."
+     },
+     {
+      "q": "Message 2: 'I'm scared of speaking English in class.'",
+      "hint": "Give advice with 'If I were you, I'd …' and say what will happen with 'If you …, you'll …'."
+     },
+     {
+      "q": "Message 3: 'I lost my phone, and my parents are angry.'",
+      "hint": "Give a warning with 'Whatever you do, don't …' and help them look on the bright side."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Kids Helping Kids",
+    "points": [
+     "In many schools around the world, older students help younger ones as 'peer mentors'.",
+     "In Saudi schools, the student counsellor is someone students can talk to about problems.",
+     "Some radio shows and podcasts for children answer listeners' questions every week."
+    ],
+    "qs": [
+     "Who do you usually ask for advice? Why?",
+     "Do you think kids give better advice to other kids than adults do?"
+    ]
+   },
+   "exit": "Your friend says: 'I always forget my homework.' Give two pieces of advice without looking at the slides."
+  },
+  "3-0": {
+   "objective": "Today you will describe a person you admire using 'who' to add information.",
+   "warmup": "Who is someone you really admire?",
+   "expressions": [
+    {
+     "w": "look up to",
+     "def": "to admire and respect someone",
+     "ar": "يحترمه ويعتبره قدوة",
+     "frame": "I look up to ___ because ___."
+    },
+    {
+     "w": "role model",
+     "def": "a person you admire and want to be like",
+     "ar": "قدوة",
+     "frame": "My role model is someone who ___."
+    },
+    {
+     "w": "hard-working",
+     "def": "putting a lot of effort into your work",
+     "ar": "مجتهد",
+     "frame": "___ is the most hard-working person I know."
+    },
+    {
+     "w": "generous",
+     "def": "happy to give money, time or help to others",
+     "ar": "كريم",
+     "frame": "My ___ is very generous because ___."
+    },
+    {
+     "w": "achieve",
+     "def": "to succeed in doing something difficult",
+     "ar": "يحقق / ينجز",
+     "frame": "I'd like to achieve ___ one day."
+    },
+    {
+     "w": "inspire",
+     "def": "to make someone want to do something good",
+     "ar": "يُلهِم",
+     "frame": "___ inspires me to ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Ali and Daniel are preparing a class presentation called 'My Role Model'.",
+    "p1": [
+     {
+      "s": "Daniel",
+      "t": "Ali, who are you going to talk about in the presentation?"
+     },
+     {
+      "s": "Ali",
+      "t": "My uncle Hamad. He's the person who taught me to swim."
+     },
+     {
+      "s": "Daniel",
+      "t": "Cool! Why do you look up to him?"
+     },
+     {
+      "s": "Ali",
+      "t": "He's a doctor who works in a village hospital. He's so hard-working and generous."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Daniel",
+      "t": "My role model is Rayyanah Barnawi. She's the scientist who went to space in 2023."
+     },
+     {
+      "s": "Ali",
+      "t": "Wow! She was the first Saudi woman who travelled to space, right?"
+     },
+     {
+      "s": "Daniel",
+      "t": "Exactly. She achieved her dream, and she inspires lots of young people."
+     },
+     {
+      "s": "Ali",
+      "t": "Great choice! I think our presentations will be the best in the class."
+     }
+    ],
+    "focus": "He's a doctor who works in a village hospital.",
+    "qs": [
+     "Who taught Ali to swim?",
+     "What did Rayyanah Barnawi achieve?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school is making a 'Wall of Heroes'. I'm the teacher, and I want you to describe someone you look up to.",
+    "prompts": [
+     {
+      "q": "Who is your role model?",
+      "hint": "Say who the person is and add a 'who' clause: 'He's / She's someone who …'."
+     },
+     {
+      "q": "What is this person like?",
+      "hint": "Use two adjectives, like hard-working or generous, and give an example."
+     },
+     {
+      "q": "How does this person inspire you?",
+      "hint": "Say what you want to achieve because of them."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Saudi Heroes",
+    "points": [
+     "Prince Sultan bin Salman was the first Arab who travelled to space, in 1985.",
+     "In 2023, Rayyanah Barnawi and Ali AlQarni became the first Saudi astronauts who visited the International Space Station.",
+     "Saudi athletes who win medals at big competitions inspire many young people."
+    ],
+    "qs": [
+     "Which Saudi person do you look up to? Why?",
+     "Would you like to travel to space one day? Why or why not?"
+    ]
+   },
+   "exit": "Describe a person you look up to in two sentences. Use 'who' in both of them."
+  },
+  "3-1": {
+   "objective": "Today you will describe gadgets and inventions using 'which' and 'that'.",
+   "warmup": "What's the most useful thing you own?",
+   "expressions": [
+    {
+     "w": "gadget",
+     "def": "a small machine or tool that does something useful",
+     "ar": "جهاز صغير / أداة ذكية",
+     "frame": "My favourite gadget is ___."
+    },
+    {
+     "w": "invention",
+     "def": "something new that someone has made for the first time",
+     "ar": "اختراع",
+     "frame": "The most useful invention is ___ because ___."
+    },
+    {
+     "w": "be used for",
+     "def": "to have a special job or purpose",
+     "ar": "يُستخدم لـ",
+     "frame": "A ___ is used for ___."
+    },
+    {
+     "w": "battery",
+     "def": "a thing that gives power to phones, toys and other machines",
+     "ar": "بطارية",
+     "frame": "My ___ battery lasts for ___ hours."
+    },
+    {
+     "w": "come in handy",
+     "def": "to be useful when you need it",
+     "ar": "يكون مفيداً عند الحاجة",
+     "frame": "A ___ comes in handy when ___."
+    },
+    {
+     "w": "high-tech",
+     "def": "using the newest and most modern technology",
+     "ar": "متطوّر تقنياً",
+     "frame": "The most high-tech thing in my house is ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem and Emma are at a science and technology exhibition in Riyadh, looking at new inventions.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Look at this gadget! It's a robot which cleans solar panels in the desert."
+     },
+     {
+      "s": "Emma",
+      "t": "Clever! Sand covers the panels all the time, so it really comes in handy."
+     },
+     {
+      "s": "Reem",
+      "t": "Exactly. And it has a battery that charges in the sun."
+     },
+     {
+      "s": "Emma",
+      "t": "What's that over there? It looks like a high-tech hat."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "It's a helmet which is used for teaching people to drive. You see the road on a screen."
+     },
+     {
+      "s": "Emma",
+      "t": "Wow! What's the best invention that you've ever seen?"
+     },
+     {
+      "s": "Reem",
+      "t": "Maybe the phone. It's a camera, a map and a computer at the same time."
+     },
+     {
+      "s": "Emma",
+      "t": "True! But I'd say the air conditioner. Life in Riyadh in summer is impossible without it!"
+     }
+    ],
+    "focus": "It's a robot which cleans solar panels in the desert.",
+    "qs": [
+     "What does the robot do?",
+     "What is the helmet used for?"
+    ]
+   },
+   "speakout": {
+    "scene": "You've invented a new gadget for kids. I'm a judge at the school science fair. Describe your invention to me in detail.",
+    "prompts": [
+     {
+      "q": "What's your invention?",
+      "hint": "Say 'It's a gadget which / that …'."
+     },
+     {
+      "q": "What is it used for?",
+      "hint": "Use 'It's used for …ing' and give an example."
+     },
+     {
+      "q": "When will it come in handy?",
+      "hint": "Describe a situation and say who it will help."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Inventions from the Arab World",
+    "points": [
+     "Al-Jazari, a famous inventor from about 800 years ago, designed amazing water clocks and machines.",
+     "The Arab scientist Ibn al-Haytham did important work on light and how our eyes see.",
+     "Today, Saudi universities like KAUST work on inventions for clean water and energy."
+    ],
+    "qs": [
+     "Which invention do you think changed the world the most?",
+     "What gadget would you like someone to invent?"
+    ]
+   },
+   "exit": "Describe your favourite gadget in two sentences. Use 'which' or 'that' at least once."
+  },
+  "3-2": {
+   "objective": "Today you will describe interesting places in detail using 'where'.",
+   "warmup": "What's the most beautiful place you've ever visited?",
+   "expressions": [
+    {
+     "w": "historic",
+     "def": "important in history",
+     "ar": "تاريخي",
+     "frame": "___ is a historic place in my country."
+    },
+    {
+     "w": "be famous for",
+     "def": "to be known by many people for something",
+     "ar": "يشتهر بـ",
+     "frame": "My city is famous for ___."
+    },
+    {
+     "w": "breathtaking",
+     "def": "very beautiful or exciting",
+     "ar": "خلّاب / يحبس الأنفاس",
+     "frame": "The view from ___ is breathtaking."
+    },
+    {
+     "w": "ancient",
+     "def": "very, very old",
+     "ar": "قديم جداً / أثري",
+     "frame": "I'd love to see the ancient ___ in ___."
+    },
+    {
+     "w": "be worth a visit",
+     "def": "to be good enough that you should go there",
+     "ar": "يستحق الزيارة",
+     "frame": "___ is really worth a visit."
+    },
+    {
+     "w": "tourist",
+     "def": "a person who travels to visit places for fun",
+     "ar": "سائح",
+     "frame": "Lots of tourists visit ___ every year."
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar has just come back from a family trip to AlUla. He shows some photos to his friend Sam.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Where are these photos from, Omar?"
+     },
+     {
+      "s": "Omar",
+      "t": "AlUla! This is Hegra, the place where the Nabataeans built huge tombs in the rocks."
+     },
+     {
+      "s": "Sam",
+      "t": "Wow, it looks ancient! How old is it?"
+     },
+     {
+      "s": "Omar",
+      "t": "About two thousand years old. It's a historic site, and it's famous for those tombs."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "And what's this? It looks like an elephant!"
+     },
+     {
+      "s": "Omar",
+      "t": "That's Elephant Rock, the place where we watched the sunset. The view was breathtaking."
+     },
+     {
+      "s": "Sam",
+      "t": "Are there many tourists there?"
+     },
+     {
+      "s": "Omar",
+      "t": "Yes, lots, especially in winter. If you ask me, AlUla is really worth a visit."
+     }
+    ],
+    "focus": "This is Hegra, the place where the Nabataeans built huge tombs in the rocks.",
+    "qs": [
+     "What is Hegra famous for?",
+     "What did Omar's family do at Elephant Rock?"
+    ]
+   },
+   "speakout": {
+    "scene": "I'm a tourist visiting Saudi Arabia for the first time. I'm asking you, a local, about places to visit.",
+    "prompts": [
+     {
+      "q": "Which place in Saudi Arabia is really worth a visit?",
+      "hint": "Name it and describe it with 'It's a place where …'."
+     },
+     {
+      "q": "What is your city or town famous for?",
+      "hint": "Give two things and add details with 'where' or 'which'."
+     },
+     {
+      "q": "Where's the best place to watch the sunset?",
+      "hint": "Describe it with adjectives like breathtaking or peaceful."
+     }
+    ]
+   },
+   "culture": {
+    "title": "UNESCO Sites in Saudi Arabia",
+    "points": [
+     "In 2008, Hegra became the first place in Saudi Arabia on the UNESCO World Heritage List.",
+     "At-Turaif in Diriyah is the place where the first Saudi state began.",
+     "Al-Ahsa Oasis, where there are millions of palm trees, is also on the list."
+    ],
+    "qs": [
+     "Which of these places would you like to visit? Why?",
+     "Why do you think it's important to protect historic places?"
+    ]
+   },
+   "exit": "Describe a place you love in two sentences. Use 'where' in one of them."
+  },
+  "3-3": {
+   "objective": "Today you will describe people in your family or class using 'whose' and other details.",
+   "warmup": "Who do you look like in your family?",
+   "expressions": [
+    {
+     "w": "recognise",
+     "def": "to know who someone is because you have seen them before",
+     "ar": "يتعرّف على",
+     "frame": "I didn't recognise ___ at first."
+    },
+    {
+     "w": "take after",
+     "def": "to look or act like an older person in your family",
+     "ar": "يشبه (أحد أفراد عائلته)",
+     "frame": "I take after my ___ because we both ___."
+    },
+    {
+     "w": "look alike",
+     "def": "to look the same as each other",
+     "ar": "يتشابهان في الشكل",
+     "frame": "___ and ___ look alike."
+    },
+    {
+     "w": "nickname",
+     "def": "a funny or friendly name that people call you",
+     "ar": "لقب",
+     "frame": "My nickname is ___ because ___."
+    },
+    {
+     "w": "curly",
+     "def": "having lots of curls",
+     "ar": "مجعّد",
+     "frame": "The person in my family with curly hair is ___."
+    },
+    {
+     "w": "in charge of",
+     "def": "being the person who controls or looks after something",
+     "ar": "مسؤول عن",
+     "frame": "In my house, ___ is in charge of ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal is showing his friend Daniel an old family photo at his grandfather's house.",
+    "p1": [
+     {
+      "s": "Daniel",
+      "t": "Who are all these people, Faisal?"
+     },
+     {
+      "s": "Faisal",
+      "t": "My family, twenty years ago! That's my grandfather, the man whose camel won a race."
+     },
+     {
+      "s": "Daniel",
+      "t": "Ha! And who's the boy with curly hair? I don't recognise him."
+     },
+     {
+      "s": "Faisal",
+      "t": "That's my dad! He was ten. People say I take after him."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Daniel",
+      "t": "You really look alike! And who are the two boys whose shirts are the same?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Twins! My uncles Fahad and Faris. Their nickname was 'Copy and Paste'."
+     },
+     {
+      "s": "Daniel",
+      "t": "That's funny! Who's the man in charge of the barbecue?"
+     },
+     {
+      "s": "Faisal",
+      "t": "My great-uncle Saad. He's the one whose stories everyone loves."
+     }
+    ],
+    "focus": "That's my grandfather, the man whose camel won a race.",
+    "qs": [
+     "Why doesn't Daniel recognise the boy with curly hair?",
+     "What was the twins' nickname?"
+    ]
+   },
+   "speakout": {
+    "scene": "Let's play a guessing game. Think of someone in your family or class. Describe them using 'whose', 'who' and other details, and I'll guess.",
+    "prompts": [
+     {
+      "q": "Tell me about the person's family or the things they own.",
+      "hint": "Use 'It's someone whose …' (for example, whose brother is a pilot)."
+     },
+     {
+      "q": "Who do they take after in their family?",
+      "hint": "Say who they look like or act like."
+     },
+     {
+      "q": "Do they have a nickname?",
+      "hint": "Say the nickname and explain where it comes from."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Names Around the World",
+    "points": [
+     "In Saudi Arabia, many fathers are called 'Abu' + their oldest son's name, like Abu Fahad.",
+     "In Iceland, many family names are the father's first name + 'son' or 'dóttir'.",
+     "In China, the family name comes first and the given name comes second."
+    ],
+    "qs": [
+     "Do you have a nickname? Who gave it to you?",
+     "Who in your family do you take after?"
+    ]
+   },
+   "exit": "Describe two people you know in two sentences. Use 'whose' in both of them."
+  },
+  "3-4": {
+   "objective": "Today you will describe a lost thing and the place where you lost it in detail.",
+   "warmup": "Have you ever lost something important?",
+   "expressions": [
+    {
+     "w": "leave behind",
+     "def": "to forget to take something with you",
+     "ar": "ينسى شيئاً في مكان",
+     "frame": "I once left my ___ behind at ___."
+    },
+    {
+     "w": "made of",
+     "def": "used to say what material something is",
+     "ar": "مصنوع من",
+     "frame": "My ___ is made of ___."
+    },
+    {
+     "w": "brand-new",
+     "def": "completely new",
+     "ar": "جديد تماماً",
+     "frame": "My ___ is brand-new."
+    },
+    {
+     "w": "pattern",
+     "def": "a design of lines, shapes or colours",
+     "ar": "نقشة",
+     "frame": "My favourite ___ has a pattern of ___."
+    },
+    {
+     "w": "belong to",
+     "def": "to be owned by someone",
+     "ar": "يخصّ / ملك لـ",
+     "frame": "This ___ belongs to ___."
+    },
+    {
+     "w": "lost and found",
+     "def": "a place where people take things that others have lost",
+     "ar": "مكتب المفقودات",
+     "frame": "If I lose my ___, I'll ask at the lost and found."
+    }
+   ],
+   "dialogue": {
+    "scene": "Ali left his backpack on the metro in Riyadh. He is at the lost and found office, talking to an officer, Mr Nasser.",
+    "p1": [
+     {
+      "s": "Mr Nasser",
+      "t": "Good morning. Welcome to the lost and found. How can I help you?"
+     },
+     {
+      "s": "Ali",
+      "t": "I left my backpack behind on the metro this morning. It was on the train which left Olaya at eight."
+     },
+     {
+      "s": "Mr Nasser",
+      "t": "OK. Can you describe it?"
+     },
+     {
+      "s": "Ali",
+      "t": "It's a brand-new blue backpack which has a pattern of white stars. It's made of soft material."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Mr Nasser",
+      "t": "What was inside it?"
+     },
+     {
+      "s": "Ali",
+      "t": "My school books and a lunch box that my mum bought in Turkey. It has my name on it."
+     },
+     {
+      "s": "Mr Nasser",
+      "t": "A man whose son was on the same train brought this one in. Is it yours?"
+     },
+     {
+      "s": "Ali",
+      "t": "Yes, that's it! It belongs to me. Thank you so much!"
+     },
+     {
+      "s": "Mr Nasser",
+      "t": "You're welcome. Please check everything's there, and sign here."
+     }
+    ],
+    "focus": "It's a brand-new blue backpack which has a pattern of white stars.",
+    "qs": [
+     "What does Ali's backpack look like?",
+     "Who brought the backpack to the office?"
+    ]
+   },
+   "speakout": {
+    "scene": "You've lost something important at the airport. I work at the lost and found office. Describe the thing and the place where you lost it in detail.",
+    "prompts": [
+     {
+      "q": "What did you lose, and what does it look like?",
+      "hint": "Give the colour, size, pattern and what it's made of. Use 'which'."
+     },
+     {
+      "q": "Where do you think you left it behind?",
+      "hint": "Describe the place with 'where' (for example, the café where I had breakfast)."
+     },
+     {
+      "q": "How do I know it belongs to you?",
+      "hint": "Describe something inside it or something special about it, using 'which' or 'that'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Lost Things Around the World",
+    "points": [
+     "In Tokyo, people take hundreds of thousands of lost things to the police every year.",
+     "Some airports use special computer systems to find the owners of lost bags.",
+     "During Hajj, special teams help pilgrims who have lost their bags or their way."
+    ],
+    "qs": [
+     "Have you ever left something behind? What happened?",
+     "What should you do if you find someone's wallet?"
+    ]
+   },
+   "exit": "Describe one thing you own in two sentences, so that someone can find it if you lose it. Use 'which' or 'that'."
+  },
+  "3-5": {
+   "objective": "Today you will show a visitor around your city and describe people, places and things in detail.",
+   "warmup": "What's the first place you'd show a visitor in your city?",
+   "expressions": [
+    {
+     "w": "located in",
+     "def": "found in a particular place",
+     "ar": "يقع في",
+     "frame": "My school is located in ___."
+    },
+    {
+     "w": "landmark",
+     "def": "a famous building or place that is easy to recognise",
+     "ar": "معلم بارز",
+     "frame": "The most famous landmark in my city is ___."
+    },
+    {
+     "w": "surrounded by",
+     "def": "having things all around",
+     "ar": "محاط بـ",
+     "frame": "My grandparents' farm is surrounded by ___."
+    },
+    {
+     "w": "local",
+     "def": "from the area where you live",
+     "ar": "محلي",
+     "frame": "A famous local dish in my city is ___."
+    },
+    {
+     "w": "highlight",
+     "def": "the best or most exciting part of something",
+     "ar": "أبرز ما في الشيء",
+     "frame": "The highlight of my last trip was ___."
+    },
+    {
+     "w": "souvenir",
+     "def": "something you buy to remember a place",
+     "ar": "تذكار",
+     "frame": "A good souvenir from my city is ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Hamad is a young volunteer guide in Riyadh. He is showing a visitor from Japan, Kenji, around the city.",
+    "p1": [
+     {
+      "s": "Hamad",
+      "t": "Welcome to Riyadh, Kenji! That tall tower is the Kingdom Centre, the most famous landmark in the city."
+     },
+     {
+      "s": "Kenji",
+      "t": "It's amazing! What's at the top?"
+     },
+     {
+      "s": "Hamad",
+      "t": "A sky bridge which gives you a view of the whole city."
+     },
+     {
+      "s": "Kenji",
+      "t": "Great! What else should I see?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Hamad",
+      "t": "Diriyah, which is located on the edge of the city. It's the place where the first Saudi state began."
+     },
+     {
+      "s": "Kenji",
+      "t": "What's the highlight there?"
+     },
+     {
+      "s": "Hamad",
+      "t": "At-Turaif, an old district which is surrounded by mud-brick walls. Then we'll try some local food."
+     },
+     {
+      "s": "Kenji",
+      "t": "Perfect! And where can I buy a souvenir for my family?"
+     },
+     {
+      "s": "Hamad",
+      "t": "Souq Al-Zal, where you can find old coins, carpets and Arabic coffee pots."
+     }
+    ],
+    "focus": "It's the place where the first Saudi state began.",
+    "qs": [
+     "What can you see from the sky bridge?",
+     "What can Kenji buy at Souq Al-Zal?"
+    ]
+   },
+   "speakout": {
+    "scene": "You're a tour guide in your own city or town. I'm a visitor from another country. Show me around and describe everything in detail.",
+    "prompts": [
+     {
+      "q": "What's the most famous landmark here?",
+      "hint": "Name it and describe it with 'which' or 'where'."
+     },
+     {
+      "q": "Who are the people who make this place special?",
+      "hint": "Describe local people or a famous person with 'who' or 'whose'."
+     },
+     {
+      "q": "What's a good souvenir, and where can I buy it?",
+      "hint": "Describe the thing and the shop or market with 'which' and 'where'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Famous Landmarks",
+    "points": [
+     "The Kingdom Centre in Riyadh is about 300 metres tall.",
+     "The King Fahd Fountain in Jeddah sends water more than 250 metres into the air.",
+     "The Eiffel Tower in Paris, which was built in 1889, is visited by millions of people every year."
+    ],
+    "qs": [
+     "Which landmark would you show a visitor first? Why?",
+     "What's the best souvenir from Saudi Arabia, in your opinion?"
+    ]
+   },
+   "exit": "In two sentences, describe your city to a visitor. Use 'which', 'where' or 'who'."
+  }
+ },
+ "kits": {
+  "0-0": {
+   "words": [
+    {
+     "w": "in my opinion",
+     "ar": "في رأيي",
+     "ex": "In my opinion, chess is more exciting than people think."
+    },
+    {
+     "w": "addictive",
+     "ar": "يجعلك تتعلّق به / يسبب الإدمان",
+     "ex": "This puzzle game is so addictive that I forgot to eat lunch."
+    },
+    {
+     "w": "a waste of time",
+     "ar": "مضيعة للوقت",
+     "ex": "My dad thinks watching other people play games is a waste of time."
+    },
+    {
+     "w": "screen time",
+     "ar": "وقت الشاشة",
+     "ex": "My mum checks my screen time every evening."
+    },
+    {
+     "w": "to be honest",
+     "ar": "بصراحة",
+     "ex": "To be honest, I found the new game a bit boring."
+    },
+    {
+     "w": "What do you think about …?",
+     "ar": "ما رأيك في ...؟",
+     "ex": "What do you think about playing games online with strangers?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "Omar, you've been playing that game for three hours! What do you think about your screen time today?"
+    },
+    {
+     "s": "Omar",
+     "t": "To be honest, it's a bit too much. But this new football game is really addictive."
+    },
+    {
+     "s": "Reem",
+     "t": "In my opinion, three hours is a waste of time. It's a beautiful day outside."
+    },
+    {
+     "s": "Omar",
+     "t": "Maybe, but it isn't a complete waste. I'm learning to work with my team online."
+    },
+    {
+     "s": "Reem",
+     "t": "That's interesting. What do you think about playing real football instead?"
+    },
+    {
+     "s": "Omar",
+     "t": "Well, I think real football is better for my health, because I actually move."
+    },
+    {
+     "s": "Reem",
+     "t": "Exactly. So let's go to the park after Asr. Dad can take us."
+    },
+    {
+     "s": "Omar",
+     "t": "Fine! I'll save the game and come with you."
+    }
+   ],
+   "grammar": {
+    "title": "Giving opinions: I think / In my opinion",
+    "ar": "نستخدم I think أو In my opinion قبل رأينا، ونضيف because لذكر السبب. وللسؤال عن رأي غيرنا: What do you think about + اسم أو فعل بـ ing؟",
+    "examples": [
+     "I think this game is too difficult for young children.",
+     "In my opinion, reading is better than watching TV.",
+     "What do you think about playing games online?"
+    ]
+   }
+  },
+  "0-1": {
+   "words": [
+    {
+     "w": "personally",
+     "ar": "شخصياً",
+     "ex": "Personally, I prefer homemade sandwiches to canteen food."
+    },
+    {
+     "w": "I'm not keen on …",
+     "ar": "لا أحبّ ... كثيراً",
+     "ex": "I'm not keen on spicy food, but my brother loves it."
+    },
+    {
+     "w": "a healthy option",
+     "ar": "خيار صحي",
+     "ex": "Fruit salad is a healthy option for break time."
+    },
+    {
+     "w": "What's your opinion of …?",
+     "ar": "ما رأيك في ...؟",
+     "ex": "What's your opinion of the new school timetable?"
+    },
+    {
+     "w": "I believe (that) …",
+     "ar": "أعتقد أن ...",
+     "ex": "I believe that every student should drink more water."
+    },
+    {
+     "w": "tasteless",
+     "ar": "بلا طعم",
+     "ex": "The soup was tasteless, so nobody finished it."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sara",
+     "t": "Noura, what's your opinion of the new canteen menu?"
+    },
+    {
+     "s": "Noura",
+     "t": "Personally, I'm not keen on it. The pasta was tasteless yesterday."
+    },
+    {
+     "s": "Sara",
+     "t": "Really? I liked the chicken wrap. I believe it's a healthy option too."
+    },
+    {
+     "s": "Noura",
+     "t": "Maybe, but they stopped selling samosas! That's a real shame."
+    },
+    {
+     "s": "Sara",
+     "t": "In my opinion, it's good that they sell less fried food."
+    },
+    {
+     "s": "Noura",
+     "t": "I suppose so. But I believe students should be able to choose."
+    },
+    {
+     "s": "Sara",
+     "t": "What do you think about writing to the head teacher about it?"
+    },
+    {
+     "s": "Noura",
+     "t": "That's a great idea! Let's ask her to add fresh juice and dates."
+    }
+   ],
+   "grammar": {
+    "title": "Personally / I believe that / What's your opinion of …?",
+    "ar": "Personally تعني رأيي أنا. بعد I believe نضع (that) + جملة كاملة. وWhat's your opinion of + اسم؟ سؤال مهذب عن الرأي.",
+    "examples": [
+     "Personally, I love the canteen's falafel.",
+     "I believe that students need longer breaks.",
+     "What's your opinion of the new uniform?"
+    ]
+   }
+  },
+  "0-2": {
+   "words": [
+    {
+     "w": "What did you think of …?",
+     "ar": "ما رأيك في ... (بعد أن شاهدته)؟",
+     "ex": "What did you think of the football match last night?"
+    },
+    {
+     "w": "I found it …",
+     "ar": "وجدته ...",
+     "ex": "I found the book quite hard at first, but then I loved it."
+    },
+    {
+     "w": "overrated",
+     "ar": "مبالغ في مدحه",
+     "ex": "Everyone loves that series, but I think it's overrated."
+    },
+    {
+     "w": "plot",
+     "ar": "حبكة القصة",
+     "ex": "The plot was so confusing that I watched it twice."
+    },
+    {
+     "w": "How do you feel about …?",
+     "ar": "ما شعورك تجاه ...؟",
+     "ex": "How do you feel about films with sad endings?"
+    },
+    {
+     "w": "worth watching",
+     "ar": "يستحق المشاهدة",
+     "ex": "The new animated film is worth watching with your family."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "So, Faisal, what did you think of the film?"
+    },
+    {
+     "s": "Faisal",
+     "t": "I found it really funny, but the plot was a bit confusing in the middle."
+    },
+    {
+     "s": "Sam",
+     "t": "Really? I thought the plot was clever. The ending surprised me."
+    },
+    {
+     "s": "Faisal",
+     "t": "True, the ending was great. But was the first film better?"
+    },
+    {
+     "s": "Sam",
+     "t": "To be honest, I think the first one is a bit overrated. This one was better."
+    },
+    {
+     "s": "Faisal",
+     "t": "I'm not sure. How do you feel about films with so many songs?"
+    },
+    {
+     "s": "Sam",
+     "t": "I usually skip the songs at home! But overall, it was worth watching."
+    },
+    {
+     "s": "Faisal",
+     "t": "In my opinion, it's the best film this year. Let's tell everyone at school!"
+    }
+   ],
+   "grammar": {
+    "title": "Asking for opinions: What did you think of …? / How do you feel about …?",
+    "ar": "بعد تجربة شيء نسأل: What did you think of …؟ وعن الشعور العام: How do you feel about …؟ والإجابة: I found it + صفة.",
+    "examples": [
+     "What did you think of the new series?",
+     "How do you feel about very long films?",
+     "I found the ending really exciting."
+    ]
+   }
+  },
+  "0-3": {
+   "words": [
+    {
+     "w": "if you ask me",
+     "ar": "لو تسألني",
+     "ex": "If you ask me, that was the best goal of the season."
+    },
+    {
+     "w": "the way I see it",
+     "ar": "من وجهة نظري",
+     "ex": "The way I see it, the team needs a faster goalkeeper."
+    },
+    {
+     "w": "deserve to win",
+     "ar": "يستحق الفوز",
+     "ex": "They didn't deserve to win; they only had one shot on goal."
+    },
+    {
+     "w": "unfair",
+     "ar": "غير عادل",
+     "ex": "It's unfair that the older boys always choose the teams."
+    },
+    {
+     "w": "referee",
+     "ar": "الحَكَم",
+     "ex": "The referee gave a yellow card to their captain."
+    },
+    {
+     "w": "Who do you think will …?",
+     "ar": "مَن تظن أنه سـ...؟",
+     "ex": "Who do you think will score first tonight?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Daniel",
+     "t": "That was never a penalty! The referee made a terrible mistake."
+    },
+    {
+     "s": "Khalid",
+     "t": "If you ask me, it was a penalty. The defender pushed him."
+    },
+    {
+     "s": "Daniel",
+     "t": "Well, it seems unfair. Al-Nassr played much better in the first half."
+    },
+    {
+     "s": "Khalid",
+     "t": "Maybe, but they missed so many chances."
+    },
+    {
+     "s": "Daniel",
+     "t": "So who do you think will win the league this year?"
+    },
+    {
+     "s": "Khalid",
+     "t": "The way I see it, Al-Hilal has the strongest team, so they deserve to win."
+    },
+    {
+     "s": "Daniel",
+     "t": "I'm not sure. In my opinion, the league is very close this season."
+    },
+    {
+     "s": "Khalid",
+     "t": "We'll see! Quick, the second half is starting."
+    }
+   ],
+   "grammar": {
+    "title": "Strong opinions: If you ask me / The way I see it",
+    "ar": "عبارات لإبداء رأي قوي، تأتي في أول الجملة ثم فاصلة ثم الرأي. وللسؤال عن التوقع: Who do you think will + فعل؟",
+    "examples": [
+     "If you ask me, the coach should change the team.",
+     "The way I see it, they played better in the second half.",
+     "Who do you think will win the cup?"
+    ]
+   }
+  },
+  "0-4": {
+   "words": [
+    {
+     "w": "it seems to me that",
+     "ar": "يبدو لي أن",
+     "ex": "It seems to me that our town needs more parks."
+    },
+    {
+     "w": "crowded",
+     "ar": "مزدحم",
+     "ex": "The mall was so crowded that we went home early."
+    },
+    {
+     "w": "peaceful",
+     "ar": "هادئ ومريح",
+     "ex": "My grandfather's farm is very peaceful in the evening."
+    },
+    {
+     "w": "traffic jam",
+     "ar": "زحمة سير",
+     "ex": "There was a huge traffic jam after the match."
+    },
+    {
+     "w": "I'm not sure, but …",
+     "ar": "لست متأكداً، لكن ...",
+     "ex": "I'm not sure, but I think the new park opens next week."
+    },
+    {
+     "w": "a lot to do",
+     "ar": "الكثير من الأشياء لتفعلها",
+     "ex": "There's a lot to do in Jeddah, like swimming and visiting old Al-Balad."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "Lama, what do you think about living in a small town?"
+    },
+    {
+     "s": "Lama",
+     "t": "I love it. It's peaceful, and my grandparents live next door."
+    },
+    {
+     "s": "Reem",
+     "t": "It seems to me that small towns are a bit boring. In Riyadh there's a lot to do."
+    },
+    {
+     "s": "Lama",
+     "t": "That's true, but Riyadh is so crowded. How long does it take you to get to school?"
+    },
+    {
+     "s": "Reem",
+     "t": "About forty minutes, because of the traffic jams every morning."
+    },
+    {
+     "s": "Lama",
+     "t": "Forty minutes! I walk to school in five."
+    },
+    {
+     "s": "Reem",
+     "t": "OK, you win! But we have Riyadh Season, the Boulevard and huge malls."
+    },
+    {
+     "s": "Lama",
+     "t": "I'm not sure, but I think a small town is still better for me. I'll visit you in winter, though!"
+    }
+   ],
+   "grammar": {
+    "title": "Careful opinions: It seems to me that … / I'm not sure, but …",
+    "ar": "It seems to me that تعطي رأياً بلطف وحذر. ونقول I'm not sure, but I think … عندما لا نكون متأكدين من رأينا.",
+    "examples": [
+     "It seems to me that the traffic is getting worse.",
+     "I'm not sure, but I think small towns are safer.",
+     "It seems to me that there isn't a lot to do here for teenagers."
+    ]
+   }
+  },
+  "0-5": {
+   "words": [
+    {
+     "w": "from my point of view",
+     "ar": "من وجهة نظري",
+     "ex": "From my point of view, school should start a bit later."
+    },
+    {
+     "w": "I'm convinced that …",
+     "ar": "أنا مقتنع بأن ...",
+     "ex": "I'm convinced that reading every day makes you smarter."
+    },
+    {
+     "w": "What's your view on …?",
+     "ar": "ما وجهة نظرك في ...؟",
+     "ex": "What's your view on longer school holidays?"
+    },
+    {
+     "w": "make sense",
+     "ar": "يكون منطقياً",
+     "ex": "It makes sense to do your homework before you play."
+    },
+    {
+     "w": "pressure",
+     "ar": "ضغط",
+     "ex": "There's a lot of pressure on players before a final."
+    },
+    {
+     "w": "the main reason",
+     "ar": "السبب الرئيسي",
+     "ex": "The main reason I walk to school is the exercise."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sultan",
+     "t": "Welcome to School Radio! Should we get homework every day? Majed, what's your view on this?"
+    },
+    {
+     "s": "Majed",
+     "t": "From my point of view, a little homework every day makes sense. It helps us remember the lesson."
+    },
+    {
+     "s": "Sultan",
+     "t": "But many students say it's a waste of time. What do you think about that?"
+    },
+    {
+     "s": "Majed",
+     "t": "To be honest, some homework is boring. But the main reason we need it is practice."
+    },
+    {
+     "s": "Sultan",
+     "t": "Some parents say their children feel too much pressure. Is that true?"
+    },
+    {
+     "s": "Majed",
+     "t": "Sometimes, yes, especially before exams. If you ask me, twenty minutes a day is enough."
+    },
+    {
+     "s": "Sultan",
+     "t": "Interesting! So you're not against homework?"
+    },
+    {
+     "s": "Majed",
+     "t": "No. I'm convinced that short homework is better than no homework at all."
+    }
+   ],
+   "grammar": {
+    "title": "Opinions with reasons",
+    "ar": "نقوّي رأينا بذكر السبب: The main reason is … . ونسأل عن رأي الآخرين: What's your view on …? ونعبّر عن قناعة قوية: I'm convinced that … .",
+    "examples": [
+     "From my point of view, the school day is too long.",
+     "The main reason is that we're tired after lunch.",
+     "What's your view on online homework?"
+    ]
+   }
+  },
+  "1-0": {
+   "words": [
+    {
+     "w": "So do I.",
+     "ar": "وأنا كذلك",
+     "ex": "A: I love mango juice. B: So do I!"
+    },
+    {
+     "w": "Neither do I.",
+     "ar": "ولا أنا",
+     "ex": "A: I don't eat fish. B: Neither do I."
+    },
+    {
+     "w": "spicy",
+     "ar": "حارّ (فيه شطة)",
+     "ex": "This chicken is too spicy for my little sister."
+    },
+    {
+     "w": "I'm in the mood for …",
+     "ar": "لديّ رغبة في ...",
+     "ex": "I'm in the mood for something sweet after dinner."
+    },
+    {
+     "w": "a matter of taste",
+     "ar": "مسألة ذوق",
+     "ex": "Choosing a favourite colour is just a matter of taste."
+    },
+    {
+     "w": "I feel the same way.",
+     "ar": "أشعر بالشيء نفسه",
+     "ex": "My brother hates waiting, and I feel the same way."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Omar",
+     "t": "I'm in the mood for kabsa. I love the chicken kabsa here."
+    },
+    {
+     "s": "Faisal",
+     "t": "So do I! It's the best kabsa in Dammam."
+    },
+    {
+     "s": "Omar",
+     "t": "But I don't like it when the sauce is too spicy."
+    },
+    {
+     "s": "Faisal",
+     "t": "Neither do I. Last time my mouth was on fire!"
+    },
+    {
+     "s": "Faisal",
+     "t": "What about dessert? I really like kunafa."
+    },
+    {
+     "s": "Omar",
+     "t": "Really? I don't. It's too sweet for me. I prefer ice cream."
+    },
+    {
+     "s": "Faisal",
+     "t": "I can't believe it! Everyone likes kunafa."
+    },
+    {
+     "s": "Omar",
+     "t": "Well, it's just a matter of taste. My sister feels the same way."
+    }
+   ],
+   "grammar": {
+    "title": "So do I / Neither do I",
+    "ar": "نوافق على جملة مثبتة بـ So do I، وعلى جملة منفية بـ Neither do I. وإذا اختلفنا نقول: Really? I don't. أو Really? I do.",
+    "examples": [
+     "A: I like dates. B: So do I.",
+     "A: I don't eat fish. B: Neither do I.",
+     "A: I love kunafa. B: Really? I don't."
+    ]
+   }
+  },
+  "1-1": {
+   "words": [
+    {
+     "w": "So am I.",
+     "ar": "وأنا كذلك",
+     "ex": "A: I'm tired of this heat. B: So am I!"
+    },
+    {
+     "w": "Neither can I.",
+     "ar": "ولا أنا أستطيع",
+     "ex": "A: I can't swim very well. B: Neither can I."
+    },
+    {
+     "w": "So have I.",
+     "ar": "وأنا أيضاً (فعلتُ ذلك)",
+     "ex": "A: I've visited Abha twice. B: So have I."
+    },
+    {
+     "w": "can't wait",
+     "ar": "متشوّق جداً",
+     "ex": "I can't wait to see my cousins at Eid."
+    },
+    {
+     "w": "cool weather",
+     "ar": "جو بارد لطيف",
+     "ex": "We go to Taif in summer for the cool weather."
+    },
+    {
+     "w": "go camping",
+     "ar": "يذهب للتخييم",
+     "ex": "We go camping in the desert every winter."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Saud",
+     "t": "I'm so tired of the heat in Riyadh. I can't wait for the summer holidays!"
+    },
+    {
+     "s": "Noura",
+     "t": "So am I! Dad says we can choose between Abha and Jeddah."
+    },
+    {
+     "s": "Saud",
+     "t": "Hmm. I've been to Jeddah twice already."
+    },
+    {
+     "s": "Noura",
+     "t": "So have I. Let's choose Abha this time. The cool weather there is amazing."
+    },
+    {
+     "s": "Saud",
+     "t": "We could go camping in the mountains near Abha."
+    },
+    {
+     "s": "Noura",
+     "t": "I'm not keen on that. I can't sleep well in a tent."
+    },
+    {
+     "s": "Saud",
+     "t": "Neither can I, to be honest! Let's stay in a hotel and go camping for one night only."
+    },
+    {
+     "s": "Noura",
+     "t": "Good idea. I can't wait to tell Mum and Dad."
+    }
+   ],
+   "grammar": {
+    "title": "Short answers: So am I / Neither can I / So have I",
+    "ar": "في الرد القصير نستخدم نفس الفعل المساعد الموجود في الجملة: am ← So am I، can't ← Neither can I، have ← So have I.",
+    "examples": [
+     "A: I'm tired. B: So am I.",
+     "A: I can't ride a camel. B: Neither can I.",
+     "A: I've seen that film. B: So have I."
+    ]
+   }
+  },
+  "1-2": {
+   "words": [
+    {
+     "w": "I see your point, but …",
+     "ar": "أفهم وجهة نظرك، لكن ...",
+     "ex": "I see your point, but I still think school is more fun."
+    },
+    {
+     "w": "That's true, but …",
+     "ar": "هذا صحيح، لكن ...",
+     "ex": "That's true, but the trip is very expensive."
+    },
+    {
+     "w": "You've got a point.",
+     "ar": "معك حق في هذه النقطة",
+     "ex": "You've got a point. We should leave early to avoid traffic."
+    },
+    {
+     "w": "face to face",
+     "ar": "وجهاً لوجه",
+     "ex": "It's better to say sorry face to face, not by message."
+    },
+    {
+     "w": "concentrate",
+     "ar": "يركّز",
+     "ex": "I can concentrate better in the library."
+    },
+    {
+     "w": "distraction",
+     "ar": "شيء يشتّت الانتباه",
+     "ex": "The TV is a big distraction when I do homework."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Emma",
+     "t": "I loved the online lessons last week. I could learn in my pyjamas!"
+    },
+    {
+     "s": "Reem",
+     "t": "Ha! I see your point, but I couldn't concentrate at all."
+    },
+    {
+     "s": "Emma",
+     "t": "Why not? It was so quiet at home."
+    },
+    {
+     "s": "Reem",
+     "t": "Not in my house! My little brothers were a big distraction."
+    },
+    {
+     "s": "Emma",
+     "t": "OK, you've got a point. But we didn't waste time in traffic."
+    },
+    {
+     "s": "Reem",
+     "t": "That's true, but I missed my friends. I prefer learning face to face."
+    },
+    {
+     "s": "Emma",
+     "t": "To be honest, I feel the same way. Seeing everyone at school is more fun."
+    },
+    {
+     "s": "Reem",
+     "t": "So online lessons are good sometimes, but not every day."
+    }
+   ],
+   "grammar": {
+    "title": "Disagreeing politely",
+    "ar": "لا نقول You're wrong! بل نوافق على جزء من الفكرة أولاً ثم نعرض رأينا: I see your point, but … / That's true, but … .",
+    "examples": [
+     "I see your point, but I learn better at school.",
+     "That's true, but online lessons can be boring.",
+     "You've got a point. Maybe we can do both."
+    ]
+   }
+  },
+  "1-3": {
+   "words": [
+    {
+     "w": "I totally agree.",
+     "ar": "أوافق تماماً",
+     "ex": "I totally agree that we should eat together as a family."
+    },
+    {
+     "w": "I'm afraid I don't agree.",
+     "ar": "آسف، لا أوافق",
+     "ex": "I'm afraid I don't agree. I think the rule is too strict."
+    },
+    {
+     "w": "Exactly!",
+     "ar": "بالضبط!",
+     "ex": "A: Pets need lots of love. B: Exactly!"
+    },
+    {
+     "w": "take care of",
+     "ar": "يعتني بـ",
+     "ex": "My cousin takes care of his grandfather's camels."
+    },
+    {
+     "w": "responsibility",
+     "ar": "مسؤولية",
+     "ex": "Feeding the birds is my responsibility."
+    },
+    {
+     "w": "make a mess",
+     "ar": "يُحدث فوضى",
+     "ex": "Please don't make a mess in the kitchen."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sara",
+     "t": "Dad, can we get a cat? All my friends have one!"
+    },
+    {
+     "s": "Dad",
+     "t": "Hmm. A cat is a big responsibility, Sara."
+    },
+    {
+     "s": "Sara",
+     "t": "I totally agree. That's why I'll take care of it every day."
+    },
+    {
+     "s": "Dad",
+     "t": "Every day? Even during exams?"
+    },
+    {
+     "s": "Sara",
+     "t": "Yes! And I'll clean its box. It won't make a mess, I promise."
+    },
+    {
+     "s": "Dad",
+     "t": "I'm afraid I don't agree. Cats often make a mess with their hair and toys."
+    },
+    {
+     "s": "Sara",
+     "t": "That's true, but we can brush it every week."
+    },
+    {
+     "s": "Dad",
+     "t": "Well, you've got a point. Let's ask your mum first. Her opinion matters too."
+    }
+   ],
+   "grammar": {
+    "title": "Strong agreement and polite disagreement",
+    "ar": "للموافقة القوية: I totally agree / Exactly!. وللاعتراض بأدب: I'm afraid I don't agree. كلمة I'm afraid هنا تجعل الاعتراض ألطف.",
+    "examples": [
+     "I totally agree with you.",
+     "Exactly! That's what I think.",
+     "I'm afraid I don't agree. Cats are easy to keep."
+    ]
+   }
+  },
+  "1-4": {
+   "words": [
+    {
+     "w": "I couldn't agree more.",
+     "ar": "أوافقك تماماً",
+     "ex": "I couldn't agree more. We need more trees in our city."
+    },
+    {
+     "w": "You may be right, but …",
+     "ar": "ربما تكون محقاً، لكن ...",
+     "ex": "You may be right, but it's too hot to walk to school."
+    },
+    {
+     "w": "Not necessarily.",
+     "ar": "ليس بالضرورة",
+     "ex": "A: New phones are always better. B: Not necessarily."
+    },
+    {
+     "w": "recycle",
+     "ar": "يعيد التدوير",
+     "ex": "Our school recycles paper and cans."
+    },
+    {
+     "w": "make a difference",
+     "ar": "يُحدث فرقاً",
+     "ex": "Turning off the lights can make a big difference."
+    },
+    {
+     "w": "single-use plastic",
+     "ar": "بلاستيك يُستخدم مرة واحدة",
+     "ex": "Many shops have stopped giving single-use plastic bags."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "Look at all these plastic bottles! We should stop using single-use plastic."
+    },
+    {
+     "s": "Omar",
+     "t": "I couldn't agree more. It's terrible for the fish and turtles."
+    },
+    {
+     "s": "Sam",
+     "t": "But one small club can't make a difference."
+    },
+    {
+     "s": "Omar",
+     "t": "You may be right, but if every school does this, it will help."
+    },
+    {
+     "s": "Sam",
+     "t": "True. My family recycles paper and bottles now."
+    },
+    {
+     "s": "Omar",
+     "t": "So does mine! But recycling isn't enough. We need to use less plastic."
+    },
+    {
+     "s": "Sam",
+     "t": "Do you think paper bags are always better than plastic ones?"
+    },
+    {
+     "s": "Omar",
+     "t": "Not necessarily. If you ask me, bags you can use again and again are the best."
+    }
+   ],
+   "grammar": {
+    "title": "Agreeing and disagreeing in discussions",
+    "ar": "I couldn't agree more = موافقة تامة. You may be right, but … = موافقة جزئية ثم اعتراض. Not necessarily = ليس دائماً صحيحاً.",
+    "examples": [
+     "I couldn't agree more. Plastic is a big problem.",
+     "You may be right, but recycling is expensive.",
+     "A: Big cars are safer. B: Not necessarily."
+    ]
+   }
+  },
+  "1-5": {
+   "words": [
+    {
+     "w": "I'm with you on that.",
+     "ar": "أنا معك في هذا",
+     "ex": "I'm with you on that. The zoo is perfect for younger students."
+    },
+    {
+     "w": "I'm not so sure about that.",
+     "ar": "لست متأكداً من ذلك",
+     "ex": "I'm not so sure about that. It might rain tomorrow."
+    },
+    {
+     "w": "Fair enough.",
+     "ar": "معقول / حسناً، كلامك منطقي",
+     "ex": "Fair enough. Let's leave the beach for winter."
+    },
+    {
+     "w": "the majority",
+     "ar": "الأغلبية",
+     "ex": "The majority of students voted for the museum."
+    },
+    {
+     "w": "change my mind",
+     "ar": "أغيّر رأيي",
+     "ex": "I wanted the red bike, but then I changed my mind."
+    },
+    {
+     "w": "come to an agreement",
+     "ar": "نتوصّل إلى اتفاق",
+     "ex": "After a long talk, my brothers and I came to an agreement."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Khalid",
+     "t": "OK, we have three choices: Ithra, the beach in Al-Khobar or a farm trip. What do you think?"
+    },
+    {
+     "s": "Ali",
+     "t": "Ithra, definitely. It has a library, a museum and a cinema."
+    },
+    {
+     "s": "Khalid",
+     "t": "I'm with you on that. But some students say it's boring."
+    },
+    {
+     "s": "Ali",
+     "t": "I'm not so sure about that. They have fun science shows for kids."
+    },
+    {
+     "s": "Khalid",
+     "t": "The beach is fun too. Lots of students love swimming."
+    },
+    {
+     "s": "Ali",
+     "t": "That's true, but it's very hot this month. We can go to the beach in winter."
+    },
+    {
+     "s": "Khalid",
+     "t": "Fair enough. Let's ask the class and see what the majority wants."
+    },
+    {
+     "s": "Ali",
+     "t": "Good idea. And if they choose the farm, maybe I'll change my mind!"
+    }
+   ],
+   "grammar": {
+    "title": "Reaching an agreement",
+    "ar": "في النقاش نوافق (I'm with you on that)، ونشكّك بأدب (I'm not so sure about that)، ونقبل الرأي الآخر (Fair enough) حتى نصل إلى اتفاق.",
+    "examples": [
+     "I'm with you on that. Ithra is a great choice.",
+     "I'm not so sure about that. The farm is very far.",
+     "Fair enough. Let's ask the majority."
+    ]
+   }
+  },
+  "2-0": {
+   "words": [
+    {
+     "w": "fall out with",
+     "ar": "يتخاصم مع",
+     "ex": "Khalid fell out with his cousin over a video game."
+    },
+    {
+     "w": "Why don't you …?",
+     "ar": "لماذا لا ...؟ (اقتراح)",
+     "ex": "Why don't you call him and say sorry?"
+    },
+    {
+     "w": "make up",
+     "ar": "يتصالح",
+     "ex": "The twins argued in the morning but made up by lunch."
+    },
+    {
+     "w": "apologise",
+     "ar": "يعتذر",
+     "ex": "He apologised for being late to the match."
+    },
+    {
+     "w": "Have you tried …ing?",
+     "ar": "هل جرّبت أن ...؟",
+     "ex": "Have you tried talking to your teacher about it?"
+    },
+    {
+     "w": "upset",
+     "ar": "منزعج / حزين",
+     "ex": "She was upset because nobody remembered her birthday."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Fahad",
+     "t": "What's wrong, Omar? You look upset."
+    },
+    {
+     "s": "Omar",
+     "t": "I fell out with Yousef. I laughed when he missed a penalty, and now he won't talk to me."
+    },
+    {
+     "s": "Fahad",
+     "t": "Oh no. Have you tried talking to him?"
+    },
+    {
+     "s": "Omar",
+     "t": "Yes, but he walked away. What should I do?"
+    },
+    {
+     "s": "Fahad",
+     "t": "Why don't you apologise? Tell him you're really sorry you laughed."
+    },
+    {
+     "s": "Omar",
+     "t": "But it was just a joke!"
+    },
+    {
+     "s": "Fahad",
+     "t": "Maybe for you, but not for him. You could send him a message tonight."
+    },
+    {
+     "s": "Omar",
+     "t": "OK, I'll try. I really want to make up with him before Thursday's match."
+    }
+   ],
+   "grammar": {
+    "title": "Making suggestions",
+    "ar": "Why don't you + فعل؟ اقتراح لطيف. You could + فعل = يمكنك أن. Have you tried + فعل بـ ing؟ = هل جرّبت؟",
+    "examples": [
+     "Why don't you invite him to play?",
+     "You could write her a short note.",
+     "Have you tried asking your teacher for help?"
+    ]
+   }
+  },
+  "2-1": {
+   "words": [
+    {
+     "w": "If I were you, I'd …",
+     "ar": "لو كنت مكانك، لـ ...",
+     "ex": "If I were you, I'd start revising this weekend."
+    },
+    {
+     "w": "stressed out",
+     "ar": "متوتر جداً",
+     "ex": "My sister gets stressed out before every exam."
+    },
+    {
+     "w": "revise",
+     "ar": "يراجع (للاختبار)",
+     "ex": "I revise my English words on the bus."
+    },
+    {
+     "w": "take a break",
+     "ar": "يأخذ استراحة",
+     "ex": "Let's take a break and have some juice."
+    },
+    {
+     "w": "fall behind",
+     "ar": "يتأخر عن الآخرين",
+     "ex": "He was ill for a week and fell behind in science."
+    },
+    {
+     "w": "make a timetable",
+     "ar": "يضع جدولاً",
+     "ex": "My mum helped me make a timetable for Ramadan."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Lama",
+     "t": "Hind, I'm so stressed out. I have four exams next week!"
+    },
+    {
+     "s": "Hind",
+     "t": "Don't worry, that's normal. Have you started to revise?"
+    },
+    {
+     "s": "Lama",
+     "t": "A bit, but I'm falling behind in maths. I don't know where to start."
+    },
+    {
+     "s": "Hind",
+     "t": "If I were you, I'd make a timetable. Write which subject you'll study each day."
+    },
+    {
+     "s": "Lama",
+     "t": "Good idea. But I study for hours and still forget everything."
+    },
+    {
+     "s": "Hind",
+     "t": "Then take a break every forty minutes. Your brain needs rest."
+    },
+    {
+     "s": "Lama",
+     "t": "Really? I thought breaks were a waste of time."
+    },
+    {
+     "s": "Hind",
+     "t": "Not at all! And if I were you, I'd ask your teacher for extra maths exercises."
+    }
+   ],
+   "grammar": {
+    "title": "If I were you, I'd + verb",
+    "ar": "عبارة ثابتة للنصيحة: If I were you (لاحظ were مع I) ثم I'd أو I wouldn't + فعل في صيغته الأساسية.",
+    "examples": [
+     "If I were you, I'd go to bed early.",
+     "If I were you, I wouldn't study all night.",
+     "If I were you, I'd ask the teacher."
+    ]
+   }
+  },
+  "2-2": {
+   "words": [
+    {
+     "w": "get enough sleep",
+     "ar": "ينام ما يكفي",
+     "ex": "Children need to get enough sleep to grow well."
+    },
+    {
+     "w": "stay up late",
+     "ar": "يسهر",
+     "ex": "We stayed up late on the last night of Ramadan."
+    },
+    {
+     "w": "junk food",
+     "ar": "الأكل غير الصحي",
+     "ex": "There's too much junk food in my lunch box."
+    },
+    {
+     "w": "exhausted",
+     "ar": "مُنهَك جداً",
+     "ex": "After the long match, the players were exhausted."
+    },
+    {
+     "w": "get into the habit of",
+     "ar": "يعتاد على",
+     "ex": "I've got into the habit of drinking water before school."
+    },
+    {
+     "w": "in the long run",
+     "ar": "على المدى البعيد",
+     "ex": "Saving a little money every week will help you in the long run."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Mr Saleh",
+     "t": "Faisal, you look exhausted. Are you OK?"
+    },
+    {
+     "s": "Faisal",
+     "t": "I stayed up late again, sir. I was playing online with my cousins."
+    },
+    {
+     "s": "Mr Saleh",
+     "t": "If you don't get enough sleep, you won't play well in the match on Thursday."
+    },
+    {
+     "s": "Faisal",
+     "t": "I know. But I can't sleep early. I'm not tired at ten."
+    },
+    {
+     "s": "Mr Saleh",
+     "t": "Why don't you put your phone away an hour before bed? You'll fall asleep faster."
+    },
+    {
+     "s": "Faisal",
+     "t": "OK. And what about breakfast? I usually just eat crisps."
+    },
+    {
+     "s": "Mr Saleh",
+     "t": "That's junk food! If you eat eggs or labneh and bread, you'll have more energy."
+    },
+    {
+     "s": "Faisal",
+     "t": "Fine, I'll try to get into the habit of eating a proper breakfast."
+    }
+   ],
+   "grammar": {
+    "title": "First conditional for advice",
+    "ar": "If + مضارع بسيط، ثم will أو won't + فعل: نستخدمه لنشرح نتيجة النصيحة في المستقبل. لا نضع will بعد If.",
+    "examples": [
+     "If you go to bed early, you'll feel better.",
+     "If you eat junk food every day, you won't have much energy.",
+     "You'll get stronger if you exercise every day."
+    ]
+   }
+  },
+  "2-3": {
+   "words": [
+    {
+     "w": "save up for",
+     "ar": "يدّخر من أجل",
+     "ex": "My brother is saving up for a new bike."
+    },
+    {
+     "w": "pocket money",
+     "ar": "المصروف",
+     "ex": "I get my pocket money every Thursday."
+    },
+    {
+     "w": "You'd better …",
+     "ar": "من الأفضل لك أن ...",
+     "ex": "You'd better hurry, or you'll miss the bus."
+    },
+    {
+     "w": "can't afford",
+     "ar": "لا يملك ثمنه",
+     "ex": "We can't afford a new car this year."
+    },
+    {
+     "w": "a bargain",
+     "ar": "صفقة رابحة",
+     "ex": "These shoes were a bargain. They were half price!"
+    },
+    {
+     "w": "unless",
+     "ar": "إلا إذا / ما لم",
+     "ex": "You won't finish your project unless you start today."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Saud",
+     "t": "Look at those football boots, Uncle! But they cost 400 riyals. I can't afford them."
+    },
+    {
+     "s": "Majed",
+     "t": "How much pocket money do you get?"
+    },
+    {
+     "s": "Saud",
+     "t": "Fifty riyals a week, but I usually spend it all on snacks and games."
+    },
+    {
+     "s": "Majed",
+     "t": "Well, you'd better stop that if you really want those boots."
+    },
+    {
+     "s": "Saud",
+     "t": "So, what should I do?"
+    },
+    {
+     "s": "Majed",
+     "t": "It's a good idea to save up for them. If you save forty riyals a week, you'll have enough in ten weeks."
+    },
+    {
+     "s": "Saud",
+     "t": "Ten weeks! That's so long."
+    },
+    {
+     "s": "Majed",
+     "t": "Maybe, but you won't get them unless you save. And wait for the sale. They might be a bargain then."
+    }
+   ],
+   "grammar": {
+    "title": "You'd better / It's a good idea to / unless",
+    "ar": "You'd better + فعل = نصيحة قوية (وإلا ستحدث مشكلة). It's a good idea to + فعل = نصيحة لطيفة. unless = إلا إذا (أي if not).",
+    "examples": [
+     "You'd better save some money every week.",
+     "It's a good idea to compare prices first.",
+     "You won't have enough money unless you save."
+    ]
+   }
+  },
+  "2-4": {
+   "words": [
+    {
+     "w": "Can I ask your advice?",
+     "ar": "هل أستطيع أن أطلب نصيحتك؟",
+     "ex": "Can I ask your advice about my science project?"
+    },
+    {
+     "w": "What do you suggest?",
+     "ar": "ماذا تقترح؟",
+     "ex": "I want to learn to cook. What do you suggest?"
+    },
+    {
+     "w": "My advice is to …",
+     "ar": "نصيحتي هي أن ...",
+     "ex": "My advice is to arrive early on your first day."
+    },
+    {
+     "w": "fit in",
+     "ar": "يندمج مع الآخرين",
+     "ex": "It took my cousin a month to fit in at his new school."
+    },
+    {
+     "w": "get used to",
+     "ar": "يتعوّد على",
+     "ex": "I'm getting used to waking up early."
+    },
+    {
+     "w": "nervous",
+     "ar": "متوتر / قلق",
+     "ex": "I always feel nervous before I speak in front of the class."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Emma",
+     "t": "Noura, can I ask your advice? I start at my new school on Sunday."
+    },
+    {
+     "s": "Noura",
+     "t": "Of course! Are you nervous?"
+    },
+    {
+     "s": "Emma",
+     "t": "Very! I don't know anyone, and I'm worried I won't fit in."
+    },
+    {
+     "s": "Noura",
+     "t": "Don't worry. My advice is to join a club. You'll meet people who like the same things."
+    },
+    {
+     "s": "Emma",
+     "t": "Good idea. And what do you suggest for the weekend? Everything is so different here."
+    },
+    {
+     "s": "Noura",
+     "t": "Why don't you come with us to Diriyah on Friday evening? It's beautiful at night."
+    },
+    {
+     "s": "Emma",
+     "t": "I'd love to! But the weekend is on Friday and Saturday here. It feels so strange."
+    },
+    {
+     "s": "Noura",
+     "t": "You'll get used to it quickly, I promise!"
+    }
+   ],
+   "grammar": {
+    "title": "Asking for advice",
+    "ar": "نطلب النصيحة بأدب: Can I ask your advice? / What do you suggest? / What should I do? والرد يكون: My advice is to + فعل.",
+    "examples": [
+     "Can I ask your advice about something?",
+     "I'm nervous about the test. What do you suggest?",
+     "My advice is to practise every day."
+    ]
+   }
+  },
+  "2-5": {
+   "words": [
+    {
+     "w": "deal with",
+     "ar": "يتعامل مع",
+     "ex": "My dad knows how to deal with difficult customers."
+    },
+    {
+     "w": "Whatever you do, don't …",
+     "ar": "مهما فعلت، لا ...",
+     "ex": "Whatever you do, don't tell him about the surprise!"
+    },
+    {
+     "w": "It might help to …",
+     "ar": "قد يساعدك أن ...",
+     "ex": "It might help to write your new words in a notebook."
+    },
+    {
+     "w": "give up",
+     "ar": "يستسلم",
+     "ex": "I nearly gave up, but then I scored a goal."
+    },
+    {
+     "w": "look on the bright side",
+     "ar": "انظر إلى الجانب المشرق",
+     "ex": "We lost the match, but look on the bright side: we played well."
+    },
+    {
+     "w": "sort it out",
+     "ar": "يحلّ المشكلة",
+     "ex": "There was a problem with my ticket, but my uncle sorted it out."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Majed",
+     "t": "Welcome back to 'Ask Us'! Today's message is from Turki, who's 11. He says: 'I'm terrible at swimming, and my friends laugh at me.'"
+    },
+    {
+     "s": "Sultan",
+     "t": "Poor Turki! Well, Turki, whatever you do, don't give up."
+    },
+    {
+     "s": "Majed",
+     "t": "I agree. It might help to take lessons at a sports club. If you practise every week, you'll improve quickly."
+    },
+    {
+     "s": "Sultan",
+     "t": "And look on the bright side: you're trying something new, and that's brave."
+    },
+    {
+     "s": "Majed",
+     "t": "What about his friends? How should he deal with them?"
+    },
+    {
+     "s": "Sultan",
+     "t": "If I were you, Turki, I'd tell them how you feel. Real friends will understand."
+    },
+    {
+     "s": "Majed",
+     "t": "Exactly. Why don't you invite them to practise with you? You could sort it out together."
+    },
+    {
+     "s": "Sultan",
+     "t": "Great advice! Send us your problems, everyone, and we'll try to help."
+    }
+   ],
+   "grammar": {
+    "title": "Gentle and strong advice",
+    "ar": "نصيحة لطيفة: It might help to … / You could … . نصيحة قوية: You'd better … / Whatever you do, don't … . ونذكر النتيجة بـ If you …, you'll … .",
+    "examples": [
+     "It might help to make a list.",
+     "Whatever you do, don't give up.",
+     "If you practise every day, you'll get better."
+    ]
+   }
+  },
+  "3-0": {
+   "words": [
+    {
+     "w": "look up to",
+     "ar": "يحترمه ويعتبره قدوة",
+     "ex": "I look up to my grandfather because he's so wise."
+    },
+    {
+     "w": "role model",
+     "ar": "قدوة",
+     "ex": "The captain is a great role model for young players."
+    },
+    {
+     "w": "hard-working",
+     "ar": "مجتهد",
+     "ex": "My mum is a hard-working nurse."
+    },
+    {
+     "w": "generous",
+     "ar": "كريم",
+     "ex": "Our neighbour is generous. He shares his dates with everyone."
+    },
+    {
+     "w": "achieve",
+     "ar": "يحقق / ينجز",
+     "ex": "She achieved her dream of becoming a pilot."
+    },
+    {
+     "w": "inspire",
+     "ar": "يُلهِم",
+     "ex": "His story inspired me to start running."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Daniel",
+     "t": "Ali, who are you going to talk about in the presentation?"
+    },
+    {
+     "s": "Ali",
+     "t": "My uncle Hamad. He's the person who taught me to swim."
+    },
+    {
+     "s": "Daniel",
+     "t": "Cool! Why do you look up to him?"
+    },
+    {
+     "s": "Ali",
+     "t": "He's a doctor who works in a village hospital. He's so hard-working and generous."
+    },
+    {
+     "s": "Daniel",
+     "t": "My role model is Rayyanah Barnawi. She's the scientist who went to space in 2023."
+    },
+    {
+     "s": "Ali",
+     "t": "Wow! She was the first Saudi woman who travelled to space, right?"
+    },
+    {
+     "s": "Daniel",
+     "t": "Exactly. She achieved her dream, and she inspires lots of young people."
+    },
+    {
+     "s": "Ali",
+     "t": "Great choice! I think our presentations will be the best in the class."
+    }
+   ],
+   "grammar": {
+    "title": "Relative clauses with who",
+    "ar": "نستخدم who بعد اسم شخص مباشرة لنضيف معلومة عنه: She's the scientist who went to space. ولا نضع he أو she بعد who.",
+    "examples": [
+     "My uncle is a doctor who works in a village.",
+     "She's the teacher who helped me most.",
+     "People who read a lot know many words."
+    ]
+   }
+  },
+  "3-1": {
+   "words": [
+    {
+     "w": "gadget",
+     "ar": "جهاز صغير / أداة ذكية",
+     "ex": "My dad loves gadgets, like his smart watch."
+    },
+    {
+     "w": "invention",
+     "ar": "اختراع",
+     "ex": "The wheel was one of the most important inventions."
+    },
+    {
+     "w": "be used for",
+     "ar": "يُستخدم لـ",
+     "ex": "This app is used for learning new words."
+    },
+    {
+     "w": "battery",
+     "ar": "بطارية",
+     "ex": "My tablet's battery is almost empty."
+    },
+    {
+     "w": "come in handy",
+     "ar": "يكون مفيداً عند الحاجة",
+     "ex": "A torch comes in handy when you go camping."
+    },
+    {
+     "w": "high-tech",
+     "ar": "متطوّر تقنياً",
+     "ex": "The new airport has a lot of high-tech machines."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "Look at this gadget! It's a robot which cleans solar panels in the desert."
+    },
+    {
+     "s": "Emma",
+     "t": "Clever! Sand covers the panels all the time, so it really comes in handy."
+    },
+    {
+     "s": "Reem",
+     "t": "Exactly. And it has a battery that charges in the sun."
+    },
+    {
+     "s": "Emma",
+     "t": "What's that over there? It looks like a high-tech hat."
+    },
+    {
+     "s": "Reem",
+     "t": "It's a helmet which is used for teaching people to drive. You see the road on a screen."
+    },
+    {
+     "s": "Emma",
+     "t": "Wow! What's the best invention that you've ever seen?"
+    },
+    {
+     "s": "Reem",
+     "t": "Maybe the phone. It's a camera, a map and a computer at the same time."
+    },
+    {
+     "s": "Emma",
+     "t": "True! But I'd say the air conditioner. Life in Riyadh in summer is impossible without it!"
+    }
+   ],
+   "grammar": {
+    "title": "Relative clauses with which / that",
+    "ar": "نستخدم which أو that بعد اسم شيء أو حيوان لنضيف معلومة عنه: a robot which cleans panels. ويمكن استخدام that للأشخاص والأشياء.",
+    "examples": [
+     "It's a robot which cleans windows.",
+     "This is the phone that I got for Eid.",
+     "A fridge is a machine which keeps food cold."
+    ]
+   }
+  },
+  "3-2": {
+   "words": [
+    {
+     "w": "historic",
+     "ar": "تاريخي",
+     "ex": "Al-Balad is the historic heart of Jeddah."
+    },
+    {
+     "w": "be famous for",
+     "ar": "يشتهر بـ",
+     "ex": "Taif is famous for its roses."
+    },
+    {
+     "w": "breathtaking",
+     "ar": "خلّاب / يحبس الأنفاس",
+     "ex": "The view from the top of the mountain was breathtaking."
+    },
+    {
+     "w": "ancient",
+     "ar": "قديم جداً / أثري",
+     "ex": "We saw ancient writing on the rocks near Hail."
+    },
+    {
+     "w": "be worth a visit",
+     "ar": "يستحق الزيارة",
+     "ex": "The new museum is worth a visit."
+    },
+    {
+     "w": "tourist",
+     "ar": "سائح",
+     "ex": "The tourists took photos of the old fort."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "Where are these photos from, Omar?"
+    },
+    {
+     "s": "Omar",
+     "t": "AlUla! This is Hegra, the place where the Nabataeans built huge tombs in the rocks."
+    },
+    {
+     "s": "Sam",
+     "t": "Wow, it looks ancient! How old is it?"
+    },
+    {
+     "s": "Omar",
+     "t": "About two thousand years old. It's a historic site, and it's famous for those tombs."
+    },
+    {
+     "s": "Sam",
+     "t": "And what's this? It looks like an elephant!"
+    },
+    {
+     "s": "Omar",
+     "t": "That's Elephant Rock, the place where we watched the sunset. The view was breathtaking."
+    },
+    {
+     "s": "Sam",
+     "t": "Are there many tourists there?"
+    },
+    {
+     "s": "Omar",
+     "t": "Yes, lots, especially in winter. If you ask me, AlUla is really worth a visit."
+    }
+   ],
+   "grammar": {
+    "title": "Relative clauses with where",
+    "ar": "نستخدم where بعد اسم مكان لنصف ما يحدث فيه: the place where we watched the sunset. بعد where تأتي جملة كاملة (فاعل + فعل).",
+    "examples": [
+     "This is the park where I learned to ride a bike.",
+     "Jeddah is the city where my grandparents live.",
+     "That's the café where we had breakfast."
+    ]
+   }
+  },
+  "3-3": {
+   "words": [
+    {
+     "w": "recognise",
+     "ar": "يتعرّف على",
+     "ex": "I didn't recognise my cousin with his new haircut."
+    },
+    {
+     "w": "take after",
+     "ar": "يشبه (أحد أفراد عائلته)",
+     "ex": "My brother takes after my dad. They both love football."
+    },
+    {
+     "w": "look alike",
+     "ar": "يتشابهان في الشكل",
+     "ex": "My twin cousins look alike, but they're very different."
+    },
+    {
+     "w": "nickname",
+     "ar": "لقب",
+     "ex": "His nickname at school is 'The Professor'."
+    },
+    {
+     "w": "curly",
+     "ar": "مجعّد",
+     "ex": "The baby has short, curly hair."
+    },
+    {
+     "w": "in charge of",
+     "ar": "مسؤول عن",
+     "ex": "My uncle is in charge of the barbecue at family parties."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Daniel",
+     "t": "Who are all these people, Faisal?"
+    },
+    {
+     "s": "Faisal",
+     "t": "My family, twenty years ago! That's my grandfather, the man whose camel won a race."
+    },
+    {
+     "s": "Daniel",
+     "t": "Ha! And who's the boy with curly hair? I don't recognise him."
+    },
+    {
+     "s": "Faisal",
+     "t": "That's my dad! He was ten. People say I take after him."
+    },
+    {
+     "s": "Daniel",
+     "t": "You really look alike! And who are the two boys whose shirts are the same?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Twins! My uncles Fahad and Faris. Their nickname was 'Copy and Paste'."
+    },
+    {
+     "s": "Daniel",
+     "t": "That's funny! Who's the man in charge of the barbecue?"
+    },
+    {
+     "s": "Faisal",
+     "t": "My great-uncle Saad. He's the one whose stories everyone loves."
+    }
+   ],
+   "grammar": {
+    "title": "Relative clauses with whose",
+    "ar": "whose تعني (الذي/التي ... له/لها) وتدل على الملكية: the man whose camel won = الرجل الذي فاز جَمَله. بعد whose يأتي اسم مباشرة.",
+    "examples": [
+     "He's the boy whose dad is a pilot.",
+     "She's the teacher whose class won the prize.",
+     "That's the man whose car broke down."
+    ]
+   }
+  },
+  "3-4": {
+   "words": [
+    {
+     "w": "leave behind",
+     "ar": "ينسى شيئاً في مكان",
+     "ex": "I left my jacket behind at my cousin's house."
+    },
+    {
+     "w": "made of",
+     "ar": "مصنوع من",
+     "ex": "This bag is made of leather."
+    },
+    {
+     "w": "brand-new",
+     "ar": "جديد تماماً",
+     "ex": "He's got brand-new football boots."
+    },
+    {
+     "w": "pattern",
+     "ar": "نقشة",
+     "ex": "Her scarf has a pattern of small flowers."
+    },
+    {
+     "w": "belong to",
+     "ar": "يخصّ / ملك لـ",
+     "ex": "Does this pencil case belong to you?"
+    },
+    {
+     "w": "lost and found",
+     "ar": "مكتب المفقودات",
+     "ex": "Someone took my wallet to the lost and found."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Mr Nasser",
+     "t": "Good morning. Welcome to the lost and found. How can I help you?"
+    },
+    {
+     "s": "Ali",
+     "t": "I left my backpack behind on the metro this morning. It was on the train which left Olaya at eight."
+    },
+    {
+     "s": "Mr Nasser",
+     "t": "OK. Can you describe it?"
+    },
+    {
+     "s": "Ali",
+     "t": "It's a brand-new blue backpack which has a pattern of white stars. It's made of soft material."
+    },
+    {
+     "s": "Mr Nasser",
+     "t": "What was inside it?"
+    },
+    {
+     "s": "Ali",
+     "t": "My school books and a lunch box that my mum bought in Turkey. It has my name on it."
+    },
+    {
+     "s": "Mr Nasser",
+     "t": "A man whose son was on the same train brought this one in. Is it yours?"
+    },
+    {
+     "s": "Ali",
+     "t": "Yes, that's it! It belongs to me. Thank you so much!"
+    }
+   ],
+   "grammar": {
+    "title": "Describing things in detail",
+    "ar": "نصف الشيء بالصفات (الحجم ثم اللون) والمادة (made of) والنقشة (pattern)، ثم نضيف جملة which/that: a small black wallet which has my name inside.",
+    "examples": [
+     "It's a small black wallet which has my name inside.",
+     "It's a bag that is made of leather.",
+     "I left it in the café where I had lunch."
+    ]
+   }
+  },
+  "3-5": {
+   "words": [
+    {
+     "w": "located in",
+     "ar": "يقع في",
+     "ex": "The museum is located in the old part of the city."
+    },
+    {
+     "w": "landmark",
+     "ar": "معلم بارز",
+     "ex": "The Kingdom Centre is a famous Riyadh landmark."
+    },
+    {
+     "w": "surrounded by",
+     "ar": "محاط بـ",
+     "ex": "The old town is surrounded by high walls."
+    },
+    {
+     "w": "local",
+     "ar": "محلي",
+     "ex": "We bought honey from a local farmer."
+    },
+    {
+     "w": "highlight",
+     "ar": "أبرز ما في الشيء",
+     "ex": "The highlight of the day was the camel ride."
+    },
+    {
+     "w": "souvenir",
+     "ar": "تذكار",
+     "ex": "I bought a small coffee pot as a souvenir."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Hamad",
+     "t": "Welcome to Riyadh, Kenji! That tall tower is the Kingdom Centre, the most famous landmark in the city."
+    },
+    {
+     "s": "Kenji",
+     "t": "It's amazing! What's at the top?"
+    },
+    {
+     "s": "Hamad",
+     "t": "A sky bridge which gives you a view of the whole city."
+    },
+    {
+     "s": "Kenji",
+     "t": "Great! What else should I see?"
+    },
+    {
+     "s": "Hamad",
+     "t": "Diriyah, which is located on the edge of the city. It's the place where the first Saudi state began."
+    },
+    {
+     "s": "Kenji",
+     "t": "What's the highlight there?"
+    },
+    {
+     "s": "Hamad",
+     "t": "At-Turaif, an old district which is surrounded by mud-brick walls. Then we'll try some local food."
+    },
+    {
+     "s": "Kenji",
+     "t": "Perfect! And where can I buy a souvenir for my family?"
+    }
+   ],
+   "grammar": {
+    "title": "Mixing relative clauses",
+    "ar": "who للأشخاص، which/that للأشياء، where للأماكن، whose للملكية. ونضع فاصلة قبل which إذا كانت معلومة إضافية: Diriyah, which is near Riyadh, … .",
+    "examples": [
+     "Diriyah, which is near Riyadh, is very old.",
+     "Kenji is a visitor who loves history.",
+     "This is the market where you can buy coffee pots."
+    ]
+   }
+  }
+ },
+ "quizzes": {
+  "0-0": [
+   {
+    "type": "order",
+    "words": [
+     "In",
+     "my",
+     "opinion,",
+     "gaming",
+     "is",
+     "a",
+     "waste",
+     "of",
+     "time."
+    ],
+    "answer": "In my opinion, gaming is a waste of time.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "What",
+     "do",
+     "you",
+     "think",
+     "about",
+     "my",
+     "new",
+     "game?"
+    ],
+    "answer": "What do you think about my new game?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence gives an opinion?",
+    "options": [
+     "I play games every day.",
+     "I think this game is too easy.",
+     "This game costs fifty riyals.",
+     "The game starts at eight."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'This game is so ___ that I can't stop playing.'",
+    "options": [
+     "boring",
+     "honest",
+     "useless",
+     "addictive"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Choose the correct question.",
+    "options": [
+     "What do you think about homework?",
+     "What you think about homework?",
+     "What do you think homework about?",
+     "What are you think about homework?"
+    ],
+    "answer": 0
+   }
+  ],
+  "0-1": [
+   {
+    "type": "order",
+    "words": [
+     "Personally,",
+     "I'm",
+     "not",
+     "keen",
+     "on",
+     "the",
+     "new",
+     "menu."
+    ],
+    "answer": "Personally, I'm not keen on the new menu.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "What's",
+     "your",
+     "opinion",
+     "of",
+     "the",
+     "school",
+     "canteen?"
+    ],
+    "answer": "What's your opinion of the school canteen?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'I ___ that schools should sell more fruit.'",
+    "options": [
+     "opinion",
+     "personally",
+     "believe",
+     "keen"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Food with no flavour is ___.",
+    "options": [
+     "healthy",
+     "tasteless",
+     "delicious",
+     "fresh"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which is a polite way to ask for an opinion?",
+    "options": [
+     "Tell me now!",
+     "The menu is bad.",
+     "I'm not keen on it.",
+     "What's your opinion of the menu?"
+    ],
+    "answer": 3
+   }
+  ],
+  "0-2": [
+   {
+    "type": "order",
+    "words": [
+     "What",
+     "did",
+     "you",
+     "think",
+     "of",
+     "the",
+     "film?"
+    ],
+    "answer": "What did you think of the film?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "found",
+     "the",
+     "plot",
+     "really",
+     "clever."
+    ],
+    "answer": "I found the plot really clever.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A film that is 'overrated' is ___.",
+    "options": [
+     "better than people say",
+     "not as good as people say",
+     "very long",
+     "very new"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'How do you feel ___ cartoons for older kids?'",
+    "options": [
+     "of",
+     "on",
+     "with",
+     "about"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Which answer fits the question 'What did you think of the series?'",
+    "options": [
+     "I found it a bit slow.",
+     "I watch it on Fridays.",
+     "It has ten episodes.",
+     "My brother is watching it."
+    ],
+    "answer": 0
+   }
+  ],
+  "0-3": [
+   {
+    "type": "order",
+    "words": [
+     "If",
+     "you",
+     "ask",
+     "me,",
+     "the",
+     "referee",
+     "was",
+     "wrong."
+    ],
+    "answer": "If you ask me, the referee was wrong.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Who",
+     "do",
+     "you",
+     "think",
+     "will",
+     "win",
+     "the",
+     "league?"
+    ],
+    "answer": "Who do you think will win the league?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The person who controls a football match is the ___.",
+    "options": [
+     "coach",
+     "captain",
+     "referee",
+     "fan"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'They played much better, so they ___ to win.'",
+    "options": [
+     "deserved",
+     "won",
+     "played",
+     "lost"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence gives an opinion?",
+    "options": [
+     "The match starts at nine.",
+     "The way I see it, they need a new coach.",
+     "The stadium is in Riyadh.",
+     "He scored two goals."
+    ],
+    "answer": 1
+   }
+  ],
+  "0-4": [
+   {
+    "type": "order",
+    "words": [
+     "It",
+     "seems",
+     "to",
+     "me",
+     "that",
+     "big",
+     "cities",
+     "are",
+     "too",
+     "crowded."
+    ],
+    "answer": "It seems to me that big cities are too crowded.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "There's",
+     "a",
+     "lot",
+     "to",
+     "do",
+     "in",
+     "Jeddah."
+    ],
+    "answer": "There's a lot to do in Jeddah.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A place that is quiet and calm is ___.",
+    "options": [
+     "crowded",
+     "noisy",
+     "peaceful",
+     "busy"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence shows you are NOT very sure about your opinion?",
+    "options": [
+     "If you ask me, it's the best.",
+     "It's definitely the best.",
+     "Everyone knows it's the best.",
+     "I'm not sure, but I think it's better."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'There were so many cars that we were stuck in a ___.'",
+    "options": [
+     "traffic jam",
+     "crowd",
+     "plot",
+     "referee"
+    ],
+    "answer": 0
+   }
+  ],
+  "0-5": [
+   {
+    "type": "order",
+    "words": [
+     "From",
+     "my",
+     "point",
+     "of",
+     "view,",
+     "homework",
+     "makes",
+     "sense."
+    ],
+    "answer": "From my point of view, homework makes sense.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "What's",
+     "your",
+     "view",
+     "on",
+     "phones",
+     "at",
+     "school?"
+    ],
+    "answer": "What's your view on phones at school?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Students feel a lot of ___ before exams.'",
+    "options": [
+     "reason",
+     "view",
+     "pressure",
+     "point"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence asks for an opinion?",
+    "options": [
+     "I'm convinced it's good.",
+     "The main reason is practice.",
+     "It makes sense.",
+     "What's your view on this?"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'I'm ___ that short homework is useful.'",
+    "options": [
+     "view",
+     "convinced",
+     "sense",
+     "point"
+    ],
+    "answer": 1
+   }
+  ],
+  "1-0": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "in",
+     "the",
+     "mood",
+     "for",
+     "pizza",
+     "tonight."
+    ],
+    "answer": "I'm in the mood for pizza tonight.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Liking",
+     "spicy",
+     "food",
+     "is",
+     "a",
+     "matter",
+     "of",
+     "taste."
+    ],
+    "answer": "Liking spicy food is a matter of taste.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A: I don't like onions. B: (you agree) ___",
+    "options": [
+     "So do I.",
+     "Neither do I.",
+     "So don't I.",
+     "Neither I do."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A: I love chocolate. B: (you agree) ___",
+    "options": [
+     "Neither do I.",
+     "So am I.",
+     "I don't.",
+     "So do I."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'This curry is too ___ for me. My mouth is on fire!'",
+    "options": [
+     "sweet",
+     "tasteless",
+     "spicy",
+     "fair"
+    ],
+    "answer": 2
+   }
+  ],
+  "1-1": [
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "can't",
+     "wait",
+     "for",
+     "the",
+     "summer",
+     "holidays."
+    ],
+    "answer": "I can't wait for the summer holidays.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "My",
+     "family",
+     "likes",
+     "to",
+     "go",
+     "camping",
+     "in",
+     "the",
+     "desert."
+    ],
+    "answer": "My family likes to go camping in the desert.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A: I'm excited. B: (you agree) ___",
+    "options": [
+     "So do I.",
+     "Neither am I.",
+     "So have I.",
+     "So am I."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "A: I can't swim. B: (you agree) ___",
+    "options": [
+     "Neither can I.",
+     "So can I.",
+     "Neither do I.",
+     "So can't I."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "A: I've been to AlUla. B: (you agree) ___",
+    "options": [
+     "So did I.",
+     "So am I.",
+     "So have I.",
+     "Neither have I."
+    ],
+    "answer": 2
+   }
+  ],
+  "1-2": [
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "see",
+     "your",
+     "point,",
+     "but",
+     "I",
+     "disagree."
+    ],
+    "answer": "I see your point, but I disagree.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "My",
+     "phone",
+     "is",
+     "a",
+     "big",
+     "distraction."
+    ],
+    "answer": "My phone is a big distraction.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Which is the most polite way to disagree?",
+    "options": [
+     "You're wrong!",
+     "That's silly.",
+     "I see your point, but I'm not sure.",
+     "No way!"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'I can't ___ when my brothers are noisy.'",
+    "options": [
+     "concentrate",
+     "distraction",
+     "point",
+     "agree"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'I prefer to meet my friends ___ to face.'",
+    "options": [
+     "hand",
+     "eye",
+     "head",
+     "face"
+    ],
+    "answer": 3
+   }
+  ],
+  "1-3": [
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "my",
+     "responsibility",
+     "to",
+     "feed",
+     "the",
+     "cat."
+    ],
+    "answer": "It's my responsibility to feed the cat.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "afraid",
+     "I",
+     "don't",
+     "agree",
+     "with",
+     "you."
+    ],
+    "answer": "I'm afraid I don't agree with you.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Which answer shows strong agreement?",
+    "options": [
+     "I'm not sure.",
+     "Exactly!",
+     "I'm afraid not.",
+     "Maybe."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'Please don't ___ a mess in the kitchen.'",
+    "options": [
+     "do",
+     "have",
+     "take",
+     "make"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'Who will take ___ of the cat?'",
+    "options": [
+     "care",
+     "look",
+     "help",
+     "mess"
+    ],
+    "answer": 0
+   }
+  ],
+  "1-4": [
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "couldn't",
+     "agree",
+     "more",
+     "with",
+     "you."
+    ],
+    "answer": "I couldn't agree more with you.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Small",
+     "changes",
+     "can",
+     "make",
+     "a",
+     "difference."
+    ],
+    "answer": "Small changes can make a difference.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'I couldn't agree more' means ___.",
+    "options": [
+     "I don't agree at all",
+     "I can't decide",
+     "I agree completely",
+     "I agree a little"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "A: Expensive things are always better. B: ___",
+    "options": [
+     "So do I.",
+     "Neither am I.",
+     "Not necessarily.",
+     "So have I."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'We should use cloth bags instead of ___ plastic.'",
+    "options": [
+     "recycle",
+     "green",
+     "planting",
+     "single-use"
+    ],
+    "answer": 3
+   }
+  ],
+  "1-5": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "with",
+     "you",
+     "on",
+     "that",
+     "idea."
+    ],
+    "answer": "I'm with you on that idea.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Let's",
+     "see",
+     "what",
+     "the",
+     "majority",
+     "wants."
+    ],
+    "answer": "Let's see what the majority wants.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Fair enough' means ___.",
+    "options": [
+     "That's unfair.",
+     "OK, that's reasonable.",
+     "I'm very angry.",
+     "I don't understand."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A: The museum is boring. B: (you doubt this politely) ___",
+    "options": [
+     "I'm not so sure about that.",
+     "You're crazy.",
+     "Neither am I.",
+     "So is it."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'I wanted the beach, but then I ___ my mind.'",
+    "options": [
+     "made",
+     "took",
+     "changed",
+     "came"
+    ],
+    "answer": 2
+   }
+  ],
+  "2-0": [
+   {
+    "type": "order",
+    "words": [
+     "Why",
+     "don't",
+     "you",
+     "send",
+     "him",
+     "a",
+     "message?"
+    ],
+    "answer": "Why don't you send him a message?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Have",
+     "you",
+     "tried",
+     "talking",
+     "to",
+     "her?"
+    ],
+    "answer": "Have you tried talking to her?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Have you tried ___ to him?'",
+    "options": [
+     "talk",
+     "talking",
+     "to talk",
+     "talked"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'We argued, but we ___ the next day.'",
+    "options": [
+     "fell out",
+     "gave up",
+     "made up",
+     "made a mess"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence gives advice?",
+    "options": [
+     "I'm upset.",
+     "He walked away.",
+     "We fell out.",
+     "You could say sorry."
+    ],
+    "answer": 3
+   }
+  ],
+  "2-1": [
+   {
+    "type": "order",
+    "words": [
+     "If",
+     "I",
+     "were",
+     "you,",
+     "I'd",
+     "take",
+     "a",
+     "break."
+    ],
+    "answer": "If I were you, I'd take a break.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "made",
+     "a",
+     "timetable",
+     "for",
+     "my",
+     "exams."
+    ],
+    "answer": "I made a timetable for my exams.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'If I ___ you, I'd study with a friend.'",
+    "options": [
+     "am",
+     "be",
+     "were",
+     "being"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "To study again before an exam is to ___.",
+    "options": [
+     "revise",
+     "fall behind",
+     "forget",
+     "relax"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'If I were you, I ___ study all night.'",
+    "options": [
+     "won't",
+     "wouldn't",
+     "don't",
+     "didn't"
+    ],
+    "answer": 1
+   }
+  ],
+  "2-2": [
+   {
+    "type": "order",
+    "words": [
+     "If",
+     "you",
+     "get",
+     "enough",
+     "sleep,",
+     "you'll",
+     "feel",
+     "better."
+    ],
+    "answer": "If you get enough sleep, you'll feel better.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Don't",
+     "stay",
+     "up",
+     "late",
+     "before",
+     "a",
+     "test."
+    ],
+    "answer": "Don't stay up late before a test.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'If you ___ breakfast, you'll have more energy.'",
+    "options": [
+     "will eat",
+     "eat",
+     "ate",
+     "eating"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'If you eat junk food every day, you ___ healthy.'",
+    "options": [
+     "aren't",
+     "not be",
+     "won't be",
+     "wouldn't"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'Exhausted' means ___.",
+    "options": [
+     "very hungry",
+     "very happy",
+     "very late",
+     "very tired"
+    ],
+    "answer": 3
+   }
+  ],
+  "2-3": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "saving",
+     "up",
+     "for",
+     "a",
+     "new",
+     "bike."
+    ],
+    "answer": "I'm saving up for a new bike.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "You'd",
+     "better",
+     "not",
+     "spend",
+     "it",
+     "all."
+    ],
+    "answer": "You'd better not spend it all.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'You won't buy the boots ___ you save some money.'",
+    "options": [
+     "if",
+     "unless",
+     "because",
+     "so"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'I can't ___ a new phone. It's too expensive.'",
+    "options": [
+     "save",
+     "spend",
+     "afford",
+     "bargain"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'You'd better ___ your money.'",
+    "options": [
+     "save",
+     "to save",
+     "saving",
+     "saved"
+    ],
+    "answer": 0
+   }
+  ],
+  "2-4": [
+   {
+    "type": "order",
+    "words": [
+     "Can",
+     "I",
+     "ask",
+     "your",
+     "advice",
+     "about",
+     "my",
+     "school?"
+    ],
+    "answer": "Can I ask your advice about my school?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "My",
+     "advice",
+     "is",
+     "to",
+     "join",
+     "a",
+     "club."
+    ],
+    "answer": "My advice is to join a club.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Which question asks for advice?",
+    "options": [
+     "What time is it?",
+     "Where do you live?",
+     "How old are you?",
+     "What do you suggest?"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'It's hard at first, but you'll get ___ it.'",
+    "options": [
+     "used to",
+     "use to",
+     "using",
+     "fit in"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'I want to ___ with my new classmates.'",
+    "options": [
+     "fall out",
+     "fit in",
+     "stay up",
+     "give up"
+    ],
+    "answer": 1
+   }
+  ],
+  "2-5": [
+   {
+    "type": "order",
+    "words": [
+     "Whatever",
+     "you",
+     "do,",
+     "don't",
+     "give",
+     "up."
+    ],
+    "answer": "Whatever you do, don't give up.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "It",
+     "might",
+     "help",
+     "to",
+     "talk",
+     "to",
+     "your",
+     "teacher."
+    ],
+    "answer": "It might help to talk to your teacher.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Don't ___! Keep trying and you'll get better.'",
+    "options": [
+     "sort out",
+     "deal with",
+     "give up",
+     "look on"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which advice is the most gentle?",
+    "options": [
+     "You'd better stop now!",
+     "It might help to rest a bit.",
+     "Whatever you do, don't go!",
+     "You must leave now."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'If you talk to her, you ___ it out.'",
+    "options": [
+     "will sort",
+     "sort",
+     "sorted",
+     "sorting"
+    ],
+    "answer": 0
+   }
+  ],
+  "3-0": [
+   {
+    "type": "order",
+    "words": [
+     "He's",
+     "the",
+     "person",
+     "who",
+     "taught",
+     "me",
+     "to",
+     "swim."
+    ],
+    "answer": "He's the person who taught me to swim.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "My",
+     "role",
+     "model",
+     "is",
+     "my",
+     "hard-working",
+     "dad."
+    ],
+    "answer": "My role model is my hard-working dad.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'She's the scientist ___ went to space.'",
+    "options": [
+     "which",
+     "who",
+     "where",
+     "whose"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A person who gives a lot to others is ___.",
+    "options": [
+     "lazy",
+     "nervous",
+     "selfish",
+     "generous"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'I really look up ___ my grandfather.'",
+    "options": [
+     "to",
+     "at",
+     "for",
+     "on"
+    ],
+    "answer": 0
+   }
+  ],
+  "3-1": [
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "a",
+     "robot",
+     "which",
+     "cleans",
+     "the",
+     "windows."
+    ],
+    "answer": "It's a robot which cleans the windows.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "A",
+     "torch",
+     "comes",
+     "in",
+     "handy",
+     "at",
+     "night."
+    ],
+    "answer": "A torch comes in handy at night.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'This is the phone ___ I got for Eid.'",
+    "options": [
+     "who",
+     "whose",
+     "that",
+     "where"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'A key is ___ opening doors.'",
+    "options": [
+     "used to",
+     "use for",
+     "using for",
+     "used for"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Something new that someone has made for the first time is an ___.",
+    "options": [
+     "battery",
+     "invention",
+     "exhibition",
+     "gadget"
+    ],
+    "answer": 1
+   }
+  ],
+  "3-2": [
+   {
+    "type": "order",
+    "words": [
+     "This",
+     "is",
+     "the",
+     "park",
+     "where",
+     "I",
+     "learned",
+     "to",
+     "ride",
+     "a",
+     "bike."
+    ],
+    "answer": "This is the park where I learned to ride a bike.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "AlUla",
+     "is",
+     "famous",
+     "for",
+     "its",
+     "ancient",
+     "tombs."
+    ],
+    "answer": "AlUla is famous for its ancient tombs.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'That's the restaurant ___ we had dinner on Eid.'",
+    "options": [
+     "who",
+     "which",
+     "whose",
+     "where"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'Very, very old' means ___.",
+    "options": [
+     "modern",
+     "crowded",
+     "ancient",
+     "peaceful"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'The view was so ___ that I couldn't stop taking photos.'",
+    "options": [
+     "breathtaking",
+     "tasteless",
+     "crowded",
+     "exhausted"
+    ],
+    "answer": 0
+   }
+  ],
+  "3-3": [
+   {
+    "type": "order",
+    "words": [
+     "He's",
+     "the",
+     "boy",
+     "whose",
+     "dad",
+     "is",
+     "a",
+     "pilot."
+    ],
+    "answer": "He's the boy whose dad is a pilot.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "take",
+     "after",
+     "my",
+     "grandfather."
+    ],
+    "answer": "I take after my grandfather.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'That's the student ___ brother plays for Al-Ahli.'",
+    "options": [
+     "who",
+     "which",
+     "whose",
+     "where"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'I didn't ___ my teacher without her glasses.'",
+    "options": [
+     "recognise",
+     "take after",
+     "look alike",
+     "nickname"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'My sister and I look ___. People always mix us up.'",
+    "options": [
+     "same",
+     "like",
+     "after",
+     "alike"
+    ],
+    "answer": 3
+   }
+  ],
+  "3-4": [
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "left",
+     "my",
+     "bag",
+     "behind",
+     "on",
+     "the",
+     "train."
+    ],
+    "answer": "I left my bag behind on the train.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "a",
+     "wallet",
+     "which",
+     "is",
+     "made",
+     "of",
+     "leather."
+    ],
+    "answer": "It's a wallet which is made of leather.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'This phone ___ to my brother.'",
+    "options": [
+     "belong",
+     "is belong",
+     "belongs",
+     "belonging"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'My new shirt has a ___ of blue and white stripes.'",
+    "options": [
+     "pattern",
+     "material",
+     "brand",
+     "pocket"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'Is this the café ___ you left your bag?'",
+    "options": [
+     "which",
+     "where",
+     "who",
+     "whose"
+    ],
+    "answer": 1
+   }
+  ],
+  "3-5": [
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "the",
+     "place",
+     "where",
+     "the",
+     "first",
+     "Saudi",
+     "state",
+     "began."
+    ],
+    "answer": "It's the place where the first Saudi state began.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "A",
+     "good",
+     "souvenir",
+     "from",
+     "Taif",
+     "is",
+     "rose",
+     "water."
+    ],
+    "answer": "A good souvenir from Taif is rose water.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'Jeddah is ___ on the Red Sea coast.'",
+    "options": [
+     "surrounded",
+     "located",
+     "landmark",
+     "local"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Choose the correct sentence.",
+    "options": [
+     "The man which helped us was kind.",
+     "The man where helped us was kind.",
+     "The man whose helped us was kind.",
+     "The man who helped us was kind."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'The ___ of the trip was the night in the desert camp.'",
+    "options": [
+     "highlight",
+     "souvenir",
+     "landmark",
+     "guide"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "unitTests": {
+  "0": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "'This game is so ___. I played it for five hours!'",
+     "options": [
+      "tasteless",
+      "addictive",
+      "peaceful",
+      "unfair"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'There were too many people. The market was really ___.'",
+     "options": [
+      "peaceful",
+      "honest",
+      "crowded",
+      "overrated"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "'Everyone says this series is amazing, but I think it's ___.'",
+     "options": [
+      "overrated",
+      "worth watching",
+      "a healthy option",
+      "convinced"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "The person who controls a match is the ___.",
+     "options": [
+      "captain",
+      "player",
+      "coach",
+      "referee"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Choose the correct question.",
+     "options": [
+      "What do you think about the new park?",
+      "What you think about the new park?",
+      "What do you think the new park about?",
+      "What are you thinking the new park?"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Which sentence gives an opinion in a careful way?",
+     "options": [
+      "The park is big.",
+      "It seems to me that the park is too small.",
+      "Go to the park!",
+      "The park opens at four."
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'___ you ask me, we should leave now.'",
+     "options": [
+      "When",
+      "So",
+      "If",
+      "Because"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "order",
+     "words": [
+      "In",
+      "my",
+      "opinion,",
+      "the",
+      "plot",
+      "was",
+      "too",
+      "confusing."
+     ],
+     "answer": "In my opinion, the plot was too confusing.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "What",
+      "did",
+      "you",
+      "think",
+      "of",
+      "the",
+      "match?"
+     ],
+     "answer": "What did you think of the match?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "Personally,",
+      "I'm",
+      "not",
+      "keen",
+      "on",
+      "fast",
+      "food."
+     ],
+     "answer": "Personally, I'm not keen on fast food.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "What do you think about having school on Saturdays? Give your opinion and two reasons.",
+    "Ask me for my opinion about a film, a food or a place, and then tell me what you think."
+   ]
+  },
+  "1": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "'I'm ___ something sweet. Let's buy some ice cream.'",
+     "options": [
+      "in the mood for",
+      "a matter of",
+      "fair enough",
+      "with you on"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "'My little brother is a big ___ when I do my homework.'",
+     "options": [
+      "majority",
+      "distraction",
+      "responsibility",
+      "agreement"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'Please don't use ___ plastic. Bring your own bottle.'",
+     "options": [
+      "recycle",
+      "cool",
+      "spicy",
+      "single-use"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "'We talked for an hour and finally came to an ___.'",
+     "options": [
+      "opinion",
+      "agreement",
+      "majority",
+      "mind"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "A: I don't like spicy food. B: (you agree) ___",
+     "options": [
+      "So do I.",
+      "So am I.",
+      "Neither do I.",
+      "Neither am I."
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "A: I've been to Abha. B: (you agree) ___",
+     "options": [
+      "So have I.",
+      "So do I.",
+      "So am I.",
+      "Neither have I."
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Which is the most polite way to disagree?",
+     "options": [
+      "You're totally wrong.",
+      "That's a stupid idea.",
+      "No!",
+      "I see your point, but I think it's too far."
+     ],
+     "answer": 3
+    },
+    {
+     "type": "order",
+     "words": [
+      "I",
+      "see",
+      "your",
+      "point,",
+      "but",
+      "I",
+      "disagree."
+     ],
+     "answer": "I see your point, but I disagree.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "I'm",
+      "afraid",
+      "I",
+      "don't",
+      "agree",
+      "with",
+      "that",
+      "rule."
+     ],
+     "answer": "I'm afraid I don't agree with that rule.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "I",
+      "couldn't",
+      "agree",
+      "more",
+      "with",
+      "you."
+     ],
+     "answer": "I couldn't agree more with you.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "I'll say: 'Children shouldn't have phones until they are 15.' Agree or disagree politely and give two reasons.",
+    "Listen: 'I love camping.' 'I can't stand hot weather.' 'I've never been to Jeddah.' Answer each one with a short agreement or a polite disagreement."
+   ]
+  },
+  "2": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "'I ___ my best friend yesterday, but we made up today.'",
+     "options": [
+      "fell out with",
+      "got used to",
+      "saved up for",
+      "took care of"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "'I'm ___. I've had three exams this week and I can't sleep.'",
+     "options": [
+      "generous",
+      "stressed out",
+      "worth it",
+      "brand-new"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'These trainers were only 50 riyals. What a ___!'",
+     "options": [
+      "pocket money",
+      "timetable",
+      "distraction",
+      "bargain"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "'Don't ___. You're nearly at the top of the mountain!'",
+     "options": [
+      "give up",
+      "make up",
+      "stay up",
+      "fall behind"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "'If I ___ you, I'd go to bed early.'",
+     "options": [
+      "am",
+      "was be",
+      "were",
+      "will be"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "'If you ___ every day, you'll get better.'",
+     "options": [
+      "will practise",
+      "practise",
+      "practised",
+      "practising"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "Which question asks for advice?",
+     "options": [
+      "What did you do?",
+      "Where is the bank?",
+      "Who is your teacher?",
+      "What do you suggest?"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "order",
+     "words": [
+      "Why",
+      "don't",
+      "you",
+      "apologise",
+      "to",
+      "him?"
+     ],
+     "answer": "Why don't you apologise to him?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "You'd",
+      "better",
+      "save",
+      "your",
+      "pocket",
+      "money."
+     ],
+     "answer": "You'd better save your pocket money.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "If",
+      "I",
+      "were",
+      "you,",
+      "I'd",
+      "take",
+      "a",
+      "break."
+     ],
+     "answer": "If I were you, I'd take a break.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Your friend says: 'I want to get fit, but I don't like sport.' Give three pieces of advice, and say what will happen.",
+    "You have a problem: you're nervous about a school presentation. Ask me for advice in two different ways, then say what you will do."
+   ]
+  },
+  "3": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "'My role model is my uncle. I really look ___ to him.'",
+     "options": [
+      "at",
+      "up",
+      "after",
+      "for"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'Take a power bank on the trip. It will come in ___.'",
+     "options": [
+      "handy",
+      "nice",
+      "high-tech",
+      "used"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "'Everybody knows Taif. It's ___ for its roses.'",
+     "options": [
+      "located",
+      "breathtaking",
+      "famous",
+      "historic"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "'I bought a small camel toy as a ___ of my trip.'",
+     "options": [
+      "landmark",
+      "highlight",
+      "pattern",
+      "souvenir"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "'She's the girl ___ won the reading competition.'",
+     "options": [
+      "which",
+      "who",
+      "where",
+      "whose"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'This is the beach ___ we go camping in winter.'",
+     "options": [
+      "who",
+      "which",
+      "whose",
+      "where"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "'He's the boy ___ father is a pilot.'",
+     "options": [
+      "whose",
+      "who",
+      "which",
+      "where"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "order",
+     "words": [
+      "It's",
+      "a",
+      "gadget",
+      "which",
+      "is",
+      "used",
+      "for",
+      "cooking",
+      "rice."
+     ],
+     "answer": "It's a gadget which is used for cooking rice.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "He's",
+      "the",
+      "man",
+      "who",
+      "taught",
+      "me",
+      "to",
+      "swim."
+     ],
+     "answer": "He's the man who taught me to swim.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "This",
+      "is",
+      "the",
+      "village",
+      "where",
+      "my",
+      "grandfather",
+      "grew",
+      "up."
+     ],
+     "answer": "This is the village where my grandfather grew up.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Describe a person you admire in detail. Use 'who' and 'whose' at least once.",
+    "Describe your favourite place in Saudi Arabia to a tourist. Use 'where' and 'which' to add details."
+   ]
+  }
+ },
+ "levelTest": {
+  "items": [
+   {
+    "type": "mc",
+    "q": "'In my ___, this series is the best one this year.'",
+    "options": [
+     "view",
+     "opinion",
+     "mind",
+     "point"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which question asks for someone's opinion?",
+    "options": [
+     "Where did you buy it?",
+     "How much was it?",
+     "What do you think about it?",
+     "When did it start?"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'I'm not ___ on fast food. I prefer home cooking.'",
+    "options": [
+     "keen",
+     "fond",
+     "happy",
+     "honest"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'Everyone loves that game, but I think it's ___.'",
+    "options": [
+     "worth watching",
+     "a healthy option",
+     "peaceful",
+     "overrated"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "A: I don't like waiting. B: (you agree) ___",
+    "options": [
+     "So do I.",
+     "Neither do I.",
+     "So am I.",
+     "Neither am I."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A: I'm really hungry. B: (you agree) ___",
+    "options": [
+     "So do I.",
+     "So have I.",
+     "So am I.",
+     "Neither am I."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which is the most polite way to disagree?",
+    "options": [
+     "That's true, but it's too expensive.",
+     "You're wrong.",
+     "That's a silly idea.",
+     "Stop talking."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'Fair enough' means ___.",
+    "options": [
+     "I'm angry.",
+     "That's unfair.",
+     "I don't understand.",
+     "OK, that's reasonable."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'If I ___ you, I'd tell your teacher.'",
+    "options": [
+     "am",
+     "were",
+     "will be",
+     "be"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'If you go to bed late, you ___ tired tomorrow.'",
+    "options": [
+     "are",
+     "were",
+     "'ll be",
+     "being"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'You won't pass the test ___ you revise.'",
+    "options": [
+     "unless",
+     "if",
+     "because",
+     "so"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'We argued yesterday, but we ___ this morning.'",
+    "options": [
+     "fell out",
+     "gave up",
+     "stayed up",
+     "made up"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'She's the teacher ___ helped me with my project.'",
+    "options": [
+     "which",
+     "who",
+     "where",
+     "whose"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'This is the park ___ I learned to ride a bike.'",
+    "options": [
+     "who",
+     "which",
+     "where",
+     "whose"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'He's the boy ___ sister is a doctor.'",
+    "options": [
+     "whose",
+     "who",
+     "which",
+     "where"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "way",
+     "I",
+     "see",
+     "it,",
+     "they",
+     "deserve",
+     "to",
+     "win."
+    ],
+    "answer": "The way I see it, they deserve to win.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "see",
+     "your",
+     "point,",
+     "but",
+     "I",
+     "don't",
+     "agree."
+    ],
+    "answer": "I see your point, but I don't agree.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Why",
+     "don't",
+     "you",
+     "take",
+     "a",
+     "break?"
+    ],
+    "answer": "Why don't you take a break?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "a",
+     "gadget",
+     "which",
+     "comes",
+     "in",
+     "handy."
+    ],
+    "answer": "It's a gadget which comes in handy.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "AlUla",
+     "is",
+     "a",
+     "place",
+     "that",
+     "is",
+     "worth",
+     "a",
+     "visit."
+    ],
+    "answer": "AlUla is a place that is worth a visit.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "speak": [
+   "What do you think about having longer school holidays? Give your opinion with reasons, and then ask for mine.",
+   "I'll say: 'Video games are a waste of time.' Agree or disagree politely, and then give me advice about healthy screen time.",
+   "Describe a person you admire and a place you love in detail, using 'who', 'which', 'where' or 'whose'."
+  ]
+ }
+}

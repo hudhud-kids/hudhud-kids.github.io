@@ -1,0 +1,208 @@
+{
+ "level": 5,
+ "mcq": [
+  {
+   "q": "Last Friday we ___ my grandparents in Qassim.",
+   "options": [
+    "visit",
+    "visited",
+    "are visiting",
+    "visits"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "My sister ___ the heavy bags to the car yesterday.",
+   "options": [
+    "carryed",
+    "carries",
+    "carried",
+    "carry"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "___ you swim in the sea last weekend?",
+   "options": [
+    "Did",
+    "Do",
+    "Were",
+    "Are"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "We ___ to AlUla by plane and ___ lots of photos.",
+   "options": [
+    "goed / taked",
+    "go / take",
+    "went / take",
+    "went / took"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "A: 'How did you get there?' B: '___'",
+   "options": [
+    "By car.",
+    "With my cousins.",
+    "Three days ago.",
+    "It was great."
+   ],
+   "answer": 0,
+   "skill": "function"
+  },
+  {
+   "q": "Riyadh is ___ than Abha.",
+   "options": [
+    "big",
+    "biggest",
+    "bigger",
+    "the biggest"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "This is ___ film I know. I laughed all the time!",
+   "options": [
+    "funnier",
+    "the funniest",
+    "the most funny",
+    "funniest than"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "A: 'I've got a sore throat.' B: '___'",
+   "options": [
+    "You should eat ice cream.",
+    "You shouldn't rest.",
+    "Let's go swimming!",
+    "You should have a warm drink."
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "The festival was full of people. It was very ___.",
+   "options": [
+    "crowded",
+    "ancient",
+    "quiet",
+    "thirsty"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Before a race, you do easy moves to get your body ready. You ___.",
+   "options": [
+    "take a photo",
+    "skip breakfast",
+    "warm up",
+    "stay up late"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Hi, I'm Faisal. Last weekend was busy. On Friday I helped my dad with the car. On Saturday morning I tidied my room, and in the afternoon I played football with my cousins.",
+   "q": "What did Faisal do on Saturday afternoon?",
+   "options": [
+    "He helped his dad.",
+    "He played football.",
+    "He tidied his room."
+   ],
+   "answer": 1
+  },
+  {
+   "script": "A: Where did you go in the holidays, Reem? B: We went to Abha. A: Did you fly? B: No, we didn't. We went by car. It took ten hours, but the mountains were beautiful.",
+   "q": "How did Reem's family travel to Abha?",
+   "options": [
+    "By car.",
+    "By plane.",
+    "By train."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Look at these three bags. The red one is 90 riyals, the blue one is 60 riyals, and the green one is 120 riyals. The blue one is the cheapest, but the green one is the biggest.",
+   "q": "Which bag is the cheapest?",
+   "options": [
+    "The red one.",
+    "The green one.",
+    "The blue one."
+   ],
+   "answer": 2
+  },
+  {
+   "script": "A: What's the matter, Omar? B: I'm always tired at school. I play games on my tablet until midnight. A: You shouldn't stay up late. You should go to bed early and read a book instead.",
+   "q": "What advice does Omar get?",
+   "options": [
+    "Play games at break.",
+    "Drink more coffee.",
+    "Go to bed early."
+   ],
+   "answer": 2
+  }
+ ],
+ "read": {
+  "passage": "Last month, Lama and her family went on a trip to Jeddah. They flew from Riyadh, and the flight was only ninety minutes. On the first day, they swam in the Red Sea and had a picnic on the beach. Lama's little brother found a beautiful shell. On the second day, they visited the old town, Al-Balad. The houses there are older than most buildings in Jeddah, and they have wooden windows. Lama took lots of photos. It was very hot, so her mum said, 'You should drink plenty of water and wear a cap.' Lama thinks Jeddah is more beautiful than Riyadh because it has the sea. She wants to go back next year.",
+  "qs": [
+   {
+    "q": "How did Lama's family get to Jeddah?",
+    "options": [
+     "By car.",
+     "By plane.",
+     "By boat."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "What did Lama's brother find?",
+    "options": [
+     "A shell.",
+     "A camera.",
+     "A cap."
+    ],
+    "answer": 0
+   },
+   {
+    "q": "What is true about the houses in Al-Balad?",
+    "options": [
+     "They are the tallest in Jeddah.",
+     "They are new.",
+     "They are older than most buildings in Jeddah."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "Why does Lama think Jeddah is more beautiful than Riyadh?",
+    "options": [
+     "It has the sea.",
+     "It is cooler.",
+     "It is bigger."
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "aloud": [
+  "Last weekend we visited my aunt, and we baked a cake together.",
+  "Did you take any photos when you went to AlUla?",
+  "A cheetah is faster than a horse, but the falcon is the fastest animal in the world."
+ ],
+ "speak": [
+  "What did you do last weekend? Tell me in order.",
+  "Tell me about a trip you took. Where did you go, and what did you see?",
+  "Your friend is always tired at school. What advice can you give them?"
+ ]
+}

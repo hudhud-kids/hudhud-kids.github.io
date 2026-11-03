@@ -1,0 +1,208 @@
+{
+ "level": 8,
+ "mcq": [
+  {
+   "q": "'In my ___, homework should be shorter.'",
+   "options": [
+    "think",
+    "opinion",
+    "believe",
+    "idea of"
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "Which question asks for an opinion?",
+   "options": [
+    "What time does the film start?",
+    "Who is in the film?",
+    "What did you think of the film?",
+    "Where is the cinema?"
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "A: I can't swim very well. B: (you agree) ___",
+   "options": [
+    "Neither can I.",
+    "So can I.",
+    "Neither do I.",
+    "So do I."
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "Which is the most polite way to disagree?",
+   "options": [
+    "You're wrong.",
+    "No way!",
+    "That's stupid.",
+    "I see your point, but I'm not so sure."
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "'If I ___ you, I'd talk to the coach.'",
+   "options": [
+    "am",
+    "were",
+    "will be",
+    "have been"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "'If you ___ enough sleep, you'll feel better.'",
+   "options": [
+    "will get",
+    "got",
+    "get",
+    "getting"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "'I'm saving ___ for a new bike.'",
+   "options": [
+    "up",
+    "on",
+    "out",
+    "off"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "'That's the man ___ son plays for the national team.'",
+   "options": [
+    "who",
+    "which",
+    "where",
+    "whose"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "'Diriyah is the place ___ the first Saudi state began.'",
+   "options": [
+    "which",
+    "where",
+    "who",
+    "whose"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "'Everyone loves that series, but I think it's a bit ___.'",
+   "options": [
+    "overrated",
+    "breathtaking",
+    "generous",
+    "brand-new"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Boy: What did you think of the match last night? Girl: To be honest, I found it a bit boring. Nobody scored until the last minute. But the way I see it, the better team won.",
+   "q": "What was the girl's opinion of the match?",
+   "options": [
+    "It was exciting from the start.",
+    "It was boring, but the better team won.",
+    "The referee was unfair."
+   ],
+   "answer": 1
+  },
+  {
+   "script": "Woman: I think we should go to the beach this weekend. Man: I see your point, but it's going to be very hot. Why don't we go to the museum instead and visit the beach in winter?",
+   "q": "What does the man suggest?",
+   "options": [
+    "Going to the beach this weekend.",
+    "Staying at home.",
+    "Going to the museum now and the beach later."
+   ],
+   "answer": 2
+  },
+  {
+   "script": "Teacher: You look stressed out, Saad. Boy: I've got three exams next week, and I'm falling behind in science. Teacher: If I were you, I'd make a timetable and ask your science teacher for extra help.",
+   "q": "What is the teacher's advice?",
+   "options": [
+    "Make a timetable and ask for help.",
+    "Stop studying science.",
+    "Take a week off school."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Girl: Excuse me, I left my bag behind. It's a small green bag which has a pattern of yellow flowers. I think I left it in the café where I had lunch, near the bookshop.",
+   "q": "What does the girl's bag look like?",
+   "options": [
+    "Big and yellow, with green stars.",
+    "Small and green, with yellow flowers.",
+    "Small and brown, made of leather."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Last month, students at a school in Dammam had a class debate. The question was: 'Should students be allowed to use phones at break time?' Fahad was convinced that phones are useful. He said, 'In my opinion, we can use them to call our parents or check our homework.' His classmate Nawaf didn't agree. 'I see your point,' he said, 'but if everyone looks at a phone, nobody will play or talk.' In the end, the teacher gave some advice: 'If I were you, I'd keep phones in your bags at break and use them only after school.' Most students said that the idea made sense, so the class came to an agreement.",
+  "qs": [
+   {
+    "q": "Why does Fahad think phones are useful?",
+    "options": [
+     "They have good games.",
+     "Students can call their parents or check homework.",
+     "Teachers use them in class."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "What is Nawaf worried about?",
+    "options": [
+     "Students won't play or talk at break.",
+     "Phones are too expensive.",
+     "Phones will break in the playground."
+    ],
+    "answer": 0
+   },
+   {
+    "q": "What did the class decide in the end?",
+    "options": [
+     "To stop the debate.",
+     "To use phones all day.",
+     "To keep phones in bags at break and use them after school."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "How did Nawaf disagree with Fahad?",
+    "options": [
+     "He shouted at him.",
+     "He politely accepted Fahad's idea first and then gave his own.",
+     "He didn't say anything."
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "aloud": [
+  "If you ask me, the new park is the best place in town for families.",
+  "I see your point, but I think it's better to study a little every day.",
+  "AlUla is a historic place where you can see tombs which are about two thousand years old."
+ ],
+ "speak": [
+  "What do you think about video games? Give your opinion and two reasons.",
+  "Your friend wants to get fit but doesn't like sport. What advice would you give?",
+  "Describe a place in Saudi Arabia that is worth a visit, and say why."
+ ]
+}

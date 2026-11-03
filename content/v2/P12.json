@@ -1,0 +1,208 @@
+{
+ "level": 12,
+ "mcq": [
+  {
+   "q": "Look at his muddy boots. He ___ playing football.",
+   "options": [
+    "must have been",
+    "can't have been",
+    "should be",
+    "must be had"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "___ the heavy traffic, we arrived on time.",
+   "options": [
+    "Although",
+    "Despite",
+    "Even though",
+    "Whereas"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "By the time we got to the cinema, the film ___.",
+   "options": [
+    "already started",
+    "has already started",
+    "had already started",
+    "was already start"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "You can borrow my camera as long as you ___ careful with it.",
+   "options": [
+    "will be",
+    "are",
+    "were",
+    "be"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "The last minutes were so exciting that we were on the ___ of our seats.",
+   "options": [
+    "edge",
+    "side",
+    "end",
+    "top"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "I'll buy the phone if you ___ a free case.",
+   "options": [
+    "throw away",
+    "give up",
+    "take off",
+    "throw in"
+   ],
+   "answer": 3,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "After weighing ___ the pros and cons, she chose the online course.",
+   "options": [
+    "up",
+    "out",
+    "off",
+    "down"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Which sentence balances an argument best?",
+   "options": [
+    "It's cheap, so I bought it.",
+    "On the one hand, it's cheap; on the other hand, it's slow.",
+    "I want it because it's cheap.",
+    "It's cheap and fast and good."
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "Your friend offers 50 riyals for a game you're selling for 80. What's the best way to compromise?",
+   "options": [
+    "No way.",
+    "I don't care.",
+    "Let's meet halfway. How about 65?",
+    "Fine, take it for free."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "Which is the best way to speculate about a photo?",
+   "options": [
+    "This is a photo.",
+    "I took this photo.",
+    "Photos are nice.",
+    "It looks as though they've just won something."
+   ],
+   "answer": 3,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Look at this picture. The man is soaked, and he's holding a broken umbrella. It must have been raining really hard, and judging by his face, he isn't very happy about it.",
+   "q": "What does the speaker think happened?",
+   "options": [
+    "It had been raining heavily.",
+    "The man had lost his umbrella.",
+    "The man had just won a prize."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Moving to the city has its advantages. There are better schools and more things to do. On the other hand, the traffic is terrible and the houses are much more expensive. On balance, I'd still rather stay in the village.",
+   "q": "What does the speaker decide?",
+   "options": [
+    "To move to the city.",
+    "To stay in the village.",
+    "To move to a new country."
+   ],
+   "answer": 1
+  },
+  {
+   "script": "OK, I'll let you have your friends over this weekend, provided that you tidy up afterwards and everyone has gone home before eleven. If not, that's the last time.",
+   "q": "What is one condition the parent sets?",
+   "options": [
+    "Cook dinner for everyone.",
+    "Invite only two friends.",
+    "Make sure the friends leave before eleven."
+   ],
+   "answer": 2
+  },
+  {
+   "script": "We had just put up our tents when, out of nowhere, a sandstorm hit the camp. By the time it stopped, half our things had blown away. Eventually, we found most of them behind a dune.",
+   "q": "When did the sandstorm start?",
+   "options": [
+    "Before they arrived at the camp.",
+    "Right after they had put up their tents.",
+    "After they had found their things."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Last spring, my class went to AlUla on a three-day school trip. On the one hand, I was excited to see the ancient tombs at Hegra; on the other hand, I was worried about the long bus journey. As it turned out, the journey was the best part. We had just left Madinah when our guide started telling stories about the Nabataeans, who had carved the tombs about two thousand years earlier. By the time we arrived, everyone was desperate to explore. Although it was hot, we walked for hours. On the last day, our teacher let us choose between a balloon ride and a night-sky tour, as long as we all agreed. Eventually, we reached a compromise: the balloon ride at sunrise and stargazing after dinner.",
+  "qs": [
+   {
+    "q": "What was the writer worried about before the trip?",
+    "options": [
+     "The heat at Hegra",
+     "The long bus journey",
+     "Choosing an activity"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "When did the guide start telling stories?",
+    "options": [
+     "Soon after they left Madinah",
+     "When they arrived at Hegra",
+     "On the last day"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "What condition did the teacher set for the last day?",
+    "options": [
+     "The students had to pay extra.",
+     "They had to finish early.",
+     "Everyone had to agree."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "What did the class finally decide?",
+    "options": [
+     "To do both activities",
+     "To do only the balloon ride",
+     "To do neither activity"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "aloud": [
+  "Judging by the expressions on their faces, they must have just heard some good news.",
+  "Although tourism boosts the economy, too many visitors can cause damage to ancient sites.",
+  "By the time we reached the airport, most of the passengers had already boarded the plane."
+ ],
+ "speak": [
+  "Look around the room you are in. What do you think happened here earlier today? Use 'must have' and 'might have'.",
+  "What are the pros and cons of studying abroad? Give a balanced answer and your conclusion.",
+  "Tell me about a time something unexpected happened to you. What had happened before, and how did it end?"
+ ]
+}
