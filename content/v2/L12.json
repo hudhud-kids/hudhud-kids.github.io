@@ -599,7 +599,7 @@
      },
      {
       "s": "Omar",
-      "t": "He must be gutted. He might have touched the ball and still missed it."
+      "t": "He must be gutted. He might have touched the ball but couldn't stop it."
      }
     ],
     "p2": [
@@ -5975,7 +5975,7 @@
     "q": "After three hours of waiting, the bus ___ arrived.",
     "options": [
      "eventually",
-     "suddenly",
+     "ever",
      "already",
      "yet"
     ],
@@ -6484,7 +6484,7 @@
      "type": "mc",
      "q": "Studying online lets you learn at your own ___.",
      "options": [
-      "speed",
+      "race",
       "pace",
       "time",
       "rhythm"
@@ -6734,7 +6734,7 @@
      "type": "mc",
      "q": "After a long wait, the bus ___ came.",
      "options": [
-      "suddenly",
+      "ever",
       "eventually",
       "already",
       "just as"
@@ -6878,7 +6878,7 @@
     "type": "mc",
     "q": "It's hard to ___ whether they're happy or nervous.",
     "options": [
-     "say",
+     "look",
      "speak",
      "tell",
      "talk"

@@ -35,12 +35,12 @@
    "skill": "grammar"
   },
   {
-   "q": "If he weren't so shy, he ___ to her at the party yesterday.",
+   "q": "If he weren't so shy, he ___ a question in class yesterday.",
    "options": [
-    "would have spoken",
-    "would speak",
-    "will speak",
-    "had spoken"
+    "would have asked",
+    "would ask",
+    "will ask",
+    "had asked"
    ],
    "answer": 0,
    "skill": "grammar"
@@ -59,7 +59,7 @@
   {
    "q": "We caught the plane, but it was a close ___.",
    "options": [
-    "shave",
+    "break",
     "line",
     "end",
     "call"
@@ -106,7 +106,7 @@
     "at",
     "in",
     "on",
-    "for"
+    "to"
    ],
    "answer": 2,
    "skill": "vocabulary"

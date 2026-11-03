@@ -501,7 +501,7 @@
     "focus": "I'd like to make a case for esports.",
     "qs": [
      "What is Emma's main argument against esports?",
-     "Which game does Nawaf use as an example?"
+     "What does Nawaf say about chess?"
     ]
    },
    "speakout": {
@@ -959,7 +959,7 @@
      },
      {
       "s": "Turki",
-      "t": "True. And now we always leave three hours early. Last time was too close a call."
+      "t": "True. On the way back we nearly missed the plane again. That was a close call, so now we leave three hours early."
      }
     ],
     "focus": "If we had set off half an hour earlier, we would have caught the plane.",
@@ -990,7 +990,7 @@
     "points": [
      "Jebel Fihrayn, known as the Edge of the World, is about ninety minutes from Riyadh.",
      "Its cliffs rise around 300 metres above the desert floor.",
-     "Visitors usually set off early to avoid the heat and reach the top for sunset."
+     "Many visitors set off in the afternoon, after the worst of the heat, to reach the top for sunset."
     ],
     "qs": [
      "Have you ever arrived somewhere too late to enjoy it?",
@@ -1045,7 +1045,7 @@
     "p1": [
      {
       "s": "Saad",
-      "t": "I still can't believe it. If we had scored that first chance, we would have won easily."
+      "t": "I still can't believe it. If we had taken that first chance, we would have won easily."
      },
      {
       "s": "Grace",
@@ -1071,7 +1071,7 @@
      },
      {
       "s": "Saad",
-      "t": "And their second goal was a close call. Our keeper nearly saved it."
+      "t": "And their striker nearly scored a third in the last minute. That was a close call!"
      },
      {
       "s": "Grace",
@@ -1161,7 +1161,7 @@
     "p1": [
      {
       "s": "Huda",
-      "t": "Let's start with penicillin. Fleming discovered it by accident when he left some dishes out."
+      "t": "Let's start with penicillin. Fleming discovered it by accident when he left some lab dishes out before a holiday."
      },
      {
       "s": "Leo",
@@ -1411,7 +1411,7 @@
     "p2": [
      {
       "s": "Mia",
-      "t": "True. I'm quite shy. If it had been me, I would have just watched."
+      "t": "I'm the opposite. I'm quite shy. If it had been me, I would have just watched."
      },
      {
       "s": "Sultan",
@@ -1625,7 +1625,7 @@
     "p1": [
      {
       "s": "Noura",
-      "t": "Did you know that one letter in Arabic calligraphy can take an hour to write? Today I'd like to talk about calligraphy."
+      "t": "Did you know that a single page of Arabic calligraphy can take days to finish? Today I'd like to talk about calligraphy."
      },
      {
       "s": "Hannah",
@@ -2013,7 +2013,7 @@
     ]
    },
    "speakout": {
-    "scene": "You and your partner surveyed your class about how they get to school. Present your results to the class: 40% by car, 30% by school bus, 20% walk, 10% by bike.",
+    "scene": "You and your partner surveyed your class about how they get to school. Present your results to the class: 42% by car, 31% by school bus, 19% walk, 8% by bike.",
     "prompts": [
      {
       "q": "So, what does your survey show?",
@@ -2119,7 +2119,7 @@
      },
      {
       "s": "Ziyad",
-      "t": "About fifteen riyals. As you can see on this last slide, it pays for itself in a few weeks."
+      "t": "About fifteen riyals. As you can see on this last slide, it pays for itself in a few months."
      }
     ],
     "focus": "To sum up, our device saves around twenty litres of water per person every day.",
@@ -2150,7 +2150,7 @@
     "points": [
      "Saudi Arabia is one of the biggest producers of desalinated water in the world.",
      "Much of the Kingdom's drinking water comes from the sea.",
-     "Simple devices on taps and showers can cut home water use by a third."
+     "Simple devices on taps and showers can cut the water they use by a third or more."
     ],
     "qs": [
      "What is one easy way your family could save water?",
@@ -2231,7 +2231,7 @@
      },
      {
       "s": "Hamad",
-      "t": "Very. You stuck to three clear points. But you looked at your notes too much."
+      "t": "Very. You stuck to your main points. But you looked at your notes too much."
      },
      {
       "s": "Lulwa",
@@ -3499,7 +3499,7 @@
     },
     {
      "s": "Turki",
-     "t": "True. And now we always leave three hours early. Last time was too close a call."
+     "t": "True. On the way back we nearly missed the plane again. That was a close call, so now we leave three hours early."
     }
    ],
    "grammar": {
@@ -3548,7 +3548,7 @@
    "dialogue": [
     {
      "s": "Saad",
-     "t": "I still can't believe it. If we had scored that first chance, we would have won easily."
+     "t": "I still can't believe it. If we had taken that first chance, we would have won easily."
     },
     {
      "s": "Grace",
@@ -3572,7 +3572,7 @@
     },
     {
      "s": "Saad",
-     "t": "And their second goal was a close call. Our keeper nearly saved it."
+     "t": "And their striker nearly scored a third in the last minute. That was a close call!"
     },
     {
      "s": "Grace",
@@ -3625,7 +3625,7 @@
    "dialogue": [
     {
      "s": "Huda",
-     "t": "Let's start with penicillin. Fleming discovered it by accident when he left some dishes out."
+     "t": "Let's start with penicillin. Fleming discovered it by accident when he left some lab dishes out before a holiday."
     },
     {
      "s": "Leo",
@@ -3795,7 +3795,7 @@
     },
     {
      "s": "Mia",
-     "t": "True. I'm quite shy. If it had been me, I would have just watched."
+     "t": "I'm the opposite. I'm quite shy. If it had been me, I would have just watched."
     },
     {
      "s": "Sultan",
@@ -3933,7 +3933,7 @@
    "dialogue": [
     {
      "s": "Noura",
-     "t": "Did you know that one letter in Arabic calligraphy can take an hour to write? Today I'd like to talk about calligraphy."
+     "t": "Did you know that a single page of Arabic calligraphy can take days to finish? Today I'd like to talk about calligraphy."
     },
     {
      "s": "Hannah",
@@ -4269,7 +4269,7 @@
     },
     {
      "s": "Ziyad",
-     "t": "About fifteen riyals. As you can see on this last slide, it pays for itself in a few weeks."
+     "t": "About fifteen riyals. As you can see on this last slide, it pays for itself in a few months."
     }
    ],
    "grammar": {
@@ -4342,7 +4342,7 @@
     },
     {
      "s": "Hamad",
-     "t": "Very. You stuck to three clear points. But you looked at your notes too much."
+     "t": "Very. You stuck to your main points. But you looked at your notes too much."
     },
     {
      "s": "Lulwa",
@@ -5097,10 +5097,10 @@
     "type": "mc",
     "q": "Online courses let you study at your own ___.",
     "options": [
-     "speed",
+     "race",
      "pace",
      "step",
-     "rate"
+     "run"
     ],
     "answer": 1
    },
@@ -5484,7 +5484,7 @@
     "q": "If I ___ so shy, I would have asked a question.",
     "options": [
      "wasn't",
-     "hadn't been",
+     "haven't been",
      "won't be",
      "am not"
     ],
@@ -5950,7 +5950,7 @@
     "options": [
      "Stay",
      "Stick",
-     "Keep",
+     "Hang",
      "Hold"
     ],
     "answer": 1
@@ -6055,7 +6055,7 @@
     "options": [
      "worthy",
      "worth",
-     "worthwhile",
+     "valuable",
      "value"
     ],
     "answer": 1
@@ -6077,7 +6077,7 @@
     "options": [
      "depends",
      "relies",
-     "is based",
+     "waits",
      "counts"
     ],
     "answer": 0
@@ -6502,7 +6502,7 @@
      "type": "mc",
      "q": "Engineers finally ___ oil in 1938.",
      "options": [
-      "hit",
+      "met",
       "found up",
       "struck",
       "took"
@@ -6514,7 +6514,7 @@
      "q": "Meeting the director was a lucky ___.",
      "options": [
       "break",
-      "chance",
+      "step",
       "luck",
       "hit"
      ],
