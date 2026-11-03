@@ -98,7 +98,7 @@
   },
   {
    "t": "Bigger, Better, Best",
-   "ar": "أكبر وأفضل والأفضل",
+   "ar": "أكبر، أفضل، الأفضل",
    "e": "🏆",
    "fn": "Comparing",
    "fnAr": "المقارنة",
@@ -761,7 +761,7 @@
     "points": [
      "In many Saudi homes, children help to serve dates and coffee to guests.",
      "In Japan, lots of children help to cook family meals.",
-     "In Sweden, many families clean the house together on Saturdays."
+     "In the UK, many children get pocket money for doing jobs at home."
     ],
     "qs": [
      "Which home job do you like doing?",
@@ -2483,7 +2483,7 @@
     "scene": "Your friend doesn't feel well today. They call you and ask for some advice. Your teacher is your friend.",
     "prompts": [
      {
-      "q": "Hi … I don't feel very well.",
+      "q": "Hi! I don't feel very well.",
       "hint": "Ask 'What's the matter?'"
      },
      {
@@ -2650,7 +2650,7 @@
     },
     {
      "w": "wear a cap",
-     "def": "put a hat with a front part on your head",
+     "def": "put on a soft hat that keeps the sun off your face",
      "ar": "يلبس قبعة",
      "frame": "You should wear a cap when you ___."
     },
@@ -3276,7 +3276,7 @@
     {
      "w": "emptied the bin",
      "ar": "أفرغ سلة المهملات",
-     "ex": "Faisal emptied the bin in the kitchen every evening."
+     "ex": "Faisal emptied the bin in the kitchen last night."
     },
     {
      "w": "helped … with",
@@ -4947,7 +4947,7 @@
     "q": "Choose the best word: 'I tidied my room. ___, I helped my dad with the car.'",
     "options": [
      "Before",
-     "Yesterday",
+     "Tomorrow",
      "Ago",
      "After that"
     ],
@@ -4987,7 +4987,7 @@
    },
    {
     "type": "mc",
-    "q": "Which word comes at the end of a story?",
+    "q": "Which word do we use for the last thing in a story?",
     "options": [
      "First",
      "Then",
@@ -5680,13 +5680,13 @@
      "cheaper",
      "the cheapest",
      "more expensive",
-     "lighter"
+     "less expensive"
     ],
     "answer": 2
    },
    {
     "type": "mc",
-    "q": "My old phone is bad, but your phone is ___.",
+    "q": "My phone is bad, but your phone is even ___!",
     "options": [
      "badder",
      "worse",
@@ -6797,7 +6797,7 @@
     "options": [
      "gooder",
      "better",
-     "the best",
+     "more better",
      "more good"
     ],
     "answer": 1

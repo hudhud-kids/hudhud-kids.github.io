@@ -421,7 +421,7 @@
     ]
    },
    "speakout": {
-    "scene": "You and your friend are sitting on a bench in the park. Your friend can't see well today. Tell them what people are doing.",
+    "scene": "You and your friend are sitting on a bench in the park. Your friend forgot their glasses today. Tell them what people are doing.",
     "prompts": [
      {
       "q": "What's that girl doing?",
@@ -1259,7 +1259,7 @@
      "w": "watch cartoons",
      "def": "watch funny films with drawings",
      "ar": "يشاهد الرسوم المتحركة",
-     "frame": "My favourite cartoon is ___."
+     "frame": "I watch cartoons about ___."
     },
     {
      "w": "at the weekend",
@@ -1949,7 +1949,7 @@
      },
      {
       "s": "Omar",
-      "t": "How do we go there?"
+      "t": "How do we get there?"
      },
      {
       "s": "Noura",
@@ -2183,7 +2183,7 @@
     },
     {
      "w": "in front of",
-     "def": "before something, where you can see it",
+     "def": "at the front of something",
      "ar": "أمام",
      "frame": "The café is in front of the ___."
     },
@@ -4334,7 +4334,7 @@
     },
     {
      "s": "Omar",
-     "t": "How do we go there?"
+     "t": "How do we get there?"
     },
     {
      "s": "Noura",
@@ -6459,7 +6459,7 @@
    },
    {
     "type": "mc",
-    "q": "Faisal: 'Can you help me?' Mum: '___'",
+    "q": "Faisal: 'Can you help me? I can't reach the top.' Mum: '___'",
     "options": [
      "No, he isn't.",
      "It's a balloon.",

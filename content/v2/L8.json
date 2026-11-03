@@ -235,7 +235,7 @@
     "p1": [
      {
       "s": "Reem",
-      "t": "Omar, you've been playing that game for three hours! What do you think about your screen time today?"
+      "t": "Omar, that's three hours on that game! What do you think about your screen time today?"
      },
      {
       "s": "Omar",
@@ -1887,7 +1887,7 @@
      },
      {
       "s": "Faisal",
-      "t": "I know. But I can't sleep early. I'm not tired at ten."
+      "t": "I know. But I can't fall asleep early. I'm not tired at ten."
      }
     ],
     "p2": [
@@ -2874,7 +2874,7 @@
    "culture": {
     "title": "Lost Things Around the World",
     "points": [
-     "In Tokyo, people take hundreds of thousands of lost things to the police every year.",
+     "In Tokyo, people take millions of lost things to the police every year.",
      "Some airports use special computer systems to find the owners of lost bags.",
      "During Hajj, special teams help pilgrims who have lost their bags or their way."
     ],
@@ -3043,7 +3043,7 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "Omar, you've been playing that game for three hours! What do you think about your screen time today?"
+     "t": "Omar, that's three hours on that game! What do you think about your screen time today?"
     },
     {
      "s": "Omar",
@@ -4133,7 +4133,7 @@
     },
     {
      "s": "Faisal",
-     "t": "I know. But I can't sleep early. I'm not tired at ten."
+     "t": "I know. But I can't fall asleep early. I'm not tired at ten."
     },
     {
      "s": "Mr Saleh",
@@ -5791,7 +5791,7 @@
     "type": "mc",
     "q": "'If you eat junk food every day, you ___ healthy.'",
     "options": [
-     "aren't",
+     "not are",
      "not be",
      "won't be",
      "wouldn't"
@@ -6908,9 +6908,9 @@
     "type": "mc",
     "q": "'In my ___, this series is the best one this year.'",
     "options": [
-     "view",
+     "think",
      "opinion",
-     "mind",
+     "idea",
      "point"
     ],
     "answer": 1

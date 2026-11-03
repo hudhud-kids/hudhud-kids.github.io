@@ -25,7 +25,7 @@
     [
      "Making Plans with Friends",
      "Confirm the time and place of a plan with a friend",
-     "We're meeting at …, aren't we? / So you're saying … / Let me get it straight …"
+     "We're meeting at …, aren't we? / So you're saying … / Let me get this straight …"
     ],
     [
      "On the Phone",
@@ -206,10 +206,10 @@
      "frame": "I like to work in pairs when ___."
     },
     {
-     "w": "get it straight",
+     "w": "get this straight",
      "def": "to understand something clearly and correctly",
      "ar": "أفهم الأمر بوضوح",
-     "frame": "Let me get it straight: we need to ___, right?"
+     "frame": "Let me get this straight: we need to ___, right?"
     },
     {
      "w": "clarify",
@@ -233,7 +233,7 @@
      },
      {
       "s": "Reem",
-      "t": "Sorry, Ms Huda, can I just get it straight? We choose our own partner, don't we?"
+      "t": "Sorry, Ms Huda, can I just get this straight? We choose our own partner, don't we?"
      },
      {
       "s": "Ms Huda",
@@ -365,7 +365,7 @@
      },
      {
       "s": "Sam",
-      "t": "Let me get it straight: four in the afternoon, not four in the morning?"
+      "t": "Let me get this straight: four in the afternoon, not four in the morning?"
      },
      {
       "s": "Omar",
@@ -631,7 +631,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Let me get it straight. Do you mean the food court with the big clock?"
+      "t": "Let me get this straight. Do you mean the food court with the big clock?"
      },
      {
       "s": "Guard",
@@ -875,7 +875,7 @@
      },
      {
       "s": "Omar",
-      "t": "Let me get it straight. Do you mean a packed lunch for the first day only?"
+      "t": "Let me get this straight. Do you mean a packed lunch for the first day only?"
      },
      {
       "s": "Mr Adel",
@@ -1386,7 +1386,7 @@
       "t": "It sounds like you'll get on well. It's great to make friends from other countries."
      }
     ],
-    "focus": "He asked me where the library was",
+    "focus": "He asked me where the library was, and he asked if we had a football team.",
     "qs": [
      "What did the teacher ask Omar to do?",
      "What did Youssef want to know about the teachers?"
@@ -1758,7 +1758,7 @@
       "t": "Deal!"
      }
     ],
-    "focus": "would you mind turning down the TV?",
+    "focus": "Nasser, would you mind turning down the TV?",
     "qs": [
      "Why does Faisal ask Nasser to turn down the TV?",
      "What does Faisal want to borrow?"
@@ -2254,7 +2254,7 @@
       "t": "Oops. OK, sorry!"
      }
     ],
-    "focus": "is it OK if I log in to my game for an hour?",
+    "focus": "Dad, is it OK if I log in to my game for an hour?",
     "qs": [
      "Why doesn't Dad want Omar to play for an hour?",
      "Why is Reem unhappy about the photo?"
@@ -2363,7 +2363,7 @@
      },
      {
       "s": "Aunt Hessa",
-      "t": "Not at all. But would you mind cleaning up afterwards?"
+      "t": "Of course you can. But would you mind cleaning up afterwards?"
      },
      {
       "s": "Faisal",
@@ -2378,7 +2378,7 @@
       "t": "Yes, please! That would be amazing."
      }
     ],
-    "focus": "would you mind helping us with the Eid gathering this year?",
+    "focus": "Aunt Hessa, would you mind helping us with the Eid gathering this year?",
     "qs": [
      "What will Aunt Hessa be in charge of?",
      "What does Aunt Hessa ask Faisal to do after the gathering?"
@@ -2874,7 +2874,7 @@
       "t": "Great. Then it's decided."
      }
     ],
-    "focus": "it would be better to go to Jeddah this time, wouldn't it?",
+    "focus": "So it would be better to go to Jeddah this time, wouldn't it?",
     "qs": [
      "Why does Dad like AlUla?",
      "Why does the family decide to go to Jeddah?"
@@ -2998,7 +2998,7 @@
       "t": "Great idea. Let's go for the big sushi plate, and the shawarma for Omar!"
      }
     ],
-    "focus": "it would be better to get one big plate between us.",
+    "focus": "Then it would be better to get one big plate between us.",
     "qs": [
      "Why does Omar decide not to have a burger?",
      "Why does Reem want one big sushi plate?"
@@ -3122,7 +3122,7 @@
       "t": "Perfect. That's a decision everyone can be happy with."
      }
     ],
-    "focus": "let's go for the garden!",
+    "focus": "Then let's go for the garden!",
     "qs": [
      "Why doesn't the group choose the beach clean-up?",
      "How do they finally reach a decision?"
@@ -3179,9 +3179,9 @@
      "ex": "Today we're going to work in pairs."
     },
     {
-     "w": "get it straight",
+     "w": "get this straight",
      "ar": "أفهم الأمر بوضوح",
-     "ex": "Let me get it straight: the test is on Monday?"
+     "ex": "Let me get this straight: the test is on Monday?"
     },
     {
      "w": "clarify",
@@ -3201,7 +3201,7 @@
     },
     {
      "s": "Reem",
-     "t": "Sorry, Ms Huda, can I just get it straight? We choose our own partner, don't we?"
+     "t": "Sorry, Ms Huda, can I just get this straight? We choose our own partner, don't we?"
     },
     {
      "s": "Ms Huda",
@@ -3286,7 +3286,7 @@
     },
     {
      "s": "Sam",
-     "t": "Let me get it straight: four in the afternoon, not four in the morning?"
+     "t": "Let me get this straight: four in the afternoon, not four in the morning?"
     },
     {
      "s": "Omar",
@@ -3452,7 +3452,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Let me get it straight. Do you mean the food court with the big clock?"
+     "t": "Let me get this straight. Do you mean the food court with the big clock?"
     },
     {
      "s": "Guard",
@@ -3602,7 +3602,7 @@
     },
     {
      "s": "Omar",
-     "t": "Let me get it straight. Do you mean a packed lunch for the first day only?"
+     "t": "Let me get this straight. Do you mean a packed lunch for the first day only?"
     },
     {
      "s": "Mr Adel",
@@ -4526,7 +4526,7 @@
     },
     {
      "s": "Aunt Hessa",
-     "t": "Not at all. But would you mind cleaning up afterwards?"
+     "t": "Of course you can. But would you mind cleaning up afterwards?"
     },
     {
      "s": "Faisal",
@@ -5197,7 +5197,7 @@
     "q": "Complete: Please ask her to call me ___.",
     "options": [
      "on",
-     "up",
+     "out",
      "off",
      "back"
     ],
@@ -6083,12 +6083,12 @@
     "type": "mc",
     "q": "Complete: Would you mind if I ___ your headphones?",
     "options": [
-     "use",
      "using",
      "to use",
-     "used"
+     "used",
+     "will use"
     ],
-    "answer": 3
+    "answer": 2
    },
    {
     "type": "mc",
@@ -6399,7 +6399,7 @@
     "type": "mc",
     "q": "Complete: You ___ a point. Jeddah is better for swimming.",
     "options": [
-     "make",
+     "get",
      "do",
      "have",
      "take"
