@@ -1,0 +1,208 @@
+{
+ "level": 14,
+ "mcq": [
+  {
+   "q": "Teenagers ___ to spend more time online at weekends.",
+   "options": [
+    "tend",
+    "tends",
+    "are tending",
+    "tending"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "'It was my coach ___ encouraged me to keep going.'",
+   "options": [
+    "what",
+    "which",
+    "who",
+    "whose"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "'What I need right now ___ a long holiday.'",
+   "options": [
+    "are",
+    "is",
+    "be",
+    "it is"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "A walking day is ___ near as effective as a daily school bus.",
+   "options": [
+    "no",
+    "nowhere",
+    "none",
+    "never"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "I think you've got the wrong end of the ___. I wasn't criticising you.",
+   "options": [
+    "rope",
+    "line",
+    "road",
+    "stick"
+   ],
+   "answer": 3,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "The benefits of the scheme clearly ___ the costs.",
+   "options": [
+    "overcome",
+    "overtake",
+    "outweigh",
+    "outrun"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "We had to ___ out the cheaper option because it wasn't safe.",
+   "options": [
+    "rule",
+    "give",
+    "turn",
+    "hand"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Which reply disagrees most tactfully?",
+   "options": [
+    "You're completely wrong.",
+    "I'm not entirely sure that's true.",
+    "That's a stupid idea.",
+    "Whatever."
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "In a discussion, someone interrupts you. Which phrase helps you continue?",
+   "options": [
+    "Sorry to interrupt, but …",
+    "What's your take on this?",
+    "Let's wrap up there.",
+    "If I could just finish, …"
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "Which sentence evaluates an idea?",
+   "options": [
+    "The main drawback is that it's expensive to run.",
+    "The app has a blue logo.",
+    "I downloaded it yesterday.",
+    "My brother uses it."
+   ],
+   "answer": 0,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "A: What did you think of my presentation? B: On the whole, it was really clear. The only thing is, the slides seemed a little crowded. You could perhaps use fewer words on each one.",
+   "q": "What does B suggest?",
+   "options": [
+    "Adding more slides",
+    "Putting fewer words on the slides",
+    "Speaking more slowly"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "A: So, as I was saying, the trip should be in March because— B: Sorry to interrupt, but March is exam month. A: Ah, good point. Going back to the dates, then, how about late April?",
+   "q": "Why does B interrupt?",
+   "options": [
+    "To say March is a bad time",
+    "To suggest a new place",
+    "To ask who is coming"
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Everyone thinks it was my brother who planned the surprise party, but it wasn't. It was my little sister who organised everything. What I really admire is that she kept it a secret for a whole month.",
+   "q": "Who organised the party?",
+   "options": [
+    "The speaker's brother",
+    "The speaker",
+    "The speaker's sister"
+   ],
+   "answer": 2
+  },
+  {
+   "script": "We looked at three ways to reduce plastic at school. Banning plastic bottles is cheap, but it's questionable whether students would follow the rule. Water fountains cost more upfront, but in the long term they're by far the best option.",
+   "q": "Which option does the speaker prefer?",
+   "options": [
+    "Banning plastic bottles",
+    "Water fountains",
+    "Recycling bins"
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "When Abdullah joined his school's discussion club, he thought the goal was to win every argument. In his first meeting, he talked over everyone and called other people's ideas 'useless'. Afterwards, the club leader took him aside. 'What makes a good speaker,' she said, 'isn't how loudly you talk. It's how well you listen.' Over the next few weeks, Abdullah practised softening his opinions with phrases like 'I'm not entirely sure that …' and inviting quieter members to speak. He also learnt to judge ideas fairly by looking at their strengths before their drawbacks. By the end of the term, the members had chosen him as their new chairperson, something he would never have imagined on his first day.",
+  "qs": [
+   {
+    "q": "What did Abdullah do in his first meeting?",
+    "options": [
+     "He listened carefully.",
+     "He talked over other members.",
+     "He invited quiet members to speak."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "According to the club leader, what makes a good speaker?",
+    "options": [
+     "Listening well",
+     "Speaking loudly",
+     "Winning every argument"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "How did Abdullah learn to judge ideas?",
+    "options": [
+     "By ignoring their drawbacks",
+     "By asking the leader to decide",
+     "By looking at their strengths first"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "What happened at the end of the term?",
+    "options": [
+     "Abdullah was chosen as chairperson.",
+     "Abdullah left the club.",
+     "The club closed for the summer."
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "aloud": [
+  "I'm not entirely sure that this plan will work, but it seems worth discussing.",
+  "Sorry to interrupt, but going back to what Reem said earlier, I think she makes a valid point.",
+  "What I really admire about the project is that it was the quietest student who came up with the best idea."
+ ],
+ "speak": [
+  "Your friend asks for your honest opinion of a song they wrote, but you don't like it much. What would you say?",
+  "What do you think is the most important skill in a group discussion? Explain why, emphasising your main point.",
+  "Your city wants to close its main street to cars every Friday evening. Judge the idea: what are its main strengths and drawbacks?"
+ ]
+}

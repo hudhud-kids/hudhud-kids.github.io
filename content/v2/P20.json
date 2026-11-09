@@ -1,0 +1,208 @@
+{
+ "level": 20,
+ "mcq": [
+  {
+   "q": "'The hotel's breakfast left a lot to be ___.'",
+   "options": [
+    "wanted",
+    "wished",
+    "desired",
+    "hoped"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "A manager says, 'You might want to double-check those figures.' What is she most likely implying?",
+   "options": [
+    "She wants to see the figures herself.",
+    "The figures probably contain a mistake.",
+    "The figures are excellent.",
+    "She has no time to check them."
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "'With respect, you're putting words in my ___.'",
+   "options": [
+    "head",
+    "ear",
+    "hand",
+    "mouth"
+   ],
+   "answer": 3,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "'Not only ___ the data, but he also took the expert's words out of context.'",
+   "options": [
+    "did he cherry-pick",
+    "he cherry-picked",
+    "cherry-picked he",
+    "he did cherry-pick"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "'Drawing the ___ together, we seem to agree that cost matters most.'",
+   "options": [
+    "strings",
+    "ropes",
+    "lines",
+    "threads"
+   ],
+   "answer": 3,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "As chair of a seminar, which sentence synthesises two opposing views?",
+   "options": [
+    "Let's hear from Omar next.",
+    "Omar wants lower fees; Sara wants better teachers.",
+    "What seems to be emerging is that you both want value for money.",
+    "Let's park that point for now."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "'The effect of the new rule has been ___: almost nobody has noticed any change.'",
+   "options": [
+    "negligible",
+    "considerable",
+    "momentous",
+    "dramatic"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "'Had the speaker kept her composure, she ___ the debate last night.'",
+   "options": [
+    "would win",
+    "would have won",
+    "had won",
+    "will have won"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "An interviewer asks, 'Why do teenagers never take anything seriously?' Which reply handles the question best?",
+   "options": [
+    "You're right, we don't.",
+    "That's a rude question.",
+    "Next question, please.",
+    "With respect, that's a sweeping generalisation; many teenagers volunteer every week."
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "'Rising temperatures will only ___ the water shortage.'",
+   "options": [
+    "alleviate",
+    "diminish",
+    "exacerbate",
+    "resolve"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  }
+ ],
+ "listen": [
+  {
+   "script": "So, how was your first week at the new job? — Well, let's just say the training could have been a tad more organised. On the first day, nobody knew I was coming, and my laptop arrived on Thursday.",
+   "q": "How does the speaker really feel about the first week?",
+   "options": [
+    "Very pleased",
+    "Rather disappointed",
+    "Furious and ready to leave"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "Thanks, everyone. Let me draw the threads together. Although Ali focused on cost and Sara on safety, you both seem to want a plan that families will actually use. So perhaps our position is: affordable, safe and simple.",
+   "q": "What is the chair doing?",
+   "options": [
+    "Asking someone to speak",
+    "Introducing a new topic",
+    "Synthesising different views"
+   ],
+   "answer": 2
+  },
+  {
+   "script": "So you admit your plan has failed? — I'd reject that premise. We haven't hit every target, and I'll concede that the timing was poor, but two of our three goals have already been met.",
+   "q": "What does the speaker concede?",
+   "options": [
+    "The timing was poor.",
+    "The plan has failed.",
+    "None of the goals were met."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "That's a tricky one. Off the top of my head, I'd say tourism is a double-edged sword: it brings jobs, but, to be more precise, it can also push up rents for local families.",
+   "q": "What is the speaker's view of tourism?",
+   "options": [
+    "It has only benefits.",
+    "It has both benefits and drawbacks.",
+    "It mainly lowers rents for families."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "In 1912, as Robert Falcon Scott's team struggled back from the South Pole, Captain Lawrence Oates, weak and frostbitten, stepped out of the tent into a blizzard with the words, 'I am just going outside and may be some time.' He was never seen again. The line has become a famous example of understatement: by saying far less than he meant, Oates conveyed courage without drama. Linguists note that such indirectness works only when speaker and listener share assumptions. Among close colleagues, 'You might want to look at this again' is understood as a clear instruction; to a newcomer from a more direct culture, it may sound like an optional suggestion. Skilled communicators therefore adjust: they keep the courtesy of indirect speech but check, discreetly, that the message has landed.",
+  "qs": [
+   {
+    "q": "Why is Oates's line considered an understatement?",
+    "options": [
+     "He described a fatal decision in very mild words.",
+     "He exaggerated the danger of the storm.",
+     "He refused to explain his plan."
+    ],
+    "answer": 0
+   },
+   {
+    "q": "According to the passage, indirectness works only when …",
+    "options": [
+     "the listener is older than the speaker",
+     "speaker and listener share assumptions",
+     "the message is written down"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "How might a newcomer misunderstand 'You might want to look at this again'?",
+    "options": [
+     "As an insult",
+     "As a clear order",
+     "As something optional"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "What do skilled communicators do, according to the passage?",
+    "options": [
+     "Avoid indirect speech completely",
+     "Stay polite but check that the message was understood",
+     "Always speak as directly as possible"
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "aloud": [
+  "With respect, I'd reject the premise of that question: the real issue isn't cost, but long-term value.",
+  "Drawing the threads together, what seems to be emerging is a middle way that reconciles both views.",
+  "The trip wasn't exactly a triumph, to put it mildly, but on balance it was hardly the end of the world."
+ ],
+ "speak": [
+  "Tell me about a time someone said one thing but meant another. How did you work out what they really meant?",
+  "Imagine you are chairing a discussion on whether schools should replace exams with projects. Summarise two opposing views and then synthesise them.",
+  "An interviewer says, 'Young people today are only interested in their phones.' Respond calmly and reframe the issue."
+ ]
+}

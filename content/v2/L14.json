@@ -1,0 +1,6918 @@
+{
+ "level": 14,
+ "cefr": "B2+",
+ "gse": "67-71",
+ "exam": "Cambridge B2 First (grade A)",
+ "v": 2,
+ "units": [
+  {
+   "t": "Saying It Tactfully",
+   "ar": "قولها بلباقة",
+   "e": "🕊️",
+   "fn": "Hedging and softening",
+   "fnAr": "التلطيف وتخفيف حدّة الكلام",
+   "cando": "Can soften opinions, criticism, disagreement and refusals with hedging language so that the message is clear but does not upset people.",
+   "grammar": [
+    "It seems that … / seem to, appear to + infinitive",
+    "tend to + base verb for careful generalisations",
+    "softeners: a bit, slightly, perhaps, I'm not entirely sure that …, I wonder if …"
+   ],
+   "lessons": [
+    [
+     "Feedback on a Friend's Work",
+     "Give a friend honest but tactful feedback on something they have made",
+     "It seems a little … / a bit on the … side / I'm not entirely sure that … / You could perhaps …"
+    ],
+    [
+     "Careful Generalisations",
+     "Talk about teenagers' habits without making sweeping generalisations",
+     "… tend to … / On the whole, … / to some extent / Not everyone, though."
+    ],
+    [
+     "Talking to Elders",
+     "Disagree respectfully with an older relative",
+     "I can see where you're coming from, but … / With all due respect, … / I'm not entirely convinced that …"
+    ],
+    [
+     "Saying No Nicely",
+     "Turn down a request tactfully and offer an alternative",
+     "I'd rather not, if that's OK. / I'd love to, but … / I'd be in a tricky position … / How about … instead?"
+    ],
+    [
+     "When a Teammate Lets You Down",
+     "Raise a problem with a teammate tactfully and ask for a change",
+     "This is a bit awkward, but … / It seems that … / I wonder if you could …"
+    ],
+    [
+     "The Tactful Advisor",
+     "Give tactful advice on tricky situations, using all the softening language from this unit",
+     "It seems … / You could perhaps … / I'm not entirely sure that … / I wonder if …"
+    ]
+   ]
+  },
+  {
+   "t": "Joining the Discussion",
+   "ar": "المشاركة في النقاش",
+   "e": "🎙️",
+   "fn": "Managing turn-taking",
+   "fnAr": "إدارة تبادل الأدوار في الحديث",
+   "cando": "Can interrupt politely, keep or give up a turn, bring others in and return to earlier points in a group discussion.",
+   "grammar": [
+    "interrupting: Sorry to interrupt, but … / Can I just add …?",
+    "holding and giving the floor: If I could just finish, … / What's your take on …?",
+    "referring back: Going back to … / To add to what … said, …"
+   ],
+   "lessons": [
+    [
+     "Getting a Word In",
+     "Interrupt politely to ask a question or add a point",
+     "Sorry to interrupt, but … / Can I just add something? / Could I come in here?"
+    ],
+    [
+     "Let Me Finish",
+     "Keep your turn politely when someone interrupts you",
+     "Hold on a second. / If I could just finish, … / As I was saying, … / Bear with me."
+    ],
+    [
+     "Bringing Others In",
+     "Invite quieter people to share their ideas in a discussion",
+     "We haven't heard from … yet. / What's your take on …? / Would you like to say more?"
+    ],
+    [
+     "Back to the Point",
+     "Bring a discussion back to the main topic when it goes off track",
+     "We're getting sidetracked. / That's a bit off the point. / Where were we? / Going back to …"
+    ],
+    [
+     "Adding to the Argument",
+     "Build on other people's ideas in a class discussion",
+     "To add to what … said, … / That ties in with … / I'd go even further and say …"
+    ],
+    [
+     "The Panel Discussion",
+     "Take part in a panel discussion, managing turns from start to finish",
+     "… you have the floor. / Sorry to interrupt, but … / If I could just finish, … / Going back to … / Let's wrap up there."
+    ]
+   ]
+  },
+  {
+   "t": "What I Really Mean",
+   "ar": "ما أعنيه حقاً",
+   "e": "💡",
+   "fn": "Emphasising",
+   "fnAr": "التأكيد وإبراز الفكرة الأهم",
+   "cando": "Can emphasise and clarify the most important part of a message using cleft sentences and other emphatic structures.",
+   "grammar": [
+    "wh-clefts: What I meant was … / What I love about … is …",
+    "it-clefts: It was … who / that …",
+    "emphatic do; All I'm asking is … / The reason why … is …"
+   ],
+   "lessons": [
+    [
+     "That's Not What I Meant",
+     "Clear up a misunderstanding by explaining what you really meant",
+     "What I meant was … / It wasn't … that …; it was … / I didn't mean …"
+    ],
+    [
+     "What I Love About It",
+     "Describe a passion and emphasise what you love most about it",
+     "What I love about … is … / What makes it special is … / I lose track of time when …"
+    ],
+    [
+     "Credit Where It's Due",
+     "Correct a wrong story and give credit to the right person",
+     "It was … who … / It wasn't … that …; it was … / It's … that really matters."
+    ],
+    [
+     "All I'm Asking Is …",
+     "Make a strong but respectful request to your parents using emphasis",
+     "I do understand … / The thing is, … / All I'm asking is … / What I really want is …"
+    ],
+    [
+     "The Reason Why",
+     "Explain the reasons for an important choice with emphasis",
+     "The reason why … is … / What made me … was … / That's what …"
+    ],
+    [
+     "Make Your Point",
+     "Pitch an idea to solve a problem, emphasising your key points",
+     "What we need is … / The real problem is … / It's … that … / I do believe …"
+    ]
+   ]
+  },
+  {
+   "t": "Judging Ideas",
+   "ar": "الحكم على الأفكار",
+   "e": "⚖️",
+   "fn": "Evaluating ideas and solutions",
+   "fnAr": "تقييم الأفكار والحلول",
+   "cando": "Can evaluate ideas and solutions by weighing their strengths and drawbacks, and reach a reasoned judgement.",
+   "grammar": [
+    "It's debatable whether … / It's questionable whether … / It remains to be seen whether …",
+    "The main drawback / strength of … is that …",
+    "strong comparisons: far / considerably more … than, nowhere near as … as, by far the …"
+   ],
+   "lessons": [
+    [
+     "Is It a Good App?",
+     "Judge a friend's app idea by giving its main strength and its main drawback",
+     "The main strength of … is that … / The main drawback is that … / It's debatable whether …"
+    ],
+    [
+     "Fixing the School Run",
+     "Compare and judge different solutions to traffic problems near schools",
+     "It's questionable whether … / … is only a short-term fix / … is nowhere near as … as … / in the long term"
+    ],
+    [
+     "Green Ideas",
+     "Weigh up the costs and benefits of green projects for your school",
+     "The benefits outweigh the costs. / … is more cost-effective / It remains to be seen whether … / weigh up"
+    ],
+    [
+     "Smart Helpers?",
+     "Give a balanced judgement on using AI tools for schoolwork",
+     "… is a double-edged sword / The jury is still out on … / On balance, …"
+    ],
+    [
+     "Worth the Money?",
+     "Judge different ways of spending money and choose the best value",
+     "Let's rule out … / It's hard to justify … / … is by far the best value for money."
+    ],
+    [
+     "The Innovation Challenge",
+     "Judge several project ideas against clear criteria and reach a final verdict",
+     "Our criteria are … / … seems a bit far-fetched / … stands up to scrutiny / … comes out on top"
+    ]
+   ]
+  }
+ ],
+ "scripts": {
+  "0-0": {
+   "objective": "Today you will give a friend honest but tactful feedback on something they have made.",
+   "warmup": "When did someone last give you feedback on your work? How did it feel?",
+   "expressions": [
+    {
+     "w": "constructive criticism",
+     "def": "comments that are meant to help someone improve",
+     "ar": "نقد بنّاء",
+     "frame": "The most useful constructive criticism I've had was about ___."
+    },
+    {
+     "w": "come across as",
+     "def": "to seem to be; to give a certain impression",
+     "ar": "يبدو / يعطي انطباعاً بأنه",
+     "frame": "My first presentation came across as a bit ___."
+    },
+    {
+     "w": "a bit on the … side",
+     "def": "a polite way of saying 'slightly too …'",
+     "ar": "يميل قليلاً إلى",
+     "frame": "The music in that video is a bit on the ___ side."
+    },
+    {
+     "w": "I'm not entirely sure that",
+     "def": "a soft way of saying that you doubt something",
+     "ar": "لست متأكداً تماماً أنّ",
+     "frame": "I'm not entirely sure that ___ works here."
+    },
+    {
+     "w": "tone down",
+     "def": "to make something less strong, bright or loud",
+     "ar": "يخفّف من حدّة",
+     "frame": "Maybe you could tone down ___."
+    },
+    {
+     "w": "spot on",
+     "def": "exactly right",
+     "ar": "دقيق تماماً / في الصميم",
+     "frame": "Your idea about ___ is spot on."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura asks her friend Lama for feedback on the poster she has made for the school's Reading Week.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Be honest, Lama. What do you think of my Reading Week poster? I'd really like some constructive criticism."
+     },
+     {
+      "s": "Lama",
+      "t": "Well, the photos are spot on. The bright orange, though, comes across as a bit loud to me."
+     },
+     {
+      "s": "Noura",
+      "t": "Really? I thought it would catch people's attention."
+     },
+     {
+      "s": "Lama",
+      "t": "It does, but it seems to pull your eyes away from the message. You could perhaps tone it down slightly."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "OK, maybe a softer orange. What about the title?"
+     },
+     {
+      "s": "Lama",
+      "t": "It's a bit on the small side. I'm not entirely sure that people will see it from the back of the hall."
+     },
+     {
+      "s": "Noura",
+      "t": "Fair enough. I'll make it bigger. Anything else?"
+     },
+     {
+      "s": "Lama",
+      "t": "Not really. On the whole, it's a really eye-catching poster."
+     }
+    ],
+    "focus": "I'm not entirely sure that people will see it from the back of the hall.",
+    "qs": [
+     "What does Lama like about the poster?",
+     "What two changes does Lama suggest?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your friend has made a short video for the school science fair and asks for your honest opinion. You like it, but some parts could be better. Give feedback tactfully.",
+    "prompts": [
+     {
+      "q": "So, what did you think of my video? Be honest!",
+      "hint": "Start with something positive, then soften one criticism with 'a bit' or 'slightly'."
+     },
+     {
+      "q": "Is the music OK? I chose it myself.",
+      "hint": "Give a gentle opinion with 'It seems …' or 'a bit on the … side'."
+     },
+     {
+      "q": "What would you change if it were your video?",
+      "hint": "Suggest one change softly with 'You could perhaps …' or 'tone down'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: The Feedback Sandwich",
+    "points": [
+     "Many teachers and coaches use a 'feedback sandwich': praise, then criticism, then praise again.",
+     "The idea is that people accept criticism more easily when it comes with something positive.",
+     "Some experts argue that clear, direct feedback is more useful than a sandwich."
+    ],
+    "qs": [
+     "Do you prefer direct feedback or a 'sandwich'? Why?",
+     "Is it harder to criticise a friend's work or a stranger's? Why?"
+    ]
+   },
+   "exit": "Give me two sentences of tactful feedback on something a friend has made, without looking at the slides."
+  },
+  "0-1": {
+   "objective": "Today you will talk about teenagers' habits without making sweeping generalisations.",
+   "warmup": "What time do you usually go to bed on a school night?",
+   "expressions": [
+    {
+     "w": "tend to",
+     "def": "to usually do something or usually be true",
+     "ar": "يميل إلى / غالباً ما",
+     "frame": "People my age tend to ___ at weekends."
+    },
+    {
+     "w": "on the whole",
+     "def": "generally, when you think about everything",
+     "ar": "بشكل عام",
+     "frame": "On the whole, my friends ___."
+    },
+    {
+     "w": "to some extent",
+     "def": "partly, but not completely",
+     "ar": "إلى حدّ ما",
+     "frame": "I agree to some extent that ___."
+    },
+    {
+     "w": "sweeping generalisation",
+     "def": "a statement that wrongly says something is true of everyone",
+     "ar": "تعميم مطلق",
+     "frame": "Saying that all ___ is a sweeping generalisation."
+    },
+    {
+     "w": "sleep-deprived",
+     "def": "not having had enough sleep",
+     "ar": "يعاني من قلّة النوم",
+     "frame": "I feel sleep-deprived when ___."
+    },
+    {
+     "w": "stay up late",
+     "def": "to go to bed later than usual",
+     "ar": "يسهر",
+     "frame": "I usually stay up late when ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Emma and Omar are reading an article about teenagers and sleep before a class discussion.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "This article says teenagers are lazy because they sleep until noon. That's a sweeping generalisation, isn't it?"
+     },
+     {
+      "s": "Omar",
+      "t": "Definitely. It comes across as a bit unfair. Teenagers tend to sleep later, but there's a scientific reason for it."
+     },
+     {
+      "s": "Emma",
+      "t": "Right. Our body clocks seem to shift as we grow up, so we don't feel sleepy until later at night."
+     },
+     {
+      "s": "Omar",
+      "t": "That's true to some extent. But lots of us also stay up late chatting with friends."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "So, on the whole, would you say our class is sleep-deprived?"
+     },
+     {
+      "s": "Omar",
+      "t": "Quite a few of us appear to be, especially during exam week. Not everyone, though."
+     },
+     {
+      "s": "Emma",
+      "t": "Then schools that start a bit later might actually help students concentrate."
+     },
+     {
+      "s": "Omar",
+      "t": "Possibly. It seems that some schools abroad have tried it, with fairly good results."
+     }
+    ],
+    "focus": "Teenagers tend to sleep later, but there's a scientific reason for it.",
+    "qs": [
+     "What does the article claim about teenagers?",
+     "Why don't teenagers feel sleepy until later at night, according to Emma?"
+    ]
+   },
+   "speakout": {
+    "scene": "A visitor from abroad is writing a blog post about Saudi teenagers and asks you about their habits. Answer carefully, without making sweeping generalisations.",
+    "prompts": [
+     {
+      "q": "Is it true that Saudi teenagers stay up very late?",
+      "hint": "Use 'tend to' and add 'Not everyone, though'."
+     },
+     {
+      "q": "What do teenagers here usually do at weekends?",
+      "hint": "Say what many teenagers do, using 'On the whole' or 'quite a few'."
+     },
+     {
+      "q": "Would you say teenagers here are sleep-deprived?",
+      "hint": "Agree 'to some extent' and give one reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Later Starts for Teens",
+    "points": [
+     "Sleep scientists say that teenagers' body clocks naturally shift later than children's or adults'.",
+     "Some schools in the USA and the UK have experimented with starting the school day later.",
+     "Results vary, but some studies found that students were more alert in class."
+    ],
+    "qs": [
+     "Would a later start help you in class? Why or why not?",
+     "Apart from school times, what affects how well teenagers sleep?"
+    ]
+   },
+   "exit": "Make two careful generalisations about people your age, using 'tend to' and 'on the whole'."
+  },
+  "0-2": {
+   "objective": "Today you will disagree respectfully with an older relative.",
+   "warmup": "Who is the oldest person in your family, and what do you usually talk about with them?",
+   "expressions": [
+    {
+     "w": "with all due respect",
+     "def": "a polite phrase you say before you disagree",
+     "ar": "مع كامل احترامي",
+     "frame": "With all due respect, I think ___."
+    },
+    {
+     "w": "I'm not entirely convinced",
+     "def": "I am not completely sure that I agree",
+     "ar": "لست مقتنعاً تماماً",
+     "frame": "I'm not entirely convinced that ___."
+    },
+    {
+     "w": "see where you're coming from",
+     "def": "to understand why someone thinks something",
+     "ar": "أفهم وجهة نظرك",
+     "frame": "I can see where you're coming from, but ___."
+    },
+    {
+     "w": "get the wrong idea",
+     "def": "to understand a situation wrongly",
+     "ar": "يفهم الأمر خطأً",
+     "frame": "Please don't get the wrong idea; I just ___."
+    },
+    {
+     "w": "set your heart on",
+     "def": "to want something very much",
+     "ar": "يتعلّق قلبه بـ",
+     "frame": "I've set my heart on ___."
+    },
+    {
+     "w": "reassure",
+     "def": "to make someone feel less worried",
+     "ar": "يطمئن",
+     "frame": "I'd like to reassure my parents that ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "After a family lunch in the majlis, Reem's grandfather tells her what he thinks she should study at university.",
+    "p1": [
+     {
+      "s": "Grandfather",
+      "t": "Reem, your uncle is a doctor, and so was my father. You'd make an excellent doctor too."
+     },
+     {
+      "s": "Reem",
+      "t": "Thank you, Grandad. I can see where you're coming from, but I've set my heart on architecture."
+     },
+     {
+      "s": "Grandfather",
+      "t": "Architecture? Doctors help people every day. It's a far more useful job."
+     },
+     {
+      "s": "Reem",
+      "t": "With all due respect, I'm not entirely convinced that's true. Architects seem to help people in a different way."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Grandfather",
+      "t": "How so?"
+     },
+     {
+      "s": "Reem",
+      "t": "Well, good buildings tend to make people healthier and happier. Think of hospitals with lots of natural light."
+     },
+     {
+      "s": "Grandfather",
+      "t": "Hmm. I suppose I hadn't looked at it like that."
+     },
+     {
+      "s": "Reem",
+      "t": "Please don't get the wrong idea. I respect doctors enormously. I just want to reassure you that I've thought about it carefully."
+     }
+    ],
+    "focus": "With all due respect, I'm not entirely convinced that's true.",
+    "qs": [
+     "What does Reem's grandfather want her to become?",
+     "How do architects help people, according to Reem?"
+    ]
+   },
+   "speakout": {
+    "scene": "At a family gathering, an older relative says that young people should never spend money on travel and should save everything. You disagree, but you want to stay respectful.",
+    "prompts": [
+     {
+      "q": "Young people waste their money on trips. Don't you agree?",
+      "hint": "Show that you understand his view first, then disagree gently."
+     },
+     {
+      "q": "So what's the point of travelling, then?",
+      "hint": "Give one reason, softened with 'It seems to me that …'."
+     },
+     {
+      "q": "Well, in my day we never travelled!",
+      "hint": "Reassure him and end the conversation politely."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Respect in the Majlis",
+    "points": [
+     "The majlis is a traditional sitting room where families and guests meet and talk.",
+     "Younger family members often greet older guests first and serve them Arabic coffee.",
+     "Listening carefully before you speak is seen as a sign of good manners."
+    ],
+    "qs": [
+     "How do you show respect when you disagree with an older relative?",
+     "Is it easier to disagree with grandparents or with friends? Why?"
+    ]
+   },
+   "exit": "Disagree tactfully, in two sentences, with this idea: 'Teenagers shouldn't have phones until they are eighteen.'"
+  },
+  "0-3": {
+   "objective": "Today you will turn down a request tactfully and offer an alternative.",
+   "warmup": "Is it easy or hard for you to say 'no' to a friend? Why?",
+   "expressions": [
+    {
+     "w": "I'd rather not",
+     "def": "a polite way to say you don't want to do something",
+     "ar": "أفضّل ألّا",
+     "frame": "I'd rather not ___, if that's OK."
+    },
+    {
+     "w": "put someone on the spot",
+     "def": "to make someone answer a difficult question immediately",
+     "ar": "يحرج شخصاً بطلب مفاجئ",
+     "frame": "I hate being put on the spot when ___."
+    },
+    {
+     "w": "turn down",
+     "def": "to say no to an offer or request",
+     "ar": "يرفض",
+     "frame": "I once had to turn down ___."
+    },
+    {
+     "w": "be in a tricky position",
+     "def": "to be in a difficult situation",
+     "ar": "يكون في موقف صعب",
+     "frame": "I'd be in a tricky position if ___."
+    },
+    {
+     "w": "make it up to you",
+     "def": "to do something nice because you disappointed someone",
+     "ar": "أعوّضك",
+     "frame": "I'll make it up to you by ___."
+    },
+    {
+     "w": "lend a hand",
+     "def": "to help someone",
+     "ar": "يمدّ يد العون",
+     "frame": "I'm happy to lend a hand with ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Before class, Sam asks his friend Faisal if he can copy his maths homework.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Faisal, I didn't manage to finish the maths homework. Could I have a quick look at yours?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Ah, you've put me on the spot a bit. I'd rather not, if that's OK."
+     },
+     {
+      "s": "Sam",
+      "t": "Come on, it'll only take five minutes!"
+     },
+     {
+      "s": "Faisal",
+      "t": "I know, but if Mr Ali noticed, we'd both be in a tricky position. It seems a bit risky to me."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "Fair enough. I just don't understand question four at all."
+     },
+     {
+      "s": "Faisal",
+      "t": "Well, I'm happy to lend a hand with that. Shall we go through it together at break?"
+     },
+     {
+      "s": "Sam",
+      "t": "That would be great. Thanks, and sorry for putting you on the spot. I'll make it up to you."
+     },
+     {
+      "s": "Faisal",
+      "t": "No problem. I hated turning you down, but this way you'll actually understand it."
+     }
+    ],
+    "focus": "I'd rather not, if that's OK.",
+    "qs": [
+     "What does Sam ask Faisal for?",
+     "What does Faisal offer to do instead?"
+    ]
+   },
+   "speakout": {
+    "scene": "A friend wants you to spend the whole weekend helping with their YouTube channel, but you have a family wedding and a test on Sunday. Say no tactfully.",
+    "prompts": [
+     {
+      "q": "Can you come over this weekend to film with me?",
+      "hint": "Thank them, then decline softly with 'I'd love to, but …'."
+     },
+     {
+      "q": "Oh, come on! Can't you skip the wedding?",
+      "hint": "Explain why it's difficult, using 'I'm afraid …' or 'I'd be in a tricky position'."
+     },
+     {
+      "q": "So when can you help me?",
+      "hint": "Offer an alternative and promise to make it up to them."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Saying No in Japan",
+    "points": [
+     "In Japan, people often avoid saying a direct 'no' to keep conversations polite.",
+     "Instead, they may say that something is 'a little difficult', which usually means no.",
+     "Visitors sometimes misunderstand this and think that the answer is still 'maybe'."
+    ],
+    "qs": [
+     "Do people in Saudi Arabia usually say 'no' directly? Give an example.",
+     "When is it better to be direct rather than tactful?"
+    ]
+   },
+   "exit": "A friend asks to borrow your new headphones for a week. Say no tactfully in two sentences."
+  },
+  "0-4": {
+   "objective": "Today you will raise a problem with a teammate tactfully and ask for a change.",
+   "warmup": "Do you prefer working alone or in a team? Why?",
+   "expressions": [
+    {
+     "w": "pull your weight",
+     "def": "to do your fair share of the work",
+     "ar": "يقوم بنصيبه من العمل",
+     "frame": "In a team, everyone should pull their weight, especially when ___."
+    },
+    {
+     "w": "fall behind",
+     "def": "to make less progress than planned",
+     "ar": "يتأخّر عن الخطة",
+     "frame": "We fell behind with ___."
+    },
+    {
+     "w": "I wonder if",
+     "def": "a soft way to begin a question or request",
+     "ar": "أتساءل إن كان",
+     "frame": "I wonder if you could ___."
+    },
+    {
+     "w": "bring something up",
+     "def": "to start talking about a subject",
+     "ar": "يطرح موضوعاً",
+     "frame": "I'd like to bring up ___ at our next meeting."
+    },
+    {
+     "w": "awkward",
+     "def": "making you feel uncomfortable or embarrassed",
+     "ar": "محرج",
+     "frame": "It feels awkward when ___."
+    },
+    {
+     "w": "deadline",
+     "def": "the time by which you must finish something",
+     "ar": "الموعد النهائي",
+     "frame": "Our deadline for ___ is next week."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam, Ziad and Omar are doing a science project together. Ziad hasn't done his part, so Sam decides to talk to him.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Ziad, have you got a minute? There's something I'd like to bring up about our project."
+     },
+     {
+      "s": "Ziad",
+      "t": "Sure. Is everything OK?"
+     },
+     {
+      "s": "Sam",
+      "t": "Well, this is a bit awkward, but it seems that we've fallen behind with the slides, and the deadline is on Thursday."
+     },
+     {
+      "s": "Ziad",
+      "t": "Ah. Yes, I haven't started my part yet. I've had football training every evening."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "I understand. But I'm not entirely sure that Omar and I can finish everything alone. I wonder if you could do your slides by Tuesday?"
+     },
+     {
+      "s": "Ziad",
+      "t": "That's fair. I know I haven't been pulling my weight lately."
+     },
+     {
+      "s": "Sam",
+      "t": "On the whole, you've been a great teammate. It's just these last two weeks."
+     },
+     {
+      "s": "Ziad",
+      "t": "Thanks for saying it so kindly. I'll send you my slides by Tuesday evening."
+     }
+    ],
+    "focus": "I wonder if you could do your slides by Tuesday?",
+    "qs": [
+     "Why hasn't Ziad started his part of the project?",
+     "When will Ziad send his slides?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are in a group of three organising a charity bake sale at school. One member hasn't done the shopping or the posters they promised. Raise the problem tactfully.",
+    "prompts": [
+     {
+      "q": "Hi! What did you want to talk to me about?",
+      "hint": "Bring up the problem gently with 'This is a bit awkward, but …'."
+     },
+     {
+      "q": "Sorry, I've been really busy. Is it a big deal?",
+      "hint": "Explain the effect on the team, softened with 'It seems that …'."
+     },
+     {
+      "q": "OK, what do you want me to do?",
+      "hint": "Make a polite request with 'I wonder if you could …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: The Ringelmann Effect",
+    "points": [
+     "Over a hundred years ago, a French engineer called Max Ringelmann studied people pulling on a rope.",
+     "He found that each person tended to pull less hard as the group got bigger.",
+     "Psychologists now call this 'social loafing', and it can happen in school projects too."
+    ],
+    "qs": [
+     "Why do you think some people work less hard in big groups?",
+     "How could teachers make group projects fairer?"
+    ]
+   },
+   "exit": "Tell a teammate tactfully, in two sentences, that they need to do more of the work."
+  },
+  "0-5": {
+   "objective": "Today you will give tactful advice on tricky situations, using all the softening language from this unit.",
+   "warmup": "Who do you go to when you need advice about a tricky situation?",
+   "expressions": [
+    {
+     "w": "tactful",
+     "def": "careful not to upset or embarrass people",
+     "ar": "لبق / دبلوماسي",
+     "frame": "A tactful way to tell a friend ___ is …"
+    },
+    {
+     "w": "blunt",
+     "def": "saying what you think without trying to be polite",
+     "ar": "صريح بشكل جارح",
+     "frame": "Sometimes I'm too blunt when ___."
+    },
+    {
+     "w": "hurt someone's feelings",
+     "def": "to make someone sad or upset",
+     "ar": "يجرح مشاعر شخص",
+     "frame": "I'd hate to hurt my friend's feelings by ___."
+    },
+    {
+     "w": "beat around the bush",
+     "def": "to avoid saying something directly",
+     "ar": "يلفّ ويدور",
+     "frame": "People beat around the bush when ___."
+    },
+    {
+     "w": "strike a balance",
+     "def": "to find a good middle point between two things",
+     "ar": "يوازن بين",
+     "frame": "It's hard to strike a balance between ___ and ___."
+    },
+    {
+     "w": "get your message across",
+     "def": "to make people understand what you mean",
+     "ar": "يوصل رسالته",
+     "frame": "The best way to get your message across is ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Dana and Hessa present 'Ask Dana', the advice slot on their school radio. Today a student has sent in a tricky problem.",
+    "p1": [
+     {
+      "s": "Dana",
+      "t": "Welcome back! Today's message says: 'My best friend wants to read her very long poem on National Day. What should I tell her?'"
+     },
+     {
+      "s": "Hessa",
+      "t": "Tricky! If you're too blunt, you might hurt her feelings. But if you beat around the bush, she won't understand."
+     },
+     {
+      "s": "Dana",
+      "t": "Exactly. You need to strike a balance. Start with what you genuinely like about the poem."
+     },
+     {
+      "s": "Hessa",
+      "t": "Then you could perhaps say: 'It seems a little long for a short event. I wonder if you could choose your best verses?'"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Dana",
+      "t": "That's tactful. It doesn't come across as criticism; it sounds like advice."
+     },
+     {
+      "s": "Hessa",
+      "t": "And she still gets to perform, which is what really matters to her."
+     },
+     {
+      "s": "Dana",
+      "t": "So, to our listener: be kind, but be clear. That's how you get your message across."
+     },
+     {
+      "s": "Hessa",
+      "t": "Keep your messages coming, everyone. See you next week!"
+     }
+    ],
+    "focus": "It seems a little long for a short event.",
+    "qs": [
+     "What problem does the listener have?",
+     "What does Hessa suggest the friend should do with the poem?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are the advisor on the school radio. The teacher will read out three listeners' problems. Give each listener tactful advice.",
+    "prompts": [
+     {
+      "q": "My cousin always arrives an hour late when we meet. How can I tell him it annoys me?",
+      "hint": "Suggest a tactful sentence using 'I wonder if …' or 'It seems that …'."
+     },
+     {
+      "q": "My friend's new haircut doesn't suit him, and he asked my opinion. Help!",
+      "hint": "Advise them to strike a balance: one positive comment plus one soft comment."
+     },
+     {
+      "q": "My brother's science project has a big mistake. Should I tell him?",
+      "hint": "Say whether to be blunt or tactful, and give the exact words to use."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: British Understatement",
+    "points": [
+     "British people are famous for understatement: saying less than they really mean.",
+     "For example, 'not bad' can mean 'very good', and 'a bit of a problem' can mean a serious one.",
+     "This style can confuse visitors who expect people to say exactly what they mean."
+    ],
+    "qs": [
+     "Can you think of an Arabic expression that sounds softer than what it really means?",
+     "Is understatement useful, or does it cause misunderstandings?"
+    ]
+   },
+   "exit": "Give me tactful advice, in two sentences, for someone whose friend always talks too loudly in the library."
+  },
+  "1-0": {
+   "objective": "Today you will interrupt politely to ask a question or add a point.",
+   "warmup": "In your family, who talks the most at dinner? Is it easy to get a word in?",
+   "expressions": [
+    {
+     "w": "get a word in",
+     "def": "to manage to speak when others are talking a lot",
+     "ar": "يجد فرصة للكلام",
+     "frame": "It's hard to get a word in when ___."
+    },
+    {
+     "w": "Sorry to interrupt, but",
+     "def": "a polite way to start speaking while someone is talking",
+     "ar": "آسف على المقاطعة، لكن",
+     "frame": "Sorry to interrupt, but ___?"
+    },
+    {
+     "w": "Can I just add",
+     "def": "a polite way to join in with an extra point",
+     "ar": "هل يمكنني أن أضيف",
+     "frame": "Can I just add that ___?"
+    },
+    {
+     "w": "come in here",
+     "def": "to join a discussion at this moment",
+     "ar": "أتدخّل هنا",
+     "frame": "Could I come in here and say ___?"
+    },
+    {
+     "w": "talk over someone",
+     "def": "to speak loudly while someone else is talking",
+     "ar": "يتكلّم فوق كلام غيره",
+     "frame": "It's rude to talk over ___."
+    },
+    {
+     "w": "chip in",
+     "def": "to add a comment or help with something",
+     "ar": "يشارك بتعليق أو مساهمة",
+     "frame": "My little brother always chips in when ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Turki, Omar and Sam are planning a winter camping trip in the desert. Turki is doing most of the talking.",
+    "p1": [
+     {
+      "s": "Turki",
+      "t": "So, we'll leave at four, set up the tent, light the fire, cook the kabsa, and after that we'll—"
+     },
+     {
+      "s": "Omar",
+      "t": "Sorry to interrupt, but who's bringing the tent? Last time we forgot it."
+     },
+     {
+      "s": "Turki",
+      "t": "Good point. My uncle has a big one. Anyway, after dinner we'll—"
+     },
+     {
+      "s": "Sam",
+      "t": "Can I just add something? The weather app says it might get really cold after midnight."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Turki",
+      "t": "Ah. OK, so everyone needs warm blankets. As I was saying, after dinner we'll watch the stars."
+     },
+     {
+      "s": "Omar",
+      "t": "Could I come in here? Last time we all talked over each other and nobody decided anything."
+     },
+     {
+      "s": "Sam",
+      "t": "True! Let's take turns this time. I'll chip in with snacks and my telescope."
+     },
+     {
+      "s": "Turki",
+      "t": "Deal. And next time, I'll let you two get a word in!"
+     }
+    ],
+    "focus": "Sorry to interrupt, but who's bringing the tent?",
+    "qs": [
+     "Why does Omar interrupt Turki?",
+     "What problem does Sam mention about the weather?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are in a group planning the end-of-year class trip. The teacher plays a classmate who talks non-stop. Join in politely.",
+    "prompts": [
+     {
+      "q": "So we'll go to the water park, then the mall, then the museum, then—",
+      "hint": "Interrupt politely with 'Sorry to interrupt, but …' and ask a question."
+     },
+     {
+      "q": "Oh, right. Anyway, the bus will leave at six in the morning and—",
+      "hint": "Use 'Can I just add …?' to add a point about time or cost."
+     },
+     {
+      "q": "OK, any other ideas?",
+      "hint": "Chip in with one suggestion and give a reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Taking Turns",
+    "points": [
+     "Researchers have found that, in many languages, the gap between speakers is usually less than a second.",
+     "In some cultures, speaking at the same time shows interest; in others, it seems rude.",
+     "In some places, a short pause before replying shows that you are thinking carefully."
+    ],
+    "qs": [
+     "In your family, do people interrupt each other a lot? Is that rude or friendly?",
+     "How can you tell when it's your turn to speak?"
+    ]
+   },
+   "exit": "Imagine I'm talking non-stop about my holiday. Interrupt me politely and add a point."
+  },
+  "1-1": {
+   "objective": "Today you will keep your turn politely when someone interrupts you.",
+   "warmup": "How do you feel when someone doesn't let you finish what you're saying?",
+   "expressions": [
+    {
+     "w": "If I could just finish",
+     "def": "a polite way to keep speaking when someone interrupts",
+     "ar": "لو سمحت لي أن أُكمل",
+     "frame": "If I could just finish, ___."
+    },
+    {
+     "w": "As I was saying",
+     "def": "a phrase to continue after an interruption",
+     "ar": "كما كنت أقول",
+     "frame": "As I was saying, ___."
+    },
+    {
+     "w": "hold on a second",
+     "def": "wait a moment",
+     "ar": "انتظر لحظة",
+     "frame": "Hold on a second, I haven't ___."
+    },
+    {
+     "w": "lose your train of thought",
+     "def": "to forget what you were going to say",
+     "ar": "يفقد تسلسل أفكاره",
+     "frame": "I lose my train of thought when ___."
+    },
+    {
+     "w": "get to the point",
+     "def": "to say the most important thing without wasting time",
+     "ar": "يدخل في صلب الموضوع",
+     "frame": "Please get to the point about ___."
+    },
+    {
+     "w": "bear with me",
+     "def": "please be patient with me for a moment",
+     "ar": "اصبر عليّ قليلاً",
+     "frame": "Bear with me while I ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Lama is presenting her ideas for the family's summer trip. Her younger brother Yousef keeps interrupting.",
+    "p1": [
+     {
+      "s": "Lama",
+      "t": "OK, everyone. I've looked at three places for our summer trip. The first is Taif, because it's cooler and—"
+     },
+     {
+      "s": "Yousef",
+      "t": "Taif again? We went there last year!"
+     },
+     {
+      "s": "Lama",
+      "t": "Hold on a second, Yousef. If I could just finish, I've got two other ideas too."
+     },
+     {
+      "s": "Mum",
+      "t": "Go on, Lama. Bear with her, Yousef."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Lama",
+      "t": "Thanks. As I was saying, Taif is cooler. The second option is Al-Baha, with its forests and— sorry, I've lost my train of thought."
+     },
+     {
+      "s": "Yousef",
+      "t": "You were talking about forests. Can you get to the point? What's the third place?"
+     },
+     {
+      "s": "Lama",
+      "t": "Just one more thing about Al-Baha: it's usually quieter than Taif. And the third is the Red Sea coast."
+     },
+     {
+      "s": "Yousef",
+      "t": "The Red Sea! Now you're talking. Sorry I kept interrupting."
+     }
+    ],
+    "focus": "If I could just finish, I've got two other ideas too.",
+    "qs": [
+     "Why does Yousef interrupt Lama at first?",
+     "What are Lama's three ideas for the trip?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are presenting your idea for a class charity event to a small group. One classmate keeps interrupting you. Keep your turn politely.",
+    "prompts": [
+     {
+      "q": "Wait, a car wash? That's a terrible idea!",
+      "hint": "Keep your turn with 'If I could just finish, …'."
+     },
+     {
+      "q": "But who's going to wash all the cars?",
+      "hint": "Ask them to wait with 'Bear with me' and continue with 'As I was saying, …'."
+     },
+     {
+      "q": "OK, OK. What's the plan, then?",
+      "hint": "Get to the point: explain your idea in two clear sentences."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Who Has the Floor?",
+    "points": [
+     "In formal meetings, the chairperson decides who 'has the floor', meaning who may speak.",
+     "Some Native American groups used a 'talking stick': only the person holding it could speak.",
+     "Some teachers use a similar idea, passing a ball or object around during class discussions."
+    ],
+    "qs": [
+     "Would a 'talking stick' work in your family or class? Why?",
+     "Is it ever OK to interrupt someone who is speaking? When?"
+    ]
+   },
+   "exit": "Imagine I keep interrupting you while you describe your weekend. Keep your turn politely in two sentences."
+  },
+  "1-2": {
+   "objective": "Today you will invite quieter people to share their ideas in a discussion.",
+   "warmup": "In group discussions, are you usually a talker or a listener?",
+   "expressions": [
+    {
+     "w": "What's your take on",
+     "def": "what is your opinion about",
+     "ar": "ما رأيك في",
+     "frame": "What's your take on ___?"
+    },
+    {
+     "w": "We haven't heard from",
+     "def": "a way to invite a quiet person to speak",
+     "ar": "لم نسمع رأي",
+     "frame": "We haven't heard from ___ yet."
+    },
+    {
+     "w": "draw someone out",
+     "def": "to help a shy person talk more",
+     "ar": "يشجّع الخجول على الكلام",
+     "frame": "A good teacher can draw out ___."
+    },
+    {
+     "w": "speak up",
+     "def": "to say what you think, especially when it is difficult",
+     "ar": "يعبّر عن رأيه بجرأة",
+     "frame": "I wish I spoke up more in ___."
+    },
+    {
+     "w": "dominate",
+     "def": "to control a conversation so that others can't speak",
+     "ar": "يهيمن على",
+     "frame": "It's annoying when one person dominates ___."
+    },
+    {
+     "w": "a fresh pair of eyes",
+     "def": "a new person who may notice new things",
+     "ar": "نظرة جديدة",
+     "frame": "A fresh pair of eyes helped me with ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Hessa is chairing a student council meeting about improving the school library. Lama, a new member, hasn't said anything yet.",
+    "p1": [
+     {
+      "s": "Hessa",
+      "t": "Right, Noura has shared lots of great ideas about the library. But we haven't heard from Lama yet."
+     },
+     {
+      "s": "Lama",
+      "t": "Oh, I'm fine, thanks. I don't really have much to say."
+     },
+     {
+      "s": "Hessa",
+      "t": "You're new here, so you've got a fresh pair of eyes. What's your take on the library?"
+     },
+     {
+      "s": "Lama",
+      "t": "Well, honestly, it feels a bit dark. Maybe that's why students don't stay there long."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "That's a great point! Sorry, I've been dominating the meeting. Would you like to say more, Lama?"
+     },
+     {
+      "s": "Lama",
+      "t": "Can I just add one more thing? We could use bean bags instead of hard chairs."
+     },
+     {
+      "s": "Hessa",
+      "t": "I love that. See? You should speak up more often."
+     },
+     {
+      "s": "Noura",
+      "t": "Hessa, you're really good at drawing people out. Let's add both ideas to the list."
+     }
+    ],
+    "focus": "What's your take on the library?",
+    "qs": [
+     "Why does Hessa think Lama's opinion is useful?",
+     "What two ideas does Lama suggest?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are leading a group discussion about how to make school breaks more fun. One classmate is talking a lot, and another hasn't said anything. Manage the discussion.",
+    "prompts": [
+     {
+      "q": "And another thing: we should have football every day, and music, and games…",
+      "hint": "Thank them, then invite the quiet student with 'We haven't heard from … yet'."
+     },
+     {
+      "q": "(as the quiet student) Oh… I don't know. I'm not sure my idea is any good.",
+      "hint": "Encourage them with 'What's your take on …?' and a kind comment."
+     },
+     {
+      "q": "Shall we just vote now?",
+      "hint": "Check that everyone has spoken first, e.g. 'Before we vote, would anyone like to add anything?'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Quiet Strengths",
+    "points": [
+     "In her book 'Quiet', the writer Susan Cain argues that schools and workplaces often favour talkative people.",
+     "She suggests that quiet people often think carefully before they speak.",
+     "Some teachers now give students thinking time before anyone answers a question."
+    ],
+    "qs": [
+     "How can a group make sure that quiet members are heard?",
+     "Is it always good to speak up? When is it better to listen?"
+    ]
+   },
+   "exit": "You are chairing a meeting. Invite two quiet people to share their opinions."
+  },
+  "1-3": {
+   "objective": "Today you will bring a discussion back to the main topic when it goes off track.",
+   "warmup": "When you chat with friends, do you often end up talking about something completely different?",
+   "expressions": [
+    {
+     "w": "Going back to",
+     "def": "a phrase to return to an earlier point",
+     "ar": "بالعودة إلى",
+     "frame": "Going back to what you said about ___, …"
+    },
+    {
+     "w": "get sidetracked",
+     "def": "to start talking about something less important",
+     "ar": "ينحرف عن الموضوع",
+     "frame": "We always get sidetracked when ___."
+    },
+    {
+     "w": "off the point",
+     "def": "not connected to the main subject",
+     "ar": "خارج الموضوع",
+     "frame": "Talking about ___ is a bit off the point."
+    },
+    {
+     "w": "Where were we?",
+     "def": "a question to continue after an interruption",
+     "ar": "أين كنّا؟",
+     "frame": "Where were we? Oh yes, we were talking about ___."
+    },
+    {
+     "w": "on track",
+     "def": "following the plan or the main topic",
+     "ar": "على المسار الصحيح",
+     "frame": "To keep a meeting on track, we should ___."
+    },
+    {
+     "w": "pick up on",
+     "def": "to return to and discuss something someone said",
+     "ar": "يتناول نقطة ذكرها أحدهم",
+     "frame": "I'd like to pick up on ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Fahad, Omar and Sam from the astronomy club are planning a stargazing night, but the discussion keeps drifting.",
+    "p1": [
+     {
+      "s": "Fahad",
+      "t": "So, for the stargazing night, we need to choose a date, a place and who brings the telescopes."
+     },
+     {
+      "s": "Omar",
+      "t": "Did you see that documentary about Mars? Apparently there might be water under the ice."
+     },
+     {
+      "s": "Sam",
+      "t": "Yes! Which reminds me, we should go when there's no moon. Anyway, there was a part about rockets landing by themselves—"
+     },
+     {
+      "s": "Fahad",
+      "t": "Sorry, guys, we're getting sidetracked. That's interesting, but it's a bit off the point."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Omar",
+      "t": "Fair enough. Where were we?"
+     },
+     {
+      "s": "Fahad",
+      "t": "Going back to what Sam said about the moon, that's a good idea. A night with no moon means darker skies."
+     },
+     {
+      "s": "Sam",
+      "t": "Exactly. And to pick up on Omar's point, maybe we could look at Mars that night too."
+     },
+     {
+      "s": "Fahad",
+      "t": "Perfect, now that's on topic! OK, let's keep this on track and choose a date."
+     }
+    ],
+    "focus": "Going back to what Sam said about the moon, that's a good idea.",
+    "qs": [
+     "Why does Fahad stop Omar and Sam?",
+     "Why does Sam want to go on a night with no moon?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are leading a meeting of the school environment club to plan a tree-planting day. The discussion keeps going off topic. Bring it back.",
+    "prompts": [
+     {
+      "q": "Talking of trees, my cousin climbed a huge tree in Taif last week! He was so scared!",
+      "hint": "Say politely that this is a bit off the point."
+     },
+     {
+      "q": "Sorry! Where were we?",
+      "hint": "Use 'Going back to …' and remind the group of the main question."
+     },
+     {
+      "q": "I still think we should plant palm trees, like I said at the start.",
+      "hint": "Pick up on their earlier point and say what you think of it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Desert Skies",
+    "points": [
+     "Deserts are excellent places to see stars because there is little light pollution and there are few clouds.",
+     "Desert stargazing trips have become a popular weekend activity in Saudi Arabia.",
+     "Many star names used today, such as Aldebaran and Altair, come from Arabic."
+    ],
+    "qs": [
+     "Have you ever been stargazing? What did you see?",
+     "Why do you think so many star names come from Arabic?"
+    ]
+   },
+   "exit": "We're discussing exam tips, and I start talking about football. Bring me back to the topic in two sentences."
+  },
+  "1-4": {
+   "objective": "Today you will build on other people's ideas in a class discussion.",
+   "warmup": "How do you usually get to school, and how long does it take?",
+   "expressions": [
+    {
+     "w": "To add to what … said",
+     "def": "a phrase to add an extra point to someone's idea",
+     "ar": "إضافةً لما قاله",
+     "frame": "To add to what ___ said, …"
+    },
+    {
+     "w": "build on",
+     "def": "to use an idea as a base for more ideas",
+     "ar": "يبني على",
+     "frame": "I'd like to build on ___'s idea."
+    },
+    {
+     "w": "tie in with",
+     "def": "to be connected to something",
+     "ar": "يرتبط بـ",
+     "frame": "That ties in with ___."
+    },
+    {
+     "w": "go even further",
+     "def": "to say something stronger than the last speaker",
+     "ar": "يذهب أبعد من ذلك",
+     "frame": "I'd go even further and say that ___."
+    },
+    {
+     "w": "a knock-on effect",
+     "def": "an indirect result of something",
+     "ar": "أثر غير مباشر",
+     "frame": "One knock-on effect of ___ is …"
+    },
+    {
+     "w": "commute",
+     "def": "the journey to work or school every day",
+     "ar": "التنقّل اليومي",
+     "frame": "My daily commute takes ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Ms Sarah's class is discussing how the Riyadh Metro has changed life in the city.",
+    "p1": [
+     {
+      "s": "Ms Sarah",
+      "t": "So, how has the Riyadh Metro changed life in the city? Noura?"
+     },
+     {
+      "s": "Noura",
+      "t": "Well, my dad's commute is much easier. He reads on the train instead of sitting in traffic."
+     },
+     {
+      "s": "Reem",
+      "t": "To add to what Noura said, fewer cars should mean less pollution as well."
+     },
+     {
+      "s": "Ms Sarah",
+      "t": "Good. Does that tie in with anything else we've studied?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "Yes, it ties in with the Saudi Green Initiative. Cutting emissions is one of its aims."
+     },
+     {
+      "s": "Reem",
+      "t": "And I'd go even further and say there's a knock-on effect on people's health."
+     },
+     {
+      "s": "Ms Sarah",
+      "t": "Can you build on that, Noura?"
+     },
+     {
+      "s": "Noura",
+      "t": "Sure. If people walk to and from the stations, they get more exercise without even noticing."
+     }
+    ],
+    "focus": "To add to what Noura said, fewer cars should mean less pollution as well.",
+    "qs": [
+     "How has the metro changed Noura's dad's commute?",
+     "What knock-on effect does Reem mention?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your class is discussing how to make your neighbourhood better for young people. The teacher plays a classmate. Build on their ideas.",
+    "prompts": [
+     {
+      "q": "I think we need more parks with sports areas.",
+      "hint": "Add to their idea with 'To add to what you said, …'."
+     },
+     {
+      "q": "Parks are good, but people won't go if it's too hot.",
+      "hint": "Build on their point and suggest a solution, such as trees or evening lighting."
+     },
+     {
+      "q": "Do you think better parks would change anything else?",
+      "hint": "Mention a knock-on effect, starting with 'I'd go even further and say …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: The Riyadh Metro",
+    "points": [
+     "The Riyadh Metro opened to passengers in stages, starting at the end of 2024.",
+     "It has six lines and is one of the biggest metro projects in the world.",
+     "Some of its stations were designed by famous international architects."
+    ],
+    "qs": [
+     "How do people usually get around your city? Would a metro help?",
+     "What knock-on effects can a new metro have on a city?"
+    ]
+   },
+   "exit": "I'll say: 'Schools should have more sports clubs.' Build on my idea in two sentences."
+  },
+  "1-5": {
+   "objective": "Today you will take part in a panel discussion, managing turns from start to finish.",
+   "warmup": "Have you ever watched or taken part in a panel discussion? What was it about?",
+   "expressions": [
+    {
+     "w": "have the floor",
+     "def": "to have the right to speak now",
+     "ar": "له الكلمة",
+     "frame": "Thank you, ___. You have the floor."
+    },
+    {
+     "w": "keep it brief",
+     "def": "to speak for a short time only",
+     "ar": "يختصر",
+     "frame": "Please keep it brief because ___."
+    },
+    {
+     "w": "make a valid point",
+     "def": "to say something reasonable and sensible",
+     "ar": "يطرح نقطة وجيهة",
+     "frame": "___ made a valid point about …"
+    },
+    {
+     "w": "wrap up",
+     "def": "to finish something such as a meeting",
+     "ar": "يختم / ينهي",
+     "frame": "Let's wrap up by ___."
+    },
+    {
+     "w": "chair a discussion",
+     "def": "to lead a discussion and decide who speaks",
+     "ar": "يدير النقاش",
+     "frame": "If I chaired a discussion, I'd make sure ___."
+    },
+    {
+     "w": "voluntary",
+     "def": "done because you want to, not because you must",
+     "ar": "تطوّعي / اختياري",
+     "frame": "I think ___ should be voluntary."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem is chairing a panel on the school radio. The question is whether volunteering should be compulsory for students.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Welcome to our panel. Today's question: should volunteering be compulsory for students? Dana, you have the floor. Please keep it brief."
+     },
+     {
+      "s": "Dana",
+      "t": "Thanks. I think it should stay voluntary. If people are forced, they won't really care about the work."
+     },
+     {
+      "s": "Lama",
+      "t": "Sorry to interrupt, but isn't that true of homework too? We still have to do it."
+     },
+     {
+      "s": "Dana",
+      "t": "If I could just finish, homework is for our own learning, but volunteering should come from the heart."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "You both make a valid point. Lama, would you like to say more?"
+     },
+     {
+      "s": "Lama",
+      "t": "Yes. Going back to Dana's point, many students never try volunteering simply because nobody asks them. A few required hours could change that."
+     },
+     {
+      "s": "Dana",
+      "t": "That's fair. Maybe a few hours, but students should choose the activity themselves."
+     },
+     {
+      "s": "Reem",
+      "t": "So, a compromise! Let's wrap up there. Chairing this discussion was easier than I thought. Thank you both!"
+     }
+    ],
+    "focus": "Sorry to interrupt, but isn't that true of homework too?",
+    "qs": [
+     "Why does Dana think volunteering should stay voluntary?",
+     "What compromise do the speakers reach?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are on a school radio panel discussing 'Should students be allowed to use AI for homework?' The teacher plays both the chair and another panellist.",
+    "prompts": [
+     {
+      "q": "(as the chair) Welcome! You have the floor. What's your view?",
+      "hint": "Give your view briefly with one reason."
+     },
+     {
+      "q": "(as the other panellist) Sorry, but AI just does the work for you, so—",
+      "hint": "Keep your turn politely, then finish your point."
+     },
+     {
+      "q": "(as the chair) Before we wrap up, can you respond to the other panellist?",
+      "hint": "Go back to their point and add your own idea with 'Going back to …' or 'To add to that, …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: A Million Volunteers",
+    "points": [
+     "One of the goals of Saudi Vision 2030 was to have one million volunteers in the country.",
+     "Young Saudis volunteer at events and festivals, and help visitors in Makkah and Madinah.",
+     "Volunteering can build skills such as teamwork, communication and leadership."
+    ],
+    "qs": [
+     "What kind of volunteer work would you enjoy?",
+     "Should schools reward students for volunteering? Why or why not?"
+    ]
+   },
+   "exit": "Imagine you are chairing a discussion. Give someone the floor, then wrap up the discussion."
+  },
+  "2-0": {
+   "objective": "Today you will clear up a misunderstanding by explaining what you really meant.",
+   "warmup": "Have you ever said something that a friend understood in the wrong way?",
+   "expressions": [
+    {
+     "w": "What I meant was",
+     "def": "a phrase to explain your real meaning",
+     "ar": "ما قصدته هو",
+     "frame": "What I meant was that ___."
+    },
+    {
+     "w": "get the wrong end of the stick",
+     "def": "to understand something completely wrongly",
+     "ar": "يفهم الكلام على غير وجهه",
+     "frame": "I think you got the wrong end of the stick about ___."
+    },
+    {
+     "w": "take something the wrong way",
+     "def": "to feel upset by something that wasn't meant badly",
+     "ar": "يفهم الكلام بشكل سلبي",
+     "frame": "Please don't take this the wrong way, but ___."
+    },
+    {
+     "w": "clear the air",
+     "def": "to talk about a problem so that bad feelings end",
+     "ar": "يصفّي الأجواء",
+     "frame": "We needed to clear the air after ___."
+    },
+    {
+     "w": "offended",
+     "def": "upset because you think someone was rude to you",
+     "ar": "مستاء / مجروح",
+     "frame": "I felt offended when ___."
+    },
+    {
+     "w": "make it clear",
+     "def": "to explain something so that nobody misunderstands",
+     "ar": "يوضّح",
+     "frame": "I want to make it clear that ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "The day after a family dinner, Ahmed tells his friend Faisal that something he said about the food upset him.",
+    "p1": [
+     {
+      "s": "Ahmed",
+      "t": "Faisal, can I ask you something? Yesterday you said my mum's kabsa was 'really different'. I was a bit offended, to be honest."
+     },
+     {
+      "s": "Faisal",
+      "t": "Oh no! I think you got the wrong end of the stick. What I meant was that it was different in a good way."
+     },
+     {
+      "s": "Ahmed",
+      "t": "Really? It didn't sound like a compliment."
+     },
+     {
+      "s": "Faisal",
+      "t": "It wasn't the taste that surprised me; it was the spices. I'd never tried dried lemon in kabsa before."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ahmed",
+      "t": "Ah, that's my mum's secret ingredient! Sorry, I took it the wrong way."
+     },
+     {
+      "s": "Faisal",
+      "t": "No, it's my fault. I should have made it clear that I loved it. I had three plates!"
+     },
+     {
+      "s": "Ahmed",
+      "t": "Ha! Well, I'm glad we've cleared the air."
+     },
+     {
+      "s": "Faisal",
+      "t": "Me too. And what I'd really like now is the recipe for my mum!"
+     }
+    ],
+    "focus": "What I meant was that it was different in a good way.",
+    "qs": [
+     "Why was Ahmed offended?",
+     "What surprised Faisal about the kabsa?"
+    ]
+   },
+   "speakout": {
+    "scene": "You told a classmate that their presentation was 'interesting'. Now they think you were being sarcastic. Clear up the misunderstanding.",
+    "prompts": [
+     {
+      "q": "Why did you say my presentation was 'interesting'? Was it boring?",
+      "hint": "Explain what you really meant with 'What I meant was …'."
+     },
+     {
+      "q": "But you were laughing at the end!",
+      "hint": "Use 'It wasn't … that …; it was …' to explain what made you laugh."
+     },
+     {
+      "q": "OK… so what did you actually like?",
+      "hint": "Make it clear with one or two specific details."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Lost in Tone",
+    "points": [
+     "In text messages it is hard to show tone, so jokes and compliments are often misunderstood.",
+     "Many people add emojis to make their meaning clear.",
+     "Others prefer voice notes, which are very popular in Saudi Arabia, because you can hear the speaker's tone."
+    ],
+    "qs": [
+     "Have you ever had a misunderstanding because of a text message?",
+     "Do you prefer texts or voice notes? Why?"
+    ]
+   },
+   "exit": "A friend thinks you called their new trainers ugly. Clear up the misunderstanding in two sentences."
+  },
+  "2-1": {
+   "objective": "Today you will describe a passion and emphasise what you love most about it.",
+   "warmup": "Which hobby or activity makes you forget about everything else?",
+   "expressions": [
+    {
+     "w": "What I love about",
+     "def": "a phrase to stress the part of something you like most",
+     "ar": "ما أحبّه في",
+     "frame": "What I love about ___ is …"
+    },
+    {
+     "w": "be passionate about",
+     "def": "to love an activity or subject very much",
+     "ar": "شغوف بـ",
+     "frame": "I'm passionate about ___."
+    },
+    {
+     "w": "lose track of time",
+     "def": "to forget about the time because you are busy",
+     "ar": "يفقد الإحساس بالوقت",
+     "frame": "I lose track of time when I'm ___."
+    },
+    {
+     "w": "therapeutic",
+     "def": "making you feel calm and relaxed",
+     "ar": "مريح للنفس",
+     "frame": "I find ___ really therapeutic."
+    },
+    {
+     "w": "take up",
+     "def": "to start doing a new hobby",
+     "ar": "يبدأ هواية",
+     "frame": "I'd like to take up ___ one day."
+    },
+    {
+     "w": "What makes it special",
+     "def": "a phrase that stresses the most important quality",
+     "ar": "ما يميّزه",
+     "frame": "What makes ___ special is …"
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar is interviewing his cousin Majid, a young Arabic calligrapher, for the school magazine.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "So, Majid, when did you take up calligraphy?"
+     },
+     {
+      "s": "Majid",
+      "t": "About three years ago. My grandfather showed me some Thuluth script, and I was hooked."
+     },
+     {
+      "s": "Omar",
+      "t": "You're clearly passionate about it. What do you love about it most?"
+     },
+     {
+      "s": "Majid",
+      "t": "What I love about calligraphy is the patience it needs. One wrong move and you have to start again."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Omar",
+      "t": "That sounds stressful! Don't take this the wrong way, but isn't it a bit boring?"
+     },
+     {
+      "s": "Majid",
+      "t": "Not at all. Actually, it's therapeutic. When I'm writing, I lose track of time completely."
+     },
+     {
+      "s": "Omar",
+      "t": "And what makes it special compared with other kinds of art?"
+     },
+     {
+      "s": "Majid",
+      "t": "What makes it special is that every letter follows rules, yet every artist's style is unique."
+     }
+    ],
+    "focus": "What I love about calligraphy is the patience it needs.",
+    "qs": [
+     "Who introduced Majid to calligraphy?",
+     "What makes calligraphy special, according to Majid?"
+    ]
+   },
+   "speakout": {
+    "scene": "A magazine for teenagers is interviewing you about a hobby or interest that you love. Answer with emphasis.",
+    "prompts": [
+     {
+      "q": "Which hobby are you most passionate about?",
+      "hint": "Name it and say when you took it up."
+     },
+     {
+      "q": "What do you love most about it?",
+      "hint": "Start with 'What I love about … is …'."
+     },
+     {
+      "q": "Why should other teenagers try it?",
+      "hint": "Use 'What makes it special is …' and give one example."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: The Art of Calligraphy",
+    "points": [
+     "Arabic calligraphy has many styles, including Kufic, Naskh and Thuluth.",
+     "In 2021, Arabic calligraphy was added to UNESCO's list of intangible cultural heritage.",
+     "Saudi Arabia named 2020 and 2021 the 'Year of Arabic Calligraphy'."
+    ],
+    "qs": [
+     "Which style of calligraphy do you find most beautiful?",
+     "Should calligraphy be taught in every school? Why?"
+    ]
+   },
+   "exit": "Tell me about something you are passionate about, using 'What I love about … is …'."
+  },
+  "2-2": {
+   "objective": "Today you will correct a wrong story and give credit to the right person.",
+   "warmup": "Who is someone who helps you a lot but rarely gets thanked for it?",
+   "expressions": [
+    {
+     "w": "give credit to",
+     "def": "to say publicly that someone deserves praise",
+     "ar": "ينسب الفضل لـ",
+     "frame": "We should give credit to ___ for …"
+    },
+    {
+     "w": "behind the scenes",
+     "def": "in a hidden way that the public doesn't see",
+     "ar": "خلف الكواليس",
+     "frame": "The person working behind the scenes at our school is ___."
+    },
+    {
+     "w": "set the record straight",
+     "def": "to correct a wrong story or belief",
+     "ar": "يصحّح المعلومة",
+     "frame": "I'd like to set the record straight about ___."
+    },
+    {
+     "w": "make all the difference",
+     "def": "to have a very important effect",
+     "ar": "يُحدث فرقاً كبيراً",
+     "frame": "___ made all the difference to my results."
+    },
+    {
+     "w": "unsung hero",
+     "def": "someone who does great things but gets little praise",
+     "ar": "بطل مجهول",
+     "frame": "The unsung hero of my family is ___."
+    },
+    {
+     "w": "take the credit",
+     "def": "to accept praise for something",
+     "ar": "ينسب الفضل لنفسه",
+     "frame": "It's unfair to take the credit for ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sara, a reporter for the school magazine, interviews Hala, the captain of the team that won the school's robotics competition.",
+    "p1": [
+     {
+      "s": "Sara",
+      "t": "Congratulations, Hala! Our magazine says you built the robot that won the school's robotics competition."
+     },
+     {
+      "s": "Hala",
+      "t": "Thanks, but I'd like to set the record straight. It wasn't me who built it; it was Joud."
+     },
+     {
+      "s": "Sara",
+      "t": "Joud? I've never heard her name mentioned."
+     },
+     {
+      "s": "Hala",
+      "t": "That's because she worked behind the scenes. She's the unsung hero of our team."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sara",
+      "t": "So what did you do?"
+     },
+     {
+      "s": "Hala",
+      "t": "I gave the presentation to the judges. But it was Joud's programming that made all the difference."
+     },
+     {
+      "s": "Sara",
+      "t": "That's very generous. Most people would just take the credit."
+     },
+     {
+      "s": "Hala",
+      "t": "What I mean is, it's teamwork that wins competitions. We need to give credit to everyone."
+     }
+    ],
+    "focus": "It wasn't me who built it; it was Joud.",
+    "qs": [
+     "What mistake did the school magazine make?",
+     "Why had Sara never heard of Joud?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your class project has won a prize, and the teacher has thanked only you. Set the record straight and give credit to your classmates.",
+    "prompts": [
+     {
+      "q": "Well done! You must be very proud of your project.",
+      "hint": "Thank them, then say 'It wasn't only me who …'."
+     },
+     {
+      "q": "So who did the most important part?",
+      "hint": "Use 'It was … who …' to give credit to a classmate."
+     },
+     {
+      "q": "What made your project successful, in your opinion?",
+      "hint": "Use 'It was … that made all the difference'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Hidden Figures",
+    "points": [
+     "In the 1960s, NASA relied on mathematicians who calculated rocket paths by hand.",
+     "Katherine Johnson was one of them; her calculations helped send astronauts into orbit and to the Moon.",
+     "For many years few people knew about her work, until a book and a film told her story in 2016."
+    ],
+    "qs": [
+     "Who is an unsung hero in your school or family?",
+     "Why do some people never get the credit they deserve?"
+    ]
+   },
+   "exit": "Tell me about a success in your life and give credit to someone, using 'It was … who …'."
+  },
+  "2-3": {
+   "objective": "Today you will make a strong but respectful request to your parents using emphasis.",
+   "warmup": "What is something you would love your parents to let you do?",
+   "expressions": [
+    {
+     "w": "All I'm asking is",
+     "def": "a phrase to show that your request is small and simple",
+     "ar": "كل ما أطلبه هو",
+     "frame": "All I'm asking is ___."
+    },
+    {
+     "w": "I do understand",
+     "def": "a strong way to show that you really understand",
+     "ar": "أنا فعلاً أتفهّم",
+     "frame": "I do understand that ___, but …"
+    },
+    {
+     "w": "The thing is",
+     "def": "a phrase to introduce the main problem or reason",
+     "ar": "المسألة هي",
+     "frame": "The thing is, ___."
+    },
+    {
+     "w": "give it a go",
+     "def": "to try something",
+     "ar": "يجرّب",
+     "frame": "I'd love to give ___ a go."
+    },
+    {
+     "w": "trust someone with",
+     "def": "to believe someone can be responsible for something",
+     "ar": "يأتمن على",
+     "frame": "My parents trust me with ___."
+    },
+    {
+     "w": "once-in-a-lifetime",
+     "def": "very special and unlikely to happen again",
+     "ar": "فرصة العمر",
+     "frame": "___ would be a once-in-a-lifetime experience."
+    }
+   ],
+   "dialogue": {
+    "scene": "Yousef, who lives in Riyadh, wants to join a week-long coding camp in Jeddah. He talks to his dad about it.",
+    "p1": [
+     {
+      "s": "Yousef",
+      "t": "Dad, the coding camp in Jeddah is in two weeks. Have you thought about it?"
+     },
+     {
+      "s": "Dad",
+      "t": "I have. A whole week away from home is a long time, Yousef."
+     },
+     {
+      "s": "Yousef",
+      "t": "I do understand that you're worried. The thing is, this camp is a once-in-a-lifetime chance."
+     },
+     {
+      "s": "Dad",
+      "t": "There will be other chances. You're only fifteen."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Yousef",
+      "t": "All I'm asking is that you let me give it a go. My cousin Saad lives there, so I won't be alone."
+     },
+     {
+      "s": "Dad",
+      "t": "Hmm. What worries me is how you'll manage on your own."
+     },
+     {
+      "s": "Yousef",
+      "t": "You trust me with my little brother every afternoon. That shows I can be responsible."
+     },
+     {
+      "s": "Dad",
+      "t": "Fair point. Let me talk to your mother and Saad. A week of real coding could make all the difference."
+     }
+    ],
+    "focus": "All I'm asking is that you let me give it a go.",
+    "qs": [
+     "Why is Yousef's dad worried?",
+     "Why does Yousef think he won't be alone in Jeddah?"
+    ]
+   },
+   "speakout": {
+    "scene": "You want to join a school trip to a science centre in another city, but your parent isn't sure. Persuade them, using emphasis.",
+    "prompts": [
+     {
+      "q": "I'm not sure. It's expensive, and you've never travelled without us.",
+      "hint": "Show you understand with 'I do understand …', then give your main reason with 'The thing is, …'."
+     },
+     {
+      "q": "Why is this trip so important to you?",
+      "hint": "Use 'What I really want is …' or 'It's … that …'."
+     },
+     {
+      "q": "What can you promise me?",
+      "hint": "Start with 'All I'm asking is …' and add a promise."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Mawhiba",
+    "points": [
+     "Mawhiba is a Saudi foundation that supports talented students, especially in science and technology.",
+     "It runs programmes where students can study subjects like engineering and coding at universities.",
+     "Many students say that time away from home on such programmes makes them more independent."
+    ],
+    "qs": [
+     "Would you like to join a programme away from home? Why?",
+     "At what age should teenagers be allowed to travel without their parents?"
+    ]
+   },
+   "exit": "Ask me for something you really want, using 'All I'm asking is …' and 'I do understand …'."
+  },
+  "2-4": {
+   "objective": "Today you will explain the reasons for an important choice with emphasis.",
+   "warmup": "What subject or job are you most curious about at the moment?",
+   "expressions": [
+    {
+     "w": "The reason why",
+     "def": "a phrase to stress the cause of something",
+     "ar": "السبب في",
+     "frame": "The reason why I chose ___ is …"
+    },
+    {
+     "w": "What made me",
+     "def": "a phrase to stress what caused a decision",
+     "ar": "ما دفعني إلى",
+     "frame": "What made me ___ was …"
+    },
+    {
+     "w": "spark an interest in",
+     "def": "to make someone start to be interested in something",
+     "ar": "يثير الاهتمام بـ",
+     "frame": "___ sparked my interest in …"
+    },
+    {
+     "w": "cybersecurity",
+     "def": "protecting computers and data from attacks",
+     "ar": "الأمن السيبراني",
+     "frame": "I think ___ will need more cybersecurity experts."
+    },
+    {
+     "w": "career path",
+     "def": "the series of jobs that someone chooses",
+     "ar": "المسار المهني",
+     "frame": "My ideal career path would start with ___."
+    },
+    {
+     "w": "in demand",
+     "def": "wanted or needed by many people",
+     "ar": "مطلوب",
+     "frame": "___ skills are very much in demand."
+    }
+   ],
+   "dialogue": {
+    "scene": "Leo is surprised to hear that his friend Khalid has chosen cybersecurity as his elective subject at their international school.",
+    "p1": [
+     {
+      "s": "Leo",
+      "t": "I heard you chose cybersecurity as your elective. I thought you wanted to be an engineer?"
+     },
+     {
+      "s": "Khalid",
+      "t": "I did, but the reason why I changed my mind is a problem my dad had last year."
+     },
+     {
+      "s": "Leo",
+      "t": "What happened?"
+     },
+     {
+      "s": "Khalid",
+      "t": "Someone hacked his email and sent fake messages to all his contacts. That's what sparked my interest in cybersecurity."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Leo",
+      "t": "Wow. So what made you choose it as a career path, not just a hobby?"
+     },
+     {
+      "s": "Khalid",
+      "t": "What made me decide was a talk at school. The speaker said cybersecurity experts are very much in demand in Saudi Arabia."
+     },
+     {
+      "s": "Leo",
+      "t": "That makes sense. The thing is, isn't it really difficult?"
+     },
+     {
+      "s": "Khalid",
+      "t": "It is, but it's the challenge that I enjoy most. It feels like solving a huge puzzle."
+     }
+    ],
+    "focus": "What made me decide was a talk at school.",
+    "qs": [
+     "What happened to Khalid's dad?",
+     "What made Khalid decide to choose cybersecurity as a career?"
+    ]
+   },
+   "speakout": {
+    "scene": "It's careers day at school. A visitor asks you about the subject or job you are most interested in. Explain your reasons with emphasis.",
+    "prompts": [
+     {
+      "q": "Which subject or career are you most interested in?",
+      "hint": "Name it and say what sparked your interest in it."
+     },
+     {
+      "q": "Why that one and not something else?",
+      "hint": "Use 'The reason why … is …'."
+     },
+     {
+      "q": "Who or what influenced your decision most?",
+      "hint": "Use 'It was … who / that …' or 'What made me … was …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Jobs of the Future",
+    "points": [
+     "Saudi Arabia has invested heavily in technology, from cloud computing to artificial intelligence.",
+     "New jobs are appearing in fields such as cybersecurity, data science and renewable energy.",
+     "Many universities now offer degrees in these subjects to prepare students for the future."
+    ],
+    "qs": [
+     "Which job of the future sounds most interesting to you? Why?",
+     "Should schools teach coding from primary school? Why or why not?"
+    ]
+   },
+   "exit": "Tell me about a decision you have made and explain it with 'The reason why …' and 'What made me … was …'."
+  },
+  "2-5": {
+   "objective": "Today you will pitch an idea to solve a problem, emphasising your key points.",
+   "warmup": "If you could solve one problem in your neighbourhood, what would it be?",
+   "expressions": [
+    {
+     "w": "What we need is",
+     "def": "a phrase to stress the most important solution",
+     "ar": "ما نحتاجه هو",
+     "frame": "What our school needs is ___."
+    },
+    {
+     "w": "the real problem",
+     "def": "the most important difficulty",
+     "ar": "المشكلة الحقيقية",
+     "frame": "The real problem with ___ is …"
+    },
+    {
+     "w": "go to waste",
+     "def": "to be thrown away or not used",
+     "ar": "يُهدر",
+     "frame": "Too much ___ goes to waste."
+    },
+    {
+     "w": "leftovers",
+     "def": "food that is not eaten at a meal",
+     "ar": "بقايا الطعام",
+     "frame": "We usually give our leftovers to ___."
+    },
+    {
+     "w": "raise awareness",
+     "def": "to make people know more about a problem",
+     "ar": "ينشر الوعي",
+     "frame": "I'd like to raise awareness of ___."
+    },
+    {
+     "w": "make a real difference",
+     "def": "to have an important good effect",
+     "ar": "يُحدث فرقاً حقيقياً",
+     "frame": "Small changes like ___ can make a real difference."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura is practising her pitch for her school's Ideas Day with her older sister Dana.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Can you listen to my pitch for Ideas Day? I've only got two minutes."
+     },
+     {
+      "s": "Dana",
+      "t": "Sure, go ahead. I'll be the judge."
+     },
+     {
+      "s": "Noura",
+      "t": "At family gatherings, a lot of good food goes to waste. What we need is a simple way to share the leftovers."
+     },
+     {
+      "s": "Dana",
+      "t": "Good start. But don't people already give leftovers to their neighbours?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "Some do. The real problem is time: food goes bad within hours. It's speed that matters most."
+     },
+     {
+      "s": "Dana",
+      "t": "So what's your solution?"
+     },
+     {
+      "s": "Noura",
+      "t": "An app that connects families with local charities, who collect the food the same night. I do believe it could make a real difference."
+     },
+     {
+      "s": "Dana",
+      "t": "I love it. Finish by asking people to help raise awareness, and the judges will remember you."
+     }
+    ],
+    "focus": "What we need is a simple way to share the leftovers.",
+    "qs": [
+     "What problem does Noura want to solve?",
+     "Why does Noura say that speed matters most?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are taking part in your school's Ideas Day. Pitch an idea to improve your school or neighbourhood to the judges (your teacher).",
+    "prompts": [
+     {
+      "q": "What problem would you like to solve?",
+      "hint": "Use 'The real problem is …' or 'What worries me is …'."
+     },
+     {
+      "q": "And what's your solution?",
+      "hint": "Start with 'What we need is …'."
+     },
+     {
+      "q": "Why should we choose your idea over the others?",
+      "hint": "Use 'It's … that …' and 'I do believe …' to stress your strongest point."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Saving Food",
+    "points": [
+     "Food waste is a big challenge in many countries, including Saudi Arabia.",
+     "Saudi food banks collect untouched food from events and share it with families in need.",
+     "Simple habits, such as cooking smaller amounts, can reduce waste at home."
+    ],
+    "qs": [
+     "What does your family do with leftover food?",
+     "Which idea would make the biggest difference in your community?"
+    ]
+   },
+   "exit": "Pitch an idea in two sentences, using 'What we need is …' and 'It's … that …'."
+  },
+  "3-0": {
+   "objective": "Today you will judge a friend's app idea by giving its main strength and its main drawback.",
+   "warmup": "Which app do you use most, and what makes it so good?",
+   "expressions": [
+    {
+     "w": "the main drawback",
+     "def": "the biggest disadvantage",
+     "ar": "العيب الرئيسي",
+     "frame": "The main drawback of ___ is that …"
+    },
+    {
+     "w": "It's debatable whether",
+     "def": "people may disagree about whether something is true",
+     "ar": "من غير المحسوم ما إذا",
+     "frame": "It's debatable whether ___."
+    },
+    {
+     "w": "user-friendly",
+     "def": "easy for people to use",
+     "ar": "سهل الاستخدام",
+     "frame": "___ is really user-friendly."
+    },
+    {
+     "w": "stand out from the crowd",
+     "def": "to be different from and better than others",
+     "ar": "يتميّز عن غيره",
+     "frame": "To stand out from the crowd, ___ needs …"
+    },
+    {
+     "w": "catch on",
+     "def": "to become popular",
+     "ar": "يلقى رواجاً",
+     "frame": "I think ___ will catch on soon."
+    },
+    {
+     "w": "on paper",
+     "def": "in theory, but perhaps not in reality",
+     "ar": "نظرياً / على الورق",
+     "frame": "On paper, ___ sounds great, but …"
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar shows his friend Faisal an idea for an app he wants to build for a school competition.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "So, here's my app idea: it matches students who want to revise the same subject together. What do you think?"
+     },
+     {
+      "s": "Faisal",
+      "t": "On paper, it sounds great. And the design looks really user-friendly."
+     },
+     {
+      "s": "Omar",
+      "t": "Thanks! I think it could really catch on before exams."
+     },
+     {
+      "s": "Faisal",
+      "t": "Maybe. It's debatable whether students would use it outside exam season, though."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Omar",
+      "t": "Fair point. Anything else?"
+     },
+     {
+      "s": "Faisal",
+      "t": "The main drawback is that there are already lots of study apps. How will yours stand out from the crowd?"
+     },
+     {
+      "s": "Omar",
+      "t": "Hmm. Maybe it could connect students from the same school, so they can meet in the library."
+     },
+     {
+      "s": "Faisal",
+      "t": "Now that's a real strength. It's far more useful than just another chat app."
+     }
+    ],
+    "focus": "The main drawback is that there are already lots of study apps.",
+    "qs": [
+     "What does Omar's app do?",
+     "How does Omar plan to make his app different?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your cousin wants to start a small business selling homemade cookies online. They ask you to judge the idea honestly.",
+    "prompts": [
+     {
+      "q": "So, what do you think of my idea?",
+      "hint": "Start with a strength: 'The main strength is that …'."
+     },
+     {
+      "q": "Do you see any problems?",
+      "hint": "Mention one drawback with 'The main drawback is that …'."
+     },
+     {
+      "q": "Do you think people will actually buy them?",
+      "hint": "Use 'It's debatable whether …' and suggest how to stand out from the crowd."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Saudi Start-ups",
+    "points": [
+     "Saudi Arabia has a fast-growing start-up scene, especially in apps and online services.",
+     "Some Saudi start-ups, such as the delivery app Jahez, have grown into large companies.",
+     "Programmes in Riyadh and other cities help young people turn ideas into businesses."
+    ],
+    "qs": [
+     "Which app do you think people in Saudi Arabia still need?",
+     "What makes a new app catch on?"
+    ]
+   },
+   "exit": "Judge an app you use every day: give its main strength and its main drawback."
+  },
+  "3-1": {
+   "objective": "Today you will compare and judge different solutions to traffic problems near schools.",
+   "warmup": "What is the traffic like near your school in the morning?",
+   "expressions": [
+    {
+     "w": "tackle",
+     "def": "to deal with a difficult problem",
+     "ar": "يعالج / يتصدّى لـ",
+     "frame": "The best way to tackle ___ is …"
+    },
+    {
+     "w": "nowhere near as",
+     "def": "not nearly as; much less",
+     "ar": "أقلّ بكثير من أن يكون",
+     "frame": "___ is nowhere near as ___ as …"
+    },
+    {
+     "w": "a short-term fix",
+     "def": "a solution that only works for a short time",
+     "ar": "حلّ مؤقت",
+     "frame": "___ is only a short-term fix."
+    },
+    {
+     "w": "in the long term",
+     "def": "over a long period in the future",
+     "ar": "على المدى الطويل",
+     "frame": "In the long term, ___ would …"
+    },
+    {
+     "w": "It's questionable whether",
+     "def": "there are serious doubts about something",
+     "ar": "من المشكوك فيه ما إذا",
+     "frame": "It's questionable whether ___ would work."
+    },
+    {
+     "w": "feasible",
+     "def": "possible and practical to do",
+     "ar": "ممكن التنفيذ",
+     "frame": "Is it feasible to ___?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Saad and Majid from the student council are judging ideas to reduce the traffic jam outside their school every morning.",
+    "p1": [
+     {
+      "s": "Saad",
+      "t": "OK, we've got three ideas to tackle the morning traffic: a school bus, staggered start times and a weekly 'walk to school' day."
+     },
+     {
+      "s": "Majid",
+      "t": "The bus is the best option in the long term. It would take dozens of cars off the road."
+     },
+     {
+      "s": "Saad",
+      "t": "True. It's questionable whether enough families would pay for it, though."
+     },
+     {
+      "s": "Majid",
+      "t": "Fair enough. What about staggered start times? Younger classes could start fifteen minutes earlier."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Saad",
+      "t": "On paper, it's simple. But is it feasible? Parents with children in different years would have to come twice."
+     },
+     {
+      "s": "Majid",
+      "t": "Good point. And the walking day?"
+     },
+     {
+      "s": "Saad",
+      "t": "It's nice, but it's only a short-term fix. One day a week is nowhere near as effective as a daily bus."
+     },
+     {
+      "s": "Majid",
+      "t": "So the bus is still our strongest option. The main drawback is cost, so let's ask the school about a discount."
+     }
+    ],
+    "focus": "It's questionable whether enough families would pay for it, though.",
+    "qs": [
+     "Which three ideas do Saad and Majid discuss?",
+     "Why might staggered start times not be feasible?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your town council wants ideas to reduce traffic near schools. You are judging three ideas: a school bus, a car-free zone near the gate, and online classes once a week.",
+    "prompts": [
+     {
+      "q": "What do you think of the school bus idea?",
+      "hint": "Judge it 'in the long term' and mention one drawback."
+     },
+     {
+      "q": "And the car-free zone?",
+      "hint": "Say whether it's feasible, using 'It's questionable whether …'."
+     },
+     {
+      "q": "Which idea is the weakest?",
+      "hint": "Compare with 'nowhere near as … as' or call it 'only a short-term fix'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: School Streets",
+    "points": [
+     "In some UK cities, roads outside schools are closed to cars at the start and end of the school day.",
+     "These 'School Streets' aim to cut pollution and make walking and cycling safer.",
+     "Some studies found that more children walked or cycled to school after the change."
+    ],
+    "qs": [
+     "Would a 'School Street' work outside your school? Why or why not?",
+     "How do most students at your school get there?"
+    ]
+   },
+   "exit": "Judge two ways of getting to school, by car and by bus, using 'far more … than' and 'in the long term'."
+  },
+  "3-2": {
+   "objective": "Today you will weigh up the costs and benefits of green projects for your school.",
+   "warmup": "What does your school or family do to save water or electricity?",
+   "expressions": [
+    {
+     "w": "outweigh",
+     "def": "to be more important than something else",
+     "ar": "يفوق / يرجح على",
+     "frame": "The benefits of ___ outweigh the costs."
+    },
+    {
+     "w": "cost-effective",
+     "def": "giving good results for the money spent",
+     "ar": "فعّال من حيث التكلفة",
+     "frame": "___ is a cost-effective way to …"
+    },
+    {
+     "w": "It remains to be seen whether",
+     "def": "we don't know yet if something will happen",
+     "ar": "يبقى أن نرى ما إذا",
+     "frame": "It remains to be seen whether ___."
+    },
+    {
+     "w": "pay off",
+     "def": "to bring good results later",
+     "ar": "يؤتي ثماره",
+     "frame": "Hard work on ___ will pay off."
+    },
+    {
+     "w": "upfront cost",
+     "def": "money you must pay at the beginning",
+     "ar": "التكلفة المبدئية",
+     "frame": "The upfront cost of ___ is high."
+    },
+    {
+     "w": "weigh up",
+     "def": "to think carefully about advantages and disadvantages",
+     "ar": "يوازن بين",
+     "frame": "Before I buy ___, I weigh up …"
+    }
+   ],
+   "dialogue": {
+    "scene": "Emma and Reem from the eco club have money for one green project at their international school in Jeddah.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "We've got a budget for one green project. Let's weigh up the two options: solar panels or water-saving taps."
+     },
+     {
+      "s": "Reem",
+      "t": "Solar panels make so much sense here. We have sunshine almost every day."
+     },
+     {
+      "s": "Emma",
+      "t": "True, but the upfront cost is huge. It could take years before they pay off."
+     },
+     {
+      "s": "Reem",
+      "t": "In the long term, though, the benefits outweigh the costs. The school's electricity bill would drop."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "Maybe. But water-saving taps are far cheaper and much more cost-effective in the short term."
+     },
+     {
+      "s": "Reem",
+      "t": "That's a fair point. Their main drawback is that students might not even notice them."
+     },
+     {
+      "s": "Emma",
+      "t": "That's exactly why we'd need posters too. Water is precious in a desert country."
+     },
+     {
+      "s": "Reem",
+      "t": "OK. It remains to be seen whether the head will agree, but let's present both options."
+     }
+    ],
+    "focus": "In the long term, though, the benefits outweigh the costs.",
+    "qs": [
+     "What two options is the eco club considering?",
+     "Why is Emma worried about the solar panels?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school has money for one green project: a vegetable garden, recycling bins in every classroom, or solar-powered lights for the playground. Judge the options.",
+    "prompts": [
+     {
+      "q": "Which option is the most cost-effective?",
+      "hint": "Compare the costs, using 'cost-effective' or 'upfront cost'."
+     },
+     {
+      "q": "Would the garden really be worth the effort?",
+      "hint": "Use 'In the long term, the benefits outweigh …' or 'It remains to be seen whether …'."
+     },
+     {
+      "q": "So which one would you choose?",
+      "hint": "Weigh up the options and give a final judgement with a reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: The Saudi Green Initiative",
+    "points": [
+     "The Saudi Green Initiative was launched in 2021.",
+     "One of its goals is to plant ten billion trees across the country over the coming decades.",
+     "It also aims to protect land and sea areas and to increase the use of renewable energy."
+    ],
+    "qs": [
+     "Which green project would you like to see in your city?",
+     "Do the benefits of planting trees in the desert outweigh the costs? Why?"
+    ]
+   },
+   "exit": "Judge one green idea for your home: say whether the benefits outweigh the costs, and why."
+  },
+  "3-3": {
+   "objective": "Today you will give a balanced judgement on using AI tools for schoolwork.",
+   "warmup": "Have you ever used an AI tool to help you learn? What did you use it for?",
+   "expressions": [
+    {
+     "w": "On balance",
+     "def": "after thinking about all the facts",
+     "ar": "بعد الموازنة / إجمالاً",
+     "frame": "On balance, I think ___."
+    },
+    {
+     "w": "The jury is still out",
+     "def": "people haven't decided yet if something is good",
+     "ar": "لم يُحسم الرأي بعد",
+     "frame": "The jury is still out on ___."
+    },
+    {
+     "w": "a double-edged sword",
+     "def": "something with both good and bad effects",
+     "ar": "سلاح ذو حدّين",
+     "frame": "___ is a double-edged sword."
+    },
+    {
+     "w": "rely on",
+     "def": "to depend on something or someone",
+     "ar": "يعتمد على",
+     "frame": "I rely on ___ too much."
+    },
+    {
+     "w": "shortcut",
+     "def": "a quicker way that may skip something important",
+     "ar": "طريق مختصر",
+     "frame": "Using ___ is a shortcut that …"
+    },
+    {
+     "w": "critical thinking",
+     "def": "thinking carefully to judge whether something is true or good",
+     "ar": "التفكير النقدي",
+     "frame": "___ helps develop critical thinking."
+    }
+   ],
+   "dialogue": {
+    "scene": "Lama asks her older cousin Sara, a university student, what she thinks about using AI chatbots for homework.",
+    "p1": [
+     {
+      "s": "Lama",
+      "t": "Some of my classmates use AI chatbots for all their essays. Is that such a bad thing?"
+     },
+     {
+      "s": "Sara",
+      "t": "Honestly, AI is a double-edged sword. It can explain things brilliantly, but it can also become a shortcut."
+     },
+     {
+      "s": "Lama",
+      "t": "A shortcut to what?"
+     },
+     {
+      "s": "Sara",
+      "t": "To good marks without real learning. If you rely on it for everything, you never build critical thinking."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Lama",
+      "t": "But it's debatable whether teachers can even tell the difference."
+     },
+     {
+      "s": "Sara",
+      "t": "Maybe not, but you'll notice the difference in your exams, when there's no chatbot to help."
+     },
+     {
+      "s": "Lama",
+      "t": "Fair enough. So should students avoid it completely?"
+     },
+     {
+      "s": "Sara",
+      "t": "Not at all. The jury is still out, but on balance, I'd use it as a tutor, not a writer."
+     }
+    ],
+    "focus": "Honestly, AI is a double-edged sword.",
+    "qs": [
+     "Why does Sara call AI a double-edged sword?",
+     "How does Sara think students should use AI?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school is deciding whether to allow AI tools in class. You are on the student panel and must judge the idea.",
+    "prompts": [
+     {
+      "q": "What's the biggest advantage of allowing AI in class?",
+      "hint": "Give one clear advantage and an example."
+     },
+     {
+      "q": "And the biggest risk?",
+      "hint": "Use 'a double-edged sword' or 'The main drawback is …'."
+     },
+     {
+      "q": "So, on balance, should the school allow it?",
+      "hint": "Start with 'On balance, …' and add a condition."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: AI in the Classroom",
+    "points": [
+     "Schools around the world are trying to decide how students should use AI tools.",
+     "Some schools ban them for homework, while others teach students to use them responsibly.",
+     "Many teachers now ask students to explain their thinking aloud, which AI cannot do for them."
+    ],
+    "qs": [
+     "Should students be taught how to use AI at school? Why?",
+     "Which school skills will still matter most in a world with AI?"
+    ]
+   },
+   "exit": "Give a balanced judgement, in two sentences, on using calculators in maths lessons."
+  },
+  "3-4": {
+   "objective": "Today you will judge different ways of spending money and choose the best value.",
+   "warmup": "What is the best thing you have ever spent your own money on?",
+   "expressions": [
+    {
+     "w": "value for money",
+     "def": "good quality for the price you pay",
+     "ar": "قيمة مقابل المال",
+     "frame": "___ is great value for money."
+    },
+    {
+     "w": "rule out",
+     "def": "to decide that something is not possible or suitable",
+     "ar": "يستبعد",
+     "frame": "I'd rule out ___ because …"
+    },
+    {
+     "w": "by far",
+     "def": "by a large amount",
+     "ar": "بفارق كبير",
+     "frame": "___ is by far the best option."
+    },
+    {
+     "w": "justify",
+     "def": "to give a good reason for something",
+     "ar": "يبرّر",
+     "frame": "It's hard to justify spending money on ___."
+    },
+    {
+     "w": "worth every riyal",
+     "def": "worth all the money you paid",
+     "ar": "يستحق كل ريال",
+     "frame": "___ was worth every riyal."
+    },
+    {
+     "w": "narrow down",
+     "def": "to reduce the number of choices",
+     "ar": "يضيّق الخيارات",
+     "frame": "Let's narrow down our list to ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Turki and Sam, the class representatives, must decide how to spend the money left in the class fund.",
+    "p1": [
+     {
+      "s": "Turki",
+      "t": "We've got 3,000 riyals left in the class fund. We need to narrow down the ideas to one."
+     },
+     {
+      "s": "Sam",
+      "t": "Let's rule out the new football kit. Only half the class plays football, so it's hard to justify."
+     },
+     {
+      "s": "Turki",
+      "t": "Agreed. That leaves the trip to the science centre and the class party."
+     },
+     {
+      "s": "Sam",
+      "t": "The party would be fun, but it's over in three hours. The trip is by far the best value for money."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Turki",
+      "t": "True. We'd learn something and still have fun. The main drawback is transport."
+     },
+     {
+      "s": "Sam",
+      "t": "The school bus is free if we book early, so that's not really a problem."
+     },
+     {
+      "s": "Turki",
+      "t": "Perfect. Then the benefits clearly outweigh the drawbacks. Let's go for the trip."
+     },
+     {
+      "s": "Sam",
+      "t": "Great. I'm sure it'll be worth every riyal."
+     }
+    ],
+    "focus": "The trip is by far the best value for money.",
+    "qs": [
+     "Why do they rule out the football kit?",
+     "Why does Sam prefer the trip to the party?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your family has 2,000 riyals to spend on something for everyone: a weekend trip, a new TV, or a family membership at a sports club. Help them decide.",
+    "prompts": [
+     {
+      "q": "Which option would you rule out first, and why?",
+      "hint": "Use 'I'd rule out … because …'."
+     },
+     {
+      "q": "Which option is the best value for money?",
+      "hint": "Use 'by far' and give one reason."
+     },
+     {
+      "q": "Can we justify spending all the money on one thing?",
+      "hint": "Weigh up the benefits and drawbacks and give a final judgement."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Learning to Budget",
+    "points": [
+     "In many countries, teenagers receive a regular allowance so that they can practise managing money.",
+     "Many experts suggest a simple rule: save part of your money before you spend the rest.",
+     "Comparing prices and asking 'Do I really need this?' helps people avoid wasting money."
+    ],
+    "qs": [
+     "Do you save part of your money? Why or why not?",
+     "Should schools teach students how to manage money? Why?"
+    ]
+   },
+   "exit": "Judge something you bought recently: was it good value for money? Explain why."
+  },
+  "3-5": {
+   "objective": "Today you will judge several project ideas against clear criteria and reach a final verdict.",
+   "warmup": "What is the cleverest invention or project you have ever seen at a school fair?",
+   "expressions": [
+    {
+     "w": "criteria",
+     "def": "the standards you use to judge something",
+     "ar": "المعايير",
+     "frame": "One of my criteria for ___ is …"
+    },
+    {
+     "w": "stand up to scrutiny",
+     "def": "to stay convincing when examined carefully",
+     "ar": "يصمد أمام التدقيق",
+     "frame": "Does ___ stand up to scrutiny?"
+    },
+    {
+     "w": "far-fetched",
+     "def": "very unlikely to be true or to work",
+     "ar": "بعيد عن الواقع",
+     "frame": "The idea of ___ sounds a bit far-fetched."
+    },
+    {
+     "w": "practical",
+     "def": "likely to work well in real life",
+     "ar": "عملي",
+     "frame": "A practical solution for ___ is …"
+    },
+    {
+     "w": "come out on top",
+     "def": "to win after a competition or comparison",
+     "ar": "يتفوّق / يفوز",
+     "frame": "In the end, ___ came out on top."
+    },
+    {
+     "w": "reach a verdict",
+     "def": "to make a final decision after judging",
+     "ar": "يصدر حكماً",
+     "frame": "Before we reach a verdict on ___, …"
+    }
+   ],
+   "dialogue": {
+    "scene": "Hamad and Leo are judges at their school's Innovation Challenge. Three teams have presented their projects.",
+    "p1": [
+     {
+      "s": "Hamad",
+      "t": "Right, let's judge the three projects against our criteria: originality, cost and how practical they are."
+     },
+     {
+      "s": "Leo",
+      "t": "The drone that delivers books between classrooms is original, but it seems a bit far-fetched."
+     },
+     {
+      "s": "Hamad",
+      "t": "I agree. It's debatable whether it would be safe in crowded corridors."
+     },
+     {
+      "s": "Leo",
+      "t": "The smart water bottle is clever, but the main drawback is the price. Each one costs 200 riyals."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Hamad",
+      "t": "So that leaves the app for reporting broken things around the school."
+     },
+     {
+      "s": "Leo",
+      "t": "It's simple, but it stands up to scrutiny. It's cheap, practical and easy to use."
+     },
+     {
+      "s": "Hamad",
+      "t": "Then it's by far the strongest project. Are we ready to reach a verdict?"
+     },
+     {
+      "s": "Leo",
+      "t": "Yes. The app comes out on top. Let's announce it!"
+     }
+    ],
+    "focus": "It's debatable whether it would be safe in crowded corridors.",
+    "qs": [
+     "What are the judges' three criteria?",
+     "Why do the judges choose the app?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are a judge at your school's Innovation Challenge. The teams have presented a solar-powered bench that charges phones, a 'lost and found' app and a robot that cleans whiteboards. Judge them with your partner (the teacher).",
+    "prompts": [
+     {
+      "q": "What criteria should we use to judge the projects?",
+      "hint": "Suggest two or three criteria and explain why they matter."
+     },
+     {
+      "q": "Which project has the biggest weakness?",
+      "hint": "Use 'The main drawback is …' or 'far-fetched'."
+     },
+     {
+      "q": "So, which project comes out on top?",
+      "hint": "Reach a verdict with 'by far' and give two reasons."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: 5,127 Prototypes",
+    "points": [
+     "The inventor James Dyson says he built 5,127 prototypes before his bagless vacuum cleaner worked.",
+     "Each failed version helped him find and fix a problem.",
+     "His story shows that judging your own ideas honestly is part of inventing."
+    ],
+    "qs": [
+     "Would you keep going after a hundred failed attempts? Why?",
+     "What criteria would you use to judge your own ideas?"
+    ]
+   },
+   "exit": "Choose the best invention of the last fifty years and give your verdict, with one strength and one drawback."
+  }
+ },
+ "kits": {
+  "0-0": {
+   "words": [
+    {
+     "w": "constructive criticism",
+     "ar": "نقد بنّاء",
+     "ex": "Thanks for the constructive criticism; it really helped."
+    },
+    {
+     "w": "come across as",
+     "ar": "يبدو / يعطي انطباعاً بأنه",
+     "ex": "The dark colours come across as rather serious."
+    },
+    {
+     "w": "a bit on the … side",
+     "ar": "يميل قليلاً إلى",
+     "ex": "The text is a bit on the small side."
+    },
+    {
+     "w": "I'm not entirely sure that",
+     "ar": "لست متأكداً تماماً أنّ",
+     "ex": "I'm not entirely sure that the title fits the topic."
+    },
+    {
+     "w": "tone down",
+     "ar": "يخفّف من حدّة",
+     "ex": "You could tone down the red a little."
+    },
+    {
+     "w": "spot on",
+     "ar": "دقيق تماماً / في الصميم",
+     "ex": "Your choice of photos is spot on."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Noura",
+     "t": "Be honest, Lama. What do you think of my Reading Week poster? I'd really like some constructive criticism."
+    },
+    {
+     "s": "Lama",
+     "t": "Well, the photos are spot on. The bright orange, though, comes across as a bit loud to me."
+    },
+    {
+     "s": "Noura",
+     "t": "Really? I thought it would catch people's attention."
+    },
+    {
+     "s": "Lama",
+     "t": "It does, but it seems to pull your eyes away from the message. You could perhaps tone it down slightly."
+    },
+    {
+     "s": "Noura",
+     "t": "OK, maybe a softer orange. What about the title?"
+    },
+    {
+     "s": "Lama",
+     "t": "It's a bit on the small side. I'm not entirely sure that people will see it from the back of the hall."
+    }
+   ],
+   "grammar": {
+    "title": "Softening criticism",
+    "ar": "نخفّف النقد بكلمات مثل a bit / slightly / a little وبعبارات مثل It seems … و I'm not entirely sure that …",
+    "examples": [
+     "The title seems a little small.",
+     "The colours are slightly too bright.",
+     "I'm not entirely sure that the ending works."
+    ]
+   }
+  },
+  "0-1": {
+   "words": [
+    {
+     "w": "tend to",
+     "ar": "يميل إلى / غالباً ما",
+     "ex": "Teenagers tend to go to bed later than adults."
+    },
+    {
+     "w": "on the whole",
+     "ar": "بشكل عام",
+     "ex": "On the whole, our class gets too little sleep."
+    },
+    {
+     "w": "to some extent",
+     "ar": "إلى حدّ ما",
+     "ex": "I agree with you to some extent, but not completely."
+    },
+    {
+     "w": "sweeping generalisation",
+     "ar": "تعميم مطلق",
+     "ex": "'All teenagers are lazy' is a sweeping generalisation."
+    },
+    {
+     "w": "sleep-deprived",
+     "ar": "يعاني من قلّة النوم",
+     "ex": "Many students are sleep-deprived during exam week."
+    },
+    {
+     "w": "stay up late",
+     "ar": "يسهر",
+     "ex": "I stayed up late to finish my science project."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Emma",
+     "t": "This article says teenagers are lazy because they sleep until noon. That's a sweeping generalisation, isn't it?"
+    },
+    {
+     "s": "Omar",
+     "t": "Definitely. It comes across as a bit unfair. Teenagers tend to sleep later, but there's a scientific reason for it."
+    },
+    {
+     "s": "Emma",
+     "t": "Right. Our body clocks seem to shift as we grow up, so we don't feel sleepy until later at night."
+    },
+    {
+     "s": "Omar",
+     "t": "That's true to some extent. But lots of us also stay up late chatting with friends."
+    },
+    {
+     "s": "Emma",
+     "t": "So, on the whole, would you say our class is sleep-deprived?"
+    },
+    {
+     "s": "Omar",
+     "t": "Quite a few of us appear to be, especially during exam week. Not everyone, though."
+    }
+   ],
+   "grammar": {
+    "title": "tend to and seem to",
+    "ar": "نستخدم tend to لوصف ما يحدث عادةً، و seem to / appear to لنقول إن شيئاً يبدو صحيحاً دون أن نجزم.",
+    "examples": [
+     "Teenagers tend to sleep later than adults.",
+     "Our class seems to be more tired on Sundays.",
+     "Some students appear to need more sleep than others."
+    ]
+   }
+  },
+  "0-2": {
+   "words": [
+    {
+     "w": "with all due respect",
+     "ar": "مع كامل احترامي",
+     "ex": "With all due respect, I see things a little differently."
+    },
+    {
+     "w": "I'm not entirely convinced",
+     "ar": "لست مقتنعاً تماماً",
+     "ex": "I'm not entirely convinced that it's the best job for me."
+    },
+    {
+     "w": "see where you're coming from",
+     "ar": "أفهم وجهة نظرك",
+     "ex": "I can see where you're coming from, Grandad."
+    },
+    {
+     "w": "get the wrong idea",
+     "ar": "يفهم الأمر خطأً",
+     "ex": "Don't get the wrong idea; I love spending time with you."
+    },
+    {
+     "w": "set your heart on",
+     "ar": "يتعلّق قلبه بـ",
+     "ex": "She has set her heart on studying architecture."
+    },
+    {
+     "w": "reassure",
+     "ar": "يطمئن",
+     "ex": "I reassured my mum that I would be careful."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Grandfather",
+     "t": "Reem, your uncle is a doctor, and so was my father. You'd make an excellent doctor too."
+    },
+    {
+     "s": "Reem",
+     "t": "Thank you, Grandad. I can see where you're coming from, but I've set my heart on architecture."
+    },
+    {
+     "s": "Grandfather",
+     "t": "Architecture? Doctors help people every day. It's a far more useful job."
+    },
+    {
+     "s": "Reem",
+     "t": "With all due respect, I'm not entirely convinced that's true. Architects seem to help people in a different way."
+    },
+    {
+     "s": "Grandfather",
+     "t": "How so?"
+    },
+    {
+     "s": "Reem",
+     "t": "Well, good buildings tend to make people healthier and happier. Think of hospitals with lots of natural light."
+    }
+   ],
+   "grammar": {
+    "title": "Disagreeing respectfully",
+    "ar": "نُظهر أولاً أننا نفهم الرأي الآخر، ثم نعبّر عن رأينا بلطف ودون جزم.",
+    "examples": [
+     "I can see where you're coming from, but I see it differently.",
+     "With all due respect, I'm not entirely convinced.",
+     "I'm not sure I'd agree with that, to be honest."
+    ]
+   }
+  },
+  "0-3": {
+   "words": [
+    {
+     "w": "I'd rather not",
+     "ar": "أفضّل ألّا",
+     "ex": "I'd rather not lend my new camera, if that's OK."
+    },
+    {
+     "w": "put someone on the spot",
+     "ar": "يحرج شخصاً بطلب مفاجئ",
+     "ex": "Sorry, you've put me on the spot a bit."
+    },
+    {
+     "w": "turn down",
+     "ar": "يرفض",
+     "ex": "She turned down the invitation because of her exams."
+    },
+    {
+     "w": "be in a tricky position",
+     "ar": "يكون في موقف صعب",
+     "ex": "If the teacher found out, we'd be in a tricky position."
+    },
+    {
+     "w": "make it up to you",
+     "ar": "أعوّضك",
+     "ex": "Sorry I missed your party; I'll make it up to you."
+    },
+    {
+     "w": "lend a hand",
+     "ar": "يمدّ يد العون",
+     "ex": "Can you lend a hand with these boxes?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "Faisal, I didn't manage to finish the maths homework. Could I have a quick look at yours?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Ah, you've put me on the spot a bit. I'd rather not, if that's OK."
+    },
+    {
+     "s": "Sam",
+     "t": "Come on, it'll only take five minutes!"
+    },
+    {
+     "s": "Faisal",
+     "t": "I know, but if Mr Ali noticed, we'd both be in a tricky position. It seems a bit risky to me."
+    },
+    {
+     "s": "Sam",
+     "t": "Fair enough. I just don't understand question four at all."
+    },
+    {
+     "s": "Faisal",
+     "t": "Well, I'm happy to lend a hand with that. Shall we go through it together at break?"
+    }
+   ],
+   "grammar": {
+    "title": "Declining politely",
+    "ar": "نرفض بلطف: نشكر، ثم نعتذر مع ذكر السبب، ثم نقترح بديلاً.",
+    "examples": [
+     "I'd love to, but I've got a test on Sunday.",
+     "I'd rather not, if that's OK.",
+     "I can't this weekend, but how about next Thursday?"
+    ]
+   }
+  },
+  "0-4": {
+   "words": [
+    {
+     "w": "pull your weight",
+     "ar": "يقوم بنصيبه من العمل",
+     "ex": "He hasn't been pulling his weight in our group."
+    },
+    {
+     "w": "fall behind",
+     "ar": "يتأخّر عن الخطة",
+     "ex": "We've fallen behind with the slides."
+    },
+    {
+     "w": "I wonder if",
+     "ar": "أتساءل إن كان",
+     "ex": "I wonder if you could finish your part by Tuesday."
+    },
+    {
+     "w": "bring something up",
+     "ar": "يطرح موضوعاً",
+     "ex": "There's something I'd like to bring up."
+    },
+    {
+     "w": "awkward",
+     "ar": "محرج",
+     "ex": "This is a bit awkward, but we need to talk."
+    },
+    {
+     "w": "deadline",
+     "ar": "الموعد النهائي",
+     "ex": "The deadline for the project is Thursday."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sam",
+     "t": "Ziad, have you got a minute? There's something I'd like to bring up about our project."
+    },
+    {
+     "s": "Ziad",
+     "t": "Sure. Is everything OK?"
+    },
+    {
+     "s": "Sam",
+     "t": "Well, this is a bit awkward, but it seems that we've fallen behind with the slides, and the deadline is on Thursday."
+    },
+    {
+     "s": "Ziad",
+     "t": "Ah. Yes, I haven't started my part yet. I've had football training every evening."
+    },
+    {
+     "s": "Sam",
+     "t": "I understand. But I'm not entirely sure that Omar and I can finish everything alone. I wonder if you could do your slides by Tuesday?"
+    },
+    {
+     "s": "Ziad",
+     "t": "That's fair. I know I haven't been pulling my weight lately."
+    }
+   ],
+   "grammar": {
+    "title": "Raising a problem politely",
+    "ar": "نبدأ بتمهيد لطيف، ونصف المشكلة بعبارة مخففة، ثم نطلب بأسلوب غير مباشر.",
+    "examples": [
+     "This is a bit awkward, but we've fallen behind.",
+     "It seems that some of the work hasn't been done.",
+     "I wonder if you could finish your part by Tuesday."
+    ]
+   }
+  },
+  "0-5": {
+   "words": [
+    {
+     "w": "tactful",
+     "ar": "لبق / دبلوماسي",
+     "ex": "It was very tactful of you not to mention her mistake."
+    },
+    {
+     "w": "blunt",
+     "ar": "صريح بشكل جارح",
+     "ex": "My brother is so blunt that he sometimes upsets people."
+    },
+    {
+     "w": "hurt someone's feelings",
+     "ar": "يجرح مشاعر شخص",
+     "ex": "I didn't mean to hurt your feelings."
+    },
+    {
+     "w": "beat around the bush",
+     "ar": "يلفّ ويدور",
+     "ex": "Stop beating around the bush and tell me."
+    },
+    {
+     "w": "strike a balance",
+     "ar": "يوازن بين",
+     "ex": "You need to strike a balance between honesty and kindness."
+    },
+    {
+     "w": "get your message across",
+     "ar": "يوصل رسالته",
+     "ex": "A short example helps you get your message across."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Dana",
+     "t": "Welcome back! Today's message says: 'My best friend wants to read her very long poem on National Day. What should I tell her?'"
+    },
+    {
+     "s": "Hessa",
+     "t": "Tricky! If you're too blunt, you might hurt her feelings. But if you beat around the bush, she won't understand."
+    },
+    {
+     "s": "Dana",
+     "t": "Exactly. You need to strike a balance. Start with what you genuinely like about the poem."
+    },
+    {
+     "s": "Hessa",
+     "t": "Then you could perhaps say: 'It seems a little long for a short event. I wonder if you could choose your best verses?'"
+    },
+    {
+     "s": "Dana",
+     "t": "So, to our listener: be kind, but be clear. That's how you get your message across."
+    },
+    {
+     "s": "Hessa",
+     "t": "Keep your messages coming, everyone. See you next week!"
+    }
+   ],
+   "grammar": {
+    "title": "Tactful language toolkit",
+    "ar": "نجمع أدوات التلطيف: seem و tend to و a bit و perhaps و I wonder if و I'm not entirely sure that.",
+    "examples": [
+     "It seems a little long for a short event.",
+     "You could perhaps choose your best lines.",
+     "I'm not entirely sure that everyone will follow it."
+    ]
+   }
+  },
+  "1-0": {
+   "words": [
+    {
+     "w": "get a word in",
+     "ar": "يجد فرصة للكلام",
+     "ex": "My uncle talks so much that nobody can get a word in."
+    },
+    {
+     "w": "Sorry to interrupt, but",
+     "ar": "آسف على المقاطعة، لكن",
+     "ex": "Sorry to interrupt, but what time are we leaving?"
+    },
+    {
+     "w": "Can I just add",
+     "ar": "هل يمكنني أن أضيف",
+     "ex": "Can I just add something about the weather?"
+    },
+    {
+     "w": "come in here",
+     "ar": "أتدخّل هنا",
+     "ex": "Could I just come in here for a second?"
+    },
+    {
+     "w": "talk over someone",
+     "ar": "يتكلّم فوق كلام غيره",
+     "ex": "Please don't talk over your sister."
+    },
+    {
+     "w": "chip in",
+     "ar": "يشارك بتعليق أو مساهمة",
+     "ex": "Everyone chipped in with ideas for the trip."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Turki",
+     "t": "So, we'll leave at four, set up the tent, light the fire, cook the kabsa, and after that we'll—"
+    },
+    {
+     "s": "Omar",
+     "t": "Sorry to interrupt, but who's bringing the tent? Last time we forgot it."
+    },
+    {
+     "s": "Turki",
+     "t": "Good point. My uncle has a big one. Anyway, after dinner we'll—"
+    },
+    {
+     "s": "Sam",
+     "t": "Can I just add something? The weather app says it might get really cold after midnight."
+    },
+    {
+     "s": "Turki",
+     "t": "Ah. OK, so everyone needs warm blankets. As I was saying, after dinner we'll watch the stars."
+    },
+    {
+     "s": "Omar",
+     "t": "Could I come in here? Last time we all talked over each other and nobody decided anything."
+    },
+    {
+     "s": "Sam",
+     "t": "True! Let's take turns this time. I'll chip in with snacks and my telescope."
+    }
+   ],
+   "grammar": {
+    "title": "Interrupting politely",
+    "ar": "نقاطع بأدب بعبارة تمهيدية، ثم نذكر النقطة باختصار.",
+    "examples": [
+     "Sorry to interrupt, but who's bringing the tent?",
+     "Can I just add something?",
+     "Could I come in here for a second?"
+    ]
+   }
+  },
+  "1-1": {
+   "words": [
+    {
+     "w": "If I could just finish",
+     "ar": "لو سمحت لي أن أُكمل",
+     "ex": "If I could just finish, I've got one more idea."
+    },
+    {
+     "w": "As I was saying",
+     "ar": "كما كنت أقول",
+     "ex": "As I was saying, Taif is cooler in summer."
+    },
+    {
+     "w": "hold on a second",
+     "ar": "انتظر لحظة",
+     "ex": "Hold on a second, I haven't finished."
+    },
+    {
+     "w": "lose your train of thought",
+     "ar": "يفقد تسلسل أفكاره",
+     "ex": "Sorry, I've lost my train of thought."
+    },
+    {
+     "w": "get to the point",
+     "ar": "يدخل في صلب الموضوع",
+     "ex": "Can you get to the point? What's the plan?"
+    },
+    {
+     "w": "bear with me",
+     "ar": "اصبر عليّ قليلاً",
+     "ex": "Bear with me; I'm almost finished."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Lama",
+     "t": "OK, everyone. I've looked at three places for our summer trip. The first is Taif, because it's cooler and—"
+    },
+    {
+     "s": "Yousef",
+     "t": "Taif again? We went there last year!"
+    },
+    {
+     "s": "Lama",
+     "t": "Hold on a second, Yousef. If I could just finish, I've got two other ideas too."
+    },
+    {
+     "s": "Mum",
+     "t": "Go on, Lama. Bear with her, Yousef."
+    },
+    {
+     "s": "Lama",
+     "t": "Thanks. As I was saying, Taif is cooler. The second option is Al-Baha, and the third is the Red Sea coast."
+    },
+    {
+     "s": "Yousef",
+     "t": "The Red Sea! Now you're talking. Sorry I kept interrupting."
+    }
+   ],
+   "grammar": {
+    "title": "Holding the floor",
+    "ar": "عندما يقاطعنا أحد نطلب بلطف أن نكمل، ثم نعود للموضوع بـ As I was saying.",
+    "examples": [
+     "Hold on a second, I haven't finished.",
+     "If I could just finish, I've got one more idea.",
+     "As I was saying, Taif is cooler in summer."
+    ]
+   }
+  },
+  "1-2": {
+   "words": [
+    {
+     "w": "What's your take on",
+     "ar": "ما رأيك في",
+     "ex": "What's your take on the new timetable?"
+    },
+    {
+     "w": "We haven't heard from",
+     "ar": "لم نسمع رأي",
+     "ex": "We haven't heard from Lama yet."
+    },
+    {
+     "w": "draw someone out",
+     "ar": "يشجّع الخجول على الكلام",
+     "ex": "She's really good at drawing people out."
+    },
+    {
+     "w": "speak up",
+     "ar": "يعبّر عن رأيه بجرأة",
+     "ex": "You should speak up more often in class."
+    },
+    {
+     "w": "dominate",
+     "ar": "يهيمن على",
+     "ex": "Sorry, I've been dominating the meeting."
+    },
+    {
+     "w": "a fresh pair of eyes",
+     "ar": "نظرة جديدة",
+     "ex": "You've got a fresh pair of eyes, so tell us what you see."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Hessa",
+     "t": "Right, Noura has shared lots of great ideas about the library. But we haven't heard from Lama yet."
+    },
+    {
+     "s": "Lama",
+     "t": "Oh, I'm fine, thanks. I don't really have much to say."
+    },
+    {
+     "s": "Hessa",
+     "t": "You're new here, so you've got a fresh pair of eyes. What's your take on the library?"
+    },
+    {
+     "s": "Lama",
+     "t": "Well, honestly, it feels a bit dark. Maybe that's why students don't stay there long."
+    },
+    {
+     "s": "Noura",
+     "t": "That's a great point! Sorry, I've been dominating the meeting. Would you like to say more, Lama?"
+    },
+    {
+     "s": "Lama",
+     "t": "Can I just add one more thing? We could use bean bags instead of hard chairs."
+    }
+   ],
+   "grammar": {
+    "title": "Giving someone the floor",
+    "ar": "ندعو الآخرين للمشاركة بأسئلة مباشرة ولطيفة مع ذكر أسمائهم.",
+    "examples": [
+     "We haven't heard from Lama yet.",
+     "What's your take on this, Omar?",
+     "Would you like to add anything, Sam?"
+    ]
+   }
+  },
+  "1-3": {
+   "words": [
+    {
+     "w": "Going back to",
+     "ar": "بالعودة إلى",
+     "ex": "Going back to the date, how about Thursday?"
+    },
+    {
+     "w": "get sidetracked",
+     "ar": "ينحرف عن الموضوع",
+     "ex": "Sorry, we're getting sidetracked."
+    },
+    {
+     "w": "off the point",
+     "ar": "خارج الموضوع",
+     "ex": "That's interesting, but it's a bit off the point."
+    },
+    {
+     "w": "Where were we?",
+     "ar": "أين كنّا؟",
+     "ex": "Sorry about that. Where were we?"
+    },
+    {
+     "w": "on track",
+     "ar": "على المسار الصحيح",
+     "ex": "Let's keep this meeting on track."
+    },
+    {
+     "w": "pick up on",
+     "ar": "يتناول نقطة ذكرها أحدهم",
+     "ex": "To pick up on Omar's point, we could look at Mars."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Fahad",
+     "t": "So, for the stargazing night, we need to choose a date, a place and who brings the telescopes."
+    },
+    {
+     "s": "Omar",
+     "t": "Did you see that documentary about Mars? Apparently there might be water under the ice."
+    },
+    {
+     "s": "Sam",
+     "t": "Yes! Which reminds me, we should go when there's no moon. Anyway, there was a part about rockets landing by themselves—"
+    },
+    {
+     "s": "Fahad",
+     "t": "Sorry, guys, we're getting sidetracked. That's interesting, but it's a bit off the point."
+    },
+    {
+     "s": "Omar",
+     "t": "Fair enough. Where were we?"
+    },
+    {
+     "s": "Fahad",
+     "t": "Going back to what Sam said about the moon, that's a good idea. A night with no moon means darker skies."
+    }
+   ],
+   "grammar": {
+    "title": "Getting back on topic",
+    "ar": "عندما يبتعد النقاش عن الموضوع نعيده بلطف ونربطه بنقطة سابقة.",
+    "examples": [
+     "Sorry, we're getting sidetracked.",
+     "Going back to what Sam said, a night with no moon is best.",
+     "To pick up on Omar's point, we could look at Mars."
+    ]
+   }
+  },
+  "1-4": {
+   "words": [
+    {
+     "w": "To add to what … said",
+     "ar": "إضافةً لما قاله",
+     "ex": "To add to what Noura said, it's cheaper too."
+    },
+    {
+     "w": "build on",
+     "ar": "يبني على",
+     "ex": "Can you build on that idea?"
+    },
+    {
+     "w": "tie in with",
+     "ar": "يرتبط بـ",
+     "ex": "That ties in with what we studied last week."
+    },
+    {
+     "w": "go even further",
+     "ar": "يذهب أبعد من ذلك",
+     "ex": "I'd go even further and say the metro is essential."
+    },
+    {
+     "w": "a knock-on effect",
+     "ar": "أثر غير مباشر",
+     "ex": "Less traffic has a knock-on effect on air quality."
+    },
+    {
+     "w": "commute",
+     "ar": "التنقّل اليومي",
+     "ex": "My dad's commute is much shorter now."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Ms Sarah",
+     "t": "So, how has the Riyadh Metro changed life in the city? Noura?"
+    },
+    {
+     "s": "Noura",
+     "t": "Well, my dad's commute is much easier. He reads on the train instead of sitting in traffic."
+    },
+    {
+     "s": "Reem",
+     "t": "To add to what Noura said, fewer cars should mean less pollution as well."
+    },
+    {
+     "s": "Ms Sarah",
+     "t": "Good. Does that tie in with anything else we've studied?"
+    },
+    {
+     "s": "Noura",
+     "t": "Yes, it ties in with the Saudi Green Initiative. Cutting emissions is one of its aims."
+    },
+    {
+     "s": "Reem",
+     "t": "And I'd go even further and say there's a knock-on effect on people's health."
+    }
+   ],
+   "grammar": {
+    "title": "Building on others' ideas",
+    "ar": "نربط كلامنا بما قاله غيرنا لنضيف إليه أو نوسّع الفكرة.",
+    "examples": [
+     "To add to what Noura said, it's also cheaper.",
+     "That ties in with what we studied last week.",
+     "I'd go even further and say it's essential."
+    ]
+   }
+  },
+  "1-5": {
+   "words": [
+    {
+     "w": "have the floor",
+     "ar": "له الكلمة",
+     "ex": "Dana, you have the floor."
+    },
+    {
+     "w": "keep it brief",
+     "ar": "يختصر",
+     "ex": "We've only got ten minutes, so please keep it brief."
+    },
+    {
+     "w": "make a valid point",
+     "ar": "يطرح نقطة وجيهة",
+     "ex": "You both make a valid point."
+    },
+    {
+     "w": "wrap up",
+     "ar": "يختم / ينهي",
+     "ex": "Let's wrap up there. Thank you both."
+    },
+    {
+     "w": "chair a discussion",
+     "ar": "يدير النقاش",
+     "ex": "Chairing a discussion is harder than it looks."
+    },
+    {
+     "w": "voluntary",
+     "ar": "تطوّعي / اختياري",
+     "ex": "Joining the club is completely voluntary."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Reem",
+     "t": "Welcome to our panel. Today's question: should volunteering be compulsory for students? Dana, you have the floor. Please keep it brief."
+    },
+    {
+     "s": "Dana",
+     "t": "Thanks. I think it should stay voluntary. If people are forced, they won't really care about the work."
+    },
+    {
+     "s": "Lama",
+     "t": "Sorry to interrupt, but isn't that true of homework too? We still have to do it."
+    },
+    {
+     "s": "Dana",
+     "t": "If I could just finish, homework is for our own learning, but volunteering should come from the heart."
+    },
+    {
+     "s": "Reem",
+     "t": "You both make a valid point. Lama, would you like to say more?"
+    },
+    {
+     "s": "Lama",
+     "t": "Yes. Going back to Dana's point, many students never try volunteering simply because nobody asks them. A few required hours could change that."
+    }
+   ],
+   "grammar": {
+    "title": "Managing a discussion",
+    "ar": "مدير النقاش يعطي الكلمة، ويحافظ على المسار، ثم يختم النقاش.",
+    "examples": [
+     "Dana, you have the floor.",
+     "Sorry to interrupt, but isn't that true of homework too?",
+     "Let's wrap up there. Thank you both."
+    ]
+   }
+  },
+  "2-0": {
+   "words": [
+    {
+     "w": "What I meant was",
+     "ar": "ما قصدته هو",
+     "ex": "What I meant was that I loved it."
+    },
+    {
+     "w": "get the wrong end of the stick",
+     "ar": "يفهم الكلام على غير وجهه",
+     "ex": "Sorry, I think I got the wrong end of the stick."
+    },
+    {
+     "w": "take something the wrong way",
+     "ar": "يفهم الكلام بشكل سلبي",
+     "ex": "Don't take it the wrong way; I was only joking."
+    },
+    {
+     "w": "clear the air",
+     "ar": "يصفّي الأجواء",
+     "ex": "I'm glad we cleared the air."
+    },
+    {
+     "w": "offended",
+     "ar": "مستاء / مجروح",
+     "ex": "He was offended by my joke."
+    },
+    {
+     "w": "make it clear",
+     "ar": "يوضّح",
+     "ex": "I should have made it clear that I loved it."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Ahmed",
+     "t": "Faisal, can I ask you something? Yesterday you said my mum's kabsa was 'really different'. I was a bit offended, to be honest."
+    },
+    {
+     "s": "Faisal",
+     "t": "Oh no! I think you got the wrong end of the stick. What I meant was that it was different in a good way."
+    },
+    {
+     "s": "Ahmed",
+     "t": "Really? It didn't sound like a compliment."
+    },
+    {
+     "s": "Faisal",
+     "t": "It wasn't the taste that surprised me; it was the spices. I'd never tried dried lemon in kabsa before."
+    },
+    {
+     "s": "Ahmed",
+     "t": "Ah, that's my mum's secret ingredient! Sorry, I took it the wrong way."
+    },
+    {
+     "s": "Faisal",
+     "t": "No, it's my fault. I should have made it clear that I loved it. I had three plates!"
+    }
+   ],
+   "grammar": {
+    "title": "Clefts for clarifying",
+    "ar": "نستخدم What I meant was … لنوضّح قصدنا، و It wasn't … that …; it was … لنصحّح الفهم.",
+    "examples": [
+     "What I meant was that it was different in a good way.",
+     "It wasn't the taste that surprised me; it was the spices.",
+     "What I wanted to say was thank you."
+    ]
+   }
+  },
+  "2-1": {
+   "words": [
+    {
+     "w": "What I love about",
+     "ar": "ما أحبّه في",
+     "ex": "What I love about football is the teamwork."
+    },
+    {
+     "w": "be passionate about",
+     "ar": "شغوف بـ",
+     "ex": "She's passionate about photography."
+    },
+    {
+     "w": "lose track of time",
+     "ar": "يفقد الإحساس بالوقت",
+     "ex": "When I draw, I completely lose track of time."
+    },
+    {
+     "w": "therapeutic",
+     "ar": "مريح للنفس",
+     "ex": "Gardening is surprisingly therapeutic."
+    },
+    {
+     "w": "take up",
+     "ar": "يبدأ هواية",
+     "ex": "He took up calligraphy three years ago."
+    },
+    {
+     "w": "What makes it special",
+     "ar": "ما يميّزه",
+     "ex": "What makes it special is the variety of styles."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Omar",
+     "t": "So, Majid, when did you take up calligraphy?"
+    },
+    {
+     "s": "Majid",
+     "t": "About three years ago. My grandfather showed me some Thuluth script, and I was hooked."
+    },
+    {
+     "s": "Omar",
+     "t": "You're clearly passionate about it. What do you love about it most?"
+    },
+    {
+     "s": "Majid",
+     "t": "What I love about calligraphy is the patience it needs. One wrong move and you have to start again."
+    },
+    {
+     "s": "Omar",
+     "t": "And what makes it special compared with other kinds of art?"
+    },
+    {
+     "s": "Majid",
+     "t": "What makes it special is that every letter follows rules, yet every artist's style is unique."
+    }
+   ],
+   "grammar": {
+    "title": "Wh-clefts for emphasis",
+    "ar": "نبدأ بـ What + جملة + is لنبرز الجزء الأهم في آخر الجملة.",
+    "examples": [
+     "What I love about calligraphy is the patience it needs.",
+     "What makes it special is the variety of styles.",
+     "What I enjoy most is the peace and quiet."
+    ]
+   }
+  },
+  "2-2": {
+   "words": [
+    {
+     "w": "give credit to",
+     "ar": "ينسب الفضل لـ",
+     "ex": "We need to give credit to everyone in the team."
+    },
+    {
+     "w": "behind the scenes",
+     "ar": "خلف الكواليس",
+     "ex": "She worked behind the scenes for months."
+    },
+    {
+     "w": "set the record straight",
+     "ar": "يصحّح المعلومة",
+     "ex": "Let me set the record straight: I didn't build it."
+    },
+    {
+     "w": "make all the difference",
+     "ar": "يُحدث فرقاً كبيراً",
+     "ex": "Her programming made all the difference."
+    },
+    {
+     "w": "unsung hero",
+     "ar": "بطل مجهول",
+     "ex": "Our school caretaker is an unsung hero."
+    },
+    {
+     "w": "take the credit",
+     "ar": "ينسب الفضل لنفسه",
+     "ex": "He took the credit for his friend's idea."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Sara",
+     "t": "Congratulations, Hala! Our magazine says you built the robot that won the school's robotics competition."
+    },
+    {
+     "s": "Hala",
+     "t": "Thanks, but I'd like to set the record straight. It wasn't me who built it; it was Joud."
+    },
+    {
+     "s": "Sara",
+     "t": "Joud? I've never heard her name mentioned."
+    },
+    {
+     "s": "Hala",
+     "t": "That's because she worked behind the scenes. She's the unsung hero of our team."
+    },
+    {
+     "s": "Sara",
+     "t": "So what did you do?"
+    },
+    {
+     "s": "Hala",
+     "t": "I gave the presentation to the judges. But it was Joud's programming that made all the difference."
+    }
+   ],
+   "grammar": {
+    "title": "It-clefts",
+    "ar": "نستخدم It was … who/that … لنبرز الشخص أو الشيء المهم، وكثيراً ما نصحّح بها معلومة خاطئة.",
+    "examples": [
+     "It wasn't me who built it; it was Joud.",
+     "It was her programming that made all the difference.",
+     "It's teamwork that wins competitions."
+    ]
+   }
+  },
+  "2-3": {
+   "words": [
+    {
+     "w": "All I'm asking is",
+     "ar": "كل ما أطلبه هو",
+     "ex": "All I'm asking is one more chance."
+    },
+    {
+     "w": "I do understand",
+     "ar": "أنا فعلاً أتفهّم",
+     "ex": "I do understand that you're worried."
+    },
+    {
+     "w": "The thing is",
+     "ar": "المسألة هي",
+     "ex": "The thing is, this chance won't come again."
+    },
+    {
+     "w": "give it a go",
+     "ar": "يجرّب",
+     "ex": "Why not give it a go?"
+    },
+    {
+     "w": "trust someone with",
+     "ar": "يأتمن على",
+     "ex": "My parents trust me with my little sister."
+    },
+    {
+     "w": "once-in-a-lifetime",
+     "ar": "فرصة العمر",
+     "ex": "It's a once-in-a-lifetime chance."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Yousef",
+     "t": "Dad, the coding camp in Jeddah is in two weeks. Have you thought about it?"
+    },
+    {
+     "s": "Dad",
+     "t": "I have. A whole week away from home is a long time, Yousef."
+    },
+    {
+     "s": "Yousef",
+     "t": "I do understand that you're worried. The thing is, this camp is a once-in-a-lifetime chance."
+    },
+    {
+     "s": "Dad",
+     "t": "There will be other chances. You're only fifteen."
+    },
+    {
+     "s": "Yousef",
+     "t": "All I'm asking is that you let me give it a go. My cousin Saad lives there, so I won't be alone."
+    },
+    {
+     "s": "Dad",
+     "t": "Fair point. Let me talk to your mother and Saad. A week of real coding could make all the difference."
+    }
+   ],
+   "grammar": {
+    "title": "Emphatic do and 'All I …'",
+    "ar": "نضيف do / does / did قبل الفعل للتأكيد، ونستخدم All I'm asking is … لنُظهر أن طلبنا بسيط.",
+    "examples": [
+     "I do understand that you're worried.",
+     "All I'm asking is one week.",
+     "I did tidy my room. Look!"
+    ]
+   }
+  },
+  "2-4": {
+   "words": [
+    {
+     "w": "The reason why",
+     "ar": "السبب في",
+     "ex": "The reason why I changed my mind is simple."
+    },
+    {
+     "w": "What made me",
+     "ar": "ما دفعني إلى",
+     "ex": "What made me decide was a talk at school."
+    },
+    {
+     "w": "spark an interest in",
+     "ar": "يثير الاهتمام بـ",
+     "ex": "A documentary sparked my interest in space."
+    },
+    {
+     "w": "cybersecurity",
+     "ar": "الأمن السيبراني",
+     "ex": "Cybersecurity is a fast-growing field."
+    },
+    {
+     "w": "career path",
+     "ar": "المسار المهني",
+     "ex": "He's still thinking about his career path."
+    },
+    {
+     "w": "in demand",
+     "ar": "مطلوب",
+     "ex": "Data scientists are in demand all over the world."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Leo",
+     "t": "I heard you chose cybersecurity as your elective. I thought you wanted to be an engineer?"
+    },
+    {
+     "s": "Khalid",
+     "t": "I did, but the reason why I changed my mind is a problem my dad had last year."
+    },
+    {
+     "s": "Leo",
+     "t": "What happened?"
+    },
+    {
+     "s": "Khalid",
+     "t": "Someone hacked his email and sent fake messages to all his contacts. That's what sparked my interest in cybersecurity."
+    },
+    {
+     "s": "Leo",
+     "t": "Wow. So what made you choose it as a career path, not just a hobby?"
+    },
+    {
+     "s": "Khalid",
+     "t": "What made me decide was a talk at school. The speaker said cybersecurity experts are very much in demand in Saudi Arabia."
+    }
+   ],
+   "grammar": {
+    "title": "Clefts for reasons",
+    "ar": "نبرز السبب بـ The reason why … is … أو What made me … was …",
+    "examples": [
+     "The reason why I changed my mind is a problem my dad had.",
+     "What made me decide was a talk at school.",
+     "It's the challenge that I enjoy most."
+    ]
+   }
+  },
+  "2-5": {
+   "words": [
+    {
+     "w": "What we need is",
+     "ar": "ما نحتاجه هو",
+     "ex": "What we need is a simple way to share food."
+    },
+    {
+     "w": "the real problem",
+     "ar": "المشكلة الحقيقية",
+     "ex": "The real problem is time."
+    },
+    {
+     "w": "go to waste",
+     "ar": "يُهدر",
+     "ex": "A lot of good food goes to waste at weddings."
+    },
+    {
+     "w": "leftovers",
+     "ar": "بقايا الطعام",
+     "ex": "We had the leftovers for lunch the next day."
+    },
+    {
+     "w": "raise awareness",
+     "ar": "ينشر الوعي",
+     "ex": "The campaign aims to raise awareness of food waste."
+    },
+    {
+     "w": "make a real difference",
+     "ar": "يُحدث فرقاً حقيقياً",
+     "ex": "Your help can make a real difference."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Noura",
+     "t": "Can you listen to my pitch for Ideas Day? I've only got two minutes."
+    },
+    {
+     "s": "Dana",
+     "t": "Sure, go ahead. I'll be the judge."
+    },
+    {
+     "s": "Noura",
+     "t": "At family gatherings, a lot of good food goes to waste. What we need is a simple way to share the leftovers."
+    },
+    {
+     "s": "Dana",
+     "t": "So what's your solution?"
+    },
+    {
+     "s": "Noura",
+     "t": "An app that connects families with local charities, who collect the food the same night. I do believe it could make a real difference."
+    },
+    {
+     "s": "Dana",
+     "t": "I love it. Finish by asking people to help raise awareness, and the judges will remember you."
+    }
+   ],
+   "grammar": {
+    "title": "Emphasis toolkit",
+    "ar": "نجمع أساليب التأكيد: What … is … و It's … that … و do قبل الفعل.",
+    "examples": [
+     "What we need is a simple way to share the leftovers.",
+     "It's speed that matters most.",
+     "I do believe it could make a real difference."
+    ]
+   }
+  },
+  "3-0": {
+   "words": [
+    {
+     "w": "the main drawback",
+     "ar": "العيب الرئيسي",
+     "ex": "The main drawback is the price."
+    },
+    {
+     "w": "It's debatable whether",
+     "ar": "من غير المحسوم ما إذا",
+     "ex": "It's debatable whether people would pay for it."
+    },
+    {
+     "w": "user-friendly",
+     "ar": "سهل الاستخدام",
+     "ex": "The new design is much more user-friendly."
+    },
+    {
+     "w": "stand out from the crowd",
+     "ar": "يتميّز عن غيره",
+     "ex": "A good logo helps an app stand out from the crowd."
+    },
+    {
+     "w": "catch on",
+     "ar": "يلقى رواجاً",
+     "ex": "The game caught on very quickly."
+    },
+    {
+     "w": "on paper",
+     "ar": "نظرياً / على الورق",
+     "ex": "On paper, the plan looks perfect."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Omar",
+     "t": "So, here's my app idea: it matches students who want to revise the same subject together. What do you think?"
+    },
+    {
+     "s": "Faisal",
+     "t": "On paper, it sounds great. And the design looks really user-friendly."
+    },
+    {
+     "s": "Omar",
+     "t": "Fair point. Anything else?"
+    },
+    {
+     "s": "Faisal",
+     "t": "The main drawback is that there are already lots of study apps. How will yours stand out from the crowd?"
+    },
+    {
+     "s": "Omar",
+     "t": "Hmm. Maybe it could connect students from the same school, so they can meet in the library."
+    },
+    {
+     "s": "Faisal",
+     "t": "Now that's a real strength. It's far more useful than just another chat app."
+    }
+   ],
+   "grammar": {
+    "title": "Strengths and drawbacks",
+    "ar": "نقيّم الفكرة بذكر نقطة القوة الرئيسية والعيب الرئيسي، ثم نذكر ما هو قابل للنقاش.",
+    "examples": [
+     "The main strength of the app is that it's user-friendly.",
+     "The main drawback is that there are lots of similar apps.",
+     "It's debatable whether people would pay for it."
+    ]
+   }
+  },
+  "3-1": {
+   "words": [
+    {
+     "w": "tackle",
+     "ar": "يعالج / يتصدّى لـ",
+     "ex": "We need to tackle the traffic problem."
+    },
+    {
+     "w": "nowhere near as",
+     "ar": "أقلّ بكثير من أن يكون",
+     "ex": "A walking day is nowhere near as effective as a daily bus."
+    },
+    {
+     "w": "a short-term fix",
+     "ar": "حلّ مؤقت",
+     "ex": "Extra traffic police is only a short-term fix."
+    },
+    {
+     "w": "in the long term",
+     "ar": "على المدى الطويل",
+     "ex": "In the long term, a bus would save money."
+    },
+    {
+     "w": "It's questionable whether",
+     "ar": "من المشكوك فيه ما إذا",
+     "ex": "It's questionable whether parents would pay."
+    },
+    {
+     "w": "feasible",
+     "ar": "ممكن التنفيذ",
+     "ex": "Is it feasible to finish the bridge in a year?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Saad",
+     "t": "OK, we've got three ideas to tackle the morning traffic: a school bus, staggered start times and a weekly 'walk to school' day."
+    },
+    {
+     "s": "Majid",
+     "t": "The bus is the best option in the long term. It would take dozens of cars off the road."
+    },
+    {
+     "s": "Saad",
+     "t": "True. It's questionable whether enough families would pay for it, though."
+    },
+    {
+     "s": "Majid",
+     "t": "Good point. And the walking day?"
+    },
+    {
+     "s": "Saad",
+     "t": "It's nice, but it's only a short-term fix. One day a week is nowhere near as effective as a daily bus."
+    },
+    {
+     "s": "Majid",
+     "t": "So the bus is still our strongest option. The main drawback is cost, so let's ask the school about a discount."
+    }
+   ],
+   "grammar": {
+    "title": "Comparing with emphasis",
+    "ar": "نقوّي المقارنة بـ far / considerably more … than و nowhere near as … as.",
+    "examples": [
+     "A bus is far more effective than a walking day.",
+     "A walking day is nowhere near as effective as a daily bus.",
+     "Staggered times would be considerably cheaper."
+    ]
+   }
+  },
+  "3-2": {
+   "words": [
+    {
+     "w": "outweigh",
+     "ar": "يفوق / يرجح على",
+     "ex": "The benefits clearly outweigh the costs."
+    },
+    {
+     "w": "cost-effective",
+     "ar": "فعّال من حيث التكلفة",
+     "ex": "LED lights are a cost-effective way to save energy."
+    },
+    {
+     "w": "It remains to be seen whether",
+     "ar": "يبقى أن نرى ما إذا",
+     "ex": "It remains to be seen whether the school will agree."
+    },
+    {
+     "w": "pay off",
+     "ar": "يؤتي ثماره",
+     "ex": "It could take years before the panels pay off."
+    },
+    {
+     "w": "upfront cost",
+     "ar": "التكلفة المبدئية",
+     "ex": "The upfront cost of solar panels is huge."
+    },
+    {
+     "w": "weigh up",
+     "ar": "يوازن بين",
+     "ex": "Let's weigh up the two options."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Emma",
+     "t": "We've got a budget for one green project. Let's weigh up the two options: solar panels or water-saving taps."
+    },
+    {
+     "s": "Reem",
+     "t": "Solar panels make so much sense here. We have sunshine almost every day."
+    },
+    {
+     "s": "Emma",
+     "t": "True, but the upfront cost is huge. It could take years before they pay off."
+    },
+    {
+     "s": "Reem",
+     "t": "In the long term, though, the benefits outweigh the costs. The school's electricity bill would drop."
+    },
+    {
+     "s": "Emma",
+     "t": "Maybe. But water-saving taps are far cheaper and much more cost-effective in the short term."
+    },
+    {
+     "s": "Reem",
+     "t": "That's a fair point. Their main drawback is that students might not even notice them."
+    }
+   ],
+   "grammar": {
+    "title": "Weighing costs and benefits",
+    "ar": "نوازن بين التكلفة والفائدة باستخدام outweigh و cost-effective و pay off و It remains to be seen whether …",
+    "examples": [
+     "The benefits outweigh the costs.",
+     "It could take years before they pay off.",
+     "It remains to be seen whether the school will agree."
+    ]
+   }
+  },
+  "3-3": {
+   "words": [
+    {
+     "w": "On balance",
+     "ar": "بعد الموازنة / إجمالاً",
+     "ex": "On balance, I'd use it as a tutor, not a writer."
+    },
+    {
+     "w": "The jury is still out",
+     "ar": "لم يُحسم الرأي بعد",
+     "ex": "The jury is still out on homework apps."
+    },
+    {
+     "w": "a double-edged sword",
+     "ar": "سلاح ذو حدّين",
+     "ex": "Social media is a double-edged sword."
+    },
+    {
+     "w": "rely on",
+     "ar": "يعتمد على",
+     "ex": "Don't rely on a calculator for simple sums."
+    },
+    {
+     "w": "shortcut",
+     "ar": "طريق مختصر",
+     "ex": "Copying answers is a shortcut that doesn't help you learn."
+    },
+    {
+     "w": "critical thinking",
+     "ar": "التفكير النقدي",
+     "ex": "Debating is great for critical thinking."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Lama",
+     "t": "Some of my classmates use AI chatbots for all their essays. Is that such a bad thing?"
+    },
+    {
+     "s": "Sara",
+     "t": "Honestly, AI is a double-edged sword. It can explain things brilliantly, but it can also become a shortcut."
+    },
+    {
+     "s": "Lama",
+     "t": "A shortcut to what?"
+    },
+    {
+     "s": "Sara",
+     "t": "To good marks without real learning. If you rely on it for everything, you never build critical thinking."
+    },
+    {
+     "s": "Lama",
+     "t": "Fair enough. So should students avoid it completely?"
+    },
+    {
+     "s": "Sara",
+     "t": "Not at all. The jury is still out, but on balance, I'd use it as a tutor, not a writer."
+    }
+   ],
+   "grammar": {
+    "title": "Reaching a balanced judgement",
+    "ar": "بعد ذكر الإيجابيات والسلبيات نصدر حكماً متوازناً بـ On balance, …",
+    "examples": [
+     "AI is a double-edged sword.",
+     "The jury is still out on homework apps.",
+     "On balance, I'd use it as a tutor, not a writer."
+    ]
+   }
+  },
+  "3-4": {
+   "words": [
+    {
+     "w": "value for money",
+     "ar": "قيمة مقابل المال",
+     "ex": "The trip is by far the best value for money."
+    },
+    {
+     "w": "rule out",
+     "ar": "يستبعد",
+     "ex": "Let's rule out the most expensive option."
+    },
+    {
+     "w": "by far",
+     "ar": "بفارق كبير",
+     "ex": "This is by far the best idea we've had."
+    },
+    {
+     "w": "justify",
+     "ar": "يبرّر",
+     "ex": "It's hard to justify spending so much on a party."
+    },
+    {
+     "w": "worth every riyal",
+     "ar": "يستحق كل ريال",
+     "ex": "The camping trip was worth every riyal."
+    },
+    {
+     "w": "narrow down",
+     "ar": "يضيّق الخيارات",
+     "ex": "We narrowed down ten ideas to two."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Turki",
+     "t": "We've got 3,000 riyals left in the class fund. We need to narrow down the ideas to one."
+    },
+    {
+     "s": "Sam",
+     "t": "Let's rule out the new football kit. Only half the class plays football, so it's hard to justify."
+    },
+    {
+     "s": "Turki",
+     "t": "Agreed. That leaves the trip to the science centre and the class party."
+    },
+    {
+     "s": "Sam",
+     "t": "The party would be fun, but it's over in three hours. The trip is by far the best value for money."
+    },
+    {
+     "s": "Turki",
+     "t": "Perfect. Then the benefits clearly outweigh the drawbacks. Let's go for the trip."
+    },
+    {
+     "s": "Sam",
+     "t": "Great. I'm sure it'll be worth every riyal."
+    }
+   ],
+   "grammar": {
+    "title": "Ruling out and choosing",
+    "ar": "نستبعد الخيارات الضعيفة أولاً، ثم نختار الأفضل باستخدام by far.",
+    "examples": [
+     "Let's rule out the football kit.",
+     "It's hard to justify spending so much on a party.",
+     "The trip is by far the best value for money."
+    ]
+   }
+  },
+  "3-5": {
+   "words": [
+    {
+     "w": "criteria",
+     "ar": "المعايير",
+     "ex": "Our criteria are cost, safety and originality."
+    },
+    {
+     "w": "stand up to scrutiny",
+     "ar": "يصمد أمام التدقيق",
+     "ex": "The plan doesn't stand up to scrutiny."
+    },
+    {
+     "w": "far-fetched",
+     "ar": "بعيد عن الواقع",
+     "ex": "A flying school bus sounds a bit far-fetched."
+    },
+    {
+     "w": "practical",
+     "ar": "عملي",
+     "ex": "We need a cheap and practical idea."
+    },
+    {
+     "w": "come out on top",
+     "ar": "يتفوّق / يفوز",
+     "ex": "In the end, the app came out on top."
+    },
+    {
+     "w": "reach a verdict",
+     "ar": "يصدر حكماً",
+     "ex": "The judges took an hour to reach a verdict."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "Hamad",
+     "t": "Right, let's judge the three projects against our criteria: originality, cost and how practical they are."
+    },
+    {
+     "s": "Leo",
+     "t": "The drone that delivers books between classrooms is original, but it seems a bit far-fetched."
+    },
+    {
+     "s": "Hamad",
+     "t": "I agree. It's debatable whether it would be safe in crowded corridors."
+    },
+    {
+     "s": "Leo",
+     "t": "The smart water bottle is clever, but the main drawback is the price. Each one costs 200 riyals."
+    },
+    {
+     "s": "Hamad",
+     "t": "So the app for reporting broken things is by far the strongest. Shall we reach a verdict?"
+    },
+    {
+     "s": "Leo",
+     "t": "Yes. The app comes out on top. Let's announce it!"
+    }
+   ],
+   "grammar": {
+    "title": "Reaching a verdict",
+    "ar": "نقيّم كل فكرة وفق معايير واضحة، ثم نصدر حكماً نهائياً مع الأسباب.",
+    "examples": [
+     "The drone seems a bit far-fetched.",
+     "The app stands up to scrutiny.",
+     "The app is by far the strongest project."
+    ]
+   }
+  }
+ },
+ "quizzes": {
+  "0-0": [
+   {
+    "type": "mc",
+    "q": "The text on your poster is a bit on the small ___.",
+    "options": [
+     "size",
+     "side",
+     "part",
+     "edge"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "could",
+     "tone",
+     "down",
+     "the",
+     "colours",
+     "a",
+     "little."
+    ],
+    "answer": "You could tone down the colours a little.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Which comment is the most tactful?",
+    "options": [
+     "Your poster is terrible.",
+     "Nobody will read this.",
+     "The title seems a little small to me.",
+     "Change everything."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "If something is 'spot on', it is …",
+    "options": [
+     "exactly right",
+     "slightly wrong",
+     "very dirty",
+     "too expensive"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "not",
+     "entirely",
+     "sure",
+     "that",
+     "the",
+     "title",
+     "works."
+    ],
+    "answer": "I'm not entirely sure that the title works.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "0-1": [
+   {
+    "type": "order",
+    "words": [
+     "Teenagers",
+     "tend",
+     "to",
+     "sleep",
+     "later",
+     "than",
+     "adults."
+    ],
+    "answer": "Teenagers tend to sleep later than adults.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'All teenagers are lazy' is a ___ generalisation.",
+    "options": [
+     "sweeping",
+     "cleaning",
+     "rushing",
+     "washing"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "I agree with you to some ___, but not completely.",
+    "options": [
+     "level",
+     "extent",
+     "amount",
+     "part"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence avoids a sweeping generalisation?",
+    "options": [
+     "Every student hates mornings.",
+     "Students never sleep enough.",
+     "All teenagers are always tired.",
+     "Many students seem to find early mornings hard."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "On",
+     "the",
+     "whole,",
+     "our",
+     "class",
+     "sleeps",
+     "too",
+     "little."
+    ],
+    "answer": "On the whole, our class sleeps too little.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "0-2": [
+   {
+    "type": "mc",
+    "q": "'With all due ___, I see things differently.'",
+    "options": [
+     "respect",
+     "manner",
+     "honour",
+     "polite"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "can",
+     "see",
+     "where",
+     "you're",
+     "coming",
+     "from."
+    ],
+    "answer": "I can see where you're coming from.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "If you 'set your heart on' something, you …",
+    "options": [
+     "forget about it",
+     "feel afraid of it",
+     "want it very much",
+     "give it away"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which reply disagrees with an older relative most tactfully?",
+    "options": [
+     "You're wrong, Grandad.",
+     "I see your point, but I'm not entirely convinced.",
+     "That's an old-fashioned idea.",
+     "I don't care what you think."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "just",
+     "want",
+     "to",
+     "reassure",
+     "you."
+    ],
+    "answer": "I just want to reassure you.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "0-3": [
+   {
+    "type": "mc",
+    "q": "I'd rather ___ lend my camera, if that's OK.",
+    "options": [
+     "not",
+     "don't",
+     "not to",
+     "no"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "Sorry,",
+     "you've",
+     "put",
+     "me",
+     "on",
+     "the",
+     "spot."
+    ],
+    "answer": "Sorry, you've put me on the spot.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "She had to ___ the invitation because of her exams.",
+    "options": [
+     "turn up",
+     "turn down",
+     "turn over",
+     "turn into"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which is the most tactful way to decline?",
+    "options": [
+     "No. Ask someone else.",
+     "Why would I help you?",
+     "I'd love to, but I'm busy that day. How about Monday?",
+     "Never ask me again."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'll",
+     "make",
+     "it",
+     "up",
+     "to",
+     "you,",
+     "I",
+     "promise."
+    ],
+    "answer": "I'll make it up to you, I promise.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "0-4": [
+   {
+    "type": "mc",
+    "q": "Everyone in the team should pull their ___.",
+    "options": [
+     "power",
+     "strength",
+     "hand",
+     "weight"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "wonder",
+     "if",
+     "you",
+     "could",
+     "help",
+     "me."
+    ],
+    "answer": "I wonder if you could help me.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "We've fallen ___ with our project, so we need to work faster.",
+    "options": [
+     "down",
+     "behind",
+     "off",
+     "out"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence raises a problem most tactfully?",
+    "options": [
+     "It seems that we've fallen a bit behind. Could we talk about it?",
+     "You're lazy and you've ruined our project.",
+     "Do your work now!",
+     "I'm telling the teacher."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "There's",
+     "something",
+     "I'd",
+     "like",
+     "to",
+     "bring",
+     "up."
+    ],
+    "answer": "There's something I'd like to bring up.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "0-5": [
+   {
+    "type": "mc",
+    "q": "A person who speaks without trying to be polite is ___.",
+    "options": [
+     "tactful",
+     "blunt",
+     "shy",
+     "gentle"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "Stop",
+     "beating",
+     "around",
+     "the",
+     "bush",
+     "and",
+     "tell",
+     "me."
+    ],
+    "answer": "Stop beating around the bush and tell me.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "It's hard to strike a ___ between honesty and kindness.",
+    "options": [
+     "balance",
+     "match",
+     "deal",
+     "line"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which advice is the most tactful?",
+    "options": [
+     "Tell her the poem is boring.",
+     "Say nothing and let her fail.",
+     "Tell everyone except her.",
+     "Praise one part, then suggest she shortens it."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "Be",
+     "kind,",
+     "but",
+     "be",
+     "clear."
+    ],
+    "answer": "Be kind, but be clear.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "1-0": [
+   {
+    "type": "order",
+    "words": [
+     "Sorry",
+     "to",
+     "interrupt,",
+     "but",
+     "I",
+     "have",
+     "a",
+     "question."
+    ],
+    "answer": "Sorry to interrupt, but I have a question.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "It's rude to talk ___ people when they are speaking.",
+    "options": [
+     "over",
+     "into",
+     "across",
+     "onto"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "My uncle talks so much that I can't get a ___ in.",
+    "options": [
+     "talk",
+     "word",
+     "turn",
+     "voice"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which is the politest way to join in?",
+    "options": [
+     "Be quiet, it's my turn.",
+     "Stop talking!",
+     "Could I just come in here?",
+     "You're wrong, listen to me."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "Can",
+     "I",
+     "just",
+     "add",
+     "something?"
+    ],
+    "answer": "Can I just add something?",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "1-1": [
+   {
+    "type": "mc",
+    "q": "'If I could just ___, I've got one more point.'",
+    "options": [
+     "finish",
+     "finished",
+     "to finish",
+     "finishing"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "As",
+     "I",
+     "was",
+     "saying,",
+     "the",
+     "trip",
+     "is",
+     "in",
+     "July."
+    ],
+    "answer": "As I was saying, the trip is in July.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Sorry, I've lost my ___ of thought.",
+    "options": [
+     "rail",
+     "train",
+     "road",
+     "bus"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "'Bear with me' means …",
+    "options": [
+     "please stop talking",
+     "please carry this",
+     "please agree with me",
+     "please be patient for a moment"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "Hold",
+     "on",
+     "a",
+     "second,",
+     "let",
+     "me",
+     "finish."
+    ],
+    "answer": "Hold on a second, let me finish.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "1-2": [
+   {
+    "type": "mc",
+    "q": "'What's your ___ on the new timetable?'",
+    "options": [
+     "take",
+     "grab",
+     "catch",
+     "hold"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "haven't",
+     "heard",
+     "from",
+     "Lama",
+     "yet."
+    ],
+    "answer": "We haven't heard from Lama yet.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A person who ___ a meeting doesn't let others speak.",
+    "options": [
+     "joins",
+     "follows",
+     "dominates",
+     "attends"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence invites a quiet person to speak?",
+    "options": [
+     "Let's finish now.",
+     "I'll decide for everyone.",
+     "Please be quiet.",
+     "Sami, would you like to add anything?"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "should",
+     "speak",
+     "up",
+     "more",
+     "often."
+    ],
+    "answer": "You should speak up more often.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "1-3": [
+   {
+    "type": "mc",
+    "q": "We always get ___ and forget what we were discussing.",
+    "options": [
+     "sidelined",
+     "sidetracked",
+     "sideways",
+     "sidestepped"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "Going",
+     "back",
+     "to",
+     "what",
+     "you",
+     "said,",
+     "I",
+     "agree."
+    ],
+    "answer": "Going back to what you said, I agree.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "That's interesting, but it's a bit ___ the point.",
+    "options": [
+     "off",
+     "out",
+     "away",
+     "under"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which phrase brings a discussion back to the topic?",
+    "options": [
+     "Did you see the match?",
+     "I'm hungry.",
+     "Let's talk about something else.",
+     "Anyway, getting back to our plan, …"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "Let's",
+     "keep",
+     "the",
+     "meeting",
+     "on",
+     "track."
+    ],
+    "answer": "Let's keep the meeting on track.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "1-4": [
+   {
+    "type": "mc",
+    "q": "Your point ties ___ with what we learned yesterday.",
+    "options": [
+     "in",
+     "at",
+     "on",
+     "out"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "To",
+     "add",
+     "to",
+     "what",
+     "Reem",
+     "said,",
+     "it's",
+     "cheaper",
+     "too."
+    ],
+    "answer": "To add to what Reem said, it's cheaper too.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Fewer cars could have a knock-___ effect on air quality.",
+    "options": [
+     "in",
+     "on",
+     "off",
+     "up"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence builds on someone's idea?",
+    "options": [
+     "I wasn't listening.",
+     "That's wrong.",
+     "Building on Omar's idea, we could also add bike lanes.",
+     "Let's change the subject."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'd",
+     "go",
+     "even",
+     "further",
+     "and",
+     "say",
+     "it's",
+     "essential."
+    ],
+    "answer": "I'd go even further and say it's essential.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "1-5": [
+   {
+    "type": "mc",
+    "q": "'Thank you, Omar. You have the ___.'",
+    "options": [
+     "stage",
+     "seat",
+     "floor",
+     "room"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "Let's",
+     "wrap",
+     "up",
+     "the",
+     "discussion",
+     "there."
+    ],
+    "answer": "Let's wrap up the discussion there.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Joining the club isn't compulsory; it's ___.",
+    "options": [
+     "voluntary",
+     "volunteered",
+     "required",
+     "forced"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which phrase does a chairperson use to end a discussion?",
+    "options": [
+     "Sorry to interrupt, but …",
+     "Let's wrap up there.",
+     "Can I just add …?",
+     "If I could just finish, …"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "make",
+     "a",
+     "valid",
+     "point",
+     "about",
+     "homework."
+    ],
+    "answer": "You make a valid point about homework.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "2-0": [
+   {
+    "type": "mc",
+    "q": "I think you got the wrong end of the ___.",
+    "options": [
+     "rope",
+     "stick",
+     "line",
+     "road"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "What",
+     "I",
+     "meant",
+     "was",
+     "that",
+     "I",
+     "loved",
+     "it."
+    ],
+    "answer": "What I meant was that I loved it.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Please don't take it the wrong ___.",
+    "options": [
+     "way",
+     "side",
+     "road",
+     "path"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence clears up a misunderstanding?",
+    "options": [
+     "Whatever.",
+     "You never listen.",
+     "I didn't say anything.",
+     "What I meant was that the food was delicious."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "glad",
+     "we",
+     "cleared",
+     "the",
+     "air."
+    ],
+    "answer": "I'm glad we cleared the air.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "2-1": [
+   {
+    "type": "order",
+    "words": [
+     "What",
+     "I",
+     "love",
+     "about",
+     "calligraphy",
+     "is",
+     "the",
+     "patience."
+    ],
+    "answer": "What I love about calligraphy is the patience.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'What I love about football ___ the teamwork.'",
+    "options": [
+     "are",
+     "is",
+     "be",
+     "it is"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "When I draw, I completely lose ___ of time.",
+    "options": [
+     "line",
+     "watch",
+     "track",
+     "mind"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence uses a cleft for emphasis?",
+    "options": [
+     "I love it is the silence.",
+     "The silence what I love.",
+     "I love what is the silence.",
+     "What I love is the silence."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "took",
+     "up",
+     "calligraphy",
+     "three",
+     "years",
+     "ago."
+    ],
+    "answer": "I took up calligraphy three years ago.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "2-2": [
+   {
+    "type": "mc",
+    "q": "'It was Joud ___ built the robot.'",
+    "options": [
+     "what",
+     "which",
+     "who",
+     "where"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "It",
+     "wasn't",
+     "me",
+     "who",
+     "built",
+     "it."
+    ],
+    "answer": "It wasn't me who built it.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "She worked behind the ___, so few people knew about her.",
+    "options": [
+     "views",
+     "shows",
+     "sights",
+     "scenes"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence corrects a fact with emphasis?",
+    "options": [
+     "Joud built the robot, maybe.",
+     "It was Joud, not me, who built the robot.",
+     "Did Joud build it?",
+     "Joud is building robots."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "Her",
+     "hard",
+     "work",
+     "made",
+     "all",
+     "the",
+     "difference."
+    ],
+    "answer": "Her hard work made all the difference.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "2-3": [
+   {
+    "type": "mc",
+    "q": "'I ___ understand your worries, Dad.'",
+    "options": [
+     "am",
+     "do",
+     "does",
+     "have"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "All",
+     "I'm",
+     "asking",
+     "is",
+     "one",
+     "chance."
+    ],
+    "answer": "All I'm asking is one chance.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Travelling to Antarctica would be a once-in-a-___ experience.",
+    "options": [
+     "lifetime",
+     "life",
+     "time",
+     "year"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence uses emphasis to persuade?",
+    "options": [
+     "Maybe I could go.",
+     "I want go.",
+     "I'm going whether you like it or not.",
+     "The thing is, this chance won't come again."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "My",
+     "parents",
+     "trust",
+     "me",
+     "with",
+     "my",
+     "little",
+     "sister."
+    ],
+    "answer": "My parents trust me with my little sister.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "2-4": [
+   {
+    "type": "mc",
+    "q": "'The reason ___ I chose art is my grandmother.'",
+    "options": [
+     "what",
+     "because",
+     "why",
+     "who"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "What",
+     "made",
+     "me",
+     "decide",
+     "was",
+     "a",
+     "talk",
+     "at",
+     "school."
+    ],
+    "answer": "What made me decide was a talk at school.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Data scientists are very much in ___ these days.",
+    "options": [
+     "need",
+     "demand",
+     "want",
+     "request"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A science documentary ___ my interest in space.",
+    "options": [
+     "burned",
+     "lit",
+     "sparked",
+     "boiled"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "the",
+     "challenge",
+     "that",
+     "I",
+     "enjoy",
+     "most."
+    ],
+    "answer": "It's the challenge that I enjoy most.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "2-5": [
+   {
+    "type": "mc",
+    "q": "Too much food goes to ___ at big parties.",
+    "options": [
+     "rubbish",
+     "waste",
+     "bin",
+     "lose"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "What",
+     "we",
+     "need",
+     "is",
+     "a",
+     "simple",
+     "solution."
+    ],
+    "answer": "What we need is a simple solution.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'It's speed ___ matters most.'",
+    "options": [
+     "that",
+     "what",
+     "where",
+     "when"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence is the most emphatic?",
+    "options": [
+     "Maybe we need an app.",
+     "An app could be good.",
+     "What we really need is an app.",
+     "Apps exist."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "do",
+     "believe",
+     "it",
+     "could",
+     "make",
+     "a",
+     "real",
+     "difference."
+    ],
+    "answer": "I do believe it could make a real difference.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "3-0": [
+   {
+    "type": "mc",
+    "q": "The main ___ of the app is that it's expensive.",
+    "options": [
+     "drawing",
+     "backdrop",
+     "drawback",
+     "withdrawal"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "debatable",
+     "whether",
+     "people",
+     "would",
+     "use",
+     "it."
+    ],
+    "answer": "It's debatable whether people would use it.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Do you think this new game will catch ___?",
+    "options": [
+     "on",
+     "off",
+     "in",
+     "out"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "If an idea is good 'on paper', it …",
+    "options": [
+     "is printed in a newspaper",
+     "seems good in theory",
+     "is very cheap",
+     "has already succeeded"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "design",
+     "is",
+     "really",
+     "user-friendly."
+    ],
+    "answer": "The design is really user-friendly.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "3-1": [
+   {
+    "type": "mc",
+    "q": "A walking day is ___ near as effective as a daily bus.",
+    "options": [
+     "nothing",
+     "nowhere",
+     "never",
+     "no way"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "only",
+     "a",
+     "short-term",
+     "fix."
+    ],
+    "answer": "It's only a short-term fix.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Is it ___ to build a new bridge here in one month?",
+    "options": [
+     "feasible",
+     "favourite",
+     "fearful",
+     "famous"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence expresses doubt about a solution?",
+    "options": [
+     "This is definitely the answer.",
+     "Everyone will love it.",
+     "There's no problem at all.",
+     "It's questionable whether parents would pay."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "need",
+     "to",
+     "tackle",
+     "the",
+     "traffic",
+     "problem."
+    ],
+    "answer": "We need to tackle the traffic problem.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "3-2": [
+   {
+    "type": "mc",
+    "q": "In the long term, the benefits ___ the costs.",
+    "options": [
+     "overweight",
+     "outgrow",
+     "overtake",
+     "outweigh"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "It",
+     "remains",
+     "to",
+     "be",
+     "seen",
+     "whether",
+     "it",
+     "will",
+     "work."
+    ],
+    "answer": "It remains to be seen whether it will work.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The ___ cost of solar panels is high, but they save money later.",
+    "options": [
+     "upfront",
+     "forward",
+     "ahead",
+     "onward"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Taps are a ___ way to save water because they're cheap and effective.",
+    "options": [
+     "costly",
+     "cost-effective",
+     "worthless",
+     "pricey"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "Your",
+     "hard",
+     "work",
+     "will",
+     "pay",
+     "off."
+    ],
+    "answer": "Your hard work will pay off.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "3-3": [
+   {
+    "type": "mc",
+    "q": "Social media is a double-___ sword: useful but risky.",
+    "options": [
+     "sided",
+     "faced",
+     "edged",
+     "handed"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "On",
+     "balance,",
+     "I",
+     "think",
+     "it's",
+     "useful."
+    ],
+    "answer": "On balance, I think it's useful.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'The jury is still ___' means people haven't decided yet.",
+    "options": [
+     "out",
+     "in",
+     "off",
+     "over"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Copying answers is a ___ that doesn't help you learn.",
+    "options": [
+     "cutback",
+     "shortlist",
+     "backlog",
+     "shortcut"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "AI",
+     "can't",
+     "do",
+     "your",
+     "critical",
+     "thinking",
+     "for",
+     "you."
+    ],
+    "answer": "AI can't do your critical thinking for you.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "3-4": [
+   {
+    "type": "mc",
+    "q": "Let's ___ out the expensive options first.",
+    "options": [
+     "give",
+     "turn",
+     "rule",
+     "hand"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "trip",
+     "is",
+     "by",
+     "far",
+     "the",
+     "best",
+     "option."
+    ],
+    "answer": "The trip is by far the best option.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "We had ten ideas, but we managed to ___ them down to two.",
+    "options": [
+     "thin",
+     "narrow",
+     "close",
+     "short"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence judges value for money?",
+    "options": [
+     "For only 50 riyals, the trip is great value for money.",
+     "The trip costs 50 riyals.",
+     "I like trips.",
+     "The bus is yellow."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "camping",
+     "trip",
+     "was",
+     "worth",
+     "every",
+     "riyal."
+    ],
+    "answer": "The camping trip was worth every riyal.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "3-5": [
+   {
+    "type": "mc",
+    "q": "A drone delivering books along busy corridors sounds a bit ___.",
+    "options": [
+     "far-reaching",
+     "far-fetched",
+     "far-off",
+     "farewell"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "app",
+     "comes",
+     "out",
+     "on",
+     "top."
+    ],
+    "answer": "The app comes out on top.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Our ___ for judging are cost, safety and originality.",
+    "options": [
+     "criteria",
+     "criterion",
+     "critics",
+     "criticism"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence gives a final verdict?",
+    "options": [
+     "Maybe we should think more.",
+     "I'm not sure about anything.",
+     "Let's look at it again tomorrow.",
+     "After weighing it all up, the app is the clear winner."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "Does",
+     "the",
+     "idea",
+     "stand",
+     "up",
+     "to",
+     "scrutiny?"
+    ],
+    "answer": "Does the idea stand up to scrutiny?",
+    "ar": "رتّب الجملة"
+   }
+  ]
+ },
+ "unitTests": {
+  "0": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "If something is 'a bit on the small side', it is …",
+     "options": [
+      "much too small",
+      "slightly too small",
+      "exactly the right size",
+      "very large"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "I'm happy to lend a ___ with the decorations.",
+     "options": [
+      "arm",
+      "finger",
+      "hand",
+      "help"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Don't beat around the ___. Just tell me!",
+     "options": [
+      "bush",
+      "tree",
+      "house",
+      "garden"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "He hasn't been pulling his ___ in our group.",
+     "options": [
+      "hand",
+      "part",
+      "weight",
+      "work"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Which sentence is the most tactful?",
+     "options": [
+      "Your essay is boring.",
+      "Nobody will read your essay.",
+      "Your essay is the worst.",
+      "Your essay seems a little long to me."
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Teenagers ___ to sleep later than adults.",
+     "options": [
+      "tend",
+      "tends",
+      "are tend",
+      "tending"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "'I'm not ___ sure that the title works.'",
+     "options": [
+      "entire",
+      "entirely",
+      "whole",
+      "total"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "order",
+     "words": [
+      "You",
+      "could",
+      "perhaps",
+      "tone",
+      "down",
+      "the",
+      "colours."
+     ],
+     "answer": "You could perhaps tone down the colours.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "On",
+      "the",
+      "whole,",
+      "it's",
+      "a",
+      "great",
+      "poster."
+     ],
+     "answer": "On the whole, it's a great poster.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "I",
+      "wonder",
+      "if",
+      "you",
+      "could",
+      "finish",
+      "it",
+      "by",
+      "Tuesday."
+     ],
+     "answer": "I wonder if you could finish it by Tuesday.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Your friend has designed a logo for your class team, but you think it is too complicated. Give them tactful feedback.",
+    "An older relative says that video games are a complete waste of time. Disagree with them tactfully."
+   ]
+  },
+  "1": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "My brother talks so much that I can't get a ___ in.",
+     "options": [
+      "talk",
+      "speech",
+      "word",
+      "voice"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Sorry, I've lost my ___ of thought.",
+     "options": [
+      "train",
+      "rail",
+      "road",
+      "bus"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "We keep getting ___, so let's focus on the main question.",
+     "options": [
+      "sidelined",
+      "sidetracked",
+      "sideways",
+      "sidestepped"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "One knock-___ effect of the metro is less traffic.",
+     "options": [
+      "in",
+      "off",
+      "on",
+      "out"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Which phrase interrupts politely?",
+     "options": [
+      "Stop! My turn.",
+      "Be quiet, please.",
+      "You're wrong.",
+      "Sorry to interrupt, but …"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Someone interrupts you, and you want to keep speaking. You say: …",
+     "options": [
+      "If I could just finish, …",
+      "What's your take on this?",
+      "We haven't heard from you yet.",
+      "Let's wrap up."
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Which phrase invites a quiet person to speak?",
+     "options": [
+      "Going back to …",
+      "Hold on a second.",
+      "What's your take on this, Lama?",
+      "As I was saying, …"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "order",
+     "words": [
+      "Going",
+      "back",
+      "to",
+      "what",
+      "Sam",
+      "said,",
+      "I",
+      "agree."
+     ],
+     "answer": "Going back to what Sam said, I agree.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "We",
+      "haven't",
+      "heard",
+      "from",
+      "Lama",
+      "yet."
+     ],
+     "answer": "We haven't heard from Lama yet.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "If",
+      "I",
+      "could",
+      "just",
+      "finish,",
+      "I",
+      "have",
+      "one",
+      "more",
+      "point."
+     ],
+     "answer": "If I could just finish, I have one more point.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Imagine you are in a group planning a class trip. Interrupt politely to add an idea, then invite a quiet classmate to speak.",
+    "Chair a short discussion about whether students should wear uniforms on school trips: give someone the floor, keep the discussion on track and wrap it up."
+   ]
+  },
+  "2": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "I think you got the wrong end of the ___.",
+     "options": [
+      "rope",
+      "line",
+      "stick",
+      "road"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "She worked behind the ___, so nobody knew how much she did.",
+     "options": [
+      "views",
+      "scenes",
+      "shows",
+      "sights"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "Spending a month in Japan would be a once-in-a-___ experience.",
+     "options": [
+      "lifetime",
+      "life",
+      "year",
+      "time"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "A school trip to a space centre sparked my ___ in astronomy.",
+     "options": [
+      "idea",
+      "mind",
+      "hobby",
+      "interest"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Which sentence is a cleft sentence?",
+     "options": [
+      "I need a break.",
+      "What I need is a break.",
+      "I am needing a break.",
+      "A break I need it."
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'It was my sister ___ taught me to swim.'",
+     "options": [
+      "what",
+      "which",
+      "who",
+      "whose"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "'I ___ want to help, but I'm too busy this week.'",
+     "options": [
+      "do",
+      "am",
+      "have",
+      "does"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "order",
+     "words": [
+      "What",
+      "I",
+      "meant",
+      "was",
+      "that",
+      "I",
+      "loved",
+      "it."
+     ],
+     "answer": "What I meant was that I loved it.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "It",
+      "wasn't",
+      "me",
+      "who",
+      "built",
+      "the",
+      "robot."
+     ],
+     "answer": "It wasn't me who built the robot.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "All",
+      "I'm",
+      "asking",
+      "is",
+      "one",
+      "more",
+      "chance."
+     ],
+     "answer": "All I'm asking is one more chance.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "A friend misunderstood something you said about their new phone. Clear up the misunderstanding using 'What I meant was …' and 'It wasn't … that …'.",
+    "Tell me about something you are passionate about and explain why, using at least two cleft sentences."
+   ]
+  },
+  "3": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "On ___, the idea sounds great, but it might not work in reality.",
+     "options": [
+      "screen",
+      "paper",
+      "demand",
+      "board"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "A walking day is ___ near as effective as a school bus.",
+     "options": [
+      "nowhere",
+      "nothing",
+      "never",
+      "no way"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Social media is a double-___ sword.",
+     "options": [
+      "sided",
+      "faced",
+      "edged",
+      "handed"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "We need to ___ down our ten ideas to three.",
+     "options": [
+      "thin",
+      "close",
+      "short",
+      "narrow"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "Which sentence names a disadvantage?",
+     "options": [
+      "It's a great idea.",
+      "The main drawback is the cost.",
+      "I love it.",
+      "It's cheap and useful."
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "'It's debatable ___ students would use the app.'",
+     "options": [
+      "unless",
+      "what",
+      "whether",
+      "which"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Which sentence gives a balanced final judgement?",
+     "options": [
+      "It's perfect.",
+      "It's useless.",
+      "I don't know.",
+      "On balance, the benefits outweigh the drawbacks."
+     ],
+     "answer": 3
+    },
+    {
+     "type": "order",
+     "words": [
+      "The",
+      "benefits",
+      "outweigh",
+      "the",
+      "costs."
+     ],
+     "answer": "The benefits outweigh the costs.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "It's",
+      "only",
+      "a",
+      "short-term",
+      "fix."
+     ],
+     "answer": "It's only a short-term fix.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "The",
+      "trip",
+      "is",
+      "by",
+      "far",
+      "the",
+      "best",
+      "value",
+      "for",
+      "money."
+     ],
+     "answer": "The trip is by far the best value for money.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Your school wants to replace paper textbooks with tablets. Judge the idea: give its main strength, its main drawback and your verdict.",
+    "Compare two ways of reducing litter in your neighbourhood and decide which is more practical in the long term."
+   ]
+  }
+ },
+ "levelTest": {
+  "items": [
+   {
+    "type": "mc",
+    "q": "Which comment is the most tactful?",
+    "options": [
+     "Your essay is boring.",
+     "Your essay seems a little long to me.",
+     "Nobody will read this.",
+     "Start again."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Teenagers ___ to sleep later than adults.",
+    "options": [
+     "tend",
+     "tends",
+     "are tend",
+     "tending"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "I can see where you're ___ from, but I disagree.",
+    "options": [
+     "going",
+     "speaking",
+     "coming",
+     "looking"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "not",
+     "entirely",
+     "sure",
+     "that",
+     "the",
+     "title",
+     "works."
+    ],
+    "answer": "I'm not entirely sure that the title works.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "He hasn't been pulling his ___ in our group.",
+    "options": [
+     "hand",
+     "weight",
+     "part",
+     "work"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which phrase interrupts politely?",
+    "options": [
+     "Stop talking.",
+     "Listen to me!",
+     "You're wrong.",
+     "Sorry to interrupt, but …"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Someone interrupts you. Which phrase keeps your turn?",
+    "options": [
+     "If I could just finish, …",
+     "Over to you.",
+     "What's your take?",
+     "Let's wrap up."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "haven't",
+     "heard",
+     "from",
+     "Lama",
+     "yet."
+    ],
+    "answer": "We haven't heard from Lama yet.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "We're getting ___. Let's go back to the main question.",
+    "options": [
+     "sidelined",
+     "sideways",
+     "sidetracked",
+     "sidestepped"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "Going",
+     "back",
+     "to",
+     "what",
+     "Sam",
+     "said,",
+     "I",
+     "agree."
+    ],
+    "answer": "Going back to what Sam said, I agree.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "'What I love about calligraphy ___ the patience it needs.'",
+    "options": [
+     "is",
+     "are",
+     "it is",
+     "be"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'It wasn't me ___ built the robot; it was Joud.'",
+    "options": [
+     "what",
+     "who",
+     "which",
+     "whose"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence uses emphatic 'do' correctly?",
+    "options": [
+     "I am understand your worries.",
+     "I does understand your worries.",
+     "I understanding your worries.",
+     "I do understand your worries."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "What",
+     "I",
+     "meant",
+     "was",
+     "that",
+     "I",
+     "loved",
+     "it."
+    ],
+    "answer": "What I meant was that I loved it.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The main ___ of the plan is the cost.",
+    "options": [
+     "drawback",
+     "drawing",
+     "backdrop",
+     "withdrawal"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'It's ___ whether people would pay for it.'",
+    "options": [
+     "debating",
+     "debatable",
+     "debate",
+     "debated"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "In the long term, the benefits ___ the costs.",
+    "options": [
+     "overweight",
+     "outgrow",
+     "outweigh",
+     "overtake"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "On",
+     "balance,",
+     "I'd",
+     "use",
+     "it",
+     "as",
+     "a",
+     "tutor."
+    ],
+    "answer": "On balance, I'd use it as a tutor.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The app is ___ the best project.",
+    "options": [
+     "far away",
+     "as far",
+     "by far",
+     "farther"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "It's",
+     "only",
+     "a",
+     "short-term",
+     "fix."
+    ],
+    "answer": "It's only a short-term fix.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "speak": [
+   "Your friend asks for honest feedback on a short film they made, but you didn't like the ending. Respond tactfully.",
+   "Imagine we are in a group discussion about school uniforms. Interrupt politely, bring in a quiet member and go back to an earlier point.",
+   "Tell me about an idea you believe in. Emphasise your main point with a cleft sentence, then judge its main strength and its main drawback."
+  ]
+ }
+}

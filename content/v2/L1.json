@@ -1039,7 +1039,7 @@
      },
      {
       "s": "Mia",
-      "t": "Where are you in the photo?"
+      "t": "Where is this photo?"
      },
      {
       "s": "Reem",
@@ -1615,7 +1615,7 @@
      "w": "family tree",
      "def": "a picture of all the people in your family",
      "ar": "شجرة العائلة",
-     "frame": "This is my ___ family tree."
+     "frame": "Look at my family tree! This is my ___."
     },
     {
      "w": "photo",
@@ -1823,7 +1823,7 @@
      },
      {
       "s": "Reem",
-      "t": "Yes, it is. And it's a white bird."
+      "t": "Yes, it is. And this is a white bird."
      },
      {
       "s": "Faisal",
@@ -1992,7 +1992,7 @@
    "culture": {
     "title": "Toys Around the World",
     "points": [
-     "The first kites are from China.",
+     "Kites are very old. They come from China.",
      "LEGO is from Denmark.",
      "Many children in Saudi Arabia fly kites at the beach."
     ],
@@ -2299,7 +2299,7 @@
     },
     {
      "w": "Look at",
-     "def": "see this, please!",
+     "def": "words you say when you want someone to see something",
      "ar": "انظر إلى",
      "frame": "Look at that ___!"
     }
@@ -3515,19 +3515,11 @@
     },
     {
      "s": "Omar",
-     "t": "Reem, are you OK?"
+     "t": "Yes, I am. I'm very happy."
     },
     {
      "s": "Reem",
-     "t": "No, I'm sad. My kite is in the tree."
-    },
-    {
-     "s": "Omar",
-     "t": "Oh no! Wait … here you are!"
-    },
-    {
-     "s": "Reem",
-     "t": "Thank you, Omar! Now I'm happy."
+     "t": "Great!"
     }
    ],
    "grammar": {
@@ -4297,7 +4289,7 @@
     },
     {
      "s": "Reem",
-     "t": "Yes, it is. And it's a white bird."
+     "t": "Yes, it is. And this is a white bird."
     }
    ],
    "grammar": {
@@ -4371,10 +4363,6 @@
     {
      "s": "Omar",
      "t": "It's a doll. It's my sister's doll."
-    },
-    {
-     "s": "Sam",
-     "t": "And is this a ball?"
     }
    ],
    "grammar": {
@@ -4448,10 +4436,6 @@
     {
      "s": "Lina",
      "t": "And this is an ice cream!"
-    },
-    {
-     "s": "Emma",
-     "t": "Yum! What's this toy?"
     }
    ],
    "grammar": {
@@ -5055,19 +5039,19 @@
     },
     {
      "s": "Sam",
+     "t": "And that player? Number twenty?"
+    },
+    {
+     "s": "Khalid",
+     "t": "No, he's number fifteen. He's my cousin!"
+    },
+    {
+     "s": "Sam",
      "t": "How old is your cousin?"
     },
     {
      "s": "Khalid",
      "t": "He's fifteen years old."
-    },
-    {
-     "s": "Sam",
-     "t": "Look! Goal! Number fifteen!"
-    },
-    {
-     "s": "Khalid",
-     "t": "Well done, cousin!"
     }
    ],
    "grammar": {
@@ -5204,7 +5188,7 @@
    },
    {
     "type": "mc",
-    "q": "You go home. You say:",
+    "q": "School is over. You say to your friend:",
     "options": [
      "Hello!",
      "Hi!",
@@ -6305,13 +6289,12 @@
    {
     "type": "order",
     "words": [
-     "Six",
-     "pencils",
-     "in",
-     "my",
-     "bag."
+     "I",
+     "have",
+     "six",
+     "pencils."
     ],
-    "answer": "Six pencils in my bag.",
+    "answer": "I have six pencils.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6359,13 +6342,12 @@
    {
     "type": "order",
     "words": [
-     "Eleven",
-     "players",
-     "in",
-     "a",
-     "team."
+     "My",
+     "cousin",
+     "is",
+     "fifteen."
     ],
-    "answer": "Eleven players in a team.",
+    "answer": "My cousin is fifteen.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6458,7 +6440,7 @@
    "items": [
     {
      "type": "mc",
-     "q": "The sun is up. You meet your teacher. You say:",
+     "q": "It's eight o'clock in the morning. You meet your teacher. You say:",
      "options": [
       "Good night!",
       "Good morning!",

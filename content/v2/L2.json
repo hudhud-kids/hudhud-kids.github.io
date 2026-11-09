@@ -807,7 +807,7 @@
     },
     {
      "w": "guess",
-     "def": "say an answer when you don't know it",
+     "def": "say an answer when you are not sure",
      "ar": "يخمّن",
      "frame": "I guess it's ___!"
     },
@@ -951,7 +951,7 @@
     },
     {
      "w": "oranges",
-     "def": "round orange fruit; you can make juice with it",
+     "def": "round orange fruit; you can make juice with them",
      "ar": "برتقال",
      "frame": "I like oranges, but I don't like ___."
     },
@@ -2293,7 +2293,7 @@
    "expressions": [
     {
      "w": "a long neck",
-     "def": "a neck that is very tall",
+     "def": "a neck that is not short, like a giraffe's neck",
      "ar": "رقبة طويلة",
      "frame": "A ___ has got a long neck."
     },
@@ -3344,6 +3344,10 @@
     {
      "s": "Noura",
      "t": "And shoes?"
+    },
+    {
+     "s": "Emma",
+     "t": "I've got white shoes and white socks."
     }
    ],
    "grammar": {
@@ -3417,10 +3421,6 @@
     {
      "s": "Faisal",
      "t": "That's my sister, Sara. Her hair is long."
-    },
-    {
-     "s": "Sam",
-     "t": "And this tall boy?"
     }
    ],
    "grammar": {
@@ -3867,6 +3867,10 @@
     {
      "s": "Reem",
      "t": "Yum! Is it chocolate?"
+    },
+    {
+     "s": "Faisal",
+     "t": "Yes. And we've got ice cream too."
     }
    ],
    "grammar": {
@@ -3940,10 +3944,6 @@
     {
      "s": "Omar",
      "t": "Here you are. Some carrots."
-    },
-    {
-     "s": "Hind",
-     "t": "Thank you! Have you got water?"
     }
    ],
    "grammar": {
@@ -4163,10 +4163,6 @@
     {
      "s": "Grandpa",
      "t": "Yes. But the chicken can't swim."
-    },
-    {
-     "s": "Faisal",
-     "t": "Can the horse jump?"
     }
    ],
    "grammar": {
@@ -4390,6 +4386,10 @@
     {
      "s": "Ali",
      "t": "Quack, quack! Can you fly like a bird?"
+    },
+    {
+     "s": "Sara",
+     "t": "No, I can't! Ha ha!"
     }
    ],
    "grammar": {
@@ -4540,10 +4540,6 @@
     {
      "s": "Omar",
      "t": "Yes! Thank you, Mum!"
-    },
-    {
-     "s": "Mum",
-     "t": "And where's your lamp?"
     }
    ],
    "grammar": {
@@ -4682,6 +4678,10 @@
     {
      "s": "Sam",
      "t": "Where's the teacher's desk?"
+    },
+    {
+     "s": "Faisal",
+     "t": "It's next to the board."
     }
    ],
    "grammar": {
@@ -4897,6 +4897,10 @@
     {
      "s": "Lama",
      "t": "Is it next to the lamp?"
+    },
+    {
+     "s": "Omar",
+     "t": "Yes! It's in the box next to the lamp."
     }
    ],
    "grammar": {
@@ -5050,7 +5054,7 @@
     "options": [
      "a cap",
      "trousers",
-     "socks"
+     "glasses"
     ],
     "answer": 1
    },
@@ -5266,9 +5270,9 @@
     "type": "mc",
     "q": "A long yellow fruit: ___",
     "options": [
-     "bananas",
-     "grapes",
-     "dates"
+     "a banana",
+     "a grape",
+     "a date"
     ],
     "answer": 0
    },
@@ -5363,14 +5367,13 @@
    {
     "type": "order",
     "words": [
-     "Yes,",
-     "I",
-     "do.",
      "I",
      "like",
-     "rice."
+     "rice",
+     "and",
+     "chicken."
     ],
-    "answer": "Yes, I do. I like rice.",
+    "answer": "I like rice and chicken.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5473,13 +5476,12 @@
    {
     "type": "order",
     "words": [
-     "Here",
+     "Have",
      "you",
-     "are.",
-     "Some",
-     "water."
+     "got",
+     "water?"
     ],
-    "answer": "Here you are. Some water.",
+    "answer": "Have you got water?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5763,7 +5765,7 @@
     "type": "mc",
     "q": "A slow animal with a hard back: ___",
     "options": [
-     "a crab",
+     "a fish",
      "a dolphin",
      "a turtle"
     ],

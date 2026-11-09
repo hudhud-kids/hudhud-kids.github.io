@@ -1487,7 +1487,7 @@
      "w": "ice cream shop",
      "def": "a shop that sells ice cream",
      "ar": "محلّ آيس كريم",
-     "frame": "My favourite ice cream is ___."
+     "frame": "There's an ice cream shop next to the ___."
     },
     {
      "w": "train",
@@ -2045,7 +2045,7 @@
     "title": "Around the World: Kites",
     "points": [
      "People fly kites in lots of countries.",
-     "The first kites come from China.",
+     "Kites are very old. They come from China.",
      "Some countries have big kite festivals with hundreds of kites."
     ],
     "qs": [
@@ -2785,7 +2785,7 @@
     },
     {
      "w": "summer",
-     "def": "the hottest season of the year",
+     "def": "the hot season, after spring",
      "ar": "الصيف",
      "frame": "In summer, my family goes to ___."
     },
@@ -2797,7 +2797,7 @@
     },
     {
      "w": "winter",
-     "def": "the coldest season of the year",
+     "def": "the cold season, after autumn",
      "ar": "الشتاء",
      "frame": "In winter, my dad wears a ___."
     },
@@ -3130,7 +3130,7 @@
     },
     {
      "s": "Omar",
-     "t": "And in the evening?"
+     "t": "What do we do in the evening?"
     },
     {
      "s": "Mum",
@@ -3346,6 +3346,10 @@
     {
      "s": "Lama",
      "t": "Do you go to the park?"
+    },
+    {
+     "s": "Sara",
+     "t": "No, we don't. We go shopping at the mall."
     }
    ],
    "grammar": {
@@ -3787,7 +3791,7 @@
     {
      "w": "ice cream shop",
      "ar": "محلّ آيس كريم",
-     "ex": "My favourite ice cream is chocolate."
+     "ex": "There's an ice cream shop next to the park."
     },
     {
      "w": "train",
@@ -3962,6 +3966,14 @@
     },
     {
      "s": "Omar",
+     "t": "Oh, that's expensive! What about the green one?"
+    },
+    {
+     "s": "Seller",
+     "t": "The green one? It's fifteen riyals."
+    },
+    {
+     "s": "Omar",
      "t": "OK. Can I have the notebook and the green one?"
     },
     {
@@ -4084,6 +4096,14 @@
    "dialogue": [
     {
      "s": "Faisal",
+     "t": "Excuse me. How much is that robot?"
+    },
+    {
+     "s": "Seller",
+     "t": "This one? It's eighty riyals."
+    },
+    {
+     "s": "Faisal",
      "t": "That's expensive. How much are those kites?"
     },
     {
@@ -4096,15 +4116,7 @@
     },
     {
      "s": "Seller",
-     "t": "Sure. Do you want a puzzle too?"
-    },
-    {
-     "s": "Faisal",
-     "t": "Great. Can I have this one too?"
-    },
-    {
-     "s": "Seller",
-     "t": "Of course. That's fifty riyals, please."
+     "t": "Sure. That's twenty riyals, please."
     }
    ],
    "grammar": {
@@ -4151,6 +4163,10 @@
     }
    ],
    "dialogue": [
+    {
+     "s": "Waiter",
+     "t": "Hello! Here's the menu."
+    },
     {
      "s": "Mia",
      "t": "Thank you. Can I have a glass of orange juice, please?"
@@ -4307,6 +4323,10 @@
     },
     {
      "s": "Emma",
+     "t": "Yes, and it's windy too."
+    },
+    {
+     "s": "Emma",
      "t": "What do you do on hot days?"
     },
     {
@@ -4450,6 +4470,10 @@
     {
      "s": "Khalid",
      "t": "Thank you! Can we sit next to the campfire?"
+    },
+    {
+     "s": "Noura",
+     "t": "Yes! It's warm there."
     }
    ],
    "grammar": {
@@ -5162,14 +5186,13 @@
    {
     "type": "order",
     "words": [
-     "No,",
-     "there",
+     "There",
      "isn't",
      "a",
      "bakery",
      "here."
     ],
-    "answer": "No, there isn't a bakery here.",
+    "answer": "There isn't a bakery here.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5976,7 +5999,7 @@
    },
    {
     "type": "mc",
-    "q": "The coldest season of the year = ___.",
+    "q": "The cold season, after autumn = ___.",
     "options": [
      "summer",
      "spring",

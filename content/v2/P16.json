@@ -1,0 +1,208 @@
+{
+ "level": 16,
+ "mcq": [
+  {
+   "q": "Rarely ___ such a talented young speaker.",
+   "options": [
+    "I have heard",
+    "have I heard",
+    "I heard",
+    "heard I"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "Not only ___ the project on time, but they also won first prize.",
+   "options": [
+    "they finished",
+    "they did finish",
+    "did they finish",
+    "finished they"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "The door was locked from the inside, so the thief ___ through it.",
+   "options": [
+    "must have escaped",
+    "can't have escaped",
+    "should have escaped",
+    "needn't escape"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "The photo ___ by AI; the people in it have six fingers.",
+   "options": [
+    "should have created",
+    "must create",
+    "can't have been created",
+    "must have been created"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "Before using a website for your essay, check that it is a ___ source.",
+   "options": [
+    "reliable",
+    "reliant",
+    "relied",
+    "relying"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "The story about the school closing spread like ___.",
+   "options": [
+    "lightning",
+    "wildfire",
+    "water",
+    "wind"
+   ],
+   "answer": 1,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Her story about moving to a new country really struck a ___ with me.",
+   "options": [
+    "bell",
+    "tone",
+    "chord",
+    "song"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Which phrase is best for summarising at the end of a talk?",
+   "options": [
+    "All things considered, …",
+    "Picture this: …",
+    "Let me begin by …",
+    "Turning now to …"
+   ],
+   "answer": 0,
+   "skill": "function"
+  },
+  {
+   "q": "Which sentence best justifies a choice in a discussion?",
+   "options": [
+    "Because.",
+    "The reason I'd go for the library is that it's open to everyone.",
+    "I don't mind.",
+    "Library is nice."
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "Which sentence speculates about a picture?",
+   "options": [
+    "The man is holding an umbrella.",
+    "There are three cars in the street.",
+    "The sky is grey.",
+    "Judging by his expression, I'd imagine he's just missed his bus."
+   ],
+   "answer": 3,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Never have I seen our school so united. Last year, we collected two hundred food baskets for families in need. This year, we're aiming for five hundred. Can we really let those families down? Join us on Thursday after school.",
+   "q": "What is the speaker trying to do?",
+   "options": [
+    "Complain about last year's event",
+    "Persuade students to volunteer",
+    "Explain how to make food baskets"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "This advert claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. I'd take it with a pinch of salt.",
+   "q": "Why does the speaker doubt the reviews?",
+   "options": [
+    "They were all posted on the same day.",
+    "They were written in another language.",
+    "They were very negative."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "So far, I've talked about why we need sleep. This brings me to my second point: what happens to our brains when we don't get enough of it. After that, I'll share three simple tips you can start using tonight.",
+   "q": "What will the speaker talk about next?",
+   "options": [
+    "Why we need sleep",
+    "Three tips for better sleep",
+    "The effects of too little sleep on the brain"
+   ],
+   "answer": 2
+  },
+  {
+   "script": "Both pictures show people travelling, but the key difference is the pace. The family on the train seems relaxed, whereas the businessman at the airport looks under pressure. Judging by the way he's checking his watch, I'd imagine his flight is about to leave.",
+   "q": "How does the businessman seem?",
+   "options": [
+    "Relaxed",
+    "Stressed",
+    "Bored"
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Every day, millions of images and stories go viral before anyone has checked whether they are true. Fact-checkers argue that the problem is not a lack of information but a lack of patience. Rarely do people stop to ask who created a post, or why. Yet a few simple habits can make a real difference. First, look for the original source: a claim that cannot be traced back to a named person or organisation should be treated with caution. Second, cross-check the story with at least two reliable news outlets. Third, notice your own emotions. Posts designed to make us angry or afraid are, by and large, the ones most likely to be misleading. None of this requires special training; it simply requires us to pause before we press 'share'.",
+  "qs": [
+   {
+    "q": "According to fact-checkers, what is the main problem?",
+    "options": [
+     "Too little information",
+     "Too little patience",
+     "Too few fact-checkers"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "What should you do with a claim that has no named source?",
+    "options": [
+     "Treat it with caution",
+     "Share it with your friends",
+     "Report it to the police"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "Which posts are most likely to be misleading?",
+    "options": [
+     "Posts from named organisations",
+     "Posts that are very short",
+     "Posts that make us angry or afraid"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "What is the writer's main message?",
+    "options": [
+     "Only experts can recognise fake news.",
+     "Simple habits can help anyone avoid being misled.",
+     "Social media should be banned."
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "aloud": [
+  "Not only does public transport reduce traffic, but it also cuts pollution.",
+  "The photograph can't have been taken in winter; the trees are full of leaves.",
+  "All things considered, the benefits of the project far outweigh the costs."
+ ],
+ "speak": [
+  "Persuade me that every teenager should learn a practical skill, such as cooking or first aid.",
+  "You read a headline: 'Study proves teenagers learn better at night.' How would you decide whether to believe it?",
+  "Compare studying at home with studying in a library, and justify which you would choose."
+ ]
+}
