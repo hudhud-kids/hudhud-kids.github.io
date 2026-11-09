@@ -481,14 +481,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar sees his friend Reem at the park.",
+    "scene": "Omar sees his friend Ali at the park.",
     "p1": [
      {
       "s": "Omar",
-      "t": "Hi, Reem! How are you?"
+      "t": "Hi, Ali! How are you?"
      },
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "I'm fine, thank you. How are you?"
      },
      {
@@ -496,7 +496,7 @@
       "t": "I'm great!"
      },
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "Are you happy today?"
      },
      {
@@ -504,17 +504,17 @@
       "t": "Yes, I am. I'm very happy."
      },
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "Great!"
      }
     ],
     "p2": [
      {
       "s": "Omar",
-      "t": "Reem, are you OK?"
+      "t": "Ali, are you OK?"
      },
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "No, I'm sad. My kite is in the tree."
      },
      {
@@ -522,7 +522,7 @@
       "t": "Oh no! Wait … here you are!"
      },
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "Thank you, Omar! Now I'm happy."
      },
      {
@@ -533,7 +533,7 @@
     "focus": "I'm fine, thank you.",
     "qs": [
      "How is Omar today?",
-     "Why is Reem sad?"
+     "Why is Ali sad?"
     ]
    },
    "speakout": {
@@ -609,22 +609,22 @@
     }
    ],
    "dialogue": {
-    "scene": "Khalid is at a summer camp in Jeddah. He meets Emma, a new girl from England.",
+    "scene": "Hessa is at a summer camp in Jeddah. She meets Emma, a new girl from England.",
     "p1": [
      {
       "s": "Emma",
       "t": "Hello! I'm Emma."
      },
      {
-      "s": "Khalid",
-      "t": "Hi, Emma! I'm Khalid."
+      "s": "Hessa",
+      "t": "Hi, Emma! I'm Hessa."
      },
      {
       "s": "Emma",
-      "t": "Where are you from, Khalid?"
+      "t": "Where are you from, Hessa?"
      },
      {
-      "s": "Khalid",
+      "s": "Hessa",
       "t": "I'm from Saudi Arabia."
      },
      {
@@ -632,13 +632,13 @@
       "t": "Which city?"
      },
      {
-      "s": "Khalid",
+      "s": "Hessa",
       "t": "Riyadh. It's a big city."
      }
     ],
     "p2": [
      {
-      "s": "Khalid",
+      "s": "Hessa",
       "t": "Where are you from, Emma?"
      },
      {
@@ -646,7 +646,7 @@
       "t": "I'm from England. I'm from London."
      },
      {
-      "s": "Khalid",
+      "s": "Hessa",
       "t": "Is London beautiful?"
      },
      {
@@ -654,13 +654,13 @@
       "t": "Yes, it is. Jeddah is beautiful, too!"
      },
      {
-      "s": "Khalid",
+      "s": "Hessa",
       "t": "Yes! Look at the sea!"
      }
     ],
     "focus": "I'm from Saudi Arabia.",
     "qs": [
-     "Where is Khalid from?",
+     "Where is Hessa from?",
      "Where is Emma from?"
     ]
    },
@@ -1521,14 +1521,14 @@
     }
    ],
    "dialogue": {
-    "scene": "It's Eid. Faisal and his cousin Maha meet at Grandpa's house.",
+    "scene": "It's Eid. Faisal and his cousin Saad meet at Grandpa's house.",
     "p1": [
      {
       "s": "Faisal",
-      "t": "Eid Mubarak, Maha!"
+      "t": "Eid Mubarak, Saad!"
      },
      {
-      "s": "Maha",
+      "s": "Saad",
       "t": "Eid Mubarak! Who's this boy?"
      },
      {
@@ -1536,7 +1536,7 @@
       "t": "This is my little brother, Saad."
      },
      {
-      "s": "Maha",
+      "s": "Saad",
       "t": "Hello, Saad! Eid Mubarak!"
      },
      {
@@ -1544,13 +1544,13 @@
       "t": "And this is my big sister, Noura."
      },
      {
-      "s": "Maha",
+      "s": "Saad",
       "t": "Hi, Noura!"
      }
     ],
     "p2": [
      {
-      "s": "Maha",
+      "s": "Saad",
       "t": "Look! Sweets from Grandma!"
      },
      {
@@ -1558,7 +1558,7 @@
       "t": "Great! Who's that man with Grandma?"
      },
      {
-      "s": "Maha",
+      "s": "Saad",
       "t": "He's my dad. He's your uncle!"
      },
      {
@@ -1566,14 +1566,14 @@
       "t": "Oh yes! Hello, Uncle!"
      },
      {
-      "s": "Maha",
+      "s": "Saad",
       "t": "It's a happy family day."
      }
     ],
     "focus": "This is my little brother, Saad.",
     "qs": [
      "Who is Saad?",
-     "Who is Maha's dad?"
+     "Who is Saad's dad?"
     ]
    },
    "speakout": {
@@ -1781,14 +1781,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal and Reem are in art class. They look at their pictures.",
+    "scene": "Noura and Reem are in art class. They look at their pictures.",
     "p1": [
      {
       "s": "Reem",
-      "t": "What colour is it, Faisal?"
+      "t": "What colour is it, Noura?"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "It's blue. It's the sky."
      },
      {
@@ -1796,7 +1796,7 @@
       "t": "Nice! And this?"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "It's green. It's a tree."
      },
      {
@@ -1804,13 +1804,13 @@
       "t": "My favourite colour is yellow."
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Yellow is nice. It's the sun!"
      }
     ],
     "p2": [
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "What's this, Reem?"
      },
      {
@@ -1818,7 +1818,7 @@
       "t": "It's a red car."
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "And is that a black cat?"
      },
      {
@@ -1826,7 +1826,7 @@
       "t": "Yes, it is. And this is a white bird."
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Wow! Great picture!"
      },
      {
@@ -1836,7 +1836,7 @@
     ],
     "focus": "It's a red car.",
     "qs": [
-     "What colour is the sky in Faisal's picture?",
+     "What colour is the sky in Noura's picture?",
      "What's Reem's favourite colour?"
     ]
    },
@@ -2305,10 +2305,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Ali and his cousin Sara are at a toy shop in the mall.",
+    "scene": "Ali and his cousin Fahad are at a toy shop in the mall.",
     "p1": [
      {
-      "s": "Sara",
+      "s": "Fahad",
       "t": "Look, Ali! It's a big toy shop!"
      },
      {
@@ -2316,7 +2316,7 @@
       "t": "Wow! What's that?"
      },
      {
-      "s": "Sara",
+      "s": "Fahad",
       "t": "It's a plane. It's white and blue."
      },
      {
@@ -2324,7 +2324,7 @@
       "t": "And that's a boat!"
      },
      {
-      "s": "Sara",
+      "s": "Fahad",
       "t": "Yes, it's a small red boat."
      },
      {
@@ -2338,15 +2338,15 @@
       "t": "Look at that bike!"
      },
      {
-      "s": "Sara",
+      "s": "Fahad",
       "t": "It's a green bike. It's beautiful."
      },
      {
       "s": "Ali",
-      "t": "What's this, Sara?"
+      "t": "What's this, Fahad?"
      },
      {
-      "s": "Sara",
+      "s": "Fahad",
       "t": "It's a teddy bear. It's brown."
      },
      {
@@ -2354,7 +2354,7 @@
       "t": "It's a big teddy bear!"
      },
      {
-      "s": "Sara",
+      "s": "Fahad",
       "t": "It's for my baby sister."
      }
     ],
@@ -3468,7 +3468,7 @@
     {
      "w": "how are you",
      "ar": "كيف حالك؟",
-     "ex": "How are you, Reem?"
+     "ex": "How are you, Ali?"
     },
     {
      "w": "fine",
@@ -3488,7 +3488,7 @@
     {
      "w": "sad",
      "ar": "حزين",
-     "ex": "Are you sad, Reem? Oh no!"
+     "ex": "Are you sad, Ali? Oh no!"
     },
     {
      "w": "great",
@@ -3499,10 +3499,10 @@
    "dialogue": [
     {
      "s": "Omar",
-     "t": "Hi, Reem! How are you?"
+     "t": "Hi, Ali! How are you?"
     },
     {
-     "s": "Reem",
+     "s": "Ali",
      "t": "I'm fine, thank you. How are you?"
     },
     {
@@ -3510,7 +3510,7 @@
      "t": "I'm great!"
     },
     {
-     "s": "Reem",
+     "s": "Ali",
      "t": "Are you happy today?"
     },
     {
@@ -3518,7 +3518,7 @@
      "t": "Yes, I am. I'm very happy."
     },
     {
-     "s": "Reem",
+     "s": "Ali",
      "t": "Great!"
     }
    ],
@@ -3571,19 +3571,19 @@
      "t": "Hello! I'm Emma."
     },
     {
-     "s": "Khalid",
-     "t": "Hi, Emma! I'm Khalid."
+     "s": "Hessa",
+     "t": "Hi, Emma! I'm Hessa."
     },
     {
      "s": "Emma",
-     "t": "Where are you from, Khalid?"
+     "t": "Where are you from, Hessa?"
     },
     {
-     "s": "Khalid",
+     "s": "Hessa",
      "t": "I'm from Saudi Arabia."
     },
     {
-     "s": "Khalid",
+     "s": "Hessa",
      "t": "Where are you from, Emma?"
     },
     {
@@ -3591,7 +3591,7 @@
      "t": "I'm from England. I'm from London."
     },
     {
-     "s": "Khalid",
+     "s": "Hessa",
      "t": "Is London beautiful?"
     },
     {
@@ -4107,10 +4107,10 @@
    "dialogue": [
     {
      "s": "Faisal",
-     "t": "Eid Mubarak, Maha!"
+     "t": "Eid Mubarak, Saad!"
     },
     {
-     "s": "Maha",
+     "s": "Saad",
      "t": "Eid Mubarak! Who's this boy?"
     },
     {
@@ -4118,11 +4118,11 @@
      "t": "This is my little brother, Saad."
     },
     {
-     "s": "Maha",
+     "s": "Saad",
      "t": "Hello, Saad! Eid Mubarak!"
     },
     {
-     "s": "Maha",
+     "s": "Saad",
      "t": "Look! Sweets from Grandma!"
     },
     {
@@ -4130,7 +4130,7 @@
      "t": "Great! Who's that man with Grandma?"
     },
     {
-     "s": "Maha",
+     "s": "Saad",
      "t": "He's my dad. He's your uncle!"
     },
     {
@@ -4261,10 +4261,10 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "What colour is it, Faisal?"
+     "t": "What colour is it, Noura?"
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "It's blue. It's the sky."
     },
     {
@@ -4272,11 +4272,11 @@
      "t": "Nice! And this?"
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "It's green. It's a tree."
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "What's this, Reem?"
     },
     {
@@ -4284,7 +4284,7 @@
      "t": "It's a red car."
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "And is that a black cat?"
     },
     {
@@ -4560,7 +4560,7 @@
    ],
    "dialogue": [
     {
-     "s": "Sara",
+     "s": "Fahad",
      "t": "Look, Ali! It's a big toy shop!"
     },
     {
@@ -4568,7 +4568,7 @@
      "t": "Wow! What's that?"
     },
     {
-     "s": "Sara",
+     "s": "Fahad",
      "t": "It's a plane. It's white and blue."
     },
     {
@@ -4580,15 +4580,15 @@
      "t": "Look at that bike!"
     },
     {
-     "s": "Sara",
+     "s": "Fahad",
      "t": "It's a green bike. It's beautiful."
     },
     {
      "s": "Ali",
-     "t": "What's this, Sara?"
+     "t": "What's this, Fahad?"
     },
     {
-     "s": "Sara",
+     "s": "Fahad",
      "t": "It's a teddy bear. It's brown."
     }
    ],
@@ -5295,7 +5295,7 @@
    },
    {
     "type": "mc",
-    "q": "Look at Reem's big smile. She's ___.",
+    "q": "Look at Ali's big smile. He's ___.",
     "options": [
      "sad",
      "happy",

@@ -1541,14 +1541,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem and Faisal are cousins. They are talking about their weekends.",
+    "scene": "Reem and Noura are cousins. They are talking about their weekends.",
     "p1": [
      {
       "s": "Reem",
-      "t": "Faisal, what does your family do at the weekend?"
+      "t": "Noura, what does your family do at the weekend?"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "We often go to the farm."
      },
      {
@@ -1556,7 +1556,7 @@
       "t": "How often do you go camping?"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Once a month, in winter. We go to the desert."
      },
      {
@@ -1564,7 +1564,7 @@
       "t": "Lucky you!"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "What about your family?"
      }
     ],
@@ -1574,7 +1574,7 @@
       "t": "We usually eat out on Thursday night."
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Do you have a barbecue?"
      },
      {
@@ -1582,7 +1582,7 @@
       "t": "Yes, sometimes, on the roof!"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "How often does your dad cook?"
      },
      {
@@ -1590,13 +1590,13 @@
       "t": "Every Friday. He makes great kabsa."
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Let's have a barbecue together!"
      }
     ],
     "focus": "We often go to the farm.",
     "qs": [
-     "How often does Faisal's family go camping?",
+     "How often does Noura's family go camping?",
      "Where does Reem's family have a barbecue?"
     ]
    },
@@ -1673,10 +1673,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Emma is doing a survey for her English class. She is asking Omar questions.",
+    "scene": "Sam is doing a survey for his English class. He is asking Omar questions.",
     "p1": [
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "Can I ask you some questions for my survey?"
      },
      {
@@ -1684,7 +1684,7 @@
       "t": "Sure!"
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "How often do you play football?"
      },
      {
@@ -1692,7 +1692,7 @@
       "t": "Every day, after school."
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "How often do you read books?"
      },
      {
@@ -1702,7 +1702,7 @@
     ],
     "p2": [
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "Do you often watch TV?"
      },
      {
@@ -1710,15 +1710,15 @@
       "t": "No, I never watch TV."
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "Thanks, Omar! Now I can tell the class."
      },
      {
       "s": "Teacher",
-      "t": "Emma, tell us about Omar."
+      "t": "Sam, tell us about Omar."
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "He plays football every day. He never watches TV."
      },
      {
@@ -2465,10 +2465,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Emma are playing a treasure hunt game at Omar's farm. The treasure is a box of chocolates.",
+    "scene": "Lama and Emma are playing a treasure hunt game at Lama's farm. The treasure is a box of chocolates.",
     "p1": [
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "Can you find my treasure, Emma?"
      },
      {
@@ -2476,7 +2476,7 @@
       "t": "Yes! Where do I go?"
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "First, go to the big tree."
      },
      {
@@ -2484,7 +2484,7 @@
       "t": "OK, I'm at the tree. Then?"
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "Then turn right and walk along the path."
      },
      {
@@ -2494,7 +2494,7 @@
     ],
     "p2": [
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "Good! Go between the well and the tent."
      },
      {
@@ -2502,7 +2502,7 @@
       "t": "Is the treasure in the tent?"
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "No. Look behind the tent, under the big stone."
      },
      {
@@ -2510,7 +2510,7 @@
       "t": "Here it is! Chocolates!"
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "Well done! Let's eat them together."
      }
     ],
@@ -4107,10 +4107,10 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "Faisal, what does your family do at the weekend?"
+     "t": "Noura, what does your family do at the weekend?"
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "We often go to the farm."
     },
     {
@@ -4118,7 +4118,7 @@
      "t": "How often do you go camping?"
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "Once a month, in winter. We go to the desert."
     },
     {
@@ -4126,7 +4126,7 @@
      "t": "We usually eat out on Thursday night."
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "Do you have a barbecue?"
     },
     {
@@ -4164,7 +4164,7 @@
     {
      "w": "often",
      "ar": "غالباً / كثيراً",
-     "ex": "Emma often reads books."
+     "ex": "Sam often reads books."
     },
     {
      "w": "never",
@@ -4179,7 +4179,7 @@
    ],
    "dialogue": [
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "Can I ask you some questions for my survey?"
     },
     {
@@ -4187,7 +4187,7 @@
      "t": "Sure!"
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "How often do you play football?"
     },
     {
@@ -4195,7 +4195,7 @@
      "t": "Every day, after school."
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "Do you often watch TV?"
     },
     {
@@ -4203,7 +4203,7 @@
      "t": "No, I never watch TV."
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "Thanks, Omar! Now I can tell the class."
     }
    ],
@@ -4617,7 +4617,7 @@
    ],
    "dialogue": [
     {
-     "s": "Omar",
+     "s": "Lama",
      "t": "Can you find my treasure, Emma?"
     },
     {
@@ -4625,7 +4625,7 @@
      "t": "Yes! Where do I go?"
     },
     {
-     "s": "Omar",
+     "s": "Lama",
      "t": "First, go to the big tree."
     },
     {
@@ -4633,7 +4633,7 @@
      "t": "OK, I'm at the tree. Then?"
     },
     {
-     "s": "Omar",
+     "s": "Lama",
      "t": "Good! Go between the well and the tent."
     },
     {
@@ -4641,7 +4641,7 @@
      "t": "Is the treasure in the tent?"
     },
     {
-     "s": "Omar",
+     "s": "Lama",
      "t": "No. Look behind the tent, under the big stone."
     }
    ],
@@ -5753,7 +5753,7 @@
    },
    {
     "type": "mc",
-    "q": "Omar: 'I play football every day.' Emma: 'Omar ___ football every day.'",
+    "q": "Omar: 'I play football every day.' Sam: 'Omar ___ football every day.'",
     "options": [
      "play",
      "plays",

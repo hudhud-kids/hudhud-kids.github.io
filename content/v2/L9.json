@@ -1589,14 +1589,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Emma and Omar are preparing a news report for the school radio about the new school garden.",
+    "scene": "Emma and Reem are preparing a news report for the school radio about the new school garden.",
     "p1": [
      {
       "s": "Emma",
       "t": "We go live on the school radio tomorrow. Did you interview the head teacher?"
      },
      {
-      "s": "Omar",
+      "s": "Reem",
       "t": "Yes, and I took notes. He said that the new garden would open next week."
      },
      {
@@ -1604,7 +1604,7 @@
       "t": "Great! Did you find out who planted the trees?"
      },
      {
-      "s": "Omar",
+      "s": "Reem",
       "t": "He told me that students from every class had helped. He also asked if we could write a poem for the opening."
      },
      {
@@ -1618,7 +1618,7 @@
       "t": "I interviewed Uncle Salem, the gardener. I asked him what his favourite plant was."
      },
      {
-      "s": "Omar",
+      "s": "Reem",
       "t": "What did he say? We need a good quote."
      },
      {
@@ -1626,7 +1626,7 @@
       "t": "He said, \"Every plant needs love and water.\" Then he told me to remind everyone not to walk on the grass."
      },
      {
-      "s": "Omar",
+      "s": "Reem",
       "t": "According to him, the grass is still very young. OK, let's start the report with \"Breaking news\"!"
      },
      {
@@ -1636,7 +1636,7 @@
     ],
     "focus": "He said that the new garden would open next week.",
     "qs": [
-     "What did the head teacher ask Omar?",
+     "What did the head teacher ask Reem?",
      "What did the gardener tell Emma to remind everyone?"
     ]
    },
@@ -3077,14 +3077,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam, Noura and Khalid must choose a class project: a bake sale for charity, a school garden or a beach clean-up.",
+    "scene": "Sam, Fahad and Khalid must choose a class project: a bake sale for charity, a school garden or a beach clean-up.",
     "p1": [
      {
       "s": "Sam",
       "t": "OK, we need to reach a decision today. Bake sale, garden or beach clean-up?"
      },
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "I think a bake sale is the best option. We could raise money for the children's hospital."
      },
      {
@@ -3096,7 +3096,7 @@
       "t": "Let's weigh up the pros and cons. A beach clean-up would make a difference, but the beach is far away."
      },
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "That's true. Transport would be a problem."
      }
     ],
@@ -3110,7 +3110,7 @@
       "t": "Good idea. I vote for the garden. It would be better to make something the whole school can enjoy."
      },
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "Hmm, I still prefer the bake sale, but I'll go along with the group."
      },
      {
@@ -4047,7 +4047,7 @@
      "t": "We go live on the school radio tomorrow. Did you interview the head teacher?"
     },
     {
-     "s": "Omar",
+     "s": "Reem",
      "t": "Yes, and I took notes. He said that the new garden would open next week."
     },
     {
@@ -4055,7 +4055,7 @@
      "t": "Great! Did you find out who planted the trees?"
     },
     {
-     "s": "Omar",
+     "s": "Reem",
      "t": "He told me that students from every class had helped. He also asked if we could write a poem for the opening."
     },
     {
@@ -4063,7 +4063,7 @@
      "t": "I interviewed Uncle Salem, the gardener. I asked him what his favourite plant was."
     },
     {
-     "s": "Omar",
+     "s": "Reem",
      "t": "What did he say? We need a good quote."
     },
     {
@@ -4071,7 +4071,7 @@
      "t": "He said, \"Every plant needs love and water.\" Then he told me to remind everyone not to walk on the grass."
     },
     {
-     "s": "Omar",
+     "s": "Reem",
      "t": "According to him, the grass is still very young. OK, let's start the report with \"Breaking news\"!"
     }
    ],
@@ -4971,7 +4971,7 @@
      "t": "OK, we need to reach a decision today. Bake sale, garden or beach clean-up?"
     },
     {
-     "s": "Noura",
+     "s": "Fahad",
      "t": "I think a bake sale is the best option. We could raise money for the children's hospital."
     },
     {
@@ -4991,7 +4991,7 @@
      "t": "Good idea. I vote for the garden. It would be better to make something the whole school can enjoy."
     },
     {
-     "s": "Noura",
+     "s": "Fahad",
      "t": "Hmm, I still prefer the bake sale, but I'll go along with the group."
     },
     {

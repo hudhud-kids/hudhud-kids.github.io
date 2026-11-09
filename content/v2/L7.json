@@ -834,10 +834,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Majed writes for the school magazine. He is interviewing his classmate Dana for the 'Student of the Week' page.",
+    "scene": "Reem writes for the school magazine. She is interviewing her classmate Dana for the 'Student of the Week' page.",
     "p1": [
      {
-      "s": "Majed",
+      "s": "Reem",
       "t": "Thanks for doing this interview, Dana. First question: have you ever won a prize?"
      },
      {
@@ -845,7 +845,7 @@
       "t": "Yes, I have. I've won two prizes for drawing."
      },
      {
-      "s": "Majed",
+      "s": "Reem",
       "t": "Great! When did you win your first prize?"
      },
      {
@@ -855,7 +855,7 @@
     ],
     "p2": [
      {
-      "s": "Majed",
+      "s": "Reem",
       "t": "Have you ever been on a plane?"
      },
      {
@@ -863,7 +863,7 @@
       "t": "Yes, twice. I flew to Egypt last year to see the pyramids."
      },
      {
-      "s": "Majed",
+      "s": "Reem",
       "t": "How was it?"
      },
      {
@@ -871,7 +871,7 @@
       "t": "It was an amazing experience, but the journey was long."
      },
      {
-      "s": "Majed",
+      "s": "Reem",
       "t": "Last question: what have you never done but want to try?"
      },
      {
@@ -1794,14 +1794,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Ali asks his classmate Emma about her family picnic last Friday.",
+    "scene": "Ali asks his classmate Sam about his family picnic last Friday.",
     "p1": [
      {
       "s": "Ali",
-      "t": "Emma, did you enjoy the picnic on Friday?"
+      "t": "Sam, did you enjoy the picnic on Friday?"
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "It was a disaster! We were having lunch in the park when suddenly it started to rain."
      },
      {
@@ -1809,7 +1809,7 @@
       "t": "Did you get wet?"
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "Very wet! It was raining heavily, and our picnic things were in a mess."
      }
     ],
@@ -1819,7 +1819,7 @@
       "t": "Was there thunder and lightning too?"
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "Yes, lots! My little sister was crying, and Dad was looking for the car keys."
      },
      {
@@ -1827,7 +1827,7 @@
       "t": "Oh no. What happened when you got home?"
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "While we were changing our clothes, there was a power cut! We sat in the dark for an hour."
      },
      {
@@ -1837,7 +1837,7 @@
     ],
     "focus": "We were having lunch in the park when suddenly it started to rain.",
     "qs": [
-     "What were Emma and her family doing when it started to rain?",
+     "What were Sam and his family doing when it started to rain?",
      "What happened while they were changing their clothes?"
     ]
    },
@@ -2518,14 +2518,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and his classmate Emma are working on a school project called 'Life in 2050'.",
+    "scene": "Noura and her classmate Emma are working on a school project called 'Life in 2050'.",
     "p1": [
      {
       "s": "Emma",
       "t": "For our project, we need five predictions about life in 2050. Any ideas?"
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "I think everyone will have a robot at home. It'll cook and clean for us."
      },
      {
@@ -2533,7 +2533,7 @@
       "t": "Definitely! And people will probably travel in driverless cars."
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "Maybe cars will even fly. Flying taxis might be normal in the future."
      }
     ],
@@ -2543,7 +2543,7 @@
       "t": "What about schools? Will children still go to school?"
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "I don't think schools will disappear. We'll always need teachers and friends!"
      },
      {
@@ -2551,14 +2551,14 @@
       "t": "True. And will people go on holiday in space?"
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "They might, but it'll be very expensive. I'll stay on Earth, thanks!"
      }
     ],
     "focus": "I think everyone will have a robot at home.",
     "qs": [
-     "What will robots do at home, according to Omar?",
-     "Why does Omar want to stay on Earth?"
+     "What will robots do at home, according to Noura?",
+     "Why does Noura want to stay on Earth?"
     ]
    },
    "speakout": {
@@ -3458,7 +3458,7 @@
    ],
    "dialogue": [
     {
-     "s": "Majed",
+     "s": "Reem",
      "t": "Dana, have you ever won a prize?"
     },
     {
@@ -3466,7 +3466,7 @@
      "t": "Yes, I have. I've won two prizes for drawing."
     },
     {
-     "s": "Majed",
+     "s": "Reem",
      "t": "When did you win your first prize?"
     },
     {
@@ -3474,7 +3474,7 @@
      "t": "In Grade 4. It was the best day I've ever had at school."
     },
     {
-     "s": "Majed",
+     "s": "Reem",
      "t": "Have you ever been on a plane?"
     },
     {
@@ -3482,7 +3482,7 @@
      "t": "Yes, twice. I flew to Egypt last year."
     },
     {
-     "s": "Majed",
+     "s": "Reem",
      "t": "How was it?"
     },
     {
@@ -4027,10 +4027,10 @@
    "dialogue": [
     {
      "s": "Ali",
-     "t": "Did you enjoy the picnic, Emma?"
+     "t": "Did you enjoy the picnic, Sam?"
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "No! We were having lunch when suddenly it started to rain."
     },
     {
@@ -4038,7 +4038,7 @@
      "t": "Did you get wet?"
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "Very wet! It was raining heavily."
     },
     {
@@ -4046,7 +4046,7 @@
      "t": "Was there thunder and lightning?"
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "Yes! And while we were changing our clothes, there was a power cut!"
     }
    ],
@@ -4448,7 +4448,7 @@
      "t": "We need predictions about life in 2050."
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "I think everyone will have a robot at home."
     },
     {
@@ -4456,7 +4456,7 @@
      "t": "Definitely! And people will probably travel in driverless cars."
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "Flying taxis might be normal in the future."
     },
     {
@@ -4464,7 +4464,7 @@
      "t": "Will people go on holiday in space?"
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "They might, but it'll be very expensive."
     }
    ],

@@ -59,7 +59,7 @@
    "cando": "Can open and chair an academic discussion, involve every participant, keep it on track, and summarise and synthesise different views into a shared position.",
    "grammar": [
     "inviting and managing turns: Would you like to come in on this? / I'd like to hear from …",
-    "summarising: Broadly speaking, … / In a nutshell, it boils down to …",
+    "summarising: Broadly speaking, … / Let me recap. / the gist (recycling L17: In a nutshell, … / It boils down to …)",
     "synthesising: What seems to be emerging is … / Drawing the threads together, …"
    ],
    "lessons": [
@@ -160,8 +160,8 @@
     ],
     [
      "Idiom with Ease",
-     "Use idioms naturally and accurately in a long turn about a person who influenced you",
-     "It was a steep learning curve. / … has rubbed off on me. / … left a lasting impression on me."
+     "Use idioms naturally and accurately in a long turn about a skill you learned from someone",
+     "It was a steep learning curve. / … has rubbed off on me. / … set the bar high."
     ],
     [
      "The Long Turn",
@@ -473,10 +473,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal and his classmate Emma are working on a group project. They discuss a message from Majed in the group chat.",
+    "scene": "Faisal and his classmate Ethan are working on a group project. They discuss a message from Majed in the group chat.",
     "p1": [
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "Did you see Majed's message? 'Great, another deadline moved forward. Best week ever.'"
      },
      {
@@ -484,7 +484,7 @@
       "t": "I did. I almost took it at face value and replied, 'Glad you're happy!'"
      },
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "Oh, that would have gone down well. He's clearly being sarcastic."
      },
      {
@@ -494,7 +494,7 @@
     ],
     "p2": [
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "In person, it's obvious. His deadpan face gives it away."
      },
      {
@@ -502,7 +502,7 @@
       "t": "But in a text, the tone gets completely lost in translation."
      },
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "Maybe we should suggest he adds an emoji when he's being tongue-in-cheek."
      },
      {
@@ -510,14 +510,14 @@
       "t": "Or maybe we should ban sarcasm in the group chat altogether. I'm only half joking."
      },
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "Oh yes, because banning things always works so well with teenagers."
      }
     ],
     "focus": "Oh, that would have gone down well.",
     "qs": [
      "Why did Faisal almost reply 'Glad you're happy!'?",
-     "Is Emma's last line serious? How do you know?"
+     "Is Ethan's last line serious? How do you know?"
     ]
    },
    "speakout": {
@@ -969,14 +969,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem is leading a student seminar on how Gulf cities can stay cool as summers get hotter. She opens the discussion with Ali and Hannah.",
+    "scene": "Reem is leading a student seminar on how Gulf cities can stay cool as summers get hotter. She opens the discussion with Alia and Hannah.",
     "p1": [
      {
       "s": "Reem",
       "t": "Shall we kick off? To set the scene, today's article argues that our cities trap heat long after sunset."
      },
      {
-      "s": "Ali",
+      "s": "Alia",
       "t": "Because of all the concrete and asphalt, presumably?"
      },
      {
@@ -991,10 +991,10 @@
     "p2": [
      {
       "s": "Reem",
-      "t": "Good. I'd like to open the floor now. Ali, where do you stand?"
+      "t": "Good. I'd like to open the floor now. Alia, where do you stand?"
      },
      {
-      "s": "Ali",
+      "s": "Alia",
       "t": "For the sake of argument, let's say we can't rebuild whole cities. What can we change quickly?"
      },
      {
@@ -1006,7 +1006,7 @@
       "t": "So we already have two angles: long-term planning and quick fixes. Let's take them one at a time."
      },
      {
-      "s": "Ali",
+      "s": "Alia",
       "t": "Sounds good. Could we start with the quick fixes? They're easier to picture."
      }
     ],
@@ -1089,7 +1089,7 @@
     }
    ],
    "dialogue": {
-    "scene": "Majed is leading a seminar on whether local dialects are worth protecting. Tom has been talking for five minutes, and Leena hasn't spoken yet.",
+    "scene": "Majed is leading a seminar on whether local dialects are worth protecting. Tom has been talking for five minutes, and Luay hasn't spoken yet.",
     "p1": [
      {
       "s": "Tom",
@@ -1105,12 +1105,12 @@
      },
      {
       "s": "Majed",
-      "t": "Not at all. Leena, you mentioned your grandmother's Nabati poems earlier. Would you like to come in on this?"
+      "t": "Not at all. Luay, you mentioned your grandmother's Nabati poems earlier. Would you like to come in on this?"
      }
     ],
     "p2": [
      {
-      "s": "Leena",
+      "s": "Luay",
       "t": "I would, if I can get a word in edgeways. Those poems only really work in the dialect."
      },
      {
@@ -1118,7 +1118,7 @@
       "t": "That's a powerful example. Could you build on that? What exactly would be lost?"
      },
      {
-      "s": "Leena",
+      "s": "Luay",
       "t": "The rhythm, the humour, the local references. Standard Arabic can't carry all of it."
      },
      {
@@ -1133,7 +1133,7 @@
     "focus": "Would you like to come in on this?",
     "qs": [
      "How does Majed stop Tom politely?",
-     "What example does Leena give, and why is it important?"
+     "What example does Luay give, and why is it important?"
     ]
    },
    "speakout": {
@@ -1209,14 +1209,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Noor is leading a seminar on how Saudi Arabia can use water more sustainably. The discussion keeps drifting.",
+    "scene": "Nasser is leading a seminar on how Saudi Arabia can use water more sustainably. The discussion keeps drifting.",
     "p1": [
      {
       "s": "Ziad",
-      "t": "Speaking of water, has anyone been to the new aquarium in Jeddah? The sharks are huge."
+      "t": "Speaking of water, has anyone been to the aquarium in Jeddah? The sharks are huge."
      },
      {
-      "s": "Noor",
+      "s": "Nasser",
       "t": "Sounds amazing, but I think we've gone off on a tangent. Let me bring us back to water use at home."
      },
      {
@@ -1228,7 +1228,7 @@
       "t": "And the plants use a lot of energy. Actually, did you know the first plant on the Red Sea coast was…"
      },
      {
-      "s": "Noor",
+      "s": "Nasser",
       "t": "Interesting, but let's park that point for now, or we'll get bogged down in history."
      }
     ],
@@ -1238,7 +1238,7 @@
       "t": "Sorry, I've lost the thread a little. What's the main question again?"
      },
      {
-      "s": "Noor",
+      "s": "Nasser",
       "t": "Whether changing household habits can make a real difference, or whether only technology can."
      },
      {
@@ -1246,7 +1246,7 @@
       "t": "Then I'd say both. Shorter showers matter, but so do cleaner, cheaper plants."
      },
      {
-      "s": "Noor",
+      "s": "Nasser",
       "t": "Good. Ziad, I promise we'll come back to the history point at the end, if there's time."
      },
      {
@@ -1256,7 +1256,7 @@
     ],
     "focus": "Let me bring us back to water use at home.",
     "qs": [
-     "How does Noor deal with Ziad's comment about the aquarium?",
+     "How does Nasser deal with Ziad's comment about the aquarium?",
      "What is the main question of the seminar?"
     ]
    },
@@ -1278,14 +1278,14 @@
     ]
    },
    "culture": {
-    "title": "Water from the Sea",
+    "title": "Keeping Meetings on Track",
     "points": [
-     "Saudi Arabia is one of the world's largest producers of desalinated water.",
-     "Desalination turns seawater into drinking water, but older methods use a great deal of energy.",
-     "Many newer plants use reverse osmosis, which pushes water through fine membranes and usually needs less energy."
+     "Many formal meetings follow a written agenda, which helps the chair keep the discussion focused.",
+     "Some teams keep a 'parking lot': a list of useful side issues to discuss later.",
+     "Good chairs summarise regularly, so that nobody loses the thread."
     ],
     "qs": [
-     "Should households pay more for water to encourage saving? Why or why not?",
+     "What is the politest way to stop someone going off on a tangent?",
      "Which matters more: changing habits or improving technology?"
     ]
    },
@@ -1453,48 +1453,48 @@
     }
    ],
    "dialogue": {
-    "scene": "Lina is leading a seminar on fast fashion. After hearing two strong views, she tries to combine them into one position.",
+    "scene": "Lina is leading a seminar on whether the school canteen should stop selling unhealthy snacks. After hearing two strong views, she tries to combine them into one position.",
     "p1": [
      {
       "s": "Mona",
-      "t": "Cheap clothes let families on a budget dress well. I don't think anyone should feel guilty about that."
+      "t": "Banning crisps and sweets from the canteen treats us like children. We should be free to choose."
      },
      {
       "s": "Emily",
-      "t": "But clothes worn only a few times create mountains of waste."
+      "t": "But the canteen shapes our habits. Right now, almost everything it sells is fried or sugary."
      },
      {
       "s": "Mona",
-      "t": "True, though second-hand shops aren't an option for everyone."
+      "t": "True, though the healthy options cost more, and nobody wants a sad, expensive salad."
      },
      {
       "s": "Lina",
-      "t": "Let me try to draw the threads together. What seems to be emerging is that you both care about fairness."
+      "t": "Let me try to draw the threads together. What seems to be emerging is that you both care about students' wellbeing."
      }
     ],
     "p2": [
      {
       "s": "Emily",
-      "t": "Fairness to families and fairness to the planet, you mean?"
+      "t": "Our health and our freedom to choose, you mean?"
      },
      {
       "s": "Lina",
-      "t": "Exactly. And your points dovetail with each other more than they clash: affordable clothes that last longer would satisfy both."
+      "t": "Exactly. And your points dovetail more than they clash: healthy food that is cheap and tasty would satisfy you both."
      },
      {
       "s": "Mona",
-      "t": "So the common ground is quality at a fair price, not simply 'buy less'."
+      "t": "So the common ground is better choices, not simply 'ban everything'."
      },
      {
       "s": "Lina",
-      "t": "Yes. Can we reconcile that with Emily's concern about waste?"
+      "t": "Yes. Can we reconcile that with Emily's concern about sugar?"
      },
      {
       "s": "Emily",
-      "t": "If clothes last longer, there's less waste. That's a middle way I can live with."
+      "t": "If treats stay but healthy food becomes cheaper and tastier, that's a middle way I can live with."
      }
     ],
-    "focus": "What seems to be emerging is that you both care about fairness.",
+    "focus": "What seems to be emerging is that you both care about students' wellbeing.",
     "qs": [
      "What do Mona and Emily disagree about at first?",
      "What common ground does Lina help them find?"
@@ -1518,15 +1518,15 @@
     ]
    },
    "culture": {
-    "title": "Fashion That Lasts",
+    "title": "School Food Around the World",
     "points": [
-     "The fashion industry produces huge amounts of textile waste, and much of it ends up in landfill.",
-     "Repair and resale apps have grown quickly as young people look for cheaper, greener clothes.",
-     "Traditional Saudi garments such as the thobe and the bisht are often worn for years, and a fine bisht may be handed down."
+     "In Japan, many schools serve the same balanced lunch to every pupil, and children take turns serving it.",
+     "Saudi school canteens follow official guidelines that limit unhealthy food and ban energy drinks.",
+     "Nutrition experts say that making healthy food cheaper and easier to reach often works better than banning snacks."
     ],
     "qs": [
-     "Would you buy fewer, better clothes if they cost more at first?",
-     "Who is most responsible for reducing waste: shoppers, brands or governments?"
+     "Should schools decide what students eat, or should students choose? Why?",
+     "What would make healthy food more popular at your school?"
     ]
    },
    "exit": "Take two opposing views on a topic you know and combine them into one position in two sentences."
@@ -1580,7 +1580,7 @@
       "t": "We've got five minutes left, so let's take stock. A recurring theme has been convenience versus identity."
      },
      {
-      "s": "Yara",
+      "s": "Yasser",
       "t": "Right. Arabizi is quick to type, but I worry my younger cousins can't spell properly in Arabic."
      },
      {
@@ -1594,12 +1594,12 @@
     ],
     "p2": [
      {
-      "s": "Yara",
+      "s": "Yasser",
       "t": "Just one thing: Arabic keyboards are easy now, so the original reason for Arabizi has almost gone."
      },
      {
       "s": "Rakan",
-      "t": "Thanks, Yara. Let me draw the threads together. Nobody here thinks Arabizi will replace Arabic."
+      "t": "Thanks, Yasser. Let me draw the threads together. Nobody here thinks Arabizi will replace Arabic."
      },
      {
       "s": "Ben",
@@ -1610,7 +1610,7 @@
       "t": "The real concern is young learners. So perhaps our position is: informal Arabizi is harmless, provided schools keep standards high."
      },
      {
-      "s": "Yara",
+      "s": "Yasser",
       "t": "That's a fair synthesis. I'd sign up to that."
      },
      {
@@ -1697,7 +1697,7 @@
     }
    ],
    "dialogue": {
-    "scene": "At a public forum in a Jeddah community centre, student representative Turki presents a plan for cycle lanes along a busy road. A resident, Mr Saleh, challenges him.",
+    "scene": "At a public forum in a Jeddah community centre, chaired by Grace, student representative Turki presents a plan for cycle lanes along a busy road. A resident, Mr Saleh, challenges him.",
     "p1": [
      {
       "s": "Grace",
@@ -1821,10 +1821,10 @@
     }
    ],
    "dialogue": {
-    "scene": "On the school podcast, presenter Laura interviews student Nawaf, who supports replacing some end-of-term exams with projects.",
+    "scene": "On the school podcast, presenter Liam interviews student Nawaf, who supports replacing some end-of-term exams with projects.",
     "p1": [
      {
-      "s": "Laura",
+      "s": "Liam",
       "t": "Critics say replacing exams with projects just makes school easier. Isn't that the truth?"
      },
      {
@@ -1832,7 +1832,7 @@
       "t": "I'd look at it another way. The real question isn't easier or harder; it's what we actually want to measure."
      },
      {
-      "s": "Laura",
+      "s": "Liam",
       "t": "But surely exams are the fairest test of knowledge?"
      },
      {
@@ -1842,7 +1842,7 @@
     ],
     "p2": [
      {
-      "s": "Laura",
+      "s": "Liam",
       "t": "So you admit projects are easier to cheat on."
      },
      {
@@ -1850,7 +1850,7 @@
       "t": "That's a fair concern, but I think it misses the point. Any system can be abused; the issue is design."
      },
      {
-      "s": "Laura",
+      "s": "Liam",
       "t": "Then how would you design it?"
      },
      {
@@ -1858,7 +1858,7 @@
       "t": "I'd shift the focus from the final product to the process: drafts, presentations and questions in person."
      },
      {
-      "s": "Laura",
+      "s": "Liam",
       "t": "You've rather reframed the whole debate."
      },
      {
@@ -2149,7 +2149,7 @@
      "How can ordinary people check a claim they see online?"
     ]
    },
-   "exit": "Challenge this claim in two sentences: 'Students who eat breakfast get better grades, so breakfast makes you clever.'"
+   "exit": "Challenge this claim in two sentences: 'Cities with more hospitals have more sick people, so hospitals make people ill.'"
   },
   "2-4": {
    "objective": "Today you will persuade an undecided audience by connecting with their values and offering a fair compromise.",
@@ -2313,10 +2313,10 @@
     }
    ],
    "dialogue": {
-    "scene": "At a public debate in a cultural centre, Ahmed argues that popular heritage sites should limit daily visitor numbers. His opponent, Kate, and a sceptical audience member, Mr Hassan, challenge him.",
+    "scene": "At a public debate in a cultural centre, Ahmed argues that popular heritage sites should limit daily visitor numbers. His opponent, Karim, and a sceptical audience member, Mr Hassan, challenge him.",
     "p1": [
      {
-      "s": "Kate",
+      "s": "Karim",
       "t": "Limiting visitors is elitist. Only the rich will ever get tickets."
      },
      {
@@ -2334,7 +2334,7 @@
     ],
     "p2": [
      {
-      "s": "Kate",
+      "s": "Karim",
       "t": "Fewer visitors means less money for local businesses."
      },
      {
@@ -2342,7 +2342,7 @@
       "t": "Let me turn the tables: what happens to local businesses if the site is damaged and has to close?"
      },
      {
-      "s": "Kate",
+      "s": "Karim",
       "t": "That's a worst-case scenario."
      },
      {
@@ -2357,7 +2357,7 @@
     "focus": "But the real question is whether these sites survive for our grandchildren.",
     "qs": [
      "How does Ahmed answer the claim that limits are elitist?",
-     "How does Ahmed 'turn the tables' on Kate?"
+     "How does Ahmed 'turn the tables' on Karim?"
     ]
    },
    "speakout": {
@@ -2512,14 +2512,14 @@
    "exit": "Describe a change in your city in two sentences, using at least two precise expressions from today."
   },
   "3-1": {
-   "objective": "Today you will use idioms naturally and accurately in a long turn about a person who influenced you.",
-   "warmup": "Who, apart from your family, has taught you the most about life?",
+   "objective": "Today you will use idioms naturally and accurately in a long turn about a skill you learned from someone.",
+   "warmup": "What is one skill someone else taught you, and how did they teach it?",
    "expressions": [
     {
-     "w": "leave a lasting impression",
-     "def": "to be remembered for a long time",
-     "ar": "يترك أثراً دائماً",
-     "frame": "___ left a lasting impression on me because ___."
+     "w": "set the bar high",
+     "def": "to set a high standard for others to reach",
+     "ar": "يضع معياراً عالياً",
+     "frame": "___ set the bar high for me when ___."
     },
     {
      "w": "a steep learning curve",
@@ -2553,19 +2553,19 @@
     }
    ],
    "dialogue": {
-    "scene": "Mishal practises an IELTS Part 2 talk about a person who has influenced him. His friend Adam times him and gives feedback.",
+    "scene": "Mishal practises an IELTS Part 2 talk about a skill he learned from someone else. His friend Adam times him and gives feedback.",
     "p1": [
      {
       "s": "Adam",
-      "t": "Your topic: describe a person who has influenced you. You've got two minutes."
+      "t": "Your topic: describe a skill you learned from someone else. You've got two minutes."
      },
      {
       "s": "Mishal",
-      "t": "I'd like to talk about my football coach, Ibrahim, who has left a lasting impression on me."
+      "t": "I'd like to talk about football, which I learned properly from my coach, Ibrahim, who set the bar high from day one."
      },
      {
       "s": "Adam",
-      "t": "How did you meet him?"
+      "t": "How did it start?"
      },
      {
       "s": "Mishal",
@@ -2573,7 +2573,7 @@
      },
      {
       "s": "Adam",
-      "t": "And what makes him special?"
+      "t": "And what made his coaching special?"
      },
      {
       "s": "Mishal",
@@ -2621,7 +2621,7 @@
      },
      {
       "q": "How did the experience change you?",
-      "hint": "Use 'come into my own' or 'leave a lasting impression', and don't force in extra idioms."
+      "hint": "Use 'come into my own' or 'set the bar high', and don't force in extra idioms."
      }
     ]
    },
@@ -2637,7 +2637,7 @@
      "Is there an Arabic proverb you'd like to translate into English? Which one?"
     ]
    },
-   "exit": "Tell me about someone who influenced you in two sentences, using two idioms naturally."
+   "exit": "Tell me about a skill you learned from someone in two sentences, using two idioms naturally."
   },
   "3-2": {
    "objective": "Today you will organise a two-minute long turn with clear points, examples and a balanced conclusion.",
@@ -2668,10 +2668,10 @@
      "frame": "I enjoy ___, not least because ___."
     },
     {
-     "w": "a double-edged sword",
-     "def": "something with both good and bad effects",
-     "ar": "سلاح ذو حدّين",
-     "frame": "___ is a double-edged sword."
+     "w": "cut both ways",
+     "def": "to have both good and bad effects",
+     "ar": "له وجهان (إيجابي وسلبي)",
+     "frame": "___ can cut both ways because ___."
     },
     {
      "w": "on balance",
@@ -2715,7 +2715,7 @@
      },
      {
       "s": "Razan",
-      "t": "On balance, technology is a double-edged sword: it weakens some kinds of memory but strengthens our ability to find and use information."
+      "t": "On balance, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information."
      },
      {
       "s": "Mr Davies",
@@ -2726,7 +2726,7 @@
       "t": "Then I'll state it more firmly: I'd say the benefits slightly outweigh the costs."
      }
     ],
-    "focus": "On balance, technology is a double-edged sword: it weakens some kinds of memory but strengthens our ability to find and use information.",
+    "focus": "On balance, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information.",
     "qs": [
      "What example does Razan give to support her first point?",
      "What advice does Mr Davies give about her conclusion?"
@@ -2925,7 +2925,7 @@
     }
    ],
    "dialogue": {
-    "scene": "During a mock C2 speaking test, Abeer describes Al Sadu weaving to the examiner, Mrs Ward, and repairs her language when she gets stuck.",
+    "scene": "During a mock C2 speaking test, Abeer describes palm-frond weaving to the examiner, Mrs Ward, and repairs her language when she gets stuck.",
     "p1": [
      {
       "s": "Mrs Ward",
@@ -2933,7 +2933,7 @@
      },
      {
       "s": "Abeer",
-      "t": "I'd like to talk about Al Sadu, a type of weaving done by Bedouin women, or rather, traditionally done by them."
+      "t": "I'd like to talk about palm-frond weaving, done mainly by women, or rather, traditionally done by them."
      },
      {
       "s": "Mrs Ward",
@@ -2941,17 +2941,17 @@
      },
      {
       "s": "Abeer",
-      "t": "Tents, cushions and the… the word escapes me… the long woven pieces that divide a tent inside."
+      "t": "Baskets, mats and the… the word escapes me… the round, cone-shaped covers that keep flies off food."
      },
      {
       "s": "Mrs Ward",
-      "t": "Dividers?"
+      "t": "Food covers?"
      }
     ],
     "p2": [
      {
       "s": "Abeer",
-      "t": "Yes, dividers. The patterns are, for want of a better word, a kind of language."
+      "t": "Yes, food covers. The patterns are, for want of a better word, a kind of signature."
      },
      {
       "s": "Mrs Ward",
@@ -2959,7 +2959,7 @@
      },
      {
       "s": "Abeer",
-      "t": "Let me rephrase that. What I'm getting at is that the patterns carry meaning about the weaver's family and surroundings."
+      "t": "Let me rephrase that. What I'm getting at is that each weaver's colours and patterns made her work recognisable."
      },
      {
       "s": "Mrs Ward",
@@ -2967,13 +2967,13 @@
      },
      {
       "s": "Abeer",
-      "t": "Yes, though less widely. To be more precise, UNESCO listed it in 2020 as heritage in urgent need of safeguarding."
+      "t": "Yes, though less widely. To be more precise, it's now taught mainly at heritage centres and festivals."
      }
     ],
-    "focus": "What I'm getting at is that the patterns carry meaning about the weaver's family and surroundings.",
+    "focus": "What I'm getting at is that each weaver's colours and patterns made her work recognisable.",
     "qs": [
      "How does Abeer manage when she can't find a word?",
-     "Why does Abeer compare the patterns to a language?"
+     "Why does Abeer compare the patterns to a signature?"
     ]
    },
    "speakout": {
@@ -2994,11 +2994,11 @@
     ]
    },
    "culture": {
-    "title": "Al Sadu Weaving",
+    "title": "Weaving with Palm Fronds",
     "points": [
-     "Al Sadu is a traditional form of weaving practised by Bedouin women in Saudi Arabia and Kuwait.",
-     "Weavers use wool from sheep, camels and goats, often in bold geometric patterns of red, black and white.",
-     "In 2020, UNESCO added Al Sadu to its list of intangible heritage in need of urgent safeguarding."
+     "In many parts of the Gulf, dried palm fronds are woven into baskets, mats and food covers, a craft often called 'khous'.",
+     "Al-Ahsa, home to one of the largest palm oases in the world, has a long tradition of palm-frond crafts.",
+     "Heritage festivals and craft centres now run workshops to pass these skills on to young people."
     ],
     "qs": [
      "Why do traditional crafts disappear, and should we try to save them?",
@@ -3169,31 +3169,31 @@
    "dialogue": [
     {
      "s": "Sam",
-     "t": "So, how was the camping trip? You'd been talking about it for weeks."
+     "t": "So, how was the camping trip?"
     },
     {
      "s": "Khalid",
-     "t": "It could have gone better. A sandstorm arrived about an hour after we'd put up the tents."
+     "t": "It could have gone better. A sandstorm arrived an hour after we'd put up the tents."
     },
     {
      "s": "Sam",
-     "t": "Ah. So it wasn't exactly the relaxing weekend under the stars you'd promised everyone."
+     "t": "So it wasn't exactly the relaxing weekend under the stars you'd promised everyone."
     },
     {
      "s": "Khalid",
-     "t": "Not exactly, no. My uncle spent most of the night chasing a tent across the dunes."
-    },
-    {
-     "s": "Khalid",
-     "t": "And the 'luxury' camp my brother booked for the second night left a lot to be desired."
-    },
-    {
-     "s": "Khalid",
-     "t": "Let's just say the hot shower was more of a rumour than a reality."
+     "t": "Not exactly. My uncle spent the night chasing a tent."
     },
     {
      "s": "Sam",
-     "t": "Still, nobody got hurt, so it's not the end of the world."
+     "t": "That sounds a tad stressful, to put it mildly."
+    },
+    {
+     "s": "Khalid",
+     "t": "And the 'luxury' camp left a lot to be desired."
+    },
+    {
+     "s": "Sam",
+     "t": "Still, nobody got hurt. It's not the end of the world."
     }
    ],
    "grammar": {
@@ -3242,7 +3242,7 @@
    "dialogue": [
     {
      "s": "Noura",
-     "t": "My manager read my report and said, 'You might want to check the figures in section three.' That's all."
+     "t": "My manager said, 'You might want to check the figures in section three.'"
     },
     {
      "s": "Hessa",
@@ -3250,23 +3250,19 @@
     },
     {
      "s": "Noura",
-     "t": "I thought so too. Then he said, 'It's worth bearing in mind that the client reads everything very carefully.'"
+     "t": "Then he said, 'I wonder if we could have the final version by tomorrow.'"
     },
     {
      "s": "Hessa",
-     "t": "He's dropping a hint, Noura. He wants it checked thoroughly before it leaves the office."
+     "t": "That's not really a question. He's dropping a hint."
     },
     {
      "s": "Noura",
-     "t": "And at four o'clock he said, 'I wonder if we could have the final version by tomorrow morning.'"
+     "t": "So I took the hint and stayed late to finish it."
     },
     {
-     "s": "Noura",
-     "t": "Hardly. So I took the hint and stayed until six to finish it."
-    },
-    {
-     "s": "Noura",
-     "t": "He said, 'This is much clearer.' From him, that's practically a standing ovation."
+     "s": "Hessa",
+     "t": "Good. It's worth bearing in mind that he notices these things."
     }
    ],
    "grammar": {
@@ -3314,32 +3310,28 @@
    ],
    "dialogue": [
     {
-     "s": "Emma",
-     "t": "Did you see Majed's message? 'Great, another deadline moved forward. Best week ever.'"
+     "s": "Ethan",
+     "t": "Majed wrote, 'Great, another deadline moved forward. Best week ever.'"
     },
     {
      "s": "Faisal",
-     "t": "I did. I almost took it at face value and replied, 'Glad you're happy!'"
+     "t": "I almost took it at face value and replied, 'Glad you're happy!'"
     },
     {
-     "s": "Emma",
-     "t": "Oh, that would have gone down well. He's clearly being sarcastic."
-    },
-    {
-     "s": "Faisal",
-     "t": "I know that now. The trouble is, Majed has such a dry sense of humour that it's hard to tell."
-    },
-    {
-     "s": "Emma",
-     "t": "In person, it's obvious. His deadpan face gives it away."
+     "s": "Ethan",
+     "t": "Oh, that would have gone down well."
     },
     {
      "s": "Faisal",
-     "t": "But in a text, the tone gets completely lost in translation."
+     "t": "He has such a dry sense of humour that it's hard to tell."
+    },
+    {
+     "s": "Ethan",
+     "t": "In person, his deadpan face gives it away. In a text, the tone gets lost."
     },
     {
      "s": "Faisal",
-     "t": "Or maybe we should ban sarcasm in the group chat altogether. I'm only half joking."
+     "t": "Maybe we should ban sarcasm in the chat. I'm only half joking."
     }
    ],
    "grammar": {
@@ -3388,31 +3380,31 @@
    "dialogue": [
     {
      "s": "Maha",
-     "t": "Your physics teacher's letter is glowing: 'exceptional', 'original', 'a natural leader'."
-    },
-    {
-     "s": "Maha",
-     "t": "He says you're 'always punctual and very polite'. That's it."
-    },
-    {
-     "s": "Maha",
-     "t": "It's faint praise, Yousef. Any mention of your actual chemistry is conspicuous by its absence."
+     "t": "Your physics teacher's letter is glowing."
     },
     {
      "s": "Yousef",
-     "t": "So the subtext is that I'm a nice person but an average student?"
+     "t": "And the chemistry one?"
     },
     {
      "s": "Maha",
-     "t": "I'm not saying he thinks you're average, but a committee might read it that way."
+     "t": "It says you're 'always punctual and very polite'. That's it."
     },
     {
      "s": "Yousef",
-     "t": "It speaks volumes that he didn't mention my project, doesn't it?"
+     "t": "That's good, isn't it?"
     },
     {
      "s": "Maha",
-     "t": "It does. Use the physics letter, and maybe ask Mr Adel what he really thought."
+     "t": "It's faint praise. Any mention of your actual chemistry is conspicuous by its absence."
+    },
+    {
+     "s": "Yousef",
+     "t": "So the subtext is that I'm an average student?"
+    },
+    {
+     "s": "Maha",
+     "t": "I'm not saying that, but it speaks volumes that he didn't mention your project."
     }
    ],
    "grammar": {
@@ -3461,31 +3453,35 @@
    "dialogue": [
     {
      "s": "Abdullah",
-     "t": "Fahad, could you organise the food stalls for the charity sports day? It's next Saturday."
+     "t": "Could you organise the food stalls next Saturday?"
     },
     {
      "s": "Fahad",
      "t": "I'd love to, but next Saturday's a tall order. I've got two assignments due."
     },
     {
+     "s": "Abdullah",
+     "t": "Just the drinks, then?"
+    },
+    {
      "s": "Fahad",
      "t": "Let me get back to you on that. I'll see what I can do."
     },
     {
-     "s": "Fahad",
-     "t": "Football isn't really my thing, but if you're desperate, ask me again nearer the time."
+     "s": "Abdullah",
+     "t": "And the football match?"
     },
     {
-     "s": "Abdullah",
-     "t": "He said he'd see what he could do."
+     "s": "Fahad",
+     "t": "Football isn't really my thing, but ask me again nearer the time."
     },
     {
      "s": "Sam",
-     "t": "Reading between the lines, that sounds like a no to me."
+     "t": "So, is Fahad helping?"
     },
     {
      "s": "Abdullah",
-     "t": "Probably. But he did leave the door open for the match."
+     "t": "Probably not, but he left the door open for the match."
     }
    ],
    "grammar": {
@@ -3534,27 +3530,27 @@
    "dialogue": [
     {
      "s": "Omar",
-     "t": "Scene one: a grandfather tastes his grandson's first attempt at kabsa. What does he say?"
+     "t": "A grandfather tastes his grandson's first kabsa. What does he say?"
     },
     {
      "s": "Tariq",
-     "t": "'Well, it's certainly… different.' He's far too kind to say it's awful."
-    },
-    {
-     "s": "Tariq",
-     "t": "Then the grandson gets the wrong end of the stick and offers to cook every Friday."
+     "t": "'Well, it's certainly… different.'"
     },
     {
      "s": "Omar",
-     "t": "And the grandfather replies, 'Let's not rush into anything.'"
+     "t": "Perfect. The audience will read between the lines."
     },
     {
      "s": "Tariq",
-     "t": "Next, the mother walks in and says, 'How nice of you to tidy the kitchen afterwards.'"
+     "t": "Then the mother says, 'How nice of you to tidy the kitchen afterwards.'"
     },
     {
      "s": "Omar",
      "t": "A loaded remark, because the kitchen is a disaster."
+    },
+    {
+     "s": "Tariq",
+     "t": "Will the younger children pick up on the irony?"
     },
     {
      "s": "Omar",
@@ -3607,31 +3603,27 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "Shall we kick off? To set the scene, today's article argues that our cities trap heat long after sunset."
+     "t": "Shall we kick off? To set the scene, our cities trap heat long after sunset."
+    },
+    {
+     "s": "Alia",
+     "t": "Because of all the concrete?"
     },
     {
      "s": "Reem",
-     "t": "Partly. But I'd frame the question slightly differently: is the problem the materials, or the way we plan streets?"
+     "t": "Partly. But I'd frame the question differently: is it the materials, or the way we plan streets?"
     },
     {
      "s": "Hannah",
-     "t": "That's the crux of the matter, I think. Old neighbourhoods had narrow, shaded lanes for a reason."
+     "t": "That's the crux of the matter."
     },
     {
      "s": "Reem",
-     "t": "Good. I'd like to open the floor now. Ali, where do you stand?"
+     "t": "Good. I'd like to open the floor now. Alia?"
     },
     {
-     "s": "Ali",
-     "t": "For the sake of argument, let's say we can't rebuild whole cities. What can we change quickly?"
-    },
-    {
-     "s": "Reem",
-     "t": "So we already have two angles: long-term planning and quick fixes. Let's take them one at a time."
-    },
-    {
-     "s": "Ali",
-     "t": "Sounds good. Could we start with the quick fixes? They're easier to picture."
+     "s": "Alia",
+     "t": "For the sake of argument, say we can't rebuild whole cities. What can we change quickly?"
     }
    ],
    "grammar": {
@@ -3680,31 +3672,27 @@
    "dialogue": [
     {
      "s": "Tom",
-     "t": "…and that's why I think dialects will simply disappear. Honestly, that's how languages have always worked."
+     "t": "…and that's why dialects will simply disappear."
     },
     {
      "s": "Majed",
-     "t": "Thanks, Tom. You've clearly given this a lot of thought. I'd like to hear from a few other people too."
-    },
-    {
-     "s": "Majed",
-     "t": "Not at all. Leena, you mentioned your grandmother's Nabati poems earlier. Would you like to come in on this?"
-    },
-    {
-     "s": "Leena",
-     "t": "I would, if I can get a word in edgeways. Those poems only really work in the dialect."
-    },
-    {
-     "s": "Majed",
-     "t": "That's a powerful example. Could you build on that? What exactly would be lost?"
-    },
-    {
-     "s": "Majed",
-     "t": "Tom, does that change your view at all? And anyone else is welcome to chip in."
+     "t": "Thanks, Tom. I'd like to hear from a few other people too."
     },
     {
      "s": "Tom",
-     "t": "It does, slightly. Maybe 'disappear' was too strong."
+     "t": "Sorry, I do tend to hold the floor."
+    },
+    {
+     "s": "Majed",
+     "t": "Luay, would you like to come in on this?"
+    },
+    {
+     "s": "Luay",
+     "t": "If I can get a word in edgeways! My grandmother's poems only work in the dialect."
+    },
+    {
+     "s": "Majed",
+     "t": "Could you build on that? And anyone is welcome to chip in."
     }
    ],
    "grammar": {
@@ -3712,7 +3700,7 @@
     "ar": "لإشراك الجميع بلطف: نشكر من يطيل الكلام، ثم ندعو غيره بالاسم ونطلب منه التوسّع.",
     "examples": [
      "Thanks, Tom. I'd like to hear from a few other people too.",
-     "Leena, would you like to come in on this?",
+     "Luay, would you like to come in on this?",
      "Could you build on that point?"
     ]
    }
@@ -3753,31 +3741,27 @@
    "dialogue": [
     {
      "s": "Ziad",
-     "t": "Speaking of water, has anyone been to the new aquarium in Jeddah? The sharks are huge."
+     "t": "Has anyone been to the aquarium in Jeddah? The sharks are huge."
     },
     {
-     "s": "Noor",
-     "t": "Sounds amazing, but I think we've gone off on a tangent. Let me bring us back to water use at home."
-    },
-    {
-     "s": "Noor",
-     "t": "Interesting, but let's park that point for now, or we'll get bogged down in history."
-    },
-    {
-     "s": "Hamad",
-     "t": "Sorry, I've lost the thread a little. What's the main question again?"
-    },
-    {
-     "s": "Noor",
-     "t": "Whether changing household habits can make a real difference, or whether only technology can."
-    },
-    {
-     "s": "Noor",
-     "t": "Good. Ziad, I promise we'll come back to the history point at the end, if there's time."
+     "s": "Nasser",
+     "t": "I think we've gone off on a tangent. Let me bring us back to water use at home."
     },
     {
      "s": "Ziad",
-     "t": "Fair enough. I'll save my shark facts for the break."
+     "t": "Did you know the first desalination plant on the Red Sea coast was…"
+    },
+    {
+     "s": "Nasser",
+     "t": "Let's park that point, or we'll get bogged down in history."
+    },
+    {
+     "s": "Hamad",
+     "t": "Sorry, I've lost the thread. What's the question?"
+    },
+    {
+     "s": "Nasser",
+     "t": "Whether household habits can make a real difference. We'll come back to the history at the end."
     }
    ],
    "grammar": {
@@ -3825,32 +3809,32 @@
    ],
    "dialogue": [
     {
-     "s": "Jack",
-     "t": "Traditional designs actually kept homes cool, though: thick walls, small windows, shaded courtyards."
-    },
-    {
      "s": "Bader",
-     "t": "Fine, but you can't build a forty-storey office tower out of mud."
-    },
-    {
-     "s": "Sultan",
-     "t": "Let me recap before we go further. Broadly speaking, we've heard two positions."
-    },
-    {
-     "s": "Sultan",
-     "t": "Bader sees traditional style as beautiful but impractical. Jack sees practical lessons in it, especially for heat. Does that do justice to you both?"
+     "t": "Nobody wants to live in a mud house today."
     },
     {
      "s": "Jack",
-     "t": "That's the gist of it, yes."
+     "t": "But traditional designs kept homes cool."
     },
     {
      "s": "Sultan",
-     "t": "So in a nutshell, the disagreement seems to boil down to this: copying the look, or learning from the logic."
+     "t": "Let me recap. Broadly speaking, we've heard two positions."
     },
     {
      "s": "Bader",
-     "t": "I'd accept that summary. I'm against copying the look, not against learning from it."
+     "t": "Go on."
+    },
+    {
+     "s": "Sultan",
+     "t": "Bader sees traditional style as impractical; Jack sees lessons in it. Does that do justice to you both?"
+    },
+    {
+     "s": "Jack",
+     "t": "That's the gist of it."
+    },
+    {
+     "s": "Sultan",
+     "t": "So in a nutshell, it boils down to this: copying the look, or learning from the logic."
     }
    ],
    "grammar": {
@@ -3899,31 +3883,31 @@
    "dialogue": [
     {
      "s": "Mona",
-     "t": "Cheap clothes let families on a budget dress well. I don't think anyone should feel guilty about that."
+     "t": "Banning snacks from the canteen treats us like children."
     },
     {
      "s": "Emily",
-     "t": "But clothes worn only a few times create mountains of waste."
+     "t": "But almost everything it sells is fried or sugary."
     },
     {
      "s": "Lina",
-     "t": "Let me try to draw the threads together. What seems to be emerging is that you both care about fairness."
+     "t": "Let me draw the threads together. What seems to be emerging is that you both care about students' wellbeing."
+    },
+    {
+     "s": "Emily",
+     "t": "Our health and our freedom to choose?"
     },
     {
      "s": "Lina",
-     "t": "Exactly. And your points dovetail with each other more than they clash: affordable clothes that last longer would satisfy both."
+     "t": "Exactly. Your points dovetail: cheap, tasty healthy food would satisfy you both."
     },
     {
      "s": "Mona",
-     "t": "So the common ground is quality at a fair price, not simply 'buy less'."
-    },
-    {
-     "s": "Lina",
-     "t": "Yes. Can we reconcile that with Emily's concern about waste?"
+     "t": "So the common ground is better choices, not a ban."
     },
     {
      "s": "Emily",
-     "t": "If clothes last longer, there's less waste. That's a middle way I can live with."
+     "t": "That's a middle way I can live with."
     }
    ],
    "grammar": {
@@ -3975,28 +3959,28 @@
      "t": "We've got five minutes left, so let's take stock. A recurring theme has been convenience versus identity."
     },
     {
-     "s": "Yara",
-     "t": "Right. Arabizi is quick to type, but I worry my younger cousins can't spell properly in Arabic."
+     "s": "Yasser",
+     "t": "Arabizi is quick, but my younger cousins struggle to spell in Arabic."
     },
     {
      "s": "Ben",
-     "t": "In fairness to Arabizi, people use it in informal chats, not in essays."
+     "t": "In fairness to Arabizi, people only use it in informal chats."
     },
     {
      "s": "Rakan",
-     "t": "Good point. Before we wrap up, I'd like to open the floor to anyone who hasn't spoken yet."
+     "t": "Before we wrap up, does anyone else want to add something?"
+    },
+    {
+     "s": "Yasser",
+     "t": "Arabic keyboards are easy now, so the reason for Arabizi has almost gone."
     },
     {
      "s": "Rakan",
-     "t": "Thanks, Yara. Let me draw the threads together. Nobody here thinks Arabizi will replace Arabic."
+     "t": "Let me draw the threads together. Informal Arabizi is harmless, provided schools keep standards high."
     },
     {
-     "s": "Rakan",
-     "t": "The real concern is young learners. So perhaps our position is: informal Arabizi is harmless, provided schools keep standards high."
-    },
-    {
-     "s": "Yara",
-     "t": "That's a fair synthesis. I'd sign up to that."
+     "s": "Ben",
+     "t": "That's a fair synthesis."
     }
    ],
    "grammar": {
@@ -4045,11 +4029,11 @@
    "dialogue": [
     {
      "s": "Mr Saleh",
-     "t": "Why do you want to make life harder for every driver in Jeddah just to please a few cyclists?"
+     "t": "Why make life harder for every driver just to please a few cyclists?"
     },
     {
      "s": "Turki",
-     "t": "With respect, that's a loaded question. It assumes the lanes help only 'a few cyclists'."
+     "t": "With respect, that's a loaded question. It assumes the lanes help only a few cyclists."
     },
     {
      "s": "Mr Saleh",
@@ -4057,7 +4041,7 @@
     },
     {
      "s": "Turki",
-     "t": "I'd reject the premise. The lanes are for walkers, runners and families too, and they could reduce short car trips."
+     "t": "I'd reject the premise. The lanes are for walkers and families too."
     },
     {
      "s": "Mr Saleh",
@@ -4065,11 +4049,15 @@
     },
     {
      "s": "Turki",
-     "t": "I'm afraid you're putting words in my mouth. For the record, I drive myself."
+     "t": "You're putting words in my mouth. For the record, I drive myself."
+    },
+    {
+     "s": "Mr Saleh",
+     "t": "We can't have both on one road."
     },
     {
      "s": "Turki",
-     "t": "That's a false choice. Many cities have redesigned roads so that cars, bikes and pedestrians all fit safely."
+     "t": "That's a false choice. Many cities fit cars, bikes and pedestrians safely."
     }
    ],
    "grammar": {
@@ -4117,32 +4105,28 @@
    ],
    "dialogue": [
     {
-     "s": "Laura",
-     "t": "Critics say replacing exams with projects just makes school easier. Isn't that the truth?"
+     "s": "Liam",
+     "t": "Critics say projects just make school easier."
     },
     {
      "s": "Nawaf",
      "t": "I'd look at it another way. The real question isn't easier or harder; it's what we actually want to measure."
     },
     {
-     "s": "Nawaf",
-     "t": "They test memory under pressure, which matters. But at its core, education should prepare us for real work."
-    },
-    {
-     "s": "Laura",
-     "t": "So you admit projects are easier to cheat on."
+     "s": "Liam",
+     "t": "Surely exams are fairer?"
     },
     {
      "s": "Nawaf",
-     "t": "That's a fair concern, but I think it misses the point. Any system can be abused; the issue is design."
+     "t": "They test memory under pressure. But at its core, education should prepare us for real work."
+    },
+    {
+     "s": "Liam",
+     "t": "Projects are easier to cheat on."
     },
     {
      "s": "Nawaf",
-     "t": "I'd shift the focus from the final product to the process: drafts, presentations and questions in person."
-    },
-    {
-     "s": "Nawaf",
-     "t": "That was the idea. If we only ask 'easier or harder?', we'll never get a useful answer."
+     "t": "That misses the point. I'd shift the focus to the process: drafts, presentations and questions."
     }
    ],
    "grammar": {
@@ -4195,27 +4179,31 @@
     },
     {
      "s": "Lama",
-     "t": "That's a fair challenge, and I'm happy to answer it. The trip reached every student in Year 11."
+     "t": "That's a fair challenge, and I'm happy to answer it."
     },
     {
      "s": "Ruba",
-     "t": "Only Year 11. What about everyone else? Or are you going to dodge the question?"
+     "t": "Only Year 11 went. Are you going to dodge the question?"
     },
     {
      "s": "Lama",
-     "t": "Not at all. I'll concede the point that other years got less this term."
+     "t": "Not at all. I'll concede the point that other years got less."
+    },
+    {
+     "s": "Ruba",
+     "t": "So it was a mistake?"
     },
     {
      "s": "Lama",
-     "t": "No. Conceding a point isn't the same as admitting a mistake. Next term, the budget goes to Years 9 and 10."
+     "t": "No. I'll stand my ground: the whole council planned the trip."
+    },
+    {
+     "s": "Ruba",
+     "t": "Doesn't this rattle you?"
     },
     {
      "s": "Lama",
-     "t": "I understand the frustration, but I'll stand my ground: the trip was planned with the whole council."
-    },
-    {
-     "s": "Lama",
-     "t": "Keeping my composure is part of the job. Getting rattled wouldn't help anyone."
+     "t": "Keeping my composure is part of the job."
     }
    ],
    "grammar": {
@@ -4264,31 +4252,35 @@
    "dialogue": [
     {
      "s": "Daniel",
-     "t": "Ninety percent of students who failed last term drank energy drinks. Case closed."
+     "t": "Ninety percent of students who failed drank energy drinks. Case closed."
     },
     {
      "s": "Saud",
-     "t": "I'd question that figure. How many students who passed also drank them?"
-    },
-    {
-     "s": "Saud",
-     "t": "It's exactly the point. Without that comparison, you're mistaking correlation for causation."
-    },
-    {
-     "s": "Saud",
-     "t": "That's a sweeping generalisation. Some athletes use them carefully before training."
+     "t": "How many who passed also drank them? You're mistaking correlation for causation."
     },
     {
      "s": "Daniel",
-     "t": "But a doctor on the news said they were dangerous."
+     "t": "Teenagers who drink them are less focused. Everyone knows that."
     },
     {
      "s": "Saud",
-     "t": "She said they were dangerous in large amounts. You've taken her words out of context."
+     "t": "That's a sweeping generalisation."
+    },
+    {
+     "s": "Daniel",
+     "t": "A doctor on the news said they were dangerous."
     },
     {
      "s": "Saud",
-     "t": "No. The evidence points to real risks for teenagers, but your statistics don't bear out your claim. Don't cherry-pick."
+     "t": "In large amounts. You've taken her words out of context."
+    },
+    {
+     "s": "Daniel",
+     "t": "So they're harmless?"
+    },
+    {
+     "s": "Saud",
+     "t": "No. The evidence points to real risks, but your statistics don't bear out your claim."
     }
    ],
    "grammar": {
@@ -4337,31 +4329,31 @@
    "dialogue": [
     {
      "s": "Liam",
-     "t": "Half the audience hasn't decided yet. How do we win them over?"
+     "t": "Half the audience hasn't decided. How do we win them over?"
     },
     {
      "s": "Hamza",
      "t": "Facts alone won't do it. We need something that strikes a chord with families."
     },
     {
+     "s": "Liam",
+     "t": "Like what?"
+    },
+    {
      "s": "Hamza",
-     "t": "Children playing outside in the evening. Everyone remembers doing that."
+     "t": "Children playing outside in the evening."
     },
     {
      "s": "Liam",
-     "t": "And the residents who are worried about parking?"
+     "t": "And the residents worried about parking?"
     },
     {
      "s": "Hamza",
-     "t": "We meet them halfway: keep twenty spaces at the edge and plant trees in the rest."
-    },
-    {
-     "s": "Hamza",
-     "t": "Exactly: 'We're not asking you to choose between cars and children. We're asking you to make common cause with your neighbours.'"
+     "t": "We meet them halfway: keep twenty spaces and plant trees in the rest."
     },
     {
      "s": "Liam",
-     "t": "That makes a compelling case. Even the parking group might clap."
+     "t": "Then we finish with the bigger picture."
     }
    ],
    "grammar": {
@@ -4409,32 +4401,32 @@
    ],
    "dialogue": [
     {
-     "s": "Kate",
-     "t": "Limiting visitors is elitist. Only the rich will ever get tickets."
+     "s": "Karim",
+     "t": "Limiting visitors is elitist. Only the rich will get tickets."
     },
     {
      "s": "Ahmed",
-     "t": "I'd reject the premise that limits mean high prices. Many sites use free timed slots booked online."
+     "t": "I'd reject the premise. Many sites use free timed slots."
     },
     {
      "s": "Mr Hassan",
-     "t": "Isn't this just playing to the gallery? Everyone loves 'protecting heritage'."
+     "t": "Isn't this just playing to the gallery?"
     },
     {
      "s": "Ahmed",
      "t": "That's a fair challenge. But the real question is whether these sites survive for our grandchildren."
     },
     {
-     "s": "Ahmed",
-     "t": "Let me turn the tables: what happens to local businesses if the site is damaged and has to close?"
+     "s": "Karim",
+     "t": "Fewer visitors means less money for local businesses."
     },
     {
      "s": "Ahmed",
-     "t": "It's a real one. Venice has started charging day-trippers on its busiest days for exactly that reason."
+     "t": "Let me turn the tables: what happens to those businesses if the site has to close?"
     },
     {
      "s": "Mr Hassan",
-     "t": "Well, you've held your own, I'll give you that. Let's hear your closing statement."
+     "t": "You've held your own. Let's hear your closing statement."
     }
    ],
    "grammar": {
@@ -4490,24 +4482,28 @@
      "t": "By and large, it's improved enormously. The new metro is a far cry from the days when the car was the only option."
     },
     {
+     "s": "Ms Clarke",
+     "t": "Is 'enormously' precise?"
+    },
+    {
      "s": "Ghada",
-     "t": "Yes, though to a lesser extent on the main routes. Rush hour still exacerbates things near schools."
+     "t": "Perhaps 'considerably'. The effect on traffic has been modest, though not negligible."
     },
     {
      "s": "Ms Clarke",
-     "t": "Nice. You said 'enormously'. Is that precise?"
+     "t": "And congestion?"
     },
     {
      "s": "Ghada",
-     "t": "Perhaps not. 'Considerably' is more accurate; the effect on traffic so far has been modest, though certainly not negligible."
-    },
-    {
-     "s": "Ghada",
-     "t": "Bus connections are still a bit hit and miss: some areas are well served, others hardly at all."
+     "t": "It's still a problem, though to a lesser extent on main routes."
     },
     {
      "s": "Ms Clarke",
-     "t": "Excellent. Your range is wide, but it's the accuracy that makes it Band 9."
+     "t": "And buses?"
+    },
+    {
+     "s": "Ghada",
+     "t": "Still a bit hit and miss."
     }
    ],
    "grammar": {
@@ -4523,9 +4519,9 @@
   "3-1": {
    "words": [
     {
-     "w": "leave a lasting impression",
-     "ar": "يترك أثراً دائماً",
-     "ex": "Her kindness left a lasting impression on everyone."
+     "w": "set the bar high",
+     "ar": "يضع معياراً عالياً",
+     "ex": "Our coach set the bar high from the first day."
     },
     {
      "w": "a steep learning curve",
@@ -4555,32 +4551,32 @@
    ],
    "dialogue": [
     {
-     "s": "Mishal",
-     "t": "I'd like to talk about my football coach, Ibrahim, who has left a lasting impression on me."
+     "s": "Adam",
+     "t": "Describe a skill you learned from someone else. Two minutes."
     },
     {
      "s": "Mishal",
-     "t": "I joined his academy at twelve. It was a steep learning curve; I'd never trained so seriously."
-    },
-    {
-     "s": "Mishal",
-     "t": "He always went the extra mile, staying late to help weaker players. That attitude has rubbed off on me."
+     "t": "I'd like to talk about football, and my coach, Ibrahim, who set the bar high from day one."
     },
     {
      "s": "Adam",
-     "t": "Time's up. That sounded natural. But did you use too many idioms?"
+     "t": "How did it start?"
     },
     {
      "s": "Mishal",
-     "t": "I don't think so. Each one fitted. I avoided anything like 'raining cats and dogs'."
+     "t": "I joined his academy at twelve. It was a steep learning curve."
     },
     {
      "s": "Adam",
-     "t": "Good call. You wanted to use 'come into my own' as well."
+     "t": "What made his coaching special?"
     },
     {
      "s": "Mishal",
-     "t": "I'll add it: I really came into my own as captain once Coach Ibrahim trusted me."
+     "t": "He always went the extra mile. That attitude has rubbed off on me."
+    },
+    {
+     "s": "Adam",
+     "t": "Natural idioms, and not too many. Well done."
     }
    ],
    "grammar": {
@@ -4616,9 +4612,9 @@
      "ex": "It's popular, not least because it's free."
     },
     {
-     "w": "a double-edged sword",
-     "ar": "سلاح ذو حدّين",
-     "ex": "Fame is a double-edged sword."
+     "w": "cut both ways",
+     "ar": "له وجهان (إيجابي وسلبي)",
+     "ex": "Fame can cut both ways."
     },
     {
      "w": "on balance",
@@ -4629,19 +4625,19 @@
    "dialogue": [
     {
      "s": "Mr Davies",
-     "t": "Here's your question: 'Is technology making our memories weaker?' About two minutes, please."
+     "t": "'Is technology making our memories weaker?' Two minutes, please."
     },
     {
      "s": "Razan",
-     "t": "It stands to reason that if our phones store everything, we practise remembering less. Phone numbers are a case in point."
+     "t": "It stands to reason that if phones store everything, we practise remembering less. Phone numbers are a case in point."
+    },
+    {
+     "s": "Mr Davies",
+     "t": "Keep going."
     },
     {
      "s": "Razan",
-     "t": "But technology also frees our memory for deeper thinking, not least because we can find facts instantly."
-    },
-    {
-     "s": "Razan",
-     "t": "By the same token, apps can train memory: language apps use repetition far better than notebooks did."
+     "t": "But it frees our memory for deeper thinking, not least because we can find facts instantly."
     },
     {
      "s": "Mr Davies",
@@ -4649,11 +4645,7 @@
     },
     {
      "s": "Razan",
-     "t": "On balance, technology is a double-edged sword: it weakens some kinds of memory but strengthens our ability to find and use information."
-    },
-    {
-     "s": "Mr Davies",
-     "t": "Very well structured. At C2, examiners want a clear position, not just a list."
+     "t": "On balance, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information."
     }
    ],
    "grammar": {
@@ -4702,11 +4694,15 @@
    "dialogue": [
     {
      "s": "Nick",
-     "t": "Here's one: 'Is success the same thing as happiness?'"
+     "t": "Is success the same thing as happiness?"
     },
     {
      "s": "Bassam",
      "t": "In the broadest sense, no. Success is usually measured against other people; happiness isn't."
+    },
+    {
+     "s": "Nick",
+     "t": "But they're connected, surely?"
     },
     {
      "s": "Bassam",
@@ -4714,11 +4710,11 @@
     },
     {
      "s": "Nick",
-     "t": "So what does happiness hinge on, in your view?"
+     "t": "What does happiness hinge on, then?"
     },
     {
      "s": "Bassam",
-     "t": "Largely on relationships, I'd say. A long-running Harvard study of adult life found much the same."
+     "t": "Largely on relationships, I'd say."
     },
     {
      "s": "Nick",
@@ -4726,7 +4722,7 @@
     },
     {
      "s": "Bassam",
-     "t": "It's a matter of degree. Enough money removes stress; beyond that, it seems to add surprisingly little."
+     "t": "It's a matter of degree."
     }
    ],
    "grammar": {
@@ -4749,7 +4745,7 @@
     {
      "w": "the word escapes me",
      "ar": "تغيب عني الكلمة",
-     "ex": "The word escapes me, but it's a kind of tent divider."
+     "ex": "The word escapes me, but it's a cover you put over food."
     },
     {
      "w": "for want of a better word",
@@ -4769,7 +4765,7 @@
     {
      "w": "to be more precise",
      "ar": "لأكون أكثر دقة",
-     "ex": "To be more precise, it was added to the list in 2020."
+     "ex": "To be more precise, it's taught mainly at heritage centres."
     }
    ],
    "dialogue": [
@@ -4779,15 +4775,23 @@
     },
     {
      "s": "Abeer",
-     "t": "I'd like to talk about Al Sadu, a type of weaving done by Bedouin women, or rather, traditionally done by them."
+     "t": "Palm-frond weaving, done mainly by women, or rather, traditionally done by them."
+    },
+    {
+     "s": "Mrs Ward",
+     "t": "What do they make?"
     },
     {
      "s": "Abeer",
-     "t": "Tents, cushions and the… the word escapes me… the long woven pieces that divide a tent inside."
+     "t": "Baskets, mats and the… the word escapes me… the round covers for food."
+    },
+    {
+     "s": "Mrs Ward",
+     "t": "Food covers?"
     },
     {
      "s": "Abeer",
-     "t": "Yes, dividers. The patterns are, for want of a better word, a kind of language."
+     "t": "Yes. The patterns are, for want of a better word, a kind of signature."
     },
     {
      "s": "Mrs Ward",
@@ -4795,18 +4799,14 @@
     },
     {
      "s": "Abeer",
-     "t": "Let me rephrase that. What I'm getting at is that the patterns carry meaning about the weaver's family and surroundings."
-    },
-    {
-     "s": "Abeer",
-     "t": "Yes, though less widely. To be more precise, UNESCO listed it in 2020 as heritage in urgent need of safeguarding."
+     "t": "Let me rephrase that. What I'm getting at is that each weaver's colours and patterns made her work recognisable."
     }
    ],
    "grammar": {
     "title": "Self-repair and paraphrase",
     "ar": "المتحدث المتمكّن لا يتوقف عند نسيان كلمة؛ يصحّح نفسه بسلاسة ويعيد الصياغة ويصف الشيء بدل اسمه.",
     "examples": [
-     "It's a tent, or rather, a tent divider.",
+     "It's a basket, or rather, a food cover.",
      "For want of a better word, it's a kind of code.",
      "Let me rephrase that. What I'm getting at is …"
     ]
@@ -4848,27 +4848,31 @@
    "dialogue": [
     {
      "s": "Ms Patel",
-     "t": "Part 3 now. What will cities look like in fifty years?"
+     "t": "What will cities look like in fifty years?"
     },
     {
      "s": "Talal",
-     "t": "That's a tricky one. Off the top of my head, I'd say greener, quieter and far more walkable."
-    },
-    {
-     "s": "Talal",
-     "t": "Because health and urban design go hand in hand. Car-centred cities are a far cry from what planners want now."
+     "t": "That's a tricky one. Off the top of my head, greener, quieter and far more walkable."
     },
     {
      "s": "Ms Patel",
-     "t": "Some people say technology will solve every urban problem. Do you agree?"
+     "t": "Why walkable?"
     },
     {
      "s": "Talal",
-     "t": "By and large, no. Technology helps, but cities also need to strike a balance between innovation and community life."
+     "t": "Because health and urban design go hand in hand."
+    },
+    {
+     "s": "Ms Patel",
+     "t": "Will technology solve every urban problem?"
     },
     {
      "s": "Talal",
-     "t": "The '15-minute city' is a case in point: shops, schools and parks within a short walk, whatever the technology."
+     "t": "By and large, no. Cities also need to strike a balance between innovation and community life."
+    },
+    {
+     "s": "Ms Patel",
+     "t": "And your overall view?"
     },
     {
      "s": "Talal",
@@ -5572,9 +5576,9 @@
     "type": "mc",
     "q": "Which sentence synthesises two views rather than just listing them?",
     "options": [
-     "Mona likes cheap clothes. Emily dislikes waste.",
+     "Mona wants freedom. Emily wants healthier food.",
      "Mona is right and Emily is wrong.",
-     "Both want fairness, so durable, affordable clothing could satisfy each of them.",
+     "Both care about wellbeing, so cheaper, tastier healthy food could satisfy each of them.",
      "Let's hear from someone else."
     ],
     "answer": 2
@@ -6170,12 +6174,12 @@
     "type": "order",
     "words": [
      "Smartphones",
-     "are",
-     "a",
-     "double-edged",
-     "sword."
+     "can",
+     "cut",
+     "both",
+     "ways."
     ],
-    "answer": "Smartphones are a double-edged sword.",
+    "answer": "Smartphones can cut both ways.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6830,12 +6834,12 @@
     },
     {
      "type": "mc",
-     "q": "'Technology is a ___ sword: it helps and harms.'",
+     "q": "'Fame can ___ both ways: it opens doors but takes away privacy.'",
      "options": [
-      "two-sided",
-      "sharp-ended",
-      "double-faced",
-      "double-edged"
+      "fall",
+      "break",
+      "turn",
+      "cut"
      ],
      "answer": 3
     },
@@ -6914,7 +6918,7 @@
     }
    ],
    "speak": [
-    "Speak for one minute about a person who influenced you, using two idioms naturally and accurately.",
+    "Speak for one minute about a skill you learned from someone, using two idioms naturally and accurately.",
     "Give a balanced answer to an abstract question: 'Is ambition always a good thing?' Finish with 'On balance, …'."
    ]
   }
@@ -7005,7 +7009,7 @@
     "type": "mc",
     "q": "Which sentence synthesises rather than summarises?",
     "options": [
-     "Ali talked about cost and Sara talked about safety.",
+     "Ali talked about cost and Saad talked about safety.",
      "Broadly speaking, there were two views.",
      "Let me recap what Ali said.",
      "Both of you want a plan families will actually use, so cost and safety must go together."
@@ -7135,12 +7139,12 @@
     "words": [
      "On",
      "balance,",
-     "it's",
-     "a",
-     "double-edged",
-     "sword."
+     "technology",
+     "cuts",
+     "both",
+     "ways."
     ],
-    "answer": "On balance, it's a double-edged sword.",
+    "answer": "On balance, technology cuts both ways.",
     "ar": "رتّب الجملة"
    },
    {

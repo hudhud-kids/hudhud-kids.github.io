@@ -60,7 +60,7 @@
    "q": "As chair of a seminar, which sentence synthesises two opposing views?",
    "options": [
     "Let's hear from Omar next.",
-    "Omar wants lower fees; Sara wants better teachers.",
+    "Omar wants lower fees; Saad wants better teachers.",
     "What seems to be emerging is that you both want value for money.",
     "Let's park that point for now."
    ],
@@ -79,14 +79,14 @@
    "skill": "vocabulary"
   },
   {
-   "q": "'Had the speaker kept her composure, she ___ the debate last night.'",
+   "q": "'___ the speaker kept her composure, she would have won the debate.'",
    "options": [
-    "would win",
-    "would have won",
-    "had won",
-    "will have won"
+    "Had",
+    "Should",
+    "Were",
+    "Did"
    ],
-   "answer": 1,
+   "answer": 0,
    "skill": "grammar"
   },
   {
@@ -124,7 +124,7 @@
    "answer": 1
   },
   {
-   "script": "Thanks, everyone. Let me draw the threads together. Although Ali focused on cost and Sara on safety, you both seem to want a plan that families will actually use. So perhaps our position is: affordable, safe and simple.",
+   "script": "Thanks, everyone. Let me draw the threads together. Although Ali focused on cost and Saad on safety, you both seem to want a plan that families will actually use. So perhaps our position is: affordable, safe and simple.",
    "q": "What is the chair doing?",
    "options": [
     "Asking someone to speak",

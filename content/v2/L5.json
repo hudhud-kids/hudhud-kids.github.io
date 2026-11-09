@@ -232,14 +232,14 @@
     }
    ],
    "dialogue": {
-    "scene": "It's Sunday morning at school. Reem asks her classmate Sam about his weekend.",
+    "scene": "It's Sunday morning at school. Reem asks her classmate Hind about her weekend.",
     "p1": [
      {
       "s": "Reem",
-      "t": "Hi Sam! How was your weekend?"
+      "t": "Hi Hind! How was your weekend?"
      },
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "It was quiet. It was really hot, so we stayed at home."
      },
      {
@@ -247,7 +247,7 @@
       "t": "Oh no! Was it boring?"
      },
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "No, not at all. On Friday evening we watched a film about the ocean."
      }
     ],
@@ -257,7 +257,7 @@
       "t": "That sounds nice. And on Saturday?"
      },
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "My dad cooked kabsa for lunch. Then I played a game of chess with my brother."
      },
      {
@@ -265,14 +265,14 @@
       "t": "Was it a good game?"
      },
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "Yes, but he was the winner! After that, I just relaxed on the sofa."
      }
     ],
     "focus": "On Friday evening we watched a film about the ocean.",
     "qs": [
-     "Why did Sam's family stay at home?",
-     "What did Sam's dad cook on Saturday?"
+     "Why did Hind's family stay at home?",
+     "What did Hind's dad cook on Saturday?"
     ]
    },
    "speakout": {
@@ -348,10 +348,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar tells his friend Noura about a visit to his grandparents' farm.",
+    "scene": "Omar tells his friend Saad about a visit to his grandparents' farm.",
     "p1": [
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "You look happy today, Omar!"
      },
      {
@@ -359,7 +359,7 @@
       "t": "I am! Last weekend we visited my grandparents. They live on a farm in Qassim."
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "Lovely! What happened there?"
      },
      {
@@ -369,7 +369,7 @@
     ],
     "p2": [
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "And your grandma?"
      },
      {
@@ -377,7 +377,7 @@
       "t": "She baked a big date cake. After lunch we all chatted in the garden."
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "That sounds fun."
      },
      {
@@ -464,10 +464,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal calls his cousin Lama and tells her about his busy day at school yesterday.",
+    "scene": "Faisal calls his cousin Fahad and tells him about his busy day at school yesterday.",
     "p1": [
      {
-      "s": "Lama",
+      "s": "Fahad",
       "t": "Hi Faisal! Your mum says you had a busy day at school yesterday."
      },
      {
@@ -475,7 +475,7 @@
       "t": "Yes, very busy! First, our class started a project about the planets."
      },
      {
-      "s": "Lama",
+      "s": "Fahad",
       "t": "Wow, that sounds interesting!"
      },
      {
@@ -485,7 +485,7 @@
     ],
     "p2": [
      {
-      "s": "Lama",
+      "s": "Fahad",
       "t": "And what about PE?"
      },
      {
@@ -493,7 +493,7 @@
       "t": "We practised for Sports Day. We raced and jumped for an hour!"
      },
      {
-      "s": "Lama",
+      "s": "Fahad",
       "t": "Phew! What a day!"
      },
      {
@@ -928,14 +928,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Emma asks her friend Faisal about his family's day at the beach in Jeddah.",
+    "scene": "Emma asks her friend Sara about her family's day at the beach in Jeddah.",
     "p1": [
      {
       "s": "Emma",
-      "t": "Hi Faisal! Where did you go last weekend?"
+      "t": "Hi Sara! Where did you go last weekend?"
      },
      {
-      "s": "Faisal",
+      "s": "Sara",
       "t": "We went to the beach in Jeddah. We stayed there all day."
      },
      {
@@ -943,7 +943,7 @@
       "t": "Lucky you! Did you swim in the sea?"
      },
      {
-      "s": "Faisal",
+      "s": "Sara",
       "t": "Yes, I did. I swam for an hour. The water was warm and clear."
      }
     ],
@@ -953,7 +953,7 @@
       "t": "What did you eat?"
      },
      {
-      "s": "Faisal",
+      "s": "Sara",
       "t": "We had a picnic on the sand. Mum brought sandwiches and fruit."
      },
      {
@@ -961,14 +961,14 @@
       "t": "Did you build a sandcastle?"
      },
      {
-      "s": "Faisal",
+      "s": "Sara",
       "t": "Yes! My sister and I built a huge one. We came back home at night."
      }
     ],
     "focus": "Did you swim in the sea?",
     "qs": [
-     "Where did Faisal go last weekend?",
-     "What did Faisal and his sister build?"
+     "Where did Sara go last weekend?",
+     "What did Sara and her sister build?"
     ]
    },
    "speakout": {
@@ -1044,14 +1044,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura asks her classmate Omar about his family's winter camping trip.",
+    "scene": "Noura asks her classmate Hessa about her family's winter camping trip.",
     "p1": [
      {
       "s": "Noura",
-      "t": "Omar, did you go camping last weekend?"
+      "t": "Hessa, did you go camping last weekend?"
      },
      {
-      "s": "Omar",
+      "s": "Hessa",
       "t": "Yes, I did. We went to the desert near Riyadh. My dad drove for two hours."
      },
      {
@@ -1059,7 +1059,7 @@
       "t": "What did you do there?"
      },
      {
-      "s": "Omar",
+      "s": "Hessa",
       "t": "In the afternoon I rode a camel. It was very tall!"
      }
     ],
@@ -1069,7 +1069,7 @@
       "t": "Fun! Where did you sleep?"
      },
      {
-      "s": "Omar",
+      "s": "Hessa",
       "t": "We slept in a big tent. In the evening we made a campfire and cooked dinner."
      },
      {
@@ -1077,13 +1077,13 @@
       "t": "Was it cold at night?"
      },
      {
-      "s": "Omar",
+      "s": "Hessa",
       "t": "Very cold! But we sat by the fire and saw hundreds of stars."
      }
     ],
     "focus": "Where did you sleep?",
     "qs": [
-     "How did Omar's family get to the desert?",
+     "How did Hessa's family get to the desert?",
      "What did they do in the evening?"
     ]
    },
@@ -1160,10 +1160,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem asks her friend Sam about his school trip to the National Museum in Riyadh.",
+    "scene": "Ali asks his friend Sam about his school trip to the National Museum in Riyadh.",
     "p1": [
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "How was the school trip, Sam? What did you see?"
      },
      {
@@ -1171,7 +1171,7 @@
       "t": "It was amazing! We saw ancient writing on big stones."
      },
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "Did you have a guide?"
      },
      {
@@ -1181,7 +1181,7 @@
     ],
     "p2": [
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "Did you take photos?"
      },
      {
@@ -1189,7 +1189,7 @@
       "t": "Lots! I took photos of a big rock from space."
      },
      {
-      "s": "Reem",
+      "s": "Ali",
       "t": "Cool! What did you buy at the shop?"
      },
      {
@@ -1276,10 +1276,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Khalid asks his cousin Lama about her family holiday in AlUla.",
+    "scene": "Sara asks her cousin Lama about her family holiday in AlUla.",
     "p1": [
      {
-      "s": "Khalid",
+      "s": "Sara",
       "t": "Lama, I heard you went to AlUla! How did you get there?"
      },
      {
@@ -1287,7 +1287,7 @@
       "t": "We flew from Jeddah. It was a short flight, only about an hour."
      },
      {
-      "s": "Khalid",
+      "s": "Sara",
       "t": "Where did you stay?"
      },
      {
@@ -1297,7 +1297,7 @@
     ],
     "p2": [
      {
-      "s": "Khalid",
+      "s": "Sara",
       "t": "What was your favourite place?"
      },
      {
@@ -1305,7 +1305,7 @@
       "t": "Elephant Rock! The view at sunset was amazing, and I took lots of photos."
      },
      {
-      "s": "Khalid",
+      "s": "Sara",
       "t": "Who did you meet there?"
      },
      {
@@ -1508,14 +1508,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar is a reporter for the school radio. He interviews his classmate Reem about her holiday in Abha.",
+    "scene": "Omar is a reporter for the school radio. He interviews his classmate Yousef about his holiday in Abha.",
     "p1": [
      {
       "s": "Omar",
-      "t": "Welcome to School Radio! Reem, where did you go in the holidays?"
+      "t": "Welcome to School Radio! Yousef, where did you go in the holidays?"
      },
      {
-      "s": "Reem",
+      "s": "Yousef",
       "t": "I went to Abha, in the south. It's in the mountains."
      },
      {
@@ -1523,7 +1523,7 @@
       "t": "How did you get there?"
      },
      {
-      "s": "Reem",
+      "s": "Yousef",
       "t": "We went by car. It took a long time, but the mountain roads were beautiful."
      }
     ],
@@ -1533,7 +1533,7 @@
       "t": "Who did you go with?"
      },
      {
-      "s": "Reem",
+      "s": "Yousef",
       "t": "With my parents and my two brothers."
      },
      {
@@ -1541,14 +1541,14 @@
       "t": "And what did you do there?"
      },
      {
-      "s": "Reem",
+      "s": "Yousef",
       "t": "We rode the cable car and had a picnic in the green hills. We had so much fun!"
      }
     ],
     "focus": "Who did you go with?",
     "qs": [
-     "How did Reem's family travel to Abha?",
-     "What did Reem do in Abha?"
+     "How did Yousef's family travel to Abha?",
+     "What did Yousef do in Abha?"
     ]
    },
    "speakout": {
@@ -1624,14 +1624,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal and Emma are watching a nature programme on TV and comparing the animals.",
+    "scene": "Reem and Emma are watching a nature programme on TV and comparing the animals.",
     "p1": [
      {
       "s": "Emma",
       "t": "Look at that cheetah! It's so fast."
      },
      {
-      "s": "Faisal",
+      "s": "Reem",
       "t": "Yes, a cheetah is faster than a horse. But do you know the fastest animal in the world?"
      },
      {
@@ -1639,7 +1639,7 @@
       "t": "Isn't it the cheetah?"
      },
      {
-      "s": "Faisal",
+      "s": "Reem",
       "t": "No! It's the falcon. When it dives, it's faster than a racing car."
      }
     ],
@@ -1649,7 +1649,7 @@
       "t": "Wow! Which animal is stronger, a lion or an elephant?"
      },
      {
-      "s": "Faisal",
+      "s": "Reem",
       "t": "An elephant is stronger than a lion, and much heavier too."
      },
      {
@@ -1657,7 +1657,7 @@
       "t": "But a lion is more dangerous than an elephant, right?"
      },
      {
-      "s": "Faisal",
+      "s": "Reem",
       "t": "Maybe! They're both dangerous, so stay in the car on a safari!"
      }
     ],
@@ -1740,14 +1740,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam's family is new in Saudi Arabia. He asks his friend Noura about different cities.",
+    "scene": "Sam's family is new in Saudi Arabia. He asks his friend Majed about different cities.",
     "p1": [
      {
       "s": "Sam",
-      "t": "Noura, we live in Riyadh now. Is it the biggest city in Saudi Arabia?"
+      "t": "Majed, we live in Riyadh now. Is it the biggest city in Saudi Arabia?"
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "Yes, it is. Riyadh is bigger than Jeddah, and it's much busier too."
      },
      {
@@ -1755,7 +1755,7 @@
       "t": "Which city is hotter in summer?"
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "Riyadh is usually hotter, but Jeddah has the sea, so you can swim!"
      }
     ],
@@ -1765,7 +1765,7 @@
       "t": "Where can we go when it's really hot?"
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "Go to Abha. It's in the mountains, so it's cooler than Riyadh. I think it's more beautiful too."
      },
      {
@@ -1773,7 +1773,7 @@
       "t": "How can we get there?"
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "By plane. That's the fastest way. By car, it takes more than ten hours."
      }
     ],
@@ -1856,10 +1856,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Reem's class must choose one sport for Sports Day. They compare the choices.",
+    "scene": "Omar and Saud's class must choose one sport for Sports Day. They compare the choices.",
     "p1": [
      {
-      "s": "Reem",
+      "s": "Saud",
       "t": "We need a sport for Sports Day. What about football?"
      },
      {
@@ -1867,7 +1867,7 @@
       "t": "Football is the most popular sport in our school, but the matches are long."
      },
      {
-      "s": "Reem",
+      "s": "Saud",
       "t": "Basketball is faster than football, and it's more exciting to watch."
      },
      {
@@ -1877,7 +1877,7 @@
     ],
     "p2": [
      {
-      "s": "Reem",
+      "s": "Saud",
       "t": "What about volleyball? It's easier than basketball."
      },
      {
@@ -1885,7 +1885,7 @@
       "t": "Hmm, I'm better at volleyball than basketball, so I like that idea!"
      },
      {
-      "s": "Reem",
+      "s": "Saud",
       "t": "Ha! OK. Let's ask the class."
      },
      {
@@ -1895,7 +1895,7 @@
     ],
     "focus": "Basketball is faster than football, and it's more exciting to watch.",
     "qs": [
-     "What is the most popular sport in Omar and Reem's school?",
+     "What is the most popular sport in Omar and Saud's school?",
      "Why does Omar like the volleyball idea?"
     ]
    },
@@ -1972,14 +1972,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Lama and Sam are doing a school project about famous buildings.",
+    "scene": "Lama and Mia are doing a school project about famous buildings.",
     "p1": [
      {
       "s": "Lama",
       "t": "Let's start with the Kingdom Centre in Riyadh. It's 302 metres tall."
      },
      {
-      "s": "Sam",
+      "s": "Mia",
       "t": "That's tall, but the Burj Khalifa in Dubai is much taller than the Kingdom Centre."
      },
      {
@@ -1987,7 +1987,7 @@
       "t": "Is the Burj Khalifa the tallest building in the world?"
      },
      {
-      "s": "Sam",
+      "s": "Mia",
       "t": "Yes, it is. It's more than 800 metres tall!"
      }
     ],
@@ -1997,7 +1997,7 @@
       "t": "What about old buildings? Masmak Fort is older than all the towers in Riyadh."
      },
      {
-      "s": "Sam",
+      "s": "Mia",
       "t": "That's right. It's more than 150 years old."
      },
      {
@@ -2005,7 +2005,7 @@
       "t": "And the pyramids in Egypt?"
      },
      {
-      "s": "Sam",
+      "s": "Mia",
       "t": "They're the oldest of all! And I think they're the most famous buildings in the world."
      }
     ],
@@ -2204,14 +2204,14 @@
     }
    ],
    "dialogue": {
-    "scene": "It's the end of the school year. Ms Sarah and her students Noura and Khalid choose winners for the fun class awards.",
+    "scene": "It's the end of the school year. Ms Sarah and her students Saad and Khalid choose winners for the fun class awards.",
     "p1": [
      {
       "s": "Ms Sarah",
       "t": "It's time for our class awards! First, who's the funniest person in the class?"
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "Khalid, of course! His jokes are the funniest."
      },
      {
@@ -2229,7 +2229,7 @@
       "t": "And which lesson was the best?"
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "Art was the best. We painted the biggest picture in the school!"
      },
      {
@@ -2244,7 +2244,7 @@
     "focus": "It was more interesting than the zoo trip.",
     "qs": [
      "Who is the funniest person in the class?",
-     "Which lesson was the best for Noura, and why?"
+     "Which lesson was the best for Saad, and why?"
     ]
    },
    "speakout": {
@@ -2668,14 +2668,14 @@
     }
    ],
    "dialogue": {
-    "scene": "It's July in Riyadh. Emma is new in the city, and she wants to play outside with her friend Faisal at midday.",
+    "scene": "It's July in Riyadh. Emma is new in the city, and she wants to play outside with her friend Hind at midday.",
     "p1": [
      {
       "s": "Emma",
       "t": "Let's play football in the park now!"
      },
      {
-      "s": "Faisal",
+      "s": "Hind",
       "t": "Now? It's midday, and it's 45 degrees! We shouldn't play outside at this time."
      },
      {
@@ -2683,7 +2683,7 @@
       "t": "Oh! When should we play, then?"
      },
      {
-      "s": "Faisal",
+      "s": "Hind",
       "t": "In the evening, when it's cooler. And you should wear a cap."
      }
     ],
@@ -2693,7 +2693,7 @@
       "t": "OK. What else should I take?"
      },
      {
-      "s": "Faisal",
+      "s": "Hind",
       "t": "You should drink plenty of water, even before you feel thirsty."
      },
      {
@@ -2701,13 +2701,13 @@
       "t": "Can I take a cold fizzy drink?"
      },
      {
-      "s": "Faisal",
+      "s": "Hind",
       "t": "You shouldn't have sugary drinks. Water is better. And put on sun cream too!"
      }
     ],
     "focus": "You should drink plenty of water, even before you feel thirsty.",
     "qs": [
-     "Why shouldn't Emma and Faisal play football at midday?",
+     "Why shouldn't Emma and Hind play football at midday?",
      "Which drink is better than a fizzy drink?"
     ]
    },
@@ -2900,14 +2900,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura and Omar are making a health poster for their school's Health Week.",
+    "scene": "Noura and Lama are making a health poster for their school's Health Week.",
     "p1": [
      {
       "s": "Noura",
       "t": "Our poster needs five tips. What's the first one?"
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "You should drink plenty of water. That's the easiest tip!"
      },
      {
@@ -2915,7 +2915,7 @@
       "t": "Good. Number two: you shouldn't eat too much junk food."
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "Yes, and we can draw a burger with a big red X on it!"
      }
     ],
@@ -2925,7 +2925,7 @@
       "t": "What about sleep? You should go to bed early on school nights."
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "Great. And to stay fit, you should exercise for an hour every day."
      },
      {
@@ -2933,14 +2933,14 @@
       "t": "We need one more tip. What healthy habits do you have?"
      },
      {
-      "s": "Omar",
+      "s": "Lama",
       "t": "I always eat fruit at break. So, tip five: you should bring fruit to school!"
      }
     ],
     "focus": "You should drink plenty of water.",
     "qs": [
      "How many tips does the poster need?",
-     "What does Omar eat at break?"
+     "What does Lama eat at break?"
     ]
    },
    "speakout": {

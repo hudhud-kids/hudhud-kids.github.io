@@ -837,14 +837,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and his cousin Noura play 'Who is it?' with a page of pictures of people.",
+    "scene": "Omar and his cousin Saad play 'Who is it?' with a page of pictures of people.",
     "p1": [
      {
       "s": "Omar",
       "t": "Let's play 'Who is it?' You guess."
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "OK!"
      },
      {
@@ -852,7 +852,7 @@
       "t": "He's got short hair and a cap."
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "Is it the man with glasses?"
      },
      {
@@ -860,7 +860,7 @@
       "t": "No, it isn't. His cap is red."
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "Is it the boy with the ball?"
      }
     ],
@@ -870,7 +870,7 @@
       "t": "Yes, it is! Your turn."
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "She's got long hair and glasses."
      },
      {
@@ -878,7 +878,7 @@
       "t": "Has she got brown eyes?"
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "Yes. Her dress is yellow."
      },
      {
@@ -886,7 +886,7 @@
       "t": "Is it the girl with the book?"
      },
      {
-      "s": "Noura",
+      "s": "Saad",
       "t": "Yes! Good guess!"
      }
     ],
@@ -1337,10 +1337,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Cousins Faisal and Reem choose snacks for a family film night.",
+    "scene": "Cousins Lama and Reem choose snacks for a family film night.",
     "p1": [
      {
-      "s": "Faisal",
+      "s": "Lama",
       "t": "It's film night! Do you like popcorn?"
      },
      {
@@ -1348,7 +1348,7 @@
       "t": "Yes, I do. I love popcorn!"
      },
      {
-      "s": "Faisal",
+      "s": "Lama",
       "t": "Me too. And biscuits?"
      },
      {
@@ -1358,7 +1358,7 @@
     ],
     "p2": [
      {
-      "s": "Faisal",
+      "s": "Lama",
       "t": "Grandma has got a big cake!"
      },
      {
@@ -1366,7 +1366,7 @@
       "t": "Yum! Is it chocolate?"
      },
      {
-      "s": "Faisal",
+      "s": "Lama",
       "t": "Yes. And we've got ice cream too."
      },
      {
@@ -1374,7 +1374,7 @@
       "t": "I love ice cream!"
      },
      {
-      "s": "Faisal",
+      "s": "Lama",
       "t": "Let's watch the film!"
      }
     ],
@@ -1457,14 +1457,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar's family have a picnic in the desert. Omar and his cousin Hind help with the food.",
+    "scene": "Omar's family have a picnic in the desert. Omar and his cousin Fahad help with the food.",
     "p1": [
      {
       "s": "Omar",
       "t": "I love a picnic in the desert!"
      },
      {
-      "s": "Hind",
+      "s": "Fahad",
       "t": "Me too. Do you like cheese sandwiches?"
      },
      {
@@ -1472,7 +1472,7 @@
       "t": "Yes, I do."
      },
      {
-      "s": "Hind",
+      "s": "Fahad",
       "t": "Here you are."
      },
      {
@@ -1480,7 +1480,7 @@
       "t": "Thanks! Do you like tomatoes?"
      },
      {
-      "s": "Hind",
+      "s": "Fahad",
       "t": "No, I don't. I like carrots."
      }
     ],
@@ -1490,7 +1490,7 @@
       "t": "Here you are. Some carrots."
      },
      {
-      "s": "Hind",
+      "s": "Fahad",
       "t": "Thank you! Have you got water?"
      },
      {
@@ -1498,7 +1498,7 @@
       "t": "Yes. Here you are."
      },
      {
-      "s": "Hind",
+      "s": "Fahad",
       "t": "Thanks. Let's eat dates too!"
      },
      {
@@ -1508,8 +1508,8 @@
     ],
     "focus": "Do you like cheese sandwiches?",
     "qs": [
-     "Does Hind like tomatoes?",
-     "What does Omar give Hind?"
+     "Does Fahad like tomatoes?",
+     "What does Omar give Fahad?"
     ]
    },
    "speakout": {
@@ -3061,10 +3061,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and his cousin Lama play a treasure hunt at home. Omar hides a small gold car.",
+    "scene": "Sara and her cousin Lama play a treasure hunt at home. Sara hides a small gold car.",
     "p1": [
      {
-      "s": "Omar",
+      "s": "Sara",
       "t": "Let's play a treasure hunt!"
      },
      {
@@ -3072,7 +3072,7 @@
       "t": "OK! Where's the treasure?"
      },
      {
-      "s": "Omar",
+      "s": "Sara",
       "t": "Find it! Here's a clue: it's in the bedroom."
      },
      {
@@ -3080,7 +3080,7 @@
       "t": "Is it under the bed?"
      },
      {
-      "s": "Omar",
+      "s": "Sara",
       "t": "No, it isn't."
      }
     ],
@@ -3090,7 +3090,7 @@
       "t": "Is it next to the lamp?"
      },
      {
-      "s": "Omar",
+      "s": "Sara",
       "t": "Yes! It's in the box next to the lamp."
      },
      {
@@ -3098,7 +3098,7 @@
       "t": "Here it is! A gold car!"
      },
      {
-      "s": "Omar",
+      "s": "Sara",
       "t": "Well done! Now you hide it."
      }
     ],
@@ -3549,7 +3549,7 @@
      "t": "Let's play 'Who is it?' You guess."
     },
     {
-     "s": "Noura",
+     "s": "Saad",
      "t": "OK!"
     },
     {
@@ -3557,7 +3557,7 @@
      "t": "He's got short hair and a cap."
     },
     {
-     "s": "Noura",
+     "s": "Saad",
      "t": "Is it the man with glasses?"
     },
     {
@@ -3565,7 +3565,7 @@
      "t": "No, it isn't. His cap is red."
     },
     {
-     "s": "Noura",
+     "s": "Saad",
      "t": "Is it the boy with the ball?"
     },
     {
@@ -3573,7 +3573,7 @@
      "t": "Yes, it is! Your turn."
     },
     {
-     "s": "Noura",
+     "s": "Saad",
      "t": "She's got long hair and glasses."
     }
    ],
@@ -3845,7 +3845,7 @@
    ],
    "dialogue": [
     {
-     "s": "Faisal",
+     "s": "Lama",
      "t": "It's film night! Do you like popcorn?"
     },
     {
@@ -3853,7 +3853,7 @@
      "t": "Yes, I do. I love popcorn!"
     },
     {
-     "s": "Faisal",
+     "s": "Lama",
      "t": "Me too. And biscuits?"
     },
     {
@@ -3861,7 +3861,7 @@
      "t": "I don't like biscuits. I like cake."
     },
     {
-     "s": "Faisal",
+     "s": "Lama",
      "t": "Grandma has got a big cake!"
     },
     {
@@ -3869,7 +3869,7 @@
      "t": "Yum! Is it chocolate?"
     },
     {
-     "s": "Faisal",
+     "s": "Lama",
      "t": "Yes. And we've got ice cream too."
     }
    ],
@@ -3922,7 +3922,7 @@
      "t": "I love a picnic in the desert!"
     },
     {
-     "s": "Hind",
+     "s": "Fahad",
      "t": "Me too. Do you like cheese sandwiches?"
     },
     {
@@ -3930,7 +3930,7 @@
      "t": "Yes, I do."
     },
     {
-     "s": "Hind",
+     "s": "Fahad",
      "t": "Here you are."
     },
     {
@@ -3938,7 +3938,7 @@
      "t": "Thanks! Do you like tomatoes?"
     },
     {
-     "s": "Hind",
+     "s": "Fahad",
      "t": "No, I don't. I like carrots."
     },
     {
@@ -4875,7 +4875,7 @@
    ],
    "dialogue": [
     {
-     "s": "Omar",
+     "s": "Sara",
      "t": "Let's play a treasure hunt!"
     },
     {
@@ -4883,7 +4883,7 @@
      "t": "OK! Where's the treasure?"
     },
     {
-     "s": "Omar",
+     "s": "Sara",
      "t": "Find it! Here's a clue: it's in the bedroom."
     },
     {
@@ -4891,7 +4891,7 @@
      "t": "Is it under the bed?"
     },
     {
-     "s": "Omar",
+     "s": "Sara",
      "t": "No, it isn't."
     },
     {
@@ -4899,7 +4899,7 @@
      "t": "Is it next to the lamp?"
     },
     {
-     "s": "Omar",
+     "s": "Sara",
      "t": "Yes! It's in the box next to the lamp."
     }
    ],

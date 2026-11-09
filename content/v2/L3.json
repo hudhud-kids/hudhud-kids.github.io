@@ -813,10 +813,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Yousef shows his 'My Day' poster to his classmate Emma.",
+    "scene": "Yousef shows his 'My Day' poster to his classmate Sam.",
     "p1": [
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "Tell me about your day, Yousef."
      },
      {
@@ -824,7 +824,7 @@
       "t": "First, I get up at six o'clock."
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "Then what do you do?"
      },
      {
@@ -834,7 +834,7 @@
     ],
     "p2": [
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "What do you do every day after school?"
      },
      {
@@ -842,7 +842,7 @@
       "t": "I play football with my brother."
      },
      {
-      "s": "Emma",
+      "s": "Sam",
       "t": "And at night?"
      },
      {
@@ -1509,14 +1509,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Khalid and Mia draw their dream towns in art class. Mia asks about Khalid's picture.",
+    "scene": "Lama and Mia draw their dream towns in art class. Mia asks about Lama's picture.",
     "p1": [
      {
       "s": "Mia",
-      "t": "Tell me about your dream town, Khalid."
+      "t": "Tell me about your dream town, Lama."
      },
      {
-      "s": "Khalid",
+      "s": "Lama",
       "t": "In my dream town, there is a water park."
      },
      {
@@ -1524,7 +1524,7 @@
       "t": "Cool! Is there an ice cream shop?"
      },
      {
-      "s": "Khalid",
+      "s": "Lama",
       "t": "Yes, there are three ice cream shops!"
      }
     ],
@@ -1534,7 +1534,7 @@
       "t": "Are there any cars?"
      },
      {
-      "s": "Khalid",
+      "s": "Lama",
       "t": "No, there aren't. There's a fast train."
      },
      {
@@ -1542,14 +1542,14 @@
       "t": "And what's that?"
      },
      {
-      "s": "Khalid",
+      "s": "Lama",
       "t": "It's a tall tower next to a big garden."
      }
     ],
     "focus": "In my dream town, there is a water park.",
     "qs": [
      "How many ice cream shops are there?",
-     "Are there any cars in Khalid's dream town?"
+     "Are there any cars in Lama's dream town?"
     ]
    },
    "speakout": {
@@ -2217,14 +2217,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Hessa's class has a shop day. Hessa is the shopkeeper and Omar is a customer.",
+    "scene": "Hessa's class has a shop day. Hessa is the shopkeeper and Noura is a customer.",
     "p1": [
      {
       "s": "Hessa",
       "t": "Welcome to our class shop! I'm the shopkeeper. Can I help you?"
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "Yes, please. I want to buy something. What do you sell?"
      },
      {
@@ -2232,7 +2232,7 @@
       "t": "We sell books, toys and snacks."
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "How much are these comics?"
      }
     ],
@@ -2242,7 +2242,7 @@
       "t": "The price is three riyals."
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "Can I have two comics, please?"
      },
      {
@@ -2250,7 +2250,7 @@
       "t": "Here you are. That's six riyals."
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "Here's ten riyals."
      },
      {
@@ -2261,7 +2261,7 @@
     "focus": "How much are these comics?",
     "qs": [
      "What does the class shop sell?",
-     "How much change does Omar get?"
+     "How much change does Noura get?"
     ]
    },
    "speakout": {
@@ -2337,10 +2337,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal lives in Riyadh. He has a video call with his friend Emma in London.",
+    "scene": "Faisal lives in Riyadh. He has a video call with his friend Jack in London.",
     "p1": [
      {
-      "s": "Emma",
+      "s": "Jack",
       "t": "Hi, Faisal! What's the weather like in Riyadh?"
      },
      {
@@ -2348,7 +2348,7 @@
       "t": "It's sunny and hot today."
      },
      {
-      "s": "Emma",
+      "s": "Jack",
       "t": "Lucky you! It's cloudy and cold here."
      },
      {
@@ -2358,7 +2358,7 @@
     ],
     "p2": [
      {
-      "s": "Emma",
+      "s": "Jack",
       "t": "Yes, and it's windy too."
      },
      {
@@ -2366,7 +2366,7 @@
       "t": "It isn't rainy here in summer."
      },
      {
-      "s": "Emma",
+      "s": "Jack",
       "t": "What do you do on hot days?"
      },
      {
@@ -2453,10 +2453,10 @@
     }
    ],
    "dialogue": {
-    "scene": "It's a hot summer day. Sam asks Reem about her family.",
+    "scene": "It's a hot summer day. Lina asks Reem about her family.",
     "p1": [
      {
-      "s": "Sam",
+      "s": "Lina",
       "t": "What do you wear in summer, Reem?"
      },
      {
@@ -2464,7 +2464,7 @@
       "t": "I wear a T-shirt and a cap."
      },
      {
-      "s": "Sam",
+      "s": "Lina",
       "t": "And your brother?"
      },
      {
@@ -2474,7 +2474,7 @@
     ],
     "p2": [
      {
-      "s": "Sam",
+      "s": "Lina",
       "t": "What does your mum do on hot days?"
      },
      {
@@ -2482,7 +2482,7 @@
       "t": "She puts sun cream on our faces."
      },
      {
-      "s": "Sam",
+      "s": "Lina",
       "t": "And your dad?"
      },
      {
@@ -2569,10 +2569,10 @@
     }
    ],
    "dialogue": {
-    "scene": "It's winter. Khalid visits his cousin Noura near Tabuk, in the north of Saudi Arabia.",
+    "scene": "It's winter. Khalid visits his cousin Fahad near Tabuk, in the north of Saudi Arabia.",
     "p1": [
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "Look, Khalid! There's snow on the mountain!"
      },
      {
@@ -2580,7 +2580,7 @@
       "t": "Wow! It's very cold here."
      },
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "Wear your coat. And here's a scarf."
      },
      {
@@ -2590,7 +2590,7 @@
     ],
     "p2": [
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "Grandma makes scarves for everyone in winter."
      },
      {
@@ -2598,7 +2598,7 @@
       "t": "That's kind. But my hands are cold!"
      },
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "Here are some gloves."
      },
      {
@@ -2606,7 +2606,7 @@
       "t": "Thank you! Can we sit next to the campfire?"
      },
      {
-      "s": "Noura",
+      "s": "Fahad",
       "t": "Yes! It's warm there."
      }
     ],
@@ -2929,14 +2929,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Sara wants to be a weather reporter. She practises her weather report for her friend Faisal.",
+    "scene": "Saad wants to be a weather reporter. He practises his weather report for his friend Faisal.",
     "p1": [
      {
       "s": "Faisal",
-      "t": "Are you ready, Sara? Start the weather report!"
+      "t": "Are you ready, Saad? Start the weather report!"
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "Good evening! In Riyadh, the sky is blue. It's thirty degrees."
      },
      {
@@ -2944,7 +2944,7 @@
       "t": "What about the north?"
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "In the north, it's cold. Everyone wears a coat."
      }
     ],
@@ -2954,7 +2954,7 @@
       "t": "And the south?"
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "In the south, it's cloudy and rainy in the mountains."
      },
      {
@@ -2962,12 +2962,12 @@
       "t": "Does my cousin in Jazan wear a jacket today?"
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "No, he doesn't. Jazan is hot. He wears a T-shirt."
      },
      {
       "s": "Faisal",
-      "t": "Great weather report, Sara!"
+      "t": "Great weather report, Saad!"
      }
     ],
     "focus": "In the north, it's cold. Everyone wears a coat.",
@@ -3397,7 +3397,7 @@
    ],
    "dialogue": [
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "Tell me about your day, Yousef."
     },
     {
@@ -3405,7 +3405,7 @@
      "t": "First, I get up at six o'clock."
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "Then what do you do?"
     },
     {
@@ -3413,7 +3413,7 @@
      "t": "Then I have breakfast. After that, I go to school."
     },
     {
-     "s": "Emma",
+     "s": "Sam",
      "t": "And at night?"
     },
     {
@@ -3812,10 +3812,10 @@
    "dialogue": [
     {
      "s": "Mia",
-     "t": "Tell me about your dream town, Khalid."
+     "t": "Tell me about your dream town, Lama."
     },
     {
-     "s": "Khalid",
+     "s": "Lama",
      "t": "In my dream town, there is a water park."
     },
     {
@@ -3823,7 +3823,7 @@
      "t": "Cool! Is there an ice cream shop?"
     },
     {
-     "s": "Khalid",
+     "s": "Lama",
      "t": "Yes, there are three ice cream shops!"
     },
     {
@@ -3831,7 +3831,7 @@
      "t": "Are there any cars?"
     },
     {
-     "s": "Khalid",
+     "s": "Lama",
      "t": "No, there aren't. There's a fast train."
     }
    ],
@@ -4237,7 +4237,7 @@
    ],
    "dialogue": [
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "How much are these comics?"
     },
     {
@@ -4245,7 +4245,7 @@
      "t": "The price is three riyals."
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "Can I have two comics, please?"
     },
     {
@@ -4253,7 +4253,7 @@
      "t": "Here you are. That's six riyals."
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "Here's ten riyals."
     },
     {
@@ -4306,7 +4306,7 @@
    ],
    "dialogue": [
     {
-     "s": "Emma",
+     "s": "Jack",
      "t": "Hi, Faisal! What's the weather like in Riyadh?"
     },
     {
@@ -4314,7 +4314,7 @@
      "t": "It's sunny and hot today."
     },
     {
-     "s": "Emma",
+     "s": "Jack",
      "t": "Lucky you! It's cloudy and cold here."
     },
     {
@@ -4322,11 +4322,11 @@
      "t": "Is it rainy too?"
     },
     {
-     "s": "Emma",
+     "s": "Jack",
      "t": "Yes, and it's windy too."
     },
     {
-     "s": "Emma",
+     "s": "Jack",
      "t": "What do you do on hot days?"
     },
     {
@@ -4379,7 +4379,7 @@
    ],
    "dialogue": [
     {
-     "s": "Sam",
+     "s": "Lina",
      "t": "What do you wear in summer, Reem?"
     },
     {
@@ -4387,7 +4387,7 @@
      "t": "I wear a T-shirt and a cap."
     },
     {
-     "s": "Sam",
+     "s": "Lina",
      "t": "And your brother?"
     },
     {
@@ -4395,7 +4395,7 @@
      "t": "Ali wears shorts and sunglasses. He looks cool!"
     },
     {
-     "s": "Sam",
+     "s": "Lina",
      "t": "What does your mum do on hot days?"
     },
     {
@@ -4448,7 +4448,7 @@
    ],
    "dialogue": [
     {
-     "s": "Noura",
+     "s": "Fahad",
      "t": "Look, Khalid! There's snow on the mountain!"
     },
     {
@@ -4456,7 +4456,7 @@
      "t": "Wow! It's very cold here."
     },
     {
-     "s": "Noura",
+     "s": "Fahad",
      "t": "Grandma makes scarves for everyone in winter."
     },
     {
@@ -4464,7 +4464,7 @@
      "t": "That's kind. But my hands are cold!"
     },
     {
-     "s": "Noura",
+     "s": "Fahad",
      "t": "Here are some gloves."
     },
     {
@@ -4472,7 +4472,7 @@
      "t": "Thank you! Can we sit next to the campfire?"
     },
     {
-     "s": "Noura",
+     "s": "Fahad",
      "t": "Yes! It's warm there."
     }
    ],
@@ -4664,10 +4664,10 @@
    "dialogue": [
     {
      "s": "Faisal",
-     "t": "Are you ready, Sara? Start the weather report!"
+     "t": "Are you ready, Saad? Start the weather report!"
     },
     {
-     "s": "Sara",
+     "s": "Saad",
      "t": "Good evening! In Riyadh, the sky is blue. It's thirty degrees."
     },
     {
@@ -4675,7 +4675,7 @@
      "t": "What about the north?"
     },
     {
-     "s": "Sara",
+     "s": "Saad",
      "t": "In the north, it's cold. Everyone wears a coat."
     },
     {
@@ -4683,7 +4683,7 @@
      "t": "Does my cousin in Jazan wear a jacket today?"
     },
     {
-     "s": "Sara",
+     "s": "Saad",
      "t": "No, he doesn't. Jazan is hot. He wears a T-shirt."
     }
    ],
