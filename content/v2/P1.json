@@ -1,0 +1,198 @@
+{
+ "level": 1,
+ "mcq": [
+  {
+   "q": "Hello! What's your name?",
+   "options": [
+    "My name is Sara.",
+    "I'm fine.",
+    "Goodbye!"
+   ],
+   "answer": 0,
+   "skill": "function"
+  },
+  {
+   "q": "___ name is Ali.",
+   "options": [
+    "I",
+    "My",
+    "Me"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "How are you?",
+   "options": [
+    "I'm seven.",
+    "I'm Omar.",
+    "I'm fine, thank you."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "My dad's dad is my ___.",
+   "options": [
+    "grandpa",
+    "sister",
+    "cousin"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Reem is a girl. ___ my friend.",
+   "options": [
+    "He's",
+    "She's",
+    "It's"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "It's ___ apple.",
+   "options": [
+    "a",
+    "an",
+    "am"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "A banana is ___.",
+   "options": [
+    "blue",
+    "black",
+    "yellow"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "How old are you?",
+   "options": [
+    "I'm seven.",
+    "Seven books.",
+    "It's seven."
+   ],
+   "answer": 0,
+   "skill": "function"
+  },
+  {
+   "q": "5 + 5 = ___",
+   "options": [
+    "eight",
+    "ten",
+    "twelve"
+   ],
+   "answer": 1,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "How many balls?",
+   "options": [
+    "It's a ball.",
+    "Yes, it is.",
+    "Three balls."
+   ],
+   "answer": 2,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Hi! My name is Lina. I'm seven years old. I'm from Dammam. This is my brother, Fahad. He's nine. Nice to meet you!",
+   "q": "How old is Lina?",
+   "options": [
+    "six",
+    "seven",
+    "nine"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "Look at my toys! This is my robot. It's big and grey. This is my ball. It's small and red. And this is my kite. It's yellow.",
+   "q": "What colour is the ball?",
+   "options": [
+    "red",
+    "grey",
+    "yellow"
+   ],
+   "answer": 0
+  },
+  {
+   "script": "This is my family. This is my mum, and this is my dad. This boy is my cousin, Saad. This woman is my aunt. She's very kind. And this baby is my sister.",
+   "q": "Who is Saad?",
+   "options": [
+    "a dad",
+    "a brother",
+    "a cousin"
+   ],
+   "answer": 2
+  },
+  {
+   "script": "Teacher: How many pencils, Omar? Omar: One, two, three, four, five, six. Six pencils! Teacher: Good. And how many books? Omar: Two books.",
+   "q": "How many pencils?",
+   "options": [
+    "two",
+    "six",
+    "four"
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Hello! I'm Faisal. I'm eight years old, and I'm from Riyadh. This is my sister, Reem. She's six. My favourite toy is a car. It's a small blue car. Reem's favourite toy is a doll. It's a big doll.",
+  "qs": [
+   {
+    "q": "How old is Faisal?",
+    "options": [
+     "six",
+     "eight",
+     "seven"
+    ],
+    "answer": 1
+   },
+   {
+    "q": "Where is Faisal from?",
+    "options": [
+     "Riyadh",
+     "Jeddah",
+     "Dammam"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "What colour is Faisal's car?",
+    "options": [
+     "red",
+     "yellow",
+     "blue"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "Who is Reem?",
+    "options": [
+     "Faisal's sister",
+     "Faisal's mum",
+     "Faisal's friend"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "aloud": [
+  "Hello, my name is Sara.",
+  "This is my big brother.",
+  "It's a red ball."
+ ],
+ "speak": [
+  "What's your name, and how old are you?",
+  "Who is in your family?",
+  "What's your favourite toy? What colour is it?"
+ ]
+}
