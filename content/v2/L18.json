@@ -4648,12 +4648,12 @@
     "type": "mc",
     "q": "If a debate 'hinges on' a definition, it …",
     "options": [
+     "repeats that definition",
      "ignores that definition",
      "depends completely on that definition",
-     "avoids that definition",
-     "repeats that definition"
+     "avoids that definition"
     ],
-    "answer": 1
+    "answer": 2
    },
    {
     "type": "order",
@@ -4673,12 +4673,12 @@
     "type": "mc",
     "q": "Which sentence is a sweeping generalisation?",
     "options": [
-     "Some brands use recycled cotton.",
-     "A few shoppers buy second-hand clothes.",
      "Nobody ever repairs their clothes any more.",
-     "Many T-shirts are worn fewer than ten times."
+     "Many T-shirts are worn fewer than ten times.",
+     "Some brands use recycled cotton.",
+     "A few shoppers buy second-hand clothes."
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "order",
@@ -4711,12 +4711,12 @@
     "type": "mc",
     "q": "Which verb means 'prove with evidence that a claim is wrong'?",
     "options": [
+     "put forward",
      "refute",
      "concede",
-     "maintain",
-     "put forward"
+     "maintain"
     ],
-    "answer": 0
+    "answer": 1
    },
    {
     "type": "order",
@@ -4738,12 +4738,12 @@
     "type": "mc",
     "q": "'He ___ the idea as unrealistic' means he did not take it seriously.",
     "options": [
-     "conceded",
-     "dismissed",
      "maintained",
-     "posited"
+     "posited",
+     "conceded",
+     "dismissed"
     ],
-    "answer": 1
+    "answer": 3
    },
    {
     "type": "order",
@@ -4762,12 +4762,12 @@
     "type": "mc",
     "q": "Which summary misrepresents an author who said 'Wheat farming in deserts wastes water'?",
     "options": [
-     "She argues that desert wheat farming wastes water.",
      "She maintains that growing wheat in the desert is wasteful.",
      "She contends that wheat uses too much desert water.",
-     "She claims that all farming is a waste of water."
+     "She claims that all farming is a waste of water.",
+     "She argues that desert wheat farming wastes water."
     ],
-    "answer": 3
+    "answer": 2
    }
   ],
   "0-2": [
@@ -4775,12 +4775,12 @@
     "type": "mc",
     "q": "Which is the nominalised version of 'Cities rely more and more on gas'?",
     "options": [
-     "Cities are relying on gas more.",
      "There is a growing reliance on gas in cities.",
      "Cities, they rely on gas.",
-     "Gas is relied on by cities more."
+     "Gas is relied on by cities more.",
+     "Cities are relying on gas more."
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -4802,12 +4802,12 @@
     "type": "mc",
     "q": "If an idea is 'viable', it …",
     "options": [
+     "is popular on social media",
      "can work successfully in practice",
      "is very expensive",
-     "has never been tested",
-     "is popular on social media"
+     "has never been tested"
     ],
-    "answer": 0
+    "answer": 1
    },
    {
     "type": "order",
@@ -4868,12 +4868,12 @@
     "type": "mc",
     "q": "A writer who mentions only the studies that support her view is …",
     "options": [
-     "drawing a conclusion",
      "cherry-picking",
      "defining her terms",
-     "conceding a point"
+     "conceding a point",
+     "drawing a conclusion"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -4892,12 +4892,12 @@
     "type": "mc",
     "q": "Which finding would best show a causal relationship?",
     "options": [
+     "A popular post with many likes",
      "A survey of 50 students' opinions",
      "One famous person's story",
-     "A controlled experiment comparing two similar groups",
-     "A popular post with many likes"
+     "A controlled experiment comparing two similar groups"
     ],
-    "answer": 2
+    "answer": 3
    }
   ],
   "0-4": [
@@ -4930,12 +4930,12 @@
     "type": "mc",
     "q": "Which sentence is the most precisely qualified claim?",
     "options": [
+     "Everyone loved the trial.",
      "The trial was a total success.",
      "The trial changed everything.",
-     "To a large extent, the trial improved wellbeing.",
-     "Everyone loved the trial."
+     "To a large extent, the trial improved wellbeing."
     ],
-    "answer": 2
+    "answer": 3
    },
    {
     "type": "order",
@@ -4958,12 +4958,12 @@
     "type": "mc",
     "q": "'Everyone enjoyed it, with the possible ___ of the youngest students.'",
     "options": [
-     "exception",
-     "except",
      "excepting",
-     "exceptional"
+     "exceptional",
+     "exception",
+     "except"
     ],
-    "answer": 0
+    "answer": 2
    }
   ],
   "0-5": [
@@ -4971,12 +4971,12 @@
     "type": "mc",
     "q": "In a formal debate, 'the motion' is …",
     "options": [
-     "the person who speaks first",
      "the statement being debated",
      "the final vote",
-     "the judge's comment"
+     "the judge's comment",
+     "the person who speaks first"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -4995,12 +4995,12 @@
     "type": "mc",
     "q": "Which is the most precise way to report the other side?",
     "options": [
-     "My opponent is just wrong.",
      "My opponent says stuff about interviews.",
      "My opponent contends that interviews reveal motivation.",
-     "Everyone knows my opponent is mistaken."
+     "Everyone knows my opponent is mistaken.",
+     "My opponent is just wrong."
     ],
-    "answer": 2
+    "answer": 1
    },
    {
     "type": "order",
@@ -5019,12 +5019,12 @@
     "type": "mc",
     "q": "If a plan 'falls short of' its goals, it …",
     "options": [
-     "fails to reach them",
      "goes beyond them",
      "changes them",
-     "achieves them early"
+     "achieves them early",
+     "fails to reach them"
     ],
-    "answer": 0
+    "answer": 3
    }
   ],
   "1-0": [
@@ -5032,12 +5032,12 @@
     "type": "mc",
     "q": "Choose the correct form: 'By 2050, the population ___ considerably.'",
     "options": [
+     "is growing",
      "will grow up",
      "will have grown",
-     "has grown",
-     "is growing"
+     "has grown"
     ],
-    "answer": 1
+    "answer": 2
    },
    {
     "type": "order",
@@ -5084,12 +5084,12 @@
     "type": "mc",
     "q": "'The project is ___ course to finish early.'",
     "options": [
+     "by",
      "in",
      "at",
-     "on",
-     "by"
+     "on"
     ],
-    "answer": 2
+    "answer": 3
    }
   ],
   "1-1": [
@@ -5097,12 +5097,12 @@
     "type": "mc",
     "q": "Choose the correct sentence.",
     "options": [
+     "Was AI to writing the news, readers would notice.",
      "Were AI to write the news, readers would notice.",
      "Were AI writes the news, readers would notice.",
-     "Were AI to wrote the news, readers would notice.",
-     "Was AI to writing the news, readers would notice."
+     "Were AI to wrote the news, readers would notice."
     ],
-    "answer": 0
+    "answer": 1
    },
    {
     "type": "order",
@@ -5126,12 +5126,12 @@
     "type": "mc",
     "q": "If technology 'renders a job obsolete', the job …",
     "options": [
-     "becomes better paid",
-     "is no longer needed",
      "becomes more dangerous",
-     "moves abroad"
+     "moves abroad",
+     "becomes better paid",
+     "is no longer needed"
     ],
-    "answer": 1
+    "answer": 3
    },
    {
     "type": "order",
@@ -5167,12 +5167,12 @@
     "type": "mc",
     "q": "Choose the correct sentence.",
     "options": [
-     "Should the engine fails, we'll land.",
      "Should the engine fail, we'll land.",
      "Should the engine to fail, we'll land.",
-     "Should the engine failed, we'll land."
+     "Should the engine failed, we'll land.",
+     "Should the engine fails, we'll land."
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -5222,12 +5222,12 @@
     "type": "mc",
     "q": "Which sentence means the same as 'If you need help, call me'?",
     "options": [
-     "Should you need help, call me.",
      "Were you needing help, call me.",
      "Had you needed help, call me.",
-     "Needing you help, call me."
+     "Needing you help, call me.",
+     "Should you need help, call me."
     ],
-    "answer": 0
+    "answer": 3
    }
   ],
   "1-3": [
@@ -5260,12 +5260,12 @@
     "type": "mc",
     "q": "Choose the correct form: '___ energy costs rise, water will cost more.'",
     "options": [
-     "Were",
      "Should",
      "Had",
-     "Would"
+     "Would",
+     "Were"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -5286,12 +5286,12 @@
     "type": "mc",
     "q": "A 'contingency plan' is a plan for …",
     "options": [
-     "what to do if something goes wrong",
      "a holiday trip",
      "a school timetable",
-     "spending extra money"
+     "spending extra money",
+     "what to do if something goes wrong"
     ],
-    "answer": 0
+    "answer": 3
    }
   ],
   "1-4": [
@@ -5325,12 +5325,12 @@
     "type": "mc",
     "q": "A 'moving target' is something that …",
     "options": [
-     "keeps changing",
      "is easy to reach",
      "never existed",
-     "everyone agrees on"
+     "everyone agrees on",
+     "keeps changing"
     ],
-    "answer": 0
+    "answer": 3
    },
    {
     "type": "order",
@@ -5366,12 +5366,12 @@
     "type": "mc",
     "q": "'The ___ scenario' means the worst possible result.",
     "options": [
-     "best-case",
      "worst-case",
      "likely-case",
-     "every-case"
+     "every-case",
+     "best-case"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -5414,12 +5414,12 @@
     "type": "mc",
     "q": "'In all likelihood' means …",
     "options": [
-     "very probably",
      "definitely not",
      "in every case",
-     "only in theory"
+     "only in theory",
+     "very probably"
     ],
-    "answer": 0
+    "answer": 3
    }
   ],
   "2-0": [
@@ -5427,12 +5427,12 @@
     "type": "mc",
     "q": "If a talent 'runs in the family', it …",
     "options": [
-     "is shared by many family members",
-     "is rare in the family",
      "is taught at school",
-     "has been lost"
+     "has been lost",
+     "is shared by many family members",
+     "is rare in the family"
     ],
-    "answer": 0
+    "answer": 2
    },
    {
     "type": "order",
@@ -5449,12 +5449,12 @@
     "type": "mc",
     "q": "'He settled in Abha and finally put down ___.'",
     "options": [
-     "seeds",
      "roots",
      "branches",
-     "leaves"
+     "leaves",
+     "seeds"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -5473,12 +5473,12 @@
     "type": "mc",
     "q": "Which sentence uses a metaphor?",
     "options": [
+     "My cousins visit every Friday.",
      "My family lives in Buraidah.",
      "My grandmother is ninety.",
-     "My family is my anchor.",
-     "My cousins visit every Friday."
+     "My family is my anchor."
     ],
-    "answer": 2
+    "answer": 3
    }
   ],
   "2-1": [
@@ -5486,12 +5486,12 @@
     "type": "mc",
     "q": "If something is 'second nature' to you, you …",
     "options": [
+     "dislike doing it",
      "do it without thinking",
      "find it very hard",
-     "have never tried it",
-     "dislike doing it"
+     "have never tried it"
     ],
-    "answer": 0
+    "answer": 1
    },
    {
     "type": "order",
@@ -5513,12 +5513,12 @@
     "type": "mc",
     "q": "Which sentence is a metaphor, not a simile?",
     "options": [
+     "It was as light as a feather.",
      "She sings like a bird.",
      "He is as brave as a lion.",
-     "Language is a bridge between people.",
-     "It was as light as a feather."
+     "Language is a bridge between people."
     ],
-    "answer": 2
+    "answer": 3
    },
    {
     "type": "order",
@@ -5537,12 +5537,12 @@
     "type": "mc",
     "q": "'The news left me ___ a loss for words.'",
     "options": [
+     "by",
      "in",
      "at",
-     "on",
-     "by"
+     "on"
     ],
-    "answer": 1
+    "answer": 2
    }
   ],
   "2-2": [
@@ -5550,12 +5550,12 @@
     "type": "mc",
     "q": "'Food for thought' is …",
     "options": [
-     "a healthy meal",
      "an idea worth thinking about",
      "a type of recipe book",
-     "a snack before exams"
+     "a snack before exams",
+     "a healthy meal"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -5602,12 +5602,12 @@
     "type": "mc",
     "q": "Which activity is best described as 'a labour of love'?",
     "options": [
+     "paying a bill online",
      "working overtime only for extra pay",
      "being forced to clean your room",
-     "spending months restoring your grandfather's old car",
-     "paying a bill online"
+     "spending months restoring your grandfather's old car"
     ],
-    "answer": 2
+    "answer": 3
    }
   ],
   "2-3": [
@@ -5615,12 +5615,12 @@
     "type": "mc",
     "q": "'It took me a month to find my ___.'",
     "options": [
+     "way out",
      "legs",
      "feet",
-     "hands",
-     "way out"
+     "hands"
     ],
-    "answer": 1
+    "answer": 2
    },
    {
     "type": "order",
@@ -5641,12 +5641,12 @@
     "type": "mc",
     "q": "Someone who 'straddles two cultures' …",
     "options": [
-     "rejects both cultures",
      "belongs partly to two cultures",
      "has never travelled",
-     "studies culture at university"
+     "studies culture at university",
+     "rejects both cultures"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -5667,12 +5667,12 @@
     "type": "mc",
     "q": "Which sentence describes culture shock?",
     "options": [
-     "Sara felt confused by the very different customs in her new country.",
      "Sara enjoyed her favourite meal at home.",
      "Sara visited her grandparents in the same city.",
-     "Sara finished her homework early."
+     "Sara finished her homework early.",
+     "Sara felt confused by the very different customs in her new country."
     ],
-    "answer": 0
+    "answer": 3
    }
   ],
   "2-4": [
@@ -5706,12 +5706,12 @@
     "type": "mc",
     "q": "'Najdi mud houses have stood the ___ of time.'",
     "options": [
-     "test",
      "exam",
      "trial",
-     "proof"
+     "proof",
+     "test"
     ],
-    "answer": 0
+    "answer": 3
    },
    {
     "type": "order",
@@ -5733,12 +5733,12 @@
     "type": "mc",
     "q": "A village that is 'frozen in time' …",
     "options": [
+     "has been destroyed",
      "is very cold",
      "has changed very little",
-     "is growing fast",
-     "has been destroyed"
+     "is growing fast"
     ],
-    "answer": 1
+    "answer": 2
    }
   ],
   "2-5": [
@@ -5746,12 +5746,12 @@
     "type": "mc",
     "q": "Something that has both good and bad effects is …",
     "options": [
-     "a melting pot",
      "a double-edged sword",
      "a dying art",
-     "an acquired taste"
+     "an acquired taste",
+     "a melting pot"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -5771,12 +5771,12 @@
     "type": "mc",
     "q": "Why might someone prefer 'mosaic' to 'melting pot'?",
     "options": [
+     "A mosaic means everyone is the same.",
      "A mosaic shows that groups keep their differences.",
      "A mosaic is hotter than a pot.",
-     "A melting pot is a type of food.",
-     "A mosaic means everyone is the same."
+     "A melting pot is a type of food."
     ],
-    "answer": 0
+    "answer": 1
    },
    {
     "type": "order",
@@ -5795,12 +5795,12 @@
     "type": "mc",
     "q": "'Our friends ___ who we are.'",
     "options": [
-     "shape",
      "shapes up",
      "shaping",
-     "shaped up"
+     "shaped up",
+     "shape"
     ],
-    "answer": 0
+    "answer": 3
    }
   ],
   "3-0": [
@@ -5808,12 +5808,12 @@
     "type": "mc",
     "q": "Which phrase best states the aim of a study?",
     "options": [
+     "Anyway, …",
      "By the way, …",
      "This study set out to …",
-     "To cut a long story short, …",
-     "Anyway, …"
+     "To cut a long story short, …"
     ],
-    "answer": 1
+    "answer": 2
    },
    {
     "type": "order",
@@ -5860,12 +5860,12 @@
     "type": "mc",
     "q": "'The ___ of this study is limited to one school.'",
     "options": [
-     "shape",
-     "scope",
      "scale up",
-     "range over"
+     "range over",
+     "shape",
+     "scope"
     ],
-    "answer": 1
+    "answer": 3
    }
   ],
   "3-1": [
@@ -5899,12 +5899,12 @@
     "type": "mc",
     "q": "If girls 'account for' 60% of users, they …",
     "options": [
-     "explain why users join",
-     "make up 60% of the total",
      "are 60% happier",
-     "lost 60% of users"
+     "lost 60% of users",
+     "explain why users join",
+     "make up 60% of the total"
     ],
-    "answer": 1
+    "answer": 3
    },
    {
     "type": "order",
@@ -5925,12 +5925,12 @@
     "type": "mc",
     "q": "Which sentence best puts a figure into perspective?",
     "options": [
-     "The area is 70,000 square metres, about ten football pitches.",
-     "The area is quite big.",
      "The area exists.",
-     "The area was measured."
+     "The area was measured.",
+     "The area is 70,000 square metres, about ten football pitches.",
+     "The area is quite big."
     ],
-    "answer": 0
+    "answer": 2
    }
   ],
   "3-2": [
@@ -5989,12 +5989,12 @@
     "type": "mc",
     "q": "'With respect ___ cost, the second option is cheaper.'",
     "options": [
+     "at",
      "of",
      "for",
-     "to",
-     "at"
+     "to"
     ],
-    "answer": 2
+    "answer": 3
    }
   ],
   "3-3": [
@@ -6002,12 +6002,12 @@
     "type": "mc",
     "q": "Which reply accepts a criticism and still defends the research?",
     "options": [
+     "Everyone else agreed with me.",
      "You're wrong.",
      "That's a fair criticism, but I stand by our main finding.",
-     "I don't want to talk about it.",
-     "Everyone else agreed with me."
+     "I don't want to talk about it."
     ],
-    "answer": 1
+    "answer": 2
    },
    {
     "type": "order",
@@ -6028,12 +6028,12 @@
     "type": "mc",
     "q": "'I'm not in a position to answer' means …",
     "options": [
-     "I'm standing in the wrong place",
      "I don't have enough information or authority to answer",
      "I refuse to be polite",
-     "I've already answered"
+     "I've already answered",
+     "I'm standing in the wrong place"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -6055,12 +6055,12 @@
     "type": "mc",
     "q": "'I ___ by what I said in my talk.'",
     "options": [
-     "stand",
      "keep",
      "hold",
-     "rest"
+     "rest",
+     "stand"
     ],
-    "answer": 0
+    "answer": 3
    }
   ],
   "3-4": [
@@ -6068,12 +6068,12 @@
     "type": "mc",
     "q": "Which phrase best begins a conclusion?",
     "options": [
-     "Turning now to …",
      "By way of introduction, …",
      "To draw the threads together, …",
-     "If I understand you correctly, …"
+     "If I understand you correctly, …",
+     "Turning now to …"
     ],
-    "answer": 2
+    "answer": 1
    },
    {
     "type": "order",
@@ -6091,12 +6091,12 @@
     "type": "mc",
     "q": "If a talk 'comes full circle', it …",
     "options": [
-     "goes on for too long",
-     "returns to its starting point",
      "has a circular chart",
-     "repeats every slide"
+     "repeats every slide",
+     "goes on for too long",
+     "returns to its starting point"
     ],
-    "answer": 1
+    "answer": 3
    },
    {
     "type": "order",
@@ -6114,12 +6114,12 @@
     "type": "mc",
     "q": "'Far-reaching implications' are effects that are …",
     "options": [
+     "easy to ignore",
      "small and local",
      "important and wide",
-     "already finished",
-     "easy to ignore"
+     "already finished"
     ],
-    "answer": 1
+    "answer": 2
    }
   ],
   "3-5": [
@@ -6127,12 +6127,12 @@
     "type": "mc",
     "q": "Which phrase links a finished point to the next one?",
     "options": [
-     "I'd like to begin by …",
      "Having established that …, let's turn to …",
      "Thank you for listening.",
-     "Any questions?"
+     "Any questions?",
+     "I'd like to begin by …"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -6152,12 +6152,12 @@
     "type": "mc",
     "q": "'___ light of these results, schools should add shade.'",
     "options": [
-     "On",
      "At",
      "In",
-     "By"
+     "By",
+     "On"
     ],
-    "answer": 2
+    "answer": 1
    },
    {
     "type": "order",
@@ -6216,12 +6216,12 @@
      "type": "mc",
      "q": "A writer who uses only the facts that support her view is …",
      "options": [
+      "qualifying",
       "conflating",
       "conceding",
-      "cherry-picking",
-      "qualifying"
+      "cherry-picking"
      ],
-     "answer": 2
+     "answer": 3
     },
     {
      "type": "mc",
@@ -6238,12 +6238,12 @@
      "type": "mc",
      "q": "Choose the nominalised sentence.",
      "options": [
-      "Prices fell, so people bought more.",
-      "A fall in prices led to an increase in demand.",
       "People bought more because prices fell.",
-      "When prices fell, people were buying more."
+      "When prices fell, people were buying more.",
+      "Prices fell, so people bought more.",
+      "A fall in prices led to an increase in demand."
      ],
-     "answer": 1
+     "answer": 3
     },
     {
      "type": "mc",
@@ -6337,56 +6337,56 @@
      "type": "mc",
      "q": "'___ AI to replace teachers, schools would change completely.'",
      "options": [
+      "If",
       "Should",
       "Had",
-      "Were",
-      "If"
+      "Were"
      ],
-     "answer": 2
+     "answer": 3
     },
     {
      "type": "mc",
      "q": "'___ you need any help, please ask the staff.'",
      "options": [
-      "Should",
-      "Were",
       "Had",
-      "Would"
-     ],
-     "answer": 0
-    },
-    {
-     "type": "mc",
-     "q": "If something 'comes to pass', it …",
-     "options": [
-      "is forgotten",
-      "actually happens",
-      "is cancelled",
-      "is predicted"
-     ],
-     "answer": 1
-    },
-    {
-     "type": "mc",
-     "q": "A plan for what to do if something goes wrong is …",
-     "options": [
-      "a moving target",
-      "a tipping point",
-      "a contingency plan",
-      "uncharted territory"
+      "Would",
+      "Should",
+      "Were"
      ],
      "answer": 2
     },
     {
      "type": "mc",
-     "q": "'By June, I ___ English for twelve years.'",
+     "q": "If something 'comes to pass', it …",
      "options": [
-      "will have been studying",
-      "will be study",
-      "am studying",
-      "have been studied"
+      "actually happens",
+      "is cancelled",
+      "is predicted",
+      "is forgotten"
      ],
      "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "A plan for what to do if something goes wrong is …",
+     "options": [
+      "uncharted territory",
+      "a moving target",
+      "a tipping point",
+      "a contingency plan"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "'By June, I ___ English for twelve years.'",
+     "options": [
+      "have been studied",
+      "will have been studying",
+      "will be study",
+      "am studying"
+     ],
+     "answer": 1
     },
     {
      "type": "mc",
@@ -6457,12 +6457,12 @@
      "type": "mc",
      "q": "If something is 'an acquired taste', people …",
      "options": [
+      "hate it forever",
       "love it immediately",
       "learn to like it over time",
-      "never try it",
-      "hate it forever"
+      "never try it"
      ],
-     "answer": 1
+     "answer": 2
     },
     {
      "type": "mc",
@@ -6479,34 +6479,34 @@
      "type": "mc",
      "q": "A skill that fewer and fewer people practise is …",
      "options": [
-      "a labour of love",
       "second nature",
       "a dying art",
-      "food for thought"
+      "food for thought",
+      "a labour of love"
      ],
-     "answer": 2
+     "answer": 1
     },
     {
      "type": "mc",
      "q": "'Hospitality is woven into the ___ of our society.'",
      "options": [
-      "thread",
-      "fabric",
       "cloth",
-      "wool"
+      "wool",
+      "thread",
+      "fabric"
      ],
-     "answer": 1
+     "answer": 3
     },
     {
      "type": "mc",
      "q": "Which sentence contains a metaphor?",
      "options": [
+      "He is like a teacher to me.",
       "She runs as fast as the wind.",
       "My grandfather is a library of stories.",
-      "My grandfather tells good stories.",
-      "He is like a teacher to me."
+      "My grandfather tells good stories."
      ],
-     "answer": 1
+     "answer": 2
     },
     {
      "type": "mc",
@@ -6523,12 +6523,12 @@
      "type": "mc",
      "q": "'Social media is a double-edged sword' means it …",
      "options": [
-      "is dangerous to touch",
-      "has both good and bad effects",
       "is only harmful",
-      "is used by soldiers"
+      "is used by soldiers",
+      "is dangerous to touch",
+      "has both good and bad effects"
      ],
-     "answer": 1
+     "answer": 3
     },
     {
      "type": "order",
@@ -6595,67 +6595,67 @@
      "type": "mc",
      "q": "If something 'falls outside the scope' of a study, it …",
      "options": [
-      "is not covered by the study",
       "is the main focus",
       "is wrong",
-      "was measured twice"
+      "was measured twice",
+      "is not covered by the study"
      ],
-     "answer": 0
+     "answer": 3
     },
     {
      "type": "mc",
      "q": "'There was a ___ increase in audiobook listening.'",
      "options": [
-      "marked",
-      "marking",
       "mark",
-      "markable"
+      "markable",
+      "marked",
+      "marking"
      ],
-     "answer": 0
+     "answer": 2
     },
     {
      "type": "mc",
      "q": "Which reply checks a question before answering it?",
      "options": [
-      "Next question.",
       "If I understand you correctly, you're asking about cost.",
       "I said that already.",
-      "That's wrong."
+      "That's wrong.",
+      "Next question."
      ],
-     "answer": 1
+     "answer": 0
     },
     {
      "type": "mc",
      "q": "The main idea you want an audience to remember is …",
      "options": [
+      "a gap in the research",
       "the take-home message",
       "the scope",
-      "the rationale",
-      "a gap in the research"
+      "the rationale"
      ],
-     "answer": 0
+     "answer": 1
     },
     {
      "type": "mc",
      "q": "Which is the best response to a fair criticism?",
      "options": [
-      "That's a fair criticism, though I stand by our main finding.",
       "No, you're mistaken.",
       "I won't answer that.",
-      "Whatever you think."
+      "Whatever you think.",
+      "That's a fair criticism, though I stand by our main finding."
      ],
-     "answer": 0
+     "answer": 3
     },
     {
      "type": "mc",
      "q": "'___ established the problem, let's turn to the solution.'",
      "options": [
+      "To have",
       "Have",
       "Having",
-      "Had",
-      "To have"
+      "Had"
      ],
-     "answer": 1
+     "answer": 2
     },
     {
      "type": "order",
@@ -6714,89 +6714,89 @@
     "type": "mc",
     "q": "Which verb means 'prove with evidence that a claim is wrong'?",
     "options": [
-     "maintain",
-     "concede",
      "refute",
-     "put forward"
-    ],
-    "answer": 2
-   },
-   {
-    "type": "mc",
-    "q": "Choose the nominalised sentence.",
-    "options": [
-     "Costs fell, so more people adopted solar.",
-     "A fall in costs led to the wider adoption of solar.",
-     "People adopted solar because costs fell.",
-     "When costs were falling, people adopted solar."
-    ],
-    "answer": 1
-   },
-   {
-    "type": "mc",
-    "q": "'You're ___ correlation with causation.'",
-    "options": [
-     "conflating",
-     "conceding",
-     "qualifying",
-     "defining"
+     "put forward",
+     "maintain",
+     "concede"
     ],
     "answer": 0
    },
    {
     "type": "mc",
-    "q": "Which claim is the most precisely qualified?",
+    "q": "Choose the nominalised sentence.",
     "options": [
-     "The plan was a disaster.",
-     "The plan worked perfectly for everyone.",
-     "To a large extent, the plan improved attendance, with the possible exception of Year 7.",
-     "Nobody liked the plan."
-    ],
-    "answer": 2
-   },
-   {
-    "type": "mc",
-    "q": "'___ AI to replace most drivers, cities would change dramatically.'",
-    "options": [
-     "Should",
-     "Were",
-     "Had",
-     "If"
-    ],
-    "answer": 1
-   },
-   {
-    "type": "mc",
-    "q": "'By 2040, she ___ as a doctor for fifteen years.'",
-    "options": [
-     "will be working",
-     "has worked",
-     "will have been working",
-     "is working"
-    ],
-    "answer": 2
-   },
-   {
-    "type": "mc",
-    "q": "'___ the weather worsen, the launch will be postponed.'",
-    "options": [
-     "Were",
-     "Had",
-     "Would",
-     "Should"
+     "People adopted solar because costs fell.",
+     "When costs were falling, people adopted solar.",
+     "Costs fell, so more people adopted solar.",
+     "A fall in costs led to the wider adoption of solar."
     ],
     "answer": 3
    },
    {
     "type": "mc",
-    "q": "A plan for what to do if something goes wrong is …",
+    "q": "'You're ___ correlation with causation.'",
     "options": [
-     "a tipping point",
-     "a contingency plan",
-     "a moving target",
-     "a giant leap"
+     "defining",
+     "conflating",
+     "conceding",
+     "qualifying"
     ],
     "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which claim is the most precisely qualified?",
+    "options": [
+     "Nobody liked the plan.",
+     "The plan was a disaster.",
+     "The plan worked perfectly for everyone.",
+     "To a large extent, the plan improved attendance, with the possible exception of Year 7."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "'___ AI to replace most drivers, cities would change dramatically.'",
+    "options": [
+     "If",
+     "Should",
+     "Were",
+     "Had"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "'By 2040, she ___ as a doctor for fifteen years.'",
+    "options": [
+     "will have been working",
+     "is working",
+     "will be working",
+     "has worked"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "'___ the weather worsen, the launch will be postponed.'",
+    "options": [
+     "Would",
+     "Should",
+     "Were",
+     "Had"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A plan for what to do if something goes wrong is …",
+    "options": [
+     "a moving target",
+     "a giant leap",
+     "a tipping point",
+     "a contingency plan"
+    ],
+    "answer": 3
    },
    {
     "type": "mc",
@@ -6824,45 +6824,45 @@
     "type": "mc",
     "q": "A skill that fewer and fewer people practise is …",
     "options": [
-     "a dying art",
      "an acquired taste",
      "second nature",
-     "a labour of love"
-    ],
-    "answer": 0
-   },
-   {
-    "type": "mc",
-    "q": "Which phrase checks what a questioner means?",
-    "options": [
-     "To draw the threads together, …",
-     "Bear in mind that …",
-     "By way of introduction, …",
-     "If I understand you correctly, …"
+     "a labour of love",
+     "a dying art"
     ],
     "answer": 3
    },
    {
     "type": "mc",
-    "q": "If a question 'falls outside the scope' of your study, it …",
+    "q": "Which phrase checks what a questioner means?",
     "options": [
-     "is the most important part of it",
-     "is not covered by it",
-     "proves it wrong",
-     "repeats it"
+     "By way of introduction, …",
+     "If I understand you correctly, …",
+     "To draw the threads together, …",
+     "Bear in mind that …"
     ],
     "answer": 1
    },
    {
     "type": "mc",
+    "q": "If a question 'falls outside the scope' of your study, it …",
+    "options": [
+     "proves it wrong",
+     "repeats it",
+     "is the most important part of it",
+     "is not covered by it"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
     "q": "Which is the best reply to a fair criticism of your sample size?",
     "options": [
-     "That's a fair criticism, but I stand by our main finding.",
-     "You obviously didn't listen.",
      "Sample size doesn't matter.",
-     "Let's not talk about that."
+     "Let's not talk about that.",
+     "That's a fair criticism, but I stand by our main finding.",
+     "You obviously didn't listen."
     ],
-    "answer": 0
+    "answer": 2
    },
    {
     "type": "order",
