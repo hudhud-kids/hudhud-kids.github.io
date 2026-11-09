@@ -539,14 +539,14 @@
     ]
    },
    "culture": {
-    "title": "Camping in the Desert",
+    "title": "The Empty Quarter",
     "points": [
-     "In winter, many Saudi families go camping in the desert. This is called a kashta.",
-     "People sit around a fire, drink tea and look at the stars.",
-     "The desert can be very cold at night, so people take warm clothes and blankets."
+     "The Empty Quarter, or Rub' al Khali, is one of the biggest sand deserts in the world.",
+     "It covers a large part of the south of Saudi Arabia.",
+     "Some of its sand dunes are more than 200 metres high."
     ],
     "qs": [
-     "Have you ever slept in a tent? How was it?",
+     "Have you ever been to a big desert? How was it?",
      "What would you put on your list for a desert trip?"
     ]
    },
@@ -662,7 +662,7 @@
     "title": "Animals of Saudi Arabia",
     "points": [
      "The Arabian oryx is a white animal with long horns that lives in the desert.",
-     "Some years ago, there were almost no oryx left in the wild, but now people protect them.",
+     "About fifty years ago, there were no oryx left in the wild, but people protected them, and now there are oryx in the desert again.",
      "Camels can walk for days in the desert without drinking water."
     ],
     "qs": [
@@ -782,7 +782,7 @@
     "title": "Learning New Skills Around the World",
     "points": [
      "In Japan, many schools have a swimming pool, and children learn to swim at school.",
-     "In Finland, children start school when they are seven.",
+     "In Norway, many children learn to ski when they are very young.",
      "In Saudi Arabia, many children join summer clubs for sport, art, coding and science."
     ],
     "qs": [
@@ -1023,10 +1023,10 @@
     ]
    },
    "culture": {
-    "title": "Weekends Around the World",
+    "title": "Free Time Around the World",
     "points": [
-     "In Saudi Arabia, the weekend is on Friday and Saturday.",
-     "In the UK and the USA, the weekend is on Saturday and Sunday.",
+     "In the UK, many children go to after-school clubs for sport, music or art.",
+     "In Japan, many children go to extra classes after school.",
      "In winter, many Saudi families spend the weekend outdoors, in parks or in the desert."
     ],
     "qs": [
@@ -1591,7 +1591,7 @@
       "t": "Great. Let's tell our teacher."
      }
     ],
-    "focus": "I suggest the science centre.",
+    "focus": "Most of us prefer the farm.",
     "qs": [
      "Why doesn't Sam want to go to the water park?",
      "Which option won the vote?"
@@ -2020,7 +2020,7 @@
     },
     {
      "w": "a security guard",
-     "def": "a person whose job is to keep a place safe",
+     "def": "a person who works to keep a place safe",
      "ar": "حارس أمن",
      "frame": "We asked a security guard about ___."
     },
@@ -2418,7 +2418,7 @@
      },
      {
       "s": "Abdulrahman",
-      "t": "Probably not. It'll be cloudy, but the wind won't be very strong."
+      "t": "Probably not. It'll be cloudy in the afternoon, but the wind won't be very strong."
      }
     ],
     "p2": [
@@ -2685,8 +2685,8 @@
       "hint": "Make a promise with 'I promise I'll …'."
      },
      {
-      "q": "What will you do if it gets dirty?",
-      "hint": "Promise what you will do: 'I'll …'."
+      "q": "It's a new white ball. What will you do after the match?",
+      "hint": "Promise what you will do with the ball: 'I'll …'."
      },
      {
       "q": "When will you give it back?",
@@ -2896,7 +2896,7 @@
      },
      {
       "s": "Lina",
-      "t": "That's very kind. I promise I'll give it back on Saturday."
+      "t": "That's very kind. I promise I'll give it back on Sunday after the test."
      },
      {
       "s": "Huda",
@@ -4388,7 +4388,7 @@
     },
     {
      "s": "Abdulrahman",
-     "t": "Probably not. It'll be cloudy."
+     "t": "Probably not. It'll be cloudy in the afternoon."
     },
     {
      "s": "Noura",
@@ -5740,7 +5740,7 @@
    },
    {
     "type": "mc",
-    "q": "A person whose job is to keep a place safe is a ___.",
+    "q": "A person who works to keep a place safe is a ___.",
     "options": [
      "shop assistant",
      "waiter",
@@ -5941,7 +5941,7 @@
    },
    {
     "type": "mc",
-    "q": "'It'll ___ be hot tomorrow. It's always hot in June.'",
+    "q": "'It'll ___ be hot tomorrow. It's usually hot in June.'",
     "options": [
      "might",
      "maybe",

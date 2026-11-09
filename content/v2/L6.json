@@ -2568,7 +2568,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Because the water isn't deep. You must dive only in the deep end."
+      "t": "Because the water isn't deep. You can only dive in the deep end."
      }
     ],
     "p2": [
@@ -2591,7 +2591,7 @@
     ],
     "focus": "You mustn't run because the floor is slippery.",
     "qs": [
-     "Where must Ali dive?",
+     "Where can Ali dive?",
      "Why mustn't Ali run?"
     ]
    },
@@ -2702,7 +2702,7 @@
      },
      {
       "s": "Huda",
-      "t": "Yes, at the airport. You mustn't put it in your big luggage. Keep it with you!"
+      "t": "Yes, at the airport. You mustn't pack it in your luggage. Keep it with you!"
      }
     ],
     "focus": "You have to wear it when the plane takes off and lands.",
@@ -4450,7 +4450,7 @@
     {
      "w": "luggage",
      "ar": "الأمتعة",
-     "ex": "Don't put your passport in your big luggage."
+     "ex": "Don't pack your passport in your luggage."
     },
     {
      "w": "flight attendant",
@@ -6751,7 +6751,7 @@
     "type": "mc",
     "q": "Can you come to the match? My dad is going to ___ at six.",
     "options": [
-     "join you",
+     "invite you",
      "support you",
      "pick you up",
      "reply you"
