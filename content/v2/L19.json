@@ -104,7 +104,7 @@
    "cando": "Can discuss complex ethical questions, weigh competing values and make conditional concessions while keeping a nuanced position.",
    "grammar": [
     "conditional concession: Even if …, … / Whatever …, … / However + adjective …, …",
-    "Much as I …, … / Be that as it may, …",
+    "recycled from L17 and applied to ethics: Much as I …, … / Be that as it may, …",
     "weighing values: … must be weighed against … / There's a fine line between … and …"
    ],
    "lessons": [
@@ -124,8 +124,8 @@
      "Be that as it may, … / Even if …, … / It's one thing to …; it's quite another to …"
     ],
     [
-     "The Real Cost of Cheap Clothes",
-     "Discuss the ethics of fast fashion, weighing price against people and the planet",
+     "The Real Price of Fakes",
+     "Discuss the ethics of buying fake brands, weighing price against honesty and safety",
      "Whatever the price, … / Even if …, … / It's not so much … as …"
     ],
     [
@@ -498,7 +498,7 @@
       "t": "That will strike a chord. It's simple, specific and human."
      }
     ],
-    "focus": "Imagine a mother who has nothing for iftar.",
+    "focus": "Imagine a mother who has nothing for iftar. Imagine a child who waits by the door. Imagine knowing you could help.",
     "qs": [
      "What does Noura want people to do?",
      "Why does Reem warn Noura not to repeat the line too often?"
@@ -1105,7 +1105,7 @@
     "title": "Projects Instead of Exams?",
     "points": [
      "The International Baccalaureate includes an extended essay that students research independently over many months.",
-     "Finland has no high-stakes national exams until the very end of upper secondary school.",
+     "Finland has no major national exams until the very end of upper secondary school.",
      "Many Saudi universities ask students to complete a graduation project before they finish their degree."
     ],
     "qs": [
@@ -1456,7 +1456,7 @@
    "culture": {
     "title": "Taxing Sugar",
     "points": [
-     "In 2019, Saudi Arabia introduced an extra tax on sweetened drinks to encourage healthier choices.",
+     "Since 2017, Saudi Arabia has taxed sugary soft drinks, and the tax was later extended to other sweetened drinks.",
      "Several other countries, including the UK and Mexico, also tax sugary drinks.",
      "Health experts link a high sugar intake with obesity, diabetes and tooth decay."
     ],
@@ -1932,32 +1932,32 @@
    "exit": "Give me your view on zoos in two sentences, using 'Be that as it may' or 'Even if'."
   },
   "2-3": {
-   "objective": "Today you will discuss the ethics of fast fashion, weighing price against people and the planet.",
-   "warmup": "How often do you buy new clothes, and do you ever think about who made them?",
+   "objective": "Today you will discuss the ethics of buying fake brands, weighing price against honesty and safety.",
+   "warmup": "Have you ever been offered a fake version of a famous brand? What did you think?",
    "expressions": [
     {
-     "w": "fast fashion",
-     "def": "cheap clothes made quickly to follow the latest trends",
-     "ar": "الأزياء السريعة",
-     "frame": "Fast fashion is popular because ___."
+     "w": "counterfeit",
+     "def": "made to look exactly like a real brand in order to trick buyers",
+     "ar": "مقلَّد / مزيّف",
+     "frame": "Some people buy counterfeit ___ because ___."
     },
     {
      "w": "at what cost",
      "def": "asking what harm was done to get something",
      "ar": "بأي ثمن",
-     "frame": "Cheap clothes, but at what cost to ___?"
+     "frame": "It's cheap, but at what cost to ___?"
     },
     {
-     "w": "working conditions",
-     "def": "the hours, pay and safety of people at work",
-     "ar": "ظروف العمل",
-     "frame": "Working conditions in factories should ___."
+     "w": "a victimless crime",
+     "def": "an illegal act that seems to harm nobody",
+     "ar": "جريمة بلا ضحية",
+     "frame": "Some people think ___ is a victimless crime, but ___."
     },
     {
-     "w": "a throwaway culture",
-     "def": "a habit of using things briefly, then throwing them away",
-     "ar": "ثقافة الاستهلاك والرمي",
-     "frame": "A throwaway culture leads to ___."
+     "w": "intellectual property",
+     "def": "ideas and designs that legally belong to the person who created them",
+     "ar": "الملكية الفكرية",
+     "frame": "Copying ___ is a breach of intellectual property because ___."
     },
     {
      "w": "turn a blind eye to",
@@ -1966,86 +1966,86 @@
      "frame": "Shoppers often turn a blind eye to ___."
     },
     {
-     "w": "ethically sourced",
-     "def": "produced in a way that is fair to workers and nature",
-     "ar": "من مصادر أخلاقية",
-     "frame": "I would pay more for ___ if it were ethically sourced."
+     "w": "cut-price",
+     "def": "much cheaper than the normal price",
+     "ar": "بسعر مخفّض جداً",
+     "frame": "I'd never buy cut-price ___ from an unknown seller because ___."
     }
    ],
    "dialogue": {
-    "scene": "Lulwa and her aunt Maha are shopping in a mall in Riyadh when Lulwa picks up a very cheap T-shirt.",
+    "scene": "Lulwa shows her aunt Maha a website selling copies of famous-brand trainers at a fraction of the real price.",
     "p1": [
      {
       "s": "Lulwa",
-      "t": "Look, this T-shirt is only twenty riyals! I'll take three."
+      "t": "Look, these trainers look exactly like the famous brand, and they're only eighty riyals!"
      },
      {
       "s": "Maha",
-      "t": "It's cheap, but at what cost? Someone, somewhere, paid the real price."
+      "t": "They're counterfeit, Lulwa. Cheap, yes, but at what cost?"
      },
      {
       "s": "Lulwa",
-      "t": "You mean the workers? Even if their working conditions are poor, the job is better than nothing, isn't it?"
+      "t": "Who does it hurt, though? The big brand won't even notice. It's a victimless crime."
      },
      {
       "s": "Maha",
-      "t": "Perhaps, but that's no reason to turn a blind eye to how they're treated."
+      "t": "Even if the brand never notices, the designers' intellectual property has still been stolen."
      }
     ],
     "p2": [
      {
       "s": "Lulwa",
-      "t": "So should I only buy ethically sourced clothes? They're so expensive."
+      "t": "But everyone at school turns a blind eye to fakes. Some people don't even know they're wearing one."
      },
      {
       "s": "Maha",
-      "t": "Not necessarily. It's not so much the price that worries me as the throwaway culture behind fast fashion."
+      "t": "It's not so much the brand that worries me as your safety. Fake products skip every safety test."
      },
      {
       "s": "Lulwa",
-      "t": "You mean buying three shirts and wearing each one twice?"
+      "t": "So cut-price trainers could actually hurt my feet?"
      },
      {
       "s": "Maha",
-      "t": "Exactly. Whatever the price, the most ethical shirt is often the one you already own."
+      "t": "Possibly. Whatever the price, a fake is never really a bargain."
      }
     ],
-    "focus": "Whatever the price, the most ethical shirt is often the one you already own.",
+    "focus": "Whatever the price, a fake is never really a bargain.",
     "qs": [
-     "What argument does Lulwa use to defend cheap factory jobs?",
-     "What worries Maha more than the price of clothes?"
+     "Why does Lulwa think buying fakes is harmless?",
+     "What worries Maha more than the brand's losses?"
     ]
    },
    "speakout": {
-    "scene": "Your class is planning a 'clothes swap' event instead of a shopping trip. The teacher plays a student who loves buying new clothes.",
+    "scene": "Your class is making a poster campaign about fake goods. The teacher plays a student who often buys fake brands.",
     "prompts": [
      {
-      "q": "Fast fashion lets everyone look good on a small budget. What's wrong with that?",
+      "q": "Fakes let everyone wear nice brands on a small budget. What's wrong with that?",
       "hint": "Concede the point, then ask 'but at what cost?' and give a reason."
      },
      {
-      "q": "If I don't buy the shirt, someone else will. So why should I change?",
+      "q": "If I don't buy it, someone else will. So why should I change?",
       "hint": "Answer conditionally with 'Even if …, …'."
      },
      {
-      "q": "Convince me to come to the clothes swap.",
-      "hint": "Weigh price against the throwaway culture and give one clear benefit."
+      "q": "Give me one line for our poster.",
+      "hint": "Use 'Whatever …, …' or 'It's not so much … as …' in a short, clear line."
      }
     ]
    },
    "culture": {
-    "title": "Fashion and the Planet",
+    "title": "Fighting Fakes",
     "points": [
-     "The fashion industry uses huge amounts of water and produces a great deal of waste.",
-     "Producing the cotton for a single T-shirt can take thousands of litres of water.",
-     "Second-hand and vintage shopping is becoming more popular with young people in many countries."
+     "The Saudi Authority for Intellectual Property protects trademarks, designs and inventions in the Kingdom.",
+     "Inspectors in Saudi Arabia regularly seize counterfeit goods, and sellers can face heavy fines.",
+     "Fake chargers, cosmetics and medicines can be dangerous because they have not passed safety tests."
     ],
     "qs": [
-     "Should shops be required to show how and where their clothes were made?",
-     "Would you pay more for clothes you knew were ethically sourced? Why?"
+     "Is buying a fake as wrong as selling one? Why or why not?",
+     "Would you buy a fake if nobody could tell the difference? Explain."
     ]
    },
-   "exit": "Tell me in two sentences how you weigh price against ethics when you shop, using 'Whatever' or 'Even if'."
+   "exit": "Tell me in two sentences how you weigh price against honesty when you shop, using 'Whatever' or 'Even if'."
   },
   "2-4": {
    "objective": "Today you will discuss what to do when honesty and kindness clash, weighing one value against the other.",
@@ -3017,27 +3017,27 @@
    "dialogue": [
     {
      "s": "Lama",
-     "t": "I need to rally support for Saturday's clean-up, but my first draft sounds like a list of instructions."
+     "t": "I need to rally support for the clean-up, but my draft sounds like a list."
     },
     {
      "s": "Huda",
-     "t": "Then try the rule of three. Audiences remember ideas in threes far better than long lists."
+     "t": "Try the rule of three. People remember ideas in threes."
     },
     {
      "s": "Lama",
-     "t": "Something like: 'Our beach. Our responsibility. Our future.'?"
-    },
-    {
-     "s": "Lama",
-     "t": "But a slogan alone won't strike a chord. People need a reason to give up their Saturday."
+     "t": "'Our beach. Our responsibility. Our future.'?"
     },
     {
      "s": "Huda",
-     "t": "So tell them what they'll gain: cleaner sand for families, safer water for turtles, and a morning they'll be proud of."
+     "t": "Short and rhythmic. But give them a reason too."
     },
     {
      "s": "Lama",
-     "t": "That's compelling. And I'll finish by repeating the slogan to drive the message home."
+     "t": "Cleaner sand for families, safer water for turtles, and a morning they'll be proud of."
+    },
+    {
+     "s": "Huda",
+     "t": "That's compelling. Repeat the slogan at the end to drive the message home."
     }
    ],
    "grammar": {
@@ -3086,27 +3086,27 @@
    "dialogue": [
     {
      "s": "Faisal",
-     "t": "Every candidate says the same thing: better food, longer breaks, more trips. Nobody believes those empty promises any more."
+     "t": "Nobody believes the other candidates' empty promises any more."
     },
     {
      "s": "Yousef",
-     "t": "So set the tone differently. Tell them what you stand for, not what you'll hand out."
+     "t": "Then tell them what you stand for, not what you'll hand out."
     },
     {
      "s": "Faisal",
-     "t": "How about this: 'This election is not about what the council can give you, but about what we can build together.'"
+     "t": "'This election is not about what the council can give you, but about what we can build together.'"
     },
     {
      "s": "Yousef",
-     "t": "That antithesis is strong. The contrast makes both halves sharper."
-    },
-    {
-     "s": "Yousef",
-     "t": "Then back it up with your track record. You organised the Arabic poetry night, after all."
+     "t": "Strong antithesis. It sets the right tone."
     },
     {
      "s": "Faisal",
-     "t": "True. 'I don't promise; I deliver.' It's short, but it might resonate with them."
+     "t": "And I can point to my track record: the poetry night."
+    },
+    {
+     "s": "Yousef",
+     "t": "Good. 'I don't promise; I deliver' should resonate with them."
     }
    ],
    "grammar": {
@@ -3155,27 +3155,27 @@
    "dialogue": [
     {
      "s": "Noura",
-     "t": "I want to make an appeal that really gets people to dig deep, not just drop a few riyals in a box."
+     "t": "I want to make an appeal that gets people to dig deep."
     },
     {
      "s": "Reem",
-     "t": "Try anaphora. Start three sentences the same way so the speech builds momentum."
+     "t": "Try anaphora, so the speech builds momentum."
     },
     {
      "s": "Noura",
-     "t": "Like this? 'Imagine a mother who has nothing for iftar. Imagine a child who waits by the door. Imagine knowing you could help.'"
+     "t": "'Imagine a mother who has nothing for iftar. Imagine a child who waits by the door. Imagine knowing you could help.'"
     },
     {
      "s": "Reem",
-     "t": "That's heartfelt, and the final 'Imagine' turns the focus back on the listener."
-    },
-    {
-     "s": "Reem",
-     "t": "Once more, perhaps, but don't overdo it, or it starts to sound like a chant."
+     "t": "That's heartfelt. Just don't overdo the repetition."
     },
     {
      "s": "Noura",
-     "t": "Then I'll close with a single line: 'One basket, one family, one month of dignity.'"
+     "t": "Then I'll close with one line: 'One basket, one family, one month of dignity.'"
+    },
+    {
+     "s": "Reem",
+     "t": "Simple and human. It will strike a chord."
     }
    ],
    "grammar": {
@@ -3224,11 +3224,11 @@
    "dialogue": [
     {
      "s": "Omar",
-     "t": "My draft is full of statistics, but when I read it aloud, people's eyes glaze over."
+     "t": "My speech is full of statistics, and people get bored."
     },
     {
      "s": "Mr Daniel",
-     "t": "Numbers inform, but pictures persuade. Can you paint a picture instead?"
+     "t": "Numbers inform, but pictures persuade. Paint a picture."
     },
     {
      "s": "Omar",
@@ -3236,15 +3236,15 @@
     },
     {
      "s": "Mr Daniel",
-     "t": "Good. That vivid imagery makes the number real. Now add one statistic to support it."
+     "t": "Good. That vivid imagery makes the number real."
+    },
+    {
+     "s": "Omar",
+     "t": "Should I show the video of the dried-up oasis? It tugs at the heartstrings."
     },
     {
      "s": "Mr Daniel",
-     "t": "Use it briefly. If you dwell on it, the audience may find it manipulative."
-    },
-    {
-     "s": "Mr Daniel",
-     "t": "Exactly. Let the image be the wake-up call, and let the fact make it undeniable."
+     "t": "Briefly. Too much emotion can feel manipulative."
     }
    ],
    "grammar": {
@@ -3297,23 +3297,23 @@
     },
     {
      "s": "Dr Hessa",
-     "t": "Many teams ask us for money. Why should we prioritise yours?"
+     "t": "Why should we fund your team?"
     },
     {
      "s": "Sara",
-     "t": "Because the figures speak for themselves: we reached the regional final twice using borrowed equipment."
-    },
-    {
-     "s": "Sara",
-     "t": "Then let me offer hard evidence of the return on investment. Five former members now study engineering."
+     "t": "The figures speak for themselves: two regional finals with borrowed equipment."
     },
     {
      "s": "Dr Hessa",
-     "t": "That certainly lends weight to your request. Can you prove the link, though?"
+     "t": "Any hard evidence of a return on investment?"
     },
     {
      "s": "Sara",
-     "t": "I won't overstate it, because I'd lose credibility. But all five say the team shaped their choice."
+     "t": "Five former members now study engineering, though I won't overstate the link."
+    },
+    {
+     "s": "Dr Hessa",
+     "t": "That honesty lends weight to your request."
     }
    ],
    "grammar": {
@@ -3362,19 +3362,19 @@
    "dialogue": [
     {
      "s": "Ahmed",
-     "t": "My hook: 'How many of you walked to school today? And how many of you would, if it were safe?'"
+     "t": "My hook: 'How many of you would walk to school, if it were safe?'"
     },
     {
      "s": "Sam",
-     "t": "That works. A double question wins over the audience before you even make your point."
+     "t": "Good. That will win over the audience."
     },
     {
      "s": "Ahmed",
-     "t": "Then I paint a picture: shaded paths, safe crossings, children cycling where cars now race."
+     "t": "Then I paint a picture: shaded paths, safe crossings, children cycling."
     },
     {
      "s": "Sam",
-     "t": "Nice tricolon. Now you need credibility and evidence, or it's just a dream."
+     "t": "Nice tricolon. What's the clincher?"
     },
     {
      "s": "Ahmed",
@@ -3382,7 +3382,7 @@
     },
     {
      "s": "Sam",
-     "t": "That antithesis will strike a chord. End with a clear call to action to drive the message home."
+     "t": "That will strike a chord. End with a clear call to action."
     }
    ],
    "grammar": {
@@ -3431,27 +3431,27 @@
    "dialogue": [
     {
      "s": "Hamad",
-     "t": "The motion is 'This House would make community service compulsory for secondary students.' Where do I begin?"
+     "t": "The motion is 'This House would make community service compulsory.' Where do I begin?"
     },
     {
      "s": "Turki",
-     "t": "With definitions. If you don't set the parameters, the opposition will set them for you."
+     "t": "With definitions. Set the parameters before the opposition does."
     },
     {
      "s": "Hamad",
      "t": "For the purposes of this debate, we define community service as two hours a week of unpaid work for a local cause."
     },
     {
+     "s": "Turki",
+     "t": "Good. Now the burden of proof."
+    },
+    {
      "s": "Hamad",
-     "t": "Our burden is to prove that compulsory service benefits students and society, not that every student will enjoy it."
+     "t": "We must prove it benefits students and society, not that everyone will enjoy it."
     },
     {
      "s": "Turki",
-     "t": "Smart. That stops them attacking a sweeping claim you never made."
-    },
-    {
-     "s": "Hamad",
-     "t": "Then I state the crux of the matter: can a habit of helping others be taught?"
+     "t": "Smart. Then they can't attack a sweeping claim you never made."
     }
    ],
    "grammar": {
@@ -3500,27 +3500,27 @@
    "dialogue": [
     {
      "s": "Majed",
-     "t": "We can't just say exams are stressful. The judges will want more than feelings."
+     "t": "The judges will want more than 'exams are stressful'."
     },
     {
      "s": "Saad",
-     "t": "Agreed. Our case rests on three pillars: deeper learning, fairer assessment and real-world skills."
+     "t": "Our case rests on three pillars: deeper learning, fairer assessment and real-world skills."
     },
     {
      "s": "Majed",
-     "t": "Then each pillar needs a mechanism. How exactly do projects lead to deeper learning?"
+     "t": "Each pillar needs a mechanism."
     },
     {
      "s": "Saad",
-     "t": "In practical terms, students research a question for weeks instead of memorising facts for one night."
+     "t": "In practical terms, students research a question for weeks, not one night."
     },
     {
      "s": "Majed",
-     "t": "And fairness? The opposition will say projects are easier to copy."
+     "t": "And examples, or it won't hold water."
     },
     {
      "s": "Saad",
-     "t": "Then we explain our safeguard: each project ends with a short oral defence."
+     "t": "Our sustainability project is a case in point."
     }
    ],
    "grammar": {
@@ -3569,27 +3569,27 @@
    "dialogue": [
     {
      "s": "Mr Hassan",
-     "t": "The opposition said a ban would destroy small businesses. How do you respond?"
+     "t": "They said a car ban would destroy small businesses."
     },
     {
      "s": "Nasser",
      "t": "Their argument rests on the flawed assumption that shoppers only arrive by car."
     },
     {
+     "s": "Mr Hassan",
+     "t": "Good. Now pick holes in it."
+    },
+    {
      "s": "Nasser",
-     "t": "Far from destroying businesses, pedestrian streets in many cities have attracted more shoppers, not fewer."
+     "t": "Far from destroying businesses, pedestrian streets often attract more shoppers."
     },
     {
      "s": "Mr Hassan",
-     "t": "They also said people need cars to feel free."
+     "t": "They also said cars mean freedom."
     },
     {
      "s": "Nasser",
-     "t": "That conflates freedom with convenience. A child who can walk safely to the shop is also free."
-    },
-    {
-     "s": "Nasser",
-     "t": "Even on their own terms, their argument doesn't hold water: traffic jams already take away the freedom they want to protect."
+     "t": "That conflates freedom with convenience. Even on their own terms, traffic jams take that freedom away."
     }
    ],
    "grammar": {
@@ -3637,6 +3637,10 @@
    ],
    "dialogue": [
     {
+     "s": "Rakan",
+     "t": "We have better maps of Mars than of much of our own ocean floor."
+    },
+    {
      "s": "Ziyad",
      "t": "Point of information!"
     },
@@ -3650,15 +3654,15 @@
     },
     {
      "s": "Rakan",
-     "t": "I would, and that strengthens our case: imagine what similar funding could discover beneath the Red Sea."
+     "t": "I would, and that strengthens our case: imagine what we could find beneath the Red Sea."
     },
     {
      "s": "Ziyad",
-     "t": "So why did you refuse my second point?"
+     "t": "Another point of information!"
     },
     {
      "s": "Rakan",
-     "t": "I'd already taken one, and I needed to stay concise. 'Not at this time, thank you' is perfectly polite."
+     "t": "Not at this time, thank you."
     }
    ],
    "grammar": {
@@ -3707,27 +3711,27 @@
    "dialogue": [
     {
      "s": "Bader",
-     "t": "The opposition's best point is that the tax hits low-income families hardest."
+     "t": "Their best point is that the tax hits low-income families hardest."
     },
     {
      "s": "Fahad",
-     "t": "Then we concede it. Pretending it isn't true would cost us credibility."
+     "t": "Then we concede it, or we lose credibility."
     },
     {
      "s": "Bader",
-     "t": "Agreed. Even if we concede that the tax costs families a little more, the health benefits far outweigh that cost."
+     "t": "Even if we concede that the tax costs families a little more, the health benefits far outweigh that cost."
     },
     {
      "s": "Fahad",
-     "t": "And we explain why: a few riyals can be recovered; damaged health often can't."
+     "t": "Because a few riyals can be recovered; damaged health often can't."
     },
     {
      "s": "Bader",
-     "t": "So our key word is 'irreversible'. Diabetes is usually lifelong, whereas a price rise is not."
+     "t": "So our key word is 'irreversible'."
     },
     {
      "s": "Fahad",
-     "t": "Scale and permanence. On balance, a small, temporary cost is worth a large, lasting gain."
+     "t": "Exactly. On balance, a small, temporary cost is worth a large, lasting gain."
     }
    ],
    "grammar": {
@@ -3775,16 +3779,20 @@
    ],
    "dialogue": [
     {
+     "s": "Mansour",
+     "t": "In the reply, don't add new arguments. Just show why we won."
+    },
+    {
      "s": "Abdullah",
-     "t": "So I'll start: 'This debate has come down to two key clashes: time and maturity.'"
+     "t": "'This debate has come down to two key clashes: time and maturity.'"
     },
     {
      "s": "Mansour",
-     "t": "Good. On time, what's your strongest line?"
+     "t": "And on time?"
     },
     {
      "s": "Abdullah",
-     "t": "'They claimed jobs steal study time, but that claim fell short: ten hours a week still leaves plenty.'"
+     "t": "'Their claim that jobs steal study time fell short: ten hours a week still leaves plenty.'"
     },
     {
      "s": "Mansour",
@@ -3792,15 +3800,7 @@
     },
     {
      "s": "Abdullah",
-     "t": "'Our point that work teaches responsibility went unanswered. They never explained where else teenagers learn it.'"
-    },
-    {
-     "s": "Mansour",
-     "t": "Then finish with the burden of proof."
-    },
-    {
-     "s": "Abdullah",
-     "t": "'Ultimately, we have shown beyond reasonable doubt that a part-time job builds skills school alone cannot.'"
+     "t": "'Our point that work teaches responsibility went unanswered. Ultimately, we have shown that a part-time job builds real skills.'"
     }
    ],
    "grammar": {
@@ -3849,7 +3849,7 @@
    "dialogue": [
     {
      "s": "Shahad",
-     "t": "All my friends use AI for essays. Honestly, what's the harm?"
+     "t": "All my friends use AI for essays. What's the harm?"
     },
     {
      "s": "Nouf",
@@ -3857,15 +3857,15 @@
     },
     {
      "s": "Shahad",
-     "t": "But even if I use AI for ideas, I still write the essay myself."
+     "t": "Using it for ideas is a grey area, though, isn't it?"
     },
     {
      "s": "Nouf",
-     "t": "That's fair. Using it to brainstorm is a grey area, not cheating as such."
+     "t": "Maybe. But submitting what the machine wrote is a breach of academic integrity."
     },
     {
-     "s": "Nouf",
-     "t": "It's when students cut corners and submit what the machine wrote. That's a breach of academic integrity."
+     "s": "Shahad",
+     "t": "So AI is a double-edged sword."
     },
     {
      "s": "Nouf",
@@ -3918,7 +3918,7 @@
    "dialogue": [
     {
      "s": "Father",
-     "t": "This app shows me where you are at any moment. It would give your mother and me real peace of mind."
+     "t": "This app would give your mother and me real peace of mind."
     },
     {
      "s": "Yazeed",
@@ -3926,19 +3926,27 @@
     },
     {
      "s": "Father",
-     "t": "Privacy? You're sixteen. Your safety must be weighed against a little inconvenience."
+     "t": "But your safety comes first."
     },
     {
      "s": "Yazeed",
-     "t": "But it's not just inconvenient. Constant checking could erode trust between us."
+     "t": "Constant checking could erode trust between us."
     },
     {
      "s": "Father",
-     "t": "And if something happened and we couldn't find you?"
+     "t": "So where would you draw the line?"
     },
     {
      "s": "Yazeed",
-     "t": "Then here's a reasonable compromise: I share my location on long trips and after dark."
+     "t": "However well-meant the app is, I don't want you watching every step I take."
+    },
+    {
+     "s": "Father",
+     "t": "Then what do you suggest?"
+    },
+    {
+     "s": "Yazeed",
+     "t": "A reasonable compromise: I share my location on long trips and after dark."
     }
    ],
    "grammar": {
@@ -3987,27 +3995,27 @@
    "dialogue": [
     {
      "s": "Jana",
-     "t": "I loved seeing the oryx, but keeping wild animals in captivity still makes me uneasy."
+     "t": "Keeping wild animals in captivity makes me uneasy."
     },
     {
      "s": "Dana",
-     "t": "Be that as it may, the Arabian oryx was once on the brink of extinction. Breeding centres saved it."
+     "t": "Be that as it may, the Arabian oryx was once on the brink of extinction."
     },
     {
      "s": "Jana",
-     "t": "True. But even if breeding saves a species, is it fair to the individual animals?"
+     "t": "But is it fair to the individual animals?"
     },
     {
      "s": "Dana",
-     "t": "It depends on their welfare. Large reserves are very different from small cages."
+     "t": "It depends on their welfare. Large reserves aren't small cages."
+    },
+    {
+     "s": "Jana",
+     "t": "So zoos are a necessary evil?"
     },
     {
      "s": "Dana",
-     "t": "Some zoos, yes. It's one thing to protect a species; it's quite another to keep animals just for entertainment."
-    },
-    {
-     "s": "Dana",
-     "t": "And the best balance is returning animals to the wild whenever we can, as happened with the oryx."
+     "t": "Some are. We need to strike a balance between welfare and conservation."
     }
    ],
    "grammar": {
@@ -4023,9 +4031,9 @@
   "2-3": {
    "words": [
     {
-     "w": "fast fashion",
-     "ar": "الأزياء السريعة",
-     "ex": "Fast fashion has made clothes cheaper than ever."
+     "w": "counterfeit",
+     "ar": "مقلَّد / مزيّف",
+     "ex": "Counterfeit chargers can overheat and start fires."
     },
     {
      "w": "at what cost",
@@ -4033,59 +4041,59 @@
      "ex": "We save money, but at what cost?"
     },
     {
-     "w": "working conditions",
-     "ar": "ظروف العمل",
-     "ex": "Poor working conditions are a serious problem in some factories."
+     "w": "a victimless crime",
+     "ar": "جريمة بلا ضحية",
+     "ex": "Selling fakes is not a victimless crime."
     },
     {
-     "w": "a throwaway culture",
-     "ar": "ثقافة الاستهلاك والرمي",
-     "ex": "Fast fashion feeds a throwaway culture."
+     "w": "intellectual property",
+     "ar": "الملكية الفكرية",
+     "ex": "Small designers work hard to protect their intellectual property."
     },
     {
      "w": "turn a blind eye to",
      "ar": "يغضّ الطرف عن",
-     "ex": "We can't turn a blind eye to how our clothes are made."
+     "ex": "We can't turn a blind eye to fake goods in our markets."
     },
     {
-     "w": "ethically sourced",
-     "ar": "من مصادر أخلاقية",
-     "ex": "Ethically sourced cotton usually costs more."
+     "w": "cut-price",
+     "ar": "بسعر مخفّض جداً",
+     "ex": "Cut-price perfume from unknown sellers can irritate your skin."
     }
    ],
    "dialogue": [
     {
      "s": "Lulwa",
-     "t": "Look, this T-shirt is only twenty riyals! I'll take three."
+     "t": "These trainers look exactly like the famous brand, and they're only eighty riyals!"
     },
     {
      "s": "Maha",
-     "t": "It's cheap, but at what cost? Someone, somewhere, paid the real price."
+     "t": "They're counterfeit. Cheap, yes, but at what cost?"
     },
     {
      "s": "Lulwa",
-     "t": "You mean the workers? Even if their working conditions are poor, the job is better than nothing, isn't it?"
+     "t": "Who does it hurt? It's a victimless crime."
     },
     {
      "s": "Maha",
-     "t": "Perhaps, but that's no reason to turn a blind eye to how they're treated."
+     "t": "Even if the brand never notices, the designers' intellectual property has been stolen."
+    },
+    {
+     "s": "Lulwa",
+     "t": "Everyone turns a blind eye to fakes, though."
     },
     {
      "s": "Maha",
-     "t": "Not necessarily. It's not so much the price that worries me as the throwaway culture behind fast fashion."
-    },
-    {
-     "s": "Maha",
-     "t": "Exactly. Whatever the price, the most ethical shirt is often the one you already own."
+     "t": "Whatever the price, a fake is never really a bargain."
     }
    ],
    "grammar": {
     "title": "Whatever / Even if / It's not so much … as …",
     "ar": "استخدم Whatever + اسم لتقول (مهما كان …)، وEven if لشرط لا يغيّر رأيك، وIt's not so much X as Y لتقول إن المشكلة الحقيقية هي Y.",
     "examples": [
-     "Whatever the price, quality matters more.",
-     "Even if the shirt is cheap, someone pays the real cost.",
-     "It's not so much the money as the waste that worries me."
+     "Whatever the price, a fake is never a bargain.",
+     "Even if the brand doesn't notice, someone still loses out.",
+     "It's not so much the money as the safety that worries me."
     ]
    }
   },
@@ -4125,11 +4133,19 @@
    "dialogue": [
     {
      "s": "Rashed",
-     "t": "Badr's script is honestly weak, but he's so proud of it. Should I just tell him it's great?"
+     "t": "Badr's script is weak. Should I just tell him it's great?"
     },
     {
      "s": "Hamza",
-     "t": "A white lie might spare his feelings today, but it could come back to bite you both."
+     "t": "A white lie might spare his feelings, but it could come back to bite you."
+    },
+    {
+     "s": "Rashed",
+     "t": "How?"
+    },
+    {
+     "s": "Hamza",
+     "t": "When the competition judges are brutally honest."
     },
     {
      "s": "Rashed",
@@ -4137,15 +4153,7 @@
     },
     {
      "s": "Hamza",
-     "t": "Exactly. You don't have to hold back the truth; you just have to be tactful."
-    },
-    {
-     "s": "Rashed",
-     "t": "So I start with what works, then suggest two big changes?"
-    },
-    {
-     "s": "Hamza",
-     "t": "Yes. There's a fine line between honesty and cruelty, and tact keeps you on the right side of it."
+     "t": "Exactly. Don't hold back the truth; just be tactful."
     }
    ],
    "grammar": {
@@ -4198,23 +4206,31 @@
     },
     {
      "s": "Waleed",
-     "t": "Because they raise a moral dilemma: in an unavoidable crash, whom does the car protect?"
+     "t": "They raise a moral dilemma: in a crash, whom does the car protect?"
     },
     {
      "s": "Dr Sami",
-     "t": "Be that as it may, human drivers make that choice badly every day."
+     "t": "Be that as it may, human drivers choose badly every day."
     },
     {
      "s": "Waleed",
-     "t": "True, but when a human makes a mistake, someone is accountable. With a machine, it's far less clear."
+     "t": "True, but a human driver is accountable. With a machine, it's less clear."
+    },
+    {
+     "s": "Dr Sami",
+     "t": "So safety and responsibility are competing values?"
     },
     {
      "s": "Waleed",
-     "t": "Exactly. Fewer accidents must be weighed against the question of who answers for the ones that still happen."
+     "t": "Yes. Fewer accidents must be weighed against the question of who answers for the ones that still happen."
+    },
+    {
+     "s": "Dr Sami",
+     "t": "And your conclusion?"
     },
     {
      "s": "Waleed",
-     "t": "Even if that fear is exaggerated, there's a fine line between help and control. On balance, I'd allow them, with clear laws."
+     "t": "On balance, I'd allow them, with clear laws."
     }
    ],
    "grammar": {
@@ -4263,11 +4279,15 @@
    "dialogue": [
     {
      "s": "Mr Peter",
-     "t": "Your opening sounds like a chat with friends. This is a formal ceremony."
+     "t": "Your opening sounds like a chat with friends."
     },
     {
      "s": "Mishari",
-     "t": "So instead of 'Hi, everyone', I should say 'Distinguished guests, teachers and fellow students'?"
+     "t": "So I should say 'Distinguished guests, teachers and fellow students'?"
+    },
+    {
+     "s": "Mr Peter",
+     "t": "Exactly. Then state your role formally."
     },
     {
      "s": "Mishari",
@@ -4275,11 +4295,15 @@
     },
     {
      "s": "Mr Peter",
-     "t": "Perfect register. Now set the scene. Why are they here?"
+     "t": "Perfect. Now set the scene."
     },
     {
      "s": "Mishari",
-     "t": "This visit marks five years of friendship between our schools, built on exchange, curiosity and respect."
+     "t": "This visit marks five years of friendship between our schools."
+    },
+    {
+     "s": "Mr Peter",
+     "t": "And the handover?"
     },
     {
      "s": "Mishari",
@@ -4332,23 +4356,31 @@
    "dialogue": [
     {
      "s": "Ghada",
-     "t": "Your notes just say 'Thanks, it was great.' That won't do for a vote of thanks."
+     "t": "'Thanks, it was great' won't do for a vote of thanks."
     },
     {
      "s": "Hessa",
-     "t": "I know. How about: 'I should like to express our sincere gratitude to Dr Hind for her remarkable talk.'"
+     "t": "'I should like to express our sincere gratitude to Dr Hind for her remarkable talk.'"
     },
     {
      "s": "Ghada",
-     "t": "Much better. Now be specific. What did you actually learn?"
+     "t": "Better. Now be specific."
     },
     {
      "s": "Hessa",
-     "t": "Her account of how Red Sea corals survive the heat was genuinely eye-opening."
+     "t": "Her account of how Red Sea corals survive the heat was eye-opening."
+    },
+    {
+     "s": "Ghada",
+     "t": "And she came all the way from Thuwal."
     },
     {
      "s": "Hessa",
-     "t": "Yes: 'We are deeply indebted to her for being so generous with her time.'"
+     "t": "'We are deeply indebted to her for being so generous with her time.'"
+    },
+    {
+     "s": "Ghada",
+     "t": "And the ending?"
     },
     {
      "s": "Hessa",
@@ -4401,27 +4433,27 @@
    "dialogue": [
     {
      "s": "Tariq",
-     "t": "I want to open with a famous quotation, something like 'Knowledge is power.'"
+     "t": "I'll open with 'Knowledge is power.'"
     },
     {
      "s": "Father",
-     "t": "Fine, but who said it? Many quotations are attributed to the wrong people."
+     "t": "Who said it? Many quotations are attributed to the wrong people."
     },
     {
      "s": "Tariq",
-     "t": "It's usually attributed to Francis Bacon, though I'll check the exact source."
+     "t": "It's usually attributed to Francis Bacon, but I'll check."
     },
     {
      "s": "Father",
-     "t": "Good. As my own teacher once observed, a quotation should support your point, not replace it."
+     "t": "Good. What about an Arabic line?"
     },
     {
      "s": "Tariq",
-     "t": "So: 'In the words of Al-Mutanabbi, the best companion in time is a book.'"
+     "t": "In the words of Al-Mutanabbi, the best companion in time is a book."
     },
     {
      "s": "Father",
-     "t": "Exactly. Just never quote anyone out of context to make them say what you want."
+     "t": "A timeless line. Just never quote anyone out of context."
     }
    ],
    "grammar": {
@@ -4470,27 +4502,27 @@
    "dialogue": [
     {
      "s": "Ali",
-     "t": "Remember, the audience wants gratitude, not a list of our achievements."
+     "t": "The audience wants gratitude, not a list of our achievements."
     },
     {
      "s": "Ibrahim",
-     "t": "Agreed. I'll begin: 'I am deeply honoured to accept this award on behalf of our team.'"
+     "t": "'I am deeply honoured to accept this award on behalf of our team.'"
     },
     {
      "s": "Ali",
-     "t": "Good. Then show some humility."
+     "t": "Then show some humility."
     },
     {
      "s": "Ibrahim",
-     "t": "'We are humbled to be chosen from so many outstanding projects, because this was truly a team effort.'"
+     "t": "'We are humbled to be chosen, because this was truly a team effort.'"
+    },
+    {
+     "s": "Ali",
+     "t": "Don't forget Mr Saleh."
     },
     {
      "s": "Ibrahim",
-     "t": "Of course. 'I would be remiss if I did not thank Mr Saleh, who went above and beyond for us.'"
-    },
-    {
-     "s": "Ibrahim",
-     "t": "'And to everyone who worked behind the scenes: this award belongs as much to you as to us.'"
+     "t": "'I would be remiss if I did not thank Mr Saleh, who went above and beyond for us.'"
     }
    ],
    "grammar": {
@@ -4539,7 +4571,7 @@
    "dialogue": [
     {
      "s": "Mohannad",
-     "t": "How do we start? 'Today is a sad day'?"
+     "t": "Should we start with 'Today is a sad day'?"
     },
     {
      "s": "Saud",
@@ -4547,19 +4579,19 @@
     },
     {
      "s": "Mohannad",
-     "t": "What about his legacy? The science club exists because of him."
+     "t": "Then we pay tribute to his work."
     },
     {
      "s": "Saud",
-     "t": "'He leaves a legacy of curiosity, patience and some very loud experiments.'"
+     "t": "In thirty-two years, he has touched the lives of thousands of students."
     },
     {
      "s": "Mohannad",
-     "t": "A little humour! Good. And on a personal note?"
+     "t": "And he leaves a legacy: the science club."
     },
     {
      "s": "Saud",
-     "t": "'On a personal note, sir, you taught me that mistakes are just data. You will be sorely missed.'"
+     "t": "'On a personal note, sir, you will be sorely missed.'"
     }
    ],
    "grammar": {
@@ -4608,27 +4640,27 @@
    "dialogue": [
     {
      "s": "Rayan",
-     "t": "Do you think I should open with a joke?"
+     "t": "Should I open with a joke?"
     },
     {
      "s": "Mother",
-     "t": "A light touch is fine, but tonight is a milestone. Open formally first."
+     "t": "Tonight is a milestone. Open formally first."
     },
     {
      "s": "Rayan",
-     "t": "'Honoured guests, teachers and families, it is my great privilege to address you on behalf of the graduating class.'"
+     "t": "'It is my great privilege to address you on behalf of the graduating class.'"
     },
     {
      "s": "Mother",
-     "t": "Strong. Now, what will you leave them with?"
+     "t": "And a quotation?"
     },
     {
      "s": "Rayan",
-     "t": "A quotation. In the words of my grandfather, 'The road is long, but every step is yours.'"
+     "t": "In the words of my grandfather, 'The road is long, but every step is yours.'"
     },
     {
      "s": "Mother",
-     "t": "Simple and personal. That will leave a lasting impression. And the close?"
+     "t": "That will leave a lasting impression. And the last line?"
     },
     {
      "s": "Rayan",
@@ -4662,14 +4694,18 @@
    {
     "type": "order",
     "words": [
-     "Our",
-     "beach,",
-     "our",
-     "responsibility,",
-     "our",
-     "future."
+     "The",
+     "rule",
+     "of",
+     "three",
+     "makes",
+     "a",
+     "message",
+     "easy",
+     "to",
+     "remember."
     ],
-    "answer": "Our beach, our responsibility, our future.",
+    "answer": "The rule of three makes a message easy to remember.",
     "ar": "رتّب الجملة"
    },
    {
@@ -4831,16 +4867,17 @@
    {
     "type": "order",
     "words": [
-     "One",
-     "basket,",
-     "one",
-     "family,",
-     "one",
-     "month",
-     "of",
-     "dignity."
+     "Repeating",
+     "a",
+     "key",
+     "phrase",
+     "gives",
+     "a",
+     "speech",
+     "its",
+     "rhythm."
     ],
-    "answer": "One basket, one family, one month of dignity.",
+    "answer": "Repeating a key phrase gives a speech its rhythm.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5059,12 +5096,12 @@
      "debate,",
      "we",
      "define",
-     "service",
+     "'service'",
      "as",
      "unpaid",
      "work."
     ],
-    "answer": "For the purposes of this debate, we define service as unpaid work.",
+    "answer": "For the purposes of this debate, we define 'service' as unpaid work.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5493,7 +5530,7 @@
      "However the rule is well-meant, it goes too far.",
      "However well-meant the rule is, it goes too far.",
      "However is the rule well-meant, it goes too far.",
-     "However well-meant is the rule, it goes too far."
+     "However much well-meant the rule is, it goes too far."
     ],
     "answer": 1
    },
@@ -5624,7 +5661,7 @@
     "options": [
      "Whatever the price is cheap, I won't buy it.",
      "Whatever it the price, I won't buy it.",
-     "Whatever the price, I won't buy three.",
+     "Whatever the price, I won't buy a fake.",
      "Whatever price, I won't buy it is."
     ],
     "answer": 2
@@ -5639,26 +5676,26 @@
      "blind",
      "eye",
      "to",
-     "working",
-     "conditions."
+     "fake",
+     "goods."
     ],
-    "answer": "We can't turn a blind eye to working conditions.",
+    "answer": "We can't turn a blind eye to fake goods.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "A 'throwaway culture' is one where people …",
+    "q": "A 'victimless crime' is …",
     "options": [
-     "repair everything they own",
-     "use things briefly and then throw them away",
-     "throw balls in sports",
-     "share clothes with neighbours"
+     "an illegal act that seems to harm nobody",
+     "a crime with many victims",
+     "a crime the police have solved",
+     "a mistake made by a victim"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
-    "q": "It's not so much the price ___ the waste that worries me.",
+    "q": "It's not so much the price ___ the safety that worries me.",
     "options": [
      "as",
      "than",
@@ -5671,13 +5708,13 @@
     "type": "order",
     "words": [
      "Cheap",
-     "clothes,",
+     "trainers,",
      "but",
      "at",
      "what",
      "cost?"
     ],
-    "answer": "Cheap clothes, but at what cost?",
+    "answer": "Cheap trainers, but at what cost?",
     "ar": "رتّب الجملة"
    }
   ],
@@ -6308,14 +6345,18 @@
     {
      "type": "order",
      "words": [
-      "Our",
-      "beach,",
-      "our",
-      "responsibility,",
-      "our",
-      "future."
+      "The",
+      "rule",
+      "of",
+      "three",
+      "makes",
+      "a",
+      "message",
+      "easy",
+      "to",
+      "remember."
      ],
-     "answer": "Our beach, our responsibility, our future.",
+     "answer": "The rule of three makes a message easy to remember.",
      "ar": "رتّب الجملة"
     },
     {
@@ -6496,7 +6537,7 @@
     },
     {
      "type": "mc",
-     "q": "Shoppers often turn a ___ eye to how clothes are made.",
+     "q": "Shoppers often turn a ___ eye to fake goods.",
      "options": [
       "closed",
       "blind",
@@ -6573,13 +6614,14 @@
       "Whatever",
       "the",
       "price,",
-      "the",
-      "waste",
+      "a",
+      "fake",
       "is",
-      "too",
-      "high."
+      "never",
+      "a",
+      "bargain."
      ],
-     "answer": "Whatever the price, the waste is too high.",
+     "answer": "Whatever the price, a fake is never a bargain.",
      "ar": "رتّب الجملة"
     },
     {

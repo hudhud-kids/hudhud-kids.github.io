@@ -181,7 +181,7 @@
     [
      "The Conference Presentation",
      "Give a short conference presentation and handle questions from the audience",
-     "I'd like to begin by … / Having established …, this brings me to … / In light of … / That's a pertinent question."
+     "I'd like to begin by … / Having established …, let me turn to … / This brings me to … / In light of … / That's a pertinent question."
     ]
    ]
   }
@@ -543,7 +543,7 @@
      "w": "it doesn't necessarily follow",
      "def": "the conclusion is not proved by the reason given",
      "ar": "لا يلزم من ذلك بالضرورة",
-     "frame": "___ , but it doesn't necessarily follow that ___."
+     "frame": "___, but it doesn't necessarily follow that ___."
     },
     {
      "w": "conflate",
@@ -1552,7 +1552,7 @@
     "scene": "You are on a student panel discussing 'Will schools still exist in 2050?'. Your teacher is the chair and asks you questions.",
     "prompts": [
      {
-      "q": "What will schools have changed most by 2050?",
+      "q": "What will have changed most about schools by 2050?",
       "hint": "Use the future perfect and say how likely you think it is."
      },
      {
@@ -1655,10 +1655,10 @@
      },
      {
       "s": "Ghada",
-      "t": "Not in our case. For me, roots aren't a place where you're stuck; they're what keep you steady."
+      "t": "It certainly doesn't! For me, roots aren't a place where you're stuck; they're what keep you steady."
      }
     ],
-    "focus": "Not in our case. For me, roots aren't a place where you're stuck; they're what keep you steady.",
+    "focus": "For me, roots aren't a place where you're stuck; they're what keep you steady.",
     "qs": [
      "Why has Leo never put down roots?",
      "What tradition does Ghada want to carry on?"
@@ -2909,11 +2909,11 @@
      },
      {
       "s": "Nouf",
-      "t": "Having established that shaded surfaces were consistently cooler, this brings me to our main question: did students actually use them more?"
+      "t": "Having established that shaded surfaces were consistently cooler, let me turn to our main question: did students actually use them more?"
      },
      {
       "s": "Nouf",
-      "t": "In light of our observations, the answer is clearly yes, especially in the hottest months."
+      "t": "This brings me to our key finding. In light of our observations, the answer is clearly yes, especially in the hottest months."
      }
     ],
     "p2": [
@@ -2934,7 +2934,7 @@
       "t": "Thank you. Let's give Nouf a round of applause."
      }
     ],
-    "focus": "Having established that shaded surfaces were consistently cooler, this brings me to our main question: did students actually use them more?",
+    "focus": "Having established that shaded surfaces were consistently cooler, let me turn to our main question: did students actually use them more?",
     "qs": [
      "What did Nouf's project find about shaded surfaces?",
      "How does Nouf handle Liam's question about artificial grass?"
@@ -2949,7 +2949,7 @@
      },
      {
       "q": "Take us from your findings to your main point.",
-      "hint": "Use 'Having established …, this brings me to …'."
+      "hint": "Use 'Having established …, let me turn to …' and 'This brings me to …'."
      },
      {
       "q": "Did you also study the cost of your idea?",
@@ -4073,7 +4073,7 @@
    ],
    "grammar": {
     "title": "Idioms of adapting",
-    "ar": "التعابير الاصطلاحية ثابتة الكلمات: نقول find your feet وليس find your legs، و a fish out of water وليس a fish without water. غيّر الضمير فقط: find my/her feet.",
+    "ar": "التعابير الاصطلاحية ثابتة الكلمات: نقول find your feet وليس find your hands، و a fish out of water وليس a fish without water. غيّر الضمير فقط: find my/her feet.",
     "examples": [
      "She felt like a fish out of water at first.",
      "It took him a month to find his feet.",
@@ -4608,7 +4608,7 @@
    "dialogue": [
     {
      "s": "Hassan",
-     "t": "Our next speaker is Nouf."
+     "t": "Our next speaker is Nouf. Nouf?"
     },
     {
      "s": "Nouf",
@@ -4616,11 +4616,11 @@
     },
     {
      "s": "Nouf",
-     "t": "Having established that shade is cooler, this brings me to our question: do students use it more?"
+     "t": "Having established that shade is cooler, let me turn to our question: do students use it more?"
     },
     {
      "s": "Nouf",
-     "t": "In light of our observations, yes."
+     "t": "This brings me to our finding. In light of our observations, yes."
     },
     {
      "s": "Liam",
@@ -5447,7 +5447,7 @@
    },
    {
     "type": "mc",
-    "q": "'He settled in Abha and finally put down ___.'",
+    "q": "'He settled in Tabuk and finally put down ___.'",
     "options": [
      "roots",
      "branches",
@@ -5616,7 +5616,7 @@
     "q": "'It took me a month to find my ___.'",
     "options": [
      "way out",
-     "legs",
+     "knees",
      "feet",
      "hands"
     ],
@@ -6469,7 +6469,7 @@
      "q": "'It took me a few weeks to find my ___ at university.'",
      "options": [
       "feet",
-      "legs",
+      "knees",
       "steps",
       "way down"
      ],
@@ -6802,7 +6802,7 @@
     "type": "mc",
     "q": "'It took me a semester to find my ___.'",
     "options": [
-     "legs",
+     "knees",
      "steps",
      "feet",
      "path up"
