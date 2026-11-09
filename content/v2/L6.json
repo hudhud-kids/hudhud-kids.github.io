@@ -1530,25 +1530,25 @@
     "p2": [
      {
       "s": "Reem",
-      "t": "'Please reply by 5th June.' So, can you come?"
+      "t": "'Please reply by 5th June.' Is the date OK for you?"
      },
      {
       "s": "Lina",
-      "t": "I'd love to! Can we invite our old teacher, Ms Sara?"
+      "t": "Yes! I'd love to come. Can we invite our old teacher, Ms Sara?"
      },
      {
       "s": "Reem",
-      "t": "Good idea. Would you like to give her the invitation?"
+      "t": "Good idea. But she's at another school now. Maybe she's going to say, 'I'm afraid I can't.'"
      },
      {
       "s": "Lina",
-      "t": "Sure. I hope she can come. She's at another school this year."
+      "t": "Let's ask her. Would you like to give her the invitation tomorrow?"
      }
     ],
     "focus": "You're invited to our end-of-year party!",
     "qs": [
      "When is the class party?",
-     "Who is Lina going to give the invitation to?"
+     "Who do the girls want to invite?"
     ]
    },
    "speakout": {
@@ -2110,7 +2110,7 @@
     "p2": [
      {
       "s": "Reem",
-      "t": "It doesn't matter. Everyone misses sometimes."
+      "t": "It doesn't matter. Every team loses sometimes."
      },
      {
       "s": "Noura",
@@ -2234,11 +2234,11 @@
      },
      {
       "s": "Mr Sam",
-      "t": "Oh dear! Were you tired the next day?"
+      "t": "Oh dear! Were you frightened?"
      },
      {
       "s": "Omar",
-      "t": "Yes, very tired! But on Thursday I felt happy because it was the last school day of the week."
+      "t": "Yes, a little. But on Thursday I felt happy because it was the last school day of the week."
      }
     ],
     "focus": "The thunder was frightening, so I couldn't sleep.",
@@ -4201,11 +4201,11 @@
     },
     {
      "s": "A",
-     "t": "Were you tired?"
+     "t": "Were you frightened?"
     },
     {
      "s": "B",
-     "t": "Yes, very tired!"
+     "t": "Yes, a little!"
     }
    ],
    "grammar": {
