@@ -1,0 +1,208 @@
+{
+ "level": 7,
+ "mcq": [
+  {
+   "q": "'Have you ever ___ a camel?'",
+   "options": [
+    "ridden",
+    "rode",
+    "ride",
+    "riding"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "'I've ___ finished my homework, so I can play now.'",
+   "options": [
+    "yet",
+    "ever",
+    "already",
+    "never"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "'He's ___ to the shop. He'll be back in ten minutes.'",
+   "options": [
+    "been",
+    "gone",
+    "went",
+    "go"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "Which sentence tells someone your preference?",
+   "options": [
+    "I stayed at home last night.",
+    "I have to stay at home.",
+    "Stay at home!",
+    "I'd rather stay at home tonight."
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "'I prefer football ___ basketball.'",
+   "options": [
+    "than",
+    "to",
+    "from",
+    "as"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "'I was having a shower when the phone ___.'",
+   "options": [
+    "ring",
+    "rings",
+    "rang",
+    "ringing"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "'While we ___ in the park, it started to rain.'",
+   "options": [
+    "were walking",
+    "was walking",
+    "walk",
+    "are walking"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "Your friend is worried about a test. What do you say?",
+   "options": [
+    "I helped you yesterday.",
+    "Did you help me?",
+    "Don't worry. I'll help you.",
+    "I'm helping my brother now."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "'I'm not sure, but I ___ visit my grandmother on Friday.'",
+   "options": [
+    "will definitely",
+    "might",
+    "am definitely",
+    "did"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "'There was a ___ cut last night, so we sat in the dark.'",
+   "options": [
+    "light",
+    "fire",
+    "dark",
+    "power"
+   ],
+   "answer": 3,
+   "skill": "vocabulary"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Girl: Have you ever been to Jeddah, Faisal? Boy: Yes, I have. I went there last summer with my family. We swam in the Red Sea, but we didn't have time to visit the old town. I'd love to see it next time.",
+   "q": "What did Faisal do in Jeddah?",
+   "options": [
+    "He visited the old town.",
+    "He swam in the sea.",
+    "He stayed in the hotel."
+   ],
+   "answer": 1
+  },
+  {
+   "script": "Man: Would you like to go to the museum or the park on Saturday? Boy: Hmm, I'd rather go to the park. The museum is interesting, but I prefer being outdoors when the weather is nice.",
+   "q": "Where does the boy want to go?",
+   "options": [
+    "To the park.",
+    "To the museum.",
+    "To both places."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Girl: Why were you late for school? Boy: I was waiting for the bus when my friend's dad stopped his car and offered me a lift. But then we got stuck in a traffic jam for half an hour!",
+   "q": "Why was the boy late?",
+   "options": [
+    "He missed the bus.",
+    "He got up late.",
+    "There was a traffic jam."
+   ],
+   "answer": 2
+  },
+  {
+   "script": "Mum: Can you look after your little sister on Thursday evening? Boy: Sure, Mum. I promise I'll play with her, and I won't let her watch TV all evening. We might go to the park if it isn't too hot.",
+   "q": "What does the boy promise?",
+   "options": [
+    "He'll take her to the park.",
+    "He'll play with her.",
+    "He'll watch TV with her."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Last Thursday, Hamad had an unforgettable day. He was walking to the shop with his little brother when they saw a small cat in a tree. It was crying because it couldn't get down. Hamad has never climbed a tall tree, and he was scared. While he was thinking about what to do, a man from the fire station drove past. Luckily, he stopped and helped them. He climbed the tree and brought the cat down. Hamad's brother wanted to take the cat home, but Hamad said, 'I'd rather find its owner first.' In the end, they saw a sign about a lost cat on a wall near the shop. The owner was very happy. 'I'll bake you a cake tomorrow, I promise,' she said.",
+  "qs": [
+   {
+    "q": "What were Hamad and his brother doing when they saw the cat?",
+    "options": [
+     "Walking to the shop.",
+     "Climbing a tree.",
+     "Looking for a lost cat."
+    ],
+    "answer": 0
+   },
+   {
+    "q": "Why didn't Hamad climb the tree?",
+    "options": [
+     "He was busy.",
+     "He was scared.",
+     "His brother said no."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "Who brought the cat down?",
+    "options": [
+     "Hamad.",
+     "The owner.",
+     "A man from the fire station."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "What will the owner do?",
+    "options": [
+     "Take the cat to the fire station.",
+     "Bake them a cake.",
+     "Give them the cat."
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "aloud": [
+  "Have you ever been to the Red Sea? I went there last winter.",
+  "I'd rather take the metro than wait in a traffic jam.",
+  "We were having a picnic when suddenly it started to rain."
+ ],
+ "speak": [
+  "Tell me about something exciting you have done. When did you do it?",
+  "Which do you prefer, summer holidays or winter holidays? Why?",
+  "What do you think you will do when you grow up?"
+ ]
+}

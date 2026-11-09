@@ -1,0 +1,208 @@
+{
+ "level": 15,
+ "mcq": [
+  {
+   "q": "___ a recent study, teenagers need about nine hours of sleep.",
+   "options": [
+    "In my opinion",
+    "According to",
+    "Research suggests",
+    "As for"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "The palace ___ to have been built in the 18th century.",
+   "options": [
+    "thinks",
+    "is thinking",
+    "is thought",
+    "has thought"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "The report recommends ___ fewer clothes.",
+   "options": [
+    "buying",
+    "to buy",
+    "us to buying",
+    "that buying"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "It might be worth ___ a second opinion.",
+   "options": [
+    "get",
+    "to get",
+    "got",
+    "getting"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "That's only ___ evidence: it's based on one person's experience.",
+   "options": [
+    "anecdotal",
+    "reliable",
+    "scientific",
+    "statistical"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "The match has been ___ until next week because of the weather.",
+   "options": [
+    "put up",
+    "postponed",
+    "taken off",
+    "cancelled out"
+   ],
+   "answer": 1,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "We need to strike a ___ between work and rest.",
+   "options": [
+    "deal",
+    "point",
+    "balance",
+    "line"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "Which opening is right for an email to a company you don't know?",
+   "options": [
+    "Hey guys!",
+    "Just a quick message to say hi!",
+    "What's up?",
+    "Dear Sir or Madam, I am writing to enquire about …"
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "In a meeting, which phrase proposes an idea tentatively?",
+   "options": [
+    "What if we tried a shorter break?",
+    "We're doing it my way.",
+    "That's final.",
+    "Stop talking, please."
+   ],
+   "answer": 0,
+   "skill": "function"
+  },
+  {
+   "q": "Which answer best extends a speaking-test answer with a contrast?",
+   "options": [
+    "I like it. That's all.",
+    "Cities are exciting. Having said that, they can be very stressful.",
+    "Yes.",
+    "I don't know much about it."
+   ],
+   "answer": 1,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Many people think energy drinks help you study. However, doctors warn that the high levels of caffeine can disturb your sleep. According to recent research, students who sleep well actually remember more, so water and an early night are a better choice before an exam.",
+   "q": "What does the speaker recommend before an exam?",
+   "options": [
+    "An energy drink and late revision",
+    "Water and an early night",
+    "Coffee and a short nap"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "Good morning, everyone. We regret to inform you that tomorrow's trip to the museum has been postponed due to a sandstorm warning. A new date will be announced in due course. For further information, please contact the school office.",
+   "q": "Why has the trip been postponed?",
+   "options": [
+    "Because of the weather",
+    "Because the museum is closed",
+    "Because the bus broke down"
+   ],
+   "answer": 0
+  },
+  {
+   "script": "So, to recap: a bigger car park would cost too much, and closing the road isn't feasible. The walking bus is cheap and easy, so we've agreed to run it as a pilot scheme for one term. Salma will contact the parents this week.",
+   "q": "What did the meeting decide?",
+   "options": [
+    "To build a bigger car park",
+    "To close the road",
+    "To try a walking bus for one term"
+   ],
+   "answer": 2
+  },
+  {
+   "script": "The person I'd like to talk about is my aunt, who's a nurse. She works night shifts, which meant that she often missed family dinners. Having said that, she always found time to help me with my science homework, and that's why I want to work in medicine.",
+   "q": "Why does the speaker want to work in medicine?",
+   "options": [
+    "Because nurses earn a lot",
+    "Because of the aunt's influence",
+    "Because they enjoy night shifts"
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Saudi Arabia produces more desalinated water than any other country, and much of the drinking water in its cities comes from the sea. Desalination, however, uses a great deal of energy, so experts urge people to treat water as a valuable resource. It is estimated that a dripping tap can waste thousands of litres a year, yet many families never think about such small leaks. Some people argue that one household saving water is just a drop in the ocean. Researchers point out, though, that small changes add up when millions of people make them. Shorter showers, fixing leaks and running the washing machine only when it is full are simple steps. Newer desalination plants are also using solar power, which could make the process cleaner in the future.",
+  "qs": [
+   {
+    "q": "Why do experts want people to save water?",
+    "options": [
+     "Because desalination uses a lot of energy",
+     "Because there is no sea nearby",
+     "Because water is free"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "What do some people argue about one household saving water?",
+    "options": [
+     "It is the only solution.",
+     "It makes very little difference.",
+     "It is too expensive."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "What do researchers point out?",
+    "options": [
+     "Leaks cannot be fixed.",
+     "Solar power is too expensive.",
+     "Small changes add up across millions of people."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "How could desalination become cleaner?",
+    "options": [
+     "By using solar power",
+     "By using less seawater",
+     "By closing old plants"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "aloud": [
+  "Research suggests that teenagers who get enough sleep tend to concentrate better in class.",
+  "We regret to inform you that the meeting has been postponed until further notice.",
+  "The beauty of a pilot scheme is that we can test the idea before spending too much money."
+ ],
+ "speak": [
+  "Do you think schools should start later in the morning? Support your opinion with evidence or examples.",
+  "How would you speak differently to a head teacher and to a close friend? Give examples.",
+  "Describe a place you would love to visit, and explain what appeals to you about it."
+ ]
+}

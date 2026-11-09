@@ -1,0 +1,6907 @@
+{
+ "level": 6,
+ "cefr": "A2",
+ "gse": "33-35",
+ "exam": "Cambridge A2 Flyers / A2 Key",
+ "v": 2,
+ "units": [
+  {
+   "t": "Weekend Plans",
+   "ar": "خطط نهاية الأسبوع",
+   "e": "🗓️",
+   "fn": "Talking about future plans",
+   "fnAr": "الحديث عن الخطط المستقبلية",
+   "cando": "Can say what they and other people are going to do, and ask about plans, using be going to and future time words.",
+   "grammar": [
+    "be going to + verb (I'm / he's / we're going to …)",
+    "questions and negatives: Are you going to …? What are you going to …? I'm not going to …",
+    "future time words: tonight, tomorrow, this weekend, next week, on Friday, in July"
+   ],
+   "lessons": [
+    [
+     "This Weekend",
+     "Say what you are going to do this weekend",
+     "This weekend I'm going to … On Friday we're going to … Tomorrow my dad is going to …"
+    ],
+    [
+     "A Visit to the Farm",
+     "Ask and answer questions about a family visit next weekend",
+     "Are you going to …? What are you going to do there? We're going to … I'm not going to …"
+    ],
+    [
+     "A Surprise for Mum",
+     "Say who is going to do what for a family surprise",
+     "I'm going to … My sister is going to … They're going to … We aren't going to tell …"
+    ],
+    [
+     "Eid Plans",
+     "Talk about your family's plans for Eid",
+     "On the first day of Eid we're going to … I'm going to wear … I'm going to save my Eidiya for …"
+    ],
+    [
+     "The Summer Holidays",
+     "Talk about your plans for the summer holidays",
+     "In the summer I'm going to … My sister is going to learn to … We aren't going to …"
+    ],
+    [
+     "A Weekend Plan for a Visitor",
+     "Plan a whole weekend for a visitor and present the plan",
+     "On Friday morning we're going to … After that, we're going to … In the evening, …"
+    ]
+   ]
+  },
+  {
+   "t": "Invitations",
+   "ar": "الدعوات",
+   "e": "✉️",
+   "fn": "Inviting, accepting and declining politely",
+   "fnAr": "توجيه الدعوة وقبولها والاعتذار عنها بلطف",
+   "cando": "Can invite someone, accept an invitation, and say no politely with a reason.",
+   "grammar": [
+    "Would you like to + verb? / Do you want to + verb?",
+    "accepting: I'd love to. / That sounds great!",
+    "declining: I'm sorry, I can't. / I'm afraid I can't … + reason with be going to",
+    "Let's meet at … / Can I bring …?"
+   ],
+   "lessons": [
+    [
+     "Come and Play!",
+     "Invite a friend to your house and answer an invitation",
+     "Would you like to come over? I'd love to! I need to ask my parents first. See you then!"
+    ],
+    [
+     "A Birthday Party",
+     "Invite people to a party and say no politely with a reason",
+     "I'm having a party on … Would you like to come? Thanks for inviting me. I'm sorry, I can't. I'm going to …"
+    ],
+    [
+     "A Night at the Match",
+     "Invite a friend to a football match and agree where to meet",
+     "Do you want to come …? That sounds great! My dad is going to pick you up. Let's meet at …"
+    ],
+    [
+     "A Picnic in the Desert",
+     "Invite a friend's family on a desert picnic and answer their questions",
+     "Would you like to join us? Can I bring …? Of course! You can bring …"
+    ],
+    [
+     "Our Science Fair",
+     "Invite an adult to a school event very politely",
+     "Would you like to come and see …? I hope you can come. That's very kind of you. I'm afraid I can't …"
+    ],
+    [
+     "You're Invited!",
+     "Make an invitation for a class event and answer other people's invitations",
+     "You're invited to … It's on … at … in … Please reply by … I'd love to come! / I'm afraid I can't …"
+    ]
+   ]
+  },
+  {
+   "t": "How I Feel",
+   "ar": "مشاعري",
+   "e": "😊",
+   "fn": "Describing feelings and reasons",
+   "fnAr": "وصف المشاعر وأسبابها",
+   "cando": "Can say how they and other people feel and why, and describe things as boring, exciting, interesting and so on.",
+   "grammar": [
+    "-ed adjectives for how people feel: bored, excited, interested, tired, surprised, disappointed",
+    "-ing adjectives for things that cause the feeling: boring, exciting, interesting, tiring, surprising",
+    "because + reason / so + result",
+    "feelings in the past: I was … / I felt …"
+   ],
+   "lessons": [
+    [
+     "A Long Journey",
+     "Say how you feel on a long journey and why",
+     "I'm bored because … This journey is boring. I'm tired, so …"
+    ],
+    [
+     "I Can't Wait!",
+     "Say why you are excited or nervous about something",
+     "I'm excited about … because … It's going to be exciting! I'm a bit nervous because …"
+    ],
+    [
+     "Test Day",
+     "Say how you feel before and after a test and why",
+     "I'm worried about … because … It was tiring, so … I'm so proud!"
+    ],
+    [
+     "At the Science Museum",
+     "Say what is interesting and amazing at a museum and how you feel",
+     "I'm interested in … It's amazing! I was surprised because …"
+    ],
+    [
+     "A Disappointing Day",
+     "Say why you feel disappointed or upset and help a friend feel better",
+     "I'm disappointed because … It was disappointing. Cheer up! It doesn't matter."
+    ],
+    [
+     "My Feelings Diary",
+     "Tell the story of your week and how you felt each day, with reasons",
+     "On Sunday I was … because … It was …, so … I felt …"
+    ]
+   ]
+  },
+  {
+   "t": "Rules",
+   "ar": "القواعد والأنظمة",
+   "e": "📋",
+   "fn": "Talking about rules and obligations",
+   "fnAr": "الحديث عن القواعد والواجبات",
+   "cando": "Can say what people have to, don't have to, must and mustn't do at school, at home and in public places.",
+   "grammar": [
+    "have to / has to + verb",
+    "don't have to / doesn't have to (it isn't necessary)",
+    "must / mustn't (strong rules)",
+    "Do you have to …? Yes, I do. / No, I don't."
+   ],
+   "lessons": [
+    [
+     "School Rules",
+     "Talk about the rules at your school",
+     "We have to … You mustn't … because … Do we have to …? Yes, we do."
+    ],
+    [
+     "Rules at Home",
+     "Talk about your jobs and rules at home",
+     "I have to … My sister has to … I don't have to … Do you have to …?"
+    ],
+    [
+     "At the Swimming Pool",
+     "Explain the safety rules at a swimming pool",
+     "You must … You mustn't … because … Do I have to …?"
+    ],
+    [
+     "My First Flight",
+     "Ask and answer questions about the rules on a plane",
+     "Do I have to …? Yes, you do. / No, you don't. You have to … You mustn't …"
+    ],
+    [
+     "Rules of the Game",
+     "Explain the rules of a sport or a game",
+     "You have to … You mustn't … You don't have to … That's a foul."
+    ],
+    [
+     "Our Club Rules",
+     "Make rules for a new club and explain why",
+     "Members have to … because … Members mustn't … You don't have to …"
+    ]
+   ]
+  }
+ ],
+ "scripts": {
+  "0-0": {
+   "objective": "Today you will say what you are going to do this weekend.",
+   "warmup": "What do you usually do at the weekend?",
+   "expressions": [
+    {
+     "w": "this weekend",
+     "def": "the Friday and Saturday that are coming soon",
+     "ar": "عطلة نهاية هذا الأسبوع",
+     "frame": "This weekend I'm going to ___."
+    },
+    {
+     "w": "be going to",
+     "def": "words we use to talk about plans for the future",
+     "ar": "سوف (لخطة مقرّرة)",
+     "frame": "After school today, I'm going to ___."
+    },
+    {
+     "w": "tomorrow",
+     "def": "the day after today",
+     "ar": "غداً",
+     "frame": "Tomorrow my family is going to ___."
+    },
+    {
+     "w": "stay in",
+     "def": "to stay at home and not go out",
+     "ar": "يبقى في البيت",
+     "frame": "When it's too hot, I stay in and ___."
+    },
+    {
+     "w": "go out",
+     "def": "to leave your home to do something fun",
+     "ar": "يخرج (للتنزّه)",
+     "frame": "On Saturday evening we're going to go out to ___."
+    },
+    {
+     "w": "have a barbecue",
+     "def": "to cook and eat food outside on a fire",
+     "ar": "يقيم حفلة شواء",
+     "frame": "We're going to have a barbecue in the ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "It's Thursday. Omar and his friend Sam are walking home from school.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "Hey Sam, what are you going to do this weekend?"
+     },
+     {
+      "s": "Sam",
+      "t": "On Friday, we're going to stay in because my aunt is going to visit us."
+     },
+     {
+      "s": "Omar",
+      "t": "That sounds nice. What about Saturday?"
+     },
+     {
+      "s": "Sam",
+      "t": "We're going to go out to the new park near our house. What about you?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Omar",
+      "t": "Tomorrow my dad is going to have a barbecue in our garden."
+     },
+     {
+      "s": "Sam",
+      "t": "Cool! Who's going to come?"
+     },
+     {
+      "s": "Omar",
+      "t": "My grandparents and my cousins. I'm going to help Dad with the food."
+     },
+     {
+      "s": "Sam",
+      "t": "Great! Have a nice weekend, Omar. See you on Sunday!"
+     }
+    ],
+    "focus": "Tomorrow my dad is going to have a barbecue in our garden.",
+    "qs": [
+     "What is Sam going to do on Friday?",
+     "Who is going to come to Omar's barbecue?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your friend calls you on Thursday evening. They want to know your plans for the weekend.",
+    "prompts": [
+     {
+      "q": "So, what are you going to do on Friday?",
+      "hint": "Say 'On Friday I'm going to …' and add one more detail."
+     },
+     {
+      "q": "Are you going to stay in or go out on Saturday?",
+      "hint": "Choose one and say what you're going to do."
+     },
+     {
+      "q": "Is anyone in your family going to visit you?",
+      "hint": "Say who is going to visit, or say 'No, nobody is going to visit us.'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Weekends Around the World",
+    "points": [
+     "In Saudi Arabia, the weekend is on Friday and Saturday.",
+     "In the UK and the USA, the weekend is on Saturday and Sunday.",
+     "In the UAE, many schools and offices close on Friday afternoon, Saturday and Sunday."
+    ],
+    "qs": [
+     "Which days do you think are the best for a weekend?",
+     "What is your favourite day of the weekend? Why?"
+    ]
+   },
+   "exit": "Tell me two things you are going to do this weekend."
+  },
+  "0-1": {
+   "objective": "Today you will ask and answer questions about a family visit next weekend.",
+   "warmup": "Does anyone in your family live in a village or on a farm?",
+   "expressions": [
+    {
+     "w": "next weekend",
+     "def": "the weekend in the coming week",
+     "ar": "عطلة نهاية الأسبوع القادمة",
+     "frame": "Next weekend my family is going to ___."
+    },
+    {
+     "w": "farm",
+     "def": "land where people grow food and keep animals",
+     "ar": "مزرعة",
+     "frame": "On a farm, you can ___."
+    },
+    {
+     "w": "pick dates",
+     "def": "to take dates from a palm tree",
+     "ar": "يجني التمر",
+     "frame": "After we pick dates, we put them in ___."
+    },
+    {
+     "w": "feed the animals",
+     "def": "to give food to animals",
+     "ar": "يُطعم الحيوانات",
+     "frame": "On the farm, I'm going to feed the ___."
+    },
+    {
+     "w": "ride",
+     "def": "to sit on a horse, camel or bike and move",
+     "ar": "يركب",
+     "frame": "One day I'm going to ride a ___."
+    },
+    {
+     "w": "spend the night",
+     "def": "to sleep in a place that is not your home",
+     "ar": "يقضي الليلة / يبيت",
+     "frame": "Next holiday, I'm going to spend the night at ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem tells her friend Emma about her family's trip to her uncle's farm.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "Are you going to do anything special next weekend, Reem?"
+     },
+     {
+      "s": "Reem",
+      "t": "Yes! We're going to visit my uncle's farm near Buraidah."
+     },
+     {
+      "s": "Emma",
+      "t": "A farm? What are you going to do there?"
+     },
+     {
+      "s": "Reem",
+      "t": "We're going to pick dates and feed the animals."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "Are you going to ride a camel?"
+     },
+     {
+      "s": "Reem",
+      "t": "No, I'm not. I'm a bit scared of camels! But my brother is going to ride one."
+     },
+     {
+      "s": "Emma",
+      "t": "Are you going to come back on Friday evening?"
+     },
+     {
+      "s": "Reem",
+      "t": "No, we aren't. We're going to spend the night at the farm and come back on Saturday."
+     }
+    ],
+    "focus": "We're going to pick dates and feed the animals.",
+    "qs": [
+     "Where is Reem's family going to go next weekend?",
+     "Who is going to ride a camel?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are going to visit a farm next weekend. Your friend asks you about your plans.",
+    "prompts": [
+     {
+      "q": "Where are you going to go next weekend?",
+      "hint": "Say 'I'm going to visit …' and say whose farm it is."
+     },
+     {
+      "q": "What are you going to do there?",
+      "hint": "Say two activities with 'We're going to …'."
+     },
+     {
+      "q": "Are you going to spend the night there?",
+      "hint": "Answer 'Yes, we are' or 'No, we aren't' and say when you're going to come back."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Dates in Qassim",
+    "points": [
+     "Qassim is famous for its many date farms.",
+     "Buraidah has a very big date market, and people come from many cities to buy dates.",
+     "Sukkari is a sweet and popular kind of date from Qassim."
+    ],
+    "qs": [
+     "What kind of dates do you like?",
+     "What would you like to do on a farm? Why?"
+    ]
+   },
+   "exit": "Tell me about a family visit you are going to make, in two sentences."
+  },
+  "0-2": {
+   "objective": "Today you will say who is going to do what for a family surprise.",
+   "warmup": "Do you like surprises? What was the best surprise you had?",
+   "expressions": [
+    {
+     "w": "surprise",
+     "def": "something nice that a person doesn't know about before",
+     "ar": "مفاجأة",
+     "frame": "A great surprise for my mum is ___."
+    },
+    {
+     "w": "decorate",
+     "def": "to make a place look nice for a special day",
+     "ar": "يزيّن",
+     "frame": "We're going to decorate the room with ___."
+    },
+    {
+     "w": "bake a cake",
+     "def": "to make a cake in the oven",
+     "ar": "يخبز كعكة",
+     "frame": "I'm going to bake a ___ cake."
+    },
+    {
+     "w": "make a card",
+     "def": "to draw and write on a card for someone",
+     "ar": "يصنع بطاقة",
+     "frame": "On my card, I'm going to write ___."
+    },
+    {
+     "w": "keep a secret",
+     "def": "to not tell anyone about something",
+     "ar": "يحفظ السرّ",
+     "frame": "It's hard to keep a secret from ___."
+    },
+    {
+     "w": "on time",
+     "def": "at the right time, not late",
+     "ar": "في الوقت المحدّد",
+     "frame": "I always try to get to ___ on time."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal and his sister Noura are planning a birthday surprise for their mum.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Faisal, Mum's birthday is tomorrow. Let's make a surprise for her!"
+     },
+     {
+      "s": "Faisal",
+      "t": "Great idea! I'm going to bake a cake with Dad."
+     },
+     {
+      "s": "Noura",
+      "t": "And I'm going to decorate the living room with balloons."
+     },
+     {
+      "s": "Faisal",
+      "t": "What about our little brother, Ali?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "Ali is going to make a card. He loves drawing."
+     },
+     {
+      "s": "Faisal",
+      "t": "But Ali can't keep a secret! He's going to tell Mum."
+     },
+     {
+      "s": "Noura",
+      "t": "Don't worry. We aren't going to tell him until tomorrow morning."
+     },
+     {
+      "s": "Faisal",
+      "t": "OK. Mum comes home at six, so we're going to finish everything on time."
+     }
+    ],
+    "focus": "I'm going to bake a cake with Dad.",
+    "qs": [
+     "What is Noura going to do?",
+     "Why aren't they going to tell Ali today?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your grandfather's birthday is next week. You and your cousin are planning a surprise party for him.",
+    "prompts": [
+     {
+      "q": "What are you going to make for Grandpa?",
+      "hint": "Say 'I'm going to make / bake …'."
+     },
+     {
+      "q": "How are we going to decorate the room?",
+      "hint": "Say what you're going to use, like balloons or lights."
+     },
+     {
+      "q": "Who is going to keep Grandpa busy before the party?",
+      "hint": "Name a person and say 'He's / She's going to …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Birthdays Around the World",
+    "points": [
+     "In many countries, people put candles on a birthday cake and make a wish.",
+     "In Mexico, children at parties often hit a piñata, a paper animal full of sweets.",
+     "In China, some people eat long noodles on their birthday for a long life."
+    ],
+    "qs": [
+     "What do you like to eat at a birthday party?",
+     "Which birthday idea from the list do you like best? Why?"
+    ]
+   },
+   "exit": "Tell me two things your family is going to do for a surprise."
+  },
+  "0-3": {
+   "objective": "Today you will talk about your family's plans for Eid.",
+   "warmup": "What do you like most about Eid?",
+   "expressions": [
+    {
+     "w": "Eid prayer",
+     "def": "the special prayer on the morning of Eid",
+     "ar": "صلاة العيد",
+     "frame": "After the Eid prayer, we're going to ___."
+    },
+    {
+     "w": "new clothes",
+     "def": "clothes that you wear for the first time",
+     "ar": "ملابس جديدة",
+     "frame": "For Eid, I'm going to wear a new ___."
+    },
+    {
+     "w": "Eidiya",
+     "def": "money that adults give to children at Eid",
+     "ar": "العيدية",
+     "frame": "With my Eidiya, I'm going to buy ___."
+    },
+    {
+     "w": "relatives",
+     "def": "people in your family, like aunts, uncles and cousins",
+     "ar": "الأقارب",
+     "frame": "At Eid, we're going to visit our relatives in ___."
+    },
+    {
+     "w": "fireworks",
+     "def": "colourful lights in the night sky for a celebration",
+     "ar": "ألعاب نارية",
+     "frame": "We're going to watch the fireworks at ___."
+    },
+    {
+     "w": "save",
+     "def": "to keep money and not spend it now",
+     "ar": "يدّخر / يوفّر",
+     "frame": "I'm going to save my money for ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Emma is new in Jeddah. Her friend Noura tells her about her family's plans for Eid.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "Noura, Eid is next week. What are you going to do?"
+     },
+     {
+      "s": "Noura",
+      "t": "In the morning, we're going to go to the Eid prayer. I'm going to wear my new clothes."
+     },
+     {
+      "s": "Emma",
+      "t": "And after that?"
+     },
+     {
+      "s": "Noura",
+      "t": "We're going to visit our relatives. My grandma is going to make a big breakfast."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "Are you going to get presents?"
+     },
+     {
+      "s": "Noura",
+      "t": "Yes! The adults give us money. It's called Eidiya."
+     },
+     {
+      "s": "Emma",
+      "t": "What are you going to do with it?"
+     },
+     {
+      "s": "Noura",
+      "t": "I'm going to save it for a new bike. And in the evening, we're going to watch the fireworks."
+     }
+    ],
+    "focus": "I'm going to save it for a new bike.",
+    "qs": [
+     "Where is Noura's family going to go in the morning?",
+     "What is Noura going to do with her Eidiya?"
+    ]
+   },
+   "speakout": {
+    "scene": "A new student from another country asks you about Eid. Tell them about your plans for the next Eid.",
+    "prompts": [
+     {
+      "q": "What are you going to wear?",
+      "hint": "Say 'I'm going to wear …' and describe it."
+     },
+     {
+      "q": "Who are you going to visit?",
+      "hint": "Name two relatives and say where they live."
+     },
+     {
+      "q": "What are you going to do with your Eidiya?",
+      "hint": "Say 'I'm going to buy …' or 'I'm going to save it for …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Eid in Saudi Arabia",
+    "points": [
+     "Many Saudi cities have fireworks on the nights of Eid.",
+     "Families visit their relatives and enjoy dates, sweets and Arabic coffee together.",
+     "Children often get Eidiya, a small present of money, from adults."
+    ],
+    "qs": [
+     "Which Eid tradition do you like best?",
+     "What would you like to buy with your Eidiya?"
+    ]
+   },
+   "exit": "Tell me two things you are going to do at the next Eid."
+  },
+  "0-4": {
+   "objective": "Today you will talk about your plans for the summer holidays.",
+   "warmup": "What did you do last summer?",
+   "expressions": [
+    {
+     "w": "summer holidays",
+     "def": "the long time in summer when there is no school",
+     "ar": "الإجازة الصيفية",
+     "frame": "In the summer holidays, I'm going to ___."
+    },
+    {
+     "w": "learn to",
+     "def": "to start to know how to do something",
+     "ar": "يتعلّم (أن يفعل شيئاً)",
+     "frame": "This summer I'm going to learn to ___."
+    },
+    {
+     "w": "summer camp",
+     "def": "a place where children do fun activities in the holidays",
+     "ar": "مخيّم صيفي",
+     "frame": "At summer camp, we're going to ___."
+    },
+    {
+     "w": "abroad",
+     "def": "in or to another country",
+     "ar": "في الخارج / خارج البلد",
+     "frame": "One day I'd like to travel abroad to ___."
+    },
+    {
+     "w": "get up late",
+     "def": "to get out of bed later than usual",
+     "ar": "يستيقظ متأخراً",
+     "frame": "In the holidays, I get up late on ___."
+    },
+    {
+     "w": "join",
+     "def": "to become a member of a club or group",
+     "ar": "ينضمّ إلى",
+     "frame": "This summer I'm going to join a ___ club."
+    }
+   ],
+   "dialogue": {
+    "scene": "It's the last day of school. Khalid and his friend Sam talk about the summer holidays.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "No more school! What are you going to do in the summer holidays, Khalid?"
+     },
+     {
+      "s": "Khalid",
+      "t": "First, I'm going to get up late every day!"
+     },
+     {
+      "s": "Sam",
+      "t": "Me too! Are you going to travel?"
+     },
+     {
+      "s": "Khalid",
+      "t": "Yes. We're going to travel abroad to Malaysia in July. What about you?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "We aren't going to travel this year. I'm going to join a football summer camp."
+     },
+     {
+      "s": "Khalid",
+      "t": "That's cool. My little sister is going to learn to swim."
+     },
+     {
+      "s": "Sam",
+      "t": "Nice! When are you going to come back?"
+     },
+     {
+      "s": "Khalid",
+      "t": "In August. Let's play football together then!"
+     }
+    ],
+    "focus": "We're going to travel abroad to Malaysia in July.",
+    "qs": [
+     "Where is Khalid's family going to travel?",
+     "What is Sam going to do this summer?"
+    ]
+   },
+   "speakout": {
+    "scene": "It's the end of the school year. Your teacher wants to know about the class's summer plans.",
+    "prompts": [
+     {
+      "q": "Are you going to travel this summer?",
+      "hint": "Say 'Yes, we're going to travel to …' or 'No, we're going to stay in …'."
+     },
+     {
+      "q": "Are you going to learn anything new?",
+      "hint": "Say 'I'm going to learn to …'."
+     },
+     {
+      "q": "What aren't you going to do in the holidays?",
+      "hint": "Say one thing with 'I'm not going to …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Summer Holidays Around the World",
+    "points": [
+     "In Saudi Arabia, the summer holidays are in the hottest months of the year.",
+     "In Australia, the long summer holidays are in December and January.",
+     "In many countries, children go to summer camps to play sports and make new friends."
+    ],
+    "qs": [
+     "Which month do you like best for a holiday? Why?",
+     "Would you like to go to a summer camp? Why?"
+    ]
+   },
+   "exit": "Tell me two plans for your next summer holidays."
+  },
+  "0-5": {
+   "objective": "Today you will plan a whole weekend for a visitor and present the plan.",
+   "warmup": "Which places in your city do visitors like?",
+   "expressions": [
+    {
+     "w": "plan",
+     "def": "the things you decide to do in the future",
+     "ar": "خطة",
+     "frame": "My plan for Friday is to ___."
+    },
+    {
+     "w": "in the evening",
+     "def": "the time between the afternoon and the night",
+     "ar": "في المساء",
+     "frame": "In the evening, we're going to ___."
+    },
+    {
+     "w": "after that",
+     "def": "next; later than the thing you said before",
+     "ar": "بعد ذلك",
+     "frame": "First we're going to ___. After that, we're going to ___."
+    },
+    {
+     "w": "go sightseeing",
+     "def": "to visit famous places as a tourist",
+     "ar": "يتجوّل لمشاهدة المعالم",
+     "frame": "In my city, visitors can go sightseeing at ___."
+    },
+    {
+     "w": "go out",
+     "def": "to leave your home to do something fun",
+     "ar": "يخرج (للتنزّه)",
+     "frame": "On Saturday night we're going to go out to ___."
+    },
+    {
+     "w": "this weekend",
+     "def": "the Friday and Saturday that are coming soon",
+     "ar": "عطلة نهاية هذا الأسبوع",
+     "frame": "This weekend is going to be ___ because ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal's cousin Adam lives in London. He is going to visit Jeddah. Faisal tells him the plan on a video call.",
+    "p1": [
+     {
+      "s": "Adam",
+      "t": "Faisal, I'm arriving in Jeddah on Thursday night. What's the plan?"
+     },
+     {
+      "s": "Faisal",
+      "t": "This weekend is going to be great! On Friday morning, we're going to go sightseeing in Al-Balad."
+     },
+     {
+      "s": "Adam",
+      "t": "What's Al-Balad?"
+     },
+     {
+      "s": "Faisal",
+      "t": "It's the old town. The houses there are very old and beautiful."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Adam",
+      "t": "And after that?"
+     },
+     {
+      "s": "Faisal",
+      "t": "After that, we're going to have lunch at my grandma's house. She's going to cook kabsa!"
+     },
+     {
+      "s": "Adam",
+      "t": "Are we going to go out in the evening?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Yes! In the evening, we're going to walk on the Corniche by the sea."
+     }
+    ],
+    "focus": "On Friday morning, we're going to go sightseeing in Al-Balad.",
+    "qs": [
+     "Where are they going to go on Friday morning?",
+     "What are they going to do in the evening?"
+    ]
+   },
+   "speakout": {
+    "scene": "A visitor from another country is going to spend the weekend in your city. You are their guide. Tell them your plan.",
+    "prompts": [
+     {
+      "q": "What are we going to do on Friday morning?",
+      "hint": "Name a place and say what you're going to do there."
+     },
+     {
+      "q": "And after that? Where are we going to eat?",
+      "hint": "Use 'After that, we're going to …' and name a food."
+     },
+     {
+      "q": "What are we going to do in the evening?",
+      "hint": "Say 'In the evening, we're going to …' and say why it's fun."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Al-Balad, Jeddah",
+    "points": [
+     "Al-Balad is the old part of Jeddah, near the Red Sea.",
+     "Many of its old houses have tall wooden windows called roshan.",
+     "Al-Balad is a UNESCO World Heritage Site."
+    ],
+    "qs": [
+     "Which old place in Saudi Arabia would you like to visit?",
+     "What can visitors see in your city?"
+    ]
+   },
+   "exit": "Tell me your plan for a visitor's weekend in two sentences, using 'going to'."
+  },
+  "1-0": {
+   "objective": "Today you will invite a friend to your house and answer an invitation.",
+   "warmup": "Which friends do you like to play with after school?",
+   "expressions": [
+    {
+     "w": "Would you like to …?",
+     "def": "a polite way to invite someone",
+     "ar": "هل تودّ أن …؟",
+     "frame": "Would you like to ___ with me on Friday?"
+    },
+    {
+     "w": "I'd love to.",
+     "def": "a happy way to say yes to an invitation",
+     "ar": "يسعدني ذلك",
+     "frame": "I'd love to! Can I bring my ___?"
+    },
+    {
+     "w": "come over",
+     "def": "to come to someone's house for a visit",
+     "ar": "يأتي للزيارة",
+     "frame": "Can you come over after ___?"
+    },
+    {
+     "w": "board game",
+     "def": "a game you play on a table, like chess or Ludo",
+     "ar": "لعبة لوحية",
+     "frame": "My favourite board game is ___."
+    },
+    {
+     "w": "ask my parents",
+     "def": "to check with your mum or dad if you can do something",
+     "ar": "أستأذن والديّ",
+     "frame": "I need to ask my parents before I ___."
+    },
+    {
+     "w": "See you then!",
+     "def": "a friendly goodbye before you meet again",
+     "ar": "أراك حينها!",
+     "frame": "Great! See you on ___ at ___!"
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal phones his friend Sam on Wednesday evening.",
+    "p1": [
+     {
+      "s": "Faisal",
+      "t": "Hi Sam! Would you like to come over to my house on Thursday afternoon?"
+     },
+     {
+      "s": "Sam",
+      "t": "I'd love to! What are we going to do?"
+     },
+     {
+      "s": "Faisal",
+      "t": "We can play board games, and my mum is going to make pizza."
+     },
+     {
+      "s": "Sam",
+      "t": "Sounds great! But I need to ask my parents first."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "OK, Mum says yes! What time?"
+     },
+     {
+      "s": "Faisal",
+      "t": "At four o'clock. Would you like to bring your new chess set?"
+     },
+     {
+      "s": "Sam",
+      "t": "Of course! I'm going to teach you a new game."
+     },
+     {
+      "s": "Faisal",
+      "t": "Cool! See you then!"
+     }
+    ],
+    "focus": "Would you like to come over to my house on Thursday afternoon?",
+    "qs": [
+     "What is Faisal's mum going to make?",
+     "What does Sam need to do before he says yes?"
+    ]
+   },
+   "speakout": {
+    "scene": "You want to invite your friend to your house this weekend. Then your friend invites you, too.",
+    "prompts": [
+     {
+      "q": "Hi! Do you want to do something this weekend?",
+      "hint": "Invite me with 'Would you like to come over to …?'."
+     },
+     {
+      "q": "Great idea! What are we going to do?",
+      "hint": "Say two things you can do together, like playing a board game."
+     },
+     {
+      "q": "Would you like to come to my house next week too?",
+      "hint": "Say 'I'd love to!' or 'I need to ask my parents first.'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Guests in Saudi Homes",
+    "points": [
+     "In Saudi Arabia, people often welcome guests with Arabic coffee and dates.",
+     "Guests usually sit in a special room called a majlis.",
+     "It is polite to say thank you to your friend's parents before you leave."
+    ],
+    "qs": [
+     "What do you give guests at your house?",
+     "What do you like doing when a friend comes over?"
+    ]
+   },
+   "exit": "Invite me to your house, and say what we can do there."
+  },
+  "1-1": {
+   "objective": "Today you will invite people to a party and say no politely with a reason.",
+   "warmup": "What do you like to do at birthday parties?",
+   "expressions": [
+    {
+     "w": "have a party",
+     "def": "to invite people to celebrate something together",
+     "ar": "يقيم حفلة",
+     "frame": "I'd like to have a party at ___."
+    },
+    {
+     "w": "I'm sorry, I can't.",
+     "def": "a polite way to say no to an invitation",
+     "ar": "آسف، لا أستطيع",
+     "frame": "I'm sorry, I can't. I'm going to ___."
+    },
+    {
+     "w": "guest",
+     "def": "a person you invite to your home or party",
+     "ar": "ضيف",
+     "frame": "At my party, there are going to be ___ guests."
+    },
+    {
+     "w": "invitation",
+     "def": "a card or message that asks you to come to something",
+     "ar": "دعوة",
+     "frame": "I got an invitation to a ___."
+    },
+    {
+     "w": "Thanks for inviting me.",
+     "def": "a polite thing to say when someone invites you",
+     "ar": "شكراً على دعوتك لي",
+     "frame": "Thanks for inviting me to your ___."
+    },
+    {
+     "w": "Maybe next time.",
+     "def": "a kind way to say you hope to come another time",
+     "ar": "ربما في المرة القادمة",
+     "frame": "I can't come this ___, but maybe next time."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem is having a birthday party. At school, she invites her friends Lina and Emma.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Lina, Emma, I'm having a party on Saturday. Would you like to come?"
+     },
+     {
+      "s": "Lina",
+      "t": "Thanks for inviting me! I'd love to come."
+     },
+     {
+      "s": "Emma",
+      "t": "Is it at your house?"
+     },
+     {
+      "s": "Reem",
+      "t": "Yes, at four o'clock. There are going to be ten guests."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "Oh, Saturday? I'm sorry, I can't. We're going to fly to Dubai in the morning."
+     },
+     {
+      "s": "Reem",
+      "t": "That's a shame! Have a great trip."
+     },
+     {
+      "s": "Emma",
+      "t": "Thanks. Maybe next time!"
+     },
+     {
+      "s": "Reem",
+      "t": "Of course. Lina, here's your invitation card."
+     }
+    ],
+    "focus": "I'm sorry, I can't.",
+    "qs": [
+     "Why can't Emma come to the party?",
+     "How many guests are going to be at Reem's party?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are having a birthday party next Saturday. Invite your friend. Then your friend invites you to something, but you are busy.",
+    "prompts": [
+     {
+      "q": "Hi! Is anything happening on Saturday?",
+      "hint": "Say 'I'm having a party' and invite me with 'Would you like to …?'."
+     },
+     {
+      "q": "What time is it, and where?",
+      "hint": "Give the time and the place."
+     },
+     {
+      "q": "Would you like to come to the science museum with me on Friday?",
+      "hint": "Say no politely: 'I'm sorry, I can't. I'm going to …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Invitations Around the World",
+    "points": [
+     "In the UK, children often give party invitation cards to their friends at school.",
+     "In Saudi Arabia, many families invite relatives for dinner with a phone call or a WhatsApp message.",
+     "In Japan, people think it is very important to arrive on time."
+    ],
+    "qs": [
+     "How do people usually invite you to parties?",
+     "Which is better, an invitation card or a phone message? Why?"
+    ]
+   },
+   "exit": "Say no politely to an invitation and give a reason, in two sentences."
+  },
+  "1-2": {
+   "objective": "Today you will invite a friend to a football match and agree where to meet.",
+   "warmup": "Do you like watching football? Which team do you support?",
+   "expressions": [
+    {
+     "w": "Do you want to …?",
+     "def": "a friendly way to invite a friend",
+     "ar": "هل تريد أن …؟",
+     "frame": "Do you want to ___ with us on Friday?"
+    },
+    {
+     "w": "ticket",
+     "def": "a paper or code you need to go into a place",
+     "ar": "تذكرة",
+     "frame": "I'd like to buy a ticket for ___."
+    },
+    {
+     "w": "support",
+     "def": "to like a team and want it to win",
+     "ar": "يشجّع",
+     "frame": "My family supports ___."
+    },
+    {
+     "w": "Let's meet at …",
+     "def": "words to say the place where you are going to meet",
+     "ar": "لنلتقِ عند …",
+     "frame": "Let's meet at ___ at ___ o'clock."
+    },
+    {
+     "w": "That sounds great!",
+     "def": "a happy way to say yes to an idea",
+     "ar": "تبدو فكرة رائعة!",
+     "frame": "A trip to ___? That sounds great!"
+    },
+    {
+     "w": "pick you up",
+     "def": "to come and take you somewhere in a car",
+     "ar": "يمرّ عليك ليأخذك",
+     "frame": "Can you pick me up from ___?"
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar's dad has an extra ticket for a football match in Riyadh. Omar calls his friend Khalid.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "Khalid, my dad has an extra ticket for the match on Friday. Do you want to come?"
+     },
+     {
+      "s": "Khalid",
+      "t": "A football match? That sounds great! Which teams are playing?"
+     },
+     {
+      "s": "Omar",
+      "t": "Al-Hilal and Al-Nassr."
+     },
+     {
+      "s": "Khalid",
+      "t": "Wow! I support Al-Hilal. I'd love to come!"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Khalid",
+      "t": "How are we going to get there?"
+     },
+     {
+      "s": "Omar",
+      "t": "My dad is going to pick you up at six o'clock."
+     },
+     {
+      "s": "Khalid",
+      "t": "Great! My cousin Ali is going to be at the match too."
+     },
+     {
+      "s": "Omar",
+      "t": "Cool! Let's meet him at the main gate before the match."
+     }
+    ],
+    "focus": "Do you want to come?",
+    "qs": [
+     "Who is going to pick Khalid up?",
+     "Where are they going to meet Ali?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your uncle has two extra tickets for a basketball match. Invite your friend and plan how to meet.",
+    "prompts": [
+     {
+      "q": "Hi! Why are you calling?",
+      "hint": "Invite me with 'Do you want to come to …?'."
+     },
+     {
+      "q": "When is it, and how are we going to get there?",
+      "hint": "Give the day and say who is going to pick me up."
+     },
+     {
+      "q": "Where are we going to meet?",
+      "hint": "Use 'Let's meet at … at … o'clock.'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Football in Saudi Arabia",
+    "points": [
+     "Football is the most popular sport in Saudi Arabia.",
+     "The Saudi Pro League has famous players from many countries.",
+     "Saudi Arabia is going to host the FIFA World Cup in 2034."
+    ],
+    "qs": [
+     "Which football team do you support?",
+     "Would you like to watch a World Cup match one day? Why?"
+    ]
+   },
+   "exit": "Invite me to a match and tell me where we are going to meet."
+  },
+  "1-3": {
+   "objective": "Today you will invite a friend's family on a desert picnic and answer their questions.",
+   "warmup": "Do you like going to the desert? What do you do there?",
+   "expressions": [
+    {
+     "w": "join us",
+     "def": "to come and do something with us",
+     "ar": "ينضمّ إلينا",
+     "frame": "Would you like to join us for ___?"
+    },
+    {
+     "w": "picnic",
+     "def": "a meal that you eat outside",
+     "ar": "نزهة مع وجبة في الخارج",
+     "frame": "For a picnic, I like to take ___."
+    },
+    {
+     "w": "tent",
+     "def": "a small house made of cloth for sleeping outside",
+     "ar": "خيمة",
+     "frame": "In our tent, there's space for ___ people."
+    },
+    {
+     "w": "Can I bring …?",
+     "def": "a polite way to ask to take something with you",
+     "ar": "هل يمكنني أن أُحضر …؟",
+     "frame": "Can I bring my ___?"
+    },
+    {
+     "w": "campfire",
+     "def": "a fire that you make outside",
+     "ar": "نار المخيّم",
+     "frame": "Around the campfire, we like to ___."
+    },
+    {
+     "w": "stars",
+     "def": "the small lights you see in the sky at night",
+     "ar": "النجوم",
+     "frame": "When I look at the stars, I feel ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura's family is going to have a picnic in the desert near Riyadh. Noura invites her friend Emma.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Emma, we're going to have a picnic in the desert on Friday. Would you like to join us?"
+     },
+     {
+      "s": "Emma",
+      "t": "Oh, I'd love to! But I need to ask my parents."
+     },
+     {
+      "s": "Noura",
+      "t": "Your whole family can come! There's a big tent for everyone."
+     },
+     {
+      "s": "Emma",
+      "t": "Wonderful! What are we going to do there?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "We're going to make a campfire and look at the stars."
+     },
+     {
+      "s": "Emma",
+      "t": "Can I bring my telescope?"
+     },
+     {
+      "s": "Noura",
+      "t": "Of course! And you can bring some snacks."
+     },
+     {
+      "s": "Emma",
+      "t": "Great! Thanks for inviting us."
+     }
+    ],
+    "focus": "Would you like to join us?",
+    "qs": [
+     "What are they going to do in the desert?",
+     "What is Emma going to bring?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your family is going to have a picnic in the desert. Invite your friend's family and answer their questions.",
+    "prompts": [
+     {
+      "q": "Hi! What are you doing on Friday?",
+      "hint": "Tell me about the picnic and invite me with 'Would you like to join us?'."
+     },
+     {
+      "q": "What are we going to do there?",
+      "hint": "Say two activities, like making a campfire or looking at the stars."
+     },
+     {
+      "q": "Can I bring anything?",
+      "hint": "Say 'Of course! You can bring …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Kashta: Winter Camping",
+    "points": [
+     "In winter, many Saudi families go camping in the desert. They call it kashta.",
+     "Families make a campfire, cook food and drink tea together.",
+     "Away from city lights, you can see many more stars."
+    ],
+    "qs": [
+     "What do you like to eat on a picnic?",
+     "Would you like to sleep in a tent in the desert? Why?"
+    ]
+   },
+   "exit": "Invite me to join your family on a trip, and tell me what I can bring."
+  },
+  "1-4": {
+   "objective": "Today you will invite an adult to a school event very politely.",
+   "warmup": "What special days or events happen at your school?",
+   "expressions": [
+    {
+     "w": "science fair",
+     "def": "a school event where students show their science projects",
+     "ar": "معرض العلوم",
+     "frame": "At the science fair, I'd like to show ___."
+    },
+    {
+     "w": "project",
+     "def": "a big piece of work about one topic",
+     "ar": "مشروع",
+     "frame": "My project is about ___."
+    },
+    {
+     "w": "I hope you can come.",
+     "def": "a polite way to say you want someone to come",
+     "ar": "أتمنى أن تتمكّن من الحضور",
+     "frame": "The fair is on ___. I hope you can come."
+    },
+    {
+     "w": "That's very kind of you.",
+     "def": "a polite thank-you to someone who is nice to you",
+     "ar": "هذا لطف منك",
+     "frame": "Thank you for ___. That's very kind of you."
+    },
+    {
+     "w": "I'm afraid I can't.",
+     "def": "a very polite way to say no",
+     "ar": "أخشى أنني لا أستطيع",
+     "frame": "I'm afraid I can't come because I'm going to ___."
+    },
+    {
+     "w": "principal",
+     "def": "the person in charge of a school",
+     "ar": "مدير المدرسة",
+     "frame": "Our principal often talks to us about ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam's class is having a science fair. Sam invites his science teacher, Mr Ahmed.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Excuse me, Mr Ahmed. Our class is having a science fair next Wednesday."
+     },
+     {
+      "s": "Mr Ahmed",
+      "t": "Really? What's your project about?"
+     },
+     {
+      "s": "Sam",
+      "t": "It's about solar energy. Would you like to come and see it?"
+     },
+     {
+      "s": "Mr Ahmed",
+      "t": "That's very kind of you. What time is it?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "It's at ten o'clock in the school hall. I hope you can come."
+     },
+     {
+      "s": "Mr Ahmed",
+      "t": "Oh, I'm afraid I can't come at ten. I'm going to teach Grade 5 then."
+     },
+     {
+      "s": "Sam",
+      "t": "That's a shame. But the fair is open until twelve."
+     },
+     {
+      "s": "Mr Ahmed",
+      "t": "Great, then I can come at eleven. I'm going to ask the principal to come too."
+     }
+    ],
+    "focus": "Would you like to come and see it?",
+    "qs": [
+     "What is Sam's project about?",
+     "Why can't Mr Ahmed come at ten?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school is having a science fair next week. Invite your teacher, then answer their questions.",
+    "prompts": [
+     {
+      "q": "Hello! Can I help you?",
+      "hint": "Tell me about the fair and invite me politely with 'Would you like to …?'."
+     },
+     {
+      "q": "What's your project about?",
+      "hint": "Say 'My project is about …' and one thing you're going to show."
+     },
+     {
+      "q": "I'm afraid I'm busy at nine. Is it open later?",
+      "hint": "Give a later time and say 'I hope you can come.'"
+     }
+    ]
+   },
+   "culture": {
+    "title": "Young Scientists in Saudi Arabia",
+    "points": [
+     "Mawhiba is a Saudi organisation that helps talented students.",
+     "Every year, Saudi students take part in big science competitions around the world.",
+     "Many Saudi students win prizes for their science projects."
+    ],
+    "qs": [
+     "What science project would you like to make?",
+     "Who would you invite to see your project?"
+    ]
+   },
+   "exit": "Invite your teacher to a school event politely, and say the day and the time."
+  },
+  "1-5": {
+   "objective": "Today you will make an invitation for a class event and answer other people's invitations.",
+   "warmup": "What was the best party or event you went to?",
+   "expressions": [
+    {
+     "w": "You're invited!",
+     "def": "words at the top of an invitation card",
+     "ar": "أنت مدعو!",
+     "frame": "You're invited to my ___ party!"
+    },
+    {
+     "w": "date",
+     "def": "the day and month of something",
+     "ar": "التاريخ",
+     "frame": "The date of my birthday is ___."
+    },
+    {
+     "w": "reply",
+     "def": "to answer a message or an invitation",
+     "ar": "يردّ",
+     "frame": "Please reply by ___."
+    },
+    {
+     "w": "place",
+     "def": "where something happens",
+     "ar": "المكان",
+     "frame": "The best place for a class party is ___."
+    },
+    {
+     "w": "I'd love to.",
+     "def": "a happy way to say yes to an invitation",
+     "ar": "يسعدني ذلك",
+     "frame": "I'd love to come! Can I bring ___?"
+    },
+    {
+     "w": "I'm afraid I can't.",
+     "def": "a very polite way to say no",
+     "ar": "أخشى أنني لا أستطيع",
+     "frame": "I'm afraid I can't come because ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem's class is going to have an end-of-year party. Reem shows her friend Lina the invitation.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Look, Lina! I made the invitation for our class party."
+     },
+     {
+      "s": "Lina",
+      "t": "Read it to me, please."
+     },
+     {
+      "s": "Reem",
+      "t": "'You're invited to our end-of-year party! It's on 10th June at eleven o'clock. The place is Classroom 6B.'"
+     },
+     {
+      "s": "Lina",
+      "t": "Great! What else does it say?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "'Please reply by 5th June.' So, can you come?"
+     },
+     {
+      "s": "Lina",
+      "t": "I'd love to! Can we invite our old teacher, Ms Sara?"
+     },
+     {
+      "s": "Reem",
+      "t": "Good idea. Would you like to give her the invitation?"
+     },
+     {
+      "s": "Lina",
+      "t": "Sure. I hope she can come. She's at another school this year."
+     }
+    ],
+    "focus": "You're invited to our end-of-year party!",
+    "qs": [
+     "When is the class party?",
+     "Who is Lina going to give the invitation to?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are planning a party for the end of the school year. Invite your teacher. Then your teacher invites you to something too.",
+    "prompts": [
+     {
+      "q": "Hello! What's this card?",
+      "hint": "Say 'You're invited to …' and give the date, the time and the place."
+     },
+     {
+      "q": "When do you need my answer?",
+      "hint": "Say 'Please reply by …'."
+     },
+     {
+      "q": "Thank you! Would you like to help me in the school garden on Thursday?",
+      "hint": "Say yes with 'I'd love to!' or no with 'I'm afraid I can't …' and a reason."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Invitation Cards in Saudi Arabia",
+    "points": [
+     "For weddings, many Saudi families send beautiful invitation cards or pictures on WhatsApp.",
+     "Many invitation cards have Arabic calligraphy and gold colours.",
+     "When someone invites you, it is polite to reply quickly."
+    ],
+    "qs": [
+     "What would you write on an invitation card?",
+     "Which is better, a paper invitation or a phone message? Why?"
+    ]
+   },
+   "exit": "Give me an invitation with the day, the time and the place, in two sentences."
+  },
+  "2-0": {
+   "objective": "Today you will say how you feel on a long journey and why.",
+   "warmup": "Do you like long car journeys? Why or why not?",
+   "expressions": [
+    {
+     "w": "bored",
+     "def": "unhappy because nothing interesting is happening",
+     "ar": "يشعر بالملل",
+     "frame": "I get bored when ___."
+    },
+    {
+     "w": "boring",
+     "def": "not interesting at all",
+     "ar": "مُمل",
+     "frame": "I think ___ is boring."
+    },
+    {
+     "w": "journey",
+     "def": "a trip from one place to another",
+     "ar": "رحلة (مسافة الطريق)",
+     "frame": "The longest journey I know is from ___ to ___."
+    },
+    {
+     "w": "tired",
+     "def": "feeling that you need to rest or sleep",
+     "ar": "متعَب",
+     "frame": "I'm always tired after ___."
+    },
+    {
+     "w": "because",
+     "def": "a word that gives the reason",
+     "ar": "لأنّ",
+     "frame": "I'm happy today because ___."
+    },
+    {
+     "w": "so",
+     "def": "a word that gives the result",
+     "ar": "لذلك",
+     "frame": "I was bored, so I ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal and his sister Noura are in the car. Their family is driving from Riyadh to Dammam.",
+    "p1": [
+     {
+      "s": "Faisal",
+      "t": "Noura, how long is this journey?"
+     },
+     {
+      "s": "Noura",
+      "t": "About four hours. We're only halfway."
+     },
+     {
+      "s": "Faisal",
+      "t": "Oh no! I'm so bored. There's nothing to see, just sand."
+     },
+     {
+      "s": "Noura",
+      "t": "I know. The road is boring because it's so straight."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Faisal",
+      "t": "I'm tired too because I got up at five."
+     },
+     {
+      "s": "Noura",
+      "t": "Let's play a game, so the time goes faster."
+     },
+     {
+      "s": "Faisal",
+      "t": "OK! I spy with my little eye something beginning with C."
+     },
+     {
+      "s": "Noura",
+      "t": "A camel! Look, there's a real camel next to the road!"
+     }
+    ],
+    "focus": "I'm tired too because I got up at five.",
+    "qs": [
+     "Why is Faisal tired?",
+     "What do they do so the time goes faster?"
+    ]
+   },
+   "speakout": {
+    "scene": "You and your cousin are on a long journey by car. Your cousin asks how you feel.",
+    "prompts": [
+     {
+      "q": "How are you feeling?",
+      "hint": "Say 'I'm bored / tired / …' and add 'because …'."
+     },
+     {
+      "q": "What's boring about this journey?",
+      "hint": "Say '… is boring because …'."
+     },
+     {
+      "q": "What can we do so we don't feel bored?",
+      "hint": "Give an idea with 'so': 'Let's …, so …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Long Journeys Around the World",
+    "points": [
+     "The Trans-Siberian Railway in Russia is one of the longest train journeys in the world.",
+     "It takes about a week to go from Moscow to Vladivostok by train.",
+     "In Saudi Arabia, the Haramain train takes people between Makkah and Madinah very fast."
+    ],
+    "qs": [
+     "What do you do on long journeys?",
+     "Which is more boring, a long car journey or a long flight? Why?"
+    ]
+   },
+   "exit": "Tell me two things that make you bored, and say why."
+  },
+  "2-1": {
+   "objective": "Today you will say why you are excited or nervous about something.",
+   "warmup": "What are you excited about this month?",
+   "expressions": [
+    {
+     "w": "excited",
+     "def": "very happy because something good is going to happen",
+     "ar": "متحمّس",
+     "frame": "I'm excited about ___."
+    },
+    {
+     "w": "exciting",
+     "def": "making you feel very happy and full of energy",
+     "ar": "مثير / ممتع جداً",
+     "frame": "The most exciting place I know is ___."
+    },
+    {
+     "w": "can't wait",
+     "def": "to want something to happen very soon",
+     "ar": "لا أطيق الانتظار",
+     "frame": "I can't wait for ___!"
+    },
+    {
+     "w": "roller coaster",
+     "def": "a fast ride with big ups and downs",
+     "ar": "قطار الأفعوانية",
+     "frame": "On a roller coaster, I feel ___."
+    },
+    {
+     "w": "theme park",
+     "def": "a big park with rides and games",
+     "ar": "مدينة ملاهٍ",
+     "frame": "At a theme park, I'd like to ___."
+    },
+    {
+     "w": "nervous",
+     "def": "a little worried about something",
+     "ar": "متوتّر",
+     "frame": "I feel nervous before ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar's family is going to visit Ferrari World in Abu Dhabi next week. He tells his friend Sam.",
+    "p1": [
+     {
+      "s": "Omar",
+      "t": "Sam, guess what? We're going to visit Ferrari World in Abu Dhabi next week!"
+     },
+     {
+      "s": "Sam",
+      "t": "Wow, that's exciting! Are you excited?"
+     },
+     {
+      "s": "Omar",
+      "t": "Yes, I can't wait! I'm excited because it has one of the fastest roller coasters in the world."
+     },
+     {
+      "s": "Sam",
+      "t": "Really? Aren't you nervous?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Omar",
+      "t": "A little nervous, but it's a good theme park, so it's very safe."
+     },
+     {
+      "s": "Sam",
+      "t": "My little brother loves theme parks too. He's never scared!"
+     },
+     {
+      "s": "Omar",
+      "t": "Do you want to see my photos when I come back?"
+     },
+     {
+      "s": "Sam",
+      "t": "Of course! Have fun, and tell me everything!"
+     }
+    ],
+    "focus": "I'm excited because it has one of the fastest roller coasters in the world.",
+    "qs": [
+     "Why is Omar excited?",
+     "How does Omar feel about the roller coaster?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your family is going to do something exciting next weekend. Your friend asks you about it.",
+    "prompts": [
+     {
+      "q": "You look happy! What's happening?",
+      "hint": "Say 'I'm excited because …'."
+     },
+     {
+      "q": "Why is it exciting?",
+      "hint": "Give one reason with 'because'."
+     },
+     {
+      "q": "Are you nervous about anything?",
+      "hint": "Say 'Yes, a little, because …' or 'No, I'm not, because …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Theme Parks Around the World",
+    "points": [
+     "Ferrari World in Abu Dhabi has a roller coaster that goes faster than 200 kilometres an hour.",
+     "The first Disneyland opened in California in 1955.",
+     "Saudi Arabia is building a huge new city for fun and sport called Qiddiya, near Riyadh."
+    ],
+    "qs": [
+     "What's the most exciting ride you know?",
+     "How do you feel on fast rides?"
+    ]
+   },
+   "exit": "Tell me something you are excited about and why."
+  },
+  "2-2": {
+   "objective": "Today you will say how you feel before and after a test and why.",
+   "warmup": "How do you feel before a test?",
+   "expressions": [
+    {
+     "w": "worried",
+     "def": "thinking a lot about a problem; not calm",
+     "ar": "قلِق",
+     "frame": "Sometimes I'm worried about ___."
+    },
+    {
+     "w": "relaxed",
+     "def": "calm and not worried",
+     "ar": "مرتاح / هادئ",
+     "frame": "I feel relaxed when ___."
+    },
+    {
+     "w": "revise",
+     "def": "to study things again before a test",
+     "ar": "يراجع (للاختبار)",
+     "frame": "Tonight I'm going to revise ___."
+    },
+    {
+     "w": "tiring",
+     "def": "making you feel tired",
+     "ar": "مُتعِب",
+     "frame": "___ is very tiring."
+    },
+    {
+     "w": "proud",
+     "def": "very happy about something good that you or others did",
+     "ar": "فخور",
+     "frame": "I was proud when I ___."
+    },
+    {
+     "w": "pass",
+     "def": "to do well enough in a test",
+     "ar": "ينجح (في الاختبار)",
+     "frame": "I want to pass my ___ test."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem has a maths test tomorrow. She talks to her older sister, Sara.",
+    "p1": [
+     {
+      "s": "Sara",
+      "t": "You look worried, Reem. What's wrong?"
+     },
+     {
+      "s": "Reem",
+      "t": "I'm worried about my maths test tomorrow because the questions are always difficult."
+     },
+     {
+      "s": "Sara",
+      "t": "Did you revise?"
+     },
+     {
+      "s": "Reem",
+      "t": "Yes, for two hours. It was really tiring, so I'm going to go to bed early."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "Sara, guess what? I passed my maths test!"
+     },
+     {
+      "s": "Sara",
+      "t": "Well done! I'm so proud of you."
+     },
+     {
+      "s": "Reem",
+      "t": "I was relaxed in the test because I slept well."
+     },
+     {
+      "s": "Sara",
+      "t": "You see? Sleep is really important before a test."
+     }
+    ],
+    "focus": "I'm worried about my maths test tomorrow because the questions are always difficult.",
+    "qs": [
+     "Why is Reem worried?",
+     "Why was Reem relaxed in the test?"
+    ]
+   },
+   "speakout": {
+    "scene": "You have an English test tomorrow. Your grandmother calls and asks how you feel.",
+    "prompts": [
+     {
+      "q": "How are you feeling about your test?",
+      "hint": "Say 'I'm worried / relaxed because …'."
+     },
+     {
+      "q": "Did you revise?",
+      "hint": "Say what you revised and how it was, like 'It was tiring.'"
+     },
+     {
+      "q": "What are you going to do tonight so you feel relaxed?",
+      "hint": "Give one plan with 'so': 'I'm going to …, so …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Big Tests Around the World",
+    "points": [
+     "In South Korea, many students study for long hours before the big university test.",
+     "During the English listening part of that test, planes stop flying for a short time, so it's quiet.",
+     "In Finland, young children don't have many tests at school."
+    ],
+    "qs": [
+     "Which is better, many small tests or one big test? Why?",
+     "What helps you feel relaxed before a test?"
+    ]
+   },
+   "exit": "Tell me how you feel before a test and why."
+  },
+  "2-3": {
+   "objective": "Today you will say what is interesting and amazing at a museum and how you feel.",
+   "warmup": "Which museums do you know? Which one is the most interesting?",
+   "expressions": [
+    {
+     "w": "interested in",
+     "def": "wanting to know more about something",
+     "ar": "مهتمّ بـ",
+     "frame": "I'm really interested in ___."
+    },
+    {
+     "w": "interesting",
+     "def": "making you want to know more",
+     "ar": "مثير للاهتمام",
+     "frame": "The most interesting subject at school is ___."
+    },
+    {
+     "w": "amazed",
+     "def": "very surprised in a good way",
+     "ar": "مندهش / منبهر",
+     "frame": "I was amazed when I saw ___."
+    },
+    {
+     "w": "amazing",
+     "def": "very, very good or surprising",
+     "ar": "مذهل",
+     "frame": "___ is an amazing place."
+    },
+    {
+     "w": "surprised",
+     "def": "how you feel when something unusual happens suddenly",
+     "ar": "متفاجئ",
+     "frame": "I was surprised when ___."
+    },
+    {
+     "w": "surprising",
+     "def": "unusual and not what you thought",
+     "ar": "مفاجئ",
+     "frame": "A surprising fact I know is ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam and his friend Khalid are on a school trip to a science museum.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Khalid, look at this dinosaur! It's amazing!"
+     },
+     {
+      "s": "Khalid",
+      "t": "Wow, it's so big. I'm really interested in dinosaurs."
+     },
+     {
+      "s": "Sam",
+      "t": "Read this. Some dinosaurs were only the size of a chicken!"
+     },
+     {
+      "s": "Khalid",
+      "t": "Really? That's surprising! I'm surprised because I thought all dinosaurs were huge."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "Let's go to the space room next. It's very interesting."
+     },
+     {
+      "s": "Khalid",
+      "t": "Look! You can stand on this machine and see your weight on the Moon."
+     },
+     {
+      "s": "Sam",
+      "t": "I'm only eight kilos on the Moon! I'm amazed!"
+     },
+     {
+      "s": "Khalid",
+      "t": "This is the best school trip ever!"
+     }
+    ],
+    "focus": "I'm surprised because I thought all dinosaurs were huge.",
+    "qs": [
+     "Why is Khalid surprised?",
+     "How does Sam feel in the space room?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your class visited a museum yesterday. Now your mum or dad asks you about it.",
+    "prompts": [
+     {
+      "q": "Was the museum interesting?",
+      "hint": "Say 'Yes, it was interesting because …' or 'No, it was boring because …'."
+     },
+     {
+      "q": "What was the most amazing thing there?",
+      "hint": "Name one thing and say why it was amazing."
+     },
+     {
+      "q": "Were you surprised by anything?",
+      "hint": "Say 'I was surprised because …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Museums in Saudi Arabia",
+    "points": [
+     "The National Museum in Riyadh tells the story of the Arabian Peninsula.",
+     "Ithra in Dhahran has a museum, a big library and a cinema.",
+     "In some science museums, children can touch things and do experiments."
+    ],
+    "qs": [
+     "What kind of museum is the most interesting for you?",
+     "Would you like to visit a dinosaur museum or a space museum? Why?"
+    ]
+   },
+   "exit": "Tell me about something amazing or surprising you saw, and how you felt."
+  },
+  "2-4": {
+   "objective": "Today you will say why you feel disappointed or upset and help a friend feel better.",
+   "warmup": "What do you do when you feel sad?",
+   "expressions": [
+    {
+     "w": "disappointed",
+     "def": "sad because something was not as good as you wanted",
+     "ar": "خائب الأمل",
+     "frame": "I was disappointed when ___."
+    },
+    {
+     "w": "disappointing",
+     "def": "not as good as you hoped",
+     "ar": "مخيّب للآمال",
+     "frame": "A disappointing day for me is when ___."
+    },
+    {
+     "w": "upset",
+     "def": "sad and a little angry",
+     "ar": "منزعج / مستاء",
+     "frame": "I get upset when ___."
+    },
+    {
+     "w": "lose",
+     "def": "to not win a game",
+     "ar": "يخسر",
+     "frame": "When my team loses, I feel ___."
+    },
+    {
+     "w": "Cheer up!",
+     "def": "words to help a sad person feel happier",
+     "ar": "ابتهج! / لا تحزن!",
+     "frame": "Cheer up! Let's ___."
+    },
+    {
+     "w": "It doesn't matter.",
+     "def": "it's not important, so don't worry",
+     "ar": "لا يهمّ",
+     "frame": "It doesn't matter. Next time we can ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Noura's basketball team lost the final in their school league. Her friend Reem talks to her after the game.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Noura, are you OK? You look upset."
+     },
+     {
+      "s": "Noura",
+      "t": "We lost the final, so I'm really disappointed."
+     },
+     {
+      "s": "Reem",
+      "t": "I know. It was a disappointing game, but you played well."
+     },
+     {
+      "s": "Noura",
+      "t": "Thanks. But I missed two easy shots."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "It doesn't matter. Everyone misses sometimes."
+     },
+     {
+      "s": "Noura",
+      "t": "I'm angry with myself because I practised every day."
+     },
+     {
+      "s": "Reem",
+      "t": "Cheer up! There's a new tournament next month."
+     },
+     {
+      "s": "Noura",
+      "t": "You're right. I'm going to practise harder, so we can win next time."
+     }
+    ],
+    "focus": "We lost the final, so I'm really disappointed.",
+    "qs": [
+     "Why is Noura disappointed?",
+     "What is Noura going to do now?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your team lost a match in your school league. Your friend wants to know how you feel.",
+    "prompts": [
+     {
+      "q": "You look sad. What's wrong?",
+      "hint": "Say 'I'm disappointed / upset because …'."
+     },
+     {
+      "q": "Was it a bad game?",
+      "hint": "Say 'It was disappointing because …'."
+     },
+     {
+      "q": "What are you going to do next time?",
+      "hint": "Give a plan with 'so': 'I'm going to …, so …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Good Sports",
+    "points": [
+     "In many sports, players shake hands after the game, even when they lose.",
+     "At the Olympic Games, athletes from more than 200 countries take part.",
+     "Many coaches say that losing can teach you important lessons."
+    ],
+    "qs": [
+     "How do you feel when you lose a game?",
+     "What can you say to a friend who is disappointed?"
+    ]
+   },
+   "exit": "Tell me about a time you were disappointed, and say why."
+  },
+  "2-5": {
+   "objective": "Today you will tell the story of your week and how you felt each day, with reasons.",
+   "warmup": "How do you feel today? Why?",
+   "expressions": [
+    {
+     "w": "feel",
+     "def": "to have a feeling, like happy or sad",
+     "ar": "يشعر",
+     "frame": "Today I feel ___ because ___."
+    },
+    {
+     "w": "frightened",
+     "def": "afraid; scared",
+     "ar": "خائف",
+     "frame": "I'm frightened of ___."
+    },
+    {
+     "w": "frightening",
+     "def": "making you feel afraid",
+     "ar": "مخيف",
+     "frame": "I think ___ is frightening."
+    },
+    {
+     "w": "diary",
+     "def": "a book where you write about your day",
+     "ar": "مذكّرات / يوميّات",
+     "frame": "In my diary, I write about ___."
+    },
+    {
+     "w": "excited",
+     "def": "very happy because something good is going to happen",
+     "ar": "متحمّس",
+     "frame": "Last week I was excited because ___."
+    },
+    {
+     "w": "bored",
+     "def": "unhappy because nothing interesting is happening",
+     "ar": "يشعر بالملل",
+     "frame": "I felt bored on ___ because ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar reads his feelings diary to his English teacher, Mr Sam.",
+    "p1": [
+     {
+      "s": "Mr Sam",
+      "t": "Omar, can you read your feelings diary to the class?"
+     },
+     {
+      "s": "Omar",
+      "t": "Sure. On Sunday, I was excited because we had a new science teacher."
+     },
+     {
+      "s": "Mr Sam",
+      "t": "And on Monday?"
+     },
+     {
+      "s": "Omar",
+      "t": "On Monday, I felt bored because it rained and we couldn't play outside."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Mr Sam",
+      "t": "What happened on Tuesday?"
+     },
+     {
+      "s": "Omar",
+      "t": "There was a big storm at night. The thunder was frightening, so I couldn't sleep."
+     },
+     {
+      "s": "Mr Sam",
+      "t": "Oh dear! Were you tired the next day?"
+     },
+     {
+      "s": "Omar",
+      "t": "Yes, very tired! But on Thursday I felt happy because it was the last school day of the week."
+     }
+    ],
+    "focus": "The thunder was frightening, so I couldn't sleep.",
+    "qs": [
+     "Why was Omar excited on Sunday?",
+     "Why couldn't Omar sleep on Tuesday?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher asks every student to talk about their week and their feelings. It's your turn.",
+    "prompts": [
+     {
+      "q": "How did you feel at the start of the week?",
+      "hint": "Say 'On Sunday I felt … because …'."
+     },
+     {
+      "q": "Was anything boring, tiring or frightening this week?",
+      "hint": "Use an -ing word, like 'The test was tiring, so …'."
+     },
+     {
+      "q": "What are you excited about next week?",
+      "hint": "Say 'I'm excited about … because …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Talking About Feelings",
+    "points": [
+     "In English, people sometimes say 'I feel blue' when they are sad.",
+     "Some schools have a feelings chart with colours, so children can show how they feel.",
+     "Many people write a diary because it helps them understand their feelings."
+    ],
+    "qs": [
+     "What colour is 'happy' for you? Why?",
+     "Do you think writing a diary is a good idea? Why?"
+    ]
+   },
+   "exit": "Tell me two feelings from your week and the reasons."
+  },
+  "3-0": {
+   "objective": "Today you will talk about the rules at your school.",
+   "warmup": "What time do you have to be at school?",
+   "expressions": [
+    {
+     "w": "have to",
+     "def": "it is necessary; you need to do it",
+     "ar": "يجب عليه / مضطرّ إلى",
+     "frame": "At school, we have to ___."
+    },
+    {
+     "w": "mustn't",
+     "def": "it's a rule not to do this; don't do it",
+     "ar": "ممنوع أن …",
+     "frame": "In class, we mustn't ___."
+    },
+    {
+     "w": "uniform",
+     "def": "special clothes that all the students wear",
+     "ar": "الزيّ المدرسي",
+     "frame": "Our school uniform is ___."
+    },
+    {
+     "w": "be late",
+     "def": "to arrive after the right time",
+     "ar": "يتأخّر",
+     "frame": "You mustn't be late for ___."
+    },
+    {
+     "w": "put up your hand",
+     "def": "to lift your hand when you want to speak in class",
+     "ar": "يرفع يده",
+     "frame": "I put up my hand when I ___."
+    },
+    {
+     "w": "break time",
+     "def": "a short time between lessons to eat and play",
+     "ar": "وقت الفسحة",
+     "frame": "At break time, I usually ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Emma is a new student at a school in Riyadh. Her classmate Reem tells her about the school rules.",
+    "p1": [
+     {
+      "s": "Emma",
+      "t": "Reem, what time do we have to be at school?"
+     },
+     {
+      "s": "Reem",
+      "t": "At quarter to seven. You mustn't be late because the gates close."
+     },
+     {
+      "s": "Emma",
+      "t": "OK. Do we have to wear a uniform?"
+     },
+     {
+      "s": "Reem",
+      "t": "Yes, we do. And we have to wear black shoes."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Emma",
+      "t": "What about phones? Can I bring mine?"
+     },
+     {
+      "s": "Reem",
+      "t": "No, you mustn't bring a phone to class."
+     },
+     {
+      "s": "Emma",
+      "t": "And in lessons, do I have to put up my hand to speak?"
+     },
+     {
+      "s": "Reem",
+      "t": "Yes. But at break time, you don't have to stay in the classroom. We can play outside!"
+     }
+    ],
+    "focus": "You mustn't be late because the gates close.",
+    "qs": [
+     "What time do the students have to be at school?",
+     "What don't the students have to do at break time?"
+    ]
+   },
+   "speakout": {
+    "scene": "A new student is joining your class. Tell them about your school rules.",
+    "prompts": [
+     {
+      "q": "What time do we have to arrive at school?",
+      "hint": "Say 'We have to arrive at …'."
+     },
+     {
+      "q": "What mustn't we do in class?",
+      "hint": "Say two things with 'We mustn't …'."
+     },
+     {
+      "q": "Do we have to wear a uniform?",
+      "hint": "Answer 'Yes, we do' or 'No, we don't' and describe it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Schools Around the World",
+    "points": [
+     "In Japan, students often clean their classrooms at the end of the day.",
+     "In Finland, children don't have to start school until they are seven.",
+     "In Saudi Arabia, many boys wear a white thobe to school."
+    ],
+    "qs": [
+     "Which rule from the list do you like? Why?",
+     "Would you like to clean your classroom every day? Why?"
+    ]
+   },
+   "exit": "Tell me one thing you have to do and one thing you mustn't do at school."
+  },
+  "3-1": {
+   "objective": "Today you will talk about your jobs and rules at home.",
+   "warmup": "What jobs do you do at home?",
+   "expressions": [
+    {
+     "w": "has to",
+     "def": "he or she needs to do it",
+     "ar": "يجب عليه / عليها",
+     "frame": "In my family, my ___ has to ___ every day."
+    },
+    {
+     "w": "don't have to",
+     "def": "it isn't necessary; you can choose",
+     "ar": "ليس مضطرّاً إلى",
+     "frame": "At the weekend, I don't have to ___."
+    },
+    {
+     "w": "make your bed",
+     "def": "to make your bed tidy after you sleep",
+     "ar": "يرتّب سريره",
+     "frame": "I make my bed every ___."
+    },
+    {
+     "w": "bedtime",
+     "def": "the time when you go to bed",
+     "ar": "وقت النوم",
+     "frame": "My bedtime on school days is ___."
+    },
+    {
+     "w": "take out the rubbish",
+     "def": "to carry the bin bag outside the house",
+     "ar": "يُخرج القمامة",
+     "frame": "In my house, ___ takes out the rubbish."
+    },
+    {
+     "w": "pocket money",
+     "def": "money that parents give children every week",
+     "ar": "المصروف",
+     "frame": "With my pocket money, I usually buy ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Khalid is at his cousin Sam's house. They talk about the rules in their homes.",
+    "p1": [
+     {
+      "s": "Khalid",
+      "t": "Sam, do you have to make your bed every day?"
+     },
+     {
+      "s": "Sam",
+      "t": "Yes, I do. My mum checks it every morning!"
+     },
+     {
+      "s": "Khalid",
+      "t": "I have to make my bed too. My sister has to take out the rubbish."
+     },
+     {
+      "s": "Sam",
+      "t": "Lucky you! In our house, I have to take out the rubbish."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Khalid",
+      "t": "What time is your bedtime?"
+     },
+     {
+      "s": "Sam",
+      "t": "Nine o'clock on school days. But at the weekend, I don't have to go to bed early."
+     },
+     {
+      "s": "Khalid",
+      "t": "Do you get pocket money?"
+     },
+     {
+      "s": "Sam",
+      "t": "Yes, but I have to help in the kitchen first."
+     }
+    ],
+    "focus": "My sister has to take out the rubbish.",
+    "qs": [
+     "What does Khalid's sister have to do?",
+     "When doesn't Sam have to go to bed early?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your new friend from another country wants to know about the rules in your home.",
+    "prompts": [
+     {
+      "q": "What do you have to do every day at home?",
+      "hint": "Say 'I have to …' with two jobs."
+     },
+     {
+      "q": "What does your brother, sister or cousin have to do?",
+      "hint": "Say 'My … has to …'."
+     },
+     {
+      "q": "What don't you have to do at the weekend?",
+      "hint": "Say 'At the weekend, I don't have to …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Pocket Money Around the World",
+    "points": [
+     "In many countries, children get pocket money every week.",
+     "Some children have to do jobs at home to get their pocket money.",
+     "Many parents think pocket money helps children learn to save."
+    ],
+    "qs": [
+     "Do you think children should get pocket money? Why?",
+     "What would you like to save your money for?"
+    ]
+   },
+   "exit": "Tell me one thing you have to do and one thing you don't have to do at home."
+  },
+  "3-2": {
+   "objective": "Today you will explain the safety rules at a swimming pool.",
+   "warmup": "Can you swim? Where do you swim?",
+   "expressions": [
+    {
+     "w": "must",
+     "def": "it is very important to do this",
+     "ar": "يجب",
+     "frame": "At the pool, you must ___."
+    },
+    {
+     "w": "lifeguard",
+     "def": "a person who watches swimmers and keeps them safe",
+     "ar": "المنقذ",
+     "frame": "A lifeguard has to ___."
+    },
+    {
+     "w": "deep end",
+     "def": "the part of a pool where the water is deep",
+     "ar": "الجزء العميق من المسبح",
+     "frame": "I can't swim in the deep end because ___."
+    },
+    {
+     "w": "slippery",
+     "def": "wet and easy to fall on",
+     "ar": "زَلِق",
+     "frame": "The floor is slippery when ___."
+    },
+    {
+     "w": "dive",
+     "def": "to jump into water with your head first",
+     "ar": "يقفز في الماء (يغطس)",
+     "frame": "I'd like to learn to dive into ___."
+    },
+    {
+     "w": "sign",
+     "def": "a board with words or pictures that tell you something",
+     "ar": "لافتة",
+     "frame": "The sign at the pool says: 'No ___!'"
+    }
+   ],
+   "dialogue": {
+    "scene": "Faisal takes his little brother Ali to the swimming pool at the sports club.",
+    "p1": [
+     {
+      "s": "Ali",
+      "t": "Faisal, can I jump in now?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Wait! First, read the sign. You mustn't dive here."
+     },
+     {
+      "s": "Ali",
+      "t": "Why not?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Because the water isn't deep. You must dive only in the deep end."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ali",
+      "t": "OK! I'm going to run to the deep end!"
+     },
+     {
+      "s": "Faisal",
+      "t": "No, Ali! You mustn't run because the floor is slippery."
+     },
+     {
+      "s": "Ali",
+      "t": "Sorry! Do I have to wear my swimming hat?"
+     },
+     {
+      "s": "Faisal",
+      "t": "Yes, you do. And you have to stay near the lifeguard."
+     }
+    ],
+    "focus": "You mustn't run because the floor is slippery.",
+    "qs": [
+     "Where must Ali dive?",
+     "Why mustn't Ali run?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are a lifeguard at a swimming pool. A child wants to swim. Tell them the rules.",
+    "prompts": [
+     {
+      "q": "Hi! Can I jump in here?",
+      "hint": "Say 'You mustn't …' and give a reason with 'because'."
+     },
+     {
+      "q": "Can I eat my sandwich next to the pool?",
+      "hint": "Give a rule with 'must' or 'mustn't'."
+     },
+     {
+      "q": "Do I have to wear a swimming hat?",
+      "hint": "Answer 'Yes, you do' or 'No, you don't'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Safe Swimming",
+    "points": [
+     "Lifeguards learn first aid, so they can help people quickly.",
+     "In many countries, children have swimming lessons at school.",
+     "On many beaches, a red flag means it isn't safe to swim."
+    ],
+    "qs": [
+     "Why is it important to learn to swim?",
+     "Which pool rule do you think is the most important?"
+    ]
+   },
+   "exit": "Tell me two swimming pool rules with 'must' and 'mustn't'."
+  },
+  "3-3": {
+   "objective": "Today you will ask and answer questions about the rules on a plane.",
+   "warmup": "Do you like travelling by plane? Why or why not?",
+   "expressions": [
+    {
+     "w": "passport",
+     "def": "a small book you need to travel to another country",
+     "ar": "جواز السفر",
+     "frame": "You need a passport to travel to ___."
+    },
+    {
+     "w": "seat belt",
+     "def": "a belt on your seat that keeps you safe",
+     "ar": "حزام الأمان",
+     "frame": "You have to wear a seat belt in a ___."
+    },
+    {
+     "w": "take off",
+     "def": "when a plane leaves the ground",
+     "ar": "تُقلع (الطائرة)",
+     "frame": "When the plane takes off, I feel ___."
+    },
+    {
+     "w": "land",
+     "def": "when a plane comes down to the ground",
+     "ar": "تهبط (الطائرة)",
+     "frame": "Our plane is going to land in ___."
+    },
+    {
+     "w": "luggage",
+     "def": "the bags you take on a trip",
+     "ar": "الأمتعة",
+     "frame": "In my luggage, I always pack ___."
+    },
+    {
+     "w": "flight attendant",
+     "def": "a person who helps passengers on a plane",
+     "ar": "مضيف الطيران",
+     "frame": "A flight attendant has to ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Sam is flying from Jeddah to London with his mum. It's his first flight, so he asks the flight attendant, Huda, lots of questions.",
+    "p1": [
+     {
+      "s": "Sam",
+      "t": "Excuse me, do I have to wear my seat belt now?"
+     },
+     {
+      "s": "Huda",
+      "t": "Yes, you do. You have to wear it when the plane takes off and lands."
+     },
+     {
+      "s": "Sam",
+      "t": "Can I use my tablet?"
+     },
+     {
+      "s": "Huda",
+      "t": "Yes, but you have to turn on flight mode."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sam",
+      "t": "Do I have to stay in my seat all the time?"
+     },
+     {
+      "s": "Huda",
+      "t": "No, you don't. You can walk when the seat belt sign is off."
+     },
+     {
+      "s": "Sam",
+      "t": "And do I have to show my passport when we land?"
+     },
+     {
+      "s": "Huda",
+      "t": "Yes, at the airport. You mustn't put it in your big luggage. Keep it with you!"
+     }
+    ],
+    "focus": "You have to wear it when the plane takes off and lands.",
+    "qs": [
+     "When does Sam have to wear his seat belt?",
+     "Where does Sam have to keep his passport?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your cousin is going to fly for the first time. They ask you about the rules on a plane.",
+    "prompts": [
+     {
+      "q": "Do I have to wear a seat belt all the time?",
+      "hint": "Say when you have to wear it and when you don't have to."
+     },
+     {
+      "q": "Can I use my phone on the plane?",
+      "hint": "Say 'Yes, but you have to …'."
+     },
+     {
+      "q": "What mustn't I do on the plane?",
+      "hint": "Give one or two rules with 'You mustn't …'."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Airports in Saudi Arabia",
+    "points": [
+     "King Abdulaziz International Airport in Jeddah is very busy because millions of visitors arrive there for Hajj and Umrah.",
+     "Riyadh is building a huge new airport called King Salman International Airport.",
+     "Saudia is the national airline of Saudi Arabia."
+    ],
+    "qs": [
+     "Where would you like to fly one day? Why?",
+     "Which is better for a long trip, a plane or a car? Why?"
+    ]
+   },
+   "exit": "Tell me two rules on a plane with 'have to', 'don't have to' or 'mustn't'."
+  },
+  "3-4": {
+   "objective": "Today you will explain the rules of a sport or a game.",
+   "warmup": "What's your favourite game? Is it easy to play?",
+   "expressions": [
+    {
+     "w": "rule",
+     "def": "something that tells you what you can and can't do",
+     "ar": "قاعدة",
+     "frame": "One rule in my house is ___."
+    },
+    {
+     "w": "referee",
+     "def": "the person who makes sure players follow the rules",
+     "ar": "الحَكَم",
+     "frame": "A referee has to ___."
+    },
+    {
+     "w": "score a goal",
+     "def": "to get the ball into the net",
+     "ar": "يسجّل هدفاً",
+     "frame": "To score a goal, you have to ___."
+    },
+    {
+     "w": "touch",
+     "def": "to put your hand or body on something",
+     "ar": "يلمس",
+     "frame": "In football, you mustn't touch the ball with your ___."
+    },
+    {
+     "w": "team",
+     "def": "a group of players who play together",
+     "ar": "فريق",
+     "frame": "There are ___ players in a football team."
+    },
+    {
+     "w": "foul",
+     "def": "something a player does that is against the rules",
+     "ar": "خطأ (مخالفة)",
+     "frame": "In ___, it's a foul when you push another player."
+    }
+   ],
+   "dialogue": {
+    "scene": "Omar is teaching his little cousin Ali the rules of football before a family game.",
+    "p1": [
+     {
+      "s": "Ali",
+      "t": "Omar, can you teach me the rules of football?"
+     },
+     {
+      "s": "Omar",
+      "t": "Sure! There are two teams. You have to kick the ball into the other team's goal."
+     },
+     {
+      "s": "Ali",
+      "t": "Can I touch the ball with my hands?"
+     },
+     {
+      "s": "Omar",
+      "t": "No, you mustn't touch it with your hands. Only the goalkeeper can do that."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ali",
+      "t": "What about pushing other players?"
+     },
+     {
+      "s": "Omar",
+      "t": "That's a foul. The referee is going to stop the game."
+     },
+     {
+      "s": "Ali",
+      "t": "Do I have to run all the time?"
+     },
+     {
+      "s": "Omar",
+      "t": "No, you don't have to. But you have to work with your team to score a goal!"
+     }
+    ],
+    "focus": "No, you mustn't touch it with your hands.",
+    "qs": [
+     "Who can touch the ball with their hands?",
+     "What does the referee do when there is a foul?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your friend wants to play your favourite game, but they don't know the rules. Teach them.",
+    "prompts": [
+     {
+      "q": "How do you win this game?",
+      "hint": "Say 'You have to …'."
+     },
+     {
+      "q": "What mustn't I do?",
+      "hint": "Give one or two rules with 'You mustn't …'."
+     },
+     {
+      "q": "Do I have to be very fast?",
+      "hint": "Say 'No, you don't have to …' or 'Yes, you have to …' and say why."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Games Around the World",
+    "points": [
+     "Cricket is very popular in India, Pakistan and the UK.",
+     "Some cricket matches last for five days.",
+     "Basketball started in the USA in 1891."
+    ],
+    "qs": [
+     "Which game has the most difficult rules? Why?",
+     "What rule would you like to change in your favourite sport?"
+    ]
+   },
+   "exit": "Tell me two rules of your favourite game."
+  },
+  "3-5": {
+   "objective": "Today you will make rules for a new club and explain why.",
+   "warmup": "Are you in a club? Which clubs would you like to join?",
+   "expressions": [
+    {
+     "w": "club",
+     "def": "a group of people who meet to do something they like",
+     "ar": "نادٍ",
+     "frame": "I'd like to start a ___ club."
+    },
+    {
+     "w": "member",
+     "def": "a person who is in a club or group",
+     "ar": "عضو",
+     "frame": "Members of my club have to ___."
+    },
+    {
+     "w": "share",
+     "def": "to let other people use something with you",
+     "ar": "يشارك / يتقاسم",
+     "frame": "In my club, we share ___."
+    },
+    {
+     "w": "respect",
+     "def": "to listen to people and be kind to them",
+     "ar": "يحترم",
+     "frame": "We have to respect ___."
+    },
+    {
+     "w": "have to",
+     "def": "it is necessary; you need to do it",
+     "ar": "يجب عليه / مضطرّ إلى",
+     "frame": "Members have to ___ because ___."
+    },
+    {
+     "w": "mustn't",
+     "def": "it's a rule not to do this; don't do it",
+     "ar": "ممنوع أن …",
+     "frame": "Members mustn't ___ because ___."
+    }
+   ],
+   "dialogue": {
+    "scene": "Reem and Noura are starting a reading club at school. They are writing the club rules.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "OK, let's write the rules for our reading club."
+     },
+     {
+      "s": "Noura",
+      "t": "First rule: members have to read one book every month."
+     },
+     {
+      "s": "Reem",
+      "t": "Good. And they mustn't write in the library books."
+     },
+     {
+      "s": "Noura",
+      "t": "Yes! What about the meetings?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Reem",
+      "t": "Members have to come on time because we only have thirty minutes."
+     },
+     {
+      "s": "Noura",
+      "t": "And everyone has to respect other people's ideas."
+     },
+     {
+      "s": "Reem",
+      "t": "Do members have to buy books?"
+     },
+     {
+      "s": "Noura",
+      "t": "No, they don't have to. We can share our books."
+     }
+    ],
+    "focus": "Members have to come on time because we only have thirty minutes.",
+    "qs": [
+     "How many books do members have to read every month?",
+     "Why don't members have to buy books?"
+    ]
+   },
+   "speakout": {
+    "scene": "You and your friend are starting a new club at school. Your teacher wants to hear your club rules.",
+    "prompts": [
+     {
+      "q": "What's your club, and what do members do?",
+      "hint": "Name the club and say what members do there."
+     },
+     {
+      "q": "What do members have to do?",
+      "hint": "Give two rules with 'have to' and a reason with 'because'."
+     },
+     {
+      "q": "What mustn't they do, and what don't they have to do?",
+      "hint": "Use 'mustn't' for one rule and 'don't have to' for another."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Clubs for Young People",
+    "points": [
+     "Scouts is a club for young people in more than 170 countries.",
+     "Many schools have clubs for reading, chess, science and sport.",
+     "In clubs, children learn to work in a team and make new friends."
+    ],
+    "qs": [
+     "What club would you like to start?",
+     "Which club rule do you think is the most important? Why?"
+    ]
+   },
+   "exit": "Tell me two rules for your own club, with a reason."
+  }
+ },
+ "kits": {
+  "0-0": {
+   "words": [
+    {
+     "w": "this weekend",
+     "ar": "عطلة نهاية هذا الأسبوع",
+     "ex": "This weekend I'm going to visit my cousins."
+    },
+    {
+     "w": "be going to",
+     "ar": "سوف (لخطة مقرّرة)",
+     "ex": "I'm going to play football after school today."
+    },
+    {
+     "w": "tomorrow",
+     "ar": "غداً",
+     "ex": "Tomorrow we're going to have lunch at Grandma's house."
+    },
+    {
+     "w": "stay in",
+     "ar": "يبقى في البيت",
+     "ex": "It's very hot, so we're going to stay in and watch a film."
+    },
+    {
+     "w": "go out",
+     "ar": "يخرج (للتنزّه)",
+     "ex": "On Saturday evening we're going to go out for dinner."
+    },
+    {
+     "w": "have a barbecue",
+     "ar": "يقيم حفلة شواء",
+     "ex": "We're going to have a barbecue in the garden on Friday."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "What are you going to do this weekend?"
+    },
+    {
+     "s": "B",
+     "t": "On Friday we're going to stay in. My aunt is going to visit us."
+    },
+    {
+     "s": "A",
+     "t": "And on Saturday?"
+    },
+    {
+     "s": "B",
+     "t": "We're going to go out to the park. What about you?"
+    },
+    {
+     "s": "A",
+     "t": "Tomorrow my dad is going to have a barbecue."
+    },
+    {
+     "s": "B",
+     "t": "Sounds great! Have fun!"
+    }
+   ],
+   "grammar": {
+    "title": "be going to: plans",
+    "ar": "نستخدم am / is / are + going to + الفعل في أصله للحديث عن خطة قرّرناها من قبل.",
+    "examples": [
+     "I'm going to visit my cousins.",
+     "She's going to bake a cake.",
+     "We're going to go out on Saturday."
+    ]
+   }
+  },
+  "0-1": {
+   "words": [
+    {
+     "w": "next weekend",
+     "ar": "عطلة نهاية الأسبوع القادمة",
+     "ex": "Next weekend we're going to visit my uncle's farm."
+    },
+    {
+     "w": "farm",
+     "ar": "مزرعة",
+     "ex": "My uncle has a big farm near Buraidah."
+    },
+    {
+     "w": "pick dates",
+     "ar": "يجني التمر",
+     "ex": "We're going to pick dates with my cousins."
+    },
+    {
+     "w": "feed the animals",
+     "ar": "يُطعم الحيوانات",
+     "ex": "My little brother is going to feed the goats."
+    },
+    {
+     "w": "ride",
+     "ar": "يركب",
+     "ex": "Are you going to ride a camel?"
+    },
+    {
+     "w": "spend the night",
+     "ar": "يقضي الليلة / يبيت",
+     "ex": "We're going to spend the night at the farm."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Are you going to do anything next weekend?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, we're going to visit my uncle's farm."
+    },
+    {
+     "s": "A",
+     "t": "What are you going to do there?"
+    },
+    {
+     "s": "B",
+     "t": "We're going to pick dates and feed the animals."
+    },
+    {
+     "s": "A",
+     "t": "Are you going to ride a camel?"
+    },
+    {
+     "s": "B",
+     "t": "No, I'm not. But my brother is going to ride one."
+    }
+   ],
+   "grammar": {
+    "title": "Questions and answers with going to",
+    "ar": "في السؤال نقدّم am / is / are: Are you going to …? وفي الجواب القصير: Yes, I am. / No, I'm not.",
+    "examples": [
+     "Are you going to ride a camel?",
+     "What are you going to do there?",
+     "No, I'm not. I'm going to feed the goats."
+    ]
+   }
+  },
+  "0-2": {
+   "words": [
+    {
+     "w": "surprise",
+     "ar": "مفاجأة",
+     "ex": "We're going to make a surprise for Mum."
+    },
+    {
+     "w": "decorate",
+     "ar": "يزيّن",
+     "ex": "My sister is going to decorate the living room with balloons."
+    },
+    {
+     "w": "bake a cake",
+     "ar": "يخبز كعكة",
+     "ex": "Dad is going to bake a chocolate cake."
+    },
+    {
+     "w": "make a card",
+     "ar": "يصنع بطاقة",
+     "ex": "I'm going to make a card and write 'Happy birthday, Mum!'"
+    },
+    {
+     "w": "keep a secret",
+     "ar": "يحفظ السرّ",
+     "ex": "Can you keep a secret? Don't tell Mum!"
+    },
+    {
+     "w": "on time",
+     "ar": "في الوقت المحدّد",
+     "ex": "Everything is going to be ready on time."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Mum's birthday is tomorrow. Let's make a surprise!"
+    },
+    {
+     "s": "B",
+     "t": "OK! I'm going to bake a cake with Dad."
+    },
+    {
+     "s": "A",
+     "t": "I'm going to decorate the room."
+    },
+    {
+     "s": "B",
+     "t": "And Ali?"
+    },
+    {
+     "s": "A",
+     "t": "He's going to make a card."
+    },
+    {
+     "s": "B",
+     "t": "Shh! It's a secret!"
+    }
+   ],
+   "grammar": {
+    "title": "he's / she's / they're going to",
+    "ar": "مع he و she نستخدم is، ومع we و they و you نستخدم are، ومع I نستخدم am.",
+    "examples": [
+     "Ali is going to make a card.",
+     "Dad and I are going to bake a cake.",
+     "They're going to decorate the room."
+    ]
+   }
+  },
+  "0-3": {
+   "words": [
+    {
+     "w": "Eid prayer",
+     "ar": "صلاة العيد",
+     "ex": "We're going to go to the Eid prayer early in the morning."
+    },
+    {
+     "w": "new clothes",
+     "ar": "ملابس جديدة",
+     "ex": "I'm going to wear my new clothes on Eid morning."
+    },
+    {
+     "w": "Eidiya",
+     "ar": "العيدية",
+     "ex": "My uncle always gives us Eidiya."
+    },
+    {
+     "w": "relatives",
+     "ar": "الأقارب",
+     "ex": "We're going to visit all our relatives on the first day."
+    },
+    {
+     "w": "fireworks",
+     "ar": "ألعاب نارية",
+     "ex": "On the first night, we're going to watch the fireworks."
+    },
+    {
+     "w": "save",
+     "ar": "يدّخر / يوفّر",
+     "ex": "I'm going to save my money for a new football."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Eid is next week. What are you going to do?"
+    },
+    {
+     "s": "B",
+     "t": "We're going to go to the Eid prayer."
+    },
+    {
+     "s": "A",
+     "t": "Are you going to wear new clothes?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, I am. Then we're going to visit our relatives."
+    },
+    {
+     "s": "A",
+     "t": "What are you going to do with your Eidiya?"
+    },
+    {
+     "s": "B",
+     "t": "I'm going to save it for a new bike."
+    }
+   ],
+   "grammar": {
+    "title": "Future time words",
+    "ar": "نستخدم مع going to كلمات للمستقبل مثل: tomorrow, next week, tonight, this evening, on the first day.",
+    "examples": [
+     "Eid is next week.",
+     "On the first day, we're going to visit Grandma.",
+     "Tonight we're going to watch the fireworks."
+    ]
+   }
+  },
+  "0-4": {
+   "words": [
+    {
+     "w": "summer holidays",
+     "ar": "الإجازة الصيفية",
+     "ex": "In the summer holidays, I'm going to visit my grandparents."
+    },
+    {
+     "w": "learn to",
+     "ar": "يتعلّم (أن يفعل شيئاً)",
+     "ex": "My little sister is going to learn to swim."
+    },
+    {
+     "w": "summer camp",
+     "ar": "مخيّم صيفي",
+     "ex": "I'm going to go to a football summer camp."
+    },
+    {
+     "w": "abroad",
+     "ar": "في الخارج / خارج البلد",
+     "ex": "We're going to travel abroad to Malaysia."
+    },
+    {
+     "w": "get up late",
+     "ar": "يستيقظ متأخراً",
+     "ex": "In the holidays, I'm not going to get up early. I'm going to get up late!"
+    },
+    {
+     "w": "join",
+     "ar": "ينضمّ إلى",
+     "ex": "I'm going to join a chess club."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "What are you going to do in the summer holidays?"
+    },
+    {
+     "s": "B",
+     "t": "I'm going to get up late every day!"
+    },
+    {
+     "s": "A",
+     "t": "Are you going to travel?"
+    },
+    {
+     "s": "B",
+     "t": "Yes. We're going to travel to Malaysia."
+    },
+    {
+     "s": "A",
+     "t": "We aren't going to travel. I'm going to join a summer camp."
+    },
+    {
+     "s": "B",
+     "t": "Cool!"
+    }
+   ],
+   "grammar": {
+    "title": "Negative: not going to",
+    "ar": "للنفي نضع not بعد am / is / are: I'm not going to … / We aren't going to … / She isn't going to …",
+    "examples": [
+     "I'm not going to get up early.",
+     "We aren't going to travel this year.",
+     "She isn't going to join the camp."
+    ]
+   }
+  },
+  "0-5": {
+   "words": [
+    {
+     "w": "plan",
+     "ar": "خطة",
+     "ex": "Here's our plan for the weekend."
+    },
+    {
+     "w": "in the evening",
+     "ar": "في المساء",
+     "ex": "In the evening, we're going to walk by the sea."
+    },
+    {
+     "w": "after that",
+     "ar": "بعد ذلك",
+     "ex": "After that, we're going to have lunch at Grandma's house."
+    },
+    {
+     "w": "go sightseeing",
+     "ar": "يتجوّل لمشاهدة المعالم",
+     "ex": "On Friday morning we're going to go sightseeing in the old town."
+    },
+    {
+     "w": "go out",
+     "ar": "يخرج (للتنزّه)",
+     "ex": "Are we going to go out in the evening?"
+    },
+    {
+     "w": "this weekend",
+     "ar": "عطلة نهاية هذا الأسبوع",
+     "ex": "This weekend is going to be great!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "What's the plan for the weekend?"
+    },
+    {
+     "s": "B",
+     "t": "On Friday morning, we're going to go sightseeing."
+    },
+    {
+     "s": "A",
+     "t": "And after that?"
+    },
+    {
+     "s": "B",
+     "t": "After that, we're going to have lunch at Grandma's."
+    },
+    {
+     "s": "A",
+     "t": "Are we going to go out in the evening?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, we're going to walk on the Corniche."
+    }
+   ],
+   "grammar": {
+    "title": "Putting plans in order",
+    "ar": "نرتّب الخطة بكلمات مثل: First, After that, In the afternoon, In the evening، ثم going to + الفعل.",
+    "examples": [
+     "First, we're going to visit Al-Balad.",
+     "After that, we're going to have lunch.",
+     "In the evening, we're going to walk by the sea."
+    ]
+   }
+  },
+  "1-0": {
+   "words": [
+    {
+     "w": "Would you like to …?",
+     "ar": "هل تودّ أن …؟",
+     "ex": "Would you like to come to my house on Saturday?"
+    },
+    {
+     "w": "I'd love to.",
+     "ar": "يسعدني ذلك",
+     "ex": "'Would you like to play chess?' 'I'd love to!'"
+    },
+    {
+     "w": "come over",
+     "ar": "يأتي للزيارة",
+     "ex": "Can you come over after school on Thursday?"
+    },
+    {
+     "w": "board game",
+     "ar": "لعبة لوحية",
+     "ex": "We're going to play board games after lunch."
+    },
+    {
+     "w": "ask my parents",
+     "ar": "أستأذن والديّ",
+     "ex": "I'd love to, but I need to ask my parents first."
+    },
+    {
+     "w": "See you then!",
+     "ar": "أراك حينها!",
+     "ex": "Great! See you on Thursday at four!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Would you like to come over on Thursday?"
+    },
+    {
+     "s": "B",
+     "t": "I'd love to! What are we going to do?"
+    },
+    {
+     "s": "A",
+     "t": "We can play board games."
+    },
+    {
+     "s": "B",
+     "t": "Great! I need to ask my parents first."
+    },
+    {
+     "s": "A",
+     "t": "OK. It's at four o'clock."
+    },
+    {
+     "s": "B",
+     "t": "See you then!"
+    }
+   ],
+   "grammar": {
+    "title": "Would you like to …?",
+    "ar": "نستخدم Would you like to + الفعل في أصله لدعوة شخص بأدب. والرد بالقبول: I'd love to!",
+    "examples": [
+     "Would you like to come over?",
+     "Would you like to play chess?",
+     "I'd love to!"
+    ]
+   }
+  },
+  "1-1": {
+   "words": [
+    {
+     "w": "have a party",
+     "ar": "يقيم حفلة",
+     "ex": "I'm having a party on Saturday."
+    },
+    {
+     "w": "I'm sorry, I can't.",
+     "ar": "آسف، لا أستطيع",
+     "ex": "I'm sorry, I can't come. I'm going to visit my grandma."
+    },
+    {
+     "w": "guest",
+     "ar": "ضيف",
+     "ex": "There are going to be ten guests at the party."
+    },
+    {
+     "w": "invitation",
+     "ar": "دعوة",
+     "ex": "Thanks for the invitation!"
+    },
+    {
+     "w": "Thanks for inviting me.",
+     "ar": "شكراً على دعوتك لي",
+     "ex": "Thanks for inviting me. Have a great party!"
+    },
+    {
+     "w": "Maybe next time.",
+     "ar": "ربما في المرة القادمة",
+     "ex": "I can't come this time, but maybe next time!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Would you like to come to my party on Saturday?"
+    },
+    {
+     "s": "B",
+     "t": "Oh, I'm sorry, I can't."
+    },
+    {
+     "s": "A",
+     "t": "Oh, why not?"
+    },
+    {
+     "s": "B",
+     "t": "We're going to fly to Dubai."
+    },
+    {
+     "s": "A",
+     "t": "That's a shame!"
+    },
+    {
+     "s": "B",
+     "t": "Thanks for inviting me. Maybe next time!"
+    }
+   ],
+   "grammar": {
+    "title": "Saying no politely",
+    "ar": "لنرفض الدعوة بأدب: نشكر، ثم نعتذر، ثم نذكر السبب باستخدام going to.",
+    "examples": [
+     "Thanks for inviting me.",
+     "I'm sorry, I can't.",
+     "I'm going to visit my grandma."
+    ]
+   }
+  },
+  "1-2": {
+   "words": [
+    {
+     "w": "Do you want to …?",
+     "ar": "هل تريد أن …؟",
+     "ex": "Do you want to come to the match with us?"
+    },
+    {
+     "w": "ticket",
+     "ar": "تذكرة",
+     "ex": "My dad has an extra ticket for the match."
+    },
+    {
+     "w": "support",
+     "ar": "يشجّع",
+     "ex": "I support Al-Hilal."
+    },
+    {
+     "w": "Let's meet at …",
+     "ar": "لنلتقِ عند …",
+     "ex": "Let's meet at the main gate at seven."
+    },
+    {
+     "w": "That sounds great!",
+     "ar": "تبدو فكرة رائعة!",
+     "ex": "A football match? That sounds great!"
+    },
+    {
+     "w": "pick you up",
+     "ar": "يمرّ عليك ليأخذك",
+     "ex": "My dad is going to pick you up at six."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "My dad has an extra ticket. Do you want to come to the match?"
+    },
+    {
+     "s": "B",
+     "t": "That sounds great!"
+    },
+    {
+     "s": "A",
+     "t": "My dad is going to pick you up at six."
+    },
+    {
+     "s": "B",
+     "t": "Perfect! My cousin is going to be there too."
+    },
+    {
+     "s": "A",
+     "t": "Let's meet him at the main gate."
+    },
+    {
+     "s": "B",
+     "t": "OK, see you on Friday!"
+    }
+   ],
+   "grammar": {
+    "title": "Do you want to …? or Would you like to …?",
+    "ar": "Do you want to أسلوب ودّي بين الأصدقاء، وWould you like to أكثر أدباً ونستخدمه مع الكبار.",
+    "examples": [
+     "Do you want to come to the match?",
+     "Would you like to come with us, Grandpa?",
+     "Let's meet at the main gate."
+    ]
+   }
+  },
+  "1-3": {
+   "words": [
+    {
+     "w": "join us",
+     "ar": "ينضمّ إلينا",
+     "ex": "We're going to the desert on Friday. Would you like to join us?"
+    },
+    {
+     "w": "picnic",
+     "ar": "نزهة مع وجبة في الخارج",
+     "ex": "We're going to have a picnic in the desert."
+    },
+    {
+     "w": "tent",
+     "ar": "خيمة",
+     "ex": "There's a big tent for everyone."
+    },
+    {
+     "w": "Can I bring …?",
+     "ar": "هل يمكنني أن أُحضر …؟",
+     "ex": "Can I bring my telescope?"
+    },
+    {
+     "w": "campfire",
+     "ar": "نار المخيّم",
+     "ex": "We're going to sit around the campfire."
+    },
+    {
+     "w": "stars",
+     "ar": "النجوم",
+     "ex": "In the desert, you can see lots of stars."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "We're going to have a picnic in the desert. Would you like to join us?"
+    },
+    {
+     "s": "B",
+     "t": "I'd love to! What are we going to do?"
+    },
+    {
+     "s": "A",
+     "t": "We're going to make a campfire and look at the stars."
+    },
+    {
+     "s": "B",
+     "t": "Can I bring my telescope?"
+    },
+    {
+     "s": "A",
+     "t": "Of course!"
+    },
+    {
+     "s": "B",
+     "t": "Thanks for inviting us!"
+    }
+   ],
+   "grammar": {
+    "title": "Can I bring …? You can …",
+    "ar": "نسأل بأدب: Can I bring …? والجواب: Of course! You can bring … (بعد can الفعل في أصله).",
+    "examples": [
+     "Can I bring my telescope?",
+     "Of course! You can bring some snacks.",
+     "Would you like to join us?"
+    ]
+   }
+  },
+  "1-4": {
+   "words": [
+    {
+     "w": "science fair",
+     "ar": "معرض العلوم",
+     "ex": "Our class is having a science fair next Wednesday."
+    },
+    {
+     "w": "project",
+     "ar": "مشروع",
+     "ex": "My project is about solar energy."
+    },
+    {
+     "w": "I hope you can come.",
+     "ar": "أتمنى أن تتمكّن من الحضور",
+     "ex": "It's at ten o'clock. I hope you can come."
+    },
+    {
+     "w": "That's very kind of you.",
+     "ar": "هذا لطف منك",
+     "ex": "An invitation? That's very kind of you."
+    },
+    {
+     "w": "I'm afraid I can't.",
+     "ar": "أخشى أنني لا أستطيع",
+     "ex": "I'm afraid I can't come on Monday. I'm going to be at work."
+    },
+    {
+     "w": "principal",
+     "ar": "مدير المدرسة",
+     "ex": "We're going to invite the principal too."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Excuse me, Mr Ahmed. Would you like to come to our science fair?"
+    },
+    {
+     "s": "B",
+     "t": "That's very kind of you. When is it?"
+    },
+    {
+     "s": "A",
+     "t": "Next Wednesday at ten. I hope you can come."
+    },
+    {
+     "s": "B",
+     "t": "I'm afraid I can't come at ten."
+    },
+    {
+     "s": "A",
+     "t": "It's open until twelve."
+    },
+    {
+     "s": "B",
+     "t": "Great, then I can come at eleven."
+    }
+   ],
+   "grammar": {
+    "title": "Very polite: I'm afraid I can't",
+    "ar": "مع الكبار نستخدم كلمات مهذّبة أكثر: Would you like to …? / I hope you can come. / I'm afraid I can't … / That's very kind of you.",
+    "examples": [
+     "Would you like to see our projects?",
+     "I'm afraid I can't come at ten.",
+     "That's very kind of you."
+    ]
+   }
+  },
+  "1-5": {
+   "words": [
+    {
+     "w": "You're invited!",
+     "ar": "أنت مدعو!",
+     "ex": "You're invited to our end-of-year party!"
+    },
+    {
+     "w": "date",
+     "ar": "التاريخ",
+     "ex": "The date of the party is 10th June."
+    },
+    {
+     "w": "reply",
+     "ar": "يردّ",
+     "ex": "Please reply by 5th June."
+    },
+    {
+     "w": "place",
+     "ar": "المكان",
+     "ex": "The place is Classroom 6B."
+    },
+    {
+     "w": "I'd love to.",
+     "ar": "يسعدني ذلك",
+     "ex": "I'd love to come to your party!"
+    },
+    {
+     "w": "I'm afraid I can't.",
+     "ar": "أخشى أنني لا أستطيع",
+     "ex": "I'm afraid I can't come. We're going to be in Abu Dhabi."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Look! I made the invitation for our class party."
+    },
+    {
+     "s": "B",
+     "t": "Read it to me, please."
+    },
+    {
+     "s": "A",
+     "t": "You're invited to our end-of-year party! It's on 10th June at eleven."
+    },
+    {
+     "s": "B",
+     "t": "I'd love to come!"
+    },
+    {
+     "s": "A",
+     "t": "Please reply by 5th June."
+    },
+    {
+     "s": "B",
+     "t": "OK! Can we invite Ms Sara too?"
+    }
+   ],
+   "grammar": {
+    "title": "Invitation language",
+    "ar": "بطاقة الدعوة فيها: You're invited to + المناسبة، ثم It's on + اليوم أو التاريخ، at + الوقت، in + المكان، ثم Please reply by …",
+    "examples": [
+     "You're invited to my party!",
+     "It's on 10th June at eleven o'clock.",
+     "Please reply by Friday."
+    ]
+   }
+  },
+  "2-0": {
+   "words": [
+    {
+     "w": "bored",
+     "ar": "يشعر بالملل",
+     "ex": "I'm so bored. There's nothing to do!"
+    },
+    {
+     "w": "boring",
+     "ar": "مُمل",
+     "ex": "The road is boring because it's so straight."
+    },
+    {
+     "w": "journey",
+     "ar": "رحلة (مسافة الطريق)",
+     "ex": "The journey from Riyadh to Dammam takes about four hours."
+    },
+    {
+     "w": "tired",
+     "ar": "متعَب",
+     "ex": "I'm tired because I got up at five."
+    },
+    {
+     "w": "because",
+     "ar": "لأنّ",
+     "ex": "I'm happy because it's the weekend."
+    },
+    {
+     "w": "so",
+     "ar": "لذلك",
+     "ex": "I was bored, so I read a book."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "How long is this journey?"
+    },
+    {
+     "s": "B",
+     "t": "About four hours."
+    },
+    {
+     "s": "A",
+     "t": "I'm so bored!"
+    },
+    {
+     "s": "B",
+     "t": "Me too. And I'm tired because I got up at five."
+    },
+    {
+     "s": "A",
+     "t": "Let's play a game, so the time goes faster."
+    },
+    {
+     "s": "B",
+     "t": "Good idea!"
+    }
+   ],
+   "grammar": {
+    "title": "bored or boring?",
+    "ar": "الصفة المنتهية بـ -ed تصف شعور الشخص (I'm bored)، والصفة المنتهية بـ -ing تصف الشيء الذي يسبّب الشعور (The film is boring).",
+    "examples": [
+     "I'm bored.",
+     "This journey is boring.",
+     "The film was boring, so I fell asleep."
+    ]
+   }
+  },
+  "2-1": {
+   "words": [
+    {
+     "w": "excited",
+     "ar": "متحمّس",
+     "ex": "I'm excited about our trip next week."
+    },
+    {
+     "w": "exciting",
+     "ar": "مثير / ممتع جداً",
+     "ex": "A trip to a theme park is really exciting!"
+    },
+    {
+     "w": "can't wait",
+     "ar": "لا أطيق الانتظار",
+     "ex": "I can't wait for the holidays!"
+    },
+    {
+     "w": "roller coaster",
+     "ar": "قطار الأفعوانية",
+     "ex": "This roller coaster is very fast."
+    },
+    {
+     "w": "theme park",
+     "ar": "مدينة ملاهٍ",
+     "ex": "My little brother loves theme parks."
+    },
+    {
+     "w": "nervous",
+     "ar": "متوتّر",
+     "ex": "Aren't you nervous about the roller coaster?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "We're going to visit Ferrari World next week!"
+    },
+    {
+     "s": "B",
+     "t": "That's exciting!"
+    },
+    {
+     "s": "A",
+     "t": "I can't wait!"
+    },
+    {
+     "s": "B",
+     "t": "Aren't you nervous about the roller coaster?"
+    },
+    {
+     "s": "A",
+     "t": "A little, but it's safe."
+    },
+    {
+     "s": "B",
+     "t": "Have fun!"
+    }
+   ],
+   "grammar": {
+    "title": "excited or exciting?",
+    "ar": "excited = أنا متحمّس (شعوري). exciting = الشيء مثير. ونقول: excited about + الشيء.",
+    "examples": [
+     "I'm excited about the trip.",
+     "The roller coaster is exciting.",
+     "She's nervous because it's very fast."
+    ]
+   }
+  },
+  "2-2": {
+   "words": [
+    {
+     "w": "worried",
+     "ar": "قلِق",
+     "ex": "I'm worried about my maths test."
+    },
+    {
+     "w": "relaxed",
+     "ar": "مرتاح / هادئ",
+     "ex": "I was relaxed because I went to bed early."
+    },
+    {
+     "w": "revise",
+     "ar": "يراجع (للاختبار)",
+     "ex": "I revised for two hours."
+    },
+    {
+     "w": "tiring",
+     "ar": "مُتعِب",
+     "ex": "Revising for two hours was really tiring!"
+    },
+    {
+     "w": "proud",
+     "ar": "فخور",
+     "ex": "Well done! I'm so proud of you."
+    },
+    {
+     "w": "pass",
+     "ar": "ينجح (في الاختبار)",
+     "ex": "I passed my maths test!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "You look worried. What's wrong?"
+    },
+    {
+     "s": "B",
+     "t": "I'm worried about my maths test because it's difficult."
+    },
+    {
+     "s": "A",
+     "t": "Did you revise?"
+    },
+    {
+     "s": "B",
+     "t": "Yes. It was really tiring."
+    },
+    {
+     "s": "A",
+     "t": "Go to bed early, so you feel relaxed."
+    },
+    {
+     "s": "B",
+     "t": "OK. Thanks!"
+    }
+   ],
+   "grammar": {
+    "title": "because and so",
+    "ar": "because تأتي قبل السبب، وso تأتي قبل النتيجة.",
+    "examples": [
+     "I'm worried because the test is difficult.",
+     "The test is difficult, so I'm worried.",
+     "I revised a lot, so I passed."
+    ]
+   }
+  },
+  "2-3": {
+   "words": [
+    {
+     "w": "interested in",
+     "ar": "مهتمّ بـ",
+     "ex": "I'm really interested in dinosaurs."
+    },
+    {
+     "w": "interesting",
+     "ar": "مثير للاهتمام",
+     "ex": "The space room is very interesting."
+    },
+    {
+     "w": "amazed",
+     "ar": "مندهش / منبهر",
+     "ex": "I'm only eight kilos on the Moon! I'm amazed!"
+    },
+    {
+     "w": "amazing",
+     "ar": "مذهل",
+     "ex": "Look at this dinosaur! It's amazing!"
+    },
+    {
+     "w": "surprised",
+     "ar": "متفاجئ",
+     "ex": "I'm surprised because I thought all dinosaurs were huge."
+    },
+    {
+     "w": "surprising",
+     "ar": "مفاجئ",
+     "ex": "That's surprising!"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Look at this dinosaur! It's amazing!"
+    },
+    {
+     "s": "B",
+     "t": "I'm really interested in dinosaurs."
+    },
+    {
+     "s": "A",
+     "t": "Some were only the size of a chicken!"
+    },
+    {
+     "s": "B",
+     "t": "That's surprising!"
+    },
+    {
+     "s": "A",
+     "t": "Let's go to the space room. It's very interesting."
+    },
+    {
+     "s": "B",
+     "t": "OK!"
+    }
+   ],
+   "grammar": {
+    "title": "More -ed and -ing adjectives",
+    "ar": "نفس القاعدة: interested / amazed / surprised لشعور الشخص، وinteresting / amazing / surprising للشيء. ونقول: interested in.",
+    "examples": [
+     "I'm interested in space.",
+     "Space is interesting.",
+     "The news was surprising, so we were all surprised."
+    ]
+   }
+  },
+  "2-4": {
+   "words": [
+    {
+     "w": "disappointed",
+     "ar": "خائب الأمل",
+     "ex": "We lost the final, so I'm really disappointed."
+    },
+    {
+     "w": "disappointing",
+     "ar": "مخيّب للآمال",
+     "ex": "It was a disappointing game."
+    },
+    {
+     "w": "upset",
+     "ar": "منزعج / مستاء",
+     "ex": "Are you OK? You look upset."
+    },
+    {
+     "w": "lose",
+     "ar": "يخسر",
+     "ex": "Every team loses sometimes."
+    },
+    {
+     "w": "Cheer up!",
+     "ar": "ابتهج! / لا تحزن!",
+     "ex": "Cheer up! There's a new tournament next month."
+    },
+    {
+     "w": "It doesn't matter.",
+     "ar": "لا يهمّ",
+     "ex": "It doesn't matter. Everyone misses sometimes."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "You look upset. What's wrong?"
+    },
+    {
+     "s": "B",
+     "t": "We lost the final, so I'm disappointed."
+    },
+    {
+     "s": "A",
+     "t": "It doesn't matter. You played well."
+    },
+    {
+     "s": "B",
+     "t": "But I missed two easy shots."
+    },
+    {
+     "s": "A",
+     "t": "Cheer up! There's a new tournament next month."
+    },
+    {
+     "s": "B",
+     "t": "OK. I'm going to practise harder."
+    }
+   ],
+   "grammar": {
+    "title": "disappointed or disappointing?",
+    "ar": "disappointed = شعوري بخيبة الأمل. disappointing = الشيء مخيّب للآمال. ونستخدم so لنذكر النتيجة.",
+    "examples": [
+     "I'm disappointed.",
+     "The match was disappointing.",
+     "We lost, so we were upset."
+    ]
+   }
+  },
+  "2-5": {
+   "words": [
+    {
+     "w": "feel",
+     "ar": "يشعر",
+     "ex": "On Thursday I felt happy."
+    },
+    {
+     "w": "frightened",
+     "ar": "خائف",
+     "ex": "My little sister is frightened of thunder."
+    },
+    {
+     "w": "frightening",
+     "ar": "مخيف",
+     "ex": "The thunder was frightening, so I couldn't sleep."
+    },
+    {
+     "w": "diary",
+     "ar": "مذكّرات / يوميّات",
+     "ex": "Can you read your feelings diary to the class?"
+    },
+    {
+     "w": "excited",
+     "ar": "متحمّس",
+     "ex": "I was excited because we had a new science teacher."
+    },
+    {
+     "w": "bored",
+     "ar": "يشعر بالملل",
+     "ex": "I felt bored because we couldn't play outside."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "How was your week?"
+    },
+    {
+     "s": "B",
+     "t": "On Sunday I was excited because we had a new teacher."
+    },
+    {
+     "s": "A",
+     "t": "And on Tuesday?"
+    },
+    {
+     "s": "B",
+     "t": "The thunder was frightening, so I couldn't sleep."
+    },
+    {
+     "s": "A",
+     "t": "Were you tired?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, very tired!"
+    }
+   ],
+   "grammar": {
+    "title": "Feelings in the past",
+    "ar": "للحديث عن مشاعر في الماضي نستخدم was / were أو felt: I was bored. I felt happy.",
+    "examples": [
+     "I was excited because we had a new teacher.",
+     "I felt bored, so I read a book.",
+     "The storm was frightening."
+    ]
+   }
+  },
+  "3-0": {
+   "words": [
+    {
+     "w": "have to",
+     "ar": "يجب عليه / مضطرّ إلى",
+     "ex": "We have to wear black shoes."
+    },
+    {
+     "w": "mustn't",
+     "ar": "ممنوع أن …",
+     "ex": "You mustn't bring a phone to class."
+    },
+    {
+     "w": "uniform",
+     "ar": "الزيّ المدرسي",
+     "ex": "Do we have to wear a uniform?"
+    },
+    {
+     "w": "be late",
+     "ar": "يتأخّر",
+     "ex": "You mustn't be late because the gates close."
+    },
+    {
+     "w": "put up your hand",
+     "ar": "يرفع يده",
+     "ex": "Do I have to put up my hand to speak?"
+    },
+    {
+     "w": "break time",
+     "ar": "وقت الفسحة",
+     "ex": "At break time, we can play outside."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "What time do we have to be at school?"
+    },
+    {
+     "s": "B",
+     "t": "At quarter to seven. You mustn't be late."
+    },
+    {
+     "s": "A",
+     "t": "Do we have to wear a uniform?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, we do."
+    },
+    {
+     "s": "A",
+     "t": "Do we have to stay in class at break time?"
+    },
+    {
+     "s": "B",
+     "t": "No, we don't. We can play outside."
+    }
+   ],
+   "grammar": {
+    "title": "have to and mustn't",
+    "ar": "have to = من الضروري أن تفعله. mustn't = ممنوع أن تفعله. وبعدهما الفعل في أصله.",
+    "examples": [
+     "We have to wear a uniform.",
+     "You mustn't be late.",
+     "We have to put up our hands to speak."
+    ]
+   }
+  },
+  "3-1": {
+   "words": [
+    {
+     "w": "has to",
+     "ar": "يجب عليه / عليها",
+     "ex": "My sister has to take out the rubbish."
+    },
+    {
+     "w": "don't have to",
+     "ar": "ليس مضطرّاً إلى",
+     "ex": "At the weekend, I don't have to go to bed early."
+    },
+    {
+     "w": "make your bed",
+     "ar": "يرتّب سريره",
+     "ex": "Do you have to make your bed every day?"
+    },
+    {
+     "w": "bedtime",
+     "ar": "وقت النوم",
+     "ex": "My bedtime is nine o'clock on school days."
+    },
+    {
+     "w": "take out the rubbish",
+     "ar": "يُخرج القمامة",
+     "ex": "I have to take out the rubbish every evening."
+    },
+    {
+     "w": "pocket money",
+     "ar": "المصروف",
+     "ex": "Do you get pocket money?"
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Do you have to make your bed every day?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, I do."
+    },
+    {
+     "s": "A",
+     "t": "My sister has to take out the rubbish."
+    },
+    {
+     "s": "B",
+     "t": "Lucky you! I have to do that."
+    },
+    {
+     "s": "A",
+     "t": "What time is your bedtime?"
+    },
+    {
+     "s": "B",
+     "t": "Nine. But at the weekend, I don't have to go to bed early."
+    }
+   ],
+   "grammar": {
+    "title": "has to / doesn't have to",
+    "ar": "مع he و she نقول has to. والنفي don't / doesn't have to يعني أنّ الأمر غير ضروري (وليس ممنوعاً).",
+    "examples": [
+     "She has to make her bed.",
+     "He doesn't have to cook.",
+     "Do you have to help at home? Yes, I do."
+    ]
+   }
+  },
+  "3-2": {
+   "words": [
+    {
+     "w": "must",
+     "ar": "يجب",
+     "ex": "You must listen to the lifeguard."
+    },
+    {
+     "w": "lifeguard",
+     "ar": "المنقذ",
+     "ex": "You have to stay near the lifeguard."
+    },
+    {
+     "w": "deep end",
+     "ar": "الجزء العميق من المسبح",
+     "ex": "You can dive only in the deep end."
+    },
+    {
+     "w": "slippery",
+     "ar": "زَلِق",
+     "ex": "Don't run! The floor is slippery."
+    },
+    {
+     "w": "dive",
+     "ar": "يقفز في الماء (يغطس)",
+     "ex": "You mustn't dive here."
+    },
+    {
+     "w": "sign",
+     "ar": "لافتة",
+     "ex": "First, read the sign."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Can I jump in now?"
+    },
+    {
+     "s": "B",
+     "t": "Wait! You mustn't dive here."
+    },
+    {
+     "s": "A",
+     "t": "Why not?"
+    },
+    {
+     "s": "B",
+     "t": "Because the water isn't deep."
+    },
+    {
+     "s": "A",
+     "t": "OK, I'm going to run to the deep end!"
+    },
+    {
+     "s": "B",
+     "t": "No! You mustn't run. The floor is slippery."
+    }
+   ],
+   "grammar": {
+    "title": "must / mustn't",
+    "ar": "must تعني أنّ القاعدة مهمّة جداً، وmustn't تعني ممنوع. لا نضع to بعد must.",
+    "examples": [
+     "You must listen to the lifeguard.",
+     "You mustn't run.",
+     "You must wear a swimming hat."
+    ]
+   }
+  },
+  "3-3": {
+   "words": [
+    {
+     "w": "passport",
+     "ar": "جواز السفر",
+     "ex": "Do I have to show my passport when we land?"
+    },
+    {
+     "w": "seat belt",
+     "ar": "حزام الأمان",
+     "ex": "You have to wear your seat belt now."
+    },
+    {
+     "w": "take off",
+     "ar": "تُقلع (الطائرة)",
+     "ex": "The plane is going to take off in five minutes."
+    },
+    {
+     "w": "land",
+     "ar": "تهبط (الطائرة)",
+     "ex": "We're going to land in London at six."
+    },
+    {
+     "w": "luggage",
+     "ar": "الأمتعة",
+     "ex": "Don't put your passport in your big luggage."
+    },
+    {
+     "w": "flight attendant",
+     "ar": "مضيف الطيران",
+     "ex": "The flight attendant answered all my questions."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Do I have to wear my seat belt now?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, when the plane takes off and lands."
+    },
+    {
+     "s": "A",
+     "t": "Do I have to stay in my seat all the time?"
+    },
+    {
+     "s": "B",
+     "t": "No, you don't."
+    },
+    {
+     "s": "A",
+     "t": "Do I have to show my passport?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, at the airport. Keep it with you!"
+    }
+   ],
+   "grammar": {
+    "title": "Do I have to …?",
+    "ar": "للسؤال: Do I / Do you have to …? / Does he have to …? والجواب القصير: Yes, you do. / No, you don't.",
+    "examples": [
+     "Do I have to wear a seat belt?",
+     "Yes, you do.",
+     "No, you don't have to stay in your seat."
+    ]
+   }
+  },
+  "3-4": {
+   "words": [
+    {
+     "w": "rule",
+     "ar": "قاعدة",
+     "ex": "Can you teach me the rules of football?"
+    },
+    {
+     "w": "referee",
+     "ar": "الحَكَم",
+     "ex": "The referee is going to stop the game."
+    },
+    {
+     "w": "score a goal",
+     "ar": "يسجّل هدفاً",
+     "ex": "You have to work with your team to score a goal."
+    },
+    {
+     "w": "touch",
+     "ar": "يلمس",
+     "ex": "You mustn't touch the ball with your hands."
+    },
+    {
+     "w": "team",
+     "ar": "فريق",
+     "ex": "There are two teams in a football match."
+    },
+    {
+     "w": "foul",
+     "ar": "خطأ (مخالفة)",
+     "ex": "Pushing another player is a foul."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Can I touch the ball with my hands?"
+    },
+    {
+     "s": "B",
+     "t": "No, you mustn't. Only the goalkeeper can."
+    },
+    {
+     "s": "A",
+     "t": "What about pushing other players?"
+    },
+    {
+     "s": "B",
+     "t": "That's a foul. The referee stops the game."
+    },
+    {
+     "s": "A",
+     "t": "Do I have to run all the time?"
+    },
+    {
+     "s": "B",
+     "t": "No, you don't. But you have to work with your team."
+    }
+   ],
+   "grammar": {
+    "title": "mustn't or don't have to?",
+    "ar": "mustn't = ممنوع. don't have to = غير ضروري، ويمكنك أن تختار.",
+    "examples": [
+     "You mustn't touch the ball with your hands.",
+     "You don't have to run all the time.",
+     "You have to work with your team."
+    ]
+   }
+  },
+  "3-5": {
+   "words": [
+    {
+     "w": "club",
+     "ar": "نادٍ",
+     "ex": "We're starting a reading club at school."
+    },
+    {
+     "w": "member",
+     "ar": "عضو",
+     "ex": "Members have to read one book every month."
+    },
+    {
+     "w": "share",
+     "ar": "يشارك / يتقاسم",
+     "ex": "We can share our books."
+    },
+    {
+     "w": "respect",
+     "ar": "يحترم",
+     "ex": "Everyone has to respect other people's ideas."
+    },
+    {
+     "w": "have to",
+     "ar": "يجب عليه / مضطرّ إلى",
+     "ex": "Members have to come on time."
+    },
+    {
+     "w": "mustn't",
+     "ar": "ممنوع أن …",
+     "ex": "They mustn't write in the library books."
+    }
+   ],
+   "dialogue": [
+    {
+     "s": "A",
+     "t": "Let's write the rules for our reading club."
+    },
+    {
+     "s": "B",
+     "t": "Members have to read one book every month."
+    },
+    {
+     "s": "A",
+     "t": "And they mustn't write in library books."
+    },
+    {
+     "s": "B",
+     "t": "Members have to come on time."
+    },
+    {
+     "s": "A",
+     "t": "Do they have to buy books?"
+    },
+    {
+     "s": "B",
+     "t": "No, they don't. We can share."
+    }
+   ],
+   "grammar": {
+    "title": "Rules with reasons",
+    "ar": "نذكر القاعدة ثم السبب بعد because: Members have to … because …",
+    "examples": [
+     "Members have to come on time because the meeting is short.",
+     "You mustn't shout because people are reading.",
+     "You don't have to buy books because we share."
+    ]
+   }
+  }
+ },
+ "quizzes": {
+  "0-0": [
+   {
+    "type": "order",
+    "words": [
+     "This",
+     "weekend",
+     "I'm",
+     "going",
+     "to",
+     "visit",
+     "my",
+     "cousins."
+    ],
+    "answer": "This weekend I'm going to visit my cousins.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We're",
+     "going",
+     "to",
+     "stay",
+     "in",
+     "on",
+     "Friday."
+    ],
+    "answer": "We're going to stay in on Friday.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Tomorrow I ___ going to play football.",
+    "options": [
+     "am",
+     "is",
+     "are",
+     "be"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "It's very hot, so we're going to ___ and watch a film at home.",
+    "options": [
+     "go out",
+     "have a picnic",
+     "stay in",
+     "play outside"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence is about a plan for the future?",
+    "options": [
+     "We went to the park.",
+     "We go to the park every day.",
+     "We were at the park.",
+     "We're going to go to the park."
+    ],
+    "answer": 3
+   }
+  ],
+  "0-1": [
+   {
+    "type": "order",
+    "words": [
+     "We're",
+     "going",
+     "to",
+     "visit",
+     "my",
+     "uncle's",
+     "farm."
+    ],
+    "answer": "We're going to visit my uncle's farm.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Are",
+     "you",
+     "going",
+     "to",
+     "ride",
+     "a",
+     "camel?"
+    ],
+    "answer": "Are you going to ride a camel?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "___ you going to spend the night there?",
+    "options": [
+     "Is",
+     "Are",
+     "Do",
+     "Am"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Reem's family is going to take dates from the palm trees. They're going to ___.",
+    "options": [
+     "pick dates",
+     "feed the animals",
+     "ride camels",
+     "spend the night"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Choose the correct sentence.",
+    "options": [
+     "My brother is going ride a camel.",
+     "My brother going to ride a camel.",
+     "My brother is going to ride a camel.",
+     "My brother are going to ride a camel."
+    ],
+    "answer": 2
+   }
+  ],
+  "0-2": [
+   {
+    "type": "order",
+    "words": [
+     "Dad",
+     "is",
+     "going",
+     "to",
+     "bake",
+     "a",
+     "chocolate",
+     "cake."
+    ],
+    "answer": "Dad is going to bake a chocolate cake.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "aren't",
+     "going",
+     "to",
+     "tell",
+     "Mum."
+    ],
+    "answer": "We aren't going to tell Mum.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "My sister ___ going to decorate the room.",
+    "options": [
+     "are",
+     "is",
+     "am",
+     "be"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Don't tell anyone! Can you ___?",
+    "options": [
+     "make a card",
+     "bake a cake",
+     "be on time",
+     "keep a secret"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "We're going to put balloons and lights in the room. We're going to ___ it.",
+    "options": [
+     "decorate",
+     "bake",
+     "keep",
+     "feed"
+    ],
+    "answer": 0
+   }
+  ],
+  "0-3": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "going",
+     "to",
+     "wear",
+     "my",
+     "new",
+     "clothes."
+    ],
+    "answer": "I'm going to wear my new clothes.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We're",
+     "going",
+     "to",
+     "visit",
+     "our",
+     "relatives."
+    ],
+    "answer": "We're going to visit our relatives.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Money that adults give to children at Eid is called ___.",
+    "options": [
+     "fireworks",
+     "Eidiya",
+     "relatives",
+     "a card"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "I'm not going to spend my money now. I'm going to ___ it.",
+    "options": [
+     "wear",
+     "watch",
+     "visit",
+     "save"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Choose the correct sentence.",
+    "options": [
+     "We going to watch the fireworks tonight.",
+     "We're going to watch the fireworks tonight.",
+     "We're go to watch the fireworks tonight.",
+     "We're going watch the fireworks tonight."
+    ],
+    "answer": 1
+   }
+  ],
+  "0-4": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "going",
+     "to",
+     "join",
+     "a",
+     "football",
+     "summer",
+     "camp."
+    ],
+    "answer": "I'm going to join a football summer camp.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "aren't",
+     "going",
+     "to",
+     "travel",
+     "this",
+     "year."
+    ],
+    "answer": "We aren't going to travel this year.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "We're going to visit another country. We're going to travel ___.",
+    "options": [
+     "at home",
+     "in town",
+     "abroad",
+     "at school"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "My sister is going to ___ swim this summer.",
+    "options": [
+     "learn",
+     "learn to",
+     "learning",
+     "learns to"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Choose the correct negative sentence.",
+    "options": [
+     "I not going to get up early.",
+     "I don't going to get up early.",
+     "I'm not go to get up early.",
+     "I'm not going to get up early."
+    ],
+    "answer": 3
+   }
+  ],
+  "0-5": [
+   {
+    "type": "order",
+    "words": [
+     "After",
+     "that,",
+     "we're",
+     "going",
+     "to",
+     "have",
+     "lunch."
+    ],
+    "answer": "After that, we're going to have lunch.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "In",
+     "the",
+     "evening,",
+     "we're",
+     "going",
+     "to",
+     "walk",
+     "by",
+     "the",
+     "sea."
+    ],
+    "answer": "In the evening, we're going to walk by the sea.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "To visit famous places as a tourist is to ___.",
+    "options": [
+     "stay in",
+     "go sightseeing",
+     "get up late",
+     "keep a secret"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "First we're going to visit the museum. ___, we're going to have lunch.",
+    "options": [
+     "Before",
+     "Yesterday",
+     "After that",
+     "Last week"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "A: What's the plan for Saturday? B: ___",
+    "options": [
+     "We're going to go to the beach.",
+     "We went to the beach.",
+     "We go to the beach yesterday.",
+     "We were at the beach last week."
+    ],
+    "answer": 0
+   }
+  ],
+  "1-0": [
+   {
+    "type": "order",
+    "words": [
+     "Would",
+     "you",
+     "like",
+     "to",
+     "come",
+     "to",
+     "my",
+     "house?"
+    ],
+    "answer": "Would you like to come to my house?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "need",
+     "to",
+     "ask",
+     "my",
+     "parents",
+     "first."
+    ],
+    "answer": "I need to ask my parents first.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A: Would you like to play football with us? B: ___",
+    "options": [
+     "Yes, I like.",
+     "I'd love to!",
+     "I love to.",
+     "Yes, I like it."
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which sentence is an invitation?",
+    "options": [
+     "Would you like to come over?",
+     "I came over yesterday.",
+     "My house is big.",
+     "I like your house."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Ludo is a game you play on a table. It's a ___ game.",
+    "options": [
+     "video",
+     "race",
+     "board",
+     "ball"
+    ],
+    "answer": 2
+   }
+  ],
+  "1-1": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "having",
+     "a",
+     "party",
+     "on",
+     "Saturday."
+    ],
+    "answer": "I'm having a party on Saturday.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Thanks",
+     "for",
+     "inviting",
+     "me",
+     "to",
+     "your",
+     "party."
+    ],
+    "answer": "Thanks for inviting me to your party.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A: Would you like to come to my party? B: ___ I'm going to visit my uncle.",
+    "options": [
+     "I'd love to.",
+     "Yes, please.",
+     "See you then!",
+     "I'm sorry, I can't."
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "A person you invite to your party is a ___.",
+    "options": [
+     "guest",
+     "teacher",
+     "driver",
+     "doctor"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Which is the most polite answer?",
+    "options": [
+     "No. I don't want to.",
+     "I'm sorry, I can't. Maybe next time!",
+     "No, I can't.",
+     "Not Saturday."
+    ],
+    "answer": 1
+   }
+  ],
+  "1-2": [
+   {
+    "type": "order",
+    "words": [
+     "Do",
+     "you",
+     "want",
+     "to",
+     "come",
+     "to",
+     "the",
+     "match?"
+    ],
+    "answer": "Do you want to come to the match?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Let's",
+     "meet",
+     "at",
+     "the",
+     "main",
+     "gate."
+    ],
+    "answer": "Let's meet at the main gate.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "My dad is going to come to your house and take you in the car. He's going to ___.",
+    "options": [
+     "support you",
+     "invite you",
+     "pick you up",
+     "meet you"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "I always want Al-Ahli to win. I ___ Al-Ahli.",
+    "options": [
+     "watch",
+     "support",
+     "play",
+     "meet"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A: Do you want to come to the match? B: ___",
+    "options": [
+     "That sounds great!",
+     "That's sound great!",
+     "It sounds great to.",
+     "Yes, I want."
+    ],
+    "answer": 0
+   }
+  ],
+  "1-3": [
+   {
+    "type": "order",
+    "words": [
+     "Would",
+     "you",
+     "like",
+     "to",
+     "join",
+     "us",
+     "on",
+     "Friday?"
+    ],
+    "answer": "Would you like to join us on Friday?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Can",
+     "I",
+     "bring",
+     "my",
+     "telescope?"
+    ],
+    "answer": "Can I bring my telescope?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A small house made of cloth for sleeping outside is a ___.",
+    "options": [
+     "picnic",
+     "campfire",
+     "garden",
+     "tent"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "A: Can I bring some snacks? B: ___",
+    "options": [
+     "Of course!",
+     "Yes, you bring.",
+     "I'd love to.",
+     "Maybe next time."
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "We're going to the beach. Would you like to ___ us?",
+    "options": [
+     "come",
+     "join",
+     "bring",
+     "go"
+    ],
+    "answer": 1
+   }
+  ],
+  "1-4": [
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "hope",
+     "you",
+     "can",
+     "come."
+    ],
+    "answer": "I hope you can come.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "afraid",
+     "I",
+     "can't",
+     "come",
+     "at",
+     "ten."
+    ],
+    "answer": "I'm afraid I can't come at ten.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The person in charge of a school is the ___.",
+    "options": [
+     "driver",
+     "guest",
+     "principal",
+     "student"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Which is the most polite way to invite your teacher?",
+    "options": [
+     "Come to the fair.",
+     "You come to the fair, OK?",
+     "Do you come to the fair?",
+     "Would you like to come to our science fair?"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "A: Would you like to come to our show? B: That's very ___ of you.",
+    "options": [
+     "kind",
+     "happy",
+     "good at",
+     "nicely"
+    ],
+    "answer": 0
+   }
+  ],
+  "1-5": [
+   {
+    "type": "order",
+    "words": [
+     "You're",
+     "invited",
+     "to",
+     "our",
+     "end-of-year",
+     "party!"
+    ],
+    "answer": "You're invited to our end-of-year party!",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Please",
+     "reply",
+     "by",
+     "Friday."
+    ],
+    "answer": "Please reply by Friday.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The party is ___ Saturday ___ four o'clock.",
+    "options": [
+     "in / on",
+     "on / at",
+     "at / in",
+     "at / on"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "When you answer an invitation, you ___.",
+    "options": [
+     "decorate",
+     "invite",
+     "pick up",
+     "reply"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "A: Would you like to come to my party? B: ___",
+    "options": [
+     "I'm afraid I can. I'm going to be in Taif.",
+     "I afraid I can't. I'm going to be in Taif.",
+     "I'm afraid I can't. I'm going to be in Taif.",
+     "I'm afraid, no can. I'm going to be in Taif."
+    ],
+    "answer": 2
+   }
+  ],
+  "2-0": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "tired",
+     "because",
+     "I",
+     "got",
+     "up",
+     "early."
+    ],
+    "answer": "I'm tired because I got up early.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "road",
+     "was",
+     "boring,",
+     "so",
+     "we",
+     "played",
+     "a",
+     "game."
+    ],
+    "answer": "The road was boring, so we played a game.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "This film is very long and nothing happens. It's ___.",
+    "options": [
+     "bored",
+     "boring",
+     "tired",
+     "excited"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "I'm ___ because I didn't sleep well.",
+    "options": [
+     "boring",
+     "tiring",
+     "tired",
+     "exciting"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "I was hungry, ___ I ate a sandwich.",
+    "options": [
+     "because",
+     "or",
+     "but",
+     "so"
+    ],
+    "answer": 3
+   }
+  ],
+  "2-1": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "excited",
+     "about",
+     "the",
+     "trip."
+    ],
+    "answer": "I'm excited about the trip.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "can't",
+     "wait",
+     "for",
+     "the",
+     "weekend!"
+    ],
+    "answer": "I can't wait for the weekend!",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The match was really ___! Both teams played very well.",
+    "options": [
+     "excited",
+     "exciting",
+     "bored",
+     "nervous"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "I'm ___ about my birthday next week.",
+    "options": [
+     "exciting",
+     "boring",
+     "tiring",
+     "excited"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Before my first swimming race, I felt a little ___.",
+    "options": [
+     "nervous",
+     "boring",
+     "exciting",
+     "tiring"
+    ],
+    "answer": 0
+   }
+  ],
+  "2-2": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "worried",
+     "because",
+     "the",
+     "test",
+     "is",
+     "difficult."
+    ],
+    "answer": "I'm worried because the test is difficult.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "revised",
+     "a",
+     "lot,",
+     "so",
+     "I",
+     "passed."
+    ],
+    "answer": "I revised a lot, so I passed.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Swimming for two hours was very ___.",
+    "options": [
+     "tired",
+     "tiring",
+     "worried",
+     "relaxed"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "I did well in the test. My parents are ___ of me.",
+    "options": [
+     "boring",
+     "nervous",
+     "proud",
+     "worried"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "I studied my notes again before the test. I ___.",
+    "options": [
+     "revised",
+     "passed",
+     "relaxed",
+     "tired"
+    ],
+    "answer": 0
+   }
+  ],
+  "2-3": [
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "really",
+     "interested",
+     "in",
+     "dinosaurs."
+    ],
+    "answer": "I'm really interested in dinosaurs.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "space",
+     "room",
+     "was",
+     "amazing."
+    ],
+    "answer": "The space room was amazing.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "I'm ___ in science.",
+    "options": [
+     "interesting",
+     "interested",
+     "interest",
+     "amazing"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "It's very unusual news. It's ___!",
+    "options": [
+     "surprised",
+     "bored",
+     "interested",
+     "surprising"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Choose the correct sentence.",
+    "options": [
+     "The museum was amazed.",
+     "I was amazing by the dinosaurs.",
+     "I was amazed by the dinosaurs.",
+     "The dinosaurs were amazed."
+    ],
+    "answer": 2
+   }
+  ],
+  "2-4": [
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "lost",
+     "the",
+     "final,",
+     "so",
+     "I'm",
+     "disappointed."
+    ],
+    "answer": "We lost the final, so I'm disappointed.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "Cheer",
+     "up!",
+     "You",
+     "played",
+     "well."
+    ],
+    "answer": "Cheer up! You played well.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "I wanted a good film, but it was bad. It was ___.",
+    "options": [
+     "disappointed",
+     "disappointing",
+     "excited",
+     "interested"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A: Oh no, I dropped my pencil. B: ___ Here's another one.",
+    "options": [
+     "Congratulations!",
+     "I'd love to!",
+     "It doesn't matter.",
+     "See you then!"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "My friend is sad. I say: '___'",
+    "options": [
+     "Cheer up!",
+     "Well done!",
+     "Have a nice trip!",
+     "You're welcome."
+    ],
+    "answer": 0
+   }
+  ],
+  "2-5": [
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "felt",
+     "bored",
+     "because",
+     "it",
+     "rained."
+    ],
+    "answer": "I felt bored because it rained.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "The",
+     "storm",
+     "was",
+     "frightening,",
+     "so",
+     "I",
+     "couldn't",
+     "sleep."
+    ],
+    "answer": "The storm was frightening, so I couldn't sleep.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "I'm ___ of big dogs.",
+    "options": [
+     "frightening",
+     "exciting",
+     "frightened",
+     "boring"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "I write about my day in my ___ every night.",
+    "options": [
+     "diary",
+     "ticket",
+     "project",
+     "tent"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "Choose the correct sentence.",
+    "options": [
+     "I was boring, so I watched TV.",
+     "I was bored, so I watched TV.",
+     "I bored, so I watched TV.",
+     "I was bored because so I watched TV."
+    ],
+    "answer": 1
+   }
+  ],
+  "3-0": [
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "have",
+     "to",
+     "wear",
+     "a",
+     "uniform."
+    ],
+    "answer": "We have to wear a uniform.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "mustn't",
+     "be",
+     "late",
+     "for",
+     "school."
+    ],
+    "answer": "You mustn't be late for school.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "All the students ___ arrive at school at seven.",
+    "options": [
+     "has to",
+     "have to",
+     "having to",
+     "haves to"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "It's a rule: no phones in class. You ___ use your phone.",
+    "options": [
+     "have to",
+     "must",
+     "has to",
+     "mustn't"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "The short time between lessons to eat and play is ___.",
+    "options": [
+     "break time",
+     "bedtime",
+     "homework",
+     "uniform"
+    ],
+    "answer": 0
+   }
+  ],
+  "3-1": [
+   {
+    "type": "order",
+    "words": [
+     "My",
+     "sister",
+     "has",
+     "to",
+     "take",
+     "out",
+     "the",
+     "rubbish."
+    ],
+    "answer": "My sister has to take out the rubbish.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "I",
+     "don't",
+     "have",
+     "to",
+     "get",
+     "up",
+     "early",
+     "at",
+     "the",
+     "weekend."
+    ],
+    "answer": "I don't have to get up early at the weekend.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "My brother ___ wash the car every Friday.",
+    "options": [
+     "have to",
+     "has to",
+     "must to",
+     "having to"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "There's no school on Saturday, so I ___ get up early.",
+    "options": [
+     "mustn't",
+     "has to",
+     "don't have to",
+     "doesn't have to"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "Money that parents give children every week is ___.",
+    "options": [
+     "rubbish",
+     "bedtime",
+     "a ticket",
+     "pocket money"
+    ],
+    "answer": 3
+   }
+  ],
+  "3-2": [
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "mustn't",
+     "run",
+     "near",
+     "the",
+     "pool."
+    ],
+    "answer": "You mustn't run near the pool.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "must",
+     "listen",
+     "to",
+     "the",
+     "lifeguard."
+    ],
+    "answer": "You must listen to the lifeguard.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "You ___ wear a swimming hat in this pool.",
+    "options": [
+     "must to",
+     "musts",
+     "must",
+     "mustn't to"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "The floor is wet. Be careful! It's ___.",
+    "options": [
+     "deep",
+     "slippery",
+     "boring",
+     "proud"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A person who watches swimmers and keeps them safe is a ___.",
+    "options": [
+     "lifeguard",
+     "principal",
+     "guest",
+     "driver"
+    ],
+    "answer": 0
+   }
+  ],
+  "3-3": [
+   {
+    "type": "order",
+    "words": [
+     "Do",
+     "I",
+     "have",
+     "to",
+     "show",
+     "my",
+     "passport?"
+    ],
+    "answer": "Do I have to show my passport?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "have",
+     "to",
+     "wear",
+     "your",
+     "seat",
+     "belt."
+    ],
+    "answer": "You have to wear your seat belt.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "When a plane leaves the ground, it ___.",
+    "options": [
+     "lands",
+     "takes off",
+     "picks up",
+     "turns on"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "A: Do I have to stay in my seat? B: No, you ___.",
+    "options": [
+     "doesn't",
+     "aren't",
+     "don't",
+     "mustn't to"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "The bags you take on a trip are your ___.",
+    "options": [
+     "passport",
+     "seat belts",
+     "tickets",
+     "luggage"
+    ],
+    "answer": 3
+   }
+  ],
+  "3-4": [
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "mustn't",
+     "touch",
+     "the",
+     "ball",
+     "with",
+     "your",
+     "hands."
+    ],
+    "answer": "You mustn't touch the ball with your hands.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "have",
+     "to",
+     "work",
+     "with",
+     "your",
+     "team."
+    ],
+    "answer": "You have to work with your team.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The person who makes sure players follow the rules is the ___.",
+    "options": [
+     "goalkeeper",
+     "referee",
+     "team",
+     "guest"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "In football, you ___ touch the ball with your hands. It's against the rules.",
+    "options": [
+     "mustn't",
+     "don't have to",
+     "have to",
+     "must"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "In this game, you can walk or run. It's your choice. You ___ run.",
+    "options": [
+     "mustn't",
+     "has to",
+     "must",
+     "don't have to"
+    ],
+    "answer": 3
+   }
+  ],
+  "3-5": [
+   {
+    "type": "order",
+    "words": [
+     "Members",
+     "have",
+     "to",
+     "come",
+     "on",
+     "time."
+    ],
+    "answer": "Members have to come on time.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "can",
+     "share",
+     "our",
+     "books."
+    ],
+    "answer": "We can share our books.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A person who is in a club is a ___.",
+    "options": [
+     "referee",
+     "lifeguard",
+     "member",
+     "guest"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "mc",
+    "q": "People are reading. You ___ shout.",
+    "options": [
+     "has to",
+     "mustn't",
+     "must",
+     "have to"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "Which rule is correct?",
+    "options": [
+     "Members has to be kind.",
+     "Members have be kind.",
+     "Members must to be kind.",
+     "Members have to be kind."
+    ],
+    "answer": 3
+   }
+  ]
+ },
+ "unitTests": {
+  "0": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "Money that adults give to children at Eid is ___.",
+     "options": [
+      "Eidiya",
+      "a surprise",
+      "a plan",
+      "a card"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "We're going to sleep at Grandpa's farm. We're going to ___ there.",
+     "options": [
+      "go sightseeing",
+      "spend the night",
+      "get up late",
+      "keep a secret"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "Lots of balloons and lights make a room look nice. We're going to ___ the room.",
+     "options": [
+      "feed",
+      "save",
+      "decorate",
+      "ride"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "We're going to visit Malaysia. We're going to travel ___.",
+     "options": [
+      "at home",
+      "on a farm",
+      "next week ago",
+      "abroad"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "My parents ___ going to buy a new car.",
+     "options": [
+      "is",
+      "am",
+      "are",
+      "be"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Choose the sentence about a future plan.",
+     "options": [
+      "We're going to visit Taif next week.",
+      "We visited Taif last week.",
+      "We visit Taif every summer.",
+      "We were in Taif last week."
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Choose the correct sentence.",
+     "options": [
+      "She not going to come tomorrow.",
+      "She isn't going come tomorrow.",
+      "She doesn't going to come tomorrow.",
+      "She isn't going to come tomorrow."
+     ],
+     "answer": 3
+    },
+    {
+     "type": "order",
+     "words": [
+      "This",
+      "weekend",
+      "I'm",
+      "going",
+      "to",
+      "stay",
+      "in."
+     ],
+     "answer": "This weekend I'm going to stay in.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "Are",
+      "you",
+      "going",
+      "to",
+      "ride",
+      "a",
+      "camel?"
+     ],
+     "answer": "Are you going to ride a camel?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "After",
+      "that,",
+      "we're",
+      "going",
+      "to",
+      "have",
+      "lunch."
+     ],
+     "answer": "After that, we're going to have lunch.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Tell me about your plans for next weekend. Use 'going to' and time words like 'on Friday' and 'in the evening'.",
+    "Ask me two questions about my plans for the summer, and then tell me two of your plans."
+   ]
+  },
+  "1": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "A person you invite to your home is a ___.",
+     "options": [
+      "tent",
+      "guest",
+      "ticket",
+      "principal"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "My dad is going to come to your house and take you in the car. He's going to ___.",
+     "options": [
+      "pick you up",
+      "join you",
+      "reply to you",
+      "support you"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "We're going to make a fire outside and sit around it. It's a ___.",
+     "options": [
+      "tent",
+      "picnic",
+      "guest",
+      "campfire"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "The party is next Saturday. Please ___ by Thursday.",
+     "options": [
+      "join",
+      "bring",
+      "reply",
+      "support"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "A: Would you like to come to the beach with us? B: ___ Thanks for inviting me!",
+     "options": [
+      "I'd love to!",
+      "I'm afraid I can.",
+      "Yes, I'd love.",
+      "I love to."
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "Which answer says no politely?",
+     "options": [
+      "No. Bye.",
+      "I'm sorry, I can't. I'm going to visit my grandma.",
+      "I don't want to come.",
+      "No, I can't."
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "Choose the correct invitation.",
+     "options": [
+      "Would you like come to my house?",
+      "Would you like coming to my house?",
+      "You would like to come to my house?",
+      "Would you like to come to my house?"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "order",
+     "words": [
+      "Would",
+      "you",
+      "like",
+      "to",
+      "join",
+      "us",
+      "for",
+      "a",
+      "picnic?"
+     ],
+     "answer": "Would you like to join us for a picnic?",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "I'm",
+      "sorry,",
+      "I",
+      "can't",
+      "come",
+      "on",
+      "Saturday."
+     ],
+     "answer": "I'm sorry, I can't come on Saturday.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "Thanks",
+      "for",
+      "inviting",
+      "me",
+      "to",
+      "your",
+      "party."
+     ],
+     "answer": "Thanks for inviting me to your party.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Invite me to a party or a trip. Say the day, the time and the place.",
+    "I'm inviting you to the zoo on Friday. Say no politely and give a reason."
+   ]
+  },
+  "2": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "I studied everything again before my test. I ___.",
+     "options": [
+      "passed",
+      "lost",
+      "revised",
+      "joined"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Our team lost the final. We were all ___.",
+     "options": [
+      "disappointed",
+      "amazed",
+      "proud",
+      "relaxed"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "My brother did very well in his test. My parents are ___ of him.",
+     "options": [
+      "bored",
+      "upset",
+      "nervous",
+      "proud"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "A book where you write about your day is a ___.",
+     "options": [
+      "ticket",
+      "diary",
+      "journey",
+      "project"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "The film was really long and slow. It was ___.",
+     "options": [
+      "boring",
+      "bored",
+      "tired",
+      "interested"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "I'm ___ about the school trip tomorrow!",
+     "options": [
+      "exciting",
+      "boring",
+      "excited",
+      "tiring"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "I didn't sleep last night, ___ I'm very tired.",
+     "options": [
+      "because",
+      "or",
+      "if",
+      "so"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "order",
+     "words": [
+      "I'm",
+      "worried",
+      "because",
+      "the",
+      "test",
+      "is",
+      "difficult."
+     ],
+     "answer": "I'm worried because the test is difficult.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "The",
+      "match",
+      "was",
+      "disappointing,",
+      "so",
+      "we",
+      "were",
+      "sad."
+     ],
+     "answer": "The match was disappointing, so we were sad.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "I'm",
+      "really",
+      "interested",
+      "in",
+      "dinosaurs."
+     ],
+     "answer": "I'm really interested in dinosaurs.",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Tell me about something exciting and something boring in your life. Say why.",
+    "How did you feel last week? Give two feelings and the reasons with 'because' or 'so'."
+   ]
+  },
+  "3": {
+   "items": [
+    {
+     "type": "mc",
+     "q": "The person who stops the game when there's a foul is the ___.",
+     "options": [
+      "lifeguard",
+      "referee",
+      "member",
+      "principal"
+     ],
+     "answer": 1
+    },
+    {
+     "type": "mc",
+     "q": "When a plane comes down to the ground, it ___.",
+     "options": [
+      "lands",
+      "takes off",
+      "dives",
+      "shares"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "The special clothes that all students at a school wear are a ___.",
+     "options": [
+      "passport",
+      "seat belt",
+      "diary",
+      "uniform"
+     ],
+     "answer": 3
+    },
+    {
+     "type": "mc",
+     "q": "The floor near the pool is wet, so it's ___.",
+     "options": [
+      "deep",
+      "tiring",
+      "slippery",
+      "boring"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "My sister ___ help with dinner every evening.",
+     "options": [
+      "has to",
+      "have to",
+      "must to",
+      "haves to"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "There's no school today, so we ___ go to school.",
+     "options": [
+      "mustn't",
+      "doesn't have to",
+      "don't have to",
+      "must"
+     ],
+     "answer": 2
+    },
+    {
+     "type": "mc",
+     "q": "Which sentence means 'It's not allowed'?",
+     "options": [
+      "You don't have to eat in class.",
+      "You mustn't eat in class.",
+      "You have to eat in class.",
+      "You can eat in class."
+     ],
+     "answer": 1
+    },
+    {
+     "type": "order",
+     "words": [
+      "We",
+      "have",
+      "to",
+      "wear",
+      "a",
+      "uniform",
+      "at",
+      "school."
+     ],
+     "answer": "We have to wear a uniform at school.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "You",
+      "mustn't",
+      "run",
+      "near",
+      "the",
+      "pool."
+     ],
+     "answer": "You mustn't run near the pool.",
+     "ar": "رتّب الجملة"
+    },
+    {
+     "type": "order",
+     "words": [
+      "Do",
+      "I",
+      "have",
+      "to",
+      "show",
+      "my",
+      "passport?"
+     ],
+     "answer": "Do I have to show my passport?",
+     "ar": "رتّب الجملة"
+    }
+   ],
+   "speak": [
+    "Tell me three rules at your school or at home. Use 'have to', 'don't have to' and 'mustn't'.",
+    "Explain the rules of your favourite game to me."
+   ]
+  }
+ },
+ "levelTest": {
+  "items": [
+   {
+    "type": "mc",
+    "q": "Next week my parents ___ going to visit Taif.",
+    "options": [
+     "are",
+     "is",
+     "am",
+     "be"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "A: What are you going to do this weekend? B: ___",
+    "options": [
+     "I visited my cousins.",
+     "I visit my cousins every day.",
+     "I'm going to visit my cousins.",
+     "I was at my cousins' house."
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "We're",
+     "going",
+     "to",
+     "watch",
+     "the",
+     "fireworks",
+     "tonight."
+    ],
+    "answer": "We're going to watch the fireworks tonight.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "At Eid, my uncle gives me money. It's called ___.",
+    "options": [
+     "a ticket",
+     "Eidiya",
+     "luggage",
+     "a project"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "Are",
+     "you",
+     "going",
+     "to",
+     "travel",
+     "abroad",
+     "this",
+     "summer?"
+    ],
+    "answer": "Are you going to travel abroad this summer?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A: Would you like to come to my party? B: ___",
+    "options": [
+     "I'd like.",
+     "Yes, I would love.",
+     "I love to come.",
+     "I'd love to!"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "mc",
+    "q": "Which answer says no politely?",
+    "options": [
+     "I'm afraid I can't. I'm going to be in Dammam.",
+     "No. I don't want to.",
+     "I can't. Bye.",
+     "No way!"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "order",
+    "words": [
+     "Would",
+     "you",
+     "like",
+     "to",
+     "join",
+     "us",
+     "on",
+     "Friday?"
+    ],
+    "answer": "Would you like to join us on Friday?",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "Can you come to the match? My dad is going to ___ at six.",
+    "options": [
+     "join you",
+     "support you",
+     "pick you up",
+     "reply you"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "Thanks",
+     "for",
+     "inviting",
+     "me",
+     "to",
+     "your",
+     "party."
+    ],
+    "answer": "Thanks for inviting me to your party.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "The film was very long and slow. I was ___.",
+    "options": [
+     "bored",
+     "boring",
+     "exciting",
+     "tiring"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "The trip to the space museum was really ___!",
+    "options": [
+     "interested",
+     "interesting",
+     "bored",
+     "worried"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "order",
+    "words": [
+     "I'm",
+     "worried",
+     "because",
+     "the",
+     "test",
+     "is",
+     "difficult."
+    ],
+    "answer": "I'm worried because the test is difficult.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "It rained all day, ___ we stayed in.",
+    "options": [
+     "because",
+     "but",
+     "if",
+     "so"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "lost",
+     "the",
+     "match,",
+     "so",
+     "we",
+     "were",
+     "disappointed."
+    ],
+    "answer": "We lost the match, so we were disappointed.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "You ___ run near the pool. It's dangerous.",
+    "options": [
+     "don't have to",
+     "mustn't",
+     "has to",
+     "must"
+    ],
+    "answer": 1
+   },
+   {
+    "type": "mc",
+    "q": "My brother ___ take out the rubbish every evening.",
+    "options": [
+     "have to",
+     "must to",
+     "has to",
+     "having to"
+    ],
+    "answer": 2
+   },
+   {
+    "type": "order",
+    "words": [
+     "We",
+     "don't",
+     "have",
+     "to",
+     "go",
+     "to",
+     "school",
+     "on",
+     "Saturday."
+    ],
+    "answer": "We don't have to go to school on Saturday.",
+    "ar": "رتّب الجملة"
+   },
+   {
+    "type": "mc",
+    "q": "A: Do I have to wear a seat belt? B: Yes, you ___.",
+    "options": [
+     "have",
+     "must to",
+     "are",
+     "do"
+    ],
+    "answer": 3
+   },
+   {
+    "type": "order",
+    "words": [
+     "You",
+     "have",
+     "to",
+     "wear",
+     "your",
+     "seat",
+     "belt."
+    ],
+    "answer": "You have to wear your seat belt.",
+    "ar": "رتّب الجملة"
+   }
+  ],
+  "speak": [
+   "Tell me about your plans for the next holiday. Use 'going to' and time words.",
+   "Invite me to an event. Then I'm going to invite you to something: say no politely and give a reason.",
+   "Tell me about a time you felt excited or disappointed and why, and then tell me three rules at your school."
+  ]
+ }
+}

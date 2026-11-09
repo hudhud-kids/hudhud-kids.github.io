@@ -1,0 +1,208 @@
+{
+ "level": 6,
+ "mcq": [
+  {
+   "q": "Next summer my family ___ travel to Malaysia.",
+   "options": [
+    "is going to",
+    "are going to",
+    "going to",
+    "goes to"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "___ you going to visit your grandparents this weekend?",
+   "options": [
+    "Do",
+    "Are",
+    "Did",
+    "Will"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "A: Would you like to come to my house on Friday? B: '___'",
+   "options": [
+    "Yes, I like.",
+    "I'm loving to.",
+    "I'd love to!",
+    "Yes, I'd love."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "Which is the most polite way to say no to an invitation?",
+   "options": [
+    "No, I don't want to.",
+    "I'm afraid I can't. I'm going to visit my aunt.",
+    "No. I'm busy.",
+    "I can't come. Bye."
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "The football match was really ___. We all shouted and cheered.",
+   "options": [
+    "excited",
+    "bored",
+    "interested",
+    "exciting"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "I'm ___ because I have a big test tomorrow.",
+   "options": [
+    "worried",
+    "worrying",
+    "boring",
+    "interesting"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "It was very cold, ___ I wore my jacket.",
+   "options": [
+    "because",
+    "or",
+    "so",
+    "but"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "Every student at our school wears the same clothes. We ___ wear a uniform.",
+   "options": [
+    "has to",
+    "have to",
+    "mustn't",
+    "doesn't have to"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "It's Saturday and there's no school, so you ___ get up early.",
+   "options": [
+    "mustn't",
+    "has to",
+    "must",
+    "don't have to"
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "A person who watches swimmers and keeps them safe is a ___.",
+   "options": [
+    "referee",
+    "principal",
+    "lifeguard",
+    "guest"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Hi, I'm Noura. This weekend is going to be busy. On Friday, we're going to visit my grandma in Unaizah. On Saturday, I'm going to stay in and finish my science project.",
+   "q": "What is Noura going to do on Saturday?",
+   "options": [
+    "Visit her grandma.",
+    "Finish her project.",
+    "Go to Unaizah."
+   ],
+   "answer": 1
+  },
+  {
+   "script": "A: Omar, would you like to come to the park with us on Thursday? B: Thanks for inviting me, but I'm afraid I can't. I'm going to the dentist after school. A: That's a shame. Maybe next time!",
+   "q": "Why can't Omar go to the park?",
+   "options": [
+    "He has a football match.",
+    "He has to study.",
+    "He's going to the dentist."
+   ],
+   "answer": 2
+  },
+  {
+   "script": "Yesterday was a terrible day. I lost my new pen, and then our team lost the basketball match. I was really disappointed. But in the evening, my uncle visited us with a big cake, so I felt better.",
+   "q": "How did the speaker feel in the evening?",
+   "options": [
+    "Better.",
+    "Disappointed.",
+    "Bored."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Welcome to the pool, everyone. Here are the rules. You must wear a swimming hat. You mustn't run, because the floor is slippery. You don't have to bring a towel, because we have towels for you.",
+   "q": "What don't swimmers have to bring?",
+   "options": [
+    "A swimming hat.",
+    "A towel.",
+    "Shoes."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "Hi, I'm Sam. Next Thursday is a big day for me. Our school is going to have a sports day, and I'm going to run in the 100-metre race. I'm excited, but I'm also a bit nervous because the other runners are very fast. Every student has to wear the school sports T-shirt, and we have to arrive at seven o'clock. We don't have to bring water because the school is going to give everyone a bottle. My best friend Faisal invited me to his house after the race. I'd love to go, but I'm afraid I can't because my grandparents are going to visit us that evening. I really hope I win!",
+  "qs": [
+   {
+    "q": "What is Sam going to do on sports day?",
+    "options": [
+     "Play football.",
+     "Give out water.",
+     "Run in a race."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "Why is Sam nervous?",
+    "options": [
+     "The other runners are fast.",
+     "He is tired.",
+     "He has no T-shirt."
+    ],
+    "answer": 0
+   },
+   {
+    "q": "What don't students have to bring?",
+    "options": [
+     "A T-shirt.",
+     "Their shoes.",
+     "Water."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "Why can't Sam go to Faisal's house?",
+    "options": [
+     "He has to study.",
+     "His grandparents are going to visit.",
+     "He is going to be at the race."
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "aloud": [
+  "This weekend we're going to have a picnic in the desert with my cousins.",
+  "Thanks for inviting me, but I'm afraid I can't come because I'm going to visit my grandma.",
+  "At our school, we have to wear a uniform, and we mustn't use our phones in class."
+ ],
+ "speak": [
+  "What are you going to do next weekend?",
+  "Your friend invites you to a party, but you are busy. What do you say?",
+  "Tell me about something that made you excited or worried. Why?"
+ ]
+}
