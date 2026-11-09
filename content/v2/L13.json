@@ -345,10 +345,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and his classmate Sara are preparing a short debate for their English club about whether homework should be banned.",
+    "scene": "Noura and her classmate Sara are preparing a short debate for their English club about whether homework should be banned.",
     "p1": [
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "I'm convinced that homework should be banned. By Thursday, everything starts to pile up and I can't relax."
      },
      {
@@ -356,7 +356,7 @@
       "t": "I understand, but the whole point of homework is to practise what we learn in class."
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "That may be true, but we already practise for six hours a day at school."
      },
      {
@@ -366,7 +366,7 @@
     ],
     "p2": [
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "So what are you suggesting? Homework every single night?"
      },
      {
@@ -374,7 +374,7 @@
       "t": "No, just short tasks. I'd argue that twenty minutes a day is enough."
      },
      {
-      "s": "Omar",
+      "s": "Noura",
       "t": "Even so, some teachers give two hours. That's what I'm really against."
      },
      {
@@ -384,7 +384,7 @@
     ],
     "focus": "That may be true, but we already practise for six hours a day at school.",
     "qs": [
-     "Why does Omar want to ban homework?",
+     "Why does Noura want to ban homework?",
      "How much homework does Sara think is enough?"
     ]
    },
@@ -461,14 +461,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Nawaf, a keen gamer, and his cousin Emma, a tennis player, argue after watching the Esports World Cup in Riyadh.",
+    "scene": "Nawaf, a keen gamer, and his cousin Majed, a tennis player, argue after watching the Esports World Cup in Riyadh.",
     "p1": [
      {
       "s": "Nawaf",
       "t": "I'd like to make a case for esports. Those players train eight hours a day, just like athletes."
      },
      {
-      "s": "Emma",
+      "s": "Majed",
       "t": "Training hard doesn't make it a sport. By definition, a sport needs physical effort."
      },
      {
@@ -476,7 +476,7 @@
       "t": "But gaming at that level needs incredible reaction time and teamwork."
      },
      {
-      "s": "Emma",
+      "s": "Majed",
       "t": "So does chess, and most people don't call chess a sport either."
      }
     ],
@@ -486,7 +486,7 @@
       "t": "Actually, the Olympic Committee does recognise chess as a sport."
      },
      {
-      "s": "Emma",
+      "s": "Majed",
       "t": "Really? I didn't know that. Even so, sitting in a chair all day isn't athletic."
      },
      {
@@ -494,13 +494,13 @@
       "t": "You can say that, but I stand by what I said. Skill and competition are what matter."
      },
      {
-      "s": "Emma",
+      "s": "Majed",
       "t": "Well, let's agree to disagree. But you're coming to my tennis match on Friday."
      }
     ],
     "focus": "I'd like to make a case for esports.",
     "qs": [
-     "What is Emma's main argument against esports?",
+     "What is Majed's main argument against esports?",
      "What does Nawaf say about chess?"
     ]
    },
@@ -577,14 +577,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Two student reporters, Lama and Yousef, interview each other for the school magazine about a plan to ban junk food from the canteen.",
+    "scene": "Two student reporters, Lama and Joud, interview each other for the school magazine about a plan to ban junk food from the canteen.",
     "p1": [
      {
       "s": "Lama",
       "t": "There's no doubt that the canteen sells too many crisps and fizzy drinks. I support the ban completely."
      },
      {
-      "s": "Yousef",
+      "s": "Joud",
       "t": "I'm not so sure. We're teenagers. Shouldn't we have some freedom of choice?"
      },
      {
@@ -592,7 +592,7 @@
       "t": "You have a point, but schools are responsible for keeping students healthy during the day."
      },
      {
-      "s": "Yousef",
+      "s": "Joud",
       "t": "Even so, if they ban everything, students will just bring snacks from home."
      }
     ],
@@ -602,7 +602,7 @@
       "t": "Maybe at first. But in the long run, people get used to healthier options."
      },
      {
-      "s": "Yousef",
+      "s": "Joud",
       "t": "So you'd remove chocolate completely? That sounds extreme."
      },
      {
@@ -610,13 +610,13 @@
       "t": "Not completely. The canteen could set limits on sugary things, like one day a week."
      },
      {
-      "s": "Yousef",
+      "s": "Joud",
       "t": "Now that's a plan I could actually support."
      }
     ],
     "focus": "You have a point, but schools are responsible for keeping students healthy during the day.",
     "qs": [
-     "Why is Yousef against the ban at first?",
+     "Why is Joud against the ban at first?",
      "What compromise does Lama suggest?"
     ]
    },
@@ -693,14 +693,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Dana and her friend Khalid are filling in a school survey that asks: Should Saudi schools offer one online day a week?",
+    "scene": "Dana and her friend Reem are filling in a school survey that asks: Should Saudi schools offer one online day a week?",
     "p1": [
      {
       "s": "Dana",
       "t": "I'm firmly in favour of an online day. I could study at my own pace and sleep a bit longer."
      },
      {
-      "s": "Khalid",
+      "s": "Reem",
       "t": "Sleeping longer isn't really an argument, Dana!"
      },
      {
@@ -708,7 +708,7 @@
       "t": "Fine. But I'd argue that we'd also save time travelling and focus better at home."
      },
      {
-      "s": "Khalid",
+      "s": "Reem",
       "t": "Maybe you would. I'm convinced that most students would lose motivation without a teacher in the room."
      }
     ],
@@ -718,7 +718,7 @@
       "t": "That may be true for some students, but we already use the Madrasati platform easily."
      },
      {
-      "s": "Khalid",
+      "s": "Reem",
       "t": "Even so, face-to-face lessons are better for group work and asking quick questions."
      },
      {
@@ -726,14 +726,14 @@
       "t": "While I agree group work is easier at school, one day a week wouldn't change that."
      },
      {
-      "s": "Khalid",
+      "s": "Reem",
       "t": "Okay, I'll tick 'not sure' instead of 'no'. You've half convinced me."
      }
     ],
     "focus": "While I agree group work is easier at school, one day a week wouldn't change that.",
     "qs": [
      "What two benefits of an online day does Dana mention?",
-     "Why does Khalid prefer face-to-face lessons?"
+     "Why does Reem prefer face-to-face lessons?"
     ]
    },
    "speakout": {
@@ -809,14 +809,14 @@
     }
    ],
    "dialogue": {
-    "scene": "In the final of the school debating club, Abdullah and Hessa debate the motion: Teenagers should spend part of their summer volunteering.",
+    "scene": "In the final of the school debating club, Lulwa and Hessa debate the motion: Teenagers should spend part of their summer volunteering.",
     "p1": [
      {
-      "s": "Abdullah",
+      "s": "Lulwa",
       "t": "The motion is that teenagers should volunteer in the summer. I'd like to make a case for it."
      },
      {
-      "s": "Abdullah",
+      "s": "Lulwa",
       "t": "Volunteering builds skills and confidence. My brother helped at Riyadh Season and now he's far more confident."
      },
      {
@@ -830,7 +830,7 @@
     ],
     "p2": [
      {
-      "s": "Abdullah",
+      "s": "Lulwa",
       "t": "That may be true, but volunteering can be just a few hours a week."
      },
      {
@@ -838,7 +838,7 @@
       "t": "Even so, forcing it would make it feel like more school. I'd argue it should be a choice."
      },
      {
-      "s": "Abdullah",
+      "s": "Lulwa",
       "t": "I never said 'force'. I'd back up my point with the national target of one million volunteers."
      },
      {
@@ -848,7 +848,7 @@
     ],
     "focus": "That may be true, but volunteering can be just a few hours a week.",
     "qs": [
-     "What example does Abdullah use to back up his argument?",
+     "What example does Lulwa use to back up her argument?",
      "What is Hessa's main counter-argument?"
     ]
    },
@@ -925,10 +925,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Turki tells his friend Laila why his family missed their flight to Abha for the summer holiday.",
+    "scene": "Turki tells his friend Bandar why his family missed their flight to Abha for the summer holiday.",
     "p1": [
      {
-      "s": "Laila",
+      "s": "Bandar",
       "t": "Weren't you supposed to be in Abha last weekend? What happened?"
      },
      {
@@ -936,7 +936,7 @@
       "t": "We missed the flight by a few minutes. There was a huge traffic jam on the way to the airport."
      },
      {
-      "s": "Laila",
+      "s": "Bandar",
       "t": "Oh no! Did you leave late?"
      },
      {
@@ -946,7 +946,7 @@
     ],
     "p2": [
      {
-      "s": "Laila",
+      "s": "Bandar",
       "t": "So you missed out on the whole trip?"
      },
      {
@@ -954,7 +954,7 @@
       "t": "No, we flew the next morning. If only my dad hadn't wanted one more coffee before leaving!"
      },
      {
-      "s": "Laila",
+      "s": "Bandar",
       "t": "Ha! Well, at least it turned out fine in the end."
      },
      {
@@ -1041,14 +1041,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Saad and Grace watched last night's Riyadh derby together. Their team lost 2–1, and they are still discussing it.",
+    "scene": "Saad and Ziyad watched last night's Riyadh derby together. Their team lost 2–1, and they are still discussing it.",
     "p1": [
      {
       "s": "Saad",
       "t": "I still can't believe it. If we had taken that first chance, we would have won easily."
      },
      {
-      "s": "Grace",
+      "s": "Ziyad",
       "t": "I know. Honestly, it could have gone either way until the last ten minutes."
      },
      {
@@ -1056,7 +1056,7 @@
       "t": "Exactly. If our striker hadn't hit the post, everything might have been different."
      },
      {
-      "s": "Grace",
+      "s": "Ziyad",
       "t": "In hindsight, the red card was the turning point. We were playing with ten men after that."
      }
     ],
@@ -1066,7 +1066,7 @@
       "t": "Some fans are blaming the defeat on the referee, but I think it was a fair decision."
      },
      {
-      "s": "Grace",
+      "s": "Ziyad",
       "t": "Me too. If our defender had stayed calm, he wouldn't have been sent off."
      },
      {
@@ -1074,13 +1074,13 @@
       "t": "And their striker nearly scored a third in the last minute. That was a close call!"
      },
      {
-      "s": "Grace",
+      "s": "Ziyad",
       "t": "Well, there's always next season. We could have done worse!"
      }
     ],
     "focus": "If our striker hadn't hit the post, everything might have been different.",
     "qs": [
-     "What does Grace think was the turning point of the match?",
+     "What does Ziyad think was the turning point of the match?",
      "Does Saad agree with the fans who blame the referee?"
     ]
    },
@@ -1157,14 +1157,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Huda and her classmate Leo are preparing a history project about inventions that changed the world.",
+    "scene": "Huda and her classmate Maha are preparing a history project about inventions that changed the world.",
     "p1": [
      {
       "s": "Huda",
       "t": "Let's start with penicillin. Fleming discovered it by accident when he left some lab dishes out before a holiday."
      },
      {
-      "s": "Leo",
+      "s": "Maha",
       "t": "Lucky mistake! If he hadn't been so untidy, he wouldn't have noticed the mould."
      },
      {
@@ -1172,7 +1172,7 @@
       "t": "And millions of people might have died from simple infections."
      },
      {
-      "s": "Leo",
+      "s": "Maha",
       "t": "We really take medicine for granted, don't we?"
      }
     ],
@@ -1182,7 +1182,7 @@
       "t": "What about Al-Jazari? He came up with amazing machines over 800 years ago."
      },
      {
-      "s": "Leo",
+      "s": "Maha",
       "t": "Yes, his water clocks and robots. Some engineers think his ideas changed the course of history."
      },
      {
@@ -1190,14 +1190,14 @@
       "t": "If nobody had built those early machines, modern engineers might not have developed robots so quickly."
      },
      {
-      "s": "Leo",
+      "s": "Maha",
       "t": "So history turned out the way it did partly because of one curious inventor. Great project idea!"
      }
     ],
     "focus": "If he hadn't been so untidy, he wouldn't have noticed the mould.",
     "qs": [
      "How was penicillin discovered?",
-     "Which inventor from the Islamic world do Huda and Leo talk about?"
+     "Which inventor from the Islamic world do Huda and Maha talk about?"
     ]
    },
    "speakout": {
@@ -1273,10 +1273,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Two cousins, Mishari and Amira, are talking about decisions they made when they were younger.",
+    "scene": "Two cousins, Mishari and Nasser, are talking about decisions they made when they were younger.",
     "p1": [
      {
-      "s": "Amira",
+      "s": "Nasser",
       "t": "Your English is amazing now, Mishari. How did you get so good?"
      },
      {
@@ -1284,7 +1284,7 @@
       "t": "When I was ten, I made a decision to watch cartoons only in English. It really paid off."
      },
      {
-      "s": "Amira",
+      "s": "Nasser",
       "t": "I wish I'd done that. If I had started earlier, I'd be fluent now."
      },
      {
@@ -1294,7 +1294,7 @@
     ],
     "p2": [
      {
-      "s": "Amira",
+      "s": "Nasser",
       "t": "True. But I gave up drawing at twelve, and in hindsight that was a mistake."
      },
      {
@@ -1302,7 +1302,7 @@
       "t": "Why? You were so talented."
      },
      {
-      "s": "Amira",
+      "s": "Nasser",
       "t": "If I hadn't given up, I would probably be studying design at the art academy now."
      },
      {
@@ -1313,7 +1313,7 @@
     "focus": "If I hadn't given up, I would probably be studying design at the art academy now.",
     "qs": [
      "What decision did Mishari make when he was ten?",
-     "What does Amira regret giving up?"
+     "What does Nasser regret giving up?"
     ]
    },
    "speakout": {
@@ -1389,10 +1389,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Sultan tells his classmate Mia how he got a part in a short film being made in AlUla.",
+    "scene": "Sultan tells his classmate Hamad how he got a part in a short film being made in AlUla.",
     "p1": [
      {
-      "s": "Mia",
+      "s": "Hamad",
       "t": "How did you get a part in that film? You've never acted before!"
      },
      {
@@ -1400,7 +1400,7 @@
       "t": "Pure luck. I happened to be at the café when the director was looking for teenagers."
      },
      {
-      "s": "Mia",
+      "s": "Hamad",
       "t": "So you were in the right place at the right time."
      },
      {
@@ -1410,7 +1410,7 @@
     ],
     "p2": [
      {
-      "s": "Mia",
+      "s": "Hamad",
       "t": "I'm the opposite. I'm quite shy. If it had been me, I would have just watched."
      },
      {
@@ -1418,7 +1418,7 @@
       "t": "And if my uncle didn't live in AlUla, I wouldn't have been there in the first place."
      },
      {
-      "s": "Mia",
+      "s": "Hamad",
       "t": "What a lucky break! So what happened next?"
      },
      {
@@ -1429,7 +1429,7 @@
     "focus": "If I weren't so outgoing, I wouldn't have spoken to him at all.",
     "qs": [
      "Why was Sultan in AlUla?",
-     "What personality difference between Sultan and Mia does the dialogue show?"
+     "What personality difference between Sultan and Hamad does the dialogue show?"
     ]
    },
    "speakout": {
@@ -1505,14 +1505,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Rakan is practising a talk for history class with his friend Jana about Dammam Well No. 7.",
+    "scene": "Rakan is practising a talk for history class with his friend Saud about Dammam Well No. 7.",
     "p1": [
      {
       "s": "Rakan",
       "t": "It all started when American geologists began drilling near Dammam in the 1930s."
      },
      {
-      "s": "Jana",
+      "s": "Saud",
       "t": "And they didn't find anything at first, right?"
      },
      {
@@ -1520,7 +1520,7 @@
       "t": "No. They were on the verge of giving up after six dry wells."
      },
      {
-      "s": "Jana",
+      "s": "Saud",
       "t": "So if they had stopped then, they would never have found the oil?"
      }
     ],
@@ -1530,7 +1530,7 @@
       "t": "Exactly. They kept drilling and struck oil at Well No. 7 in 1938. It was a real turning point."
      },
      {
-      "s": "Jana",
+      "s": "Saud",
       "t": "It transformed the whole country, didn't it?"
      },
      {
@@ -1538,7 +1538,7 @@
       "t": "Completely. If they hadn't kept going, the Kingdom would probably look very different today."
      },
      {
-      "s": "Jana",
+      "s": "Saud",
       "t": "Amazing. One decision not to give up changed the course of history."
      }
     ],
@@ -1853,7 +1853,7 @@
     }
    ],
    "dialogue": {
-    "scene": "At a school assembly, Yazeed gives a talk on why every student should play a team sport. His friend Chloe gives him feedback afterwards.",
+    "scene": "At a school assembly, Yazeed gives a talk on why every student should play a team sport. His friend Ben gives him feedback afterwards.",
     "p1": [
      {
       "s": "Yazeed",
@@ -1874,7 +1874,7 @@
     ],
     "p2": [
      {
-      "s": "Chloe",
+      "s": "Ben",
       "t": "That was brilliant! Your basketball example was really powerful."
      },
      {
@@ -1882,7 +1882,7 @@
       "t": "Thanks. I wanted a real story, not just facts."
      },
      {
-      "s": "Chloe",
+      "s": "Ben",
       "t": "It worked. Maybe add one number, like how many hours of sport doctors recommend."
      },
      {
@@ -1893,7 +1893,7 @@
     "focus": "Take my basketball team for example.",
     "qs": [
      "What happened to Yazeed's basketball team this year?",
-     "What does Chloe suggest adding to the talk?"
+     "What does Ben suggest adding to the talk?"
     ]
    },
    "speakout": {
@@ -1969,7 +1969,7 @@
     }
    ],
    "dialogue": {
-    "scene": "Razan and Ethan present the results of their class survey on sleep. Razan presents, and Ethan controls the slides.",
+    "scene": "Razan and Shahad present the results of their class survey on sleep. Razan presents, and Shahad controls the slides.",
     "p1": [
      {
       "s": "Razan",
@@ -1990,7 +1990,7 @@
     ],
     "p2": [
      {
-      "s": "Ethan",
+      "s": "Shahad",
       "t": "Next slide. Razan, what do you think these results mean?"
      },
      {
@@ -1998,7 +1998,7 @@
       "t": "This suggests that screens are keeping teenagers awake. Doctors recommend eight to ten hours for our age."
      },
      {
-      "s": "Ethan",
+      "s": "Shahad",
       "t": "Did anything surprise you?"
      },
      {
@@ -2317,14 +2317,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Abdulaziz and Sophie are on the class committee. They must choose a place for the end-of-year class trip in Riyadh.",
+    "scene": "Abdulaziz and Yousef are on the class committee. They must choose a place for the end-of-year class trip in Riyadh.",
     "p1": [
      {
       "s": "Abdulaziz",
       "t": "So, where shall we go? How about visiting the National Museum?"
      },
      {
-      "s": "Sophie",
+      "s": "Yousef",
       "t": "It's interesting, but some students went last year. Why don't we try Boulevard World?"
      },
      {
@@ -2332,7 +2332,7 @@
       "t": "Hmm, I'm not so keen on that. It's only open in the evening during the season."
      },
      {
-      "s": "Sophie",
+      "s": "Yousef",
       "t": "Good point. We could always go to Diriyah instead. It has history and great cafés."
      }
     ],
@@ -2342,7 +2342,7 @@
       "t": "Diriyah sounds good to me. There's something for everyone there."
      },
      {
-      "s": "Sophie",
+      "s": "Yousef",
       "t": "And we could have lunch near At-Turaif, so nobody gets bored."
      },
      {
@@ -2350,7 +2350,7 @@
       "t": "Perfect. Shall we suggest it to the teacher tomorrow?"
      },
      {
-      "s": "Sophie",
+      "s": "Yousef",
       "t": "Yes, let's. See, we work well as a team!"
      }
     ],
@@ -2433,10 +2433,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Fahad and Isabel must choose one charity project for their class during Ramadan.",
+    "scene": "Hind and Isabel must choose one charity project for their class during Ramadan.",
     "p1": [
      {
-      "s": "Fahad",
+      "s": "Hind",
       "t": "How about preparing iftar meals for workers? That would be really helpful."
      },
      {
@@ -2444,7 +2444,7 @@
       "t": "It's a lovely idea. The problem with it is that it needs a lot of money and organising."
      },
      {
-      "s": "Fahad",
+      "s": "Hind",
       "t": "True. What about collecting clothes for families in need? That's worth considering."
      },
      {
@@ -2454,7 +2454,7 @@
     ],
     "p2": [
      {
-      "s": "Fahad",
+      "s": "Hind",
       "t": "But would it make a real difference?"
      },
      {
@@ -2462,7 +2462,7 @@
       "t": "It depends on how many we collect. If every student brings five items, that's hundreds."
      },
      {
-      "s": "Fahad",
+      "s": "Hind",
       "t": "And the iftar meals?"
      },
      {
@@ -2549,14 +2549,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Joud and Adam are planning activities for an Eid party for the younger children in their neighbourhood.",
+    "scene": "Joud and Jana are planning activities for an Eid party for the younger children in their neighbourhood.",
     "p1": [
      {
       "s": "Joud",
       "t": "Let's start with the games. How do you feel about a treasure hunt?"
      },
      {
-      "s": "Adam",
+      "s": "Jana",
       "t": "I love it. It would keep the children entertained for ages. What do you reckon about face painting?"
      },
      {
@@ -2564,7 +2564,7 @@
       "t": "It's worth considering, but some little ones might be scared of the paint."
      },
      {
-      "s": "Adam",
+      "s": "Jana",
       "t": "Fair enough. Shall we move on to the food, then?"
      }
     ],
@@ -2574,7 +2574,7 @@
       "t": "Sure. What do you think about a popcorn machine? Kids love watching it."
      },
      {
-      "s": "Adam",
+      "s": "Jana",
       "t": "I'd go along with that, as long as an adult controls it."
      },
      {
@@ -2582,14 +2582,14 @@
       "t": "Of course. Do you agree we should also give every child an Eidiya gift bag?"
      },
      {
-      "s": "Adam",
+      "s": "Jana",
       "t": "Definitely. That's the best part of Eid for any kid!"
      }
     ],
     "focus": "What do you reckon about face painting?",
     "qs": [
      "What is Joud worried about with face painting?",
-     "What condition does Adam give for the popcorn machine?"
+     "What condition does Jana give for the popcorn machine?"
     ]
    },
    "speakout": {
@@ -2665,10 +2665,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Mohammed and Lily are discussing how to spend the budget for improving the park in their neighbourhood. They must choose one main project.",
+    "scene": "Mohammed and Abdullah are discussing how to spend the budget for improving the park in their neighbourhood. They must choose one main project.",
     "p1": [
      {
-      "s": "Lily",
+      "s": "Abdullah",
       "t": "I think a big skate park would be the best choice. Teenagers have nowhere to go."
      },
      {
@@ -2676,7 +2676,7 @@
       "t": "I see what you mean, but the park is mostly used by families with small children."
      },
      {
-      "s": "Lily",
+      "s": "Abdullah",
       "t": "True. The problem with a playground, though, is that we already have one."
      },
      {
@@ -2686,7 +2686,7 @@
     ],
     "p2": [
      {
-      "s": "Lily",
+      "s": "Abdullah",
       "t": "I'm with you on the trees. Nobody can use the park at midday."
      },
      {
@@ -2694,7 +2694,7 @@
       "t": "So why don't we meet halfway? Trees around a new playground, with a small skate area next to it."
      },
      {
-      "s": "Lily",
+      "s": "Abdullah",
       "t": "That works for me. So shall we go for the playground and the trees as the main project?"
      },
      {
@@ -2781,14 +2781,14 @@
     }
    ],
    "dialogue": {
-    "scene": "In a practice speaking exam, the examiner asks Abeer and Daniel: Should schools teach life skills like cooking and managing money?",
+    "scene": "In a practice speaking exam, the examiner asks Abeer and Dana: Should schools teach life skills like cooking and managing money?",
     "p1": [
      {
       "s": "Abeer",
       "t": "That's an interesting question. Generally speaking, I'd say yes. Many teenagers can't even boil an egg!"
      },
      {
-      "s": "Daniel",
+      "s": "Dana",
       "t": "Ha, that's true. In my experience, though, my parents taught me most life skills at home."
      },
      {
@@ -2796,7 +2796,7 @@
       "t": "I see what you mean, but not every family has the time for that."
      },
      {
-      "s": "Daniel",
+      "s": "Dana",
       "t": "Fair point. And money is a good example. Lots of adults struggle with it. What's your view on that?"
      }
     ],
@@ -2806,7 +2806,7 @@
       "t": "I think managing money is the most important skill of all, especially with online shopping."
      },
      {
-      "s": "Daniel",
+      "s": "Dana",
       "t": "I'd agree. If students learnt to plan a budget, they'd make better choices later."
      },
      {
@@ -2814,13 +2814,13 @@
       "t": "So maybe schools should teach money, and families can teach cooking?"
      },
      {
-      "s": "Daniel",
+      "s": "Dana",
       "t": "That sounds like a sensible balance."
      }
     ],
     "focus": "Generally speaking, I'd say yes.",
     "qs": [
-     "Who taught Daniel most of his life skills?",
+     "Who taught Dana most of her life skills?",
      "Which life skill does Abeer think is most important?"
     ]
    },
@@ -2897,14 +2897,14 @@
     }
    ],
    "dialogue": {
-    "scene": "In a mock speaking test, Salman and Olivia discuss: How could young people be encouraged to read more? They must choose the two best ideas.",
+    "scene": "In a mock speaking test, Salman and Jack discuss: How could young people be encouraged to read more? They must choose the two best ideas.",
     "p1": [
      {
       "s": "Salman",
       "t": "Let's start with the reading competition. That would be motivating, especially with prizes."
      },
      {
-      "s": "Olivia",
+      "s": "Jack",
       "t": "Maybe, but the problem with competitions is that weaker readers might give up. What do you reckon about a book club?"
      },
      {
@@ -2912,7 +2912,7 @@
       "t": "I like it. Talking about books with friends makes reading more social."
      },
      {
-      "s": "Olivia",
+      "s": "Jack",
       "t": "And how about having audiobooks in the library? They're great for people who travel a lot."
      }
     ],
@@ -2922,7 +2922,7 @@
       "t": "Good idea. We need to reach a decision, though. So shall we go for the book club and audiobooks?"
      },
      {
-      "s": "Olivia",
+      "s": "Jack",
       "t": "I'd go along with that. They suit different types of readers."
      },
      {
@@ -2930,13 +2930,13 @@
       "t": "Generally speaking, I think teenagers read more than adults think, just on screens."
      },
      {
-      "s": "Olivia",
+      "s": "Jack",
       "t": "I see what you mean, but reading a whole book is different from reading posts."
      }
     ],
     "focus": "So shall we go for the book club and audiobooks?",
     "qs": [
-     "What is Olivia's problem with reading competitions?",
+     "What is Jack's problem with reading competitions?",
      "Which two ideas do they choose?"
     ]
    },
@@ -3085,7 +3085,7 @@
    ],
    "dialogue": [
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "I'm convinced that homework should be banned. By Thursday, everything starts to pile up and I can't relax."
     },
     {
@@ -3093,7 +3093,7 @@
      "t": "I understand, but the whole point of homework is to practise what we learn in class."
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "That may be true, but we already practise for six hours a day at school."
     },
     {
@@ -3101,7 +3101,7 @@
      "t": "That's a fair point. Still, some things, like vocabulary, need daily review."
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "So what are you suggesting? Homework every single night?"
     },
     {
@@ -3109,7 +3109,7 @@
      "t": "No, just short tasks. I'd argue that twenty minutes a day is enough."
     },
     {
-     "s": "Omar",
+     "s": "Noura",
      "t": "Even so, some teachers give two hours. That's what I'm really against."
     },
     {
@@ -3166,7 +3166,7 @@
      "t": "I'd like to make a case for esports. Those players train eight hours a day, just like athletes."
     },
     {
-     "s": "Emma",
+     "s": "Majed",
      "t": "Training hard doesn't make it a sport. By definition, a sport needs physical effort."
     },
     {
@@ -3174,7 +3174,7 @@
      "t": "But gaming at that level needs incredible reaction time and teamwork."
     },
     {
-     "s": "Emma",
+     "s": "Majed",
      "t": "So does chess, and most people don't call chess a sport either."
     },
     {
@@ -3182,7 +3182,7 @@
      "t": "Actually, the Olympic Committee does recognise chess as a sport."
     },
     {
-     "s": "Emma",
+     "s": "Majed",
      "t": "Really? I didn't know that. Even so, sitting in a chair all day isn't athletic."
     },
     {
@@ -3190,7 +3190,7 @@
      "t": "You can say that, but I stand by what I said. Skill and competition are what matter."
     },
     {
-     "s": "Emma",
+     "s": "Majed",
      "t": "Well, let's agree to disagree. But you're coming to my tennis match on Friday."
     }
    ],
@@ -3243,7 +3243,7 @@
      "t": "There's no doubt that the canteen sells too many crisps and fizzy drinks. I support the ban completely."
     },
     {
-     "s": "Yousef",
+     "s": "Joud",
      "t": "I'm not so sure. We're teenagers. Shouldn't we have some freedom of choice?"
     },
     {
@@ -3251,7 +3251,7 @@
      "t": "You have a point, but schools are responsible for keeping students healthy during the day."
     },
     {
-     "s": "Yousef",
+     "s": "Joud",
      "t": "Even so, if they ban everything, students will just bring snacks from home."
     },
     {
@@ -3259,7 +3259,7 @@
      "t": "Maybe at first. But in the long run, people get used to healthier options."
     },
     {
-     "s": "Yousef",
+     "s": "Joud",
      "t": "So you'd remove chocolate completely? That sounds extreme."
     },
     {
@@ -3267,7 +3267,7 @@
      "t": "Not completely. The canteen could set limits on sugary things, like one day a week."
     },
     {
-     "s": "Yousef",
+     "s": "Joud",
      "t": "Now that's a plan I could actually support."
     }
    ],
@@ -3320,7 +3320,7 @@
      "t": "I'm firmly in favour of an online day. I could study at my own pace and sleep a bit longer."
     },
     {
-     "s": "Khalid",
+     "s": "Reem",
      "t": "Sleeping longer isn't really an argument, Dana!"
     },
     {
@@ -3328,7 +3328,7 @@
      "t": "Fine. But I'd argue that we'd also save time travelling and focus better at home."
     },
     {
-     "s": "Khalid",
+     "s": "Reem",
      "t": "Maybe you would. I'm convinced that most students would lose motivation without a teacher in the room."
     },
     {
@@ -3336,7 +3336,7 @@
      "t": "That may be true for some students, but we already use the Madrasati platform easily."
     },
     {
-     "s": "Khalid",
+     "s": "Reem",
      "t": "Even so, face-to-face lessons are better for group work and asking quick questions."
     },
     {
@@ -3344,7 +3344,7 @@
      "t": "While I agree group work is easier at school, one day a week wouldn't change that."
     },
     {
-     "s": "Khalid",
+     "s": "Reem",
      "t": "Okay, I'll tick 'not sure' instead of 'no'. You've half convinced me."
     }
    ],
@@ -3393,11 +3393,11 @@
    ],
    "dialogue": [
     {
-     "s": "Abdullah",
+     "s": "Lulwa",
      "t": "The motion is that teenagers should volunteer in the summer. I'd like to make a case for it."
     },
     {
-     "s": "Abdullah",
+     "s": "Lulwa",
      "t": "Volunteering builds skills and confidence. My brother helped at Riyadh Season and now he's far more confident."
     },
     {
@@ -3409,7 +3409,7 @@
      "t": "Summer is our only chance to relax, travel with family and enjoy hobbies."
     },
     {
-     "s": "Abdullah",
+     "s": "Lulwa",
      "t": "That may be true, but volunteering can be just a few hours a week."
     },
     {
@@ -3417,7 +3417,7 @@
      "t": "Even so, forcing it would make it feel like more school. I'd argue it should be a choice."
     },
     {
-     "s": "Abdullah",
+     "s": "Lulwa",
      "t": "I never said 'force'. I'd back up my point with the national target of one million volunteers."
     },
     {
@@ -3470,7 +3470,7 @@
    ],
    "dialogue": [
     {
-     "s": "Laila",
+     "s": "Bandar",
      "t": "Weren't you supposed to be in Abha last weekend? What happened?"
     },
     {
@@ -3478,7 +3478,7 @@
      "t": "We missed the flight by a few minutes. There was a huge traffic jam on the way to the airport."
     },
     {
-     "s": "Laila",
+     "s": "Bandar",
      "t": "Oh no! Did you leave late?"
     },
     {
@@ -3486,7 +3486,7 @@
      "t": "A bit. If we had set off half an hour earlier, we would have caught the plane."
     },
     {
-     "s": "Laila",
+     "s": "Bandar",
      "t": "So you missed out on the whole trip?"
     },
     {
@@ -3494,7 +3494,7 @@
      "t": "No, we flew the next morning. If only my dad hadn't wanted one more coffee before leaving!"
     },
     {
-     "s": "Laila",
+     "s": "Bandar",
      "t": "Ha! Well, at least it turned out fine in the end."
     },
     {
@@ -3551,7 +3551,7 @@
      "t": "I still can't believe it. If we had taken that first chance, we would have won easily."
     },
     {
-     "s": "Grace",
+     "s": "Ziyad",
      "t": "I know. Honestly, it could have gone either way until the last ten minutes."
     },
     {
@@ -3559,7 +3559,7 @@
      "t": "Exactly. If our striker hadn't hit the post, everything might have been different."
     },
     {
-     "s": "Grace",
+     "s": "Ziyad",
      "t": "In hindsight, the red card was the turning point. We were playing with ten men after that."
     },
     {
@@ -3567,7 +3567,7 @@
      "t": "Some fans are blaming the defeat on the referee, but I think it was a fair decision."
     },
     {
-     "s": "Grace",
+     "s": "Ziyad",
      "t": "Me too. If our defender had stayed calm, he wouldn't have been sent off."
     },
     {
@@ -3575,7 +3575,7 @@
      "t": "And their striker nearly scored a third in the last minute. That was a close call!"
     },
     {
-     "s": "Grace",
+     "s": "Ziyad",
      "t": "Well, there's always next season. We could have done worse!"
     }
    ],
@@ -3628,7 +3628,7 @@
      "t": "Let's start with penicillin. Fleming discovered it by accident when he left some lab dishes out before a holiday."
     },
     {
-     "s": "Leo",
+     "s": "Maha",
      "t": "Lucky mistake! If he hadn't been so untidy, he wouldn't have noticed the mould."
     },
     {
@@ -3636,7 +3636,7 @@
      "t": "And millions of people might have died from simple infections."
     },
     {
-     "s": "Leo",
+     "s": "Maha",
      "t": "We really take medicine for granted, don't we?"
     },
     {
@@ -3644,7 +3644,7 @@
      "t": "What about Al-Jazari? He came up with amazing machines over 800 years ago."
     },
     {
-     "s": "Leo",
+     "s": "Maha",
      "t": "Yes, his water clocks and robots. Some engineers think his ideas changed the course of history."
     },
     {
@@ -3652,7 +3652,7 @@
      "t": "If nobody had built those early machines, modern engineers might not have developed robots so quickly."
     },
     {
-     "s": "Leo",
+     "s": "Maha",
      "t": "So history turned out the way it did partly because of one curious inventor. Great project idea!"
     }
    ],
@@ -3701,7 +3701,7 @@
    ],
    "dialogue": [
     {
-     "s": "Amira",
+     "s": "Nasser",
      "t": "Your English is amazing now, Mishari. How did you get so good?"
     },
     {
@@ -3709,7 +3709,7 @@
      "t": "When I was ten, I made a decision to watch cartoons only in English. It really paid off."
     },
     {
-     "s": "Amira",
+     "s": "Nasser",
      "t": "I wish I'd done that. If I had started earlier, I'd be fluent now."
     },
     {
@@ -3717,7 +3717,7 @@
      "t": "It's not too late! You're only fifteen."
     },
     {
-     "s": "Amira",
+     "s": "Nasser",
      "t": "True. But I gave up drawing at twelve, and in hindsight that was a mistake."
     },
     {
@@ -3725,7 +3725,7 @@
      "t": "Why? You were so talented."
     },
     {
-     "s": "Amira",
+     "s": "Nasser",
      "t": "If I hadn't given up, I would probably be studying design at the art academy now."
     },
     {
@@ -3778,7 +3778,7 @@
    ],
    "dialogue": [
     {
-     "s": "Mia",
+     "s": "Hamad",
      "t": "How did you get a part in that film? You've never acted before!"
     },
     {
@@ -3786,7 +3786,7 @@
      "t": "Pure luck. I happened to be at the café when the director was looking for teenagers."
     },
     {
-     "s": "Mia",
+     "s": "Hamad",
      "t": "So you were in the right place at the right time."
     },
     {
@@ -3794,7 +3794,7 @@
      "t": "True. If I weren't so outgoing, I wouldn't have spoken to him at all."
     },
     {
-     "s": "Mia",
+     "s": "Hamad",
      "t": "I'm the opposite. I'm quite shy. If it had been me, I would have just watched."
     },
     {
@@ -3802,7 +3802,7 @@
      "t": "And if my uncle didn't live in AlUla, I wouldn't have been there in the first place."
     },
     {
-     "s": "Mia",
+     "s": "Hamad",
      "t": "What a lucky break! So what happened next?"
     },
     {
@@ -3859,7 +3859,7 @@
      "t": "It all started when American geologists began drilling near Dammam in the 1930s."
     },
     {
-     "s": "Jana",
+     "s": "Saud",
      "t": "And they didn't find anything at first, right?"
     },
     {
@@ -3867,7 +3867,7 @@
      "t": "No. They were on the verge of giving up after six dry wells."
     },
     {
-     "s": "Jana",
+     "s": "Saud",
      "t": "So if they had stopped then, they would never have found the oil?"
     },
     {
@@ -3875,7 +3875,7 @@
      "t": "Exactly. They kept drilling and struck oil at Well No. 7 in 1938. It was a real turning point."
     },
     {
-     "s": "Jana",
+     "s": "Saud",
      "t": "It transformed the whole country, didn't it?"
     },
     {
@@ -3883,7 +3883,7 @@
      "t": "Completely. If they hadn't kept going, the Kingdom would probably look very different today."
     },
     {
-     "s": "Jana",
+     "s": "Saud",
      "t": "Amazing. One decision not to give up changed the course of history."
     }
    ],
@@ -4102,7 +4102,7 @@
      "t": "What's more, sport is a great way to deal with exam stress."
     },
     {
-     "s": "Chloe",
+     "s": "Ben",
      "t": "That was brilliant! Your basketball example was really powerful."
     },
     {
@@ -4110,7 +4110,7 @@
      "t": "Thanks. I wanted a real story, not just facts."
     },
     {
-     "s": "Chloe",
+     "s": "Ben",
      "t": "It worked. Maybe add one number, like how many hours of sport doctors recommend."
     },
     {
@@ -4179,7 +4179,7 @@
      "t": "Moving on to the reasons, most students blamed phones and gaming."
     },
     {
-     "s": "Ethan",
+     "s": "Shahad",
      "t": "Next slide. Razan, what do you think these results mean?"
     },
     {
@@ -4187,7 +4187,7 @@
      "t": "This suggests that screens are keeping teenagers awake. Doctors recommend eight to ten hours for our age."
     },
     {
-     "s": "Ethan",
+     "s": "Shahad",
      "t": "Did anything surprise you?"
     },
     {
@@ -4398,7 +4398,7 @@
      "t": "So, where shall we go? How about visiting the National Museum?"
     },
     {
-     "s": "Sophie",
+     "s": "Yousef",
      "t": "It's interesting, but some students went last year. Why don't we try Boulevard World?"
     },
     {
@@ -4406,7 +4406,7 @@
      "t": "Hmm, I'm not so keen on that. It's only open in the evening during the season."
     },
     {
-     "s": "Sophie",
+     "s": "Yousef",
      "t": "Good point. We could always go to Diriyah instead. It has history and great cafés."
     },
     {
@@ -4414,7 +4414,7 @@
      "t": "Diriyah sounds good to me. There's something for everyone there."
     },
     {
-     "s": "Sophie",
+     "s": "Yousef",
      "t": "And we could have lunch near At-Turaif, so nobody gets bored."
     },
     {
@@ -4422,7 +4422,7 @@
      "t": "Perfect. Shall we suggest it to the teacher tomorrow?"
     },
     {
-     "s": "Sophie",
+     "s": "Yousef",
      "t": "Yes, let's. See, we work well as a team!"
     }
    ],
@@ -4471,7 +4471,7 @@
    ],
    "dialogue": [
     {
-     "s": "Fahad",
+     "s": "Hind",
      "t": "How about preparing iftar meals for workers? That would be really helpful."
     },
     {
@@ -4479,7 +4479,7 @@
      "t": "It's a lovely idea. The problem with it is that it needs a lot of money and organising."
     },
     {
-     "s": "Fahad",
+     "s": "Hind",
      "t": "True. What about collecting clothes for families in need? That's worth considering."
     },
     {
@@ -4487,7 +4487,7 @@
      "t": "Yes, it's easy, and everyone has clothes they don't wear."
     },
     {
-     "s": "Fahad",
+     "s": "Hind",
      "t": "But would it make a real difference?"
     },
     {
@@ -4495,7 +4495,7 @@
      "t": "It depends on how many we collect. If every student brings five items, that's hundreds."
     },
     {
-     "s": "Fahad",
+     "s": "Hind",
      "t": "And the iftar meals?"
     },
     {
@@ -4552,7 +4552,7 @@
      "t": "Let's start with the games. How do you feel about a treasure hunt?"
     },
     {
-     "s": "Adam",
+     "s": "Jana",
      "t": "I love it. It would keep the children entertained for ages. What do you reckon about face painting?"
     },
     {
@@ -4560,7 +4560,7 @@
      "t": "It's worth considering, but some little ones might be scared of the paint."
     },
     {
-     "s": "Adam",
+     "s": "Jana",
      "t": "Fair enough. Shall we move on to the food, then?"
     },
     {
@@ -4568,7 +4568,7 @@
      "t": "Sure. What do you think about a popcorn machine? Kids love watching it."
     },
     {
-     "s": "Adam",
+     "s": "Jana",
      "t": "I'd go along with that, as long as an adult controls it."
     },
     {
@@ -4576,7 +4576,7 @@
      "t": "Of course. Do you agree we should also give every child an Eidiya gift bag?"
     },
     {
-     "s": "Adam",
+     "s": "Jana",
      "t": "Definitely. That's the best part of Eid for any kid!"
     }
    ],
@@ -4625,7 +4625,7 @@
    ],
    "dialogue": [
     {
-     "s": "Lily",
+     "s": "Abdullah",
      "t": "I think a big skate park would be the best choice. Teenagers have nowhere to go."
     },
     {
@@ -4633,7 +4633,7 @@
      "t": "I see what you mean, but the park is mostly used by families with small children."
     },
     {
-     "s": "Lily",
+     "s": "Abdullah",
      "t": "True. The problem with a playground, though, is that we already have one."
     },
     {
@@ -4641,7 +4641,7 @@
      "t": "It's very old. And what about more trees? It's so hot in summer."
     },
     {
-     "s": "Lily",
+     "s": "Abdullah",
      "t": "I'm with you on the trees. Nobody can use the park at midday."
     },
     {
@@ -4649,7 +4649,7 @@
      "t": "So why don't we meet halfway? Trees around a new playground, with a small skate area next to it."
     },
     {
-     "s": "Lily",
+     "s": "Abdullah",
      "t": "That works for me. So shall we go for the playground and the trees as the main project?"
     },
     {
@@ -4706,7 +4706,7 @@
      "t": "That's an interesting question. Generally speaking, I'd say yes. Many teenagers can't even boil an egg!"
     },
     {
-     "s": "Daniel",
+     "s": "Dana",
      "t": "Ha, that's true. In my experience, though, my parents taught me most life skills at home."
     },
     {
@@ -4714,7 +4714,7 @@
      "t": "I see what you mean, but not every family has the time for that."
     },
     {
-     "s": "Daniel",
+     "s": "Dana",
      "t": "Fair point. And money is a good example. Lots of adults struggle with it. What's your view on that?"
     },
     {
@@ -4722,7 +4722,7 @@
      "t": "I think managing money is the most important skill of all, especially with online shopping."
     },
     {
-     "s": "Daniel",
+     "s": "Dana",
      "t": "I'd agree. If students learnt to plan a budget, they'd make better choices later."
     },
     {
@@ -4730,7 +4730,7 @@
      "t": "So maybe schools should teach money, and families can teach cooking?"
     },
     {
-     "s": "Daniel",
+     "s": "Dana",
      "t": "That sounds like a sensible balance."
     }
    ],
@@ -4783,7 +4783,7 @@
      "t": "Let's start with the reading competition. That would be motivating, especially with prizes."
     },
     {
-     "s": "Olivia",
+     "s": "Jack",
      "t": "Maybe, but the problem with competitions is that weaker readers might give up. What do you reckon about a book club?"
     },
     {
@@ -4791,7 +4791,7 @@
      "t": "I like it. Talking about books with friends makes reading more social."
     },
     {
-     "s": "Olivia",
+     "s": "Jack",
      "t": "And how about having audiobooks in the library? They're great for people who travel a lot."
     },
     {
@@ -4799,7 +4799,7 @@
      "t": "Good idea. We need to reach a decision, though. So shall we go for the book club and audiobooks?"
     },
     {
-     "s": "Olivia",
+     "s": "Jack",
      "t": "I'd go along with that. They suit different types of readers."
     },
     {
@@ -4807,7 +4807,7 @@
      "t": "Generally speaking, I think teenagers read more than adults think, just on screens."
     },
     {
-     "s": "Olivia",
+     "s": "Jack",
      "t": "I see what you mean, but reading a whole book is different from reading posts."
     }
    ],

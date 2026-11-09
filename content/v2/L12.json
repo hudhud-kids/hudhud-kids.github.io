@@ -583,10 +583,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Emma are looking at a photo from a Saudi Pro League match on a sports website.",
+    "scene": "Omar and Khalid are looking at a photo from a Saudi Pro League match on a sports website.",
     "p1": [
      {
-      "s": "Emma",
+      "s": "Khalid",
       "t": "Look at this player with his arms in the air. He must have just scored."
      },
      {
@@ -594,7 +594,7 @@
       "t": "Definitely. And the fans behind him look as though they're over the moon."
      },
      {
-      "s": "Emma",
+      "s": "Khalid",
       "t": "What about the goalkeeper lying on the grass?"
      },
      {
@@ -604,7 +604,7 @@
     ],
     "p2": [
      {
-      "s": "Emma",
+      "s": "Khalid",
       "t": "Judging by the clock on the scoreboard, it was the last minute of the match."
      },
      {
@@ -612,7 +612,7 @@
       "t": "Wow, everyone must have been on the edge of their seats."
      },
      {
-      "s": "Emma",
+      "s": "Khalid",
       "t": "The man in the suit can't be a player. Maybe he's the coach?"
      },
      {
@@ -1047,10 +1047,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem and Sam are discussing whether their school should offer more online classes.",
+    "scene": "Reem and Hind are discussing whether their school should offer more online classes.",
     "p1": [
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "I think online classes are great. You can learn at your own pace."
      },
      {
@@ -1058,7 +1058,7 @@
       "t": "That's true, although I get distracted really easily at home."
      },
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "By what? Your phone?"
      },
      {
@@ -1068,7 +1068,7 @@
     ],
     "p2": [
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "Fair enough. At home I can replay a lesson, whereas in class I might miss something."
      },
      {
@@ -1076,7 +1076,7 @@
       "t": "But face-to-face lessons are more fun. You can ask questions straight away."
      },
      {
-      "s": "Sam",
+      "s": "Hind",
       "t": "So maybe the best option is a mix of both?"
      },
      {
@@ -1087,7 +1087,7 @@
     "focus": "Although online learning has its drawbacks, it's really useful for revision.",
     "qs": [
      "Why does Reem find it hard to study online?",
-     "What do Sam and Reem decide in the end?"
+     "What do Hind and Reem decide in the end?"
     ]
    },
    "speakout": {
@@ -1395,10 +1395,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Reem are preparing a school presentation about tourism in AlUla.",
+    "scene": "Omar and Faisal are preparing a school presentation about tourism in AlUla.",
     "p1": [
      {
-      "s": "Reem",
+      "s": "Faisal",
       "t": "Let's start with the benefits. Tourism definitely boosts the economy."
      },
      {
@@ -1406,7 +1406,7 @@
       "t": "Yes, and it creates jobs for the local community, like tour guides and hotel staff."
      },
      {
-      "s": "Reem",
+      "s": "Faisal",
       "t": "But we should also mention a major concern: the ancient tombs at Hegra are fragile."
      },
      {
@@ -1416,7 +1416,7 @@
     ],
     "p2": [
      {
-      "s": "Reem",
+      "s": "Faisal",
       "t": "Some people want unlimited visitors, whereas others think there should be strict limits."
      },
      {
@@ -1424,7 +1424,7 @@
       "t": "Despite the risks, I think the benefits outweigh the drawbacks."
      },
      {
-      "s": "Reem",
+      "s": "Faisal",
       "t": "Only if the sites are properly protected, though."
      },
      {
@@ -1435,7 +1435,7 @@
     "focus": "Despite the risks, I think the benefits outweigh the drawbacks.",
     "qs": [
      "How does tourism help the local community in AlUla?",
-     "What is Reem's main concern?"
+     "What is Faisal's main concern?"
     ]
    },
    "speakout": {
@@ -1511,10 +1511,10 @@
     }
    ],
    "dialogue": {
-    "scene": "In a class debate, Sam and Noura discuss whether school should start at nine instead of seven.",
+    "scene": "In a class debate, Dana and Noura discuss whether school should start at nine instead of seven.",
     "p1": [
      {
-      "s": "Sam",
+      "s": "Dana",
       "t": "There's a lot to be said for starting at nine. Teenagers need more sleep."
      },
      {
@@ -1522,7 +1522,7 @@
       "t": "You make a valid point, but we'd finish later, when it's even hotter outside."
      },
      {
-      "s": "Sam",
+      "s": "Dana",
       "t": "On the one hand, that's true. On the other hand, we'd concentrate much better."
      },
      {
@@ -1532,7 +1532,7 @@
     ],
     "p2": [
      {
-      "s": "Sam",
+      "s": "Dana",
       "t": "Despite the traffic, I still think tired students don't learn well."
      },
      {
@@ -1540,7 +1540,7 @@
       "t": "Let's weigh up both sides: better sleep and focus versus traffic and heat."
      },
      {
-      "s": "Sam",
+      "s": "Dana",
       "t": "So, all things considered, what's your conclusion?"
      },
      {
@@ -1550,7 +1550,7 @@
     ],
     "focus": "On balance, I think a slightly later start, maybe eight o'clock, would be best.",
     "qs": [
-     "What is Sam's main argument for starting later?",
+     "What is Dana's main argument for starting later?",
      "What does Noura conclude?"
     ]
    },
@@ -1743,14 +1743,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem and Faisal are on the class council. They must choose a trip for their class.",
+    "scene": "Reem and Noura are on the class council. They must choose a trip for their class.",
     "p1": [
      {
       "s": "Reem",
       "t": "So, the options are Boulevard World or the desert camp in Thumamah."
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Boulevard World is too expensive. We need something within budget."
      },
      {
@@ -1758,7 +1758,7 @@
       "t": "What if we go to the desert camp and have a barbecue there?"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "I'd go, provided that we leave after the afternoon heat."
      }
     ],
@@ -1768,7 +1768,7 @@
       "t": "We could leave at four and come back at ten. How does that sound?"
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Ten is a bit late for some parents. How about if we're back by nine?"
      },
      {
@@ -1776,13 +1776,13 @@
       "t": "I could live with that."
      },
      {
-      "s": "Faisal",
+      "s": "Noura",
       "t": "Great, so we've come to an agreement. Let's tell our teacher."
      }
     ],
     "focus": "I'd go, provided that we leave after the afternoon heat.",
     "qs": [
-     "Why doesn't Faisal want to go to Boulevard World?",
+     "Why doesn't Noura want to go to Boulevard World?",
      "What time will the class come back?"
     ]
    },
@@ -1975,14 +1975,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam and Reem are planning a science project on solar energy with their classmate Omar. Sam and Reem both want to be the presenter.",
+    "scene": "Sam and Khalid are planning a science project on solar energy with their classmate Omar. Sam and Khalid both want to be the presenter.",
     "p1": [
      {
       "s": "Sam",
       "t": "I really want to present our project. I'm good at speaking in public."
      },
      {
-      "s": "Reem",
+      "s": "Khalid",
       "t": "So am I. Would you be willing to share the presentation?"
      },
      {
@@ -1990,7 +1990,7 @@
       "t": "Maybe. But someone also needs to take on the research."
      },
      {
-      "s": "Reem",
+      "s": "Khalid",
       "t": "Omar loves research, but last time he didn't really pull his weight."
      }
     ],
@@ -2000,7 +2000,7 @@
       "t": "Let's compromise on the roles. You present the first half and I'll do the second."
      },
      {
-      "s": "Reem",
+      "s": "Khalid",
       "t": "I'm happy with that, as long as we both help Omar with the research."
      },
      {
@@ -2008,13 +2008,13 @@
       "t": "That's a win-win. Everyone does something they enjoy."
      },
      {
-      "s": "Reem",
+      "s": "Khalid",
       "t": "Great. Let's message Omar and see what he thinks."
      }
     ],
     "focus": "Would you be willing to share the presentation?",
     "qs": [
-     "What problem do Sam and Reem have?",
+     "What problem do Sam and Khalid have?",
      "What compromise do they reach?"
     ]
    },
@@ -3245,7 +3245,7 @@
    ],
    "dialogue": [
     {
-     "s": "Emma",
+     "s": "Khalid",
      "t": "Look at this player with his arms in the air. He must have just scored."
     },
     {
@@ -3253,11 +3253,11 @@
      "t": "Definitely. And the fans behind him look as though they're over the moon."
     },
     {
-     "s": "Emma",
+     "s": "Khalid",
      "t": "What about the goalkeeper lying on the grass?"
     },
     {
-     "s": "Emma",
+     "s": "Khalid",
      "t": "Judging by the clock on the scoreboard, it was the last minute of the match."
     },
     {
@@ -3265,7 +3265,7 @@
      "t": "Wow, everyone must have been on the edge of their seats."
     },
     {
-     "s": "Emma",
+     "s": "Khalid",
      "t": "The man in the suit can't be a player. Maybe he's the coach?"
     },
     {
@@ -3537,7 +3537,7 @@
    ],
    "dialogue": [
     {
-     "s": "Sam",
+     "s": "Hind",
      "t": "I think online classes are great. You can learn at your own pace."
     },
     {
@@ -3545,11 +3545,11 @@
      "t": "That's true, although I get distracted really easily at home."
     },
     {
-     "s": "Sam",
+     "s": "Hind",
      "t": "By what? Your phone?"
     },
     {
-     "s": "Sam",
+     "s": "Hind",
      "t": "Fair enough. At home I can replay a lesson, whereas in class I might miss something."
     },
     {
@@ -3557,7 +3557,7 @@
      "t": "But face-to-face lessons are more fun. You can ask questions straight away."
     },
     {
-     "s": "Sam",
+     "s": "Hind",
      "t": "So maybe the best option is a mix of both?"
     },
     {
@@ -3756,7 +3756,7 @@
    ],
    "dialogue": [
     {
-     "s": "Reem",
+     "s": "Faisal",
      "t": "Let's start with the benefits. Tourism definitely boosts the economy."
     },
     {
@@ -3764,11 +3764,11 @@
      "t": "Yes, and it creates jobs for the local community, like tour guides and hotel staff."
     },
     {
-     "s": "Reem",
+     "s": "Faisal",
      "t": "But we should also mention a major concern: the ancient tombs at Hegra are fragile."
     },
     {
-     "s": "Reem",
+     "s": "Faisal",
      "t": "Some people want unlimited visitors, whereas others think there should be strict limits."
     },
     {
@@ -3776,7 +3776,7 @@
      "t": "Despite the risks, I think the benefits outweigh the drawbacks."
     },
     {
-     "s": "Reem",
+     "s": "Faisal",
      "t": "Only if the sites are properly protected, though."
     },
     {
@@ -3829,7 +3829,7 @@
    ],
    "dialogue": [
     {
-     "s": "Sam",
+     "s": "Dana",
      "t": "There's a lot to be said for starting at nine. Teenagers need more sleep."
     },
     {
@@ -3837,11 +3837,11 @@
      "t": "You make a valid point, but we'd finish later, when it's even hotter outside."
     },
     {
-     "s": "Sam",
+     "s": "Dana",
      "t": "On the one hand, that's true. On the other hand, we'd concentrate much better."
     },
     {
-     "s": "Sam",
+     "s": "Dana",
      "t": "Despite the traffic, I still think tired students don't learn well."
     },
     {
@@ -3849,7 +3849,7 @@
      "t": "Let's weigh up both sides: better sleep and focus versus traffic and heat."
     },
     {
-     "s": "Sam",
+     "s": "Dana",
      "t": "So, all things considered, what's your conclusion?"
     },
     {
@@ -3979,11 +3979,11 @@
      "t": "So, the options are Boulevard World or the desert camp in Thumamah."
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "Boulevard World is too expensive. We need something within budget."
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "I'd go, provided that we leave after the afternoon heat."
     },
     {
@@ -3991,7 +3991,7 @@
      "t": "We could leave at four and come back at ten. How does that sound?"
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "Ten is a bit late for some parents. How about if we're back by nine?"
     },
     {
@@ -3999,7 +3999,7 @@
      "t": "I could live with that."
     },
     {
-     "s": "Faisal",
+     "s": "Noura",
      "t": "Great, so we've come to an agreement. Let's tell our teacher."
     }
    ],
@@ -4125,7 +4125,7 @@
      "t": "I really want to present our project. I'm good at speaking in public."
     },
     {
-     "s": "Reem",
+     "s": "Khalid",
      "t": "So am I. Would you be willing to share the presentation?"
     },
     {
@@ -4137,7 +4137,7 @@
      "t": "Let's compromise on the roles. You present the first half and I'll do the second."
     },
     {
-     "s": "Reem",
+     "s": "Khalid",
      "t": "I'm happy with that, as long as we both help Omar with the research."
     },
     {
@@ -4145,7 +4145,7 @@
      "t": "That's a win-win. Everyone does something they enjoy."
     },
     {
-     "s": "Reem",
+     "s": "Khalid",
      "t": "Great. Let's message Omar and see what he thinks."
     }
    ],
@@ -5532,7 +5532,7 @@
    },
    {
     "type": "mc",
-    "q": "Choose the best word: '___ being tired, Sam spoke really well.'",
+    "q": "Choose the best word: '___ being tired, Dana spoke really well.'",
     "options": [
      "Although",
      "Whereas",
