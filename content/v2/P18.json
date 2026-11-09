@@ -1,0 +1,208 @@
+{
+ "level": 18,
+ "mcq": [
+  {
+   "q": "'The author ___ that her sample was small, but maintains that the trend is real.'",
+   "options": [
+    "dismisses",
+    "concedes",
+    "refutes",
+    "posits"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "Which sentence uses nominalisation most effectively?",
+   "options": [
+    "Prices dropped and people bought more.",
+    "A sharp drop in prices led to a rise in demand.",
+    "People bought more when the prices dropped.",
+    "Because prices dropped, people were buying more."
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "'___ the government to ban cars from the city centre, air quality would improve.'",
+   "options": [
+    "Should",
+    "Had",
+    "Were",
+    "If"
+   ],
+   "answer": 2,
+   "skill": "grammar"
+  },
+  {
+   "q": "'By the time she graduates, she ___ Arabic and English for six years.'",
+   "options": [
+    "will have been studying",
+    "will be studied",
+    "has been studying",
+    "would study"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "'___ you require further information, please contact the organisers.'",
+   "options": [
+    "Were",
+    "Had",
+    "Would",
+    "Should"
+   ],
+   "answer": 3,
+   "skill": "grammar"
+  },
+  {
+   "q": "A tradition that has not changed at all while everything around it has is said to be …",
+   "options": [
+    "second nature",
+    "frozen in time",
+    "a far cry",
+    "an acquired taste"
+   ],
+   "answer": 1,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "'The argument rests on a ___ link between diet and intelligence.'",
+   "options": [
+    "tenuous",
+    "tedious",
+    "tenacious",
+    "tender"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "'Generosity is woven into the ___ of Saudi society.'",
+   "options": [
+    "thread",
+    "string",
+    "fabric",
+    "cloth"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "An audience member asks about something your study did not examine. The most professional reply is:",
+   "options": [
+    "That's irrelevant.",
+    "I have no idea.",
+    "Let's move on.",
+    "That's a pertinent question, but it falls outside the scope of this study."
+   ],
+   "answer": 3,
+   "skill": "function"
+  },
+  {
+   "q": "Which sentence argues with the most precision?",
+   "options": [
+    "Homework is totally useless for everyone.",
+    "By and large, short daily homework improves retention, with the possible exception of the youngest pupils.",
+    "Everybody knows homework is bad.",
+    "Homework is good and bad, I suppose."
+   ],
+   "answer": 1,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "The article's author contends that online learning is as effective as classroom teaching. She concedes, however, that her data come only from university students, and that younger learners may need more direct support from teachers.",
+   "q": "What does the author admit?",
+   "options": [
+    "Online learning is less effective.",
+    "Her findings may not apply to younger learners.",
+    "Classroom teaching has no benefits."
+   ],
+   "answer": 1
+  },
+  {
+   "script": "Were desalination to become much cheaper, coastal cities could grow far beyond their current limits. Should that happen, though, planners would need to think carefully about energy use, since the process still requires a great deal of power.",
+   "q": "What concern does the speaker raise?",
+   "options": [
+    "Energy use",
+    "Water quality",
+    "Coastal tourism"
+   ],
+   "answer": 0
+  },
+  {
+   "script": "When I first moved to Toronto, I was a fish out of water. It took me a whole year to find my feet. Now I feel I have the best of both worlds: I'm at home in two cultures, and I can move between them easily.",
+   "q": "How does the speaker feel now?",
+   "options": [
+    "Still uncomfortable in Toronto",
+    "Comfortable in both cultures",
+    "Keen to return home permanently"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "That's a fair criticism. Our sample was limited to two schools, so the data don't allow us to generalise to the whole country. I do, however, stand by our central finding: in both schools, shaded areas were used far more in the afternoon.",
+   "q": "What does the speaker stand by?",
+   "options": [
+    "That the results apply nationally",
+    "That the sample was large enough",
+    "That shaded areas were used more"
+   ],
+   "answer": 2
+  }
+ ],
+ "read": {
+  "passage": "Few crafts are as closely woven into the fabric of Arabian life as Al-Sadu, the Bedouin art of weaving wool from sheep, camels and goats. For generations, the skill was handed down from grandmother to granddaughter, and its bold geometric patterns decorated tents, cushions and camel saddles. As families settled in cities, however, Sadu came close to becoming a dying art. Critics of recent revivals contend that printing Sadu patterns on phone cases and notebooks reduces a living tradition to a decorative trend. Supporters concede that some products are superficial, but maintain that a tradition frozen in time is more likely to disappear than one that adapts. Were young designers to stop experimenting, they argue, Sadu would survive only in museums.",
+  "qs": [
+   {
+    "q": "Why did Sadu come close to disappearing?",
+    "options": [
+     "Wool became too expensive.",
+     "Families moved to cities and the skill was passed on less.",
+     "UNESCO banned its use on tents."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "What do critics of the revival argue?",
+    "options": [
+     "Modern products trivialise the tradition.",
+     "Sadu should be taught in every school.",
+     "The patterns were never important."
+    ],
+    "answer": 0
+   },
+   {
+    "q": "What do supporters concede?",
+    "options": [
+     "That museums are the best place for Sadu",
+     "That adapting a tradition always destroys it",
+     "That some modern products are superficial"
+    ],
+    "answer": 2
+   },
+   {
+    "q": "According to supporters, what would happen if designers stopped experimenting?",
+    "options": [
+     "Sadu would become more popular.",
+     "Sadu would survive only in museums.",
+     "Sadu patterns would become simpler."
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "aloud": [
+  "Were the price of solar panels to continue falling, a growing reliance on renewable energy would become not merely viable but inevitable.",
+  "The author concedes that the sample was small, yet maintains that the trend is unmistakable.",
+  "Having established the scope of our study, I'd like to turn now to the rationale behind it."
+ ],
+ "speak": [
+  "Some people contend that exams are the fairest way to judge students. Report this view accurately, then argue against or for it with precision.",
+  "By 2050, how will your city have changed? Speculate about one likely and one unlikely scenario.",
+  "What shapes your identity most? Answer using at least one idiom and one metaphor."
+ ]
+}
