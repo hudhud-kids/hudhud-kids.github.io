@@ -161,7 +161,7 @@
     [
      "Part 2: Someone Who Inspired You",
      "Give a fluent two-minute IELTS Part 2 talk about a person who inspired you",
-     "I'd have to say … / I've always looked up to … / She had a way of … / It left a lasting impression on me."
+     "I'd have to say … / I've always held … in high regard / She would bend over backwards to … / It had a profound influence on me."
     ],
     [
      "Part 3: Technology and Society",
@@ -345,14 +345,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam and Noura are preparing a short talk for their school's environment club about fast fashion.",
+    "scene": "Sara and Noura are preparing a short talk for their school's environment club about fast fashion.",
     "p1": [
      {
       "s": "Noura",
       "t": "Fast fashion is a disaster. These brands cut corners everywhere to keep prices low."
      },
      {
-      "s": "Sam",
+      "s": "Sara",
       "t": "I agree with you up to a point. It's true that quality is poor, but not everyone can afford expensive clothes."
      },
      {
@@ -360,7 +360,7 @@
       "t": "Granted, but cheap clothes fall apart quickly, so people end up buying more."
      },
      {
-      "s": "Sam",
+      "s": "Sara",
       "t": "That's fair. To some extent, we've all become part of a throwaway culture."
      }
     ],
@@ -370,7 +370,7 @@
       "t": "And the low prices come at the expense of factory workers and the environment."
      },
      {
-      "s": "Sam",
+      "s": "Sara",
       "t": "Admittedly, the environmental cost is huge. Some brands are trying to improve, though."
      },
      {
@@ -378,13 +378,13 @@
       "t": "Up to a point. A small recycled collection doesn't change the whole business model."
      },
      {
-      "s": "Sam",
+      "s": "Sara",
       "t": "So in our talk, let's suggest buying less, rather than never buying cheap clothes."
      }
     ],
     "focus": "It's true that quality is poor, but not everyone can afford expensive clothes.",
     "qs": [
-     "Why does Sam only partly agree with Noura?",
+     "Why does Sara only partly agree with Noura?",
      "What do they decide to suggest in their talk?"
     ]
    },
@@ -693,10 +693,10 @@
     }
    ],
    "dialogue": {
-    "scene": "In their school's debating club, Abdullah and Emma are discussing the very high salaries of football stars in the Saudi Pro League and in Europe.",
+    "scene": "In their school's debating club, Abdullah and Ethan are discussing the very high salaries of football stars in the Saudi Pro League and in Europe.",
     "p1": [
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "Much as I love football, I think these salaries are out of all proportion. A nurse earns a tiny fraction of that."
      },
      {
@@ -704,7 +704,7 @@
       "t": "I'll grant you that. But star players generate revenue through tickets, TV rights and shirt sales."
      },
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "Be that as it may, nobody needs that much money for kicking a ball."
      },
      {
@@ -714,7 +714,7 @@
     ],
     "p2": [
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "Admittedly, a short career is a fair point. Even so, the gap with other jobs is shocking."
      },
      {
@@ -722,7 +722,7 @@
       "t": "Big salaries are fine, within reason. What matters more is how players behave."
      },
      {
-      "s": "Emma",
+      "s": "Ethan",
       "t": "You mean because they're role models for young people?"
      },
      {
@@ -733,7 +733,7 @@
     "focus": "Much as I love football, I think these salaries are out of all proportion.",
     "qs": [
      "Why does Abdullah think star players deserve high salaries?",
-     "Which point does Emma admit is fair?"
+     "Which point does Ethan admit is fair?"
     ]
    },
    "speakout": {
@@ -1505,7 +1505,7 @@
     }
    ],
    "dialogue": {
-    "scene": "For a school project fair, Jana is giving a two-minute talk about the driverless trains of the Riyadh Metro. Her classmate Ali asks questions.",
+    "scene": "For a school project fair, Jana is giving a two-minute talk about the driverless trains of the Riyadh Metro. Her classmate Asma asks questions.",
     "p1": [
      {
       "s": "Jana",
@@ -1520,7 +1520,7 @@
       "t": "Third, computers control the speed and the doors. What this means is that trains can run safely close together."
      },
      {
-      "s": "Ali",
+      "s": "Asma",
       "t": "Sorry, so nobody is in charge? That sounds dangerous!"
      }
     ],
@@ -1530,7 +1530,7 @@
       "t": "To clarify, people are always in charge, but from the control centre, not from a cab at the front."
      },
      {
-      "s": "Ali",
+      "s": "Asma",
       "t": "And what if something goes wrong?"
      },
      {
@@ -1538,7 +1538,7 @@
       "t": "Bear in mind that the system is tested constantly. If there's a problem, the train stops automatically."
      },
      {
-      "s": "Ali",
+      "s": "Asma",
       "t": "Right, so the computer drives, but humans supervise. That's much clearer now."
      }
     ],
@@ -1621,10 +1621,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Rakan and Emma are preparing a presentation on desertification for their geography class.",
+    "scene": "Rakan and Liam are preparing a presentation on desertification for their geography class.",
     "p1": [
      {
-      "s": "Emma",
+      "s": "Liam",
       "t": "So what actually causes desertification? Is it just the hot weather?"
      },
      {
@@ -1632,7 +1632,7 @@
       "t": "Not only that. In many areas, it stems from human activity, especially overgrazing and cutting down trees."
      },
      {
-      "s": "Emma",
+      "s": "Liam",
       "t": "How does overgrazing make things worse?"
      },
      {
@@ -1642,7 +1642,7 @@
     ],
     "p2": [
      {
-      "s": "Emma",
+      "s": "Liam",
       "t": "And I suppose that has a knock-on effect on wildlife and farming."
      },
      {
@@ -1650,7 +1650,7 @@
       "t": "Exactly. Fewer plants mean fewer animals and poorer harvests. This has led to big plans for planting native trees."
      },
      {
-      "s": "Emma",
+      "s": "Liam",
       "t": "Do you think we can really reverse the trend?"
      },
      {
@@ -1737,10 +1737,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Sultan and Maryam are discussing why their city has grown so fast and how it affects daily life.",
+    "scene": "Sultan and Mansour are discussing why their city has grown so fast and how it affects daily life.",
     "p1": [
      {
-      "s": "Maryam",
+      "s": "Mansour",
       "t": "When my parents were young, this area was empty desert. Now it's full of houses."
      },
      {
@@ -1748,7 +1748,7 @@
       "t": "That's urban sprawl. Much of the city's growth can be attributed to new jobs and universities."
      },
      {
-      "s": "Maryam",
+      "s": "Mansour",
       "t": "But the city spread out so quickly. As a consequence, everyone needs a car."
      },
      {
@@ -1758,7 +1758,7 @@
     ],
     "p2": [
      {
-      "s": "Maryam",
+      "s": "Mansour",
       "t": "It isn't just roads. A growing population puts pressure on schools and hospitals, too."
      },
      {
@@ -1766,7 +1766,7 @@
       "t": "True. This has led to big investment in public transport, like the new metro."
      },
      {
-      "s": "Maryam",
+      "s": "Mansour",
       "t": "Do you think the metro will actually change people's habits?"
      },
      {
@@ -1914,10 +1914,10 @@
     ]
    },
    "culture": {
-    "title": "Saving Food",
+    "title": "Food Waste and the Climate",
     "points": [
      "Around the world, a large share of the food that is produced is lost or wasted.",
-     "In Saudi Arabia, food banks such as Eta'am collect surplus food and share it with families in need.",
+     "Food that rots in landfill releases methane, a gas that traps far more heat than carbon dioxide.",
      "Some supermarkets in Europe sell 'ugly' fruit and vegetables at lower prices so they don't go to waste."
     ],
     "qs": [
@@ -2030,10 +2030,10 @@
     ]
    },
    "culture": {
-    "title": "The Red Sea's Coral",
+    "title": "The Problem with Plastic",
     "points": [
-     "The Red Sea has some of the most colourful coral reefs in the world.",
-     "Scientists are studying Red Sea coral because some of it seems able to survive warmer water.",
+     "Plastic does not rot away; it slowly breaks into tiny pieces called microplastics.",
+     "Microplastics have been found in seawater, in fish and even in sea salt.",
      "Many countries have banned or charged for single-use plastic bags to reduce pollution."
     ],
     "qs": [
@@ -2085,14 +2085,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Hessa and Omar are working on a media-literacy project. They are looking at how a fake rumour about a school holiday spread in their town's WhatsApp groups (an invented example for the project).",
+    "scene": "Hessa and Amal are working on a media-literacy project. They are looking at how a fake rumour about a brand of bottled water spread in their town's WhatsApp groups (an invented example for the project).",
     "p1": [
      {
       "s": "Hessa",
-      "t": "In our example, the fake message about a school holiday went viral in less than an hour."
+      "t": "In our example, the fake message saying a popular brand of bottled water was unsafe went viral in less than an hour."
      },
      {
-      "s": "Omar",
+      "s": "Amal",
       "t": "Because nobody checked it. Wanting to be the first to share is at the root of the problem."
      },
      {
@@ -2100,8 +2100,8 @@
       "t": "And exciting news fuels the sharing. People forward it before they think."
      },
      {
-      "s": "Omar",
-      "t": "In the example, it gave rise to real confusion. Some parents kept their children at home."
+      "s": "Amal",
+      "t": "In the example, it gave rise to real confusion. Some families threw away bottles that were perfectly safe."
      }
     ],
     "p2": [
@@ -2110,7 +2110,7 @@
       "t": "The worst part is the long-term effect. Rumours like this erode trust in official announcements."
      },
      {
-      "s": "Omar",
+      "s": "Amal",
       "t": "And when people stop trusting official sources, they believe rumours even more."
      },
      {
@@ -2118,14 +2118,14 @@
       "t": "So it's a vicious circle: less trust leads to more rumours, and more rumours lead to less trust."
      },
      {
-      "s": "Omar",
+      "s": "Amal",
       "t": "Then our solution should be simple: check the source before you share."
      }
     ],
     "focus": "Wanting to be the first to share is at the root of the problem.",
     "qs": [
      "What was the real-life effect of the fake message in their example?",
-     "Why do Hessa and Omar call it a vicious circle?"
+     "Why do Hessa and Amal call it a vicious circle?"
     ]
    },
    "speakout": {
@@ -2201,7 +2201,7 @@
     }
    ],
    "dialogue": {
-    "scene": "At a school model conference, Nawaf and Sophie are on a panel about inactive lifestyles among young people. The moderator asks them questions.",
+    "scene": "At a school model conference, Nawaf and Sami are on a panel about inactive lifestyles among young people. The moderator asks them questions.",
     "p1": [
      {
       "s": "Moderator",
@@ -2213,10 +2213,10 @@
      },
      {
       "s": "Moderator",
-      "t": "Sophie, why should we be worried?"
+      "t": "Sami, why should we be worried?"
      },
      {
-      "s": "Sophie",
+      "s": "Sami",
       "t": "Inactivity has far-reaching consequences. It can result in obesity and diabetes, and it contributes to stress and poor sleep."
      }
     ],
@@ -2230,7 +2230,7 @@
       "t": "We need to tackle the problem at its source. That means daily sport at school and safe, shaded places to walk."
      },
      {
-      "s": "Sophie",
+      "s": "Sami",
       "t": "Admittedly, that costs money. That said, treating diabetes later costs far more."
      },
      {
@@ -2241,7 +2241,7 @@
     "focus": "Inactivity has far-reaching consequences.",
     "qs": [
      "What does Nawaf say is the main driving force behind inactivity?",
-     "Why does Sophie think the solution is worth the cost?"
+     "Why does Sami think the solution is worth the cost?"
     ]
    },
    "speakout": {
@@ -2378,15 +2378,15 @@
     ]
    },
    "culture": {
-    "title": "The IELTS Speaking Test",
+    "title": "Around Saudi Arabia: Towns on the Move",
     "points": [
-     "The IELTS Speaking test is a face-to-face conversation with an examiner and lasts about 11 to 14 minutes.",
-     "Part 1 has short questions about familiar topics such as your home, studies and hobbies.",
-     "Examiners score fluency, vocabulary, grammar and pronunciation, not your opinions."
+     "In many Saudi towns, new parks, cafés and walking tracks have changed daily life in recent years.",
+     "Many families still spend winter weekends at a farm or an istiraha (a rest house) outside town.",
+     "Around the world, many young people move to big cities for study and work, then miss the calm of home."
     ],
     "qs": [
-     "Which part of a speaking test do you find the most difficult? Why?",
-     "How can you sound natural without memorising answers?"
+     "What has changed most in your town in the last few years?",
+     "What makes a town a good place for teenagers to live?"
     ]
    },
    "exit": "Tell me about your home town in two or three natural sentences, using two of today's expressions."
@@ -2402,22 +2402,22 @@
      "frame": "If I had to choose, I'd have to say ___."
     },
     {
-     "w": "look up to",
-     "def": "to admire and respect someone",
-     "ar": "يحترم ويتخذه قدوة",
-     "frame": "I've always looked up to ___ because ___."
+     "w": "hold someone in high regard",
+     "def": "to respect and admire someone very much",
+     "ar": "يكنّ له تقديراً واحتراماً كبيرين",
+     "frame": "I've always held ___ in high regard because ___."
     },
     {
-     "w": "go out of their way to",
-     "def": "to make a special effort to do something",
-     "ar": "يبذل جهداً خاصاً لـ",
-     "frame": "She would go out of her way to ___."
+     "w": "bend over backwards to",
+     "def": "to try very hard to help or please someone",
+     "ar": "يبذل قصارى جهده لـ",
+     "frame": "She would bend over backwards to ___."
     },
     {
-     "w": "leave a lasting impression",
-     "def": "to have an effect that you remember for a long time",
-     "ar": "يترك أثراً دائماً",
-     "frame": "___ left a lasting impression on me."
+     "w": "have a profound influence on",
+     "def": "to change someone's thinking or life in a deep way",
+     "ar": "يؤثّر تأثيراً عميقاً في",
+     "frame": "___ had a profound influence on my ___."
     },
     {
      "w": "set an example",
@@ -2441,11 +2441,11 @@
      },
      {
       "s": "Noura",
-      "t": "I'd have to say my chemistry teacher in secondary school, Ms Huda. I've always looked up to her, even though she was strict."
+      "t": "I'd have to say my chemistry teacher in secondary school, Ms Huda. I've always held her in high regard, even though she was strict."
      },
      {
       "s": "Noura",
-      "t": "She had a way of making complicated topics feel simple, and she would go out of her way to help anyone who was struggling."
+      "t": "She had a way of making complicated topics feel simple, and she would bend over backwards to help anyone who was struggling."
      },
      {
       "s": "Noura",
@@ -2459,7 +2459,7 @@
      },
      {
       "s": "Noura",
-      "t": "Thanks to her, I'm now considering studying pharmacy. Her belief in me left a lasting impression."
+      "t": "Thanks to her, I'm now considering studying pharmacy. Her belief in me has had a profound influence on my plans."
      },
      {
       "s": "Mr Peterson",
@@ -2470,9 +2470,9 @@
       "t": "Every so often, yes. I sent her a message when I got my exam results."
      }
     ],
-    "focus": "She had a way of making complicated topics feel simple, and she would go out of her way to help anyone who was struggling.",
+    "focus": "She had a way of making complicated topics feel simple, and she would bend over backwards to help anyone who was struggling.",
     "qs": [
-     "What example does Noura give of her teacher going out of her way?",
+     "What example does Noura give of her teacher bending over backwards to help?",
      "How has the teacher influenced Noura's future plans?"
     ]
    },
@@ -2485,11 +2485,11 @@
      },
      {
       "q": "What did they do that was special?",
-      "hint": "Use 'go out of their way to' or 'have a way of' with a specific example."
+      "hint": "Use 'bend over backwards to' or 'have a way of' with a specific example."
      },
      {
       "q": "Why did this person inspire you?",
-      "hint": "Explain the effect with 'leave a lasting impression' or 'set an example'."
+      "hint": "Explain the effect with 'have a profound influence on' or 'set an example'."
      }
     ]
    },
@@ -2497,7 +2497,7 @@
     "title": "Inspiring Teachers",
     "points": [
      "Many countries celebrate teachers on World Teachers' Day, which is held every year on 5 October.",
-     "In IELTS Part 2, candidates get one minute to prepare and then speak for one to two minutes.",
+     "The Egyptian poet Ahmed Shawqi wrote a famous line telling people to stand up and honour the teacher.",
      "Research suggests that one supportive adult can make a big difference to a young person's confidence."
     ],
     "qs": [
@@ -2505,7 +2505,7 @@
      "Is it better to have one role model or many? Why?"
     ]
    },
-   "exit": "In two or three sentences, tell me about someone you look up to and one thing they did that left a lasting impression."
+   "exit": "In two or three sentences, tell me about someone you hold in high regard and one thing they did that had a profound influence on you."
   },
   "3-2": {
    "objective": "Today you will discuss abstract questions about technology and society with idiomatic language and balanced reasoning.",
@@ -3081,7 +3081,7 @@
      "t": "Fast fashion brands cut corners to keep prices low."
     },
     {
-     "s": "Sam",
+     "s": "Sara",
      "t": "I agree up to a point, but not everyone can afford expensive clothes."
     },
     {
@@ -3089,7 +3089,7 @@
      "t": "Cheap clothes come at the expense of workers."
     },
     {
-     "s": "Sam",
+     "s": "Sara",
      "t": "Admittedly, the cost to the environment is huge."
     },
     {
@@ -3097,7 +3097,7 @@
      "t": "To some extent, it's a throwaway culture."
     },
     {
-     "s": "Sam",
+     "s": "Sara",
      "t": "So let's suggest buying less, not buying nothing."
     }
    ],
@@ -3284,7 +3284,7 @@
    ],
    "dialogue": [
     {
-     "s": "Emma",
+     "s": "Ethan",
      "t": "Much as I love football, these salaries are out of all proportion."
     },
     {
@@ -3292,7 +3292,7 @@
      "t": "But star players generate revenue for their clubs."
     },
     {
-     "s": "Emma",
+     "s": "Ethan",
      "t": "Be that as it may, it's far too much."
     },
     {
@@ -3300,7 +3300,7 @@
      "t": "Their careers are short, though."
     },
     {
-     "s": "Emma",
+     "s": "Ethan",
      "t": "Admittedly, that's a fair point."
     },
     {
@@ -3362,7 +3362,7 @@
     },
     {
      "s": "Lama",
-     "t": "Admittedly, it's frustrating at first. That said, the basics are easy to reach."
+     "t": "Admittedly, it's frustrating at first. That said, the basics are within everyone's reach."
     },
     {
      "s": "Reem",
@@ -3371,6 +3371,10 @@
     {
      "s": "Lama",
      "t": "It's not that it's more important than art, it's just that the basics are essential."
+    },
+    {
+     "s": "Reem",
+     "t": "I take your point. So what's your conclusion?"
     },
     {
      "s": "Lama",
@@ -3747,7 +3751,7 @@
     {
      "w": "To clarify,",
      "ar": "للتوضيح",
-     "ex": "To clarify, there is no driver, but there are staff on board."
+     "ex": "To clarify, there is no driver, but staff watch every train from the control centre."
     },
     {
      "w": "in real time",
@@ -3779,7 +3783,7 @@
      "t": "A control centre tracks every train in real time."
     },
     {
-     "s": "Ali",
+     "s": "Asma",
      "t": "So nobody is in charge? That sounds dangerous!"
     },
     {
@@ -3836,7 +3840,7 @@
    ],
    "dialogue": [
     {
-     "s": "Emma",
+     "s": "Liam",
      "t": "What causes desertification?"
     },
     {
@@ -3848,7 +3852,7 @@
      "t": "Bare soil can give rise to more dust storms."
     },
     {
-     "s": "Emma",
+     "s": "Liam",
      "t": "That must have a knock-on effect on wildlife."
     },
     {
@@ -3856,7 +3860,7 @@
      "t": "Yes. This has led to plans for planting native trees."
     },
     {
-     "s": "Emma",
+     "s": "Liam",
      "t": "Can we really reverse the trend?"
     }
    ],
@@ -3905,7 +3909,7 @@
    ],
    "dialogue": [
     {
-     "s": "Maryam",
+     "s": "Mansour",
      "t": "This area used to be empty desert."
     },
     {
@@ -3913,7 +3917,7 @@
      "t": "Its growth can be attributed to new jobs."
     },
     {
-     "s": "Maryam",
+     "s": "Mansour",
      "t": "As a consequence, everyone needs a car."
     },
     {
@@ -3921,7 +3925,7 @@
      "t": "And more cars result in traffic congestion."
     },
     {
-     "s": "Maryam",
+     "s": "Mansour",
      "t": "Population growth puts pressure on schools, too."
     },
     {
@@ -4116,7 +4120,7 @@
      "t": "The fake message went viral in an hour."
     },
     {
-     "s": "Omar",
+     "s": "Amal",
      "t": "Wanting to share first is at the root of the problem."
     },
     {
@@ -4124,7 +4128,7 @@
      "t": "Exciting news fuels the sharing."
     },
     {
-     "s": "Omar",
+     "s": "Amal",
      "t": "It gave rise to real confusion."
     },
     {
@@ -4132,7 +4136,7 @@
      "t": "Rumours like this erode trust in official news."
     },
     {
-     "s": "Omar",
+     "s": "Amal",
      "t": "It's a vicious circle."
     }
    ],
@@ -4189,11 +4193,11 @@
      "t": "The main driving force behind it is sitting too much."
     },
     {
-     "s": "Sophie",
+     "s": "Sami",
      "t": "Inactivity has far-reaching consequences."
     },
     {
-     "s": "Sophie",
+     "s": "Sami",
      "t": "It can result in obesity and diabetes."
     },
     {
@@ -4201,7 +4205,7 @@
      "t": "We need to tackle the problem at its source."
     },
     {
-     "s": "Sophie",
+     "s": "Sami",
      "t": "Prevention costs less than treatment."
     }
    ],
@@ -4292,19 +4296,19 @@
      "ex": "If I had to choose, I'd have to say my maths teacher."
     },
     {
-     "w": "look up to",
-     "ar": "يحترم ويتخذه قدوة",
-     "ex": "I've always looked up to my older cousin."
+     "w": "hold someone in high regard",
+     "ar": "يكنّ له تقديراً واحتراماً كبيرين",
+     "ex": "I hold my grandfather in high regard."
     },
     {
-     "w": "go out of their way to",
-     "ar": "يبذل جهداً خاصاً لـ",
-     "ex": "He would go out of his way to help new students."
+     "w": "bend over backwards to",
+     "ar": "يبذل قصارى جهده لـ",
+     "ex": "The hotel staff bent over backwards to help us."
     },
     {
-     "w": "leave a lasting impression",
-     "ar": "يترك أثراً دائماً",
-     "ex": "Her kindness left a lasting impression on me."
+     "w": "have a profound influence on",
+     "ar": "يؤثّر تأثيراً عميقاً في",
+     "ex": "That book had a profound influence on me."
     },
     {
      "w": "set an example",
@@ -4324,7 +4328,7 @@
     },
     {
      "s": "Noura",
-     "t": "I've always looked up to her."
+     "t": "I've always held her in high regard."
     },
     {
      "s": "Noura",
@@ -4332,7 +4336,7 @@
     },
     {
      "s": "Noura",
-     "t": "She would go out of her way to help us."
+     "t": "She would bend over backwards to help us."
     },
     {
      "s": "Noura",
@@ -4340,16 +4344,16 @@
     },
     {
      "s": "Noura",
-     "t": "Her belief in me left a lasting impression."
+     "t": "Her belief in me had a profound influence on my plans."
     }
    ],
    "grammar": {
     "title": "Telling a Part 2 story fluently: would for past habits",
-    "ar": "نستخدم would + فعل لوصف عادات متكررة في الماضي (She would go out of her way to help us)، ونربط القصة بأمثلة محددة.",
+    "ar": "نستخدم would + فعل لوصف عادات متكررة في الماضي (She would bend over backwards to help us)، ونربط القصة بأمثلة محددة.",
     "examples": [
      "She would stay after class to help us.",
      "He had a way of making us laugh.",
-     "Her support left a lasting impression on me."
+     "Her support had a profound influence on me."
     ]
    }
   },
@@ -5847,19 +5851,19 @@
     "words": [
      "I've",
      "always",
-     "looked",
-     "up",
-     "to",
+     "held",
      "my",
-     "older",
-     "cousin."
+     "cousin",
+     "in",
+     "high",
+     "regard."
     ],
-    "answer": "I've always looked up to my older cousin.",
+    "answer": "I've always held my cousin in high regard.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "If someone 'goes out of their way' to help you, they …",
+    "q": "If someone 'bends over backwards' to help you, they …",
     "options": [
      "refuse to help",
      "make a special effort to help",
@@ -5870,12 +5874,12 @@
    },
    {
     "type": "mc",
-    "q": "'Her kindness left a ___ impression on me.'",
+    "q": "'Her advice had a ___ influence on my choice of career.'",
     "options": [
-     "lasting",
-     "long",
-     "lasted",
-     "late"
+     "profound",
+     "thick",
+     "steep",
+     "tall"
     ],
     "answer": 0
    },
@@ -6576,7 +6580,7 @@
     },
     {
      "type": "mc",
-     "q": "If someone 'goes out of their way' to help, they …",
+     "q": "If someone 'bends over backwards' to help, they …",
      "options": [
       "help unwillingly",
       "make a special effort",
@@ -6674,14 +6678,14 @@
      "words": [
       "Her",
       "kindness",
-      "left",
+      "had",
       "a",
-      "lasting",
-      "impression",
+      "profound",
+      "influence",
       "on",
       "me."
      ],
-     "answer": "Her kindness left a lasting impression on me.",
+     "answer": "Her kindness had a profound influence on me.",
      "ar": "رتّب الجملة"
     }
    ],

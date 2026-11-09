@@ -229,14 +229,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Lina and Yousef are preparing for their school debating club. The motion is: 'Fast fashion can never be sustainable.'",
+    "scene": "Lina and Hala are preparing for their school debating club. The motion is: 'Fast fashion can never be sustainable.'",
     "p1": [
      {
       "s": "Lina",
       "t": "Before we write a word, we need to define our terms. What exactly do we mean by 'sustainable'?"
      },
      {
-      "s": "Yousef",
+      "s": "Hala",
       "t": "Anything that doesn't damage the planet, I suppose. By that standard, fast fashion fails completely."
      },
      {
@@ -244,7 +244,7 @@
       "t": "That's a sweeping generalisation, though. Some brands now use recycled fabric."
      },
      {
-      "s": "Yousef",
+      "s": "Hala",
       "t": "True, but in the strict sense, a T-shirt worn three times isn't sustainable, whatever it's made of."
      }
     ],
@@ -254,7 +254,7 @@
       "t": "So the crux of the matter isn't the material; it's how long clothes are actually worn."
      },
      {
-      "s": "Yousef",
+      "s": "Hala",
       "t": "Exactly. Our whole case hinges on that distinction."
      },
      {
@@ -262,13 +262,13 @@
       "t": "Then we'll contend that the business model, not the fabric, is the real problem."
      },
      {
-      "s": "Yousef",
+      "s": "Hala",
       "t": "Perfect. If we define it that way, the other team can't hide behind recycled labels."
      }
     ],
     "focus": "True, but in the strict sense, a T-shirt worn three times isn't sustainable, whatever it's made of.",
     "qs": [
-     "Why does Yousef think recycled fabric is not enough?",
+     "Why does Hala think recycled fabric is not enough?",
      "What does their whole case depend on?"
     ]
    },
@@ -345,10 +345,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem and Majed are writing a joint report for their environmental science class on farming in the desert, using two articles with opposite views.",
+    "scene": "Reem and Mai are writing a joint report for their environmental science class on farming in the desert, using two articles with opposite views.",
     "p1": [
      {
-      "s": "Majed",
+      "s": "Mai",
       "t": "So the first article says desert farming is a total waste of water, right?"
      },
      {
@@ -356,7 +356,7 @@
       "t": "Not quite. That would misrepresent the author. She maintains that farming wheat in the desert wastes water."
      },
      {
-      "s": "Majed",
+      "s": "Mai",
       "t": "And she puts forward greenhouse farming as the alternative?"
      },
      {
@@ -366,7 +366,7 @@
     ],
     "p2": [
      {
-      "s": "Majed",
+      "s": "Mai",
       "t": "The second writer just dismisses greenhouses as too expensive."
      },
      {
@@ -374,7 +374,7 @@
       "t": "Careful. He dismisses them as too expensive for small farmers, which is a narrower claim."
      },
      {
-      "s": "Majed",
+      "s": "Mai",
       "t": "Fine. Does either of them actually refute the other?"
      },
      {
@@ -385,7 +385,7 @@
     "focus": "Not quite. That would misrepresent the author. She maintains that farming wheat in the desert wastes water.",
     "qs": [
      "What does the first author concede?",
-     "Why does Reem correct Majed about the second writer?"
+     "Why does Reem correct Mai about the second writer?"
     ]
    },
    "speakout": {
@@ -461,10 +461,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Hessa and Daniel, an exchange student from Canada, are editing a paragraph for an academic essay on solar energy in Saudi Arabia.",
+    "scene": "Hessa and Danielle, an exchange student from Canada, are editing a paragraph for an academic essay on solar energy in Saudi Arabia.",
     "p1": [
      {
-      "s": "Daniel",
+      "s": "Danielle",
       "t": "My first sentence says, 'People in Saudi Arabia use more solar power now.' It sounds a bit plain."
      },
      {
@@ -472,7 +472,7 @@
       "t": "Try nominalising it: 'There has been a marked shift towards solar power in Saudi Arabia.'"
      },
      {
-      "s": "Daniel",
+      "s": "Danielle",
       "t": "Better. Next: 'Solar panels got cheaper, so more companies adopted them.'"
      },
      {
@@ -482,7 +482,7 @@
     ],
     "p2": [
      {
-      "s": "Daniel",
+      "s": "Danielle",
       "t": "That packs a lot into one line. Doesn't it hide who did what, though?"
      },
      {
@@ -490,7 +490,7 @@
       "t": "It can, so we add a source. Also mention the growing reliance on gas for electricity."
      },
      {
-      "s": "Daniel",
+      "s": "Danielle",
       "t": "Right: 'Large solar plants such as Sudair could bring about a reduction in that reliance.'"
      },
      {
@@ -500,8 +500,8 @@
     ],
     "focus": "How about: 'A sharp reduction in panel costs has led to the wider adoption of solar technology.'",
     "qs": [
-     "How does Hessa improve Daniel's sentence about cheaper panels?",
-     "What risk of nominalisation does Daniel notice?"
+     "How does Hessa improve Danielle's sentence about cheaper panels?",
+     "What risk of nominalisation does Danielle notice?"
     ]
    },
    "speakout": {
@@ -577,14 +577,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Sultan and Emma are reviewing a school blog post titled 'Breakfast Makes You Smarter' for their critical thinking class.",
+    "scene": "Sultan and Adam are reviewing a school blog post titled 'Breakfast Makes You Smarter' for their critical thinking class.",
     "p1": [
      {
       "s": "Sultan",
       "t": "The post says students who eat breakfast get higher grades, so breakfast makes you smarter."
      },
      {
-      "s": "Emma",
+      "s": "Adam",
       "t": "It doesn't necessarily follow. Higher grades and breakfast might both come from something else, like regular sleep."
      },
      {
@@ -592,7 +592,7 @@
       "t": "So the survey shows a pattern, not a causal relationship?"
      },
      {
-      "s": "Emma",
+      "s": "Adam",
       "t": "Exactly. And the writer conflates 'getting higher grades' with 'being smarter', which isn't the same thing."
      }
     ],
@@ -602,7 +602,7 @@
       "t": "She also quotes only two studies. I found five more with mixed results."
      },
      {
-      "s": "Emma",
+      "s": "Adam",
       "t": "Then she's cherry-picking. That's a serious weakness."
      },
      {
@@ -610,14 +610,14 @@
       "t": "So what conclusion can we fairly draw?"
      },
      {
-      "s": "Emma",
+      "s": "Adam",
       "t": "That breakfast may help, but any link to intelligence is tenuous at best."
      }
     ],
     "focus": "It doesn't necessarily follow. Higher grades and breakfast might both come from something else, like regular sleep.",
     "qs": [
      "Which two ideas does the blog writer conflate?",
-     "Why does Emma say the writer is cherry-picking?"
+     "Why does Adam say the writer is cherry-picking?"
     ]
    },
    "speakout": {
@@ -693,14 +693,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Abdullah and Nina are presenting the results of an imaginary trial of a four-day school week to their student council.",
+    "scene": "Abdullah and Nabil are presenting the results of an imaginary trial of a four-day school week to their student council.",
     "p1": [
      {
       "s": "Abdullah",
       "t": "So, did the four-day week work? Can we say it was a success?"
      },
      {
-      "s": "Nina",
+      "s": "Nabil",
       "t": "By and large, yes. Students reported feeling less tired, with the possible exception of the youngest classes."
      },
      {
@@ -708,7 +708,7 @@
       "t": "And grades? Some people are saying they shot up."
      },
      {
-      "s": "Nina",
+      "s": "Nabil",
       "t": "It would be an overstatement to say they shot up. They improved only marginally."
      }
     ],
@@ -718,7 +718,7 @@
       "t": "So the benefit was mainly about wellbeing, not results?"
      },
      {
-      "s": "Nina",
+      "s": "Nabil",
       "t": "To a large extent, yes. Longer days were hard for some students to concentrate through."
      },
      {
@@ -726,14 +726,14 @@
       "t": "Then should we recommend it to the school?"
      },
      {
-      "s": "Nina",
+      "s": "Nabil",
       "t": "Only under certain conditions: shorter lessons, a proper lunch break and more time outdoors."
      }
     ],
     "focus": "It would be an overstatement to say they shot up. They improved only marginally.",
     "qs": [
      "Which students did not benefit as much?",
-     "Under what conditions would Nina recommend the four-day week?"
+     "Under what conditions would Nabil recommend the four-day week?"
     ]
    },
    "speakout": {
@@ -809,7 +809,7 @@
     }
    ],
    "dialogue": {
-    "scene": "In a school debate, Noura proposes and Kareem opposes the motion: 'University places should depend on interviews as well as exam scores.'",
+    "scene": "In a school debate, Noura proposes and Khulood opposes the motion: 'University places should depend on interviews as well as exam scores.'",
     "p1": [
      {
       "s": "Noura",
@@ -820,11 +820,11 @@
       "t": "Exam scores fall short of showing motivation, communication or curiosity, all of which predict success at university."
      },
      {
-      "s": "Kareem",
+      "s": "Khulood",
       "t": "My opponent contends that interviews reveal motivation. In practice, they often reward confidence and coaching."
      },
      {
-      "s": "Kareem",
+      "s": "Khulood",
       "t": "The weight of evidence suggests that exam results remain the fairest single predictor."
      }
     ],
@@ -834,7 +834,7 @@
       "t": "I concede that interviews can be coached. That's why I'm proposing structured interviews with fixed questions."
      },
      {
-      "s": "Kareem",
+      "s": "Khulood",
       "t": "Even structured interviews take time and money that many universities simply don't have."
      },
      {
@@ -848,7 +848,7 @@
     ],
     "focus": "My opponent contends that interviews reveal motivation. In practice, they often reward confidence and coaching.",
     "qs": [
-     "What weakness of interviews does Kareem point out?",
+     "What weakness of interviews does Khulood point out?",
      "How does Noura respond to the problem of coaching?"
     ]
    },
@@ -925,14 +925,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Turki and Mia are preparing a geography project called 'Riyadh in 2050'.",
+    "scene": "Turki and Max are preparing a geography project called 'Riyadh in 2050'.",
     "p1": [
      {
       "s": "Turki",
       "t": "By the middle of the century, Riyadh will, in all likelihood, have grown much bigger than it is today."
      },
      {
-      "s": "Mia",
+      "s": "Max",
       "t": "Is it on course to keep growing that fast?"
      },
      {
@@ -940,13 +940,13 @@
       "t": "Probably. By 2050, the metro will have reshaped the way people move around the city."
      },
      {
-      "s": "Mia",
+      "s": "Max",
       "t": "And a lot of people will have stopped driving to work, I imagine."
      }
     ],
     "p2": [
      {
-      "s": "Mia",
+      "s": "Max",
       "t": "But rapid growth can bring unforeseen consequences, like pressure on water and housing."
      },
      {
@@ -954,7 +954,7 @@
       "t": "True. Demand for homes may outpace construction for years."
      },
      {
-      "s": "Mia",
+      "s": "Max",
       "t": "So by 2050, planners will have had to rethink almost everything."
      },
      {
@@ -965,7 +965,7 @@
     "focus": "Probably. By 2050, the metro will have reshaped the way people move around the city.",
     "qs": [
      "How will the metro have changed the city by 2050, according to Turki?",
-     "What unforeseen consequences of growth does Mia mention?"
+     "What unforeseen consequences of growth does Max mention?"
     ]
    },
    "speakout": {
@@ -1041,10 +1041,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Salman and Grace are discussing AI for an article in their school's English magazine.",
+    "scene": "Salman and George are discussing AI for an article in their school's English magazine.",
     "p1": [
      {
-      "s": "Grace",
+      "s": "George",
       "t": "Were AI to write all the news, would we still need journalists?"
      },
      {
@@ -1052,7 +1052,7 @@
       "t": "Were that to come to pass, I think reporters would still be needed to find the stories."
      },
      {
-      "s": "Grace",
+      "s": "George",
       "t": "Software can already write match reports in seconds. Couldn't it render reporters obsolete?"
      },
      {
@@ -1062,7 +1062,7 @@
     ],
     "p2": [
      {
-      "s": "Grace",
+      "s": "George",
       "t": "So you don't think AI would displace journalists?"
      },
      {
@@ -1070,7 +1070,7 @@
       "t": "It might displace some, but readers still value the human touch: a real interview, a real voice."
      },
      {
-      "s": "Grace",
+      "s": "George",
       "t": "Were readers to stop trusting AI articles, newspapers might even hire more people."
      },
      {
@@ -1157,10 +1157,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Rayan and Sofia are watching a documentary about a future mission to Mars for their science club.",
+    "scene": "Rayan and Sami are watching a documentary about a future mission to Mars for their science club.",
     "p1": [
      {
-      "s": "Sofia",
+      "s": "Sami",
       "t": "Should humans ever settle on Mars, what would they need first?"
      },
      {
@@ -1168,7 +1168,7 @@
       "t": "Shelter. Should a dust storm hit, they would need somewhere safe immediately."
      },
      {
-      "s": "Sofia",
+      "s": "Sami",
       "t": "It's completely uncharted territory. Nobody knows how the body copes with years in low gravity."
      },
      {
@@ -1178,7 +1178,7 @@
     ],
     "p2": [
      {
-      "s": "Sofia",
+      "s": "Sami",
       "t": "In the event of a medical emergency, though, help would be months away."
      },
      {
@@ -1186,7 +1186,7 @@
       "t": "So every crew would need a doctor, plus extra supplies should the need arise."
      },
      {
-      "s": "Sofia",
+      "s": "Sami",
       "t": "Do you really think it's worth the risk?"
      },
      {
@@ -1197,7 +1197,7 @@
     "focus": "Shelter. Should a dust storm hit, they would need somewhere safe immediately.",
     "qs": [
      "Why does Rayan think Moon missions matter?",
-     "What problem does Sofia see in a medical emergency?"
+     "What problem does Sami see in a medical emergency?"
     ]
    },
    "speakout": {
@@ -1273,10 +1273,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Fahad and Amira are preparing a talk on the future of water for their school's environment club.",
+    "scene": "Fahad and Amir are preparing a talk on the future of water for their school's environment club.",
     "p1": [
      {
-      "s": "Amira",
+      "s": "Amir",
       "t": "Should demand keep rising, could our underground water eventually run dry?"
      },
      {
@@ -1284,7 +1284,7 @@
       "t": "Some ancient underground supplies could, yes. They refill extremely slowly."
      },
      {
-      "s": "Amira",
+      "s": "Amir",
       "t": "So desalination is what staves off a crisis?"
      },
      {
@@ -1294,7 +1294,7 @@
     ],
     "p2": [
      {
-      "s": "Amira",
+      "s": "Amir",
       "t": "Then we need a contingency plan. What happens if demand outstrips supply?"
      },
      {
@@ -1302,7 +1302,7 @@
       "t": "Water would have to be rationed. Were that to happen, farms would probably be hit first."
      },
      {
-      "s": "Amira",
+      "s": "Amir",
       "t": "Is there a tipping point we should worry about?"
      },
      {
@@ -1389,10 +1389,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Nawaf and Leila are talking after a careers day at their secondary school.",
+    "scene": "Nawaf and Laith are talking after a careers day at their secondary school.",
     "p1": [
      {
-      "s": "Leila",
+      "s": "Laith",
       "t": "By the time we're thirty, we'll have been working for almost ten years. Scary, isn't it?"
      },
      {
@@ -1400,7 +1400,7 @@
       "t": "And many of us will be doing jobs that don't even exist yet."
      },
      {
-      "s": "Leila",
+      "s": "Laith",
       "t": "So how do you future-proof a career when the job market is a moving target?"
      },
      {
@@ -1410,7 +1410,7 @@
     ],
     "p2": [
      {
-      "s": "Leila",
+      "s": "Laith",
       "t": "Should AI take over routine tasks, which skills will still matter?"
      },
      {
@@ -1418,7 +1418,7 @@
       "t": "Creativity, judgement and working with people. Machines are still a long way from those."
      },
      {
-      "s": "Leila",
+      "s": "Laith",
       "t": "So staying ahead of the curve really means learning how to learn."
      },
      {
@@ -1429,7 +1429,7 @@
     "focus": "Lifelong learning, I think. By 2040, I'll have been upskilling for years, just to keep up.",
     "qs": [
      "Which skills does Nawaf think will still matter?",
-     "What does 'staying ahead of the curve' mean for Leila?"
+     "What does 'staying ahead of the curve' mean for Laith?"
     ]
    },
    "speakout": {
@@ -1505,14 +1505,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Dana is chairing a student panel on the question 'Will schools as we know them still exist in 2050?' with Hamad and Zoe.",
+    "scene": "Dana is chairing a student panel on the question 'Will schools as we know them still exist in 2050?' with Hessa and Zoe.",
     "p1": [
      {
       "s": "Dana",
-      "t": "Our question tonight: will schools as we know them still exist in 2050? Hamad?"
+      "t": "Our question tonight: will schools as we know them still exist in 2050? Hessa?"
      },
      {
-      "s": "Hamad",
+      "s": "Hessa",
       "t": "In all likelihood, yes. Schools will have changed, but people will still need places to learn together."
      },
      {
@@ -1526,7 +1526,7 @@
     ],
     "p2": [
      {
-      "s": "Hamad",
+      "s": "Hessa",
       "t": "Every student will have a personal AI tutor, and teachers will focus on mentoring."
      },
      {
@@ -1538,7 +1538,7 @@
       "t": "So how should schools prepare?"
      },
      {
-      "s": "Hamad",
+      "s": "Hessa",
       "t": "By planning for every eventuality. Should online learning fail, we'll still need strong schools."
      }
     ],
@@ -1621,10 +1621,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Ghada and her classmate Leo, whose family has moved between several countries, are talking about where they feel at home.",
+    "scene": "Ghada and her classmate Lea, whose family has moved between several countries, are talking about where they feel at home.",
     "p1": [
      {
-      "s": "Leo",
+      "s": "Lea",
       "t": "My family has moved four times, so I've never really put down roots anywhere."
      },
      {
@@ -1632,7 +1632,7 @@
       "t": "That's so different from me. My father's family has lived in the same town in Al-Qassim for generations."
      },
      {
-      "s": "Leo",
+      "s": "Lea",
       "t": "Does that give you a strong sense of belonging?"
      },
      {
@@ -1642,7 +1642,7 @@
     ],
     "p2": [
      {
-      "s": "Leo",
+      "s": "Lea",
       "t": "Is there a family tradition you'd like to keep?"
      },
      {
@@ -1650,7 +1650,7 @@
       "t": "Poetry runs in the family. My grandfather writes Nabati poems, and I'd love to carry the torch."
      },
      {
-      "s": "Leo",
+      "s": "Lea",
       "t": "So the apple doesn't fall far from the tree!"
      },
      {
@@ -1660,7 +1660,7 @@
     ],
     "focus": "For me, roots aren't a place where you're stuck; they're what keep you steady.",
     "qs": [
-     "Why has Leo never put down roots?",
+     "Why has Lea never put down roots?",
      "What tradition does Ghada want to carry on?"
     ]
    },
@@ -1737,14 +1737,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Badr and Ines, whose family is from Spain, are chatting in the school library about speaking more than one language.",
+    "scene": "Bushra and Ines, whose family is from Spain, are chatting in the school library about speaking more than one language.",
     "p1": [
      {
       "s": "Ines",
       "t": "You switch between Arabic and English mid-sentence all the time. Do you even notice?"
      },
      {
-      "s": "Badr",
+      "s": "Bushra",
       "t": "Not really. It's become second nature, especially when I talk about games or technology."
      },
      {
@@ -1752,7 +1752,7 @@
       "t": "Do you ever feel that something gets lost in translation?"
      },
      {
-      "s": "Badr",
+      "s": "Bushra",
       "t": "All the time. Some Arabic expressions of hospitality sound flat in English."
      }
     ],
@@ -1762,7 +1762,7 @@
       "t": "I feel the same about Spanish. It's a window into how my grandparents see the world."
      },
      {
-      "s": "Badr",
+      "s": "Bushra",
       "t": "Exactly. Language is the heart and soul of a culture, not just a set of words."
      },
      {
@@ -1770,13 +1770,13 @@
       "t": "Have you ever been at a loss for words in English?"
      },
      {
-      "s": "Badr",
+      "s": "Bushra",
       "t": "When my baby cousin was born, yes. Only Arabic could express how I felt."
      }
     ],
     "focus": "Exactly. Language is the heart and soul of a culture, not just a set of words.",
     "qs": [
-     "When does Badr usually switch to English?",
+     "When does Bushra usually switch to English?",
      "Why does Ines value Spanish?"
     ]
    },
@@ -1853,10 +1853,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Yara is welcoming Tom, a visiting exchange student, to her family's home in Hail.",
+    "scene": "Yara is welcoming Tess, a visiting exchange student, to her family's home in Hail.",
     "p1": [
      {
-      "s": "Tom",
+      "s": "Tess",
       "t": "This Saudi coffee is lighter than I expected. Is it always flavoured with cardamom?"
      },
      {
@@ -1864,7 +1864,7 @@
       "t": "Usually, and sometimes saffron. For some visitors, it's an acquired taste."
      },
      {
-      "s": "Tom",
+      "s": "Tess",
       "t": "And dates always come with it?"
      },
      {
@@ -1874,7 +1874,7 @@
     ],
     "p2": [
      {
-      "s": "Tom",
+      "s": "Tess",
       "t": "My grandmother's apple pie is similar: a labour of love that says 'you belong here'."
      },
      {
@@ -1882,7 +1882,7 @@
       "t": "So food is really a language of its own. That's food for thought."
      },
      {
-      "s": "Tom",
+      "s": "Tess",
       "t": "Variety is the spice of life, but every family brings its own traditions to the table."
      },
      {
@@ -1893,7 +1893,7 @@
     "focus": "Always. In our culture, serving coffee and dates is how you say 'welcome' without words.",
     "qs": [
      "What does serving coffee and dates mean in Yara's culture?",
-     "Why does Tom mention his grandmother's apple pie?"
+     "Why does Tess mention her grandmother's apple pie?"
     ]
    },
    "speakout": {
@@ -2201,14 +2201,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Mishal and Clara are recording an episode of their school podcast, 'Who We Are', about the forces that shape identity.",
+    "scene": "Mishal and Chris are recording an episode of their school podcast, 'Who We Are', about the forces that shape identity.",
     "p1": [
      {
       "s": "Mishal",
       "t": "Welcome back to 'Who We Are'. Today's question: what really shapes who we are?"
      },
      {
-      "s": "Clara",
+      "s": "Chris",
       "t": "For me, family is at the heart of it. It gives you a sense of belonging before you can even speak."
      },
      {
@@ -2216,7 +2216,7 @@
       "t": "And place? Jeddah has always been a melting pot of people from many countries."
      },
      {
-      "s": "Clara",
+      "s": "Chris",
       "t": "I'd call it a mosaic rather than a melting pot. Each piece keeps its own colour."
      }
     ],
@@ -2226,7 +2226,7 @@
       "t": "What about the internet? We all watch the same videos now."
      },
      {
-      "s": "Clara",
+      "s": "Chris",
       "t": "It's a double-edged sword. It connects cultures, but it can also wash out the differences between them."
      },
      {
@@ -2234,14 +2234,14 @@
       "t": "So can young people have the best of both worlds, global and local?"
      },
      {
-      "s": "Clara",
+      "s": "Chris",
       "t": "Absolutely, as long as our roots run deep enough to keep us steady."
      }
     ],
     "focus": "I'd call it a mosaic rather than a melting pot. Each piece keeps its own colour.",
     "qs": [
-     "Why does Clara prefer the image of a mosaic to a melting pot?",
-     "Why does Clara call the internet a double-edged sword?"
+     "Why does Chris prefer the image of a mosaic to a melting pot?",
+     "Why does Chris call the internet a double-edged sword?"
     ]
    },
    "speakout": {
@@ -2317,14 +2317,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Jana is rehearsing the opening of her science presentation on sleep and learning with her project partner, Ethan.",
+    "scene": "Jana is rehearsing the opening of her science presentation on sleep and learning with her project partner, Elena.",
     "p1": [
      {
       "s": "Jana",
       "t": "By way of introduction, I'll ask the audience a question: how many hours did you sleep last night?"
      },
      {
-      "s": "Ethan",
+      "s": "Elena",
       "t": "Strong opening. What comes next?"
      },
      {
@@ -2332,7 +2332,7 @@
       "t": "Then the rationale behind the study: teenagers' body clocks shift later, yet school starts very early."
      },
      {
-      "s": "Ethan",
+      "s": "Elena",
       "t": "Good. And your actual research question?"
      }
     ],
@@ -2342,7 +2342,7 @@
       "t": "This study set out to find out whether later start times improve concentration in class."
      },
      {
-      "s": "Ethan",
+      "s": "Elena",
       "t": "Fine, but why does it matter here?"
      },
      {
@@ -2350,14 +2350,14 @@
       "t": "Relatively few studies have looked at schools in our region, so there's a clear gap in the research."
      },
      {
-      "s": "Ethan",
+      "s": "Elena",
       "t": "Then say you hope to shed light on it, and define the scope: which students and which ages."
      }
     ],
     "focus": "This study set out to find out whether later start times improve concentration in class.",
     "qs": [
      "How does Jana plan to begin her presentation?",
-     "What advice does Ethan give about the scope?"
+     "What advice does Elena give about the scope?"
     ]
    },
    "speakout": {
@@ -2433,14 +2433,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Haya and Ziad are presenting the results of their school survey on teenagers' reading habits to their class.",
+    "scene": "Haya and Zainab are presenting the results of their school survey on teenagers' reading habits to their class.",
     "p1": [
      {
       "s": "Haya",
       "t": "Turning now to our results, as illustrated by this chart, reading for pleasure fell sharply between the ages of twelve and sixteen."
      },
      {
-      "s": "Ziad",
+      "s": "Zainab",
       "t": "To put this into perspective, nearly every twelve-year-old in our survey read for fun weekly; among sixteen-year-olds, fewer than half did."
      },
      {
@@ -2448,7 +2448,7 @@
       "t": "However, we saw a marked increase in audiobook listening over the same period."
      },
      {
-      "s": "Ziad",
+      "s": "Zainab",
       "t": "In fact, audiobooks account for nearly a third of the reading older students reported."
      }
     ],
@@ -2458,7 +2458,7 @@
       "t": "Bear in mind that our sample was small: just 120 students from one school."
      },
      {
-      "s": "Ziad",
+      "s": "Zainab",
       "t": "So the figures suggest a trend rather than prove one."
      },
      {
@@ -2466,7 +2466,7 @@
       "t": "Having looked at the numbers, let's move on to what students told us in interviews."
      },
      {
-      "s": "Ziad",
+      "s": "Zainab",
       "t": "Their answers help explain why the drop happens."
      }
     ],
@@ -2549,10 +2549,10 @@
     }
    ],
    "dialogue": {
-    "scene": "Lama has just presented her project on Red Sea coral reefs. Ahmed, a student in the audience, asks her some questions.",
+    "scene": "Lama has just presented her project on Red Sea coral reefs. Amal, a student in the audience, asks her some questions.",
     "p1": [
      {
-      "s": "Ahmed",
+      "s": "Amal",
       "t": "You said Red Sea corals cope well with heat. Does that mean they're safe from climate change?"
      },
      {
@@ -2560,7 +2560,7 @@
       "t": "That's a pertinent question. If I understand you correctly, you're asking whether they're fully protected."
      },
      {
-      "s": "Ahmed",
+      "s": "Amal",
       "t": "Yes, exactly."
      },
      {
@@ -2570,7 +2570,7 @@
     ],
     "p2": [
      {
-      "s": "Ahmed",
+      "s": "Amal",
       "t": "And what about fishing? Is that a problem too?"
      },
      {
@@ -2578,7 +2578,7 @@
       "t": "With respect to fishing, I'm afraid that falls outside the scope of our study, which focused on temperature."
      },
      {
-      "s": "Ahmed",
+      "s": "Amal",
       "t": "Could you say more about why they tolerate heat so well?"
      },
      {
@@ -2781,14 +2781,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Khalid and Sara are rehearsing the conclusion of their science project on turning date palm waste into building boards.",
+    "scene": "Khalid and Saad are rehearsing the conclusion of their science project on turning date palm waste into building boards.",
     "p1": [
      {
       "s": "Khalid",
       "t": "So, to draw the threads together: palm waste, which is often burned, could become useful building material."
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "The take-home message is simple: what we throw away might be a resource."
      },
      {
@@ -2796,7 +2796,7 @@
       "t": "And that has far-reaching implications for farmers, builders and the environment."
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "One question merits further research, though: how well do the boards cope with humidity?"
      }
     ],
@@ -2806,7 +2806,7 @@
       "t": "How should we finish?"
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "Let's come full circle. We opened with a photo of palm fronds being burned on a farm."
      },
      {
@@ -2814,14 +2814,14 @@
       "t": "Then I'll leave you with the same farm, now with a storeroom built from palm-fibre boards."
      },
      {
-      "s": "Sara",
+      "s": "Saad",
       "t": "Perfect. It shows our whole argument in a single image."
      }
     ],
     "focus": "So, to draw the threads together: palm waste, which is often burned, could become useful building material.",
     "qs": [
      "What is the take-home message of the project?",
-     "How do Khalid and Sara plan to come full circle?"
+     "How do Khalid and Saad plan to come full circle?"
     ]
    },
    "speakout": {
@@ -2897,7 +2897,7 @@
     }
    ],
    "dialogue": {
-    "scene": "At a youth science conference, the chair, Mr Hassan, introduces Nouf, who presents her project on shade in school playgrounds. Liam asks a question.",
+    "scene": "At a youth science conference, the chair, Mr Hassan, introduces Nouf, who presents her project on shade in school playgrounds. Lily asks a question.",
     "p1": [
      {
       "s": "Hassan",
@@ -2919,10 +2919,10 @@
     "p2": [
      {
       "s": "Hassan",
-      "t": "Thank you, Nouf. We have time for one question. Yes, Liam?"
+      "t": "Thank you, Nouf. We have time for one question. Yes, Lily?"
      },
      {
-      "s": "Liam",
+      "s": "Lily",
       "t": "Did you consider artificial grass? Many schools use it."
      },
      {
@@ -2937,7 +2937,7 @@
     "focus": "Having established that shaded surfaces were consistently cooler, let me turn to our main question: did students actually use them more?",
     "qs": [
      "What did Nouf's project find about shaded surfaces?",
-     "How does Nouf handle Liam's question about artificial grass?"
+     "How does Nouf handle Lily's question about artificial grass?"
     ]
    },
    "speakout": {
@@ -3012,7 +3012,7 @@
      "t": "We need to define our terms. What do we mean by 'sustainable'?"
     },
     {
-     "s": "Yousef",
+     "s": "Hala",
      "t": "Anything that doesn't harm the planet. Fast fashion fails that test."
     },
     {
@@ -3020,7 +3020,7 @@
      "t": "That's a sweeping generalisation. Some brands use recycled fabric."
     },
     {
-     "s": "Yousef",
+     "s": "Hala",
      "t": "In the strict sense, a T-shirt worn three times isn't sustainable."
     },
     {
@@ -3028,7 +3028,7 @@
      "t": "So the crux of the matter is how long clothes are worn."
     },
     {
-     "s": "Yousef",
+     "s": "Hala",
      "t": "Exactly. Our case hinges on that distinction."
     }
    ],
@@ -3077,7 +3077,7 @@
    ],
    "dialogue": [
     {
-     "s": "Majed",
+     "s": "Mai",
      "t": "The first article says desert farming wastes water, right?"
     },
     {
@@ -3085,7 +3085,7 @@
      "t": "Not quite. She maintains that farming wheat in the desert wastes water."
     },
     {
-     "s": "Majed",
+     "s": "Mai",
      "t": "And she concedes something?"
     },
     {
@@ -3093,7 +3093,7 @@
      "t": "Yes, she concedes that greenhouses use a lot of energy."
     },
     {
-     "s": "Majed",
+     "s": "Mai",
      "t": "The second writer dismisses greenhouses as too expensive."
     },
     {
@@ -3146,7 +3146,7 @@
    ],
    "dialogue": [
     {
-     "s": "Daniel",
+     "s": "Danielle",
      "t": "'People use more solar power now.' It sounds plain."
     },
     {
@@ -3154,7 +3154,7 @@
      "t": "Say: 'There has been a marked shift towards solar power.'"
     },
     {
-     "s": "Daniel",
+     "s": "Danielle",
      "t": "And 'Panels got cheaper, so companies adopted them'?"
     },
     {
@@ -3162,7 +3162,7 @@
      "t": "'A reduction in costs has led to the wider adoption of solar.'"
     },
     {
-     "s": "Daniel",
+     "s": "Danielle",
      "t": "Could solar plants bring about a reduction in gas use?"
     },
     {
@@ -3219,7 +3219,7 @@
      "t": "The post says breakfast makes you smarter."
     },
     {
-     "s": "Emma",
+     "s": "Adam",
      "t": "It doesn't necessarily follow. Sleep could explain both."
     },
     {
@@ -3227,7 +3227,7 @@
      "t": "So it's a pattern, not a causal relationship?"
     },
     {
-     "s": "Emma",
+     "s": "Adam",
      "t": "Yes, and she conflates higher grades with being smarter."
     },
     {
@@ -3235,7 +3235,7 @@
      "t": "She also quotes only two studies."
     },
     {
-     "s": "Emma",
+     "s": "Adam",
      "t": "Then she's cherry-picking. The link is tenuous at best."
     }
    ],
@@ -3288,7 +3288,7 @@
      "t": "Was the four-day week a success?"
     },
     {
-     "s": "Nina",
+     "s": "Nabil",
      "t": "By and large, yes, with the possible exception of the youngest classes."
     },
     {
@@ -3296,7 +3296,7 @@
      "t": "Some say grades shot up."
     },
     {
-     "s": "Nina",
+     "s": "Nabil",
      "t": "That would be an overstatement. They rose marginally."
     },
     {
@@ -3304,7 +3304,7 @@
      "t": "Should we recommend it?"
     },
     {
-     "s": "Nina",
+     "s": "Nabil",
      "t": "Only under certain conditions, like shorter lessons."
     }
    ],
@@ -3361,7 +3361,7 @@
      "t": "Exam scores fall short of showing motivation."
     },
     {
-     "s": "Kareem",
+     "s": "Khulood",
      "t": "My opponent contends that interviews reveal motivation, but they reward coaching."
     },
     {
@@ -3369,7 +3369,7 @@
      "t": "I concede that. So I propose structured interviews."
     },
     {
-     "s": "Kareem",
+     "s": "Khulood",
      "t": "They cost time and money."
     },
     {
@@ -3426,7 +3426,7 @@
      "t": "By 2050, Riyadh will, in all likelihood, have grown much bigger."
     },
     {
-     "s": "Mia",
+     "s": "Max",
      "t": "Is it on course to keep growing that fast?"
     },
     {
@@ -3434,7 +3434,7 @@
      "t": "Probably. The metro will have reshaped how people travel."
     },
     {
-     "s": "Mia",
+     "s": "Max",
      "t": "But growth can bring unforeseen consequences."
     },
     {
@@ -3442,7 +3442,7 @@
      "t": "True. Demand for homes may outpace construction."
     },
     {
-     "s": "Mia",
+     "s": "Max",
      "t": "So planners will have had to rethink everything."
     }
    ],
@@ -3491,7 +3491,7 @@
    ],
    "dialogue": [
     {
-     "s": "Grace",
+     "s": "George",
      "t": "Were AI to write all the news, would we need journalists?"
     },
     {
@@ -3499,7 +3499,7 @@
      "t": "Were that to come to pass, reporters would still find the stories."
     },
     {
-     "s": "Grace",
+     "s": "George",
      "t": "Couldn't AI render reporters obsolete?"
     },
     {
@@ -3507,7 +3507,7 @@
      "t": "A match report is a far cry from an investigation."
     },
     {
-     "s": "Grace",
+     "s": "George",
      "t": "So AI won't displace journalists?"
     },
     {
@@ -3560,7 +3560,7 @@
    ],
    "dialogue": [
     {
-     "s": "Sofia",
+     "s": "Sami",
      "t": "Should humans settle on Mars, what would they need?"
     },
     {
@@ -3568,7 +3568,7 @@
      "t": "Shelter. Should a dust storm hit, they'd need it fast."
     },
     {
-     "s": "Sofia",
+     "s": "Sami",
      "t": "It's uncharted territory for the human body."
     },
     {
@@ -3576,7 +3576,7 @@
      "t": "Moon missions will pave the way."
     },
     {
-     "s": "Sofia",
+     "s": "Sami",
      "t": "In the event of an emergency, help would be months away."
     },
     {
@@ -3629,7 +3629,7 @@
    ],
    "dialogue": [
     {
-     "s": "Amira",
+     "s": "Amir",
      "t": "Should demand keep rising, could our water run dry?"
     },
     {
@@ -3637,7 +3637,7 @@
      "t": "Some underground supplies could. They refill slowly."
     },
     {
-     "s": "Amira",
+     "s": "Amir",
      "t": "So desalination staves off a crisis?"
     },
     {
@@ -3645,7 +3645,7 @@
      "t": "For now. But should energy costs rise, it would be expensive."
     },
     {
-     "s": "Amira",
+     "s": "Amir",
      "t": "We need a contingency plan."
     },
     {
@@ -3698,7 +3698,7 @@
    ],
    "dialogue": [
     {
-     "s": "Leila",
+     "s": "Laith",
      "t": "By thirty, we'll have been working for ten years."
     },
     {
@@ -3706,7 +3706,7 @@
      "t": "Maybe in jobs that don't exist yet."
     },
     {
-     "s": "Leila",
+     "s": "Laith",
      "t": "How do you future-proof a career?"
     },
     {
@@ -3714,7 +3714,7 @@
      "t": "Lifelong learning. I'll have been upskilling for years."
     },
     {
-     "s": "Leila",
+     "s": "Laith",
      "t": "So staying ahead of the curve means learning how to learn."
     },
     {
@@ -3771,7 +3771,7 @@
      "t": "Will schools still exist in 2050?"
     },
     {
-     "s": "Hamad",
+     "s": "Hessa",
      "t": "In all likelihood, yes, though they will have changed."
     },
     {
@@ -3783,7 +3783,7 @@
      "t": "What's the best-case scenario?"
     },
     {
-     "s": "Hamad",
+     "s": "Hessa",
      "t": "A personal AI tutor for every student."
     },
     {
@@ -3791,7 +3791,7 @@
      "t": "The worst case is isolated students."
     },
     {
-     "s": "Hamad",
+     "s": "Hessa",
      "t": "So we should plan for every eventuality."
     }
    ],
@@ -3840,7 +3840,7 @@
    ],
    "dialogue": [
     {
-     "s": "Leo",
+     "s": "Lea",
      "t": "I've never really put down roots anywhere."
     },
     {
@@ -3848,7 +3848,7 @@
      "t": "My family has lived in Al-Qassim for generations."
     },
     {
-     "s": "Leo",
+     "s": "Lea",
      "t": "Does that give you a sense of belonging?"
     },
     {
@@ -3856,7 +3856,7 @@
      "t": "Yes. We're a tight-knit family, and poetry runs in the family."
     },
     {
-     "s": "Leo",
+     "s": "Lea",
      "t": "The apple doesn't fall far from the tree!"
     },
     {
@@ -3913,7 +3913,7 @@
      "t": "You switch between Arabic and English all the time."
     },
     {
-     "s": "Badr",
+     "s": "Bushra",
      "t": "It's become second nature."
     },
     {
@@ -3921,7 +3921,7 @@
      "t": "Does anything get lost in translation?"
     },
     {
-     "s": "Badr",
+     "s": "Bushra",
      "t": "Yes, especially expressions of hospitality."
     },
     {
@@ -3929,7 +3929,7 @@
      "t": "For me, Spanish is a window into my grandparents' world."
     },
     {
-     "s": "Badr",
+     "s": "Bushra",
      "t": "Language is the heart and soul of a culture."
     }
    ],
@@ -3978,7 +3978,7 @@
    ],
    "dialogue": [
     {
-     "s": "Tom",
+     "s": "Tess",
      "t": "Is Saudi coffee always flavoured with cardamom?"
     },
     {
@@ -3986,7 +3986,7 @@
      "t": "Usually. For some visitors, it's an acquired taste."
     },
     {
-     "s": "Tom",
+     "s": "Tess",
      "t": "And it's always served with dates?"
     },
     {
@@ -3994,7 +3994,7 @@
      "t": "Yes. It's how we say 'welcome' without words."
     },
     {
-     "s": "Tom",
+     "s": "Tess",
      "t": "So food is a language of its own. That's food for thought."
     },
     {
@@ -4189,7 +4189,7 @@
      "t": "What really shapes who we are?"
     },
     {
-     "s": "Clara",
+     "s": "Chris",
      "t": "Family is at the heart of it."
     },
     {
@@ -4197,7 +4197,7 @@
      "t": "Jeddah has always been a melting pot."
     },
     {
-     "s": "Clara",
+     "s": "Chris",
      "t": "I'd call it a mosaic. Each piece keeps its colour."
     },
     {
@@ -4205,7 +4205,7 @@
      "t": "And the internet?"
     },
     {
-     "s": "Clara",
+     "s": "Chris",
      "t": "It's a double-edged sword."
     },
     {
@@ -4213,7 +4213,7 @@
      "t": "Can we have the best of both worlds?"
     },
     {
-     "s": "Clara",
+     "s": "Chris",
      "t": "Yes, if our roots run deep."
     }
    ],
@@ -4266,7 +4266,7 @@
      "t": "By way of introduction, I'll ask: how long did you sleep last night?"
     },
     {
-     "s": "Ethan",
+     "s": "Elena",
      "t": "Then what?"
     },
     {
@@ -4274,7 +4274,7 @@
      "t": "The rationale behind the study: body clocks shift later in teenagers."
     },
     {
-     "s": "Ethan",
+     "s": "Elena",
      "t": "And your research question?"
     },
     {
@@ -4282,7 +4282,7 @@
      "t": "This study set out to see if later starts improve concentration."
     },
     {
-     "s": "Ethan",
+     "s": "Elena",
      "t": "Say you hope to shed light on a gap in the research."
     }
    ],
@@ -4335,7 +4335,7 @@
      "t": "Turning now to our results, reading for pleasure fell sharply."
     },
     {
-     "s": "Ziad",
+     "s": "Zainab",
      "t": "To put this into perspective, fewer than half of sixteen-year-olds read for fun."
     },
     {
@@ -4343,7 +4343,7 @@
      "t": "But there was a marked increase in audiobooks."
     },
     {
-     "s": "Ziad",
+     "s": "Zainab",
      "t": "They account for a third of older students' reading."
     },
     {
@@ -4351,7 +4351,7 @@
      "t": "Bear in mind that our sample was small."
     },
     {
-     "s": "Ziad",
+     "s": "Zainab",
      "t": "So the figures suggest a trend."
     }
    ],
@@ -4400,7 +4400,7 @@
    ],
    "dialogue": [
     {
-     "s": "Ahmed",
+     "s": "Amal",
      "t": "Are Red Sea corals safe from climate change?"
     },
     {
@@ -4408,7 +4408,7 @@
      "t": "That's a pertinent question. If I understand you correctly, you mean fully protected?"
     },
     {
-     "s": "Ahmed",
+     "s": "Amal",
      "t": "Yes."
     },
     {
@@ -4416,7 +4416,7 @@
      "t": "To address your point, they're heat-tolerant, but not immune."
     },
     {
-     "s": "Ahmed",
+     "s": "Amal",
      "t": "What about fishing?"
     },
     {
@@ -4542,7 +4542,7 @@
      "t": "To draw the threads together, palm waste could become building material."
     },
     {
-     "s": "Sara",
+     "s": "Saad",
      "t": "The take-home message: waste might be a resource."
     },
     {
@@ -4550,7 +4550,7 @@
      "t": "It has far-reaching implications for farmers."
     },
     {
-     "s": "Sara",
+     "s": "Saad",
      "t": "Humidity merits further research."
     },
     {
@@ -4558,7 +4558,7 @@
      "t": "How should we finish?"
     },
     {
-     "s": "Sara",
+     "s": "Saad",
      "t": "Let's come full circle and leave them with the farm photo."
     }
    ],
@@ -4623,7 +4623,7 @@
      "t": "This brings me to our finding. In light of our observations, yes."
     },
     {
-     "s": "Liam",
+     "s": "Lily",
      "t": "Did you consider artificial grass?"
     },
     {

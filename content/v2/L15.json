@@ -349,14 +349,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Turki and his classmate Lina are in a supermarket in Dammam, looking at an energy drink.",
+    "scene": "Turki and his classmate Saad are in a supermarket in Dammam, looking at an energy drink.",
     "p1": [
      {
       "s": "Turki",
       "t": "Look at this can: 'Boosts focus and energy.' Maybe I'll try it before Saturday's match."
      },
      {
-      "s": "Lina",
+      "s": "Saad",
       "t": "Of course the company claims that. They want to sell it. I'd take it with a pinch of salt."
      },
      {
@@ -364,7 +364,7 @@
       "t": "But it says it's packed with vitamins."
      },
      {
-      "s": "Lina",
+      "s": "Saad",
       "t": "Sure, and it's also packed with sugar and caffeine. Check the label."
      }
     ],
@@ -374,7 +374,7 @@
       "t": "Oh, there's a warning: 'Not recommended for children.' I didn't notice that."
      },
      {
-      "s": "Lina",
+      "s": "Saad",
       "t": "Exactly. Doctors warn that too much caffeine can cause heart problems and poor sleep."
      },
      {
@@ -382,7 +382,7 @@
       "t": "So the advert's a bit misleading, then."
      },
      {
-      "s": "Lina",
+      "s": "Saad",
       "t": "Yes. And our PE teacher pointed out that water and a banana work just as well before a match."
      },
      {
@@ -469,14 +469,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Nawaf and his classmate Grace are preparing a geography presentation about water in Saudi Arabia.",
+    "scene": "Nawaf and his classmate Liam are preparing a geography presentation about water in Saudi Arabia.",
     "p1": [
      {
       "s": "Nawaf",
       "t": "Let's open with a big fact. Saudi Arabia is thought to be the world's largest producer of desalinated water."
      },
      {
-      "s": "Grace",
+      "s": "Liam",
       "t": "Good start. Do we have a source for that?"
      },
      {
@@ -484,7 +484,7 @@
       "t": "Yes, several international reports. It is estimated that a large share of the country's drinking water comes from desalination."
      },
      {
-      "s": "Grace",
+      "s": "Liam",
       "t": "And desalination uses a huge amount of energy, so wasting water is expensive."
      }
     ],
@@ -494,7 +494,7 @@
       "t": "Next, home consumption. On average, a long shower uses far more water than people realise."
      },
      {
-      "s": "Grace",
+      "s": "Liam",
       "t": "People might say one family saving water is just a drop in the ocean."
      },
      {
@@ -502,14 +502,14 @@
       "t": "True, but if millions of families do it, it really adds up."
      },
      {
-      "s": "Grace",
+      "s": "Liam",
       "t": "Then let's finish with three easy tips: shorter showers, fixing leaks and turning off the tap."
      }
     ],
     "focus": "It is estimated that a large share of the country's drinking water comes from desalination.",
     "qs": [
      "How does Nawaf open the presentation?",
-     "Why is wasting water expensive, according to Grace?"
+     "Why is wasting water expensive, according to Liam?"
     ]
    },
    "speakout": {
@@ -585,14 +585,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Lama and Daniel are presenting the results of a survey they did at their own school about sport.",
+    "scene": "Lama and Grace are presenting the results of a survey they did at their own school about sport.",
     "p1": [
      {
       "s": "Lama",
       "t": "We asked 200 students in our school how often they do sport. The figures indicate that girls' participation has nearly doubled since last year."
      },
      {
-      "s": "Daniel",
+      "s": "Grace",
       "t": "That's mainly because the school opened a new sports hall. A significant proportion of girls now play basketball after school."
      },
      {
@@ -600,7 +600,7 @@
       "t": "We also asked how students feel before exams."
      },
      {
-      "s": "Daniel",
+      "s": "Grace",
       "t": "Students who exercise three times a week reported feeling less stressed."
      }
     ],
@@ -610,7 +610,7 @@
       "t": "That matches research elsewhere. There is a growing body of evidence that exercise is linked to better mental health."
      },
      {
-      "s": "Daniel",
+      "s": "Grace",
       "t": "Of course, our survey was small, so we must be careful."
      },
      {
@@ -618,14 +618,14 @@
       "t": "True, but we can still draw a tentative conclusion: better facilities seem to lead to more active students."
      },
      {
-      "s": "Daniel",
+      "s": "Grace",
       "t": "So our recommendation is simple: keep the sports hall open longer."
      }
     ],
     "focus": "The figures indicate that girls' participation has nearly doubled since last year.",
     "qs": [
      "What has happened to girls' participation in sport at the school?",
-     "Why does Daniel say they must be careful?"
+     "Why does Grace say they must be careful?"
     ]
    },
    "speakout": {
@@ -817,14 +817,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal and Noura are taking part in a youth council discussion about whether their city should build more cycle lanes.",
+    "scene": "Faisal and Majed are taking part in a youth council discussion about whether their city should build more cycle lanes.",
     "p1": [
      {
       "s": "Faisal",
       "t": "I'd like to make the case for more cycle lanes. Research suggests that people cycle more when they feel safe from traffic."
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "That sounds nice, but isn't it too hot to cycle here for most of the year?"
      },
      {
@@ -832,7 +832,7 @@
       "t": "It's a fair point, but it is estimated that many car journeys in cities are shorter than five kilometres."
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "Is that based on evidence from Saudi cities, though, or from Europe?"
      }
     ],
@@ -842,7 +842,7 @@
       "t": "Mostly from abroad, I admit. My own evidence is anecdotal: since a cycle path opened near us, I've seen far more cyclists."
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "So that's a strong argument for shaded lanes that people can use after sunset."
      },
      {
@@ -850,14 +850,14 @@
       "t": "Exactly. If we weigh up the evidence, the benefits for health and traffic are clear."
      },
      {
-      "s": "Noura",
+      "s": "Majed",
       "t": "All right, I'm convinced, as long as the lanes have trees and good lighting."
      }
     ],
     "focus": "Research suggests that people cycle more when they feel safe from traffic.",
     "qs": [
-     "What is Noura's first objection?",
-     "What two things does Noura want the lanes to have?"
+     "What is Majed's first objection?",
+     "What two things does Majed want the lanes to have?"
     ]
    },
    "speakout": {
@@ -1238,15 +1238,15 @@
     ]
    },
    "culture": {
-    "title": "Around Saudi Arabia: Majlis Manners",
+    "title": "Around Saudi Arabia: Respectful Ways to Address People",
     "points": [
-     "In a traditional majlis, people usually stand up to greet guests when they arrive.",
-     "Arabic coffee and dates are often offered to guests soon after they sit down.",
-     "Young people are expected to listen carefully and speak politely when older guests are talking."
+     "Many young Saudis politely call an older man 'ammi' (my uncle), even if he is not a relative.",
+     "People are often addressed by a kunya, such as 'Abu Fahad', which means 'father of Fahad'.",
+     "In formal situations, titles such as 'Doctor' or 'Ustadh' are used to show respect."
     ],
     "qs": [
-     "What do young people learn from sitting in a majlis?",
-     "How would you explain majlis manners to a visitor from another country?"
+     "How do you address an older person you have just met?",
+     "Which English titles, such as 'Sir' or 'Dr', are similar to Arabic ones?"
     ]
    },
    "exit": "Ask an older person and then a friend for the same thing, in two different registers."
@@ -1529,14 +1529,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Lulwa and Adam are organising a charity bake sale at school. They prepare two messages: one to a local bakery owner and one to their friends.",
+    "scene": "Lulwa and Mia are organising a charity bake sale at school. They prepare two messages: one to a local bakery owner and one to their friends.",
     "p1": [
      {
       "s": "Lulwa",
       "t": "Let's write to the bakery owner first: 'Dear Mr Al-Otaibi, on behalf of Year 11, I would like to invite you to our bake sale.'"
      },
      {
-      "s": "Adam",
+      "s": "Mia",
       "t": "Good. Then: 'We would be delighted if you could donate some pastries.'"
      },
      {
@@ -1544,7 +1544,7 @@
       "t": "And 'Kindly reply by Thursday.' Then we finish with 'I look forward to hearing from you.'"
      },
      {
-      "s": "Adam",
+      "s": "Mia",
       "t": "Perfect. Now the message to our friends. No 'kindly' there!"
      }
     ],
@@ -1554,7 +1554,7 @@
       "t": "Ha, true. 'Hey everyone! Fancy helping at our bake sale on Saturday?'"
      },
      {
-      "s": "Adam",
+      "s": "Mia",
       "t": "'It'd be great if you could bring some homemade cookies. All the money goes to charity!'"
      },
      {
@@ -1562,7 +1562,7 @@
       "t": "Should we add 'Please reply by Thursday'?"
      },
      {
-      "s": "Adam",
+      "s": "Mia",
       "t": "Just write 'Let me know by Thursday!' It sounds friendlier."
      },
      {
@@ -1656,7 +1656,7 @@
       "t": "Okay, let's tackle the canteen problem. Students are waiting fifteen minutes and missing half their break."
      },
      {
-      "s": "Omar",
+      "s": "Rana",
       "t": "The bottleneck is the payment counter. Everyone pays in cash, so it's really slow."
      },
      {
@@ -1664,7 +1664,7 @@
       "t": "It might be worth letting students pay with their school ID cards."
      },
      {
-      "s": "Omar",
+      "s": "Rana",
       "t": "That could work, but it would take time to set up."
      }
     ],
@@ -1674,7 +1674,7 @@
       "t": "What if we had staggered breaks? Younger students could eat first, and older students ten minutes later."
      },
      {
-      "s": "Omar",
+      "s": "Rana",
       "t": "I like that. It would cut the queue in half, and it wouldn't cost anything."
      },
      {
@@ -1682,14 +1682,14 @@
       "t": "Shall we suggest both ideas to the head teacher? Staggered breaks now, and ID payments next term."
      },
      {
-      "s": "Omar",
+      "s": "Rana",
       "t": "Agreed. I'll write it up in the notes."
      }
     ],
     "focus": "It might be worth letting students pay with their school ID cards.",
     "qs": [
      "What is causing the bottleneck?",
-     "Why does Omar like the idea of staggered breaks?"
+     "Why does Rana like the idea of staggered breaks?"
     ]
    },
    "speakout": {
@@ -1942,15 +1942,15 @@
     ]
    },
    "culture": {
-    "title": "Around Saudi Arabia: The Riyadh Metro",
+    "title": "Around the World: The Walking Bus",
     "points": [
-     "The Riyadh Metro opened to passengers in stages from December 2024.",
-     "It has six lines and was built to reduce the city's heavy car traffic.",
-     "Stations were designed with shade and cooling to suit the hot climate."
+     "A 'walking bus' is a group of children who walk to school together with adult volunteers.",
+     "The idea has been used for many years in countries such as the UK and New Zealand.",
+     "Supporters say it reduces traffic outside schools and gives children daily exercise."
     ],
     "qs": [
-     "Would public transport change the way you get to school?",
-     "What would persuade more people to leave their cars at home?"
+     "Would a walking bus work in your area? Why or why not?",
+     "What would persuade more parents not to drive right up to the school gate?"
     ]
    },
    "exit": "Evaluate one idea positively and one idea negatively, giving reasons."
@@ -2058,15 +2058,15 @@
     ]
    },
    "culture": {
-    "title": "Around Saudi Arabia: Fighting Food Waste",
+    "title": "Around the World: France's Food Law",
     "points": [
-     "Saudi Arabia runs national campaigns to reduce food waste, especially during Ramadan and Eid.",
-     "Charities such as the Saudi Food Bank (Itaam) collect extra food from events and restaurants.",
-     "Generous hospitality is an important tradition, so hosts often prepare far more food than guests can eat."
+     "In 2016, France became one of the first countries to stop large supermarkets throwing away unsold food that is still safe to eat.",
+     "Instead, supermarkets must offer this food to charities, which share it with people in need.",
+     "Other countries have since discussed similar laws to cut food waste."
     ],
     "qs": [
-     "How can families stay generous without wasting food?",
-     "What happens to leftovers in your home?"
+     "Should restaurants and hotels in Saudi Arabia have a similar rule? Why or why not?",
+     "How can families stay generous without wasting food?"
     ]
    },
    "exit": "Propose one way to reduce food waste and say what it would mean."
@@ -2113,14 +2113,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Majd is chairing the planning meeting for his class's end-of-year trip. Lucy and Waleed are also there.",
+    "scene": "Majd is chairing the planning meeting for his class's end-of-year trip. Luke and Waleed are also there.",
     "p1": [
      {
       "s": "Majd",
       "t": "Right, let's get down to business. The first item on the agenda is where to go for the end-of-year trip."
      },
      {
-      "s": "Lucy",
+      "s": "Luke",
       "t": "I'd suggest the aquarium in Jeddah. Everyone's been talking about it."
      },
      {
@@ -2138,7 +2138,7 @@
       "t": "To recap: the aquarium is popular, but we need cheaper transport. Are we all agreed that we'll ask for two prices?"
      },
      {
-      "s": "Lucy",
+      "s": "Luke",
       "t": "Agreed."
      },
      {
@@ -2147,11 +2147,7 @@
      },
      {
       "s": "Majd",
-      "t": "Yes, quickly. Hands up for the 15th. Right, that's decided."
-     },
-     {
-      "s": "Majd",
-      "t": "Action points: Lucy contacts the bus companies, and Waleed books the tickets."
+      "t": "Yes, quickly. Hands up for the 15th. Right, that's decided. Action points: Luke contacts the bus companies, and Waleed books the tickets."
      }
     ],
     "focus": "Shall we move on to the budget and come back to this later?",
@@ -2233,14 +2229,14 @@
     }
    ],
    "dialogue": {
-    "scene": "At a neighbourhood youth meeting, Bader (the chair), Layla and Jack discuss how to give teenagers in the area somewhere to spend their free time.",
+    "scene": "At a neighbourhood youth meeting, Bader (the chair), Laith and Jack discuss how to give teenagers in the area somewhere to spend their free time.",
     "p1": [
      {
       "s": "Bader",
       "t": "Let's get down to business. Teenagers here say there's nowhere to go in the evenings. Any ideas?"
      },
      {
-      "s": "Layla",
+      "s": "Laith",
       "t": "What if we turned the empty hall next to the park into a youth centre?"
      },
      {
@@ -2248,7 +2244,7 @@
       "t": "I like it, but is it a feasible option? Renovating it would cost a lot."
      },
      {
-      "s": "Layla",
+      "s": "Laith",
       "t": "It might be worth running a pilot scheme first, maybe two evenings a week with games and study tables."
      }
     ],
@@ -2266,7 +2262,7 @@
       "t": "To recap: a three-month pilot, two evenings a week, closing at ten. Have we reached a consensus?"
      },
      {
-      "s": "Layla",
+      "s": "Laith",
       "t": "Agreed. My action point: I'll write to the municipality to ask for permission."
      }
     ],
@@ -3056,16 +3052,16 @@
      "t": "Honestly, that might not help. Research suggests that sleep helps the brain store what you've learnt."
     },
     {
-     "s": "Reem",
-     "t": "According to sleep experts, teenagers need eight to ten hours a night. You're getting about five."
-    },
-    {
      "s": "Khalid",
      "t": "But one late night won't have an impact on my grade, will it?"
     },
     {
      "s": "Reem",
      "t": "There is strong evidence that lack of sleep slows your reactions and weakens your memory."
+    },
+    {
+     "s": "Khalid",
+     "t": "Where did you read that? It could be some random website."
     },
     {
      "s": "Reem",
@@ -3125,15 +3121,23 @@
      "t": "Look at this can: 'Boosts focus and energy.' Maybe I'll try it before Saturday's match."
     },
     {
-     "s": "Lina",
+     "s": "Saad",
      "t": "Of course the company claims that. They want to sell it. I'd take it with a pinch of salt."
     },
     {
-     "s": "Lina",
+     "s": "Turki",
+     "t": "But it says it's packed with vitamins."
+    },
+    {
+     "s": "Saad",
      "t": "Sure, and it's also packed with sugar and caffeine. Check the label."
     },
     {
-     "s": "Lina",
+     "s": "Turki",
+     "t": "Oh, there's a warning: 'Not recommended for children.' I didn't notice that."
+    },
+    {
+     "s": "Saad",
      "t": "Exactly. Doctors warn that too much caffeine can cause heart problems and poor sleep."
     },
     {
@@ -3141,12 +3145,8 @@
      "t": "So the advert's a bit misleading, then."
     },
     {
-     "s": "Lina",
+     "s": "Saad",
      "t": "Yes. And our PE teacher pointed out that water and a banana work just as well before a match."
-    },
-    {
-     "s": "Turki",
-     "t": "Fine, a banana it is. It's cheaper anyway!"
     }
    ],
    "grammar": {
@@ -3198,11 +3198,15 @@
      "t": "Let's open with a big fact. Saudi Arabia is thought to be the world's largest producer of desalinated water."
     },
     {
+     "s": "Liam",
+     "t": "Good start. Do we have a source for that?"
+    },
+    {
      "s": "Nawaf",
      "t": "Yes, several international reports. It is estimated that a large share of the country's drinking water comes from desalination."
     },
     {
-     "s": "Grace",
+     "s": "Liam",
      "t": "And desalination uses a huge amount of energy, so wasting water is expensive."
     },
     {
@@ -3210,12 +3214,12 @@
      "t": "Next, home consumption. On average, a long shower uses far more water than people realise."
     },
     {
-     "s": "Grace",
+     "s": "Liam",
      "t": "People might say one family saving water is just a drop in the ocean."
     },
     {
-     "s": "Grace",
-     "t": "Then let's finish with three easy tips: shorter showers, fixing leaks and turning off the tap."
+     "s": "Nawaf",
+     "t": "True, but if millions of families do it, it really adds up."
     }
    ],
    "grammar": {
@@ -3267,11 +3271,15 @@
      "t": "We asked 200 students in our school how often they do sport. The figures indicate that girls' participation has nearly doubled since last year."
     },
     {
-     "s": "Daniel",
+     "s": "Grace",
      "t": "That's mainly because the school opened a new sports hall. A significant proportion of girls now play basketball after school."
     },
     {
-     "s": "Daniel",
+     "s": "Lama",
+     "t": "We also asked how students feel before exams."
+    },
+    {
+     "s": "Grace",
      "t": "Students who exercise three times a week reported feeling less stressed."
     },
     {
@@ -3279,16 +3287,12 @@
      "t": "That matches research elsewhere. There is a growing body of evidence that exercise is linked to better mental health."
     },
     {
-     "s": "Daniel",
+     "s": "Grace",
      "t": "Of course, our survey was small, so we must be careful."
     },
     {
      "s": "Lama",
      "t": "True, but we can still draw a tentative conclusion: better facilities seem to lead to more active students."
-    },
-    {
-     "s": "Daniel",
-     "t": "So our recommendation is simple: keep the sports hall open longer."
     }
    ],
    "grammar": {
@@ -3340,6 +3344,10 @@
      "t": "Listen to this. The report emphasises that the fashion industry produces a huge amount of waste every year."
     },
     {
+     "s": "Mia",
+     "t": "Does it say where all those clothes go?"
+    },
+    {
      "s": "Hessa",
      "t": "A lot of them end up in landfill. And the writer admits that recycling isn't the full answer, because many fabrics are hard to recycle."
     },
@@ -3352,12 +3360,12 @@
      "t": "Same here. But experts urge people to buy fewer, better-quality clothes."
     },
     {
-     "s": "Hessa",
-     "t": "It recommends swapping clothes with friends and donating the ones you don't wear."
+     "s": "Mia",
+     "t": "What else does the report suggest?"
     },
     {
-     "s": "Mia",
-     "t": "We could organise a clothes swap at school before Eid. That would support our argument in the debate."
+     "s": "Hessa",
+     "t": "It recommends swapping clothes with friends and donating the ones you don't wear."
     }
    ],
    "grammar": {
@@ -3409,7 +3417,7 @@
      "t": "I'd like to make the case for more cycle lanes. Research suggests that people cycle more when they feel safe from traffic."
     },
     {
-     "s": "Noura",
+     "s": "Majed",
      "t": "That sounds nice, but isn't it too hot to cycle here for most of the year?"
     },
     {
@@ -3417,11 +3425,15 @@
      "t": "It's a fair point, but it is estimated that many car journeys in cities are shorter than five kilometres."
     },
     {
+     "s": "Majed",
+     "t": "Is that based on evidence from Saudi cities, though, or from Europe?"
+    },
+    {
      "s": "Faisal",
      "t": "Mostly from abroad, I admit. My own evidence is anecdotal: since a cycle path opened near us, I've seen far more cyclists."
     },
     {
-     "s": "Noura",
+     "s": "Majed",
      "t": "So that's a strong argument for shaded lanes that people can use after sunset."
     },
     {
@@ -3482,20 +3494,28 @@
      "t": "Oh no. That's fine for your friends, but the register is completely wrong for a camp director."
     },
     {
+     "s": "Yousef",
+     "t": "What's wrong with it? It's short and clear."
+    },
+    {
      "s": "Dana",
      "t": "It sounds rude. Start with 'Dear Mr Carter' and then 'I am writing to enquire about your summer coding camp.'"
+    },
+    {
+     "s": "Yousef",
+     "t": "Okay. And instead of 'Is it expensive?'"
     },
     {
      "s": "Dana",
      "t": "Try 'I would be grateful if you could tell me the fees.' Then finish with 'I look forward to hearing from you.'"
     },
     {
-     "s": "Dana",
-     "t": "Definitely not. Write 'Yours sincerely' and your full name. Save 'Speak soon!' for messages to me."
+     "s": "Yousef",
+     "t": "And not 'Thx'?"
     },
     {
-     "s": "Yousef",
-     "t": "Fine. Just a quick message to my sister, then: thanks!"
+     "s": "Dana",
+     "t": "Definitely not. Write 'Yours sincerely' and your full name. Save 'Speak soon!' for messages to me."
     }
    ],
    "grammar": {
@@ -3555,6 +3575,10 @@
      "t": "A new date will be announced in due course. For further information, please contact the school office."
     },
     {
+     "s": "Chris",
+     "t": "Hey Majed! Are we still going to the science centre tomorrow?"
+    },
+    {
      "s": "Majed",
      "t": "Nope, they've put it off because of the sandstorm."
     },
@@ -3563,8 +3587,8 @@
      "t": "Oh, what a shame. Did they say when?"
     },
     {
-     "s": "Chris",
-     "t": "Cool, thanks!"
+     "s": "Majed",
+     "t": "Not yet. I'll get in touch as soon as I hear anything."
     }
    ],
    "grammar": {
@@ -3636,6 +3660,10 @@
      "t": "Of course. Dr Saleh's a really important guest. Mind if I sit here?"
     },
     {
+     "s": "Ziyad",
+     "t": "Go ahead. So, what did he say?"
+    },
+    {
      "s": "Hamad",
      "t": "Loads! Let's catch up properly after dinner."
     }
@@ -3693,12 +3721,20 @@
      "t": "Certainly. I'm keen to help visitors enjoy the event, and I would welcome the opportunity to use my English."
     },
     {
+     "s": "Ms Grant",
+     "t": "Do you have any experience in this kind of work?"
+    },
+    {
      "s": "Noura",
      "t": "Yes. I have some experience in organising events, as I helped run our school's science fair last year."
     },
     {
      "s": "Ms Grant",
      "t": "Could you elaborate on your role at the science fair?"
+    },
+    {
+     "s": "Noura",
+     "t": "Of course. I was responsible for welcoming guests and guiding them to the different stands."
     },
     {
      "s": "Ms Grant",
@@ -3758,12 +3794,12 @@
      "t": "Mrs Hayes, please accept my apologies for missing the deadline yesterday."
     },
     {
-     "s": "Rakan",
-     "t": "It was due to a problem with my laptop, but I should have saved a copy. I apologise for any inconvenience caused to the group."
+     "s": "Mrs Hayes",
+     "t": "Thank you, Rakan. What happened?"
     },
     {
-     "s": "Mrs Hayes",
-     "t": "I appreciate your honesty. Please send it by tomorrow morning."
+     "s": "Rakan",
+     "t": "It was due to a problem with my laptop, but I should have saved a copy. I apologise for any inconvenience caused to the group."
     },
     {
      "s": "Ali",
@@ -3772,6 +3808,10 @@
     {
      "s": "Rakan",
      "t": "I know, my bad. My laptop died and I hadn't backed anything up."
+    },
+    {
+     "s": "Ali",
+     "t": "Well, I finished the conclusion for you."
     },
     {
      "s": "Rakan",
@@ -3827,20 +3867,24 @@
      "t": "Let's write to the bakery owner first: 'Dear Mr Al-Otaibi, on behalf of Year 11, I would like to invite you to our bake sale.'"
     },
     {
-     "s": "Adam",
+     "s": "Mia",
      "t": "Good. Then: 'We would be delighted if you could donate some pastries.'"
+    },
+    {
+     "s": "Lulwa",
+     "t": "And 'Kindly reply by Thursday.' Then we finish with 'I look forward to hearing from you.'"
+    },
+    {
+     "s": "Mia",
+     "t": "Perfect. Now the message to our friends. No 'kindly' there!"
     },
     {
      "s": "Lulwa",
      "t": "Ha, true. 'Hey everyone! Fancy helping at our bake sale on Saturday?'"
     },
     {
-     "s": "Adam",
+     "s": "Mia",
      "t": "'It'd be great if you could bring some homemade cookies. All the money goes to charity!'"
-    },
-    {
-     "s": "Adam",
-     "t": "Just write 'Let me know by Thursday!' It sounds friendlier."
     },
     {
      "s": "Lulwa",
@@ -3896,7 +3940,7 @@
      "t": "Okay, let's tackle the canteen problem. Students are waiting fifteen minutes and missing half their break."
     },
     {
-     "s": "Omar",
+     "s": "Rana",
      "t": "The bottleneck is the payment counter. Everyone pays in cash, so it's really slow."
     },
     {
@@ -3904,7 +3948,7 @@
      "t": "It might be worth letting students pay with their school ID cards."
     },
     {
-     "s": "Omar",
+     "s": "Rana",
      "t": "That could work, but it would take time to set up."
     },
     {
@@ -3912,7 +3956,7 @@
      "t": "What if we had staggered breaks? Younger students could eat first, and older students ten minutes later."
     },
     {
-     "s": "Omar",
+     "s": "Rana",
      "t": "I like that. It would cut the queue in half, and it wouldn't cost anything."
     }
    ],
@@ -3969,6 +4013,10 @@
      "t": "Then we need to cut costs. I'd suggest that we keep last year's kits for one more season."
     },
     {
+     "s": "Ryan",
+     "t": "That would save a lot, but some shirts are really worn out."
+    },
+    {
      "s": "Saud",
      "t": "Fine. What if we only replaced the damaged ones?"
     },
@@ -3983,10 +4031,6 @@
     {
      "s": "Ryan",
      "t": "Brilliant. And supposing we found a sponsor, like the sports shop near school?"
-    },
-    {
-     "s": "Saud",
-     "t": "Their logo on our shirts in return for paying for the trip? Let's ask them tomorrow."
     }
    ],
    "grammar": {
@@ -4042,8 +4086,16 @@
      "t": "Most of the problem is parents stopping right at the gate to drop off their children."
     },
     {
+     "s": "Mr Fahad",
+     "t": "Some parents suggested building a bigger car park."
+    },
+    {
      "s": "Huda",
      "t": "I can't see that working, to be honest. It would take years and cost a fortune."
+    },
+    {
+     "s": "Mr Fahad",
+     "t": "So what do you propose?"
     },
     {
      "s": "Huda",
@@ -4052,10 +4104,6 @@
     {
      "s": "Mr Fahad",
      "t": "Interesting. The beauty of it is that it costs almost nothing."
-    },
-    {
-     "s": "Huda",
-     "t": "Exactly. And it would ease congestion and get students moving before class."
     }
    ],
    "grammar": {
@@ -4113,6 +4161,10 @@
     {
      "s": "Rahaf",
      "t": "The trouble with that is that Grandma will worry there isn't enough for the guests."
+    },
+    {
+     "s": "Sami",
+     "t": "True. Hospitality matters to her. It might be worth asking the guests to confirm if they're coming."
     },
     {
      "s": "Rahaf",
@@ -4176,7 +4228,7 @@
      "t": "Right, let's get down to business. The first item on the agenda is where to go for the end-of-year trip."
     },
     {
-     "s": "Lucy",
+     "s": "Luke",
      "t": "I'd suggest the aquarium in Jeddah. Everyone's been talking about it."
     },
     {
@@ -4188,16 +4240,16 @@
      "t": "Good point. Shall we move on to the budget and come back to this later?"
     },
     {
-     "s": "Majd",
-     "t": "To recap: the aquarium is popular, but we need cheaper transport. Are we all agreed that we'll ask for two prices?"
+     "s": "Luke",
+     "t": "Agreed."
+    },
+    {
+     "s": "Waleed",
+     "t": "Fine by me. Should we take a vote on the date as well?"
     },
     {
      "s": "Majd",
-     "t": "Yes, quickly. Hands up for the 15th. Right, that's decided."
-    },
-    {
-     "s": "Majd",
-     "t": "Action points: Lucy contacts the bus companies, and Waleed books the tickets."
+     "t": "Yes, quickly. Hands up for the 15th. Right, that's decided. Action points: Luke contacts the bus companies, and Waleed books the tickets."
     }
    ],
    "grammar": {
@@ -4249,7 +4301,7 @@
      "t": "Let's get down to business. Teenagers here say there's nowhere to go in the evenings. Any ideas?"
     },
     {
-     "s": "Layla",
+     "s": "Laith",
      "t": "What if we turned the empty hall next to the park into a youth centre?"
     },
     {
@@ -4257,8 +4309,12 @@
      "t": "I like it, but is it a feasible option? Renovating it would cost a lot."
     },
     {
-     "s": "Layla",
+     "s": "Laith",
      "t": "It might be worth running a pilot scheme first, maybe two evenings a week with games and study tables."
+    },
+    {
+     "s": "Bader",
+     "t": "The beauty of a pilot is that we can see if people actually come. But what about noise for the neighbours?"
     },
     {
      "s": "Jack",
@@ -4267,10 +4323,6 @@
     {
      "s": "Bader",
      "t": "To recap: a three-month pilot, two evenings a week, closing at ten. Have we reached a consensus?"
-    },
-    {
-     "s": "Layla",
-     "t": "Agreed. My action point: I'll write to the municipality to ask for permission."
     }
    ],
    "grammar": {
@@ -4411,8 +4463,8 @@
      "t": "I've read about small mountain villages where the scenery is breathtaking, especially in autumn."
     },
     {
-     "s": "Reem",
-     "t": "Good idea. I could say it would be my first trip to Asia, which would make it really special."
+     "s": "Hannah",
+     "t": "Time's up! Great examples. Maybe add why the trip matters to you personally."
     }
    ],
    "grammar": {
@@ -4541,12 +4593,16 @@
      "t": "Having said that, it's not that celebrities are bad people, it's just that nobody can be perfect all the time."
     },
     {
+     "s": "Examiner",
+     "t": "Who are better role models for teenagers: celebrities or family members?"
+    },
+    {
      "s": "Mariam",
      "t": "On the whole, I'd say family members. You see how they deal with real problems every day."
     },
     {
-     "s": "Mariam",
-     "t": "By contrast, you only see a celebrity's best moments, usually edited for social media."
+     "s": "Examiner",
+     "t": "Has this changed compared to the past?"
     },
     {
      "s": "Mariam",
@@ -4606,12 +4662,16 @@
      "t": "Hugely. Compared to when my parents were young, there's been a shift towards online shopping, especially for clothes and electronics."
     },
     {
-     "s": "Talal",
-     "t": "My grandmother used to shop at the traditional souq every week, whereas these days my mum orders groceries on an app."
+     "s": "Ms Lopez",
+     "t": "Why do you think that is?"
     },
     {
      "s": "Talal",
      "t": "Mainly convenience. Delivery is fast, and you don't have to drive in the summer heat."
+    },
+    {
+     "s": "Ms Lopez",
+     "t": "Do you think traditional markets will disappear?"
     },
     {
      "s": "Talal",
@@ -4683,6 +4743,10 @@
      "t": "I know it has a steep learning curve. It can take months to get the hang of training a falcon."
     },
     {
+     "s": "Examiner",
+     "t": "Thank you. Do you think traditional skills are still important for young people?"
+    },
+    {
      "s": "Sultan",
      "t": "Definitely. They connect us to our history. Having said that, young people also need modern skills, such as coding."
     },
@@ -4726,11 +4790,11 @@
     "q": "Which sentence is correct?",
     "options": [
      "Research suggests sleep to matter.",
-     "Research suggest that sleep matters.",
-     "In my view, sleep matters.",
+     "Research suggests that sleep matters.",
+     "Research suggest that sleep is matter.",
      "There is strong evidences that sleep matters."
     ],
-    "answer": 2
+    "answer": 1
    },
    {
     "type": "mc",

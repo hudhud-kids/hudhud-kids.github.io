@@ -345,14 +345,14 @@
     }
    ],
    "dialogue": {
-    "scene": "Emma and Omar are reading an article about teenagers and sleep before a class discussion.",
+    "scene": "Emma and Fahad are reading an article about teenagers and sleep before a class discussion.",
     "p1": [
      {
       "s": "Emma",
       "t": "This article says teenagers are lazy because they sleep until noon. That's a sweeping generalisation, isn't it?"
      },
      {
-      "s": "Omar",
+      "s": "Fahad",
       "t": "Definitely. It comes across as a bit unfair. Teenagers tend to sleep later, but there's a scientific reason for it."
      },
      {
@@ -360,7 +360,7 @@
       "t": "Right. Our body clocks seem to shift as we grow up, so we don't feel sleepy until later at night."
      },
      {
-      "s": "Omar",
+      "s": "Fahad",
       "t": "That's true to some extent. But lots of us also stay up late chatting with friends."
      }
     ],
@@ -370,7 +370,7 @@
       "t": "So, on the whole, would you say our class is sleep-deprived?"
      },
      {
-      "s": "Omar",
+      "s": "Fahad",
       "t": "Quite a few of us appear to be, especially during exam week. Not everyone, though."
      },
      {
@@ -378,7 +378,7 @@
       "t": "Then schools that start a bit later might actually help students concentrate."
      },
      {
-      "s": "Omar",
+      "s": "Fahad",
       "t": "Possibly. It seems that some schools abroad have tried it, with fairly good results."
      }
     ],
@@ -715,7 +715,7 @@
     "p2": [
      {
       "s": "Sam",
-      "t": "I understand. But I'm not entirely sure that Omar and I can finish everything alone. I wonder if you could do your slides by Tuesday?"
+      "t": "I understand. But I'm not entirely sure that Omar and I can finish everything alone. I wonder if you could do your slides by Tuesday."
      },
      {
       "s": "Ziad",
@@ -730,7 +730,7 @@
       "t": "Thanks for saying it so kindly. I'll send you my slides by Tuesday evening."
      }
     ],
-    "focus": "I wonder if you could do your slides by Tuesday?",
+    "focus": "I wonder if you could do your slides by Tuesday.",
     "qs": [
      "Why hasn't Ziad started his part of the project?",
      "When will Ziad send his slides?"
@@ -3081,7 +3081,7 @@
      "t": "This article says teenagers are lazy because they sleep until noon. That's a sweeping generalisation, isn't it?"
     },
     {
-     "s": "Omar",
+     "s": "Fahad",
      "t": "Definitely. It comes across as a bit unfair. Teenagers tend to sleep later, but there's a scientific reason for it."
     },
     {
@@ -3089,7 +3089,7 @@
      "t": "Right. Our body clocks seem to shift as we grow up, so we don't feel sleepy until later at night."
     },
     {
-     "s": "Omar",
+     "s": "Fahad",
      "t": "That's true to some extent. But lots of us also stay up late chatting with friends."
     },
     {
@@ -3097,7 +3097,7 @@
      "t": "So, on the whole, would you say our class is sleep-deprived?"
     },
     {
-     "s": "Omar",
+     "s": "Fahad",
      "t": "Quite a few of us appear to be, especially during exam week. Not everyone, though."
     }
    ],
@@ -3301,7 +3301,7 @@
     },
     {
      "s": "Sam",
-     "t": "I understand. But I'm not entirely sure that Omar and I can finish everything alone. I wonder if you could do your slides by Tuesday?"
+     "t": "I understand. But I'm not entirely sure that Omar and I can finish everything alone. I wonder if you could do your slides by Tuesday."
     },
     {
      "s": "Ziad",
@@ -5939,7 +5939,7 @@
    },
    {
     "type": "mc",
-    "q": "Taps are a ___ way to save water because they're cheap and effective.",
+    "q": "Water-saving taps are a ___ solution because they're cheap and effective.",
     "options": [
      "costly",
      "cost-effective",

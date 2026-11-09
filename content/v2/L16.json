@@ -103,7 +103,7 @@
    "fnAr": "تنظيم حديث مطوّل",
    "cando": "Can give a clear, well-structured talk with an engaging opening, smooth transitions and an effective summary.",
    "grammar": [
-    "advanced discourse markers: This brings me to … / Turning now to … / Having said that, …",
+    "advanced discourse markers: This brings me to … / Turning now to … / Nonetheless, … / On the flip side, …",
     "summarising: To recap, … / In a nutshell, … / All things considered, …",
     "rhetorical structure: hook, rule of three, problem – solution – impact"
    ],
@@ -121,7 +121,7 @@
     [
      "On the Other Hand",
      "Balance a talk by linking contrasting and supporting points smoothly",
-     "Having said that, … / By contrast, … / What's more, …"
+     "Nonetheless, … / On the flip side, … / What's more, …"
     ],
     [
      "Problem, Solution, Impact",
@@ -361,15 +361,15 @@
      },
      {
       "s": "Majed",
-      "t": "We start with the problem. Every day, kilos of food from school canteens end up in the bin."
+      "t": "We start with the problem. Families spend a fortune on sports kit that children use only a few times."
      },
      {
       "s": "Saud",
-      "t": "Then we present our app. Not only does it cut food waste, but it also saves families money."
+      "t": "Then we present our app. Not only does it save families money, but it also lets children try new sports."
      },
      {
       "s": "Majed",
-      "t": "Good. And we stress that it's cost-effective: schools don't need any new equipment."
+      "t": "Good. And we stress that it's cost-effective: schools don't need to buy any new equipment."
      }
     ],
     "p2": [
@@ -379,11 +379,11 @@
      },
      {
       "s": "Majed",
-      "t": "We say that it fills a gap in the market. No other app connects canteens with local charities."
+      "t": "We say that it fills a gap in the market. No other app lets students lend kit to each other within one school."
      },
      {
       "s": "Saud",
-      "t": "And we do have real data from our trial week. Forty kilos of food were saved!"
+      "t": "And we do have real data from our trial month. Over a hundred items were borrowed!"
      },
      {
       "s": "Majed",
@@ -394,7 +394,7 @@
       "t": "Let's finish by calling it a game-changer for schools across the Kingdom."
      }
     ],
-    "focus": "Not only does it cut food waste, but it also saves families money.",
+    "focus": "Not only does it save families money, but it also lets children try new sports.",
     "qs": [
      "What problem does the app solve?",
      "What evidence do Saud and Majed have that the app works?"
@@ -837,7 +837,7 @@
     }
    ],
    "dialogue": {
-    "scene": "Hind is in the final of an inter-school debate on the motion 'Projects should replace some exams'. Her coach, Ms Sara, listens as she practises her closing speech.",
+    "scene": "Hind is in the final of an inter-school debate on the motion 'Projects should replace some exams'. Her coach, Ms Sara, listens as she practises her speech.",
     "p1": [
      {
       "s": "Ms Sara",
@@ -1862,11 +1862,11 @@
     ]
    },
    "culture": {
-    "title": "Arabic Calligraphy: Art in Every Letter",
+    "title": "Arabic Calligraphy: Old and New",
     "points": [
-     "In 2021, UNESCO added Arabic calligraphy to its list of the world's intangible cultural heritage.",
      "Traditional calligraphers write with a qalam, a pen cut from reed or bamboo.",
-     "Saudi Arabia's Ministry of Culture named 2020 and 2021 the 'Year of Arabic Calligraphy'."
+     "Learning a classical script properly can take many years of practice with a master.",
+     "Today, some artists mix calligraphy with street art, a style often called 'calligraffiti'."
     ],
     "qs": [
      "Why do you think handwriting still matters in a digital age?",
@@ -1880,16 +1880,16 @@
    "warmup": "Would you like your family's next car to be electric? Why or why not?",
    "expressions": [
     {
-     "w": "having said that",
-     "def": "used before a point that contrasts with what you just said",
-     "ar": "ومع ذلك / رغم ما قلته",
-     "frame": "___ is useful. Having said that, ___."
+     "w": "nonetheless",
+     "def": "used to add a point that contrasts with what you just said (formal)",
+     "ar": "ومع ذلك / رغم ذلك",
+     "frame": "___ is useful. Nonetheless, ___."
     },
     {
-     "w": "by contrast",
-     "def": "used to show a clear difference",
-     "ar": "في المقابل",
-     "frame": "___ is expensive. By contrast, ___ is cheap."
+     "w": "on the flip side",
+     "def": "used to introduce the opposite, often negative, side of something",
+     "ar": "على الجانب الآخر / في المقابل",
+     "frame": "___ is convenient. On the flip side, ___."
     },
     {
      "w": "what's more",
@@ -1929,7 +1929,7 @@
      },
      {
       "s": "Ziyad",
-      "t": "OK: 'Electric cars are quiet and clean. Having said that, they're still expensive to buy.'"
+      "t": "OK: 'Electric cars are quiet and clean. Nonetheless, they're still expensive to buy.'"
      },
      {
       "s": "Lucas",
@@ -1947,7 +1947,7 @@
      },
      {
       "s": "Ziyad",
-      "t": "'By contrast, on long desert highways, finding a charger can still be a challenge.'"
+      "t": "'On the flip side, on long desert highways, finding a charger can still be a challenge.'"
      },
      {
       "s": "Lucas",
@@ -1958,7 +1958,7 @@
       "t": "Exactly. I'll finish with: 'On balance, electric cars make most sense for city driving, for now.'"
      }
     ],
-    "focus": "Having said that, they're still expensive to buy.",
+    "focus": "Nonetheless, they're still expensive to buy.",
     "qs": [
      "What is the problem with Ziyad's first version?",
      "What is Ziyad's final conclusion about electric cars?"
@@ -1973,7 +1973,7 @@
      },
      {
       "q": "And the disadvantages?",
-      "hint": "Use 'Having said that, …' or 'By contrast, …' to show the other side."
+      "hint": "Use 'Nonetheless, …' or 'On the flip side, …' to show the other side."
      },
      {
       "q": "So what's your overall view?",
@@ -1993,7 +1993,7 @@
      "Is it better to give a balanced talk or a one-sided one? When?"
     ]
    },
-   "exit": "Give me one advantage and one disadvantage of something, linked with 'Having said that' or 'By contrast'."
+   "exit": "Give me one advantage and one disadvantage of something, linked with 'Nonetheless' or 'On the flip side'."
   },
   "2-3": {
    "objective": "Today you will organise a talk around a problem and its solution, using the rule of three.",
@@ -2102,14 +2102,14 @@
     ]
    },
    "culture": {
-    "title": "The Riyadh Metro",
+    "title": "The Power of Three",
     "points": [
-     "The Riyadh Metro opened in stages from late 2024, with six lines across the capital.",
-     "Its trains are driverless, and some stations were designed by world-famous architects.",
-     "Planners hope it will reduce traffic and pollution in the city."
+     "Many slogans and speeches use lists of three, such as 'Stop, look and listen'.",
+     "Julius Caesar's famous words 'I came, I saw, I conquered' are a classic example from ancient Rome.",
+     "Three points are easy for listeners to remember, but still feel complete."
     ],
     "qs": [
-     "Would you use the metro instead of a car? Why or why not?",
+     "Can you think of an Arabic saying or slogan with three parts?",
      "Why do you think the 'rule of three' is so effective?"
     ]
    },
@@ -2950,15 +2950,15 @@
     ]
    },
    "culture": {
-    "title": "Gap Years Around the World",
+    "title": "Around the World: Boredom and Big Ideas",
     "points": [
-     "In countries such as the UK and Australia, many students take a 'gap year' between school and university.",
-     "Some use the year to travel, volunteer or work and save money.",
-     "Supporters say gap years build maturity, while critics worry that students lose their study habits."
+     "Some psychologists believe that short periods of boredom can help people come up with creative ideas.",
+     "Many writers and inventors say their best ideas came while walking or resting, not while working.",
+     "Free online courses now let young people teach themselves skills such as animation, design and music."
     ],
     "qs": [
-     "Would a gap year be a good idea for you? Why or why not?",
-     "Which is more valuable: experience or qualifications?"
+     "Do you get your best ideas when you are busy or when you are bored?",
+     "Has technology made you more creative or less creative? Give an example."
     ]
    },
    "exit": "Give me your opinion on a big question and justify it in two sentences, using 'That's largely because …'."
@@ -3194,19 +3194,19 @@
     },
     {
      "s": "Majed",
-     "t": "We start with the problem. Every day, kilos of food from school canteens end up in the bin."
+     "t": "We start with the problem. Families spend a fortune on sports kit that children use only a few times."
     },
     {
      "s": "Saud",
-     "t": "Then we present our app. Not only does it cut food waste, but it also saves families money."
+     "t": "Then we present our app. Not only does it save families money, but it also lets children try new sports."
     },
     {
      "s": "Majed",
-     "t": "Good. And we stress that it's cost-effective: schools don't need any new equipment."
+     "t": "Good. And we stress that it's cost-effective: schools don't need to buy any new equipment."
     },
     {
      "s": "Saud",
-     "t": "And we do have real data from our trial week. Forty kilos of food were saved!"
+     "t": "And we do have real data from our trial month. Over a hundred items were borrowed!"
     },
     {
      "s": "Majed",
@@ -3912,7 +3912,7 @@
    "dialogue": [
     {
      "s": "Majed",
-     "t": "Fiction, then. Claim two: 'Camels store water in their humps.'"
+     "t": "Next claim: 'Camels store water in their humps.'"
     },
     {
      "s": "Chris",
@@ -4098,14 +4098,14 @@
   "2-2": {
    "words": [
     {
-     "w": "having said that",
-     "ar": "ومع ذلك / رغم ما قلته",
-     "ex": "The hotel was expensive. Having said that, the service was excellent."
+     "w": "nonetheless",
+     "ar": "ومع ذلك / رغم ذلك",
+     "ex": "The hotel was expensive. Nonetheless, the service was excellent."
     },
     {
-     "w": "by contrast",
-     "ar": "في المقابل",
-     "ex": "Summers in Riyadh are dry. By contrast, Jeddah is very humid."
+     "w": "on the flip side",
+     "ar": "على الجانب الآخر / في المقابل",
+     "ex": "Working from home saves time. On the flip side, it can feel lonely."
     },
     {
      "w": "what's more",
@@ -4139,7 +4139,7 @@
     },
     {
      "s": "Ziyad",
-     "t": "OK: 'Electric cars are quiet and clean. Having said that, they're still expensive to buy.'"
+     "t": "OK: 'Electric cars are quiet and clean. Nonetheless, they're still expensive to buy.'"
     },
     {
      "s": "Lucas",
@@ -4147,7 +4147,7 @@
     },
     {
      "s": "Ziyad",
-     "t": "'By contrast, on long desert highways, finding a charger can still be a challenge.'"
+     "t": "'On the flip side, on long desert highways, finding a charger can still be a challenge.'"
     },
     {
      "s": "Lucas",
@@ -4160,10 +4160,10 @@
    ],
    "grammar": {
     "title": "Linking contrast and addition",
-    "ar": "للتضاد: Having said that / By contrast. للإضافة: What's more. للحكم بعد الموازنة: On balance.",
+    "ar": "للتضاد: Nonetheless / On the flip side. للإضافة: What's more. للحكم بعد الموازنة: On balance.",
     "examples": [
-     "The city is exciting. Having said that, it's very noisy.",
-     "Riyadh is hot and dry. By contrast, Taif is cooler and greener.",
+     "The city is exciting. Nonetheless, it's very noisy.",
+     "Electric cars are cheap to run. On the flip side, chargers can be hard to find.",
      "What's more, the app is completely free."
     ]
    }
@@ -4646,7 +4646,7 @@
    "dialogue": [
     {
      "s": "Adam",
-     "t": "Fair enough. What about the online guide?"
+     "t": "What about the online guide?"
     },
     {
      "s": "Nasser",
@@ -5737,7 +5737,7 @@
     "options": [
      "What's more",
      "As a result",
-     "Having said that",
+     "Nonetheless",
      "For example"
     ],
     "answer": 2
@@ -5773,8 +5773,8 @@
     "q": "The car is comfortable. ___, it's very cheap to run.",
     "options": [
      "What's more",
-     "Having said that",
-     "By contrast",
+     "Nonetheless",
+     "On the flip side",
      "Instead"
     ],
     "answer": 0
@@ -5782,14 +5782,16 @@
    {
     "type": "order",
     "words": [
-     "By",
-     "contrast,",
+     "On",
      "the",
-     "countryside",
-     "is",
-     "quiet."
+     "flip",
+     "side,",
+     "charging",
+     "can",
+     "take",
+     "hours."
     ],
-    "answer": "By contrast, the countryside is quiet.",
+    "answer": "On the flip side, charging can take hours.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -6702,7 +6704,7 @@
      "q": "The phone is expensive. ___, it has the best camera on the market.",
      "options": [
       "What's more",
-      "Having said that",
+      "Nonetheless",
       "For example",
       "As a result"
      ],
@@ -7060,7 +7062,7 @@
     "type": "mc",
     "q": "The car is expensive. ___, it is very cheap to run.",
     "options": [
-     "Having said that",
+     "Nonetheless",
      "What's more",
      "As a result",
      "For this reason"
