@@ -1,0 +1,208 @@
+{
+ "level": 17,
+ "mcq": [
+  {
+   "q": "'The plan is expensive. ___, it would save money in the long run.'",
+   "options": [
+    "As a result",
+    "That said",
+    "In addition",
+    "For instance"
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "'___ I respect his experience, I can't agree with his conclusion.'",
+   "options": [
+    "Much as",
+    "Despite",
+    "However",
+    "In spite"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "Which reply concedes a point and then qualifies it?",
+   "options": [
+    "You're absolutely right about everything.",
+    "That's completely wrong.",
+    "Granted, it's popular, but popularity doesn't make it right.",
+    "I have no opinion on that."
+   ],
+   "answer": 2,
+   "skill": "function"
+  },
+  {
+   "q": "'The term \"urban sprawl\" ___ the spread of a city into the land around it.'",
+   "options": [
+    "refers to",
+    "means to",
+    "defines as",
+    "is called"
+   ],
+   "answer": 0,
+   "skill": "grammar"
+  },
+  {
+   "q": "Which phrase introduces the same idea in different words?",
+   "options": [
+    "Be that as it may,",
+    "Put another way,",
+    "On balance,",
+    "Granted,"
+   ],
+   "answer": 1,
+   "skill": "function"
+  },
+  {
+   "q": "'The water shortage ___ decades of overuse.' (The overuse is the cause.)",
+   "options": [
+    "gives rise to",
+    "results in",
+    "leads to",
+    "stems from"
+   ],
+   "answer": 3,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "'___ heavy rain, the match was postponed.'",
+   "options": [
+    "Because",
+    "Owing to",
+    "Since",
+    "As a result"
+   ],
+   "answer": 1,
+   "skill": "grammar"
+  },
+  {
+   "q": "'Fewer bees means fewer plants, which ___ affects the animals that eat them.'",
+   "options": [
+    "in turn",
+    "in case",
+    "in vain",
+    "in fact"
+   ],
+   "answer": 0,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "'Free apps often come at a ___ to our privacy.'",
+   "options": [
+    "price tag",
+    "charge",
+    "cost",
+    "fee"
+   ],
+   "answer": 2,
+   "skill": "vocabulary"
+  },
+  {
+   "q": "In a speaking exam, which is the most natural way to buy time?",
+   "options": [
+    "Hmm. Pass.",
+    "Can you ask someone else?",
+    "I refuse to answer that.",
+    "That's an interesting question. Let me think about that for a moment."
+   ],
+   "answer": 3,
+   "skill": "function"
+  }
+ ],
+ "listen": [
+  {
+   "script": "Many people say tourism ruins quiet towns. Admittedly, prices have gone up in my town since the new resort opened. That said, my cousins have found jobs there, and the old market is busier than ever. On balance, I'd say it's been good for us.",
+   "q": "What is the speaker's overall view of tourism in their town?",
+   "options": [
+    "It has mostly been positive.",
+    "It has ruined the town.",
+    "It has made no difference."
+   ],
+   "answer": 0
+  },
+  {
+   "script": "Think of inflation as a slow leak in your wallet. Put another way, the same amount of money buys a little less every year. That's why keeping cash under your bed isn't the smartest way to save.",
+   "q": "What does the speaker compare inflation to?",
+   "options": [
+    "A bank account",
+    "A slow leak in a wallet",
+    "A rising balloon"
+   ],
+   "answer": 1
+  },
+  {
+   "script": "When the city spread into the desert, most new homes were far from shops and offices. As a consequence, nearly every family needed two cars, and this, in turn, made the morning traffic much worse.",
+   "q": "According to the speaker, what was the final effect of the city spreading out?",
+   "options": [
+    "Fewer families bought cars.",
+    "New shops opened near homes.",
+    "Morning traffic got worse."
+   ],
+   "answer": 2
+  },
+  {
+   "script": "That's an interesting question. It's hard to generalise, but I'd say most young people still value family traditions. Where they differ from their grandparents is that they adapt them to fit modern life, rather than following every detail.",
+   "q": "How are young people different from their grandparents, according to the speaker?",
+   "options": [
+    "They have no interest in traditions.",
+    "They adapt traditions to modern life.",
+    "They follow every detail of traditions."
+   ],
+   "answer": 1
+  }
+ ],
+ "read": {
+  "passage": "In many coastal cities, coral reefs are under growing pressure. Scientists say the damage stems from several causes at once. Rising sea temperatures can trigger coral bleaching, in which corals lose the tiny algae that give them colour and food. Pollution and plastic waste add to the stress, and badly managed tourism can break fragile reefs. Admittedly, tourism also brings money that can be used for protection. That said, experts warn that the benefits disappear if visitor numbers are not controlled. What this means, in practice, is that a reef can only be saved if the causes are tackled together. Some projects now combine strict rules for divers, regular clean-ups and research into heat-resistant coral. Red Sea coral is of particular interest, because some of it appears to tolerate warmer water better than coral elsewhere.",
+  "qs": [
+   {
+    "q": "What happens during coral bleaching?",
+    "options": [
+     "Corals grow more quickly.",
+     "Corals lose the algae that give them colour and food.",
+     "Corals are broken by divers."
+    ],
+    "answer": 1
+   },
+   {
+    "q": "What does the writer concede about tourism?",
+    "options": [
+     "It always destroys reefs.",
+     "It has no effect on reefs.",
+     "It can bring money for protection."
+    ],
+    "answer": 2
+   },
+   {
+    "q": "According to the passage, how can a reef be saved?",
+    "options": [
+     "By tackling all the causes together",
+     "By stopping all research",
+     "By banning plastic only"
+    ],
+    "answer": 0
+   },
+   {
+    "q": "Why is Red Sea coral of special interest?",
+    "options": [
+     "It is the most colourful in the world.",
+     "Some of it seems to tolerate warmer water.",
+     "It is not affected by pollution."
+    ],
+    "answer": 1
+   }
+  ]
+ },
+ "aloud": [
+  "Admittedly, a gap year can be expensive; that said, it can broaden your horizons in ways a classroom never could.",
+  "To put it simply, desalination means taking the salt out of seawater, which is why the process uses a vast amount of energy.",
+  "By and large, technology has made our lives easier, but it's a double-edged sword, and in the end, it boils down to how we use it."
+ ],
+ "speak": [
+  "Some people believe that famous athletes are paid far too much. Give your opinion, concede the strongest argument on the other side and reach a balanced conclusion.",
+  "Explain a complex idea you have learnt about, such as inflation or artificial intelligence, as if you were talking to a ten-year-old.",
+  "What do you think are the main causes and effects of one global problem, and what is the most realistic way to tackle it?"
+ ]
+}
