@@ -2579,10 +2579,13 @@ function captureOnce(o, fresh){
   });
 }
 function recordUtterance(ctl, maxMs, silence, waitMs, onSpeech){ return captureAudio({ctl, maxMs, silence, waitMs, onSpeech}); }
-async function azRecognize(wav, lang){
-  const r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
-    {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav});
-  if(!r.ok){ const e = new Error('stt ' + r.status); e.status = r.status; throw e; }
+async function azRecognize(wav, lang, again){
+  const w = linkedAbort(null, 10000); let r;
+  try{ r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
+    {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav, signal:w.signal}); }
+  catch(e){ w.clear(); if(!again) return azRecognize(wav, lang, true); throw e; }
+  w.clear();
+  if(!r.ok){ if(r.status >= 500 && !again) return azRecognize(wav, lang, true); const e = new Error('stt ' + r.status); e.status = r.status; throw e; }
   const j = await r.json(); return j.RecognitionStatus === 'Success' ? String(j.DisplayText || '').trim() : '';
 }
 class AzSR {
@@ -2615,13 +2618,24 @@ let micOK = !!SR;
 
 /* =============== CLAUDE API =============== */
 function apiHeaders(){ return {'content-type':'application/json','x-api-key':DB.apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'}; }
+/* fetch with a time limit; also follows an outer abort signal */
+function linkedAbort(signal, ms){ const c = new AbortController(); let t = null;
+  const arm = m => { clearTimeout(t); t = setTimeout(() => { c.timedOut = true; c.abort(); }, m); };
+  if(signal){ if(signal.aborted) c.abort(); else signal.addEventListener('abort', () => c.abort(), {once:true}); }
+  if(ms) arm(ms); return {signal:c.signal, arm, clear:() => clearTimeout(t), ctl:c}; }
+const timeoutErr = () => ({status:'timeout', body:''});
 async function* streamClaude(body, signal){
   if(DEMO || DB.apiKey === 'demo'){ yield* demoStream(body); return; }
-  const r = await fetch(API,{method:'POST',headers:apiHeaders(),body:JSON.stringify(Object.assign({}, body, {stream:true})),signal});
-  if(!r.ok){ let t = ''; try{ t = await r.text(); }catch(e){} throw {status:r.status, body:t}; }
+  // watchdog: 12 s for the answer to start, then 12 s max between pieces (a stalled connection used to hang the lesson forever)
+  const w = linkedAbort(signal, 12000);
+  let r; try{ r = await fetch(API,{method:'POST',headers:apiHeaders(),body:JSON.stringify(Object.assign({}, body, {stream:true})),signal:w.signal}); }
+  catch(e){ w.clear(); if(w.ctl.timedOut) throw timeoutErr(); throw e; }
+  if(!r.ok){ w.clear(); let t = ''; try{ t = await r.text(); }catch(e){} throw {status:r.status, body:t}; }
   const reader = r.body.getReader(), dec = new TextDecoder(); let buf = '';
   while(true){
-    const {value, done} = await reader.read(); if(done) break;
+    w.arm(12000);
+    let part; try{ part = await reader.read(); }catch(e){ w.clear(); if(w.ctl.timedOut) throw timeoutErr(); throw e; }
+    const {value, done} = part; if(done){ w.clear(); break; }
     buf += dec.decode(value, {stream:true});
     let i; while((i = buf.indexOf('\n\n')) >= 0){
       const chunk = buf.slice(0,i); buf = buf.slice(i+2);
@@ -2828,7 +2842,9 @@ function boardWrite(emoji, word){ const e = document.getElementById('bwE'), t = 
 function nod(){ const b = $('#tbox'); if(!b || b.classList.contains('nod')) return; b.classList.add('nod'); setTimeout(() => b && b.classList.remove('nod'), 460); }
 
 /* ---- speaking queue ---- */
-function enqueue(s){ s = s.replace(/[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]+/g,'').replace(/\s+/g,' ').trim(); if(!/[A-Za-z0-9]/.test(s)) return; L.queue.push(s); pump(); }
+function enqueue(s){ s = s.replace(/[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]+/g,'').replace(/\s+/g,' ').trim(); if(!/[A-Za-z0-9]/.test(s)) return; L.queue.push(s);
+  if(azOn() && L.queue.length > (L.speaking ? 0 : 1)){ try{ azFetch(s, kidVoices(L.kid).teacher, DB.kids[L.kid].level <= 6 ? .92 : 1).catch(() => {}); }catch(e){} }
+  pump(); }
 function pump(){
   if(!L) return;
   if(L.speaking) return;
@@ -2877,7 +2893,7 @@ function parseTags(full){
 function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
 function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
-async function teacherTurn(userText){
+async function teacherTurn(userText, attempt){
   if(!L || L.done) return;
   stopListening();
   const lesson = L, m = elapsedMin();
@@ -2923,6 +2939,9 @@ async function teacherTurn(userText){
     if(L !== lesson) return;
     lesson.ctl = null; lesson.streamDone = true; lesson.history.pop();
     if(e && e.name === 'AbortError') return;
+    // one quiet automatic retry for a dropped/stalled connection or a busy service, before bothering the child
+    const soft = !e || e.status === 'timeout' || e.status === 429 || e.status === 529 || e.status >= 500 || e instanceof TypeError;
+    if(soft && !attempt && !full){ console.warn('teacher retry', e); setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn(userText, 1); }, 1200); return; }
     let msg = 'انقطع الاتصال بالمعلمة. تأكد من الإنترنت ثم اضغط «حاول مرة ثانية».';
     if(e && e.status === 401) msg = 'مفتاح التشغيل غير صحيح. اطلب من ولي الأمر تحديثه من لوحته.';
     else if(e && (e.status === 429 || e.status === 529)) msg = 'الخدمة مزدحمة الآن. انتظر لحظة ثم اضغط «حاول مرة ثانية».';
@@ -3981,12 +4000,16 @@ const xmlEsc = s => String(s).replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','
 function azEl(){ if(!AZ_EL){ AZ_EL = new Audio(); AZ_EL.preload = 'auto'; AZ_EL.setAttribute('playsinline', ''); } return AZ_EL; }
 async function azFetch(text, voiceName, rate, pitch){
   const key = voiceName + '|' + rate + '|' + (pitch||0) + '|' + text; if(AZ_CACHE.has(key)) return AZ_CACHE.get(key);
+  const pr = azFetchNet(text, voiceName, rate, pitch); AZ_CACHE.set(key, pr);
+  pr.catch(() => { if(AZ_CACHE.get(key) === pr) AZ_CACHE.delete(key); });
+  if(AZ_CACHE.size > 150){ const f = AZ_CACHE.keys().next().value; const old = AZ_CACHE.get(f); AZ_CACHE.delete(f); Promise.resolve(old).then(u => URL.revokeObjectURL(u), () => {}); }
+  return pr;
+}
+async function azFetchNet(text, voiceName, rate, pitch){
   const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US"><voice name="${voiceName}"><prosody rate="${Math.round((rate-1)*100)}%" pitch="${Math.round((pitch||0)*100)}%">${xmlEsc(text)}</prosody></voice></speak>`;
-  const r = await fetch(`https://${DB.azure.region}.tts.speech.microsoft.com/cognitiveservices/v1`, {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'application/ssml+xml', 'X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'}, body:ssml});
+  const r = await fetch(`https://${DB.azure.region}.tts.speech.microsoft.com/cognitiveservices/v1`, {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'application/ssml+xml', 'X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'}, body:ssml, signal:AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined});
   if(!r.ok){ const e = new Error('azure ' + r.status); e.status = r.status; throw e; }
-  const url = URL.createObjectURL(await r.blob()); AZ_CACHE.set(key, url);
-  if(AZ_CACHE.size > 150){ const f = AZ_CACHE.keys().next().value; URL.revokeObjectURL(AZ_CACHE.get(f)); AZ_CACHE.delete(f); }
-  return url;
+  return URL.createObjectURL(await r.blob());
 }
 let AZ_RES = null;
 function azPlay(url, onStart){ return new Promise(res => { const a = azEl(); AZ_RES = res; a.onended = () => { AZ_RES = null; res(true); }; a.onerror = () => { AZ_RES = null; res(false); };
@@ -4001,8 +4024,9 @@ function speakOneAZ(text, slow, done){
   const rate = slow ? .75 : (DB.kids[L.kid].level <= 6 ? .92 : 1), vn = kidVoices(L.kid).teacher;
   guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; speakOneWS(text, slow, done); } }, 7000);
   azFetch(text, vn, rate).then(url => { if(finished || gen !== AZ_GEN) return;
-    clearTimeout(guard);
-    return azPlay(url, dur => { if(dur){ clearTimeout(guard); guard = setTimeout(fin, dur*1000 + 1500); } mouthWalk(text, Math.max(35, Math.round((dur ? dur*1000 : text.length*65) / text.length))); }).then(fin);
+    // the sound must START within 4 s (iPad sometimes never starts or ends an <audio>): otherwise use the device voice
+    clearTimeout(guard); guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; try{ azEl().pause(); }catch(e){} speakOneWS(text, slow, done); } }, 4000);
+    return azPlay(url, dur => { clearTimeout(guard); guard = setTimeout(fin, dur ? dur*1000 + 1500 : text.length*90 + 3000); mouthWalk(text, Math.max(35, Math.round((dur ? dur*1000 : text.length*65) / text.length))); }).then(fin);
   }).catch(e => { azFail(e); if(!finished && gen === AZ_GEN){ finished = true; clearTimeout(guard); speakOneWS(text, slow, done); } });
 }
 function narrateAZ(text, o){
