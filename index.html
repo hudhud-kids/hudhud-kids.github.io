@@ -175,6 +175,8 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .sl-obj{font-size:1.25rem;font-weight:700;line-height:1.4}.sl-q{font-size:1.3rem;font-weight:700;line-height:1.4}
 .sl-n{font-size:.75rem;color:var(--muted);direction:ltr;text-align:left}
 .sl-w{font-size:1.7rem;font-weight:800;color:var(--brand)}.sl-def{font-size:1rem}.sl-ar{font-size:.9rem;color:var(--muted)}
+.sl-game{font-weight:800;font-size:1.05rem;display:flex;gap:8px;align-items:center}.sl-pair{display:grid;gap:4px;padding:8px 0;border-bottom:1px dashed var(--line)}.sl-pair:last-of-type{border-bottom:0}.sl-pair .sl-w{font-size:1.35rem}.sl-pair .sl-frame{font-size:1rem;padding:8px 10px}
+.sl-star{background:#fff3c4;color:#7a5a00;border-radius:99px;padding:2px 10px;font-weight:800;font-size:.85rem;margin-inline-start:auto;margin-inline-end:8px}
 .sl-frame{background:var(--brand-soft);border-radius:12px;padding:10px 12px;font-size:1.2rem;font-weight:600;line-height:1.5}.sl-frame .gap{color:var(--brand);letter-spacing:1px}
 .sl-mini{display:flex;flex-wrap:wrap;gap:4px;direction:ltr}.sl-mini span{font-family:var(--en);font-size:.72rem;border-radius:99px;padding:1px 8px;background:var(--bg);color:var(--muted)}.sl-mini span.on{background:var(--brand);color:#fff}.sl-mini span.ok{background:var(--good-soft);color:var(--good)}
 .sl-scene{font-style:italic;color:var(--muted);font-size:.92rem}.sl-part{font-weight:800;color:var(--sky);font-size:.85rem}
@@ -646,7 +648,7 @@ const LIVE_MODEL = new Date() < PROMO_END ? 'claude-opus-5-5' : 'claude-sonnet-5
 const REPORT_MODEL = 'claude-opus-5-5';
 const BOOK_LEAD = 15*60e3; /* booking, moving and cancelling close 15 minutes before a lesson */
 const OPEN_BEFORE = 10, OPEN_AFTER = 30, MIN_MINUTES = 18, LESSON_MIN = 25;
-const SILENCE_MS = 1700, NUDGE_MS = 15000;
+const SILENCE_MS = 2300, NUDGE_MS = 15000;
 const DAYS_AR = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
 const DEMO = /demo/.test(location.hash) || /demo/.test(location.search);
 
@@ -945,7 +947,7 @@ function reportCardHTML(r){
       ${ring(r.confidence, 'الثقة', '#E8A317', delta(r.confidence, prev && prev.confidence))}
     </div>
     <div class="rc-stats"><div><b>⏱️ ${Number(r.minutes) || 0}</b><span>دقيقة</span></div><div><b>${num(r.avgWords) != null ? `<bdi dir="ltr">${num(r.avgWords)}</bdi>` : '—'}</b><span>كلمة في كل رد</span></div><div><b style="color:var(--gold);direction:ltr">${(() => { const st = Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)); return '★'.repeat(st) + '☆'.repeat(3 - st); })()}</b><span>التقييم</span></div></div>
-    ${r.v2 ? `<div class="rc-v2"><span>📚 التعابير <b><bdi dir="ltr">${Number(r.v2.exp)||0}/${Number(r.v2.of)||6}</bdi></b></span><span>🎭 المواقف <b><bdi dir="ltr">${Number(r.v2.so)||0}/3</bdi></b></span><span>🎯 هدف الدرس <b>${{yes:'تحقق ✓', partly:'جزئياً', no:'يحتاج إعادة'}[r.v2.exit] || '—'}</b></span>${r.v2.fn ? `<span class="en">${esc(r.v2.fn)}</span>` : ''}${r.v2.review ? '<span>🔁 حصة مراجعة</span>' : ''}</div>` : ''}
+    ${r.v2 ? `<div class="rc-v2"><span>📚 التعابير <b><bdi dir="ltr">${Number(r.v2.exp)||0}/${Number(r.v2.of)||6}</bdi></b></span><span>🎭 المواقف <b><bdi dir="ltr">${Number(r.v2.so)||0}/3</bdi></b></span>${r.v2.stars ? `<span>⭐ نجوم الحصة <b><bdi dir="ltr">${Number(r.v2.stars)}</bdi></b></span>` : ''}<span>🎯 هدف الدرس <b>${{yes:'تحقق ✓', partly:'جزئياً', no:'يحتاج إعادة'}[r.v2.exit] || '—'}</b></span>${r.v2.fn ? `<span class="en">${esc(r.v2.fn)}</span>` : ''}${r.v2.review ? '<span>🔁 حصة مراجعة</span>' : ''}</div>` : ''}
     ${sec('💬', 'ملخص المعلمة', p(r.parentNote))}
     ${sec('🗣️', 'نسبة الكلام', p(r.talkNote))}
     ${sec('💪', 'الثقة في الكلام', p(r.confidenceNote))}
@@ -1020,11 +1022,16 @@ function lessonPlan(k){
 
 /* =============== LESSON v2: a fixed 7-stage script shown as slides =============== */
 function scriptFor(level, ui, li){ const c = CONTENT[level]; return c && c.v === 2 && c.scripts ? c.scripts[`${ui}-${li}`] || null : null; }
-const V2_STAGES = ['الهدف','البداية','التعابير الجديدة','الحوار','دورك: موقف','ثقافة','الختام'];
+const V2_STAGES = ['الهدف','البداية','لعبة التعابير','تمثيل الحوار','دورك: موقف','ثقافة','الختام'];
+const V2_GAMES = [{en:'Guess it', ar:'🔍 خمّنها', how:'describe a funny situation without saying the expression; the child guesses which of the 2 expressions fits, then makes their own sentence with it; then the same for the other one'},
+  {en:'This or that', ar:'⚖️ هذا أو ذاك', how:'give two fun choices (would-you-rather style) that need the expressions; the child picks and explains with a full sentence using each expression'},
+  {en:'Story chain', ar:'📖 كمّل القصة', how:'start a silly 2-sentence story; the child continues it with a sentence that uses one expression, you add a twist, the child continues with the other expression'}];
 function v2Steps(sc){
   const st = [{k:'obj', st:0, sec:30, en:'Objective'}, {k:'warm', st:1, sec:120, en:'Warm-up'}];
-  (sc.expressions||[]).forEach((e, i) => st.push({k:'exp', i, st:2, sec:50, en:`Expression ${i+1}: ${e.w}`}));
-  st.push({k:'dlg', part:1, st:3, sec:150, en:'Model dialogue part I (read it together)'}, {k:'dlg', part:2, st:3, sec:150, en:'Model dialogue part II + 2 questions'});
+  const ex = sc.expressions || [];
+  for(let r = 0; r * 2 < ex.length; r++){ const pair = ex.slice(r*2, r*2+2).map(e => e.w);
+    st.push({k:'exp', i:r, pair:[r*2, r*2+1].filter(x => x < ex.length), game:V2_GAMES[r % V2_GAMES.length], st:2, sec:110, en:`Word game ${r+1} (${V2_GAMES[r % V2_GAMES.length].en}): ${pair.join(' + ')}`}); }
+  st.push({k:'dlg', part:1, st:3, sec:150, en:'Role-play part I (child acts a character)'}, {k:'dlg', part:2, st:3, sec:150, en:'Role-play part II + 2 questions'});
   ((sc.speakout||{}).prompts||[]).forEach((p, i) => st.push({k:'so', i, st:4, sec:160, en:`Speak out question ${i+1}`}));
   st.push({k:'cul', st:5, sec:170, en:'Culture'}, {k:'exit', st:6, sec:120, en:'Exit check'});
   return st;
@@ -1036,12 +1043,12 @@ function v2Slide(){
   let body = '';
   if(stp.k === 'obj') body = `<div class="sl-obj en">${esc(sc.objective)}</div>`;
   else if(stp.k === 'warm') body = `<div class="sl-q en">${esc(sc.warmup)}</div>`;
-  else if(stp.k === 'exp'){ const e = sc.expressions[stp.i];
-    body = `<div class="sl-n">${stp.i+1} / ${sc.expressions.length}</div><div class="sl-w en">${esc(e.w)}</div><div class="sl-def en">${esc(e.def)}</div><div class="sl-ar">${esc(e.ar)}</div>
-      <div class="sl-frame en">${esc(e.frame).replace(/_{2,}/g, '<span class="gap">______</span>')}</div>
-      <div class="sl-mini">${sc.expressions.map((x, y) => `<span class="${L.v2.got['exp'+y] ? 'ok' : y === stp.i ? 'on' : ''}">${esc(x.w)}</span>`).join('')}</div>`; }
+  else if(stp.k === 'exp'){ const pair = (stp.pair || [stp.i]).map(x => sc.expressions[x]).filter(Boolean);
+    body = `<div class="sl-game">${esc((stp.game||{}).ar || '')} <span class="sl-n">جولة ${stp.i+1}</span></div>
+      ${pair.map(e => `<div class="sl-pair"><div class="sl-w en">${esc(e.w)}</div><div class="sl-def en">${esc(e.def)}</div><div class="sl-ar">${esc(e.ar)}</div><div class="sl-frame en">${esc(e.frame).replace(/_{2,}/g, '<span class="gap">______</span>')}</div></div>`).join('')}
+      <div class="sl-mini">${sc.expressions.map((x, y) => `<span class="${L.v2.got['exp'+y] ? 'ok' : (stp.pair||[]).includes(y) ? 'on' : ''}">${esc(x.w)}</span>`).join('')}</div>`; }
   else if(stp.k === 'dlg'){ const d = sc.dialogue, lines = stp.part === 1 ? d.p1 : d.p2;
-    body = `<div class="sl-scene en">${esc(d.scene)}</div><div class="sl-part en">Part ${stp.part === 1 ? 'I' : 'II'}</div>
+    body = `<div class="sl-scene en">${esc(d.scene)}</div><div class="sl-part">🎭 تمثيل · الجزء ${stp.part === 1 ? 'الأول' : 'الثاني'} — أنت <b class="en">${esc(v2Role(d))}</b>، قلها بكلامك</div>
       <div class="sl-dlg en">${lines.map(l => `<p class="${d.focus && l.t.includes(d.focus.replace(/[.!?]$/, '').slice(0, 25)) ? 'focus' : ''}"><b>${esc(l.s)}:</b> ${v2Hi(l.t, sc)}</p>`).join('')}</div>
       ${stp.part === 2 ? `<div class="sl-qs en">${d.qs.map((q, x) => `<div>❓ ${esc(q)}</div>`).join('')}</div>` : ''}`; }
   else if(stp.k === 'so'){ const so = sc.speakout, p = so.prompts[stp.i];
@@ -1049,13 +1056,19 @@ function v2Slide(){
       <button class="btn sm sl-hint" id="slHint" type="button">💡 تلميح</button><div class="sl-hintx en" id="slHintX" hidden>${esc(p.hint)}</div>`; }
   else if(stp.k === 'cul'){ const c = sc.culture; body = `<div class="sl-t en">${esc(c.title)}</div><ul class="sl-pts en">${c.points.map(x => `<li>${esc(x)}</li>`).join('')}</ul><div class="sl-qs en">${c.qs.map(q => `<div>❓ ${esc(q)}</div>`).join('')}</div>`; }
   else if(stp.k === 'exit') body = `<div class="sl-q en">${esc(sc.exit)}</div><div class="small muted">بدون مساعدة: جملتين من عندك</div>`;
-  el.innerHTML = `<div class="sl-h"><b>${V2_STAGES[stp.st]}</b><span class="sl-dots">${dots}</span></div>${body}`;
+  el.innerHTML = `<div class="sl-h"><b>${V2_STAGES[stp.st]}</b><span class="sl-star" title="نجوم الحصة">⭐ ${L.v2.stars||0}</span><span class="sl-dots">${dots}</span></div>${body}`;
   const hb = document.getElementById('slHint'); if(hb) hb.onclick = () => { const x = document.getElementById('slHintX'); x.hidden = !x.hidden; L.v2.hints = (L.v2.hints||0) + 1; };
 }
+function v2Role(d){ const names = [...new Set([...(d.p1||[]), ...(d.p2||[])].map(l => l.s))]; return names[1] || names[0] || ''; }
+function v2Star(n){ if(!L || !L.v2) return; L.v2.stars = (L.v2.stars||0) + (n||1); burst(); v2Slide(); }
 function v2Advance(auto){ if(!L || !L.v2) return; const v = L.v2; if(v.i >= v.steps.length - 1){ v.doneAll = true; v2Slide(); return; } v.i++; v.at = Date.now(); if(auto) v.auto = (v.auto||0) + 1; v2Slide(); }
 function v2Header(){ if(!L || !L.v2) return ''; const v = L.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)], used = Math.round((Date.now() - v.at)/1000);
-  if(v.doneAll) return ' · [all 15 steps done: praise specifically, say goodbye, then [END]]';
-  return ` · [step ${v.i+1}/${v.steps.length}: ${stp.en} · ${used}s of ${stp.sec}s${used > stp.sec ? ' · TIME IS UP: finish this step in one sentence and add [NEXT]' : ''}]`; }
+  if(v.doneAll) return ` · [all ${v.steps.length} steps done: praise specifically, say goodbye, then [END]]`;
+  let ch = '';
+  if(!['obj','exit'].includes(stp.k) && Date.now() - (v.chAt || v.t0 || 0) > 5*60e3 && v.i > 1){ v.chAt = Date.now(); v.ch = (v.ch||0) + 1;
+    ch = ' · [FUN CHALLENGE NOW: before going on, do ONE 30-second quick challenge with today\'s words: ' + ['would you rather', 'guess what I am thinking of (3 clues)', 'fastest full sentence', 'silly picture: describe something funny I imagine'][v.ch % 4] + '. Give a [STAR] if they do it well, then continue this step]';
+    try{ toast('⚡ تحدي سريع!'); }catch(e){} }
+  return ch + ` · [step ${v.i+1}/${v.steps.length}: ${stp.en} · ${used}s of ${stp.sec}s${used > stp.sec ? ' · TIME IS UP: finish this step in one sentence and add [NEXT]' : ''}]`; }
 function buildRulesV2(k, plan, sc){
   const kid = DB.kids[k], prog = DB.progress[k], age = ageOf(kid.birth), nk = nick(k), cefr = LEVEL_CEFR[kid.level] || 'A2';
   const u = (levelUnits(kid.level) || [])[plan.ui] || {}, steps = v2Steps(sc);
@@ -1068,22 +1081,28 @@ What you know about the child (use it to make it personal): ${(prog.interests||[
 THE LESSON SCRIPT (the child sees each step on a slide next to you; the app moves the slide when you write [NEXT]):
 ${JSON.stringify(sc)}
 
-THE 15 STEPS, in order (every student message starts with the current step and how long it has taken):
+THE ${steps.length} STEPS, in order (every student message starts with the current step and how long it has taken):
 ${steps.map((x, i) => `${i+1}. ${x.en} (about ${x.sec}s)`).join('\n')}
 
 HOW TO RUN EACH STEP:
 - Objective: say the objective in your own friendly words, connect it to the child, then [NEXT] in the same turn.
 - Warm-up: ask the warm-up question (personalise it). After one full-sentence answer, react, then [NEXT].
-- Expression n: say the word, give the meaning simply, then ask the child to complete the frame on the slide with their OWN idea. If they use it correctly in a full sentence: praise, add [GOT] and [NEXT]. If not: model a correct example and ask them to try again; after 2 tries, have them repeat your model, then [NEXT] (no [GOT]).
-- Dialogue part I: say who the people are, read the FIRST speaker's lines yourself and ask the child to read the other speaker's lines from the slide, line by line. Then [NEXT]. Part II: the same, then ask the 2 questions on the slide; add [GOT] if both answers were right and in sentences, then [NEXT].
+- Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
+- Role-play part I: set the scene in one exciting sentence. YOU play the first speaker, the CHILD plays ${v2Role(sc.dialogue||{}) || 'the other character'} (the slide shows their lines as a guide). Say your line, then let the child say theirs IN THEIR OWN WORDS — they do not need to read it exactly; react in character, improvise a little, keep it moving. Then [NEXT]. Part II: continue the scene the same way, then step out of the role and ask the 2 questions on the slide; add [GOT] if both answers were right and in sentences, then [NEXT].
 - Speak out n: play the situation with the child and ask the question on the slide (in role). The child must answer with 2 or more sentences using the unit function. Ask one follow-up question. If they did it: [GOT] [NEXT]. If they are stuck, tell them to tap the hint button, or give the first words.
 - Culture: read the title, tell the 3 points in a lively way (short), then ask the 2 questions; one opinion with a reason is enough; then [NEXT].
 - Exit check: ask the exit prompt and give NO help. Then write [EXIT:yes] if they said 2 correct sentences with the function, [EXIT:partly] if one or with errors, [EXIT:no] if not; then [NEXT].
 - After the last step: specific praise about what they said today, goodbye, then [END].
 - Never write [NEXT] twice in one turn. Never skip ahead by yourself. If the header says TIME IS UP, wrap that step up in one sentence and add [NEXT].
 
+BE FUN — the child must never feel this is a worksheet:
+- Be playful and surprising: little jokes, silly examples, sound effects in words ("Wow!", "Boom!"), mini challenges, and examples about what THIS child loves (their interests above). Vary your praise; never repeat the same phrase twice in a row.
+- React to WHAT the child said (the content), with real curiosity, before you correct or move on.
+- Stars: write [STAR] after an especially good full sentence, a brave try, or a won challenge (about once every 2–3 child turns, never twice in one turn). The app shows the stars to the child; you can mention them ("That's another star!").
+- When the header says FUN CHALLENGE NOW, do that 30-second challenge first, then continue the step.
+
 GIVE THE CHILD THE SPEAKING TIME:
-- Your turns are SHORT: a quick reaction + ONE question or instruction. Maximum about 20 words (reading dialogue lines can be longer).
+- Your turns are SHORT: a quick reaction + ONE question or instruction, about 25 words. Once in a while you may tell a 2-sentence funny mini-story to set up a game.
 - The child must FINISH sentences: if a sentence is incomplete, ask them to finish it before moving on.
 - Never answer your own question, never two questions at once.
 
@@ -1094,7 +1113,7 @@ CORRECTION: errors in today's expressions or function → recast and ask them to
 - If you get "(student was silent)": encourage and rephrase more simply.
 - Never ask for personal details (address, phone, school name, passwords, photos). Never say you are an AI unless asked.
 
-FORMAT (strict): Line 1 = [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Then tags, each on its own line: [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [END]
+FORMAT (strict): Line 1 = [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Then tags, each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [END]
 No markdown, no emojis, no Arabic letters in the spoken text.`;
 }
 
@@ -2573,8 +2592,8 @@ function captureOnce(o, fresh){
         else if(waitMs && waited * 1000 > waitMs){ finish(false); } }
       else { chunks.push(d); if(rms > speechPeak) speechPeak = rms;
         // end of speech: quiet relative to the room AND to how loud the child spoke (a noisy room no longer keeps it recording)
-        if(rms > Math.max(.006, noise * 2, speechPeak * .12)) quiet = 0; else quiet += dt;
-        if(quiet > silence || chunks.length * 4096 / rate > 20) finish(false); } };
+        if(rms > Math.max(.006, noise * 2, speechPeak * .08)) quiet = 0; else quiet += dt;
+        if(quiet > silence || chunks.length * 4096 / rate > 30) finish(false); } };
     src.connect(proc); proc.connect(ac.destination);
   });
 }
@@ -2596,7 +2615,10 @@ class AzSR {
   async _run(){
     let rec;
     // wait up to 12 s for the child to start talking (the caller simply listens again), 25 s cap for one answer
-    try{ rec = await recordUtterance(this._ctl, 25000, 1.2, 12000, () => { try{ this.onspeechstart && this.onspeechstart(); }catch(e){} }); }
+    // children pause to think mid-sentence: wait ~2 s of silence before sending (was 1.2 s and cut them off),
+    // and keep ONE recording open for the whole wait instead of restarting it (speech in the restart gap was lost)
+    const pause = L && L.kid && DB.kids[L.kid] && DB.kids[L.kid].level <= 6 ? 2.2 : 1.9;
+    try{ rec = await recordUtterance(this._ctl, 40000, pause, NUDGE_MS, () => { try{ this.onspeechstart && this.onspeechstart(); }catch(e){} }); }
     catch(e){ this._err(e && e.name === 'NotAllowedError' ? 'not-allowed' : 'audio-capture'); return this._end(); }
     if(this._aborted || !rec.heard) return this._end();
     try{ this.onspeechend && this.onspeechend(); }catch(e){}
@@ -2745,7 +2767,7 @@ function startLesson(k, trial){
        queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:led.gifts, typing:false, sw:0, tw:0};
   if(!trial){ DB.live[k] = {slot:L.slot, startedAt:startedAt.toISOString()}; save(); }
   const sc2 = scriptFor(DB.kids[k].level, plan.ui, plan.li);
-  if(sc2){ L.v2 = {sc:sc2, steps:v2Steps(sc2), i:0, at:Date.now(), got:{}, exit:null}; L.rules = buildRulesV2(k, plan, sc2); }
+  if(sc2){ L.v2 = {sc:sc2, steps:v2Steps(sc2), i:0, at:Date.now(), t0:Date.now(), got:{}, exit:null, stars:0}; L.rules = buildRulesV2(k, plan, sc2); }
   else L.rules = buildRules(k, plan);
   demoN = 0;
   renderRoom(); v2Slide();
@@ -2880,7 +2902,7 @@ function interrupt(listenAfter){
 /* ---- teacher turn (streaming) ---- */
 function parseTags(full){
   const out = {mood:null, board:null, fix:null, ar:'', stage:null, end:false, goals:[], next:false, got:false, exit:null};
-  if(/\[NEXT\]/i.test(full)) out.next = true; if(/\[GOT\]/i.test(full)) out.got = true;
+  if(/\[NEXT\]/i.test(full)) out.next = true; if(/\[GOT\]/i.test(full)) out.got = true; out.star = (full.match(/\[STAR\]/gi) || []).length;
   const ex = full.match(/\[EXIT:(yes|partly|no)\]/i); if(ex) out.exit = ex[1].toLowerCase();
   const m = full.match(/^\s*\[MOOD:([a-z]+)\]/i); if(m) out.mood = m[1].toLowerCase();
   const re = /\[(BOARD|FIX|AR|STAGE|END|GOAL)(?::([^\]]*))?\]/gi; let x;
@@ -2890,7 +2912,7 @@ function parseTags(full){
     else if(tag === 'AR') out.ar = v; else if(tag === 'STAGE') out.stage = v.toLowerCase(); else if(tag === 'END') out.end = true; else if(tag === 'GOAL') out.goals.push(Number(v)); }
   return out;
 }
-function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
+function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
 function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
 async function teacherTurn(userText, attempt){
@@ -2928,7 +2950,8 @@ async function teacherTurn(userText, attempt){
     if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
     if(lesson.mission && tags.goals.length){ tags.goals.forEach(g => { if(g >= 1 && g <= 3 && !lesson.mission.done[g-1]){ lesson.mission.done[g-1] = true; burst(); toast(`🎯 حققت الهدف ${g}!`); } }); drawMissionPanel(); }
     if(lesson.v2){ const v = lesson.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)];
-      if(tags.got){ v.got[stp.k === 'exp' || stp.k === 'so' ? stp.k + stp.i : stp.k + (stp.part||'')] = true; v2Slide(); }
+      if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
+      if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide();
       if(tags.exit) v.exit = tags.exit;
       if(tags.next) v2Advance(false);
       // the script is finished: the lesson may end even a little before the usual minimum
@@ -2977,9 +3000,10 @@ function startListening(fromTap){
   if(!SR || !micOK){ setState('tap'); return; }
   stopListening();
   if(!L.listenStart) L.listenStart = Date.now();
-  L.manualStop = false; let text = '';
+  L.manualStop = false; L.talking = false; let text = '';
   const rec = new SR(); L.rec = rec; rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = true; rec.maxAlternatives = 1;
   const you = $('#you');
+  rec.onspeechstart = () => { if(L && L.rec === rec){ L.talking = true; if(you){ you.hidden = false; you.classList.add('live'); you.textContent = '🎙️ …'; } } };
   rec.onspeechend = () => { if(L && L.rec === rec && you){ you.hidden = false; you.classList.add('live'); you.textContent = '… 👂'; } };
   rec.onresult = e => { let t = ''; for(const r of e.results) t += r[0].transcript; if(t.split(' ').length !== text.split(' ').length && Math.random() < .5) nod(); text = t;
     if(you){ you.hidden = false; you.classList.add('live'); you.textContent = t; }
@@ -2990,7 +3014,7 @@ function startListening(fromTap){
     if(L.manualStop){ L.manualStop = false; L.listenStart = 0; clearTimeout(L.nudgeT); setState('tap'); return; }
     if(L.state === 'listening'){ if(Date.now() - L.listenStart > NUDGE_MS){ L.listenStart = 0; teacherTurn('(student was silent)'); } else startListening(false); } };
   try{ rec.start(); setState('listening'); }catch(e){ L.rec = null; setState('tap'); }
-  clearTimeout(L.nudgeT); L.nudgeT = setTimeout(() => { if(L && L.state === 'listening' && !text.trim()){ try{ rec.stop(); }catch(x){} } }, NUDGE_MS + 500);
+  clearTimeout(L.nudgeT); L.nudgeT = setTimeout(() => { if(L && L.state === 'listening' && !text.trim() && !L.talking){ try{ rec.stop(); }catch(x){} } }, NUDGE_MS + 500);
 }
 function stopListening(submit){
   if(!L) return; clearTimeout(L.silT); clearTimeout(L.nudgeT);
@@ -3052,7 +3076,7 @@ Reply with ONLY one JSON object:
     avgWords:(() => { const t = lesson.history.filter(h => h.role === 'user' && !/\]\s*\(/.test(h.content)).length; return t ? Math.round(lesson.sw / t * 10) / 10 : null; })(),
     confidence:rep.confidence == null ? null : Math.max(0, Math.min(100, Number(rep.confidence) || 0)), confidenceNote:String(rep.confidenceNote||''), talkNote:String(rep.talkNote||''),
     levelFit:['easy','right','hard'].includes(rep.levelFit) ? rep.levelFit : null, levelNote:String(rep.levelNote||''), strengths:(Array.isArray(rep.strengths)?rep.strengths:[]).slice(0,4).map(String), homePractice:String(rep.homePractice||''),
-    v2:lesson.v2 ? {exp:Object.keys(lesson.v2.got).filter(x => x.startsWith('exp')).length, of:lesson.v2.sc.expressions.length, so:Object.keys(lesson.v2.got).filter(x => x.startsWith('so')).length, exit:lesson.v2.exit, steps:lesson.v2.i + 1, total:lesson.v2.steps.length, review:!!plan.review, fn:((levelUnits(DB.kids[k].level)||[])[plan.ui]||{}).fn || ''} : null};
+    v2:lesson.v2 ? {exp:Object.keys(lesson.v2.got).filter(x => x.startsWith('exp')).length, of:lesson.v2.sc.expressions.length, so:Object.keys(lesson.v2.got).filter(x => x.startsWith('so')).length, exit:lesson.v2.exit, stars:lesson.v2.stars||0, steps:lesson.v2.i + 1, total:lesson.v2.steps.length, review:!!plan.review, fn:((levelUnits(DB.kids[k].level)||[])[plan.ui]||{}).fn || ''} : null};
   if(Array.isArray(rep.interests) && !lesson.trial){ const p0 = DB.progress[k]; p0.interests = [...new Set(rep.interests.map(String).concat(p0.interests||[]))].slice(0,15); }
   let book = null, cert = null;
   if(!lesson.trial){
