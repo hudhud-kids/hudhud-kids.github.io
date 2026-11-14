@@ -265,7 +265,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
 </div>
 <div class="ticks">
 <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>اختبار مستوى أول دخول</span>
-<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>20 مستوى من Pre-A1 إلى C2</span>
+<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>20 مستوى من Pre-A1 حتى مسار المحادثة المتقدمة</span>
 <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>على الآيباد والجوال</span>
 </div>
 </div>
@@ -317,7 +317,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
 <svg viewBox="0 0 1000 96" preserveAspectRatio="none"><path d="M10 48 C 120 0, 220 96, 330 48 S 540 0, 660 48 S 880 96, 990 48" fill="none" stroke="rgba(255,246,238,.25)" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/></svg>
 <div class="nodes" id="nodes"></div>
 </div>
-<div class="cefr"><span>Pre-A1</span><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span><span>C2</span></div>
+<div class="cefr"><span>Pre-A1</span><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>B2+ → C1</span></div>
 </div>
 </div>
 </section>
@@ -471,7 +471,7 @@ const steps = [
 $('#steps').innerHTML = steps.map((s, i) => `<article class="card step lift rv" style="transition-delay:${i * 90}ms"><span class="n">${i + 1}</span><span class="ico ${s[3]}">${svg(I[s[2]])}</span><h3>${s[0]}</h3><p>${s[1]}</p></article>`).join('');
 
 /* journey */
-const LV = {1:'Pre-A1 · Starters',2:'Pre-A1 · Starters',3:'A1 · Movers',4:'A1 · Movers',5:'A2 · Flyers',6:'A2 · Flyers / Key',7:'A2+ · Key',8:'B1 · Preliminary',9:'B1 · Preliminary',10:'B1+ · Preliminary',11:'B1+ · IELTS 4.5-5',12:'B2 · First',13:'B2 · IELTS 5.5-6',14:'B2+ · First',15:'B2+ · IELTS 6.5',16:'C1 · Advanced',17:'C1 · IELTS 7-7.5',18:'C2 · Proficiency',19:'C2 · Proficiency',20:'C2 · Mastery'};
+const LV = {1:'Pre-A1 · Starters',2:'Pre-A1 · Starters',3:'A1 · Movers',4:'A1 · Movers',5:'A2 · Flyers',6:'A2 · Flyers / Key',7:'A2+ · Key',8:'B1 · Preliminary',9:'B1 · Preliminary',10:'B1+ · Preliminary',11:'B1+ · IELTS 4.5-5',12:'B2 · First',13:'B2 · IELTS 5.5-6',14:'B2+ · First',15:'B2+ · IELTS 6.5',16:'مسار المحادثة المتقدمة ١ · B2+ → C1',17:'مسار المحادثة المتقدمة ٢ · B2+ → C1',18:'مسار المحادثة المتقدمة ٣ · B2+ → C1',19:'مسار المحادثة المتقدمة ٤ · B2+ → C1',20:'مسار المحادثة المتقدمة ٥ · B2+ → C1'};
 $('#nodes').innerHTML = Array.from({length:20}, (_, i) => `<span class="node" data-n="${i + 1}">${i + 1}</span>`).join('');
 function setAge(a){ const lv = Math.max(1, Math.min(20, a - 5));
   document.querySelectorAll('#ages button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.a === a));
@@ -488,7 +488,7 @@ const CC = {learn:'c-coral', play:'c-gold', read:'c-teal', parents:'c-sky', app:
 const F = [
   ['learn','mic','معلمة بالصوت','تسمع طفلك وترد عليه بصوت طبيعي، وتصحّح أخطاءه بلطف وتخليه يعيد الجملة صح.'],
   ['learn','target','اختبار تحديد المستوى','5 أجزاء أول دخول: معرفة، تمييز أصوات، إملاء، نطق، وكلام. والمستوى يتحدد تلقائيًا.'],
-  ['learn','map','20 مستوى وخريطة','من Pre-A1 إلى C2، كل مستوى وحدات ودروس، والهدهد يمشي معه على الخريطة.'],
+  ['learn','map','20 مستوى وخريطة','من Pre-A1 حتى مسار المحادثة المتقدمة (مهارات B2+ → C1)، كل مستوى وحدات ودروس، والهدهد يمشي معه على الخريطة.'],
   ['learn','bag','حضّر لدرسك القادم','6 كلمات وحوار قصير من درس الحصة، يفتح قبل الحصة بساعة عشان يدخل جاهز.'],
   ['learn','chat','عدّاد الكلام','أثناء الحصة يشوف كم تكلّم هو مقابل المعلمة، وله هدف يوصل له.'],
   ['learn','pencil','اختبار بعد كل حصة','أسئلة قصيرة من نفس الدرس تثبّت اللي تعلّمه.'],

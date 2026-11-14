@@ -35,7 +35,7 @@
     [
      "Finding Your Way",
      "Check directions to a place you don't know",
-     "Go past …, then turn right. Is that right? / Do you mean the … ? / It's on the second floor, isn't it?"
+     "Keep going until …, then turn right. Is that right? / Do you mean the … ? / It's on the second floor, isn't it?"
     ],
     [
      "Cooking Together",
@@ -325,10 +325,10 @@
      "frame": "My dad can pick us up at ___."
     },
     {
-     "w": "on time",
-     "def": "not late; at the planned time",
-     "ar": "في الموعد",
-     "frame": "I'm always on time for ___."
+     "w": "on the dot",
+     "def": "at exactly the time that was planned",
+     "ar": "في الموعد تماماً",
+     "frame": "The ___ starts at seven on the dot."
     },
     {
      "w": "confirm",
@@ -392,7 +392,7 @@
      },
      {
       "s": "Omar",
-      "t": "Sure. Just make sure you're on time!"
+      "t": "Sure. Just make sure you're there on the dot!"
      }
     ],
     "focus": "So you're saying we should meet at five instead?",
@@ -430,7 +430,10 @@
      "Do group chats make plans easier or more confusing?"
     ]
    },
-   "exit": "Tell me about a plan with a friend and check two details with question tags."
+   "exit": "Tell me about a plan with a friend and check two details with question tags.",
+   "recycle": [
+    "on time"
+   ]
   },
   "0-2": {
    "objective": "Today you will take a phone message and check that you have understood it.",
@@ -558,25 +561,25 @@
   },
   "0-3": {
    "objective": "Today you will check directions to a place you don't know.",
-   "warmup": "Have you ever got lost? Where were you, and what did you do?",
+   "warmup": "Have you ever lost your way? Where were you, and what did you do?",
    "expressions": [
     {
-     "w": "get lost",
-     "def": "to not know where you are or how to find the way",
-     "ar": "يضيع (الطريق)",
-     "frame": "I once got lost in ___."
+     "w": "lose your way",
+     "def": "to not know which way to go",
+     "ar": "يضلّ الطريق",
+     "frame": "I once lost my way in ___."
     },
     {
-     "w": "go past",
-     "def": "to walk or drive beyond something",
-     "ar": "يتجاوز / يمرّ بجانب",
-     "frame": "Go past the ___ and then turn right."
+     "w": "keep going until",
+     "def": "to continue walking or driving until you reach a place",
+     "ar": "استمر حتى تصل إلى",
+     "frame": "Keep going until you reach the ___."
     },
     {
-     "w": "on your left",
-     "def": "on the left side as you walk",
-     "ar": "على يسارك",
-     "frame": "The ___ is on your left."
+     "w": "on the left-hand side",
+     "def": "on the left as you walk or look",
+     "ar": "على الجهة اليسرى",
+     "frame": "The ___ is on the left-hand side."
     },
     {
      "w": "take the escalator",
@@ -585,10 +588,10 @@
      "frame": "Take the escalator to the ___ floor."
     },
     {
-     "w": "landmark",
-     "def": "a building or place that is easy to see and remember",
-     "ar": "معلَم بارز",
-     "frame": "A famous landmark in my city is ___."
+     "w": "eye-catching",
+     "def": "very easy to notice because it is unusual or attractive",
+     "ar": "لافت للنظر",
+     "frame": "The most eye-catching building in my city is ___."
     },
     {
      "w": "you can't miss it",
@@ -602,15 +605,15 @@
     "p1": [
      {
       "s": "Faisal",
-      "t": "Excuse me, I think I've got lost. How do I get to the cinema?"
+      "t": "Excuse me, I think I've lost my way. How do I get to the cinema?"
      },
      {
       "s": "Guard",
-      "t": "No problem. Go past the fountain and turn right at the bookshop."
+      "t": "No problem. Keep going until you reach the fountain and turn right at the bookshop."
      },
      {
       "s": "Faisal",
-      "t": "Go past the fountain, then turn right at the bookshop. Is that right?"
+      "t": "Keep going until you reach the fountain, then turn right at the bookshop. Is that right?"
      },
      {
       "s": "Guard",
@@ -628,7 +631,7 @@
      },
      {
       "s": "Guard",
-      "t": "Not quite. When you get off the escalator, it's on your left, next to the food court."
+      "t": "Not quite. When you get off the escalator, it's on the left-hand side, next to the food court."
      },
      {
       "s": "Faisal",
@@ -636,24 +639,24 @@
      },
      {
       "s": "Guard",
-      "t": "Exactly. The clock is a good landmark. You can't miss it!"
+      "t": "Exactly. The clock is really eye-catching. You can't miss it!"
      },
      {
       "s": "Faisal",
       "t": "Perfect. Thank you very much for your help."
      }
     ],
-    "focus": "Go past the fountain, then turn right at the bookshop. Is that right?",
+    "focus": "Keep going until you reach the fountain, then turn right at the bookshop. Is that right?",
     "qs": [
      "Which floor is the cinema on?",
-     "What landmark helps Faisal find the cinema?"
+     "What helps Faisal find the cinema?"
     ]
    },
    "speakout": {
     "scene": "You are visiting a new city with your family. You ask a local person (me) how to get to a museum. Check the directions carefully.",
     "prompts": [
      {
-      "q": "The museum? Go straight on and go past the hospital.",
+      "q": "The museum? Go straight on and keep going until you reach the hospital.",
       "hint": "Repeat the direction and check it with 'Is that right?'"
      },
      {
@@ -678,7 +681,13 @@
      "What is a good landmark near your home?"
     ]
    },
-   "exit": "Tell me the way from your home to a nearby shop, then check one direction with 'Is that right?'"
+   "exit": "Tell me the way from your home to a nearby shop, then check one direction with 'Is that right?'",
+   "recycle": [
+    "on your left",
+    "go past",
+    "get lost",
+    "landmark"
+   ]
   },
   "0-4": {
    "objective": "Today you will check the steps of a recipe while cooking with someone.",
@@ -715,10 +724,10 @@
      "frame": "First, roll out the ___."
     },
     {
-     "w": "make sense",
-     "def": "to be clear and easy to understand",
-     "ar": "يكون مفهوماً / منطقياً",
-     "frame": "It makes sense to ___ first."
+     "w": "get the idea",
+     "def": "to understand how something works",
+     "ar": "يفهم الفكرة",
+     "frame": "I got the idea when ___."
     }
    ],
    "dialogue": {
@@ -760,7 +769,7 @@
      },
      {
       "s": "Grandma",
-      "t": "Exactly, and then we cut it into small pieces. It'll make sense when you see it."
+      "t": "Exactly, and then we cut it into small pieces. You'll get the idea when you see it."
      },
      {
       "s": "Reem",
@@ -802,7 +811,10 @@
      "Is it better to learn a recipe from a person or from a video? Why?"
     ]
    },
-   "exit": "Tell me two steps of a recipe you know, and check one step with 'Do you mean …?' or a question tag."
+   "exit": "Tell me two steps of a recipe you know, and check one step with 'Do you mean …?' or a question tag.",
+   "recycle": [
+    "make sense"
+   ]
   },
   "0-5": {
    "objective": "Today you will check and confirm all the details of a group trip.",
@@ -1183,10 +1195,10 @@
    "warmup": "Do you watch interviews with players after a match? Which players do you follow?",
    "expressions": [
     {
-     "w": "score a goal",
-     "def": "to get the ball into the net",
-     "ar": "يسجّل هدفاً",
-     "frame": "My favourite player scored a goal against ___."
+     "w": "hit the back of the net",
+     "def": "to score a goal",
+     "ar": "يسجّل هدفاً / يهزّ الشباك",
+     "frame": "My favourite player hit the back of the net against ___."
     },
     {
      "w": "be proud of",
@@ -1195,10 +1207,10 @@
      "frame": "I'm really proud of ___."
     },
     {
-     "w": "give up",
-     "def": "to stop trying",
-     "ar": "يستسلم",
-     "frame": "I never give up when ___."
+     "w": "keep fighting",
+     "def": "to keep trying hard, even when things are difficult",
+     "ar": "يواصل الكفاح",
+     "frame": "I keep fighting when ___."
     },
     {
      "w": "press conference",
@@ -1236,7 +1248,7 @@
      },
      {
       "s": "Reem",
-      "t": "He said that he was proud of the team because they hadn't given up."
+      "t": "He said that he was proud of the team because they had kept fighting until the end."
      },
      {
       "s": "Emma",
@@ -1246,7 +1258,7 @@
     "p2": [
      {
       "s": "Emma",
-      "t": "And what about the player who scored the winning goal?"
+      "t": "And what about the player who hit the back of the net in the last minute?"
      },
      {
       "s": "Reem",
@@ -1265,7 +1277,7 @@
       "t": "Well, after the final whistle, nobody cared about the first half!"
      }
     ],
-    "focus": "He said that he was proud of the team because they hadn't given up.",
+    "focus": "He said that he was proud of the team because they had kept fighting until the end.",
     "qs": [
      "Why was the captain proud of the team?",
      "What did the coach admit?"
@@ -1300,7 +1312,11 @@
      "How should Saudi Arabia prepare for the 2034 World Cup?"
     ]
    },
-   "exit": "Report two things a famous player or coach said, using 'said that' or 'told reporters that'."
+   "exit": "Report two things a famous player or coach said, using 'said that' or 'told reporters that'.",
+   "recycle": [
+    "score a goal",
+    "give up"
+   ]
   },
   "1-3": {
    "objective": "Today you will report questions that someone asked you.",
@@ -1710,10 +1726,10 @@
      "frame": "I'll ___ in a minute."
     },
     {
-     "w": "tidy up",
-     "def": "to make a place clean and neat",
-     "ar": "يرتّب",
-     "frame": "I need to tidy up my ___ before ___."
+     "w": "clear up",
+     "def": "to put things away and make a place clean",
+     "ar": "ينظّف ويرتّب المكان",
+     "frame": "I need to clear up my ___ before ___."
     }
    ],
    "dialogue": {
@@ -1751,11 +1767,11 @@
      },
      {
       "s": "Faisal",
-      "t": "Of course. And would you mind not telling Mum about my messy room? I'll tidy up later!"
+      "t": "Of course. And would you mind not telling Mum about my messy room? I'll clear it up later!"
      },
      {
       "s": "Nasser",
-      "t": "Ha! I won't tell her, but you'd better tidy up today."
+      "t": "Ha! I won't tell her, but you'd better clear up that mess today."
      },
      {
       "s": "Faisal",
@@ -1789,7 +1805,7 @@
     "title": "Respect at Home",
     "points": [
      "In Saudi families, younger people usually speak very politely to older brothers, sisters and parents.",
-     "Many families share the housework, like tidying up after meals.",
+     "Many families share the housework, like clearing up after meals.",
      "In English, words like 'would', 'could' and 'possibly' make a request sound softer."
     ],
     "qs": [
@@ -1797,7 +1813,10 @@
      "Do you think children should help with housework? Why?"
     ]
    },
-   "exit": "Make two polite requests to someone in your family, using 'Would you mind …ing?' and 'Could you possibly …?'"
+   "exit": "Make two polite requests to someone in your family, using 'Would you mind …ing?' and 'Could you possibly …?'",
+   "recycle": [
+    "tidy up"
+   ]
   },
   "2-1": {
    "objective": "Today you will ask your teacher for permission politely.",
@@ -1940,10 +1959,10 @@
      "frame": "Help yourself to some ___."
     },
     {
-     "w": "take off",
-     "def": "to remove clothes or shoes",
-     "ar": "يخلع",
-     "frame": "In our home, we take off our ___ at the door."
+     "w": "slip off",
+     "def": "to remove shoes or clothes quickly and easily",
+     "ar": "يخلع بسرعة وسهولة",
+     "frame": "When I get home, I slip off my ___."
     },
     {
      "w": "charge (your) phone",
@@ -1977,7 +1996,7 @@
      },
      {
       "s": "Sam",
-      "t": "Thank you. Do you mind if I take off my shoes here?"
+      "t": "Thank you. Do you mind if I slip off my shoes here?"
      },
      {
       "s": "Mrs Al-Qahtani",
@@ -2010,7 +2029,7 @@
       "t": "Really? I'd love to stay for dinner. I'll ask my dad first."
      }
     ],
-    "focus": "Do you mind if I take off my shoes here?",
+    "focus": "Do you mind if I slip off my shoes here?",
     "qs": [
      "What does Omar's mum offer Sam?",
      "Why does Sam want the Wi-Fi password?"
@@ -2045,7 +2064,10 @@
      "What makes someone a good guest?"
     ]
    },
-   "exit": "Imagine you are a guest. Make two polite requests to your host, using 'Do you mind if I …?' and 'Could I possibly …?'"
+   "exit": "Imagine you are a guest. Make two polite requests to your host, using 'Do you mind if I …?' and 'Could I possibly …?'",
+   "recycle": [
+    "take off"
+   ]
   },
   "2-3": {
    "objective": "Today you will make polite requests to people you don't know in public places.",
@@ -2058,10 +2080,10 @@
      "frame": "Sorry to bother you, but could you ___?"
     },
     {
-     "w": "swap seats",
-     "def": "to change seats with someone",
-     "ar": "يتبادل المقاعد",
-     "frame": "Would you mind swapping seats with ___?"
+     "w": "change places",
+     "def": "to move to someone's seat while they move to yours",
+     "ar": "يتبادل الأماكن",
+     "frame": "Would you mind changing places with ___?"
     },
     {
      "w": "window seat",
@@ -2093,7 +2115,7 @@
     "p1": [
      {
       "s": "Noura",
-      "t": "Sorry to bother you, but would you mind swapping seats with my little brother? He wants to sit next to me."
+      "t": "Sorry to bother you, but would you mind changing places with my little brother? He wants to sit next to me."
      },
      {
       "s": "Passenger",
@@ -2134,9 +2156,9 @@
       "t": "Thank you! They're great."
      }
     ],
-    "focus": "Sorry to bother you, but would you mind swapping seats with my little brother?",
+    "focus": "Sorry to bother you, but would you mind changing places with my little brother?",
     "qs": [
-     "Why is the passenger happy to swap seats?",
+     "Why is the passenger happy to change places?",
      "What does the man ask the family to do before he takes the photo?"
     ]
    },
@@ -2169,17 +2191,20 @@
      "What polite requests might a tourist need to make on holiday?"
     ]
    },
-   "exit": "Imagine you are on a plane. Make two polite requests: one to a passenger and one to the flight attendant."
+   "exit": "Imagine you are on a plane. Make two polite requests: one to a passenger and one to the flight attendant.",
+   "recycle": [
+    "swap seats"
+   ]
   },
   "2-4": {
    "objective": "Today you will ask for permission about screens, games and photos.",
    "warmup": "How much time do you spend online every day? What do you do?",
    "expressions": [
     {
-     "w": "screen time",
-     "def": "the time you spend looking at phones, tablets or TVs",
-     "ar": "وقت الشاشة",
-     "frame": "My screen time is about ___ hours a day."
+     "w": "log off",
+     "def": "to stop using a computer, game or website",
+     "ar": "يُغلق الجهاز / يسجّل الخروج",
+     "frame": "I usually log off at ___ in the evening."
     },
     {
      "w": "log in",
@@ -2222,7 +2247,7 @@
      },
      {
       "s": "Dad",
-      "t": "You've already had a lot of screen time today, Omar."
+      "t": "You've already had a lot of screen time today, Omar. Please log off soon."
      },
      {
       "s": "Omar",
@@ -2294,7 +2319,10 @@
      "Why should we ask permission before posting a photo of a friend?"
     ]
    },
-   "exit": "Ask me for permission for two things you want to do online, using 'Is it OK if I …?' and 'Would you mind if I …?'"
+   "exit": "Ask me for permission for two things you want to do online, using 'Is it OK if I …?' and 'Would you mind if I …?'",
+   "recycle": [
+    "screen time"
+   ]
   },
   "2-5": {
    "objective": "Today you will plan a family Eid gathering by making polite requests and asking permission.",
@@ -2331,10 +2359,10 @@
      "frame": "We put up ___ decorations for Eid."
     },
     {
-     "w": "lend",
-     "def": "to give something to someone for a short time",
-     "ar": "يُعير",
-     "frame": "Could you lend me your ___ for the party?"
+     "w": "spare",
+     "def": "to give or lend something you don't need at the moment",
+     "ar": "يستغني عن شيء مؤقتاً",
+     "frame": "Could you spare a few ___ for the party?"
     }
    ],
    "dialogue": {
@@ -2373,7 +2401,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Of course. And could you lend us your big carpet? Grandma and Grandpa can sit on it."
+      "t": "Of course. And could you spare your big carpet for the day? Grandma and Grandpa can sit on it."
      },
      {
       "s": "Aunt Hessa",
@@ -2419,7 +2447,10 @@
      "How could you make Eid special for someone who lives alone?"
     ]
    },
-   "exit": "Make three polite requests to plan a party, each with a different form, without looking at the slides."
+   "exit": "Make three polite requests to plan a party, each with a different form, without looking at the slides.",
+   "recycle": [
+    "lend"
+   ]
   },
   "3-0": {
    "objective": "Today you will compare two weekend activities and decide what to do.",
@@ -2438,10 +2469,10 @@
      "frame": "___ is fun. On the other hand, ___."
     },
     {
-     "w": "crowded",
-     "def": "full of people",
-     "ar": "مزدحم",
-     "frame": "___ is always crowded at the weekend."
+     "w": "overcrowded",
+     "def": "with too many people in it",
+     "ar": "مكتظ بالناس",
+     "frame": "___ is always overcrowded at the weekend."
     },
     {
      "w": "it's up to you",
@@ -2475,11 +2506,11 @@
      },
      {
       "s": "Sam",
-      "t": "That's true. On the other hand, the museum is always crowded at the weekend."
+      "t": "That's true. On the other hand, the museum is always overcrowded at the weekend."
      },
      {
       "s": "Faisal",
-      "t": "Well, the karting track is crowded too. It's up to you, really."
+      "t": "Well, the karting track is overcrowded too. It's up to you, really."
      },
      {
       "s": "Sam",
@@ -2543,7 +2574,10 @@
      "What is the best weekend activity in your city?"
     ]
    },
-   "exit": "Compare two things you could do this weekend and say which one you'll go for."
+   "exit": "Compare two things you could do this weekend and say which one you'll go for.",
+   "recycle": [
+    "crowded"
+   ]
   },
   "3-1": {
    "objective": "Today you will compare gift ideas and choose the best one.",
@@ -2556,10 +2590,10 @@
      "frame": "I came up with a great idea for ___."
     },
     {
-     "w": "can't afford",
-     "def": "to not have enough money to buy something",
-     "ar": "لا يستطيع تحمّل ثمنه",
-     "frame": "I'd love to buy ___, but I can't afford it."
+     "w": "out of my price range",
+     "def": "too expensive for the money I have",
+     "ar": "فوق ميزانيتي",
+     "frame": "___ is out of my price range."
     },
     {
      "w": "split the cost",
@@ -2580,10 +2614,10 @@
      "frame": "___ is good value for money."
     },
     {
-     "w": "in the end",
-     "def": "finally, after thinking about it",
-     "ar": "في النهاية",
-     "frame": "In the end, we decided to ___."
+     "w": "at the end of the day",
+     "def": "when you think about what is most important",
+     "ar": "في نهاية المطاف / الأهم",
+     "frame": "At the end of the day, ___ is what matters most."
     }
    ],
    "dialogue": {
@@ -2599,7 +2633,7 @@
      },
      {
       "s": "Reem",
-      "t": "She would, but a good handbag is really expensive. I can't afford one."
+      "t": "She would, but a good handbag is really expensive. It's out of my price range."
      },
      {
       "s": "Omar",
@@ -2629,7 +2663,7 @@
      },
      {
       "s": "Reem",
-      "t": "In the end, the best gifts come from the heart."
+      "t": "At the end of the day, the best gifts come from the heart."
      }
     ],
     "focus": "Let's go for the photo book.",
@@ -2647,7 +2681,7 @@
      },
      {
       "q": "But we only have one hundred riyals.",
-      "hint": "Talk about money: 'We can't afford …' or 'We could split the cost.'"
+      "hint": "Talk about money: 'It's out of our price range …' or 'We could split the cost.'"
      },
      {
       "q": "So, what's our final decision?",
@@ -2667,17 +2701,21 @@
      "Is an expensive gift always better than a cheap one?"
     ]
    },
-   "exit": "Compare two gift ideas for someone in your family and say which one you'd go for and why."
+   "exit": "Compare two gift ideas for someone in your family and say which one you'd go for and why.",
+   "recycle": [
+    "in the end",
+    "can't afford"
+   ]
   },
   "3-2": {
    "objective": "Today you will compare school clubs and choose the one that suits you.",
    "warmup": "Which after-school clubs or activities have you tried?",
    "expressions": [
     {
-     "w": "be into",
-     "def": "to like something a lot",
-     "ar": "يحب / مهتم جداً بـ",
-     "frame": "I'm really into ___ at the moment."
+     "w": "be fascinated by",
+     "def": "to find something very interesting",
+     "ar": "مفتون / منبهر بـ",
+     "frame": "I'm fascinated by ___."
     },
     {
      "w": "weigh up",
@@ -2719,7 +2757,7 @@
      },
      {
       "s": "Emma",
-      "t": "Not yet. I'm weighing up the pros and cons. I'm really into robotics, but it's on Thursdays."
+      "t": "Not yet. I'm weighing up the pros and cons. I'm fascinated by robotics, but it's on Thursdays."
      },
      {
       "s": "Noura",
@@ -2767,7 +2805,7 @@
     "prompts": [
      {
       "q": "Which clubs are you interested in?",
-      "hint": "Say what you're into and compare two clubs with 'just as … as' or 'not as … as'."
+      "hint": "Say what you're fascinated by and compare two clubs with 'just as … as' or 'not as … as'."
      },
      {
       "q": "What are the pros and cons of each one?",
@@ -2791,7 +2829,10 @@
      "Do you think after-school clubs are as important as lessons? Why?"
     ]
    },
-   "exit": "Tell me about two clubs or activities, compare them, and say which one would suit you better."
+   "exit": "Tell me about two clubs or activities, compare them, and say which one would suit you better.",
+   "recycle": [
+    "be into"
+   ]
   },
   "3-3": {
    "objective": "Today you will compare holiday places and agree on where to go.",
@@ -3064,10 +3105,10 @@
      "frame": "We could raise money for ___ by ___."
     },
     {
-     "w": "make a difference",
-     "def": "to have a good effect on people or things",
-     "ar": "يُحدث فرقاً",
-     "frame": "I want to make a difference by ___."
+     "w": "do your bit",
+     "def": "to do your share of work to help others",
+     "ar": "يقوم بدوره / يساهم بنصيبه",
+     "frame": "I do my bit at home by ___."
     },
     {
      "w": "take a vote",
@@ -3100,7 +3141,7 @@
      },
      {
       "s": "Sam",
-      "t": "Let's weigh up the pros and cons. A beach clean-up would make a difference, but the beach is far away."
+      "t": "Let's weigh up the pros and cons. A beach clean-up would be a great way to do our bit, but the beach is far away."
      },
      {
       "s": "Fahad",
@@ -3164,7 +3205,10 @@
      "Is it better to give money or to give your time? Why?"
     ]
    },
-   "exit": "Tell me about two project ideas, compare them, and say what decision you would reach and why."
+   "exit": "Tell me about two project ideas, compare them, and say what decision you would reach and why.",
+   "recycle": [
+    "make a difference"
+   ]
   }
  },
  "kits": {
@@ -3254,9 +3298,9 @@
      "ex": "My mum will pick me up at five."
     },
     {
-     "w": "on time",
-     "ar": "في الموعد",
-     "ex": "Please be on time for the game."
+     "w": "on the dot",
+     "ar": "في الموعد تماماً",
+     "ex": "The game starts at five on the dot."
     },
     {
      "w": "confirm",
@@ -3398,19 +3442,19 @@
   "0-3": {
    "words": [
     {
-     "w": "get lost",
-     "ar": "يضيع (الطريق)",
-     "ex": "Don't worry if you get lost. Just ask someone."
+     "w": "lose your way",
+     "ar": "يضلّ الطريق",
+     "ex": "Don't worry if you lose your way. Just ask someone."
     },
     {
-     "w": "go past",
-     "ar": "يتجاوز / يمرّ بجانب",
-     "ex": "Go past the bank and turn left."
+     "w": "keep going until",
+     "ar": "استمر حتى تصل إلى",
+     "ex": "Keep going until you reach the bank, then turn left."
     },
     {
-     "w": "on your left",
-     "ar": "على يسارك",
-     "ex": "The pharmacy is on your left."
+     "w": "on the left-hand side",
+     "ar": "على الجهة اليسرى",
+     "ex": "The pharmacy is on the left-hand side of the street."
     },
     {
      "w": "take the escalator",
@@ -3418,9 +3462,9 @@
      "ex": "Take the escalator up to the food court."
     },
     {
-     "w": "landmark",
-     "ar": "معلَم بارز",
-     "ex": "Kingdom Centre is a famous landmark in Riyadh."
+     "w": "eye-catching",
+     "ar": "لافت للنظر",
+     "ex": "The new stadium is really eye-catching at night."
     },
     {
      "w": "you can't miss it",
@@ -3431,15 +3475,15 @@
    "dialogue": [
     {
      "s": "Faisal",
-     "t": "Excuse me, I think I've got lost. How do I get to the cinema?"
+     "t": "Excuse me, I think I've lost my way. How do I get to the cinema?"
     },
     {
      "s": "Guard",
-     "t": "No problem. Go past the fountain and turn right at the bookshop."
+     "t": "No problem. Keep going until you reach the fountain and turn right at the bookshop."
     },
     {
      "s": "Faisal",
-     "t": "Go past the fountain, then turn right at the bookshop. Is that right?"
+     "t": "Keep going until you reach the fountain, then turn right at the bookshop. Is that right?"
     },
     {
      "s": "Guard",
@@ -3451,7 +3495,7 @@
     },
     {
      "s": "Guard",
-     "t": "Not quite. When you get off the escalator, it's on your left, next to the food court."
+     "t": "Not quite. When you get off the escalator, it's on the left-hand side, next to the food court."
     },
     {
      "s": "Faisal",
@@ -3459,7 +3503,7 @@
     },
     {
      "s": "Guard",
-     "t": "Exactly. The clock is a good landmark. You can't miss it!"
+     "t": "Exactly. The clock is really eye-catching. You can't miss it!"
     }
    ],
    "grammar": {
@@ -3500,9 +3544,9 @@
      "ex": "Roll out the dough on the table."
     },
     {
-     "w": "make sense",
-     "ar": "يكون مفهوماً / منطقياً",
-     "ex": "Now the recipe makes sense to me."
+     "w": "get the idea",
+     "ar": "يفهم الفكرة",
+     "ex": "Watch me once and you'll get the idea."
     }
    ],
    "dialogue": [
@@ -3536,7 +3580,7 @@
     },
     {
      "s": "Grandma",
-     "t": "Exactly, and then we cut it into small pieces. It'll make sense when you see it."
+     "t": "Exactly, and then we cut it into small pieces. You'll get the idea when you see it."
     }
    ],
    "grammar": {
@@ -3783,9 +3827,9 @@
   "1-2": {
    "words": [
     {
-     "w": "score a goal",
-     "ar": "يسجّل هدفاً",
-     "ex": "He scored a goal in the last minute."
+     "w": "hit the back of the net",
+     "ar": "يسجّل هدفاً / يهزّ الشباك",
+     "ex": "He hit the back of the net in the last minute."
     },
     {
      "w": "be proud of",
@@ -3793,9 +3837,9 @@
      "ex": "I'm proud of my little sister."
     },
     {
-     "w": "give up",
-     "ar": "يستسلم",
-     "ex": "Don't give up. You can do it!"
+     "w": "keep fighting",
+     "ar": "يواصل الكفاح",
+     "ex": "We were losing, but we kept fighting and drew 2–2."
     },
     {
      "w": "press conference",
@@ -3828,11 +3872,11 @@
     },
     {
      "s": "Reem",
-     "t": "He said that he was proud of the team because they hadn't given up."
+     "t": "He said that he was proud of the team because they had kept fighting until the end."
     },
     {
      "s": "Emma",
-     "t": "And what about the player who scored the winning goal?"
+     "t": "And what about the player who hit the back of the net in the last minute?"
     },
     {
      "s": "Reem",
@@ -4116,9 +4160,9 @@
      "ex": "I'll help you in a minute."
     },
     {
-     "w": "tidy up",
-     "ar": "يرتّب",
-     "ex": "Please tidy up your room before dinner."
+     "w": "clear up",
+     "ar": "ينظّف ويرتّب المكان",
+     "ex": "Please clear up your room before dinner."
     }
    ],
    "dialogue": [
@@ -4148,11 +4192,11 @@
     },
     {
      "s": "Faisal",
-     "t": "Of course. And would you mind not telling Mum about my messy room? I'll tidy up later!"
+     "t": "Of course. And would you mind not telling Mum about my messy room? I'll clear it up later!"
     },
     {
      "s": "Nasser",
-     "t": "Ha! I won't tell her, but you'd better tidy up today."
+     "t": "Ha! I won't tell her, but you'd better clear up that mess today."
     }
    ],
    "grammar": {
@@ -4255,9 +4299,9 @@
      "ex": "Help yourself to some dates."
     },
     {
-     "w": "take off",
-     "ar": "يخلع",
-     "ex": "Please take off your shoes here."
+     "w": "slip off",
+     "ar": "يخلع بسرعة وسهولة",
+     "ex": "She slipped off her sandals at the door."
     },
     {
      "w": "charge (your) phone",
@@ -4286,7 +4330,7 @@
     },
     {
      "s": "Sam",
-     "t": "Thank you. Do you mind if I take off my shoes here?"
+     "t": "Thank you. Do you mind if I slip off my shoes here?"
     },
     {
      "s": "Mrs Al-Qahtani",
@@ -4327,9 +4371,9 @@
      "ex": "Sorry to bother you, but is this seat free?"
     },
     {
-     "w": "swap seats",
-     "ar": "يتبادل المقاعد",
-     "ex": "Would you mind swapping seats with me?"
+     "w": "change places",
+     "ar": "يتبادل الأماكن",
+     "ex": "Would you mind changing places with me?"
     },
     {
      "w": "window seat",
@@ -4355,7 +4399,7 @@
    "dialogue": [
     {
      "s": "Noura",
-     "t": "Sorry to bother you, but would you mind swapping seats with my little brother? He wants to sit next to me."
+     "t": "Sorry to bother you, but would you mind changing places with my little brother? He wants to sit next to me."
     },
     {
      "s": "Passenger",
@@ -4399,9 +4443,9 @@
   "2-4": {
    "words": [
     {
-     "w": "screen time",
-     "ar": "وقت الشاشة",
-     "ex": "My parents check my screen time."
+     "w": "log off",
+     "ar": "يُغلق الجهاز / يسجّل الخروج",
+     "ex": "Log off and come and help me in the kitchen!"
     },
     {
      "w": "log in",
@@ -4436,7 +4480,7 @@
     },
     {
      "s": "Dad",
-     "t": "You've already had a lot of screen time today, Omar."
+     "t": "You've already had a lot of screen time today, Omar. Please log off soon."
     },
     {
      "s": "Omar",
@@ -4501,9 +4545,9 @@
      "ex": "The decorations look beautiful."
     },
     {
-     "w": "lend",
-     "ar": "يُعير",
-     "ex": "Could you lend me your pen?"
+     "w": "spare",
+     "ar": "يستغني عن شيء مؤقتاً",
+     "ex": "Could you spare some chairs for the party?"
     }
    ],
    "dialogue": [
@@ -4533,7 +4577,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Of course. And could you lend us your big carpet? Grandma and Grandpa can sit on it."
+     "t": "Of course. And could you spare your big carpet for the day? Grandma and Grandpa can sit on it."
     },
     {
      "s": "Aunt Hessa",
@@ -4545,7 +4589,7 @@
     "ar": "كلما كان الطلب أكبر أو كان الشخص أكبر سناً نختار صيغة أكثر تهذيباً: Can you…? ← Could you possibly…? ← Would you mind …ing? ← Would it be possible to…?",
     "examples": [
      "Can you pass the dates? (a friend, a small request)",
-     "Could you possibly lend us your carpet? (a bigger request)",
+     "Could you possibly spare your carpet? (a bigger request)",
      "Would it be possible to use the hall? (very polite, to an adult)"
     ]
    }
@@ -4563,9 +4607,9 @@
      "ex": "It's cheap. On the other hand, it's far."
     },
     {
-     "w": "crowded",
-     "ar": "مزدحم",
-     "ex": "The mall was very crowded on Friday."
+     "w": "overcrowded",
+     "ar": "مكتظ بالناس",
+     "ex": "The beach gets overcrowded in the summer holidays."
     },
     {
      "w": "it's up to you",
@@ -4594,11 +4638,11 @@
     },
     {
      "s": "Sam",
-     "t": "That's true. On the other hand, the museum is always crowded at the weekend."
+     "t": "That's true. On the other hand, the museum is always overcrowded at the weekend."
     },
     {
      "s": "Faisal",
-     "t": "Well, the karting track is crowded too. It's up to you, really."
+     "t": "Well, the karting track is overcrowded too. It's up to you, really."
     },
     {
      "s": "Sam",
@@ -4635,9 +4679,9 @@
      "ex": "She came up with a brilliant idea."
     },
     {
-     "w": "can't afford",
-     "ar": "لا يستطيع تحمّل ثمنه",
-     "ex": "I can't afford a new phone."
+     "w": "out of my price range",
+     "ar": "فوق ميزانيتي",
+     "ex": "That phone is lovely, but it's out of my price range."
     },
     {
      "w": "split the cost",
@@ -4655,9 +4699,9 @@
      "ex": "This bag is good value for money."
     },
     {
-     "w": "in the end",
-     "ar": "في النهاية",
-     "ex": "In the end, we bought flowers."
+     "w": "at the end of the day",
+     "ar": "في نهاية المطاف / الأهم",
+     "ex": "At the end of the day, family is what matters most."
     }
    ],
    "dialogue": [
@@ -4671,7 +4715,7 @@
     },
     {
      "s": "Reem",
-     "t": "She would, but a good handbag is really expensive. I can't afford one."
+     "t": "She would, but a good handbag is really expensive. It's out of my price range."
     },
     {
      "s": "Omar",
@@ -4707,9 +4751,9 @@
   "3-2": {
    "words": [
     {
-     "w": "be into",
-     "ar": "يحب / مهتم جداً بـ",
-     "ex": "My brother is really into robots."
+     "w": "be fascinated by",
+     "ar": "مفتون / منبهر بـ",
+     "ex": "My brother is fascinated by robots."
     },
     {
      "w": "weigh up",
@@ -4744,7 +4788,7 @@
     },
     {
      "s": "Emma",
-     "t": "Not yet. I'm weighing up the pros and cons. I'm really into robotics, but it's on Thursdays."
+     "t": "Not yet. I'm weighing up the pros and cons. I'm fascinated by robotics, but it's on Thursdays."
     },
     {
      "s": "Noura",
@@ -4953,9 +4997,9 @@
      "ex": "We raised money for the hospital."
     },
     {
-     "w": "make a difference",
-     "ar": "يُحدث فرقاً",
-     "ex": "Small actions can make a difference."
+     "w": "do your bit",
+     "ar": "يقوم بدوره / يساهم بنصيبه",
+     "ex": "Everyone can do their bit to keep the beach clean."
     },
     {
      "w": "take a vote",
@@ -4983,7 +5027,7 @@
     },
     {
      "s": "Sam",
-     "t": "Let's weigh up the pros and cons. A beach clean-up would make a difference, but the beach is far away."
+     "t": "Let's weigh up the pros and cons. A beach clean-up would be a great way to do our bit, but the beach is far away."
     },
     {
      "s": "Khalid",
@@ -5128,7 +5172,7 @@
      "Pick me up.",
      "Count me in!",
      "It's a change of plan.",
-     "I'm on time."
+     "I'm running late."
     ],
     "answer": 1
    },
@@ -5227,15 +5271,18 @@
    {
     "type": "order",
     "words": [
-     "Go",
-     "past",
+     "Keep",
+     "going",
+     "until",
+     "you",
+     "reach",
      "the",
      "fountain",
      "and",
      "turn",
      "right."
     ],
-    "answer": "Go past the fountain and turn right.",
+    "answer": "Keep going until you reach the fountain and turn right.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5262,9 +5309,9 @@
    },
    {
     "type": "mc",
-    "q": "Which word means 'a building that is easy to see and remember'?",
+    "q": "Which word means 'very easy to notice'?",
     "options": [
-     "landmark",
+     "eye-catching",
      "escalator",
      "traffic",
      "corner"
@@ -5327,7 +5374,7 @@
     "type": "mc",
     "q": "Your friend explains something clearly. You say:",
     "options": [
-     "That makes sense.",
+     "I get the idea.",
      "Hold on a pinch.",
      "Roll it out.",
      "You can't miss it."
@@ -5576,12 +5623,12 @@
    },
    {
     "type": "mc",
-    "q": "What does 'give up' mean?",
+    "q": "What does 'keep fighting' mean in sport?",
     "options": [
-     "score again",
-     "stop trying",
-     "start a match",
-     "clap loudly"
+     "start a fight",
+     "keep trying hard until the end",
+     "leave the match early",
+     "argue with the referee"
     ],
     "answer": 1
    },
@@ -6106,14 +6153,14 @@
    },
    {
     "type": "mc",
-    "q": "What does 'screen time' mean?",
+    "q": "What does 'log off' mean?",
     "options": [
-     "time at the cinema",
-     "a type of video game",
-     "time spent looking at phones, tablets or TVs",
-     "the time on a clock"
+     "buy a new game",
+     "stop using a computer or game",
+     "turn up the volume",
+     "take a photo"
     ],
-    "answer": 2
+    "answer": 1
    }
   ],
   "2-5": [
@@ -6123,12 +6170,11 @@
      "Could",
      "you",
      "possibly",
-     "lend",
-     "us",
+     "spare",
      "your",
      "carpet?"
     ],
-    "answer": "Could you possibly lend us your carpet?",
+    "answer": "Could you possibly spare your carpet?",
     "ar": "رتّب الجملة"
    },
    {
@@ -6536,11 +6582,11 @@
    },
    {
     "type": "mc",
-    "q": "What does 'make a difference' mean?",
+    "q": "What does 'do your bit' mean?",
     "options": [
-     "have a good effect",
+     "do your share to help",
      "change your clothes",
-     "find two different things",
+     "eat a small piece",
      "make a mistake"
     ],
     "answer": 0
@@ -6671,12 +6717,13 @@
      "words": [
       "It's",
       "on",
-      "your",
-      "left,",
+      "the",
+      "left-hand",
+      "side,",
       "isn't",
       "it?"
      ],
-     "answer": "It's on your left, isn't it?",
+     "answer": "It's on the left-hand side, isn't it?",
      "ar": "رتّب الجملة"
     }
    ],

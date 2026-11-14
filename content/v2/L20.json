@@ -36,7 +36,7 @@
     [
      "What the Letter Didn't Say",
      "Recognise implication in what people leave out and express a judgement through implication",
-     "It speaks volumes that … / … is conspicuous by its absence. / I'm not saying …, but …"
+     "… tells its own story. / … is conspicuous by its absence. / I'm not saying …, but …"
     ],
     [
      "No Without Saying No",
@@ -65,13 +65,13 @@
    "lessons": [
     [
      "Opening the Floor",
-     "Open a seminar by setting the scene, framing the question and inviting the first contributions",
-     "Shall we kick off? / To set the scene, … / I'd like to open the floor now."
+     "Open a seminar by sketching out the background, framing the question and inviting the first contributions",
+     "Shall we kick off? / To sketch out the background, … / I'd like to open the floor now."
     ],
     [
      "Bringing Everyone In",
      "Invite quieter participants to speak and politely manage someone who dominates the discussion",
-     "I'd like to hear from … / Would you like to come in on this? / Could you build on that?"
+     "I'd like to hear from … / Would you like to come in on this? / Could you expand on that?"
     ],
     [
      "Back on Track",
@@ -81,7 +81,7 @@
     [
      "Summing Up",
      "Summarise the views in a discussion fairly and identify the core disagreement",
-     "Let me recap. / Broadly speaking, … / In a nutshell, it boils down to …"
+     "Let me pause to summarise. / Broadly speaking, … / The short version is … / It boils down to …"
     ],
     [
      "Drawing the Threads Together",
@@ -91,7 +91,7 @@
     [
      "Chairing the Seminar",
      "Chair a complete seminar from opening to closing synthesis",
-     "Let's take stock. / A recurring theme has been … / Before we wrap up, … / So perhaps our position is …"
+     "Let's take stock. / A recurring theme has been … / Before we bring things to a close, … / So perhaps our position is …"
     ]
    ]
   },
@@ -131,12 +131,12 @@
     [
      "Winning the Room",
      "Persuade an undecided audience by connecting with their values and offering a fair compromise",
-     "We need something that strikes a chord. / Let's meet them halfway. / This is about the bigger picture."
+     "We need something that touches people's hearts. / Let's meet them halfway. / We need to take the long view."
     ],
     [
      "The Public Debate",
      "Take part in a public debate, handling hostile questions, reframing the issue and delivering a closing statement",
-     "I'd reject the premise that … / The real question is … / Let me turn the tables. / In my closing statement, …"
+     "I'd reject the premise that … / The real question is … / Let me turn that argument on its head. / In my closing statement, …"
     ]
    ]
   },
@@ -156,32 +156,32 @@
     [
      "The Precise Word",
      "Choose words that match exactly the size and nature of what you describe",
-     "By and large, … / … to a lesser extent. / It's a far cry from …"
+     "In general terms, … / … to a lesser extent. / It's light years away from …"
     ],
     [
      "Idiom with Ease",
      "Use idioms naturally and accurately in a long turn about a skill you learned from someone",
-     "It was a steep learning curve. / … has rubbed off on me. / … set the bar high."
+     "It was a baptism of fire. / … has rubbed off on me. / … set the bar high."
     ],
     [
      "The Long Turn",
      "Organise a two-minute long turn with clear points, examples and a balanced conclusion",
-     "It stands to reason that … / … is a case in point. / By the same token, … / On balance, …"
+     "It follows that … / … is a telling example. / In the same vein, … / Taken as a whole, …"
     ],
     [
      "Big Ideas",
      "Discuss abstract ideas with nuance, defining terms and avoiding over-simple claims",
-     "In the broadest sense, … / It's a matter of degree. / It's debatable whether … / … hinges on …"
+     "In the broadest sense, … / It's a matter of degree. / It's an open question whether … / … is contingent on …"
     ],
     [
      "Repair and Rephrase",
      "Repair and rephrase your language smoothly when you can't find a word or express an idea unclearly",
-     "…, or rather, … / The word escapes me. / Let me rephrase that. / What I'm getting at is …"
+     "…, or rather, … / The word escapes me. / Let me put that another way. / What I'm getting at is …"
     ],
     [
      "The Mock Exam",
      "Complete a mock speaking test at Band 9, combining precision, natural idiom, structure and smooth repair",
-     "That's a tricky one. / Off the top of my head, … / … go hand in hand. / On balance, …"
+     "That's a tricky one. / Roughly speaking, … / … is bound up with … / In the grand scheme of things, …"
     ]
    ]
   }
@@ -272,6 +272,14 @@
      {
       "s": "Khalid",
       "t": "True. And my grandfather says it was the best trip in years. I'm not sure he was joking."
+     },
+     {
+      "s": "Sam",
+      "t": "Knowing your grandfather, he probably meant it. He'd call a sandstorm 'a bit of fresh air'."
+     },
+     {
+      "s": "Khalid",
+      "t": "Exactly. To him, anything short of a disaster is a lovely weekend."
      }
     ],
     "focus": "So it wasn't exactly the relaxing weekend under the stars you'd promised everyone.",
@@ -285,15 +293,15 @@
     "prompts": [
      {
       "q": "So, how was the trip? Was it as amazing as you'd hoped?",
-      "hint": "Use understatement: 'It wasn't exactly …' or 'It could have gone better.'"
+      "hint": "Use understatement: 'It wasn't exactly …' or 'It could have gone better.' Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What was the worst part?",
-      "hint": "Describe one problem and soften it with 'a tad' or 'to put it mildly'."
+      "hint": "Describe one problem and soften it with 'a tad' or 'to put it mildly'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Would you go on the same trip again?",
-      "hint": "Show your real feeling indirectly, for example 'It's not the end of the world, but …'."
+      "hint": "Show your real feeling indirectly, for example 'It's not the end of the world, but …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -340,10 +348,10 @@
      "frame": "You might want to check ___ before you submit it."
     },
     {
-     "w": "I wonder if",
-     "def": "a soft way to make a request or suggestion",
-     "ar": "أتساءل إن كان (طلب مهذّب)",
-     "frame": "I wonder if we could ___ next time."
+     "w": "a gentle nudge",
+     "def": "a polite, indirect reminder or encouragement",
+     "ar": "تلميح لطيف / دفعة خفيفة",
+     "frame": "My teacher gave me a gentle nudge about ___."
     },
     {
      "w": "worth bearing in mind",
@@ -370,6 +378,14 @@
      {
       "s": "Hessa",
       "t": "He's dropping a hint, Noura. He wants it checked thoroughly before it leaves the office."
+     },
+     {
+      "s": "Noura",
+      "t": "So why doesn't he just say 'There's a mistake'? It would save time."
+     },
+     {
+      "s": "Hessa",
+      "t": "Many managers prefer a gentle nudge. It lets you fix things without feeling embarrassed in front of others."
      }
     ],
     "p2": [
@@ -392,6 +408,14 @@
      {
       "s": "Noura",
       "t": "He said, 'This is much clearer.' From him, that's practically a standing ovation."
+     },
+     {
+      "s": "Hessa",
+      "t": "Then you've passed the first test: understanding what isn't said."
+     },
+     {
+      "s": "Noura",
+      "t": "And the second test is learning to speak that way myself!"
      }
     ],
     "focus": "Reading between the lines, I'd say there's a mistake in section three.",
@@ -405,15 +429,15 @@
     "prompts": [
      {
       "q": "You might want to look at the introduction again.",
-      "hint": "Say what the manager really means and promise a specific change."
+      "hint": "Say what the manager really means and promise a specific change. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "I wonder if the slides could be a little less… colourful.",
-      "hint": "Read between the lines: what is the real problem? Reply politely."
+      "hint": "Read between the lines: what is the real problem? Reply politely. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "It's worth bearing in mind that the director dislikes long meetings.",
-      "hint": "Show you've taken the hint by saying how you'll shorten your presentation."
+      "hint": "Show you've taken the hint by saying how you'll shorten your presentation. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -429,11 +453,108 @@
      "What problems can indirect feedback cause in an international team?"
     ]
    },
-   "exit": "Give me two sentences of indirect feedback that a manager might say, and explain what each one really means."
+   "exit": "Give me two sentences of indirect feedback that a manager might say, and explain what each one really means.",
+   "recycle": [
+    "I wonder if"
+   ]
   },
   "0-2": {
    "objective": "Today you will use and recognise irony and sarcasm, especially in written messages.",
    "warmup": "Have you ever misunderstood a joke in a text message? What happened?",
+   "dialogue": {
+    "scene": "Faisal and his classmate Ethan are working on a group project. They discuss a message from Majed in the group chat.",
+    "p1": [
+     {
+      "s": "Ethan",
+      "t": "Did you see Majed's message? 'Great, another deadline moved forward. Best week ever.'"
+     },
+     {
+      "s": "Faisal",
+      "t": "I did. I almost took it at face value and replied, 'Glad you're happy!'"
+     },
+     {
+      "s": "Ethan",
+      "t": "Oh, that would have gone down well. He's clearly being sarcastic."
+     },
+     {
+      "s": "Faisal",
+      "t": "I know that now. The trouble is, Majed has such a dry sense of humour that it's hard to tell."
+     },
+     {
+      "s": "Ethan",
+      "t": "Last week he wrote 'Lovely weather' during a sandstorm, and his aunt replied with a sun emoji."
+     },
+     {
+      "s": "Faisal",
+      "t": "Ha! She definitely took it at face value. Sarcasm is hard enough to spot in person."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ethan",
+      "t": "In person, it's obvious. His deadpan face gives it away."
+     },
+     {
+      "s": "Faisal",
+      "t": "But in a text, his jokes fall flat, because you can't see his face."
+     },
+     {
+      "s": "Ethan",
+      "t": "Maybe we should suggest he adds an emoji when he's being tongue-in-cheek."
+     },
+     {
+      "s": "Faisal",
+      "t": "Or maybe we should ban sarcasm in the group chat altogether. I'm only half joking."
+     },
+     {
+      "s": "Ethan",
+      "t": "Oh yes, because banning things always works so well with teenagers."
+     },
+     {
+      "s": "Faisal",
+      "t": "See? You're doing it too. Now I can't tell if you're serious."
+     },
+     {
+      "s": "Ethan",
+      "t": "Exactly my point. Tone of voice does half the work."
+     }
+    ],
+    "focus": "Oh, that would have gone down well.",
+    "qs": [
+     "Why did Faisal almost reply 'Glad you're happy!'?",
+     "Is Ethan's last line serious? How do you know?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher plays a friend who keeps sending you ironic messages about a group project. Work out what they mean and reply.",
+    "prompts": [
+     {
+      "q": "'Wonderful. The printer's broken again. My favourite thing.' How do I really feel?",
+      "hint": "Explain the sarcasm: say what your friend actually feels. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Should I have replied 'I'm glad you like it'? Why or why not?",
+      "hint": "Explain the risk of taking the message at face value. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Now send me an ironic reply about our deadline moving forward.",
+      "hint": "Use irony: praise something bad, e.g. 'Brilliant, just what we needed.' Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Sarcasm Online",
+    "points": [
+     "Some internet users add '/s' to the end of a message to show that it is sarcastic.",
+     "Research suggests that people often overestimate how clearly their tone comes across in emails and texts.",
+     "In Saudi dialects, a playful 'Ya salam!' can express real admiration or gentle mockery, depending entirely on the tone."
+    ],
+    "qs": [
+     "Is sarcasm a good idea in group chats? Why or why not?",
+     "How can you make your tone clear in a written message?"
+    ]
+   },
+   "exit": "Say one ironic sentence about a bad situation, then explain what you really mean.",
    "expressions": [
     {
      "w": "tongue-in-cheek",
@@ -454,10 +575,10 @@
      "frame": "I took his message at face value, so I ___."
     },
     {
-     "w": "lost in translation",
-     "def": "when meaning or humour disappears between languages or contexts",
-     "ar": "ضاع في الترجمة",
-     "frame": "The joke about ___ got lost in translation."
+     "w": "fall flat",
+     "def": "(of a joke or idea) to fail to have the effect you wanted",
+     "ar": "يفشل في إحداث الأثر المطلوب",
+     "frame": "My joke about ___ fell flat."
     },
     {
      "w": "I'm only half joking",
@@ -472,94 +593,117 @@
      "frame": "People with a dry sense of humour often ___."
     }
    ],
-   "dialogue": {
-    "scene": "Faisal and his classmate Ethan are working on a group project. They discuss a message from Majed in the group chat.",
-    "p1": [
-     {
-      "s": "Ethan",
-      "t": "Did you see Majed's message? 'Great, another deadline moved forward. Best week ever.'"
-     },
-     {
-      "s": "Faisal",
-      "t": "I did. I almost took it at face value and replied, 'Glad you're happy!'"
-     },
-     {
-      "s": "Ethan",
-      "t": "Oh, that would have gone down well. He's clearly being sarcastic."
-     },
-     {
-      "s": "Faisal",
-      "t": "I know that now. The trouble is, Majed has such a dry sense of humour that it's hard to tell."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Ethan",
-      "t": "In person, it's obvious. His deadpan face gives it away."
-     },
-     {
-      "s": "Faisal",
-      "t": "But in a text, the tone gets completely lost in translation."
-     },
-     {
-      "s": "Ethan",
-      "t": "Maybe we should suggest he adds an emoji when he's being tongue-in-cheek."
-     },
-     {
-      "s": "Faisal",
-      "t": "Or maybe we should ban sarcasm in the group chat altogether. I'm only half joking."
-     },
-     {
-      "s": "Ethan",
-      "t": "Oh yes, because banning things always works so well with teenagers."
-     }
-    ],
-    "focus": "Oh, that would have gone down well.",
-    "qs": [
-     "Why did Faisal almost reply 'Glad you're happy!'?",
-     "Is Ethan's last line serious? How do you know?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your teacher plays a friend who keeps sending you ironic messages about a group project. Work out what they mean and reply.",
-    "prompts": [
-     {
-      "q": "'Wonderful. The printer's broken again. My favourite thing.' How do I really feel?",
-      "hint": "Explain the sarcasm: say what your friend actually feels."
-     },
-     {
-      "q": "Should I have replied 'I'm glad you like it'? Why or why not?",
-      "hint": "Explain the risk of taking the message at face value."
-     },
-     {
-      "q": "Now send me an ironic reply about our deadline moving forward.",
-      "hint": "Use irony: praise something bad, e.g. 'Brilliant, just what we needed.'"
-     }
-    ]
-   },
-   "culture": {
-    "title": "Sarcasm Online",
-    "points": [
-     "Some internet users add '/s' to the end of a message to show that it is sarcastic.",
-     "Research suggests that people often overestimate how clearly their tone comes across in emails and texts.",
-     "In Saudi dialects, a playful 'Ya salam!' can express real admiration or gentle mockery, depending entirely on the tone."
-    ],
-    "qs": [
-     "Is sarcasm a good idea in group chats? Why or why not?",
-     "How can you make your tone clear in a written message?"
-    ]
-   },
-   "exit": "Say one ironic sentence about a bad situation, then explain what you really mean."
+   "recycle": [
+    "lost in translation"
+   ]
   },
   "0-3": {
    "objective": "Today you will recognise implication in what people leave out and express a judgement through implication.",
    "warmup": "When you read a review of a restaurant or a phone, what makes you trust it or doubt it?",
+   "dialogue": {
+    "scene": "Yousef is applying for a university scholarship. His older sister Maha helps him compare two reference letters from his teachers.",
+    "p1": [
+     {
+      "s": "Maha",
+      "t": "Your physics teacher's letter is glowing: 'exceptional', 'original', 'a natural leader'."
+     },
+     {
+      "s": "Yousef",
+      "t": "And the chemistry one? I thought Mr Adel liked me."
+     },
+     {
+      "s": "Maha",
+      "t": "He says you're 'always punctual and very polite'. That's it."
+     },
+     {
+      "s": "Yousef",
+      "t": "That's good, isn't it? Punctuality matters."
+     },
+     {
+      "s": "Maha",
+      "t": "It's faint praise, Yousef. Any mention of your actual chemistry is conspicuous by its absence."
+     },
+     {
+      "s": "Yousef",
+      "t": "But he did write that I'm polite. Isn't that a compliment?"
+     },
+     {
+      "s": "Maha",
+      "t": "It is, but in a reference letter, praising your manners instead of your work sends a message of its own."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Yousef",
+      "t": "So the subtext is that I'm a nice person but an average student?"
+     },
+     {
+      "s": "Maha",
+      "t": "I'm not saying he thinks you're average, but a committee might read it that way."
+     },
+     {
+      "s": "Yousef",
+      "t": "The fact that he didn't mention my project tells its own story, doesn't it?"
+     },
+     {
+      "s": "Maha",
+      "t": "It does. Use the physics letter, and maybe ask Mr Adel what he really thought."
+     },
+     {
+      "s": "Yousef",
+      "t": "Something tells me that conversation won't exactly be relaxing."
+     },
+     {
+      "s": "Maha",
+      "t": "Maybe not, but it's better to know now than to wonder after the committee decides."
+     },
+     {
+      "s": "Yousef",
+      "t": "True. I'll ask him tomorrow, politely and without sounding defensive."
+     }
+    ],
+    "focus": "Any mention of your actual chemistry is conspicuous by its absence.",
+    "qs": [
+     "Why is Maha worried about the chemistry teacher's letter?",
+     "What does Maha advise Yousef to do?"
+    ]
+   },
+   "speakout": {
+    "scene": "You and your friend are choosing a summer coding course. Your teacher reads you two reviews; explain what each one implies.",
+    "prompts": [
+     {
+      "q": "Review A says: 'The building was easy to find and the coffee was hot.' What does that tell us?",
+      "hint": "Point out what is missing and what that implies about the teaching. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Review B calls the trainer 'inspiring' and 'endlessly patient'. Is that more useful?",
+      "hint": "Compare the two: glowing praise versus faint praise. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So which course should I choose?",
+      "hint": "Recommend one, using '… tells its own story.' or 'I'm not saying …, but …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Kinaya in Arabic Rhetoric",
+    "points": [
+     "Classical Arabic rhetoric describes 'kinaya': expressing an idea indirectly through a related detail or image.",
+     "A traditional example praises a generous host as having 'plenty of ash', implying that his fire cooks for many guests.",
+     "English uses similar indirection: a reference that praises only someone's handwriting may imply that their work is weak."
+    ],
+    "qs": [
+     "Why might indirect criticism sometimes be kinder than direct criticism?",
+     "Can you think of a Saudi expression that says something indirectly?"
+    ]
+   },
+   "exit": "Tell me about a review, letter or message you've seen, and explain one thing it implied without saying it.",
    "expressions": [
     {
-     "w": "speak volumes",
-     "def": "to show something clearly without words",
-     "ar": "يدلّ بوضوح / يقول الكثير",
-     "frame": "It speaks volumes that ___."
+     "w": "tell its own story",
+     "def": "to show the truth clearly without anyone explaining it",
+     "ar": "يحكي القصة بنفسه",
+     "frame": "The fact that ___ tells its own story."
     },
     {
      "w": "conspicuous by its absence",
@@ -592,88 +736,9 @@
      "frame": "The subtext of his message was ___."
     }
    ],
-   "dialogue": {
-    "scene": "Yousef is applying for a university scholarship. His older sister Maha helps him compare two reference letters from his teachers.",
-    "p1": [
-     {
-      "s": "Maha",
-      "t": "Your physics teacher's letter is glowing: 'exceptional', 'original', 'a natural leader'."
-     },
-     {
-      "s": "Yousef",
-      "t": "And the chemistry one? I thought Mr Adel liked me."
-     },
-     {
-      "s": "Maha",
-      "t": "He says you're 'always punctual and very polite'. That's it."
-     },
-     {
-      "s": "Yousef",
-      "t": "That's good, isn't it? Punctuality matters."
-     },
-     {
-      "s": "Maha",
-      "t": "It's faint praise, Yousef. Any mention of your actual chemistry is conspicuous by its absence."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Yousef",
-      "t": "So the subtext is that I'm a nice person but an average student?"
-     },
-     {
-      "s": "Maha",
-      "t": "I'm not saying he thinks you're average, but a committee might read it that way."
-     },
-     {
-      "s": "Yousef",
-      "t": "It speaks volumes that he didn't mention my project, doesn't it?"
-     },
-     {
-      "s": "Maha",
-      "t": "It does. Use the physics letter, and maybe ask Mr Adel what he really thought."
-     },
-     {
-      "s": "Yousef",
-      "t": "Something tells me that conversation won't exactly be relaxing."
-     }
-    ],
-    "focus": "Any mention of your actual chemistry is conspicuous by its absence.",
-    "qs": [
-     "Why is Maha worried about the chemistry teacher's letter?",
-     "What does Maha advise Yousef to do?"
-    ]
-   },
-   "speakout": {
-    "scene": "You and your friend are choosing a summer coding course. Your teacher reads you two reviews; explain what each one implies.",
-    "prompts": [
-     {
-      "q": "Review A says: 'The building was easy to find and the coffee was hot.' What does that tell us?",
-      "hint": "Point out what is missing and what that implies about the teaching."
-     },
-     {
-      "q": "Review B calls the trainer 'inspiring' and 'endlessly patient'. Is that more useful?",
-      "hint": "Compare the two: glowing praise versus faint praise."
-     },
-     {
-      "q": "So which course should I choose?",
-      "hint": "Recommend one, using 'It speaks volumes that …' or 'I'm not saying …, but …'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Kinaya in Arabic Rhetoric",
-    "points": [
-     "Classical Arabic rhetoric describes 'kinaya': expressing an idea indirectly through a related detail or image.",
-     "A traditional example praises a generous host as having 'plenty of ash', implying that his fire cooks for many guests.",
-     "English uses similar indirection: a reference that praises only someone's handwriting may imply that their work is weak."
-    ],
-    "qs": [
-     "Why might indirect criticism sometimes be kinder than direct criticism?",
-     "Can you think of a Saudi expression that says something indirectly?"
-    ]
-   },
-   "exit": "Tell me about a review, letter or message you've seen, and explain one thing it implied without saying it."
+   "recycle": [
+    "speak volumes"
+   ]
   },
   "0-4": {
    "objective": "Today you will refuse requests indirectly and recognise when others are refusing indirectly.",
@@ -746,6 +811,10 @@
     ],
     "p2": [
      {
+      "s": "Abdullah",
+      "t": "Sam, I've just spoken to Fahad about the sports day."
+     },
+     {
       "s": "Sam",
       "t": "So, is Fahad helping or not?"
      },
@@ -764,6 +833,18 @@
      {
       "s": "Sam",
       "t": "Then the drinks are on you, and Fahad's your emergency goalkeeper."
+     },
+     {
+      "s": "Abdullah",
+      "t": "That's a bit unfair. He was polite about it, at least."
+     },
+     {
+      "s": "Sam",
+      "t": "Of course. 'Let me get back to you' is the politest no there is."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Fine. I'll learn to make tea for two hundred people by Saturday."
      }
     ],
     "focus": "I'd love to, but next Saturday's a tall order.",
@@ -777,15 +858,15 @@
     "prompts": [
      {
       "q": "Could you lend me your laptop for the whole week?",
-      "hint": "Refuse softly with 'I'd love to, but …' and give a reason."
+      "hint": "Refuse softly with 'I'd love to, but …' and give a reason. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Will you come on the 5 a.m. bike ride on Friday?",
-      "hint": "Use 'not really my thing' or 'a tall order', and perhaps suggest something else."
+      "hint": "Use 'not really my thing' or 'a tall order', and perhaps suggest something else. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Can you help me paint my room next month?",
-      "hint": "Don't commit: use 'Let me get back to you' and leave the door open."
+      "hint": "Don't commit: use 'Let me get back to you' and leave the door open. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -806,44 +887,6 @@
   "0-5": {
    "objective": "Today you will plan and perform a short sketch full of irony, understatement and implication, and explain its hidden meanings.",
    "warmup": "Which film, series or book character do you find funny because of what they don't say?",
-   "expressions": [
-    {
-     "w": "what she's really saying is",
-     "def": "introduces your interpretation of a hidden meaning",
-     "ar": "ما تقصده فعلاً هو",
-     "frame": "When my mother says 'We'll see', what she's really saying is ___."
-    },
-    {
-     "w": "read between the lines",
-     "def": "to understand a meaning that is not stated directly",
-     "ar": "يفهم ما بين السطور",
-     "frame": "If you read between the lines of ___, you'll see ___."
-    },
-    {
-     "w": "not exactly",
-     "def": "said ironically to mean 'not at all', but more softly",
-     "ar": "ليس تماماً (أي: أبداً)",
-     "frame": "My first attempt at ___ wasn't exactly a success."
-    },
-    {
-     "w": "a loaded remark",
-     "def": "a comment with a hidden, often critical, meaning",
-     "ar": "ملاحظة مبطّنة",
-     "frame": "My aunt made a loaded remark about ___."
-    },
-    {
-     "w": "pick up on",
-     "def": "to notice something that is not obvious",
-     "ar": "يلتقط / ينتبه إلى",
-     "frame": "I didn't pick up on ___ until much later."
-    },
-    {
-     "w": "get the wrong end of the stick",
-     "def": "to misunderstand something completely",
-     "ar": "يفهم الأمر على نحو خاطئ تماماً",
-     "frame": "I got the wrong end of the stick when ___."
-    }
-   ],
    "dialogue": {
     "scene": "Omar and Tariq are writing a short comedy sketch for their school's drama evening. Every line must hide its real meaning.",
     "p1": [
@@ -861,11 +904,19 @@
      },
      {
       "s": "Tariq",
-      "t": "Then the grandson gets the wrong end of the stick and offers to cook every Friday."
+      "t": "Then the grandson misreads the situation and offers to cook every Friday."
      },
      {
       "s": "Omar",
       "t": "And the grandfather replies, 'Let's not rush into anything.'"
+     },
+     {
+      "s": "Tariq",
+      "t": "That's almost a backhanded compliment: polite on the surface, but the message is clear."
+     },
+     {
+      "s": "Omar",
+      "t": "Exactly. The whole sketch is about families who say one thing and mean another."
      }
     ],
     "p2": [
@@ -879,7 +930,7 @@
      },
      {
       "s": "Tariq",
-      "t": "Exactly. But will the younger children pick up on the irony?"
+      "t": "Exactly. But will the younger children catch on to the irony?"
      },
      {
       "s": "Omar",
@@ -888,6 +939,14 @@
      {
       "s": "Tariq",
       "t": "So it isn't exactly subtle, but it'll work."
+     },
+     {
+      "s": "Omar",
+      "t": "Subtle enough for the adults, obvious enough for the children. That's the balance we need."
+     },
+     {
+      "s": "Tariq",
+      "t": "Let's rehearse it tomorrow and see if Mr Fahad laughs in the right places."
      }
     ],
     "focus": "What she's really saying is 'Clean up now.'",
@@ -901,15 +960,15 @@
     "prompts": [
      {
       "q": "Who are the characters, and what awkward situation does the sketch show?",
-      "hint": "Describe the setting and one problem, e.g. a failed surprise or a burnt meal."
+      "hint": "Describe the setting and one problem, e.g. a failed surprise or a burnt meal. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Give me one line of understatement and one line of irony for your characters.",
-      "hint": "Say each line, then explain what it really means."
+      "hint": "Say each line, then explain what it really means. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
-      "q": "How will the audience pick up on the hidden meanings?",
-      "hint": "Mention tone of voice, facial expression or what is conspicuously missing."
+      "q": "How will the audience catch on to the hidden meanings?",
+      "hint": "Mention tone of voice, facial expression or what is conspicuously missing. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -925,55 +984,61 @@
      "Why might irony be harder to catch in a second language?"
     ]
    },
-   "exit": "Say two lines from your sketch, one with irony and one with understatement, and explain their real meaning."
-  },
-  "1-0": {
-   "objective": "Today you will open a seminar by setting the scene, framing the question and inviting the first contributions.",
-   "warmup": "Think of the best class discussion you've ever had. Who started it, and how?",
+   "exit": "Say two lines from your sketch, one with irony and one with understatement, and explain their real meaning.",
    "expressions": [
     {
-     "w": "kick off",
-     "def": "to start an event or discussion",
-     "ar": "يبدأ / يستهلّ",
-     "frame": "Let's kick off with a quick question about ___."
+     "w": "what she's really saying is",
+     "def": "introduces your interpretation of a hidden meaning",
+     "ar": "ما تقصده فعلاً هو",
+     "frame": "When my mother says 'We'll see', what she's really saying is ___."
     },
     {
-     "w": "set the scene",
-     "def": "to give the background before the main discussion",
-     "ar": "يمهّد / يعرض الخلفية",
-     "frame": "To set the scene, ___."
+     "w": "a backhanded compliment",
+     "def": "a remark that seems like praise but is really a criticism",
+     "ar": "مديح ظاهره المدح وباطنه الانتقاد",
+     "frame": "'___' is a backhanded compliment because …"
     },
     {
-     "w": "frame the question",
-     "def": "to state a problem in a particular, clear way",
-     "ar": "يصوغ السؤال",
-     "frame": "I'd frame the question like this: ___?"
+     "w": "say one thing and mean another",
+     "def": "to hide your real meaning behind different words",
+     "ar": "يقول شيئاً ويقصد غيره",
+     "frame": "People often say one thing and mean another when ___."
     },
     {
-     "w": "the crux of the matter",
-     "def": "the most important part of a problem",
-     "ar": "جوهر المسألة",
-     "frame": "The crux of the matter is ___."
+     "w": "a loaded remark",
+     "def": "a comment with a hidden, often critical, meaning",
+     "ar": "ملاحظة مبطّنة",
+     "frame": "My aunt made a loaded remark about ___."
     },
     {
-     "w": "open the floor",
-     "def": "to invite everyone present to speak",
-     "ar": "يفتح باب المشاركة",
-     "frame": "I'd like to open the floor to ___."
+     "w": "catch on to",
+     "def": "to finally understand something that is not obvious",
+     "ar": "ينتبه إلى / يفهم المقصود",
+     "frame": "I didn't catch on to ___ until much later."
     },
     {
-     "w": "for the sake of argument",
-     "def": "assuming something just to discuss it",
-     "ar": "على سبيل الافتراض",
-     "frame": "For the sake of argument, let's say ___."
+     "w": "misread the situation",
+     "def": "to understand what is happening wrongly",
+     "ar": "يسيء فهم الموقف",
+     "frame": "I misread the situation when ___."
     }
    ],
+   "recycle": [
+    "read between the lines",
+    "not exactly",
+    "pick up on",
+    "get the wrong end of the stick"
+   ]
+  },
+  "1-0": {
+   "objective": "Today you will open a seminar by sketching out the background, framing the question and inviting the first contributions.",
+   "warmup": "Think of the best class discussion you've ever had. Who started it, and how?",
    "dialogue": {
     "scene": "Reem is leading a student seminar on how Gulf cities can stay cool as summers get hotter. She opens the discussion with Alia and Hannah.",
     "p1": [
      {
       "s": "Reem",
-      "t": "Shall we kick off? To set the scene, today's article argues that our cities trap heat long after sunset."
+      "t": "Shall we kick off? To sketch out the background, today's article argues that our cities trap heat long after sunset."
      },
      {
       "s": "Alia",
@@ -981,11 +1046,15 @@
      },
      {
       "s": "Reem",
+      "t": "Presumably, but let's not assume. Let's test it against the evidence."
+     },
+     {
+      "s": "Reem",
       "t": "Partly. But I'd frame the question slightly differently: is the problem the materials, or the way we plan streets?"
      },
      {
       "s": "Hannah",
-      "t": "That's the crux of the matter, I think. Old neighbourhoods had narrow, shaded lanes for a reason."
+      "t": "That's the nub of the issue, I think. Old neighbourhoods had narrow, shaded lanes for a reason."
      }
     ],
     "p2": [
@@ -1008,6 +1077,14 @@
      {
       "s": "Alia",
       "t": "Sounds good. Could we start with the quick fixes? They're easier to picture."
+     },
+     {
+      "s": "Reem",
+      "t": "Good choice. Hannah, could you start us off with one quick fix you've actually seen work?"
+     },
+     {
+      "s": "Hannah",
+      "t": "Sure. Our school planted trees along the car park last year, and the cars are noticeably cooler now."
      }
     ],
     "focus": "I'd like to open the floor now.",
@@ -1021,15 +1098,15 @@
     "prompts": [
      {
       "q": "We're all here. How would you like to begin?",
-      "hint": "Kick off the seminar and set the scene in one or two sentences."
+      "hint": "Kick off the seminar and sketch out the background in one or two sentences. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What exactly are we trying to decide today?",
-      "hint": "Frame the question clearly and name the crux of the matter."
+      "hint": "Frame the question clearly and name the nub of the issue. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "I have some thoughts, but who goes first?",
-      "hint": "Open the floor and invite a specific person to start."
+      "hint": "Open the floor and invite a specific person to start. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1045,11 +1122,143 @@
      "What makes someone good at starting a discussion?"
     ]
    },
-   "exit": "Open a seminar on a topic of your choice: set the scene, frame the question and open the floor in two or three sentences."
+   "exit": "Open a seminar on a topic of your choice: sketch out the background, frame the question and open the floor in two or three sentences.",
+   "expressions": [
+    {
+     "w": "kick off",
+     "def": "to start an event or discussion",
+     "ar": "يبدأ / يستهلّ",
+     "frame": "Let's kick off with a quick question about ___."
+    },
+    {
+     "w": "sketch out",
+     "def": "to describe something briefly, giving the main points",
+     "ar": "يرسم الخطوط العريضة",
+     "frame": "To sketch out the background, ___."
+    },
+    {
+     "w": "frame the question",
+     "def": "to state a problem in a particular, clear way",
+     "ar": "يصوغ السؤال",
+     "frame": "I'd frame the question like this: ___?"
+    },
+    {
+     "w": "the nub of the issue",
+     "def": "the most important part of a problem",
+     "ar": "لبّ المسألة",
+     "frame": "The nub of the issue is ___."
+    },
+    {
+     "w": "open the floor",
+     "def": "to invite everyone present to speak",
+     "ar": "يفتح باب المشاركة",
+     "frame": "I'd like to open the floor to ___."
+    },
+    {
+     "w": "for the sake of argument",
+     "def": "assuming something just to discuss it",
+     "ar": "على سبيل الافتراض",
+     "frame": "For the sake of argument, let's say ___."
+    }
+   ],
+   "recycle": [
+    "set the scene",
+    "the crux of the matter"
+   ]
   },
   "1-1": {
    "objective": "Today you will invite quieter participants to speak and politely manage someone who dominates the discussion.",
    "warmup": "In group discussions, are you usually the one who talks most or the one who listens most?",
+   "dialogue": {
+    "scene": "Majed is leading a seminar on whether local dialects are worth protecting. Tom has been talking for five minutes, and Luay hasn't spoken yet.",
+    "p1": [
+     {
+      "s": "Tom",
+      "t": "…and that's why I think dialects will simply disappear. Honestly, that's how languages have always worked."
+     },
+     {
+      "s": "Majed",
+      "t": "Thanks, Tom. You've clearly given this a lot of thought. I'd like to hear from a few other people too."
+     },
+     {
+      "s": "Tom",
+      "t": "Sure, sorry. I do tend to hold the floor."
+     },
+     {
+      "s": "Majed",
+      "t": "No need to apologise; strong opinions keep things lively. Luay, you mentioned your grandmother's Nabati poems earlier. Would you like to come in on this?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Luay",
+      "t": "I would, if I can get a word in edgeways. Those poems only really work in the dialect."
+     },
+     {
+      "s": "Majed",
+      "t": "That's a powerful example. Could you expand on that? What exactly would be lost?"
+     },
+     {
+      "s": "Luay",
+      "t": "The rhythm, the humour, the local references. Standard Arabic can't carry all of it."
+     },
+     {
+      "s": "Majed",
+      "t": "Tom, does that change your view at all? And anyone else is welcome to weigh in."
+     },
+     {
+      "s": "Tom",
+      "t": "It does, slightly. Maybe 'disappear' was too strong."
+     },
+     {
+      "s": "Majed",
+      "t": "That's exactly what a seminar is for: changing our minds when we hear something new."
+     },
+     {
+      "s": "Luay",
+      "t": "And thanks for asking me. I wouldn't have jumped in otherwise."
+     },
+     {
+      "s": "Tom",
+      "t": "Fair point. I suppose I'd rather be convinced than be right."
+     }
+    ],
+    "focus": "Would you like to come in on this?",
+    "qs": [
+     "How does Majed stop Tom politely?",
+     "What example does Luay give, and why is it important?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are chairing a discussion about whether everyone should learn a third language. Your teacher plays two participants: one who talks too much and one who is very quiet.",
+    "prompts": [
+     {
+      "q": "(talkative participant) …and another thing, and another thing…",
+      "hint": "Thank them politely and say you'd like to hear from others. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "(quiet participant) Um… I'm not sure I have much to add.",
+      "hint": "Draw them in: mention something they know and invite them to come in. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "(quiet participant) Well, my cousin learned Korean from TV dramas.",
+      "hint": "Ask them to expand on their example, then invite others to weigh in. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Languages at Risk",
+    "points": [
+     "Linguists estimate that thousands of the world's roughly 7,000 languages could disappear this century.",
+     "Nabati poetry, composed in the spoken Arabic of the Arabian Peninsula, has been passed down for centuries, often by word of mouth.",
+     "Arabic is one of the six official languages of the United Nations, and World Arabic Language Day is marked on 18 December."
+    ],
+    "qs": [
+     "Is it worth protecting a dialect that fewer and fewer people speak? Why?",
+     "How could young people help keep local poetry alive?"
+    ]
+   },
+   "exit": "Imagine one person is dominating your seminar. Say two sentences: one to stop them politely and one to invite someone else in.",
    "expressions": [
     {
      "w": "hear from",
@@ -1076,138 +1285,26 @@
      "frame": "At family dinners, I can hardly get a word in edgeways because ___."
     },
     {
-     "w": "build on",
-     "def": "to develop an idea further",
-     "ar": "يبني على / يطوّر",
-     "frame": "I'd like to build on ___'s point."
+     "w": "expand on",
+     "def": "to give more details about something",
+     "ar": "يتوسّع في",
+     "frame": "I'd like to expand on ___'s point."
     },
     {
-     "w": "chip in",
-     "def": "to add a comment to a conversation",
-     "ar": "يُدلي بدلوه / يضيف",
-     "frame": "Anyone is welcome to chip in about ___."
+     "w": "weigh in",
+     "def": "to join a discussion with your opinion",
+     "ar": "يدلي برأيه",
+     "frame": "Anyone is welcome to weigh in on ___."
     }
    ],
-   "dialogue": {
-    "scene": "Majed is leading a seminar on whether local dialects are worth protecting. Tom has been talking for five minutes, and Luay hasn't spoken yet.",
-    "p1": [
-     {
-      "s": "Tom",
-      "t": "…and that's why I think dialects will simply disappear. Honestly, that's how languages have always worked."
-     },
-     {
-      "s": "Majed",
-      "t": "Thanks, Tom. You've clearly given this a lot of thought. I'd like to hear from a few other people too."
-     },
-     {
-      "s": "Tom",
-      "t": "Sure, sorry. I do tend to hold the floor."
-     },
-     {
-      "s": "Majed",
-      "t": "Not at all. Luay, you mentioned your grandmother's Nabati poems earlier. Would you like to come in on this?"
-     }
-    ],
-    "p2": [
-     {
-      "s": "Luay",
-      "t": "I would, if I can get a word in edgeways. Those poems only really work in the dialect."
-     },
-     {
-      "s": "Majed",
-      "t": "That's a powerful example. Could you build on that? What exactly would be lost?"
-     },
-     {
-      "s": "Luay",
-      "t": "The rhythm, the humour, the local references. Standard Arabic can't carry all of it."
-     },
-     {
-      "s": "Majed",
-      "t": "Tom, does that change your view at all? And anyone else is welcome to chip in."
-     },
-     {
-      "s": "Tom",
-      "t": "It does, slightly. Maybe 'disappear' was too strong."
-     }
-    ],
-    "focus": "Would you like to come in on this?",
-    "qs": [
-     "How does Majed stop Tom politely?",
-     "What example does Luay give, and why is it important?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are chairing a discussion about whether everyone should learn a third language. Your teacher plays two participants: one who talks too much and one who is very quiet.",
-    "prompts": [
-     {
-      "q": "(talkative participant) …and another thing, and another thing…",
-      "hint": "Thank them politely and say you'd like to hear from others."
-     },
-     {
-      "q": "(quiet participant) Um… I'm not sure I have much to add.",
-      "hint": "Draw them in: mention something they know and invite them to come in."
-     },
-     {
-      "q": "(quiet participant) Well, my cousin learned Korean from TV dramas.",
-      "hint": "Ask them to build on their example, then invite others to chip in."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Languages at Risk",
-    "points": [
-     "Linguists estimate that thousands of the world's roughly 7,000 languages could disappear this century.",
-     "Nabati poetry, composed in the spoken Arabic of the Arabian Peninsula, has been passed down for centuries, often by word of mouth.",
-     "Arabic is one of the six official languages of the United Nations, and World Arabic Language Day is marked on 18 December."
-    ],
-    "qs": [
-     "Is it worth protecting a dialect that fewer and fewer people speak? Why?",
-     "How could young people help keep local poetry alive?"
-    ]
-   },
-   "exit": "Imagine one person is dominating your seminar. Say two sentences: one to stop them politely and one to invite someone else in."
+   "recycle": [
+    "build on",
+    "chip in"
+   ]
   },
   "1-2": {
    "objective": "Today you will keep a discussion focused by steering it back from tangents and postponing side issues.",
    "warmup": "Have you ever been in a meeting or lesson that drifted completely off topic? What happened?",
-   "expressions": [
-    {
-     "w": "go off on a tangent",
-     "def": "to start talking about something unrelated",
-     "ar": "يخرج عن الموضوع",
-     "frame": "Our teacher sometimes goes off on a tangent about ___."
-    },
-    {
-     "w": "park a point",
-     "def": "to put an issue aside to discuss later",
-     "ar": "يؤجّل نقطة",
-     "frame": "Let's park the point about ___ for now."
-    },
-    {
-     "w": "bring us back to",
-     "def": "to return a group to the main topic",
-     "ar": "يعيدنا إلى",
-     "frame": "Let me bring us back to ___."
-    },
-    {
-     "w": "lose the thread",
-     "def": "to forget what a discussion is about",
-     "ar": "يفقد خيط الحديث",
-     "frame": "I lost the thread when ___."
-    },
-    {
-     "w": "get bogged down in",
-     "def": "to become stuck in details and make no progress",
-     "ar": "يغرق في (التفاصيل)",
-     "frame": "We shouldn't get bogged down in ___."
-    },
-    {
-     "w": "come back to",
-     "def": "to return to a topic later",
-     "ar": "يعود إلى",
-     "frame": "We'll come back to ___ after the break."
-    }
-   ],
    "dialogue": {
     "scene": "Nasser is leading a seminar on how Saudi Arabia can use water more sustainably. The discussion keeps drifting.",
     "p1": [
@@ -1235,7 +1332,7 @@
     "p2": [
      {
       "s": "Hamad",
-      "t": "Sorry, I've lost the thread a little. What's the main question again?"
+      "t": "Sorry, I'm a bit all at sea. What's the main question again?"
      },
      {
       "s": "Nasser",
@@ -1247,11 +1344,19 @@
      },
      {
       "s": "Nasser",
-      "t": "Good. Ziad, I promise we'll come back to the history point at the end, if there's time."
+      "t": "Good. Ziad, I promise we'll revisit the history point at the end, if there's time."
      },
      {
       "s": "Ziad",
       "t": "Fair enough. I'll save my shark facts for the break."
+     },
+     {
+      "s": "Nasser",
+      "t": "Deal. Right, Hamad, you said both matter. Which would you fund first?"
+     },
+     {
+      "s": "Hamad",
+      "t": "Household habits, because they cost almost nothing and work immediately."
      }
     ],
     "focus": "Let me bring us back to water use at home.",
@@ -1265,15 +1370,15 @@
     "prompts": [
      {
       "q": "By the way, have you tried that new burger place near the mall?",
-      "hint": "Acknowledge it briefly, then bring the group back to the topic."
+      "hint": "Acknowledge it briefly, then bring the group back to the topic. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Actually, there's a fascinating history of buffets I could tell you…",
-      "hint": "Park the point politely and promise to come back to it if there's time."
+      "hint": "Park the point politely and promise to revisit it if there's time. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Wait, what were we discussing again?",
-      "hint": "Restate the main question clearly so nobody loses the thread."
+      "hint": "Restate the main question clearly so nobody is all at sea. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1289,17 +1394,149 @@
      "Which matters more: changing habits or improving technology?"
     ]
    },
-   "exit": "Imagine your discussion has drifted. Say two sentences to bring it back on track without being rude."
+   "exit": "Imagine your discussion has drifted. Say two sentences to bring it back on track without being rude.",
+   "expressions": [
+    {
+     "w": "go off on a tangent",
+     "def": "to start talking about something unrelated",
+     "ar": "يخرج عن الموضوع",
+     "frame": "Our teacher sometimes goes off on a tangent about ___."
+    },
+    {
+     "w": "park a point",
+     "def": "to put an issue aside to discuss later",
+     "ar": "يؤجّل نقطة",
+     "frame": "Let's park the point about ___ for now."
+    },
+    {
+     "w": "bring us back to",
+     "def": "to return a group to the main topic",
+     "ar": "يعيدنا إلى",
+     "frame": "Let me bring us back to ___."
+    },
+    {
+     "w": "be all at sea",
+     "def": "to be completely confused",
+     "ar": "تائه / مرتبك تماماً",
+     "frame": "I was all at sea when ___."
+    },
+    {
+     "w": "get bogged down in",
+     "def": "to become stuck in details and make no progress",
+     "ar": "يغرق في (التفاصيل)",
+     "frame": "We shouldn't get bogged down in ___."
+    },
+    {
+     "w": "revisit",
+     "def": "to return to a topic and consider it again",
+     "ar": "يعود إلى الموضوع لاحقاً",
+     "frame": "We'll revisit ___ after the break."
+    }
+   ],
+   "recycle": [
+    "lose the thread",
+    "come back to"
+   ]
   },
   "1-3": {
    "objective": "Today you will summarise the views in a discussion fairly and identify the core disagreement.",
    "warmup": "When you explain a long discussion to someone who missed it, how do you keep it short?",
+   "dialogue": {
+    "scene": "Sultan is leading a seminar on whether new buildings in Riyadh should copy traditional Najdi style. Halfway through, he summarises the views so far.",
+    "p1": [
+     {
+      "s": "Bader",
+      "t": "Mud-brick looks beautiful, but nobody wants to live like it's two hundred years ago."
+     },
+     {
+      "s": "Jack",
+      "t": "Traditional designs actually kept homes cool, though: thick walls, small windows, shaded courtyards."
+     },
+     {
+      "s": "Bader",
+      "t": "Fine, but you can't build a forty-storey office tower out of mud."
+     },
+     {
+      "s": "Jack",
+      "t": "Of course not, and nobody's suggesting that. It's about learning from the design."
+     },
+     {
+      "s": "Sultan",
+      "t": "Let me pause to summarise before we go further. Broadly speaking, we've heard two positions."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sultan",
+      "t": "Bader sees traditional style as beautiful but impractical. Jack sees practical lessons in it, especially for heat. Does that do justice to you both?"
+     },
+     {
+      "s": "Jack",
+      "t": "That's the gist of it, yes."
+     },
+     {
+      "s": "Sultan",
+      "t": "So the short version is that the disagreement seems to boil down to this: copying the look, or learning from the logic."
+     },
+     {
+      "s": "Bader",
+      "t": "I'd accept that summary. I'm against copying the look, not against learning from it."
+     },
+     {
+      "s": "Sultan",
+      "t": "Then perhaps we're closer than it seemed. Shall we test that with a real example?"
+     },
+     {
+      "s": "Jack",
+      "t": "Good idea. The Diriyah restoration might be a useful example to test."
+     },
+     {
+      "s": "Bader",
+      "t": "Agreed, as long as we talk about how it works, not just how it looks."
+     }
+    ],
+    "focus": "Broadly speaking, we've heard two positions.",
+    "qs": [
+     "What two positions does Sultan summarise?",
+     "What does the disagreement 'boil down to', according to Sultan?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are leading a discussion about whether school uniforms should be kept. Your teacher gives three different views, and you summarise them.",
+    "prompts": [
+     {
+      "q": "Some say uniforms save time, some say they limit self-expression, and a few want them optional on Thursdays. Can you sum that up?",
+      "hint": "Summarise the views in one or two sentences, starting with 'Broadly speaking, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What's the short version of the main disagreement?",
+      "hint": "Use 'It boils down to …' to state the core issue. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Is your summary fair to everyone?",
+      "hint": "Check with the group, e.g. 'Does that do justice to your view?' Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Learning from Mud-Brick",
+    "points": [
+     "At-Turaif in Diriyah, the mud-brick district that was the first capital of the Saudi state, became a UNESCO World Heritage Site in 2010.",
+     "Traditional Najdi houses used thick earthen walls, small windows and inner courtyards to stay cool in summer.",
+     "Architects around the world now study traditional buildings to design more energy-efficient homes."
+    ],
+    "qs": [
+     "Should new buildings in your city look traditional, modern or both?",
+     "What can modern designers learn from older buildings?"
+    ]
+   },
+   "exit": "Summarise a discussion you've had recently in two sentences, using 'Broadly speaking' and 'It boils down to'.",
    "expressions": [
     {
-     "w": "recap",
-     "def": "to repeat the main points briefly",
-     "ar": "يلخّص / يستعرض باختصار",
-     "frame": "Let me recap what we said about ___."
+     "w": "pause to summarise",
+     "def": "to stop briefly and repeat the main points",
+     "ar": "يتوقف ليلخّص",
+     "frame": "Let me pause to summarise what ___ said."
     },
     {
      "w": "broadly speaking",
@@ -1308,10 +1545,10 @@
      "frame": "Broadly speaking, people in my family think ___."
     },
     {
-     "w": "in a nutshell",
-     "def": "in very few words",
+     "w": "the short version is",
+     "def": "used before giving a very brief summary",
      "ar": "باختصار شديد",
-     "frame": "In a nutshell, my view on ___ is ___."
+     "frame": "The short version is that ___."
     },
     {
      "w": "boil down to",
@@ -1332,84 +1569,10 @@
      "frame": "I hope my summary does justice to ___'s view."
     }
    ],
-   "dialogue": {
-    "scene": "Sultan is leading a seminar on whether new buildings in Riyadh should copy traditional Najdi style. Halfway through, he summarises the views so far.",
-    "p1": [
-     {
-      "s": "Bader",
-      "t": "Mud-brick looks beautiful, but nobody wants to live like it's two hundred years ago."
-     },
-     {
-      "s": "Jack",
-      "t": "Traditional designs actually kept homes cool, though: thick walls, small windows, shaded courtyards."
-     },
-     {
-      "s": "Bader",
-      "t": "Fine, but you can't build a forty-storey office tower out of mud."
-     },
-     {
-      "s": "Sultan",
-      "t": "Let me recap before we go further. Broadly speaking, we've heard two positions."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Sultan",
-      "t": "Bader sees traditional style as beautiful but impractical. Jack sees practical lessons in it, especially for heat. Does that do justice to you both?"
-     },
-     {
-      "s": "Jack",
-      "t": "That's the gist of it, yes."
-     },
-     {
-      "s": "Sultan",
-      "t": "So in a nutshell, the disagreement seems to boil down to this: copying the look, or learning from the logic."
-     },
-     {
-      "s": "Bader",
-      "t": "I'd accept that summary. I'm against copying the look, not against learning from it."
-     },
-     {
-      "s": "Sultan",
-      "t": "Then perhaps we're closer than it seemed. Shall we test that with a real example?"
-     }
-    ],
-    "focus": "Broadly speaking, we've heard two positions.",
-    "qs": [
-     "What two positions does Sultan summarise?",
-     "What does the disagreement 'boil down to', according to Sultan?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are leading a discussion about whether school uniforms should be kept. Your teacher gives three different views, and you summarise them.",
-    "prompts": [
-     {
-      "q": "Some say uniforms save time, some say they limit self-expression, and a few want them optional on Thursdays. Can you sum that up?",
-      "hint": "Recap the views in one or two sentences, starting with 'Broadly speaking, …'."
-     },
-     {
-      "q": "What's the main disagreement, in a nutshell?",
-      "hint": "Use 'It boils down to …' to state the core issue."
-     },
-     {
-      "q": "Is your summary fair to everyone?",
-      "hint": "Check with the group, e.g. 'Does that do justice to your view?'"
-     }
-    ]
-   },
-   "culture": {
-    "title": "Learning from Mud-Brick",
-    "points": [
-     "At-Turaif in Diriyah, the mud-brick district that was the first capital of the Saudi state, became a UNESCO World Heritage Site in 2010.",
-     "Traditional Najdi houses used thick earthen walls, small windows and inner courtyards to stay cool in summer.",
-     "Architects around the world now study traditional buildings to design more energy-efficient homes."
-    ],
-    "qs": [
-     "Should new buildings in your city look traditional, modern or both?",
-     "What can modern designers learn from older buildings?"
-    ]
-   },
-   "exit": "Summarise a discussion you've had recently in two sentences, using 'Broadly speaking' and 'It boils down to'."
+   "recycle": [
+    "in a nutshell",
+    "recap"
+   ]
   },
   "1-4": {
    "objective": "Today you will synthesise different views into a shared position by finding common ground.",
@@ -1468,6 +1631,10 @@
       "t": "True, though the healthy options cost more, and nobody wants a sad, expensive salad."
      },
      {
+      "s": "Emily",
+      "t": "That's a fair point. Price shapes habits as much as rules do."
+     },
+     {
       "s": "Lina",
       "t": "Let me try to draw the threads together. What seems to be emerging is that you both care about students' wellbeing."
      }
@@ -1492,6 +1659,14 @@
      {
       "s": "Emily",
       "t": "If treats stay but healthy food becomes cheaper and tastier, that's a middle way I can live with."
+     },
+     {
+      "s": "Lina",
+      "t": "Then that's our recommendation: keep choice, but make the healthy options the easy ones."
+     },
+     {
+      "s": "Mona",
+      "t": "I can live with that, especially if the salads stop being sad."
      }
     ],
     "focus": "What seems to be emerging is that you both care about students' wellbeing.",
@@ -1505,15 +1680,15 @@
     "prompts": [
      {
       "q": "View 1: jobs teach responsibility. View 2: jobs take time away from study. What do they have in common?",
-      "hint": "Find the common ground, e.g. both care about the student's future."
+      "hint": "Find the common ground, e.g. both care about the student's future. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Can these views be reconciled?",
-      "hint": "Suggest a middle way that satisfies both, e.g. limited weekend hours."
+      "hint": "Suggest a middle way that satisfies both, e.g. limited weekend hours. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Give the group a final synthesis.",
-      "hint": "Start with 'Drawing the threads together, …' and combine both views in one position."
+      "hint": "Start with 'Drawing the threads together, …' and combine both views in one position. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1534,18 +1709,108 @@
   "1-5": {
    "objective": "Today you will chair a complete seminar from opening to closing synthesis.",
    "warmup": "If you could chair a discussion with any three people, who would you invite and what would you discuss?",
+   "dialogue": {
+    "scene": "Rakan chairs a student seminar on whether Arabizi, Arabic written in Latin letters and numbers, is a threat to Arabic. It is almost time to finish.",
+    "p1": [
+     {
+      "s": "Rakan",
+      "t": "We've got five minutes left, so let's take stock. A recurring theme has been convenience versus identity."
+     },
+     {
+      "s": "Yasser",
+      "t": "Right. Arabizi is quick to type, but I worry my younger cousins can't spell properly in Arabic."
+     },
+     {
+      "s": "Ben",
+      "t": "In fairness to Arabizi, people use it in informal chats, not in essays."
+     },
+     {
+      "s": "Rakan",
+      "t": "Good point. Before we bring things to a close, I'd like to open the floor to anyone who hasn't spoken yet."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Yasser",
+      "t": "Just one thing: Arabic keyboards are easy now, so the original reason for Arabizi has almost gone."
+     },
+     {
+      "s": "Rakan",
+      "t": "Thanks, Yasser. Let me draw the threads together. Nobody here thinks Arabizi will replace Arabic."
+     },
+     {
+      "s": "Ben",
+      "t": "Agreed. Even my little brother, who only writes Arabizi, reads Arabic books at school."
+     },
+     {
+      "s": "Rakan",
+      "t": "The real concern is young learners. So perhaps our position is: informal Arabizi is harmless, provided schools keep standards high."
+     },
+     {
+      "s": "Yasser",
+      "t": "That's a fair synthesis. I'd sign up to that."
+     },
+     {
+      "s": "Ben",
+      "t": "Me too, though I'd love a follow-up seminar on emojis."
+     },
+     {
+      "s": "Rakan",
+      "t": "Let's take a straw poll before we go: hands up if you agree with that position."
+     },
+     {
+      "s": "Ben",
+      "t": "Every hand is up. A common thread at last!"
+     }
+    ],
+    "focus": "Let me draw the threads together.",
+    "qs": [
+     "What recurring theme does Rakan identify?",
+     "What final position does the group agree on?"
+    ]
+   },
+   "speakout": {
+    "scene": "Chair a short seminar with your teacher on the question 'Should Saudi universities teach more courses in Arabic?' Lead it from start to finish.",
+    "prompts": [
+     {
+      "q": "(as a participant) So, what's today's question?",
+      "hint": "Kick off: set the scene and frame the question clearly. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "(as a participant) Courses in English prepare us for global jobs, and another thing, and another thing…",
+      "hint": "Manage the long turn politely and invite a different view. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "(as a participant) I think we've covered everything. Can you bring things to a close?",
+      "hint": "Take stock, draw the threads together and state a shared position. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Arabic in the Digital Age",
+    "points": [
+     "Arabizi, which uses numbers such as 3 and 7 for Arabic sounds, spread with early mobile phones that had no Arabic keyboard.",
+     "Today, Arabic is one of the most widely used languages on the internet.",
+     "Saudi Arabia has established the King Salman Global Academy for the Arabic Language to promote and develop Arabic."
+    ],
+    "qs": [
+     "Do you ever write in Arabizi? When and why?",
+     "How can Arabic stay strong in a world of English-language technology?"
+    ]
+   },
+   "exit": "Bring an imaginary seminar to a close in two or three sentences: take stock, draw the threads together and give a shared conclusion.",
    "expressions": [
     {
-     "w": "open the floor",
-     "def": "to invite everyone present to speak",
-     "ar": "يفتح باب المشاركة",
-     "frame": "Before we finish, I'll open the floor to ___."
+     "w": "take a straw poll",
+     "def": "to ask people quickly and informally what they think",
+     "ar": "يجري استطلاعاً سريعاً غير رسمي",
+     "frame": "Let's take a straw poll on ___."
     },
     {
-     "w": "draw the threads together",
-     "def": "to combine different ideas into one clear picture",
-     "ar": "يجمع الخيوط / يربط الأفكار",
-     "frame": "Drawing the threads together, ___."
+     "w": "a common thread",
+     "def": "an idea or feature that several things share",
+     "ar": "خيط مشترك",
+     "frame": "The common thread in all our ideas is ___."
     },
     {
      "w": "take stock",
@@ -1566,94 +1831,17 @@
      "frame": "In fairness to ___, they did ___."
     },
     {
-     "w": "wrap up",
+     "w": "bring things to a close",
      "def": "to finish a meeting or discussion",
-     "ar": "يختتم",
-     "frame": "Let's wrap up with ___."
+     "ar": "يختتم النقاش",
+     "frame": "Let's bring things to a close with ___."
     }
    ],
-   "dialogue": {
-    "scene": "Rakan chairs a student seminar on whether Arabizi, Arabic written in Latin letters and numbers, is a threat to Arabic. It is almost time to finish.",
-    "p1": [
-     {
-      "s": "Rakan",
-      "t": "We've got five minutes left, so let's take stock. A recurring theme has been convenience versus identity."
-     },
-     {
-      "s": "Yasser",
-      "t": "Right. Arabizi is quick to type, but I worry my younger cousins can't spell properly in Arabic."
-     },
-     {
-      "s": "Ben",
-      "t": "In fairness to Arabizi, people use it in informal chats, not in essays."
-     },
-     {
-      "s": "Rakan",
-      "t": "Good point. Before we wrap up, I'd like to open the floor to anyone who hasn't spoken yet."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Yasser",
-      "t": "Just one thing: Arabic keyboards are easy now, so the original reason for Arabizi has almost gone."
-     },
-     {
-      "s": "Rakan",
-      "t": "Thanks, Yasser. Let me draw the threads together. Nobody here thinks Arabizi will replace Arabic."
-     },
-     {
-      "s": "Ben",
-      "t": "Agreed."
-     },
-     {
-      "s": "Rakan",
-      "t": "The real concern is young learners. So perhaps our position is: informal Arabizi is harmless, provided schools keep standards high."
-     },
-     {
-      "s": "Yasser",
-      "t": "That's a fair synthesis. I'd sign up to that."
-     },
-     {
-      "s": "Ben",
-      "t": "Me too, though I'd love a follow-up seminar on emojis."
-     }
-    ],
-    "focus": "Let me draw the threads together.",
-    "qs": [
-     "What recurring theme does Rakan identify?",
-     "What final position does the group agree on?"
-    ]
-   },
-   "speakout": {
-    "scene": "Chair a short seminar with your teacher on the question 'Should Saudi universities teach more courses in Arabic?' Lead it from start to finish.",
-    "prompts": [
-     {
-      "q": "(as a participant) So, what's today's question?",
-      "hint": "Kick off: set the scene and frame the question clearly."
-     },
-     {
-      "q": "(as a participant) Courses in English prepare us for global jobs, and another thing, and another thing…",
-      "hint": "Manage the long turn politely and invite a different view."
-     },
-     {
-      "q": "(as a participant) I think we've covered everything. Can you wrap up?",
-      "hint": "Take stock, draw the threads together and state a shared position."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Arabic in the Digital Age",
-    "points": [
-     "Arabizi, which uses numbers such as 3 and 7 for Arabic sounds, spread with early mobile phones that had no Arabic keyboard.",
-     "Today, Arabic is one of the most widely used languages on the internet.",
-     "Saudi Arabia has established the King Salman Global Academy for the Arabic Language to promote and develop Arabic."
-    ],
-    "qs": [
-     "Do you ever write in Arabizi? When and why?",
-     "How can Arabic stay strong in a world of English-language technology?"
-    ]
-   },
-   "exit": "Wrap up an imaginary seminar in two or three sentences: take stock, draw the threads together and give a shared conclusion."
+   "recycle": [
+    "open the floor",
+    "draw the threads together",
+    "wrap up"
+   ]
   },
   "2-0": {
    "objective": "Today you will recognise loaded questions in public and reject their false premises calmly.",
@@ -1718,6 +1906,14 @@
      {
       "s": "Turki",
       "t": "I'd reject the premise. The lanes are for walkers, runners and families too, and they could reduce short car trips."
+     },
+     {
+      "s": "Mr Saleh",
+      "t": "Families? In this heat, who's going to walk anywhere?"
+     },
+     {
+      "s": "Turki",
+      "t": "Fair question. That's why the plan includes shade trees and evening lighting, when most people go out anyway."
      }
     ],
     "p2": [
@@ -1740,6 +1936,18 @@
      {
       "s": "Turki",
       "t": "That's a false choice. Many cities have redesigned roads so that cars, bikes and pedestrians all fit safely."
+     },
+     {
+      "s": "Grace",
+      "t": "Mr Saleh, does that answer your concern?"
+     },
+     {
+      "s": "Mr Saleh",
+      "t": "Partly. I'd want to see the designs before I'm convinced, but I'll look at them."
+     },
+     {
+      "s": "Turki",
+      "t": "That's all I ask. The plans are on the council website."
      }
     ],
     "focus": "I'd reject the premise.",
@@ -1753,15 +1961,15 @@
     "prompts": [
      {
       "q": "Why are you wasting public money on grass while people can't find parking?",
-      "hint": "Point out the loaded assumption and reject the premise calmly."
+      "hint": "Point out the loaded assumption and reject the premise calmly. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "So you think parking doesn't matter at all?",
-      "hint": "Say they're putting words in your mouth, then state your real position 'for the record'."
+      "hint": "Say they're putting words in your mouth, then state your real position 'for the record'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "It's simple: either we have parking or we have a park.",
-      "hint": "Call it a false choice and suggest how both could work."
+      "hint": "Call it a false choice and suggest how both could work. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1833,7 +2041,7 @@
      },
      {
       "s": "Liam",
-      "t": "But surely exams are the fairest test of knowledge?"
+      "t": "But surely exams are the fairest test of knowledge? Everyone sits the same paper under the same conditions."
      },
      {
       "s": "Nawaf",
@@ -1864,6 +2072,14 @@
      {
       "s": "Nawaf",
       "t": "That was the idea. If we only ask 'easier or harder?', we'll never get a useful answer."
+     },
+     {
+      "s": "Liam",
+      "t": "Fair. So next time someone asks me 'easier or harder?', I'll ask what we're measuring."
+     },
+     {
+      "s": "Nawaf",
+      "t": "Exactly. Change the question, and you often change the whole conversation."
      }
     ],
     "focus": "The real question isn't easier or harder; it's what we actually want to measure.",
@@ -1877,15 +2093,15 @@
     "prompts": [
      {
       "q": "Isn't this simply taking away students' freedom?",
-      "hint": "Reframe it: 'The real question is …', e.g. what the school should encourage."
+      "hint": "Reframe it: 'The real question is …', e.g. what the school should encourage. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "But teenagers can decide for themselves, can't they?",
-      "hint": "Accept part of the point, then shift the focus to something bigger."
+      "hint": "Accept part of the point, then shift the focus to something bigger. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "So, in one sentence, what is this debate really about?",
-      "hint": "State the core issue with 'At its core, …'."
+      "hint": "State the core issue with 'At its core, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1967,7 +2183,7 @@
     "p2": [
      {
       "s": "Ruba",
-      "t": "So you admit it was a mistake?"
+      "t": "That's quite an admission. So you admit it was a mistake?"
      },
      {
       "s": "Lama",
@@ -1975,7 +2191,7 @@
      },
      {
       "s": "Ruba",
-      "t": "Some students say you only care about your own year."
+      "t": "Some students say you only care about your own year. How do you respond to that?"
      },
      {
       "s": "Lama",
@@ -1988,6 +2204,14 @@
      {
       "s": "Lama",
       "t": "Keeping my composure is part of the job. Getting rattled wouldn't help anyone."
+     },
+     {
+      "s": "Ruba",
+      "t": "Last question: would you do anything differently?"
+     },
+     {
+      "s": "Lama",
+      "t": "Yes. I'd explain the budget earlier, so nobody feels left out when the plans are announced."
      }
     ],
     "focus": "That's a fair challenge, and I'm happy to answer it.",
@@ -2001,15 +2225,15 @@
     "prompts": [
      {
       "q": "Your event was a failure, wasn't it?",
-      "hint": "Stay calm: call it a fair challenge, then give one positive fact."
+      "hint": "Stay calm: call it a fair challenge, then give one positive fact. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "You promised ten thousand riyals and raised four. Are you going to dodge that?",
-      "hint": "Concede the point clearly, then explain what you learned."
+      "hint": "Concede the point clearly, then explain what you learned. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Some people think you should step down from the committee. Will you?",
-      "hint": "Stand your ground politely and give a reason."
+      "hint": "Stand your ground politely and give a reason. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2030,44 +2254,6 @@
   "2-3": {
    "objective": "Today you will challenge misleading statistics and quotations in a public debate.",
    "warmup": "Have you ever seen a statistic online that sounded shocking? Did you believe it?",
-   "expressions": [
-    {
-     "w": "cherry-pick",
-     "def": "to choose only the facts that support your view",
-     "ar": "ينتقي ما يناسبه فقط",
-     "frame": "If you cherry-pick data about ___, you can prove anything."
-    },
-    {
-     "w": "take something out of context",
-     "def": "to quote words without the situation that explains them",
-     "ar": "يقتطع من السياق",
-     "frame": "My words about ___ were taken out of context."
-    },
-    {
-     "w": "bear out",
-     "def": "to show that something is true",
-     "ar": "يؤكّد / يدعم",
-     "frame": "The results don't bear out the claim that ___."
-    },
-    {
-     "w": "the evidence points to",
-     "def": "the facts suggest",
-     "ar": "تشير الأدلة إلى",
-     "frame": "The evidence points to ___."
-    },
-    {
-     "w": "a sweeping generalisation",
-     "def": "a statement that wrongly applies to everyone",
-     "ar": "تعميم شامل مُفرِط",
-     "frame": "Saying that all ___ are ___ is a sweeping generalisation."
-    },
-    {
-     "w": "mistake correlation for causation",
-     "def": "to think that because two things occur together, one causes the other",
-     "ar": "يخلط بين الارتباط والسببية",
-     "frame": "People mistake correlation for causation when they say ___."
-    }
-   ],
    "dialogue": {
     "scene": "In a public school debate on banning energy drinks for under-18s, Saud faces an opponent, Daniel, who quotes doubtful statistics.",
     "p1": [
@@ -2095,7 +2281,7 @@
     "p2": [
      {
       "s": "Saud",
-      "t": "That's a sweeping generalisation. Some athletes use them carefully before training."
+      "t": "That's a blanket statement. Some athletes use them carefully before training."
      },
      {
       "s": "Daniel",
@@ -2107,11 +2293,31 @@
      },
      {
       "s": "Daniel",
+      "t": "Well, I only had time to read the headline."
+     },
+     {
+      "s": "Saud",
+      "t": "That's exactly how misleading claims spread. Headlines are written to grab attention, not to explain."
+     },
+     {
+      "s": "Daniel",
       "t": "So you think they're harmless?"
      },
      {
       "s": "Saud",
-      "t": "No. The evidence points to real risks for teenagers, but your statistics don't bear out your claim. Don't cherry-pick."
+      "t": "No. The evidence points to real risks for teenagers, but your statistics don't bear out your claim. Don't quote selectively."
+     },
+     {
+      "s": "Daniel",
+      "t": "So what would convince you?"
+     },
+     {
+      "s": "Saud",
+      "t": "A study comparing similar students who do and don't drink them, over a whole year. Then we'd have something to debate."
+     },
+     {
+      "s": "Daniel",
+      "t": "Fair enough. I'll find better evidence for the next round."
      }
     ],
     "focus": "You've taken her words out of context.",
@@ -2125,15 +2331,15 @@
     "prompts": [
      {
       "q": "Eighty percent of aggressive teenagers play video games. Isn't that proof?",
-      "hint": "Point out the correlation-causation problem; ask what share of all teenagers play."
+      "hint": "Point out the correlation-causation problem; ask what share of all teenagers play. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "A famous scientist said games 'change the brain'. Doesn't that settle it?",
-      "hint": "Suggest the quotation may be out of context and ask what she actually said."
+      "hint": "Suggest the quotation may be out of context and ask what she actually said. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Gamers are all antisocial. Everybody knows that.",
-      "hint": "Call it a sweeping generalisation and give a counter-example."
+      "hint": "Call it a blanket statement and give a counter-example."
      }
     ]
    },
@@ -2149,59 +2355,63 @@
      "How can ordinary people check a claim they see online?"
     ]
    },
-   "exit": "Challenge this claim in two sentences: 'Cities with more hospitals have more sick people, so hospitals make people ill.'"
+   "exit": "Challenge this claim in two sentences: 'Cities with more hospitals have more sick people, so hospitals make people ill.'",
+   "expressions": [
+    {
+     "w": "quote selectively",
+     "def": "to use only the parts of a source that support your view",
+     "ar": "يقتبس بانتقائية",
+     "frame": "If you quote selectively from ___, you can prove anything."
+    },
+    {
+     "w": "take something out of context",
+     "def": "to quote words without the situation that explains them",
+     "ar": "يقتطع من السياق",
+     "frame": "My words about ___ were taken out of context."
+    },
+    {
+     "w": "bear out",
+     "def": "to show that something is true",
+     "ar": "يؤكّد / يدعم",
+     "frame": "The results don't bear out the claim that ___."
+    },
+    {
+     "w": "the evidence points to",
+     "def": "the facts suggest",
+     "ar": "تشير الأدلة إلى",
+     "frame": "The evidence points to ___."
+    },
+    {
+     "w": "a blanket statement",
+     "def": "a statement that wrongly claims something is true in every case",
+     "ar": "تعميم شامل",
+     "frame": "Saying that all ___ are ___ is a blanket statement."
+    },
+    {
+     "w": "mistake correlation for causation",
+     "def": "to think that because two things occur together, one causes the other",
+     "ar": "يخلط بين الارتباط والسببية",
+     "frame": "People mistake correlation for causation when they say ___."
+    }
+   ],
+   "recycle": [
+    "cherry-pick",
+    "a sweeping generalisation"
+   ]
   },
   "2-4": {
    "objective": "Today you will persuade an undecided audience by connecting with their values and offering a fair compromise.",
    "warmup": "What is the last thing someone persuaded you to do? What finally changed your mind?",
-   "expressions": [
-    {
-     "w": "win someone over",
-     "def": "to persuade someone to support you",
-     "ar": "يكسب تأييد",
-     "frame": "To win over my parents about ___, I'd ___."
-    },
-    {
-     "w": "strike a chord",
-     "def": "to make people feel emotionally connected",
-     "ar": "يلامس وتراً / يلقى صدى",
-     "frame": "Stories about ___ always strike a chord with me."
-    },
-    {
-     "w": "meet someone halfway",
-     "def": "to reach a compromise",
-     "ar": "يلتقي في منتصف الطريق",
-     "frame": "I'd meet my brother halfway by ___."
-    },
-    {
-     "w": "the bigger picture",
-     "def": "the whole situation, not just details",
-     "ar": "الصورة الأشمل",
-     "frame": "If we look at the bigger picture, ___."
-    },
-    {
-     "w": "make common cause with",
-     "def": "to join with others to achieve a shared aim",
-     "ar": "يتّحد مع / يتكاتف مع",
-     "frame": "Students could make common cause with ___ to ___."
-    },
-    {
-     "w": "make a compelling case",
-     "def": "to argue in a very convincing way",
-     "ar": "يقدّم حجة مقنعة",
-     "frame": "I could make a compelling case for ___."
-    }
-   ],
    "dialogue": {
     "scene": "Hamza and his friend Liam are preparing the closing speech for a public debate on whether their neighbourhood should turn a gravel lot into a shaded garden. Many residents are undecided.",
     "p1": [
      {
       "s": "Liam",
-      "t": "Half the audience hasn't decided yet. How do we win them over?"
+      "t": "Half the audience hasn't decided yet. How do we sway them?"
      },
      {
       "s": "Hamza",
-      "t": "Facts alone won't do it. We need something that strikes a chord with families."
+      "t": "Facts alone won't do it. We need something that touches families' hearts."
      },
      {
       "s": "Liam",
@@ -2210,6 +2420,14 @@
      {
       "s": "Hamza",
       "t": "Children playing outside in the evening. Everyone remembers doing that."
+     },
+     {
+      "s": "Liam",
+      "t": "That's true. My dad still talks about playing football in the street until the call to prayer."
+     },
+     {
+      "s": "Hamza",
+      "t": "Then use his story. One real memory is worth more than ten statistics."
      }
     ],
     "p2": [
@@ -2219,11 +2437,11 @@
      },
      {
       "s": "Hamza",
-      "t": "We meet them halfway: keep twenty spaces at the edge and plant trees in the rest."
+      "t": "We meet them halfway. Some of them park there every evening, so we keep twenty spaces at the edge and plant trees in the rest."
      },
      {
       "s": "Liam",
-      "t": "Then we should end with the bigger picture, not just our street."
+      "t": "Then we should end by taking the long view, not just talking about our street."
      },
      {
       "s": "Hamza",
@@ -2232,11 +2450,19 @@
      {
       "s": "Liam",
       "t": "That makes a compelling case. Even the parking group might clap."
+     },
+     {
+      "s": "Hamza",
+      "t": "Let's hope so. And if they don't, at least they'll leave thinking about it."
+     },
+     {
+      "s": "Liam",
+      "t": "Either way, we'll have argued fairly. That matters too."
      }
     ],
-    "focus": "We need something that strikes a chord with families.",
+    "focus": "We need something that touches families' hearts.",
     "qs": [
-     "Why does Hamza think facts alone won't win over the audience?",
+     "Why does Hamza think facts alone won't sway the audience?",
      "How do they plan to meet the parking group halfway?"
     ]
    },
@@ -2245,15 +2471,15 @@
     "prompts": [
      {
       "q": "I can see both sides. Why should I support you?",
-      "hint": "Strike a chord: link the idea to something people value, like family time."
+      "hint": "Touch people's hearts: link the idea to something people value, like family time. Then give your view, a reason and an example, and admit one point against you before answering it."
      },
      {
       "q": "But I need my car to reach the shops.",
-      "hint": "Meet them halfway with a practical compromise."
+      "hint": "Meet them halfway with a practical compromise. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Give me your final sentence.",
-      "hint": "End with the bigger picture and a memorable line."
+      "hint": "End by taking the long view, with a memorable line. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      }
     ]
    },
@@ -2269,49 +2495,54 @@
      "What argument would win over people who don't care about the environment?"
     ]
    },
-   "exit": "Win me over in two sentences to an idea you believe in: strike a chord and show me the bigger picture."
+   "exit": "Sway me in two sentences towards an idea you believe in: touch my heart and take the long view.",
+   "expressions": [
+    {
+     "w": "sway",
+     "def": "to influence someone so that they change their opinion",
+     "ar": "يستميل / يؤثّر في رأي",
+     "frame": "To sway my parents about ___, I would ___."
+    },
+    {
+     "w": "touch people's hearts",
+     "def": "to make people feel strong, warm emotions",
+     "ar": "يلامس القلوب",
+     "frame": "Stories about ___ always touch people's hearts."
+    },
+    {
+     "w": "meet someone halfway",
+     "def": "to reach a compromise",
+     "ar": "يلتقي في منتصف الطريق",
+     "frame": "I'd meet my brother halfway by ___."
+    },
+    {
+     "w": "take the long view",
+     "def": "to consider what will happen far in the future",
+     "ar": "ينظر إلى المدى البعيد",
+     "frame": "If we take the long view, ___."
+    },
+    {
+     "w": "make common cause with",
+     "def": "to join with others to achieve a shared aim",
+     "ar": "يتّحد مع / يتكاتف مع",
+     "frame": "Students could make common cause with ___ to ___."
+    },
+    {
+     "w": "make a compelling case",
+     "def": "to argue in a very convincing way",
+     "ar": "يقدّم حجة مقنعة",
+     "frame": "I could make a compelling case for ___."
+    }
+   ],
+   "recycle": [
+    "win someone over",
+    "strike a chord",
+    "the bigger picture"
+   ]
   },
   "2-5": {
    "objective": "Today you will take part in a public debate, handling hostile questions, reframing the issue and delivering a closing statement.",
    "warmup": "Which famous place in Saudi Arabia or abroad have you visited that felt too crowded?",
-   "expressions": [
-    {
-     "w": "reject the premise",
-     "def": "to refuse to accept the idea a question is based on",
-     "ar": "يرفض الفرضية",
-     "frame": "I'd reject the premise that ___."
-    },
-    {
-     "w": "the real question is",
-     "def": "introduces the issue you think matters most",
-     "ar": "السؤال الحقيقي هو",
-     "frame": "The real question is whether ___."
-    },
-    {
-     "w": "hold your own",
-     "def": "to perform well against strong opposition",
-     "ar": "يصمد / يُحسن الأداء أمام خصم قوي",
-     "frame": "I can hold my own in a debate about ___."
-    },
-    {
-     "w": "turn the tables",
-     "def": "to reverse a situation so that you gain the advantage",
-     "ar": "يقلب الطاولة",
-     "frame": "In the end, ___ turned the tables on ___."
-    },
-    {
-     "w": "play to the gallery",
-     "def": "to say what pleases an audience rather than what is right",
-     "ar": "يتملّق الجمهور",
-     "frame": "Some speakers play to the gallery by ___."
-    },
-    {
-     "w": "a closing statement",
-     "def": "the final speech that sums up your case",
-     "ar": "الكلمة الختامية",
-     "frame": "In my closing statement, I'd remind everyone that ___."
-    }
-   ],
    "dialogue": {
     "scene": "At a public debate in a cultural centre, Ahmed argues that popular heritage sites should limit daily visitor numbers. His opponent, Karim, and a sceptical audience member, Mr Hassan, challenge him.",
     "p1": [
@@ -2330,6 +2561,14 @@
      {
       "s": "Ahmed",
       "t": "That's a fair challenge. But the real question is whether these sites survive for our grandchildren."
+     },
+     {
+      "s": "Karim",
+      "t": "For our grandchildren? That sounds like playing to the gallery again."
+     },
+     {
+      "s": "Ahmed",
+      "t": "I'll keep my nerve and answer directly: without limits, some sites will simply wear out."
      }
     ],
     "p2": [
@@ -2339,7 +2578,7 @@
      },
      {
       "s": "Ahmed",
-      "t": "Let me turn the tables: what happens to local businesses if the site is damaged and has to close?"
+      "t": "Let me turn that argument on its head: what happens to local businesses if the site is damaged and has to close?"
      },
      {
       "s": "Karim",
@@ -2352,12 +2591,20 @@
      {
       "s": "Mr Hassan",
       "t": "Well, you've held your own, I'll give you that. Let's hear your closing statement."
+     },
+     {
+      "s": "Ahmed",
+      "t": "Thank you. I won't go on the offensive; I'll simply remind everyone what we stand to lose."
+     },
+     {
+      "s": "Mr Hassan",
+      "t": "Then the floor is yours, and the clock starts now."
      }
     ],
     "focus": "But the real question is whether these sites survive for our grandchildren.",
     "qs": [
      "How does Ahmed answer the claim that limits are elitist?",
-     "How does Ahmed 'turn the tables' on Karim?"
+     "How does Ahmed turn Karim's argument on its head?"
     ]
    },
    "speakout": {
@@ -2365,15 +2612,15 @@
     "prompts": [
      {
       "q": "Your idea will destroy tourism jobs. How can you defend that?",
-      "hint": "Handle the hostile question: reject or reframe the premise, then give evidence."
+      "hint": "Handle the hostile question: reject or reframe the premise, then give evidence. Then give your view, a reason and an example, and admit one point against you before answering it."
      },
      {
       "q": "Aren't you just saying what the audience wants to hear?",
-      "hint": "Accept it as a fair challenge, then stand your ground with a specific point."
+      "hint": "Accept it as a fair challenge, then stand your ground with a specific point. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "You have thirty seconds for your closing statement.",
-      "hint": "Sum up your case, show the bigger picture and end with a memorable line."
+      "hint": "Sum up your case, show the bigger picture and end with a memorable line. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      }
     ]
    },
@@ -2389,23 +2636,164 @@
      "Which place in Saudi Arabia would benefit most from visitor limits? Why?"
     ]
    },
-   "exit": "Give a two-sentence closing statement for your side of today's motion."
+   "exit": "Give a two-sentence closing statement for your side of today's motion.",
+   "expressions": [
+    {
+     "w": "keep your nerve",
+     "def": "to stay calm and confident under pressure",
+     "ar": "يحافظ على رباطة جأشه",
+     "frame": "I kept my nerve when ___."
+    },
+    {
+     "w": "go on the offensive",
+     "def": "to start attacking instead of defending",
+     "ar": "ينتقل إلى الهجوم",
+     "frame": "In a debate, it can be risky to go on the offensive when ___."
+    },
+    {
+     "w": "hold your own",
+     "def": "to perform well against strong opposition",
+     "ar": "يصمد / يُحسن الأداء أمام خصم قوي",
+     "frame": "I can hold my own in a debate about ___."
+    },
+    {
+     "w": "turn something on its head",
+     "def": "to make something mean the opposite of what it did",
+     "ar": "يقلب الأمر رأساً على عقب",
+     "frame": "She turned the opponent's argument on its head by ___."
+    },
+    {
+     "w": "play to the gallery",
+     "def": "to say what pleases an audience rather than what is right",
+     "ar": "يتملّق الجمهور",
+     "frame": "Some speakers play to the gallery by ___."
+    },
+    {
+     "w": "a closing statement",
+     "def": "the final speech that sums up your case",
+     "ar": "الكلمة الختامية",
+     "frame": "In my closing statement, I'd remind everyone that ___."
+    }
+   ],
+   "recycle": [
+    "reject the premise",
+    "the real question is",
+    "turn the tables"
+   ]
   },
   "3-0": {
    "objective": "Today you will choose words that match exactly the size and nature of what you describe.",
    "warmup": "How has transport in your city changed since you were a small child?",
+   "dialogue": {
+    "scene": "Ghada is practising for IELTS Speaking Part 3 with her tutor, Ms Clarke. The topic is public transport.",
+    "p1": [
+     {
+      "s": "Ms Clarke",
+      "t": "How has public transport changed in your city?"
+     },
+     {
+      "s": "Ghada",
+      "t": "In general terms, it's improved enormously. Getting around today is light years away from the days when the car was the only option."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "Good. Is congestion still a problem?"
+     },
+     {
+      "s": "Ghada",
+      "t": "Yes, though to a lesser extent on the main routes. Rush hour still exacerbates things near schools."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "'Exacerbates' is a good choice. What exactly makes it worse near schools?"
+     },
+     {
+      "s": "Ghada",
+      "t": "Parents dropping children off at the same time. Hundreds of cars arrive within twenty minutes."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ms Clarke",
+      "t": "Nice. You said 'enormously', though. Is that really precise, or just dramatic?"
+     },
+     {
+      "s": "Ghada",
+      "t": "Perhaps not. 'Considerably' is more accurate; the effect on traffic so far has been modest, though certainly not negligible."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "That's the kind of precision examiners reward. What about buses?"
+     },
+     {
+      "s": "Ghada",
+      "t": "Bus connections are still a bit hit and miss: some areas are well served, others hardly at all."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "Excellent. Your range is wide, but it's the accuracy that makes it Band 9."
+     },
+     {
+      "s": "Ghada",
+      "t": "So accuracy matters more than impressive words?"
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "Always. A precise ordinary word beats an impressive wrong one."
+     },
+     {
+      "s": "Ghada",
+      "t": "Then I'll stop collecting fancy words and start checking what they mean."
+     }
+    ],
+    "focus": "Getting around today is light years away from the days when the car was the only option.",
+    "qs": [
+     "How does Ghada correct the word 'enormously'?",
+     "What does 'hit and miss' tell us about the bus service?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher is an IELTS examiner asking Part 3 questions about the environment. Answer with precise, carefully chosen words.",
+    "prompts": [
+     {
+      "q": "Have attitudes to recycling changed in your country?",
+      "hint": "Use 'in general terms' or 'to a lesser extent' to give a precise, balanced answer. Then give your view, a reason and an example, and admit one point against you before answering it."
+     },
+     {
+      "q": "Does tourism harm the environment?",
+      "hint": "Say which factors 'exacerbate' the problem and which effects are 'negligible'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Are government campaigns effective?",
+      "hint": "Use 'hit and miss' or 'light years away from' and support it with an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     }
+    ]
+   },
+   "culture": {
+    "title": "How IELTS Speaking Is Marked",
+    "points": [
+     "IELTS Speaking is assessed on four criteria: fluency and coherence, lexical resource, grammatical range and accuracy, and pronunciation.",
+     "At Band 9, candidates use vocabulary with full flexibility and precision, including idiomatic language used naturally.",
+     "The Riyadh Metro, which opened in stages from late 2024, is one of the largest urban rail projects in the region."
+    ],
+    "qs": [
+     "Which of the four IELTS criteria is hardest for you? Why?",
+     "Is it better to use a rare word or a precise common one?"
+    ]
+   },
+   "exit": "Describe a change in your city in two sentences, using at least two precise expressions from today.",
    "expressions": [
     {
-     "w": "by and large",
-     "def": "generally; considering everything",
-     "ar": "بوجه عام",
-     "frame": "By and large, people in my city ___."
+     "w": "in general terms",
+     "def": "without giving all the details; generally",
+     "ar": "بشكل عام",
+     "frame": "In general terms, people in my city ___."
     },
     {
-     "w": "a far cry from",
-     "def": "very different from",
-     "ar": "مختلف تماماً عن",
-     "frame": "Life today is a far cry from ___."
+     "w": "light years away from",
+     "def": "extremely different from",
+     "ar": "مختلف تماماً عن / بعيد كل البعد عن",
+     "frame": "Life today is light years away from ___."
     },
     {
      "w": "to a lesser extent",
@@ -2432,126 +2820,14 @@
      "frame": "The Wi-Fi at ___ is a bit hit and miss."
     }
    ],
-   "dialogue": {
-    "scene": "Ghada is practising for IELTS Speaking Part 3 with her tutor, Ms Clarke. The topic is public transport.",
-    "p1": [
-     {
-      "s": "Ms Clarke",
-      "t": "How has public transport changed in your city?"
-     },
-     {
-      "s": "Ghada",
-      "t": "By and large, it's improved enormously. The new metro is a far cry from the days when the car was the only option."
-     },
-     {
-      "s": "Ms Clarke",
-      "t": "Good. Is congestion still a problem?"
-     },
-     {
-      "s": "Ghada",
-      "t": "Yes, though to a lesser extent on the main routes. Rush hour still exacerbates things near schools."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Ms Clarke",
-      "t": "Nice. You said 'enormously'. Is that precise?"
-     },
-     {
-      "s": "Ghada",
-      "t": "Perhaps not. 'Considerably' is more accurate; the effect on traffic so far has been modest, though certainly not negligible."
-     },
-     {
-      "s": "Ms Clarke",
-      "t": "That's the kind of precision examiners reward. What about buses?"
-     },
-     {
-      "s": "Ghada",
-      "t": "Bus connections are still a bit hit and miss: some areas are well served, others hardly at all."
-     },
-     {
-      "s": "Ms Clarke",
-      "t": "Excellent. Your range is wide, but it's the accuracy that makes it Band 9."
-     }
-    ],
-    "focus": "The new metro is a far cry from the days when the car was the only option.",
-    "qs": [
-     "How does Ghada correct the word 'enormously'?",
-     "What does 'hit and miss' tell us about the bus service?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your teacher is an IELTS examiner asking Part 3 questions about the environment. Answer with precise, carefully chosen words.",
-    "prompts": [
-     {
-      "q": "Have attitudes to recycling changed in your country?",
-      "hint": "Use 'by and large' or 'to a lesser extent' to give a precise, balanced answer."
-     },
-     {
-      "q": "Does tourism harm the environment?",
-      "hint": "Say which factors 'exacerbate' the problem and which effects are 'negligible'."
-     },
-     {
-      "q": "Are government campaigns effective?",
-      "hint": "Use 'hit and miss' or 'a far cry from' and support it with an example."
-     }
-    ]
-   },
-   "culture": {
-    "title": "How IELTS Speaking Is Marked",
-    "points": [
-     "IELTS Speaking is assessed on four criteria: fluency and coherence, lexical resource, grammatical range and accuracy, and pronunciation.",
-     "At Band 9, candidates use vocabulary with full flexibility and precision, including idiomatic language used naturally.",
-     "The Riyadh Metro, which opened in stages from late 2024, is one of the largest urban rail projects in the region."
-    ],
-    "qs": [
-     "Which of the four IELTS criteria is hardest for you? Why?",
-     "Is it better to use a rare word or a precise common one?"
-    ]
-   },
-   "exit": "Describe a change in your city in two sentences, using at least two precise expressions from today."
+   "recycle": [
+    "by and large",
+    "a far cry from"
+   ]
   },
   "3-1": {
    "objective": "Today you will use idioms naturally and accurately in a long turn about a skill you learned from someone.",
    "warmup": "What is one skill someone else taught you, and how did they teach it?",
-   "expressions": [
-    {
-     "w": "set the bar high",
-     "def": "to set a high standard for others to reach",
-     "ar": "يضع معياراً عالياً",
-     "frame": "___ set the bar high for me when ___."
-    },
-    {
-     "w": "a steep learning curve",
-     "def": "a situation where you must learn a lot quickly",
-     "ar": "منحنى تعلّم حادّ",
-     "frame": "Starting ___ was a steep learning curve."
-    },
-    {
-     "w": "go the extra mile",
-     "def": "to do more than is expected",
-     "ar": "يبذل جهداً إضافياً",
-     "frame": "My ___ always goes the extra mile by ___."
-    },
-    {
-     "w": "rub off on",
-     "def": "to influence someone so they become similar",
-     "ar": "ينتقل إلى / يؤثّر في",
-     "frame": "My ___'s patience has rubbed off on me."
-    },
-    {
-     "w": "come into your own",
-     "def": "to show your true ability at last",
-     "ar": "يُظهر قدراته الحقيقية",
-     "frame": "I really came into my own when ___."
-    },
-    {
-     "w": "take something in your stride",
-     "def": "to deal with a difficulty calmly",
-     "ar": "يتقبّل الأمر بهدوء",
-     "frame": "I usually take ___ in my stride."
-    }
-   ],
    "dialogue": {
     "scene": "Mishal practises an IELTS Part 2 talk about a skill he learned from someone else. His friend Adam times him and gives feedback.",
     "p1": [
@@ -2569,7 +2845,7 @@
      },
      {
       "s": "Mishal",
-      "t": "I joined his academy at twelve. It was a steep learning curve; I'd never trained so seriously."
+      "t": "I joined his academy at twelve. It was a baptism of fire; I'd never trained so seriously."
      },
      {
       "s": "Adam",
@@ -2600,11 +2876,19 @@
      {
       "s": "Adam",
       "t": "And you've taken my criticism in your stride. That's another idiom, by the way."
+     },
+     {
+      "s": "Mishal",
+      "t": "Thanks. I'll try not to overdo it in the real test, though."
+     },
+     {
+      "s": "Adam",
+      "t": "Good plan. Two or three natural idioms beat ten forced ones."
      }
     ],
     "focus": "That attitude has rubbed off on me.",
     "qs": [
-     "Why does Mishal say joining the academy was 'a steep learning curve'?",
+     "Why does Mishal call joining the academy 'a baptism of fire'?",
      "Why does Mishal avoid 'raining cats and dogs'?"
     ]
    },
@@ -2613,15 +2897,15 @@
     "prompts": [
      {
       "q": "What was the challenge, and how did it feel at first?",
-      "hint": "Use 'a steep learning curve' or 'take it in my stride' naturally."
+      "hint": "Use 'a baptism of fire' or 'take it in my stride' naturally. Then give your view, a reason and an example, and admit one point against you before answering it."
      },
      {
       "q": "Who or what helped you?",
-      "hint": "Use 'go the extra mile' or 'rub off on' to describe someone's help."
+      "hint": "Use 'go the extra mile' or 'rub off on' to describe someone's help. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "How did the experience change you?",
-      "hint": "Use 'come into my own' or 'set the bar high', and don't force in extra idioms."
+      "hint": "Use 'come into my own' or 'set the bar high', and don't force in extra idioms. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      }
     ]
    },
@@ -2637,49 +2921,52 @@
      "Is there an Arabic proverb you'd like to translate into English? Which one?"
     ]
    },
-   "exit": "Tell me about a skill you learned from someone in two sentences, using two idioms naturally."
+   "exit": "Tell me about a skill you learned from someone in two sentences, using two idioms naturally.",
+   "expressions": [
+    {
+     "w": "set the bar high",
+     "def": "to set a high standard for others to reach",
+     "ar": "يضع معياراً عالياً",
+     "frame": "___ set the bar high for me when ___."
+    },
+    {
+     "w": "a baptism of fire",
+     "def": "a very difficult first experience of something",
+     "ar": "بداية قاسية / امتحان صعب منذ البداية",
+     "frame": "Starting ___ was a baptism of fire."
+    },
+    {
+     "w": "go the extra mile",
+     "def": "to do more than is expected",
+     "ar": "يبذل جهداً إضافياً",
+     "frame": "My ___ always goes the extra mile by ___."
+    },
+    {
+     "w": "rub off on",
+     "def": "to influence someone so they become similar",
+     "ar": "ينتقل إلى / يؤثّر في",
+     "frame": "My ___'s patience has rubbed off on me."
+    },
+    {
+     "w": "come into your own",
+     "def": "to show your true ability at last",
+     "ar": "يُظهر قدراته الحقيقية",
+     "frame": "I really came into my own when ___."
+    },
+    {
+     "w": "take something in your stride",
+     "def": "to deal with a difficulty calmly",
+     "ar": "يتقبّل الأمر بهدوء",
+     "frame": "I usually take ___ in my stride."
+    }
+   ],
+   "recycle": [
+    "a steep learning curve"
+   ]
   },
   "3-2": {
    "objective": "Today you will organise a two-minute long turn with clear points, examples and a balanced conclusion.",
    "warmup": "Which things do you no longer bother to remember because your phone remembers them for you?",
-   "expressions": [
-    {
-     "w": "it stands to reason",
-     "def": "it is logical and obvious",
-     "ar": "من المنطقي أن",
-     "frame": "It stands to reason that ___."
-    },
-    {
-     "w": "a case in point",
-     "def": "a clear example of what you're saying",
-     "ar": "مثال واضح على ذلك",
-     "frame": "___ is a case in point."
-    },
-    {
-     "w": "by the same token",
-     "def": "for the same reason; similarly",
-     "ar": "وبالمنطق نفسه",
-     "frame": "By the same token, ___."
-    },
-    {
-     "w": "not least because",
-     "def": "especially because",
-     "ar": "ولا سيما لأن",
-     "frame": "I enjoy ___, not least because ___."
-    },
-    {
-     "w": "cut both ways",
-     "def": "to have both good and bad effects",
-     "ar": "له وجهان (إيجابي وسلبي)",
-     "frame": "___ can cut both ways because ___."
-    },
-    {
-     "w": "on balance",
-     "def": "after considering all the arguments",
-     "ar": "بعد الموازنة / إجمالاً",
-     "frame": "On balance, I think ___."
-    }
-   ],
    "dialogue": {
     "scene": "Razan is preparing for the C2 Proficiency speaking test. Her teacher, Mr Davies, gives her a long-turn question: 'Is technology making our memories weaker?'",
     "p1": [
@@ -2689,11 +2976,11 @@
      },
      {
       "s": "Razan",
-      "t": "It stands to reason that if our phones store everything, we practise remembering less. Phone numbers are a case in point."
+      "t": "If our phones store everything, it follows that we practise remembering less. Phone numbers are a telling example."
      },
      {
       "s": "Mr Davies",
-      "t": "Good start. Keep going."
+      "t": "Good start, and a clear example. Keep going."
      },
      {
       "s": "Razan",
@@ -2701,13 +2988,13 @@
      },
      {
       "s": "Mr Davies",
-      "t": "Good. Anything else?"
+      "t": "Good. Anything else, perhaps on the other side?"
      }
     ],
     "p2": [
      {
       "s": "Razan",
-      "t": "By the same token, apps can train memory: language apps use repetition far better than notebooks did."
+      "t": "In the same vein, apps can train memory: language apps use repetition far better than notebooks did."
      },
      {
       "s": "Mr Davies",
@@ -2715,7 +3002,7 @@
      },
      {
       "s": "Razan",
-      "t": "On balance, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information."
+      "t": "Taken as a whole, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information."
      },
      {
       "s": "Mr Davies",
@@ -2724,9 +3011,25 @@
      {
       "s": "Razan",
       "t": "Then I'll state it more firmly: I'd say the benefits slightly outweigh the costs."
+     },
+     {
+      "s": "Mr Davies",
+      "t": "Better. Notice how one firm sentence makes the whole answer sound more confident."
+     },
+     {
+      "s": "Razan",
+      "t": "So hedging is fine, as long as I still land somewhere?"
+     },
+     {
+      "s": "Mr Davies",
+      "t": "Exactly. Nuance first, then a position. That's what top answers sound like."
+     },
+     {
+      "s": "Razan",
+      "t": "Then I'll practise ending every answer with one clear sentence."
      }
     ],
-    "focus": "On balance, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information.",
+    "focus": "Taken as a whole, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information.",
     "qs": [
      "What example does Razan give to support her first point?",
      "What advice does Mr Davies give about her conclusion?"
@@ -2737,15 +3040,15 @@
     "prompts": [
      {
       "q": "Start your long turn. What's your first point?",
-      "hint": "Make a clear point and support it with '… is a case in point'."
+      "hint": "Make a clear point and support it with '… is a telling example'. Then give your view, a reason and an example, and admit one point against you before answering it."
      },
      {
       "q": "Is there another side to consider?",
-      "hint": "Add a related or opposite point with 'By the same token' or 'not least because'."
+      "hint": "Add a related or opposite point with 'In the same vein' or 'not least because'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "And your conclusion?",
-      "hint": "Finish with 'On balance, …' and a clear position."
+      "hint": "Finish with 'Taken as a whole, …' and a clear position. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      }
     ]
    },
@@ -2761,11 +3064,153 @@
      "Is it a problem if we remember where to find information rather than the information itself?"
     ]
    },
-   "exit": "In two sentences, give a balanced view on whether technology helps or harms learning, ending with 'On balance, …'."
+   "exit": "In two sentences, give a balanced view on whether technology helps or harms learning, ending with 'Taken as a whole, …'.",
+   "expressions": [
+    {
+     "w": "it follows that",
+     "def": "used to say that something is the logical result",
+     "ar": "يترتّب على ذلك أنّ",
+     "frame": "If ___, it follows that ___."
+    },
+    {
+     "w": "a telling example",
+     "def": "an example that shows something very clearly",
+     "ar": "مثال معبّر",
+     "frame": "___ is a telling example of ___."
+    },
+    {
+     "w": "in the same vein",
+     "def": "in a similar way; on a similar subject",
+     "ar": "على المنوال نفسه",
+     "frame": "In the same vein, ___."
+    },
+    {
+     "w": "not least because",
+     "def": "especially because",
+     "ar": "ولا سيما لأن",
+     "frame": "I enjoy ___, not least because ___."
+    },
+    {
+     "w": "cut both ways",
+     "def": "to have both good and bad effects",
+     "ar": "له وجهان (إيجابي وسلبي)",
+     "frame": "___ can cut both ways because ___."
+    },
+    {
+     "w": "taken as a whole",
+     "def": "considering all the parts together",
+     "ar": "إذا نظرنا إليه ككل",
+     "frame": "Taken as a whole, I think ___."
+    }
+   ],
+   "recycle": [
+    "it stands to reason",
+    "a case in point",
+    "by the same token",
+    "on balance"
+   ]
   },
   "3-3": {
    "objective": "Today you will discuss abstract ideas with nuance, defining terms and avoiding over-simple claims.",
    "warmup": "What does 'success' mean to you? Is it the same as what your parents mean by it?",
+   "dialogue": {
+    "scene": "Bassam and his friend Nick are practising abstract IELTS Part 3 questions about success and happiness.",
+    "p1": [
+     {
+      "s": "Nick",
+      "t": "Here's one: 'Is success the same thing as happiness?'"
+     },
+     {
+      "s": "Bassam",
+      "t": "In the broadest sense, no. Success is usually measured against other people; happiness isn't, or at least it shouldn't be."
+     },
+     {
+      "s": "Nick",
+      "t": "But they're connected, surely?"
+     },
+     {
+      "s": "Bassam",
+      "t": "For some people they're inextricably linked, but it's an open question whether one causes the other."
+     },
+     {
+      "s": "Nick",
+      "t": "Inextricably linked? That's a strong phrase for a speaking test."
+     },
+     {
+      "s": "Bassam",
+      "t": "It's accurate, though. For some people, achievement is part of how they feel happy."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Nick",
+      "t": "So what is happiness contingent on, in your view?"
+     },
+     {
+      "s": "Bassam",
+      "t": "Largely on relationships, I'd say. A long-running Harvard study of adult life found much the same."
+     },
+     {
+      "s": "Nick",
+      "t": "The one that followed people for decades? And what about money?"
+     },
+     {
+      "s": "Bassam",
+      "t": "It's a matter of degree. Enough money removes stress; beyond that, it seems to add surprisingly little."
+     },
+     {
+      "s": "Nick",
+      "t": "That's a Band 9 answer, I think: abstract, but grounded in evidence."
+     },
+     {
+      "s": "Bassam",
+      "t": "Thanks. The trick is not to sound like a textbook while you're doing it."
+     },
+     {
+      "s": "Nick",
+      "t": "Next question, then: 'Should schools teach happiness as a subject?'"
+     },
+     {
+      "s": "Bassam",
+      "t": "In the broadest sense, they already do, through sport, friendship and clubs, but perhaps not explicitly."
+     }
+    ],
+    "focus": "It's a matter of degree.",
+    "qs": [
+     "How does Bassam distinguish success from happiness?",
+     "What, according to Bassam, does happiness mainly depend on?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher asks you abstract IELTS Part 3 questions about ambition and contentment.",
+    "prompts": [
+     {
+      "q": "Is ambition always a good thing?",
+      "hint": "Answer with nuance: 'It's a matter of degree', and explain where the limit is. Then give your view, a reason and an example, and admit one point against you before answering it."
+     },
+     {
+      "q": "What does a good life depend on?",
+      "hint": "Use 'be contingent on' and name one or two key factors with an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Are wealth and happiness connected?",
+      "hint": "Use 'it's an open question whether' or 'inextricably linked', and mention evidence if you can. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     }
+    ]
+   },
+   "culture": {
+    "title": "What Makes a Good Life?",
+    "points": [
+     "The Harvard Study of Adult Development has followed participants since 1938 and found that close relationships strongly predict long-term wellbeing.",
+     "Saudi Vision 2030 includes a Quality of Life Program that supports sport, culture and entertainment.",
+     "Arabic has a word, 'qana'a', for the contentment of being satisfied with what you have."
+    ],
+    "qs": [
+     "Which matters more to you: success or contentment? Why?",
+     "Can a country make its people happier? How?"
+    ]
+   },
+   "exit": "Answer this abstract question in two or three sentences: 'Does money buy happiness?'",
    "expressions": [
     {
      "w": "in the broadest sense",
@@ -2786,16 +3231,16 @@
      "frame": "For me, ___ and ___ are inextricably linked."
     },
     {
-     "w": "it's debatable whether",
-     "def": "it is not certain or agreed that",
-     "ar": "من غير المؤكد / محلّ جدل ما إذا",
-     "frame": "It's debatable whether ___."
+     "w": "it's an open question whether",
+     "def": "nobody knows for certain whether",
+     "ar": "لا يزال السؤال مطروحاً حول ما إذا",
+     "frame": "It's an open question whether ___."
     },
     {
-     "w": "hinge on",
-     "def": "to depend completely on",
-     "ar": "يتوقّف على",
-     "frame": "A happy life hinges on ___."
+     "w": "be contingent on",
+     "def": "to depend completely on something",
+     "ar": "مشروط بـ / متوقّف على",
+     "frame": "A happy life is contingent on ___."
     },
     {
      "w": "a matter of degree",
@@ -2804,126 +3249,14 @@
      "frame": "Whether ___ is good is a matter of degree."
     }
    ],
-   "dialogue": {
-    "scene": "Bassam and his friend Nick are practising abstract IELTS Part 3 questions about success and happiness.",
-    "p1": [
-     {
-      "s": "Nick",
-      "t": "Here's one: 'Is success the same thing as happiness?'"
-     },
-     {
-      "s": "Bassam",
-      "t": "In the broadest sense, no. Success is usually measured against other people; happiness isn't."
-     },
-     {
-      "s": "Nick",
-      "t": "But they're connected, surely?"
-     },
-     {
-      "s": "Bassam",
-      "t": "For some people they're inextricably linked, but it's debatable whether one causes the other."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Nick",
-      "t": "So what does happiness hinge on, in your view?"
-     },
-     {
-      "s": "Bassam",
-      "t": "Largely on relationships, I'd say. A long-running Harvard study of adult life found much the same."
-     },
-     {
-      "s": "Nick",
-      "t": "And money?"
-     },
-     {
-      "s": "Bassam",
-      "t": "It's a matter of degree. Enough money removes stress; beyond that, it seems to add surprisingly little."
-     },
-     {
-      "s": "Nick",
-      "t": "That's a Band 9 answer, I think: abstract, but grounded in evidence."
-     }
-    ],
-    "focus": "It's a matter of degree.",
-    "qs": [
-     "How does Bassam distinguish success from happiness?",
-     "What, according to Bassam, does happiness mainly hinge on?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your teacher asks you abstract IELTS Part 3 questions about ambition and contentment.",
-    "prompts": [
-     {
-      "q": "Is ambition always a good thing?",
-      "hint": "Answer with nuance: 'It's a matter of degree', and explain where the limit is."
-     },
-     {
-      "q": "What does a good life depend on?",
-      "hint": "Use 'hinge on' and name one or two key factors with an example."
-     },
-     {
-      "q": "Are wealth and happiness connected?",
-      "hint": "Use 'it's debatable whether' or 'inextricably linked', and mention evidence if you can."
-     }
-    ]
-   },
-   "culture": {
-    "title": "What Makes a Good Life?",
-    "points": [
-     "The Harvard Study of Adult Development has followed participants since 1938 and found that close relationships strongly predict long-term wellbeing.",
-     "Saudi Vision 2030 includes a Quality of Life Program that supports sport, culture and entertainment.",
-     "Arabic has a word, 'qana'a', for the contentment of being satisfied with what you have."
-    ],
-    "qs": [
-     "Which matters more to you: success or contentment? Why?",
-     "Can a country make its people happier? How?"
-    ]
-   },
-   "exit": "Answer this abstract question in two or three sentences: 'Does money buy happiness?'"
+   "recycle": [
+    "it's debatable whether",
+    "hinge on"
+   ]
   },
   "3-4": {
    "objective": "Today you will repair and rephrase your language smoothly when you can't find a word or express an idea unclearly.",
    "warmup": "What do you do when you forget a word in the middle of speaking English?",
-   "expressions": [
-    {
-     "w": "or rather",
-     "def": "used to correct or make what you said more exact",
-     "ar": "أو بالأحرى",
-     "frame": "I'm interested in ___, or rather, ___."
-    },
-    {
-     "w": "the word escapes me",
-     "def": "I can't remember the exact word",
-     "ar": "تغيب عني الكلمة",
-     "frame": "The word escapes me, but it's the thing you use to ___."
-    },
-    {
-     "w": "for want of a better word",
-     "def": "the word I'm using isn't perfect",
-     "ar": "لعدم وجود كلمة أدقّ",
-     "frame": "The patterns are, for want of a better word, ___."
-    },
-    {
-     "w": "let me rephrase that",
-     "def": "I'll say it again in a clearer way",
-     "ar": "دعني أعيد صياغة ذلك",
-     "frame": "Let me rephrase that: what I mean is ___."
-    },
-    {
-     "w": "what I'm getting at is",
-     "def": "introduces the main point you are trying to make",
-     "ar": "ما أقصده هو",
-     "frame": "What I'm getting at is that ___."
-    },
-    {
-     "w": "to be more precise",
-     "def": "used to give more exact information",
-     "ar": "لأكون أكثر دقة",
-     "frame": "I live in ___, or, to be more precise, ___."
-    }
-   ],
    "dialogue": {
     "scene": "During a mock C2 speaking test, Abeer describes palm-frond weaving to the examiner, Mrs Ward, and repairs her language when she gets stuck.",
     "p1": [
@@ -2951,7 +3284,7 @@
     "p2": [
      {
       "s": "Abeer",
-      "t": "Yes, food covers. The patterns are, for want of a better word, a kind of signature."
+      "t": "Yes, food covers. Sorry, that came out wrong at first. The patterns are, for want of a better word, a kind of signature."
      },
      {
       "s": "Mrs Ward",
@@ -2959,15 +3292,31 @@
      },
      {
       "s": "Abeer",
-      "t": "Let me rephrase that. What I'm getting at is that each weaver's colours and patterns made her work recognisable."
+      "t": "Let me put that another way. What I'm getting at is that each weaver's colours and patterns made her work recognisable."
      },
      {
       "s": "Mrs Ward",
-      "t": "Interesting. Is it still practised today?"
+      "t": "Ah, so the pattern identified the maker. Is it still practised today?"
      },
      {
       "s": "Abeer",
       "t": "Yes, though less widely. To be more precise, it's now taught mainly at heritage centres and festivals."
+     },
+     {
+      "s": "Mrs Ward",
+      "t": "Good. You repaired your language smoothly, which is exactly what examiners want to see."
+     },
+     {
+      "s": "Abeer",
+      "t": "I was worried that stopping to search for words would lower my score."
+     },
+     {
+      "s": "Mrs Ward",
+      "t": "Not at all. Repairing naturally shows control. It's silence and panic that cost marks."
+     },
+     {
+      "s": "Abeer",
+      "t": "That's reassuring. I'll stop panicking when a word disappears."
      }
     ],
     "focus": "What I'm getting at is that each weaver's colours and patterns made her work recognisable.",
@@ -2981,15 +3330,15 @@
     "prompts": [
      {
       "q": "Describe a traditional skill from your region. What exactly is it?",
-      "hint": "If a word escapes you, describe it: 'the thing you use to …'."
+      "hint": "If a word escapes you, describe it: 'the thing you use to …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      },
      {
       "q": "Why is it important?",
-      "hint": "Refine your first idea with 'or rather' or 'to be more precise'."
+      "hint": "Refine your first idea with 'or rather' or 'to be more precise'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Is it changing today?",
-      "hint": "If your answer comes out unclear, say 'Let me rephrase that. What I'm getting at is …'."
+      "hint": "If your answer comes out unclear, say 'Let me put that another way. What I'm getting at is …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      }
     ]
    },
@@ -3005,49 +3354,53 @@
      "Would you like to learn a traditional craft? Which one?"
     ]
    },
-   "exit": "Describe an object whose English name you don't know, using two repair phrases from today."
+   "exit": "Describe an object whose English name you don't know, using two repair phrases from today.",
+   "expressions": [
+    {
+     "w": "or rather",
+     "def": "used to correct or make what you said more exact",
+     "ar": "أو بالأحرى",
+     "frame": "I'm interested in ___, or rather, ___."
+    },
+    {
+     "w": "the word escapes me",
+     "def": "I can't remember the exact word",
+     "ar": "تغيب عني الكلمة",
+     "frame": "The word escapes me, but it's the thing you use to ___."
+    },
+    {
+     "w": "for want of a better word",
+     "def": "the word I'm using isn't perfect",
+     "ar": "لعدم وجود كلمة أدقّ",
+     "frame": "The patterns are, for want of a better word, ___."
+    },
+    {
+     "w": "let me put that another way",
+     "def": "used to say something again in different words",
+     "ar": "دعني أعبّر عن ذلك بطريقة أخرى",
+     "frame": "Let me put that another way: ___."
+    },
+    {
+     "w": "come out wrong",
+     "def": "to be said in a way that does not express what you meant",
+     "ar": "يخرج الكلام بشكل غير مقصود",
+     "frame": "Sorry, that came out wrong. What I meant was ___."
+    },
+    {
+     "w": "to be more precise",
+     "def": "used to give more exact information",
+     "ar": "لأكون أكثر دقة",
+     "frame": "I live in ___, or, to be more precise, ___."
+    }
+   ],
+   "recycle": [
+    "what I'm getting at is",
+    "let me rephrase that"
+   ]
   },
   "3-5": {
    "objective": "Today you will complete a mock speaking test at Band 9, combining precision, natural idiom, structure and smooth repair.",
    "warmup": "How do you feel before a speaking exam, and what helps you stay calm?",
-   "expressions": [
-    {
-     "w": "on balance",
-     "def": "after considering all the arguments",
-     "ar": "بعد الموازنة / إجمالاً",
-     "frame": "On balance, I'd rather live in ___ because ___."
-    },
-    {
-     "w": "a far cry from",
-     "def": "very different from",
-     "ar": "مختلف تماماً عن",
-     "frame": "My neighbourhood today is a far cry from ___."
-    },
-    {
-     "w": "that's a tricky one",
-     "def": "a natural phrase to gain a moment to think",
-     "ar": "سؤال صعب / سؤال محيّر",
-     "frame": "That's a tricky one, but I'd say ___."
-    },
-    {
-     "w": "off the top of my head",
-     "def": "without time to think or check",
-     "ar": "على البديهة / دون تفكير مسبق",
-     "frame": "Off the top of my head, I'd say ___."
-    },
-    {
-     "w": "go hand in hand",
-     "def": "to be closely connected and happen together",
-     "ar": "يسيران جنباً إلى جنب",
-     "frame": "In my view, ___ and ___ go hand in hand."
-    },
-    {
-     "w": "strike a balance",
-     "def": "to find a good middle point between two things",
-     "ar": "يحقّق التوازن",
-     "frame": "Cities need to strike a balance between ___ and ___."
-    }
-   ],
    "dialogue": {
     "scene": "Talal sits a full mock IELTS Speaking test with his teacher, Ms Patel. They have reached Part 3, on cities of the future.",
     "p1": [
@@ -3057,7 +3410,7 @@
      },
      {
       "s": "Talal",
-      "t": "That's a tricky one. Off the top of my head, I'd say greener, quieter and far more walkable."
+      "t": "That's a tricky one. Roughly speaking, I'd say greener, quieter and far more walkable."
      },
      {
       "s": "Ms Patel",
@@ -3065,7 +3418,7 @@
      },
      {
       "s": "Talal",
-      "t": "Because health and urban design go hand in hand. Car-centred cities are a far cry from what planners want now."
+      "t": "Because health is bound up with urban design. Planners now want a clear departure from car-centred cities."
      }
     ],
     "p2": [
@@ -3075,7 +3428,7 @@
      },
      {
       "s": "Talal",
-      "t": "By and large, no. Technology helps, but cities also need to strike a balance between innovation and community life."
+      "t": "In general terms, no. Technology helps, but cities also need to find the sweet spot between innovation and community life."
      },
      {
       "s": "Ms Patel",
@@ -3083,7 +3436,15 @@
      },
      {
       "s": "Talal",
-      "t": "The '15-minute city' is a case in point: shops, schools and parks within a short walk, whatever the technology."
+      "t": "The '15-minute city' is a telling example: shops, schools and parks within a short walk, whatever the technology."
+     },
+     {
+      "s": "Ms Patel",
+      "t": "Is that realistic in a hot climate like ours?"
+     },
+     {
+      "s": "Talal",
+      "t": "Roughly speaking, yes, if streets are shaded and services are close. Distance matters more than temperature."
      },
      {
       "s": "Ms Patel",
@@ -3091,10 +3452,18 @@
      },
      {
       "s": "Talal",
-      "t": "On balance, the best future cities will be designed around people rather than machines."
+      "t": "In the grand scheme of things, the best future cities will be designed around people rather than machines."
+     },
+     {
+      "s": "Ms Patel",
+      "t": "Excellent. Your answers were precise, natural and well balanced. How did it feel?"
+     },
+     {
+      "s": "Talal",
+      "t": "Easier than I expected. Having a few ways to buy time really helped."
      }
     ],
-    "focus": "On balance, the best future cities will be designed around people rather than machines.",
+    "focus": "In the grand scheme of things, the best future cities will be designed around people rather than machines.",
     "qs": [
      "Why does Talal think future cities will be more walkable?",
      "What example does Talal give, and what point does it support?"
@@ -3105,15 +3474,15 @@
     "prompts": [
      {
       "q": "Part 1: Do you prefer living in a city or a small town? Why?",
-      "hint": "Give a natural, precise answer with a reason; avoid one-word replies."
+      "hint": "Give a natural, precise answer with a reason; avoid one-word replies. Then give your view, a reason and an example, and admit one point against you before answering it."
      },
      {
       "q": "Part 2: Describe a place in your city that has changed a lot.",
-      "hint": "Speak for up to two minutes, using precise vocabulary and one or two natural idioms."
+      "hint": "Speak for up to two minutes, using precise vocabulary and one or two natural idioms. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Part 3: Should cities be designed for cars or for people?",
-      "hint": "Give a balanced answer, repair yourself smoothly if needed, and finish with 'On balance, …'."
+      "hint": "Give a balanced answer, repair yourself smoothly if needed, and finish with 'In the grand scheme of things, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      }
     ]
    },
@@ -3129,7 +3498,52 @@
      "Would you give up a car to live in a walkable city? Why?"
     ]
    },
-   "exit": "Answer this Part 3 question in three sentences at Band 9: 'How will technology change the way we live in cities?'"
+   "exit": "Answer this Part 3 question in three sentences at Band 9: 'How will technology change the way we live in cities?'",
+   "expressions": [
+    {
+     "w": "in the grand scheme of things",
+     "def": "when you consider the whole situation",
+     "ar": "في الصورة الكبرى للأمور",
+     "frame": "In the grand scheme of things, I'd rather live in ___ because ___."
+    },
+    {
+     "w": "a departure from",
+     "def": "a clear change from the usual way",
+     "ar": "خروج عن / تحوّل عن",
+     "frame": "My neighbourhood today is a departure from ___."
+    },
+    {
+     "w": "that's a tricky one",
+     "def": "a natural phrase to gain a moment to think",
+     "ar": "سؤال صعب / سؤال محيّر",
+     "frame": "That's a tricky one, but I'd say ___."
+    },
+    {
+     "w": "roughly speaking",
+     "def": "approximately; without giving exact details",
+     "ar": "تقريباً / بشكل تقريبي",
+     "frame": "Roughly speaking, I'd say ___."
+    },
+    {
+     "w": "be bound up with",
+     "def": "to be closely connected with",
+     "ar": "مرتبط ارتباطاً وثيقاً بـ",
+     "frame": "In my view, ___ is bound up with ___."
+    },
+    {
+     "w": "find the sweet spot",
+     "def": "to find the best balance between two things",
+     "ar": "يجد النقطة المثالية",
+     "frame": "Cities need to find the sweet spot between ___ and ___."
+    }
+   ],
+   "recycle": [
+    "on balance",
+    "a far cry from",
+    "off the top of my head",
+    "go hand in hand",
+    "strike a balance"
+   ]
   }
  },
  "kits": {
@@ -3229,9 +3643,9 @@
      "ex": "You might want to check the figures again."
     },
     {
-     "w": "I wonder if",
-     "ar": "أتساءل إن كان (طلب مهذّب)",
-     "ex": "I wonder if we could start a little earlier tomorrow."
+     "w": "a gentle nudge",
+     "ar": "تلميح لطيف / دفعة خفيفة",
+     "ex": "A gentle nudge from his coach got him back to training."
     },
     {
      "w": "worth bearing in mind",
@@ -3293,9 +3707,9 @@
      "ex": "Don't take everything she says at face value."
     },
     {
-     "w": "lost in translation",
-     "ar": "ضاع في الترجمة",
-     "ex": "Much of the irony got lost in translation."
+     "w": "fall flat",
+     "ar": "يفشل في إحداث الأثر المطلوب",
+     "ex": "His sarcastic joke fell flat in the group chat."
     },
     {
      "w": "I'm only half joking",
@@ -3347,9 +3761,9 @@
   "0-3": {
    "words": [
     {
-     "w": "speak volumes",
-     "ar": "يدلّ بوضوح / يقول الكثير",
-     "ex": "His silence spoke volumes."
+     "w": "tell its own story",
+     "ar": "يحكي القصة بنفسه",
+     "ex": "The empty seats told their own story."
     },
     {
      "w": "conspicuous by its absence",
@@ -3404,7 +3818,7 @@
     },
     {
      "s": "Maha",
-     "t": "I'm not saying that, but it speaks volumes that he didn't mention your project."
+     "t": "I'm not saying that, but the fact that he didn't mention your project tells its own story."
     }
    ],
    "grammar": {
@@ -3413,7 +3827,7 @@
     "examples": [
      "The hotel has a lovely car park. (= little else is lovely)",
      "I'm not saying the plan is wrong, but it's very expensive.",
-     "It speaks volumes that nobody volunteered."
+     "The fact that nobody volunteered tells its own story."
     ]
    }
   },
@@ -3502,14 +3916,14 @@
      "ex": "When she says 'Interesting idea', what she's really saying is no."
     },
     {
-     "w": "read between the lines",
-     "ar": "يفهم ما بين السطور",
-     "ex": "The audience has to read between the lines."
+     "w": "a backhanded compliment",
+     "ar": "مديح ظاهره المدح وباطنه الانتقاد",
+     "ex": "'You look nice today for once' is a backhanded compliment."
     },
     {
-     "w": "not exactly",
-     "ar": "ليس تماماً (أي: أبداً)",
-     "ex": "It wasn't exactly a quiet evening."
+     "w": "say one thing and mean another",
+     "ar": "يقول شيئاً ويقصد غيره",
+     "ex": "Polite guests often say one thing and mean another."
     },
     {
      "w": "a loaded remark",
@@ -3517,14 +3931,14 @@
      "ex": "'Nice of you to join us' was a loaded remark to the late student."
     },
     {
-     "w": "pick up on",
-     "ar": "يلتقط / ينتبه إلى",
-     "ex": "She picked up on the irony immediately."
+     "w": "catch on to",
+     "ar": "ينتبه إلى / يفهم المقصود",
+     "ex": "She caught on to the irony immediately."
     },
     {
-     "w": "get the wrong end of the stick",
-     "ar": "يفهم الأمر على نحو خاطئ تماماً",
-     "ex": "He got the wrong end of the stick and thought he'd been fired."
+     "w": "misread the situation",
+     "ar": "يسيء فهم الموقف",
+     "ex": "He misread the situation and thought he had been fired."
     }
    ],
    "dialogue": [
@@ -3550,7 +3964,7 @@
     },
     {
      "s": "Tariq",
-     "t": "Will the younger children pick up on the irony?"
+     "t": "Will the younger children catch on to the irony?"
     },
     {
      "s": "Omar",
@@ -3575,9 +3989,9 @@
      "ex": "Shall we kick off with the main reading?"
     },
     {
-     "w": "set the scene",
-     "ar": "يمهّد / يعرض الخلفية",
-     "ex": "To set the scene, let me summarise the article."
+     "w": "sketch out",
+     "ar": "يرسم الخطوط العريضة",
+     "ex": "Let me sketch out the main points of the article."
     },
     {
      "w": "frame the question",
@@ -3585,9 +3999,9 @@
      "ex": "How we frame the question shapes the whole discussion."
     },
     {
-     "w": "the crux of the matter",
-     "ar": "جوهر المسألة",
-     "ex": "Cost is the crux of the matter."
+     "w": "the nub of the issue",
+     "ar": "لبّ المسألة",
+     "ex": "Cost is the nub of the issue."
     },
     {
      "w": "open the floor",
@@ -3603,7 +4017,7 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "Shall we kick off? To set the scene, our cities trap heat long after sunset."
+     "t": "Shall we kick off? To sketch out the background, our cities trap heat long after sunset."
     },
     {
      "s": "Alia",
@@ -3615,7 +4029,7 @@
     },
     {
      "s": "Hannah",
-     "t": "That's the crux of the matter."
+     "t": "That's the nub of the issue."
     },
     {
      "s": "Reem",
@@ -3631,7 +4045,7 @@
     "ar": "لافتتاح النقاش: نبدأ، نعرض الخلفية، نصوغ السؤال الأساسي بدقة، ثم نفتح باب المشاركة.",
     "examples": [
      "Shall we kick off?",
-     "To set the scene, the article argues that …",
+     "To sketch out the background, the article argues that …",
      "I'd like to open the floor now. Who'd like to start?"
     ]
    }
@@ -3659,14 +4073,14 @@
      "ex": "I couldn't get a word in edgeways."
     },
     {
-     "w": "build on",
-     "ar": "يبني على / يطوّر",
-     "ex": "Could you build on that example?"
+     "w": "expand on",
+     "ar": "يتوسّع في",
+     "ex": "Could you expand on that example?"
     },
     {
-     "w": "chip in",
-     "ar": "يُدلي بدلوه / يضيف",
-     "ex": "Feel free to chip in at any time."
+     "w": "weigh in",
+     "ar": "يدلي برأيه",
+     "ex": "Feel free to weigh in at any time."
     }
    ],
    "dialogue": [
@@ -3692,7 +4106,7 @@
     },
     {
      "s": "Majed",
-     "t": "Could you build on that? And anyone is welcome to chip in."
+     "t": "Could you expand on that? And anyone is welcome to weigh in."
     }
    ],
    "grammar": {
@@ -3701,7 +4115,7 @@
     "examples": [
      "Thanks, Tom. I'd like to hear from a few other people too.",
      "Luay, would you like to come in on this?",
-     "Could you build on that point?"
+     "Could you expand on that point?"
     ]
    }
   },
@@ -3723,9 +4137,9 @@
      "ex": "Let me bring us back to the main question."
     },
     {
-     "w": "lose the thread",
-     "ar": "يفقد خيط الحديث",
-     "ex": "Sorry, I've lost the thread."
+     "w": "be all at sea",
+     "ar": "تائه / مرتبك تماماً",
+     "ex": "Sorry, I'm all at sea. What's the question again?"
     },
     {
      "w": "get bogged down in",
@@ -3733,9 +4147,9 @@
      "ex": "The meeting got bogged down in small details."
     },
     {
-     "w": "come back to",
-     "ar": "يعود إلى",
-     "ex": "I promise we'll come back to your question."
+     "w": "revisit",
+     "ar": "يعود إلى الموضوع لاحقاً",
+     "ex": "I promise we'll revisit your question."
     }
    ],
    "dialogue": [
@@ -3761,7 +4175,7 @@
     },
     {
      "s": "Nasser",
-     "t": "Whether household habits can make a real difference. We'll come back to the history at the end."
+     "t": "Whether household habits can make a real difference. We'll revisit the history at the end."
     }
    ],
    "grammar": {
@@ -3777,9 +4191,9 @@
   "1-3": {
    "words": [
     {
-     "w": "recap",
-     "ar": "يلخّص / يستعرض باختصار",
-     "ex": "Let me recap before we go further."
+     "w": "pause to summarise",
+     "ar": "يتوقف ليلخّص",
+     "ex": "The chair paused to summarise the two positions."
     },
     {
      "w": "broadly speaking",
@@ -3787,9 +4201,9 @@
      "ex": "Broadly speaking, we've heard two positions."
     },
     {
-     "w": "in a nutshell",
+     "w": "the short version is",
      "ar": "باختصار شديد",
-     "ex": "In a nutshell, the plan is too expensive."
+     "ex": "The short version is that the plan is too expensive."
     },
     {
      "w": "boil down to",
@@ -3818,7 +4232,7 @@
     },
     {
      "s": "Sultan",
-     "t": "Let me recap. Broadly speaking, we've heard two positions."
+     "t": "Let me pause to summarise. Broadly speaking, we've heard two positions."
     },
     {
      "s": "Bader",
@@ -3834,16 +4248,16 @@
     },
     {
      "s": "Sultan",
-     "t": "So in a nutshell, it boils down to this: copying the look, or learning from the logic."
+     "t": "So the short version is that it boils down to this: copying the look, or learning from the logic."
     }
    ],
    "grammar": {
     "title": "Summarising views",
     "ar": "للتلخيص بإنصاف: نعرض المواقف باختصار، ثم نحدد جوهر الخلاف، ونتأكد أن أصحابها يوافقون على تلخيصنا.",
     "examples": [
-     "Let me recap before we go further.",
+     "Let me pause to summarise before we go further.",
      "Broadly speaking, we've heard two positions.",
-     "In a nutshell, it boils down to cost versus quality."
+     "The short version is that it boils down to cost versus quality."
     ]
    }
   },
@@ -3923,14 +4337,14 @@
   "1-5": {
    "words": [
     {
-     "w": "open the floor",
-     "ar": "يفتح باب المشاركة",
-     "ex": "I'd like to open the floor to anyone who hasn't spoken."
+     "w": "take a straw poll",
+     "ar": "يجري استطلاعاً سريعاً غير رسمي",
+     "ex": "The chair took a straw poll before closing the meeting."
     },
     {
-     "w": "draw the threads together",
-     "ar": "يجمع الخيوط / يربط الأفكار",
-     "ex": "Let me draw the threads together."
+     "w": "a common thread",
+     "ar": "خيط مشترك",
+     "ex": "A common thread ran through every speech: respect."
     },
     {
      "w": "take stock",
@@ -3948,9 +4362,9 @@
      "ex": "In fairness to Ben, he did mention that."
     },
     {
-     "w": "wrap up",
-     "ar": "يختتم",
-     "ex": "We need to wrap up in two minutes."
+     "w": "bring things to a close",
+     "ar": "يختتم النقاش",
+     "ex": "The chair brought things to a close with a short summary."
     }
    ],
    "dialogue": [
@@ -3968,7 +4382,7 @@
     },
     {
      "s": "Rakan",
-     "t": "Before we wrap up, does anyone else want to add something?"
+     "t": "Before we bring things to a close, does anyone else want to add something?"
     },
     {
      "s": "Yasser",
@@ -3987,7 +4401,7 @@
     "title": "Chairing from start to finish",
     "ar": "مهارات الرئاسة كاملة: الافتتاح، إشراك الجميع، ضبط المسار، التلخيص، ثم الختام بموقف تركيبي.",
     "examples": [
-     "Let's take stock before we wrap up.",
+     "Let's take stock before we bring things to a close.",
      "A recurring theme has been convenience versus identity.",
      "So perhaps our position is that …"
     ]
@@ -4219,9 +4633,9 @@
   "2-3": {
    "words": [
     {
-     "w": "cherry-pick",
-     "ar": "ينتقي ما يناسبه فقط",
-     "ex": "He cherry-picked the figures that suited him."
+     "w": "quote selectively",
+     "ar": "يقتبس بانتقائية",
+     "ex": "He quoted selectively from the report."
     },
     {
      "w": "take something out of context",
@@ -4239,9 +4653,9 @@
      "ex": "The evidence points to a small but real risk."
     },
     {
-     "w": "a sweeping generalisation",
-     "ar": "تعميم شامل مُفرِط",
-     "ex": "'Teenagers are lazy' is a sweeping generalisation."
+     "w": "a blanket statement",
+     "ar": "تعميم شامل",
+     "ex": "'Teenagers are lazy' is a blanket statement."
     },
     {
      "w": "mistake correlation for causation",
@@ -4264,7 +4678,7 @@
     },
     {
      "s": "Saud",
-     "t": "That's a sweeping generalisation."
+     "t": "That's a blanket statement."
     },
     {
      "s": "Daniel",
@@ -4296,14 +4710,14 @@
   "2-4": {
    "words": [
     {
-     "w": "win someone over",
-     "ar": "يكسب تأييد",
-     "ex": "Her honesty won over the audience."
+     "w": "sway",
+     "ar": "يستميل / يؤثّر في رأي",
+     "ex": "Her honest story swayed the undecided voters."
     },
     {
-     "w": "strike a chord",
-     "ar": "يلامس وتراً / يلقى صدى",
-     "ex": "His story about his grandfather struck a chord."
+     "w": "touch people's hearts",
+     "ar": "يلامس القلوب",
+     "ex": "His story about his grandfather touched people's hearts."
     },
     {
      "w": "meet someone halfway",
@@ -4311,9 +4725,9 @@
      "ex": "We met them halfway on the price."
     },
     {
-     "w": "the bigger picture",
-     "ar": "الصورة الأشمل",
-     "ex": "Don't forget the bigger picture."
+     "w": "take the long view",
+     "ar": "ينظر إلى المدى البعيد",
+     "ex": "Take the long view: what will this street look like in twenty years?"
     },
     {
      "w": "make common cause with",
@@ -4329,11 +4743,11 @@
    "dialogue": [
     {
      "s": "Liam",
-     "t": "Half the audience hasn't decided. How do we win them over?"
+     "t": "Half the audience hasn't decided. How do we sway them?"
     },
     {
      "s": "Hamza",
-     "t": "Facts alone won't do it. We need something that strikes a chord with families."
+     "t": "Facts alone won't do it. We need something that touches families' hearts."
     },
     {
      "s": "Liam",
@@ -4353,30 +4767,30 @@
     },
     {
      "s": "Liam",
-     "t": "Then we finish with the bigger picture."
+     "t": "Then we finish by taking the long view."
     }
    ],
    "grammar": {
     "title": "Persuading the undecided",
     "ar": "لكسب الجمهور المتردد: نلامس قيمه، ونقدّم حلاً وسطاً لمخاوفه، ثم نختم بالصورة الأشمل.",
     "examples": [
-     "We need an argument that strikes a chord with families.",
+     "We need an argument that touches families' hearts.",
      "Let's meet them halfway on parking.",
-     "Let's not lose sight of the bigger picture."
+     "Let's take the long view."
     ]
    }
   },
   "2-5": {
    "words": [
     {
-     "w": "reject the premise",
-     "ar": "يرفض الفرضية",
-     "ex": "I'd reject the premise that limits mean high prices."
+     "w": "keep your nerve",
+     "ar": "يحافظ على رباطة جأشه",
+     "ex": "She kept her nerve when the audience started laughing."
     },
     {
-     "w": "the real question is",
-     "ar": "السؤال الحقيقي هو",
-     "ex": "The real question is whether the site survives."
+     "w": "go on the offensive",
+     "ar": "ينتقل إلى الهجوم",
+     "ex": "Instead of defending himself, he went on the offensive."
     },
     {
      "w": "hold your own",
@@ -4384,9 +4798,9 @@
      "ex": "He held his own against older debaters."
     },
     {
-     "w": "turn the tables",
-     "ar": "يقلب الطاولة",
-     "ex": "She turned the tables with one simple question."
+     "w": "turn something on its head",
+     "ar": "يقلب الأمر رأساً على عقب",
+     "ex": "One simple question turned the whole argument on its head."
     },
     {
      "w": "play to the gallery",
@@ -4422,7 +4836,7 @@
     },
     {
      "s": "Ahmed",
-     "t": "Let me turn the tables: what happens to those businesses if the site has to close?"
+     "t": "Let me turn that argument on its head: what happens to those businesses if the site has to close?"
     },
     {
      "s": "Mr Hassan",
@@ -4434,7 +4848,7 @@
     "ar": "في المناظرة العامة: نرفض الافتراضات الخاطئة، ونعيد التأطير، ونقلب الحجة على الخصم، ثم نختم بكلمة قوية.",
     "examples": [
      "I'd reject the premise that limits mean high prices.",
-     "Let me turn the tables: what happens if the site closes?",
+     "Let me turn that argument on its head: what happens if the site closes?",
      "In my closing statement, I'd like to remind you of one thing."
     ]
    }
@@ -4442,14 +4856,14 @@
   "3-0": {
    "words": [
     {
-     "w": "by and large",
-     "ar": "بوجه عام",
-     "ex": "By and large, the new system works well."
+     "w": "in general terms",
+     "ar": "بشكل عام",
+     "ex": "In general terms, the new system works well."
     },
     {
-     "w": "a far cry from",
-     "ar": "مختلف تماماً عن",
-     "ex": "The new library is a far cry from the old one."
+     "w": "light years away from",
+     "ar": "مختلف تماماً عن / بعيد كل البعد عن",
+     "ex": "The new library is light years away from the old one."
     },
     {
      "w": "to a lesser extent",
@@ -4479,7 +4893,7 @@
     },
     {
      "s": "Ghada",
-     "t": "By and large, it's improved enormously. The new metro is a far cry from the days when the car was the only option."
+     "t": "In general terms, it's improved enormously. Getting around today is light years away from the days when the car was the only option."
     },
     {
      "s": "Ms Clarke",
@@ -4510,7 +4924,7 @@
     "title": "Precision in word choice",
     "ar": "في المستوى التاسع لا يكفي تنوع المفردات؛ المطلوب الدقة: كلمة تطابق حجم الأثر بالضبط (modest لا negligible ولا enormous).",
     "examples": [
-     "By and large, the policy has worked.",
+     "In general terms, the policy has worked.",
      "The effect was modest, though certainly not negligible.",
      "Traffic has improved, though to a lesser extent in the suburbs."
     ]
@@ -4524,9 +4938,9 @@
      "ex": "Our coach set the bar high from the first day."
     },
     {
-     "w": "a steep learning curve",
-     "ar": "منحنى تعلّم حادّ",
-     "ex": "My first month at the academy was a steep learning curve."
+     "w": "a baptism of fire",
+     "ar": "بداية قاسية / امتحان صعب منذ البداية",
+     "ex": "My first month at the academy was a baptism of fire."
     },
     {
      "w": "go the extra mile",
@@ -4564,7 +4978,7 @@
     },
     {
      "s": "Mishal",
-     "t": "I joined his academy at twelve. It was a steep learning curve."
+     "t": "I joined his academy at twelve. It was a baptism of fire."
     },
     {
      "s": "Adam",
@@ -4583,7 +4997,7 @@
     "title": "Natural idiom",
     "ar": "استخدم التعابير الاصطلاحية بدقة وفي سياقها المناسب ولا تحشرها حشراً؛ الإكثار منها يبدو محفوظاً.",
     "examples": [
-     "It was a steep learning curve at first.",
+     "It was a baptism of fire at first.",
      "His patience has rubbed off on me.",
      "She took the setback in her stride."
     ]
@@ -4592,19 +5006,19 @@
   "3-2": {
    "words": [
     {
-     "w": "it stands to reason",
-     "ar": "من المنطقي أن",
-     "ex": "It stands to reason that practice improves memory."
+     "w": "it follows that",
+     "ar": "يترتّب على ذلك أنّ",
+     "ex": "If we practise less, it follows that we remember less."
     },
     {
-     "w": "a case in point",
-     "ar": "مثال واضح على ذلك",
-     "ex": "Phone numbers are a case in point."
+     "w": "a telling example",
+     "ar": "مثال معبّر",
+     "ex": "Phone numbers are a telling example."
     },
     {
-     "w": "by the same token",
-     "ar": "وبالمنطق نفسه",
-     "ex": "By the same token, apps can help us learn."
+     "w": "in the same vein",
+     "ar": "على المنوال نفسه",
+     "ex": "In the same vein, apps can help us learn."
     },
     {
      "w": "not least because",
@@ -4617,9 +5031,9 @@
      "ex": "Fame can cut both ways."
     },
     {
-     "w": "on balance",
-     "ar": "بعد الموازنة / إجمالاً",
-     "ex": "On balance, the benefits outweigh the costs."
+     "w": "taken as a whole",
+     "ar": "إذا نظرنا إليه ككل",
+     "ex": "Taken as a whole, the benefits outweigh the costs."
     }
    ],
    "dialogue": [
@@ -4629,7 +5043,7 @@
     },
     {
      "s": "Razan",
-     "t": "It stands to reason that if phones store everything, we practise remembering less. Phone numbers are a case in point."
+     "t": "If phones store everything, it follows that we practise remembering less. Phone numbers are a telling example."
     },
     {
      "s": "Mr Davies",
@@ -4645,16 +5059,16 @@
     },
     {
      "s": "Razan",
-     "t": "On balance, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information."
+     "t": "Taken as a whole, technology cuts both ways: it weakens some kinds of memory but strengthens our ability to find and use information."
     }
    ],
    "grammar": {
     "title": "Structuring a long turn",
     "ar": "الحديث المطوّل في C2: فكرة واضحة مع مثال، ثم فكرة مكمّلة أو مقابلة، ثم خلاصة موزونة بموقف صريح.",
     "examples": [
-     "Phone numbers are a case in point.",
-     "By the same token, apps can help us practise.",
-     "On balance, the benefits outweigh the costs."
+     "Phone numbers are a telling example.",
+     "In the same vein, apps can help us practise.",
+     "Taken as a whole, the benefits outweigh the costs."
     ]
    }
   },
@@ -4676,14 +5090,14 @@
      "ex": "Health and happiness are inextricably linked."
     },
     {
-     "w": "it's debatable whether",
-     "ar": "من غير المؤكد / محلّ جدل ما إذا",
-     "ex": "It's debatable whether money brings happiness."
+     "w": "it's an open question whether",
+     "ar": "لا يزال السؤال مطروحاً حول ما إذا",
+     "ex": "It's an open question whether money brings happiness."
     },
     {
-     "w": "hinge on",
-     "ar": "يتوقّف على",
-     "ex": "Everything hinges on the final exam."
+     "w": "be contingent on",
+     "ar": "مشروط بـ / متوقّف على",
+     "ex": "Your place is contingent on your final results."
     },
     {
      "w": "a matter of degree",
@@ -4698,7 +5112,7 @@
     },
     {
      "s": "Bassam",
-     "t": "In the broadest sense, no. Success is usually measured against other people; happiness isn't."
+     "t": "In the broadest sense, no. Success is usually measured against other people; happiness isn't, or at least it shouldn't be."
     },
     {
      "s": "Nick",
@@ -4706,11 +5120,11 @@
     },
     {
      "s": "Bassam",
-     "t": "For some people they're inextricably linked, but it's debatable whether one causes the other."
+     "t": "For some people they're inextricably linked, but it's an open question whether one causes the other."
     },
     {
      "s": "Nick",
-     "t": "What does happiness hinge on, then?"
+     "t": "What is happiness contingent on, then?"
     },
     {
      "s": "Bassam",
@@ -4718,7 +5132,7 @@
     },
     {
      "s": "Nick",
-     "t": "And money?"
+     "t": "The one that followed people for decades? And what about money?"
     },
     {
      "s": "Bassam",
@@ -4729,8 +5143,8 @@
     "title": "Discussing abstract ideas",
     "ar": "في الأسئلة المجردة: عرّف المفهوم، وميّز بين المفاهيم المتقاربة، وتجنّب الأحكام المطلقة بعبارات مثل it's a matter of degree.",
     "examples": [
-     "It's debatable whether money causes happiness.",
-     "Much hinges on how we define success.",
+     "It's an open question whether money causes happiness.",
+     "Much is contingent on how we define success.",
      "The two are inextricably linked."
     ]
    }
@@ -4753,14 +5167,14 @@
      "ex": "It's, for want of a better word, a code."
     },
     {
-     "w": "let me rephrase that",
-     "ar": "دعني أعيد صياغة ذلك",
-     "ex": "Sorry, let me rephrase that."
+     "w": "let me put that another way",
+     "ar": "دعني أعبّر عن ذلك بطريقة أخرى",
+     "ex": "Let me put that another way: each pattern has a meaning."
     },
     {
-     "w": "what I'm getting at is",
-     "ar": "ما أقصده هو",
-     "ex": "What I'm getting at is that each pattern has a meaning."
+     "w": "come out wrong",
+     "ar": "يخرج الكلام بشكل غير مقصود",
+     "ex": "Sorry, that came out wrong. I meant it as a compliment."
     },
     {
      "w": "to be more precise",
@@ -4799,7 +5213,7 @@
     },
     {
      "s": "Abeer",
-     "t": "Let me rephrase that. What I'm getting at is that each weaver's colours and patterns made her work recognisable."
+     "t": "Let me put that another way. What I'm getting at is that each weaver's colours and patterns made her work recognisable."
     }
    ],
    "grammar": {
@@ -4808,21 +5222,21 @@
     "examples": [
      "It's a basket, or rather, a food cover.",
      "For want of a better word, it's a kind of code.",
-     "Let me rephrase that. What I'm getting at is …"
+     "Let me put that another way. What I'm getting at is …"
     ]
    }
   },
   "3-5": {
    "words": [
     {
-     "w": "on balance",
-     "ar": "بعد الموازنة / إجمالاً",
-     "ex": "On balance, cities should be built around people."
+     "w": "in the grand scheme of things",
+     "ar": "في الصورة الكبرى للأمور",
+     "ex": "In the grand scheme of things, a late bus is a small problem."
     },
     {
-     "w": "a far cry from",
-     "ar": "مختلف تماماً عن",
-     "ex": "Today's cities are a far cry from those of the past."
+     "w": "a departure from",
+     "ar": "خروج عن / تحوّل عن",
+     "ex": "The new design is a bold departure from the old one."
     },
     {
      "w": "that's a tricky one",
@@ -4830,19 +5244,19 @@
      "ex": "That's a tricky one. Let me think."
     },
     {
-     "w": "off the top of my head",
-     "ar": "على البديهة / دون تفكير مسبق",
-     "ex": "Off the top of my head, I can think of three reasons."
+     "w": "roughly speaking",
+     "ar": "تقريباً / بشكل تقريبي",
+     "ex": "Roughly speaking, half the class walks to school."
     },
     {
-     "w": "go hand in hand",
-     "ar": "يسيران جنباً إلى جنب",
-     "ex": "Health and good design go hand in hand."
+     "w": "be bound up with",
+     "ar": "مرتبط ارتباطاً وثيقاً بـ",
+     "ex": "Health is bound up with good design."
     },
     {
-     "w": "strike a balance",
-     "ar": "يحقّق التوازن",
-     "ex": "It's hard to strike a balance between work and rest."
+     "w": "find the sweet spot",
+     "ar": "يجد النقطة المثالية",
+     "ex": "It's hard to find the sweet spot between work and rest."
     }
    ],
    "dialogue": [
@@ -4852,7 +5266,7 @@
     },
     {
      "s": "Talal",
-     "t": "That's a tricky one. Off the top of my head, greener, quieter and far more walkable."
+     "t": "That's a tricky one. Roughly speaking, greener, quieter and far more walkable."
     },
     {
      "s": "Ms Patel",
@@ -4860,7 +5274,7 @@
     },
     {
      "s": "Talal",
-     "t": "Because health and urban design go hand in hand."
+     "t": "Because health is bound up with urban design."
     },
     {
      "s": "Ms Patel",
@@ -4868,7 +5282,7 @@
     },
     {
      "s": "Talal",
-     "t": "By and large, no. Cities also need to strike a balance between innovation and community life."
+     "t": "In general terms, no. Cities also need to find the sweet spot between innovation and community life."
     },
     {
      "s": "Ms Patel",
@@ -4876,16 +5290,16 @@
     },
     {
      "s": "Talal",
-     "t": "On balance, the best future cities will be designed around people rather than machines."
+     "t": "In the grand scheme of things, the best future cities will be designed around people rather than machines."
     }
    ],
    "grammar": {
     "title": "Band 9 in action",
     "ar": "اجمع كل ما تعلمته: الدقة، والتعابير الطبيعية، وبناء الإجابة، والإصلاح الذاتي، وخلاصة متوازنة واضحة.",
     "examples": [
-     "That's a tricky one, but off the top of my head …",
-     "Health and design go hand in hand.",
-     "On balance, cities should be built around people."
+     "That's a tricky one, but roughly speaking …",
+     "Health is bound up with design.",
+     "In the grand scheme of things, cities should be built around people."
     ]
    }
   }
@@ -5058,13 +5472,15 @@
     "type": "order",
     "words": [
      "The",
-     "humour",
-     "got",
-     "lost",
+     "joke",
+     "fell",
+     "flat",
      "in",
-     "translation."
+     "the",
+     "group",
+     "chat."
     ],
-    "answer": "The humour got lost in translation.",
+    "answer": "The joke fell flat in the group chat.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5096,10 +5512,12 @@
     "words": [
      "His",
      "silence",
-     "spoke",
-     "volumes."
+     "told",
+     "its",
+     "own",
+     "story."
     ],
-    "answer": "His silence spoke volumes.",
+    "answer": "His silence told its own story.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5207,7 +5625,7 @@
   "0-5": [
    {
     "type": "mc",
-    "q": "Someone 'picks up on' a hidden meaning. They ___.",
+    "q": "Someone 'catches on to' a hidden meaning. They ___.",
     "options": [
      "ignore it",
      "invent it",
@@ -5286,12 +5704,12 @@
     "words": [
      "That's",
      "the",
-     "crux",
+     "nub",
      "of",
      "the",
-     "matter."
+     "issue."
     ],
-    "answer": "That's the crux of the matter.",
+    "answer": "That's the nub of the issue.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5321,12 +5739,12 @@
    },
    {
     "type": "mc",
-    "q": "To 'set the scene' at the start of a seminar means to ___.",
+    "q": "To 'sketch out' the background at the start of a seminar means to ___.",
     "options": [
      "end the discussion",
      "choose a winner",
-     "decorate the room",
-     "give the background"
+     "draw a picture",
+     "describe it briefly"
     ],
     "answer": 3
    }
@@ -5350,10 +5768,10 @@
      "anyone",
      "like",
      "to",
-     "chip",
+     "weigh",
      "in?"
     ],
-    "answer": "Would anyone like to chip in?",
+    "answer": "Would anyone like to weigh in?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5372,12 +5790,12 @@
     "words": [
      "Could",
      "you",
-     "build",
+     "expand",
      "on",
      "that",
      "point?"
     ],
-    "answer": "Could you build on that point?",
+    "answer": "Could you expand on that point?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5447,7 +5865,7 @@
    },
    {
     "type": "mc",
-    "q": "A participant says, 'Sorry, I've lost the thread.' The best response from the leader is:",
+    "q": "A participant says, 'Sorry, I'm all at sea.' The best response from the leader is:",
     "options": [
      "Then just listen.",
      "That's not my problem.",
@@ -5464,7 +5882,7 @@
     "options": [
      "On the dot, …",
      "Out of the blue, …",
-     "In a nutshell, …",
+     "The short version is …",
      "Under the weather, …"
     ],
     "answer": 2
@@ -5498,13 +5916,15 @@
     "words": [
      "Let",
      "me",
-     "recap",
+     "pause",
+     "to",
+     "summarise",
      "before",
      "we",
      "go",
      "further."
     ],
-    "answer": "Let me recap before we go further.",
+    "answer": "Let me pause to summarise before we go further.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5625,13 +6045,16 @@
     "words": [
      "Before",
      "we",
-     "wrap",
-     "up,",
+     "bring",
+     "things",
+     "to",
+     "a",
+     "close,",
      "any",
      "final",
      "thoughts?"
     ],
-    "answer": "Before we wrap up, any final thoughts?",
+    "answer": "Before we bring things to a close, any final thoughts?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5838,14 +6261,14 @@
   "2-3": [
    {
     "type": "mc",
-    "q": "Choosing only the facts that support your view and ignoring the rest is called ___.",
+    "q": "Using only the parts of a source that support your view is quoting ___.",
     "options": [
-     "fact-checking",
-     "reframing",
-     "cherry-picking",
-     "summarising"
+     "selectively",
+     "effectively",
+     "directly",
+     "widely"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "order",
@@ -5893,7 +6316,7 @@
      "a fair concession",
      "a precise statistic",
      "an understatement",
-     "a sweeping generalisation"
+     "a blanket statement"
     ],
     "answer": 3
    }
@@ -5901,7 +6324,7 @@
   "2-4": [
    {
     "type": "mc",
-    "q": "If an idea 'strikes a chord' with people, it ___.",
+    "q": "If a story 'touches people's hearts', it ___.",
     "options": [
      "annoys them",
      "makes them feel emotionally connected",
@@ -5916,13 +6339,12 @@
      "We",
      "need",
      "to",
-     "win",
-     "over",
+     "sway",
      "the",
      "undecided",
      "residents."
     ],
-    "answer": "We need to win over the undecided residents.",
+    "answer": "We need to sway the undecided residents.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5952,7 +6374,7 @@
    },
    {
     "type": "mc",
-    "q": "Which closing line shows 'the bigger picture'?",
+    "q": "Which closing line 'takes the long view'?",
     "options": [
      "Thanks, that's all.",
      "Parking is difficult.",
@@ -5980,13 +6402,13 @@
      "Let",
      "me",
      "turn",
-     "the",
-     "tables",
-     "on",
      "that",
-     "argument."
+     "argument",
+     "on",
+     "its",
+     "head."
     ],
-    "answer": "Let me turn the tables on that argument.",
+    "answer": "Let me turn that argument on its head.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6042,15 +6464,15 @@
    {
     "type": "order",
     "words": [
-     "By",
-     "and",
-     "large,",
+     "In",
+     "general",
+     "terms,",
      "the",
      "plan",
      "has",
      "worked."
     ],
-    "answer": "By and large, the plan has worked.",
+    "answer": "In general terms, the plan has worked.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6070,15 +6492,15 @@
      "Today's",
      "city",
      "is",
-     "a",
-     "far",
-     "cry",
+     "light",
+     "years",
+     "away",
      "from",
      "the",
      "old",
      "one."
     ],
-    "answer": "Today's city is a far cry from the old one.",
+    "answer": "Today's city is light years away from the old one.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6111,13 +6533,13 @@
      "It",
      "was",
      "a",
-     "steep",
-     "learning",
-     "curve",
+     "baptism",
+     "of",
+     "fire",
      "at",
      "first."
     ],
-    "answer": "It was a steep learning curve at first.",
+    "answer": "It was a baptism of fire at first.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6150,7 +6572,7 @@
     "type": "mc",
     "q": "Which sentence uses an idiom naturally in an IELTS answer?",
     "options": [
-     "Moving to a new school was a steep learning curve, but I adapted.",
+     "Moving to a new school was a baptism of fire, but I adapted.",
      "My coach rained cats and dogs on me.",
      "I was over the moon under the weather.",
      "He went the extra mile to the shop to buy bread."
@@ -6161,10 +6583,10 @@
   "3-2": [
    {
     "type": "mc",
-    "q": "Which phrase introduces a final, balanced judgement?",
+    "q": "Which phrase introduces a final judgement that considers everything together?",
     "options": [
      "On purpose, …",
-     "On balance, …",
+     "Taken as a whole, …",
      "On the dot, …",
      "On the house, …"
     ],
@@ -6186,8 +6608,8 @@
     "type": "mc",
     "q": "'Electric cars cost more to buy. ___, they are cheaper to run.'",
     "options": [
-     "By the same token",
-     "It stands to reason",
+     "In the same vein",
+     "It follows that",
      "Not least because",
      "On the other hand"
     ],
@@ -6200,36 +6622,35 @@
      "numbers",
      "are",
      "a",
-     "case",
-     "in",
-     "point."
+     "telling",
+     "example."
     ],
-    "answer": "Phone numbers are a case in point.",
+    "answer": "Phone numbers are a telling example.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "'It ___ to reason that practice improves memory.'",
+    "q": "'If phones remember for us, it ___ that we practise less.'",
     "options": [
-     "holds",
-     "makes",
+     "follows",
      "goes",
-     "stands"
+     "comes",
+     "leads"
     ],
-    "answer": 3
+    "answer": 0
    }
   ],
   "3-3": [
    {
     "type": "mc",
-    "q": "'The result will ___ on the final exam.' (depend completely)",
+    "q": "'Your place is ___ on your final exam results.' (depends completely)",
     "options": [
-     "lean",
-     "stand",
-     "hinge",
-     "rest up"
+     "contingent",
+     "continual",
+     "consistent",
+     "constant"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "order",
@@ -6258,14 +6679,15 @@
     "type": "order",
     "words": [
      "Much",
-     "hinges",
+     "is",
+     "contingent",
      "on",
      "how",
      "we",
      "define",
      "success."
     ],
-    "answer": "Much hinges on how we define success.",
+    "answer": "Much is contingent on how we define success.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6274,7 +6696,7 @@
     "options": [
      "Yes.",
      "I like money.",
-     "It's debatable whether wealth brings happiness; beyond a certain point, relationships seem to matter more.",
+     "It's an open question whether wealth brings happiness; beyond a certain point, relationships seem to matter more.",
      "My friend is rich."
     ],
     "answer": 2
@@ -6297,12 +6719,14 @@
     "words": [
      "Let",
      "me",
-     "rephrase",
+     "put",
      "that",
+     "another",
+     "way",
      "more",
      "clearly."
     ],
-    "answer": "Let me rephrase that more clearly.",
+    "answer": "Let me put that another way more clearly.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6358,23 +6782,22 @@
     "type": "order",
     "words": [
      "Health",
-     "and",
-     "design",
-     "go",
-     "hand",
-     "in",
-     "hand."
+     "is",
+     "bound",
+     "up",
+     "with",
+     "design."
     ],
-    "answer": "Health and design go hand in hand.",
+    "answer": "Health is bound up with design.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "'Off the top of my head' means ___.",
+    "q": "'Roughly speaking' means ___.",
     "options": [
      "after long research",
      "with complete certainty",
-     "without checking first",
+     "approximately, without exact detail",
      "very loudly"
     ],
     "answer": 2
@@ -6385,13 +6808,14 @@
      "We",
      "need",
      "to",
-     "strike",
-     "a",
-     "balance",
+     "find",
+     "the",
+     "sweet",
+     "spot",
      "between",
      "them."
     ],
-    "answer": "We need to strike a balance between them.",
+    "answer": "We need to find the sweet spot between them.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6400,7 +6824,7 @@
     "options": [
      "Yes, cars bad.",
      "No.",
-     "A total ban seems unrealistic, but on balance, cities should limit cars in central areas.",
+     "A total ban seems unrealistic, but in the grand scheme of things, cities should limit cars in central areas.",
      "I don't drive, so I don't know."
     ],
     "answer": 2
@@ -6505,14 +6929,14 @@
     {
      "type": "order",
      "words": [
-      "It",
-      "speaks",
-      "volumes",
-      "that",
-      "nobody",
-      "replied."
+      "The",
+      "silence",
+      "tells",
+      "its",
+      "own",
+      "story."
      ],
-     "answer": "It speaks volumes that nobody replied.",
+     "answer": "The silence tells its own story.",
      "ar": "رتّب الجملة"
     },
     {
@@ -6634,16 +7058,18 @@
     {
      "type": "order",
      "words": [
-      "In",
-      "a",
-      "nutshell,",
+      "The",
+      "short",
+      "version",
+      "is",
+      "that",
       "it",
       "boils",
       "down",
       "to",
       "time."
      ],
-     "answer": "In a nutshell, it boils down to time.",
+     "answer": "The short version is that it boils down to time.",
      "ar": "رتّب الجملة"
     },
     {
@@ -6705,7 +7131,7 @@
     },
     {
      "type": "mc",
-     "q": "An argument that 'strikes a chord' with listeners ___.",
+     "q": "An argument that 'touches people's hearts' ___.",
      "options": [
       "bores them",
       "confuses them",
@@ -6815,7 +7241,7 @@
      "q": "Which is the most precise and natural sentence?",
      "options": [
       "The metro has changed everything totally forever.",
-      "By and large, the metro has improved journeys, though to a lesser extent in the suburbs.",
+      "In general terms, the metro has improved journeys, though to a lesser extent in the suburbs.",
       "The metro is very very good.",
       "The metro is a far cry."
      ],
@@ -6850,7 +7276,7 @@
       "Or rather, …",
       "In a nutshell, …",
       "For the record, …",
-      "By and large, …"
+      "In general terms, …"
      ],
      "answer": 0
     },
@@ -6879,15 +7305,17 @@
     {
      "type": "order",
      "words": [
-      "On",
-      "balance,",
+      "Taken",
+      "as",
+      "a",
+      "whole,",
       "the",
       "benefits",
       "outweigh",
       "the",
       "costs."
      ],
-     "answer": "On balance, the benefits outweigh the costs.",
+     "answer": "Taken as a whole, the benefits outweigh the costs.",
      "ar": "رتّب الجملة"
     },
     {
@@ -6896,11 +7324,11 @@
       "It",
       "was",
       "a",
-      "steep",
-      "learning",
-      "curve."
+      "baptism",
+      "of",
+      "fire."
      ],
-     "answer": "It was a steep learning curve.",
+     "answer": "It was a baptism of fire.",
      "ar": "رتّب الجملة"
     },
     {
@@ -6908,18 +7336,18 @@
      "words": [
       "Let",
       "me",
-      "rephrase",
+      "put",
       "that",
-      "more",
-      "clearly."
+      "another",
+      "way."
      ],
-     "answer": "Let me rephrase that more clearly.",
+     "answer": "Let me put that another way.",
      "ar": "رتّب الجملة"
     }
    ],
    "speak": [
     "Speak for one minute about a skill you learned from someone, using two idioms naturally and accurately.",
-    "Give a balanced answer to an abstract question: 'Is ambition always a good thing?' Finish with 'On balance, …'."
+    "Give a balanced answer to an abstract question: 'Is ambition always a good thing?' Finish with 'Taken as a whole, …'."
    ]
   }
  },
@@ -7130,21 +7558,23 @@
      "Always.",
      "Never.",
      "I want to be successful.",
-     "It's debatable whether one causes the other; much hinges on how we define success."
+     "It's an open question whether one causes the other; much is contingent on how we define success."
     ],
     "answer": 3
    },
    {
     "type": "order",
     "words": [
-     "On",
-     "balance,",
+     "Taken",
+     "as",
+     "a",
+     "whole,",
      "technology",
      "cuts",
      "both",
      "ways."
     ],
-    "answer": "On balance, technology cuts both ways.",
+    "answer": "Taken as a whole, technology cuts both ways.",
     "ar": "رتّب الجملة"
    },
    {

@@ -32,13 +32,15 @@ Grammar that appears in a level must not be "taught" again as new in a later lev
 1. Last Weekend | telling what happened | past simple (regular), time words
 2. Trips and Visits | asking about past trips | past simple irregular, Did you …? Where did …?
 3. Bigger, Better, Best | comparing | comparatives and superlatives
-4. Food and Health | giving simple advice | should / shouldn't
+4. Food and Health | giving simple advice | should / shouldn't; quantifiers some / any / a lot of / much / many and How much …? / How many …? with countable and uncountable food words
+   (added Nov 2026 to fill a gap no unit taught: lesson 1 'A Healthy Breakfast' = some / any / a lot of / much / many; lesson 4 'Hot Summer Days' = How much water …? / How many drinks …?; lesson 6 'Our Health Poster' recycles too much / too many. Advice with should stays the unit function. Unit test items 5 and 10 test the two points.)
 
 ## L6 — A2 (Flyers / Key) · GSE 33-35
 1. Weekend Plans | talking about future plans | be going to; future time words
 2. Invitations | inviting, accepting, declining politely | Would you like to …? I'd love to. / I'm afraid I can't …
 3. How I Feel | describing feelings and reasons | -ed / -ing adjectives; because / so
-4. Rules | talking about rules and obligations | have to / don't have to / must / mustn't
+4. Rules | talking about rules and obligations | have to / don't have to / must / mustn't; zero conditional for rules and facts (If / When + present, present)
+   (added Nov 2026 to fill a gap no unit taught: lesson 3 'At the Swimming Pool' = If you dive here, you hit the bottom. / When the lifeguard blows the whistle, everyone gets out; lesson 4 'My First Flight' recycles When the sign is off, you can walk; lesson 5 'Rules of the Game' = If you touch the ball with your hands, it's a foul. Facts: If you heat ice, it melts (quiz 3-2, unit test item 9). L8 builds the first conditional on it.)
 
 ## L7 — A2+ (Key for Schools) · GSE 36-42
 1. Have You Ever …? | talking about experiences | present perfect with ever / never / already / yet
@@ -50,7 +52,7 @@ Grammar that appears in a level must not be "taught" again as new in a later lev
 1. In My Opinion | giving and asking for opinions | I think / In my opinion / What do you think about …?
 2. I Agree … or Not | agreeing and disagreeing politely | So do I / Neither do I / I see your point, but …
 3. What Should I Do? | asking for and giving advice | If I were you …, Why don't you …?, first conditional
-4. People and Places in Detail | describing in detail | relative clauses who / which / where / whose
+4. People and Places in Detail | describing in detail | relative clauses who / which / where / whose; used to / didn't use to (past habits and states, L8 4.1 and 4.6)
 
 ## L9 — B1 (Preliminary) · GSE 47-50
 1. Just Checking | checking and confirming understanding | question tags; Do you mean …? So you're saying …
@@ -59,15 +61,15 @@ Grammar that appears in a level must not be "taught" again as new in a later lev
 4. Making Decisions | comparing options and deciding | It would be better to …, Let's go for …, as … as
 
 ## L10 — B1+ · GSE 51-54
-1. Experiences in Detail | describing experiences and how long | present perfect continuous, for / since
+1. Experiences in Detail | describing experiences and how long | present perfect continuous, for / since; verb + -ing / verb + to (enjoy doing, want to do, stop doing vs stop to do, L10 1.2 and 1.4)
 2. The Facts | giving precise information | passive voice (present and past)
-3. There's a Problem | complaining politely and asking for solutions | I'm afraid …, Could you possibly …? I'd like to …
+3. There's a Problem | complaining politely and asking for solutions | I'm afraid …, Could you possibly …? I'd like to … (reported speech from L9 recycled in 3.4)
 4. Imagine That | imagining unreal situations | second conditional, I wish + past
 
 ## L11 — B1+ · GSE 55-58
 1. One Hundred Percent Sure | expressing certainty and possibility | must / might / can't be; I'm positive that …
 2. You Should Try It | persuading and recommending | It's worth …ing, You really should …, If you ask me …
-3. Looking Back | talking about regrets and past possibilities | should have / could have, I wish I had …
+3. Looking Back | talking about regrets and past possibilities | should have / could have, I wish I had … (reported speech from L9 recycled in 3.2)
 4. How It Works | explaining processes and instructions | sequencing words, passive in processes
 
 ## L12 — B2 (First) · GSE 59-62
