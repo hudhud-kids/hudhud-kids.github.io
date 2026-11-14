@@ -233,6 +233,7 @@
    ],
    "dialogue": {
     "scene": "Reem visits her friend Noura and sees lots of paintings in her room.",
+    "scene_emoji": "🖌️",
     "p1": [
      {
       "s": "Reem",
@@ -276,7 +277,7 @@
     ]
    },
    "speakout": {
-    "scene": "You are joining a new hobby club at school. The club leader wants to know about your hobbies. Answer their questions.",
+    "scene": "You are joining a new hobby club at the community centre. The club leader wants to know about your hobbies. Answer their questions.",
     "prompts": [
      {
       "q": "What hobby have you been doing recently?",
@@ -349,6 +350,7 @@
    ],
    "dialogue": {
     "scene": "Omar meets his cousin Sam, who is visiting from the UK, at a family dinner in Jeddah.",
+    "scene_emoji": "🧠",
     "p1": [
      {
       "s": "Omar",
@@ -356,7 +358,7 @@
      },
      {
       "s": "Sam",
-      "t": "I've been studying it since September. I have online lessons twice a week."
+      "t": "I've been studying it since September. I practise online with a tutor twice a week."
      },
      {
       "s": "Omar",
@@ -392,7 +394,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your teacher is writing an article for the school website about students who are learning new skills. You are being interviewed.",
+    "scene": "A kids' magazine is writing an article about young people who are learning new skills. I'm the reporter, and you are being interviewed.",
     "prompts": [
      {
       "q": "What skill have you been learning?",
@@ -464,7 +466,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Emma's family moved from Canada to Riyadh. Her classmate Reem asks her about her new life.",
+    "scene": "Emma's family moved from Canada to Riyadh. Her new neighbour Reem asks her about her new life.",
+    "scene_emoji": "🏡",
     "p1": [
      {
       "s": "Reem",
@@ -508,7 +511,7 @@
     ]
    },
    "speakout": {
-    "scene": "A new student from another country has joined your class. They ask you about life where you live. Answer their questions.",
+    "scene": "A new neighbour from another country asks you about life where you live. Answer their questions.",
     "prompts": [
      {
       "q": "How long have you been living here?",
@@ -580,7 +583,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal is preparing for a 5 km school fun run. His sister Lama asks him how it's going.",
+    "scene": "Faisal is preparing for a 5 km family fun run in Riyadh. His sister Lama asks him how it's going.",
+    "scene_emoji": "🏃",
     "p1": [
      {
       "s": "Lama",
@@ -588,7 +592,7 @@
      },
      {
       "s": "Faisal",
-      "t": "I've been running in the park. The school fun run is next Friday."
+      "t": "I've been running in the park. The fun run is next Friday."
      },
      {
       "s": "Lama",
@@ -624,7 +628,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your friend is the captain of the school football team. They want to check how you have been preparing for the big match.",
+    "scene": "Your friend is the captain of your football team at the club. They want to check how you have been preparing for the big match.",
     "prompts": [
      {
       "q": "What have you been doing to get ready for the match?",
@@ -813,10 +817,11 @@
    ],
    "dialogue": {
     "scene": "Noura is having an online interview for a summer leadership programme. Mr Khalid is interviewing her.",
+    "scene_emoji": "💻",
     "p1": [
      {
       "s": "Mr Khalid",
-      "t": "Thanks for joining us, Noura. Tell me about something you've been doing outside school."
+      "t": "Thanks for joining us, Noura. Tell me about something you've been doing in your free time."
      },
      {
       "s": "Noura",
@@ -846,7 +851,7 @@
      },
      {
       "s": "Noura",
-      "t": "I've built a small quiz app for my class. I'm really looking forward to learning more this summer."
+      "t": "I've built a small quiz app for my cousins. I'm really looking forward to learning more this summer."
      }
     ],
     "focus": "I've been volunteering at a children's library since last January.",
@@ -1045,6 +1050,7 @@
    ],
    "dialogue": {
     "scene": "Omar is showing his British friend Jack around Masmak Fortress in Riyadh.",
+    "scene_emoji": "🏰",
     "p1": [
      {
       "s": "Jack",
@@ -1088,7 +1094,7 @@
     ]
    },
    "speakout": {
-    "scene": "You are making a short video about a famous building for a school competition. Your friend is filming and asks you questions.",
+    "scene": "You are making a short video about a famous building for a kids' video competition. Your friend is filming and asks you questions.",
     "prompts": [
      {
       "q": "Which building are you talking about, and when was it built?",
@@ -1161,6 +1167,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and his friend Sam are at a science museum. They are looking at a strange old machine.",
+    "scene_emoji": "⚙️",
     "p1": [
      {
       "s": "Sam",
@@ -1204,7 +1211,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your class is making a quiz about great inventions. Your partner asks you about the invention you have chosen.",
+    "scene": "Your family is making a quiz about great inventions for a game night. Your cousin asks you about the invention you have chosen.",
     "prompts": [
      {
       "q": "Which invention did you choose, and who was it invented by?",
@@ -1392,11 +1399,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura and her brother Faisal are reading the school news website at breakfast.",
+    "scene": "Noura and her brother Faisal are reading the news on a tablet at breakfast.",
+    "scene_emoji": "📰",
     "p1": [
      {
       "s": "Faisal",
-      "t": "Did you hear? Tomorrow's school trip was called off."
+      "t": "Did you hear? Tomorrow's scout camping trip was called off."
      },
      {
       "s": "Noura",
@@ -1404,7 +1412,7 @@
      },
      {
       "s": "Faisal",
-      "t": "According to the school website, heavy rain is expected in Riyadh tomorrow."
+      "t": "According to the weather website, heavy rain is expected in Riyadh tomorrow."
      },
      {
       "s": "Noura",
@@ -1431,12 +1439,12 @@
     ],
     "focus": "It was put off until next Tuesday.",
     "qs": [
-     "Why was the school trip called off?",
+     "Why was the camping trip called off?",
      "When was the winning goal scored?"
     ]
    },
    "speakout": {
-    "scene": "You are a presenter on your school's news podcast. Your co-presenter asks you about this week's news.",
+    "scene": "You are a presenter on a kids' news podcast. Your co-presenter asks you about this week's news.",
     "prompts": [
      {
       "q": "What happened at school this week?",
@@ -1508,7 +1516,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem is practising her class presentation about AlUla. Her friend Emma is listening and asking questions.",
+    "scene": "Reem is practising a talk about AlUla for a young tour guides' competition. Her friend Emma is listening and asking questions.",
+    "scene_emoji": "🏜️",
     "p1": [
      {
       "s": "Emma",
@@ -1552,7 +1561,7 @@
     ]
    },
    "speakout": {
-    "scene": "You are presenting a fact file about a famous place in Saudi Arabia or another country. Your classmates ask you questions.",
+    "scene": "You are presenting a fact file about a famous place in Saudi Arabia or another country. The judges ask you questions.",
     "prompts": [
      {
       "q": "Where is the place located, and what is it famous for?",
@@ -1973,6 +1982,7 @@
    ],
    "dialogue": {
     "scene": "Noura booked a padel court for herself and her sister, but when they arrived, someone else was playing. She speaks to the club manager.",
+    "scene_emoji": "🎾",
     "p1": [
      {
       "s": "Noura",
@@ -2016,7 +2026,7 @@
     ]
    },
    "speakout": {
-    "scene": "You booked a swimming lesson at your sports club, but the pool was closed when you arrived and nobody told you. You speak to the manager.",
+    "scene": "You booked a swimming session at your sports club, but the pool was closed when you arrived and nobody told you. You speak to the manager.",
     "prompts": [
      {
       "q": "Hello, can I help you?",
@@ -2089,6 +2099,7 @@
    ],
    "dialogue": {
     "scene": "Sam takes his tablet to a repair shop in Riyadh. He talks to the technician.",
+    "scene_emoji": "🔧",
     "p1": [
      {
       "s": "Technician",
@@ -2114,7 +2125,7 @@
      },
      {
       "s": "Sam",
-      "t": "Three days? Could you possibly do it a bit faster? I need it for school."
+      "t": "Three days? Could you possibly do it a bit faster? I need it for a trip on Thursday."
      },
      {
       "s": "Technician",
@@ -2320,7 +2331,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Sam are waiting for the bus after school, talking about superpowers.",
+    "scene": "Omar and Sam are waiting in a long queue for a roller coaster at a theme park, talking about superpowers.",
+    "scene_emoji": "🦸",
     "p1": [
      {
       "s": "Sam",
@@ -2328,11 +2340,11 @@
      },
      {
       "s": "Omar",
-      "t": "Easy. I'd fly. If I could fly, I'd get to school in the blink of an eye."
+      "t": "Easy. I'd fly. If I could fly, I'd get to the front of this queue in the blink of an eye."
      },
      {
       "s": "Sam",
-      "t": "Ha! I'd choose to read people's minds. Then I'd know the answers in every test."
+      "t": "Ha! I'd choose to read people's minds. Then I'd always win at board games."
      },
      {
       "s": "Omar",
@@ -2357,7 +2369,7 @@
       "t": "If I could go back in time, I'd warn people about big floods. That would save lives."
      }
     ],
-    "focus": "If I could fly, I'd get to school in the blink of an eye.",
+    "focus": "If I could fly, I'd get to the front of this queue in the blink of an eye.",
     "qs": [
      "Why does Omar want to fly?",
      "How would Omar use his power to make a difference?"
@@ -2668,7 +2680,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura and Emma are looking at a travel magazine in the school library.",
+    "scene": "Noura and Emma are looking at a travel magazine in a bookshop at the mall.",
+    "scene_emoji": "✈️",
     "p1": [
      {
       "s": "Emma",
@@ -2785,6 +2798,7 @@
    ],
    "dialogue": {
     "scene": "Omar and Faisal are playing a 'What would you do?' card game during a long car journey to Abha.",
+    "scene_emoji": "🚗",
     "p1": [
      {
       "s": "Faisal",
@@ -2828,7 +2842,7 @@
     ]
    },
    "speakout": {
-    "scene": "You are a guest on a school radio show called 'What Would You Do?'. The presenter asks you about difficult situations.",
+    "scene": "You are a guest on a kids' radio show called 'What Would You Do?'. The presenter asks you about difficult situations.",
     "prompts": [
      {
       "q": "What would you do if you saw a classmate cheating in an exam?",
@@ -2900,7 +2914,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem is preparing a two-minute talk called 'My Ideal City' for her English class. She practises with her mother.",
+    "scene": "Reem is preparing a two-minute talk called 'My Ideal City' for a 'Design the Future' competition at the science centre. She practises with her mother.",
+    "scene_emoji": "🌆",
     "p1": [
      {
       "s": "Mum",
@@ -2944,7 +2959,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your school is holding a 'Design the Future' competition. Give a short talk about your ideal city. The judges ask you questions.",
+    "scene": "The science centre is holding a 'Design the Future' competition. Give a short talk about your ideal city. The judges ask you questions.",
     "prompts": [
      {
       "q": "What would your ideal city be like?",
@@ -3093,7 +3108,7 @@
     },
     {
      "s": "Sam",
-     "t": "I've been studying it since September. I have online lessons twice a week."
+     "t": "I've been studying it since September. I practise online with a tutor twice a week."
     },
     {
      "s": "Omar",
@@ -3247,7 +3262,7 @@
     },
     {
      "s": "Faisal",
-     "t": "I've been running in the park. The school fun run is next Friday."
+     "t": "I've been running in the park. The fun run is next Friday."
     },
     {
      "s": "Lama",
@@ -3397,7 +3412,7 @@
    "dialogue": [
     {
      "s": "Mr Khalid",
-     "t": "Thanks for joining us, Noura. Tell me about something you've been doing outside school."
+     "t": "Thanks for joining us, Noura. Tell me about something you've been doing in your free time."
     },
     {
      "s": "Noura",
@@ -3425,7 +3440,7 @@
     },
     {
      "s": "Noura",
-     "t": "I've built a small quiz app for my class. I'm really looking forward to learning more this summer."
+     "t": "I've built a small quiz app for my cousins. I'm really looking forward to learning more this summer."
     }
    ],
    "grammar": {
@@ -3782,7 +3797,7 @@
    "dialogue": [
     {
      "s": "Faisal",
-     "t": "Did you hear? Tomorrow's school trip was called off."
+     "t": "Did you hear? Tomorrow's scout camping trip was called off."
     },
     {
      "s": "Noura",
@@ -3790,7 +3805,7 @@
     },
     {
      "s": "Faisal",
-     "t": "According to the school website, heavy rain is expected in Riyadh tomorrow."
+     "t": "According to the weather website, heavy rain is expected in Riyadh tomorrow."
     },
     {
      "s": "Noura",
@@ -4264,7 +4279,7 @@
     },
     {
      "s": "Sam",
-     "t": "Three days? Could you possibly do it a bit faster? I need it for school."
+     "t": "Three days? Could you possibly do it a bit faster? I need it for a trip on Thursday."
     },
     {
      "s": "Technician",
@@ -4402,11 +4417,11 @@
     },
     {
      "s": "Omar",
-     "t": "Easy. I'd fly. If I could fly, I'd get to school in the blink of an eye."
+     "t": "Easy. I'd fly. If I could fly, I'd get to the front of this queue in the blink of an eye."
     },
     {
      "s": "Sam",
-     "t": "Ha! I'd choose to read people's minds. Then I'd know the answers in every test."
+     "t": "Ha! I'd choose to read people's minds. Then I'd always win at board games."
     },
     {
      "s": "Omar",
@@ -5465,7 +5480,7 @@
     "type": "order",
     "words": [
      "The",
-     "school",
+     "camping",
      "trip",
      "was",
      "put",
@@ -5473,7 +5488,7 @@
      "until",
      "Tuesday."
     ],
-    "answer": "The school trip was put off until Tuesday.",
+    "answer": "The camping trip was put off until Tuesday.",
     "ar": "رتّب الجملة"
    },
    {
