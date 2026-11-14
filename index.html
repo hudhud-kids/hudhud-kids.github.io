@@ -2793,8 +2793,14 @@ function linkedAbort(signal, ms){ const c = new AbortController(); let t = null;
   if(signal){ if(signal.aborted) c.abort(); else signal.addEventListener('abort', () => c.abort(), {once:true}); }
   if(ms) arm(ms); return {signal:c.signal, arm, clear:() => clearTimeout(t), ctl:c}; }
 const timeoutErr = () => ({status:'timeout', body:''});
-/* per-turn latency marks (filled in by the speech pipeline; step 8 records them) */
-function latMark(){}
+/* per-turn latency: child stops talking -> text ready (stt) -> first token (llm) -> first teacher audio (tts) */
+function latMark(k){ const t = typeof L !== 'undefined' && L && L.turnT; if(t && k === 'tok' && !t.tok) t.tok = Date.now(); }
+function audioStarted(){ const t = typeof L !== 'undefined' && L && L.turnT; if(!t || !t.tok || t.audio) return; t.audio = Date.now();
+  const row = {stt:t.end ? t.text - t.end : null, llm:t.tok - t.text, tts:t.audio - t.tok, total:t.audio - (t.end || t.text)};
+  (L.lat = L.lat || []).push(row); console.log('turn latency ms', JSON.stringify(row)); }
+function latSummary(lesson){ const a = (lesson && lesson.lat) || []; if(!a.length) return null;
+  const avg = k => { const v = a.map(x => x[k]).filter(x => x != null); return v.length ? Math.round(v.reduce((s, x) => s + x, 0) / v.length) : null; };
+  return {stt:avg('stt'), llm:avg('llm'), tts:avg('tts'), total:avg('total'), n:a.length}; }
 async function* streamClaude(body, signal){
   if(DEMO || DB.apiKey === 'demo'){ yield* demoStream(body); return; }
   // watchdog: 12 s for the answer to start, then 12 s max between pieces (a stalled connection used to hang the lesson forever)
@@ -3034,10 +3040,10 @@ function speakOneWS(text, slow, done){
   const words = text.split(/\s+/).length; const guard = setTimeout(fin, (slow?700:420)*words + 2500);
   const rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96);
   const perChar = Math.round(62 / rate);
-  if(!('speechSynthesis' in window)){ mouthWalk(text, perChar); setTimeout(fin, 300*words); return; }
+  if(!('speechSynthesis' in window)){ audioStarted(); mouthWalk(text, perChar); setTimeout(fin, 300*words); return; }
   try{ const u = new SpeechSynthesisUtterance(text); const male = L && !teacherOf(L.kid).female; u.lang = 'en-US'; u.rate = rate; u.pitch = male ? .88 : 1.04;
     let gotBoundary = false;
-    u.onstart = () => { setTimeout(() => { if(!gotBoundary && !finished) mouthWalk(text, perChar); }, 250); };
+    u.onstart = () => { audioStarted(); setTimeout(() => { if(!gotBoundary && !finished) mouthWalk(text, perChar); }, 250); };
     u.onboundary = e => { if(e.name && e.name !== 'word') return; gotBoundary = true; const w = text.slice(e.charIndex).split(/\s/)[0] || ''; mouthWalk(w, perChar);
       const clean = w.replace(/[^A-Za-z]/g,''); if(clean.length >= 7 || /[!?]$/.test(w) || (/^[A-Z]/.test(clean) && clean !== 'I' && e.charIndex > 0)) emph(); };
     u.onend = fin; u.onerror = fin; speechSynthesis.speak(u); }catch(e){ fin(); }
@@ -3105,6 +3111,7 @@ async function teacherTurn(userText, attempt){
   if(!L || L.done) return;
   stopListening(); L.unclear = 0;
   const lesson = L, m = elapsedMin();
+  if(!/^Student: /.test(userText)) lesson.turnT = null; // latency is measured for the child's turns only
   // a turn the child interrupted is kept: the new message joins it, so roles still alternate
   const entry = `[minute ${m} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}] ${userText}`, prev = lesson.history[lesson.history.length - 1];
   let undo; if(prev && prev.role === 'user'){ const old = prev.content; prev.content = old + '\n' + entry; undo = () => { prev.content = old; }; }
@@ -3234,7 +3241,7 @@ function stopListening(submit){
 function studentSaid(text){
   if(L){ L.sw += countWords(text); updateTalk(); }
   const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; }
-  if(L){ setState('thinking'); ackPlay(); }
+  if(L){ L.turnT = {end:L.tSpeechEnd || 0, text:Date.now()}; L.tSpeechEnd = 0; setState('thinking'); ackPlay(); }
   teacherTurn(`Student: ${text}`);
 }
 
@@ -3288,6 +3295,7 @@ Reply with ONLY one JSON object:
     confidence:rep.confidence == null ? null : Math.max(0, Math.min(100, Number(rep.confidence) || 0)), confidenceNote:String(rep.confidenceNote||''), talkNote:String(rep.talkNote||''),
     levelFit:['easy','right','hard'].includes(rep.levelFit) ? rep.levelFit : null, levelNote:String(rep.levelNote||''), strengths:(Array.isArray(rep.strengths)?rep.strengths:[]).slice(0,4).map(String), homePractice:String(rep.homePractice||''),
     v2:lesson.v2 ? {exp:Object.keys(lesson.v2.got).filter(x => x.startsWith('exp')).length, of:lesson.v2.sc.expressions.length, so:Object.keys(lesson.v2.got).filter(x => x.startsWith('so')).length, exit:lesson.v2.exit, stars:lesson.v2.stars||0, steps:lesson.v2.i + 1, total:lesson.v2.steps.length, review:!!plan.review, fn:((levelUnits(DB.kids[k].level)||[])[plan.ui]||{}).fn || ''} : null};
+  report.lat = latSummary(lesson); if(report.lat) console.log('lesson latency avg ms', JSON.stringify(report.lat));
   if(Array.isArray(rep.interests) && !lesson.trial){ const p0 = DB.progress[k]; p0.interests = [...new Set(rep.interests.map(String).concat(p0.interests||[]))].slice(0,15); }
   let book = null, cert = null;
   if(!lesson.trial){
@@ -4264,7 +4272,7 @@ function speakOneAZ(text, slow, done){
     // the sound must START within 4 s (iPad sometimes never starts or ends an <audio>): otherwise use the device voice
     clearTimeout(guard); guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; try{ azEl().pause(); }catch(e){} speakOneWS(text, slow, done); } }, 4000);
     ackStop();
-    return azPlay(url, dur => { clearTimeout(guard); guard = setTimeout(fin, dur ? dur*1000 + 1500 : text.length*90 + 3000); mouthWalk(text, Math.max(35, Math.round((dur ? dur*1000 : text.length*65) / text.length))); }).then(fin);
+    return azPlay(url, dur => { audioStarted(); clearTimeout(guard); guard = setTimeout(fin, dur ? dur*1000 + 1500 : text.length*90 + 3000); mouthWalk(text, Math.max(35, Math.round((dur ? dur*1000 : text.length*65) / text.length))); }).then(fin);
   }).catch(e => { azFail(e); if(!finished && gen === AZ_GEN){ finished = true; clearTimeout(guard); speakOneWS(text, slow, done); } });
 }
 function narrateAZ(text, o){
