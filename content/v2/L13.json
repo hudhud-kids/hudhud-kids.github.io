@@ -155,7 +155,7 @@
    "lessons": [
     [
      "Where Shall We Go?",
-     "Make and respond to suggestions while planning a class trip with a partner",
+     "make and respond to suggestions while planning a day out with a partner",
      "How about + -ing? / Why don't we …? / We could always … / Shall we …?"
     ],
     [
@@ -230,6 +230,7 @@
    ],
    "dialogue": {
     "scene": "Reem and her brother Faisal react to a news report saying teenagers spend seven hours a day on screens.",
+    "scene_emoji": "📱",
     "p1": [
      {
       "s": "Reem",
@@ -237,11 +238,11 @@
      },
      {
       "s": "Faisal",
-      "t": "Come on, Reem. Not all screen time is a waste of time. I use my phone for homework too."
+      "t": "Come on, Reem. Not all screen time is a waste of time. I use my phone to learn coding too."
      },
      {
       "s": "Reem",
-      "t": "Sure, but how much of those seven hours is actually homework?"
+      "t": "Sure, but how much of those seven hours is actually coding?"
      },
      {
       "s": "Faisal",
@@ -273,10 +274,10 @@
     ]
    },
    "speakout": {
-    "scene": "Your school is asking students whether phones should be allowed during break time. You are giving your view to the student council.",
+    "scene": "A family magazine is asking teenagers whether phones should be allowed at the dinner table. You are giving your view in an interview.",
     "prompts": [
      {
-      "q": "So, what's your position on phones at break time?",
+      "q": "So, what's your position on phones at the dinner table?",
       "hint": "State your view clearly, starting with 'I'd argue that …'."
      },
      {
@@ -284,7 +285,7 @@
       "hint": "Give two reasons and one example from your own day."
      },
      {
-      "q": "Some students say break is their only free time. What would you say to them?",
+      "q": "Some teenagers say dinner is the only time they can relax and check messages. What would you say to them?",
       "hint": "Accept part of their point, then defend your view: 'That may be true, but …'."
      }
     ]
@@ -462,6 +463,7 @@
    ],
    "dialogue": {
     "scene": "Nawaf, a keen gamer, and his cousin Majed, a tennis player, argue after watching the Esports World Cup in Riyadh.",
+    "scene_emoji": "🎮",
     "p1": [
      {
       "s": "Nawaf",
@@ -505,10 +507,10 @@
     ]
    },
    "speakout": {
-    "scene": "Your school is deciding whether to start an esports team that would compete with other schools. You are speaking at a student meeting.",
+    "scene": "Your sports club is deciding whether to start an esports team that would compete with other clubs. You are speaking at a members' meeting.",
     "prompts": [
      {
-      "q": "Do you think the school should support an esports team?",
+      "q": "Do you think the club should support an esports team?",
       "hint": "Make your case clearly: 'I'd like to make a case for/against …'."
      },
      {
@@ -926,6 +928,7 @@
    ],
    "dialogue": {
     "scene": "Turki tells his friend Bandar why his family missed their flight to Abha for the summer holiday.",
+    "scene_emoji": "🛫",
     "p1": [
      {
       "s": "Bandar",
@@ -969,7 +972,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your friend missed the school trip to the Edge of the World because they overslept. Talk about what happened and what could have been different.",
+    "scene": "Your friend missed a family trip to the Edge of the World because they overslept. Talk about what happened and what could have been different.",
     "prompts": [
      {
       "q": "I can't believe I overslept! What would have happened if I'd set an alarm?",
@@ -1041,7 +1044,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Saad and Ziyad watched last night's Riyadh derby together. Their team lost 2–1, and they are still discussing it.",
+    "scene": "Saad and Ziyad watched last night's Riyadh derby together (an invented match). Their team lost 2–1, and they are still discussing it.",
+    "scene_emoji": "⚽",
     "p1": [
      {
       "s": "Saad",
@@ -1085,7 +1089,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your school team lost the inter-school final 2–1 after missing a penalty. You and a teammate are discussing the match the next day.",
+    "scene": "In this invented story, your neighbourhood team lost the local cup final 2–1 after missing a penalty. You and a teammate are discussing the match the next day.",
     "prompts": [
      {
       "q": "What do you think the turning point was?",
@@ -1157,7 +1161,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Huda and her classmate Maha are preparing a history project about inventions that changed the world.",
+    "scene": "Huda and her friend Maha are planning a video about inventions that changed the world for a kids' science channel.",
+    "scene_emoji": "💡",
     "p1": [
      {
       "s": "Huda",
@@ -1191,7 +1196,7 @@
      },
      {
       "s": "Maha",
-      "t": "So history turned out the way it did partly because of one curious inventor. Great project idea!"
+      "t": "So history turned out the way it did partly because of one curious inventor. Great video idea!"
      }
     ],
     "focus": "If he hadn't been so untidy, he wouldn't have noticed the mould.",
@@ -1389,7 +1394,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Sultan tells his classmate Hamad how he got a part in a short film being made in AlUla.",
+    "scene": "Sultan tells his friend Hamad how he got a part in a short film being made in AlUla.",
+    "scene_emoji": "🎬",
     "p1": [
      {
       "s": "Hamad",
@@ -1505,7 +1511,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Rakan is practising a talk for history class with his friend Saud about Dammam Well No. 7.",
+    "scene": "Rakan is recording a podcast episode called 'Turning Points' with his friend Saud. Today's story is about Dammam Well No. 7.",
+    "scene_emoji": "🛢️",
     "p1": [
      {
       "s": "Rakan",
@@ -1549,7 +1556,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your class is making a podcast called 'Turning Points'. Tell the listeners about one turning point: in your life, in your city or in history.",
+    "scene": "A kids' podcast called 'Turning Points' invites you as a guest. Tell the listeners about one turning point: in your life, in your city or in history.",
     "prompts": [
      {
       "q": "Welcome! So what turning point are you going to talk about?",
@@ -1621,7 +1628,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura is practising the beginning of a talk about Arabic calligraphy for her English class. Her friend Hannah is listening.",
+    "scene": "Noura is practising the beginning of a talk about Arabic calligraphy for a hobby club at the community centre. Her friend Hannah is listening.",
+    "scene_emoji": "🖋️",
     "p1": [
      {
       "s": "Noura",
@@ -1665,7 +1673,7 @@
     ]
    },
    "speakout": {
-    "scene": "You have joined a school club, and each new member gives a one-minute introduction to their favourite hobby. It's your turn.",
+    "scene": "You have joined a new hobby club at the community centre, and each new member gives a one-minute introduction to their favourite hobby. It's your turn.",
     "prompts": [
      {
       "q": "Okay, you have the floor. What's your talk about?",
@@ -1737,7 +1745,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Bandar is giving a travel talk about AlUla to his English class. His teacher, Ms Carter, asks him a few questions afterwards.",
+    "scene": "Bandar is giving a short talk about AlUla to a group of Canadian tourists at a hotel in Riyadh. One of the tourists, Ms Carter, asks him a few questions afterwards.",
+    "scene_emoji": "🏜️",
     "p1": [
      {
       "s": "Bandar",
@@ -1781,7 +1790,7 @@
     ]
    },
    "speakout": {
-    "scene": "An exchange student from Canada is visiting your school. You've been asked to give a short talk on the best place to visit in Saudi Arabia.",
+    "scene": "An exchange student from Canada is staying with your family. You've been asked to give a short talk on the best place to visit in Saudi Arabia.",
     "prompts": [
      {
       "q": "What's your first point about this place?",
@@ -1853,7 +1862,8 @@
     }
    ],
    "dialogue": {
-    "scene": "At a school assembly, Yazeed gives a talk on why every student should play a team sport. His friend Ben gives him feedback afterwards.",
+    "scene": "At the opening of a neighbourhood sports festival, Yazeed gives a talk on why every teenager should play a team sport. His friend Ben gives him feedback afterwards.",
+    "scene_emoji": "🏀",
     "p1": [
      {
       "s": "Yazeed",
@@ -1869,7 +1879,7 @@
      },
      {
       "s": "Yazeed",
-      "t": "What's more, sport is a great way to deal with exam stress."
+      "t": "What's more, sport is a great way to deal with stress."
      }
     ],
     "p2": [
@@ -1897,7 +1907,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your school is holding a Sports Week, and students are giving short talks at the opening. You are speaking about the benefits of sport for teenagers.",
+    "scene": "Your city is holding a Sports Week, and young people are giving short talks at the opening. You are speaking about the benefits of sport for teenagers.",
     "prompts": [
      {
       "q": "What's your main point?",
@@ -1929,7 +1939,7 @@
   },
   "2-3": {
    "objective": "Today you will present the results of a survey and explain what the numbers show.",
-   "warmup": "How many hours do you usually sleep on a school night?",
+   "warmup": "How many hours do you usually sleep on a weeknight?",
    "expressions": [
     {
      "w": "As you can see",
@@ -1969,15 +1979,16 @@
     }
    ],
    "dialogue": {
-    "scene": "Razan and Shahad present the results of their class survey on sleep. Razan presents, and Shahad controls the slides.",
+    "scene": "Razan and Shahad present the results of a sleep survey they carried out at their basketball club. Razan presents, and Shahad controls the slides.",
+    "scene_emoji": "😴",
     "p1": [
      {
       "s": "Razan",
-      "t": "We carried out a survey of sixty students in our year about their sleep."
+      "t": "We carried out a survey of sixty players at our basketball club about their sleep."
      },
      {
       "s": "Razan",
-      "t": "As you can see from this chart, the majority of students sleep less than seven hours on school nights."
+      "t": "As you can see from this chart, the majority of players sleep less than seven hours on weeknights."
      },
      {
       "s": "Razan",
@@ -1985,7 +1996,7 @@
      },
      {
       "s": "Razan",
-      "t": "Moving on to the reasons, most students blamed phones and gaming."
+      "t": "Moving on to the reasons, most players blamed phones and gaming."
      }
     ],
     "p2": [
@@ -2003,17 +2014,17 @@
      },
      {
       "s": "Razan",
-      "t": "Yes. For instance, students who play sport every day said they fall asleep much faster."
+      "t": "Yes. For instance, players who train every day said they fall asleep much faster."
      }
     ],
-    "focus": "As you can see from this chart, the majority of students sleep less than seven hours on school nights.",
+    "focus": "As you can see from this chart, the majority of players sleep less than seven hours on weeknights.",
     "qs": [
-     "How many students took part in the survey?",
-     "What reason did most students give for sleeping late?"
+     "How many players took part in the survey?",
+     "What reason did most players give for sleeping late?"
     ]
    },
    "speakout": {
-    "scene": "You and your partner surveyed your class about how they get to school. Present your results to the class: 42% by car, 31% by school bus, 19% walk, 8% by bike.",
+    "scene": "You and your partner surveyed your friends and cousins about how they spend Friday afternoons. Present your results: 42% gaming, 31% sport, 19% visiting family, 8% reading.",
     "prompts": [
      {
       "q": "So, what does your survey show?",
@@ -2041,7 +2052,7 @@
      "What is one simple habit that could help students sleep better?"
     ]
    },
-   "exit": "Describe the results of a simple survey about your class, using at least two number phrases."
+   "exit": "Describe the results of a simple survey about your friends, using at least two number phrases."
   },
   "2-4": {
    "objective": "Today you will conclude a talk clearly and answer questions from the audience.",
@@ -2085,7 +2096,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Ziyad presents his science fair project, a simple device that saves water at home, to a judge called Dr Amal.",
+    "scene": "At a young inventors' competition, Ziyad presents his invention, a simple device that saves water at home, to a judge called Dr Amal.",
+    "scene_emoji": "🚰",
     "p1": [
      {
       "s": "Ziyad",
@@ -2124,19 +2136,19 @@
     ],
     "focus": "To sum up, our device saves around twenty litres of water per person every day.",
     "qs": [
-     "What are the three main points of Ziyad's project?",
+     "What are the three main points of Ziyad's talk?",
      "How did Ziyad test the device?"
     ]
    },
    "speakout": {
-    "scene": "You have just presented a project on recycling at school. Now you must conclude and answer the teacher's questions.",
+    "scene": "You have just presented your invention for recycling plastic at a young inventors' fair. Now you must conclude and answer the judge's questions.",
     "prompts": [
      {
       "q": "You're nearly out of time. Can you finish your talk?",
       "hint": "Summarise with 'To sum up, …' and 'The key point is that …'."
      },
      {
-      "q": "Thank you. How would your idea work in a big school?",
+      "q": "Thank you. How would your idea work in a big shopping mall?",
       "hint": "Gain time with 'That's a good question', then answer."
      },
      {
@@ -2202,6 +2214,7 @@
    ],
    "dialogue": {
     "scene": "Lulwa is rehearsing a two-minute talk about the Red Sea coral reefs for a competition. Her older brother Hamad is timing her.",
+    "scene_emoji": "🐠",
     "p1": [
      {
       "s": "Hamad",
@@ -2245,7 +2258,7 @@
     ]
    },
    "speakout": {
-    "scene": "You are taking part in your school's 'Two-Minute Talk' competition. Choose a topic: a place, a person you admire, or an important invention. The teacher is the judge.",
+    "scene": "You are taking part in a 'Two-Minute Talk' competition at the book fair. Choose a topic: a place, a person you admire, or an important invention. I'm the judge.",
     "prompts": [
      {
       "q": "Please begin. What's your talk about, and how is it organised?",
@@ -2276,8 +2289,8 @@
    "exit": "Give me a complete thirty-second talk on any topic, with a beginning, two points and an end."
   },
   "3-0": {
-   "objective": "Today you will make and respond to suggestions while planning a class trip with a partner.",
-   "warmup": "What was the best school trip you have ever been on?",
+   "objective": "Today you will make and respond to suggestions while planning a day out with a partner.",
+   "warmup": "What was the best day out you have ever had?",
    "expressions": [
     {
      "w": "How about + -ing",
@@ -2317,7 +2330,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Abdulaziz and Yousef are on the class committee. They must choose a place for the end-of-year class trip in Riyadh.",
+    "scene": "Abdulaziz and Yousef are planning a day out in Riyadh for their football team.",
+    "scene_emoji": "🏰",
     "p1": [
      {
       "s": "Abdulaziz",
@@ -2325,7 +2339,7 @@
      },
      {
       "s": "Yousef",
-      "t": "It's interesting, but some students went last year. Why don't we try Boulevard World?"
+      "t": "It's interesting, but some players went last year. Why don't we try Boulevard World?"
      },
      {
       "s": "Abdulaziz",
@@ -2347,7 +2361,7 @@
      },
      {
       "s": "Abdulaziz",
-      "t": "Perfect. Shall we suggest it to the teacher tomorrow?"
+      "t": "Perfect. Shall we suggest it to the coach tomorrow?"
      },
      {
       "s": "Yousef",
@@ -2361,7 +2375,7 @@
     ]
    },
    "speakout": {
-    "scene": "You and your partner are planning a one-day trip for your class. Choose between a desert camp, a museum, a theme park and a farm.",
+    "scene": "You and your partner are planning a one-day trip for your football team. Choose between a desert camp, a museum, a theme park and a farm.",
     "prompts": [
      {
       "q": "So, which place shall we choose first?",
@@ -2385,11 +2399,11 @@
      "Today Diriyah has museums, restaurants and walking paths for families and tourists."
     ],
     "qs": [
-     "What makes a good school trip: learning, fun, or both?",
-     "Which place in your city should every student visit?"
+     "What makes a good day out: learning, fun, or both?",
+     "Which place in your city should every teenager visit?"
     ]
    },
-   "exit": "Suggest a place for a class trip and respond to one other suggestion politely."
+   "exit": "Suggest a place for a day out and respond to one other suggestion politely."
   },
   "3-1": {
    "objective": "Today you will evaluate different options with a partner before choosing one.",
@@ -2433,7 +2447,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Hind and Isabel must choose one charity project for their class during Ramadan.",
+    "scene": "Hind and Isabel must choose one charity activity for their neighbourhood girls' club during Ramadan.",
+    "scene_emoji": "🌙",
     "p1": [
      {
       "s": "Hind",
@@ -2459,7 +2474,7 @@
      },
      {
       "s": "Isabel",
-      "t": "It depends on how many we collect. If every student brings five items, that's hundreds."
+      "t": "It depends on how many we collect. If every girl in the club brings five items, that's hundreds."
      },
      {
       "s": "Hind",
@@ -2477,14 +2492,14 @@
     ]
    },
    "speakout": {
-    "scene": "Your school has some money to improve student life. Discuss these options with your partner: a new library corner, a gaming room, a garden, or better sports equipment.",
+    "scene": "Your sports club has some money to improve the clubhouse. Discuss these options with your partner: a new reading corner, a gaming room, a garden, or better sports equipment.",
     "prompts": [
      {
       "q": "What do you think of the library corner?",
       "hint": "Evaluate it with 'That would be … because …'."
      },
      {
-      "q": "And the gaming room? Lots of students want one.",
+      "q": "And the gaming room? Lots of members want one.",
       "hint": "Give a weak point with 'The problem with … is that …'."
      },
      {
@@ -2505,7 +2520,7 @@
      "Which kind of help makes the biggest difference: money, time or skills?"
     ]
    },
-   "exit": "Evaluate two options for a class project, giving one good point and one problem."
+   "exit": "Evaluate two options for a charity project, giving one good point and one problem."
   },
   "3-2": {
    "objective": "Today you will invite your partner's opinions and keep a discussion moving.",
@@ -2550,6 +2565,7 @@
    ],
    "dialogue": {
     "scene": "Joud and Jana are planning activities for an Eid party for the younger children in their neighbourhood.",
+    "scene_emoji": "🎈",
     "p1": [
      {
       "s": "Joud",
@@ -2593,7 +2609,7 @@
     ]
    },
    "speakout": {
-    "scene": "You and your partner are organising a welcome day for new students. Options: a school tour, a quiz, a sports match, a picnic, or a talent show. Make sure you ask your partner's opinion.",
+    "scene": "You and your partner are organising a welcome day for a new family in your neighbourhood. Options: a street tour, a quiz, a football match, a picnic, or a talent show. Make sure you ask your partner's opinion.",
     "prompts": [
      {
       "q": "Okay, where shall we start?",
@@ -2665,7 +2681,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Mohammed and Abdullah are discussing how to spend the budget for improving the park in their neighbourhood. They must choose one main project.",
+    "scene": "Mohammed and Abdullah are discussing how to spend the budget for improving the park in their neighbourhood. They must choose one main plan.",
+    "scene_emoji": "🌳",
     "p1": [
      {
       "s": "Abdullah",
@@ -2695,24 +2712,24 @@
      },
      {
       "s": "Abdullah",
-      "t": "That works for me. So shall we go for the playground and the trees as the main project?"
+      "t": "That works for me. So shall we go for the playground and the trees as the main plan?"
      },
      {
       "s": "Mohammed",
       "t": "Agreed. Let's settle on that, and suggest the skate area for next year."
      }
     ],
-    "focus": "So shall we go for the playground and the trees as the main project?",
+    "focus": "So shall we go for the playground and the trees as the main plan?",
     "qs": [
      "Why does Mohammed disagree with the skate park idea?",
      "What do they finally decide?"
     ]
    },
    "speakout": {
-    "scene": "You and your partner must choose ONE improvement for your school: longer breaks, a new canteen menu, air-conditioned buses, or a quiet study room. You don't agree at first.",
+    "scene": "You and your partner must choose ONE improvement for your sports club: a bigger pool, a new café menu, air-conditioned changing rooms, or a quiet study room. You don't agree at first.",
     "prompts": [
      {
-      "q": "I really think longer breaks are the most important. Don't you?",
+      "q": "I really think a bigger pool is the most important. Don't you?",
       "hint": "Disagree politely with 'I see what you mean, but …'."
      },
      {
@@ -3013,11 +3030,11 @@
     },
     {
      "s": "Faisal",
-     "t": "Come on, Reem. Not all screen time is a waste of time. I use my phone for homework too."
+     "t": "Come on, Reem. Not all screen time is a waste of time. I use my phone to learn coding too."
     },
     {
      "s": "Reem",
-     "t": "Sure, but how much of those seven hours is actually homework?"
+     "t": "Sure, but how much of those seven hours is actually coding?"
     },
     {
      "s": "Faisal",
@@ -3653,7 +3670,7 @@
     },
     {
      "s": "Maha",
-     "t": "So history turned out the way it did partly because of one curious inventor. Great project idea!"
+     "t": "So history turned out the way it did partly because of one curious inventor. Great video idea!"
     }
    ],
    "grammar": {
@@ -4099,7 +4116,7 @@
     },
     {
      "s": "Yazeed",
-     "t": "What's more, sport is a great way to deal with exam stress."
+     "t": "What's more, sport is a great way to deal with stress."
     },
     {
      "s": "Ben",
@@ -4164,19 +4181,15 @@
    "dialogue": [
     {
      "s": "Razan",
-     "t": "We carried out a survey of sixty students in our year about their sleep."
+     "t": "We carried out a survey of sixty players at our basketball club about their sleep."
     },
     {
      "s": "Razan",
-     "t": "As you can see from this chart, the majority of students sleep less than seven hours on school nights."
+     "t": "As you can see from this chart, the majority of players sleep less than seven hours on weeknights."
     },
     {
      "s": "Razan",
-     "t": "In fact, just over a third go to bed after midnight."
-    },
-    {
-     "s": "Razan",
-     "t": "Moving on to the reasons, most students blamed phones and gaming."
+     "t": "Moving on to the reasons, most players blamed phones and gaming."
     },
     {
      "s": "Shahad",
@@ -4192,7 +4205,7 @@
     },
     {
      "s": "Razan",
-     "t": "Yes. For instance, students who play sport every day said they fall asleep much faster."
+     "t": "Yes. For instance, players who train every day said they fall asleep much faster."
     }
    ],
    "grammar": {
@@ -4399,7 +4412,7 @@
     },
     {
      "s": "Yousef",
-     "t": "It's interesting, but some students went last year. Why don't we try Boulevard World?"
+     "t": "It's interesting, but some players went last year. Why don't we try Boulevard World?"
     },
     {
      "s": "Abdulaziz",
@@ -4419,7 +4432,7 @@
     },
     {
      "s": "Abdulaziz",
-     "t": "Perfect. Shall we suggest it to the teacher tomorrow?"
+     "t": "Perfect. Shall we suggest it to the coach tomorrow?"
     },
     {
      "s": "Yousef",
@@ -4492,7 +4505,7 @@
     },
     {
      "s": "Isabel",
-     "t": "It depends on how many we collect. If every student brings five items, that's hundreds."
+     "t": "It depends on how many we collect. If every girl in the club brings five items, that's hundreds."
     },
     {
      "s": "Hind",
@@ -4650,7 +4663,7 @@
     },
     {
      "s": "Abdullah",
-     "t": "That works for me. So shall we go for the playground and the trees as the main project?"
+     "t": "That works for me. So shall we go for the playground and the trees as the main plan?"
     },
     {
      "s": "Mohammed",
@@ -5801,9 +5814,9 @@
      "survey",
      "of",
      "sixty",
-     "students."
+     "players."
     ],
-    "answer": "We carried out a survey of sixty students.",
+    "answer": "We carried out a survey of sixty players.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5819,7 +5832,7 @@
    },
    {
     "type": "mc",
-    "q": "'The ___ of students sleep less than seven hours.' (more than half)",
+    "q": "'The ___ of players sleep less than seven hours.' (more than half)",
     "options": [
      "minority",
      "most",
