@@ -59,9 +59,9 @@ Grammar that appears in a level must not be "taught" again as new in a later lev
 4. Making Decisions | comparing options and deciding | It would be better to …, Let's go for …, as … as
 
 ## L10 — B1+ · GSE 51-54
-1. Experiences in Detail | describing experiences and how long | present perfect continuous, for / since
+1. Experiences in Detail | describing experiences and how long | present perfect continuous, for / since; verb + -ing / verb + to (enjoy doing, want to do, stop doing vs stop to do, L10 1.2 and 1.4)
 2. The Facts | giving precise information | passive voice (present and past)
-3. There's a Problem | complaining politely and asking for solutions | I'm afraid …, Could you possibly …? I'd like to …
+3. There's a Problem | complaining politely and asking for solutions | I'm afraid …, Could you possibly …? I'd like to … (reported speech from L9 recycled in 3.4)
 4. Imagine That | imagining unreal situations | second conditional, I wish + past
 
 ## L11 — B1+ · GSE 55-58
