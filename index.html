@@ -1508,6 +1508,7 @@ function tabHome(k){
   const kl = $('#kitLock'); if(kl) kl.onclick = () => { const ps = prepState(k); if(ps.open){ renderKid(k); return; } hoopoeSays(ps.t ? `التحضير يفتح قبل الحصة بساعة، الساعة ${fmtTime(ps.at)} ⏳` : 'التحضير يفتح قبل حصتك القادمة بساعة ⏳', 'think', 3000); };
   const eg = $('#examGo'); if(eg) eg.onclick = () => startLevelExam(k);
   const ug = $('#unitGo'); if(ug) ug.onclick = () => startUnitTest(k);
+  const ur = $('#unitRev'); if(ur) ur.onclick = () => startFreeReview(k);
   const cg = $('#confGo'); if(cg) cg.onclick = () => startConfirm(k);
   const fg = $('#famGo'); if(fg) fg.onclick = () => { claimFamily(); renderKid(k); };
   clearInterval(homeTimer); homeTimer = setInterval(() => { if(!L && WHO === k && TAB === 'home' && !document.querySelector('.ov,.reader')) renderKid(k); }, 30000);
@@ -2121,24 +2122,106 @@ function startConfirm(k){ const kid = DB.kids[k], lv = kid.level, c = CONTENT[lv
 function unitTestCard(k){
   const p = DB.progress[k], ut = p.unitTest, c = CONTENT[DB.kids[k].level]; if(!ut || ut.passed || !c || ut.level !== DB.kids[k].level) return '';
   const t = (c.unitTests||{})[ut.ui], u = (c.units||[])[ut.ui] || {}; if(!t) return '';
+  const rev = ut.review === 'due';
   return `<section class="card gift" style="text-align:right"><div class="chips" style="justify-content:space-between"><div><h2>📝 اختبار الوحدة: ${esc(u.ar || u.t || '')}</h2>
-    <div class="small">خلصت الوحدة! انجح بـ 70% عشان تنتقل للوحدة التالية. حصتك الجاية مراجعة للوحدة إلى أن تنجح.${ut.last != null ? ` آخر نتيجة: ${ut.last}%` : ''}</div></div>
-    <button class="btn primary" id="unitGo">${ut.last != null ? 'أعد الاختبار' : 'ابدأ اختبار الوحدة'}</button></div></section>`; }
+    <div class="small">${rev ? `ما وصلت للـ 70% هالمرة${ut.last != null ? ` (نتيجتك ${ut.last}%)` : ''}. عندك <b>حصة مراجعة مجانية</b> للوحدة (ما تنحسب من رصيدك)، وبعدها تعيد الاختبار 💪`
+      : `خلصت الوحدة! الاختبار أسئلة + جزء تحدث قصير بصوتك. انجح بـ 70% عشان تنتقل للوحدة التالية. حصتك الجاية مراجعة للوحدة إلى أن تنجح.${ut.last != null ? ` آخر نتيجة: ${ut.last}%` : ''}`}</div></div>
+    ${rev ? '<button class="btn primary" id="unitRev">🎁 ابدأ حصة المراجعة المجانية</button>' : `<button class="btn primary" id="unitGo">${ut.last != null ? 'أعد الاختبار' : 'ابدأ اختبار الوحدة'}</button>`}</div></section>`; }
+/* one free review lesson after a failed unit test: a lesson outside the schedule, so it is never charged */
+async function startFreeReview(k){
+  unlockAudio(); if(!aiReady()){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
+  try{ await ensureCurr(DB.kids[k].level); }catch(e){}
+  startLesson(k, true, {freeReview:true}); }
+/* speaking part of the unit and level tests: the child answers the test's speak prompts by voice (until «انتهيت» or 60 s),
+   then a separate strict examiner grades each answer 0-10 against the unit's language function and the CEFR level.
+   Returns null when speech is not available or the grading fails: the test then counts its items only. */
+async function speakTest(k, prompts, ctx){
+  prompts = (prompts || []).map(String).filter(x => x.trim()).slice(0, 3);
+  if(!prompts.length || !SR || !micOK) return null;
+  const kid = DB.kids[k], lv = kid.level, cefr = LEVEL_CEFR[lv] || 'A2', MIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>';
+  const ov = document.createElement('div'); ov.className = 'ov'; document.body.appendChild(ov);
+  ov.innerHTML = `<div class="card quiz" style="text-align:center;display:grid;gap:12px"><div style="font-size:2.6rem">🗣️</div><h2>جزء التحدث</h2>
+    <p style="margin:0">${prompts.length === 1 ? 'سؤال واحد' : prompts.length === 2 ? 'سؤالين' : prompts.length + ' أسئلة'} تجاوب عليها بصوتك. اضغط الميكروفون وتكلم بجمل كاملة، وخذ وقتك، ثم اضغط «انتهيت».</p>
+    <p class="small muted" style="margin:0">جزء التحدث 30% من نتيجة الاختبار، والأسئلة 70%.</p><button class="btn primary big" id="stGo">ابدأ</button></div>`;
+  await new Promise(r => ov.querySelector('#stGo').onclick = r); unlockAudio();
+  const answers = [];
+  for(const [i, q] of prompts.entries()){
+    let ans = '';
+    for(let attempt = 0; attempt < 2; attempt++){
+      ov.innerHTML = `<div class="card quiz" style="text-align:center"><div class="qhead"><span class="small muted">🗣️ تحدث · سؤال ${i+1} من ${prompts.length}</span><div class="qbar"><i style="width:${i/prompts.length*100}%"></i></div></div>
+        <h2 class="en" style="direction:ltr;text-align:left">${esc(q)}</h2><button class="btn" id="tq">🔊 اسمع السؤال</button>
+        <button class="micbig" id="tm" style="justify-self:center" aria-label="ابدأ التسجيل">${MIC}</button><div class="small muted" id="tmm">اضغط الميكروفون وأجب</div>
+        <div class="en" id="tt" style="direction:ltr;text-align:left;min-height:2.5em"></div>
+        <button class="btn primary big" id="td" style="position:sticky;bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:2" hidden>✓ انتهيت</button></div>`;
+      ov.querySelector('#tq').onclick = () => speakText(q, .9); if(!attempt) await speakText(q, .9);
+      await new Promise(r => ov.querySelector('#tm').onclick = r); speechSynthesis.cancel();
+      const ctl = {}, td = ov.querySelector('#td'), tm = ov.querySelector('#tm'), tmm = ov.querySelector('#tmm'), t0 = Date.now();
+      tm.classList.add('on'); td.hidden = false; td.onclick = () => ctl.stop && ctl.stop(); tm.onclick = () => ctl.stop && ctl.stop(); try{ td.scrollIntoView({block:'nearest'}); }catch(e){}
+      const tk = setInterval(() => { if(tmm.isConnected) tmm.textContent = `🎙️ نسجّل… اضغط «انتهيت» لما تخلص (${Math.max(0, 60 - Math.round((Date.now() - t0) / 1000))} ث)`; }, 500);
+      ans = await listenUntilDone(60000, t => { const el = ov.querySelector('#tt'); if(el) el.textContent = t; }, ctl) || ''; clearInterval(tk);
+      if(countWords(ans) || attempt) break;
+      // nothing was heard: one more try (the mic may have missed it) or skip this question
+      ov.innerHTML = `<div class="card quiz" style="text-align:center;display:grid;gap:12px"><div style="font-size:2.4rem">🤔</div><h2>ما سمعنا شيء</h2><p class="small muted" style="margin:0">قرّب الجهاز وتكلم بصوت واضح.</p>
+        <div class="chips" style="justify-content:center"><button class="btn primary" id="tr">🎙️ حاول مرة ثانية</button><button class="btn" id="ts">تخطّ السؤال</button></div></div>`;
+      if(await new Promise(r => { ov.querySelector('#tr').onclick = () => r(false); ov.querySelector('#ts').onclick = () => r(true); })) break;
+    }
+    answers.push({q, a:ans.trim()});
+  }
+  ov.innerHTML = `<div class="card" style="text-align:center"><div style="font-size:2.6rem" class="spin">🧮</div><h2>المعلمة تصحح كلامك…</h2></div>`;
+  let scores = null, notes = [];
+  if(answers.every(x => !countWords(x.a))) scores = answers.map(() => 0);
+  else try{
+    const u = ctx.unit || {}, units = ctx.units || [];
+    const txt = await callClaude({model:REPORT_MODEL, max_tokens:700, messages:[{role:'user', content:
+`You are a strict Cambridge English speaking examiner. Grade a ${ageOf(kid.birth)}-year-old Saudi learner (Arabic L1) at Hudhud level ${lv} of 20 (CEFR ${cefr}) in the speaking part of ${ctx.kind === 'level' ? 'the END-OF-LEVEL test' : 'a UNIT test'}.
+${ctx.kind === 'level' ? `The level's language functions: ${units.map(x => `${x.t}: ${x.fn || ''}`).join('; ')}.` : `Unit "${u.t || ''}" · language function: ${u.fn || ''} · can-do: ${u.cando || ''} · grammar: ${(u.grammar || []).join('; ')}.`}
+The answers come from speech-to-text: ignore punctuation, capitals and obvious recognition slips.
+Score EACH answer 0-10 against the prompt, the language function and CEFR ${cefr}:
+0 = no answer, Arabic only, or unrelated · 1-3 = single words or fragments, the function is not done · 4-5 = the function is attempted, but short or with errors that hurt the meaning · 6 = the function done in one simple correct sentence · 7-8 = the function done in two or more full sentences at this level, only small errors · 9-10 = fully done, fluent and beyond the minimum for this level.
+Be strict: give marks only for what was actually said. An answer under 4 English words cannot score above 3. Repeating the prompt's own words earns nothing.
+Answers: ${JSON.stringify(answers.map(x => ({prompt:x.q, answer:x.a})))}
+Reply with ONLY JSON: {"scores":[one integer per answer],"notes":["one short Arabic sentence per answer: what was good or what was missing"]}`}]});
+    const j = JSON.parse(txt.slice(txt.indexOf('{'), txt.lastIndexOf('}') + 1));
+    if(!Array.isArray(j.scores) || j.scores.length < answers.length) throw new Error('no scores');
+    scores = answers.map((x, i) => countWords(x.a) ? Math.max(0, Math.min(countWords(x.a) < 4 ? 3 : 10, Math.round(Number(j.scores[i]) || 0))) : 0);
+    notes = (Array.isArray(j.notes) ? j.notes : []).map(String);
+  }catch(e){ console.warn('speaking grade', e); scores = null; }
+  ov.remove();
+  if(!scores) return null;
+  return {answers, scores, notes, pct:Math.round(scores.reduce((a, b) => a + b, 0) / (scores.length * 10) * 100)};
+}
+/* final test result: 70% items + 30% speaking (items only when speaking was not possible); pass mark 70% */
+function testResult(o){ return new Promise(res => {
+  const pass = o.pct >= 70, sp = o.sp;
+  const ov = overlay(`<div style="text-align:center;display:grid;gap:10px"><div class="bigbird">${hoopoeSVG(pass ? 'cheer' : 'think')}</div><h2>${esc(o.title)}: <bdi dir="ltr">${o.pct}%</bdi></h2>
+    <div class="chips" style="justify-content:center"><span class="chip">📝 الأسئلة <bdi dir="ltr">${o.itemsPct}%</bdi></span>${sp ? `<span class="chip">🗣️ التحدث <bdi dir="ltr">${sp.pct}%</bdi></span>` : '<span class="chip">🗣️ بدون جزء تحدث</span>'}</div>
+    ${sp ? `<div class="small muted">النتيجة = 70% من الأسئلة + 30% من التحدث</div>
+      <div style="display:grid;gap:6px;text-align:right">${sp.answers.map((a, i) => `<div class="small"><b><bdi dir="ltr">${sp.scores[i]}/10</bdi></b> · <bdi dir="ltr" class="en">${esc(a.q)}</bdi>${sp.notes[i] ? `<div class="muted">${esc(sp.notes[i])}</div>` : ''}</div>`).join('')}</div>` : ''}
+    <p style="margin:0">${pass ? 'نجحت! 🎉' : `تحتاج 70% للنجاح. ${esc(o.failMsg || '')}`}</p><button class="btn primary big" id="trOk">تم</button></div>`);
+  ov.querySelector('#trOk').onclick = () => { ov.remove(); res(); }; }); }
 function startUnitTest(k){
   const p = DB.progress[k], ut = p.unitTest, c = CONTENT[DB.kids[k].level] || {}, t = (c.unitTests||{})[ut.ui]; if(!t) return;
-  runQuiz(k, t.items, 'Unit test', res => { if(!res) return renderKid(k);
-    const pct = Math.round(res.score/res.total*100); ut.last = pct; ut.tries = (ut.tries||0) + 1;
-    if(pct >= 70){ ut.passed = true; ut.passedAt = new Date().toISOString(); addXP(k, 60); toast('🎉 نجحت في اختبار الوحدة! +60 نقطة', 'gold'); }
-    else toast(`نتيجتك ${pct}%. حصتك الجاية مراجعة للوحدة، ثم أعد الاختبار 💪`);
-    save(); renderKid(k); }, 10);
+  runQuiz(k, t.items, 'Unit test', async res => { if(!res) return renderKid(k);
+    const itemsPct = Math.round(res.score/res.total*100), sp = await speakTest(k, t.speak, {kind:'unit', unit:(c.units||[])[ut.ui]});
+    const pct = sp ? Math.round(itemsPct * .7 + sp.pct * .3) : itemsPct;
+    ut.last = pct; ut.items = itemsPct; ut.speak = sp ? sp.pct : null; ut.tries = (ut.tries||0) + 1;
+    const free = pct < 70 && (ut.free||0) < 3;
+    if(pct >= 70){ ut.passed = true; ut.passedAt = new Date().toISOString(); ut.review = null; addXP(k, 60); }
+    else ut.review = free ? 'due' : null;
+    save();
+    await testResult({title:'اختبار الوحدة', pct, itemsPct, sp, failMsg:free ? 'عندك حصة مراجعة مجانية للوحدة، وبعدها تعيد الاختبار 💪' : 'حصتك الجاية مراجعة للوحدة، ثم أعد الاختبار 💪'});
+    if(pct >= 70) toast('🎉 نجحت في اختبار الوحدة! +60 نقطة', 'gold');
+    renderKid(k); }, 10);
 }
 function startLevelExam(k){
   const lv = DB.kids[k].level, c = CONTENT[lv] || {}, qs = c.v === 2 ? ((c.levelTest||{}).items || []) : (Array.isArray(c.exam) ? c.exam : []);
-  runQuiz(k, qs.slice(0, 20), `Level ${lv} exam`, res => { if(!res) return renderKid(k);
-    const p = DB.progress[k]; p.exams = p.exams || {}; const pct = Math.round(res.score/res.total*100); p.exams[lv] = {pct, at:new Date().toISOString()};
+  runQuiz(k, qs.slice(0, 20), `Level ${lv} exam`, async res => { if(!res) return renderKid(k);
+    const itemsPct = Math.round(res.score/res.total*100), sp = c.v === 2 ? await speakTest(k, (c.levelTest||{}).speak, {kind:'level', units:c.units || []}) : null;
+    const pct = sp ? Math.round(itemsPct * .7 + sp.pct * .3) : itemsPct;
+    const p = DB.progress[k]; p.exams = p.exams || {}; p.exams[lv] = {pct, items:itemsPct, speak:sp ? sp.pct : null, at:new Date().toISOString()}; save();
+    await testResult({title:`اختبار المستوى ${lv}`, pct, itemsPct, sp, failMsg:'راجع وحاول مرة ثانية 💪'});
     if(pct >= 70){ addXP(k, 100); toast('🎖️ نجحت في اختبار المستوى! +100 نقطة', 'gold');
       if(c.v === 2 && lv < 20){ setLevel(k, lv + 1); toast(`🚀 انتقلت للمستوى ${lv + 1}!`, 'gold'); loadContent(lv + 1); } }
-    else toast(`نتيجتك ${pct}%. تحتاج 70% — راجع وحاول مرة ثانية 💪`);
     save(); renderKid(k); }, 20);
 }
 async function placementTestBasic(k){
@@ -2889,7 +2972,7 @@ No markdown, no emojis, and no Arabic letters in the spoken text, no other text 
 }
 const elapsedMin = () => L ? Math.floor((Date.now()-L.startedAt.getTime())/60000) : 0;
 
-function startLesson(k, trial){
+function startLesson(k, trial, opt){
   unlockAudio();
   const led = ledger(k);
   if(!trial && (!led.open || led.ended)) return go(k);
@@ -2899,7 +2982,7 @@ function startLesson(k, trial){
   if(!trial && !led.open.resumed && new Date() < led.open.t){ DB.progress[k].early = (DB.progress[k].early||0) + 1; }
   if(!trial && led.open.resumed && DB.live[k] && DB.live[k].startedAt) startedAt = new Date(DB.live[k].startedAt);
   L = {kid:k, trial, slot:trial?null:led.open.key, n, plan, history:[], startedAt, state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
-       queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:led.gifts, typing:false, sw:0, tw:0};
+       queue:[], speaking:false, streamDone:true, lastSay:'', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:led.gifts, typing:false, sw:0, tw:0, freeReview:!!(trial && opt && opt.freeReview)};
   if(!trial){ DB.live[k] = {slot:L.slot, startedAt:startedAt.toISOString()}; save(); }
   const sc2 = scriptFor(DB.kids[k].level, plan.ui, plan.li);
   if(sc2){ const fmt = v2Format(plan, k);
@@ -2916,7 +2999,7 @@ function startLesson(k, trial){
 function renderRoom(){
   $('#app').innerHTML = `<div class="room">
     <header class="rbar"><button class="btn sm" id="exit">خروج</button>
-      <div class="ttl">${L.trial ? `<span class="chip brand" style="font-family:var(--font)">${L.mission ? 'مهمة' : 'تجريبي'}</span> ` : ''}${esc(L.plan.t)}</div>
+      <div class="ttl">${L.trial ? `<span class="chip brand" style="font-family:var(--font)">${L.mission ? 'مهمة' : L.freeReview ? 'مراجعة مجانية' : 'تجريبي'}</span> ` : ''}${esc(L.plan.t)}</div>
       <div class="talk" id="talk"></div><div class="timer" id="timer">00:00</div></header>
     <div class="rbody">
       <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="selfcam" id="selfcam" hidden><video playsinline muted autoplay></video><span>${esc(nick(L.kid))}</span></div><div class="burst" id="burst"></div><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div></div></div>
@@ -3225,7 +3308,7 @@ Reply with ONLY one JSON object:
     const att = att0;
     DB.reports.push(Object.assign({}, att, report));
     const p = DB.progress[k], lkey = `${DB.kids[k].level}-${plan.ui}-${plan.li}`;
-    if(plan.review){ /* review before the unit test: position stays */ }
+    if(plan.review){ /* review before the unit test: position stays; the test can be taken again */ if(p.unitTest && p.unitTest.review === 'due') p.unitTest.review = 'done'; }
     else if(lesson.v2 && lesson.v2.exit === 'no' && p.repeatOf !== lkey){ p.repeatOf = lkey; }
     else { p.pos = (p.pos||0)+1; p.repeatOf = null;
       if(lesson.v2 && plan.li === (plan.perUnit||6) - 1 && ((CONTENT[DB.kids[k].level]||{}).unitTests||{})[plan.ui]) p.unitTest = {level:DB.kids[k].level, ui:plan.ui, passed:false, at:new Date().toISOString()}; }
@@ -3235,9 +3318,16 @@ Reply with ONLY one JSON object:
     DB.live[k] = null; save();
     const g = ledger(k).gifts; if(g > lesson.giftsBefore) book = BOOKS[band(k)][g-1];
   }
+  if(lesson.freeReview){ /* the free review after a failed unit test: report and progress like a lesson, but no attendance, so it is not charged */
+    const p = DB.progress[k], ut = p.unitTest;
+    DB.reports.push(Object.assign({kid:k, slot:keyOf(new Date()) + '-free', lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:mins, free:true}, report));
+    if(ut && !ut.passed){ ut.review = 'done'; ut.free = (ut.free||0) + 1; }
+    p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); seedSRS(k); report.mistakes.forEach(m => addSRS(k, m.right, 'كنت تقول: ' + m.wrong));
+    p.xp = (p.xp||0) + 50; save();
+  }
   ov.innerHTML = `<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
     ${report.talkPct != null ? `<div class="chip ${report.talkPct >= talkGoal(k) ? 'good' : 'brand'}" style="text-align:center">🗣️ تكلمت ${report.talkPct}% من وقت الحصة · هدفك ${talkGoal(k)}%</div>` : ''}
-    ${lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${priceNow(k)} ريال صارت خضراء · +50 نقطة</div>`}
+    ${lesson.freeReview ? '<div class="chip good" style="text-align:center">🎁 حصة مراجعة مجانية: لم تُحتسب في الرصيد · +50 نقطة</div>' : lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${priceNow(k)} ريال صارت خضراء · +50 نقطة</div>`}
     ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
     ${book ? `<div class="gift">🎁 هدية جديدة! فتحت كتاب: <span class="en">${esc(book[0])}</span></div>` : ''}
     ${(() => { const kit = kitFor(DB.kids[k].level, plan.ui, plan.li); return kit && kit.grammar ? `<div class="gram"><div style="font-weight:800">📘 قاعدة الدرس: <span class="en">${esc(kit.grammar.title)}</span></div><div class="small">${esc(kit.grammar.ar)}</div><div class="en small" style="direction:ltr;text-align:left">${(kit.grammar.examples||[]).map(esc).join('<br>')}</div></div>` : ''; })()}
