@@ -1406,7 +1406,7 @@ function tabHome(k){
   document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => { HOME_SEG = b.dataset.seg; try{ localStorage.setItem('hh:seg', HOME_SEG); }catch(e){}
     document.querySelectorAll('[data-seg]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
     document.querySelectorAll('[data-segp]').forEach(x => x.hidden = x.dataset.segp !== HOME_SEG); });
-  const dg = $('#dailyGo'); if(dg) dg.onclick = () => { if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; } unlockAudio(); startDaily(k); };
+  const dg = $('#dailyGo'); if(dg) dg.onclick = () => { if(!aiReady()){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; } unlockAudio(); startDaily(k); };
   const rg = $('#revGo'); if(rg) rg.onclick = () => { unlockAudio(); startReview(k); };
   const hw = $('#hwGo'); if(hw) hw.onclick = () => { unlockAudio(); startHomework(k); };
   const pn = $('#pronGo'); if(pn) pn.onclick = () => { unlockAudio(); openPronLab(k); };
@@ -1601,7 +1601,7 @@ function tabLibrary(k){
   document.querySelectorAll('[data-pre]').forEach(b => b.onclick = () => openBook(k, pre.find(x => x.id === b.dataset.pre)));
 }
 async function newBook(k, topic){
-  if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
+  if(!aiReady()){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
   const kid = DB.kids[k], cefr = LEVEL_CEFR[kid.level], age = ageOf(kid.birth);
   const ctl = new AbortController(); let secs = 0;
   const ov = overlay(`<div style="text-align:center;display:grid;gap:8px"><div style="font-size:2.6rem" class="spin">✍️</div><h2>${teacherOf(k).name} يكتب قصتك…</h2><p class="small muted" style="margin:0">تقريباً 20 إلى 40 ثانية · <span class="num" id="bsec">0</span> ث</p><button class="btn sm" id="bcancel" style="justify-self:center">إلغاء</button></div>`);
@@ -2519,7 +2519,7 @@ function unlockAudio(){ azUnlock(); try{ const u = new SpeechSynthesisUtterance(
    home-screen app and sluggish in Safari, so there (when the Azure key is set) we record the child with the mic and
    send each utterance to Azure Speech instead. AzSR mimics the parts of the SpeechRecognition API the app uses. */
 const NativeSR = window.SpeechRecognition || window.webkitSpeechRecognition;
-const azSttOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !DEMO && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+const azSttOn = () => hasAz() && !DEMO && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
 const useAzSR = () => azSttOn() && (!NativeSR || (typeof isIOS !== 'undefined' && isIOS));
 let MIC_STREAM = null, MIC_IDLE_T = null;
 /* iOS audio session. The app sets the session to "playback" (so sounds play with the silent switch on). A "playback" session
@@ -2600,8 +2600,8 @@ function captureOnce(o, fresh){
 function recordUtterance(ctl, maxMs, silence, waitMs, onSpeech){ return captureAudio({ctl, maxMs, silence, waitMs, onSpeech}); }
 async function azRecognize(wav, lang, again){
   const w = linkedAbort(null, 10000); let r;
-  try{ r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
-    {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav, signal:w.signal}); }
+  try{ const au = await azAuth(); r = await fetch(`https://${au.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
+    {method:'POST', headers:{...au.h, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav, signal:w.signal}); }
   catch(e){ w.clear(); if(!again) return azRecognize(wav, lang, true); throw e; }
   w.clear();
   if(!r.ok){ if(r.status >= 500 && !again) return azRecognize(wav, lang, true); const e = new Error('stt ' + r.status); e.status = r.status; throw e; }
@@ -2650,9 +2650,9 @@ async function* streamClaude(body, signal){
   if(DEMO || DB.apiKey === 'demo'){ yield* demoStream(body); return; }
   // watchdog: 12 s for the answer to start, then 12 s max between pieces (a stalled connection used to hang the lesson forever)
   const w = linkedAbort(signal, 12000);
-  let r; try{ r = await fetch(API,{method:'POST',headers:apiHeaders(),body:JSON.stringify(Object.assign({}, body, {stream:true})),signal:w.signal}); }
+  let r; try{ r = await aiFetch(Object.assign({}, body, {stream:true}), w.signal); }
   catch(e){ w.clear(); if(w.ctl.timedOut) throw timeoutErr(); throw e; }
-  if(!r.ok){ w.clear(); let t = ''; try{ t = await r.text(); }catch(e){} throw {status:r.status, body:t}; }
+  if(!r.ok){ w.clear(); let t = ''; try{ t = await r.text(); }catch(e){} throw {status:r.status === 412 ? 401 : r.status, body:t}; }
   const reader = r.body.getReader(), dec = new TextDecoder(); let buf = '';
   while(true){
     w.arm(12000);
@@ -2672,8 +2672,8 @@ async function* streamClaude(body, signal){
 }
 async function callClaude(body, signal){
   if(DEMO || DB.apiKey === 'demo') return demoReport();
-  const r = await fetch(API,{method:'POST',headers:apiHeaders(),body:JSON.stringify(body),signal});
-  if(!r.ok){ let t = ''; try{ t = await r.text(); }catch(e){} throw {status:r.status, body:t}; }
+  const r = await aiFetch(body, signal);
+  if(!r.ok){ let t = ''; try{ t = await r.text(); }catch(e){} throw {status:r.status === 412 ? 401 : r.status, body:t}; }
   const j = await r.json(); return (j.content||[]).filter(c => c.type === 'text').map(c => c.text).join('');
 }
 /* demo mode: canned teacher so the parent can preview without a key */
@@ -2758,7 +2758,7 @@ function startLesson(k, trial){
   unlockAudio();
   const led = ledger(k);
   if(!trial && (!led.open || led.ended)) return go(k);
-  if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
+  if(!aiReady()){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
   const plan = lessonPlan(k), n = plan.n;
   let startedAt = new Date();
   if(!trial && !led.open.resumed && new Date() < led.open.t){ DB.progress[k].early = (DB.progress[k].early||0) + 1; }
@@ -3158,7 +3158,7 @@ function renderParent(){
         <p class="small muted" style="margin:8px 0 0">الطفل يجمع تقريباً 70 إلى 100 نقطة من كل حصة مع اختبارها، و20 من تحدي اليوم، و30 من كل قصة.</p></section>
       <section class="card grid" style="gap:10px"><h2>تشغيل المعلمة</h2>
         ${cloudOn() ? `<div class="vguide"><div><b>☁️ المزامنة السحابية</b></div><div class="small">الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.</div></div>` : ''}
-        <p class="small muted" style="margin:0">${DB.apiKey ? (CLOUD.token ? '✅ مفتاح التشغيل محفوظ ومتزامن مع كل الأجهزة.' : '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.') : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
+        <p class="small muted" style="margin:0">${DB.apiKey ? (CLOUD.token ? '✅ مفتاح التشغيل محفوظ في الخادم بأمان، ولا يُرسل لأجهزة الأطفال.' : '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.') : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
         <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
         <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><button class="btn sm primary" id="micCheck">🎤 فحص الميكروفون</button><span class="small" id="keyMsg"></span></div>
         <div class="field"><label>🔊 صوت المعلم وقراءة القصص</label><div class="vguide">
@@ -3248,6 +3248,7 @@ function renderParent(){
     ov.querySelector('#yes').onclick = () => { setLevel(k, to); ov.remove(); toast(`تم نقل ${DB.kids[k].ar} للمستوى ${to}`); renderParent(); }; });
   $('#xfer').onclick = async () => {
     const full = JSON.parse(JSON.stringify(DB)); Object.values(full.books||{}).forEach(arr => arr.length = 0);
+    if(cloudOn() && CLOUD.token){ delete full.apiKey; delete full.azure; } // with the cloud on, the new device signs in and uses the server relay
     const code = await encodeSetup({full}), link = setupLink(code);
     const ov = overlay(`<h2>📲 تجهيز جهاز آخر</h2>
       <p style="margin:0">أرسل هذا الرابط لنفسك (واتساب أو AirDrop أو الملاحظات) وافتحه مرة واحدة على الجهاز الجديد. يجهّز كل شيء: الحسابات والتقدم ومفتاح المعلمة ومفتاح الصوت والأصوات المختارة. بعدها يدخل كل طفل بيوزره وباسورده.</p>
@@ -3260,12 +3261,12 @@ function renderParent(){
     ov.querySelector('#xcopy').onclick = () => copy(code, 'تم نسخ الرمز');
     const sh = ov.querySelector('#xshare'); if(sh) sh.onclick = () => navigator.share({title:'هدهد', text:'رابط تجهيز هدهد', url:link}).catch(() => {});
   };
-  $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); renderParent(); toast('تم حفظ المفتاح'); };
+  $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); if(CLOUD.cfg) CLOUD.cfg.ai = true; renderParent(); toast('تم حفظ المفتاح'); };
   $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
-  $('#azs').onclick = () => { const kk = $('#azk').value.trim(), rg = $('#azr').value.trim().toLowerCase().replace(/\s+/g,'') || 'eastus'; if(!kk && !(DB.azure && DB.azure.key)){ $('#azm').textContent = 'الصق المفتاح أولاً.'; return; } DB.azure = {key: kk || DB.azure.key, region: rg}; AZ_DOWN = false; save(); renderParent(); toast('تم حفظ صوت Azure'); };
+  $('#azs').onclick = () => { const kk = $('#azk').value.trim(), rg = $('#azr').value.trim().toLowerCase().replace(/\s+/g,'') || 'eastus'; if(!kk && !(DB.azure && DB.azure.key)){ $('#azm').textContent = 'الصق المفتاح أولاً.'; return; } DB.azure = {key: kk || DB.azure.key, region: rg}; AZ_DOWN = false; AZ_TOK = null; save(); if(CLOUD.cfg) CLOUD.cfg.az = true; renderParent(); toast('تم حفظ صوت Azure'); };
   $('#azt').onclick = async () => { const m = $('#azm'); if(!(DB.azure && DB.azure.key)){ m.textContent = 'احفظ المفتاح أولاً.'; return; } AZ_DOWN = false; m.className = 'small'; m.textContent = 'جاري التجربة…'; azUnlock();
     try{ await azTest(); m.className = 'small ok'; m.textContent = '✅ الصوت البشري يعمل'; }catch(e){ m.className = 'small err'; m.textContent = e && (e.status === 401 || e.status === 403) ? 'المفتاح أو المنطقة غير صحيحة.' : `فشل (${(e && e.status) || 'اتصال'}).`; } };
-  $('#azx') && ($('#azx').onclick = () => { DB.azure = null; save(); renderParent(); toast('رجعنا لصوت الجهاز'); });
+  $('#azx') && ($('#azx').onclick = () => { DB.azure = null; save(); if(CLOUD.cfg) CLOUD.cfg.az = false; renderParent(); toast('رجعنا لصوت الجهاز'); });
   $('#savePl').onclick = () => { const v = Math.max(1, Math.round(Number($('#pl').value))||10); kidIds().forEach(k => setPrice(k, v)); DB.perLesson = v; save(); toast(`قيمة الحصة الآن ${v} ريال لكل الأطفال، من الآن فصاعداً`); renderParent(); };
   $('#micCheck').onclick = () => micCheck();
   $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
@@ -3701,7 +3702,7 @@ FORMAT: first line starts with [MOOD:happy|excited|proud|laughing|surprised|thin
 }
 function startMission(k, id){
   const m = MISSIONS.find(x => x.id === id); if(!m) return;
-  if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
+  if(!aiReady()){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; }
   unlockAudio();
   const plan = Object.assign({}, lessonPlan(k), {t:m.t});
   L = {kid:k, trial:true, mission:{m, done:[false,false,false]}, slot:null, n:0, plan, history:[], startedAt:new Date(), state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
@@ -4019,7 +4020,7 @@ const azFemale = v => /Ava|Emma|Sonia/.test(v);
 function kidVoices(k){ const v = (DB.voices || {})[k] || {}; return {teacher: v.teacher || (teacherOf(k).female ? AZ_VOICES.f : AZ_VOICES.m), story: v.story || AZ_VOICES.f}; }
 const kidCtx = () => (L && L.kid) || (DB && DB.kids && DB.kids[WHO] ? WHO : null);
 let AZ_DOWN = false, AZ_GEN = 0, AZ_EL = null; const AZ_CACHE = new Map();
-const azOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !AZ_DOWN;
+const azOn = () => hasAz() && !AZ_DOWN;
 const xmlEsc = s => String(s).replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]));
 function azEl(){ if(!AZ_EL){ AZ_EL = new Audio(); AZ_EL.preload = 'auto'; AZ_EL.setAttribute('playsinline', ''); } return AZ_EL; }
 async function azFetch(text, voiceName, rate, pitch){
@@ -4031,7 +4032,8 @@ async function azFetch(text, voiceName, rate, pitch){
 }
 async function azFetchNet(text, voiceName, rate, pitch){
   const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US"><voice name="${voiceName}"><prosody rate="${Math.round((rate-1)*100)}%" pitch="${Math.round((pitch||0)*100)}%">${xmlEsc(text)}</prosody></voice></speak>`;
-  const r = await fetch(`https://${DB.azure.region}.tts.speech.microsoft.com/cognitiveservices/v1`, {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'application/ssml+xml', 'X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'}, body:ssml, signal:AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined});
+  const au = await azAuth();
+  const r = await fetch(`https://${au.region}.tts.speech.microsoft.com/cognitiveservices/v1`, {method:'POST', headers:{...au.h, 'Content-Type':'application/ssml+xml', 'X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'}, body:ssml, signal:AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined});
   if(!r.ok){ const e = new Error('azure ' + r.status); e.status = r.status; throw e; }
   return URL.createObjectURL(await r.blob());
 }
@@ -4077,6 +4079,42 @@ async function azTest(){ const url = await azFetch("Hello! I'm Teacher Noor. I c
 /* =============== CLOUD SYNC (Supabase) =============== */
 const SUPA_URL = 'https://muhfgviqdjysjzkbwlph.supabase.co', SUPA_KEY = 'sb_publishable_uNs9sj1LzyZkefmjmhbQ-g_bfGTL2PP';
 const CLOUD_KEY = '51telk:cloud';
+/* AI relay: with cloud sync on, Claude and Azure are reached through our server function, so the keys never sit on a child's device */
+const RELAY = SUPA_URL + '/functions/v1/ai/';
+const relayOn = () => !DEMO && cloudOn() && !!(CLOUD && CLOUD.token);
+const aiReady = () => DEMO || DB.apiKey === 'demo' || (relayOn() ? !(CLOUD.cfg && CLOUD.cfg.ai === false) : !!DB.apiKey);
+const hasAz = () => relayOn() ? !!(CLOUD.cfg ? CLOUD.cfg.az : (DB && DB.azure && DB.azure.key)) : !!(DB && DB.azure && DB.azure.key && DB.azure.region);
+let AZ_TOK = null;
+async function azAuth(){
+  if(!relayOn()) return {region:DB.azure.region, h:{'Ocp-Apim-Subscription-Key':DB.azure.key}};
+  if(!AZ_TOK || Date.now() - AZ_TOK.at > 8*60e3){
+    const r = await fetch(RELAY + 'aztoken', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token}), signal:AbortSignal.timeout ? AbortSignal.timeout(8000) : undefined});
+    if(!r.ok){ const e = new Error('aztoken ' + r.status); e.status = r.status === 412 ? 401 : r.status; throw e; }
+    const j = await r.json(); AZ_TOK = {token:j.token, region:j.region, at:Date.now()}; }
+  return {region:AZ_TOK.region, h:{'Authorization':'Bearer ' + AZ_TOK.token}};
+}
+async function aiFetch(body, signal){
+  const direct = () => fetch(API, {method:'POST', headers:apiHeaders(), body:JSON.stringify(body), signal});
+  if(!relayOn()) return direct();
+  let r; try{ r = await fetch(RELAY + 'claude', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token, body}), signal}); }
+  catch(e){ if(e && e.name === 'AbortError') throw e; if(DB.apiKey && DB.apiKey !== 'demo') return direct(); throw e; }
+  // the parent's own device still has the key: if the relay itself is broken, fall back to the direct call
+  if((r.status === 404 || r.status >= 500 && r.status !== 529) && DB.apiKey && DB.apiKey !== 'demo') return direct();
+  return r;
+}
+/* a child's device keeps only that child's data and no keys (the server sends nothing else any more; this cleans older copies) */
+function kidPurge(){
+  if(CLOUD.role !== 'kid' || !CLOUD.kid || !DB) return;
+  const me = CLOUD.kid, gone = [], keepAll = new Set(['family','curr']);
+  ['apiKey','azure','topups'].forEach(k => { if(DB[k] !== undefined && DB[k] !== null){ delete DB[k]; gone.push(k); } });
+  if(DB.parent && (DB.parent.user || DB.parent.pass)){ DB.parent = {name:DB.parent.name}; CLOUD.synced.parent = J(DB.parent); }
+  ['attendance','reports','certs','redeems','reviews'].forEach(k => { if(Array.isArray(DB[k]) && DB[k].some(e => e && e.kid !== me)){ DB[k] = DB[k].filter(e => e && e.kid === me); CLOUD.synced[k] = J(DB[k]); } });
+  for(const [k, v] of Object.entries(DB)){ if(!isObj(v) || NO_SPLIT.has(k) || LOCAL_ONLY.has(k) || keepAll.has(k)) continue;
+    if(!['kids','sched','progress','profiles','books','live','livefeed','placements','renewReq','cheers','monthly','balance','prices','voices','gseen','guardians'].includes(k)) continue;
+    for(const sub of Object.keys(v)) if(sub !== me){ delete v[sub]; gone.push(k + '/' + sub); } }
+  gone.forEach(p => { CLOUD.synced[p] = 'null'; });
+  if(gone.length){ normalize(); localSaveOnly(); cloudSave(); }
+}
 let CLOUD = (() => { try{ return JSON.parse(localStorage.getItem(CLOUD_KEY)) || {}; }catch(e){ return {}; } })();
 CLOUD.vers = CLOUD.vers || {}; CLOUD.synced = CLOUD.synced || {};
 let cloudBusy = false, cloudAgain = false, cloudT = null, cloudPullT = null, cloudApplying = false;
@@ -4164,8 +4202,9 @@ async function cloudPull(full){
     CLOUD.vers[r.path] = r.ver; CLOUD.synced[r.path] = remoteJ;
   });
   cloudApplying = false;
-  CLOUD.since = res.now; CLOUD.lastOk = Date.now(); cloudSave();
+  CLOUD.since = res.now; CLOUD.lastOk = Date.now(); if(res.cfg) CLOUD.cfg = res.cfg; cloudSave();
   if(changed){ normalize(); localSaveOnly(); }
+  kidPurge();
   /* a guardian who was just linked to another child only receives that child's rows that changed recently: fetch everything once */
   if(!full && CLOUD.role === 'guardian' && DB && DB.guardians){ const g = DB.guardians[CLOUD.kid];
     if(g && (g.kids || []).some(x => !CLOUD.vers['balance/' + x] || !CLOUD.vers['sched/' + x])) return (await cloudPull(true)) || changed; }
@@ -4672,7 +4711,7 @@ function onboarding(k){
 }
 
 /* =============== PHONEME PRONUNCIATION SCORING (Azure) =============== */
-const paOn = () => !!(DB && DB.azure && DB.azure.key && DB.azure.region) && !DEMO;
+const paOn = () => hasAz() && !DEMO;
 /* record mono PCM from the mic; stops after ~1.2s of silence once speech started, on stopRef.stop(), or at maxMs */
 function recordWav(maxMs, onLevel, ctl){ return captureAudio({maxMs, onLevel, ctl, silence:1.2}); }
 function downsample(chunks, from, to){
@@ -4690,8 +4729,9 @@ function encodeWav(samples, rate){
 }
 async function azAssess(wav, ref){
   const pa = btoa(unescape(encodeURIComponent(JSON.stringify({ReferenceText:ref, GradingSystem:'HundredMark', Granularity:'Phoneme', Dimension:'Comprehensive', EnableMiscue:true}))));
-  const r = await fetch(`https://${DB.azure.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed`,
-    {method:'POST', headers:{'Ocp-Apim-Subscription-Key':DB.azure.key, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Pronunciation-Assessment':pa, 'Accept':'application/json'}, body:wav});
+  const au = await azAuth();
+  const r = await fetch(`https://${au.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed`,
+    {method:'POST', headers:{...au.h, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Pronunciation-Assessment':pa, 'Accept':'application/json'}, body:wav});
   if(!r.ok){ const e = new Error('assess ' + r.status); e.status = r.status; throw e; }
   const j = await r.json(), nb = (j.NBest || [])[0];
   if(!nb || j.RecognitionStatus !== 'Success') return {ok:false, status:j.RecognitionStatus || 'NoMatch', acc:0, words:[], text:''};
@@ -4769,7 +4809,7 @@ function monthReviewCard(k){
     <button class="btn primary" id="mrevGo">ابدأ المراجعة</button></section>`;
 }
 function startMonthReview(k){
-  if(!DB.apiKey && !DEMO){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد.'); return; }
+  if(!aiReady()){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد.'); return; }
   const items = reviewItems(k); if(items.length < 3) return;
   const intro = overlay(`<div style="text-align:center">${hoopoeSVG('wow')}</div><h2>قبل ما نبدأ: اختبار صغير</h2><p style="margin:0">${items.length} جمل من أخطاء هذا الشهر. رتّبها بنفسك، وبعد الحصة نعيد نفس الاختبار ونشوف كم تحسّنت 💪</p><button class="btn primary big" id="rg">ابدأ</button>`);
   intro.querySelector('#rg').onclick = () => { intro.remove();
