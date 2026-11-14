@@ -3105,7 +3105,11 @@ async function teacherTurn(userText, attempt){
   if(!L || L.done) return;
   stopListening(); L.unclear = 0;
   const lesson = L, m = elapsedMin();
-  lesson.history.push({role:'user', content:`[minute ${m} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}] ${userText}`}); liveFeed(lesson, 'k', userText);
+  // a turn the child interrupted is kept: the new message joins it, so roles still alternate
+  const entry = `[minute ${m} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}] ${userText}`, prev = lesson.history[lesson.history.length - 1];
+  let undo; if(prev && prev.role === 'user'){ const old = prev.content; prev.content = old + '\n' + entry; undo = () => { prev.content = old; }; }
+  else { const mine = {role:'user', content:entry}; lesson.history.push(mine); undo = () => { const i = lesson.history.lastIndexOf(mine); if(i >= 0) lesson.history.splice(i, 1); }; }
+  liveFeed(lesson, 'k', userText);
   setState('thinking');
   const msgs = lesson.history.slice(-40); while(msgs.length && msgs[0].role !== 'user') msgs.shift();
   const apiMsgs = msgs.map((x,i) => i === msgs.length-1 ? {role:x.role, content:[{type:'text', text:x.content, cache_control:{type:'ephemeral'}}]} : {role:x.role, content:x.content});
@@ -3148,8 +3152,9 @@ async function teacherTurn(userText, attempt){
     lesson.ctl = null; lesson.streamDone = true; pump();
   }catch(e){
     if(L !== lesson) return;
-    lesson.ctl = null; lesson.streamDone = true; lesson.history.pop();
-    if(e && e.name === 'AbortError') return;
+    lesson.ctl = null; lesson.streamDone = true;
+    if(e && e.name === 'AbortError') return; // interrupted by the child: keep their message (the next one is merged with it)
+    undo();
     // one quiet automatic retry for a dropped/stalled connection or a busy service, before bothering the child
     const soft = !e || e.status === 'timeout' || e.status === 429 || e.status === 529 || e.status >= 500 || e instanceof TypeError;
     if(soft && !attempt && !full){ console.warn('teacher retry', e); setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn(userText, 1); }, 1200); return; }
