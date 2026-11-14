@@ -307,14 +307,14 @@
    "objective": "Today you will talk about teenagers' habits without making sweeping generalisations.",
    "warmup": "What time do you usually go to bed on a school night?",
    "dialogue": {
-    "scene": "Emma and Fahad are reading an article about teenagers and sleep before a class discussion.",
+    "scene": "Emma and Lina are reading an article about teenagers and sleep before a class discussion.",
     "p1": [
      {
       "s": "Emma",
       "t": "This article says teenagers are lazy because they sleep until noon. That's a sweeping generalisation, isn't it?"
      },
      {
-      "s": "Fahad",
+      "s": "Lina",
       "t": "Definitely. It comes across as a bit unfair. Teenagers tend to sleep later, but there's a scientific reason for it."
      },
      {
@@ -322,7 +322,7 @@
       "t": "Right. Our body clocks seem to shift as we grow up, so we don't feel sleepy until later at night."
      },
      {
-      "s": "Fahad",
+      "s": "Lina",
       "t": "That's true to some extent. But lots of us also burn the midnight oil before exams."
      }
     ],
@@ -332,7 +332,7 @@
       "t": "So, on the whole, would you say our class is sleep-deprived?"
      },
      {
-      "s": "Fahad",
+      "s": "Lina",
       "t": "Quite a few of us appear to be, especially during exam week. Not everyone, though."
      },
      {
@@ -340,7 +340,7 @@
       "t": "Then schools that start a bit later might actually help students concentrate."
      },
      {
-      "s": "Fahad",
+      "s": "Lina",
       "t": "Possibly. It seems that some schools abroad have tried it, with fairly good results."
      }
     ],
@@ -673,7 +673,11 @@
      },
      {
       "s": "Sam",
-      "t": "Well, this is a bit awkward, but it seems that we've let the project slide, and with the hand-in on Thursday, we can't leave it to the last minute."
+      "t": "Well, this is a bit awkward, but it seems that we've let the project slide."
+     },
+     {
+      "s": "Sam",
+      "t": "With the hand-in on Thursday, we can't leave it to the last minute."
      },
      {
       "s": "Ziad",
@@ -3131,7 +3135,7 @@
      "t": "This article says teenagers are lazy because they sleep until noon. That's a sweeping generalisation, isn't it?"
     },
     {
-     "s": "Fahad",
+     "s": "Lina",
      "t": "Definitely. It comes across as a bit unfair. Teenagers tend to sleep later, but there's a scientific reason for it."
     },
     {
@@ -3139,7 +3143,7 @@
      "t": "Right. Our body clocks seem to shift as we grow up, so we don't feel sleepy until later at night."
     },
     {
-     "s": "Fahad",
+     "s": "Lina",
      "t": "That's true to some extent. But lots of us also burn the midnight oil before exams."
     },
     {
@@ -3147,7 +3151,7 @@
      "t": "So, on the whole, would you say our class is sleep-deprived?"
     },
     {
-     "s": "Fahad",
+     "s": "Lina",
      "t": "Quite a few of us appear to be, especially during exam week. Not everyone, though."
     }
    ],
@@ -3343,7 +3347,11 @@
     },
     {
      "s": "Sam",
-     "t": "Well, this is a bit awkward, but it seems that we've let the project slide, and with the hand-in on Thursday, we can't leave it to the last minute."
+     "t": "Well, this is a bit awkward, but it seems that we've let the project slide."
+    },
+    {
+     "s": "Sam",
+     "t": "With the hand-in on Thursday, we can't leave it to the last minute."
     },
     {
      "s": "Ziad",
@@ -4313,7 +4321,7 @@
     },
     {
      "s": "Omar",
-     "t": "Fair point. Anything else?"
+     "t": "Thanks! Anything else?"
     },
     {
      "s": "Faisal",

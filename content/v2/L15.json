@@ -1986,14 +1986,14 @@
    "objective": "Today you will propose and evaluate ways to reduce food waste at a family event.",
    "warmup": "What happens to the leftover food after a big family meal in your home?",
    "dialogue": {
-    "scene": "Rahaf's family is planning a big Eid lunch. Rahaf and her cousin Sami discuss how to stop so much food being thrown away.",
+    "scene": "Rahaf's family is planning a big Eid lunch. Rahaf and her cousin Salma discuss how to stop so much food being thrown away.",
     "p1": [
      {
       "s": "Rahaf",
       "t": "Last Eid, trays of rice and meat went off before anyone ate them. I hate seeing that."
      },
      {
-      "s": "Sami",
+      "s": "Salma",
       "t": "Same. What if we just cooked less this year?"
      },
      {
@@ -2001,7 +2001,7 @@
       "t": "The trouble with that is that Grandma will worry there isn't enough for the guests."
      },
      {
-      "s": "Sami",
+      "s": "Salma",
       "t": "True. Hospitality matters to her. It might be worth asking the guests to confirm if they're coming."
      }
     ],
@@ -2011,7 +2011,7 @@
       "t": "That's worth a try. And what about the surplus food?"
      },
      {
-      "s": "Sami",
+      "s": "Salma",
       "t": "A food bank in our city collects good food from events and gives it to families in need."
      },
      {
@@ -2019,7 +2019,7 @@
       "t": "It would mean organising boxes and a pickup, but I think it's worth it."
      },
      {
-      "s": "Sami",
+      "s": "Salma",
       "t": "Let's present both ideas to Grandma together. She'll find it hard to say no to both of us!"
      }
     ],
@@ -4219,7 +4219,7 @@
      "t": "Last Eid, trays of rice and meat went off before anyone ate them. I hate seeing that."
     },
     {
-     "s": "Sami",
+     "s": "Salma",
      "t": "Same. What if we just cooked less this year?"
     },
     {
@@ -4227,7 +4227,7 @@
      "t": "The trouble with that is that Grandma will worry there isn't enough for the guests."
     },
     {
-     "s": "Sami",
+     "s": "Salma",
      "t": "True. Hospitality matters to her. It might be worth asking the guests to confirm if they're coming."
     },
     {
@@ -4235,7 +4235,7 @@
      "t": "That's worth a try. And what about the surplus food?"
     },
     {
-     "s": "Sami",
+     "s": "Salma",
      "t": "A food bank in our city collects good food from events and gives it to families in need."
     },
     {

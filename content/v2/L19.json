@@ -255,15 +255,15 @@
     "prompts": [
      {
       "q": "Why should a busy student give up a morning for this?",
-      "hint": "Give three benefits in a parallel list, e.g. 'It is …, it is … and it is …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give three benefits in a parallel list, e.g. 'It is …, it is … and it is …'. Then add a real example that makes it concrete."
      },
      {
       "q": "Can you give me a short slogan for the day?",
-      "hint": "Create a three-part slogan that repeats the same word or pattern. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Create a three-part slogan that repeats the same word or pattern."
      },
      {
       "q": "How would you finish your speech so that people remember it?",
-      "hint": "Repeat your key idea in a memorable rule-of-three sentence. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Repeat your key idea in a memorable rule-of-three sentence. Then say why that line will stay with people."
      }
     ]
    },
@@ -429,15 +429,15 @@
     "prompts": [
      {
       "q": "Why should I vote for you and not the others?",
-      "hint": "Answer with an antithesis: 'It's not about …, but about …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Answer with an antithesis: 'It's not about …, but about …'. Then back it up with one real example."
      },
      {
       "q": "Every candidate makes promises. How are you different?",
-      "hint": "Contrast empty promises with your track record, giving one real example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Contrast empty promises with your track record, giving one real example."
      },
      {
       "q": "Sum up your campaign in one line.",
-      "hint": "Give a short contrasting slogan, e.g. 'Less …, more …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give a short contrasting slogan, e.g. 'Less …, more …'."
      }
     ]
    },
@@ -561,15 +561,15 @@
     "prompts": [
      {
       "q": "Why should parents give, when they already have so many expenses?",
-      "hint": "Use anaphora: start two or three sentences with the same words, e.g. 'Imagine …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use anaphora: start two or three sentences with the same words, e.g. 'Imagine …'. Then add one specific detail."
      },
      {
       "q": "What exactly will our donations change?",
-      "hint": "Give a specific, heartfelt picture of one child's school day. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give a specific, heartfelt picture of one child's school day. Then say how many children it could help."
      },
      {
       "q": "How would you close the appeal?",
-      "hint": "Finish with a short repeated pattern, e.g. 'One bag, one child, one …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Finish with a short repeated pattern, e.g. 'One bag, one child, one …'."
      }
     ]
    },
@@ -655,15 +655,15 @@
     "prompts": [
      {
       "q": "Why should people care about leftover food?",
-      "hint": "Paint a picture: describe one vivid scene of wasted food. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Paint a picture: describe one vivid scene of wasted food. Then add one fact to support the image."
      },
      {
       "q": "Isn't cooking too much just good hospitality?",
-      "hint": "Respect the value of generosity, then show the cost with an image and one fact. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Respect the value of generosity, then show the cost with an image and one fact. Then give one practical solution."
      },
      {
       "q": "What should guests and hosts actually do?",
-      "hint": "Give a clear call to action, ideally in three parts. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give a clear call to action, ideally in three parts."
      }
     ]
    },
@@ -788,7 +788,7 @@
      },
      {
       "s": "Dr Hessa",
-      "t": "Letters from experts certainly help. What exactly would you spend the money on?"
+      "t": "Letters from experts certainly help. But what will the school get back for its money?"
      }
     ],
     "p2": [
@@ -828,15 +828,15 @@
     "prompts": [
      {
       "q": "Why should I listen to you on this?",
-      "hint": "Build credibility: 'As someone who …, I have first-hand experience of …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Build credibility: 'As someone who …, I have first-hand experience of …'."
      },
      {
       "q": "What evidence do you have that students would use it?",
-      "hint": "Give one piece of hard evidence, such as a survey result, and say what it shows. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give one piece of hard evidence, such as a survey result, and say what it shows. Then admit one limit of your evidence."
      },
      {
       "q": "What would the school gain in return?",
-      "hint": "Explain the return on investment honestly, without exaggerating. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain the return on investment honestly, without exaggerating. Then admit one cost and say why it's worth it."
      }
     ]
    },
@@ -922,15 +922,15 @@
     "prompts": [
      {
       "q": "Please start your speech. How will you grab our attention?",
-      "hint": "Open with a hook: a surprising question, fact or picture. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Open with a hook: a surprising question, fact or picture."
      },
      {
       "q": "Why should the council believe you and act now?",
-      "hint": "Combine your credibility, one piece of evidence and one vivid image. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Combine your credibility, one piece of evidence and one vivid image. Then answer one doubt the council might have."
      },
      {
       "q": "Please finish your speech. What do you want us to do?",
-      "hint": "Use a contrast or the rule of three, then a rallying cry. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use a contrast or the rule of three, then a rallying cry."
      }
     ]
    },
@@ -1059,15 +1059,15 @@
     "prompts": [
      {
       "q": "Please open your case. How do you define the key terms?",
-      "hint": "Use 'For the purposes of this debate, we define … as …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'For the purposes of this debate, we define … as …'. Then explain why you defined it that way."
      },
      {
       "q": "What exactly do you have to prove today?",
-      "hint": "State your burden: 'Our burden is to prove that …, not that …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "State your burden: 'Our burden is to prove that …, not that …'."
      },
      {
       "q": "In one sentence, what is this debate really about?",
-      "hint": "Name the heart of the matter as a clear question. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Name the heart of the matter as a clear question."
      }
     ]
    },
@@ -1199,15 +1199,15 @@
     "prompts": [
      {
       "q": "What are the main pillars of your case?",
-      "hint": "Give two or three pillars: 'Our case rests on …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give two or three pillars: 'Our case rests on …'."
      },
      {
       "q": "How, in practical terms, would this work?",
-      "hint": "Explain the mechanism step by step, starting with 'In practical terms, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain the mechanism step by step, starting with 'In practical terms, …'. Then give a real example."
      },
      {
       "q": "Can you give me a real example?",
-      "hint": "Offer a prime example from your school, your city or the news. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Offer a prime example from your school, your city or the news. Then explain what it shows."
      }
     ]
    },
@@ -1339,15 +1339,15 @@
     "prompts": [
      {
       "q": "Uniforms make everyone equal, so they must stay. What's your response?",
-      "hint": "Expose an assumption: 'That rests on the flawed assumption that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Expose an assumption: 'That rests on the flawed assumption that …'."
      },
      {
       "q": "Without uniforms, students will compete over expensive brands.",
-      "hint": "Answer with 'Far from …, …' and give a reason or an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Answer with 'Far from …, …' and give a reason or an example. Then give a real example."
      },
      {
       "q": "Uniforms help students focus. Surely you accept that?",
-      "hint": "Show that they lump two ideas together, or use 'Even on their own terms, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Show that they lump two ideas together, or use 'Even on their own terms, …'."
      }
     ]
    },
@@ -1478,15 +1478,15 @@
     "prompts": [
      {
       "q": "… so later starts mean better sleep for every student. Yes, do you have a point?",
-      "hint": "Offer a concise point: 'Would the speaker accept that …?' Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Offer a concise point: 'Would the speaker accept that …?'"
      },
      {
       "q": "Now it's your speech. I'd like to offer a point of information.",
-      "hint": "Accept it with 'I'll take that' or decline with 'Not at this time, thank you'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Accept it with 'I'll take that' or decline with 'Not at this time, thank you'. Then answer it briefly and return to your speech."
      },
      {
       "q": "Would you accept that most teenagers naturally fall asleep later?",
-      "hint": "Keep a cool head: accept the fact, then show why it doesn't help their case. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Keep a cool head: accept the fact, then show why it doesn't help their case. Then link it back to your main argument."
      }
     ]
    },
@@ -1584,7 +1584,7 @@
      },
      {
       "s": "Fahad",
-      "t": "Exactly. Then we zoom out to the bigger picture: hospitals, families and future generations."
+      "t": "Right. Then we zoom out to the bigger picture: hospitals, families and future generations."
      },
      {
       "s": "Bader",
@@ -1614,15 +1614,15 @@
     "prompts": [
      {
       "q": "The opposition says it's too expensive for builders. Do you accept that?",
-      "hint": "Concede part of it: 'Even if we concede that …, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Concede part of it: 'Even if we concede that …, …'. Then explain why your benefits still matter more."
      },
      {
       "q": "Why should their cost matter less than your benefits?",
-      "hint": "Compare scale, time or reversibility, using 'far outweighs' or 'whereas'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Compare scale, time or reversibility, using 'far outweighs' or 'whereas'. Then give a real example."
      },
      {
       "q": "So, weighing it all up, who has won this clash?",
-      "hint": "Sum up with 'Weighing it all up, …' and say what tips the scales. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Sum up with 'Weighing it all up, …' and say what tips the scales."
      }
     ]
    },
@@ -1755,15 +1755,15 @@
     "prompts": [
      {
       "q": "Open your case. What is the motion really about, and what are your pillars?",
-      "hint": "Define one key term and give two pillars of your case. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Define one key term and give two pillars of your case. Then give one example for each pillar."
      },
      {
       "q": "Here is my argument: students are already overloaded. Your rebuttal?",
-      "hint": "Expose an assumption, or concede and show that your side outweighs it. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Expose an assumption, or concede and show that your side outweighs it."
      },
      {
       "q": "Now give your reply speech in under a minute.",
-      "hint": "Name the key clashes, say where I fell short and finish with 'Ultimately, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Name the key clashes, say where I fell short and finish with 'Ultimately, …'."
      }
     ]
    },
@@ -1877,7 +1877,7 @@
      },
      {
       "s": "Nouf",
-      "t": "Exactly. If the answer is no, then the tool has done your learning for you."
+      "t": "Right. If the answer is no, then the tool has done your learning for you."
      }
     ],
     "focus": "Saving an hour must be weighed against what you never actually learn.",
@@ -1891,15 +1891,15 @@
     "prompts": [
      {
       "q": "Should students be allowed to use AI at all?",
-      "hint": "Use 'There's a fine line between … and …' to show where you stand. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'There's a fine line between … and …' to show where you stand. Then give a real example."
      },
      {
       "q": "Isn't it unfair to students who don't have access to good AI tools?",
-      "hint": "Concede conditionally with 'Even if …, …', then give your view. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Concede conditionally with 'Even if …, …', then give your view. Then admit one point against you and answer it."
      },
      {
       "q": "What single rule would you write into the policy?",
-      "hint": "Weigh the benefits against the risks and propose one clear rule. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Weigh the benefits against the risks and propose one clear rule. Then explain how the rule would work in practice."
      }
     ]
    },
@@ -2021,7 +2021,7 @@
      },
      {
       "s": "Yazeed",
-      "t": "And I'll prove it's a good deal."
+      "t": "And I'll prove I deserve that trust."
      }
     ],
     "focus": "However well-meant the app is, I don't want you watching every step I take.",
@@ -2035,15 +2035,15 @@
     "prompts": [
      {
       "q": "Cameras keep everyone safe. What could be wrong with that?",
-      "hint": "Accept the aim with 'Much as I …, …', then raise a concern. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Accept the aim with 'Much as I …, …', then raise a concern. Then give a real example."
      },
      {
       "q": "Honest students have nothing to hide, surely?",
-      "hint": "Use 'However …' or 'Whatever …' to show the value you want to protect. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'However …' or 'Whatever …' to show the value you want to protect. Then explain why privacy matters even for honest people."
      },
      {
       "q": "So what do you suggest instead?",
-      "hint": "Propose a reasonable compromise and say where you would draw the line. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Propose a reasonable compromise and say where you would draw the line."
      }
     ]
    },
@@ -2137,7 +2137,7 @@
     "p2": [
      {
       "s": "Jana",
-      "t": "So you see zoos as a necessary evil?"
+      "t": "Zoos are a real bone of contention in our class. So do you see them as a necessary evil?"
      },
      {
       "s": "Dana",
@@ -2145,7 +2145,7 @@
      },
      {
       "s": "Jana",
-      "t": "I agree. We need a fair compromise between animal welfare and human curiosity."
+      "t": "I agree. Running a zoo is a balancing act between animal welfare and human curiosity."
      },
      {
       "s": "Dana",
@@ -2171,15 +2171,15 @@
     "prompts": [
      {
       "q": "Dolphin shows bring families and jobs. Why would anyone object?",
-      "hint": "Concede the benefit with 'Be that as it may, …' and raise a welfare concern. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Concede the benefit with 'Be that as it may, …' and raise a welfare concern. Then give a real example."
      },
      {
       "q": "But children learn to love animals by seeing them up close, don't they?",
-      "hint": "Answer with 'It's one thing to …; it's quite another to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Answer with 'It's one thing to …; it's quite another to …'. Then explain why the difference matters."
      },
      {
       "q": "So what would you build instead?",
-      "hint": "Suggest an option that offers a fair compromise between education and animal welfare. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Suggest an option and explain how it handles the balancing act between education and animal welfare. Then admit one weakness of your idea."
      }
     ]
    },
@@ -2210,10 +2210,10 @@
      "frame": "Animal welfare should come first when ___."
     },
     {
-     "w": "be that as it may",
-     "def": "even if that is true (a formal way to concede)",
-     "ar": "مهما يكن من أمر",
-     "frame": "Be that as it may, ___."
+     "w": "a bone of contention",
+     "def": "a subject that people keep disagreeing and arguing about",
+     "ar": "موضع خلاف وجدل",
+     "frame": "___ is a real bone of contention in my family."
     },
     {
      "w": "on the brink of extinction",
@@ -2228,14 +2228,15 @@
      "frame": "Some people see ___ as a necessary evil."
     },
     {
-     "w": "a fair compromise",
-     "def": "a solution that gives each side part of what it wants",
-     "ar": "حلّ وسط عادل",
-     "frame": "A fair compromise between ___ and ___ would be …"
+     "w": "a balancing act",
+     "def": "a situation where you must give fair weight to two competing needs",
+     "ar": "عملية موازنة دقيقة",
+     "frame": "Running ___ is a balancing act between ___ and ___."
     }
    ],
    "recycle": [
-    "strike a balance"
+    "strike a balance",
+    "be that as it may"
    ]
   },
   "2-3": {
@@ -2348,15 +2349,15 @@
     "prompts": [
      {
       "q": "Fakes let everyone wear nice brands on a small budget. What's wrong with that?",
-      "hint": "Concede the point, then ask 'but at what cost?' and give a reason. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Concede the point, then ask 'but at what cost?' and give a reason. Then give a real example."
      },
      {
       "q": "If I don't buy it, someone else will. So why should I change?",
-      "hint": "Answer conditionally with 'Even if …, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Answer conditionally with 'Even if …, …'. Then explain why one person's choice still matters."
      },
      {
       "q": "Give me one line for our poster.",
-      "hint": "Use 'Whatever …, …' or 'It's not so much … as …' in a short, clear line. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'Whatever …, …' or 'It's not so much … as …' in a short, clear line."
      }
     ]
    },
@@ -2412,7 +2413,7 @@
      },
      {
       "s": "Hamza",
-      "t": "Exactly. You don't have to hold back the truth; you just have to be diplomatic."
+      "t": "Right. You don't have to hold back the truth; you just have to be diplomatic."
      },
      {
       "s": "Rashed",
@@ -2446,15 +2447,15 @@
     "prompts": [
      {
       "q": "So, be honest. Do you think my idea will work?",
-      "hint": "Be diplomatic: start with a strength, then raise one concern. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Be diplomatic: start with a strength, then raise one concern. Then give a reason."
      },
      {
       "q": "Why can't you just say it's great? I need support, not criticism!",
-      "hint": "Use 'Much as I …, …' to explain why honesty will help them. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'Much as I …, …' to explain why honesty will help them. Then give an example of honesty that helped someone."
      },
      {
       "q": "Would you have told me a white lie if I hadn't asked?",
-      "hint": "Weigh honesty against kindness and say where you draw the line. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Weigh honesty against kindness and say where you draw the line. Then admit one situation where a white lie might be kinder."
      }
     ]
    },
@@ -2619,15 +2620,15 @@
     "prompts": [
      {
       "q": "What competing values does this question raise?",
-      "hint": "Name two values and explain why they pull in different directions. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Name two values and explain why they pull in different directions. Then give a real example."
      },
      {
       "q": "Isn't it a slippery slope? Where would it stop?",
-      "hint": "Concede conditionally with 'Even if …' or 'Be that as it may', then reply. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Concede conditionally with 'Even if …' or 'Be that as it may', then reply. Then give a concrete example."
      },
      {
       "q": "Please give the panel your final, balanced position.",
-      "hint": "Weigh both sides and finish with 'On balance, I'd conclude that …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Weigh both sides and finish with 'On balance, I'd conclude that …'."
      }
     ]
    },
@@ -2717,15 +2718,15 @@
     "prompts": [
      {
       "q": "Please open the event.",
-      "hint": "Address the audience formally and use 'On behalf of …, it is my great privilege to …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Address the audience formally and use 'On behalf of …, it is my great privilege to …'."
      },
      {
       "q": "Tell our guests why this event matters.",
-      "hint": "Put things in context in two sentences, perhaps with a rule of three. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Put things in context in two sentences, perhaps with a rule of three. Then add one detail that makes it personal."
      },
      {
       "q": "Now please hand over to the first speaker.",
-      "hint": "Use 'I should like to …' to thank the audience and introduce the next person. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'I should like to …' to thank the audience and introduce the next person."
      }
     ]
    },
@@ -2907,15 +2908,15 @@
     "prompts": [
      {
       "q": "Please begin your vote of thanks.",
-      "hint": "Use 'I should like to express our sincere gratitude to …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'I should like to express our sincere gratitude to …'."
      },
      {
       "q": "What did the audience gain from the talk?",
-      "hint": "Mention one specific, eye-opening idea from the talk. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Mention one specific, eye-opening idea from the talk. Then explain why it mattered to you."
      },
      {
       "q": "How will you close?",
-      "hint": "Thank the speaker for being generous with their time, then say 'Please join me in …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Thank the speaker for being generous with their time, then say 'Please join me in …'."
      }
     ]
    },
@@ -3009,15 +3010,15 @@
     "prompts": [
      {
       "q": "Which quotation will you use, and who said it?",
-      "hint": "Introduce it with 'In the words of …' or 'As … once observed, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Introduce it with 'In the words of …' or 'As … once observed, …'."
      },
      {
       "q": "Why did you choose that quotation?",
-      "hint": "Explain how it supports your main point; don't let it replace your point. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain how it supports your main point; don't let it replace your point. Then give an example from your own life."
      },
      {
       "q": "What if you're not completely sure who said it?",
-      "hint": "Use careful language such as 'is often attributed to' or 'It has often been said that …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use careful language such as 'is often attributed to' or 'It has often been said that …'."
      }
     ]
    },
@@ -3117,7 +3118,7 @@
       "t": "Of course. 'I would be remiss if I did not thank Mr Saleh, who went above and beyond for us.'"
      },
      {
-      "s": "Ali",
+      "s": "Ibrahim",
       "t": "He'll love that, even if he won't admit it."
      },
      {
@@ -3148,15 +3149,15 @@
     "prompts": [
      {
       "q": "Congratulations! Would you like to say a few words?",
-      "hint": "Begin with 'I am deeply honoured to …' and show humility. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Begin with 'I am deeply honoured to …' and show humility."
      },
      {
       "q": "Who would you like to thank?",
-      "hint": "Use 'I would be remiss if I did not thank …' and say what they did. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'I would be remiss if I did not thank …' and say what they did."
      },
      {
       "q": "What does this award mean to you?",
-      "hint": "Share the credit, e.g. 'This belongs as much to … as to me.' Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Share the credit, e.g. 'This belongs as much to … as to me.' Then explain what you have learnt from the experience."
      }
     ]
    },
@@ -3287,15 +3288,15 @@
     "prompts": [
      {
       "q": "Please begin your tribute.",
-      "hint": "Open with 'It is with mixed emotions that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Open with 'It is with mixed emotions that …'."
      },
      {
       "q": "What has he given the school over the years?",
-      "hint": "Pay tribute to his work and describe the legacy he leaves. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Pay tribute to his work and describe the legacy he leaves. Then add one specific memory."
      },
      {
       "q": "Would you like to add anything personal?",
-      "hint": "Start with 'On a personal note, …' and finish with 'will be sorely missed'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Start with 'On a personal note, …' and finish with 'will be sorely missed'."
      }
     ]
    },
@@ -3388,7 +3389,7 @@
     "p2": [
      {
       "s": "Rayan",
-      "t": "A quotation. In the words of my grandfather, 'The road is long, but every step is yours.'"
+      "t": "Then a quotation. In the words of my grandfather, 'The road is long, but every step is yours.'"
      },
      {
       "s": "Mother",
@@ -3430,15 +3431,15 @@
     "prompts": [
      {
       "q": "Please come to the stage and begin.",
-      "hint": "Open formally: address the guests and use 'It is my great privilege to …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Open formally: address the guests and use 'It is my great privilege to …'."
      },
      {
       "q": "What message would you like to share with your classmates?",
-      "hint": "Support your message with a quotation introduced with 'In the words of …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Support your message with a quotation introduced with 'In the words of …'. Then explain why it matters to you."
      },
      {
       "q": "Please bring your speech to a close.",
-      "hint": "Use 'Allow me to …' or 'It remains only for me to …' for a memorable ending. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'Allow me to …' or 'It remains only for me to …' for a memorable ending."
      }
     ]
    },
@@ -4491,9 +4492,9 @@
      "ex": "Good wildlife centres take animal welfare very seriously."
     },
     {
-     "w": "be that as it may",
-     "ar": "مهما يكن من أمر",
-     "ex": "Zoos educate children. Be that as it may, many animals suffer."
+     "w": "a bone of contention",
+     "ar": "موضع خلاف وجدل",
+     "ex": "Zoos are a bone of contention among animal lovers."
     },
     {
      "w": "on the brink of extinction",
@@ -4506,9 +4507,9 @@
      "ex": "Some see zoos as a necessary evil for conservation."
     },
     {
-     "w": "a fair compromise",
-     "ar": "حلّ وسط عادل",
-     "ex": "Large reserves are a fair compromise between freedom and protection."
+     "w": "a balancing act",
+     "ar": "عملية موازنة دقيقة",
+     "ex": "Running a wildlife centre is a balancing act between freedom and protection."
     }
    ],
    "dialogue": [
@@ -4534,7 +4535,7 @@
     },
     {
      "s": "Dana",
-     "t": "Some are. We need a fair compromise between welfare and conservation."
+     "t": "Some are. Running one is a balancing act between welfare and conservation."
     }
    ],
    "grammar": {
@@ -6088,7 +6089,7 @@
      "wedge",
      "wall",
      "line",
-     "car"
+     "stone"
     ],
     "answer": 0
    },
@@ -6112,12 +6113,12 @@
   "2-2": [
    {
     "type": "mc",
-    "q": "'Be that as it may' is used to …",
+    "q": "A 'bone of contention' is …",
     "options": [
-     "ask a polite question",
-     "accept a point and then add a different view",
-     "finish a speech",
-     "agree completely"
+     "a fossil found in the desert",
+     "a subject people keep arguing about",
+     "a very strong argument",
+     "a final decision"
     ],
     "answer": 1
    },
@@ -6150,12 +6151,12 @@
    },
    {
     "type": "mc",
-    "q": "Large reserves offer a fair ___ between welfare and education.",
+    "q": "Running a good zoo is a balancing ___ between welfare and education.",
     "options": [
-     "compromise",
-     "comparison",
-     "complaint",
-     "complement"
+     "act",
+     "game",
+     "job",
+     "show"
     ],
     "answer": 0
    },
