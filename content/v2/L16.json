@@ -121,7 +121,7 @@
     [
      "On the Other Hand",
      "Balance a talk by linking contrasting and supporting points smoothly",
-     "Nonetheless, … / On the flip side, … / What's more, …"
+     "Nonetheless, … / On the flip side, … / On top of that, …"
     ],
     [
      "Problem, Solution, Impact",
@@ -131,7 +131,7 @@
     [
      "Wrapping It Up",
      "Summarise a talk and end it with a memorable final message",
-     "To recap, … / In a nutshell, … / The bottom line is …"
+     "Let me run through … / Put simply, … / The bottom line is …"
     ],
     [
      "My Big Talk",
@@ -181,7 +181,7 @@
     [
      "Full Mock Test",
      "Complete a full C1 Advanced-style speaking test, comparing, speculating and justifying throughout",
-     "compare (whereas) + speculate (Judging by …) + justify (The reason … is that …)"
+     "compare (whereas) + speculate (From the look of …) + justify (The reason … is that …)"
     ]
    ]
   }
@@ -190,12 +190,110 @@
   "0-0": {
    "objective": "Today you will persuade a classmate to support a good cause with powerful language.",
    "warmup": "Have you ever helped a charity or a community project? What did you do?",
+   "dialogue": {
+    "scene": "Reem is trying to convince her classmate Lina to join the school's Ramadan food-basket drive.",
+    "p1": [
+     {
+      "s": "Reem",
+      "t": "Lina, the Ramadan food-basket drive starts next week, and we're short of volunteers. Would you consider joining?"
+     },
+     {
+      "s": "Lina",
+      "t": "I'd love to help, but I've got exams coming up. Can't someone else step up?"
+     },
+     {
+      "s": "Reem",
+      "t": "Everyone says that! Never have I seen a cause that needed us more."
+     },
+     {
+      "s": "Lina",
+      "t": "Really? Is it that serious?"
+     },
+     {
+      "s": "Reem",
+      "t": "Last year we packed three hundred baskets and still couldn't meet the demand."
+     },
+     {
+      "s": "Lina",
+      "t": "Three hundred? I had no idea the need was so big. I assumed most families in our area were managing fine."
+     },
+     {
+      "s": "Reem",
+      "t": "That's what most people assume. Many families are too proud to ask, so the charity relies on schools like ours to help quietly."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Lina",
+      "t": "What makes this year's drive so compelling, though?"
+     },
+     {
+      "s": "Reem",
+      "t": "It goes without saying that families appreciate it. But think about it: how often do we get to make a dent in a real problem in two afternoons?"
+     },
+     {
+      "s": "Lina",
+      "t": "Hmm, when you put it like that, it's hard to say no."
+     },
+     {
+      "s": "Lina",
+      "t": "But be honest: will my two afternoons really change anything, or is it mostly about making us feel good?"
+     },
+     {
+      "s": "Reem",
+      "t": "Maybe both. But every basket feeds a family for a week, and that's not a feeling; that's a fact."
+     },
+     {
+      "s": "Reem",
+      "t": "If the whole class rallies behind it, we'll finish in no time."
+     },
+     {
+      "s": "Lina",
+      "t": "Fine, you've convinced me. I'll join you wholeheartedly, right after my maths exam!"
+     }
+    ],
+    "focus": "Never have I seen a cause that needed us more.",
+    "qs": [
+     "Why is Lina hesitant at first?",
+     "How does Reem show that the drive is important?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school is collecting donations for a local charity before Eid. You are trying to persuade a classmate who isn't interested to take part.",
+    "prompts": [
+     {
+      "q": "Honestly, why should I bother? It's not my responsibility.",
+      "hint": "Use a strong opening like 'Never have I …' and give one compelling reason. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Won't my small donation be too little to matter?",
+      "hint": "Answer with a rhetorical question and explain how small actions can make a dent in a big problem. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Who else is actually going to help?",
+      "hint": "Explain how the class could rally behind the cause and who has already stepped up. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Ehsan: Giving in Saudi Arabia",
+    "points": [
+     "Ehsan is a national online platform, launched in 2021, that lets people donate to verified charitable causes.",
+     "During Ramadan, many Saudi families and volunteers prepare food baskets and iftar meals for people in need.",
+     "Volunteering has grown quickly in the Kingdom, and Vision 2030 aims to increase the number of volunteers even further."
+    ],
+    "qs": [
+     "Why do you think volunteering has become more popular among young Saudis?",
+     "Is it more persuasive to ask people for their time or for their money? Why?"
+    ]
+   },
+   "exit": "Persuade me to join a cause you care about in two sentences, using 'Never have I …' or a rhetorical question.",
    "expressions": [
     {
-     "w": "make a real difference",
-     "def": "to have an important, positive effect",
-     "ar": "يُحدث فرقاً حقيقياً",
-     "frame": "Volunteering for ___ could make a real difference."
+     "w": "make a dent in",
+     "def": "to reduce a big problem or amount a little",
+     "ar": "يُحدث أثراً ملموساً في",
+     "frame": "Our project could make a dent in ___."
     },
     {
      "w": "rally behind",
@@ -228,130 +326,13 @@
      "frame": "When ___ needed help, I stepped up by ___."
     }
    ],
-   "dialogue": {
-    "scene": "Reem is trying to convince her classmate Lina to join the school's Ramadan food-basket drive.",
-    "p1": [
-     {
-      "s": "Reem",
-      "t": "Lina, the Ramadan food-basket drive starts next week, and we're short of volunteers. Would you consider joining?"
-     },
-     {
-      "s": "Lina",
-      "t": "I'd love to help, but I've got exams coming up. Can't someone else step up?"
-     },
-     {
-      "s": "Reem",
-      "t": "Everyone says that! Never have I seen a cause that needed us more."
-     },
-     {
-      "s": "Lina",
-      "t": "Really? Is it that serious?"
-     },
-     {
-      "s": "Reem",
-      "t": "Last year we packed three hundred baskets and still couldn't meet the demand."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Lina",
-      "t": "What makes this year's drive so compelling, though?"
-     },
-     {
-      "s": "Reem",
-      "t": "It goes without saying that families appreciate it. But think about it: how often do we get to make a real difference in two afternoons?"
-     },
-     {
-      "s": "Lina",
-      "t": "Hmm, when you put it like that, it's hard to say no."
-     },
-     {
-      "s": "Reem",
-      "t": "If the whole class rallies behind it, we'll finish in no time."
-     },
-     {
-      "s": "Lina",
-      "t": "Fine, you've convinced me. I'll join you wholeheartedly, right after my maths exam!"
-     }
-    ],
-    "focus": "Never have I seen a cause that needed us more.",
-    "qs": [
-     "Why is Lina hesitant at first?",
-     "How does Reem show that the drive is important?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your school is collecting donations for a local charity before Eid. You are trying to persuade a classmate who isn't interested to take part.",
-    "prompts": [
-     {
-      "q": "Honestly, why should I bother? It's not my responsibility.",
-      "hint": "Use a strong opening like 'Never have I …' and give one compelling reason."
-     },
-     {
-      "q": "Won't my small donation be too little to matter?",
-      "hint": "Answer with a rhetorical question and explain how small actions make a real difference."
-     },
-     {
-      "q": "Who else is actually going to help?",
-      "hint": "Explain how the class could rally behind the cause and who has already stepped up."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Ehsan: Giving in Saudi Arabia",
-    "points": [
-     "Ehsan is a national online platform, launched in 2021, that lets people donate to verified charitable causes.",
-     "During Ramadan, many Saudi families and volunteers prepare food baskets and iftar meals for people in need.",
-     "Volunteering has grown quickly in the Kingdom, and Vision 2030 aims to increase the number of volunteers even further."
-    ],
-    "qs": [
-     "Why do you think volunteering has become more popular among young Saudis?",
-     "Is it more persuasive to ask people for their time or for their money? Why?"
-    ]
-   },
-   "exit": "Persuade me to join a cause you care about in two sentences, using 'Never have I …' or a rhetorical question."
+   "recycle": [
+    "make a real difference"
+   ]
   },
   "0-1": {
    "objective": "Today you will convince a panel of judges that your project idea deserves support.",
    "warmup": "Have you ever had an idea for an app or a business? What was it?",
-   "expressions": [
-    {
-     "w": "stand out from the crowd",
-     "def": "to be noticeably different from and better than others",
-     "ar": "يتميّز عن غيره",
-     "frame": "Our idea stands out from the crowd because ___."
-    },
-    {
-     "w": "fill a gap in the market",
-     "def": "to offer something people need that nobody sells yet",
-     "ar": "يسدّ فراغاً في السوق",
-     "frame": "A ___ would fill a gap in the market."
-    },
-    {
-     "w": "game-changer",
-     "def": "something that completely changes the way things are done",
-     "ar": "شيء يغيّر قواعد اللعبة",
-     "frame": "For students, ___ would be a real game-changer."
-    },
-    {
-     "w": "win somebody over",
-     "def": "to persuade someone to support you",
-     "ar": "يكسب تأييد شخص",
-     "frame": "The best way to win the judges over is ___."
-    },
-    {
-     "w": "cost-effective",
-     "def": "giving good results for the money spent",
-     "ar": "فعّال من حيث التكلفة",
-     "frame": "___ is a cost-effective way to ___."
-    },
-    {
-     "w": "back",
-     "def": "to support someone, often with money",
-     "ar": "يدعم / يموّل",
-     "frame": "I'd back a project that ___."
-    }
-   ],
    "dialogue": {
     "scene": "Saud and his teammate Majed are rehearsing their pitch for the school's young entrepreneurs competition.",
     "p1": [
@@ -365,17 +346,21 @@
      },
      {
       "s": "Saud",
+      "t": "So we open with a question: how many of you have a tennis racket at home that hasn't been touched for a year?"
+     },
+     {
+      "s": "Saud",
       "t": "Then we present our app. Not only does it save families money, but it also lets children try new sports."
      },
      {
       "s": "Majed",
-      "t": "Good. And we stress that it's cost-effective: schools don't need to buy any new equipment."
+      "t": "Good. And we stress that it's budget-friendly: schools don't need to buy any new equipment."
      }
     ],
     "p2": [
      {
       "s": "Saud",
-      "t": "What if a judge asks why our idea stands out from the crowd?"
+      "t": "What if a judge asks what sets our idea apart?"
      },
      {
       "s": "Majed",
@@ -384,6 +369,10 @@
      {
       "s": "Saud",
       "t": "And we do have real data from our trial month. Over a hundred items were borrowed!"
+     },
+     {
+      "s": "Majed",
+      "t": "And the feedback was encouraging. Parents said they'd saved hundreds of riyals, and three students joined clubs they'd never have tried otherwise."
      },
      {
       "s": "Majed",
@@ -405,15 +394,15 @@
     "prompts": [
      {
       "q": "In one sentence, what does your product do?",
-      "hint": "Use 'Not only does it …, but it also …'."
+      "hint": "Use 'Not only does it …, but it also …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "There are already similar products. Why is yours different?",
-      "hint": "Explain how it stands out from the crowd or fills a gap in the market."
+      "hint": "Explain what sets it apart or how it fills a gap in the market. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Why should we back your project instead of the others?",
-      "hint": "End with a rhetorical question and one strong reason."
+      "hint": "End with a rhetorical question and one strong reason. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -429,11 +418,147 @@
      "Which problem in your city would you most like to solve with a startup?"
     ]
    },
-   "exit": "Pitch me any product in two sentences, using 'Not only … but also …'."
+   "exit": "Pitch me any product in two sentences, using 'Not only … but also …'.",
+   "expressions": [
+    {
+     "w": "set something apart",
+     "def": "to make something different from and better than others",
+     "ar": "يميّز الشيء عن غيره",
+     "frame": "What sets ___ apart is …"
+    },
+    {
+     "w": "fill a gap in the market",
+     "def": "to offer something people need that nobody sells yet",
+     "ar": "يسدّ فراغاً في السوق",
+     "frame": "A ___ would fill a gap in the market."
+    },
+    {
+     "w": "game-changer",
+     "def": "something that completely changes the way things are done",
+     "ar": "شيء يغيّر قواعد اللعبة",
+     "frame": "For students, ___ would be a real game-changer."
+    },
+    {
+     "w": "win somebody over",
+     "def": "to persuade someone to support you",
+     "ar": "يكسب تأييد شخص",
+     "frame": "The best way to win the judges over is ___."
+    },
+    {
+     "w": "budget-friendly",
+     "def": "cheap enough for most people to afford",
+     "ar": "مناسب للميزانية",
+     "frame": "___ is a budget-friendly way to ___."
+    },
+    {
+     "w": "back",
+     "def": "to support someone, often with money",
+     "ar": "يدعم / يموّل",
+     "frame": "I'd back a project that ___."
+    }
+   ],
+   "recycle": [
+    "stand out from the crowd",
+    "cost-effective"
+   ]
   },
   "0-2": {
    "objective": "Today you will persuade people to protect the environment, using Rarely, Seldom and rhetorical questions.",
    "warmup": "What is the most beautiful natural place you have ever visited?",
+   "dialogue": {
+    "scene": "Talal, whose father is a diving instructor, is helping his friend Yazeed plan a speech for the school's environment week.",
+    "p1": [
+     {
+      "s": "Yazeed",
+      "t": "I want my speech about the Red Sea reefs to really move people. Where should I start?"
+     },
+     {
+      "s": "Talal",
+      "t": "Start with what's at stake. Rarely do we find reefs as colourful and healthy as ours."
+     },
+     {
+      "s": "Yazeed",
+      "t": "True. My dad says some of them cope with warm water better than many other reefs."
+     },
+     {
+      "s": "Talal",
+      "t": "Exactly. But if they're damaged by litter and careless divers, the harm could be irreversible."
+     },
+     {
+      "s": "Yazeed",
+      "t": "Should I include numbers, or will statistics just make people switch off?"
+     },
+     {
+      "s": "Talal",
+      "t": "Use one striking figure, not ten. People remember a single shocking fact far better than a long list of percentages."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Yazeed",
+      "t": "Some students will say one person picking up plastic is just a token gesture."
+     },
+     {
+      "s": "Talal",
+      "t": "Then ask them: if everyone thought like that, would anything ever change?"
+     },
+     {
+      "s": "Yazeed",
+      "t": "Nice. A rhetorical question like that should give them pause."
+     },
+     {
+      "s": "Talal",
+      "t": "And end by asking them to take action, for example with a beach clean-up next Friday."
+     },
+     {
+      "s": "Yazeed",
+      "t": "Should I mention my dad? Seeing damaged coral with his own eyes changed the way he talks about the sea."
+     },
+     {
+      "s": "Talal",
+      "t": "Definitely. A personal story makes it real; otherwise the reefs are just a picture on a slide."
+     },
+     {
+      "s": "Yazeed",
+      "t": "Perfect. We could leave a legacy that our grandchildren will thank us for."
+     }
+    ],
+    "focus": "Rarely do we find reefs as colourful and healthy as ours.",
+    "qs": [
+     "Why does Talal think the Red Sea reefs are special?",
+     "How does Talal suggest answering the 'token gesture' argument?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school is starting a campaign to reduce plastic on Saudi beaches. You are speaking to a group of parents who are not convinced.",
+    "prompts": [
+     {
+      "q": "Why should we worry about a few plastic bottles on the beach?",
+      "hint": "Explain what is at stake and use 'Rarely do we …' or 'Seldom …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Isn't one family's effort just a token gesture?",
+      "hint": "Reply with a rhetorical question, then give a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "What exactly do you want us to do?",
+      "hint": "Ask them to take action and suggest one or two specific steps. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "The Red Sea's Hidden Treasure",
+    "points": [
+     "The Red Sea is home to more than a thousand species of fish, and some are found nowhere else.",
+     "Scientists are studying its corals because many can cope with high water temperatures.",
+     "Saudi Arabia has launched large projects to protect its coastline and marine life."
+    ],
+    "qs": [
+     "Which is more persuasive in an environmental campaign: facts or emotional stories?",
+     "What could young people do to protect the sea?"
+    ]
+   },
+   "exit": "Persuade me to protect nature in two sentences, using 'Rarely do …' or a rhetorical question.",
    "expressions": [
     {
      "w": "at stake",
@@ -454,16 +579,16 @@
      "frame": "If we don't take action now, ___."
     },
     {
-     "w": "a drop in the ocean",
-     "def": "a very small amount compared to what is needed",
-     "ar": "قطرة في بحر",
-     "frame": "Some people say ___ is just a drop in the ocean."
+     "w": "a token gesture",
+     "def": "a small action that shows support but changes little",
+     "ar": "لفتة رمزية",
+     "frame": "Some people think ___ is just a token gesture."
     },
     {
-     "w": "think twice",
-     "def": "to consider something carefully before doing it",
-     "ar": "يفكّر مليّاً",
-     "frame": "Next time, think twice before ___."
+     "w": "give someone pause",
+     "def": "to make someone stop and think carefully",
+     "ar": "يجعل المرء يتوقف ويفكّر",
+     "frame": "The fact that ___ should give us pause."
     },
     {
      "w": "leave a legacy",
@@ -472,126 +597,14 @@
      "frame": "I'd like to leave a legacy of ___."
     }
    ],
-   "dialogue": {
-    "scene": "Talal, whose father is a diving instructor, is helping his friend Yazeed plan a speech for the school's environment week.",
-    "p1": [
-     {
-      "s": "Yazeed",
-      "t": "I want my speech about the Red Sea reefs to really move people. Where should I start?"
-     },
-     {
-      "s": "Talal",
-      "t": "Start with what's at stake. Rarely do we find reefs as colourful and healthy as ours."
-     },
-     {
-      "s": "Yazeed",
-      "t": "True. My dad says some of them cope with warm water better than many other reefs."
-     },
-     {
-      "s": "Talal",
-      "t": "Exactly. But if they're damaged by litter and careless divers, the harm could be irreversible."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Yazeed",
-      "t": "Some students will say one person picking up plastic is a drop in the ocean."
-     },
-     {
-      "s": "Talal",
-      "t": "Then ask them: if everyone thought like that, would anything ever change?"
-     },
-     {
-      "s": "Yazeed",
-      "t": "Nice. A rhetorical question will make them think twice."
-     },
-     {
-      "s": "Talal",
-      "t": "And end by asking them to take action, for example with a beach clean-up next Friday."
-     },
-     {
-      "s": "Yazeed",
-      "t": "Perfect. We could leave a legacy that our grandchildren will thank us for."
-     }
-    ],
-    "focus": "Rarely do we find reefs as colourful and healthy as ours.",
-    "qs": [
-     "Why does Talal think the Red Sea reefs are special?",
-     "How does Talal suggest answering the 'drop in the ocean' argument?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your school is starting a campaign to reduce plastic on Saudi beaches. You are speaking to a group of parents who are not convinced.",
-    "prompts": [
-     {
-      "q": "Why should we worry about a few plastic bottles on the beach?",
-      "hint": "Explain what is at stake and use 'Rarely do we …' or 'Seldom …'."
-     },
-     {
-      "q": "Isn't one family's effort just a drop in the ocean?",
-      "hint": "Reply with a rhetorical question, then give a reason."
-     },
-     {
-      "q": "What exactly do you want us to do?",
-      "hint": "Ask them to take action and suggest one or two specific steps."
-     }
-    ]
-   },
-   "culture": {
-    "title": "The Red Sea's Hidden Treasure",
-    "points": [
-     "The Red Sea is home to more than a thousand species of fish, and some are found nowhere else.",
-     "Scientists are studying its corals because many can cope with high water temperatures.",
-     "Saudi Arabia has launched large projects to protect its coastline and marine life."
-    ],
-    "qs": [
-     "Which is more persuasive in an environmental campaign: facts or emotional stories?",
-     "What could young people do to protect the sea?"
-    ]
-   },
-   "exit": "Persuade me to protect nature in two sentences, using 'Rarely do …' or a rhetorical question."
+   "recycle": [
+    "a drop in the ocean",
+    "think twice"
+   ]
   },
   "0-3": {
    "objective": "Today you will persuade a head teacher to make a change, using Only by … and Under no circumstances ….",
    "warmup": "What would you change about the food at your school?",
-   "expressions": [
-    {
-     "w": "in the long run",
-     "def": "over a long period of time in the future",
-     "ar": "على المدى البعيد",
-     "frame": "In the long run, ___ will save us time and money."
-    },
-    {
-     "w": "weigh up",
-     "def": "to consider the advantages and disadvantages",
-     "ar": "يوازن بين",
-     "frame": "Before deciding, we should weigh up ___."
-    },
-    {
-     "w": "set an example",
-     "def": "to behave in a way that others should copy",
-     "ar": "يكون قدوة",
-     "frame": "Schools should set an example by ___."
-    },
-    {
-     "w": "outweigh",
-     "def": "to be more important than something else",
-     "ar": "يفوق في الأهمية",
-     "frame": "The benefits of ___ far outweigh the costs."
-    },
-    {
-     "w": "make a strong case for",
-     "def": "to give good reasons to support something",
-     "ar": "يقدّم حجّة قوية لـ",
-     "frame": "I'd like to make a strong case for ___."
-    },
-    {
-     "w": "nutritious",
-     "def": "full of things the body needs to be healthy",
-     "ar": "مغذٍّ",
-     "frame": "A nutritious breakfast should include ___."
-    }
-   ],
    "dialogue": {
     "scene": "Abdulaziz, a member of the student council, meets the head teacher, Mr Harbi, to ask for healthier food in the canteen.",
     "p1": [
@@ -605,7 +618,7 @@
      },
      {
       "s": "Abdulaziz",
-      "t": "Some do, but we've weighed up the options carefully. The benefits of change far outweigh the drawbacks."
+      "t": "Some do, but we've considered every angle. The health benefits more than justify the change."
      },
      {
       "s": "Mr Harbi",
@@ -614,6 +627,14 @@
      {
       "s": "Abdulaziz",
       "t": "Students who eat nutritious food concentrate better. Surely that matters to every teacher?"
+     },
+     {
+      "s": "Mr Harbi",
+      "t": "It matters, of course. But change in a school is slow, and I need more than good intentions to convince the parents."
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "We expected that, so we surveyed three hundred students. Two-thirds said they'd buy fresh wraps and fruit if the prices were reasonable."
      }
     ],
     "p2": [
@@ -623,7 +644,7 @@
      },
      {
       "s": "Abdulaziz",
-      "t": "In the long run, yes. Only by investing in our health now can we avoid bigger problems later."
+      "t": "Down the line, yes. Only by investing in our health now can we avoid bigger problems later."
      },
      {
       "s": "Mr Harbi",
@@ -649,15 +670,15 @@
     "prompts": [
      {
       "q": "Why should we change something that has worked for years?",
-      "hint": "Make a strong case and say how the benefits outweigh the costs."
+      "hint": "Make a strong case and say how the benefits more than justify the costs. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Isn't this going to be expensive?",
-      "hint": "Answer with 'In the long run, …' and 'Only by … can we …'."
+      "hint": "Answer with 'Down the line, …' and 'Only by … can we …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Is there anything the school should never allow?",
-      "hint": "Use 'Under no circumstances should …' to make your point strongly."
+      "hint": "Use 'Under no circumstances should …' to make your point strongly. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -673,55 +694,60 @@
      "Who should decide what is sold in a school canteen: students, parents or the school?"
     ]
    },
-   "exit": "Persuade me to change one school rule, using 'Only by … can …' or 'Under no circumstances …'."
+   "exit": "Persuade me to change one school rule, using 'Only by … can …' or 'Under no circumstances …'.",
+   "expressions": [
+    {
+     "w": "down the line",
+     "def": "at some point in the future",
+     "ar": "لاحقاً / في المستقبل",
+     "frame": "Down the line, ___ will save us money."
+    },
+    {
+     "w": "consider every angle",
+     "def": "to think about a problem from all points of view",
+     "ar": "يدرس الأمر من كل الجوانب",
+     "frame": "Before deciding on ___, we should consider every angle."
+    },
+    {
+     "w": "set an example",
+     "def": "to behave in a way that others should copy",
+     "ar": "يكون قدوة",
+     "frame": "Schools should set an example by ___."
+    },
+    {
+     "w": "more than justify",
+     "def": "to be a much better reason than is needed for something",
+     "ar": "يبرّر الأمر بما يكفي وأكثر",
+     "frame": "The benefits of ___ more than justify the cost."
+    },
+    {
+     "w": "make a strong case for",
+     "def": "to give good reasons to support something",
+     "ar": "يقدّم حجّة قوية لـ",
+     "frame": "I'd like to make a strong case for ___."
+    },
+    {
+     "w": "nutritious",
+     "def": "full of things the body needs to be healthy",
+     "ar": "مغذٍّ",
+     "frame": "A nutritious breakfast should include ___."
+    }
+   ],
+   "recycle": [
+    "in the long run",
+    "weigh up",
+    "outweigh"
+   ]
   },
   "0-4": {
    "objective": "Today you will persuade a visitor to explore a place you love, using Little do … and Not until ….",
    "warmup": "If a foreign friend visited Saudi Arabia, where would you take them first?",
-   "expressions": [
-    {
-     "w": "off the beaten track",
-     "def": "far from the places most tourists go",
-     "ar": "بعيد عن الأماكن المعتادة",
-     "frame": "For something off the beaten track, try ___."
-    },
-    {
-     "w": "hidden gem",
-     "def": "a great place that few people know about",
-     "ar": "جوهرة مخفية",
-     "frame": "___ is a hidden gem that most tourists miss."
-    },
-    {
-     "w": "breathtaking",
-     "def": "extremely beautiful or impressive",
-     "ar": "يخطف الأنفاس",
-     "frame": "The view from ___ is absolutely breathtaking."
-    },
-    {
-     "w": "once-in-a-lifetime",
-     "def": "very special and unlikely to happen again",
-     "ar": "فرصة العمر",
-     "frame": "Seeing ___ was a once-in-a-lifetime experience."
-    },
-    {
-     "w": "soak up the atmosphere",
-     "def": "to enjoy the feeling of a place by being there",
-     "ar": "يستمتع بأجواء المكان",
-     "frame": "The best place to soak up the atmosphere is ___."
-    },
-    {
-     "w": "live up to expectations",
-     "def": "to be as good as people hoped",
-     "ar": "يرقى إلى التوقعات",
-     "frame": "___ really lived up to my expectations."
-    }
-   ],
    "dialogue": {
     "scene": "Mansour is talking to Ethan, an exchange student from Canada, about where to go during his week off.",
     "p1": [
      {
       "s": "Ethan",
-      "t": "Everyone tells me to visit Riyadh and Jeddah. Is there anything off the beaten track?"
+      "t": "Everyone tells me to visit Riyadh and Jeddah. Is there anything away from the tourist trail?"
      },
      {
       "s": "Mansour",
@@ -734,6 +760,14 @@
      {
       "s": "Mansour",
       "t": "Trust me. The date market in Buraidah is enormous. You can soak up the atmosphere while traders bargain loudly."
+     },
+     {
+      "s": "Ethan",
+      "t": "I've never seen a market like that. Back home, we buy dates in small plastic boxes at the supermarket."
+     },
+     {
+      "s": "Mansour",
+      "t": "Then you're in for a surprise. During the harvest, hundreds of cars arrive every morning loaded with dates, and the auctions start at sunrise."
      }
     ],
     "p2": [
@@ -743,15 +777,23 @@
      },
      {
       "s": "Mansour",
-      "t": "Unaizah has old mud-brick houses that are a real hidden gem. The architecture is breathtaking."
+      "t": "Unaizah has old mud-brick houses that are a real hidden gem. The architecture is jaw-dropping."
      },
      {
       "s": "Ethan",
-      "t": "It does sound like a once-in-a-lifetime experience."
+      "t": "The whole region sounds like a feast for the senses."
      },
      {
       "s": "Mansour",
       "t": "Not until you've tasted fresh Sukkari dates will you understand why people love the region."
+     },
+     {
+      "s": "Ethan",
+      "t": "How long should I stay? I only have a week, and I don't want to rush everything."
+     },
+     {
+      "s": "Mansour",
+      "t": "Three days is plenty. Spend one at the market, one in Unaizah, and one driving through the farms."
      },
      {
       "s": "Ethan",
@@ -769,15 +811,15 @@
     "prompts": [
      {
       "q": "Why should I leave my comfortable hotel?",
-      "hint": "Use 'Little do people know …' and describe something special."
+      "hint": "Use 'Little do people know …' and describe something special. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Will it really be worth the journey?",
-      "hint": "Use 'Not until you … will you …' to promise it will live up to expectations."
+      "hint": "Use 'Not until you … will you …' to promise it will live up to expectations. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What's the one thing I mustn't miss?",
-      "hint": "Describe a hidden gem with strong adjectives such as 'breathtaking'."
+      "hint": "Describe a hidden gem with strong adjectives such as 'jaw-dropping'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -793,23 +835,160 @@
      "How can small towns attract more visitors without losing their character?"
     ]
    },
-   "exit": "Persuade me to visit a place in Saudi Arabia in two sentences, using 'Little do people know …'."
+   "exit": "Persuade me to visit a place in Saudi Arabia in two sentences, using 'Little do people know …'.",
+   "expressions": [
+    {
+     "w": "away from the tourist trail",
+     "def": "in places that most visitors do not go to",
+     "ar": "بعيداً عن مسارات السيّاح",
+     "frame": "For something away from the tourist trail, try ___."
+    },
+    {
+     "w": "hidden gem",
+     "def": "a great place that few people know about",
+     "ar": "جوهرة مخفية",
+     "frame": "___ is a hidden gem that most tourists miss."
+    },
+    {
+     "w": "jaw-dropping",
+     "def": "so impressive or surprising that you are amazed",
+     "ar": "مذهل يفغر له الفم",
+     "frame": "The view from ___ is jaw-dropping."
+    },
+    {
+     "w": "a feast for the senses",
+     "def": "something full of things to see, hear, smell and taste",
+     "ar": "متعة للحواس",
+     "frame": "___ is a feast for the senses."
+    },
+    {
+     "w": "soak up the atmosphere",
+     "def": "to enjoy the feeling of a place by being there",
+     "ar": "يستمتع بأجواء المكان",
+     "frame": "The best place to soak up the atmosphere is ___."
+    },
+    {
+     "w": "live up to expectations",
+     "def": "to be as good as people hoped",
+     "ar": "يرقى إلى التوقعات",
+     "frame": "___ really lived up to my expectations."
+    }
+   ],
+   "recycle": [
+    "off the beaten track",
+    "breathtaking",
+    "once-in-a-lifetime"
+   ]
   },
   "0-5": {
    "objective": "Today you will deliver a short persuasive speech that uses inversion and rhetorical questions.",
    "warmup": "Who is the most persuasive speaker you know? What makes them convincing?",
+   "dialogue": {
+    "scene": "Hind is in the final of an inter-school debate on the motion 'Projects should replace some exams'. Her coach, Ms Sara, listens as she practises her speech.",
+    "p1": [
+     {
+      "s": "Ms Sara",
+      "t": "Let's hear your opening, Hind. Remember: you've got two minutes to argue the case for projects."
+     },
+     {
+      "s": "Hind",
+      "t": "Ladies and gentlemen, what is the purpose of school? Is it to memorise facts, or to prepare us for life?"
+     },
+     {
+      "s": "Ms Sara",
+      "t": "Good hook. Now drive the point home."
+     },
+     {
+      "s": "Hind",
+      "t": "Never before have students had so much information at their fingertips. Yet we are still tested on memory alone."
+     },
+     {
+      "s": "Ms Sara",
+      "t": "Good, but expect the other team to say that exams are fairer because everyone answers the same questions."
+     },
+     {
+      "s": "Hind",
+      "t": "Then I'll admit that exams have a place. My point is that one kind of test can't measure every kind of talent."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ms Sara",
+      "t": "Strong. What hangs in the balance if nothing changes?"
+     },
+     {
+      "s": "Hind",
+      "t": "Our creativity. The fact that many employers want more practical skills from graduates speaks volumes."
+     },
+     {
+      "s": "Ms Sara",
+      "t": "Do you have an example the judges can picture?"
+     },
+     {
+      "s": "Hind",
+      "t": "Yes. Last term, our robotics team built a working water sensor, yet none of that appeared on our report cards."
+     },
+     {
+      "s": "Ms Sara",
+      "t": "Excellent. That should give the judges food for thought. And your ending?"
+     },
+     {
+      "s": "Hind",
+      "t": "Not only do projects teach teamwork, but they also build confidence. I call on you to support this motion."
+     },
+     {
+      "s": "Ms Sara",
+      "t": "Perfect. Say it slowly, look at the audience, and you'll win them over."
+     }
+    ],
+    "focus": "Never before have students had so much information at their fingertips.",
+    "qs": [
+     "How does Hind open her speech?",
+     "What does Hind call on the audience to do at the end?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are in the final of a school debate. The motion is 'Every student should do one month of community service before graduating.' Choose a side and persuade the judges.",
+    "prompts": [
+     {
+      "q": "Begin your speech. How will you grab our attention?",
+      "hint": "Open with a rhetorical question or 'Never before has …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What really hangs in the balance in this debate?",
+      "hint": "Give your strongest reason, using 'Not only … but also …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Finish your speech. What do you want us to do?",
+      "hint": "Use 'I call on you to …' and repeat your main point. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "The Art of Persuasion",
+    "points": [
+     "Over 2,000 years ago, Aristotle said that persuasion relies on character, emotion and logic.",
+     "Classical Arab poets and orators were famous for using rhythm and repetition to move their listeners.",
+     "Today, debate clubs in many Saudi schools and universities train students to argue clearly and respectfully."
+    ],
+    "qs": [
+     "Which works better on you: emotion or logic?",
+     "Can persuasive language ever be dangerous? When?"
+    ]
+   },
+   "exit": "Give me a two-sentence closing argument on any topic, using inversion and a rhetorical question.",
    "expressions": [
     {
-     "w": "make a strong case for",
-     "def": "to give good reasons to support something",
-     "ar": "يقدّم حجّة قوية لـ",
-     "frame": "In my speech, I'll make a strong case for ___."
+     "w": "argue the case for",
+     "def": "to give reasons why something should happen",
+     "ar": "يدافع عن فكرة بالحجج",
+     "frame": "In my speech, I'll argue the case for ___."
     },
     {
-     "w": "at stake",
-     "def": "at risk of being lost or damaged",
-     "ar": "على المحك / معرّض للخطر",
-     "frame": "In this debate, ___ is at stake."
+     "w": "hang in the balance",
+     "def": "to be uncertain, with a risk of a bad result",
+     "ar": "معلّق في الميزان / مهدّد",
+     "frame": "If we don't act, ___ will hang in the balance."
     },
     {
      "w": "food for thought",
@@ -836,88 +1015,108 @@
      "frame": "I call on everyone to ___."
     }
    ],
-   "dialogue": {
-    "scene": "Hind is in the final of an inter-school debate on the motion 'Projects should replace some exams'. Her coach, Ms Sara, listens as she practises her speech.",
-    "p1": [
-     {
-      "s": "Ms Sara",
-      "t": "Let's hear your opening, Hind. Remember: you've got two minutes to make a strong case."
-     },
-     {
-      "s": "Hind",
-      "t": "Ladies and gentlemen, what is the purpose of school? Is it to memorise facts, or to prepare us for life?"
-     },
-     {
-      "s": "Ms Sara",
-      "t": "Good hook. Now drive the point home."
-     },
-     {
-      "s": "Hind",
-      "t": "Never before have students had so much information at their fingertips. Yet we are still tested on memory alone."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Ms Sara",
-      "t": "Strong. What's at stake if nothing changes?"
-     },
-     {
-      "s": "Hind",
-      "t": "Our creativity. The fact that many employers want more practical skills from graduates speaks volumes."
-     },
-     {
-      "s": "Ms Sara",
-      "t": "Excellent. That should give the judges food for thought. And your ending?"
-     },
-     {
-      "s": "Hind",
-      "t": "Not only do projects teach teamwork, but they also build confidence. I call on you to support this motion."
-     },
-     {
-      "s": "Ms Sara",
-      "t": "Perfect. Say it slowly, look at the audience, and you'll win them over."
-     }
-    ],
-    "focus": "Never before have students had so much information at their fingertips.",
-    "qs": [
-     "How does Hind open her speech?",
-     "What does Hind call on the audience to do at the end?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are in the final of a school debate. The motion is 'Every student should do one month of community service before graduating.' Choose a side and persuade the judges.",
-    "prompts": [
-     {
-      "q": "Begin your speech. How will you grab our attention?",
-      "hint": "Open with a rhetorical question or 'Never before has …'."
-     },
-     {
-      "q": "What is really at stake in this debate?",
-      "hint": "Give your strongest reason, using 'Not only … but also …'."
-     },
-     {
-      "q": "Finish your speech. What do you want us to do?",
-      "hint": "Use 'I call on you to …' and repeat your main point."
-     }
-    ]
-   },
-   "culture": {
-    "title": "The Art of Persuasion",
-    "points": [
-     "Over 2,000 years ago, Aristotle said that persuasion relies on character, emotion and logic.",
-     "Classical Arab poets and orators were famous for using rhythm and repetition to move their listeners.",
-     "Today, debate clubs in many Saudi schools and universities train students to argue clearly and respectfully."
-    ],
-    "qs": [
-     "Which works better on you: emotion or logic?",
-     "Can persuasive language ever be dangerous? When?"
-    ]
-   },
-   "exit": "Give me a two-sentence closing argument on any topic, using inversion and a rhetorical question."
+   "recycle": [
+    "make a strong case for",
+    "at stake"
+   ]
   },
   "1-0": {
    "objective": "Today you will judge the claims in an advert and explain why they might be false.",
    "warmup": "Have you ever bought something online that was disappointing? What happened?",
+   "dialogue": {
+    "scene": "Yousef shows his sister Shahad an advert for an app that claims to make anyone fluent in English in seven days.",
+    "p1": [
+     {
+      "s": "Yousef",
+      "t": "Look at this! 'Fluent English in seven days, guaranteed.' I'm downloading it now."
+     },
+     {
+      "s": "Shahad",
+      "t": "Wait. Doesn't that sound a bit too good to be true?"
+     },
+     {
+      "s": "Yousef",
+      "t": "But there are hundreds of five-star reviews."
+     },
+     {
+      "s": "Shahad",
+      "t": "Many of those reviews must have been written by the company itself. They all use exactly the same words."
+     },
+     {
+      "s": "Yousef",
+      "t": "Now that you mention it, three of them say 'life-changing' in the very first sentence. That's a bit strange."
+     },
+     {
+      "s": "Shahad",
+      "t": "Exactly. Real people write in different styles and usually mention at least one small problem, even when they're happy."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Yousef",
+      "t": "Hmm, you're right. And the 'before and after' video?"
+     },
+     {
+      "s": "Shahad",
+      "t": "It may well have been edited. It's highly unlikely that anyone could learn a language that fast."
+     },
+     {
+      "s": "Yousef",
+      "t": "They do say a university tested it."
+     },
+     {
+      "s": "Shahad",
+      "t": "Which university? If they can't back up the claim, that raises a red flag. And read the fine print."
+     },
+     {
+      "s": "Yousef",
+      "t": "Oh no. 'Monthly subscription: 199 riyals.' I nearly fell for a really deceptive advert!"
+     },
+     {
+      "s": "Shahad",
+      "t": "Don't feel bad. These adverts are designed by professionals to make smart people act before they think."
+     },
+     {
+      "s": "Yousef",
+      "t": "Well, next time I'll ask myself who benefits before I press 'download'."
+     }
+    ],
+    "focus": "Many of those reviews must have been written by the company itself.",
+    "qs": [
+     "Why does Shahad doubt the reviews?",
+     "What does Yousef discover in the fine print?"
+    ]
+   },
+   "speakout": {
+    "scene": "A friend sends you an advert for a phone charger that 'charges any phone in 60 seconds' for only 20 riyals. They want to buy ten for the family.",
+    "prompts": [
+     {
+      "q": "Isn't this an amazing deal?",
+      "hint": "Explain why it sounds too good to be true, using 'It's highly unlikely that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "But it has thousands of positive reviews!",
+      "hint": "Use 'must have been' or 'might have been' to say who wrote the reviews. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So what should I do before buying anything online?",
+      "hint": "Give advice: read the fine print and look for proof that backs up the claim. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Shopping Safely Online",
+    "points": [
+     "Online shopping has grown enormously in Saudi Arabia, especially among young people.",
+     "Saudi Arabia introduced an e-commerce law in 2019 to protect people who shop online.",
+     "Fake reviews are a global problem, and some countries now fine companies that publish them."
+    ],
+    "qs": [
+     "How do you decide whether an online review is genuine?",
+     "Should influencers be punished for promoting misleading products?"
+    ]
+   },
+   "exit": "Tell me about a claim you don't believe, using 'must have been' or 'It's highly unlikely that …'.",
    "expressions": [
     {
      "w": "too good to be true",
@@ -926,16 +1125,16 @@
      "frame": "An offer like ___ sounds too good to be true."
     },
     {
-     "w": "take something with a pinch of salt",
-     "def": "to not completely believe something",
-     "ar": "يتعامل معه بحذر ولا يصدّقه كلياً",
-     "frame": "I take ___ with a pinch of salt."
+     "w": "raise a red flag",
+     "def": "to be a warning sign that something is wrong",
+     "ar": "يثير الشكوك / علامة تحذير",
+     "frame": "___ raises a red flag for me."
     },
     {
-     "w": "misleading",
-     "def": "giving the wrong idea, often on purpose",
-     "ar": "مضلِّل",
-     "frame": "The advert was misleading because ___."
+     "w": "deceptive",
+     "def": "making you believe something that is not true",
+     "ar": "خادع",
+     "frame": "The advert was deceptive because ___."
     },
     {
      "w": "back up a claim",
@@ -956,84 +1155,10 @@
      "frame": "I once fell for ___."
     }
    ],
-   "dialogue": {
-    "scene": "Yousef shows his sister Shahad an advert for an app that claims to make anyone fluent in English in seven days.",
-    "p1": [
-     {
-      "s": "Yousef",
-      "t": "Look at this! 'Fluent English in seven days, guaranteed.' I'm downloading it now."
-     },
-     {
-      "s": "Shahad",
-      "t": "Wait. Doesn't that sound a bit too good to be true?"
-     },
-     {
-      "s": "Yousef",
-      "t": "But there are hundreds of five-star reviews."
-     },
-     {
-      "s": "Shahad",
-      "t": "Many of those reviews must have been written by the company itself. They all use exactly the same words."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Yousef",
-      "t": "Hmm, you're right. And the 'before and after' video?"
-     },
-     {
-      "s": "Shahad",
-      "t": "It may well have been edited. It's highly unlikely that anyone could learn a language that fast."
-     },
-     {
-      "s": "Yousef",
-      "t": "They do say a university tested it."
-     },
-     {
-      "s": "Shahad",
-      "t": "Which university? If they can't back up the claim, I'd take it with a pinch of salt. And read the fine print."
-     },
-     {
-      "s": "Yousef",
-      "t": "Oh no. 'Monthly subscription: 199 riyals.' I nearly fell for a really misleading advert!"
-     }
-    ],
-    "focus": "Many of those reviews must have been written by the company itself.",
-    "qs": [
-     "Why does Shahad doubt the reviews?",
-     "What does Yousef discover in the fine print?"
-    ]
-   },
-   "speakout": {
-    "scene": "A friend sends you an advert for a phone charger that 'charges any phone in 60 seconds' for only 20 riyals. They want to buy ten for the family.",
-    "prompts": [
-     {
-      "q": "Isn't this an amazing deal?",
-      "hint": "Explain why it sounds too good to be true, using 'It's highly unlikely that …'."
-     },
-     {
-      "q": "But it has thousands of positive reviews!",
-      "hint": "Use 'must have been' or 'might have been' to say who wrote the reviews."
-     },
-     {
-      "q": "So what should I do before buying anything online?",
-      "hint": "Give advice: read the fine print and look for proof that backs up the claim."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Shopping Safely Online",
-    "points": [
-     "Online shopping has grown enormously in Saudi Arabia, especially among young people.",
-     "Saudi Arabia introduced an e-commerce law in 2019 to protect people who shop online.",
-     "Fake reviews are a global problem, and some countries now fine companies that publish them."
-    ],
-    "qs": [
-     "How do you decide whether an online review is genuine?",
-     "Should influencers be punished for promoting misleading products?"
-    ]
-   },
-   "exit": "Tell me about a claim you don't believe, using 'must have been' or 'It's highly unlikely that …'."
+   "recycle": [
+    "take something with a pinch of salt",
+    "misleading"
+   ]
   },
   "1-1": {
    "objective": "Today you will decide whether a website is a reliable source for a school project.",
@@ -1094,6 +1219,14 @@
      {
       "s": "Bader",
       "t": "And the author has no credentials listed. Not a reliable source, then."
+     },
+     {
+      "s": "Adam",
+      "t": "That's a shame, because it's the only site with clear charts. It would have made our report look really professional."
+     },
+     {
+      "s": "Bader",
+      "t": "Good-looking charts don't make information true. If anything, a company has more money to make its pages look convincing."
      }
     ],
     "p2": [
@@ -1116,6 +1249,10 @@
      {
       "s": "Adam",
       "t": "Good idea. Our teacher will be impressed if we explain why we rejected the first one."
+     },
+     {
+      "s": "Bader",
+      "t": "Agreed. Showing how we chose our sources might be the strongest part of the whole report."
      }
     ],
     "focus": "The article can't have been written by an independent expert.",
@@ -1129,15 +1266,15 @@
     "prompts": [
      {
       "q": "Which source should I trust most, and why?",
-      "hint": "Compare the sources and mention credentials and vested interests."
+      "hint": "Compare the sources and mention credentials and vested interests. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "The blog was written in 2010. Is that a problem?",
-      "hint": "Explain that the information might be out of date."
+      "hint": "Explain that the information might be out of date. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Who do you think wrote the blog?",
-      "hint": "Make a deduction: 'It can't have been / might have been written by …'."
+      "hint": "Make a deduction: 'It can't have been / might have been written by …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1158,44 +1295,6 @@
   "1-2": {
    "objective": "Today you will examine a viral photo and deduce whether it is real or fake.",
    "warmup": "Have you ever seen a photo online that turned out to be fake?",
-   "expressions": [
-    {
-     "w": "go viral",
-     "def": "to spread very quickly online",
-     "ar": "ينتشر بسرعة كبيرة",
-     "frame": "A video of ___ went viral last week."
-    },
-    {
-     "w": "doctored",
-     "def": "changed in a dishonest way",
-     "ar": "معدّل / مزوّر",
-     "frame": "You can tell the photo was doctored because ___."
-    },
-    {
-     "w": "a dead giveaway",
-     "def": "a clear sign that shows the truth",
-     "ar": "دليل واضح يكشف الحقيقة",
-     "frame": "The ___ was a dead giveaway that it was fake."
-    },
-    {
-     "w": "on closer inspection",
-     "def": "when you look more carefully",
-     "ar": "عند التدقيق",
-     "frame": "On closer inspection, I noticed ___."
-    },
-    {
-     "w": "jump to conclusions",
-     "def": "to decide too quickly without all the facts",
-     "ar": "يتسرّع في الحكم",
-     "frame": "Don't jump to conclusions about ___."
-    },
-    {
-     "w": "authentic",
-     "def": "real and not a copy",
-     "ar": "أصلي / حقيقي",
-     "frame": "To check if a photo is authentic, you can ___."
-    }
-   ],
    "dialogue": {
     "scene": "A photo of a shark swimming down a flooded street has gone viral. Ali and his friend Fahad are discussing it.",
     "p1": [
@@ -1205,7 +1304,7 @@
      },
      {
       "s": "Fahad",
-      "t": "Hold on, let's not jump to conclusions. It may well have been made with AI."
+      "t": "Hold on, let's not rush to judgement. It may well have been made with AI."
      },
      {
       "s": "Ali",
@@ -1213,7 +1312,15 @@
      },
      {
       "s": "Fahad",
-      "t": "On closer inspection, though, the water around the shark isn't moving at all. There are no ripples."
+      "t": "On the face of it, yes, but the water around the shark isn't moving at all. There are no ripples."
+     },
+     {
+      "s": "Ali",
+      "t": "I didn't even notice that. I just saw a shark and got excited."
+     },
+     {
+      "s": "Fahad",
+      "t": "That's exactly what fakes rely on. Your brain sees something dramatic and stops asking questions."
      }
     ],
     "p2": [
@@ -1236,6 +1343,14 @@
      {
       "s": "Ali",
       "t": "And I was about to send it to the family group!"
+     },
+     {
+      "s": "Fahad",
+      "t": "Lucky you checked first. Forwarding fakes to the family group is how half these rumours start."
+     },
+     {
+      "s": "Ali",
+      "t": "Fair point. From now on, if a picture makes me gasp, I'll take a closer look before I share it."
      }
     ],
     "focus": "It may well have been made with AI.",
@@ -1249,15 +1364,15 @@
     "prompts": [
      {
       "q": "Why do you think the video isn't authentic?",
-      "hint": "Describe a dead giveaway you noticed on closer inspection."
+      "hint": "Describe a dead giveaway that looked normal on the face of it. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Who would make a video like that, and why?",
-      "hint": "Use 'must have been / might have been hoping to …'."
+      "hint": "Use 'must have been / might have been hoping to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "How can we check whether it's real?",
-      "hint": "Suggest practical steps, and warn against jumping to conclusions."
+      "hint": "Suggest practical steps, and warn against rushing to judgement. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1273,11 +1388,147 @@
      "What harm can a viral fake photo do?"
     ]
    },
-   "exit": "Describe a photo or video you doubt, using 'may well have been' or 'must have been'."
+   "exit": "Describe a photo or video you doubt, using 'may well have been' or 'must have been'.",
+   "expressions": [
+    {
+     "w": "go viral",
+     "def": "to spread very quickly online",
+     "ar": "ينتشر بسرعة كبيرة",
+     "frame": "A video of ___ went viral last week."
+    },
+    {
+     "w": "doctored",
+     "def": "changed in a dishonest way",
+     "ar": "معدّل / مزوّر",
+     "frame": "You can tell the photo was doctored because ___."
+    },
+    {
+     "w": "a dead giveaway",
+     "def": "a clear sign that shows the truth",
+     "ar": "دليل واضح يكشف الحقيقة",
+     "frame": "The ___ was a dead giveaway that it was fake."
+    },
+    {
+     "w": "on the face of it",
+     "def": "when you first look, before checking carefully",
+     "ar": "في الظاهر / للوهلة الأولى",
+     "frame": "On the face of it, ___ looked real, but …"
+    },
+    {
+     "w": "rush to judgement",
+     "def": "to decide too quickly, before knowing the facts",
+     "ar": "يتسرّع في الحكم",
+     "frame": "We shouldn't rush to judgement about ___."
+    },
+    {
+     "w": "authentic",
+     "def": "real and not a copy",
+     "ar": "أصلي / حقيقي",
+     "frame": "To check if a photo is authentic, you can ___."
+    }
+   ],
+   "recycle": [
+    "on closer inspection",
+    "jump to conclusions"
+   ]
   },
   "1-3": {
    "objective": "Today you will question statistics and headlines, using It's highly unlikely that … and It's questionable whether ….",
    "warmup": "Do you trust numbers more than opinions? Why?",
+   "dialogue": {
+    "scene": "Nawaf reads a headline to his classmate Khalid: 'Study proves gamers get better grades!'",
+    "p1": [
+     {
+      "s": "Nawaf",
+      "t": "Great news! 'Study proves gamers get better grades.' I'm showing this to my parents tonight."
+     },
+     {
+      "s": "Khalid",
+      "t": "Not so fast. How many students were in the study?"
+     },
+     {
+      "s": "Nawaf",
+      "t": "Let me check. Forty, all from one school."
+     },
+     {
+      "s": "Khalid",
+      "t": "That's a tiny sample size. It's highly unlikely that forty students represent every teenager."
+     },
+     {
+      "s": "Nawaf",
+      "t": "Fair enough, but forty is better than nothing, isn't it?"
+     },
+     {
+      "s": "Khalid",
+      "t": "It's a start, but you'd need thousands of students from different cities before you could say anything about teenagers in general."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Nawaf",
+      "t": "But the study does show a correlation between gaming and good marks."
+     },
+     {
+      "s": "Khalid",
+      "t": "A correlation doesn't prove that one causes the other. Students from wealthier families might have both games consoles and private tutors."
+     },
+     {
+      "s": "Nawaf",
+      "t": "And the study was paid for by a games company. The results could easily have been skewed."
+     },
+     {
+      "s": "Khalid",
+      "t": "Exactly. It's questionable whether the study tells us anything useful at all."
+     },
+     {
+      "s": "Nawaf",
+      "t": "So 'proves' is a sweeping statement. The journalist read too much into the findings, or took them out of context."
+     },
+     {
+      "s": "Khalid",
+      "t": "Probably. Headlines need clicks, and 'gaming might be linked to grades in one school' doesn't sound nearly as exciting."
+     },
+     {
+      "s": "Nawaf",
+      "t": "True. I suppose I'll show my parents my actual grades instead."
+     }
+    ],
+    "focus": "It's highly unlikely that forty students represent every teenager.",
+    "qs": [
+     "What problems does Khalid find with the study?",
+     "Who paid for the research?"
+    ]
+   },
+   "speakout": {
+    "scene": "A news website claims: 'Teenagers who eat breakfast are 50% happier.' The study asked 25 people online. Discuss the headline with a friend who believes it.",
+    "prompts": [
+     {
+      "q": "Fifty per cent happier! Isn't that convincing?",
+      "hint": "Talk about the sample size, using 'It's highly unlikely that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "But there is a link between breakfast and happiness, isn't there?",
+      "hint": "Explain the difference between a correlation and a cause. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So what would make the research more reliable?",
+      "hint": "Suggest improvements and say how much we can read into the results. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Al-Khwarizmi and the Power of Numbers",
+    "points": [
+     "The word 'algorithm' comes from the name of al-Khwarizmi, a ninth-century scholar who worked in Baghdad.",
+     "The title of his book on solving equations gave us the word 'algebra'.",
+     "Today, data scientists use algorithms to find patterns, but they must still check whether the data is fair."
+    ],
+    "qs": [
+     "Why do numbers in headlines seem so convincing?",
+     "Should all students learn basic statistics before they leave school? Why?"
+    ]
+   },
+   "exit": "Criticise a statistic you have heard, using 'It's highly unlikely that …' or 'It's questionable whether …'.",
    "expressions": [
     {
      "w": "sample size",
@@ -1286,10 +1537,10 @@
      "frame": "With a sample size of only ___, the results aren't reliable."
     },
     {
-     "w": "draw a conclusion",
-     "def": "to decide something based on evidence",
-     "ar": "يستخلص نتيجة",
-     "frame": "We can't draw a conclusion from ___."
+     "w": "read too much into",
+     "def": "to think something has more meaning than it really has",
+     "ar": "يحمّل الأمر أكثر مما يحتمل",
+     "frame": "People read too much into ___."
     },
     {
      "w": "out of context",
@@ -1316,126 +1567,13 @@
      "frame": "The results were skewed because ___."
     }
    ],
-   "dialogue": {
-    "scene": "Nawaf reads a headline to his classmate Khalid: 'Study proves gamers get better grades!'",
-    "p1": [
-     {
-      "s": "Nawaf",
-      "t": "Great news! 'Study proves gamers get better grades.' I'm showing this to my parents tonight."
-     },
-     {
-      "s": "Khalid",
-      "t": "Not so fast. How many students were in the study?"
-     },
-     {
-      "s": "Nawaf",
-      "t": "Let me check. Forty, all from one school."
-     },
-     {
-      "s": "Khalid",
-      "t": "That's a tiny sample size. It's highly unlikely that forty students represent every teenager."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Nawaf",
-      "t": "But the study does show a correlation between gaming and good marks."
-     },
-     {
-      "s": "Khalid",
-      "t": "A correlation doesn't prove that one causes the other. Students from wealthier families might have both games consoles and private tutors."
-     },
-     {
-      "s": "Nawaf",
-      "t": "And the study was paid for by a games company. The results could easily have been skewed."
-     },
-     {
-      "s": "Khalid",
-      "t": "Exactly. It's questionable whether we can draw any conclusion at all."
-     },
-     {
-      "s": "Nawaf",
-      "t": "So 'proves' is a sweeping statement. Maybe the article took the findings out of context."
-     }
-    ],
-    "focus": "It's highly unlikely that forty students represent every teenager.",
-    "qs": [
-     "What problems does Khalid find with the study?",
-     "Who paid for the research?"
-    ]
-   },
-   "speakout": {
-    "scene": "A news website claims: 'Teenagers who eat breakfast are 50% happier.' The study asked 25 people online. Discuss the headline with a friend who believes it.",
-    "prompts": [
-     {
-      "q": "Fifty per cent happier! Isn't that convincing?",
-      "hint": "Talk about the sample size, using 'It's highly unlikely that …'."
-     },
-     {
-      "q": "But there is a link between breakfast and happiness, isn't there?",
-      "hint": "Explain the difference between a correlation and a cause."
-     },
-     {
-      "q": "So what would make the research more reliable?",
-      "hint": "Suggest improvements and say what conclusion we can or can't draw."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Al-Khwarizmi and the Power of Numbers",
-    "points": [
-     "The word 'algorithm' comes from the name of al-Khwarizmi, a ninth-century scholar who worked in Baghdad.",
-     "The title of his book on solving equations gave us the word 'algebra'.",
-     "Today, data scientists use algorithms to find patterns, but they must still check whether the data is fair."
-    ],
-    "qs": [
-     "Why do numbers in headlines seem so convincing?",
-     "Should all students learn basic statistics before they leave school? Why?"
-    ]
-   },
-   "exit": "Criticise a statistic you have heard, using 'It's highly unlikely that …' or 'It's questionable whether …'."
+   "recycle": [
+    "draw a conclusion"
+   ]
   },
   "1-4": {
    "objective": "Today you will deal with a rumour by checking the facts and making logical deductions.",
    "warmup": "How do you usually find out important news about your school?",
-   "expressions": [
-    {
-     "w": "spread like wildfire",
-     "def": "to spread very quickly",
-     "ar": "ينتشر كالنار في الهشيم",
-     "frame": "The news about ___ spread like wildfire."
-    },
-    {
-     "w": "straight from the horse's mouth",
-     "def": "directly from the person who knows",
-     "ar": "من مصدره مباشرة",
-     "frame": "I heard it straight from the horse's mouth: ___."
-    },
-    {
-     "w": "get the wrong end of the stick",
-     "def": "to misunderstand something",
-     "ar": "يفهم الأمر بشكل خاطئ",
-     "frame": "I think you've got the wrong end of the stick about ___."
-    },
-    {
-     "w": "unfounded",
-     "def": "not based on facts",
-     "ar": "لا أساس له",
-     "frame": "The rumour that ___ turned out to be unfounded."
-    },
-    {
-     "w": "set the record straight",
-     "def": "to correct a false story",
-     "ar": "يصحّح المعلومات",
-     "frame": "I'd like to set the record straight about ___."
-    },
-    {
-     "w": "verify",
-     "def": "to check that something is true",
-     "ar": "يتحقّق من",
-     "frame": "Before sharing news, always verify ___."
-    }
-   ],
    "dialogue": {
     "scene": "A message saying 'School closed tomorrow because of a sandstorm!' is spreading among students. Lulwa calls her friend Hessa.",
     "p1": [
@@ -1453,7 +1591,15 @@
      },
      {
       "s": "Hessa",
-      "t": "Teachers never use our class group. Someone must have got the wrong end of the stick."
+      "t": "Teachers never use our class group. Someone must have got their wires crossed."
+     },
+     {
+      "s": "Lulwa",
+      "t": "But half the class has already shared it. Some people are even planning a trip to the mall tomorrow morning."
+     },
+     {
+      "s": "Hessa",
+      "t": "That's how rumours work: the more people forward something, the more believable it seems."
      }
     ],
     "p2": [
@@ -1475,10 +1621,14 @@
      },
      {
       "s": "Lulwa",
-      "t": "So that's straight from the horse's mouth. I'll set the record straight in the group before anyone stays at home!"
+      "t": "So that's straight from the horse's mouth. I'll nip this in the bud in the group before anyone stays at home!"
+     },
+     {
+      "s": "Hessa",
+      "t": "Good idea. And include the official link, so nobody has to take your word for it."
      }
     ],
-    "focus": "Someone must have got the wrong end of the stick.",
+    "focus": "Someone must have got their wires crossed.",
     "qs": [
      "Why does Hessa think the message isn't from the school?",
      "How does Hessa check the rumour?"
@@ -1489,15 +1639,15 @@
     "prompts": [
      {
       "q": "Is it true? Everyone's saying so!",
-      "hint": "Use 'It can't have …' or 'Someone must have …' and give a reason."
+      "hint": "Use 'It can't have …' or 'Someone must have …' and give a reason. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Where do you think the rumour started?",
-      "hint": "Make a deduction, for example that someone might have got the wrong end of the stick."
+      "hint": "Make a deduction, for example that someone might have got their wires crossed. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What should we do now?",
-      "hint": "Suggest how to verify it and set the record straight."
+      "hint": "Suggest how to verify it and nip the rumour in the bud. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1513,23 +1663,155 @@
      "Whose job is it to stop rumours: app companies or users?"
     ]
    },
-   "exit": "Tell me how you would deal with a rumour, using 'must have' or 'can't have' in two sentences."
+   "exit": "Tell me how you would deal with a rumour, using 'must have' or 'can't have' in two sentences.",
+   "expressions": [
+    {
+     "w": "spread like wildfire",
+     "def": "to spread very quickly",
+     "ar": "ينتشر كالنار في الهشيم",
+     "frame": "The news about ___ spread like wildfire."
+    },
+    {
+     "w": "straight from the horse's mouth",
+     "def": "directly from the person who knows",
+     "ar": "من مصدره مباشرة",
+     "frame": "I heard it straight from the horse's mouth: ___."
+    },
+    {
+     "w": "get your wires crossed",
+     "def": "to misunderstand what someone means",
+     "ar": "يحدث سوء فهم بين الطرفين",
+     "frame": "We got our wires crossed about ___."
+    },
+    {
+     "w": "unfounded",
+     "def": "not based on facts",
+     "ar": "لا أساس له",
+     "frame": "The rumour that ___ turned out to be unfounded."
+    },
+    {
+     "w": "nip something in the bud",
+     "def": "to stop a problem early, before it grows",
+     "ar": "يقضي على الأمر في مهده",
+     "frame": "The best way to nip ___ in the bud is …"
+    },
+    {
+     "w": "verify",
+     "def": "to check that something is true",
+     "ar": "يتحقّق من",
+     "frame": "Before sharing news, always verify ___."
+    }
+   ],
+   "recycle": [
+    "get the wrong end of the stick",
+    "set the record straight"
+   ]
   },
   "1-5": {
    "objective": "Today you will act as a fact-checker, evaluate three claims and give a reasoned verdict.",
    "warmup": "If you could check whether one thing you've heard is true, what would it be?",
+   "dialogue": {
+    "scene": "Majed and Chris from the school media club are preparing a 'Fact or Fiction?' video about three popular claims.",
+    "p1": [
+     {
+      "s": "Majed",
+      "t": "Claim one: 'You can easily see the Great Wall of China from space.' Verdict?"
+     },
+     {
+      "s": "Chris",
+      "t": "That's been debunked many times. Astronauts have said it's far too narrow to see with your eyes."
+     },
+     {
+      "s": "Majed",
+      "t": "Fiction, then. Claim two: 'Camels store water in their humps.'"
+     },
+     {
+      "s": "Chris",
+      "t": "That doesn't hold water, literally! The hump is mostly fat. Whoever started that myth must have been guessing."
+     },
+     {
+      "s": "Majed",
+      "t": "Ha! I believed that one until about five minutes ago. Everyone in my family still does."
+     },
+     {
+      "s": "Chris",
+      "t": "That's what makes it a good myth: it sounds logical, and people repeat it without checking."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Majed",
+      "t": "Claim three is harder: 'Eating dates helps runners recover faster.' A sports website says so."
+     },
+     {
+      "s": "Chris",
+      "t": "I'd treat it with a healthy dose of scepticism until we find a peer-reviewed study. That website sells dates."
+     },
+     {
+      "s": "Majed",
+      "t": "But a university study does suggest dates give quick energy."
+     },
+     {
+      "s": "Chris",
+      "t": "Then let's weigh the evidence. I'd give the claim the benefit of the doubt but call it 'partly true'."
+     },
+     {
+      "s": "Majed",
+      "t": "Agreed. Three verdicts, all clearly explained. Let's record!"
+     },
+     {
+      "s": "Chris",
+      "t": "Let's end the video by asking viewers to send us the next claim they want us to test."
+     }
+    ],
+    "focus": "Whoever started that myth must have been guessing.",
+    "qs": [
+     "Why is the claim about camels false?",
+     "What verdict do they give the third claim, and why?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are a fact-checker on a youth news programme. The presenter (the teacher) reads out claims, and you must evaluate each one live.",
+    "prompts": [
+     {
+      "q": "Claim: 'Drinking cold water after a meal is dangerous.' What's your verdict?",
+      "hint": "Say whether it holds water and where the idea might have come from. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Some people say it's true because their grandparents told them. Should we believe them?",
+      "hint": "Explain how to weigh the evidence and find a peer-reviewed study. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "What's your final message to our viewers?",
+      "hint": "Give advice using 'It's highly unlikely that …' or 'a healthy dose of scepticism'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Myths Around the World",
+    "points": [
+     "Goldfish do not have a three-second memory; experiments show they can remember things for months.",
+     "Lightning can strike the same place twice; tall buildings are hit many times a year.",
+     "Myths survive because they are simple, memorable and repeated by people we trust."
+    ],
+    "qs": [
+     "Which myth did you believe when you were younger?",
+     "Why is it hard to change someone's mind once they believe a myth?"
+    ]
+   },
+   "exit": "Give me your verdict on any claim you've heard, using a modal perfect and one expression from this unit.",
    "expressions": [
     {
-     "w": "reliable source",
-     "def": "a place to get information you can trust",
-     "ar": "مصدر موثوق",
-     "frame": "For claims about health, a reliable source would be ___."
+     "w": "a peer-reviewed study",
+     "def": "research checked by other experts before it is published",
+     "ar": "دراسة محكّمة",
+     "frame": "A peer-reviewed study about ___ would convince me."
     },
     {
-     "w": "take something with a pinch of salt",
-     "def": "to not completely believe something",
-     "ar": "يتعامل معه بحذر ولا يصدّقه كلياً",
-     "frame": "I'd take any claim about ___ with a pinch of salt."
+     "w": "a healthy dose of scepticism",
+     "def": "a sensible amount of doubt",
+     "ar": "قدر صحّي من الشك",
+     "frame": "I treat ___ with a healthy dose of scepticism."
     },
     {
      "w": "hold water",
@@ -1556,88 +1838,108 @@
      "frame": "I'd give ___ the benefit of the doubt because ___."
     }
    ],
-   "dialogue": {
-    "scene": "Majed and Chris from the school media club are preparing a 'Fact or Fiction?' video about three popular claims.",
-    "p1": [
-     {
-      "s": "Majed",
-      "t": "Claim one: 'You can easily see the Great Wall of China from space.' Verdict?"
-     },
-     {
-      "s": "Chris",
-      "t": "That's been debunked many times. Astronauts have said it's far too narrow to see with your eyes."
-     },
-     {
-      "s": "Majed",
-      "t": "Fiction, then. Claim two: 'Camels store water in their humps.'"
-     },
-     {
-      "s": "Chris",
-      "t": "That doesn't hold water, literally! The hump is mostly fat. Whoever started that myth must have been guessing."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Majed",
-      "t": "Claim three is harder: 'Eating dates helps runners recover faster.' A sports website says so."
-     },
-     {
-      "s": "Chris",
-      "t": "I'd take it with a pinch of salt until we find a reliable source. That website sells dates."
-     },
-     {
-      "s": "Majed",
-      "t": "But a university study does suggest dates give quick energy."
-     },
-     {
-      "s": "Chris",
-      "t": "Then let's weigh the evidence. I'd give the claim the benefit of the doubt but call it 'partly true'."
-     },
-     {
-      "s": "Majed",
-      "t": "Agreed. Three verdicts, all clearly explained. Let's record!"
-     }
-    ],
-    "focus": "Whoever started that myth must have been guessing.",
-    "qs": [
-     "Why is the claim about camels false?",
-     "What verdict do they give the third claim, and why?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are a fact-checker on a youth news programme. The presenter (the teacher) reads out claims, and you must evaluate each one live.",
-    "prompts": [
-     {
-      "q": "Claim: 'Drinking cold water after a meal is dangerous.' What's your verdict?",
-      "hint": "Say whether it holds water and where the idea might have come from."
-     },
-     {
-      "q": "Some people say it's true because their grandparents told them. Should we believe them?",
-      "hint": "Explain how to weigh the evidence and find a reliable source."
-     },
-     {
-      "q": "What's your final message to our viewers?",
-      "hint": "Give advice using 'It's highly unlikely that …' or 'take it with a pinch of salt'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Myths Around the World",
-    "points": [
-     "Goldfish do not have a three-second memory; experiments show they can remember things for months.",
-     "Lightning can strike the same place twice; tall buildings are hit many times a year.",
-     "Myths survive because they are simple, memorable and repeated by people we trust."
-    ],
-    "qs": [
-     "Which myth did you believe when you were younger?",
-     "Why is it hard to change someone's mind once they believe a myth?"
-    ]
-   },
-   "exit": "Give me your verdict on any claim you've heard, using a modal perfect and one expression from this unit."
+   "recycle": [
+    "reliable source",
+    "take something with a pinch of salt"
+   ]
   },
   "2-0": {
    "objective": "Today you will open a talk in a way that grabs your audience's attention.",
    "warmup": "Think of a great talk or video you watched. How did it begin?",
+   "dialogue": {
+    "scene": "Turki is preparing a talk on sleep for his school's science week. His older brother Hamad, a university student, gives him advice.",
+    "p1": [
+     {
+      "s": "Turki",
+      "t": "My talk starts like this: 'Today I'm going to talk about sleep.' Is that OK?"
+     },
+     {
+      "s": "Hamad",
+      "t": "It's clear, but it won't grab anyone's attention. Try a startling fact instead."
+     },
+     {
+      "s": "Turki",
+      "t": "Like this? 'Teenagers need eight to ten hours of sleep a night, yet most get far less.'"
+     },
+     {
+      "s": "Hamad",
+      "t": "Better. Or start with a scene. Picture this: it's 2 a.m., and you're still scrolling through videos."
+     },
+     {
+      "s": "Turki",
+      "t": "That's a bit uncomfortable. Half my class will think I'm talking about them personally."
+     },
+     {
+      "s": "Hamad",
+      "t": "That's the point. When listeners recognise themselves, they stop checking their phones and start paying attention."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Turki",
+      "t": "Ha! That will definitely strike a chord with my classmates."
+     },
+     {
+      "s": "Hamad",
+      "t": "Exactly. Once you've brought the scene to life, tell them what's coming."
+     },
+     {
+      "s": "Turki",
+      "t": "So: 'Let me begin by explaining why we sleep, and then I'll share three simple tips.'"
+     },
+     {
+      "s": "Hamad",
+      "t": "Perfect. A good opening is like a promise. Now you have to keep it!"
+     },
+     {
+      "s": "Turki",
+      "t": "Thanks. I'll practise until I can say it without notes."
+     },
+     {
+      "s": "Hamad",
+      "t": "Good, but don't memorise every word. Learn the structure, so you sound natural even if you forget a line."
+     },
+     {
+      "s": "Turki",
+      "t": "Makes sense. Can I try the whole opening on you again tomorrow evening?"
+     }
+    ],
+    "focus": "Once you've brought the scene to life, tell them what's coming.",
+    "qs": [
+     "What is wrong with Turki's first opening?",
+     "What two kinds of opening does Hamad suggest?"
+    ]
+   },
+   "speakout": {
+    "scene": "You will give a three-minute talk at a school assembly on a topic you care about, for example food waste, reading or friendship. The teacher wants to hear your opening.",
+    "prompts": [
+     {
+      "q": "How will you grab our attention in the first ten seconds?",
+      "hint": "Start with 'Picture this: …' or a startling fact. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Why will your topic strike a chord with students?",
+      "hint": "Connect the topic to the audience's daily life. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "What will you tell us is coming next?",
+      "hint": "Use 'Let me begin by …, and then I'll …' to preview your talk. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "TED Talks and the 18-Minute Rule",
+    "points": [
+     "TED talks are limited to 18 minutes, which organisers believe is long enough to be serious but short enough to hold attention.",
+     "Many of the most popular talks begin with a personal story rather than with facts.",
+     "TEDx events are organised independently around the world, including in Saudi cities."
+    ],
+    "qs": [
+     "Is 18 minutes too long or too short for a talk? Why?",
+     "Do you prefer talks that start with a story or with facts?"
+    ]
+   },
+   "exit": "Give me a powerful two-sentence opening for a talk on any topic.",
    "expressions": [
     {
      "w": "grab someone's attention",
@@ -1670,90 +1972,15 @@
      "frame": "Here's a startling fact: ___."
     },
     {
-     "w": "set the scene",
-     "def": "to give background information before the main part",
-     "ar": "يمهّد ويرسم الإطار",
-     "frame": "To set the scene, I'll describe ___."
+     "w": "bring something to life",
+     "def": "to make something feel real and exciting for people",
+     "ar": "يُضفي الحياة على الشيء",
+     "frame": "To bring my talk to life, I would ___."
     }
    ],
-   "dialogue": {
-    "scene": "Turki is preparing a talk on sleep for his school's science week. His older brother Hamad, a university student, gives him advice.",
-    "p1": [
-     {
-      "s": "Turki",
-      "t": "My talk starts like this: 'Today I'm going to talk about sleep.' Is that OK?"
-     },
-     {
-      "s": "Hamad",
-      "t": "It's clear, but it won't grab anyone's attention. Try a startling fact instead."
-     },
-     {
-      "s": "Turki",
-      "t": "Like this? 'Teenagers need eight to ten hours of sleep a night, yet most get far less.'"
-     },
-     {
-      "s": "Hamad",
-      "t": "Better. Or start with a scene. Picture this: it's 2 a.m., and you're still scrolling through videos."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Turki",
-      "t": "Ha! That will definitely strike a chord with my classmates."
-     },
-     {
-      "s": "Hamad",
-      "t": "Exactly. Once you've set the scene, tell them what's coming."
-     },
-     {
-      "s": "Turki",
-      "t": "So: 'Let me begin by explaining why we sleep, and then I'll share three simple tips.'"
-     },
-     {
-      "s": "Hamad",
-      "t": "Perfect. A good opening is like a promise. Now you have to keep it!"
-     },
-     {
-      "s": "Turki",
-      "t": "Thanks. I'll practise until I can say it without notes."
-     }
-    ],
-    "focus": "Once you've set the scene, tell them what's coming.",
-    "qs": [
-     "What is wrong with Turki's first opening?",
-     "What two kinds of opening does Hamad suggest?"
-    ]
-   },
-   "speakout": {
-    "scene": "You will give a three-minute talk at a school assembly on a topic you care about, for example food waste, reading or friendship. The teacher wants to hear your opening.",
-    "prompts": [
-     {
-      "q": "How will you grab our attention in the first ten seconds?",
-      "hint": "Start with 'Picture this: …' or a startling fact."
-     },
-     {
-      "q": "Why will your topic strike a chord with students?",
-      "hint": "Connect the topic to the audience's daily life."
-     },
-     {
-      "q": "What will you tell us is coming next?",
-      "hint": "Use 'Let me begin by …, and then I'll …' to preview your talk."
-     }
-    ]
-   },
-   "culture": {
-    "title": "TED Talks and the 18-Minute Rule",
-    "points": [
-     "TED talks are limited to 18 minutes, which organisers believe is long enough to be serious but short enough to hold attention.",
-     "Many of the most popular talks begin with a personal story rather than with facts.",
-     "TEDx events are organised independently around the world, including in Saudi cities."
-    ],
-    "qs": [
-     "Is 18 minutes too long or too short for a talk? Why?",
-     "Do you prefer talks that start with a story or with facts?"
-    ]
-   },
-   "exit": "Give me a powerful two-sentence opening for a talk on any topic."
+   "recycle": [
+    "set the scene"
+   ]
   },
   "2-1": {
    "objective": "Today you will guide listeners through a talk with clear signposting phrases.",
@@ -1814,6 +2041,14 @@
      {
       "s": "Grace",
       "t": "Much better. And when you mention the reed pens again, remind us you've already talked about them."
+     },
+     {
+      "s": "Razan",
+      "t": "Do I really need to remind them? I only mentioned the pens two minutes earlier."
+     },
+     {
+      "s": "Grace",
+      "t": "Yes. Listeners can't scroll back like readers can, so a quick reminder helps them connect the ideas."
      }
     ],
     "p2": [
@@ -1836,6 +2071,14 @@
      {
       "s": "Razan",
       "t": "Great. With signposts like these, no one will get lost."
+     },
+     {
+      "s": "Grace",
+      "t": "One last thing: slow down at each signpost. A short pause tells everyone that a new section is starting."
+     },
+     {
+      "s": "Razan",
+      "t": "Pausing feels so awkward, though. The silence seems to last forever."
      }
     ],
     "focus": "This brings me to the second part of my talk: the Naskh script.",
@@ -1849,15 +2092,15 @@
     "prompts": [
      {
       "q": "You've finished your first point. How will you move on?",
-      "hint": "Use 'This brings me to …' or 'Turning now to …'."
+      "hint": "Use 'This brings me to …' or 'Turning now to …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Can you tell us more about that last point?",
-      "hint": "Use 'Let me elaborate on …' and add an example."
+      "hint": "Use 'Let me elaborate on …' and add an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "How will you remind us of something you said before?",
-      "hint": "Use 'As I mentioned earlier, …'."
+      "hint": "Use 'As I mentioned earlier, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1878,44 +2121,6 @@
   "2-2": {
    "objective": "Today you will balance a talk by linking contrasting and supporting points smoothly.",
    "warmup": "Would you like your family's next car to be electric? Why or why not?",
-   "expressions": [
-    {
-     "w": "nonetheless",
-     "def": "used to add a point that contrasts with what you just said (formal)",
-     "ar": "ومع ذلك / رغم ذلك",
-     "frame": "___ is useful. Nonetheless, ___."
-    },
-    {
-     "w": "on the flip side",
-     "def": "used to introduce the opposite, often negative, side of something",
-     "ar": "على الجانب الآخر / في المقابل",
-     "frame": "___ is convenient. On the flip side, ___."
-    },
-    {
-     "w": "what's more",
-     "def": "used to add an even stronger point",
-     "ar": "علاوة على ذلك",
-     "frame": "It's cheap. What's more, ___."
-    },
-    {
-     "w": "a double-edged sword",
-     "def": "something with both good and bad results",
-     "ar": "سلاح ذو حدّين",
-     "frame": "___ is a double-edged sword because ___."
-    },
-    {
-     "w": "on balance",
-     "def": "after considering all the facts",
-     "ar": "بعد الموازنة",
-     "frame": "On balance, I think ___."
-    },
-    {
-     "w": "be offset by",
-     "def": "to be balanced by an opposite effect",
-     "ar": "يُعوَّض بـ",
-     "frame": "The high price is offset by ___."
-    }
-   ],
    "dialogue": {
     "scene": "Ziyad is preparing a talk on electric cars for his engineering club. His friend Lucas helps him link his points.",
     "p1": [
@@ -1934,12 +2139,20 @@
      {
       "s": "Lucas",
       "t": "Good. And the cost of the car is partly offset by cheap charging, isn't it?"
+     },
+     {
+      "s": "Ziyad",
+      "t": "Yes, charging at home costs much less than filling up with petrol, although petrol here is fairly cheap too."
+     },
+     {
+      "s": "Lucas",
+      "t": "Then mention that honestly. If you admit the weak points, the audience trusts the strong ones more."
      }
     ],
     "p2": [
      {
       "s": "Ziyad",
-      "t": "True. 'What's more, they produce no exhaust fumes in crowded cities.'"
+      "t": "True. 'On top of that, they produce no exhaust fumes in crowded cities.'"
      },
      {
       "s": "Lucas",
@@ -1951,11 +2164,19 @@
      },
      {
       "s": "Lucas",
-      "t": "Nice. So the technology is a bit of a double-edged sword here."
+      "t": "Could you add a real example? General points alone can sound a bit dry."
      },
      {
       "s": "Ziyad",
-      "t": "Exactly. I'll finish with: 'On balance, electric cars make most sense for city driving, for now.'"
+      "t": "Good idea. My uncle drove his electric car from Riyadh to Dammam and had to stop twice to charge."
+     },
+     {
+      "s": "Lucas",
+      "t": "Nice. So the technology is a blessing and a curse here."
+     },
+     {
+      "s": "Ziyad",
+      "t": "Exactly. I'll finish with: 'Taking everything into account, electric cars make most sense for city driving, for now.'"
      }
     ],
     "focus": "Nonetheless, they're still expensive to buy.",
@@ -1969,15 +2190,15 @@
     "prompts": [
      {
       "q": "What's the main advantage?",
-      "hint": "Give the advantage, then add another with 'What's more, …'."
+      "hint": "Give the advantage, then add another with 'On top of that, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "And the disadvantages?",
-      "hint": "Use 'Nonetheless, …' or 'On the flip side, …' to show the other side."
+      "hint": "Use 'Nonetheless, …' or 'On the flip side, …' to show the other side. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "So what's your overall view?",
-      "hint": "Start with 'On balance, …' and explain why."
+      "hint": "Start with 'Taking everything into account, …' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1993,11 +2214,148 @@
      "Is it better to give a balanced talk or a one-sided one? When?"
     ]
    },
-   "exit": "Give me one advantage and one disadvantage of something, linked with 'Nonetheless' or 'On the flip side'."
+   "exit": "Give me one advantage and one disadvantage of something, linked with 'Nonetheless' or 'On the flip side'.",
+   "expressions": [
+    {
+     "w": "nonetheless",
+     "def": "used to add a point that contrasts with what you just said (formal)",
+     "ar": "ومع ذلك / رغم ذلك",
+     "frame": "___ is useful. Nonetheless, ___."
+    },
+    {
+     "w": "on the flip side",
+     "def": "used to introduce the opposite, often negative, side of something",
+     "ar": "على الجانب الآخر / في المقابل",
+     "frame": "___ is convenient. On the flip side, ___."
+    },
+    {
+     "w": "on top of that",
+     "def": "used to add another point, often a stronger one",
+     "ar": "علاوة على ذلك",
+     "frame": "It's cheap. On top of that, ___."
+    },
+    {
+     "w": "a blessing and a curse",
+     "def": "something that is good and bad at the same time",
+     "ar": "نعمة ونقمة في آنٍ واحد",
+     "frame": "___ is a blessing and a curse because ___."
+    },
+    {
+     "w": "taking everything into account",
+     "def": "after considering all the facts",
+     "ar": "بعد أخذ كل شيء في الحسبان",
+     "frame": "Taking everything into account, I think ___."
+    },
+    {
+     "w": "be offset by",
+     "def": "to be balanced by an opposite effect",
+     "ar": "يُعوَّض بـ",
+     "frame": "The high price is offset by ___."
+    }
+   ],
+   "recycle": [
+    "what's more",
+    "a double-edged sword",
+    "on balance"
+   ]
   },
   "2-3": {
    "objective": "Today you will organise a talk around a problem and its solution, using the rule of three.",
    "warmup": "What is the biggest everyday problem in your city?",
+   "dialogue": {
+    "scene": "Rakan and his teammate Omar are planning a talk on traffic for a youth city-planning competition.",
+    "p1": [
+     {
+      "s": "Rakan",
+      "t": "Our talk needs a clear structure. How about problem, solution, impact?"
+     },
+     {
+      "s": "Omar",
+      "t": "Good. First the problem: traffic jams. But what's the root of the problem?"
+     },
+     {
+      "s": "Rakan",
+      "t": "Too many cars and too few alternatives. Some people spend over an hour in traffic every day."
+     },
+     {
+      "s": "Omar",
+      "t": "To put this into perspective, that adds up to more than two whole weeks a year."
+     },
+     {
+      "s": "Rakan",
+      "t": "That's a powerful comparison. Two weeks a year just sitting in a car, going nowhere."
+     },
+     {
+      "s": "Omar",
+      "t": "And that's only the time. Think of the fuel, the pollution and the stress on top of it."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Rakan",
+      "t": "Then the solution. First and foremost: public transport, like the new Riyadh Metro."
+     },
+     {
+      "s": "Omar",
+      "t": "And to get to grips with the problem, we need three things: better buses, safe cycle lanes and shaded walkways."
+     },
+     {
+      "s": "Rakan",
+      "t": "Three is perfect. People remember ideas in groups of three."
+     },
+     {
+      "s": "Omar",
+      "t": "But won't the judges say people here prefer their own cars, especially in summer?"
+     },
+     {
+      "s": "Rakan",
+      "t": "We'll admit that. That's exactly why shade and air-conditioned stations matter: comfort has to come first."
+     },
+     {
+      "s": "Omar",
+      "t": "Finally, the impact: cleaner air, less stress and more time with family. Who could argue with that?"
+     },
+     {
+      "s": "Rakan",
+      "t": "It's a win-win situation, and the effects will be far-reaching."
+     }
+    ],
+    "focus": "People remember ideas in groups of three.",
+    "qs": [
+     "What three parts will the talk have?",
+     "What three things do they suggest to deal with traffic?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are presenting at a youth forum about a problem in your neighbourhood, for example litter, a lack of parks or noisy streets. Structure your talk as problem, solution, impact.",
+    "prompts": [
+     {
+      "q": "What exactly is the problem, and what's the root of it?",
+      "hint": "Describe the problem and use 'To put this into perspective, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "How would you get to grips with it?",
+      "hint": "Give three solutions in a list (the rule of three). Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Why should anyone care?",
+      "hint": "Describe the far-reaching impact and end with a rhetorical question. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "The Power of Three",
+    "points": [
+     "Many slogans and speeches use lists of three, such as 'Stop, look and listen'.",
+     "Julius Caesar's famous words 'I came, I saw, I conquered' are a classic example from ancient Rome.",
+     "Three points are easy for listeners to remember, but still feel complete."
+    ],
+    "qs": [
+     "Can you think of an Arabic saying or slogan with three parts?",
+     "Why do you think the 'rule of three' is so effective?"
+    ]
+   },
+   "exit": "Give me a three-part mini-talk on any problem: problem, solution, impact.",
    "expressions": [
     {
      "w": "to put this into perspective",
@@ -2012,10 +2370,10 @@
      "frame": "The root of the problem is ___."
     },
     {
-     "w": "tackle",
-     "def": "to deal with a difficult problem",
-     "ar": "يعالج / يتصدّى لـ",
-     "frame": "The best way to tackle ___ is ___."
+     "w": "get to grips with",
+     "def": "to start dealing with a difficult problem seriously",
+     "ar": "يتعامل بجدية مع",
+     "frame": "The best way to get to grips with ___ is ___."
     },
     {
      "w": "a win-win situation",
@@ -2036,126 +2394,13 @@
      "frame": "___ will have far-reaching effects on ___."
     }
    ],
-   "dialogue": {
-    "scene": "Rakan and his teammate Omar are planning a talk on traffic for a youth city-planning competition.",
-    "p1": [
-     {
-      "s": "Rakan",
-      "t": "Our talk needs a clear structure. How about problem, solution, impact?"
-     },
-     {
-      "s": "Omar",
-      "t": "Good. First the problem: traffic jams. But what's the root of the problem?"
-     },
-     {
-      "s": "Rakan",
-      "t": "Too many cars and too few alternatives. Some people spend over an hour in traffic every day."
-     },
-     {
-      "s": "Omar",
-      "t": "To put this into perspective, that adds up to more than two whole weeks a year."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Rakan",
-      "t": "Then the solution. First and foremost: public transport, like the new Riyadh Metro."
-     },
-     {
-      "s": "Omar",
-      "t": "And to tackle the problem fully, we need three things: better buses, safe cycle lanes and shaded walkways."
-     },
-     {
-      "s": "Rakan",
-      "t": "Three is perfect. People remember ideas in groups of three."
-     },
-     {
-      "s": "Omar",
-      "t": "Finally, the impact: cleaner air, less stress and more time with family. Who could argue with that?"
-     },
-     {
-      "s": "Rakan",
-      "t": "It's a win-win situation, and the effects will be far-reaching."
-     }
-    ],
-    "focus": "People remember ideas in groups of three.",
-    "qs": [
-     "What three parts will the talk have?",
-     "What three things do they suggest to tackle traffic?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are presenting at a youth forum about a problem in your neighbourhood, for example litter, a lack of parks or noisy streets. Structure your talk as problem, solution, impact.",
-    "prompts": [
-     {
-      "q": "What exactly is the problem, and what's the root of it?",
-      "hint": "Describe the problem and use 'To put this into perspective, …'."
-     },
-     {
-      "q": "How would you tackle it?",
-      "hint": "Give three solutions in a list (the rule of three)."
-     },
-     {
-      "q": "Why should anyone care?",
-      "hint": "Describe the far-reaching impact and end with a rhetorical question."
-     }
-    ]
-   },
-   "culture": {
-    "title": "The Power of Three",
-    "points": [
-     "Many slogans and speeches use lists of three, such as 'Stop, look and listen'.",
-     "Julius Caesar's famous words 'I came, I saw, I conquered' are a classic example from ancient Rome.",
-     "Three points are easy for listeners to remember, but still feel complete."
-    ],
-    "qs": [
-     "Can you think of an Arabic saying or slogan with three parts?",
-     "Why do you think the 'rule of three' is so effective?"
-    ]
-   },
-   "exit": "Give me a three-part mini-talk on any problem: problem, solution, impact."
+   "recycle": [
+    "tackle"
+   ]
   },
   "2-4": {
    "objective": "Today you will summarise a talk and end it with a memorable final message.",
    "warmup": "What is the last thing you remember from a good talk or lesson?",
-   "expressions": [
-    {
-     "w": "to recap",
-     "def": "used to repeat the main points briefly",
-     "ar": "للتلخيص",
-     "frame": "To recap, we've looked at ___."
-    },
-    {
-     "w": "in a nutshell",
-     "def": "in very few words",
-     "ar": "باختصار شديد",
-     "frame": "In a nutshell, ___."
-    },
-    {
-     "w": "all things considered",
-     "def": "after thinking about everything",
-     "ar": "بعد النظر في كل شيء",
-     "frame": "All things considered, ___."
-    },
-    {
-     "w": "the bottom line is",
-     "def": "the most important fact is",
-     "ar": "خلاصة القول",
-     "frame": "The bottom line is that ___."
-    },
-    {
-     "w": "leave a lasting impression",
-     "def": "to be remembered for a long time",
-     "ar": "يترك انطباعاً دائماً",
-     "frame": "___ left a lasting impression on me."
-    },
-    {
-     "w": "take-home message",
-     "def": "the main idea people should remember",
-     "ar": "الرسالة الأساسية",
-     "frame": "My take-home message is ___."
-    }
-   ],
    "dialogue": {
     "scene": "Dalia has just given a talk about the first Saudi astronauts. Her teacher, Ms Kim, gives her feedback on her ending.",
     "p1": [
@@ -2169,11 +2414,19 @@
      },
      {
       "s": "Ms Kim",
-      "t": "Exactly. A strong ending should recap your main points first."
+      "t": "Many speakers do that. They spend hours on the middle and forget that the last thirty seconds are what people remember."
+     },
+     {
+      "s": "Ms Kim",
+      "t": "Exactly. A strong ending should run through your main points first."
      },
      {
       "s": "Dalia",
-      "t": "So: 'To recap, we've looked at their training, their mission and what they achieved.'"
+      "t": "So: 'Let me run through the main points: their training, their mission and what they achieved.'"
+     },
+     {
+      "s": "Ms Kim",
+      "t": "Keep it short, though. A summary is a reminder, not a second presentation."
      }
     ],
     "p2": [
@@ -2183,22 +2436,30 @@
      },
      {
       "s": "Dalia",
-      "t": "'In a nutshell: if they could reach space, we can reach our goals.'"
+      "t": "'Put simply: if they could reach space, we can reach our goals.'"
      },
      {
       "s": "Ms Kim",
-      "t": "Lovely. All things considered, it was a great talk. The bottom line is that endings matter."
+      "t": "Lovely. All told, it was a great talk. The bottom line is that endings matter."
      },
      {
       "s": "Dalia",
-      "t": "And a final question would leave a lasting impression, wouldn't it?"
+      "t": "And a final question would stay with the audience, wouldn't it?"
      },
      {
       "s": "Ms Kim",
       "t": "It would. Try: 'So, where will your dreams take you?'"
+     },
+     {
+      "s": "Dalia",
+      "t": "That's much better than 'That's it'. But won't a question sound a bit dramatic?"
+     },
+     {
+      "s": "Ms Kim",
+      "t": "Not if you say it calmly and pause afterwards. Let the audience think about it for a moment before you thank them."
      }
     ],
-    "focus": "A strong ending should recap your main points first.",
+    "focus": "A strong ending should run through your main points first.",
     "qs": [
      "What was wrong with Dalia's first ending?",
      "What is Dalia's take-home message?"
@@ -2209,15 +2470,15 @@
     "prompts": [
      {
       "q": "Can you remind us of your main points?",
-      "hint": "Use 'To recap, …' and list your points briefly."
+      "hint": "Use 'Let me run through the main points' and list them briefly. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "If we remember only one thing, what should it be?",
-      "hint": "Give your take-home message with 'In a nutshell, …' or 'The bottom line is …'."
+      "hint": "Give your take-home message with 'Put simply, …' or 'The bottom line is …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "How will you make your ending memorable?",
-      "hint": "Finish with a question, a quotation or a call to action."
+      "hint": "Finish with a question, a quotation or a call to action. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2233,23 +2494,165 @@
      "Which is more important in a talk: the beginning or the ending?"
     ]
    },
-   "exit": "Summarise something you learned this week in two sentences, using 'In a nutshell' or 'The bottom line is'."
+   "exit": "Summarise something you learned this week in two sentences, using 'Put simply' or 'The bottom line is'.",
+   "expressions": [
+    {
+     "w": "run through the main points",
+     "def": "to repeat the key ideas quickly",
+     "ar": "يستعرض النقاط الرئيسية بسرعة",
+     "frame": "Before I finish, let me run through the main points: ___."
+    },
+    {
+     "w": "put simply",
+     "def": "said in the easiest way to understand",
+     "ar": "ببساطة",
+     "frame": "Put simply, ___."
+    },
+    {
+     "w": "all told",
+     "def": "when everything is considered or counted",
+     "ar": "إجمالاً",
+     "frame": "All told, ___ was a success."
+    },
+    {
+     "w": "the bottom line is",
+     "def": "the most important fact is",
+     "ar": "خلاصة القول",
+     "frame": "The bottom line is that ___."
+    },
+    {
+     "w": "stay with someone",
+     "def": "to be remembered by someone for a long time",
+     "ar": "يبقى عالقاً في الذهن",
+     "frame": "___ has stayed with me ever since."
+    },
+    {
+     "w": "take-home message",
+     "def": "the main idea people should remember",
+     "ar": "الرسالة الأساسية",
+     "frame": "My take-home message is ___."
+    }
+   ],
+   "recycle": [
+    "to recap",
+    "in a nutshell",
+    "all things considered",
+    "leave a lasting impression"
+   ]
   },
   "2-5": {
    "objective": "Today you will plan and give a complete, well-structured talk on a topic you care about.",
    "warmup": "If you could give a talk to the whole country, what would you talk about?",
+   "dialogue": {
+    "scene": "Sultan is rehearsing a five-minute talk called 'Why Everyone Should Learn to Swim' for a TEDx-style event at his school. His friend Jack is timing him.",
+    "p1": [
+     {
+      "s": "Jack",
+      "t": "Ready? Five minutes, starting now."
+     },
+     {
+      "s": "Sultan",
+      "t": "Picture this: a hot Friday at the beach, and a child slips under the water. Would you know what to do?"
+     },
+     {
+      "s": "Jack",
+      "t": "Great, you opened with a bang. You've got everyone's attention already."
+     },
+     {
+      "s": "Sultan",
+      "t": "Thousands of people around the world drown every week. Yet swimming is a skill almost anyone can learn."
+     },
+     {
+      "s": "Jack",
+      "t": "Is that figure accurate? Someone in the audience might ask where it comes from."
+     },
+     {
+      "s": "Sultan",
+      "t": "It's from the World Health Organization. I'll mention that, so nobody thinks I've made it up."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Jack",
+      "t": "Stop there for a second. You're rushing. Pace yourself."
+     },
+     {
+      "s": "Sultan",
+      "t": "Sorry. This brings me to my three reasons: safety, health and confidence."
+     },
+     {
+      "s": "Jack",
+      "t": "Good. Now tell your own story. That's how you'll hold the audience's attention."
+     },
+     {
+      "s": "Jack",
+      "t": "But don't tell it straight away. Build up to it, so it lands at the right moment."
+     },
+     {
+      "s": "Sultan",
+      "t": "Right. I couldn't swim until I was twelve, so I speak from the heart."
+     },
+     {
+      "s": "Jack",
+      "t": "And the ending?"
+     },
+     {
+      "s": "Sultan",
+      "t": "To recap: learn to swim, teach someone else and keep our beaches safe. That's my call to action."
+     },
+     {
+      "s": "Jack",
+      "t": "Four minutes fifty. Perfect timing, and much calmer than your first attempt."
+     }
+    ],
+    "focus": "This brings me to my three reasons: safety, health and confidence.",
+    "qs": [
+     "How does Sultan open his talk?",
+     "What advice does Jack give Sultan?"
+    ]
+   },
+   "speakout": {
+    "scene": "You've been invited to give a five-minute TEDx-style talk at your school. Choose a topic you care about and present your outline to the organiser (the teacher).",
+    "prompts": [
+     {
+      "q": "How will you open your talk?",
+      "hint": "Use a hook: 'Picture this: …', a startling fact or a question. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "How will you organise the middle part?",
+      "hint": "Give three points and link them with signposting phrases. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "How will you end, and what's your call to action?",
+      "hint": "Recap, give your take-home message and tell us what to do. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Great Speakers, Great Habits",
+    "points": [
+     "Many professional speakers rehearse a talk dozens of times before giving it.",
+     "Pausing for a second or two after an important point helps the audience remember it.",
+     "Speaking slowly and making eye contact makes a speaker seem more confident."
+    ],
+    "qs": [
+     "What frightens people most about public speaking?",
+     "Which tip from this unit will you use first?"
+    ]
+   },
+   "exit": "Give me the opening and the closing sentence of your own talk.",
    "expressions": [
     {
-     "w": "picture this",
-     "def": "used to ask listeners to imagine a scene",
-     "ar": "تخيّلوا هذا المشهد",
-     "frame": "Picture this: ___."
+     "w": "open with a bang",
+     "def": "to start in a very exciting way",
+     "ar": "يبدأ بداية قوية لافتة",
+     "frame": "To open with a bang, I would start with ___."
     },
     {
-     "w": "this brings me to",
-     "def": "used to move on to the next point",
-     "ar": "وهذا ينقلني إلى",
-     "frame": "This brings me to my final point: ___."
+     "w": "build up to",
+     "def": "to prepare gradually for an important moment",
+     "ar": "يمهّد تدريجياً لـ",
+     "frame": "In my talk, I would build up to ___."
     },
     {
      "w": "speak from the heart",
@@ -2276,88 +2679,10 @@
      "frame": "To pace myself during a talk, I ___."
     }
    ],
-   "dialogue": {
-    "scene": "Sultan is rehearsing a five-minute talk called 'Why Everyone Should Learn to Swim' for a TEDx-style event at his school. His friend Jack is timing him.",
-    "p1": [
-     {
-      "s": "Jack",
-      "t": "Ready? Five minutes, starting now."
-     },
-     {
-      "s": "Sultan",
-      "t": "Picture this: a hot Friday at the beach, and a child slips under the water. Would you know what to do?"
-     },
-     {
-      "s": "Jack",
-      "t": "Great opening. You've got everyone's attention already."
-     },
-     {
-      "s": "Sultan",
-      "t": "Thousands of people around the world drown every week. Yet swimming is a skill almost anyone can learn."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Jack",
-      "t": "Stop there for a second. You're rushing. Pace yourself."
-     },
-     {
-      "s": "Sultan",
-      "t": "Sorry. This brings me to my three reasons: safety, health and confidence."
-     },
-     {
-      "s": "Jack",
-      "t": "Good. Now tell your own story. That's how you'll hold the audience's attention."
-     },
-     {
-      "s": "Sultan",
-      "t": "Right. I couldn't swim until I was twelve, so I speak from the heart."
-     },
-     {
-      "s": "Jack",
-      "t": "And the ending?"
-     },
-     {
-      "s": "Sultan",
-      "t": "To recap: learn to swim, teach someone else and keep our beaches safe. That's my call to action."
-     }
-    ],
-    "focus": "This brings me to my three reasons: safety, health and confidence.",
-    "qs": [
-     "How does Sultan open his talk?",
-     "What advice does Jack give Sultan?"
-    ]
-   },
-   "speakout": {
-    "scene": "You've been invited to give a five-minute TEDx-style talk at your school. Choose a topic you care about and present your outline to the organiser (the teacher).",
-    "prompts": [
-     {
-      "q": "How will you open your talk?",
-      "hint": "Use a hook: 'Picture this: …', a startling fact or a question."
-     },
-     {
-      "q": "How will you organise the middle part?",
-      "hint": "Give three points and link them with signposting phrases."
-     },
-     {
-      "q": "How will you end, and what's your call to action?",
-      "hint": "Recap, give your take-home message and tell us what to do."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Great Speakers, Great Habits",
-    "points": [
-     "Many professional speakers rehearse a talk dozens of times before giving it.",
-     "Pausing for a second or two after an important point helps the audience remember it.",
-     "Speaking slowly and making eye contact makes a speaker seem more confident."
-    ],
-    "qs": [
-     "What frightens people most about public speaking?",
-     "Which tip from this unit will you use first?"
-    ]
-   },
-   "exit": "Give me the opening and the closing sentence of your own talk."
+   "recycle": [
+    "picture this",
+    "this brings me to"
+   ]
   },
   "3-0": {
    "objective": "Today you will give full, natural answers to personal questions in a speaking test interview.",
@@ -2418,6 +2743,14 @@
      {
       "s": "Abeer",
       "t": "When it comes to weekends, I'm quite sociable, so for me it's a family gathering, ideally with my grandmother's kabsa!"
+     },
+     {
+      "s": "Mr Daniel",
+      "t": "Lovely. Notice you added a detail about your grandmother. Examiners remember answers that sound like real life."
+     },
+     {
+      "s": "Abeer",
+      "t": "I wasn't sure if personal details were allowed. I thought formal answers would score higher."
      }
     ],
     "p2": [
@@ -2439,6 +2772,14 @@
      },
      {
       "s": "Mr Daniel",
+      "t": "Is there anything that would worry you about living there?"
+     },
+     {
+      "s": "Abeer",
+      "t": "Probably the distance from my family, and the cost of living, which I've heard is quite high in big cities like Tokyo."
+     },
+     {
+      "s": "Mr Daniel",
       "t": "Excellent. Notice how you never stopped at one sentence. That's exactly what examiners want."
      }
     ],
@@ -2453,15 +2794,15 @@
     "prompts": [
      {
       "q": "What do you find most challenging about studying at your level?",
-      "hint": "Give a full answer: your view, a reason and an example."
+      "hint": "Give a full answer: your view, a reason and an example. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Do you prefer spending time indoors or outdoors?",
-      "hint": "Compare the two with 'whereas' and use 'When it comes to …'."
+      "hint": "Compare the two with 'whereas' and use 'When it comes to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What new skill would you most like to learn in the future?",
-      "hint": "Use 'Off the top of my head' or 'I'd have to say' and explain why."
+      "hint": "Use 'Off the top of my head' or 'I'd have to say' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2484,10 +2825,10 @@
    "warmup": "Do you prefer studying alone or in a group?",
    "expressions": [
     {
-     "w": "whereas",
-     "def": "used to compare two different facts",
-     "ar": "بينما",
-     "frame": "In the first picture ___, whereas in the second ___."
+     "w": "by comparison",
+     "def": "used when comparing something with what was just mentioned",
+     "ar": "بالمقارنة",
+     "frame": "___ is quiet. By comparison, ___ is lively."
     },
     {
      "w": "the key difference is",
@@ -2537,6 +2878,14 @@
      },
      {
       "s": "Ben",
+      "t": "Nice. Could you add what that tells us about the people?"
+     },
+     {
+      "s": "Mishal",
+      "t": "Sure. The student alone is probably revising for an exam. By comparison, the group seems to be planning a project together."
+     },
+     {
+      "s": "Ben",
       "t": "Good. Is there anything they have in common?"
      }
     ],
@@ -2555,11 +2904,23 @@
      },
      {
       "s": "Ben",
+      "t": "Why do you think some people prefer studying in noisy places?"
+     },
+     {
+      "s": "Mishal",
+      "t": "I'd imagine background noise helps some people concentrate, whereas total silence makes them feel sleepy or anxious."
+     },
+     {
+      "s": "Ben",
       "t": "Great, you answered both parts of the task. Just try not to describe every small detail."
      },
      {
       "s": "Mishal",
       "t": "Fair point. Compare first, then speculate."
+     },
+     {
+      "s": "Ben",
+      "t": "Exactly. The examiner cares more about your ideas than about the colour of every chair."
      }
     ],
     "focus": "Both pictures show people studying, but the key difference is the setting.",
@@ -2573,15 +2934,15 @@
     "prompts": [
      {
       "q": "Compare the two pictures. What do they have in common?",
-      "hint": "Start with 'Both pictures show …' and use 'similarly'."
+      "hint": "Start with 'Both pictures show …' and use 'similarly'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What is the key difference between them?",
-      "hint": "Use 'whereas' or 'In contrast to …'."
+      "hint": "Use 'whereas' or 'In contrast to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Which experience do you think the shoppers enjoy more?",
-      "hint": "Give your view and support it with a reason from the pictures."
+      "hint": "Give your view and support it with a reason from the pictures. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2597,11 +2958,108 @@
      "Will shops disappear completely one day? Why or why not?"
     ]
    },
-   "exit": "Compare two places you know in two sentences, using 'whereas' and 'the key difference is'."
+   "exit": "Compare two places you know in two sentences, using 'whereas' and 'the key difference is'.",
+   "recycle": [
+    "whereas"
+   ]
   },
   "3-2": {
    "objective": "Today you will speculate about people's feelings and situations in pictures, using a range of advanced phrases.",
    "warmup": "When you see strangers in a café, do you ever guess what their story is?",
+   "dialogue": {
+    "scene": "Ghada and her partner, Lily, look at three pictures of people making decisions: a chef in a busy kitchen, a pilot in a cockpit and a student choosing a university.",
+    "p1": [
+     {
+      "s": "Lily",
+      "t": "The chef looks exhausted. What do you think is going on?"
+     },
+     {
+      "s": "Ghada",
+      "t": "Going by the piles of plates, I'd imagine it's the busiest time of the evening."
+     },
+     {
+      "s": "Lily",
+      "t": "So he's probably under pressure."
+     },
+     {
+      "s": "Ghada",
+      "t": "Definitely. Presumably, a big group has just arrived, and every order has to be perfect."
+     },
+     {
+      "s": "Lily",
+      "t": "What about the pilot? He looks surprisingly calm."
+     },
+     {
+      "s": "Ghada",
+      "t": "Presumably he's trained for years to stay calm. It could well be that he's dealing with bad weather, but he can't show any panic."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Lily",
+      "t": "And the student with the laptop and all those brochures?"
+     },
+     {
+      "s": "Ghada",
+      "t": "If I had to hazard a guess, I'd say she's choosing a university. It could well be that her parents prefer another one."
+     },
+     {
+      "s": "Lily",
+      "t": "Why do you think her parents might disagree?"
+     },
+     {
+      "s": "Ghada",
+      "t": "Going by the brochures, one university is abroad. Parents often prefer their children to study closer to home."
+     },
+     {
+      "s": "Lily",
+      "t": "Ooh, that's a nice idea. Which person has the hardest decision?"
+     },
+     {
+      "s": "Ghada",
+      "t": "I'd say the pilot, because a mistake could affect hundreds of lives, whereas the chef only risks a bad review."
+     },
+     {
+      "s": "Lily",
+      "t": "Good. You speculated first and then justified your choice."
+     }
+    ],
+    "focus": "Going by the piles of plates, I'd imagine it's the busiest time of the evening.",
+    "qs": [
+     "Why does Ghada think the chef is under pressure?",
+     "Who does Ghada think has the hardest decision, and why?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are taking Part 2 of the test. The examiner shows you pictures of people waiting: at an airport, outside a hospital room and before a football final.",
+    "prompts": [
+     {
+      "q": "How might the people be feeling?",
+      "hint": "Use 'I'd imagine …' or 'Going by …, they must be …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What might have happened just before the pictures were taken?",
+      "hint": "Use 'Presumably, …' or 'It could well be that …' with a past form. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Who do you think is finding the wait most difficult?",
+      "hint": "Choose one person and justify your answer with a comparison. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Reading Body Language",
+    "points": [
+     "Communication is not only about words: tone of voice, facial expressions and gestures also carry meaning.",
+     "Some gestures mean different things in different cultures, so they are easy to misread.",
+     "In some parts of the Gulf, men may touch noses when greeting each other as a sign of respect."
+    ],
+    "qs": [
+     "Can you always tell how someone feels just by looking at them?",
+     "Which gestures might confuse a visitor to Saudi Arabia?"
+    ]
+   },
+   "exit": "Look around you and speculate about something or someone, using two different phrases from today.",
    "expressions": [
     {
      "w": "I'd imagine",
@@ -2616,10 +3074,10 @@
      "frame": "Presumably, they've just ___."
     },
     {
-     "w": "judging by",
-     "def": "used to give the reason for your guess",
-     "ar": "بالحكم من",
-     "frame": "Judging by ___, they must be ___."
+     "w": "going by",
+     "def": "judging from; using something as evidence",
+     "ar": "استناداً إلى / بالحكم من",
+     "frame": "Going by ___, they must be ___."
     },
     {
      "w": "could well be",
@@ -2640,84 +3098,9 @@
      "frame": "The person in ___ seems to be under pressure because ___."
     }
    ],
-   "dialogue": {
-    "scene": "Ghada and her partner, Lily, look at three pictures of people making decisions: a chef in a busy kitchen, a pilot in a cockpit and a student choosing a university.",
-    "p1": [
-     {
-      "s": "Lily",
-      "t": "The chef looks exhausted. What do you think is going on?"
-     },
-     {
-      "s": "Ghada",
-      "t": "Judging by the piles of plates, I'd imagine it's the busiest time of the evening."
-     },
-     {
-      "s": "Lily",
-      "t": "So he's probably under pressure."
-     },
-     {
-      "s": "Ghada",
-      "t": "Definitely. Presumably, a big group has just arrived, and every order has to be perfect."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Lily",
-      "t": "And the student with the laptop and all those brochures?"
-     },
-     {
-      "s": "Ghada",
-      "t": "If I had to hazard a guess, I'd say she's choosing a university. It could well be that her parents prefer another one."
-     },
-     {
-      "s": "Lily",
-      "t": "Ooh, that's a nice idea. Which person has the hardest decision?"
-     },
-     {
-      "s": "Ghada",
-      "t": "I'd say the pilot, because a mistake could affect hundreds of lives, whereas the chef only risks a bad review."
-     },
-     {
-      "s": "Lily",
-      "t": "Good. You speculated first and then justified your choice."
-     }
-    ],
-    "focus": "Judging by the piles of plates, I'd imagine it's the busiest time of the evening.",
-    "qs": [
-     "Why does Ghada think the chef is under pressure?",
-     "Who does Ghada think has the hardest decision, and why?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are taking Part 2 of the test. The examiner shows you pictures of people waiting: at an airport, outside a hospital room and before a football final.",
-    "prompts": [
-     {
-      "q": "How might the people be feeling?",
-      "hint": "Use 'I'd imagine …' or 'Judging by …, they must be …'."
-     },
-     {
-      "q": "What might have happened just before the pictures were taken?",
-      "hint": "Use 'Presumably, …' or 'It could well be that …' with a past form."
-     },
-     {
-      "q": "Who do you think is finding the wait most difficult?",
-      "hint": "Choose one person and justify your answer with a comparison."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Reading Body Language",
-    "points": [
-     "Communication is not only about words: tone of voice, facial expressions and gestures also carry meaning.",
-     "Some gestures mean different things in different cultures, so they are easy to misread.",
-     "In some parts of the Gulf, men may touch noses when greeting each other as a sign of respect."
-    ],
-    "qs": [
-     "Can you always tell how someone feels just by looking at them?",
-     "Which gestures might confuse a visitor to Saudi Arabia?"
-    ]
-   },
-   "exit": "Look around you and speculate about something or someone, using two different phrases from today."
+   "recycle": [
+    "judging by"
+   ]
   },
   "3-3": {
    "objective": "Today you will discuss options with a partner, justify your choices and reach a decision.",
@@ -2777,6 +3160,10 @@
      },
      {
       "s": "Adam",
+      "t": "Maybe, but a single day out could create friendships that last the whole year. First impressions matter a lot."
+     },
+     {
+      "s": "Adam",
       "t": "Fair enough. What about the online guide?"
      }
     ],
@@ -2799,6 +3186,14 @@
      },
      {
       "s": "Nasser",
+      "t": "Fair, but new students are often too shy to approach a teacher in their first few weeks."
+     },
+     {
+      "s": "Adam",
+      "t": "That's true. I certainly didn't talk to any teachers when I first arrived."
+     },
+     {
+      "s": "Nasser",
       "t": "Well, I suppose it comes down to what new students need most: friendship or advice. I'd say friendship."
      },
      {
@@ -2817,15 +3212,15 @@
     "prompts": [
      {
       "q": "Which option would you choose first, and why?",
-      "hint": "Use 'The reason I'd go for … is that …'."
+      "hint": "Use 'The reason I'd go for … is that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "I think a youth centre is better. What do you think?",
-      "hint": "Respond with 'That's a valid point, but …' and give your reason."
+      "hint": "Respond with 'That's a valid point, but …' and give your reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "We need to decide. Which one is it?",
-      "hint": "Narrow it down, say what it comes down to, and reach a decision."
+      "hint": "Narrow it down, say what it comes down to, and reach a decision. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2846,12 +3241,98 @@
   "3-4": {
    "objective": "Today you will discuss abstract questions in depth and justify your opinions convincingly.",
    "warmup": "Do you think young people today have more opportunities than their parents did?",
+   "dialogue": {
+    "scene": "In Part 4, the examiner asks Waleed and Kenji to discuss whether technology has made young people less creative.",
+    "p1": [
+     {
+      "s": "Examiner",
+      "t": "Has technology made young people less creative?"
+     },
+     {
+      "s": "Waleed",
+      "t": "It's not as clear-cut as it might seem. On the one hand, many teenagers just consume content rather than create it."
+     },
+     {
+      "s": "Kenji",
+      "t": "True, but I'd go as far as to say that technology has made us more creative. Look at all the young designers online."
+     },
+     {
+      "s": "Waleed",
+      "t": "That's a fair point. My cousin is a case in point: she taught herself animation from free videos."
+     },
+     {
+      "s": "Kenji",
+      "t": "Exactly. Twenty years ago, she would have needed expensive software and a course at a college."
+     },
+     {
+      "s": "Waleed",
+      "t": "Still, watching a tutorial isn't the same as having an original idea of your own."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Examiner",
+      "t": "So why do some people believe the opposite?"
+     },
+     {
+      "s": "Kenji",
+      "t": "That's largely because older generations see us staring at screens and assume we're wasting time."
+     },
+     {
+      "s": "Waleed",
+      "t": "And by the same token, they may not notice the creative things we make on those screens."
+     },
+     {
+      "s": "Kenji",
+      "t": "Still, switching off sometimes has a lot going for it. Boredom can spark great ideas."
+     },
+     {
+      "s": "Waleed",
+      "t": "Absolutely. Some of my best ideas come when my phone's battery has died. So I'd conclude that technology is a tool; creativity depends on how we use it."
+     }
+    ],
+    "focus": "That's largely because older generations see us staring at screens and assume we're wasting time.",
+    "qs": [
+     "How did Waleed's cousin learn animation?",
+     "What does Kenji say about switching off?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are in Part 4 of the test. The examiner asks you some deeper questions about education and the future.",
+    "prompts": [
+     {
+      "q": "Should schools spend less time on exams and more on practical skills?",
+      "hint": "Give a clear opinion with 'I'd go as far as to say …' and justify it. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Some people say university isn't necessary any more. What do you think?",
+      "hint": "Show that it isn't clear-cut, and give a case in point. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Why do you think some people disagree with you?",
+      "hint": "Use 'That's largely because …' to explain their view. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the World: Boredom and Big Ideas",
+    "points": [
+     "Some psychologists believe that short periods of boredom can help people come up with creative ideas.",
+     "Many writers and inventors say their best ideas came while walking or resting, not while working.",
+     "Free online courses now let young people teach themselves skills such as animation, design and music."
+    ],
+    "qs": [
+     "Do you get your best ideas when you are busy or when you are bored?",
+     "Has technology made you more creative or less creative? Give an example."
+    ]
+   },
+   "exit": "Give me your opinion on a big question and justify it in two sentences, using 'That's largely because …'.",
    "expressions": [
     {
-     "w": "there's a lot to be said for",
-     "def": "there are many advantages to",
-     "ar": "هناك الكثير مما يُقال لصالح",
-     "frame": "There's a lot to be said for ___."
+     "w": "have a lot going for it",
+     "def": "to have many advantages",
+     "ar": "له مزايا كثيرة",
+     "frame": "___ has a lot going for it."
     },
     {
      "w": "I'd go as far as to say",
@@ -2884,126 +3365,13 @@
      "frame": "___ is a case in point."
     }
    ],
-   "dialogue": {
-    "scene": "In Part 4, the examiner asks Waleed and Kenji to discuss whether technology has made young people less creative.",
-    "p1": [
-     {
-      "s": "Examiner",
-      "t": "Has technology made young people less creative?"
-     },
-     {
-      "s": "Waleed",
-      "t": "It's not as clear-cut as it might seem. On the one hand, many teenagers just consume content rather than create it."
-     },
-     {
-      "s": "Kenji",
-      "t": "True, but I'd go as far as to say that technology has made us more creative. Look at all the young designers online."
-     },
-     {
-      "s": "Waleed",
-      "t": "That's a fair point. My cousin is a case in point: she taught herself animation from free videos."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Examiner",
-      "t": "So why do some people believe the opposite?"
-     },
-     {
-      "s": "Kenji",
-      "t": "That's largely because older generations see us staring at screens and assume we're wasting time."
-     },
-     {
-      "s": "Waleed",
-      "t": "And by the same token, they may not notice the creative things we make on those screens."
-     },
-     {
-      "s": "Kenji",
-      "t": "Still, there's a lot to be said for switching off sometimes. Boredom can spark great ideas."
-     },
-     {
-      "s": "Waleed",
-      "t": "Absolutely. So I'd conclude that technology is a tool; creativity depends on how we use it."
-     }
-    ],
-    "focus": "That's largely because older generations see us staring at screens and assume we're wasting time.",
-    "qs": [
-     "How did Waleed's cousin learn animation?",
-     "What does Kenji say about switching off?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are in Part 4 of the test. The examiner asks you some deeper questions about education and the future.",
-    "prompts": [
-     {
-      "q": "Should schools spend less time on exams and more on practical skills?",
-      "hint": "Give a clear opinion with 'I'd go as far as to say …' and justify it."
-     },
-     {
-      "q": "Some people say university isn't necessary any more. What do you think?",
-      "hint": "Show that it isn't clear-cut, and give a case in point."
-     },
-     {
-      "q": "Why do you think some people disagree with you?",
-      "hint": "Use 'That's largely because …' to explain their view."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around the World: Boredom and Big Ideas",
-    "points": [
-     "Some psychologists believe that short periods of boredom can help people come up with creative ideas.",
-     "Many writers and inventors say their best ideas came while walking or resting, not while working.",
-     "Free online courses now let young people teach themselves skills such as animation, design and music."
-    ],
-    "qs": [
-     "Do you get your best ideas when you are busy or when you are bored?",
-     "Has technology made you more creative or less creative? Give an example."
-    ]
-   },
-   "exit": "Give me your opinion on a big question and justify it in two sentences, using 'That's largely because …'."
+   "recycle": [
+    "there's a lot to be said for"
+   ]
   },
   "3-5": {
    "objective": "Today you will complete a full C1 Advanced-style speaking test, comparing, speculating and justifying throughout.",
    "warmup": "What's your biggest worry about a speaking test, and how could you deal with it?",
-   "expressions": [
-    {
-     "w": "whereas",
-     "def": "used to compare two different facts",
-     "ar": "بينما",
-     "frame": "___ is relaxing, whereas ___ is stressful."
-    },
-    {
-     "w": "judging by",
-     "def": "used to give the reason for your guess",
-     "ar": "بالحكم من",
-     "frame": "Judging by ___, I'd imagine ___."
-    },
-    {
-     "w": "buy time",
-     "def": "to give yourself more time to think",
-     "ar": "يكسب وقتاً للتفكير",
-     "frame": "To buy time, I might say ___."
-    },
-    {
-     "w": "that's an interesting question",
-     "def": "used to gain a moment before answering",
-     "ar": "هذا سؤال مثير للاهتمام",
-     "frame": "That's an interesting question. I suppose ___."
-    },
-    {
-     "w": "keep the conversation going",
-     "def": "to continue talking without long silences",
-     "ar": "يحافظ على استمرار الحديث",
-     "frame": "To keep the conversation going, I can ask my partner ___."
-    },
-    {
-     "w": "think on your feet",
-     "def": "to think and react quickly",
-     "ar": "يفكّر بسرعة بديهة",
-     "frame": "In the test, you need to think on your feet when ___."
-    }
-   ],
    "dialogue": {
     "scene": "Lama has just finished a mock speaking test. Her teacher, Ms Aisha, goes through each part with her.",
     "p1": [
@@ -3017,17 +3385,25 @@
      },
      {
       "s": "Ms Aisha",
-      "t": "But you bought time nicely: 'That's an interesting question. Let me think about that.'"
+      "t": "But you bought time nicely: 'That's a tough one. Let me think about that.'"
      },
      {
       "s": "Lama",
       "t": "Then I said the farmer works outdoors, whereas the office worker sits indoors all day."
+     },
+     {
+      "s": "Ms Aisha",
+      "t": "Good, but go further. 'The farmer depends on the weather, as opposed to the office worker' would show real comparison."
+     },
+     {
+      "s": "Lama",
+      "t": "That's true. I only described what I could see, not what it meant."
      }
     ],
     "p2": [
      {
       "s": "Ms Aisha",
-      "t": "And your speculation was excellent: 'Judging by the sky, it could well be a long, hot day for him.'"
+      "t": "And your speculation was excellent: 'From the look of the sky, it could well be a long, hot day for him.'"
      },
      {
       "s": "Lama",
@@ -3044,6 +3420,14 @@
      {
       "s": "Ms Aisha",
       "t": "Justify more. Don't just say what you think; always say why. That's what moves you from good to excellent."
+     },
+     {
+      "s": "Lama",
+      "t": "So every time I give an opinion, I should add 'because' and an example?"
+     },
+     {
+      "s": "Ms Aisha",
+      "t": "Exactly, and a contrast when you can. Opinion, reason, example, contrast. Then you're ready."
      }
     ],
     "focus": "Then I said the farmer works outdoors, whereas the office worker sits indoors all day.",
@@ -3057,15 +3441,15 @@
     "prompts": [
      {
       "q": "Part 1: What do you enjoy most about learning English?",
-      "hint": "Give a full answer with a reason and an example."
+      "hint": "Give a full answer with a reason and an example. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Part 2: Compare a picture of people working in a team with a picture of someone working alone. Why might they be working like this?",
-      "hint": "Compare with 'whereas' and speculate with 'Judging by …' or 'I'd imagine …'."
+      "hint": "Compare with 'whereas' or 'as opposed to' and speculate with 'From the look of …' or 'I'd imagine …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Part 4: Will people still need to learn languages when translation apps are perfect?",
-      "hint": "Justify your opinion, give a case in point and think on your feet."
+      "hint": "Justify your opinion, give a case in point and think on your feet. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -3081,16 +3465,59 @@
      "What's your best tip for staying calm in a speaking test?"
     ]
    },
-   "exit": "Tell me what you'll do differently in your next speaking test, and justify your plan."
+   "exit": "Tell me what you'll do differently in your next speaking test, and justify your plan.",
+   "expressions": [
+    {
+     "w": "as opposed to",
+     "def": "used to compare two very different things",
+     "ar": "في مقابل / على عكس",
+     "frame": "I prefer ___ as opposed to ___."
+    },
+    {
+     "w": "from the look of",
+     "def": "based on how something appears",
+     "ar": "بالنظر إلى مظهر",
+     "frame": "From the look of ___, I'd imagine ___."
+    },
+    {
+     "w": "buy time",
+     "def": "to give yourself more time to think",
+     "ar": "يكسب وقتاً للتفكير",
+     "frame": "To buy time, I might say ___."
+    },
+    {
+     "w": "that's a tough one",
+     "def": "used to show a question is hard and to gain time",
+     "ar": "هذا سؤال صعب",
+     "frame": "That's a tough one. I suppose ___."
+    },
+    {
+     "w": "keep the conversation going",
+     "def": "to continue talking without long silences",
+     "ar": "يحافظ على استمرار الحديث",
+     "frame": "To keep the conversation going, I can ask my partner ___."
+    },
+    {
+     "w": "think on your feet",
+     "def": "to think and react quickly",
+     "ar": "يفكّر بسرعة بديهة",
+     "frame": "In the test, you need to think on your feet when ___."
+    }
+   ],
+   "recycle": [
+    "whereas",
+    "judging by",
+    "that's an interesting question"
+   ]
   }
  },
  "kits": {
   "0-0": {
    "words": [
     {
-     "w": "make a real difference",
-     "ar": "يُحدث فرقاً حقيقياً",
-     "ex": "Even one hour a week can make a real difference to a lonely elderly neighbour."
+     "w": "make a dent in",
+     "ar": "يُحدث أثراً ملموساً في",
+     "ex": "Our food drive made a real dent in the waiting list."
     },
     {
      "w": "rally behind",
@@ -3137,7 +3564,7 @@
     },
     {
      "s": "Reem",
-     "t": "It goes without saying that families appreciate it. But think about it: how often do we get to make a real difference in two afternoons?"
+     "t": "It goes without saying that families appreciate it. But think about it: how often do we get to make a dent in a real problem in two afternoons?"
     },
     {
      "s": "Lina",
@@ -3157,9 +3584,9 @@
   "0-1": {
    "words": [
     {
-     "w": "stand out from the crowd",
-     "ar": "يتميّز عن غيره",
-     "ex": "With her bright red bike, Hessa really stood out from the crowd."
+     "w": "set something apart",
+     "ar": "يميّز الشيء عن غيره",
+     "ex": "Its long battery life sets this phone apart."
     },
     {
      "w": "fill a gap in the market",
@@ -3177,9 +3604,9 @@
      "ex": "His honest answers won the audience over."
     },
     {
-     "w": "cost-effective",
-     "ar": "فعّال من حيث التكلفة",
-     "ex": "Solar panels are a cost-effective choice in a sunny country."
+     "w": "budget-friendly",
+     "ar": "مناسب للميزانية",
+     "ex": "Second-hand kit is a budget-friendly choice for beginners."
     },
     {
      "w": "back",
@@ -3202,7 +3629,7 @@
     },
     {
      "s": "Majed",
-     "t": "Good. And we stress that it's cost-effective: schools don't need to buy any new equipment."
+     "t": "Good. And we stress that it's budget-friendly: schools don't need to buy any new equipment."
     },
     {
      "s": "Saud",
@@ -3241,14 +3668,14 @@
      "ex": "The council took action after residents complained about the noise."
     },
     {
-     "w": "a drop in the ocean",
-     "ar": "قطرة في بحر",
-     "ex": "Our donation was a drop in the ocean, but it still helped."
+     "w": "a token gesture",
+     "ar": "لفتة رمزية",
+     "ex": "Planting one tree felt like a token gesture, but it started a movement."
     },
     {
-     "w": "think twice",
-     "ar": "يفكّر مليّاً",
-     "ex": "After the storm, people will think twice before camping in the valley."
+     "w": "give someone pause",
+     "ar": "يجعل المرء يتوقف ويفكّر",
+     "ex": "The photos of damaged reefs gave everyone pause."
     },
     {
      "w": "leave a legacy",
@@ -3267,7 +3694,7 @@
     },
     {
      "s": "Yazeed",
-     "t": "Some students will say one person picking up plastic is a drop in the ocean."
+     "t": "Some students will say one person picking up plastic is just a token gesture."
     },
     {
      "s": "Talal",
@@ -3275,7 +3702,7 @@
     },
     {
      "s": "Yazeed",
-     "t": "Nice. A rhetorical question will make them think twice."
+     "t": "Nice. A rhetorical question like that should give them pause."
     },
     {
      "s": "Talal",
@@ -3299,14 +3726,14 @@
   "0-3": {
    "words": [
     {
-     "w": "in the long run",
-     "ar": "على المدى البعيد",
-     "ex": "Learning to cook will save you a lot of money in the long run."
+     "w": "down the line",
+     "ar": "لاحقاً / في المستقبل",
+     "ex": "Learning to cook will save you money down the line."
     },
     {
-     "w": "weigh up",
-     "ar": "يوازن بين",
-     "ex": "She weighed up the pros and cons before choosing her university."
+     "w": "consider every angle",
+     "ar": "يدرس الأمر من كل الجوانب",
+     "ex": "She considered every angle before choosing her university."
     },
     {
      "w": "set an example",
@@ -3314,9 +3741,9 @@
      "ex": "Older brothers and sisters should set an example for the younger ones."
     },
     {
-     "w": "outweigh",
-     "ar": "يفوق في الأهمية",
-     "ex": "For me, the benefits of living near school outweigh the small house."
+     "w": "more than justify",
+     "ar": "يبرّر الأمر بما يكفي وأكثر",
+     "ex": "The great results more than justified the long hours of training."
     },
     {
      "w": "make a strong case for",
@@ -3348,7 +3775,7 @@
     },
     {
      "s": "Abdulaziz",
-     "t": "In the long run, yes. Only by investing in our health now can we avoid bigger problems later."
+     "t": "Down the line, yes. Only by investing in our health now can we avoid bigger problems later."
     },
     {
      "s": "Mr Harbi",
@@ -3368,9 +3795,9 @@
   "0-4": {
    "words": [
     {
-     "w": "off the beaten track",
-     "ar": "بعيد عن الأماكن المعتادة",
-     "ex": "We stayed in a small village off the beaten track."
+     "w": "away from the tourist trail",
+     "ar": "بعيداً عن مسارات السيّاح",
+     "ex": "We found a quiet beach away from the tourist trail."
     },
     {
      "w": "hidden gem",
@@ -3378,14 +3805,14 @@
      "ex": "This tiny café is a hidden gem in the old part of town."
     },
     {
-     "w": "breathtaking",
-     "ar": "يخطف الأنفاس",
-     "ex": "The sunset over the mountains was breathtaking."
+     "w": "jaw-dropping",
+     "ar": "مذهل يفغر له الفم",
+     "ex": "The fireworks on National Day were jaw-dropping."
     },
     {
-     "w": "once-in-a-lifetime",
-     "ar": "فرصة العمر",
-     "ex": "Watching the final live in the stadium was a once-in-a-lifetime experience."
+     "w": "a feast for the senses",
+     "ar": "متعة للحواس",
+     "ex": "The spice souq is a feast for the senses."
     },
     {
      "w": "soak up the atmosphere",
@@ -3401,7 +3828,7 @@
    "dialogue": [
     {
      "s": "Ethan",
-     "t": "Everyone tells me to visit Riyadh and Jeddah. Is there anything off the beaten track?"
+     "t": "Everyone tells me to visit Riyadh and Jeddah. Is there anything away from the tourist trail?"
     },
     {
      "s": "Mansour",
@@ -3421,7 +3848,7 @@
     },
     {
      "s": "Mansour",
-     "t": "Unaizah has old mud-brick houses that are a real hidden gem. The architecture is breathtaking."
+     "t": "Unaizah has old mud-brick houses that are a real hidden gem. The architecture is jaw-dropping."
     },
     {
      "s": "Ethan",
@@ -3441,14 +3868,14 @@
   "0-5": {
    "words": [
     {
-     "w": "make a strong case for",
-     "ar": "يقدّم حجّة قوية لـ",
-     "ex": "The engineers made a strong case for building the bridge."
+     "w": "argue the case for",
+     "ar": "يدافع عن فكرة بالحجج",
+     "ex": "She argued the case for longer breaks."
     },
     {
-     "w": "at stake",
-     "ar": "على المحك / معرّض للخطر",
-     "ex": "There's a lot at stake in tomorrow's final exam."
+     "w": "hang in the balance",
+     "ar": "معلّق في الميزان / مهدّد",
+     "ex": "With five minutes left, the result still hung in the balance."
     },
     {
      "w": "food for thought",
@@ -3474,7 +3901,7 @@
    "dialogue": [
     {
      "s": "Ms Sara",
-     "t": "Let's hear your opening, Hind. Remember: you've got two minutes to make a strong case."
+     "t": "Let's hear your opening, Hind. Remember: you've got two minutes to argue the case for projects."
     },
     {
      "s": "Hind",
@@ -3519,14 +3946,14 @@
      "ex": "A new phone for 50 riyals? It's too good to be true."
     },
     {
-     "w": "take something with a pinch of salt",
-     "ar": "يتعامل معه بحذر ولا يصدّقه كلياً",
-     "ex": "Take his football predictions with a pinch of salt."
+     "w": "raise a red flag",
+     "ar": "يثير الشكوك / علامة تحذير",
+     "ex": "An app asking for your bank details should raise a red flag."
     },
     {
-     "w": "misleading",
-     "ar": "مضلِّل",
-     "ex": "The headline was misleading; the article said something different."
+     "w": "deceptive",
+     "ar": "خادع",
+     "ex": "The photo was deceptive; the hotel room was much smaller."
     },
     {
      "w": "back up a claim",
@@ -3567,11 +3994,11 @@
     },
     {
      "s": "Shahad",
-     "t": "Which university? If they can't back up the claim, I'd take it with a pinch of salt. And read the fine print."
+     "t": "Which university? If they can't back up the claim, that raises a red flag. And read the fine print."
     },
     {
      "s": "Yousef",
-     "t": "Oh no. 'Monthly subscription: 199 riyals.' I nearly fell for a really misleading advert!"
+     "t": "Oh no. 'Monthly subscription: 199 riyals.' I nearly fell for a really deceptive advert!"
     }
    ],
    "grammar": {
@@ -3675,14 +4102,14 @@
      "ex": "His muddy shoes were a dead giveaway that he'd been in the garden."
     },
     {
-     "w": "on closer inspection",
-     "ar": "عند التدقيق",
-     "ex": "On closer inspection, the 'gold' ring was just painted metal."
+     "w": "on the face of it",
+     "ar": "في الظاهر / للوهلة الأولى",
+     "ex": "On the face of it, the ring looked like real gold."
     },
     {
-     "w": "jump to conclusions",
+     "w": "rush to judgement",
      "ar": "يتسرّع في الحكم",
-     "ex": "Don't jump to conclusions before you hear both sides."
+     "ex": "Don't rush to judgement before you hear both sides."
     },
     {
      "w": "authentic",
@@ -3697,7 +4124,7 @@
     },
     {
      "s": "Fahad",
-     "t": "Hold on, let's not jump to conclusions. It may well have been made with AI."
+     "t": "Hold on, let's not rush to judgement. It may well have been made with AI."
     },
     {
      "s": "Ali",
@@ -3705,7 +4132,7 @@
     },
     {
      "s": "Fahad",
-     "t": "On closer inspection, though, the water around the shark isn't moving at all. There are no ripples."
+     "t": "On the face of it, yes, but the water around the shark isn't moving at all. There are no ripples."
     },
     {
      "s": "Ali",
@@ -3738,9 +4165,9 @@
      "ex": "The researchers increased the sample size to 2,000 people."
     },
     {
-     "w": "draw a conclusion",
-     "ar": "يستخلص نتيجة",
-     "ex": "It's too early to draw a conclusion about the new timetable."
+     "w": "read too much into",
+     "ar": "يحمّل الأمر أكثر مما يحتمل",
+     "ex": "Don't read too much into one bad grade."
     },
     {
      "w": "out of context",
@@ -3790,7 +4217,7 @@
     },
     {
      "s": "Nawaf",
-     "t": "So 'proves' is a sweeping statement. Maybe the article took the findings out of context."
+     "t": "So 'proves' is a sweeping statement. The journalist read too much into the findings, or took them out of context."
     }
    ],
    "grammar": {
@@ -3816,9 +4243,9 @@
      "ex": "The coach told me himself, so it's straight from the horse's mouth."
     },
     {
-     "w": "get the wrong end of the stick",
-     "ar": "يفهم الأمر بشكل خاطئ",
-     "ex": "Sorry, I got the wrong end of the stick; I thought the trip was cancelled."
+     "w": "get your wires crossed",
+     "ar": "يحدث سوء فهم بين الطرفين",
+     "ex": "We got our wires crossed and waited at different gates."
     },
     {
      "w": "unfounded",
@@ -3826,9 +4253,9 @@
      "ex": "Fears that the bridge was unsafe proved unfounded."
     },
     {
-     "w": "set the record straight",
-     "ar": "يصحّح المعلومات",
-     "ex": "The singer gave an interview to set the record straight."
+     "w": "nip something in the bud",
+     "ar": "يقضي على الأمر في مهده",
+     "ex": "The teacher nipped the argument in the bud."
     },
     {
      "w": "verify",
@@ -3863,7 +4290,7 @@
     },
     {
      "s": "Lulwa",
-     "t": "So that's straight from the horse's mouth. I'll set the record straight in the group before anyone stays at home!"
+     "t": "So that's straight from the horse's mouth. I'll nip this in the bud in the group before anyone stays at home!"
     }
    ],
    "grammar": {
@@ -3879,14 +4306,14 @@
   "1-5": {
    "words": [
     {
-     "w": "reliable source",
-     "ar": "مصدر موثوق",
-     "ex": "Is this blog a reliable source for your history essay?"
+     "w": "a peer-reviewed study",
+     "ar": "دراسة محكّمة",
+     "ex": "The article quoted a peer-reviewed study from a medical journal."
     },
     {
-     "w": "take something with a pinch of salt",
-     "ar": "يتعامل معه بحذر ولا يصدّقه كلياً",
-     "ex": "I took his story about meeting a famous footballer with a pinch of salt."
+     "w": "a healthy dose of scepticism",
+     "ar": "قدر صحّي من الشك",
+     "ex": "Read online reviews with a healthy dose of scepticism."
     },
     {
      "w": "hold water",
@@ -3912,7 +4339,7 @@
    "dialogue": [
     {
      "s": "Majed",
-     "t": "Next claim: 'Camels store water in their humps.'"
+     "t": "Fiction, then. Claim two: 'Camels store water in their humps.'"
     },
     {
      "s": "Chris",
@@ -3924,7 +4351,7 @@
     },
     {
      "s": "Chris",
-     "t": "I'd take it with a pinch of salt until we find a reliable source. That website sells dates."
+     "t": "I'd treat it with a healthy dose of scepticism until we find a peer-reviewed study. That website sells dates."
     },
     {
      "s": "Majed",
@@ -3977,9 +4404,9 @@
      "ex": "The report revealed a startling number of road accidents."
     },
     {
-     "w": "set the scene",
-     "ar": "يمهّد ويرسم الإطار",
-     "ex": "The first chapter sets the scene in a busy Jeddah market."
+     "w": "bring something to life",
+     "ar": "يُضفي الحياة على الشيء",
+     "ex": "Her stories brought the history lesson to life."
     }
    ],
    "dialogue": [
@@ -4005,7 +4432,7 @@
     },
     {
      "s": "Hamad",
-     "t": "Exactly. Once you've set the scene, tell them what's coming."
+     "t": "Exactly. Once you've brought the scene to life, tell them what's coming."
     },
     {
      "s": "Turki",
@@ -4108,19 +4535,19 @@
      "ex": "Working from home saves time. On the flip side, it can feel lonely."
     },
     {
-     "w": "what's more",
+     "w": "on top of that",
      "ar": "علاوة على ذلك",
-     "ex": "The course is free. What's more, you get a certificate."
+     "ex": "The course is free. On top of that, you get a certificate."
     },
     {
-     "w": "a double-edged sword",
-     "ar": "سلاح ذو حدّين",
-     "ex": "Fame can be a double-edged sword."
+     "w": "a blessing and a curse",
+     "ar": "نعمة ونقمة في آنٍ واحد",
+     "ex": "Living next to the stadium is a blessing and a curse."
     },
     {
-     "w": "on balance",
-     "ar": "بعد الموازنة",
-     "ex": "On balance, I'd rather live near the sea."
+     "w": "taking everything into account",
+     "ar": "بعد أخذ كل شيء في الحسبان",
+     "ex": "Taking everything into account, I'd rather live near the sea."
     },
     {
      "w": "be offset by",
@@ -4151,20 +4578,20 @@
     },
     {
      "s": "Lucas",
-     "t": "Nice. So the technology is a bit of a double-edged sword here."
+     "t": "Nice. So the technology is a blessing and a curse here."
     },
     {
      "s": "Ziyad",
-     "t": "Exactly. I'll finish with: 'On balance, electric cars make most sense for city driving, for now.'"
+     "t": "Exactly. I'll finish with: 'Taking everything into account, electric cars make most sense for city driving, for now.'"
     }
    ],
    "grammar": {
     "title": "Linking contrast and addition",
-    "ar": "للتضاد: Nonetheless / On the flip side. للإضافة: What's more. للحكم بعد الموازنة: On balance.",
+    "ar": "للتضاد: Nonetheless / On the flip side. للإضافة: On top of that. للحكم بعد الموازنة: Taking everything into account.",
     "examples": [
      "The city is exciting. Nonetheless, it's very noisy.",
      "Electric cars are cheap to run. On the flip side, chargers can be hard to find.",
-     "What's more, the app is completely free."
+     "On top of that, the app is completely free."
     ]
    }
   },
@@ -4181,9 +4608,9 @@
      "ex": "Poor sleep is often the root of the problem."
     },
     {
-     "w": "tackle",
-     "ar": "يعالج / يتصدّى لـ",
-     "ex": "The school is trying to tackle bullying."
+     "w": "get to grips with",
+     "ar": "يتعامل بجدية مع",
+     "ex": "The school is finally getting to grips with bullying."
     },
     {
      "w": "a win-win situation",
@@ -4224,7 +4651,7 @@
     },
     {
      "s": "Omar",
-     "t": "And to tackle the problem fully, we need three things: better buses, safe cycle lanes and shaded walkways."
+     "t": "And to get to grips with the problem, we need three things: better buses, safe cycle lanes and shaded walkways."
     },
     {
      "s": "Rakan",
@@ -4236,7 +4663,7 @@
     "ar": "نبني الحديث على ثلاثة أجزاء: المشكلة ثم الحل ثم الأثر، ونعرض الأفكار في مجموعات من ثلاث ليسهل على الجمهور تذكّرها.",
     "examples": [
      "The root of the problem is a lack of choice.",
-     "To tackle it, we need better buses, safer roads and more trees.",
+     "To get to grips with it, we need better buses, safer roads and more trees.",
      "The result? Cleaner air, calmer drivers and happier families."
     ]
    }
@@ -4244,19 +4671,19 @@
   "2-4": {
    "words": [
     {
-     "w": "to recap",
-     "ar": "للتلخيص",
-     "ex": "To recap, the bus leaves at eight and returns at six."
+     "w": "run through the main points",
+     "ar": "يستعرض النقاط الرئيسية بسرعة",
+     "ex": "The coach ran through the main points before the match."
     },
     {
-     "w": "in a nutshell",
-     "ar": "باختصار شديد",
-     "ex": "In a nutshell, the film is about friendship."
+     "w": "put simply",
+     "ar": "ببساطة",
+     "ex": "Put simply, the film is about friendship."
     },
     {
-     "w": "all things considered",
-     "ar": "بعد النظر في كل شيء",
-     "ex": "All things considered, the camping trip was a success."
+     "w": "all told",
+     "ar": "إجمالاً",
+     "ex": "All told, the camping trip was a success."
     },
     {
      "w": "the bottom line is",
@@ -4264,9 +4691,9 @@
      "ex": "The bottom line is that we need more volunteers."
     },
     {
-     "w": "leave a lasting impression",
-     "ar": "يترك انطباعاً دائماً",
-     "ex": "The visit to the Edge of the World left a lasting impression on us."
+     "w": "stay with someone",
+     "ar": "يبقى عالقاً في الذهن",
+     "ex": "The visit to the Edge of the World has stayed with us."
     },
     {
      "w": "take-home message",
@@ -4285,11 +4712,11 @@
     },
     {
      "s": "Ms Kim",
-     "t": "Exactly. A strong ending should recap your main points first."
+     "t": "Exactly. A strong ending should run through your main points first."
     },
     {
      "s": "Dalia",
-     "t": "So: 'To recap, we've looked at their training, their mission and what they achieved.'"
+     "t": "So: 'Let me run through the main points: their training, their mission and what they achieved.'"
     },
     {
      "s": "Ms Kim",
@@ -4297,18 +4724,18 @@
     },
     {
      "s": "Dalia",
-     "t": "'In a nutshell: if they could reach space, we can reach our goals.'"
+     "t": "'Put simply: if they could reach space, we can reach our goals.'"
     },
     {
      "s": "Ms Kim",
-     "t": "Lovely. All things considered, it was a great talk. The bottom line is that endings matter."
+     "t": "Lovely. All told, it was a great talk. The bottom line is that endings matter."
     }
    ],
    "grammar": {
     "title": "Summarising and concluding",
-    "ar": "في نهاية الحديث: نلخّص (To recap) ثم نذكر الفكرة الأهم (The bottom line is / In a nutshell) ثم نختم بسؤال أو دعوة.",
+    "ar": "في نهاية الحديث: نلخّص (Let me run through the main points) ثم نذكر الفكرة الأهم (The bottom line is / Put simply) ثم نختم بسؤال أو دعوة.",
     "examples": [
-     "To recap, we've discussed three main reasons.",
+     "Let me run through the three main reasons we've discussed.",
      "The bottom line is that practice leads to progress.",
      "So I'll leave you with one question: what's stopping you?"
     ]
@@ -4317,14 +4744,14 @@
   "2-5": {
    "words": [
     {
-     "w": "picture this",
-     "ar": "تخيّلوا هذا المشهد",
-     "ex": "Picture this: the whole school working together on one project."
+     "w": "open with a bang",
+     "ar": "يبدأ بداية قوية لافتة",
+     "ex": "The concert opened with a bang: fireworks and drums."
     },
     {
-     "w": "this brings me to",
-     "ar": "وهذا ينقلني إلى",
-     "ex": "This brings me to my final point."
+     "w": "build up to",
+     "ar": "يمهّد تدريجياً لـ",
+     "ex": "The film slowly builds up to a surprising ending."
     },
     {
      "w": "speak from the heart",
@@ -4467,9 +4894,9 @@
   "3-1": {
    "words": [
     {
-     "w": "whereas",
-     "ar": "بينما",
-     "ex": "My brother loves the beach, whereas I prefer the mountains."
+     "w": "by comparison",
+     "ar": "بالمقارنة",
+     "ex": "Riyadh is huge. By comparison, our town feels tiny."
     },
     {
      "w": "the key difference is",
@@ -4550,9 +4977,9 @@
      "ex": "Presumably, you've already heard the news."
     },
     {
-     "w": "judging by",
-     "ar": "بالحكم من",
-     "ex": "Judging by the clouds, it's going to rain."
+     "w": "going by",
+     "ar": "استناداً إلى / بالحكم من",
+     "ex": "Going by the clouds, it's going to rain."
     },
     {
      "w": "could well be",
@@ -4577,7 +5004,7 @@
     },
     {
      "s": "Ghada",
-     "t": "Judging by the piles of plates, I'd imagine it's the busiest time of the evening."
+     "t": "Going by the piles of plates, I'd imagine it's the busiest time of the evening."
     },
     {
      "s": "Lily",
@@ -4604,7 +5031,7 @@
     "title": "Speculating with confidence",
     "ar": "للتخمين بدرجات مختلفة: I'd imagine / Presumably (احتمال قوي)، It could well be that (محتمل جداً)، I'd hazard a guess (تخمين غير مؤكّد).",
     "examples": [
-     "Judging by her smile, she's just heard some good news.",
+     "Going by her smile, she's just heard some good news.",
      "Presumably, they've been waiting for hours.",
      "It could well be that the flight has been delayed."
     ]
@@ -4686,9 +5113,9 @@
   "3-4": {
    "words": [
     {
-     "w": "there's a lot to be said for",
-     "ar": "هناك الكثير مما يُقال لصالح",
-     "ex": "There's a lot to be said for living near your family."
+     "w": "have a lot going for it",
+     "ar": "له مزايا كثيرة",
+     "ex": "Living near your family has a lot going for it."
     },
     {
      "w": "I'd go as far as to say",
@@ -4743,7 +5170,7 @@
     },
     {
      "s": "Kenji",
-     "t": "Still, there's a lot to be said for switching off sometimes. Boredom can spark great ideas."
+     "t": "Still, switching off sometimes has a lot going for it. Boredom can spark great ideas."
     }
    ],
    "grammar": {
@@ -4759,14 +5186,14 @@
   "3-5": {
    "words": [
     {
-     "w": "whereas",
-     "ar": "بينما",
-     "ex": "Some students love exams, whereas others find them stressful."
+     "w": "as opposed to",
+     "ar": "في مقابل / على عكس",
+     "ex": "He works outdoors, as opposed to his brother, who sits in an office."
     },
     {
-     "w": "judging by",
-     "ar": "بالحكم من",
-     "ex": "Judging by the crowds, the match must be about to start."
+     "w": "from the look of",
+     "ar": "بالنظر إلى مظهر",
+     "ex": "From the look of the crowds, the match must be about to start."
     },
     {
      "w": "buy time",
@@ -4774,9 +5201,9 @@
      "ex": "He asked the examiner to repeat the question to buy time."
     },
     {
-     "w": "that's an interesting question",
-     "ar": "هذا سؤال مثير للاهتمام",
-     "ex": "That's an interesting question; I've never really thought about it."
+     "w": "that's a tough one",
+     "ar": "هذا سؤال صعب",
+     "ex": "That's a tough one; I've never really thought about it."
     },
     {
      "w": "keep the conversation going",
@@ -4800,7 +5227,7 @@
     },
     {
      "s": "Ms Aisha",
-     "t": "But you bought time nicely: 'That's an interesting question. Let me think about that.'"
+     "t": "But you bought time nicely: 'That's a tough one. Let me think about that.'"
     },
     {
      "s": "Lama",
@@ -4808,7 +5235,7 @@
     },
     {
      "s": "Ms Aisha",
-     "t": "And your speculation was excellent: 'Judging by the sky, it could well be a long, hot day for him.'"
+     "t": "And your speculation was excellent: 'From the look of the sky, it could well be a long, hot day for him.'"
     },
     {
      "s": "Lama",
@@ -4821,10 +5248,10 @@
    ],
    "grammar": {
     "title": "Review: comparing, speculating, justifying",
-    "ar": "في الاختبار الكامل نجمع بين المقارنة (whereas) والتخمين (Judging by / I'd imagine) والتبرير (The reason … is that).",
+    "ar": "في الاختبار الكامل نجمع بين المقارنة (whereas) والتخمين (From the look of / I'd imagine) والتبرير (The reason … is that).",
     "examples": [
      "The farmer works outdoors, whereas the office worker sits indoors.",
-     "Judging by the sky, it could well be a long day.",
+     "From the look of the sky, it could well be a long day.",
      "The reason I'd choose teamwork is that it builds trust."
     ]
    }
@@ -5005,9 +5432,9 @@
    },
    {
     "type": "mc",
-    "q": "'A drop in the ocean' means …",
+    "q": "A 'token gesture' is …",
     "options": [
-     "a very small amount compared to what is needed",
+     "a small action with little real effect",
      "a sudden fall in quality",
      "a serious mistake",
      "a surprising discovery"
@@ -5058,38 +5485,38 @@
     "words": [
      "The",
      "benefits",
-     "far",
-     "outweigh",
+     "more",
+     "than",
+     "justify",
      "the",
      "costs."
     ],
-    "answer": "The benefits far outweigh the costs.",
+    "answer": "The benefits more than justify the costs.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "To 'weigh up' two options means to …",
+    "q": "To 'consider every angle' means to …",
     "options": [
-     "choose one immediately",
-     "consider the advantages and disadvantages",
-     "reject both of them",
-     "make them heavier"
+     "choose one option immediately",
+     "think about a problem from all points of view",
+     "reject every idea",
+     "measure the corners of a room"
     ],
     "answer": 1
    },
    {
     "type": "order",
     "words": [
-     "In",
+     "Down",
      "the",
-     "long",
-     "run,",
+     "line,",
      "healthy",
      "food",
      "saves",
      "money."
     ],
-    "answer": "In the long run, healthy food saves money.",
+    "answer": "Down the line, healthy food saves money.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5152,9 +5579,9 @@
      "top",
      "is",
      "absolutely",
-     "breathtaking."
+     "jaw-dropping."
     ],
-    "answer": "The view from the top is absolutely breathtaking.",
+    "answer": "The view from the top is absolutely jaw-dropping.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5252,17 +5679,16 @@
    {
     "type": "order",
     "words": [
-     "I'd",
-     "take",
-     "that",
+     "That",
      "claim",
-     "with",
+     "raises",
      "a",
-     "pinch",
-     "of",
-     "salt."
+     "red",
+     "flag",
+     "for",
+     "me."
     ],
-    "answer": "I'd take that claim with a pinch of salt.",
+    "answer": "That claim raises a red flag for me.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5383,11 +5809,11 @@
     "words": [
      "Let's",
      "not",
-     "jump",
+     "rush",
      "to",
-     "conclusions."
+     "judgement."
     ],
-    "answer": "Let's not jump to conclusions.",
+    "answer": "Let's not rush to judgement.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5405,14 +5831,16 @@
     "type": "order",
     "words": [
      "On",
-     "closer",
-     "inspection,",
      "the",
-     "letters",
-     "were",
-     "nonsense."
+     "face",
+     "of",
+     "it,",
+     "the",
+     "photo",
+     "looked",
+     "real."
     ],
-    "answer": "On closer inspection, the letters were nonsense.",
+    "answer": "On the face of it, the photo looked real.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5454,7 +5882,7 @@
    },
    {
     "type": "mc",
-    "q": "It's questionable ___ we can draw any conclusion.",
+    "q": "It's questionable ___ the study tells us anything.",
     "options": [
      "unless",
      "what",
@@ -5492,14 +5920,14 @@
    },
    {
     "type": "mc",
-    "q": "If you misunderstand something, you get the wrong end of the …",
+    "q": "If two people misunderstand each other, they get their ___ crossed.",
     "options": [
-     "line",
-     "story",
-     "stick",
-     "road"
+     "wires",
+     "arms",
+     "fingers",
+     "paths"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "order",
@@ -5645,12 +6073,12 @@
    },
    {
     "type": "mc",
-    "q": "Before the main part of a story or talk, you set the ___.",
+    "q": "A vivid story can bring a dull topic to ___.",
     "options": [
-     "scene",
-     "table",
-     "place",
-     "room"
+     "life",
+     "sleep",
+     "rest",
+     "work"
     ],
     "answer": 0
    },
@@ -5735,7 +6163,7 @@
     "type": "mc",
     "q": "The phone is expensive. ___, its battery lasts for days.",
     "options": [
-     "What's more",
+     "On top of that",
      "As a result",
      "Nonetheless",
      "For example"
@@ -5744,20 +6172,22 @@
    },
    {
     "type": "mc",
-    "q": "Something with both good and bad results is a double-edged …",
+    "q": "Something that is good and bad at the same time is a blessing and a ___.",
     "options": [
-     "coin",
-     "sword",
-     "knife",
-     "blade"
+     "curse",
+     "gift",
+     "prize",
+     "wish"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
     "words": [
-     "On",
-     "balance,",
+     "Taking",
+     "everything",
+     "into",
+     "account,",
      "I",
      "think",
      "the",
@@ -5765,14 +6195,14 @@
      "are",
      "greater."
     ],
-    "answer": "On balance, I think the benefits are greater.",
+    "answer": "Taking everything into account, I think the benefits are greater.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
     "q": "The car is comfortable. ___, it's very cheap to run.",
     "options": [
-     "What's more",
+     "On top of that",
      "Nonetheless",
      "On the flip side",
      "Instead"
@@ -5861,20 +6291,20 @@
   "2-4": [
    {
     "type": "mc",
-    "q": "In a ___, the talk was about hard work and dreams.",
+    "q": "Put ___, the talk was about hard work and dreams.",
     "options": [
-     "shell",
-     "case",
-     "nutshell",
-     "nut"
+     "simply",
+     "simple",
+     "simplify",
+     "simplest"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "mc",
     "q": "Which phrase is best for repeating your main points at the end?",
     "options": [
-     "To recap, …",
+     "Let me run through the main points …",
      "Picture this: …",
      "Let me begin by …",
      "Turning now to …"
@@ -5910,15 +6340,14 @@
     "type": "order",
     "words": [
      "All",
-     "things",
-     "considered,",
+     "told,",
      "the",
      "talk",
      "was",
      "a",
      "success."
     ],
-    "answer": "All things considered, the talk was a success.",
+    "answer": "All told, the talk was a success.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5937,16 +6366,17 @@
    {
     "type": "order",
     "words": [
-     "Picture",
-     "this:",
+     "Open",
+     "with",
      "a",
-     "hot",
-     "day",
-     "at",
+     "bang",
+     "and",
      "the",
-     "beach."
+     "audience",
+     "will",
+     "listen."
     ],
-    "answer": "Picture this: a hot day at the beach.",
+    "answer": "Open with a bang and the audience will listen.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6058,14 +6488,14 @@
   "3-1": [
    {
     "type": "mc",
-    "q": "The library is silent, ___ the café is noisy.",
+    "q": "The library is silent. By ___, the café is very noisy.",
     "options": [
-     "similarly",
-     "therefore",
-     "whereas",
-     "moreover"
+     "comparison",
+     "compare",
+     "comparing",
+     "compared"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6120,12 +6550,12 @@
     "type": "mc",
     "q": "___ by his uniform, he's probably a pilot.",
     "options": [
+     "Going",
      "Guessing",
-     "Looking",
      "Thinking",
-     "Judging"
+     "Seeing"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6301,25 +6731,24 @@
    {
     "type": "order",
     "words": [
-     "There's",
+     "Switching",
+     "off",
+     "sometimes",
+     "has",
      "a",
      "lot",
-     "to",
-     "be",
-     "said",
+     "going",
      "for",
-     "switching",
-     "off",
-     "sometimes."
+     "it."
     ],
-    "answer": "There's a lot to be said for switching off sometimes.",
+    "answer": "Switching off sometimes has a lot going for it.",
     "ar": "رتّب الجملة"
    }
   ],
   "3-5": [
    {
     "type": "mc",
-    "q": "Saying 'That's an interesting question' helps you ___ time.",
+    "q": "Saying 'That's a tough one' helps you ___ time.",
     "options": [
      "sell",
      "buy",
@@ -6343,16 +6772,16 @@
     "type": "order",
     "words": [
      "That's",
-     "an",
-     "interesting",
-     "question.",
+     "a",
+     "tough",
+     "one.",
      "Let",
      "me",
      "think",
      "about",
      "that."
     ],
-    "answer": "That's an interesting question. Let me think about that.",
+    "answer": "That's a tough one. Let me think about that.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6412,14 +6841,14 @@
     },
     {
      "type": "mc",
-     "q": "The benefits of the new timetable far ___ the disadvantages.",
+     "q": "The benefits of the new timetable more than ___ the extra cost.",
      "options": [
-      "overcome",
-      "outrun",
-      "overdo",
-      "outweigh"
+      "justify",
+      "justice",
+      "justified",
+      "justifying"
      ],
-     "answer": 3
+     "answer": 0
     },
     {
      "type": "mc",
@@ -6434,7 +6863,7 @@
     },
     {
      "type": "mc",
-     "q": "___ have I seen such a breathtaking view.",
+     "q": "___ have I seen such a jaw-dropping view.",
      "options": [
       "Always",
       "Ever",
@@ -6693,8 +7122,8 @@
      "q": "Which phrase moves a talk on to a new point?",
      "options": [
       "This brings me to …",
-      "To recap, …",
-      "In a nutshell, …",
+      "Let me run through …",
+      "Put simply, …",
       "Picture this: …"
      ],
      "answer": 0
@@ -6703,7 +7132,7 @@
      "type": "mc",
      "q": "The phone is expensive. ___, it has the best camera on the market.",
      "options": [
-      "What's more",
+      "On top of that",
       "Nonetheless",
       "For example",
       "As a result"
@@ -6738,31 +7167,35 @@
     {
      "type": "order",
      "words": [
-      "To",
-      "recap,",
+      "Let",
+      "me",
+      "run",
+      "through",
+      "the",
+      "three",
+      "main",
+      "ideas",
       "we",
       "have",
       "looked",
-      "at",
-      "three",
-      "main",
-      "ideas."
+      "at."
      ],
-     "answer": "To recap, we have looked at three main ideas.",
+     "answer": "Let me run through the three main ideas we have looked at.",
      "ar": "رتّب الجملة"
     },
     {
      "type": "order",
      "words": [
-      "On",
-      "balance,",
+      "Taking",
+      "everything",
+      "into",
+      "account,",
       "the",
       "benefits",
-      "outweigh",
-      "the",
-      "costs."
+      "are",
+      "greater."
      ],
-     "answer": "On balance, the benefits outweigh the costs.",
+     "answer": "Taking everything into account, the benefits are greater.",
      "ar": "رتّب الجملة"
     }
    ],
@@ -6944,12 +7377,12 @@
     "type": "mc",
     "q": "The view from the mountain was absolutely ___.",
     "options": [
-     "breathless",
-     "breathtaking",
-     "breathing",
-     "breathy"
+     "jaw-dropping",
+     "jaw-breaking",
+     "eye-dropping",
+     "mouth-watering"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
@@ -7012,36 +7445,36 @@
    },
    {
     "type": "mc",
-    "q": "'Take it with a pinch of salt' means …",
+    "q": "If a claim 'raises a red flag', it …",
     "options": [
-     "add more flavour",
-     "don't believe it completely",
-     "remember it carefully",
-     "share it with others"
+     "is a warning sign that something is wrong",
+     "proves the claim is true",
+     "is popular online",
+     "is very old"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
     "q": "Which phrase is best for moving on to a new point in a talk?",
     "options": [
      "This brings me to …",
-     "To recap, …",
+     "Let me run through …",
      "Picture this: …",
-     "In a nutshell, …"
+     "Put simply, …"
     ],
     "answer": 0
    },
    {
     "type": "mc",
-    "q": "To ___, we've looked at three main reasons.",
+    "q": "Let me run ___ the main points we've covered.",
     "options": [
-     "remind",
-     "return",
-     "recap",
-     "revise"
+     "through",
+     "into",
+     "across",
+     "along"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "order",
@@ -7063,7 +7496,7 @@
     "q": "The car is expensive. ___, it is very cheap to run.",
     "options": [
      "Nonetheless",
-     "What's more",
+     "On top of that",
      "As a result",
      "For this reason"
     ],

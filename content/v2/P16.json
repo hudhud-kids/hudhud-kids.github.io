@@ -81,7 +81,7 @@
   {
    "q": "Which phrase is best for summarising at the end of a talk?",
    "options": [
-    "All things considered, …",
+    "All told, …",
     "Picture this: …",
     "Let me begin by …",
     "Turning now to …"
@@ -124,7 +124,7 @@
    "answer": 1
   },
   {
-   "script": "This advert claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. I'd take it with a pinch of salt.",
+   "script": "This advert claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. That raises a red flag for me.",
    "q": "Why does the speaker doubt the reviews?",
    "options": [
     "They were all posted on the same day.",
@@ -198,7 +198,7 @@
  "aloud": [
   "Not only does public transport reduce traffic, but it also cuts pollution.",
   "The photograph can't have been taken in winter; the trees are full of leaves.",
-  "All things considered, the benefits of the project far outweigh the costs."
+  "All told, the benefits of the project more than justify the costs."
  ],
  "speak": [
   "Persuade me that every teenager should learn a practical skill, such as cooking or first aid.",
