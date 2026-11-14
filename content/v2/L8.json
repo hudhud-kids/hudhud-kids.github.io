@@ -75,7 +75,7 @@
     ],
     [
      "Learning Online",
-     "disagree politely about online lessons by agreeing with part of an idea first",
+     "disagree politely about learning online by agreeing with part of an idea first",
      "I see your point, but … / That's true, but … / You've got a point."
     ],
     [
@@ -89,8 +89,8 @@
      "I couldn't agree more. / You may be right, but … / Not necessarily."
     ],
     [
-     "Planning the Class Trip",
-     "discuss choices for a class trip, agree and disagree politely, and reach an agreement",
+     "Planning the Team Trip",
+     "discuss choices for a team trip, agree and disagree politely, and reach an agreement",
      "I'm with you on that. / I'm not so sure about that. / Fair enough."
     ]
    ]
@@ -172,7 +172,7 @@
     ],
     [
      "Whose Is It?",
-     "describe people in your family or class using 'whose' and other details",
+     "describe people in your family using 'whose' and other details",
      "He's the boy whose … / She's the one whose …"
     ],
     [
@@ -232,6 +232,7 @@
    ],
    "dialogue": {
     "scene": "Omar and his sister Reem are talking about a new football video game at home.",
+    "scene_emoji": "🎮",
     "p1": [
      {
       "s": "Reem",
@@ -275,7 +276,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your school magazine is asking students: should children have a daily screen-time limit? I'm a reporter, and I want to interview you.",
+    "scene": "A gaming channel for kids is asking its viewers: should children have a daily screen-time limit? I'm the host, and I want to interview you.",
     "prompts": [
      {
       "q": "What do you think about having a daily screen-time limit?",
@@ -464,6 +465,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and his cousin Sam have just watched an animated film at a cinema in Jeddah.",
+    "scene_emoji": "🎬",
     "p1": [
      {
       "s": "Sam",
@@ -497,7 +499,7 @@
      },
      {
       "s": "Faisal",
-      "t": "In my opinion, it's the best film this year. Let's tell everyone at school!"
+      "t": "In my opinion, it's the best film this year. Let's tell the whole family tonight!"
      }
     ],
     "focus": "I found it really funny, but the plot was a bit confusing in the middle.",
@@ -696,6 +698,7 @@
    ],
    "dialogue": {
     "scene": "Reem lives in Riyadh. Her friend Lama lives in a small town in Qassim. They are talking on a video call.",
+    "scene_emoji": "🏙️",
     "p1": [
      {
       "s": "Reem",
@@ -711,17 +714,17 @@
      },
      {
       "s": "Lama",
-      "t": "That's true, but Riyadh is so crowded. How long does it take you to get to school?"
+      "t": "That's true, but Riyadh is so crowded. How long does it take you to get to your swimming club?"
      }
     ],
     "p2": [
      {
       "s": "Reem",
-      "t": "About forty minutes, because of the traffic jams every morning."
+      "t": "About forty minutes, because of the traffic jams every afternoon."
      },
      {
       "s": "Lama",
-      "t": "Forty minutes! I walk to school in five."
+      "t": "Forty minutes! I walk to my club in five."
      },
      {
       "s": "Reem",
@@ -735,7 +738,7 @@
     "focus": "It seems to me that small towns are a bit boring.",
     "qs": [
      "Why does Lama love her town?",
-     "Why does it take Reem forty minutes to get to school?"
+     "Why does it take Reem forty minutes to get to her swimming club?"
     ]
    },
    "speakout": {
@@ -928,6 +931,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and Omar are choosing what to eat at a food court in a mall in Dammam.",
+    "scene_emoji": "🍔",
     "p1": [
      {
       "s": "Omar",
@@ -975,7 +979,7 @@
     ]
    },
    "speakout": {
-    "scene": "We're on a school trip, and we stop to eat. I'll tell you what I like and don't like. Agree or disagree with me.",
+    "scene": "We're on a road trip with our families, and we stop at a food court to eat. I'll tell you what I like and don't like. Agree or disagree with me.",
     "prompts": [
      {
       "q": "I love burgers and fries.",
@@ -1122,8 +1126,8 @@
    "exit": "Listen: 'I'm hungry.' 'I can't swim very well.' Answer both sentences with a short agreement, then add one more idea."
   },
   "1-2": {
-   "objective": "Today you will disagree politely about online lessons by agreeing with part of an idea first.",
-   "warmup": "Have you ever had lessons online? Did you like them?",
+   "objective": "Today you will disagree politely about learning online by agreeing with part of an idea first.",
+   "warmup": "Have you ever learnt something new from online videos? Did it work?",
    "expressions": [
     {
      "w": "I see your point, but …",
@@ -1163,11 +1167,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem and her classmate Emma are talking about last week's online lessons.",
+    "scene": "Reem and her friend Emma have been learning to bake cakes from online videos. Emma loves it, but Reem isn't sure.",
+    "scene_emoji": "🧁",
     "p1": [
      {
       "s": "Emma",
-      "t": "I loved the online lessons last week. I could learn in my pyjamas!"
+      "t": "I love learning to bake from online videos. I can watch them in my pyjamas!"
      },
      {
       "s": "Reem",
@@ -1175,67 +1180,67 @@
      },
      {
       "s": "Emma",
-      "t": "Why not? It was so quiet at home."
+      "t": "Why not? Your kitchen is so quiet."
      },
      {
       "s": "Reem",
-      "t": "Not in my house! My little brothers were a big distraction."
+      "t": "Not when my little brothers are at home! They were a big distraction."
      }
     ],
     "p2": [
      {
       "s": "Emma",
-      "t": "OK, you've got a point. But we didn't waste time in traffic."
+      "t": "OK, you've got a point. But the videos are free, and we don't waste time in traffic."
      },
      {
       "s": "Reem",
-      "t": "That's true, but I missed my friends. I prefer learning face to face."
+      "t": "That's true, but my cake was a disaster. I prefer learning face to face with a real chef."
      },
      {
       "s": "Emma",
-      "t": "To be honest, I feel the same way. Seeing everyone at school is more fun."
+      "t": "To be honest, I feel the same way. My cake looked like a pancake!"
      },
      {
       "s": "Reem",
-      "t": "So online lessons are good sometimes, but not every day."
+      "t": "So let's try the baking workshop at the mall, and watch videos at home too."
      }
     ],
     "focus": "I see your point, but I couldn't concentrate at all.",
     "qs": [
      "Why couldn't Reem concentrate at home?",
-     "What does Emma agree with at the end?"
+     "What happened to Emma's cake?"
     ]
    },
    "speakout": {
-    "scene": "I think all school lessons should be online. You don't agree. Let's discuss it politely.",
+    "scene": "I think kids should learn everything from online videos: cooking, drawing, even football. You don't agree. Let's discuss it politely.",
     "prompts": [
      {
-      "q": "Online lessons are better because you can stay at home.",
+      "q": "Online videos are better because you can learn at home.",
       "hint": "Start with 'I see your point, but …' and give your reason."
      },
      {
-      "q": "Students don't waste time travelling to school.",
+      "q": "Videos are free, and you don't waste time travelling.",
       "hint": "Agree with part of it: 'That's true, but …'."
      },
      {
-      "q": "At home there are no noisy classmates.",
+      "q": "At home, there's nobody to distract you.",
       "hint": "Say 'You've got a point' or disagree, and talk about distractions at home."
      }
     ]
    },
    "culture": {
-    "title": "Learning Around the World",
+    "title": "Learning Online",
     "points": [
-     "In 2020, millions of students around the world studied online from home.",
+     "Millions of people around the world learn skills like cooking and drawing from online videos.",
      "Saudi Arabia's Madrasati platform helped millions of students learn online.",
      "In Australia, some children who live far from towns have lessons over the internet."
     ],
     "qs": [
-     "In your opinion, what's the best thing about online lessons?",
-     "Do you think face-to-face lessons are better? Why?"
+     "In your opinion, what's the best thing about learning online?",
+     "Do you think learning face to face is better? Why?"
     ]
    },
-   "exit": "I'll say: 'All homework should be online.' Disagree with me politely in two sentences."
+   "exit": "I'll say: 'Everyone should learn to cook from videos.' Disagree with me politely in two sentences."
   },
   "1-3": {
    "objective": "Today you will agree strongly or disagree politely about rules and responsibilities at home.",
@@ -1280,6 +1285,7 @@
    ],
    "dialogue": {
     "scene": "Sara wants a pet cat. She and her dad are talking about it at dinner.",
+    "scene_emoji": "🐱",
     "p1": [
      {
       "s": "Sara",
@@ -1295,7 +1301,7 @@
      },
      {
       "s": "Dad",
-      "t": "Every day? Even during exams?"
+      "t": "Every day? Even when we visit Grandma for the weekend?"
      }
     ],
     "p2": [
@@ -1399,11 +1405,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Sam are cleaning a beach in Jeddah with their school's environment club.",
+    "scene": "Omar and Sam are snorkelling on a family boat trip in the Red Sea near Jeddah. They are collecting plastic from the water with a net.",
+    "scene_emoji": "🐢",
     "p1": [
      {
       "s": "Sam",
-      "t": "Look at all these plastic bottles! We should stop using single-use plastic."
+      "t": "Look at all these plastic bottles in the water! We should stop using single-use plastic."
      },
      {
       "s": "Omar",
@@ -1411,11 +1418,11 @@
      },
      {
       "s": "Sam",
-      "t": "But one small club can't make a difference."
+      "t": "But two boys with a net can't make a difference."
      },
      {
       "s": "Omar",
-      "t": "You may be right, but if every school does this, it will help."
+      "t": "You may be right, but if every family on every boat does this, it will help."
      }
     ],
     "p2": [
@@ -1436,17 +1443,17 @@
       "t": "Not necessarily. If you ask me, bags you can use again and again are the best."
      }
     ],
-    "focus": "You may be right, but if every school does this, it will help.",
+    "focus": "You may be right, but if every family on every boat does this, it will help.",
     "qs": [
      "Why does Omar think single-use plastic is terrible?",
      "What kind of bag does Omar think is the best?"
     ]
    },
    "speakout": {
-    "scene": "Our class is choosing one green project for this year. I have some ideas. Agree or disagree with each one politely.",
+    "scene": "Your neighbourhood is choosing one green idea for its new park. I have some ideas. Agree or disagree with each one politely.",
     "prompts": [
      {
-      "q": "Let's stop using plastic bottles at school.",
+      "q": "Let's stop selling plastic bottles in the park.",
       "hint": "React with 'I couldn't agree more' or 'You may be right, but …'."
      },
      {
@@ -1464,7 +1471,7 @@
     "points": [
      "The Saudi Green Initiative plans to plant 10 billion trees across the country.",
      "Mangrove trees on the Red Sea coast give a home to fish and birds.",
-     "Many Saudi schools now have clubs that clean beaches and parks."
+     "Volunteers in many Saudi cities clean beaches and parks together."
     ],
     "qs": [
      "Do you think planting trees in the desert is a good idea? Why?",
@@ -1474,8 +1481,8 @@
    "exit": "I'll say: 'Recycling is a waste of time.' Disagree with me politely in two sentences."
   },
   "1-5": {
-   "objective": "Today you will discuss choices for a class trip, agree and disagree politely, and reach an agreement.",
-   "warmup": "What's the best school trip you've ever been on?",
+   "objective": "Today you will discuss choices for a team trip, agree and disagree politely, and reach an agreement.",
+   "warmup": "What's the best trip you've ever been on with friends or family?",
    "expressions": [
     {
      "w": "I'm with you on that.",
@@ -1515,7 +1522,8 @@
     }
    ],
    "dialogue": {
-    "scene": "The class can choose one trip this term. Khalid, the class leader, and Ali are discussing three choices.",
+    "scene": "In this invented story, Khalid's neighbourhood football team has just won a local league. The prize is a free team trip. Khalid, the captain, and Ali are discussing three choices.",
+    "scene_emoji": "🏆",
     "p1": [
      {
       "s": "Khalid",
@@ -1527,7 +1535,7 @@
      },
      {
       "s": "Khalid",
-      "t": "I'm with you on that. But some students say it's boring."
+      "t": "I'm with you on that. But some players say it's boring."
      },
      {
       "s": "Ali",
@@ -1537,7 +1545,7 @@
     "p2": [
      {
       "s": "Khalid",
-      "t": "The beach is fun too. Lots of students love swimming."
+      "t": "The beach is fun too. Lots of the players love swimming."
      },
      {
       "s": "Ali",
@@ -1545,7 +1553,7 @@
      },
      {
       "s": "Khalid",
-      "t": "Fair enough. Let's ask the class and see what the majority wants."
+      "t": "Fair enough. Let's ask the team and see what the majority wants."
      },
      {
       "s": "Ali",
@@ -1563,18 +1571,18 @@
     ]
    },
    "speakout": {
-    "scene": "You and I are on the class committee. We must choose one place for the end-of-year trip. I'll give my opinions; agree or disagree politely, and help us reach an agreement.",
+    "scene": "You and I are in charge of our football team's prize trip. We must choose one place. I'll give my opinions; agree or disagree politely, and help us reach an agreement.",
     "prompts": [
      {
       "q": "I think we should go to the zoo. Everyone likes animals.",
       "hint": "Agree or disagree with 'I'm with you on that' or 'I'm not so sure about that', and give a reason."
      },
      {
-      "q": "The water park is too expensive for some students.",
+      "q": "The water park is too expensive for some players.",
       "hint": "React with 'Fair enough' or 'That's true, but …', and suggest another idea."
      },
      {
-      "q": "So, what should we tell the class? Have we come to an agreement?",
+      "q": "So, what should we tell the team? Have we come to an agreement?",
       "hint": "Sum up: say the place you both agree on and why."
      }
     ]
@@ -1588,10 +1596,10 @@
     ],
     "qs": [
      "Would you like to visit Ithra? Why or why not?",
-     "When your class can't agree, what's the fairest way to decide?"
+     "When your team or family can't agree, what's the fairest way to decide?"
     ]
    },
-   "exit": "I'll suggest: 'Let's go to the desert for our class trip.' Agree or disagree in two sentences, and give a reason."
+   "exit": "I'll suggest: 'Let's go to the desert for our team trip.' Agree or disagree in two sentences, and give a reason."
   },
   "2-0": {
    "objective": "Today you will give a friend advice about a problem with another friend.",
@@ -1871,7 +1879,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal plays video games until midnight. In the morning, his PE teacher, Mr Saleh, notices he looks tired.",
+    "scene": "Faisal plays video games until midnight. The next morning at football training, his coach, Mr Saleh, notices he looks tired.",
+    "scene_emoji": "😴",
     "p1": [
      {
       "s": "Mr Saleh",
@@ -2228,6 +2237,7 @@
    ],
    "dialogue": {
     "scene": "Majed and Sultan present a kids' podcast called 'Ask Us'. Today they are answering a message from a listener.",
+    "scene_emoji": "🎙️",
     "p1": [
      {
       "s": "Majed",
@@ -2239,7 +2249,7 @@
      },
      {
       "s": "Majed",
-      "t": "I agree. It might help to take lessons at a sports club. If you practise every week, you'll improve quickly."
+      "t": "I agree. It might help to join a swimming club. If you practise every week, you'll improve quickly."
      },
      {
       "s": "Sultan",
@@ -2343,11 +2353,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Ali and Daniel are preparing a class presentation called 'My Role Model'.",
+    "scene": "Ali and Daniel are planning a short video called 'My Role Model' for an online video competition for kids.",
+    "scene_emoji": "🎥",
     "p1": [
      {
       "s": "Daniel",
-      "t": "Ali, who are you going to talk about in the presentation?"
+      "t": "Ali, who are you going to talk about in your video?"
      },
      {
       "s": "Ali",
@@ -2377,7 +2388,7 @@
      },
      {
       "s": "Ali",
-      "t": "Great choice! I think our presentations will be the best in the class."
+      "t": "Great choice! I think our videos will be the best in the competition!"
      }
     ],
     "focus": "He's a doctor who works in a village hospital.",
@@ -2387,7 +2398,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your school is making a 'Wall of Heroes'. I'm the teacher, and I want you to describe someone you look up to.",
+    "scene": "A kids' TV channel is making a show called 'Heroes'. I'm the presenter, and I want you to describe someone you look up to.",
     "prompts": [
      {
       "q": "Who is your role model?",
@@ -2460,6 +2471,7 @@
    ],
    "dialogue": {
     "scene": "Reem and Emma are at a science and technology exhibition in Riyadh, looking at new inventions.",
+    "scene_emoji": "🤖",
     "p1": [
      {
       "s": "Reem",
@@ -2503,7 +2515,7 @@
     ]
    },
    "speakout": {
-    "scene": "You've invented a new gadget for kids. I'm a judge at the school science fair. Describe your invention to me in detail.",
+    "scene": "You've invented a new gadget for kids. I'm a judge on a TV show for young inventors. Describe your invention to me in detail.",
     "prompts": [
      {
       "q": "What's your invention?",
@@ -2650,7 +2662,7 @@
    "exit": "Describe a place you love in two sentences. Use 'where' in one of them."
   },
   "3-3": {
-   "objective": "Today you will describe people in your family or class using 'whose' and other details.",
+   "objective": "Today you will describe people in your family using 'whose' and other details.",
    "warmup": "Who do you look like in your family?",
    "expressions": [
     {
@@ -2692,6 +2704,7 @@
    ],
    "dialogue": {
     "scene": "Faisal is showing his friend Daniel an old family photo at his grandfather's house.",
+    "scene_emoji": "📷",
     "p1": [
      {
       "s": "Daniel",
@@ -2735,7 +2748,7 @@
     ]
    },
    "speakout": {
-    "scene": "Let's play a guessing game. Think of someone in your family or class. Describe them using 'whose', 'who' and other details, and I'll guess.",
+    "scene": "Let's play a guessing game. Think of someone in your family or a famous person. Describe them using 'whose', 'who' and other details, and I'll guess.",
     "prompts": [
      {
       "q": "Tell me about the person's family or the things they own.",
@@ -2808,6 +2821,7 @@
    ],
    "dialogue": {
     "scene": "Ali left his backpack on the metro in Riyadh. He is at the lost and found office, talking to an officer, Mr Nasser.",
+    "scene_emoji": "🎒",
     "p1": [
      {
       "s": "Mr Nasser",
@@ -2833,7 +2847,7 @@
      },
      {
       "s": "Ali",
-      "t": "My school books and a lunch box that my mum bought in Turkey. It has my name on it."
+      "t": "My football boots and a lunch box that my mum bought in Turkey. It has my name on it."
      },
      {
       "s": "Mr Nasser",
@@ -3225,7 +3239,7 @@
     },
     {
      "s": "Faisal",
-     "t": "In my opinion, it's the best film this year. Let's tell everyone at school!"
+     "t": "In my opinion, it's the best film this year. Let's tell the whole family tonight!"
     }
    ],
    "grammar": {
@@ -3363,15 +3377,15 @@
     },
     {
      "s": "Lama",
-     "t": "That's true, but Riyadh is so crowded. How long does it take you to get to school?"
+     "t": "That's true, but Riyadh is so crowded. How long does it take you to get to your swimming club?"
     },
     {
      "s": "Reem",
-     "t": "About forty minutes, because of the traffic jams every morning."
+     "t": "About forty minutes, because of the traffic jams every afternoon."
     },
     {
      "s": "Lama",
-     "t": "Forty minutes! I walk to school in five."
+     "t": "Forty minutes! I walk to my club in five."
     },
     {
      "s": "Reem",
@@ -3659,7 +3673,7 @@
    "dialogue": [
     {
      "s": "Emma",
-     "t": "I loved the online lessons last week. I could learn in my pyjamas!"
+     "t": "I love learning to bake from online videos. I can watch them in my pyjamas!"
     },
     {
      "s": "Reem",
@@ -3667,27 +3681,23 @@
     },
     {
      "s": "Emma",
-     "t": "Why not? It was so quiet at home."
+     "t": "Why not? Your kitchen is so quiet."
     },
     {
      "s": "Reem",
-     "t": "Not in my house! My little brothers were a big distraction."
+     "t": "Not when my little brothers are at home! They were a big distraction."
     },
     {
      "s": "Emma",
-     "t": "OK, you've got a point. But we didn't waste time in traffic."
+     "t": "OK, you've got a point. But the videos are free, and we don't waste time in traffic."
     },
     {
      "s": "Reem",
-     "t": "That's true, but I missed my friends. I prefer learning face to face."
-    },
-    {
-     "s": "Emma",
-     "t": "To be honest, I feel the same way. Seeing everyone at school is more fun."
+     "t": "That's true, but my cake was a disaster. I prefer learning face to face with a real chef."
     },
     {
      "s": "Reem",
-     "t": "So online lessons are good sometimes, but not every day."
+     "t": "So let's try the baking workshop at the mall, and watch videos at home too."
     }
    ],
    "grammar": {
@@ -3748,7 +3758,7 @@
     },
     {
      "s": "Dad",
-     "t": "Every day? Even during exams?"
+     "t": "Every day? Even when we visit Grandma for the weekend?"
     },
     {
      "s": "Sara",
@@ -3813,7 +3823,7 @@
    "dialogue": [
     {
      "s": "Sam",
-     "t": "Look at all these plastic bottles! We should stop using single-use plastic."
+     "t": "Look at all these plastic bottles in the water! We should stop using single-use plastic."
     },
     {
      "s": "Omar",
@@ -3821,11 +3831,11 @@
     },
     {
      "s": "Sam",
-     "t": "But one small club can't make a difference."
+     "t": "But two boys with a net can't make a difference."
     },
     {
      "s": "Omar",
-     "t": "You may be right, but if every school does this, it will help."
+     "t": "You may be right, but if every family on every boat does this, it will help."
     },
     {
      "s": "Sam",
@@ -3834,10 +3844,6 @@
     {
      "s": "Omar",
      "t": "So does mine! But recycling isn't enough. We need to use less plastic."
-    },
-    {
-     "s": "Sam",
-     "t": "Do you think paper bags are always better than plastic ones?"
     },
     {
      "s": "Omar",
@@ -3898,7 +3904,7 @@
     },
     {
      "s": "Khalid",
-     "t": "I'm with you on that. But some students say it's boring."
+     "t": "I'm with you on that. But some players say it's boring."
     },
     {
      "s": "Ali",
@@ -3906,7 +3912,7 @@
     },
     {
      "s": "Khalid",
-     "t": "The beach is fun too. Lots of students love swimming."
+     "t": "The beach is fun too. Lots of the players love swimming."
     },
     {
      "s": "Ali",
@@ -3914,7 +3920,7 @@
     },
     {
      "s": "Khalid",
-     "t": "Fair enough. Let's ask the class and see what the majority wants."
+     "t": "Fair enough. Let's ask the team and see what the majority wants."
     },
     {
      "s": "Ali",
@@ -4360,7 +4366,7 @@
     },
     {
      "s": "Majed",
-     "t": "I agree. It might help to take lessons at a sports club. If you practise every week, you'll improve quickly."
+     "t": "I agree. It might help to join a swimming club. If you practise every week, you'll improve quickly."
     },
     {
      "s": "Sultan",
@@ -4429,7 +4435,7 @@
    "dialogue": [
     {
      "s": "Daniel",
-     "t": "Ali, who are you going to talk about in the presentation?"
+     "t": "Ali, who are you going to talk about in your video?"
     },
     {
      "s": "Ali",
@@ -4457,7 +4463,7 @@
     },
     {
      "s": "Ali",
-     "t": "Great choice! I think our presentations will be the best in the class."
+     "t": "Great choice! I think our videos will be the best in the competition!"
     }
    ],
    "grammar": {
@@ -4757,7 +4763,7 @@
     },
     {
      "s": "Ali",
-     "t": "My school books and a lunch box that my mum bought in Turkey. It has my name on it."
+     "t": "My football boots and a lunch box that my mum bought in Turkey. It has my name on it."
     },
     {
      "s": "Mr Nasser",
