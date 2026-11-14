@@ -702,7 +702,7 @@
       "t": "No, he isn't. He's getting dressed."
      }
     ],
-    "focus": "Are you having breakfast? No, I'm not.",
+    "focus": "Are you having breakfast?",
     "qs": [
      "Is Emma having breakfast?",
      "Is Emma's dad washing the car?"
@@ -6035,7 +6035,7 @@
     "q": "At school, you buy food in the ___.",
     "options": [
      "canteen",
-     "library",
+     "office",
      "playground"
     ],
     "answer": 0
@@ -6091,7 +6091,7 @@
    },
    {
     "type": "mc",
-    "q": "The café is ___ the bank and the toy shop.",
+    "q": "The café is ___ the bank and the bookshop.",
     "options": [
      "opposite",
      "between",
@@ -6561,7 +6561,7 @@
     "type": "mc",
     "q": "People who visit your home are ___.",
     "options": [
-     "dates",
+     "plates",
      "cups",
      "guests"
     ],

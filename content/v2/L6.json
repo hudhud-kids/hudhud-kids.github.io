@@ -5021,7 +5021,7 @@
    },
    {
     "type": "mc",
-    "q": "My sister ___ going to decorate the room.",
+    "q": "My sister ___ going to make a card.",
     "options": [
      "are",
      "is",
@@ -5197,18 +5197,16 @@
    {
     "type": "order",
     "words": [
-     "In",
-     "the",
-     "evening,",
+     "Then",
      "we're",
      "going",
      "to",
      "walk",
-     "by",
+     "on",
      "the",
-     "sea."
+     "Corniche."
     ],
-    "answer": "In the evening, we're going to walk by the sea.",
+    "answer": "Then we're going to walk on the Corniche.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5776,7 +5774,7 @@
      "tired",
      "tiring",
      "worried",
-     "relaxed"
+     "proud"
     ],
     "answer": 1
    },
@@ -5797,7 +5795,7 @@
     "options": [
      "revised",
      "passed",
-     "relaxed",
+     "slept",
      "tired"
     ],
     "answer": 0
@@ -6055,12 +6053,11 @@
      "sister",
      "has",
      "to",
-     "take",
-     "out",
-     "the",
-     "rubbish."
+     "make",
+     "her",
+     "bed."
     ],
-    "answer": "My sister has to take out the rubbish.",
+    "answer": "My sister has to make her bed.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6106,7 +6103,7 @@
     "type": "mc",
     "q": "Money that parents give children every week is ___.",
     "options": [
-     "rubbish",
+     "a gift",
      "bedtime",
      "a ticket",
      "pocket money"

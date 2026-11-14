@@ -2065,11 +2065,11 @@
      "frame": "My toy plane is ___."
     },
     {
-     "w": "doll",
-     "emoji": "🪆",
-     "def": "a toy that looks like a small person",
-     "ar": "دمية",
-     "frame": "My sister has got a ___ doll."
+     "w": "yo-yo",
+     "emoji": "🪀",
+     "def": "a round toy that goes up and down on a string",
+     "ar": "يويو",
+     "frame": "My yo-yo is ___."
     },
     {
      "w": "puzzle",
@@ -2128,7 +2128,7 @@
      },
      {
       "s": "Seller",
-      "t": "Sure. Do you want a puzzle or a doll too?"
+      "t": "Sure. Do you want a puzzle or a yo-yo too?"
      },
      {
       "s": "Faisal",
@@ -2185,7 +2185,8 @@
    "exit": "Ask me for two toys. Use 'this one', 'that' or 'those'.",
    "recycle": [
     "robot",
-    "kite"
+    "kite",
+    "doll"
    ]
   },
   "2-4": {
@@ -4261,9 +4262,9 @@
      "ex": "The toy plane is forty riyals."
     },
     {
-     "w": "doll",
-     "ar": "دمية",
-     "ex": "This doll has got long hair."
+     "w": "yo-yo",
+     "ar": "يويو",
+     "ex": "This yo-yo is only ten riyals."
     },
     {
      "w": "puzzle",
@@ -4309,7 +4310,7 @@
     },
     {
      "s": "Seller",
-     "t": "Sure. Do you want a doll too?"
+     "t": "Sure. Do you want a yo-yo too?"
     },
     {
      "s": "Faisal",
@@ -5819,14 +5820,14 @@
     "q": "A game with small pieces you put together = a ___.",
     "options": [
      "puzzle",
-     "doll",
+     "yo-yo",
      "toy plane"
     ],
     "answer": 0
    },
    {
     "type": "mc",
-    "q": "I like ___ doll here. Can I have it?",
+    "q": "I like ___ yo-yo here. Can I have it?",
     "options": [
      "these",
      "those",
