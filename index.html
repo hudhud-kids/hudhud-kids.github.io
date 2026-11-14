@@ -238,6 +238,29 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 }
 
 /* teacher animation */
+/* characters v2: every colour is a variable on .tbox, so a character (.t-adam) or an art direction (.teen) is one class */
+.tbox{--t-w1:#EAF3FF;--t-w2:#D3E4FC;--t-w3:#C2D7F5;--t-sk1:#FFE3CB;--t-sk2:#F6C8A6;--t-sk3:#E6A983;--t-sk:#F6C8A6;--t-skd:#D8946C;--t-lip:#D2605A;--t-brow:#4A2A18;--t-blush:.26;
+  --t-hair:#4E2C19;--t-hairhi:#7A4C2C;--t-c1:#31C2B1;--t-c2:#138C80;--t-sl:#22AC9C;--t-sld:#0D6E65;--t-bl:#FFF4E4;--t-d1:#DCA06A;--t-d2:#B9773F;--t-i1:#8E5C30;--t-i2:#4A2A12;--t-ink:#2A1A10;--t-acc:#3B7BE8}
+.tbox.t-adam{--t-sk1:#F9D6B3;--t-sk2:#EBBB92;--t-sk3:#D59C70;--t-sk:#EBBB92;--t-skd:#C2845A;--t-lip:#B9665C;--t-brow:#2A1A10;--t-blush:.2;--t-hair:#2A1A10;--t-hairhi:#4A3020;--t-c1:#4A82E6;--t-c2:#2C59B8;--t-sl:#3F74D8;--t-sld:#21469A}
+.tbox.teen{--t-w1:#EEF1F6;--t-w2:#DDE4EE;--t-w3:#CBD5E3;--t-c1:#5F8F8C;--t-c2:#3D6664;--t-sl:#537F7C;--t-sld:#2C4D4B;--t-bl:#F4F1EC;--t-blush:.16;--t-acc:#5C77B8;--t-lip:#C4635E}
+.tbox.teen.t-adam{--t-c1:#56647E;--t-c2:#394459;--t-sl:#4C5A73;--t-sld:#283144;--t-blush:.1;--t-lip:#B0665E}
+.tbox .ts-w1{stop-color:var(--t-w1)}.tbox .ts-w2{stop-color:var(--t-w2)}.tbox .ts-sk1{stop-color:var(--t-sk1)}.tbox .ts-sk2{stop-color:var(--t-sk2)}.tbox .ts-sk3{stop-color:var(--t-sk3)}
+.tbox .ts-c1{stop-color:var(--t-c1)}.tbox .ts-c2{stop-color:var(--t-c2)}.tbox .ts-d1{stop-color:var(--t-d1)}.tbox .ts-d2{stop-color:var(--t-d2)}.tbox .ts-i1{stop-color:var(--t-i1)}.tbox .ts-i2{stop-color:var(--t-i2)}
+.tbox .tc-wains{fill:var(--t-w3);opacity:.55}.tbox .tc-frame{fill:#FFFFFF;stroke:#B9CBE6;stroke-width:3}.tbox .tc-poster{fill:#FFF1E3}.tbox .tc-shelf{fill:#C58B55}.tbox .tc-board{fill:#FFFFFF;stroke:#B9CBE6;stroke-width:4}.tbox .tc-deskedge{fill:#EDBE8C}
+.tbox .tc-sk{fill:var(--t-sk)}.tbox .tc-skd{fill:var(--t-skd)}.tbox .tc-line{fill:none;stroke:var(--t-skd);stroke-width:1.8;stroke-linecap:round}
+.tbox .tc-palm{fill:var(--t-sk);stroke:var(--t-skd);stroke-width:1.3}.tbox .tc-fg{fill:none;stroke:var(--t-sk);stroke-linecap:round}.tbox .tc-fgd{fill:none;stroke:var(--t-skd);stroke-linecap:round}.tbox .tc-crease{fill:none;stroke:var(--t-skd);stroke-width:1.5;stroke-linecap:round;opacity:.8}
+.tbox .tc-sl{fill:var(--t-sl);stroke:var(--t-sld);stroke-width:1.6;stroke-linejoin:round}.tbox .tc-cuff{fill:var(--t-sld)}.tbox .tc-seam{fill:none;stroke:var(--t-sld);stroke-width:2;stroke-linecap:round}
+.tbox .tc-collar{fill:#FFFFFF;stroke:var(--t-sld);stroke-width:1.6;stroke-linejoin:round}.tbox .tc-btn2{fill:var(--t-sld);opacity:.55}.tbox .tc-blouse{fill:var(--t-bl)}.tbox .tc-neckline{fill:none;stroke:#D9C3A4;stroke-width:2;stroke-linecap:round}.tbox .tc-rib{fill:none;stroke:var(--t-sld);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.tbox .tc-badget{fill:#0F766E}
+.tbox .tc-hair{fill:var(--t-hair)}.tbox .tc-hairhi{fill:var(--t-hairhi)}.tbox .tc-strand{fill:none;stroke:var(--t-hairhi);stroke-width:2.6;stroke-linecap:round;opacity:.75}.tbox .tc-beard{fill:#2A1A10;opacity:.9}
+.tbox .tc-blush{fill:#FF7F78;opacity:var(--t-blush)}
+.tbox .tc-brow{fill:none;stroke:var(--t-brow);stroke-width:4.3;stroke-linecap:round;transform-box:fill-box;transform-origin:center;transition:transform .2s ease-out}
+.tbox.t-adam .tc-brow{stroke-width:5.8}
+.tbox .tc-lash{fill:none;stroke:var(--t-ink);stroke-width:3.3;stroke-linecap:round}.tbox .tc-eyeshade{fill:#3A2414;opacity:.2}
+.tbox .tc-lip{fill:var(--t-lip)}.tbox .tc-lipline{fill:none;stroke:var(--t-lip);stroke-width:2.2;stroke-linecap:round}.tbox .tc-lipo{fill:none;stroke:var(--t-lip);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.tbox .tc-in{fill:#5E1C1B}.tbox .tc-tongue{fill:#E8706F}
+.tbox .tc-waves{fill:none;stroke:var(--t-acc);stroke-width:4;stroke-linecap:round}
+.tbox .c-adam{display:none}
+.tbox.t-adam .c-noor{display:none}.tbox.t-adam .c-adam{display:inline}
 .tbox svg .pose{opacity:0;transform-box:view-box;transform:translateY(30px) rotate(var(--r,0deg)) scale(.9);transition:opacity .26s ease,transform .42s cubic-bezier(.3,1.35,.5,1)}
 .pose-wave,.pose-thumb{transform-origin:108px 345px;--r:-6deg}
 .pose-chin,.pose-ear,.pose-point,.pose-open{transform-origin:298px 345px;--r:6deg}
@@ -245,8 +268,8 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .arm-l,.arm-r{transition:opacity .22s ease}
 .p-wave .arm-l,.p-thumb .arm-l{opacity:0}
 .p-chin .arm-r,.p-ear .arm-r,.p-point .arm-r,.p-open .arm-r{opacity:0}
-.wave-in{transform-box:view-box;transform-origin:104px 330px;animation:wave .5s ease-in-out infinite alternate}
-@keyframes wave{from{transform:rotate(-10deg)}to{transform:rotate(8deg)}}
+.wave-in{transform-box:view-box;transform-origin:100px 334px;animation:wave .5s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-9deg)}to{transform:rotate(7deg)}}
 .open-in{transform-box:view-box;transform-origin:290px 340px;animation:talkhand 1.8s ease-in-out infinite}
 @keyframes talkhand{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg) translateY(-3px)}65%{transform:rotate(3deg)}}
 .t-tilt{transform-box:view-box;transform-origin:200px 300px;transition:transform .5s ease}
@@ -254,32 +277,43 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .emph .brows{transform:translateY(-6px)!important}
 .t-head{transform-box:view-box;transform-origin:200px 300px;transition:transform .35s ease}
 .speaking .t-head{animation:bob 1.7s ease-in-out infinite}
-.listening .t-head{transform:rotate(-5deg) translateX(-4px)}
-.thinking .t-head{transform:rotate(4deg)}
-.nod .t-head{animation:nod .45s ease-in-out}
-@keyframes bob{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(-2.4deg) translateY(-3px)}50%{transform:rotate(.5deg) translateY(0)}75%{transform:rotate(2.4deg) translateY(-1px)}}
-@keyframes nod{0%,100%{transform:rotate(-5deg) translateY(0)}45%{transform:rotate(-5deg) translateY(7px)}}
+.listening .t-head{transform:rotate(4deg) translateX(2px)}
+.thinking .t-head{transform:rotate(-3.5deg)}
+.m-proud .t-head{transform:translateY(-2px)}
+.t-idle{transform-box:view-box;transform-origin:200px 300px;animation:tidle 7s ease-in-out infinite}
+@keyframes tidle{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.8deg) translateY(-1px)}}
+.nod .t-idle{animation:nod .45s ease-in-out}
+@keyframes bob{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(-2.2deg) translateY(-3px)}50%{transform:rotate(.5deg) translateY(0)}75%{transform:rotate(2.2deg) translateY(-1px)}}
+@keyframes nod{0%,100%{transform:translateY(0)}45%{transform:translateY(7px) rotate(.6deg)}}
 .t-body{transform-box:view-box;transform-origin:200px 440px;animation:breathe 4s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(1.012,1.018)}}
-.lids ellipse{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .07s}
-.blink .lids ellipse{transform:scaleY(1)}
+.tbox .lids path{fill:var(--t-sk2);transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .07s}
+.tbox.blink .lids path{transform:scaleY(1)}
 .pupils{transition:transform .16s ease-out}
+.tbox .tc-glint{transform-box:fill-box;transform-origin:center;transition:transform .2s}
 .eyes-h{display:none}
-.m-happy .eyes-n,.m-laughing .eyes-n,.m-proud .eyes-n{display:none}
-.m-happy .eyes-h,.m-laughing .eyes-h,.m-proud .eyes-h{display:inline}
-.speaking.m-happy .eyes-n,.speaking.m-proud .eyes-n{display:inline}
-.speaking.m-happy .eyes-h,.speaking.m-proud .eyes-h{display:none}
+.m-laughing .eyes-n,.m-proud .eyes-n{display:none}
+.m-laughing .eyes-h,.m-proud .eyes-h{display:inline}
+.speaking.m-proud .eyes-n{display:inline}
+.speaking.m-proud .eyes-h{display:none}
 .brows{transform-box:view-box;transition:transform .16s ease-out}
-.m-surprised .brows,.m-excited .brows{transform:translateY(-8px)}
-.m-thinking .brows,.thinking .brows{transform:translateY(-4px)}
-.m-encouraging .brows{transform:translateY(-3px)}
+.m-surprised .brows,.m-excited .brows{transform:translateY(-7px)}
+.m-thinking .brows,.thinking .brows{transform:translateY(-3px)}
+.m-encouraging .brows,.m-proud .brows,.listening .brows{transform:translateY(-3px)}
+.m-thinking .brow-l,.thinking .brow-l{transform:translateY(-4px) rotate(-7deg)}
+.m-thinking .brow-r,.thinking .brow-r{transform:translateY(3px) rotate(-5deg)}
+.m-encouraging .brow-l{transform:rotate(-10deg)}.m-encouraging .brow-r{transform:rotate(10deg)}
+.m-laughing .brow-l{transform:translateY(-4px) rotate(-6deg)}.m-laughing .brow-r{transform:translateY(-4px) rotate(6deg)}
+.m-surprised .brow-l{transform:rotate(-5deg)}.m-surprised .brow-r{transform:rotate(5deg)}
+.mouth{transform-box:fill-box;transform-origin:center;transition:transform .2s}
 .mouth > *{display:none}
 .mouth > .on{display:inline}
-.ring{fill:none;stroke:#3B7BE8;stroke-width:6;opacity:0}
+.thinking:not(.speaking) .mouth,.m-thinking:not(.speaking) .mouth{transform:translateX(4px) scaleX(.72)}
+.ring{fill:none;stroke:var(--t-acc,#3B7BE8);stroke-width:6;opacity:0}
 .listening .ring{animation:ring 1.3s ease-out infinite}
-@keyframes ring{0%{opacity:.55;transform:scale(.92)}100%{opacity:0;transform:scale(1.08)}}
+@keyframes ring{0%{opacity:.5;transform:scale(.92)}100%{opacity:0;transform:scale(1.08)}}
 .ring{transform-box:fill-box;transform-origin:center}
-.think-dots{opacity:0;transition:opacity .2s}
+.think-dots{opacity:0;transition:opacity .2s;fill:#FFFFFF;stroke:var(--t-acc,#3B7BE8);stroke-width:3}
 .thinking .think-dots{opacity:1}
 .think-dots circle{animation:dot 1s infinite}
 .think-dots circle:nth-child(2){animation-delay:.15s}.think-dots circle:nth-child(3){animation-delay:.3s}
@@ -287,19 +321,25 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .board-glow{opacity:0;transition:opacity .3s}
 .p-point .board-glow{opacity:1}
 .sway{transform-box:view-box;transform-origin:200px 440px;animation:sway 6s ease-in-out infinite}
-@keyframes sway{0%,100%{transform:rotate(-.9deg)}50%{transform:rotate(.9deg)}}
+@keyframes sway{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.7deg)}}
 .m-excited .sway{animation:hop .55s ease-out 1,sway 6s ease-in-out .55s infinite}
 @keyframes hop{30%{transform:translateY(-12px)}60%{transform:translateY(0)}}
-.eyes-n{transform-box:view-box;transform-origin:200px 182px;transition:transform .2s}
-.m-surprised .eyes-n{transform:scale(1.13)}
-.m-laughing .t-head{animation:laugh .28s ease-in-out 5}
+.eyes-n{transform-box:view-box;transform-origin:200px 184px;transition:transform .2s}
+.m-happy .eyes-n,.m-encouraging .eyes-n{transform:scaleY(.93)}
+.m-excited .eyes-n,.listening .eyes-n{transform:scale(1.06)}
+.m-surprised .eyes-n{transform:scale(1.15)}
+.m-excited .tc-glint,.m-surprised .tc-glint{transform:scale(1.3)}
+.m-laughing .t-idle{animation:laugh .28s ease-in-out 5,tidle 7s ease-in-out 1.4s infinite}
 @keyframes laugh{50%{transform:translateY(-5px) rotate(-1.5deg)}}
 .lw{opacity:0}
 .listening .lw{animation:lw 1.2s ease-out infinite}
 .listening .lw2{animation-delay:.2s}.listening .lw3{animation-delay:.4s}
 @keyframes lw{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
-.clock-m{transform-box:view-box;transform-origin:64px 52px;animation:spin 60s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
+/* 12+ : same teachers, calmer movement */
+.tbox.teen .sway{animation-duration:9s}.tbox.teen.m-excited .sway{animation:sway 9s ease-in-out infinite}
+.tbox.teen .wave-in{animation-duration:.8s}.tbox.teen.speaking .t-head{animation-duration:2.4s}
+.tbox.teen.m-laughing .t-idle{animation:laugh .32s ease-in-out 3,tidle 7s ease-in-out 1s infinite}
+@media (prefers-reduced-motion:reduce){.tbox svg *{animation:none!important}}
 .bw-write{transform-box:fill-box;transform-origin:center}
 .bw-new{animation:write .6s cubic-bezier(.3,1.4,.5,1)}
 @keyframes write{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
@@ -2633,147 +2673,170 @@ async function monthlyReport(k){
 /* =============== TEACHER SVG =============== */
 const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor">
  <defs>
-  <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF2FF"/><stop offset="1" stop-color="#D3E3FF"/></linearGradient>
-  <radialGradient id="g-skin" cx=".5" cy=".4" r=".65"><stop offset="0" stop-color="#FCDDBF"/><stop offset="1" stop-color="#EDB48A"/></radialGradient>
-  <linearGradient id="g-hij" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B9BFF"/><stop offset="1" stop-color="#3D6AD6"/></linearGradient>
-  <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2DD4BF"/><stop offset="1" stop-color="#0F9E8E"/></linearGradient>
-  <clipPath id="c-scene"><rect width="400" height="440" rx="40"/></clipPath>
-  <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D99A62"/><stop offset="1" stop-color="#B9773F"/></linearGradient>
+  <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-w1"/><stop offset="1" class="ts-w2"/></linearGradient>
+  <radialGradient id="g-skin" cx=".46" cy=".36" r=".72"><stop offset="0" class="ts-sk1"/><stop offset=".62" class="ts-sk2"/><stop offset="1" class="ts-sk3"/></radialGradient>
+  <linearGradient id="g-neck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-sk3"/><stop offset="1" class="ts-sk2"/></linearGradient>
+  <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-c1"/><stop offset="1" class="ts-c2"/></linearGradient>
+  <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-d1"/><stop offset="1" class="ts-d2"/></linearGradient>
+  <radialGradient id="g-iris" cx=".5" cy=".62" r=".6"><stop offset="0" class="ts-i1"/><stop offset="1" class="ts-i2"/></radialGradient>
+  <clipPath id="g-scene"><rect width="400" height="440" rx="40"/></clipPath>
+  <clipPath id="g-eyeL"><path d="M160 181 Q175 166 192 180 Q177 193 160 181Z"/></clipPath>
+  <clipPath id="g-eyeR"><path d="M208 180 Q225 166 240 181 Q223 193 208 180Z"/></clipPath>
  </defs>
- <g clip-path="url(#c-scene)">
+ <g clip-path="url(#g-scene)">
   <rect width="400" height="440" fill="url(#g-wall)"/>
-  <rect x="0" y="300" width="400" height="140" fill="#C9DBF7" opacity=".5"/>
+  <path d="M150 0 L250 0 L120 300 L20 300Z" fill="#FFFFFF" opacity=".16"/>
+  <rect x="0" y="296" width="400" height="144" class="tc-wains"/>
+  <rect x="0" y="296" width="400" height="5" fill="#FFFFFF" opacity=".55"/>
   <g>
-   <rect x="14" y="126" width="104" height="8" rx="3" fill="#B9773F"/>
-   <rect x="22" y="94" width="12" height="32" rx="2" fill="#F05A38"/><rect x="36" y="100" width="10" height="26" rx="2" fill="#3B7BE8"/>
-   <rect x="48" y="90" width="13" height="36" rx="2" fill="#15803D"/><rect x="63" y="104" width="22" height="22" rx="11" fill="#FFD25E"/>
-   <path d="M90 126 Q92 104 100 98 Q104 112 102 126Z" fill="#5DB36A"/><path d="M98 126 Q104 100 114 96 Q112 114 106 126Z" fill="#3E8A4A"/>
-   <circle cx="64" cy="52" r="20" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
-   <path class="clock-h" d="M64 52 L64 40" stroke="#2B1B0F" stroke-width="3" stroke-linecap="round"/><path class="clock-m" d="M64 52 L74 56" stroke="#F05A38" stroke-width="3" stroke-linecap="round"/>
+   <rect x="16" y="20" width="94" height="94" rx="12" class="tc-frame"/>
+   <rect x="23" y="27" width="80" height="80" rx="7" class="tc-poster"/>
+   <circle cx="78" cy="48" r="11" fill="#FFD25E" opacity=".75"/>
+   <path d="M30 96 Q62 86 98 96" stroke="#3E8A4A" stroke-width="3" fill="none" stroke-linecap="round"/>
+   <path d="M72 70 L96 84 L92 88 L70 80Z" fill="#2B1B0F"/><path d="M80 76 L93 84 M76 78 L90 87" stroke="#FFFFFF" stroke-width="1.6"/>
+   <ellipse cx="64" cy="76" rx="17" ry="11.5" transform="rotate(18 64 76)" fill="#F4A261"/>
+   <path d="M58 72 C66 68 78 72 82 82 C74 86 62 84 58 72Z" fill="#2B1B0F"/><path d="M62 73 L78 81 M66 71 L80 78" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/>
+   <circle cx="48" cy="64" r="9" fill="#F4A261"/>
+   <path d="M41 65 Q33 68 27 76" stroke="#2B1B0F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+   <path d="M49 57 L40 40 M51 56 L48 37 M53 56 L57 38 M55 58 L65 43" stroke="#F05A38" stroke-width="4" stroke-linecap="round"/>
+   <path d="M40 40 L39.5 39 M48 37 L48 36 M57 38 L57.3 37 M65 43 L65.8 42" stroke="#2B1B0F" stroke-width="4.2" stroke-linecap="round"/>
+   <circle cx="45.5" cy="62.5" r="1.7" fill="#2B1B0F"/>
+   <path d="M62 87 L60 95 M68 88 L68 95" stroke="#86695A" stroke-width="1.8" stroke-linecap="round"/>
   </g>
   <g>
-   <rect class="board-glow" x="256" y="20" width="142" height="136" rx="14" fill="#FFD25E"/>
-   <rect x="262" y="26" width="130" height="124" rx="10" fill="#FFFFFF" stroke="#B9CBE6" stroke-width="4"/>
+   <rect x="10" y="176" width="108" height="8" rx="4" class="tc-shelf"/>
+   <rect x="20" y="140" width="13" height="36" rx="2.5" fill="#F05A38"/><rect x="23" y="146" width="7" height="3" rx="1.5" fill="#FFFFFF" opacity=".7"/>
+   <rect x="35" y="148" width="11" height="28" rx="2.5" fill="#3B7BE8"/>
+   <rect x="48" y="136" width="14" height="40" rx="2.5" fill="#14B8A6"/><rect x="51" y="143" width="8" height="3" rx="1.5" fill="#FFFFFF" opacity=".7"/>
+   <rect x="62" y="150" width="12" height="27" rx="2.5" fill="#FFD25E" transform="rotate(12 68 176)"/>
+   <path d="M88 176 L90 160 H108 L110 176Z" fill="#E8B27C"/>
+   <path d="M99 160 C92 150 90 140 94 132 C100 140 101 150 99 160Z" fill="#3E8A4A"/><path d="M99 160 C104 148 110 142 116 140 C114 150 108 156 99 160Z" fill="#5DB36A"/><path d="M99 160 C94 152 88 150 82 150 C86 156 92 160 99 160Z" fill="#5DB36A"/>
+  </g>
+  <g>
+   <rect class="board-glow" x="256" y="20" width="142" height="136" rx="16" fill="#FFD25E"/>
+   <rect x="262" y="26" width="130" height="124" rx="11" class="tc-board"/>
    <text id="bwE" x="327" y="76" text-anchor="middle" font-size="34">👋</text>
    <text id="bwT" class="bw-write" x="327" y="118" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#F05A38">Hello!</text>
-   <path d="M282 134 Q310 126 340 136 T376 132" stroke="#E9A100" stroke-width="4" fill="none" stroke-linecap="round"/>
+   <path d="M286 134 Q310 127 338 135 T370 132" stroke="#E9A100" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".8"/>
+   <rect x="296" y="150" width="62" height="6" rx="3" class="tc-shelf"/><rect x="304" y="145" width="20" height="6" rx="3" fill="#F05A38"/><rect x="328" y="145" width="20" height="6" rx="3" fill="#3B7BE8"/>
   </g>
-  <circle class="ring" cx="200" cy="175" r="118"/>
+  <circle class="ring" cx="200" cy="178" r="118"/>
+  <g class="think-dots"><circle cx="290" cy="238" r="6"/><circle cx="308" cy="218" r="9"/><circle cx="334" cy="192" r="14"/></g>
   <g class="sway">
    <g class="t-body">
-    <path d="M180 236 H220 V300 Q200 318 180 300 Z" fill="#E9AE84"/>
-    <path d="M66 440 C70 352 124 310 200 310 C276 310 330 352 334 440 Z" fill="url(#g-top)"/>
-    <path d="M166 312 L186 340 L200 322 L214 340 L234 312 Z" fill="#FFFFFF"/>
-    <rect x="216" y="352" width="50" height="22" rx="5" fill="#FFFFFF"/>
-    <text x="241" y="368" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="13" fill="#0F766E" id="tbadge">Noor</text>
+    <path class="c-noor" d="M180 250 H220 V300 Q200 316 180 300Z" fill="url(#g-neck)"/>
+    <path class="c-adam" d="M173 232 H227 V298 Q200 316 173 298Z" fill="url(#g-neck)"/><path class="c-adam tc-skd" d="M173 250 Q200 272 227 250 V238 H173Z" opacity=".3"/>
+    <g class="c-noor" transform="translate(0 -12)">
+     <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
+     <path d="M166 306 C176 326 224 326 234 306 L246 312 C236 356 226 404 224 452 L176 452 C174 404 164 356 154 312Z" class="tc-blouse"/>
+     <path d="M166 306 C176 326 224 326 234 306" class="tc-neckline"/>
+     <path d="M154 312 C164 356 174 404 176 452 M246 312 C236 356 226 404 224 452" class="tc-seam"/>
+     <circle cx="200" cy="352" r="2.6" class="tc-btn2"/><circle cx="200" cy="372" r="2.6" class="tc-btn2"/><circle cx="200" cy="392" r="2.6" class="tc-btn2"/>
+    </g>
+    <g class="c-adam" transform="translate(0 -12)">
+     <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
+     <path d="M166 302 L200 346 L234 302 L226 288 Q200 306 174 288Z" fill="#FDFEFF"/>
+     <path d="M174 288 L200 318 L185 330 L164 302Z" class="tc-collar"/><path d="M226 288 L200 318 L215 330 L236 302Z" class="tc-collar"/>
+     <path d="M160 306 L200 356 L240 306" class="tc-rib"/>
+    </g>
    </g>
-  <g class="t-tilt"><g class="t-head">
-   <path class="hair-f" d="M120 196 C110 108 152 72 200 72 C248 72 290 108 280 196 C284 236 288 262 296 282 C266 296 240 290 230 270 L170 270 C160 290 134 296 104 282 C112 262 116 236 120 196Z" fill="#4A2A18"/>
-   <g class="hair-f"><circle cx="200" cy="70" r="27" fill="#4A2A18"/><path d="M178 86 Q200 96 222 86" stroke="#F05A38" stroke-width="7" fill="none" stroke-linecap="round"/></g>
-   <ellipse cx="143" cy="190" rx="10" ry="14" fill="#EDB48A"/><ellipse cx="257" cy="190" rx="10" ry="14" fill="#EDB48A"/>
-   <ellipse cx="200" cy="182" rx="58" ry="66" fill="url(#g-skin)"/>
-   <g class="hair-f"><path d="M141 176 C136 112 182 96 214 103 C248 110 266 138 260 178 C250 146 230 132 206 134 C190 154 166 166 141 176Z" fill="#5A3420"/>
-   <path d="M168 120 C186 108 220 108 238 122" stroke="#7A4A2C" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/></g>
-   <g class="hair-m"><path d="M138 178 C128 112 168 86 204 90 C246 94 272 124 262 178 C258 150 244 130 222 124 C198 130 170 130 152 142 C145 152 140 164 138 178Z" fill="#2E1D12"/><path d="M140 150 C137 170 139 188 146 200 L151 200 C147 182 147 166 151 150Z" fill="#2E1D12"/><path d="M260 150 C263 170 261 188 254 200 L249 200 C253 182 253 166 249 150Z" fill="#2E1D12"/></g>
-   <g class="hair-f"><circle cx="141" cy="210" r="5" fill="#FFD25E"/><circle cx="259" cy="210" r="5" fill="#FFD25E"/></g>
-   <g class="brows">
-    <path d="M160 156 Q174 147 188 154" stroke="#4A2A18" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M212 154 Q226 147 240 156" stroke="#4A2A18" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g class="t-tilt"><g class="t-head"><g class="t-idle">
+   <g class="c-noor"><path class="tc-hair" d="M200 85 C248 85 277 122 273 178 C271 214 277 250 281 278 C283 295 273 306 259 304 C247 302 239 294 237 284 L163 284 C161 294 153 302 141 304 C127 306 117 295 119 278 C123 250 129 214 127 178 C123 122 152 85 200 85Z"/>
+    <path class="tc-strand" d="M135 200 C132 232 129 258 127 282 M265 200 C268 232 271 258 273 282 M147 250 C147 270 146 286 141 297 M253 250 C253 270 254 286 259 297"/>
+    <path d="M180 236 H220 V300 Q200 314 180 300Z" fill="url(#g-neck)"/><path d="M180 252 Q200 270 220 252 V240 H180Z" class="tc-skd" opacity=".3"/></g>
+   <g class="c-adam">
+    <path d="M141 180 C131 174 131 194 136 203 C139 209 145 209 146 203Z" class="tc-sk"/><path d="M259 180 C269 174 269 194 264 203 C261 209 255 209 254 203Z" class="tc-sk"/>
+    <path d="M139 188 Q137 196 142 202 M261 188 Q263 196 258 202" class="tc-line" opacity=".6"/>
+   </g>
+   <path class="c-noor" d="M200 116 C234 116 256 140 256 176 C256 210 242 236 224 249 C212 257 188 257 176 249 C158 236 144 210 144 176 C144 140 166 116 200 116Z" fill="url(#g-skin)"/>
+   <path class="c-adam" d="M200 108 C236 108 258 134 258 174 C258 204 249 229 232 245 C218 257 182 257 168 245 C151 229 142 204 142 174 C142 134 164 108 200 108Z" fill="url(#g-skin)"/>
+   <g class="c-adam">
+    <path class="tc-beard" d="M143 186 C144 214 152 234 168 246 C182 258 218 258 232 246 C248 234 256 214 257 186 C253 204 246 218 234 226 C226 216 214 214 200 214 C186 214 174 216 166 226 C154 218 147 204 143 186Z"/>
+    <path class="tc-beard" d="M176 222 C184 213 194 212 200 216 C206 212 216 213 224 222 C214 219 206 219 200 221 C194 219 186 219 176 222Z"/>
+   </g>
+   <ellipse class="tc-blush" cx="161" cy="210" rx="13" ry="8"/><ellipse class="tc-blush" cx="239" cy="210" rx="13" ry="8"/>
+   <g transform="translate(200 182) scale(1.1) translate(-200 -182)"><g class="brows">
+    <path class="tc-brow brow-l" d="M160 163 Q174 153 191 160"/>
+    <path class="tc-brow brow-r" d="M209 160 Q226 153 240 163"/>
    </g>
    <g class="eyes-n">
-    <ellipse cx="175" cy="182" rx="14" ry="16" fill="#FFFFFF"/>
-    <ellipse cx="225" cy="182" rx="14" ry="16" fill="#FFFFFF"/>
-    <g class="pupils">
-     <circle cx="176" cy="184" r="9.5" fill="#6B4423"/><circle cx="226" cy="184" r="9.5" fill="#6B4423"/>
-     <circle cx="176" cy="184" r="5.5" fill="#1B120B"/><circle cx="226" cy="184" r="5.5" fill="#1B120B"/>
-     <circle cx="179.5" cy="180" r="3.2" fill="#FFFFFF"/><circle cx="229.5" cy="180" r="3.2" fill="#FFFFFF"/>
-    </g>
-    <path d="M160 175 Q175 162 190 175" stroke="#1B120B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M210 175 Q225 162 240 175" stroke="#1B120B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path class="hair-f" d="M160 175 L154 170 M163 171 L159 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
-    <path class="hair-f" d="M240 175 L246 170 M237 171 L241 165" stroke="#1B120B" stroke-width="2.5" stroke-linecap="round"/>
-    <g class="lids"><ellipse cx="175" cy="182" rx="15" ry="17" fill="#F2C29C"/><ellipse cx="225" cy="182" rx="15" ry="17" fill="#F2C29C"/></g>
+    <path d="M160 181 Q175 166 192 180 Q177 193 160 181Z" fill="#FFFFFF"/><path d="M208 180 Q225 166 240 181 Q223 193 208 180Z" fill="#FFFFFF"/>
+    <g clip-path="url(#g-eyeL)"><g class="pupils"><circle cx="176" cy="180" r="9" fill="url(#g-iris)"/><circle cx="176" cy="180" r="4.4" fill="#1B120B"/><circle class="tc-glint" cx="179.4" cy="176.6" r="2.7" fill="#FFFFFF"/><circle cx="172.8" cy="183.4" r="1.2" fill="#FFFFFF" opacity=".7"/></g><path d="M158 176 Q175 163 194 176 L194 172 Q175 158 158 172Z" class="tc-eyeshade"/></g>
+    <g clip-path="url(#g-eyeR)"><g class="pupils"><circle cx="224" cy="180" r="9" fill="url(#g-iris)"/><circle cx="224" cy="180" r="4.4" fill="#1B120B"/><circle class="tc-glint" cx="227.4" cy="176.6" r="2.7" fill="#FFFFFF"/><circle cx="220.8" cy="183.4" r="1.2" fill="#FFFFFF" opacity=".7"/></g><path d="M206 176 Q225 163 242 176 L242 172 Q225 158 206 172Z" class="tc-eyeshade"/></g>
+    <g class="lids"><path d="M158 182 Q175 163 194 181 Q177 196 158 182Z"/><path d="M206 181 Q225 163 242 182 Q223 196 206 181Z"/></g>
+    <path class="tc-lash" d="M159 182 Q175 165 193 180"/><path class="tc-lash" d="M207 180 Q225 165 241 182"/>
+    <path class="tc-lash c-noor" d="M160 181.5 Q156.5 180.5 154 177" stroke-width="2.6"/><path class="tc-lash c-noor" d="M240 181.5 Q243.5 180.5 246 177" stroke-width="2.6"/>
+    <path class="tc-line" d="M168 189 Q177 192 186 187 M214 187 Q223 192 232 189" opacity=".3"/>
    </g>
    <g class="eyes-h">
-    <path d="M161 186 Q175 170 189 186" stroke="#1B120B" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <path d="M211 186 Q225 170 239 186" stroke="#1B120B" stroke-width="5" fill="none" stroke-linecap="round"/>
-   </g>
-   <path d="M200 190 Q194 208 202 211" stroke="#D08C62" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-   <circle cx="157" cy="210" r="12" fill="#FF8F86" opacity=".42"/><circle cx="243" cy="210" r="12" fill="#FF8F86" opacity=".42"/>
+    <path class="tc-lash" stroke-width="4" d="M161 184 Q176 170 191 184"/><path class="tc-lash" stroke-width="4" d="M209 184 Q224 170 239 184"/>
+   </g></g>
+   <path d="M197 196 Q194 207 197.5 211 Q201 214.5 206.5 211" class="tc-line" stroke-width="2.5"/>
    <g class="mouth">
-    <path data-m="rest" class="on" d="M182 226 Q200 240 218 226 Q200 233 182 226Z" fill="#C2483C"/>
-    <g data-m="A"><path d="M184 223 Q200 254 216 223 Q200 229 184 223Z" fill="#7A2620"/><path d="M190 246 Q200 240 210 246 Q200 251 190 246Z" fill="#E86F6F"/></g>
-    <g data-m="E"><path d="M178 225 Q200 244 222 225 Q200 231 178 225Z" fill="#7A2620"/><path d="M183 226 Q200 231 217 226 L216 230 Q200 234 184 230Z" fill="#FFFFFF"/></g>
-    <g data-m="O"><ellipse cx="200" cy="232" rx="10" ry="13" fill="#7A2620"/><ellipse cx="200" cy="238" rx="6" ry="4" fill="#E86F6F"/></g>
-    <path data-m="M" d="M184 229 Q200 233 216 229" stroke="#B23F33" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <g data-m="F"><path d="M186 226 Q200 236 214 226 Q200 230 186 226Z" fill="#7A2620"/><rect x="190" y="224" width="20" height="5" rx="2" fill="#FFFFFF"/></g>
-    <g data-m="grin"><path d="M176 220 Q200 258 224 220 Z" fill="#7A2620"/><path d="M180 221 Q200 227 220 221 L218 227 Q200 232 182 227Z" fill="#FFFFFF"/><path d="M190 246 Q200 238 210 246 Q200 252 190 246Z" fill="#E86F6F"/></g>
+    <g data-m="rest" class="on"><path d="M183 226 Q200 239 217 226 Q200 232 183 226Z" class="tc-lip"/><path d="M180.5 224.5 Q182.5 226 184.5 228 M219.5 224.5 Q217.5 226 215.5 228" class="tc-lipline"/><path d="M191 237 Q200 241 209 237" class="tc-line" opacity=".45"/></g>
+    <g data-m="A"><path d="M185 224 Q200 219 215 224 Q215 250 200 251 Q185 250 185 224Z" class="tc-in"/><path d="M188 224.5 Q200 221 212 224.5 L211.5 229.5 Q200 227.5 188.5 229.5Z" fill="#FFFFFF"/><path d="M190 246 Q200 238 210 246 Q205 250.5 200 250.5 Q195 250.5 190 246Z" class="tc-tongue"/><path d="M185 224 Q200 219 215 224 Q215 250 200 251 Q185 250 185 224Z" class="tc-lipo"/></g>
+    <g data-m="E"><path d="M180 225 Q200 220 220 225 Q217 241 200 242 Q183 241 180 225Z" class="tc-in"/><path d="M183.5 225.5 Q200 222 216.5 225.5 L215 231.5 Q200 230 185 231.5Z" fill="#FFFFFF"/><path d="M190 240 Q200 235 210 240 Q200 242.5 190 240Z" class="tc-tongue"/><path d="M180 225 Q200 220 220 225 Q217 241 200 242 Q183 241 180 225Z" class="tc-lipo"/></g>
+    <g data-m="O"><ellipse cx="200" cy="232" rx="9" ry="11" class="tc-in"/><ellipse cx="200" cy="238.5" rx="5.5" ry="3.4" class="tc-tongue"/><ellipse cx="200" cy="232" rx="9" ry="11" class="tc-lipo" stroke-width="3.4"/></g>
+    <g data-m="M"><path d="M186 229 Q200 233 214 229" class="tc-lipo" stroke-width="4.2"/><path d="M192 237 Q200 240 208 237" class="tc-line" opacity=".45"/></g>
+    <g data-m="F"><path d="M186 226 Q200 222 214 226 Q212 237 200 238 Q188 237 186 226Z" class="tc-in"/><path d="M189 226 Q200 223 211 226 L210.5 232 Q200 230.5 189.5 232Z" fill="#FFFFFF"/><path d="M186 226 Q200 222 214 226 Q212 237 200 238 Q188 237 186 226Z" class="tc-lipo"/></g>
+    <g data-m="grin"><path d="M177 221 Q200 228 223 221 Q220 249 200 250 Q180 249 177 221Z" class="tc-in"/><path d="M180 222.5 Q200 229 220 222.5 L218.5 230 Q200 235 181.5 230Z" fill="#FFFFFF"/><path d="M189 245 Q200 237 211 245 Q205 249.5 200 249.5 Q195 249.5 189 245Z" class="tc-tongue"/><path d="M177 221 Q200 228 223 221 Q220 249 200 250 Q180 249 177 221Z" class="tc-lipo"/></g>
    </g>
-   <path d="M128 182 C128 90 272 90 272 182" stroke="#2B1B0F" stroke-width="9" fill="none" stroke-linecap="round"/>
-   <rect x="114" y="162" width="28" height="46" rx="12" fill="#F05A38"/><rect x="258" y="162" width="28" height="46" rx="12" fill="#F05A38"/>
-   <rect x="120" y="170" width="16" height="30" rx="7" fill="#FF6B4A"/><rect x="264" y="170" width="16" height="30" rx="7" fill="#FF6B4A"/>
-   <path d="M132 204 Q138 240 172 242" stroke="#2B1B0F" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="176" cy="242" r="7.5" fill="#2B1B0F"/>
-   <g class="think-dots" fill="#3B7BE8"><circle cx="104" cy="96" r="8"/><circle cx="82" cy="72" r="10"/><circle cx="56" cy="46" r="13"/></g>
-  </g></g>
+   <g class="c-noor">
+    <path class="tc-hair" d="M144 192 C135 138 153 97 202 95 C251 97 267 138 256 192 C255 172 251 155 241 143 C223 153 194 151 177 130 C168 146 157 160 151 174 C148 180 146 186 144 192Z"/>
+    <path class="tc-hair" d="M148 174 C141 202 141 238 148 268 C139 260 132 244 131 220 C130 200 137 182 148 174Z M254 174 C259 202 259 238 252 268 C261 260 268 244 269 220 C270 200 263 184 254 174Z"/>
+    <path d="M186 108 C208 101 234 108 246 126" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity=".13"/>
+    <path class="tc-strand" d="M196 118 C216 124 232 132 242 142 M170 112 C162 122 156 136 153 152 M190 100 C182 110 178 120 177 128"/>
+    <path d="M150 154 L168 138" stroke="#F05A38" stroke-width="6.5" stroke-linecap="round"/><path d="M152 151 L160 144" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+   </g>
+   <g class="c-adam">
+    <path class="tc-hair" d="M140 182 C129 122 158 82 204 82 C250 82 271 124 260 182 C258 162 252 148 242 138 C232 144 214 146 196 142 C182 139 170 140 160 146 C150 154 143 166 140 182Z"/><path d="M160 146 C174 118 218 110 246 134 C222 124 190 128 172 142Z" class="tc-hairhi"/>
+    <path class="tc-hair" d="M141 176 C140 186 142 192 143 198 L148 190 C146 182 146 170 148 160Z M259 176 C260 186 258 192 257 198 L252 190 C254 182 254 170 252 160Z"/>
+   </g>
+   
+  </g></g></g>
   </g>
   <g>
-   <rect x="0" y="390" width="400" height="50" fill="url(#g-wood)"/>
-   <rect x="0" y="388" width="400" height="7" fill="#E8B27C"/>
-   <rect x="22" y="374" width="70" height="9" rx="2" fill="#3B7BE8"/><rect x="26" y="365" width="62" height="9" rx="2" fill="#15803D"/><rect x="30" y="356" width="56" height="9" rx="2" fill="#F05A38"/>
-   <rect x="300" y="344" width="78" height="46" rx="5" fill="#2B2F3A"/><rect x="305" y="349" width="68" height="36" rx="3" fill="#3B7BE8"/>
-   <text x="339" y="373" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="14" fill="#FFFFFF">هدهد</text>
-   <rect x="292" y="388" width="94" height="6" rx="3" fill="#9AA3B5"/>
+   <rect x="0" y="392" width="400" height="48" fill="url(#g-wood)"/>
+   <rect x="0" y="390" width="400" height="7" class="tc-deskedge"/>
+   <rect x="14" y="377" width="64" height="13" rx="3" fill="#3B7BE8"/><rect x="14" y="381" width="64" height="2.5" fill="#FFFFFF" opacity=".45"/>
+   <rect x="19" y="365" width="56" height="12" rx="3" fill="#14B8A6"/><rect x="24" y="354" width="48" height="11" rx="3" fill="#F05A38"/><rect x="24" y="357.5" width="48" height="2.2" fill="#FFFFFF" opacity=".45"/>
+   <path d="M318 390 L322 346 Q322 340 328 340 H384 Q390 340 390 346 L394 390Z" fill="#30364A"/>
+   <path d="M326 386 L329 348 H383 L386 386Z" fill="#3B4560"/>
+   <text x="356" y="373" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" opacity=".95">هدهد</text>
+   <rect x="308" y="388" width="92" height="5" rx="2.5" fill="#9AA3B5"/>
+   <g class="tc-badge" transform="translate(0 -3)"><path d="M168 433 L172 414 H228 L232 433Z" fill="#FFFFFF"/><path d="M171.2 418 L172 414 H228 L228.8 418Z" fill="#F05A38"/><rect x="166" y="432" width="68" height="3" rx="1.5" fill="#8F5A2C" opacity=".5"/>
+   <text x="200" y="429.5" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="11.5" class="tc-badget" id="tbadge">Noor</text></g>
   </g>
-  <g class="arm-l"><path d="M100 350 C84 372 96 394 126 400 L148 388 C130 382 120 370 120 358 Z" fill="#0F9E8E"/>
-   <g class="hand-tap"><ellipse cx="150" cy="395" rx="19" ry="10" fill="url(#g-skin)"/></g></g>
-  <g class="arm-r"><path d="M300 350 C316 372 304 394 274 400 L252 388 C270 382 280 370 280 358 Z" fill="#0F9E8E"/>
-   <ellipse cx="250" cy="395" rx="19" ry="10" fill="url(#g-skin)"/></g>
+  <g class="arm-l"><path class="tc-sl" d="M96 336 C74 352 62 392 86 408 L148 413 L150 390 C134 388 122 384 116 374 C112 366 112 350 116 340Z"/><path class="tc-cuff" d="M143 389 L152 390 L150 414 L141 413Z"/>
+   <g class="hand-tap"><path class="tc-palm" d="M150 401 C149 393 160 389 172 390 C181 391 186 395 185 401 C184 408 174 412 163 412 C155 412 150 408 150 401Z"/><path class="tc-crease" d="M175 392 Q179 398 177 405 M169 391 Q173 399 171 408 M163 391 Q166 399 164 409"/></g></g>
+  <g class="arm-r"><path class="tc-sl" d="M304 336 C326 352 338 392 314 408 L252 413 L250 390 C266 388 278 384 284 374 C288 366 288 350 284 340Z"/><path class="tc-cuff" d="M257 389 L248 390 L250 414 L259 413Z"/>
+   <path class="tc-palm" d="M250 401 C251 393 240 389 228 390 C219 391 214 395 215 401 C216 408 226 412 237 412 C245 412 250 408 250 401Z"/><path class="tc-crease" d="M225 392 Q221 398 223 405 M231 391 Q227 399 229 408 M237 391 Q234 399 236 409"/></g>
    <g class="pose pose-wave"><g class="wave-in">
-    <path d="M100 350 C70 336 56 292 62 246 L96 244 C96 282 110 314 132 332 Z" fill="#0F9E8E"/>
-    <ellipse cx="78" cy="226" rx="20" ry="24" fill="url(#g-skin)"/>
-    <rect x="58" y="196" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(-14 62 209)"/>
-    <rect x="68" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
-    <rect x="79" y="188" width="9" height="28" rx="4.5" fill="#F3C49E"/>
-    <rect x="90" y="194" width="9" height="26" rx="4.5" fill="#F3C49E" transform="rotate(12 94 207)"/>
-    <ellipse cx="98" cy="234" rx="7" ry="12" fill="#F3C49E" transform="rotate(35 98 234)"/>
+    <path class="tc-sl" d="M108 380 C82 386 64 370 62 342 C58 312 56 284 58 258 L94 254 C94 282 98 308 104 332 C108 348 112 362 118 370Z"/><path class="tc-cuff" d="M56 262 L57 250 L95 246 L95 258Z"/>
+    <path class="tc-fgd" stroke-width="11.799999999999999" d="M63 214 L57 190 M72 211 L70 182 M81 211 L83 183 M90 215 L96 193 M92 238 L106 224"/><path class="tc-palm" d="M58 222 C58 212 66 208 76 208 C87 208 94 213 94 222 L93 238 C92 248 85 254 76 254 C67 254 60 248 59 238Z"/><path class="tc-fg" stroke-width="9.2" d="M63 214 L57 190 M72 211 L70 182 M81 211 L83 183 M90 215 L96 193 M92 238 L106 224"/><path class="tc-crease" d="M66 236 Q76 242 86 234"/>
    </g></g>
    <g class="pose pose-thumb">
-    <path d="M98 352 C90 330 98 306 112 300 L138 306 C130 318 124 336 126 354 Z" fill="#0F9E8E"/>
-    <rect x="108" y="278" width="36" height="34" rx="12" fill="url(#g-skin)"/>
-    <rect x="128" y="280" width="18" height="8" rx="4" fill="#F3C49E"/><rect x="128" y="288" width="18" height="8" rx="4" fill="#F3C49E"/>
-    <rect x="128" y="296" width="18" height="8" rx="4" fill="#F3C49E"/><rect x="127" y="304" width="16" height="7" rx="3.5" fill="#F3C49E"/>
-    <rect x="104" y="250" width="16" height="34" rx="8" fill="#F3C49E" transform="rotate(-10 112 268)"/>
-    <ellipse cx="110" cy="254" rx="5" ry="4" fill="#FBE3CF" transform="rotate(-10 110 254)"/>
+    <path class="tc-sl" d="M98 384 C78 380 74 360 84 344 C92 332 100 320 108 310 L142 318 C134 330 128 342 126 354 C124 364 118 376 110 382Z"/><path class="tc-cuff" d="M103 318 L104 307 L144 310 L143 321Z"/>
+    <path class="tc-fgd" stroke-width="9.2" d="M128 286 H140 M128 294 H141 M128 302 H140 M127 309 H137"/><path class="tc-palm" d="M104 292 C104 284 110 280 118 280 H132 C140 280 144 285 144 292 V302 C144 310 139 314 131 314 H117 C109 314 104 309 104 302Z"/><path class="tc-fg" stroke-width="6.6" d="M128 286 H140 M128 294 H141 M128 302 H140 M127 309 H137"/><path class="tc-fgd" stroke-width="15.2" d="M113 286 L110 260"/><path class="tc-fg" stroke-width="12.6" d="M113 288 L110 260"/><ellipse cx="109.5" cy="258" rx="3.6" ry="4.6" fill="#FFFFFF" opacity=".42"/>
    </g>
   <g class="pose pose-chin">
-   <path d="M302 352 C298 312 274 290 250 282 L238 302 C260 310 276 328 282 356 Z" fill="#0F9E8E"/>
-   <ellipse cx="230" cy="266" rx="24" ry="15" fill="url(#g-skin)" transform="rotate(-14 230 266)"/>
-   <circle cx="210" cy="258" r="7" fill="#F3C49E"/><circle cx="220" cy="254" r="7" fill="#F3C49E"/><circle cx="231" cy="252" r="7" fill="#F3C49E"/><circle cx="242" cy="253" r="7" fill="#F3C49E"/>
+   <path class="tc-sl" d="M324 400 C318 356 292 312 258 284 L238 300 C262 324 280 360 284 402Z"/><path class="tc-cuff" d="M264 290 L254 280 L232 298 L242 308Z"/>
+   <path class="tc-fgd" stroke-width="12.0" d="M216 262 L217 261 M225 258 L226 257 M235 257 L236 256.5 M244 260 L245 259.6"/><path class="tc-palm" d="M212 266 C212 258 222 254 234 255 C246 256 254 262 252 270 C250 279 238 284 226 282 C217 281 212 274 212 266Z"/><path class="tc-fg" stroke-width="9.4" d="M216 262 L217 261 M225 258 L226 257 M235 257 L236 256.5 M244 260 L245 259.6"/><path class="tc-fgd" stroke-width="11.4" d="M216 272 L204 262"/><path class="tc-fg" stroke-width="8.8" d="M218 273 L204 262"/>
   </g>
   <g class="pose pose-ear">
-   <path d="M304 352 C324 314 316 262 294 236 L276 248 C292 274 294 312 282 352 Z" fill="#0F9E8E"/>
-   <ellipse cx="280" cy="206" rx="15" ry="25" fill="url(#g-skin)" transform="rotate(-18 280 206)"/>
-   <path d="M272 192 Q266 206 274 220" stroke="#D9A37C" stroke-width="2.5" fill="none"/>
+   <path class="tc-sl" d="M290 380 C318 384 334 364 330 332 C326 300 316 268 304 238 L274 250 C286 280 294 310 294 334 C294 350 288 362 280 370Z"/><path class="tc-cuff" d="M308 246 L302 234 L270 244 L275 256Z"/>
+   <path class="tc-fgd" stroke-width="11.2" d="M279 190 L273 168 M286 187 L284 160 M293 189 L295 163 M298 196 L304 176 M277 216 L266 206"/><path class="tc-palm" d="M274 196 C276 186 286 182 294 186 C301 190 302 200 300 212 C298 224 290 230 282 228 C274 226 272 208 274 196Z"/><path class="tc-fg" stroke-width="8.6" d="M279 190 L273 168 M286 187 L284 160 M293 189 L295 163 M298 196 L304 176 M277 216 L266 206"/><path class="tc-crease" d="M280 212 Q288 216 295 208"/>
   </g>
   <g class="pose pose-open"><g class="open-in">
-   <path d="M302 352 C306 326 298 306 280 298 L266 316 C278 322 282 336 280 356 Z" fill="#0F9E8E"/>
-   <ellipse cx="262" cy="302" rx="23" ry="13" fill="url(#g-skin)" transform="rotate(-16 262 302)"/>
-   <rect x="236" y="284" width="8" height="22" rx="4" fill="#F3C49E" transform="rotate(-48 240 295)"/>
-   <rect x="242" y="278" width="8" height="24" rx="4" fill="#F3C49E" transform="rotate(-36 246 290)"/>
-   <rect x="250" y="275" width="8" height="24" rx="4" fill="#F3C49E" transform="rotate(-24 254 287)"/>
-   <ellipse cx="278" cy="290" rx="6" ry="11" fill="#F3C49E" transform="rotate(30 278 290)"/>
+   <path class="tc-sl" d="M300 384 C322 384 330 362 322 344 C314 328 302 312 288 302 L266 322 C278 330 286 342 286 354 C286 362 284 368 280 372Z"/><path class="tc-cuff" d="M292 306 L282 298 L262 322 L272 330Z"/>
+   <path class="tc-fgd" stroke-width="11.2" d="M246 300 L226 290 M249 294 L231 279 M255 291 L242 273 M263 290 L256 273 M274 294 L281 278"/><path class="tc-palm" d="M240 300 C246 290 262 286 274 290 C284 294 284 304 276 310 C266 317 250 318 242 312 C238 308 238 304 240 300Z"/><path class="tc-fg" stroke-width="8.6" d="M246 300 L226 290 M249 294 L231 279 M255 291 L242 273 M263 290 L256 273 M274 294 L281 278"/><path class="tc-crease" d="M252 306 Q262 304 270 298"/>
   </g></g>
   <g class="pose pose-point">
-   <path d="M302 352 C322 314 330 268 336 230 L358 236 C348 278 334 318 324 356 Z" fill="#0F9E8E"/>
-   <g transform="rotate(-38 350 214)">
-    <ellipse cx="350" cy="214" rx="20" ry="13" fill="url(#g-skin)"/>
-    <rect x="364" y="203" width="26" height="7" rx="3.5" fill="#F3C49E"/><rect x="366" y="210" width="28" height="7" rx="3.5" fill="#F3C49E"/>
-    <rect x="365" y="217" width="26" height="7" rx="3.5" fill="#F3C49E"/><rect x="362" y="224" width="20" height="6" rx="3" fill="#F3C49E"/>
-    <ellipse cx="348" cy="200" rx="5" ry="10" fill="#F3C49E" transform="rotate(-50 348 200)"/>
-   </g>
+   <path class="tc-sl" d="M292 378 C316 386 336 372 340 344 C346 310 356 280 364 252 L330 242 C322 272 312 304 306 330 C302 348 296 362 284 368Z"/><path class="tc-cuff" d="M326 250 L328 238 L364 244 L362 256Z"/>
+   <path class="tc-fgd" stroke-width="11.799999999999999" d="M352 213 L366 180"/><path class="tc-palm" d="M330 224 C328 214 336 206 346 206 C357 206 364 214 362 224 C360 235 352 240 344 239 C336 238 331 232 330 224Z"/><path class="tc-fg" stroke-width="9.2" d="M352 213 L366 180"/><path class="tc-fgd" stroke-width="10.2" d="M356 222 L362 216 M354 230 L361 226 M349 236 L356 233"/><path class="tc-fg" stroke-width="7.6" d="M355 223 L362 216 M353 230 L361 226 M348 236 L356 233"/><path class="tc-fgd" stroke-width="11.4" d="M338 214 L340 200"/><path class="tc-fg" stroke-width="8.8" d="M338 216 L340 200"/>
   </g>
-  <g stroke="#3B7BE8" stroke-width="4" fill="none" stroke-linecap="round">
-   <path class="lw lw1" d="M306 178 Q314 192 306 206"/><path class="lw lw2" d="M316 170 Q328 192 316 214"/><path class="lw lw3" d="M326 162 Q342 192 326 222"/>
+  <g class="tc-waves">
+   <path class="lw lw1" d="M318 176 Q326 192 318 208"/><path class="lw lw2" d="M330 168 Q342 192 330 216"/><path class="lw lw3" d="M342 160 Q358 192 342 224"/>
   </g>
  </g>
 </svg>`;
@@ -3426,7 +3489,7 @@ function renderRoom(){
       <button class="btn sm" id="wrap" hidden>اختم الحصة</button>
       <form class="typer" id="typer" hidden><input class="input en" id="msg" placeholder="Type in English…" autocomplete="off" enterkeyhint="send"><button class="btn primary" type="submit">إرسال</button></form>
     </div></div>`;
-  if(!teacherOf(L.kid).female){ $('#tbox').classList.add('t-adam'); const tb = document.getElementById('tbadge'); if(tb) tb.textContent = 'Adam'; }
+  teacherDress(L.kid);
   $('#exit').onclick = confirmExit;
   $('#cam').onclick = () => { const p = DB.profiles[L.kid]; if(camStream){ stopCam(); p.camOff = true; } else { p.camOff = false; startCam(); } save(); };
   if(!(DB.profiles[L.kid]||{}).camOff) startCam();
@@ -3452,14 +3515,21 @@ function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt
     if(!busy && (now - v.at)/1000 > stp.sec + 180 && now - v.idleAt > 25000){ v.idleAt = now; v2Advance(true); } } }
 
 const STATE_TXT = {idle:'', thinking:'المعلمة تفكر…', speaking:'المعلمة تتكلم · اضغط عليها لتقاطعها', listening:'دورك! تكلم بالإنجليزي 🎤', tap:'اضغط زر الميكروفون الأزرق وتكلم'};
+const STATE_TXT_M = {thinking:'المعلم يفكر…', speaking:'المعلم يتكلم · اضغط عليه لتقاطعه'};
 const POSES = ['wave','thumb','chin','ear','point','open'];
 function setPose(p, ms){ if(!L) return; const b = $('#tbox'); if(!b) return; clearTimeout(L.poseT);
   POSES.forEach(x => b.classList.toggle('p-'+x, x === p));
   if(ms) L.poseT = setTimeout(() => { if(L) setPose(L.state === 'thinking' ? 'chin' : L.state === 'listening' ? 'ear' : null); }, ms); }
-function look(x, y){ const p = document.querySelector('#tbox .pupils'); if(p) p.style.transform = `translate(${x}px,${y}px)`; }
+function look(x, y){ document.querySelectorAll('#tbox .pupils').forEach(p => { p.style.transform = `translate(${x}px,${y}px)`; }); }
+/* which character (Noor / Adam) and which art direction (the calmer look for 12+) */
+function teacherDress(k){ const b = $('#tbox'); if(!b) return; const t = teacherOf(k), kid = DB.kids[k] || {};
+  b.classList.toggle('t-adam', !t.female);
+  let age = 0; try{ age = kid.birth ? ageOf(kid.birth) : 0; }catch(e){} b.classList.toggle('teen', age >= 12);
+  const tb = document.getElementById('tbadge'); if(tb) tb.textContent = t.female ? 'Noor' : 'Adam';
+  const sv = b.querySelector('svg'); if(sv) sv.setAttribute('aria-label', t.name); }
 function setState(s){ if(!L) return; L.state = s; const b = $('#tbox'); if(!b) return;
   b.classList.toggle('speaking', s==='speaking'); b.classList.toggle('listening', s==='listening'); b.classList.toggle('thinking', s==='thinking');
-  $('#state').textContent = STATE_TXT[s] || '';
+  $('#state').textContent = (!teacherOf(L.kid).female && STATE_TXT_M[s]) || STATE_TXT[s] || '';
   const m = $('#mic'); if(m){ m.classList.toggle('on', s==='listening'); m.classList.toggle('wait', s==='thinking'||s==='speaking'); }
   if(s === 'thinking'){ setPose('chin'); look(5,-6); }
   else if(s === 'listening'){ setPose('ear'); look(-2,3); }
