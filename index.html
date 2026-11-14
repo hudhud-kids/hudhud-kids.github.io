@@ -238,25 +238,20 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 }
 
 /* teacher animation */
-/* characters v2: every colour is a variable on .tbox, so a character (.t-adam, .t-modern) or an art direction (.teen) is one class */
+/* characters v2: every colour is a variable on .tbox, so a character (.t-adam) or an art direction (.teen) is one class */
 .tbox{--t-w1:#EAF3FF;--t-w2:#D3E4FC;--t-w3:#C2D7F5;--t-sk1:#FFE3CB;--t-sk2:#F6C8A6;--t-sk3:#E6A983;--t-sk:#F6C8A6;--t-skd:#D8946C;--t-lip:#D2605A;--t-brow:#4A2A18;--t-blush:.26;
-  --t-h1:#3CC9B8;--t-h2:#128A7E;--t-hd:#0B6A61;--t-hb:#0F766E;--t-c1:#6A58A6;--t-c2:#483A7C;--t-sl:#5E4D98;--t-sld:#392E69;--t-d1:#DCA06A;--t-d2:#B9773F;--t-i1:#8E5C30;--t-i2:#4A2A12;--t-ink:#2A1A10;--t-acc:#3B7BE8;--t-shm:#D4373F}
-.tbox.t-adam{--t-sk1:#F9D6B3;--t-sk2:#EBBB92;--t-sk3:#D59C70;--t-sk:#EBBB92;--t-skd:#C2845A;--t-lip:#B9665C;--t-brow:#2A1A10;--t-blush:.2;--t-c1:#FFFFFF;--t-c2:#E3EAF4;--t-sl:#F8FAFD;--t-sld:#CBD6E6}
-.tbox.t-adam.t-modern{--t-c1:#3A5FA6;--t-c2:#27437C;--t-sl:#33559A;--t-sld:#1F376B}
-.tbox.teen{--t-w1:#EEF1F6;--t-w2:#DDE4EE;--t-w3:#CBD5E3;--t-h1:#7286B8;--t-h2:#3E4E82;--t-hd:#2F3C68;--t-hb:#33416F;--t-c1:#525868;--t-c2:#363B49;--t-sl:#494F5E;--t-sld:#2A2E3A;--t-blush:.16;--t-acc:#5C77B8;--t-shm:#B5454B;--t-lip:#C4635E}
-.tbox.teen.t-adam{--t-c1:#FFFFFF;--t-c2:#E3E7EE;--t-sl:#F8F9FB;--t-sld:#CBD2DE;--t-blush:.1;--t-lip:#B0665E}
-.tbox.teen.t-adam.t-modern{--t-c1:#4A5568;--t-c2:#2F3848;--t-sl:#414B5D;--t-sld:#262E3C}
+  --t-hair:#4E2C19;--t-hairhi:#7A4C2C;--t-c1:#31C2B1;--t-c2:#138C80;--t-sl:#22AC9C;--t-sld:#0D6E65;--t-bl:#FFF4E4;--t-d1:#DCA06A;--t-d2:#B9773F;--t-i1:#8E5C30;--t-i2:#4A2A12;--t-ink:#2A1A10;--t-acc:#3B7BE8}
+.tbox.t-adam{--t-sk1:#F9D6B3;--t-sk2:#EBBB92;--t-sk3:#D59C70;--t-sk:#EBBB92;--t-skd:#C2845A;--t-lip:#B9665C;--t-brow:#2A1A10;--t-blush:.2;--t-hair:#2A1A10;--t-hairhi:#4A3020;--t-c1:#4A82E6;--t-c2:#2C59B8;--t-sl:#3F74D8;--t-sld:#21469A}
+.tbox.teen{--t-w1:#EEF1F6;--t-w2:#DDE4EE;--t-w3:#CBD5E3;--t-c1:#5F8F8C;--t-c2:#3D6664;--t-sl:#537F7C;--t-sld:#2C4D4B;--t-bl:#F4F1EC;--t-blush:.16;--t-acc:#5C77B8;--t-lip:#C4635E}
+.tbox.teen.t-adam{--t-c1:#56647E;--t-c2:#394459;--t-sl:#4C5A73;--t-sld:#283144;--t-blush:.1;--t-lip:#B0665E}
 .tbox .ts-w1{stop-color:var(--t-w1)}.tbox .ts-w2{stop-color:var(--t-w2)}.tbox .ts-sk1{stop-color:var(--t-sk1)}.tbox .ts-sk2{stop-color:var(--t-sk2)}.tbox .ts-sk3{stop-color:var(--t-sk3)}
-.tbox .ts-h1{stop-color:var(--t-h1)}.tbox .ts-h2{stop-color:var(--t-h2)}.tbox .ts-c1{stop-color:var(--t-c1)}.tbox .ts-c2{stop-color:var(--t-c2)}.tbox .ts-d1{stop-color:var(--t-d1)}.tbox .ts-d2{stop-color:var(--t-d2)}.tbox .ts-i1{stop-color:var(--t-i1)}.tbox .ts-i2{stop-color:var(--t-i2)}
+.tbox .ts-c1{stop-color:var(--t-c1)}.tbox .ts-c2{stop-color:var(--t-c2)}.tbox .ts-d1{stop-color:var(--t-d1)}.tbox .ts-d2{stop-color:var(--t-d2)}.tbox .ts-i1{stop-color:var(--t-i1)}.tbox .ts-i2{stop-color:var(--t-i2)}
 .tbox .tc-wains{fill:var(--t-w3);opacity:.55}.tbox .tc-frame{fill:#FFFFFF;stroke:#B9CBE6;stroke-width:3}.tbox .tc-poster{fill:#FFF1E3}.tbox .tc-shelf{fill:#C58B55}.tbox .tc-board{fill:#FFFFFF;stroke:#B9CBE6;stroke-width:4}.tbox .tc-deskedge{fill:#EDBE8C}
-.tbox .tc-sk{fill:var(--t-sk)}.tbox .tc-line{fill:none;stroke:var(--t-skd);stroke-width:1.8;stroke-linecap:round}
+.tbox .tc-sk{fill:var(--t-sk)}.tbox .tc-skd{fill:var(--t-skd)}.tbox .tc-line{fill:none;stroke:var(--t-skd);stroke-width:1.8;stroke-linecap:round}
 .tbox .tc-palm{fill:var(--t-sk);stroke:var(--t-skd);stroke-width:1.3}.tbox .tc-fg{fill:none;stroke:var(--t-sk);stroke-linecap:round}.tbox .tc-fgd{fill:none;stroke:var(--t-skd);stroke-linecap:round}.tbox .tc-crease{fill:none;stroke:var(--t-skd);stroke-width:1.5;stroke-linecap:round;opacity:.8}
 .tbox .tc-sl{fill:var(--t-sl);stroke:var(--t-sld);stroke-width:1.6;stroke-linejoin:round}.tbox .tc-cuff{fill:var(--t-sld)}.tbox .tc-seam{fill:none;stroke:var(--t-sld);stroke-width:2;stroke-linecap:round}
-.tbox .tc-collar{fill:#FFFFFF;stroke:var(--t-sld);stroke-width:1.6;stroke-linejoin:round}.tbox .tc-btn{fill:var(--t-sld)}.tbox .tc-lapel{fill:var(--t-sld);opacity:.55}.tbox .tc-badget{fill:#0F766E}
-.tbox .tc-hijd{fill:var(--t-hd)}.tbox .tc-hijband{fill:var(--t-hb)}.tbox .tc-fold{fill:none;stroke:var(--t-hd);stroke-width:2.4;stroke-linecap:round;opacity:.42}.tbox .tc-hijhi{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-linecap:round;opacity:.22}
-.tbox .tc-shmline{fill:none;stroke:var(--t-shm);stroke-width:2.5}.tbox .tc-shmdot{fill:var(--t-shm)}.tbox .tc-shmback{fill:#E4DCD3}.tbox .tc-shmfold{fill:none;stroke:#8A7460;stroke-width:2;stroke-linecap:round;opacity:.35}
-.tbox .tc-agal{fill:none;stroke:#1F1B1A;stroke-width:9.5;stroke-linecap:round}.tbox .tc-agalhi{fill:none;stroke:#FFFFFF;stroke-width:1.6;stroke-linecap:round;opacity:.22}
-.tbox .tc-hair{fill:#2A1A10}.tbox .tc-hairhi{fill:#4A3020}.tbox .tc-beard{fill:#2A1A10;opacity:.9}
+.tbox .tc-collar{fill:#FFFFFF;stroke:var(--t-sld);stroke-width:1.6;stroke-linejoin:round}.tbox .tc-btn2{fill:var(--t-sld);opacity:.55}.tbox .tc-blouse{fill:var(--t-bl)}.tbox .tc-neckline{fill:none;stroke:#D9C3A4;stroke-width:2;stroke-linecap:round}.tbox .tc-rib{fill:none;stroke:var(--t-sld);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.tbox .tc-badget{fill:#0F766E}
+.tbox .tc-hair{fill:var(--t-hair)}.tbox .tc-hairhi{fill:var(--t-hairhi)}.tbox .tc-strand{fill:none;stroke:var(--t-hairhi);stroke-width:2.6;stroke-linecap:round;opacity:.75}.tbox .tc-beard{fill:#2A1A10;opacity:.9}
 .tbox .tc-blush{fill:#FF7F78;opacity:var(--t-blush)}
 .tbox .tc-brow{fill:none;stroke:var(--t-brow);stroke-width:4.3;stroke-linecap:round;transform-box:fill-box;transform-origin:center;transition:transform .2s ease-out}
 .tbox.t-adam .tc-brow{stroke-width:5.8}
@@ -264,9 +259,8 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .tbox .tc-lip{fill:var(--t-lip)}.tbox .tc-lipline{fill:none;stroke:var(--t-lip);stroke-width:2.2;stroke-linecap:round}.tbox .tc-lipo{fill:none;stroke:var(--t-lip);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .tbox .tc-in{fill:#5E1C1B}.tbox .tc-tongue{fill:#E8706F}
 .tbox .tc-waves{fill:none;stroke:var(--t-acc);stroke-width:4;stroke-linecap:round}
-.tbox .c-adam,.tbox .c-shm,.tbox .c-mod{display:none}
+.tbox .c-adam{display:none}
 .tbox.t-adam .c-noor{display:none}.tbox.t-adam .c-adam{display:inline}
-.tbox.t-adam:not(.t-modern) .c-shm{display:inline}.tbox.t-adam.t-modern .c-mod{display:inline}
 .tbox svg .pose{opacity:0;transform-box:view-box;transform:translateY(30px) rotate(var(--r,0deg)) scale(.9);transition:opacity .26s ease,transform .42s cubic-bezier(.3,1.35,.5,1)}
 .pose-wave,.pose-thumb{transform-origin:108px 345px;--r:-6deg}
 .pose-chin,.pose-ear,.pose-point,.pose-open{transform-origin:298px 345px;--r:6deg}
@@ -1938,7 +1932,7 @@ async function loadContent(level){
 function lessonQuizFromBank(level, ui, li){ const c = CONTENT[level]; return c && c.quizzes ? c.quizzes[`${ui}-${li}`] || null : null; }
 
 /* =============== TEACHERS =============== */
-const TEACHERS = {noor:{name:'Teacher Noor', ar:'المعلمة نور', female:true}, adam:{name:'Teacher Adam', ar:'المعلم آدم', female:false}, adam2:{name:'Teacher Adam', ar:'المعلم آدم · لبس عصري', female:false, look:'modern'}};
+const TEACHERS = {noor:{name:'Teacher Noor', ar:'المعلمة نور', female:true}, adam:{name:'Teacher Adam', ar:'المعلم آدم', female:false}};
 const teacherOf = k => TEACHERS[(DB.profiles[k] && DB.profiles[k].teacher) || (DB.kids[k].boy ? 'adam' : 'noor')] || TEACHERS.noor;
 
 /* =============== CALENDAR (.ics) =============== */
@@ -2624,11 +2618,9 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
   <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-w1"/><stop offset="1" class="ts-w2"/></linearGradient>
   <radialGradient id="g-skin" cx=".46" cy=".36" r=".72"><stop offset="0" class="ts-sk1"/><stop offset=".62" class="ts-sk2"/><stop offset="1" class="ts-sk3"/></radialGradient>
   <linearGradient id="g-neck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-sk3"/><stop offset="1" class="ts-sk2"/></linearGradient>
-  <linearGradient id="g-hij" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" class="ts-h1"/><stop offset="1" class="ts-h2"/></linearGradient>
   <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-c1"/><stop offset="1" class="ts-c2"/></linearGradient>
   <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-d1"/><stop offset="1" class="ts-d2"/></linearGradient>
   <radialGradient id="g-iris" cx=".5" cy=".62" r=".6"><stop offset="0" class="ts-i1"/><stop offset="1" class="ts-i2"/></radialGradient>
-  <pattern id="g-shm" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45 200 200)"><rect width="11" height="11" fill="#FBF8F4"/><path d="M0 2.2H11M2.2 0V11" class="tc-shmline"/><rect x="5.6" y="5.6" width="3" height="3" class="tc-shmdot"/></pattern>
   <clipPath id="g-scene"><rect width="400" height="440" rx="40"/></clipPath>
   <clipPath id="g-eyeL"><path d="M160 181 Q175 166 192 180 Q177 193 160 181Z"/></clipPath>
   <clipPath id="g-eyeR"><path d="M208 180 Q225 166 240 181 Q223 193 208 180Z"/></clipPath>
@@ -2674,31 +2666,27 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
   <g class="think-dots"><circle cx="290" cy="238" r="6"/><circle cx="308" cy="218" r="9"/><circle cx="334" cy="192" r="14"/></g>
   <g class="sway">
    <g class="t-body">
+    <path class="c-noor" d="M180 250 H220 V300 Q200 316 180 300Z" fill="url(#g-neck)"/>
+    <path class="c-adam" d="M173 232 H227 V298 Q200 316 173 298Z" fill="url(#g-neck)"/><path class="c-adam tc-skd" d="M173 250 Q200 272 227 250 V238 H173Z" opacity=".3"/>
     <g class="c-noor" transform="translate(0 -12)">
      <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
-     <path d="M200 350 L200 440" class="tc-seam"/>
+     <path d="M166 306 C176 326 224 326 234 306 L246 312 C236 356 226 404 224 452 L176 452 C174 404 164 356 154 312Z" class="tc-blouse"/>
+     <path d="M166 306 C176 326 224 326 234 306" class="tc-neckline"/>
+     <path d="M154 312 C164 356 174 404 176 452 M246 312 C236 356 226 404 224 452" class="tc-seam"/>
+     <circle cx="200" cy="352" r="2.6" class="tc-btn2"/><circle cx="200" cy="372" r="2.6" class="tc-btn2"/><circle cx="200" cy="392" r="2.6" class="tc-btn2"/>
     </g>
-    <g class="c-shm"><path d="M146 150 H254 V292 C236 312 164 312 146 292Z" class="tc-shmback"/></g>
-    <g class="c-adam">
-     <path d="M173 232 H227 V298 Q200 316 173 298Z" fill="url(#g-neck)"/>
-    </g>
-    <g class="c-shm" transform="translate(0 -12)">
+    <g class="c-adam" transform="translate(0 -12)">
      <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
-     <path d="M167 286 C176 304 190 312 200 313 C210 312 224 304 233 286 L239 302 C228 320 212 328 200 329 C188 328 172 320 161 302Z" class="tc-collar"/>
-     <path d="M200 329 V440" class="tc-seam"/><path d="M193 330 V440 M207 330 V440" class="tc-seam" opacity=".45"/>
-     <circle cx="200" cy="343" r="3" class="tc-btn"/><circle cx="200" cy="361" r="3" class="tc-btn"/>
-    </g>
-    <g class="c-mod" transform="translate(0 -12)">
-     <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
-     <path d="M168 300 L200 360 L232 300 L226 288 Q200 306 174 288Z" fill="#FDFEFF"/>
-     <path d="M174 288 L200 318 L185 330 L165 302Z" class="tc-collar"/><path d="M226 288 L200 318 L215 330 L235 302Z" class="tc-collar"/>
-     <path d="M158 307 L168 300 L200 362 L200 440 L178 440 C172 400 162 344 158 307Z" class="tc-lapel"/><path d="M242 307 L232 300 L200 362 L200 440 L222 440 C228 400 238 344 242 307Z" class="tc-lapel"/>
-     <path d="M200 362 V440" class="tc-seam"/>
+     <path d="M166 302 L200 346 L234 302 L226 288 Q200 306 174 288Z" fill="#FDFEFF"/>
+     <path d="M174 288 L200 318 L185 330 L164 302Z" class="tc-collar"/><path d="M226 288 L200 318 L215 330 L236 302Z" class="tc-collar"/>
+     <path d="M160 306 L200 356 L240 306" class="tc-rib"/>
     </g>
    </g>
   <g class="t-tilt"><g class="t-head"><g class="t-idle">
-   <g class="c-noor"><path d="M200 84 C246 84 276 120 274 172 C273 206 262 232 254 252 C270 268 292 296 300 332 C268 352 232 358 200 358 C168 358 132 352 100 332 C108 296 130 268 146 252 C138 232 127 206 126 172 C124 120 154 84 200 84Z" class="tc-hijd"/></g>
-   <g class="c-mod">
+   <g class="c-noor"><path class="tc-hair" d="M200 85 C248 85 277 122 273 178 C271 214 277 250 281 278 C283 295 273 306 259 304 C247 302 239 294 237 284 L163 284 C161 294 153 302 141 304 C127 306 117 295 119 278 C123 250 129 214 127 178 C123 122 152 85 200 85Z"/>
+    <path class="tc-strand" d="M135 200 C132 232 129 258 127 282 M265 200 C268 232 271 258 273 282 M147 250 C147 270 146 286 141 297 M253 250 C253 270 254 286 259 297"/>
+    <path d="M180 236 H220 V300 Q200 314 180 300Z" fill="url(#g-neck)"/><path d="M180 252 Q200 270 220 252 V240 H180Z" class="tc-skd" opacity=".3"/></g>
+   <g class="c-adam">
     <path d="M141 180 C131 174 131 194 136 203 C139 209 145 209 146 203Z" class="tc-sk"/><path d="M259 180 C269 174 269 194 264 203 C261 209 255 209 254 203Z" class="tc-sk"/>
     <path d="M139 188 Q137 196 142 202 M261 188 Q263 196 258 202" class="tc-line" opacity=".6"/>
    </g>
@@ -2719,7 +2707,7 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <g clip-path="url(#g-eyeR)"><g class="pupils"><circle cx="224" cy="180" r="9" fill="url(#g-iris)"/><circle cx="224" cy="180" r="4.4" fill="#1B120B"/><circle class="tc-glint" cx="227.4" cy="176.6" r="2.7" fill="#FFFFFF"/><circle cx="220.8" cy="183.4" r="1.2" fill="#FFFFFF" opacity=".7"/></g><path d="M206 176 Q225 163 242 176 L242 172 Q225 158 206 172Z" class="tc-eyeshade"/></g>
     <g class="lids"><path d="M158 182 Q175 163 194 181 Q177 196 158 182Z"/><path d="M206 181 Q225 163 242 182 Q223 196 206 181Z"/></g>
     <path class="tc-lash" d="M159 182 Q175 165 193 180"/><path class="tc-lash" d="M207 180 Q225 165 241 182"/>
-    <path class="tc-lash c-noor" d="M160 181.5 Q155 180 151.5 175" stroke-width="2.6"/><path class="tc-lash c-noor" d="M240 181.5 Q245 180 248.5 175" stroke-width="2.6"/>
+    <path class="tc-lash c-noor" d="M160 181.5 Q156.5 180.5 154 177" stroke-width="2.6"/><path class="tc-lash c-noor" d="M240 181.5 Q243.5 180.5 246 177" stroke-width="2.6"/>
     <path class="tc-line" d="M168 189 Q177 192 186 187 M214 187 Q223 192 232 189" opacity=".3"/>
    </g>
    <g class="eyes-h">
@@ -2736,22 +2724,13 @@ const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor"
     <g data-m="grin"><path d="M177 221 Q200 228 223 221 Q220 249 200 250 Q180 249 177 221Z" class="tc-in"/><path d="M180 222.5 Q200 229 220 222.5 L218.5 230 Q200 235 181.5 230Z" fill="#FFFFFF"/><path d="M189 245 Q200 237 211 245 Q205 249.5 200 249.5 Q195 249.5 189 245Z" class="tc-tongue"/><path d="M177 221 Q200 228 223 221 Q220 249 200 250 Q180 249 177 221Z" class="tc-lipo"/></g>
    </g>
    <g class="c-noor">
-    <path fill-rule="evenodd" d="M200 84 C246 84 276 120 274 172 C273 206 262 232 254 252 C270 268 292 296 300 332 C268 352 232 358 200 358 C168 358 132 352 100 332 C108 296 130 268 146 252 C138 232 127 206 126 172 C124 120 154 84 200 84Z M200 124 C230 124 250 146 250 178 C250 208 238 232 222 245 C212 253 188 253 178 245 C162 232 150 208 150 178 C150 146 170 124 200 124Z" fill="url(#g-hij)"/>
-    <path d="M150 178 C150 146 170 124 200 124 C230 124 250 146 250 178 C247 152 228 136 200 136 C172 136 153 152 150 178Z" class="tc-hijband"/>
-    <path d="M178 245 C188 253 212 253 222 245 C236 250 246 258 254 268 C238 290 162 290 146 268 C154 258 164 250 178 245Z" class="tc-hijd" opacity=".34"/>
-    <path d="M146 268 C170 296 230 296 254 268 M160 290 C176 316 190 338 198 357 M246 284 C236 312 224 336 214 357 M118 318 C134 300 146 286 152 276" class="tc-fold"/>
-    <path d="M152 112 C170 94 212 90 238 104" class="tc-hijhi"/>
-    <circle cx="247" cy="262" r="5" fill="#FFD25E"/><circle cx="245.6" cy="260.6" r="1.8" fill="#FFFFFF" opacity=".8"/>
+    <path class="tc-hair" d="M144 192 C135 138 153 97 202 95 C251 97 267 138 256 192 C255 172 251 155 241 143 C223 153 194 151 177 130 C168 146 157 160 151 174 C148 180 146 186 144 192Z"/>
+    <path class="tc-hair" d="M148 174 C141 202 141 238 148 268 C139 260 132 244 131 220 C130 200 137 182 148 174Z M254 174 C259 202 259 238 252 268 C261 260 268 244 269 220 C270 200 263 184 254 174Z"/>
+    <path d="M186 108 C208 101 234 108 246 126" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity=".13"/>
+    <path class="tc-strand" d="M196 118 C216 124 232 132 242 142 M170 112 C162 122 156 136 153 152 M190 100 C182 110 178 120 177 128"/>
+    <path d="M150 154 L168 138" stroke="#F05A38" stroke-width="6.5" stroke-linecap="round"/><path d="M152 151 L160 144" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
    </g>
-   <g class="c-shm">
-    <path d="M200 82 C250 82 282 118 279 170 C277 204 276 232 280 262 C284 294 294 322 302 344 C284 356 264 358 246 352 C242 322 242 290 246 258 C250 236 252 206 251 176 C250 150 228 133 200 127 C172 133 150 150 149 176 C148 206 150 236 154 258 C158 290 158 322 154 352 C136 358 116 356 98 344 C106 322 116 294 120 262 C124 232 123 204 121 170 C118 118 150 82 200 82Z" fill="url(#g-shm)"/>
-    <path d="M200 82 C250 82 282 118 279 170 C277 204 276 232 280 262 C284 294 294 322 302 344 C284 356 264 358 246 352 C254 300 268 240 262 170 C258 124 236 96 200 90 C164 96 142 124 138 170 C132 240 146 300 154 352 C136 358 116 356 98 344 C106 322 116 294 120 262 C124 232 123 204 121 170 C118 118 150 82 200 82Z" fill="#8A7460" opacity=".13"/>
-    <path d="M200 127 V92 M262 190 C262 250 266 300 274 348 M138 190 C138 250 134 300 126 348" class="tc-shmfold"/>
-    <path d="M149 176 C150 150 172 133 200 127 C228 133 250 150 251 176" fill="none" stroke="#B9A894" stroke-width="1.6" opacity=".7"/>
-    <path d="M131 138 Q200 96 269 138" class="tc-agal"/><path d="M136 124 Q200 84 264 124" class="tc-agal"/>
-    <path d="M150 122 Q200 92 250 122 M146 109 Q200 80 254 109" class="tc-agalhi"/>
-   </g>
-   <g class="c-mod">
+   <g class="c-adam">
     <path class="tc-hair" d="M140 182 C129 122 158 82 204 82 C250 82 271 124 260 182 C258 162 252 148 242 138 C232 144 214 146 196 142 C182 139 170 140 160 146 C150 154 143 166 140 182Z"/><path d="M160 146 C174 118 218 110 246 134 C222 124 190 128 172 142Z" class="tc-hairhi"/>
     <path class="tc-hair" d="M141 176 C140 186 142 192 143 198 L148 190 C146 182 146 170 148 160Z M259 176 C260 186 258 192 257 198 L252 190 C254 182 254 170 252 160Z"/>
    </g>
@@ -3289,20 +3268,21 @@ function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt
     if(!busy && (now - v.at)/1000 > stp.sec + 180 && now - v.idleAt > 25000){ v.idleAt = now; v2Advance(true); } } }
 
 const STATE_TXT = {idle:'', thinking:'المعلمة تفكر…', speaking:'المعلمة تتكلم · اضغط عليها لتقاطعها', listening:'دورك! تكلم بالإنجليزي 🎤', tap:'اضغط زر الميكروفون الأزرق وتكلم'};
+const STATE_TXT_M = {thinking:'المعلم يفكر…', speaking:'المعلم يتكلم · اضغط عليه لتقاطعه'};
 const POSES = ['wave','thumb','chin','ear','point','open'];
 function setPose(p, ms){ if(!L) return; const b = $('#tbox'); if(!b) return; clearTimeout(L.poseT);
   POSES.forEach(x => b.classList.toggle('p-'+x, x === p));
   if(ms) L.poseT = setTimeout(() => { if(L) setPose(L.state === 'thinking' ? 'chin' : L.state === 'listening' ? 'ear' : null); }, ms); }
 function look(x, y){ document.querySelectorAll('#tbox .pupils').forEach(p => { p.style.transform = `translate(${x}px,${y}px)`; }); }
-/* which character and which art direction: Adam / Adam in modern clothes / Noor, and the calmer look for 12+ */
+/* which character (Noor / Adam) and which art direction (the calmer look for 12+) */
 function teacherDress(k){ const b = $('#tbox'); if(!b) return; const t = teacherOf(k), kid = DB.kids[k] || {};
-  b.classList.toggle('t-adam', !t.female); b.classList.toggle('t-modern', t.look === 'modern');
+  b.classList.toggle('t-adam', !t.female);
   let age = 0; try{ age = kid.birth ? ageOf(kid.birth) : 0; }catch(e){} b.classList.toggle('teen', age >= 12);
   const tb = document.getElementById('tbadge'); if(tb) tb.textContent = t.female ? 'Noor' : 'Adam';
   const sv = b.querySelector('svg'); if(sv) sv.setAttribute('aria-label', t.name); }
 function setState(s){ if(!L) return; L.state = s; const b = $('#tbox'); if(!b) return;
   b.classList.toggle('speaking', s==='speaking'); b.classList.toggle('listening', s==='listening'); b.classList.toggle('thinking', s==='thinking');
-  $('#state').textContent = STATE_TXT[s] || '';
+  $('#state').textContent = (!teacherOf(L.kid).female && STATE_TXT_M[s]) || STATE_TXT[s] || '';
   const m = $('#mic'); if(m){ m.classList.toggle('on', s==='listening'); m.classList.toggle('wait', s==='thinking'||s==='speaking'); }
   if(s === 'thinking'){ setPose('chin'); look(5,-6); }
   else if(s === 'listening'){ setPose('ear'); look(-2,3); }
