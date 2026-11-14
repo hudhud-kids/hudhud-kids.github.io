@@ -918,10 +918,10 @@
      "frame": "To make the most of a trip to ___, you should ___."
     },
     {
-     "w": "once-in-a-lifetime",
-     "def": "very special and may only happen once",
+     "w": "the chance of a lifetime",
+     "def": "a very special opportunity that may never come again",
      "ar": "فرصة العمر / لا تتكرر",
-     "frame": "Seeing ___ was a once-in-a-lifetime experience."
+     "frame": "A trip to ___ would be the chance of a lifetime."
     },
     {
      "w": "must-see",
@@ -965,7 +965,7 @@
      },
      {
       "s": "Noura",
-      "t": "Try a hot-air balloon ride at sunrise. It's a once-in-a-lifetime experience. Make the most of it!"
+      "t": "Try a hot-air balloon ride at sunrise. It's the chance of a lifetime, so make the most of it!"
      }
     ],
     "focus": "If you ask me, you really should visit AlUla. It's well worth a visit.",
@@ -1005,7 +1005,8 @@
    },
    "exit": "Recommend one place in Saudi Arabia to me in two sentences, and say why it's worth it.",
    "recycle": [
-    "off the beaten track"
+    "off the beaten track",
+    "once in a lifetime"
    ]
   },
   "1-1": {
@@ -1624,10 +1625,10 @@
      "frame": "I let ___ slip through my fingers because ___."
     },
     {
-     "w": "if only",
-     "def": "used to say you strongly wish things were different",
-     "ar": "ليت / يا ليت",
-     "frame": "If only I had ___."
+     "w": "regret …ing",
+     "def": "to feel sorry about something you did or didn't do",
+     "ar": "يندم على (فعل شيء)",
+     "frame": "I regret ___ing because ___."
     },
     {
      "w": "a golden opportunity",
@@ -1672,7 +1673,7 @@
      },
      {
       "s": "Omar",
-      "t": "If only I had left on time! I won't let a chance like that slip through my fingers again."
+      "t": "I really regret staying home. If only I'd left on time! I won't let a chance like that slip through my fingers again."
      }
     ],
     "focus": "You should have left earlier. The event was all over social media.",
@@ -1710,7 +1711,10 @@
      "Is it always bad to miss an event? Why or why not?"
     ]
    },
-   "exit": "Tell me about one chance you missed, in two sentences, using 'should have' or 'could have'."
+   "exit": "Tell me about one chance you missed, in two sentences, using 'should have' or 'could have'.",
+   "recycle": [
+    "if only"
+   ]
   },
   "2-1": {
    "objective": "Today you will talk about how you could have prepared better for a test.",
@@ -2156,7 +2160,7 @@
     "prompts": [
      {
       "q": "What went wrong on your picnic?",
-      "hint": "Describe two problems with 'We were stranded …' or 'We forgot …'."
+      "hint": "Describe two problems with 'Everything went wrong when …' or 'We forgot …'."
      },
      {
       "q": "What could you have done differently?",
@@ -2610,7 +2614,7 @@
      },
      {
       "s": "Faisal",
-      "t": "That's the Wi-Fi password. It's written on the back of the router. Be careful to type capital letters correctly."
+      "t": "You'll need the Wi-Fi password. It's written on the back of the router. Be careful to type capital letters correctly."
      },
      {
       "s": "Grandpa",
@@ -3153,6 +3157,10 @@
      "t": "So it can't be a thief. It must be Aunt Huda. She's planning a surprise for Grandpa."
     },
     {
+     "s": "Noura",
+     "t": "She might be cleaning it for his party tonight."
+    },
+    {
      "s": "Reem",
      "t": "Yes! I put two and two together. She's the only one with the key."
     },
@@ -3494,9 +3502,9 @@
      "ex": "Get up early to make the most of your day."
     },
     {
-     "w": "once-in-a-lifetime",
+     "w": "the chance of a lifetime",
      "ar": "فرصة العمر / لا تتكرر",
-     "ex": "A balloon ride over AlUla is a once-in-a-lifetime experience."
+     "ex": "A balloon ride over AlUla is the chance of a lifetime."
     },
     {
      "w": "must-see",
@@ -3535,7 +3543,7 @@
     },
     {
      "s": "Noura",
-     "t": "Try a hot-air balloon ride at sunrise. It's a once-in-a-lifetime experience. Make the most of it!"
+     "t": "Try a hot-air balloon ride at sunrise. It's the chance of a lifetime, so make the most of it!"
     }
    ],
    "grammar": {
@@ -3956,9 +3964,9 @@
      "ex": "We let the win slip through our fingers in the last minute."
     },
     {
-     "w": "if only",
-     "ar": "ليت / يا ليت",
-     "ex": "If only I had checked my messages!"
+     "w": "regret …ing",
+     "ar": "يندم على (فعل شيء)",
+     "ex": "I regret not buying the tickets earlier."
     },
     {
      "w": "a golden opportunity",
@@ -3997,7 +4005,7 @@
     },
     {
      "s": "Omar",
-     "t": "If only I had left on time! I won't let a chance like that slip through my fingers again."
+     "t": "I really regret staying home. If only I'd left on time! I won't let a chance like that slip through my fingers again."
     }
    ],
    "grammar": {
@@ -4605,7 +4613,7 @@
     },
     {
      "s": "Faisal",
-     "t": "That's the Wi-Fi password. It's written on the back of the router. Be careful to type capital letters correctly."
+     "t": "You'll need the Wi-Fi password. It's written on the back of the router. Be careful to type capital letters correctly."
     },
     {
      "s": "Grandpa",
@@ -4914,7 +4922,7 @@
     "type": "mc",
     "q": "'They have the upper hand' means they …",
     "options": [
-     "have every advantage",
+     "have an advantage",
      "are holding hands",
      "have lost all hope",
      "are very tired"

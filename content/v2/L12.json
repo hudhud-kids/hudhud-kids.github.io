@@ -1058,10 +1058,10 @@
      "frame": "I like learning ___ at my own pace."
     },
     {
-     "w": "face-to-face",
-     "def": "meeting in person, not online",
-     "ar": "وجهاً لوجه",
-     "frame": "I prefer face-to-face lessons for ___."
+     "w": "interact with",
+     "def": "to talk and work together with other people",
+     "ar": "يتفاعل مع",
+     "frame": "In class, I can interact with ___ more easily."
     },
     {
      "w": "get distracted",
@@ -1103,7 +1103,7 @@
      },
      {
       "s": "Reem",
-      "t": "But face-to-face lessons are more fun. You can ask questions straight away."
+      "t": "But face-to-face lessons are more fun. You can interact with classmates and ask questions straight away."
      },
      {
       "s": "Hind",
@@ -1151,7 +1151,8 @@
    },
    "exit": "Tell me one good thing and one bad thing about online learning in a single sentence with 'although'.",
    "recycle": [
-    "a drawback"
+    "a drawback",
+    "face-to-face"
    ]
   },
   "1-2": {
@@ -1671,10 +1672,10 @@
      "frame": "I'd like to put a limit on ___."
     },
     {
-     "w": "fair enough",
-     "def": "used to accept that something is reasonable",
-     "ar": "معقول / لا بأس",
-     "frame": "Fair enough, but ___."
+     "w": "that sounds reasonable",
+     "def": "used to accept an offer because it seems fair",
+     "ar": "هذا معقول / عرض مقبول",
+     "frame": "That sounds reasonable, as long as ___."
     }
    ],
    "dialogue": {
@@ -1701,11 +1702,11 @@
     "p2": [
      {
       "s": "Dad",
-      "t": "Fair enough, as long as you tidy your room first."
+      "t": "That sounds reasonable, as long as you tidy your room first."
      },
      {
       "s": "Omar",
-      "t": "And can I have extra time if I help wash the car?"
+      "t": "Fair enough! And can I have extra time if I help wash the car?"
      },
      {
       "s": "Dad",
@@ -1716,7 +1717,7 @@
       "t": "That's a deal, Dad!"
      }
     ],
-    "focus": "Fair enough, as long as you tidy your room first.",
+    "focus": "That sounds reasonable, as long as you tidy your room first.",
     "qs": [
      "What does Omar's father want him to do?",
      "What condition does Dad set?"
@@ -1753,7 +1754,8 @@
    },
    "exit": "Make me an offer about your screen time using 'How about if …?' and 'as long as'.",
    "recycle": [
-    "cut down on"
+    "cut down on",
+    "fair enough"
    ]
   },
   "2-1": {
@@ -2253,10 +2255,10 @@
      "frame": "To keep everyone happy, we could ___."
     },
     {
-     "w": "I'm not keen on",
-     "def": "a polite way to say you don't like something",
-     "ar": "لست متحمّساً لـ",
-     "frame": "I'm not keen on ___, to be honest."
+     "w": "I'm not a big fan of",
+     "def": "a friendly way to say you don't really like something",
+     "ar": "لستُ من محبّي …",
+     "frame": "I'm not a big fan of ___, to be honest."
     },
     {
      "w": "sounds like a plan",
@@ -2286,7 +2288,7 @@
      },
      {
       "s": "Reem",
-      "t": "I'm not keen on the farm, to be honest. There's nothing to do there."
+      "t": "I'm not a big fan of the farm, to be honest. There's nothing to do there."
      },
      {
       "s": "Dad",
@@ -2353,7 +2355,8 @@
    "exit": "Without help, negotiate a plan for next Friday with me, using two of this unit's expressions.",
    "recycle": [
     "as long as",
-    "I could live with that"
+    "I could live with that",
+    "I'm not keen on"
    ]
   },
   "3-0": {
@@ -3137,6 +3140,14 @@
     },
     {
      "s": "Reem",
+     "t": "Exactly. That's my grandparents' house in Qassim. It's where we have a big family reunion every year."
+    },
+    {
+     "s": "Emma",
+     "t": "And who's the man in the foreground? He's beaming."
+    },
+    {
+     "s": "Reem",
      "t": "That's my uncle. Why do you think he looks so happy?"
     },
     {
@@ -3146,10 +3157,6 @@
     {
      "s": "Reem",
      "t": "Close! He'd just come back from studying abroad for two years."
-    },
-    {
-     "s": "Emma",
-     "t": "That explains it. And those kids in the background must be your cousins."
     }
    ],
    "grammar": {
@@ -3282,6 +3289,10 @@
      "t": "Hmm, it can't have been a coffee pot. It's completely flat."
     },
     {
+     "s": "Faisal",
+     "t": "Fair point. Maybe it was used for roasting the beans over a fire."
+    },
+    {
      "s": "Noura",
      "t": "That makes sense. The burn marks are a telltale sign. It might have belonged to a Bedouin family."
     },
@@ -3292,10 +3303,6 @@
     {
      "s": "Noura",
      "t": "So it's a real antique. It's older than our great-grandparents!"
-    },
-    {
-     "s": "Faisal",
-     "t": "Imagine how long it took to make coffee back then."
     }
    ],
    "grammar": {
@@ -3355,20 +3362,16 @@
      "t": "What about the goalkeeper lying on the grass?"
     },
     {
+     "s": "Omar",
+     "t": "He must be gutted. He might have touched the ball but couldn't stop it."
+    },
+    {
      "s": "Khalid",
      "t": "Judging by the clock on the scoreboard, it was the last minute of the match."
     },
     {
      "s": "Omar",
      "t": "Wow, what a nail-biting finish! Everyone must have been on the edge of their seats."
-    },
-    {
-     "s": "Khalid",
-     "t": "The man in the suit can't be a player. Maybe he's the coach?"
-    },
-    {
-     "s": "Omar",
-     "t": "Yes, and he looks as though he can't believe it!"
     }
    ],
    "grammar": {
@@ -3421,11 +3424,11 @@
     },
     {
      "s": "Reem",
-     "t": "Well, both pictures show families on a long journey."
+     "t": "Unlike the family on the train, the people in the car look a bit squashed."
     },
     {
-     "s": "Reem",
-     "t": "Unlike the family on the train, the people in the car look a bit squashed."
+     "s": "Ms Sarah",
+     "t": "Good. And how do you think they feel?"
     },
     {
      "s": "Reem",
@@ -3570,6 +3573,10 @@
      "t": "Terrible! I got stuck in traffic for forty minutes again."
     },
     {
+     "s": "Khalid",
+     "t": "That's the biggest drawback of the city, isn't it? I walk to the club in five minutes."
+    },
+    {
      "s": "Omar",
      "t": "Lucky you. On the one hand, Riyadh has everything; on the other hand, it's exhausting."
     },
@@ -3584,10 +3591,6 @@
     {
      "s": "Khalid",
      "t": "Exactly. The main advantage here is that everyone knows each other."
-    },
-    {
-     "s": "Omar",
-     "t": "I suppose each place has its pros and cons. Maybe I'll spend the summer with you!"
     }
    ],
    "grammar": {
@@ -3618,9 +3621,9 @@
      "ex": "With videos, you can study at your own pace."
     },
     {
-     "w": "face-to-face",
-     "ar": "وجهاً لوجه",
-     "ex": "It's easier to ask questions face-to-face."
+     "w": "interact with",
+     "ar": "يتفاعل مع",
+     "ex": "In class, we interact with our classmates much more."
     },
     {
      "w": "get distracted",
@@ -3644,15 +3647,11 @@
     },
     {
      "s": "Hind",
-     "t": "By what? Your phone?"
-    },
-    {
-     "s": "Hind",
      "t": "Fair enough. At home I can replay a lesson, whereas in class I might miss something."
     },
     {
      "s": "Reem",
-     "t": "But face-to-face lessons are more fun. You can ask questions straight away."
+     "t": "But face-to-face lessons are more fun. You can interact with classmates and ask questions straight away."
     },
     {
      "s": "Hind",
@@ -3789,6 +3788,10 @@
      "t": "Even though I love burgers, we've had fast food three times this week."
     },
     {
+     "s": "Emma",
+     "t": "I know, but cooking is so time-consuming."
+    },
+    {
      "s": "Noura",
      "t": "While it's true that it takes longer, my mum's kabsa is worth the wait."
     },
@@ -3799,10 +3802,6 @@
     {
      "s": "Noura",
      "t": "Exactly. A proper meal will do us good, and we'd feel better for the match tomorrow."
-    },
-    {
-     "s": "Emma",
-     "t": "And it's much cheaper too."
     },
     {
      "s": "Noura",
@@ -3866,6 +3865,10 @@
      "t": "But we should also mention a major concern: the ancient tombs at Hegra are fragile."
     },
     {
+     "s": "Omar",
+     "t": "Right. Thousands of visitors could cause damage to them."
+    },
+    {
      "s": "Faisal",
      "t": "Opinions are divided: some people want unlimited visitors, but others think there should be strict limits."
     },
@@ -3876,10 +3879,6 @@
     {
      "s": "Faisal",
      "t": "Only if the sites are properly protected, though."
-    },
-    {
-     "s": "Omar",
-     "t": "Exactly. Let's end our presentation with that point."
     }
    ],
    "grammar": {
@@ -3939,8 +3938,8 @@
      "t": "Point taken, but we'd concentrate much better."
     },
     {
-     "s": "Dana",
-     "t": "Despite the traffic, I still think tired students don't learn well."
+     "s": "Noura",
+     "t": "Although I'd love an extra hour in bed, I'm worried about the traffic."
     },
     {
      "s": "Noura",
@@ -3993,9 +3992,9 @@
      "ex": "My parents put a limit on my gaming time."
     },
     {
-     "w": "fair enough",
-     "ar": "معقول / لا بأس",
-     "ex": "Fair enough, but I need a break first."
+     "w": "that sounds reasonable",
+     "ar": "هذا معقول / عرض مقبول",
+     "ex": "Ninety minutes on Fridays? That sounds reasonable."
     }
    ],
    "dialogue": [
@@ -4012,16 +4011,12 @@
      "t": "Two hours is too much. One hour."
     },
     {
-     "s": "Dad",
-     "t": "Fair enough, as long as you tidy your room first."
-    },
-    {
      "s": "Omar",
-     "t": "And can I have extra time if I help wash the car?"
+     "t": "Let's meet halfway. An hour and a half?"
     },
     {
      "s": "Dad",
-     "t": "Only if you do it properly, without complaining!"
+     "t": "That sounds reasonable, as long as you tidy your room first."
     },
     {
      "s": "Omar",
@@ -4077,8 +4072,8 @@
      "t": "So, the options are Boulevard World or the desert camp in Thumamah."
     },
     {
-     "s": "Noura",
-     "t": "Boulevard World is too expensive. We need something within budget."
+     "s": "Reem",
+     "t": "What if we go to the desert camp and have a barbecue there?"
     },
     {
      "s": "Noura",
@@ -4158,6 +4153,10 @@
      "t": "That's not fair! The bathrooms take twice as long."
     },
     {
+     "s": "Faisal",
+     "t": "OK, let's split the difference. We'll take turns: one bathroom each."
+    },
+    {
      "s": "Noura",
      "t": "Deal. And I'll vacuum the stairs if you take the rubbish out."
     },
@@ -4168,10 +4167,6 @@
     {
      "s": "Noura",
      "t": "It's only fair, I suppose. But in return, you have to be careful with them."
-    },
-    {
-     "s": "Faisal",
-     "t": "I promise. Let's get started!"
     }
    ],
    "grammar": {
@@ -4231,6 +4226,10 @@
      "t": "Maybe. But someone also needs to take on the research."
     },
     {
+     "s": "Khalid",
+     "t": "Omar loves research, but last time he didn't really pull his weight."
+    },
+    {
      "s": "Sam",
      "t": "Let's compromise on the roles. You present the first half and I'll do the second."
     },
@@ -4241,10 +4240,6 @@
     {
      "s": "Sam",
      "t": "That's a win-win. Everyone does something they enjoy."
-    },
-    {
-     "s": "Khalid",
-     "t": "Great. Let's message Omar and see what he thinks."
     }
    ],
    "grammar": {
@@ -4304,6 +4299,10 @@
      "t": "It's lovely, but that's a bit much. Would you take a hundred and twenty?"
     },
     {
+     "s": "Seller",
+     "t": "A hundred and twenty? You drive a hard bargain! One hundred and seventy."
+    },
+    {
      "s": "Emma",
      "t": "How about a hundred and fifty, if you throw in that small purse?"
     },
@@ -4343,9 +4342,9 @@
      "ex": "It's hard to keep everyone happy on a family trip."
     },
     {
-     "w": "I'm not keen on",
-     "ar": "لست متحمّساً لـ",
-     "ex": "I'm not keen on long car journeys."
+     "w": "I'm not a big fan of",
+     "ar": "لستُ من محبّي …",
+     "ex": "I'm not a big fan of long car journeys."
     },
     {
      "w": "sounds like a plan",
@@ -4370,7 +4369,11 @@
     },
     {
      "s": "Reem",
-     "t": "I'm not keen on the farm, to be honest. There's nothing to do there."
+     "t": "I'm not a big fan of the farm, to be honest. There's nothing to do there."
+    },
+    {
+     "s": "Dad",
+     "t": "Well, I'm not keen on crowds. What do you suggest?"
     },
     {
      "s": "Reem",
@@ -4379,14 +4382,6 @@
     {
      "s": "Dad",
      "t": "Hmm, that works for me, assuming that we come home before midnight."
-    },
-    {
-     "s": "Reem",
-     "t": "Deal. And can my cousins come to the farm too?"
-    },
-    {
-     "s": "Dad",
-     "t": "Provided that they help with the barbecue! That should keep everyone happy."
     },
     {
      "s": "Reem",
@@ -4444,10 +4439,6 @@
     {
      "s": "Faisal",
      "t": "Lots! But that wasn't the exciting part. We were driving over the dunes when suddenly the car got stuck."
-    },
-    {
-     "s": "Sam",
-     "t": "No way! What did you do?"
     },
     {
      "s": "Sam",
@@ -4523,6 +4514,10 @@
      "t": "Oh no! In front of everyone?"
     },
     {
+     "s": "Reem",
+     "t": "Yes! I went bright red. And to make matters worse, my water bottle flew across the room."
+    },
+    {
      "s": "Noura",
      "t": "Did it hit anyone?"
     },
@@ -4592,6 +4587,10 @@
      "t": "Great in the end, but the journey was a disaster. Just as we were leaving, Dad realised he'd forgotten his passport."
     },
     {
+     "s": "Mr Ben",
+     "t": "Oh dear! Did you go back for it?"
+    },
+    {
      "s": "Omar",
      "t": "Yes. By the time we reached the airport, most passengers had already boarded."
     },
@@ -4602,10 +4601,6 @@
     {
      "s": "Omar",
      "t": "Almost! As luck would have it, the flight was delayed by twenty minutes."
-    },
-    {
-     "s": "Mr Ben",
-     "t": "That was lucky."
     },
     {
      "s": "Omar",
@@ -4663,10 +4658,6 @@
     {
      "s": "Noura",
      "t": "Amazing! We'd planned a surprise party for weeks, and somehow we managed to keep it a secret."
-    },
-    {
-     "s": "Emma",
-     "t": "Didn't she suspect anything?"
     },
     {
      "s": "Emma",
@@ -4742,6 +4733,14 @@
      "t": "At first, Juha was. But people said, 'What a selfish father, making the boy walk!'"
     },
     {
+     "s": "Reem",
+     "t": "So did they swap?"
+    },
+    {
+     "s": "Grandpa",
+     "t": "Yes, but then people said the son was rude to let his old father walk. So they both rode it."
+    },
+    {
      "s": "Grandpa",
      "t": "'Poor donkey!' they cried. Then came the twist in the tale: Juha and his son carried the donkey!"
     },
@@ -4752,10 +4751,6 @@
     {
      "s": "Grandpa",
      "t": "They did. Eventually, it dawned on Juha that he could never please everyone."
-    },
-    {
-     "s": "Reem",
-     "t": "So the moral of the story is to do what you think is right."
     }
    ],
    "grammar": {
@@ -4813,6 +4808,10 @@
     {
      "s": "Faisal",
      "t": "Great start! Keep going."
+    },
+    {
+     "s": "Sam",
+     "t": "My heart was pounding. A little boy's kite had got caught in a tree and he was in tears."
     },
     {
      "s": "Sam",
@@ -5019,14 +5018,14 @@
    },
    {
     "type": "mc",
-    "q": "These carvings date ___ to the Nabataean period.",
+    "q": "Dallahs have been ___ since long before electric kettles.",
     "options": [
-     "on",
-     "off",
-     "out",
-     "back"
+     "around",
+     "over",
+     "along",
+     "away"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5336,14 +5335,14 @@
    },
    {
     "type": "mc",
-    "q": "I prefer ___ lessons because I can see my teacher in person.",
+    "q": "In class, it's easier to ___ other students and share ideas.",
     "options": [
-     "back-to-back",
-     "face-to-face",
-     "day-to-day",
-     "door-to-door"
+     "interact with",
+     "interfere with",
+     "introduce to",
+     "insist on"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5994,14 +5993,14 @@
    },
    {
     "type": "mc",
-    "q": "I'm not ___ on crowded places, to be honest.",
+    "q": "I'm not a big ___ of crowded places, to be honest.",
     "options": [
+     "fan",
+     "fun",
      "fond",
-     "keen",
-     "interested",
-     "happy"
+     "friend"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6019,7 +6018,7 @@
     "q": "Which sentence sets a condition?",
     "options": [
      "We went to the farm.",
-     "I'm not keen on the farm.",
+     "I'm not a big fan of the farm.",
      "We'll go, assuming that it doesn't rain.",
      "Sounds like a plan."
     ],
