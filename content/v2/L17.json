@@ -171,7 +171,7 @@
     [
      "Part 3: Success and Happiness",
      "Discuss abstract ideas about success and happiness, using idioms accurately and supporting every point",
-     "It boils down to … / There's more to life than … / All in all, … / peace of mind"
+     "It boils down to … / There's more to life than … / Nine times out of ten, … / peace of mind"
     ],
     [
      "Part 3: Tradition and Change",
@@ -3028,7 +3028,7 @@
      },
      {
       "s": "Reem",
-      "t": "All in all, people look at your job and your income. Climbing the career ladder is seen as a sign of success."
+      "t": "Nine times out of ten, people look at your job and your income. Climbing the career ladder is seen as a sign of success."
      },
      {
       "s": "Ms Clarke",
@@ -3149,14 +3149,15 @@
      "frame": "I get a sense of fulfilment from ___."
     },
     {
-     "w": "all in all",
-     "def": "considering everything",
-     "ar": "إجمالاً",
-     "frame": "All in all, I think ___."
+     "w": "nine times out of ten",
+     "def": "almost always; in nearly every case",
+     "ar": "في تسع حالات من عشر / غالباً جداً",
+     "frame": "Nine times out of ten, ___."
     }
    ],
    "recycle": [
-    "on the whole"
+    "on the whole",
+    "all in all"
    ]
   },
   "3-4": {
@@ -4914,9 +4915,9 @@
      "ex": "Volunteering gives me a real sense of fulfilment."
     },
     {
-     "w": "all in all",
-     "ar": "إجمالاً",
-     "ex": "All in all, young people today are quite ambitious."
+     "w": "nine times out of ten",
+     "ar": "في تسع حالات من عشر / غالباً جداً",
+     "ex": "Nine times out of ten, young people today are quite ambitious."
     }
    ],
    "dialogue": [
@@ -4926,7 +4927,7 @@
     },
     {
      "s": "Reem",
-     "t": "All in all, by their job and income."
+     "t": "Nine times out of ten, by their job and income."
     },
     {
      "s": "Reem",
@@ -4946,11 +4947,11 @@
     }
    ],
    "grammar": {
-    "title": "Summarising abstract ideas: it boils down to / all in all",
-    "ar": "it boils down to تلخّص الفكرة في أهم عنصر، و all in all تعطي تعميماً حذراً قبل الأمثلة.",
+    "title": "Summarising abstract ideas: it boils down to / nine times out of ten",
+    "ar": "it boils down to تلخّص الفكرة في أهم عنصر، و nine times out of ten تعطي تعميماً حذراً قبل الأمثلة.",
     "examples": [
      "It boils down to good relationships.",
-     "All in all, people value stability.",
+     "Nine times out of ten, people value stability.",
      "There's more to life than money."
     ]
    }

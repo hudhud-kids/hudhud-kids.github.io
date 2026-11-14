@@ -171,7 +171,7 @@
     [
      "Smart Helpers?",
      "Give a balanced judgement on using AI tools for schoolwork",
-     "… is a double-edged sword / The jury is still out on … / When all is said and done, …"
+     "… is a double-edged sword / The jury is still out on … / On reflection, …"
     ],
     [
      "Worth the Money?",
@@ -673,7 +673,7 @@
      },
      {
       "s": "Sam",
-      "t": "Well, this is a bit awkward, but it seems that we've let the project slide, and with the hand-in on Thursday, we're cutting it fine."
+      "t": "Well, this is a bit awkward, but it seems that we've let the project slide, and with the hand-in on Thursday, we can't leave it to the last minute."
      },
      {
       "s": "Ziad",
@@ -766,16 +766,17 @@
      "frame": "It feels awkward when ___."
     },
     {
-     "w": "cut it fine",
-     "def": "to leave yourself very little time to do something",
-     "ar": "يترك وقتاً ضيقاً جداً",
-     "frame": "I cut it fine when I ___."
+     "w": "leave it to the last minute",
+     "def": "to wait until there is almost no time left to do something",
+     "ar": "يؤجّله إلى آخر لحظة",
+     "frame": "I always leave ___ to the last minute."
     }
    ],
    "recycle": [
     "pull your weight",
     "fall behind",
-    "deadline"
+    "deadline",
+    "cut it fine"
    ]
   },
   "0-5": {
@@ -2220,7 +2221,7 @@
      },
      {
       "s": "Noura",
-      "t": "An app that connects families with local charities, who collect the food the same night. I do believe it could go a long way."
+      "t": "An app that connects families with local charities, who collect the food the same night. I do believe it's a step in the right direction."
      },
      {
       "s": "Dana",
@@ -2295,14 +2296,15 @@
      "frame": "I'd like to raise awareness of ___."
     },
     {
-     "w": "go a long way",
-     "def": "to help a lot in achieving something",
-     "ar": "يساهم كثيراً في تحقيق شيء",
-     "frame": "A small act like ___ can go a long way."
+     "w": "a step in the right direction",
+     "def": "an action that helps to improve a situation",
+     "ar": "خطوة في الاتجاه الصحيح",
+     "frame": "Using ___ would be a step in the right direction."
     }
    ],
    "recycle": [
-    "make a real difference"
+    "make a real difference",
+    "go a long way"
    ]
   },
   "3-0": {
@@ -2699,7 +2701,7 @@
      },
      {
       "s": "Sara",
-      "t": "Not at all. The jury is still out, but when all is said and done, I'd use it as a tutor, not a writer."
+      "t": "Not at all. The jury is still out, but on reflection, I'd use it as a tutor, not a writer."
      }
     ],
     "focus": "Honestly, AI is a double-edged sword.",
@@ -2720,8 +2722,8 @@
       "hint": "Use 'a double-edged sword' or 'The main drawback is …'."
      },
      {
-      "q": "So, when all is said and done, should the school allow it?",
-      "hint": "Start with 'When all is said and done, …' and add a condition."
+      "q": "So, on reflection, should the school allow it?",
+      "hint": "Start with 'On reflection, …' and add a condition."
      }
     ]
    },
@@ -2740,10 +2742,10 @@
    "exit": "Give a balanced judgement, in two sentences, on using calculators in maths lessons.",
    "expressions": [
     {
-     "w": "when all is said and done",
-     "def": "after considering everything",
-     "ar": "في نهاية المطاف",
-     "frame": "When all is said and done, ___ is worth it."
+     "w": "on reflection",
+     "def": "after thinking about something carefully",
+     "ar": "بعد التفكير والتأمّل",
+     "frame": "On reflection, ___ is worth it."
     },
     {
      "w": "The jury is still out",
@@ -2777,7 +2779,8 @@
     }
    ],
    "recycle": [
-    "On balance"
+    "On balance",
+    "when all is said and done"
    ]
   },
   "3-4": {
@@ -3324,9 +3327,9 @@
      "ex": "This is a bit awkward, but we need to talk."
     },
     {
-     "w": "cut it fine",
-     "ar": "يترك وقتاً ضيقاً جداً",
-     "ex": "Finishing the slides on Wednesday night is cutting it fine."
+     "w": "leave it to the last minute",
+     "ar": "يؤجّله إلى آخر لحظة",
+     "ex": "If we leave it to the last minute, the slides will be rushed."
     }
    ],
    "dialogue": [
@@ -3340,7 +3343,7 @@
     },
     {
      "s": "Sam",
-     "t": "Well, this is a bit awkward, but it seems that we've let the project slide, and with the hand-in on Thursday, we're cutting it fine."
+     "t": "Well, this is a bit awkward, but it seems that we've let the project slide, and with the hand-in on Thursday, we can't leave it to the last minute."
     },
     {
      "s": "Ziad",
@@ -4225,9 +4228,9 @@
      "ex": "The campaign aims to raise awareness of food waste."
     },
     {
-     "w": "go a long way",
-     "ar": "يساهم كثيراً في تحقيق شيء",
-     "ex": "A kind word can go a long way."
+     "w": "a step in the right direction",
+     "ar": "خطوة في الاتجاه الصحيح",
+     "ex": "Cooking smaller amounts is a step in the right direction."
     }
    ],
    "dialogue": [
@@ -4249,7 +4252,7 @@
     },
     {
      "s": "Noura",
-     "t": "An app that connects families with local charities, who collect the food the same night. I do believe it could go a long way."
+     "t": "An app that connects families with local charities, who collect the food the same night. I do believe it's a step in the right direction."
     },
     {
      "s": "Dana",
@@ -4262,7 +4265,7 @@
     "examples": [
      "What we need is a simple way to share the leftovers.",
      "It's speed that matters most.",
-     "I do believe it could go a long way."
+     "I do believe it's a step in the right direction."
     ]
    }
   },
@@ -4476,9 +4479,9 @@
   "3-3": {
    "words": [
     {
-     "w": "when all is said and done",
-     "ar": "في نهاية المطاف",
-     "ex": "When all is said and done, it's a useful tool."
+     "w": "on reflection",
+     "ar": "بعد التفكير والتأمّل",
+     "ex": "On reflection, it's a useful tool."
     },
     {
      "w": "The jury is still out",
@@ -4529,16 +4532,16 @@
     },
     {
      "s": "Sara",
-     "t": "Not at all. The jury is still out, but when all is said and done, I'd use it as a tutor, not a writer."
+     "t": "Not at all. The jury is still out, but on reflection, I'd use it as a tutor, not a writer."
     }
    ],
    "grammar": {
     "title": "Reaching a balanced judgement",
-    "ar": "بعد ذكر الإيجابيات والسلبيات نصدر حكماً متوازناً بـ When all is said and done, …",
+    "ar": "بعد ذكر الإيجابيات والسلبيات نصدر حكماً متوازناً بـ On reflection, …",
     "examples": [
      "AI is a double-edged sword.",
      "The jury is still out on homework apps.",
-     "When all is said and done, I'd use it as a tutor, not a writer."
+     "On reflection, I'd use it as a tutor, not a writer."
     ]
    }
   },
@@ -4965,12 +4968,12 @@
    },
    {
     "type": "mc",
-    "q": "Finishing a big project the night before is cutting it ___.",
+    "q": "Which phrase means 'to wait until there is almost no time left'?",
     "options": [
-     "fine",
-     "thin",
-     "short",
-     "small"
+     "leave it to the last minute",
+     "take your time",
+     "get ahead of schedule",
+     "run out of ideas"
     ],
     "answer": 0
    },
@@ -5812,14 +5815,15 @@
      "I",
      "do",
      "believe",
-     "it",
-     "could",
-     "go",
+     "it's",
      "a",
-     "long",
-     "way."
+     "step",
+     "in",
+     "the",
+     "right",
+     "direction."
     ],
-    "answer": "I do believe it could go a long way.",
+    "answer": "I do believe it's a step in the right direction.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -6025,18 +6029,14 @@
    {
     "type": "order",
     "words": [
-     "When",
-     "all",
-     "is",
-     "said",
-     "and",
-     "done,",
+     "On",
+     "reflection,",
      "I",
      "think",
      "it's",
      "useful."
     ],
-    "answer": "When all is said and done, I think it's useful.",
+    "answer": "On reflection, I think it's useful.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6670,7 +6670,7 @@
       "It's perfect.",
       "It's useless.",
       "I don't know.",
-      "When all is said and done, it's worth trying."
+      "On reflection, it's worth trying."
      ],
      "answer": 3
     },
@@ -6931,12 +6931,8 @@
    {
     "type": "order",
     "words": [
-     "When",
-     "all",
-     "is",
-     "said",
-     "and",
-     "done,",
+     "On",
+     "reflection,",
      "I'd",
      "use",
      "it",
@@ -6944,7 +6940,7 @@
      "a",
      "tutor."
     ],
-    "answer": "When all is said and done, I'd use it as a tutor.",
+    "answer": "On reflection, I'd use it as a tutor.",
     "ar": "رتّب الجملة"
    },
    {

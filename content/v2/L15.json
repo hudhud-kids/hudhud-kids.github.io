@@ -2496,7 +2496,7 @@
      },
      {
       "s": "Reem",
-      "t": "I've read about small mountain villages where the scenery is awe-inspiring, especially in autumn."
+      "t": "I've read about small mountain villages that are incredibly picturesque, especially in autumn."
      },
      {
       "s": "Hannah",
@@ -2563,10 +2563,10 @@
      "frame": "I'd love to try local food such as ___."
     },
     {
-     "w": "awe-inspiring",
-     "def": "so impressive that it fills you with wonder",
-     "ar": "مهيب يبعث على الدهشة",
-     "frame": "Standing in front of ___ was awe-inspiring."
+     "w": "picturesque",
+     "def": "very pretty, like a picture or a painting",
+     "ar": "خلّاب كأنه لوحة",
+     "frame": "The old town of ___ is really picturesque."
     },
     {
      "w": "What really appeals to me is",
@@ -2583,7 +2583,8 @@
    ],
    "recycle": [
     "breathtaking",
-    "off the beaten track"
+    "off the beaten track",
+    "awe-inspiring"
    ]
   },
   "3-2": {
@@ -2733,7 +2734,7 @@
     "p2": [
      {
       "s": "Mariam",
-      "t": "For the most part, I'd say family members. You see how they deal with real problems every day."
+      "t": "More often than not, I'd say family members. You see how they deal with real problems every day."
      },
      {
       "s": "Mariam",
@@ -2767,7 +2768,7 @@
      },
      {
       "q": "Are people today less helpful than in the past?",
-      "hint": "Begin with 'That's a tricky question' and finish with 'For the most part, …'."
+      "hint": "Begin with 'That's a tricky question' and finish with 'More often than not, …'."
      }
     ]
    },
@@ -2816,15 +2817,16 @@
      "frame": "That's a tricky question, but I'd say ___."
     },
     {
-     "w": "for the most part",
-     "def": "mostly; in most cases",
-     "ar": "في الغالب",
-     "frame": "For the most part, I think ___."
+     "w": "more often than not",
+     "def": "usually; in most cases",
+     "ar": "في أغلب الأحيان",
+     "frame": "More often than not, I think ___."
     }
    ],
    "recycle": [
     "to some extent",
-    "on the whole"
+    "on the whole",
+    "for the most part"
    ]
   },
   "3-4": {
@@ -3007,7 +3009,7 @@
      },
      {
       "q": "Is it harder for adults to learn new skills than children?",
-      "hint": "Start with 'To a certain degree …', give reasons and finish with 'For the most part, …'."
+      "hint": "Start with 'To a certain degree …', give reasons and finish with 'More often than not, …'."
      }
     ]
    },
@@ -4484,9 +4486,9 @@
      "ex": "We visited cities such as Tokyo and Osaka."
     },
     {
-     "w": "awe-inspiring",
-     "ar": "مهيب يبعث على الدهشة",
-     "ex": "The night sky in the desert is awe-inspiring."
+     "w": "picturesque",
+     "ar": "خلّاب كأنه لوحة",
+     "ex": "The fishing village by the lake is so picturesque."
     },
     {
      "w": "What really appeals to me is",
@@ -4522,7 +4524,7 @@
     },
     {
      "s": "Reem",
-     "t": "I've read about small mountain villages where the scenery is awe-inspiring, especially in autumn."
+     "t": "I've read about small mountain villages that are incredibly picturesque, especially in autumn."
     },
     {
      "s": "Hannah",
@@ -4636,9 +4638,9 @@
      "ex": "That's a tricky question, but I'd say both are important."
     },
     {
-     "w": "for the most part",
-     "ar": "في الغالب",
-     "ex": "For the most part, the trip was a success."
+     "w": "more often than not",
+     "ar": "في أغلب الأحيان",
+     "ex": "More often than not, the simplest answer is the best one."
     }
    ],
    "dialogue": [
@@ -4660,7 +4662,7 @@
     },
     {
      "s": "Mariam",
-     "t": "For the most part, I'd say family members. You see how they deal with real problems every day."
+     "t": "More often than not, I'd say family members. You see how they deal with real problems every day."
     },
     {
      "s": "Examiner",
@@ -6090,11 +6092,11 @@
    },
    {
     "type": "mc",
-    "q": "Which word means 'so impressive that it fills you with wonder'?",
+    "q": "Which word means 'very pretty, like a picture or a painting'?",
     "options": [
      "boring",
      "crowded",
-     "awe-inspiring",
+     "picturesque",
      "ordinary"
     ],
     "answer": 2
@@ -6243,10 +6245,10 @@
    {
     "type": "order",
     "words": [
-     "For",
-     "the",
-     "most",
-     "part,",
+     "More",
+     "often",
+     "than",
+     "not,",
      "family",
      "members",
      "are",
@@ -6254,7 +6256,7 @@
      "role",
      "models."
     ],
-    "answer": "For the most part, family members are better role models.",
+    "answer": "More often than not, family members are better role models.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -6791,9 +6793,9 @@
     },
     {
      "type": "mc",
-     "q": "Walking in the desert at night was ___: the stars were amazing.",
+     "q": "The little village by the lake was ___: it looked like a painting.",
      "options": [
-      "awe-inspiring",
+      "picturesque",
       "tiring",
       "awful",
       "boring"
