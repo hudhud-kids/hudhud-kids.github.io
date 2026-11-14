@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>معلمو هدهد · معاينة</title>
+<style>
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-medium.woff2) format("woff2");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Dubai";src:url(../fonts/dubai-bold.woff2) format("woff2");font-weight:700 900;font-display:swap}
+:root{--brand:#F05A38;--brand-ink:#B2391C;--brand-soft:#FFE6DD;--teal:#14B8A6;--teal-ink:#0F766E;--bg:#FFF6EE;--surface:#FFFFFF;--fg:#2B1B0F;--muted:#86695A;--line:#F0DCCB;--sky:#3B7BE8;--sky-soft:#E3EEFF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Dubai",system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px}
+header.top{display:grid;gap:6px;padding:18px 0 10px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);margin:0;line-height:1.3}
+h2{font-size:1.25rem;margin:0 0 4px}
+.lead{color:var(--muted);margin:0;max-width:60ch}
+.bar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.seg{display:inline-flex;background:var(--surface);border:1.5px solid var(--line);border-radius:99px;padding:3px}
+.seg button{font:inherit;font-weight:700;border:0;background:none;color:var(--muted);padding:6px 16px;border-radius:99px;cursor:pointer;min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
+.seg button:focus-visible,.say:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.barl{font-weight:700;font-size:.95rem}
+section{padding:26px 0 6px}
+.sec-h{margin-bottom:14px}
+.sec-h p{margin:0;color:var(--muted);font-size:.95rem}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g-m{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.g-p{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+@media (max-width:720px){.g3{grid-template-columns:1fr}.g-m{grid-template-columns:repeat(2,minmax(0,1fr))}.g-p{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cell{display:grid;justify-items:center;gap:6px;min-width:0}
+.cell .cap{font-weight:700;text-align:center}
+.cell .cap small{display:block;font-weight:400;color:var(--muted);direction:ltr;font-size:.8rem}
+.say{font:inherit;font-weight:700;border:1.5px solid var(--line);background:var(--surface);color:var(--brand-ink);border-radius:99px;padding:6px 18px;min-height:44px;cursor:pointer}
+.sizes{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:center}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%}
+.note{background:var(--surface);border:1.5px dashed var(--line);border-radius:16px;padding:12px 16px;color:var(--muted);font-size:.95rem;margin-top:26px}
+/* ===== the same CSS that ships in index.html ===== */
+.tbox{position:relative;display:grid;justify-items:center;width:100%}
+.tbox svg{width:100%;height:auto;display:block;overflow:visible;direction:ltr}
+/* teacher animation */
+/* characters v2: every colour is a variable on .tbox, so a character (.t-adam, .t-modern) or an art direction (.teen) is one class */
+.tbox{--t-w1:#EAF3FF;--t-w2:#D3E4FC;--t-w3:#C2D7F5;--t-sk1:#FFE3CB;--t-sk2:#F6C8A6;--t-sk3:#E6A983;--t-sk:#F6C8A6;--t-skd:#D8946C;--t-lip:#D2605A;--t-brow:#4A2A18;--t-blush:.26;
+  --t-h1:#3CC9B8;--t-h2:#128A7E;--t-hd:#0B6A61;--t-hb:#0F766E;--t-c1:#6A58A6;--t-c2:#483A7C;--t-sl:#5E4D98;--t-sld:#392E69;--t-d1:#DCA06A;--t-d2:#B9773F;--t-i1:#8E5C30;--t-i2:#4A2A12;--t-ink:#2A1A10;--t-acc:#3B7BE8;--t-shm:#D4373F}
+.tbox.t-adam{--t-sk1:#F9D6B3;--t-sk2:#EBBB92;--t-sk3:#D59C70;--t-sk:#EBBB92;--t-skd:#C2845A;--t-lip:#B9665C;--t-brow:#2A1A10;--t-blush:.2;--t-c1:#FFFFFF;--t-c2:#E3EAF4;--t-sl:#F8FAFD;--t-sld:#CBD6E6}
+.tbox.t-adam.t-modern{--t-c1:#3A5FA6;--t-c2:#27437C;--t-sl:#33559A;--t-sld:#1F376B}
+.tbox.teen{--t-w1:#EEF1F6;--t-w2:#DDE4EE;--t-w3:#CBD5E3;--t-h1:#7286B8;--t-h2:#3E4E82;--t-hd:#2F3C68;--t-hb:#33416F;--t-c1:#525868;--t-c2:#363B49;--t-sl:#494F5E;--t-sld:#2A2E3A;--t-blush:.16;--t-acc:#5C77B8;--t-shm:#B5454B;--t-lip:#C4635E}
+.tbox.teen.t-adam{--t-c1:#FFFFFF;--t-c2:#E3E7EE;--t-sl:#F8F9FB;--t-sld:#CBD2DE;--t-blush:.1;--t-lip:#B0665E}
+.tbox.teen.t-adam.t-modern{--t-c1:#4A5568;--t-c2:#2F3848;--t-sl:#414B5D;--t-sld:#262E3C}
+.tbox .ts-w1{stop-color:var(--t-w1)}.tbox .ts-w2{stop-color:var(--t-w2)}.tbox .ts-sk1{stop-color:var(--t-sk1)}.tbox .ts-sk2{stop-color:var(--t-sk2)}.tbox .ts-sk3{stop-color:var(--t-sk3)}
+.tbox .ts-h1{stop-color:var(--t-h1)}.tbox .ts-h2{stop-color:var(--t-h2)}.tbox .ts-c1{stop-color:var(--t-c1)}.tbox .ts-c2{stop-color:var(--t-c2)}.tbox .ts-d1{stop-color:var(--t-d1)}.tbox .ts-d2{stop-color:var(--t-d2)}.tbox .ts-i1{stop-color:var(--t-i1)}.tbox .ts-i2{stop-color:var(--t-i2)}
+.tbox .tc-wains{fill:var(--t-w3);opacity:.55}.tbox .tc-frame{fill:#FFFFFF;stroke:#B9CBE6;stroke-width:3}.tbox .tc-poster{fill:#FFF1E3}.tbox .tc-shelf{fill:#C58B55}.tbox .tc-board{fill:#FFFFFF;stroke:#B9CBE6;stroke-width:4}.tbox .tc-deskedge{fill:#EDBE8C}
+.tbox .tc-sk{fill:var(--t-sk)}.tbox .tc-line{fill:none;stroke:var(--t-skd);stroke-width:1.8;stroke-linecap:round}
+.tbox .tc-palm{fill:var(--t-sk);stroke:var(--t-skd);stroke-width:1.3}.tbox .tc-fg{fill:none;stroke:var(--t-sk);stroke-linecap:round}.tbox .tc-fgd{fill:none;stroke:var(--t-skd);stroke-linecap:round}.tbox .tc-crease{fill:none;stroke:var(--t-skd);stroke-width:1.5;stroke-linecap:round;opacity:.8}
+.tbox .tc-sl{fill:var(--t-sl);stroke:var(--t-sld);stroke-width:1.6;stroke-linejoin:round}.tbox .tc-cuff{fill:var(--t-sld)}.tbox .tc-seam{fill:none;stroke:var(--t-sld);stroke-width:2;stroke-linecap:round}
+.tbox .tc-collar{fill:#FFFFFF;stroke:var(--t-sld);stroke-width:1.6;stroke-linejoin:round}.tbox .tc-btn{fill:var(--t-sld)}.tbox .tc-lapel{fill:var(--t-sld);opacity:.55}.tbox .tc-badget{fill:#0F766E}
+.tbox .tc-hijd{fill:var(--t-hd)}.tbox .tc-hijband{fill:var(--t-hb)}.tbox .tc-fold{fill:none;stroke:var(--t-hd);stroke-width:2.4;stroke-linecap:round;opacity:.42}.tbox .tc-hijhi{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-linecap:round;opacity:.22}
+.tbox .tc-shmline{fill:none;stroke:var(--t-shm);stroke-width:2.5}.tbox .tc-shmdot{fill:var(--t-shm)}.tbox .tc-shmback{fill:#E4DCD3}.tbox .tc-shmfold{fill:none;stroke:#8A7460;stroke-width:2;stroke-linecap:round;opacity:.35}
+.tbox .tc-agal{fill:none;stroke:#1F1B1A;stroke-width:9.5;stroke-linecap:round}.tbox .tc-agalhi{fill:none;stroke:#FFFFFF;stroke-width:1.6;stroke-linecap:round;opacity:.22}
+.tbox .tc-hair{fill:#2A1A10}.tbox .tc-hairhi{fill:#4A3020}.tbox .tc-beard{fill:#2A1A10;opacity:.9}
+.tbox .tc-blush{fill:#FF7F78;opacity:var(--t-blush)}
+.tbox .tc-brow{fill:none;stroke:var(--t-brow);stroke-width:4.3;stroke-linecap:round;transform-box:fill-box;transform-origin:center;transition:transform .2s ease-out}
+.tbox.t-adam .tc-brow{stroke-width:5.8}
+.tbox .tc-lash{fill:none;stroke:var(--t-ink);stroke-width:3.3;stroke-linecap:round}.tbox .tc-eyeshade{fill:#3A2414;opacity:.2}
+.tbox .tc-lip{fill:var(--t-lip)}.tbox .tc-lipline{fill:none;stroke:var(--t-lip);stroke-width:2.2;stroke-linecap:round}.tbox .tc-lipo{fill:none;stroke:var(--t-lip);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.tbox .tc-in{fill:#5E1C1B}.tbox .tc-tongue{fill:#E8706F}
+.tbox .tc-waves{fill:none;stroke:var(--t-acc);stroke-width:4;stroke-linecap:round}
+.tbox .c-adam,.tbox .c-shm,.tbox .c-mod{display:none}
+.tbox.t-adam .c-noor{display:none}.tbox.t-adam .c-adam{display:inline}
+.tbox.t-adam:not(.t-modern) .c-shm{display:inline}.tbox.t-adam.t-modern .c-mod{display:inline}
+.tbox svg .pose{opacity:0;transform-box:view-box;transform:translateY(30px) rotate(var(--r,0deg)) scale(.9);transition:opacity .26s ease,transform .42s cubic-bezier(.3,1.35,.5,1)}
+.pose-wave,.pose-thumb{transform-origin:108px 345px;--r:-6deg}
+.pose-chin,.pose-ear,.pose-point,.pose-open{transform-origin:298px 345px;--r:6deg}
+.tbox.p-wave .pose-wave,.tbox.p-thumb .pose-thumb,.tbox.p-chin .pose-chin,.tbox.p-ear .pose-ear,.tbox.p-point .pose-point,.tbox.p-open .pose-open{opacity:1;transform:none}
+.arm-l,.arm-r{transition:opacity .22s ease}
+.p-wave .arm-l,.p-thumb .arm-l{opacity:0}
+.p-chin .arm-r,.p-ear .arm-r,.p-point .arm-r,.p-open .arm-r{opacity:0}
+.wave-in{transform-box:view-box;transform-origin:100px 334px;animation:wave .5s ease-in-out infinite alternate}
+@keyframes wave{from{transform:rotate(-9deg)}to{transform:rotate(7deg)}}
+.open-in{transform-box:view-box;transform-origin:290px 340px;animation:talkhand 1.8s ease-in-out infinite}
+@keyframes talkhand{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg) translateY(-3px)}65%{transform:rotate(3deg)}}
+.t-tilt{transform-box:view-box;transform-origin:200px 300px;transition:transform .5s ease}
+.ask .t-tilt{transform:rotate(-4deg)}
+.emph .brows{transform:translateY(-6px)!important}
+.t-head{transform-box:view-box;transform-origin:200px 300px;transition:transform .35s ease}
+.speaking .t-head{animation:bob 1.7s ease-in-out infinite}
+.listening .t-head{transform:rotate(4deg) translateX(2px)}
+.thinking .t-head{transform:rotate(-3.5deg)}
+.m-proud .t-head{transform:translateY(-2px)}
+.t-idle{transform-box:view-box;transform-origin:200px 300px;animation:tidle 7s ease-in-out infinite}
+@keyframes tidle{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.8deg) translateY(-1px)}}
+.nod .t-idle{animation:nod .45s ease-in-out}
+@keyframes bob{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(-2.2deg) translateY(-3px)}50%{transform:rotate(.5deg) translateY(0)}75%{transform:rotate(2.2deg) translateY(-1px)}}
+@keyframes nod{0%,100%{transform:translateY(0)}45%{transform:translateY(7px) rotate(.6deg)}}
+.t-body{transform-box:view-box;transform-origin:200px 440px;animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.012,1.018)}}
+.tbox .lids path{fill:var(--t-sk2);transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .07s}
+.tbox.blink .lids path{transform:scaleY(1)}
+.pupils{transition:transform .16s ease-out}
+.tbox .tc-glint{transform-box:fill-box;transform-origin:center;transition:transform .2s}
+.eyes-h{display:none}
+.m-laughing .eyes-n,.m-proud .eyes-n{display:none}
+.m-laughing .eyes-h,.m-proud .eyes-h{display:inline}
+.speaking.m-proud .eyes-n{display:inline}
+.speaking.m-proud .eyes-h{display:none}
+.brows{transform-box:view-box;transition:transform .16s ease-out}
+.m-surprised .brows,.m-excited .brows{transform:translateY(-7px)}
+.m-thinking .brows,.thinking .brows{transform:translateY(-3px)}
+.m-encouraging .brows,.m-proud .brows,.listening .brows{transform:translateY(-3px)}
+.m-thinking .brow-l,.thinking .brow-l{transform:translateY(-4px) rotate(-7deg)}
+.m-thinking .brow-r,.thinking .brow-r{transform:translateY(3px) rotate(-5deg)}
+.m-encouraging .brow-l{transform:rotate(-10deg)}.m-encouraging .brow-r{transform:rotate(10deg)}
+.m-laughing .brow-l{transform:translateY(-4px) rotate(-6deg)}.m-laughing .brow-r{transform:translateY(-4px) rotate(6deg)}
+.m-surprised .brow-l{transform:rotate(-5deg)}.m-surprised .brow-r{transform:rotate(5deg)}
+.mouth{transform-box:fill-box;transform-origin:center;transition:transform .2s}
+.mouth > *{display:none}
+.mouth > .on{display:inline}
+.thinking:not(.speaking) .mouth,.m-thinking:not(.speaking) .mouth{transform:translateX(4px) scaleX(.72)}
+.ring{fill:none;stroke:var(--t-acc,#3B7BE8);stroke-width:6;opacity:0}
+.listening .ring{animation:ring 1.3s ease-out infinite}
+@keyframes ring{0%{opacity:.5;transform:scale(.92)}100%{opacity:0;transform:scale(1.08)}}
+.ring{transform-box:fill-box;transform-origin:center}
+.think-dots{opacity:0;transition:opacity .2s;fill:#FFFFFF;stroke:var(--t-acc,#3B7BE8);stroke-width:3}
+.thinking .think-dots{opacity:1}
+.think-dots circle{animation:dot 1s infinite}
+.think-dots circle:nth-child(2){animation-delay:.15s}.think-dots circle:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{transform:translateY(-6px)}}
+.board-glow{opacity:0;transition:opacity .3s}
+.p-point .board-glow{opacity:1}
+.sway{transform-box:view-box;transform-origin:200px 440px;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.7deg)}}
+.m-excited .sway{animation:hop .55s ease-out 1,sway 6s ease-in-out .55s infinite}
+@keyframes hop{30%{transform:translateY(-12px)}60%{transform:translateY(0)}}
+.eyes-n{transform-box:view-box;transform-origin:200px 184px;transition:transform .2s}
+.m-happy .eyes-n,.m-encouraging .eyes-n{transform:scaleY(.93)}
+.m-excited .eyes-n,.listening .eyes-n{transform:scale(1.06)}
+.m-surprised .eyes-n{transform:scale(1.15)}
+.m-excited .tc-glint,.m-surprised .tc-glint{transform:scale(1.3)}
+.m-laughing .t-idle{animation:laugh .28s ease-in-out 5,tidle 7s ease-in-out 1.4s infinite}
+@keyframes laugh{50%{transform:translateY(-5px) rotate(-1.5deg)}}
+.lw{opacity:0}
+.listening .lw{animation:lw 1.2s ease-out infinite}
+.listening .lw2{animation-delay:.2s}.listening .lw3{animation-delay:.4s}
+@keyframes lw{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+/* 12+ : same teachers, calmer movement */
+.tbox.teen .sway{animation-duration:9s}.tbox.teen.m-excited .sway{animation:sway 9s ease-in-out infinite}
+.tbox.teen .wave-in{animation-duration:.8s}.tbox.teen.speaking .t-head{animation-duration:2.4s}
+.tbox.teen.m-laughing .t-idle{animation:laugh .32s ease-in-out 3,tidle 7s ease-in-out 1s infinite}
+@media (prefers-reduced-motion:reduce){.tbox svg *{animation:none!important}}
+.bw-write{transform-box:fill-box;transform-origin:center}
+.bw-new{animation:write .6s cubic-bezier(.3,1.4,.5,1)}
+@keyframes write{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>المعلمة نور والمعلم آدم بالشكل الجديد</h1>
+  <p class="lead">هذه معاينة فقط. لا شيء يتغير عند الأطفال حتى تعتمدها. جرّب المشاعر والحركات والكلام، وبدّل بين شكل الصغار وشكل الكبار.</p>
+</header>
+<div class="bar">
+  <span class="barl">عمر الطفل</span>
+  <span class="seg" id="segAge"><button data-v="kid" aria-pressed="true">من 6 إلى 11</button><button data-v="teen" aria-pressed="false">12 فأكثر</button></span>
+</div>
+
+<section id="s-cast">
+  <div class="sec-h"><h2>الشخصيات</h2><p>نور بالحجاب، وآدم بخيارين: ثوب وشماغ، أو لبس عصري. اضغط «تكلّم» لترى حركة الفم.</p></div>
+  <div class="grid g3" id="cast"></div>
+</section>
+
+<section id="s-noor-moods">
+  <div class="sec-h"><h2>مشاعر المعلمة نور</h2><p>المشاعر السبعة في الحصة، مع حالتي الاستماع والتفكير.</p></div>
+  <div class="grid g-m" id="noorMoods"></div>
+</section>
+
+<section id="s-adam-moods">
+  <div class="sec-h"><h2>مشاعر المعلم آدم</h2><p>نفس المشاعر بالثوب والشماغ.</p></div>
+  <div class="grid g-m" id="adamMoods"></div>
+</section>
+
+<section id="s-poses">
+  <div class="sec-h"><h2>حركات اليدين</h2><p>تلويح، إعجاب، تفكير، إنصات، إشارة إلى السبورة، وشرح بكف مفتوحة.</p></div>
+  <div class="grid g-p" id="poses"></div>
+</section>
+
+<section id="s-sizes">
+  <div class="sec-h"><h2>الأحجام</h2><p>صغير كما يظهر في الجوال، وكبير كما يظهر في الآيباد.</p></div>
+  <div class="sizes" id="sizes"></div>
+</section>
+
+<section id="s-teen">
+  <div class="sec-h"><h2>شكل الكبار (12 فأكثر) بجانب شكل الصغار</h2><p>نفس الشخصيات بألوان أهدأ وحركة أقل قفزاً.</p></div>
+  <div class="grid g3" id="teen"></div>
+</section>
+
+<p class="note">الرسم كله SVG داخل الصفحة، بلا صور خارجية. الحركة تتوقف تلقائياً عند من فعّل «تقليل الحركة» في جهازه.</p>
+</div>
+<script>
+const TEACHER = `<svg viewBox="0 0 400 440" role="img" aria-label="Teacher Noor">
+ <defs>
+  <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-w1"/><stop offset="1" class="ts-w2"/></linearGradient>
+  <radialGradient id="g-skin" cx=".46" cy=".36" r=".72"><stop offset="0" class="ts-sk1"/><stop offset=".62" class="ts-sk2"/><stop offset="1" class="ts-sk3"/></radialGradient>
+  <linearGradient id="g-neck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-sk3"/><stop offset="1" class="ts-sk2"/></linearGradient>
+  <linearGradient id="g-hij" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" class="ts-h1"/><stop offset="1" class="ts-h2"/></linearGradient>
+  <linearGradient id="g-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-c1"/><stop offset="1" class="ts-c2"/></linearGradient>
+  <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ts-d1"/><stop offset="1" class="ts-d2"/></linearGradient>
+  <radialGradient id="g-iris" cx=".5" cy=".62" r=".6"><stop offset="0" class="ts-i1"/><stop offset="1" class="ts-i2"/></radialGradient>
+  <pattern id="g-shm" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45 200 200)"><rect width="11" height="11" fill="#FBF8F4"/><path d="M0 2.2H11M2.2 0V11" class="tc-shmline"/><rect x="5.6" y="5.6" width="3" height="3" class="tc-shmdot"/></pattern>
+  <clipPath id="g-scene"><rect width="400" height="440" rx="40"/></clipPath>
+  <clipPath id="g-eyeL"><path d="M160 181 Q175 166 192 180 Q177 193 160 181Z"/></clipPath>
+  <clipPath id="g-eyeR"><path d="M208 180 Q225 166 240 181 Q223 193 208 180Z"/></clipPath>
+ </defs>
+ <g clip-path="url(#g-scene)">
+  <rect width="400" height="440" fill="url(#g-wall)"/>
+  <path d="M150 0 L250 0 L120 300 L20 300Z" fill="#FFFFFF" opacity=".16"/>
+  <rect x="0" y="296" width="400" height="144" class="tc-wains"/>
+  <rect x="0" y="296" width="400" height="5" fill="#FFFFFF" opacity=".55"/>
+  <g>
+   <rect x="16" y="20" width="94" height="94" rx="12" class="tc-frame"/>
+   <rect x="23" y="27" width="80" height="80" rx="7" class="tc-poster"/>
+   <circle cx="78" cy="48" r="11" fill="#FFD25E" opacity=".75"/>
+   <path d="M30 96 Q62 86 98 96" stroke="#3E8A4A" stroke-width="3" fill="none" stroke-linecap="round"/>
+   <path d="M72 70 L96 84 L92 88 L70 80Z" fill="#2B1B0F"/><path d="M80 76 L93 84 M76 78 L90 87" stroke="#FFFFFF" stroke-width="1.6"/>
+   <ellipse cx="64" cy="76" rx="17" ry="11.5" transform="rotate(18 64 76)" fill="#F4A261"/>
+   <path d="M58 72 C66 68 78 72 82 82 C74 86 62 84 58 72Z" fill="#2B1B0F"/><path d="M62 73 L78 81 M66 71 L80 78" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round"/>
+   <circle cx="48" cy="64" r="9" fill="#F4A261"/>
+   <path d="M41 65 Q33 68 27 76" stroke="#2B1B0F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+   <path d="M49 57 L40 40 M51 56 L48 37 M53 56 L57 38 M55 58 L65 43" stroke="#F05A38" stroke-width="4" stroke-linecap="round"/>
+   <path d="M40 40 L39.5 39 M48 37 L48 36 M57 38 L57.3 37 M65 43 L65.8 42" stroke="#2B1B0F" stroke-width="4.2" stroke-linecap="round"/>
+   <circle cx="45.5" cy="62.5" r="1.7" fill="#2B1B0F"/>
+   <path d="M62 87 L60 95 M68 88 L68 95" stroke="#86695A" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <g>
+   <rect x="10" y="176" width="108" height="8" rx="4" class="tc-shelf"/>
+   <rect x="20" y="140" width="13" height="36" rx="2.5" fill="#F05A38"/><rect x="23" y="146" width="7" height="3" rx="1.5" fill="#FFFFFF" opacity=".7"/>
+   <rect x="35" y="148" width="11" height="28" rx="2.5" fill="#3B7BE8"/>
+   <rect x="48" y="136" width="14" height="40" rx="2.5" fill="#14B8A6"/><rect x="51" y="143" width="8" height="3" rx="1.5" fill="#FFFFFF" opacity=".7"/>
+   <rect x="62" y="150" width="12" height="27" rx="2.5" fill="#FFD25E" transform="rotate(12 68 176)"/>
+   <path d="M88 176 L90 160 H108 L110 176Z" fill="#E8B27C"/>
+   <path d="M99 160 C92 150 90 140 94 132 C100 140 101 150 99 160Z" fill="#3E8A4A"/><path d="M99 160 C104 148 110 142 116 140 C114 150 108 156 99 160Z" fill="#5DB36A"/><path d="M99 160 C94 152 88 150 82 150 C86 156 92 160 99 160Z" fill="#5DB36A"/>
+  </g>
+  <g>
+   <rect class="board-glow" x="256" y="20" width="142" height="136" rx="16" fill="#FFD25E"/>
+   <rect x="262" y="26" width="130" height="124" rx="11" class="tc-board"/>
+   <text id="bwE" x="327" y="76" text-anchor="middle" font-size="34">👋</text>
+   <text id="bwT" class="bw-write" x="327" y="118" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="26" fill="#F05A38">Hello!</text>
+   <path d="M286 134 Q310 127 338 135 T370 132" stroke="#E9A100" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".8"/>
+   <rect x="296" y="150" width="62" height="6" rx="3" class="tc-shelf"/><rect x="304" y="145" width="20" height="6" rx="3" fill="#F05A38"/><rect x="328" y="145" width="20" height="6" rx="3" fill="#3B7BE8"/>
+  </g>
+  <circle class="ring" cx="200" cy="178" r="118"/>
+  <g class="think-dots"><circle cx="290" cy="238" r="6"/><circle cx="308" cy="218" r="9"/><circle cx="334" cy="192" r="14"/></g>
+  <g class="sway">
+   <g class="t-body">
+    <g class="c-noor" transform="translate(0 -12)">
+     <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
+     <path d="M200 350 L200 440" class="tc-seam"/>
+    </g>
+    <g class="c-shm"><path d="M146 150 H254 V292 C236 312 164 312 146 292Z" class="tc-shmback"/></g>
+    <g class="c-adam">
+     <path d="M173 232 H227 V298 Q200 316 173 298Z" fill="url(#g-neck)"/>
+    </g>
+    <g class="c-shm" transform="translate(0 -12)">
+     <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
+     <path d="M167 286 C176 304 190 312 200 313 C210 312 224 304 233 286 L239 302 C228 320 212 328 200 329 C188 328 172 320 161 302Z" class="tc-collar"/>
+     <path d="M200 329 V440" class="tc-seam"/><path d="M193 330 V440 M207 330 V440" class="tc-seam" opacity=".45"/>
+     <circle cx="200" cy="343" r="3" class="tc-btn"/><circle cx="200" cy="361" r="3" class="tc-btn"/>
+    </g>
+    <g class="c-mod" transform="translate(0 -12)">
+     <path d="M56 452 C58 376 92 328 158 306 L242 306 C308 328 342 376 344 452Z" fill="url(#g-top)"/>
+     <path d="M168 300 L200 360 L232 300 L226 288 Q200 306 174 288Z" fill="#FDFEFF"/>
+     <path d="M174 288 L200 318 L185 330 L165 302Z" class="tc-collar"/><path d="M226 288 L200 318 L215 330 L235 302Z" class="tc-collar"/>
+     <path d="M158 307 L168 300 L200 362 L200 440 L178 440 C172 400 162 344 158 307Z" class="tc-lapel"/><path d="M242 307 L232 300 L200 362 L200 440 L222 440 C228 400 238 344 242 307Z" class="tc-lapel"/>
+     <path d="M200 362 V440" class="tc-seam"/>
+    </g>
+   </g>
+  <g class="t-tilt"><g class="t-head"><g class="t-idle">
+   <g class="c-noor"><path d="M200 84 C246 84 276 120 274 172 C273 206 262 232 254 252 C270 268 292 296 300 332 C268 352 232 358 200 358 C168 358 132 352 100 332 C108 296 130 268 146 252 C138 232 127 206 126 172 C124 120 154 84 200 84Z" class="tc-hijd"/></g>
+   <g class="c-mod">
+    <path d="M141 180 C131 174 131 194 136 203 C139 209 145 209 146 203Z" class="tc-sk"/><path d="M259 180 C269 174 269 194 264 203 C261 209 255 209 254 203Z" class="tc-sk"/>
+    <path d="M139 188 Q137 196 142 202 M261 188 Q263 196 258 202" class="tc-line" opacity=".6"/>
+   </g>
+   <path class="c-noor" d="M200 116 C234 116 256 140 256 176 C256 210 242 236 224 249 C212 257 188 257 176 249 C158 236 144 210 144 176 C144 140 166 116 200 116Z" fill="url(#g-skin)"/>
+   <path class="c-adam" d="M200 108 C236 108 258 134 258 174 C258 204 249 229 232 245 C218 257 182 257 168 245 C151 229 142 204 142 174 C142 134 164 108 200 108Z" fill="url(#g-skin)"/>
+   <g class="c-adam">
+    <path class="tc-beard" d="M143 186 C144 214 152 234 168 246 C182 258 218 258 232 246 C248 234 256 214 257 186 C253 204 246 218 234 226 C226 216 214 214 200 214 C186 214 174 216 166 226 C154 218 147 204 143 186Z"/>
+    <path class="tc-beard" d="M176 222 C184 213 194 212 200 216 C206 212 216 213 224 222 C214 219 206 219 200 221 C194 219 186 219 176 222Z"/>
+   </g>
+   <ellipse class="tc-blush" cx="161" cy="210" rx="13" ry="8"/><ellipse class="tc-blush" cx="239" cy="210" rx="13" ry="8"/>
+   <g transform="translate(200 182) scale(1.1) translate(-200 -182)"><g class="brows">
+    <path class="tc-brow brow-l" d="M160 163 Q174 153 191 160"/>
+    <path class="tc-brow brow-r" d="M209 160 Q226 153 240 163"/>
+   </g>
+   <g class="eyes-n">
+    <path d="M160 181 Q175 166 192 180 Q177 193 160 181Z" fill="#FFFFFF"/><path d="M208 180 Q225 166 240 181 Q223 193 208 180Z" fill="#FFFFFF"/>
+    <g clip-path="url(#g-eyeL)"><g class="pupils"><circle cx="176" cy="180" r="9" fill="url(#g-iris)"/><circle cx="176" cy="180" r="4.4" fill="#1B120B"/><circle class="tc-glint" cx="179.4" cy="176.6" r="2.7" fill="#FFFFFF"/><circle cx="172.8" cy="183.4" r="1.2" fill="#FFFFFF" opacity=".7"/></g><path d="M158 176 Q175 163 194 176 L194 172 Q175 158 158 172Z" class="tc-eyeshade"/></g>
+    <g clip-path="url(#g-eyeR)"><g class="pupils"><circle cx="224" cy="180" r="9" fill="url(#g-iris)"/><circle cx="224" cy="180" r="4.4" fill="#1B120B"/><circle class="tc-glint" cx="227.4" cy="176.6" r="2.7" fill="#FFFFFF"/><circle cx="220.8" cy="183.4" r="1.2" fill="#FFFFFF" opacity=".7"/></g><path d="M206 176 Q225 163 242 176 L242 172 Q225 158 206 172Z" class="tc-eyeshade"/></g>
+    <g class="lids"><path d="M158 182 Q175 163 194 181 Q177 196 158 182Z"/><path d="M206 181 Q225 163 242 182 Q223 196 206 181Z"/></g>
+    <path class="tc-lash" d="M159 182 Q175 165 193 180"/><path class="tc-lash" d="M207 180 Q225 165 241 182"/>
+    <path class="tc-lash c-noor" d="M160 181.5 Q155 180 151.5 175" stroke-width="2.6"/><path class="tc-lash c-noor" d="M240 181.5 Q245 180 248.5 175" stroke-width="2.6"/>
+    <path class="tc-line" d="M168 189 Q177 192 186 187 M214 187 Q223 192 232 189" opacity=".3"/>
+   </g>
+   <g class="eyes-h">
+    <path class="tc-lash" stroke-width="4" d="M161 184 Q176 170 191 184"/><path class="tc-lash" stroke-width="4" d="M209 184 Q224 170 239 184"/>
+   </g></g>
+   <path d="M197 196 Q194 207 197.5 211 Q201 214.5 206.5 211" class="tc-line" stroke-width="2.5"/>
+   <g class="mouth">
+    <g data-m="rest" class="on"><path d="M183 226 Q200 239 217 226 Q200 232 183 226Z" class="tc-lip"/><path d="M180.5 224.5 Q182.5 226 184.5 228 M219.5 224.5 Q217.5 226 215.5 228" class="tc-lipline"/><path d="M191 237 Q200 241 209 237" class="tc-line" opacity=".45"/></g>
+    <g data-m="A"><path d="M185 224 Q200 219 215 224 Q215 250 200 251 Q185 250 185 224Z" class="tc-in"/><path d="M188 224.5 Q200 221 212 224.5 L211.5 229.5 Q200 227.5 188.5 229.5Z" fill="#FFFFFF"/><path d="M190 246 Q200 238 210 246 Q205 250.5 200 250.5 Q195 250.5 190 246Z" class="tc-tongue"/><path d="M185 224 Q200 219 215 224 Q215 250 200 251 Q185 250 185 224Z" class="tc-lipo"/></g>
+    <g data-m="E"><path d="M180 225 Q200 220 220 225 Q217 241 200 242 Q183 241 180 225Z" class="tc-in"/><path d="M183.5 225.5 Q200 222 216.5 225.5 L215 231.5 Q200 230 185 231.5Z" fill="#FFFFFF"/><path d="M190 240 Q200 235 210 240 Q200 242.5 190 240Z" class="tc-tongue"/><path d="M180 225 Q200 220 220 225 Q217 241 200 242 Q183 241 180 225Z" class="tc-lipo"/></g>
+    <g data-m="O"><ellipse cx="200" cy="232" rx="9" ry="11" class="tc-in"/><ellipse cx="200" cy="238.5" rx="5.5" ry="3.4" class="tc-tongue"/><ellipse cx="200" cy="232" rx="9" ry="11" class="tc-lipo" stroke-width="3.4"/></g>
+    <g data-m="M"><path d="M186 229 Q200 233 214 229" class="tc-lipo" stroke-width="4.2"/><path d="M192 237 Q200 240 208 237" class="tc-line" opacity=".45"/></g>
+    <g data-m="F"><path d="M186 226 Q200 222 214 226 Q212 237 200 238 Q188 237 186 226Z" class="tc-in"/><path d="M189 226 Q200 223 211 226 L210.5 232 Q200 230.5 189.5 232Z" fill="#FFFFFF"/><path d="M186 226 Q200 222 214 226 Q212 237 200 238 Q188 237 186 226Z" class="tc-lipo"/></g>
+    <g data-m="grin"><path d="M177 221 Q200 228 223 221 Q220 249 200 250 Q180 249 177 221Z" class="tc-in"/><path d="M180 222.5 Q200 229 220 222.5 L218.5 230 Q200 235 181.5 230Z" fill="#FFFFFF"/><path d="M189 245 Q200 237 211 245 Q205 249.5 200 249.5 Q195 249.5 189 245Z" class="tc-tongue"/><path d="M177 221 Q200 228 223 221 Q220 249 200 250 Q180 249 177 221Z" class="tc-lipo"/></g>
+   </g>
+   <g class="c-noor">
+    <path fill-rule="evenodd" d="M200 84 C246 84 276 120 274 172 C273 206 262 232 254 252 C270 268 292 296 300 332 C268 352 232 358 200 358 C168 358 132 352 100 332 C108 296 130 268 146 252 C138 232 127 206 126 172 C124 120 154 84 200 84Z M200 124 C230 124 250 146 250 178 C250 208 238 232 222 245 C212 253 188 253 178 245 C162 232 150 208 150 178 C150 146 170 124 200 124Z" fill="url(#g-hij)"/>
+    <path d="M150 178 C150 146 170 124 200 124 C230 124 250 146 250 178 C247 152 228 136 200 136 C172 136 153 152 150 178Z" class="tc-hijband"/>
+    <path d="M178 245 C188 253 212 253 222 245 C236 250 246 258 254 268 C238 290 162 290 146 268 C154 258 164 250 178 245Z" class="tc-hijd" opacity=".34"/>
+    <path d="M146 268 C170 296 230 296 254 268 M160 290 C176 316 190 338 198 357 M246 284 C236 312 224 336 214 357 M118 318 C134 300 146 286 152 276" class="tc-fold"/>
+    <path d="M152 112 C170 94 212 90 238 104" class="tc-hijhi"/>
+    <circle cx="247" cy="262" r="5" fill="#FFD25E"/><circle cx="245.6" cy="260.6" r="1.8" fill="#FFFFFF" opacity=".8"/>
+   </g>
+   <g class="c-shm">
+    <path d="M200 82 C250 82 282 118 279 170 C277 204 276 232 280 262 C284 294 294 322 302 344 C284 356 264 358 246 352 C242 322 242 290 246 258 C250 236 252 206 251 176 C250 150 228 133 200 127 C172 133 150 150 149 176 C148 206 150 236 154 258 C158 290 158 322 154 352 C136 358 116 356 98 344 C106 322 116 294 120 262 C124 232 123 204 121 170 C118 118 150 82 200 82Z" fill="url(#g-shm)"/>
+    <path d="M200 82 C250 82 282 118 279 170 C277 204 276 232 280 262 C284 294 294 322 302 344 C284 356 264 358 246 352 C254 300 268 240 262 170 C258 124 236 96 200 90 C164 96 142 124 138 170 C132 240 146 300 154 352 C136 358 116 356 98 344 C106 322 116 294 120 262 C124 232 123 204 121 170 C118 118 150 82 200 82Z" fill="#8A7460" opacity=".13"/>
+    <path d="M200 127 V92 M262 190 C262 250 266 300 274 348 M138 190 C138 250 134 300 126 348" class="tc-shmfold"/>
+    <path d="M149 176 C150 150 172 133 200 127 C228 133 250 150 251 176" fill="none" stroke="#B9A894" stroke-width="1.6" opacity=".7"/>
+    <path d="M131 138 Q200 96 269 138" class="tc-agal"/><path d="M136 124 Q200 84 264 124" class="tc-agal"/>
+    <path d="M150 122 Q200 92 250 122 M146 109 Q200 80 254 109" class="tc-agalhi"/>
+   </g>
+   <g class="c-mod">
+    <path class="tc-hair" d="M140 182 C129 122 158 82 204 82 C250 82 271 124 260 182 C258 162 252 148 242 138 C232 144 214 146 196 142 C182 139 170 140 160 146 C150 154 143 166 140 182Z"/><path d="M160 146 C174 118 218 110 246 134 C222 124 190 128 172 142Z" class="tc-hairhi"/>
+    <path class="tc-hair" d="M141 176 C140 186 142 192 143 198 L148 190 C146 182 146 170 148 160Z M259 176 C260 186 258 192 257 198 L252 190 C254 182 254 170 252 160Z"/>
+   </g>
+   
+  </g></g></g>
+  </g>
+  <g>
+   <rect x="0" y="392" width="400" height="48" fill="url(#g-wood)"/>
+   <rect x="0" y="390" width="400" height="7" class="tc-deskedge"/>
+   <rect x="14" y="377" width="64" height="13" rx="3" fill="#3B7BE8"/><rect x="14" y="381" width="64" height="2.5" fill="#FFFFFF" opacity=".45"/>
+   <rect x="19" y="365" width="56" height="12" rx="3" fill="#14B8A6"/><rect x="24" y="354" width="48" height="11" rx="3" fill="#F05A38"/><rect x="24" y="357.5" width="48" height="2.2" fill="#FFFFFF" opacity=".45"/>
+   <path d="M318 390 L322 346 Q322 340 328 340 H384 Q390 340 390 346 L394 390Z" fill="#30364A"/>
+   <path d="M326 386 L329 348 H383 L386 386Z" fill="#3B4560"/>
+   <text x="356" y="373" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" opacity=".95">هدهد</text>
+   <rect x="308" y="388" width="92" height="5" rx="2.5" fill="#9AA3B5"/>
+   <g class="tc-badge" transform="translate(0 -3)"><path d="M168 433 L172 414 H228 L232 433Z" fill="#FFFFFF"/><path d="M171.2 418 L172 414 H228 L228.8 418Z" fill="#F05A38"/><rect x="166" y="432" width="68" height="3" rx="1.5" fill="#8F5A2C" opacity=".5"/>
+   <text x="200" y="429.5" text-anchor="middle" font-family="Dubai,sans-serif" font-weight="700" font-size="11.5" class="tc-badget" id="tbadge">Noor</text></g>
+  </g>
+  <g class="arm-l"><path class="tc-sl" d="M96 336 C74 352 62 392 86 408 L148 413 L150 390 C134 388 122 384 116 374 C112 366 112 350 116 340Z"/><path class="tc-cuff" d="M143 389 L152 390 L150 414 L141 413Z"/>
+   <g class="hand-tap"><path class="tc-palm" d="M150 401 C149 393 160 389 172 390 C181 391 186 395 185 401 C184 408 174 412 163 412 C155 412 150 408 150 401Z"/><path class="tc-crease" d="M175 392 Q179 398 177 405 M169 391 Q173 399 171 408 M163 391 Q166 399 164 409"/></g></g>
+  <g class="arm-r"><path class="tc-sl" d="M304 336 C326 352 338 392 314 408 L252 413 L250 390 C266 388 278 384 284 374 C288 366 288 350 284 340Z"/><path class="tc-cuff" d="M257 389 L248 390 L250 414 L259 413Z"/>
+   <path class="tc-palm" d="M250 401 C251 393 240 389 228 390 C219 391 214 395 215 401 C216 408 226 412 237 412 C245 412 250 408 250 401Z"/><path class="tc-crease" d="M225 392 Q221 398 223 405 M231 391 Q227 399 229 408 M237 391 Q234 399 236 409"/></g>
+   <g class="pose pose-wave"><g class="wave-in">
+    <path class="tc-sl" d="M108 380 C82 386 64 370 62 342 C58 312 56 284 58 258 L94 254 C94 282 98 308 104 332 C108 348 112 362 118 370Z"/><path class="tc-cuff" d="M56 262 L57 250 L95 246 L95 258Z"/>
+    <path class="tc-fgd" stroke-width="11.799999999999999" d="M63 214 L57 190 M72 211 L70 182 M81 211 L83 183 M90 215 L96 193 M92 238 L106 224"/><path class="tc-palm" d="M58 222 C58 212 66 208 76 208 C87 208 94 213 94 222 L93 238 C92 248 85 254 76 254 C67 254 60 248 59 238Z"/><path class="tc-fg" stroke-width="9.2" d="M63 214 L57 190 M72 211 L70 182 M81 211 L83 183 M90 215 L96 193 M92 238 L106 224"/><path class="tc-crease" d="M66 236 Q76 242 86 234"/>
+   </g></g>
+   <g class="pose pose-thumb">
+    <path class="tc-sl" d="M98 384 C78 380 74 360 84 344 C92 332 100 320 108 310 L142 318 C134 330 128 342 126 354 C124 364 118 376 110 382Z"/><path class="tc-cuff" d="M103 318 L104 307 L144 310 L143 321Z"/>
+    <path class="tc-fgd" stroke-width="9.2" d="M128 286 H140 M128 294 H141 M128 302 H140 M127 309 H137"/><path class="tc-palm" d="M104 292 C104 284 110 280 118 280 H132 C140 280 144 285 144 292 V302 C144 310 139 314 131 314 H117 C109 314 104 309 104 302Z"/><path class="tc-fg" stroke-width="6.6" d="M128 286 H140 M128 294 H141 M128 302 H140 M127 309 H137"/><path class="tc-fgd" stroke-width="15.2" d="M113 286 L110 260"/><path class="tc-fg" stroke-width="12.6" d="M113 288 L110 260"/><ellipse cx="109.5" cy="258" rx="3.6" ry="4.6" fill="#FFFFFF" opacity=".42"/>
+   </g>
+  <g class="pose pose-chin">
+   <path class="tc-sl" d="M324 400 C318 356 292 312 258 284 L238 300 C262 324 280 360 284 402Z"/><path class="tc-cuff" d="M264 290 L254 280 L232 298 L242 308Z"/>
+   <path class="tc-fgd" stroke-width="12.0" d="M216 262 L217 261 M225 258 L226 257 M235 257 L236 256.5 M244 260 L245 259.6"/><path class="tc-palm" d="M212 266 C212 258 222 254 234 255 C246 256 254 262 252 270 C250 279 238 284 226 282 C217 281 212 274 212 266Z"/><path class="tc-fg" stroke-width="9.4" d="M216 262 L217 261 M225 258 L226 257 M235 257 L236 256.5 M244 260 L245 259.6"/><path class="tc-fgd" stroke-width="11.4" d="M216 272 L204 262"/><path class="tc-fg" stroke-width="8.8" d="M218 273 L204 262"/>
+  </g>
+  <g class="pose pose-ear">
+   <path class="tc-sl" d="M290 380 C318 384 334 364 330 332 C326 300 316 268 304 238 L274 250 C286 280 294 310 294 334 C294 350 288 362 280 370Z"/><path class="tc-cuff" d="M308 246 L302 234 L270 244 L275 256Z"/>
+   <path class="tc-fgd" stroke-width="11.2" d="M279 190 L273 168 M286 187 L284 160 M293 189 L295 163 M298 196 L304 176 M277 216 L266 206"/><path class="tc-palm" d="M274 196 C276 186 286 182 294 186 C301 190 302 200 300 212 C298 224 290 230 282 228 C274 226 272 208 274 196Z"/><path class="tc-fg" stroke-width="8.6" d="M279 190 L273 168 M286 187 L284 160 M293 189 L295 163 M298 196 L304 176 M277 216 L266 206"/><path class="tc-crease" d="M280 212 Q288 216 295 208"/>
+  </g>
+  <g class="pose pose-open"><g class="open-in">
+   <path class="tc-sl" d="M300 384 C322 384 330 362 322 344 C314 328 302 312 288 302 L266 322 C278 330 286 342 286 354 C286 362 284 368 280 372Z"/><path class="tc-cuff" d="M292 306 L282 298 L262 322 L272 330Z"/>
+   <path class="tc-fgd" stroke-width="11.2" d="M246 300 L226 290 M249 294 L231 279 M255 291 L242 273 M263 290 L256 273 M274 294 L281 278"/><path class="tc-palm" d="M240 300 C246 290 262 286 274 290 C284 294 284 304 276 310 C266 317 250 318 242 312 C238 308 238 304 240 300Z"/><path class="tc-fg" stroke-width="8.6" d="M246 300 L226 290 M249 294 L231 279 M255 291 L242 273 M263 290 L256 273 M274 294 L281 278"/><path class="tc-crease" d="M252 306 Q262 304 270 298"/>
+  </g></g>
+  <g class="pose pose-point">
+   <path class="tc-sl" d="M292 378 C316 386 336 372 340 344 C346 310 356 280 364 252 L330 242 C322 272 312 304 306 330 C302 348 296 362 284 368Z"/><path class="tc-cuff" d="M326 250 L328 238 L364 244 L362 256Z"/>
+   <path class="tc-fgd" stroke-width="11.799999999999999" d="M352 213 L366 180"/><path class="tc-palm" d="M330 224 C328 214 336 206 346 206 C357 206 364 214 362 224 C360 235 352 240 344 239 C336 238 331 232 330 224Z"/><path class="tc-fg" stroke-width="9.2" d="M352 213 L366 180"/><path class="tc-fgd" stroke-width="10.2" d="M356 222 L362 216 M354 230 L361 226 M349 236 L356 233"/><path class="tc-fg" stroke-width="7.6" d="M355 223 L362 216 M353 230 L361 226 M348 236 L356 233"/><path class="tc-fgd" stroke-width="11.4" d="M338 214 L340 200"/><path class="tc-fg" stroke-width="8.8" d="M338 216 L340 200"/>
+  </g>
+  <g class="tc-waves">
+   <path class="lw lw1" d="M318 176 Q326 192 318 208"/><path class="lw lw2" d="M330 168 Q342 192 330 216"/><path class="lw lw3" d="M342 160 Q358 192 342 224"/>
+  </g>
+ </g>
+</svg>`;
+const MOODS = [['happy','سعيد'],['excited','متحمس'],['proud','فخور'],['laughing','يضحك'],['surprised','متفاجئ'],['thinking','يفكر'],['encouraging','يشجّع']];
+const MOODS_F = {happy:'سعيدة',excited:'متحمسة',proud:'فخورة',laughing:'تضحك',surprised:'متفاجئة',thinking:'تفكر',encouraging:'تشجّع'};
+const POSES = [['wave','تلويح'],['thumb','إعجاب'],['chin','تفكير'],['ear','إنصات'],['point','إشارة للسبورة'],['open','شرح']];
+const VIS = c => /[ah]/.test(c) ? 'A' : /[eiy]/.test(c) ? 'E' : /[ouwq]/.test(c) ? 'O' : /[mbp]/.test(c) ? 'M' : /[fv]/.test(c) ? 'F' : /[a-z]/.test(c) ? (Math.random() < .5 ? 'E' : 'A') : 'rest';
+let N = 0; const BOXES = [];
+function make(o){ const n = ++N, b = document.createElement('div'); b.className = 'tbox';
+  b.innerHTML = TEACHER.replace(/id="(g-[a-zA-Z]+|bwE|bwT|tbadge)"/g, `id="$1-${n}"`).replace(/url\(#(g-[a-zA-Z]+)\)/g, `url(#$1-${n})`);
+  if(o.who !== 'noor') b.classList.add('t-adam'); if(o.who === 'adam2') b.classList.add('t-modern');
+  b.querySelector('[id^=tbadge]').textContent = o.who === 'noor' ? 'Noor' : 'Adam';
+  b.querySelector('svg').setAttribute('aria-label', o.who === 'noor' ? 'Teacher Noor' : 'Teacher Adam');
+  if(o.teen) b.classList.add('teen'); if(o.fixedAge) b.dataset.fixed = '1';
+  if(o.mood){ b.classList.add('m-' + o.mood); setMouth(b, o.mood === 'surprised' ? 'O' : ['laughing','excited','proud'].includes(o.mood) ? 'grin' : 'rest'); }
+  if(o.state){ b.classList.add(o.state); if(o.state === 'listening'){ b.classList.add('p-ear'); look(b, -2, 3); } if(o.state === 'thinking'){ b.classList.add('p-chin'); look(b, 5, -6); } }
+  if(o.pose) b.classList.add('p-' + o.pose);
+  if(o.board){ b.querySelector('[id^=bwE]').textContent = o.board[0]; b.querySelector('[id^=bwT]').textContent = o.board[1]; }
+  BOXES.push(b); blink(b); return b; }
+function setMouth(b, n){ b.querySelectorAll('.mouth > *').forEach(p => p.classList.toggle('on', p.dataset.m === n)); }
+function look(b, x, y){ b.querySelectorAll('.pupils').forEach(p => p.style.transform = `translate(${x}px,${y}px)`); }
+function blink(b){ const once = () => { b.classList.add('blink'); setTimeout(() => b.classList.remove('blink'), 120); }; setTimeout(() => { once(); blink(b); }, 2200 + Math.random() * 3800); }
+function talk(b, text){ clearInterval(b._t); b.classList.add('speaking'); let i = 0; const s = text.toLowerCase(); const rest = b.querySelector('.mouth > .on').dataset.m;
+  b._t = setInterval(() => { if(i >= s.length){ clearInterval(b._t); b.classList.remove('speaking', 'p-open'); setMouth(b, rest === 'grin' || rest === 'O' ? rest : 'rest'); return; }
+    const c = s[i++]; setMouth(b, c === ' ' && Math.random() < .5 ? 'M' : VIS(c)); if(i === 8) b.classList.add('p-open'); }, 70); }
+function cell(box, cap, sub, btn){ const c = document.createElement('div'); c.className = 'cell'; c.appendChild(box);
+  const p = document.createElement('div'); p.className = 'cap'; p.textContent = cap; if(sub){ const s = document.createElement('small'); s.textContent = sub; p.appendChild(s); } c.appendChild(p);
+  if(btn){ const t = document.createElement('button'); t.className = 'say'; t.textContent = 'تكلّم'; t.onclick = () => talk(box, 'Hello! My name is ' + (box.classList.contains('t-adam') ? 'Adam' : 'Noor') + '. What do you like to do after school?'); c.appendChild(t); }
+  return c; }
+const $ = s => document.querySelector(s);
+[['noor','المعلمة نور','Teacher Noor'],['adam','المعلم آدم · ثوب وشماغ','Teacher Adam'],['adam2','المعلم آدم · لبس عصري','Teacher Adam']].forEach(([w, ar, en]) => $('#cast').appendChild(cell(make({who:w, mood:'happy'}), ar, en, true)));
+for(const [box, who] of [['#noorMoods','noor'],['#adamMoods','adam']]){
+  MOODS.forEach(([m, ar]) => $(box).appendChild(cell(make({who, mood:m}), who === 'noor' ? MOODS_F[m] : ar, m)));
+  $(box).appendChild(cell(make({who, mood:'happy', state:'listening'}), who === 'noor' ? 'تستمع' : 'يستمع', 'listening'));
+  $(box).appendChild(cell(make({who, mood:'happy', state:'thinking'}), who === 'noor' ? 'تجهّز الرد' : 'يجهّز الرد', 'thinking (state)')); }
+POSES.forEach(([p, ar], i) => $('#poses').appendChild(cell(make({who:['noor','adam','adam2'][i % 3], mood:p === 'thumb' ? 'proud' : p === 'chin' ? 'thinking' : 'happy', pose:p, board:p === 'point' ? ['🍎','apple'] : null}), ar, p)));
+{ const s = make({who:'noor', mood:'happy'}); s.style.width = '210px'; const l = make({who:'adam', mood:'happy'}); l.style.width = 'min(520px,100%)';
+  const cs = cell(s, 'جوال', '210 px', true), cl = cell(l, 'آيباد', '520 px', true); cs.style.width = '210px'; cl.style.width = 'min(520px,100%)'; $('#sizes').append(cs, cl); }
+['noor','adam','adam2'].forEach(w => { const d = document.createElement('div'); d.className = 'pair';
+  d.append(cell(make({who:w, mood:'happy', fixedAge:1}), 'صغار', '6–11'), cell(make({who:w, mood:'happy', teen:1, fixedAge:1}), 'كبار', '12+')); $('#teen').appendChild(d); });
+$('#segAge').onclick = e => { const b = e.target.closest('button'); if(!b) return; const teen = b.dataset.v === 'teen';
+  $('#segAge').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); BOXES.forEach(x => { if(!x.dataset.fixed) x.classList.toggle('teen', teen); }); };
+if(/teen/.test(location.hash)) $('#segAge [data-v=teen]').click();
+</script>
+</body>
+</html>
