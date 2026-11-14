@@ -46,7 +46,7 @@
     [
      "The Balanced Argument",
      "Give a balanced two-minute argument on whether every student should learn to code, conceding and qualifying throughout",
-     "The case for … / Admittedly, … / That said, … / All things considered, …"
+     "The case for … / Admittedly, … / That said, … / For my money, …"
     ]
    ]
   },
@@ -279,7 +279,7 @@
      },
      {
       "s": "Reem",
-      "t": "My cousin did. Admittedly, she said the first month felt strange, but she came back far more confident and organised."
+      "t": "My friend's sister did. Admittedly, she said the first month felt strange, but she came back far more confident and organised."
      }
     ],
     "focus": "That said, most of my plans are free or very cheap.",
@@ -293,15 +293,15 @@
     "prompts": [
      {
       "q": "Surely a gap year just delays your career?",
-      "hint": "Admit part of the point with 'Granted, …', then add 'but' and your own view. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Admit part of the point with 'Granted, …', then add 'but' and your own view. Then back it up with a real example."
      },
      {
       "q": "What would you actually gain from a year off?",
-      "hint": "Give two benefits, for example with 'broaden your horizons'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give two benefits, for example with 'broaden your horizons'. Then admit one cost and say why it's worth it."
      },
      {
       "q": "What's the biggest risk, in your opinion?",
-      "hint": "Name the risk with 'Admittedly, …', then say how to manage it with 'That said, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Name the risk with 'Admittedly, …', then say how to manage it with 'That said, …'."
      }
     ]
    },
@@ -387,15 +387,15 @@
     "prompts": [
      {
       "q": "Shouldn't fast fashion simply be banned?",
-      "hint": "Agree only partly with 'up to a point' and explain where you disagree. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Agree only partly with 'up to a point' and explain where you disagree. Then give a real example."
      },
      {
       "q": "Who is to blame: the brands or the shoppers?",
-      "hint": "Share the blame with 'partly to blame' and give a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Share the blame with 'partly to blame' and give a reason. Then give one example of each side's share."
      },
      {
       "q": "What can a teenager realistically do?",
-      "hint": "Accept a fact with 'It's true that …, but …' and suggest one action. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Accept a fact with 'It's true that …, but …' and suggest one action."
      }
     ]
    },
@@ -496,7 +496,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Hmm. I suppose I'd still reap the rewards with a summer job."
+      "t": "Hmm. I suppose I'd still reap the rewards of working, just in the summer."
      },
      {
       "s": "Hessa",
@@ -522,15 +522,15 @@
     "prompts": [
      {
       "q": "Won't a job hurt your grades?",
-      "hint": "Show you understand with 'I take your point, but …', then give your plan. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Show you understand with 'I take your point, but …', then give your plan. Then give one real example of how you'd manage your time."
      },
      {
       "q": "What will you gain apart from money?",
-      "hint": "Mention 'hands-on experience' and one skill you'd learn. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Mention 'hands-on experience' and one skill you'd learn."
      },
      {
       "q": "So are you saying every student should work?",
-      "hint": "Limit your claim with 'That's not to say …' or 'in most cases'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Limit your claim with 'That's not to say …' or 'in most cases'. Then give an example of a student who shouldn't work."
      }
     ]
    },
@@ -627,7 +627,7 @@
      },
      {
       "s": "Omar",
-      "t": "Admittedly, there are new jobs. That said, prices for rent and food can go up as well."
+      "t": "Admittedly, there are new jobs. That said, rents and food prices can rise too; you have to take the rough with the smooth."
      },
      {
       "s": "Daniel",
@@ -657,15 +657,15 @@
     "prompts": [
      {
       "q": "Tourism brings money, so it's good, isn't it?",
-      "hint": "Agree partly and add a drawback with 'There's no denying that …, but …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Agree partly and add a drawback with 'There's no denying that …, but …'. Then give a real example from a place you know."
      },
      {
       "q": "I think tourism ruins quiet towns. Don't you?",
-      "hint": "Accept one point with 'I'll grant you that', then disagree. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Accept one point with 'I'll grant you that', then disagree. Then explain why you still disagree, with an example."
      },
      {
       "q": "So what's your overall view?",
-      "hint": "Give your conclusion with 'On balance, …' and add a condition. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give your conclusion with 'On balance, …' and add a condition."
      }
     ]
    },
@@ -702,10 +702,10 @@
      "frame": "I'll grant you that ___, but ___."
     },
     {
-     "w": "On balance,",
-     "def": "after considering all the facts on both sides",
-     "ar": "بعد الموازنة بين الأمرين",
-     "frame": "On balance, I think ___."
+     "w": "take the rough with the smooth",
+     "def": "to accept the bad parts of something as well as the good",
+     "ar": "يتقبّل السيئ مع الجيد",
+     "frame": "Living in ___ is great, but you have to take the rough with the smooth."
     },
     {
      "w": "put a strain on",
@@ -721,7 +721,8 @@
     }
    ],
    "recycle": [
-    "While it's true that"
+    "While it's true that",
+    "On balance,"
    ]
   },
   "0-4": {
@@ -792,15 +793,15 @@
     "prompts": [
      {
       "q": "Athletes entertain millions. Don't they deserve it?",
-      "hint": "Start with 'Much as I …' and then give your view. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'Much as I …' and then give your view. Then give a reason and a real example."
      },
      {
       "q": "But clubs earn even more than they pay players.",
-      "hint": "Keep your view with 'Be that as it may, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Keep your view with 'Be that as it may, …'. Then add one more reason to support your view."
      },
      {
       "q": "So what would a fair salary look like?",
-      "hint": "Use 'within reason' or 'out of all proportion' and give an example. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'within reason' or 'out of all proportion' and give an example."
      }
     ]
    },
@@ -879,7 +880,7 @@
      },
      {
       "s": "Reem",
-      "t": "Nevertheless, isn't it unfair to give low marks to students who just don't think that way?"
+      "t": "Even so, isn't it unfair to give low marks to students who just don't think that way?"
      },
      {
       "s": "Lama",
@@ -893,7 +894,7 @@
     "p2": [
      {
       "s": "Lama",
-      "t": "No. It's not that coding is more important than art, it's just that a basic level is essential today."
+      "t": "No. Don't get me wrong: coding isn't more important than art. Nevertheless, a basic level is essential today."
      },
      {
       "s": "Reem",
@@ -901,7 +902,7 @@
      },
      {
       "s": "Lama",
-      "t": "All things considered, one year of compulsory coding is fair. After that, students should choose."
+      "t": "For my money, one year of compulsory coding is fair. After that, students should choose."
      },
      {
       "s": "Reem",
@@ -912,7 +913,7 @@
       "t": "Thanks. I'll finish by asking the class what they think, so it doesn't sound like a lecture."
      }
     ],
-    "focus": "All things considered, one year of compulsory coding is fair.",
+    "focus": "For my money, one year of compulsory coding is fair.",
     "qs": [
      "What are Lama's two reasons for teaching coding?",
      "Why doesn't Lama want coding to be compulsory until graduation?"
@@ -923,15 +924,15 @@
     "prompts": [
      {
       "q": "Present both sides of the question. What's the case for and against?",
-      "hint": "Use 'the case for …' and 'Admittedly, …', and give one example for each side. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'the case for …' and 'Admittedly, …', and give one example for each side."
      },
      {
       "q": "Isn't it a waste of time for students who love art or sport?",
-      "hint": "Avoid a misunderstanding with 'It's not that …, it's just that …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Avoid a misunderstanding with 'Don't get me wrong: …'. Then give a real example."
      },
      {
       "q": "So what's your final position?",
-      "hint": "Conclude with 'All things considered, …' and add one condition or limit. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give your final view with 'For my money, …' and add one condition or limit."
      }
     ]
    },
@@ -947,7 +948,7 @@
      "What other modern skill should every student learn?"
     ]
    },
-   "exit": "In two or three sentences, give me a balanced view on compulsory coding: concede one point and finish with 'All things considered, …'.",
+   "exit": "In two or three sentences, give me a balanced view on compulsory coding: concede one point and finish with 'For my money, …'.",
    "expressions": [
     {
      "w": "the case for",
@@ -962,16 +963,16 @@
      "frame": "Before deciding about ___, let's look at both sides."
     },
     {
-     "w": "It's not that …, it's just that",
-     "def": "used to explain your real reason and avoid being misunderstood",
-     "ar": "ليس الأمر أنّ …، بل إنّ",
-     "frame": "It's not that ___, it's just that ___."
+     "w": "Don't get me wrong",
+     "def": "used before explaining something so that people don't misunderstand you",
+     "ar": "لا تفهمني خطأً",
+     "frame": "Don't get me wrong: I ___, but ___."
     },
     {
-     "w": "All things considered,",
-     "def": "after thinking about every part of the situation",
-     "ar": "بعد أخذ كل شيء في الاعتبار",
-     "frame": "All things considered, I believe ___."
+     "w": "For my money,",
+     "def": "in my honest opinion, after thinking about it carefully",
+     "ar": "في رأيي الشخصي",
+     "frame": "For my money, ___ is the best option because ___."
     },
     {
      "w": "I must admit",
@@ -989,7 +990,9 @@
    "recycle": [
     "weigh up",
     "Admittedly",
-    "That said,"
+    "That said,",
+    "All things considered,",
+    "It's not that …, it's just that …"
    ]
   },
   "1-0": {
@@ -1084,7 +1087,7 @@
      },
      {
       "s": "Hamad",
-      "t": "In other words, yes. Turning off the tap while you brush your teeth actually saves electricity, too."
+      "t": "That's right. Turning off the tap while you brush your teeth actually saves electricity, too."
      }
     ],
     "focus": "To put it simply, desalination means taking the salt out of seawater.",
@@ -1098,15 +1101,15 @@
     "prompts": [
      {
       "q": "What does 'desalination' actually mean?",
-      "hint": "Explain it in easy words, starting with 'To put it simply, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Explain it in easy words, starting with 'To put it simply, …'. Then give one everyday example."
      },
      {
       "q": "Why do we need it here?",
-      "hint": "Give a fact about rain or rivers, then explain with 'What this means is …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give a fact about rain or rivers, then explain with 'What this means is …'."
      },
      {
       "q": "I still don't understand the filters part.",
-      "hint": "Say it again in a different way with 'In other words, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Say it again in a different way with 'In other words, …'. Then check that your listener has understood."
      }
     ]
    },
@@ -1178,7 +1181,7 @@
      },
      {
       "s": "Noura",
-      "t": "Exactly. That's why grown-ups try to save in ways that grow over time, not just under the bed."
+      "t": "Yes. That's why grown-ups try to save in ways that grow over time, not just under the bed."
      }
     ],
     "focus": "Put another way, the same two riyals buy less than before.",
@@ -1192,15 +1195,15 @@
     "prompts": [
      {
       "q": "Why is everything more expensive now?",
-      "hint": "Give a short explanation with 'The long and short of it is …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a short explanation with 'The long and short of it is …'. Then give an everyday example with prices."
      },
      {
       "q": "I don't get it. Money is money!",
-      "hint": "Compare it to something familiar with 'Think of it as …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Compare it to something familiar with 'Think of it as …'."
      },
      {
       "q": "So what can I do about it?",
-      "hint": "Explain one idea simply, then check with 'Does that make sense?'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain one idea simply, then check with 'Does that make sense?'."
      }
     ]
    },
@@ -1365,15 +1368,15 @@
     "prompts": [
      {
       "q": "What is AI, in simple words?",
-      "hint": "Give the basic idea, starting with 'Essentially, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give the basic idea, starting with 'Essentially, …'. Then give one everyday example of AI."
      },
      {
       "q": "How can a machine possibly learn?",
-      "hint": "Use a comparison: 'A good analogy would be …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use a comparison: 'A good analogy would be …'. Then explain what the comparison shows."
      },
      {
       "q": "Can it make mistakes?",
-      "hint": "Explain 'trial and error' or 'spot patterns' and say it again with 'That is to say, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain 'trial and error' or 'spot patterns' and say it again with 'That is to say, …'. Then say how people can check its answers."
      }
     ]
    },
@@ -1497,15 +1500,15 @@
     "prompts": [
      {
       "q": "What does that expression mean in English?",
-      "hint": "Give a translation with 'It roughly translates as …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a translation with 'It roughly translates as …'. Then say when people use it."
      },
      {
       "q": "Is there an English phrase that means the same?",
-      "hint": "Say if there is one, or use 'There's no direct equivalent …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Say if there is one, or use 'There's no direct equivalent …'. Then give an example of a situation where it fits."
      },
      {
       "q": "Why is it so hard to translate?",
-      "hint": "Explain your main point with 'What I'm getting at is …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain your main point with 'What I'm getting at is …'. Then give one more example of something that is hard to translate."
      }
     ]
    },
@@ -1629,15 +1632,15 @@
     "prompts": [
      {
       "q": "What does 'placebo' mean?",
-      "hint": "Define it with '… refers to …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Define it with '… refers to …'. Then give a simple example."
      },
      {
       "q": "So fake medicine works as well as real medicine?",
-      "hint": "Correct the idea with 'Let me rephrase that.' and explain again. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Correct the idea with 'Let me rephrase that.' and explain again."
      },
      {
       "q": "Can you say it without science words?",
-      "hint": "Explain it with 'In layman's terms, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain it with 'In layman's terms, …'. Then check that your classmate has understood."
      }
     ]
    },
@@ -1747,7 +1750,7 @@
      },
      {
       "s": "Jana",
-      "t": "Mainly for safety and frequency. Bear in mind that it's one of the largest driverless networks in the world."
+      "t": "Mainly for safety and frequency. It's also one of the largest driverless networks in the world."
      }
     ],
     "focus": "To clarify, people are always in charge, but from the control centre, not from a cab at the front.",
@@ -1761,15 +1764,15 @@
     "prompts": [
      {
       "q": "Can you give me the main idea first?",
-      "hint": "Start with 'To put it simply, …' and then say you'll 'break it down'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'To put it simply, …' and then say you'll 'break it down'."
      },
      {
       "q": "Sorry, I'm lost. Can you explain the second step again?",
-      "hint": "Rephrase with 'To clarify, …' or 'In other words, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Rephrase with 'To clarify, …' or 'In other words, …'. Then check that your listener now understands."
      },
      {
       "q": "Is there anything people usually misunderstand about it?",
-      "hint": "Correct a common mistake, beginning with 'Bear in mind that …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Correct a common mistake, beginning with 'Bear in mind that …'. Then say why people get it wrong."
      }
     ]
    },
@@ -1863,15 +1866,15 @@
     "prompts": [
      {
       "q": "What are the main causes of desertification?",
-      "hint": "Name two causes, using 'stem from'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Name two causes, using 'stem from'. Then say which cause matters most and why."
      },
      {
       "q": "What effects does it have on people and animals?",
-      "hint": "Use 'give rise to' or 'a domino effect' to link causes to results. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'give rise to' or 'a domino effect' to link causes to results. Then give a concrete example."
      },
      {
       "q": "Is there any hope?",
-      "hint": "Mention a solution and say whether it could 'reverse the trend'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Mention a solution and say whether it could 'reverse the trend'. Then admit one difficulty and say how to deal with it."
      }
     ]
    },
@@ -2036,15 +2039,15 @@
     "prompts": [
      {
       "q": "Why do you think your city has grown so much?",
-      "hint": "Give two reasons with 'can be attributed to'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give two reasons with 'can be attributed to'. Then give a real example from your city."
      },
      {
       "q": "What problems has this growth caused?",
-      "hint": "Link causes and results with 'result in' or 'As a consequence, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Link causes and results with 'result in' or 'As a consequence, …'. Then say which problem matters most and why."
      },
      {
       "q": "What should the city do next?",
-      "hint": "Suggest one solution and say what it would result in. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Suggest one solution and say what it would result in. Then admit one drawback of your idea."
      }
     ]
    },
@@ -2081,20 +2084,16 @@
       "t": "Mum always says it's better to have too much than to run out in front of guests."
      },
      {
-      "s": "Lama",
-      "t": "I agree. It stems from the wish to be generous; nobody wants a guest to go hungry."
-     },
-     {
       "s": "Turki",
-      "t": "That's a lovely value. But throwing food away contributes to so many problems."
+      "t": "I know. It stems from the wish to be generous; nobody wants a guest to go hungry."
      },
      {
       "s": "Lama",
-      "t": "Exactly. Our hospitality is rooted in tradition, so cooking less can feel almost rude."
+      "t": "True. Our hospitality is rooted in tradition, so cooking less can feel almost rude."
      },
      {
       "s": "Turki",
-      "t": "But nobody thinks a host is mean for serving what guests can actually eat."
+      "t": "But nobody thinks a host is mean for serving what guests can actually eat. And throwing food away contributes to so many problems."
      }
     ],
     "p2": [
@@ -2134,15 +2133,15 @@
     "prompts": [
      {
       "q": "Why is so much food wasted during celebrations?",
-      "hint": "Give a cause with 'be largely due to' or 'stem from'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a cause with 'be largely due to' or 'stem from'. Then give a real example from your family or community."
      },
      {
       "q": "Why does it matter if some food is thrown away?",
-      "hint": "Explain an effect with 'contribute to' or 'a direct consequence of'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain an effect with 'contribute to' or 'a direct consequence of'. Then add one more effect."
      },
      {
       "q": "What should families do differently?",
-      "hint": "Suggest one change and explain what it would achieve. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Suggest one change and explain what it would achieve. Then admit one difficulty and answer it."
      }
     ]
    },
@@ -2270,15 +2269,15 @@
     "prompts": [
      {
       "q": "Where does all this plastic come from?",
-      "hint": "Explain how it 'ends up in' the sea. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Explain how it 'ends up in' the sea. Then give a real example."
      },
      {
       "q": "Why is plastic dangerous for animals?",
-      "hint": "Use 'pose a threat to' and give an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'pose a threat to' and give an example."
      },
      {
       "q": "Does it affect people, too?",
-      "hint": "Describe a chain using 'in turn' or 'a chain reaction'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Describe a chain using 'in turn' or 'a chain reaction'. Then say what people can do about it."
      }
     ]
    },
@@ -2405,15 +2404,15 @@
     "prompts": [
      {
       "q": "Why do false stories spread so fast?",
-      "hint": "Give a root cause with 'be at the root of' and mention how messages 'do the rounds'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a root cause with 'be at the root of' and mention how messages 'do the rounds'. Then give an example, and say whether it is real or invented."
      },
      {
       "q": "What harm can one fake message do?",
-      "hint": "Use 'give rise to' or 'erode trust' with an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'give rise to' or 'erode trust' with an example."
      },
      {
       "q": "Why does the problem keep getting worse?",
-      "hint": "Explain the 'vicious circle' step by step. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain the 'vicious circle' step by step. Then say how the circle could be broken."
      }
     ]
    },
@@ -2583,15 +2582,15 @@
     "prompts": [
      {
       "q": "What are the underlying causes of the issue you chose?",
-      "hint": "Name at least two causes and say which is 'the main driving force behind' it. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Name at least two causes and say which is 'the main driving force behind' it. Then explain which cause is hardest to deal with."
      },
      {
       "q": "What are its consequences, now and in the future?",
-      "hint": "Use 'far-reaching consequences', 'result in' or 'contribute to'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'far-reaching consequences', 'result in' or 'contribute to'. Then give a concrete example."
      },
      {
       "q": "What is the most effective solution?",
-      "hint": "Suggest how to 'tackle the problem at its source' and admit one difficulty. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Suggest how to 'tackle the problem at its source' and admit one difficulty."
      }
     ]
    },
@@ -2681,15 +2680,15 @@
     "prompts": [
      {
       "q": "Can you describe the area where you live?",
-      "hint": "Give a location with 'a stone's throw from' and one more detail. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a location with 'a stone's throw from' and one more detail."
      },
      {
       "q": "What do you like to do in your free time there?",
-      "hint": "Use 'every so often' and add a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'every so often' and add a reason. Then add a short example."
      },
      {
       "q": "Would you like to live somewhere else in the future?",
-      "hint": "Use 'I'm not much of a …' or 'the hustle and bustle' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'I'm not much of a …' or 'the hustle and bustle' and explain why."
      }
     ]
    },
@@ -2760,7 +2759,11 @@
      },
      {
       "s": "Noura",
-      "t": "The first person who springs to mind is my chemistry teacher in secondary school, Ms Huda. I've always held her in high regard, even though she was strict."
+      "t": "The first person who springs to mind is my chemistry teacher in secondary school, Ms Huda."
+     },
+     {
+      "s": "Noura",
+      "t": "I've always held her in high regard, even though she was strict."
      },
      {
       "s": "Noura",
@@ -2812,15 +2815,15 @@
     "prompts": [
      {
       "q": "Who is the person, and how do you know them?",
-      "hint": "Start with 'The first person who springs to mind is …' and give some background. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'The first person who springs to mind is …' and give some background."
      },
      {
       "q": "What did they do that was special?",
-      "hint": "Use 'bend over backwards to' or 'have a way of' with a specific example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'bend over backwards to' or 'have a way of' with a specific example."
      },
      {
       "q": "Why did this person inspire you?",
-      "hint": "Explain the effect with 'have a profound influence on' or 'lead by example'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain the effect with 'have a profound influence on' or 'lead by example'. Then say what you have learnt from them."
      }
     ]
    },
@@ -2948,15 +2951,15 @@
     "prompts": [
      {
       "q": "How has technology changed the way young people learn?",
-      "hint": "Generalise with 'as a rule', then add a contrast and an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Generalise with 'as a rule', then add a contrast and an example."
      },
      {
       "q": "Are there any dangers in relying too much on technology?",
-      "hint": "Use 'there's a catch' or 'come at a cost' and explain one danger. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'there's a catch' or 'come at a cost' and explain one danger. Then give a real example."
      },
      {
       "q": "Will governments ever be able to control technology properly?",
-      "hint": "Use 'keep pace with' and finish with your overall view. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'keep pace with' and finish with your overall view. Then admit one point against your view."
      }
     ]
    },
@@ -3092,15 +3095,15 @@
     "prompts": [
      {
       "q": "Is money the most important thing for a happy life?",
-      "hint": "Disagree or qualify with 'There's more to life than …' and give an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Disagree or qualify with 'There's more to life than …' and give an example. Then admit one point against you and answer it."
      },
      {
       "q": "Why do some successful people still feel unhappy?",
-      "hint": "Use 'peace of mind' or 'a sense of fulfilment' to explain. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'peace of mind' or 'a sense of fulfilment' to explain. Then give an example."
      },
      {
       "q": "What, in the end, is the secret of happiness?",
-      "hint": "Sum up your view with 'it boils down to …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Sum up your view with 'it boils down to …'."
      }
     ]
    },
@@ -3228,15 +3231,15 @@
     "prompts": [
      {
       "q": "Which traditions in your country have lasted the longest, and why?",
-      "hint": "Use 'stand the test of time' and give a specific example. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'stand the test of time' and give a specific example."
      },
      {
       "q": "Do older and younger people see traditions differently?",
-      "hint": "Talk about 'a generation gap' and contrast the two groups. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Talk about 'a generation gap' and contrast the two groups. Then give an example from your own family."
      },
      {
       "q": "Should governments try to protect traditional crafts?",
-      "hint": "Use 'die out' or 'get the mix right' and give your overall view. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'die out' or 'get the mix right' and give your overall view. Then admit one point against your view."
      }
     ]
    },
@@ -3363,15 +3366,15 @@
     "prompts": [
      {
       "q": "Part 1: What do you enjoy most about studying English?",
-      "hint": "Give a natural answer of two or three sentences with one idiom. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a natural answer of two or three sentences with one idiom."
      },
      {
       "q": "Part 2: Describe an achievement you are proud of. Talk for up to two minutes.",
-      "hint": "Say what, when and how, then why you're proud, using expressions from this unit. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Say what, when and how, then why you're proud, using expressions from this unit."
      },
      {
       "q": "Part 3: Do you think people today put too much pressure on themselves to succeed?",
-      "hint": "Buy time with 'Let me think about that for a moment', then give a balanced answer with 'It's hard to generalise, but …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Buy time with 'Let me think about that for a moment', then give a balanced answer with 'It's hard to generalise, but …'. Then give a real example."
      }
     ]
    },
@@ -3628,7 +3631,7 @@
     },
     {
      "s": "Hessa",
-     "t": "You'd still reap the rewards with a summer job."
+     "t": "You'd still reap the rewards of working in the summer."
     }
    ],
    "grammar": {
@@ -3659,9 +3662,9 @@
      "ex": "I'll grant you that the roads are busier, but the town is livelier."
     },
     {
-     "w": "On balance,",
-     "ar": "بعد الموازنة بين الأمرين",
-     "ex": "On balance, tourism has helped our region."
+     "w": "take the rough with the smooth",
+     "ar": "يتقبّل السيئ مع الجيد",
+     "ex": "Living by the sea is lovely, but you have to take the rough with the smooth."
     },
     {
      "w": "put a strain on",
@@ -3792,14 +3795,14 @@
      "ex": "We need to look at both sides before we vote."
     },
     {
-     "w": "It's not that …, it's just that",
-     "ar": "ليس الأمر أنّ …، بل إنّ",
-     "ex": "It's not that coding is useless, it's just that not everyone needs it."
+     "w": "Don't get me wrong",
+     "ar": "لا تفهمني خطأً",
+     "ex": "Don't get me wrong: coding is useful, but not everyone needs to be an expert."
     },
     {
-     "w": "All things considered,",
-     "ar": "بعد أخذ كل شيء في الاعتبار",
-     "ex": "All things considered, a short coding course should be compulsory."
+     "w": "For my money,",
+     "ar": "في رأيي الشخصي",
+     "ex": "For my money, a short coding course should be compulsory."
     },
     {
      "w": "I must admit",
@@ -3831,7 +3834,7 @@
     },
     {
      "s": "Lama",
-     "t": "It's not that it's more important than art, it's just that the basics are essential."
+     "t": "Don't get me wrong: it isn't more important than art, but the basics are essential."
     },
     {
      "s": "Reem",
@@ -3839,16 +3842,16 @@
     },
     {
      "s": "Lama",
-     "t": "All things considered, one compulsory year is fair."
+     "t": "For my money, one compulsory year is fair."
     }
    ],
    "grammar": {
     "title": "Structuring a balanced argument",
-    "ar": "الحجة المتوازنة: اعرض الحجج المؤيدة (the case for)، ثم اعترف بالسلبيات (Admittedly)، ثم قيّدها (That said)، واختم بحكم واضح (All things considered).",
+    "ar": "الحجة المتوازنة: اعرض الحجج المؤيدة (the case for)، ثم اعترف بالسلبيات (Admittedly)، ثم قيّدها (That said)، واختم بحكم واضح (For my money).",
     "examples": [
      "The case for it is strong.",
      "Admittedly, it's hard. That said, it's worth it.",
-     "All things considered, I'm in favour."
+     "For my money, I'm in favour."
     ]
    }
   },
@@ -5291,15 +5294,17 @@
    {
     "type": "order",
     "words": [
-     "On",
-     "balance,",
-     "tourism",
-     "has",
-     "helped",
-     "our",
-     "region."
+     "You",
+     "have",
+     "to",
+     "take",
+     "the",
+     "rough",
+     "with",
+     "the",
+     "smooth."
     ],
-    "answer": "On balance, tourism has helped our region.",
+    "answer": "You have to take the rough with the smooth.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5433,23 +5438,23 @@
    },
    {
     "type": "mc",
-    "q": "Which phrase best introduces the conclusion of a balanced argument?",
+    "q": "Which phrase gives your honest personal verdict at the end of an argument?",
     "options": [
      "Granted,",
      "For instance,",
      "To begin with,",
-     "All things considered,"
+     "For my money,"
     ],
     "answer": 3
    },
    {
     "type": "mc",
-    "q": "'It's not that coding is useless, ___ not everyone needs it.'",
+    "q": "'Don't get me ___: coding is useful, but not everyone needs it.'",
     "options": [
-     "it's just that",
-     "so that",
-     "even though",
-     "in case"
+     "wrong",
+     "right",
+     "mistaken",
+     "false"
     ],
     "answer": 0
    },

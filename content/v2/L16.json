@@ -229,7 +229,7 @@
      },
      {
       "s": "Reem",
-      "t": "It goes without saying that families appreciate it. But think about it: how often do we get to make a dent in a real problem in two afternoons?"
+      "t": "It goes without saying that families appreciate it. But how often do we get to make a dent in a real problem in two afternoons?"
      },
      {
       "s": "Lina",
@@ -263,15 +263,15 @@
     "prompts": [
      {
       "q": "Honestly, why should I bother? It's not my responsibility.",
-      "hint": "Use a strong opening like 'Never have I …' and give one compelling reason. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use a strong opening like 'Never have I …' and give one compelling reason. Then back it up with one real example."
      },
      {
       "q": "Won't my small donation be too little to matter?",
-      "hint": "Answer with a rhetorical question and explain how small actions can make a dent in a big problem. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Answer with a rhetorical question and explain how small actions can make a dent in a big problem. Then support it with a concrete example from your school or area."
      },
      {
       "q": "Who else is actually going to help?",
-      "hint": "Explain how the class could rally behind the cause and who has already stepped up. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Explain how the class could rally behind the cause and who has already stepped up."
      }
     ]
    },
@@ -394,15 +394,15 @@
     "prompts": [
      {
       "q": "In one sentence, what does your product do?",
-      "hint": "Use 'Not only does it …, but it also …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'Not only does it …, but it also …'."
      },
      {
       "q": "There are already similar products. Why is yours different?",
-      "hint": "Explain what sets it apart or how it fills a gap in the market. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain what sets it apart or how it fills a gap in the market. Then back it up with a reason and a real example."
      },
      {
       "q": "Why should we back your project instead of the others?",
-      "hint": "End with a rhetorical question and one strong reason. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "End with a rhetorical question and one strong reason. Then admit one weakness of your project and show why it doesn't matter."
      }
     ]
    },
@@ -466,7 +466,7 @@
    "objective": "Today you will persuade people to protect the environment, using Rarely, Seldom and rhetorical questions.",
    "warmup": "What is the most beautiful natural place you have ever visited?",
    "dialogue": {
-    "scene": "Talal, whose father is a diving instructor, is helping his friend Yazeed plan a speech for the school's environment week.",
+    "scene": "Yazeed, whose father is a diving instructor, is planning a speech for the school's environment week. His friend Talal is helping him.",
     "p1": [
      {
       "s": "Yazeed",
@@ -534,15 +534,15 @@
     "prompts": [
      {
       "q": "Why should we worry about a few plastic bottles on the beach?",
-      "hint": "Explain what is at stake and use 'Rarely do we …' or 'Seldom …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Explain what is at stake and use 'Rarely do we …' or 'Seldom …'. Then give one real example of what could be lost."
      },
      {
       "q": "Isn't one family's effort just a token gesture?",
-      "hint": "Reply with a rhetorical question, then give a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Reply with a rhetorical question, then give a reason. Then add a concrete example to make your point real."
      },
      {
       "q": "What exactly do you want us to do?",
-      "hint": "Ask them to take action and suggest one or two specific steps. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Ask them to take action and suggest one or two specific steps."
      }
     ]
    },
@@ -670,15 +670,15 @@
     "prompts": [
      {
       "q": "Why should we change something that has worked for years?",
-      "hint": "Make a strong case and say how the benefits more than justify the costs. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Make a strong case and say how the benefits more than justify the costs. Then admit one drawback and answer it."
      },
      {
       "q": "Isn't this going to be expensive?",
-      "hint": "Answer with 'Down the line, …' and 'Only by … can we …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Answer with 'Down the line, …' and 'Only by … can we …'."
      },
      {
       "q": "Is there anything the school should never allow?",
-      "hint": "Use 'Under no circumstances should …' to make your point strongly. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'Under no circumstances should …' to make your point strongly. Then give a reason and a real example."
      }
     ]
    },
@@ -811,15 +811,15 @@
     "prompts": [
      {
       "q": "Why should I leave my comfortable hotel?",
-      "hint": "Use 'Little do people know …' and describe something special. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'Little do people know …' and describe something special. Then add one concrete detail the tourist can picture."
      },
      {
       "q": "Will it really be worth the journey?",
-      "hint": "Use 'Not until you … will you …' to promise it will live up to expectations. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'Not until you … will you …' to promise it will live up to expectations. Then admit one downside, such as the distance, and answer it."
      },
      {
       "q": "What's the one thing I mustn't miss?",
-      "hint": "Describe a hidden gem with strong adjectives such as 'jaw-dropping'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Describe a hidden gem with strong adjectives such as 'jaw-dropping'."
      }
     ]
    },
@@ -952,15 +952,15 @@
     "prompts": [
      {
       "q": "Begin your speech. How will you grab our attention?",
-      "hint": "Open with a rhetorical question or 'Never before has …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Open with a rhetorical question or 'Never before has …'. Then state your position in one clear sentence."
      },
      {
       "q": "What really hangs in the balance in this debate?",
-      "hint": "Give your strongest reason, using 'Not only … but also …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give your strongest reason, using 'Not only … but also …'. Then answer the strongest point the other side could make."
      },
      {
       "q": "Finish your speech. What do you want us to do?",
-      "hint": "Use 'I call on you to …' and repeat your main point. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'I call on you to …' and repeat your main point."
      }
     ]
    },
@@ -1092,15 +1092,15 @@
     "prompts": [
      {
       "q": "Isn't this an amazing deal?",
-      "hint": "Explain why it sounds too good to be true, using 'It's highly unlikely that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Explain why it sounds too good to be true, using 'It's highly unlikely that …'. Then give a real example of a similar offer."
      },
      {
       "q": "But it has thousands of positive reviews!",
-      "hint": "Use 'must have been' or 'might have been' to say who wrote the reviews. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'must have been' or 'might have been' to say who wrote the reviews. Then explain what real evidence would look like."
      },
      {
       "q": "So what should I do before buying anything online?",
-      "hint": "Give advice: read the fine print and look for proof that backs up the claim. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give advice: read the fine print and look for proof that backs up the claim."
      }
     ]
    },
@@ -1228,15 +1228,15 @@
     "prompts": [
      {
       "q": "Which source should I trust most, and why?",
-      "hint": "Compare the sources and mention credentials and vested interests. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Compare the sources and mention credentials and vested interests. Then admit one weakness of the source you choose."
      },
      {
       "q": "The blog was written in 2010. Is that a problem?",
-      "hint": "Explain that the information might be out of date. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain that the information might be out of date. Then say what you would do about it."
      },
      {
       "q": "Who do you think wrote the blog?",
-      "hint": "Make a deduction: 'It can't have been / might have been written by …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Make a deduction: 'It can't have been / might have been written by …'."
      }
     ]
    },
@@ -1367,15 +1367,15 @@
     "prompts": [
      {
       "q": "Why do you think the video isn't authentic?",
-      "hint": "Describe a dead giveaway that looked normal on the face of it. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Describe a dead giveaway that looked normal on the face of it. Then explain why that detail matters."
      },
      {
       "q": "Who would make a video like that, and why?",
-      "hint": "Use 'must have been / might have been hoping to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'must have been / might have been hoping to …'. Then admit that you could be wrong, and say why you still think so."
      },
      {
       "q": "How can we check whether it's real?",
-      "hint": "Suggest practical steps, and warn against rushing to judgement. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Suggest practical steps, and warn against rushing to judgement."
      }
     ]
    },
@@ -1507,15 +1507,15 @@
     "prompts": [
      {
       "q": "Fifty per cent happier! Isn't that convincing?",
-      "hint": "Talk about the sample size, using 'It's highly unlikely that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Talk about the sample size, using 'It's highly unlikely that …'. Then give a reason and a concrete example."
      },
      {
       "q": "But there is a link between breakfast and happiness, isn't there?",
-      "hint": "Explain the difference between a correlation and a cause. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain the difference between a correlation and a cause. Then give an example of two things that go together without one causing the other."
      },
      {
       "q": "So what would make the research more reliable?",
-      "hint": "Suggest improvements and say how much we can read into the results. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Suggest improvements and say how much we can read into the results."
      }
     ]
    },
@@ -1642,15 +1642,15 @@
     "prompts": [
      {
       "q": "Is it true? Everyone's saying so!",
-      "hint": "Use 'It can't have …' or 'Someone must have …' and give a reason. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'It can't have …' or 'Someone must have …' and give a reason. Then admit one reason it might be true, and answer it."
      },
      {
       "q": "Where do you think the rumour started?",
-      "hint": "Make a deduction, for example that someone might have got their wires crossed. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Make a deduction, for example that someone might have got their wires crossed."
      },
      {
       "q": "What should we do now?",
-      "hint": "Suggest how to verify it and nip the rumour in the bud. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Suggest how to verify it and nip the rumour in the bud. Then explain why acting quickly matters."
      }
     ]
    },
@@ -1778,15 +1778,15 @@
     "prompts": [
      {
       "q": "Claim: 'Drinking cold water after a meal is dangerous.' What's your verdict?",
-      "hint": "Say whether it holds water and where the idea might have come from. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Say whether it holds water and where the idea might have come from. Then give a reason and a real example."
      },
      {
       "q": "Some people say it's true because their grandparents told them. Should we believe them?",
-      "hint": "Explain how to weigh the evidence and find a peer-reviewed study. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain how to weigh the evidence and find a peer-reviewed study. Then admit what older people often get right before you answer."
      },
      {
       "q": "What's your final message to our viewers?",
-      "hint": "Give advice using 'It's highly unlikely that …' or 'a healthy dose of scepticism'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give advice using 'It's highly unlikely that …' or 'a healthy dose of scepticism'."
      }
     ]
    },
@@ -1918,15 +1918,15 @@
     "prompts": [
      {
       "q": "How will you grab our attention in the first ten seconds?",
-      "hint": "Start with 'Picture this: …' or a startling fact. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'Picture this: …' or a startling fact."
      },
      {
       "q": "Why will your topic strike a chord with students?",
-      "hint": "Connect the topic to the audience's daily life. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Connect the topic to the audience's daily life. Then give one real example from school life."
      },
      {
       "q": "What will you tell us is coming next?",
-      "hint": "Use 'Let me begin by …, and then I'll …' to preview your talk. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'Let me begin by …, and then I'll …' to preview your talk."
      }
     ]
    },
@@ -2081,7 +2081,7 @@
      },
      {
       "s": "Razan",
-      "t": "Pausing feels so awkward, though. The silence seems to last forever."
+      "t": "Pausing feels awkward, but I'll try it. Let's go from the top."
      }
     ],
     "focus": "This brings me to the second part of my talk: the Naskh script.",
@@ -2095,15 +2095,15 @@
     "prompts": [
      {
       "q": "You've finished your first point. How will you move on?",
-      "hint": "Use 'This brings me to …' or 'Turning now to …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'This brings me to …' or 'Turning now to …'. Then add one sentence that previews the new point."
      },
      {
       "q": "Can you tell us more about that last point?",
-      "hint": "Use 'Let me elaborate on …' and add an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'Let me elaborate on …' and add an example."
      },
      {
       "q": "How will you remind us of something you said before?",
-      "hint": "Use 'As I mentioned earlier, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'As I mentioned earlier, …'."
      }
     ]
    },
@@ -2193,15 +2193,15 @@
     "prompts": [
      {
       "q": "What's the main advantage?",
-      "hint": "Give the advantage, then add another with 'On top of that, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give the advantage, then add another with 'On top of that, …'. Then give a real example."
      },
      {
       "q": "And the disadvantages?",
-      "hint": "Use 'Nonetheless, …' or 'On the flip side, …' to show the other side. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'Nonetheless, …' or 'On the flip side, …' to show the other side. Then give a concrete example of each."
      },
      {
       "q": "So what's your overall view?",
-      "hint": "Start with 'Taking everything into account, …' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Start with 'Taking everything into account, …' and explain why. Then admit one point against you and answer it."
      }
     ]
    },
@@ -2334,15 +2334,15 @@
     "prompts": [
      {
       "q": "What exactly is the problem, and what's the root of it?",
-      "hint": "Describe the problem and use 'To put this into perspective, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Describe the problem and use 'To put this into perspective, …'. Then give a real example from your area."
      },
      {
       "q": "How would you get to grips with it?",
-      "hint": "Give three solutions in a list (the rule of three). Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give three solutions in a list (the rule of three). Then say which solution matters most and why."
      },
      {
       "q": "Why should anyone care?",
-      "hint": "Describe the far-reaching impact and end with a rhetorical question. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Describe the far-reaching impact and end with a rhetorical question."
      }
     ]
    },
@@ -2420,8 +2420,12 @@
       "t": "Many speakers do that. They spend hours on the middle and forget that the last thirty seconds are what people remember."
      },
      {
+      "s": "Dalia",
+      "t": "So what should I do instead?"
+     },
+     {
       "s": "Ms Kim",
-      "t": "Exactly. A strong ending should run through your main points first."
+      "t": "A strong ending should run through your main points first."
      },
      {
       "s": "Dalia",
@@ -2435,7 +2439,7 @@
     "p2": [
      {
       "s": "Ms Kim",
-      "t": "Good. Then give the take-home message in one sentence."
+      "t": "Then give the take-home message in one sentence."
      },
      {
       "s": "Dalia",
@@ -2473,15 +2477,15 @@
     "prompts": [
      {
       "q": "Can you remind us of your main points?",
-      "hint": "Use 'Let me run through the main points' and list them briefly. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'Let me run through the main points' and list them briefly."
      },
      {
       "q": "If we remember only one thing, what should it be?",
-      "hint": "Give your take-home message with 'Put simply, …' or 'The bottom line is …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give your take-home message with 'Put simply, …' or 'The bottom line is …'. Then explain why this message matters to teenagers."
      },
      {
       "q": "How will you make your ending memorable?",
-      "hint": "Finish with a question, a quotation or a call to action. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Finish with a question, a quotation or a call to action."
      }
     ]
    },
@@ -2585,11 +2589,7 @@
      },
      {
       "s": "Jack",
-      "t": "Good. Now tell your own story. That's how you'll hold the audience's attention."
-     },
-     {
-      "s": "Jack",
-      "t": "But don't tell it straight away. Build up to it, so it lands at the right moment."
+      "t": "Your own story will hold the audience's attention, but don't tell it straight away. Build up to it so it lands at the right moment."
      },
      {
       "s": "Sultan",
@@ -2619,15 +2619,15 @@
     "prompts": [
      {
       "q": "How will you open your talk?",
-      "hint": "Use a hook: 'Picture this: …', a startling fact or a question. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use a hook: 'Picture this: …', a startling fact or a question. Then explain why that hook suits your topic."
      },
      {
       "q": "How will you organise the middle part?",
-      "hint": "Give three points and link them with signposting phrases. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give three points and link them with signposting phrases."
      },
      {
       "q": "How will you end, and what's your call to action?",
-      "hint": "Recap, give your take-home message and tell us what to do. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Recap, give your take-home message and tell us what to do. Then admit one reason people might not act, and answer it."
      }
     ]
    },
@@ -2759,7 +2759,7 @@
     "p2": [
      {
       "s": "Mr Daniel",
-      "t": "Nice personal touch. Now, if you could study abroad, where would you go?"
+      "t": "They're very welcome. Now, if you could study abroad, where would you go?"
      },
      {
       "s": "Abeer",
@@ -2797,15 +2797,15 @@
     "prompts": [
      {
       "q": "What do you find most challenging about studying at your level?",
-      "hint": "Give a full answer: your view, a reason and an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a full answer: your view, a reason and an example."
      },
      {
       "q": "Do you prefer spending time indoors or outdoors?",
-      "hint": "Compare the two with 'whereas' and use 'When it comes to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Compare the two with 'whereas' and use 'When it comes to …'. Then add a personal example."
      },
      {
       "q": "What new skill would you most like to learn in the future?",
-      "hint": "Use 'Off the top of my head' or 'I'd have to say' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'Off the top of my head' or 'I'd have to say' and explain why. Then say how you might learn it."
      }
     ]
    },
@@ -2937,15 +2937,15 @@
     "prompts": [
      {
       "q": "Compare the two pictures. What do they have in common?",
-      "hint": "Start with 'Both pictures show …' and use 'similarly'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'Both pictures show …' and use 'similarly'."
      },
      {
       "q": "What is the key difference between them?",
-      "hint": "Use 'whereas' or 'In contrast to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'whereas' or 'In contrast to …'. Then say what the difference tells us about the people."
      },
      {
       "q": "Which experience do you think the shoppers enjoy more?",
-      "hint": "Give your view and support it with a reason from the pictures. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give your view and support it with a reason from the pictures. Then say which you would prefer yourself, and why."
      }
     ]
    },
@@ -2994,7 +2994,7 @@
      },
      {
       "s": "Ghada",
-      "t": "Presumably he's trained for years to stay calm. It could well be that he's dealing with bad weather, but he can't show any panic."
+      "t": "I'd imagine he's trained for years to stay calm. It could well be that he's dealing with bad weather, but he can't show any panic."
      }
     ],
     "p2": [
@@ -3038,15 +3038,15 @@
     "prompts": [
      {
       "q": "How might the people be feeling?",
-      "hint": "Use 'I'd imagine …' or 'Going by …, they must be …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'I'd imagine …' or 'Going by …, they must be …'. Then explain what in the picture makes you think so."
      },
      {
       "q": "What might have happened just before the pictures were taken?",
-      "hint": "Use 'Presumably, …' or 'It could well be that …' with a past form. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'Presumably, …' or 'It could well be that …' with a past form."
      },
      {
       "q": "Who do you think is finding the wait most difficult?",
-      "hint": "Choose one person and justify your answer with a comparison. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Choose one person and justify your answer with a comparison."
      }
     ]
    },
@@ -3159,11 +3159,7 @@
      },
      {
       "s": "Nasser",
-      "t": "True, although trips are expensive and only last a day."
-     },
-     {
-      "s": "Adam",
-      "t": "Maybe, but a single day out could create friendships that last the whole year. First impressions matter a lot."
+      "t": "True, although trips are expensive and only last a day. A buddy would be there every single week."
      },
      {
       "s": "Adam",
@@ -3215,15 +3211,15 @@
     "prompts": [
      {
       "q": "Which option would you choose first, and why?",
-      "hint": "Use 'The reason I'd go for … is that …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'The reason I'd go for … is that …'. Then add a real example to support your choice."
      },
      {
       "q": "I think a youth centre is better. What do you think?",
-      "hint": "Respond with 'That's a valid point, but …' and give your reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Respond with 'That's a valid point, but …' and give your reason."
      },
      {
       "q": "We need to decide. Which one is it?",
-      "hint": "Narrow it down, say what it comes down to, and reach a decision. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Narrow it down, say what it comes down to, and reach a decision."
      }
     ]
    },
@@ -3291,7 +3287,7 @@
      },
      {
       "s": "Waleed",
-      "t": "Absolutely. Some of my best ideas come when my phone's battery has died. So I'd conclude that technology is a tool; creativity depends on how we use it."
+      "t": "Absolutely. Some of my best ideas come when my phone has died. So technology is a tool; creativity depends on how we use it."
      }
     ],
     "focus": "That's largely because older generations see us staring at screens and assume we're wasting time.",
@@ -3305,15 +3301,15 @@
     "prompts": [
      {
       "q": "Should schools spend less time on exams and more on practical skills?",
-      "hint": "Give a clear opinion with 'I'd go as far as to say …' and justify it. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a clear opinion with 'I'd go as far as to say …' and justify it. Then give a real example and answer one counterpoint."
      },
      {
       "q": "Some people say university isn't necessary any more. What do you think?",
-      "hint": "Show that it isn't clear-cut, and give a case in point. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Show that it isn't clear-cut, and give a case in point. Then say where you stand yourself, with a reason."
      },
      {
       "q": "Why do you think some people disagree with you?",
-      "hint": "Use 'That's largely because …' to explain their view. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'That's largely because …' to explain their view. Then explain why you still disagree."
      }
     ]
    },
@@ -3444,15 +3440,15 @@
     "prompts": [
      {
       "q": "Part 1: What do you enjoy most about learning English?",
-      "hint": "Give a full answer with a reason and an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give a full answer with a reason and an example."
      },
      {
       "q": "Part 2: Compare a picture of people working in a team with a picture of someone working alone. Why might they be working like this?",
-      "hint": "Compare with 'whereas' or 'as opposed to' and speculate with 'From the look of …' or 'I'd imagine …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Compare with 'whereas' or 'as opposed to' and speculate with 'From the look of …' or 'I'd imagine …'. Then say which way of working you prefer, and why."
      },
      {
       "q": "Part 4: Will people still need to learn languages when translation apps are perfect?",
-      "hint": "Justify your opinion, give a case in point and think on your feet. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Justify your opinion, give a case in point and think on your feet. Then admit one point against your view and answer it."
      }
     ]
    },
@@ -3567,7 +3563,7 @@
     },
     {
      "s": "Reem",
-     "t": "It goes without saying that families appreciate it. But think about it: how often do we get to make a dent in a real problem in two afternoons?"
+     "t": "It goes without saying that families appreciate it. But how often do we get to make a dent in a real problem in two afternoons?"
     },
     {
      "s": "Lina",
@@ -4715,7 +4711,7 @@
     },
     {
      "s": "Ms Kim",
-     "t": "Exactly. A strong ending should run through your main points first."
+     "t": "A strong ending should run through your main points first."
     },
     {
      "s": "Dalia",

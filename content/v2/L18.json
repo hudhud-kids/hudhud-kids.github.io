@@ -225,7 +225,7 @@
      },
      {
       "s": "Hala",
-      "t": "Exactly. Our whole case hinges on that distinction."
+      "t": "Agreed. Our whole case hinges on that distinction."
      },
      {
       "s": "Lina",
@@ -255,15 +255,15 @@
     "prompts": [
      {
       "q": "Surely recycled clothes solve the problem, don't they?",
-      "hint": "Say that it hinges on how 'sustainable' is defined, then give your definition. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Say that it hinges on how 'sustainable' is defined, then give your definition. Then give a real example."
      },
      {
       "q": "Everyone who buys cheap clothes is destroying the planet. Agree?",
-      "hint": "Call it an oversimplification and offer a more precise version of the claim. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Call it an oversimplification and offer a more precise version of the claim. Then give one example that shows why precision matters."
      },
      {
       "q": "So what, in your view, is the real issue here?",
-      "hint": "State the crux of the matter in one exact sentence. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "State the crux of the matter in one exact sentence."
      }
     ]
    },
@@ -388,7 +388,7 @@
      },
      {
       "s": "Reem",
-      "t": "No. She maintains that the crop matters. Dates and vegetables in greenhouses are very different from huge wheat fields."
+      "t": "No. Her point is that the crop matters. Dates and vegetables in greenhouses are very different from huge wheat fields."
      }
     ],
     "p2": [
@@ -432,15 +432,15 @@
     "prompts": [
      {
       "q": "What does the first author argue, exactly?",
-      "hint": "Use 'maintains that' and keep her claim as narrow as she made it. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'maintains that' and keep her claim as narrow as she made it."
      },
      {
       "q": "Does she admit any weakness in her own argument?",
-      "hint": "Use 'concedes that' and name the weakness. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'concedes that' and name the weakness."
      },
      {
       "q": "So the second writer simply rejects greenhouses?",
-      "hint": "Correct the summary with 'dismisses … as …' and add his exact limit. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Correct the summary with 'dismisses … as …' and add his exact limit. Then say whether you find his argument convincing, and why."
      }
     ]
    },
@@ -564,15 +564,15 @@
     "prompts": [
      {
       "q": "Rewrite this: 'Cities used gas more and more.'",
-      "hint": "Turn the verb into a noun phrase with 'a growing reliance on'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Turn the verb into a noun phrase with 'a growing reliance on'."
      },
      {
       "q": "Rewrite this: 'Panels got cheaper, so people bought more.'",
-      "hint": "Use 'a reduction in' and 'led to the adoption of'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'a reduction in' and 'led to the adoption of'."
      },
      {
       "q": "Is solar really practical here? Answer academically.",
-      "hint": "Say whether it is 'viable' and give one precise reason. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Say whether it is 'viable' and give one precise reason. Then admit one limitation, such as dust or cost."
      }
     ]
    },
@@ -644,7 +644,7 @@
      },
      {
       "s": "Adam",
-      "t": "Exactly. We could even suggest a fairer test: compare the same students on days with and without breakfast."
+      "t": "Yes. We could even suggest a fairer test: compare the same students on days with and without breakfast."
      },
      {
       "s": "Sultan",
@@ -662,15 +662,15 @@
     "prompts": [
      {
       "q": "Teens who play chess get better maths marks, so chess makes you good at maths. Convincing?",
-      "hint": "Say it doesn't necessarily follow and suggest another explanation. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Say it doesn't necessarily follow and suggest another explanation. Then give a real example of a similar mistake."
      },
      {
       "q": "This article only mentions the two studies that agree with it. Is that a problem?",
-      "hint": "Use 'cherry-pick' and say what a fair writer would do. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'cherry-pick' and say what a fair writer would do. Then explain why it matters."
      },
      {
       "q": "Then what can we safely conclude?",
-      "hint": "Make a careful inference and say whether the link is causal or tenuous. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Make a careful inference and say whether the link is causal or tenuous."
      }
     ]
    },
@@ -801,15 +801,15 @@
     "prompts": [
      {
       "q": "So it was a total success, wasn't it?",
-      "hint": "Qualify the claim with 'in the main' and mention one exception. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Qualify the claim with 'in the main' and mention one exception. Then give the figure or detail that supports you."
      },
      {
       "q": "Grades went up dramatically, I heard.",
-      "hint": "Correct the overstatement and say how much they really changed. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Correct the overstatement and say how much they really changed."
      },
      {
       "q": "Should every school switch, then?",
-      "hint": "Say it works only under certain conditions and name two. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Say it works only under certain conditions and name two. Then admit one group it might not suit."
      }
     ]
    },
@@ -932,15 +932,15 @@
     "prompts": [
      {
       "q": "Please open your case for or against the motion.",
-      "hint": "State the motion, take a side and define one key term precisely. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "State the motion, take a side and define one key term precisely. Then give a reason and a real example."
      },
      {
       "q": "Interviews simply reward confident students. How do you respond?",
-      "hint": "Report the point with 'My opponent contends that …', then answer it exactly. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Report the point with 'My opponent contends that …', then answer it exactly. Then add one piece of evidence of your own."
      },
      {
       "q": "Please give your closing statement.",
-      "hint": "Concede one point, then finish with 'In the final analysis, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Concede one point, then finish with 'In the final analysis, …'."
      }
     ]
    },
@@ -1111,15 +1111,15 @@
     "prompts": [
      {
       "q": "What will have changed most in your city by 2050?",
-      "hint": "Use 'By 2050, … will have …' and name one big change. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'By 2050, … will have …' and name one big change. Then explain why, with a reason."
      },
      {
       "q": "Is the population on course to keep growing?",
-      "hint": "Speculate with 'in all likelihood' and give a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Speculate with 'in all likelihood' and give a reason."
      },
      {
       "q": "What could go wrong?",
-      "hint": "Mention one unforeseen consequence and how planners could prevent it. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Mention one unforeseen consequence and how planners could prevent it. Then say how likely you think it is."
      }
     ]
    },
@@ -1247,15 +1247,15 @@
     "prompts": [
      {
       "q": "Were AI to write all your school textbooks, what would change?",
-      "hint": "Start with 'Were that to happen, …' and give one effect. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'Were that to happen, …' and give one effect. Then add a second effect."
      },
      {
       "q": "Could AI render any jobs obsolete?",
-      "hint": "Name one job and use 'render … obsolete'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Name one job and use 'render … obsolete'. Then admit one job that might be safe, and say why."
      },
      {
       "q": "Which jobs will always need people?",
-      "hint": "Use 'the human touch' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'the human touch' and explain why."
      }
     ]
    },
@@ -1379,15 +1379,15 @@
     "prompts": [
      {
       "q": "Should the main computer fail, what would you do?",
-      "hint": "Start with 'Should that happen, …' and describe a backup plan. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'Should that happen, …' and describe a backup plan."
      },
      {
       "q": "What would you do in the event of a medical emergency?",
-      "hint": "Use 'In the event of …' and give two steps. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'In the event of …' and give two steps."
      },
      {
       "q": "Why should we explore space at all?",
-      "hint": "Use 'pave the way for' or 'push the boundaries' in your answer. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'pave the way for' or 'push the boundaries' in your answer. Then admit one argument against space exploration and answer it."
      }
     ]
    },
@@ -1455,7 +1455,7 @@
      },
      {
       "s": "Fahad",
-      "t": "Possibly. In the years to come, saving water will be far cheaper than producing more of it."
+      "t": "Possibly. Either way, in the years to come, saving water will be far cheaper than producing more of it."
      },
      {
       "s": "Amir",
@@ -1481,15 +1481,15 @@
     "prompts": [
      {
       "q": "Should rainfall drop even further, what would happen?",
-      "hint": "Begin with 'Should that happen, …' and describe one effect. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Begin with 'Should that happen, …' and describe one effect."
      },
      {
       "q": "How can we stave off a crisis?",
-      "hint": "Suggest two actions using 'stave off' and 'in the years to come'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Suggest two actions using 'stave off' and 'in the years to come'. Then say which action would make the biggest difference."
      },
      {
       "q": "What if demand outstrips supply anyway?",
-      "hint": "Describe a contingency plan in two or three steps. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Describe a contingency plan in two or three steps."
      }
     ]
    },
@@ -1654,15 +1654,15 @@
     "prompts": [
      {
       "q": "By 2040, how long will you have been working?",
-      "hint": "Use 'By 2040, I'll have been …ing for …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'By 2040, I'll have been …ing for …'. Then say how you feel about that."
      },
      {
       "q": "How will you future-proof your career?",
-      "hint": "Name two things you will do, including 'upskill' or 'lifelong learning'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Name two things you will do, including 'upskill' or 'lifelong learning'. Then give a real example of a skill that has changed."
      },
      {
       "q": "Should your dream job disappear, what would you do?",
-      "hint": "Start with 'Should that happen, …' and give a plan B. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Start with 'Should that happen, …' and give a plan B."
      }
     ]
    },
@@ -1751,7 +1751,7 @@
     "p2": [
      {
       "s": "Hessa",
-      "t": "Every student will have a personal AI tutor, and teachers will focus on mentoring."
+      "t": "Still, the best case is easy to imagine: every student will have a personal AI tutor, and teachers will focus on mentoring."
      },
      {
       "s": "Zoe",
@@ -1793,15 +1793,15 @@
     "prompts": [
      {
       "q": "What will have changed most about schools by 2050?",
-      "hint": "Use the future perfect and say how likely you think it is. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use the future perfect and say how likely you think it is. Then give a reason."
      },
      {
       "q": "What's your best-case and worst-case scenario?",
-      "hint": "Give one of each and explain briefly. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give one of each and explain briefly. Then say which one you think is more likely."
      },
      {
       "q": "Imagine all lessons moved online. What then?",
-      "hint": "Start with 'Were that to happen, …' and give two consequences. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Start with 'Were that to happen, …' and give two consequences."
      }
     ]
    },
@@ -1928,15 +1928,15 @@
     "prompts": [
      {
       "q": "Where does your family come from, and have they always lived there?",
-      "hint": "Use 'put down roots' and describe your family's story briefly. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'put down roots' and describe your family's story briefly."
      },
      {
       "q": "Is there a talent that runs in your family?",
-      "hint": "Use 'run in the family' and give an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'run in the family' and give an example. Then say whether you'd like to carry the torch."
      },
      {
       "q": "What gives you a sense of belonging?",
-      "hint": "Answer with a metaphor, such as 'Family is my anchor'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Answer with a metaphor, such as 'Family is my anchor'. Then add a personal example."
      }
     ]
    },
@@ -2064,15 +2064,15 @@
     "prompts": [
      {
       "q": "When do you switch between languages, and why?",
-      "hint": "Give two situations and say whether it's second nature to you. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Give two situations and say whether it's second nature to you."
      },
      {
       "q": "Is there an Arabic word or phrase that gets lost in translation?",
-      "hint": "Name one and explain what English misses. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Name one and explain what English misses."
      },
      {
       "q": "Is language part of who you are?",
-      "hint": "Use a metaphor, for example 'Language is a window into …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use a metaphor, for example 'Language is a window into …'. Then give an example from your own life."
      }
     ]
    },
@@ -2166,15 +2166,15 @@
     "prompts": [
      {
       "q": "Why is coffee so important when guests arrive?",
-      "hint": "Explain using a metaphor, such as 'Coffee is our way of saying …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Explain using a metaphor, such as 'Coffee is our way of saying …'. Then give a personal example."
      },
      {
       "q": "Is there a Saudi dish visitors find strange at first?",
-      "hint": "Use 'an acquired taste' and describe it. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'an acquired taste' and describe it. Then say how you felt when you first tried it."
      },
      {
       "q": "Do young people still cook traditional dishes?",
-      "hint": "Use 'a labour of love' or 'a recipe for' in your answer. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'a labour of love' or 'a recipe for' in your answer. Then admit one reason some young people don't cook them."
      }
     ]
    },
@@ -2305,15 +2305,15 @@
     "prompts": [
      {
       "q": "What will it feel like in the first few weeks?",
-      "hint": "Use 'a fish out of water' or 'culture shock' to prepare them. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'a fish out of water' or 'culture shock' to prepare them. Then give a real example."
      },
      {
       "q": "How can I find my feet quickly?",
-      "hint": "Give two practical tips using 'find your feet' and 'readjust to'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give two practical tips using 'find your feet' and 'readjust to'."
      },
      {
       "q": "Will I lose my own culture?",
-      "hint": "Reassure them with 'a foot in both camps' and an image of your own. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Reassure them with 'a foot in both camps' and an image of your own."
      }
     ]
    },
@@ -2445,15 +2445,15 @@
     "prompts": [
      {
       "q": "Which tradition would you show me, and why does it matter?",
-      "hint": "Use 'woven into the fabric of' to explain its importance. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'woven into the fabric of' to explain its importance. Then give a real example of it today."
      },
      {
       "q": "Isn't it a dying art these days?",
-      "hint": "Agree or disagree, and say who is breathing new life into it. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Agree or disagree, and say who is breathing new life into it."
      },
      {
       "q": "Should traditions change or stay exactly the same?",
-      "hint": "Use 'frozen in time' and 'stay relevant' to give a balanced view. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'frozen in time' and 'stay relevant' to give a balanced view. Then admit one risk of changing it."
      }
     ]
    },
@@ -2580,15 +2580,15 @@
     "prompts": [
      {
       "q": "What is at the heart of your identity?",
-      "hint": "Name one thing and explain it with a metaphor. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Name one thing and explain it with a metaphor."
      },
      {
       "q": "Is your city more of a melting pot or a mosaic?",
-      "hint": "Choose one image and justify it with an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Choose one image and justify it with an example."
      },
      {
       "q": "Is globalisation good or bad for young people's identity?",
-      "hint": "Use 'a mixed bag' and 'a global citizen'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'a mixed bag' and 'a global citizen'. Then admit one point against your view and answer it."
      }
     ]
    },
@@ -2759,15 +2759,15 @@
     "prompts": [
      {
       "q": "Please introduce your research. What did you set out to do?",
-      "hint": "Start with 'By way of introduction, …' and state your aim with 'set out to'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'By way of introduction, …' and state your aim with 'set out to'."
      },
      {
       "q": "Why did you choose this topic?",
-      "hint": "Explain the rationale behind it and mention a gap in the research. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain the rationale behind it and mention a gap in the research."
      },
      {
       "q": "What does your study include, and what doesn't it?",
-      "hint": "Define the scope of your study precisely. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Define the scope of your study precisely. Then say why you chose those limits."
      }
     ]
    },
@@ -2849,15 +2849,15 @@
     "prompts": [
      {
       "q": "What does the chart show overall?",
-      "hint": "Start with 'As illustrated by this chart, …' and give the main trend. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'As illustrated by this chart, …' and give the main trend. Then point out one surprising detail."
      },
      {
       "q": "Is that a big change? Help us understand it.",
-      "hint": "Use 'To give you a sense of scale, …' with a familiar comparison. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'To give you a sense of scale, …' with a familiar comparison."
      },
      {
       "q": "Are there any limits to your data?",
-      "hint": "Use 'Bear in mind that …' and name one limitation. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'Bear in mind that …' and name one limitation. Then explain how it affects your conclusions."
      }
     ]
    },
@@ -3027,15 +3027,15 @@
     "prompts": [
      {
       "q": "So are you saying the problem is completely solved?",
-      "hint": "Check the meaning with 'If I understand you correctly, …', then answer precisely. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Check the meaning with 'If I understand you correctly, …', then answer precisely."
      },
      {
       "q": "What about the cost of your solution?",
-      "hint": "Politely say it falls outside the scope of your study and suggest who could study it. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Politely say it falls outside the scope of your study and suggest who could study it."
      },
      {
       "q": "Can you tell us more about your method?",
-      "hint": "Begin with 'I'd be happy to elaborate' and give two details. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Begin with 'I'd be happy to elaborate' and give two details. Then explain why you chose that method."
      }
     ]
    },
@@ -3159,15 +3159,15 @@
     "prompts": [
      {
       "q": "Your survey only had 40 people. Why should we trust it?",
-      "hint": "Accept the criticism, then say what you still stand by. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Accept the criticism, then say what you still stand by."
      },
      {
       "q": "Doesn't this prove that the problem affects the whole country?",
-      "hint": "Use 'The data don't allow us to …' to avoid overclaiming. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'The data don't allow us to …' to avoid overclaiming."
      },
      {
       "q": "What will the government do about it?",
-      "hint": "Say politely that you're not in a position to answer, and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Say politely that you're not in a position to answer, and explain why. Then say who could answer it."
      }
     ]
    },
@@ -3260,15 +3260,15 @@
     "prompts": [
      {
       "q": "Please give us your conclusion.",
-      "hint": "Start with 'To draw the threads together, …' and state your key takeaway. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'To draw the threads together, …' and state your key takeaway."
      },
      {
       "q": "Why should anyone outside this room care?",
-      "hint": "Explain the far-reaching implications in one or two sentences. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain the far-reaching implications in one or two sentences. Then give a concrete example."
      },
      {
       "q": "How would you end your talk memorably?",
-      "hint": "Use 'I'll leave you with …' or come full circle to your opening. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'I'll leave you with …' or come full circle to your opening."
      }
     ]
    },
@@ -3429,15 +3429,15 @@
     "prompts": [
      {
       "q": "Please open your presentation.",
-      "hint": "Begin with 'I'd like to begin by …' and state your research question. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Begin with 'I'd like to begin by …' and state your research question."
      },
      {
       "q": "Take us from your findings to your main point.",
-      "hint": "Use 'Having established …, let me turn to …' and 'This brings me to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'Having established …, let me turn to …' and 'This brings me to …'."
      },
      {
       "q": "Did you also study the cost of your idea?",
-      "hint": "Thank the questioner, then say what falls inside and outside your scope. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Thank the questioner, then say what falls inside and outside your scope. Then explain why you limited your study."
      }
     ]
    },

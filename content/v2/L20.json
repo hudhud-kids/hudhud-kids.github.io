@@ -293,15 +293,15 @@
     "prompts": [
      {
       "q": "So, how was the trip? Was it as amazing as you'd hoped?",
-      "hint": "Use understatement: 'It wasn't exactly …' or 'It could have gone better.' Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use understatement: 'It wasn't exactly …' or 'It could have gone better.' Then add one detail that shows how bad it really was."
      },
      {
       "q": "What was the worst part?",
-      "hint": "Describe one problem and soften it with 'a tad' or 'to put it mildly'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Describe one problem and soften it with 'a tad' or 'to put it mildly'."
      },
      {
       "q": "Would you go on the same trip again?",
-      "hint": "Show your real feeling indirectly, for example 'It's not the end of the world, but …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Show your real feeling indirectly, for example 'It's not the end of the world, but …'. Then give a reason."
      }
     ]
    },
@@ -429,15 +429,15 @@
     "prompts": [
      {
       "q": "You might want to look at the introduction again.",
-      "hint": "Say what the manager really means and promise a specific change. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Say what the manager really means and promise a specific change."
      },
      {
       "q": "I wonder if the slides could be a little less… colourful.",
-      "hint": "Read between the lines: what is the real problem? Reply politely. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Read between the lines: what is the real problem? Reply politely. Then suggest one change."
      },
      {
       "q": "It's worth bearing in mind that the director dislikes long meetings.",
-      "hint": "Show you've taken the hint by saying how you'll shorten your presentation. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Show you've taken the hint by saying how you'll shorten your presentation."
      }
     ]
    },
@@ -530,15 +530,15 @@
     "prompts": [
      {
       "q": "'Wonderful. The printer's broken again. My favourite thing.' How do I really feel?",
-      "hint": "Explain the sarcasm: say what your friend actually feels. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Explain the sarcasm: say what your friend actually feels."
      },
      {
       "q": "Should I have replied 'I'm glad you like it'? Why or why not?",
-      "hint": "Explain the risk of taking the message at face value. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Explain the risk of taking the message at face value. Then give an example of a message that was misunderstood."
      },
      {
       "q": "Now send me an ironic reply about our deadline moving forward.",
-      "hint": "Use irony: praise something bad, e.g. 'Brilliant, just what we needed.' Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use irony: praise something bad, e.g. 'Brilliant, just what we needed.'"
      }
     ]
    },
@@ -673,15 +673,15 @@
     "prompts": [
      {
       "q": "Review A says: 'The building was easy to find and the coffee was hot.' What does that tell us?",
-      "hint": "Point out what is missing and what that implies about the teaching. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Point out what is missing and what that implies about the teaching."
      },
      {
       "q": "Review B calls the trainer 'inspiring' and 'endlessly patient'. Is that more useful?",
-      "hint": "Compare the two: glowing praise versus faint praise. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Compare the two: glowing praise versus faint praise. Then say which review you trust more, and why."
      },
      {
       "q": "So which course should I choose?",
-      "hint": "Recommend one, using '… tells its own story.' or 'I'm not saying …, but …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Recommend one, using '… tells its own story.' or 'I'm not saying …, but …'."
      }
     ]
    },
@@ -858,15 +858,15 @@
     "prompts": [
      {
       "q": "Could you lend me your laptop for the whole week?",
-      "hint": "Refuse softly with 'I'd love to, but …' and give a reason. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Refuse softly with 'I'd love to, but …' and give a reason."
      },
      {
       "q": "Will you come on the 5 a.m. bike ride on Friday?",
-      "hint": "Use 'not really my thing' or 'a tall order', and perhaps suggest something else. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'not really my thing' or 'a tall order', and perhaps suggest something else."
      },
      {
       "q": "Can you help me paint my room next month?",
-      "hint": "Don't commit: use 'Let me get back to you' and leave the door open. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Don't commit: use 'Let me get back to you' and leave the door open."
      }
     ]
    },
@@ -896,7 +896,7 @@
      },
      {
       "s": "Tariq",
-      "t": "'Well, it's certainly… different.' He's far too kind to say it's awful."
+      "t": "'Well, it's certainly… different.' It's a backhanded compliment: he's far too kind to say it's awful."
      },
      {
       "s": "Omar",
@@ -912,7 +912,7 @@
      },
      {
       "s": "Tariq",
-      "t": "That's almost a backhanded compliment: polite on the surface, but the message is clear."
+      "t": "Polite on the surface, but the message is perfectly clear."
      },
      {
       "s": "Omar",
@@ -960,15 +960,15 @@
     "prompts": [
      {
       "q": "Who are the characters, and what awkward situation does the sketch show?",
-      "hint": "Describe the setting and one problem, e.g. a failed surprise or a burnt meal. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Describe the setting and one problem, e.g. a failed surprise or a burnt meal."
      },
      {
       "q": "Give me one line of understatement and one line of irony for your characters.",
-      "hint": "Say each line, then explain what it really means. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Say each line, then explain what it really means."
      },
      {
       "q": "How will the audience catch on to the hidden meanings?",
-      "hint": "Mention tone of voice, facial expression or what is conspicuously missing. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Mention tone of voice, facial expression or what is conspicuously missing. Then give one example from your sketch."
      }
     ]
    },
@@ -1045,8 +1045,8 @@
       "t": "Because of all the concrete and asphalt, presumably?"
      },
      {
-      "s": "Reem",
-      "t": "Presumably, but let's not assume. Let's test it against the evidence."
+      "s": "Hannah",
+      "t": "Or the lack of trees. We shouldn't assume it's only the materials."
      },
      {
       "s": "Reem",
@@ -1098,15 +1098,15 @@
     "prompts": [
      {
       "q": "We're all here. How would you like to begin?",
-      "hint": "Kick off the seminar and sketch out the background in one or two sentences. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Kick off the seminar and sketch out the background in one or two sentences."
      },
      {
       "q": "What exactly are we trying to decide today?",
-      "hint": "Frame the question clearly and name the nub of the issue. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Frame the question clearly and name the nub of the issue. Then explain why that question matters."
      },
      {
       "q": "I have some thoughts, but who goes first?",
-      "hint": "Open the floor and invite a specific person to start. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Open the floor and invite a specific person to start."
      }
     ]
    },
@@ -1220,7 +1220,7 @@
      },
      {
       "s": "Tom",
-      "t": "Fair point. I suppose I'd rather be convinced than be right."
+      "t": "And I'll try to leave more gaps for others. I'd rather be convinced than be right."
      }
     ],
     "focus": "Would you like to come in on this?",
@@ -1234,15 +1234,15 @@
     "prompts": [
      {
       "q": "(talkative participant) …and another thing, and another thing…",
-      "hint": "Thank them politely and say you'd like to hear from others. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Thank them politely and say you'd like to hear from others."
      },
      {
       "q": "(quiet participant) Um… I'm not sure I have much to add.",
-      "hint": "Draw them in: mention something they know and invite them to come in. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Draw them in: mention something they know and invite them to come in."
      },
      {
       "q": "(quiet participant) Well, my cousin learned Korean from TV dramas.",
-      "hint": "Ask them to expand on their example, then invite others to weigh in. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Ask them to expand on their example, then invite others to weigh in. Then sum up the views so far."
      }
     ]
    },
@@ -1370,15 +1370,15 @@
     "prompts": [
      {
       "q": "By the way, have you tried that new burger place near the mall?",
-      "hint": "Acknowledge it briefly, then bring the group back to the topic. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Acknowledge it briefly, then bring the group back to the topic."
      },
      {
       "q": "Actually, there's a fascinating history of buffets I could tell you…",
-      "hint": "Park the point politely and promise to revisit it if there's time. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Park the point politely and promise to revisit it if there's time."
      },
      {
       "q": "Wait, what were we discussing again?",
-      "hint": "Restate the main question clearly so nobody is all at sea. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Restate the main question clearly so nobody is all at sea. Then invite someone to answer it."
      }
     ]
    },
@@ -1506,15 +1506,15 @@
     "prompts": [
      {
       "q": "Some say uniforms save time, some say they limit self-expression, and a few want them optional on Thursdays. Can you sum that up?",
-      "hint": "Summarise the views in one or two sentences, starting with 'Broadly speaking, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Summarise the views in one or two sentences, starting with 'Broadly speaking, …'."
      },
      {
       "q": "What's the short version of the main disagreement?",
-      "hint": "Use 'It boils down to …' to state the core issue. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'It boils down to …' to state the core issue."
      },
      {
       "q": "Is your summary fair to everyone?",
-      "hint": "Check with the group, e.g. 'Does that do justice to your view?' Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Check with the group, e.g. 'Does that do justice to your view?' Then adjust your summary if someone disagrees."
      }
     ]
    },
@@ -1680,15 +1680,15 @@
     "prompts": [
      {
       "q": "View 1: jobs teach responsibility. View 2: jobs take time away from study. What do they have in common?",
-      "hint": "Find the common ground, e.g. both care about the student's future. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Find the common ground, e.g. both care about the student's future."
      },
      {
       "q": "Can these views be reconciled?",
-      "hint": "Suggest a middle way that satisfies both, e.g. limited weekend hours. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Suggest a middle way that satisfies both, e.g. limited weekend hours. Then explain why both sides could accept it."
      },
      {
       "q": "Give the group a final synthesis.",
-      "hint": "Start with 'Drawing the threads together, …' and combine both views in one position. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Start with 'Drawing the threads together, …' and combine both views in one position."
      }
     ]
    },
@@ -1726,7 +1726,7 @@
      },
      {
       "s": "Rakan",
-      "t": "Good point. Before we bring things to a close, I'd like to open the floor to anyone who hasn't spoken yet."
+      "t": "Good point. Before we bring things to a close, I'd like to open the floor to anyone with a final point."
      }
     ],
     "p2": [
@@ -1774,15 +1774,15 @@
     "prompts": [
      {
       "q": "(as a participant) So, what's today's question?",
-      "hint": "Kick off: set the scene and frame the question clearly. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Kick off: set the scene and frame the question clearly. Then invite the first speaker."
      },
      {
       "q": "(as a participant) Courses in English prepare us for global jobs, and another thing, and another thing…",
-      "hint": "Manage the long turn politely and invite a different view. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Manage the long turn politely and invite a different view."
      },
      {
       "q": "(as a participant) I think we've covered everything. Can you bring things to a close?",
-      "hint": "Take stock, draw the threads together and state a shared position. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Take stock, draw the threads together and state a shared position."
      }
     ]
    },
@@ -1961,15 +1961,15 @@
     "prompts": [
      {
       "q": "Why are you wasting public money on grass while people can't find parking?",
-      "hint": "Point out the loaded assumption and reject the premise calmly. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Point out the loaded assumption and reject the premise calmly. Then give one real benefit of the park."
      },
      {
       "q": "So you think parking doesn't matter at all?",
-      "hint": "Say they're putting words in your mouth, then state your real position 'for the record'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Say they're putting words in your mouth, then state your real position 'for the record'."
      },
      {
       "q": "It's simple: either we have parking or we have a park.",
-      "hint": "Call it a false choice and suggest how both could work. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Call it a false choice and suggest how both could work. Then give an example from another city."
      }
     ]
    },
@@ -2093,15 +2093,15 @@
     "prompts": [
      {
       "q": "Isn't this simply taking away students' freedom?",
-      "hint": "Reframe it: 'The real question is …', e.g. what the school should encourage. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Reframe it: 'The real question is …', e.g. what the school should encourage. Then give an example."
      },
      {
       "q": "But teenagers can decide for themselves, can't they?",
-      "hint": "Accept part of the point, then shift the focus to something bigger. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Accept part of the point, then shift the focus to something bigger. Then explain why the bigger question matters more."
      },
      {
       "q": "So, in one sentence, what is this debate really about?",
-      "hint": "State the core issue with 'At its core, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "State the core issue with 'At its core, …'."
      }
     ]
    },
@@ -2225,15 +2225,15 @@
     "prompts": [
      {
       "q": "Your event was a failure, wasn't it?",
-      "hint": "Stay calm: call it a fair challenge, then give one positive fact. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Stay calm: call it a fair challenge, then give one positive fact."
      },
      {
       "q": "You promised ten thousand riyals and raised four. Are you going to dodge that?",
-      "hint": "Concede the point clearly, then explain what you learned. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Concede the point clearly, then explain what you learned."
      },
      {
       "q": "Some people think you should step down from the committee. Will you?",
-      "hint": "Stand your ground politely and give a reason. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Stand your ground politely and give a reason. Then say what you would do differently next time."
      }
     ]
    },
@@ -2331,11 +2331,11 @@
     "prompts": [
      {
       "q": "Eighty percent of aggressive teenagers play video games. Isn't that proof?",
-      "hint": "Point out the correlation-causation problem; ask what share of all teenagers play. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Point out the correlation-causation problem; ask what share of all teenagers play."
      },
      {
       "q": "A famous scientist said games 'change the brain'. Doesn't that settle it?",
-      "hint": "Suggest the quotation may be out of context and ask what she actually said. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Suggest the quotation may be out of context and ask what she actually said. Then say what evidence would convince you."
      },
      {
       "q": "Gamers are all antisocial. Everybody knows that.",
@@ -2471,15 +2471,15 @@
     "prompts": [
      {
       "q": "I can see both sides. Why should I support you?",
-      "hint": "Touch people's hearts: link the idea to something people value, like family time. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Touch people's hearts: link the idea to something people value, like family time. Then give a real example."
      },
      {
       "q": "But I need my car to reach the shops.",
-      "hint": "Meet them halfway with a practical compromise. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Meet them halfway with a practical compromise. Then explain how it would work in practice."
      },
      {
       "q": "Give me your final sentence.",
-      "hint": "End by taking the long view, with a memorable line. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "End by taking the long view, with a memorable line."
      }
     ]
    },
@@ -2568,7 +2568,7 @@
      },
      {
       "s": "Ahmed",
-      "t": "I'll keep my nerve and answer directly: without limits, some sites will simply wear out."
+      "t": "Not at all. Here's a direct answer: without limits, some sites will simply wear out."
      }
     ],
     "p2": [
@@ -2590,7 +2590,7 @@
      },
      {
       "s": "Mr Hassan",
-      "t": "Well, you've held your own, I'll give you that. Let's hear your closing statement."
+      "t": "Well, you've kept your nerve and held your own, I'll give you that. Let's hear your closing statement."
      },
      {
       "s": "Ahmed",
@@ -2612,15 +2612,15 @@
     "prompts": [
      {
       "q": "Your idea will destroy tourism jobs. How can you defend that?",
-      "hint": "Handle the hostile question: reject or reframe the premise, then give evidence. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Handle the hostile question: reject or reframe the premise, then give evidence. Then give a real example."
      },
      {
       "q": "Aren't you just saying what the audience wants to hear?",
-      "hint": "Accept it as a fair challenge, then stand your ground with a specific point. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Accept it as a fair challenge, then stand your ground with a specific point."
      },
      {
       "q": "You have thirty seconds for your closing statement.",
-      "hint": "Sum up your case, show the bigger picture and end with a memorable line. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Sum up your case, show the bigger picture and end with a memorable line."
      }
     ]
    },
@@ -2757,15 +2757,15 @@
     "prompts": [
      {
       "q": "Have attitudes to recycling changed in your country?",
-      "hint": "Use 'in general terms' or 'to a lesser extent' to give a precise, balanced answer. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'in general terms' or 'to a lesser extent' to give a precise, balanced answer. Then support it with an example."
      },
      {
       "q": "Does tourism harm the environment?",
-      "hint": "Say which factors 'exacerbate' the problem and which effects are 'negligible'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Say which factors 'exacerbate' the problem and which effects are 'negligible'. Then give a concrete example."
      },
      {
       "q": "Are government campaigns effective?",
-      "hint": "Use 'hit and miss' or 'light years away from' and support it with an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'hit and miss' or 'light years away from' and support it with an example. Then say what would make them more effective."
      }
     ]
    },
@@ -2867,7 +2867,7 @@
      },
      {
       "s": "Adam",
-      "t": "Good call. You wanted to use 'come into my own' as well."
+      "t": "Good call. Didn't you want to use 'come into my own' as well?"
      },
      {
       "s": "Mishal",
@@ -2897,15 +2897,15 @@
     "prompts": [
      {
       "q": "What was the challenge, and how did it feel at first?",
-      "hint": "Use 'a baptism of fire' or 'take it in my stride' naturally. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Use 'a baptism of fire' or 'take it in my stride' naturally."
      },
      {
       "q": "Who or what helped you?",
-      "hint": "Use 'go the extra mile' or 'rub off on' to describe someone's help. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'go the extra mile' or 'rub off on' to describe someone's help."
      },
      {
       "q": "How did the experience change you?",
-      "hint": "Use 'come into my own' or 'set the bar high', and don't force in extra idioms. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'come into my own' or 'set the bar high', and don't force in extra idioms. Then say what you would do differently now."
      }
     ]
    },
@@ -3040,15 +3040,15 @@
     "prompts": [
      {
       "q": "Start your long turn. What's your first point?",
-      "hint": "Make a clear point and support it with '… is a telling example'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Make a clear point and support it with '… is a telling example'."
      },
      {
       "q": "Is there another side to consider?",
-      "hint": "Add a related or opposite point with 'In the same vein' or 'not least because'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Add a related point with 'In the same vein', or a reason with 'not least because'."
      },
      {
       "q": "And your conclusion?",
-      "hint": "Finish with 'Taken as a whole, …' and a clear position. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Finish with 'Taken as a whole, …' and a clear position."
      }
     ]
    },
@@ -3186,15 +3186,15 @@
     "prompts": [
      {
       "q": "Is ambition always a good thing?",
-      "hint": "Answer with nuance: 'It's a matter of degree', and explain where the limit is. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Answer with nuance: 'It's a matter of degree', and explain where the limit is."
      },
      {
       "q": "What does a good life depend on?",
-      "hint": "Use 'be contingent on' and name one or two key factors with an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Use 'be contingent on' and name one or two key factors with an example. Then admit one exception."
      },
      {
       "q": "Are wealth and happiness connected?",
-      "hint": "Use 'it's an open question whether' or 'inextricably linked', and mention evidence if you can. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Use 'it's an open question whether' or 'inextricably linked', and mention evidence if you can."
      }
     ]
    },
@@ -3284,15 +3284,19 @@
     "p2": [
      {
       "s": "Abeer",
-      "t": "Yes, food covers. Sorry, that came out wrong at first. The patterns are, for want of a better word, a kind of signature."
+      "t": "Yes, food covers. The patterns are, for want of a better word, a kind of signature."
      },
      {
       "s": "Mrs Ward",
-      "t": "In what sense?"
+      "t": "A signature? In what sense?"
      },
      {
       "s": "Abeer",
-      "t": "Let me put that another way. What I'm getting at is that each weaver's colours and patterns made her work recognisable."
+      "t": "Sorry, that came out wrong. Let me put that another way."
+     },
+     {
+      "s": "Abeer",
+      "t": "What I'm getting at is that each weaver's colours and patterns made her work recognisable."
      },
      {
       "s": "Mrs Ward",
@@ -3330,15 +3334,15 @@
     "prompts": [
      {
       "q": "Describe a traditional skill from your region. What exactly is it?",
-      "hint": "If a word escapes you, describe it: 'the thing you use to …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "If a word escapes you, describe it: 'the thing you use to …'."
      },
      {
       "q": "Why is it important?",
-      "hint": "Refine your first idea with 'or rather' or 'to be more precise'. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Refine your first idea with 'or rather' or 'to be more precise'."
      },
      {
       "q": "Is it changing today?",
-      "hint": "If your answer comes out unclear, say 'Let me put that another way. What I'm getting at is …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "If your answer comes out unclear, say 'Let me put that another way. What I'm getting at is …'."
      }
     ]
    },
@@ -3474,15 +3478,15 @@
     "prompts": [
      {
       "q": "Part 1: Do you prefer living in a city or a small town? Why?",
-      "hint": "Give a natural, precise answer with a reason; avoid one-word replies. Then give your view, a reason and an example, and admit one point against you before answering it."
+      "hint": "Give a natural, precise answer with a reason; avoid one-word replies."
      },
      {
       "q": "Part 2: Describe a place in your city that has changed a lot.",
-      "hint": "Speak for up to two minutes, using precise vocabulary and one or two natural idioms. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Speak for up to two minutes, using precise vocabulary and one or two natural idioms."
      },
      {
       "q": "Part 3: Should cities be designed for cars or for people?",
-      "hint": "Give a balanced answer, repair yourself smoothly if needed, and finish with 'In the grand scheme of things, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Give a balanced answer, repair yourself smoothly if needed, and finish with 'In the grand scheme of things, …'."
      }
     ]
    },
@@ -5128,7 +5132,7 @@
     },
     {
      "s": "Bassam",
-     "t": "Largely on relationships, I'd say."
+     "t": "Largely on relationships. A long-running Harvard study found much the same."
     },
     {
      "s": "Nick",
