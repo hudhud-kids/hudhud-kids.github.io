@@ -1229,14 +1229,18 @@ const LOGO = `<span class="logo" aria-label="هدهد"><svg class="hh" viewBox="
 function decodeSetup(s){ const t = s.trim().replace(/\s+/g,''); return JSON.parse(decodeURIComponent(escape(atob(t)))); }
 const b64u = bytes => { let s = ''; for(let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000)); return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); };
 const unb64u = t => { t = t.replace(/-/g,'+').replace(/_/g,'/'); while(t.length % 4) t += '='; const bin = atob(t), out = new Uint8Array(bin.length); for(let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i); return out; };
-async function encodeSetup(obj){ const json = JSON.stringify(obj);
+async function encodeSetup(obj){
+  if(obj && obj.full && cloudOn() && CLOUD.token){ obj = JSON.parse(JSON.stringify(obj)); const f = obj.full;   /* accounts live on the server: the link carries no passwords */
+    if(f.parent) delete f.parent.pass; Object.values(f.kids || {}).forEach(o => { if(o) delete o.pass; }); Object.values(f.guardians || {}).forEach(o => { if(o) delete o.pass; }); }
+  const json = JSON.stringify(obj);
   if(window.CompressionStream){ try{ const buf = await new Response(new Blob([json]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer(); return 'z' + b64u(new Uint8Array(buf)); }catch(e){} }
   return btoa(unescape(encodeURIComponent(json))); }
 async function decodeSetupAny(s){ let t = String(s || '').trim(); const m = t.match(/[#&?]setup=([^&\s]+)/); if(m) t = decodeURIComponent(m[1]); t = t.replace(/\s+/g,'');
   if(t[0] === 'z' && window.DecompressionStream){ const txt = await new Response(new Blob([unb64u(t.slice(1))]).stream().pipeThrough(new DecompressionStream('gzip'))).text(); return JSON.parse(txt); }
   return decodeSetup(t); }
 const setupLink = code => location.origin + location.pathname + '#setup=' + code;
-function applyFullSetup(cfg){ DB = cfg.full; try{ CLOUD.token = null; CLOUD.family = null; CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; cloudSave(); }catch(e){} normalize(); save(); try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){} }
+function applyFullSetup(cfg){ DB = cfg.full; try{ CLOUD.token = null; CLOUD.family = null; CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; cloudSave(); }catch(e){}
+  try{ ACCT = {pend:{}, map:{}, miss:{}, v9:true}; acctSave(); lsSet(LV_KEY, {}); }catch(e){}   /* another family's data: forget this device's account state */ normalize(); save(); try{ navigator.storage && navigator.storage.persist && navigator.storage.persist(); }catch(e){} }
 function toast(msg, kind){ const t = document.createElement('div'); t.className = 'toast ' + (kind||''); if(kind === 'gold' && typeof hoopoeSVG === 'function'){ t.innerHTML = hoopoeSVG('cheer') + '<span></span>'; t.querySelector('span').textContent = msg; } else t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
 function overlay(html){ const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = `<div class="card">${html}</div>`; document.body.appendChild(ov); return ov; }
 
@@ -1621,17 +1625,20 @@ function renderLogin(){
     <button class="btn primary big" type="submit">دخول</button>
     <button class="btn sm ghost" type="button" id="toSetup">📲 عندي رمز إعداد من جهاز آخر</button>
     <a class="small" href="welcome/" style="text-align:center;font-weight:700;color:var(--brand-ink)">🦜 تعرّف على هدهد ومميزاته</a>
+    <a class="small muted" href="privacy/" style="text-align:center">🔒 سياسة الخصوصية</a>
   </form></div>`;
   $('#toSetup').onclick = () => renderFirstRun();
   $('#lf').addEventListener('submit', async e => {
     e.preventDefault();
     const u = $('#u').value.trim().toLowerCase(), p = $('#p').value.trim();
-    let who = null; const btn = $('#lf [type=submit]'); SFX.unlock(); unlockAudio();
+    let who = null, answered = false; const btn = $('#lf [type=submit]'); SFX.unlock(); unlockAudio();
     if(cloudOn() && navigator.onLine){ btn.disabled = true; btn.textContent = 'جاري الدخول…';
-      try{ who = await cloudLogin(u, p); }catch(err){ console.warn(err); if(err && /locked/.test(err.msg || err.message || '')){ btn.disabled = false; btn.textContent = 'دخول'; $('#le').textContent = 'محاولات دخول خاطئة كثيرة. حاول بعد ربع ساعة.'; return; } }
+      try{ who = await cloudLogin(u, p); answered = !who; }catch(err){ console.warn(err); if(err && /locked/.test(err.msg || err.message || '')){ btn.disabled = false; btn.textContent = 'دخول'; $('#le').textContent = 'محاولات دخول خاطئة كثيرة. حاول بعد ربع ساعة.'; return; } }
       btn.disabled = false; btn.textContent = 'دخول';
       if(who){ setWho(who); TAB = 'home'; go(who); showSplash(true); return; } }
-    if(DB && DB.kids){ for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
+    if(answered){ lvDrop(u); $('#le').textContent = 'اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة ثانية.'; return; }   /* the server said no: no offline fallback */
+    if(cloudOn()) who = await lvCheck(u, p);
+    if(!who && DB && DB.kids){ for(const k of kidIds()) if(DB.kids[k].user === u && DB.kids[k].pass === p) who = k;
       if(DB.parent && u === DB.parent.user && p === DB.parent.pass) who = 'parent';
       for(const g of Object.keys(DB.guardians || {})) if(DB.guardians[g].user === u && DB.guardians[g].pass === p) who = 'g:' + g; }
     if(!who && !DB){ $('#le').textContent = navigator.onLine ? 'اسم المستخدم أو كلمة المرور غير صحيحة.' : 'أول دخول على هذا الجهاز يحتاج إنترنت.'; return; }
@@ -4607,7 +4614,7 @@ function kidForm(k, pre){
       <div class="field"><label for="f_ar">الاسم بالعربي</label><input class="input" id="f_ar" value="${esc(kid.ar)}"></div>
       <div class="field"><label for="f_en">الاسم بالإنجليزي</label><input class="input ltr" id="f_en" value="${esc(kid.en)}"></div>
       <div class="field"><label for="f_user">اسم المستخدم</label><input class="input ltr" id="f_user" autocapitalize="none" value="${esc(kid.user)}"></div>
-      <div class="field"><label for="f_pass">كلمة المرور</label><input class="input ltr" id="f_pass" value="${esc(kid.pass)}"></div>
+      <div class="field"><label for="f_pass">كلمة المرور</label><input class="input ltr" id="f_pass" value="${esc(kid.pass || '')}" ${k ? 'placeholder="اتركها فاضية = بدون تغيير"' : ''} autocomplete="new-password"></div>
       ${k ? '' : '<!--'}<div class="field"><label for="f_lv">المستوى</label><select class="input" id="f_lv">${Object.keys(LEVEL_CEFR).map(l => `<option value="${l}" ${Number(l)===kid.level?'selected':''}>Level ${l} · ${levelTag(l)}</option>`).join('')}</select></div>${k ? '' : '-->'}
       <div class="field"><label for="f_b">تاريخ الميلاد</label><input class="input" type="date" id="f_b" value="${esc(kid.birth)}"></div>
       <div class="field"><label for="f_g">الجنس</label><select class="input" id="f_g"><option value="1" ${kid.boy?'selected':''}>ولد</option><option value="0" ${!kid.boy?'selected':''}>بنت</option></select></div>
@@ -4640,7 +4647,7 @@ function kidForm(k, pre){
     const days = []; for(let i=0;i<7;i++) if(ov.querySelector('#f_d'+i).checked) days.push(i);
     if(!ar || !en){ err.textContent = 'اكتب الاسم بالعربي والإنجليزي.'; return; }
     if(!/^[a-z0-9_.-]{3,20}$/.test(user)){ err.textContent = 'اسم المستخدم: 3 أحرف إنجليزية أو أرقام على الأقل، بدون مسافات.'; return; }
-    if(pass.length < 4){ err.textContent = 'كلمة المرور 4 أحرف على الأقل.'; return; }
+    if((pass || !k) && pass.length < 4){ err.textContent = 'كلمة المرور 4 أحرف على الأقل.'; return; }
     if(userTaken(user, k)){ err.textContent = 'اسم المستخدم مستخدم من قبل.'; return; }
     { const gu = ov.querySelector('#g_sel').value !== 'none' ? ov.querySelector('#g_user').value.trim().toLowerCase() : ''; if(gu && gu === user){ err.textContent = 'اسم مستخدم ولي الأمر لازم يختلف عن اسم مستخدم الطالب.'; return; } }
     if(!days.length || !time){ err.textContent = 'اختر يوماً واحداً على الأقل ووقت الحصة.'; return; }
@@ -4648,7 +4655,7 @@ function kidForm(k, pre){
     if(!k && ov.querySelector('#f_bal').value.trim() === ''){ err.textContent = 'اكتب مبلغ الاشتراك (يقدر يكون 0).'; ov.querySelector('#f_bal').focus(); return; }
     if(k){
       { const gErr = saveGuardianFields(ov, k, ar); if(gErr){ err.textContent = gErr; return; } }
-      Object.assign(DB.kids[k], {ar, en, user, pass, birth, boy}); if($('#f_place').checked) DB.kids[k].needPlace = true; else delete DB.kids[k].needPlace;
+      Object.assign(DB.kids[k], {ar, en, user, birth, boy}); if(pass) DB.kids[k].pass = pass; if($('#f_place').checked) DB.kids[k].needPlace = true; else delete DB.kids[k].needPlace;
       setLevel(k, level);
       DB.balance[k] = bal; setPrice(k, Math.max(1, Math.round(Number(ov.querySelector('#f_price').value)) || priceNow(k)));
       const cur = periodAt(k, new Date());
@@ -5466,6 +5473,7 @@ async function cloudPush(){
   if(!cloudOn() || !CLOUD.token || !DB) return;
   if(cloudBusy){ cloudAgain = true; return; } cloudBusy = true;
   try{
+    await acctPrep();
     for(let round = 0; round < 4; round++){
       const cur = pathsOf(DB), changes = [];
       for(const [p, v] of Object.entries(cur)){ const j = J(v); if(CLOUD.synced[p] !== j) changes.push({path:p, value:v, base:CLOUD.vers[p] || null}); }
@@ -5514,7 +5522,126 @@ async function cloudPull(full){
 }
 function localSaveOnly(){ if(DEMO) return; try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){ console.warn(e); } }
 function acctList(){ const a = [{u:DB.parent.user, p:DB.parent.pass, role:'parent'}]; kidIds().forEach(k => a.push({u:DB.kids[k].user, p:DB.kids[k].pass, role:'kid', kid:k})); Object.values(DB.guardians || {}).forEach(g => a.push({u:g.user, p:g.pass, role:'guardian', kid:g.id})); return a; }
+/* =============== ACCOUNTS & PASSWORDS ===============
+   With cloud sync the server keeps only bcrypt hashes (tk_accounts). A password typed in a form sits in the family data
+   just until the next push: acctCapture moves it to ACCT.pend (this device only), cloudAccounts sends it with tk_accounts_apply,
+   then it is forgotten. Offline login uses LV: a salted PBKDF2-SHA-256 verifier per username, made on this device after a
+   successful login, never synced. Without schema_9 on the server (tk_accounts_apply missing) the old flow is used. */
+const ACCT_KEY = '51telk:acct', LV_KEY = '51telk:lv', DEV_KEY = '51telk:dev';
+const lsGet = (k, d) => { try{ return JSON.parse(localStorage.getItem(k)) || d; }catch(e){ return d; } };
+const lsSet = (k, v) => { if(DEMO) return; try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} };
+let ACCT = lsGet(ACCT_KEY, {});
+ACCT.pend = ACCT.pend || {}; ACCT.map = ACCT.map || {}; ACCT.miss = ACCT.miss || {};
+const ACCT_KNOWN = {};                                       /* passwords set in this session, shown once in the credentials card */
+const acctSave = () => lsSet(ACCT_KEY, ACCT);
+const acctKey = (kind, id) => kind === 'parent' ? 'parent' : kind + ':' + id;
+function acctKnown(kind, id){ const k = acctKey(kind === 'g' ? 'guardian' : kind, id); return ACCT_KNOWN[k] || (ACCT.pend[k] && ACCT.pend[k].p) || ''; }
+function devId(){ let d = ''; try{ d = localStorage.getItem(DEV_KEY) || ''; }catch(e){}
+  if(!/^[a-z0-9-]{8,64}$/.test(d)){ d = (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2)); try{ localStorage.setItem(DEV_KEY, d); }catch(e){} }
+  return d; }
+function acctWanted(){ const out = {}; if(!DB) return out;
+  if(DB.parent && DB.parent.user) out.parent = {kind:'parent', id:'parent', u:String(DB.parent.user).toLowerCase(), obj:DB.parent, who:'parent'};
+  Object.keys(DB.kids || {}).forEach(k => { const o = DB.kids[k]; if(o && o.user) out['kid:' + k] = {kind:'kid', id:k, u:String(o.user).toLowerCase(), obj:o, who:k}; });
+  Object.keys(DB.guardians || {}).forEach(g => { const o = DB.guardians[g]; if(o && o.user) out['guardian:' + g] = {kind:'guardian', id:g, u:String(o.user).toLowerCase(), obj:o, who:'g:' + g}; });
+  return out; }
+/* offline verifiers */
+async function lvHash(salt, u, p){ const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey('raw', enc.encode(String(u).toLowerCase() + ':' + p), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits({name:'PBKDF2', hash:'SHA-256', salt:enc.encode(salt), iterations:20000}, key, 256);
+  return b64u(new Uint8Array(bits)); }
+async function lvSet(u, p, who){ if(DEMO || !u || !p || !(window.crypto && crypto.subtle)) return;
+  try{ const salt = b64u(crypto.getRandomValues(new Uint8Array(16))), h = await lvHash(salt, u, p);
+    const lv = lsGet(LV_KEY, {}); lv[String(u).toLowerCase()] = {s:salt, h, w:who, at:Date.now()}; lsSet(LV_KEY, lv); }catch(e){ console.warn('lv', e); } }
+function lvDrop(u){ const lv = lsGet(LV_KEY, {}); if(lv[u]){ delete lv[u]; lsSet(LV_KEY, lv); } }
+async function lvCheck(u, p){ const v = lsGet(LV_KEY, {})[String(u).toLowerCase()]; if(!v || !p || !(window.crypto && crypto.subtle) || !DB) return null;
+  try{ if(await lvHash(v.s, u, p) !== v.h) return null; }catch(e){ return null; }
+  const w = v.w; if(w === 'parent') return DB.parent ? w : null; if(/^g:/.test(w)) return DB.guardians && DB.guardians[w.slice(2)] ? w : null; return DB.kids && DB.kids[w] ? w : null; }
+/* a device that still holds old plain passwords turns them into verifiers (keeps offline login working) */
+function acctBootLV(){ if(DEMO || !cloudOn() || !DB) return; const lv = lsGet(LV_KEY, {});
+  Object.values(acctWanted()).forEach(w => { if(w.obj.pass && !lv[w.u] && (CLOUD.role !== 'kid' || w.who === CLOUD.kid)) lvSet(w.u, w.obj.pass, w.who); }); }
+setTimeout(acctBootLV, 1500);
+/* does the server have schema_9? (asked once; re-asked every 10 minutes while the answer is no) */
+async function acctProbe(){ if(ACCT.srv === 9) return true; if(!CLOUD.token || Date.now() - (ACCT.probeAt || 0) < 10 * 60e3) return false;
+  try{ await rpc('tk_accounts_apply', {t:CLOUD.token, ops:[]}); ACCT.srv = 9; acctSave(); return true; }
+  catch(e){ if(e.status === 404 || /tk_accounts_apply|PGRST202|Could not find/.test(e.msg || '')){ ACCT.probeAt = Date.now(); acctSave(); return false; } throw e; } }
+/* move passwords out of the family data (parent device, server with schema_9) */
+function acctCapture(){
+  if(CLOUD.role !== 'parent' || !DB || ACCT.srv !== 9) return false;
+  let legacy = null; if(!ACCT.v9){ legacy = new Set(); try{ (JSON.parse(CLOUD.acctSig || '[]') || []).forEach(a => legacy.add([String(a.u || '').toLowerCase(), a.p, a.role, a.kid || ''].join('|'))); }catch(e){} }
+  const lv = lsGet(LV_KEY, {}); let ch = false;
+  Object.entries(acctWanted()).forEach(([key, w]) => { const p = w.obj.pass; if(p === undefined) return; delete w.obj.pass; ch = true;
+    if(!p) return;
+    if(legacy && legacy.has([w.u, p, w.kind, w.kind === 'parent' ? '' : w.id].join('|'))){ if(!lv[w.u]) lvSet(w.u, p, w.who); return; }   /* the server already has it */
+    ACCT.pend[key] = {p, at:Date.now()}; ACCT_KNOWN[key] = p; delete ACCT.miss[key]; });
+  if(!ACCT.v9){ ACCT.v9 = true; ch = true; }
+  if(ch){ acctSave(); localSaveOnly(); }
+  return ch; }
+async function acctPrep(){ if(CLOUD.role !== 'parent' || !CLOUD.token) return; try{ if(await acctProbe()) acctCapture(); }catch(e){ console.warn('acct', e); } }
 async function cloudAccounts(){
+  if(CLOUD.role !== 'parent' || !DB || !DB.parent || !CLOUD.token) return;
+  let on = false; try{ on = await acctProbe(); }catch(e){ console.warn('acct', e); return; }
+  if(!on) return cloudAccountsLegacy();
+  acctCapture();
+  const want = acctWanted(), ops = [], sent = {};
+  Object.entries(want).forEach(([key, w]) => { const pend = ACCT.pend[key];
+    if(ACCT.map[key] === w.u && !pend) return; if(!pend && ACCT.miss[key] === w.u) return;   /* known problem: wait for a change or a reset */
+    const op = {op:'save', kind:w.kind, id:w.kind === 'parent' ? null : w.id, u:w.u}; if(pend) op.p = pend.p; ops.push(op); sent[key] = {u:w.u, p:pend && pend.p}; });
+  Object.keys(ACCT.map).forEach(key => { if(!want[key] && key !== 'parent'){ const [kind, id] = key.split(':'); ops.push({op:'del', kind, id}); sent[key] = {del:true}; } });
+  if(!ops.length) return;
+  let r; try{ r = await rpc('tk_accounts_apply', {t:CLOUD.token, ops}); }catch(e){ console.warn('accounts', e); return; }
+  const taken = [];
+  ((r && r.results) || []).forEach(x => { const key = acctKey(x.kind, x.id), s = sent[key]; if(!s) return;
+    if(s.del){ if(x.st === 'ok') delete ACCT.map[key]; return; }
+    if(['ok', 'created', 'pass'].includes(x.st)){ ACCT.map[key] = s.u; delete ACCT.miss[key]; if(ACCT.pend[key] && ACCT.pend[key].p === s.p) delete ACCT.pend[key]; }
+    else { ACCT.miss[key] = s.u; if(x.st === 'taken') taken.push(s.u); if(ACCT.pend[key] && ACCT.pend[key].p === s.p && x.st !== 'taken') delete ACCT.pend[key]; } });
+  acctSave();
+  if(taken.length) alertBox(`اسم المستخدم «${taken.join('، ')}» محجوز في السحابة لحساب آخر. اختر اسم مستخدم مختلفاً من «تعديل».`);
+}
+/* CONTRACT (owner dashboard): resetPass(kind, id) — kind 'kid' (kid id) | 'guardian' (guardian id) | 'parent' (id 'parent').
+   Asks for a new password (children: 4 digits), saves it on the server, toasts, and offers the login message. Resolves to the new password or null. */
+function resetPass(kind, id){
+  if(kind === 'g') kind = 'guardian';
+  const o = kind === 'kid' ? (DB.kids || {})[id] : kind === 'guardian' ? (DB.guardians || {})[id] : DB.parent;
+  if(!o) return Promise.resolve(null);
+  const kid = kind === 'kid', name = kid ? o.ar : kind === 'guardian' ? (o.name || 'ولي الأمر') : 'حساب الإدارة', gen = () => rnd(kid ? 4 : 6);
+  return new Promise(done => {
+    const ov = overlay(`<h2>🔑 كلمة مرور جديدة · ${esc(name)}</h2>
+      <p class="small muted" style="margin:0">اسم المستخدم: <code>${esc(o.user || '')}</code>. كلمة المرور القديمة تتوقف، والأجهزة الثانية تطلب الدخول من جديد.</p>
+      <div class="field"><label for="rp_p">كلمة المرور الجديدة</label><div class="chips" style="flex-wrap:nowrap"><input class="input ltr" id="rp_p" autocomplete="new-password" ${kid ? 'inputmode="numeric" maxlength="4" pattern="[0-9]*"' : 'maxlength="64"'} value="${gen()}"><button class="btn sm" type="button" id="rp_g" aria-label="اقترح كلمة مرور">🎲</button></div>
+      <div class="small muted">${kid ? '4 أرقام يسهل على الطفل حفظها.' : '6 أحرف أو أرقام على الأقل.'}</div></div>
+      <div class="err" id="rp_e"></div>
+      <div class="chips"><button class="btn primary" id="rp_ok">حفظ</button><button class="btn" id="rp_x">رجوع</button></div>`);
+    ov.dataset.rp = '1';
+    const inp = ov.querySelector('#rp_p'), er = ov.querySelector('#rp_e'), okb = ov.querySelector('#rp_ok');
+    ov.querySelector('#rp_g').onclick = () => { inp.value = gen(); inp.focus(); };
+    ov.querySelector('#rp_x').onclick = () => { ov.remove(); done(null); };
+    okb.onclick = async () => {
+      const p = inp.value.trim(); er.textContent = '';
+      if(kid ? !/^\d{4}$/.test(p) : p.length < 6){ er.textContent = kid ? 'اكتب 4 أرقام.' : 'كلمة المرور 6 أحرف على الأقل.'; return; }
+      const key = acctKey(kind, id);
+      if(cloudOn()){
+        if(!CLOUD.token || !navigator.onLine){ er.textContent = 'تغيير كلمة المرور يحتاج إنترنت. تأكد من الاتصال وحاول مرة ثانية.'; return; }
+        okb.disabled = true; okb.textContent = 'جاري الحفظ…';
+        try{ await rpc('tk_account_set_pass', {t:CLOUD.token, kind, id:kind === 'parent' ? null : id, new_pass:p}); }
+        catch(e){ okb.disabled = false; okb.textContent = 'حفظ';
+          er.textContent = e.status === 404 ? 'الخادم يحتاج تحديث قبل هذه الميزة. تواصل مع الدعم.' : /not_allowed/.test(e.msg || '') ? 'ما عندك صلاحية لتغيير كلمة المرور هذه.' : /taken/.test(e.msg || '') ? 'اسم المستخدم محجوز لحساب آخر. غيّره أولاً.' : /bad_session/.test(e.msg || '') ? 'انتهت جلسة الدخول. سجّل دخولك مرة ثانية.' : 'ما قدرنا نحفظ. تأكد من الإنترنت وحاول مرة ثانية.';
+          return; }
+        delete ACCT.pend[key]; delete ACCT.miss[key]; ACCT.map[key] = String(o.user || '').toLowerCase(); acctSave();
+        if(o.pass !== undefined){ delete o.pass; localSaveOnly(); }
+        const lv = lsGet(LV_KEY, {}); if(lv[String(o.user || '').toLowerCase()]) lvSet(o.user, p, kind === 'parent' ? 'parent' : kind === 'guardian' ? 'g:' + id : id);
+      } else { o.pass = p; save(); }    /* local-only mode (no cloud): the device is the only store */
+      ACCT_KNOWN[key] = p; toast('تم تغيير كلمة المرور ✓');
+      const msg = kind !== 'parent' && typeof credsMessage === 'function' ? credsMessage(kid ? 'kid' : 'g', name, o.user, p) : '';
+      ov.querySelector('.card').innerHTML = `<h2>✅ تم تغيير كلمة المرور</h2><div class="credc"><b>${esc(name)}</b><div class="credrow"><span>اسم المستخدم</span><code>${esc(o.user || '')}</code></div><div class="credrow"><span>كلمة المرور</span><code>${esc(p)}</code></div>
+        ${msg ? `<div class="chips"><button class="btn sm primary" id="rp_c">📋 نسخ الرسالة</button><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(msg)}">واتساب</a></div>` : ''}</div>
+        <p class="small muted" style="margin:0">احفظها أو أرسلها الآن: لن تظهر مرة ثانية بعد الإغلاق.</p><button class="btn" id="rp_d">تم</button>`;
+      const c = ov.querySelector('#rp_c'); if(c) c.onclick = () => copyText(msg, 'تم نسخ الرسالة');
+      ov.querySelector('#rp_d').onclick = () => { ov.remove(); if(WHO === 'parent' && cloudSafeToRender()) go('parent', TAB); };
+      done(p);
+    };
+  });
+}
+async function cloudAccountsLegacy(){
   if(CLOUD.role !== 'parent' || !DB || !DB.parent) return; const list = acctList(), sig = J(list);
   if(CLOUD.acctSig === sig) return;
   const r = await rpc('tk_accounts_set', {t:CLOUD.token, accts:list}); CLOUD.acctSig = sig; cloudSave();
@@ -5526,6 +5653,7 @@ function cloudLost(){ CLOUD.token = null; cloudSave();
 /* first-time: register the family from this device's data, or join it if it already exists */
 async function cloudEnable(){
   if(!cloudOn() || !DB || !DB.parent) return false;
+  if(!DB.parent.pass){ cloudLost(); const e = new Error('need_login'); e.msg = 'need_login'; throw e; }   /* passwords are no longer kept on the device */
   const r = await rpc('tk_register', {u:DB.parent.user, p:DB.parent.pass});
   CLOUD.token = r.token; CLOUD.role = 'parent'; CLOUD.kid = null; CLOUD.family = r.family; CLOUD.username = String(DB.parent.user).toLowerCase();
   if(r.created){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; cloudSave(); await cloudPush(); return true; }
@@ -5541,16 +5669,21 @@ function joinMerge(remote, local){
   return remote === undefined || remote === null ? local : remote;
 }
 async function cloudLogin(u, p){
-  const r = await rpc('tk_login', {u, p}); if(!r) return null;
+  let r; try{ r = await rpc('tk_login2', {u, p, d:devId()}); }
+  catch(e){ if(e.status === 404 || /PGRST202|Could not find/.test(e.msg || '')) r = await rpc('tk_login', {u, p}); else throw e; }   /* server before schema_9 */
+  if(!r) return null;
   const prevRole = CLOUD.role, prevKid = CLOUD.kid;
   const sameFamily = CLOUD.family && CLOUD.family === r.family && DB && prevRole === r.role && (r.role !== 'guardian' || prevKid === r.kid);
   const backupDB = DB, backupCloud = JSON.stringify(CLOUD);
   CLOUD.token = r.token; CLOUD.role = r.role; CLOUD.kid = r.kid || null; CLOUD.family = r.family; CLOUD.username = String(u).toLowerCase();
   if(!sameFamily){ CLOUD.vers = {}; CLOUD.synced = {}; CLOUD.since = null; CLOUD.acctSig = null; DB = {}; await cloudPull(true); }
+  if(ACCT.fam !== r.family){ ACCT.fam = r.family; ACCT.map = {}; ACCT.pend = {}; ACCT.miss = {}; ACCT.v9 = true; acctSave(); }
   else await cloudPull(false);
   if(!DB || !DB.kids){ DB = backupDB; try{ Object.assign(CLOUD, JSON.parse(backupCloud)); }catch(e){} const e = new Error('pull_failed'); e.msg = 'pull_failed'; throw e; }
   normalize(); localSaveOnly(); cloudSave(); cloudStart();
-  return r.role === 'parent' ? 'parent' : r.role === 'guardian' ? 'g:' + r.kid : r.kid;
+  const who = r.role === 'parent' ? 'parent' : r.role === 'guardian' ? 'g:' + r.kid : r.kid;
+  lvSet(u, p, who);   /* lets this person open the app on this device without internet next time */
+  return who;
 }
 async function cloudLogout(){ const t = CLOUD.token; if(t){ try{ await cloudPush(); }catch(e){} try{ await rpc('tk_logout', {t}); }catch(e){} } CLOUD.token = null; cloudSave(); }
 function cloudSafeToRender(){ return !L && !document.querySelector('.ov,.reader') && !(document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)); }
@@ -5724,13 +5857,16 @@ function credsMessage(kind, name, user, pass){
 function copyText(txt, msg){ (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast(msg || 'تم النسخ'), () => { const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} ta.remove(); toast(msg || 'تم النسخ'); }); }
 function showCreds(k){
   const kid = DB.kids[k], g = guardianOf(k);
-  const card = (title, kind, name, user, pass) => { const m = credsMessage(kind, name, user, pass);
-    return `<div class="credc"><b>${title}</b><div class="credrow"><span>اسم المستخدم</span><code>${esc(user)}</code></div><div class="credrow"><span>كلمة المرور</span><code>${esc(pass)}</code></div>
-      <div class="chips"><button class="btn sm primary" data-cc="${esc(kind)}">📋 نسخ الرسالة</button><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(m)}">واتساب</a></div></div>`; };
+  /* passwords are kept only as hashes: they show here right after they are set, otherwise a reset button */
+  const kp = kid.pass || (typeof acctKnown === 'function' ? acctKnown('kid', k) : ''), gp = g ? (g.pass || (typeof acctKnown === 'function' ? acctKnown('guardian', g.id) : '')) : '';
+  const card = (title, kind, name, user, pass) => { const m = pass ? credsMessage(kind, name, user, pass) : '', rk = kind === 'kid' ? 'kid:' + k : 'guardian:' + (g && g.id);
+    return `<div class="credc"><b>${title}</b><div class="credrow"><span>اسم المستخدم</span><code>${esc(user)}</code></div><div class="credrow"><span>كلمة المرور</span>${pass ? `<code>${esc(pass)}</code>` : '<span class="muted">•••• مخفية</span>'}</div>
+      <div class="chips">${pass ? `<button class="btn sm primary" data-cc="${esc(kind)}">📋 نسخ الرسالة</button><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(m)}">واتساب</a>` : `<button class="btn sm primary" data-crp="${esc(rk)}">🔑 كلمة مرور جديدة</button>`}</div></div>`; };
   const ov = overlay(`<h2>🎉 حسابات ${esc(kid.ar)} جاهزة</h2><p class="small muted" style="margin:0">أرسل لكل واحد رسالته. الحسابات تشتغل من أي جهاز بعد ثواني من الحفظ.</p>
-    ${card('👦 حساب الطالب', 'kid', kid.ar, kid.user, kid.pass)}${g ? card('👨‍👩‍👧 حساب ولي الأمر', 'g', g.name, g.user, g.pass) : ''}
+    ${card('👦 حساب الطالب', 'kid', kid.ar, kid.user, kp)}${g ? card('👨‍👩‍👧 حساب ولي الأمر', 'g', g.name, g.user, gp) : ''}
     <button class="btn" id="cx">تم</button>`);
-  ov.querySelectorAll('[data-cc]').forEach(b => b.onclick = () => copyText(b.dataset.cc === 'kid' ? credsMessage('kid', kid.ar, kid.user, kid.pass) : credsMessage('g', g.name, g.user, g.pass), 'تم نسخ الرسالة'));
+  ov.querySelectorAll('[data-cc]').forEach(b => b.onclick = () => copyText(b.dataset.cc === 'kid' ? credsMessage('kid', kid.ar, kid.user, kp) : credsMessage('g', g.name, g.user, gp), 'تم نسخ الرسالة'));
+  ov.querySelectorAll('[data-crp]').forEach(b => b.onclick = () => { const [kind, id] = b.dataset.crp.split(':'); ov.remove(); if(typeof resetPass === 'function') resetPass(kind, id); });
   ov.querySelector('#cx').onclick = () => { ov.remove(); renderParent(); };
 }
 /* guardian section inside the student form */
@@ -5757,7 +5893,7 @@ function wireGuardianFields(ov, k){
   const fill = () => { const v = sel.value; box.hidden = v === 'none';
     const gr = ov.querySelector('#g_rel'), gf = ov.querySelector('#g_first'); const g0 = v !== 'new' && v !== 'none' ? DB.guardians[v] : null; gr.value = g0 ? (g0.rel || '') : 'بابا'; gf.value = g0 ? (g0.first || '') : ''; prev();
     if(v === 'new'){ ov.querySelector('#g_name').value = ''; ov.querySelector('#g_phone').value = ''; ov.querySelector('#g_user').value = suggestUser((kidUser() || 'family') + 'p'); ov.querySelector('#g_pass').value = rnd(6); }
-    else if(v !== 'none'){ const g = DB.guardians[v]; ov.querySelector('#g_name').value = g.name || ''; ov.querySelector('#g_phone').value = g.phone || ''; ov.querySelector('#g_user').value = g.user; ov.querySelector('#g_pass').value = g.pass; } };
+    else if(v !== 'none'){ const g = DB.guardians[v]; ov.querySelector('#g_name').value = g.name || ''; ov.querySelector('#g_phone').value = g.phone || ''; ov.querySelector('#g_user').value = g.user; ov.querySelector('#g_pass').value = g.pass || ''; ov.querySelector('#g_pass').placeholder = 'اتركها فاضية = بدون تغيير'; } };
   function prev(){ const el = ov.querySelector('#g_prev'); if(el) el.textContent = '💌 تطلع رسائله للطفل: «فخور فيك ❤️ — من ' + gLabel({rel:ov.querySelector('#g_rel').value, first:ov.querySelector('#g_first').value, name:ov.querySelector('#g_name').value}) + '»'; }
   ov.querySelector('#g_rel').onchange = prev; ov.querySelector('#g_first').oninput = prev; ov.querySelector('#g_name').addEventListener('input', prev);
   sel.onchange = fill; fill();
@@ -5772,11 +5908,11 @@ function saveGuardianFields(ov, k, kidName){
   const name = ov.querySelector('#g_name').value.trim() || ('ولي أمر ' + kidName), phone = ov.querySelector('#g_phone').value.trim();
   const user = ov.querySelector('#g_user').value.trim().toLowerCase(), pass = ov.querySelector('#g_pass').value.trim();
   if(!/^[a-z0-9_.-]{3,24}$/.test(user)) return 'اسم مستخدم ولي الأمر: 3 أحرف إنجليزية أو أرقام على الأقل.';
-  if(pass.length < 4) return 'كلمة مرور ولي الأمر 4 أحرف على الأقل.';
+  if((pass || v === 'new') && pass.length < 4) return 'كلمة مرور ولي الأمر 4 أحرف على الأقل.';
   const gid = v === 'new' ? 'g' + Date.now().toString(36) + rnd(2) : v;
   if(userTaken(user, k, gid)) return 'اسم مستخدم ولي الأمر مستخدم من قبل.';
   if(prev !== gid) detach(prev);
-  const g = DB.guardians[gid] = Object.assign(DB.guardians[gid] || {id:gid, kids:[], created:new Date().toISOString()}, {name, phone, user, pass, rel:ov.querySelector('#g_rel').value, first:ov.querySelector('#g_first').value.trim()});
+  const g = DB.guardians[gid] = Object.assign(DB.guardians[gid] || {id:gid, kids:[], created:new Date().toISOString()}, Object.assign({name, phone, user, rel:ov.querySelector('#g_rel').value, first:ov.querySelector('#g_first').value.trim()}, pass ? {pass} : {}));
   if(!g.kids.includes(k)) g.kids.push(k);
   DB.kids[k].guardian = gid;
   return null;
