@@ -32,13 +32,15 @@ Grammar that appears in a level must not be "taught" again as new in a later lev
 1. Last Weekend | telling what happened | past simple (regular), time words
 2. Trips and Visits | asking about past trips | past simple irregular, Did you …? Where did …?
 3. Bigger, Better, Best | comparing | comparatives and superlatives
-4. Food and Health | giving simple advice | should / shouldn't
+4. Food and Health | giving simple advice | should / shouldn't; quantifiers some / any / a lot of / much / many and How much …? / How many …? with countable and uncountable food words
+   (added Nov 2026 to fill a gap no unit taught: lesson 1 'A Healthy Breakfast' = some / any / a lot of / much / many; lesson 4 'Hot Summer Days' = How much water …? / How many drinks …?; lesson 6 'Our Health Poster' recycles too much / too many. Advice with should stays the unit function. Unit test items 5 and 10 test the two points.)
 
 ## L6 — A2 (Flyers / Key) · GSE 33-35
 1. Weekend Plans | talking about future plans | be going to; future time words
 2. Invitations | inviting, accepting, declining politely | Would you like to …? I'd love to. / I'm afraid I can't …
 3. How I Feel | describing feelings and reasons | -ed / -ing adjectives; because / so
-4. Rules | talking about rules and obligations | have to / don't have to / must / mustn't
+4. Rules | talking about rules and obligations | have to / don't have to / must / mustn't; zero conditional for rules and facts (If / When + present, present)
+   (added Nov 2026 to fill a gap no unit taught: lesson 3 'At the Swimming Pool' = If you dive here, you hit the bottom. / When the lifeguard blows the whistle, everyone gets out; lesson 4 'My First Flight' recycles When the sign is off, you can walk; lesson 5 'Rules of the Game' = If you touch the ball with your hands, it's a foul. Facts: If you heat ice, it melts (quiz 3-2, unit test item 9). L8 builds the first conditional on it.)
 
 ## L7 — A2+ (Key for Schools) · GSE 36-42
 1. Have You Ever …? | talking about experiences | present perfect with ever / never / already / yet
