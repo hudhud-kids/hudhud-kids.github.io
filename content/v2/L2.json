@@ -706,7 +706,7 @@
     {
      "w": "a ghutra",
      "emoji": "🧣",
-     "def": "a white or red cloth men wear on the head",
+     "def": "a white or red-and-white cloth men wear on the head",
      "ar": "غترة",
      "frame": "My dad's ghutra is ___."
     },
@@ -938,7 +938,7 @@
     ],
     "focus": "He's got short hair and a hat.",
     "qs": [
-     "What colour is the boy's cap?",
+     "What colour is the boy's hat?",
      "Has the girl got a scarf?"
     ]
    },
@@ -951,7 +951,7 @@
      },
      {
       "q": "What clothes has this person got?",
-      "hint": "Say a colour and some clothes, like 'a … cap'."
+      "hint": "Say a colour and some clothes, like 'a … hat'."
      },
      {
       "q": "Is it your brother?",
@@ -1971,7 +1971,7 @@
      },
      {
       "s": "Grandpa",
-      "t": "Yes! The sheep can't jump. The chicken can't swim."
+      "t": "Yes! The sheep can't climb. The chicken can't swim."
      },
      {
       "s": "Faisal",
@@ -2105,11 +2105,11 @@
     "p2": [
      {
       "s": "Omar",
-      "t": "Can hippos swim?"
+      "t": "Can hippos run?"
      },
      {
       "s": "Dad",
-      "t": "Yes, they can. They love water."
+      "t": "Yes, they can. They can run fast!"
      },
      {
       "s": "Omar",
@@ -2131,7 +2131,7 @@
     "focus": "It can climb trees.",
     "qs": [
      "What can the monkey do?",
-     "Can elephants swim?"
+     "Can hippos jump?"
     ]
    },
    "speakout": {
@@ -2212,7 +2212,7 @@
      "emoji": "🐚",
      "def": "the hard outside of a crab or a turtle",
      "ar": "صَدَفة / قوقعة",
-     "frame": "I've got a ___ shell."
+     "frame": "A ___ has got a shell."
     }
    ],
    "dialogue": {
@@ -2996,7 +2996,7 @@
     },
     {
      "w": "a toy box",
-     "emoji": "🧸",
+     "emoji": "📦",
      "def": "a big box for your toys",
      "ar": "صندوق الألعاب",
      "frame": "My ___ is in my toy box."
@@ -3263,7 +3263,7 @@
      "emoji": "👏",
      "def": "say this when someone does a good job",
      "ar": "أحسنت!",
-     "frame": "You find the ___. Well done!"
+     "frame": "Here's the ___! Well done!"
     }
    ],
    "dialogue": {
@@ -4377,7 +4377,7 @@
     },
     {
      "s": "Grandpa",
-     "t": "Yes! The sheep can't jump. The chicken can't swim."
+     "t": "Yes! The sheep can't climb. The chicken can't swim."
     }
    ],
    "grammar": {
@@ -4400,7 +4400,7 @@
     {
      "w": "a hippo",
      "ar": "فرس النهر",
-     "ex": "A hippo can swim."
+     "ex": "A hippo loves water."
     },
     {
      "w": "a giraffe",
@@ -4450,11 +4450,11 @@
     },
     {
      "s": "Omar",
-     "t": "Can hippos swim?"
+     "t": "Can hippos run?"
     },
     {
      "s": "Dad",
-     "t": "Yes, they can. They love water."
+     "t": "Yes, they can. They can run fast!"
     }
    ],
    "grammar": {
@@ -5093,7 +5093,7 @@
     {
      "w": "Well done!",
      "ar": "أحسنت!",
-     "ex": "You find it! Well done!"
+     "ex": "Here's the car! Well done!"
     }
    ],
    "dialogue": [
@@ -6031,13 +6031,13 @@
     "type": "order",
     "words": [
      "I",
-     "can't",
-     "walk",
+     "can",
+     "move",
      "like",
      "a",
      "snake."
     ],
-    "answer": "I can't walk like a snake.",
+    "answer": "I can move like a snake.",
     "ar": "رتّب الجملة"
    },
    {

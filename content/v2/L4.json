@@ -1911,7 +1911,7 @@
     }
    ],
    "dialogue": {
-    "scene": "It's Sam's first day at the school. Faisal is helping him find the rooms.",
+    "scene": "It's Sam's first day at the school. Faisal is helping him find the rooms. They are on the first floor.",
     "scene_emoji": "🏫",
     "p1": [
      {
@@ -2863,7 +2863,7 @@
     {
      "w": "Let me show you",
      "emoji": "🙋",
-     "def": "offer to do something so someone can learn",
+     "def": "say this when you teach someone how to do something",
      "ar": "دعني أريك",
      "frame": "I can't ___. — Let me show you!"
     },
@@ -6350,7 +6350,7 @@
     "type": "mc",
     "q": "Where's the treasure?",
     "options": [
-     "It's between the well and the tent.",
+     "It's under the big stone.",
      "Yes, I can.",
      "It's a game."
     ],

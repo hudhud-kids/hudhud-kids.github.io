@@ -330,7 +330,7 @@
      "w": "picked",
      "emoji": "🌴",
      "def": "took fruit or flowers from a tree or plant",
-     "ar": "قطفنا",
+     "ar": "قطف",
      "frame": "We picked ___ from the garden."
     },
     {
@@ -484,7 +484,7 @@
      "w": "raced",
      "emoji": "🏃",
      "def": "ran against other people to see who was fastest",
-     "ar": "تسابقنا",
+     "ar": "تسابق",
      "frame": "We raced to the ___."
     }
    ],
@@ -582,7 +582,7 @@
      "w": "celebrated",
      "emoji": "🎉",
      "def": "did something fun because something good happened",
-     "ar": "احتفلنا",
+     "ar": "احتفل",
      "frame": "We celebrated when ___."
     },
     {
@@ -729,7 +729,7 @@
      "w": "arrived",
      "emoji": "🚪",
      "def": "came to a place",
-     "ar": "وصلوا",
+     "ar": "وصل",
      "frame": "When the guests arrived, I ___."
     },
     {
@@ -835,7 +835,7 @@
      "w": "walked",
      "emoji": "🚶",
      "def": "went somewhere on foot",
-     "ar": "مشينا",
+     "ar": "مشى",
      "frame": "We walked to the ___."
     },
     {
@@ -863,7 +863,7 @@
      "w": "watched the stars",
      "emoji": "✨",
      "def": "looked at the stars in the night sky",
-     "ar": "شاهدنا النجوم",
+     "ar": "شاهد النجوم",
      "frame": "We watched the stars from the ___."
     }
    ],
@@ -1078,9 +1078,9 @@
    "expressions": [
     {
      "w": "sat by the fire",
-     "emoji": "🔥",
+     "emoji": "🪵",
      "def": "sat near a fire to keep warm",
-     "ar": "جلسنا بجانب النار",
+     "ar": "جلس بجانب النار",
      "frame": "We sat by the fire and ___."
     },
     {
@@ -2737,7 +2737,7 @@
     },
     {
      "w": "fell asleep",
-     "emoji": "😴",
+     "emoji": "💤",
      "def": "started sleeping",
      "ar": "غلبه النوم",
      "frame": "Last night I fell asleep at ___."
@@ -2863,7 +2863,7 @@
     },
     {
      "w": "fizzy drinks",
-     "emoji": "🥤",
+     "emoji": "🫧",
      "def": "sweet drinks with lots of small bubbles",
      "ar": "المشروبات الغازية",
      "frame": "Instead of fizzy drinks, I drink ___."
@@ -3282,7 +3282,7 @@
     },
     {
      "w": "picked",
-     "ar": "قطفنا",
+     "ar": "قطف",
      "ex": "We picked lots of dates from the palm trees."
     },
     {
@@ -3375,7 +3375,7 @@
     },
     {
      "w": "raced",
-     "ar": "تسابقنا",
+     "ar": "تسابق",
      "ex": "We raced across the playground."
     }
    ],
@@ -3424,7 +3424,7 @@
     },
     {
      "w": "celebrated",
-     "ar": "احتفلنا",
+     "ar": "احتفل",
      "ex": "We celebrated all the way back to class."
     },
     {
@@ -3516,7 +3516,7 @@
     },
     {
      "w": "arrived",
-     "ar": "وصلوا",
+     "ar": "وصل",
      "ex": "When the guests arrived, I carried the coffee."
     },
     {
@@ -3578,7 +3578,7 @@
     },
     {
      "w": "walked",
-     "ar": "مشينا",
+     "ar": "مشى",
      "ex": "We walked in the park near our house."
     },
     {
@@ -3598,7 +3598,7 @@
     },
     {
      "w": "watched the stars",
-     "ar": "شاهدنا النجوم",
+     "ar": "شاهد النجوم",
      "ex": "We watched the stars from the roof."
     }
    ],
@@ -3711,7 +3711,7 @@
    "words": [
     {
      "w": "sat by the fire",
-     "ar": "جلسنا بجانب النار",
+     "ar": "جلس بجانب النار",
      "ex": "We sat by the fire and drank tea."
     },
     {

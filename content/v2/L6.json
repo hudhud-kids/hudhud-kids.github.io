@@ -832,7 +832,7 @@
     {
      "w": "walk on the Corniche",
      "emoji": "🌊",
-     "def": "walk on the long road by the sea in Jeddah",
+     "def": "walk on the long road by the sea, like in Jeddah",
      "ar": "نتمشّى على الكورنيش",
      "frame": "We're going to walk on the Corniche and ___."
     },
@@ -2783,7 +2783,7 @@
     ],
     "focus": "You mustn't run because the floor is slippery.",
     "qs": [
-     "Where can Ali dive?",
+     "What happens when the lifeguard blows the whistle?",
      "Why mustn't Ali run?"
     ]
    },
@@ -2998,7 +2998,7 @@
      },
      {
       "s": "Omar",
-      "t": "Sure! You have to kick the ball into the other team's goal. If it goes in, your team gets a point."
+      "t": "Sure! You have to kick the ball into the other team's goal. If it goes in, your team scores a goal."
      },
      {
       "s": "Ali",
@@ -5297,7 +5297,7 @@
    },
    {
     "type": "mc",
-    "q": "The black and white board and pieces for chess are a ___.",
+    "q": "A board and pieces for playing chess is a ___.",
     "options": [
      "chess set",
      "ball",
@@ -6140,12 +6140,12 @@
    },
    {
     "type": "mc",
-    "q": "If you heat ice, it ___.",
+    "q": "If you dive here, you ___ the bottom.",
     "options": [
-     "melts",
-     "melted",
-     "melting",
-     "to melt"
+     "hit",
+     "hits",
+     "hitting",
+     "to hit"
     ],
     "answer": 0
    },

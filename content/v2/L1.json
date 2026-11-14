@@ -879,7 +879,7 @@
     {
      "w": "shake hands",
      "emoji": "🤝",
-     "def": "to hold and move hands to say hello",
+     "def": "to hold someone's hand and move it to say hello",
      "ar": "نتصافح",
      "frame": "I shake hands with ___."
     },
@@ -902,7 +902,7 @@
      "emoji": "🙋",
      "def": "say this when you like the same thing",
      "ar": "وأنا أيضاً!",
-     "frame": "I like ___. Me too!"
+     "frame": "I like ___. — Me too!"
     }
    ],
    "dialogue": {
@@ -1623,11 +1623,11 @@
      },
      {
       "s": "Faisal",
-      "t": "This is my little brother, Saad."
+      "t": "This is my little brother, Fahad."
      },
      {
       "s": "Saad",
-      "t": "Hello, Saad! Eid Mubarak!"
+      "t": "Hello, Fahad! Eid Mubarak!"
      },
      {
       "s": "Faisal",
@@ -1660,9 +1660,9 @@
       "t": "It's a happy family day."
      }
     ],
-    "focus": "This is my little brother, Saad.",
+    "focus": "This is my little brother, Fahad.",
     "qs": [
-     "Who is Saad?",
+     "Who is Fahad?",
      "Who is Saad's dad?"
     ]
    },
@@ -3917,7 +3917,7 @@
     {
      "w": "Me too!",
      "ar": "وأنا أيضاً!",
-     "ex": "I like swimming. Me too!"
+     "ex": "I like swimming. — Me too!"
     }
    ],
    "dialogue": [
@@ -4282,7 +4282,7 @@
     {
      "w": "little",
      "ar": "صغير / الأصغر",
-     "ex": "This is my little brother, Saad."
+     "ex": "This is my little brother, Fahad."
     },
     {
      "w": "big",
@@ -4316,11 +4316,11 @@
     },
     {
      "s": "Faisal",
-     "t": "This is my little brother, Saad."
+     "t": "This is my little brother, Fahad."
     },
     {
      "s": "Saad",
-     "t": "Hello, Saad! Eid Mubarak!"
+     "t": "Hello, Fahad! Eid Mubarak!"
     },
     {
      "s": "Saad",
@@ -5913,7 +5913,7 @@
    },
    {
     "type": "mc",
-    "q": "Saad is three. Faisal is nine. Saad is Faisal's ___ brother.",
+    "q": "Fahad is three. Faisal is nine. Fahad is Faisal's ___ brother.",
     "options": [
      "big",
      "old",
