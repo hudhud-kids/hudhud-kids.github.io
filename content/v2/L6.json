@@ -148,12 +148,13 @@
    "e": "📋",
    "fn": "Talking about rules and obligations",
    "fnAr": "الحديث عن القواعد والواجبات",
-   "cando": "Can say what people have to, don't have to, must and mustn't do at school, at home and in public places.",
+   "cando": "Can say what people have to, don't have to, must and mustn't do at school, at home and in public places, and say what always happens if a rule is broken.",
    "grammar": [
     "have to / has to + verb",
     "don't have to / doesn't have to (it isn't necessary)",
     "must / mustn't (strong rules)",
-    "Do you have to …? Yes, I do. / No, I don't."
+    "Do you have to …? Yes, I do. / No, I don't.",
+    "zero conditional for rules and facts: If / When + present, present (If you touch the ball with your hands, it's a foul. If you heat ice, it melts.)"
    ],
    "lessons": [
     [
@@ -169,17 +170,17 @@
     [
      "At the Swimming Pool",
      "Explain the safety rules at a swimming pool",
-     "You must … You mustn't … because … Do I have to …?"
+     "You must … You mustn't … because … / If you dive here, you hit the bottom. / When the lifeguard blows the whistle, everyone gets out."
     ],
     [
      "My First Flight",
      "Ask and answer questions about the rules on a plane",
-     "Do I have to …? Yes, you do. / No, you don't. You have to … You mustn't …"
+     "Do I have to …? Yes, you do. / No, you don't. You have to … You mustn't … / When the sign is off, you can walk."
     ],
     [
      "Rules of the Game",
      "Explain the rules of a sport or a game",
-     "You have to … You mustn't … You don't have to … That's a foul."
+     "You have to … You mustn't … You don't have to … / If you touch the ball with your hands, it's a foul."
     ],
     [
      "Our Club Rules",
@@ -230,11 +231,11 @@
      "frame": "On Saturday evening we're going to go out to ___."
     },
     {
-     "w": "have a barbecue",
-     "emoji": "🍖",
-     "def": "to cook and eat food outside on a fire",
-     "ar": "يقيم حفلة شواء",
-     "frame": "We're going to have a barbecue in the ___."
+     "w": "Have a nice weekend!",
+     "emoji": "👋",
+     "def": "a friendly goodbye before the weekend",
+     "ar": "عطلة سعيدة!",
+     "frame": "Have a nice weekend! See you on ___."
     }
    ],
    "dialogue": {
@@ -311,7 +312,10 @@
      "What is your favourite day of the weekend? Why?"
     ]
    },
-   "exit": "Tell me two things you are going to do this weekend."
+   "exit": "Tell me two things you are going to do this weekend.",
+   "recycle": [
+    "have a barbecue"
+   ]
   },
   "0-1": {
    "objective": "Today you will ask and answer questions about a family visit next weekend.",
@@ -325,11 +329,11 @@
      "frame": "Next weekend my family is going to ___."
     },
     {
-     "w": "farm",
-     "emoji": "🚜",
-     "def": "land where people grow food and keep animals",
-     "ar": "مزرعة",
-     "frame": "On a farm, you can ___."
+     "w": "anything special",
+     "emoji": "✨",
+     "def": "something different or exciting",
+     "ar": "شيء مميّز",
+     "frame": "Are you going to do anything special on ___?"
     },
     {
      "w": "pick dates",
@@ -434,7 +438,10 @@
      "What would you like to do on a farm? Why?"
     ]
    },
-   "exit": "Tell me about a family visit you are going to make, in two sentences."
+   "exit": "Tell me about a family visit you are going to make, in two sentences.",
+   "recycle": [
+    "farm"
+   ]
   },
   "0-2": {
    "objective": "Today you will say who is going to do what for a family surprise.",
@@ -448,11 +455,11 @@
      "frame": "A great surprise for my mum is ___."
     },
     {
-     "w": "decorate",
-     "emoji": "🎀",
-     "def": "to make a place look nice for a special day",
-     "ar": "يزيّن",
-     "frame": "We're going to decorate the room with ___."
+     "w": "Great idea!",
+     "emoji": "💡",
+     "def": "say this when you like someone's plan",
+     "ar": "فكرة رائعة!",
+     "frame": "Let's ___. — Great idea!"
     },
     {
      "w": "bake a cake",
@@ -557,7 +564,10 @@
      "Which birthday idea from the list do you like best? Why?"
     ]
    },
-   "exit": "Tell me two things your family is going to do for a surprise."
+   "exit": "Tell me two things your family is going to do for a surprise.",
+   "recycle": [
+    "decorate"
+   ]
   },
   "0-3": {
    "objective": "Today you will talk about your family's plans for Eid.",
@@ -715,11 +725,11 @@
      "frame": "One day I'd like to travel abroad to ___."
     },
     {
-     "w": "get up late",
-     "emoji": "😴",
-     "def": "to get out of bed later than usual",
-     "ar": "يستيقظ متأخراً",
-     "frame": "In the holidays, I get up late on ___."
+     "w": "travel",
+     "emoji": "🧳",
+     "def": "go on a trip to another place",
+     "ar": "يسافر",
+     "frame": "This summer I want to travel to ___."
     },
     {
      "w": "join",
@@ -803,7 +813,10 @@
      "Would you like to go to a summer camp? Why?"
     ]
    },
-   "exit": "Tell me two plans for your next summer holidays."
+   "exit": "Tell me two plans for your next summer holidays.",
+   "recycle": [
+    "get up late"
+   ]
   },
   "0-5": {
    "objective": "Today you will plan a whole weekend for a visitor and present the plan.",
@@ -817,18 +830,18 @@
      "frame": "My plan for Friday is to ___."
     },
     {
-     "w": "in the evening",
-     "emoji": "🌆",
-     "def": "the time between the afternoon and the night",
-     "ar": "في المساء",
-     "frame": "In the evening, we're going to ___."
+     "w": "walk on the Corniche",
+     "emoji": "🌊",
+     "def": "walk on the long road by the sea in Jeddah",
+     "ar": "نتمشّى على الكورنيش",
+     "frame": "We're going to walk on the Corniche and ___."
     },
     {
-     "w": "after that",
-     "emoji": "⏭️",
-     "def": "next; later than the thing you said before",
-     "ar": "بعد ذلك",
-     "frame": "First we're going to ___. After that, we're going to ___."
+     "w": "have lunch",
+     "emoji": "🍽️",
+     "def": "eat the meal in the middle of the day",
+     "ar": "نتناول الغداء",
+     "frame": "We're going to have lunch at ___."
     },
     {
      "w": "go sightseeing",
@@ -838,18 +851,18 @@
      "frame": "In my city, visitors can go sightseeing at ___."
     },
     {
-     "w": "go out",
-     "emoji": "🚪",
-     "def": "to leave your home to do something fun",
-     "ar": "يخرج (للتنزّه)",
-     "frame": "On Saturday night we're going to go out to ___."
+     "w": "show you around",
+     "emoji": "🧭",
+     "def": "take a visitor to see the interesting places",
+     "ar": "أعرّفك على المكان",
+     "frame": "I'm going to show you around ___."
     },
     {
-     "w": "this weekend",
-     "emoji": "📅",
-     "def": "the Friday and Saturday that are coming soon",
-     "ar": "عطلة نهاية هذا الأسبوع",
-     "frame": "This weekend is going to be ___ because ___."
+     "w": "the old town",
+     "emoji": "🏘️",
+     "def": "the oldest part of a city",
+     "ar": "البلدة القديمة",
+     "frame": "In the old town, you can see ___."
     }
    ],
    "dialogue": {
@@ -862,7 +875,7 @@
      },
      {
       "s": "Faisal",
-      "t": "This weekend is going to be great! On Friday morning, we're going to go sightseeing in Al-Balad."
+      "t": "This weekend is going to be great! I'm going to show you around. On Friday morning, we're going to go sightseeing in Al-Balad."
      },
      {
       "s": "Adam",
@@ -926,7 +939,13 @@
      "What can visitors see in your city?"
     ]
    },
-   "exit": "Tell me your plan for a visitor's weekend in two sentences, using 'going to'."
+   "exit": "Tell me your plan for a visitor's weekend in two sentences, using 'going to'.",
+   "recycle": [
+    "in the evening",
+    "after that",
+    "go out",
+    "this weekend"
+   ]
   },
   "1-0": {
    "objective": "Today you will invite a friend to your house and answer an invitation.",
@@ -954,11 +973,11 @@
      "frame": "Can you come over after ___?"
     },
     {
-     "w": "board game",
+     "w": "chess set",
      "emoji": "♟️",
-     "def": "a game you play on a table, like chess or Ludo",
-     "ar": "لعبة لوحية",
-     "frame": "My favourite board game is ___."
+     "def": "a board and pieces for playing chess",
+     "ar": "رقعة الشطرنج",
+     "frame": "With my chess set, I can ___."
     },
     {
      "w": "ask my parents",
@@ -1049,7 +1068,10 @@
      "What do you like doing when a friend comes over?"
     ]
    },
-   "exit": "Invite me to your house, and say what we can do there."
+   "exit": "Invite me to your house, and say what we can do there.",
+   "recycle": [
+    "board game"
+   ]
   },
   "1-1": {
    "objective": "Today you will invite people to a party and say no politely with a reason.",
@@ -1330,11 +1352,11 @@
      "frame": "Can I bring my ___?"
     },
     {
-     "w": "campfire",
-     "emoji": "🔥",
-     "def": "a fire that you make outside",
-     "ar": "نار المخيّم",
-     "frame": "Around the campfire, we like to ___."
+     "w": "telescope",
+     "emoji": "🔭",
+     "def": "a tube you look through to see things far away",
+     "ar": "تلسكوب",
+     "frame": "With a telescope, I can see ___."
     },
     {
      "w": "stars",
@@ -1418,7 +1440,10 @@
      "Would you like to sleep in a tent in the desert? Why?"
     ]
    },
-   "exit": "Invite me to join your family on a trip, and tell me what I can bring."
+   "exit": "Invite me to join your family on a trip, and tell me what I can bring.",
+   "recycle": [
+    "campfire"
+   ]
   },
   "1-4": {
    "objective": "Today you will invite an adult to a school event very politely.",
@@ -1576,18 +1601,18 @@
      "frame": "The best place for a class party is ___."
     },
     {
-     "w": "I'd love to.",
-     "emoji": "😍",
-     "def": "a happy way to say yes to an invitation",
-     "ar": "يسعدني ذلك",
-     "frame": "I'd love to come! Can I bring ___?"
+     "w": "end-of-year party",
+     "emoji": "🎉",
+     "def": "a party in the last days of the school year",
+     "ar": "حفلة نهاية العام",
+     "frame": "At our end-of-year party, we're going to ___."
     },
     {
-     "w": "I'm afraid I can't.",
-     "emoji": "🙁",
-     "def": "a very polite way to say no",
-     "ar": "أخشى أنني لا أستطيع",
-     "frame": "I'm afraid I can't come because ___."
+     "w": "Read it to me",
+     "emoji": "📖",
+     "def": "ask someone to say the words on a paper aloud",
+     "ar": "اقرأها لي",
+     "frame": "Read it to me, please. When is the ___?"
     }
    ],
    "dialogue": {
@@ -1664,7 +1689,11 @@
      "Which is better, a paper invitation or a phone message? Why?"
     ]
    },
-   "exit": "Give me an invitation with the day, the time and the place, in two sentences."
+   "exit": "Give me an invitation with the day, the time and the place, in two sentences.",
+   "recycle": [
+    "I'd love to.",
+    "I'm afraid I can't."
+   ]
   },
   "2-0": {
    "objective": "Today you will say how you feel on a long journey and why.",
@@ -1692,11 +1721,11 @@
      "frame": "The longest journey I know is from ___ to ___."
     },
     {
-     "w": "tired",
-     "emoji": "😩",
-     "def": "feeling that you need to rest or sleep",
-     "ar": "متعَب",
-     "frame": "I'm always tired after ___."
+     "w": "halfway",
+     "emoji": "↔️",
+     "def": "in the middle of a journey",
+     "ar": "في منتصف الطريق",
+     "frame": "We're only halfway to ___."
     },
     {
      "w": "because",
@@ -1787,7 +1816,10 @@
      "Which is more boring, a long car journey or a long flight? Why?"
     ]
    },
-   "exit": "Tell me two things that make you bored, and say why."
+   "exit": "Tell me two things that make you bored, and say why.",
+   "recycle": [
+    "tired"
+   ]
   },
   "2-1": {
    "objective": "Today you will say why you are excited or nervous about something.",
@@ -1924,11 +1956,11 @@
      "frame": "Sometimes I'm worried about ___."
     },
     {
-     "w": "relaxed",
-     "emoji": "😌",
-     "def": "calm and not worried",
-     "ar": "مرتاح / هادئ",
-     "frame": "I feel relaxed when ___."
+     "w": "slept well",
+     "emoji": "😴",
+     "def": "had a good night's sleep",
+     "ar": "نمتُ جيداً",
+     "frame": "I slept well, so I felt ___."
     },
     {
      "w": "revise",
@@ -2033,7 +2065,10 @@
      "What helps you feel relaxed before a test?"
     ]
    },
-   "exit": "Tell me how you feel before a test and why."
+   "exit": "Tell me how you feel before a test and why.",
+   "recycle": [
+    "relaxed"
+   ]
   },
   "2-3": {
    "objective": "Today you will say what is interesting and amazing at a museum and how you feel.",
@@ -2314,18 +2349,18 @@
      "frame": "In my diary, I write about ___."
     },
     {
-     "w": "excited",
-     "emoji": "🤩",
-     "def": "very happy because something good is going to happen",
-     "ar": "متحمّس",
-     "frame": "Last week I was excited because ___."
+     "w": "storm",
+     "emoji": "⛈️",
+     "def": "very bad weather with strong wind and rain",
+     "ar": "عاصفة",
+     "frame": "During the storm, I felt ___."
     },
     {
-     "w": "bored",
-     "emoji": "😑",
-     "def": "unhappy because nothing interesting is happening",
-     "ar": "يشعر بالملل",
-     "frame": "I felt bored on ___ because ___."
+     "w": "thunder",
+     "emoji": "⚡",
+     "def": "the loud noise in the sky during a storm",
+     "ar": "الرعد",
+     "frame": "When I hear thunder, I ___."
     }
    ],
    "dialogue": {
@@ -2402,7 +2437,11 @@
      "Do you think writing a diary is a good idea? Why?"
     ]
    },
-   "exit": "Tell me two feelings from your week and the reasons."
+   "exit": "Tell me two feelings from your week and the reasons.",
+   "recycle": [
+    "excited",
+    "bored"
+   ]
   },
   "3-0": {
    "objective": "Today you will talk about the rules at your school.",
@@ -2444,11 +2483,11 @@
      "frame": "I put up my hand when I ___."
     },
     {
-     "w": "break time",
-     "emoji": "🔔",
-     "def": "a short time between lessons to eat and play",
-     "ar": "وقت الفسحة",
-     "frame": "At break time, I usually ___."
+     "w": "gates",
+     "emoji": "🚧",
+     "def": "big doors in a wall or fence",
+     "ar": "البوّابات",
+     "frame": "Our school gates close at ___."
     }
    ],
    "dialogue": {
@@ -2525,7 +2564,10 @@
      "Would you like to clean your classroom every day? Why?"
     ]
    },
-   "exit": "Tell me one thing you have to do and one thing you mustn't do at school."
+   "exit": "Tell me one thing you have to do and one thing you mustn't do at school.",
+   "recycle": [
+    "break time"
+   ]
   },
   "3-1": {
    "objective": "Today you will talk about your jobs and rules at home.",
@@ -2560,11 +2602,11 @@
      "frame": "My bedtime on school days is ___."
     },
     {
-     "w": "take out the rubbish",
-     "emoji": "🗑️",
-     "def": "to carry the bin bag outside the house",
-     "ar": "يُخرج القمامة",
-     "frame": "In my house, ___ takes out the rubbish."
+     "w": "Lucky you!",
+     "emoji": "🍀",
+     "def": "say this when someone has something nice",
+     "ar": "محظوظ!",
+     "frame": "I don't have to ___. — Lucky you!"
     },
     {
      "w": "pocket money",
@@ -2648,7 +2690,10 @@
      "What would you like to save your money for?"
     ]
    },
-   "exit": "Tell me one thing you have to do and one thing you don't have to do at home."
+   "exit": "Tell me one thing you have to do and one thing you don't have to do at home.",
+   "recycle": [
+    "take out the rubbish"
+   ]
   },
   "3-2": {
    "objective": "Today you will explain the safety rules at a swimming pool.",
@@ -2715,7 +2760,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Because the water isn't deep. You can only dive in the deep end."
+      "t": "Because the water isn't deep. If you dive here, you hit the bottom."
      }
     ],
     "p2": [
@@ -2733,7 +2778,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Yes, you do. And you have to stay near the lifeguard."
+      "t": "Yes, you do. And when the lifeguard blows the whistle, everyone gets out of the pool."
      }
     ],
     "focus": "You mustn't run because the floor is slippery.",
@@ -2747,7 +2792,7 @@
     "prompts": [
      {
       "q": "Hi! Can I jump in here?",
-      "hint": "Say 'You mustn't …' and give a reason with 'because'."
+      "hint": "Say 'You mustn't …' and give a reason with 'because' or 'If you …, you …'."
      },
      {
       "q": "Can I eat my sandwich next to the pool?",
@@ -2771,7 +2816,7 @@
      "Which pool rule do you think is the most important?"
     ]
    },
-   "exit": "Tell me two swimming pool rules with 'must' and 'mustn't'."
+   "exit": "Tell me two swimming pool rules with 'must' and 'mustn't', and one with 'If you …, …'."
   },
   "3-3": {
    "objective": "Today you will ask and answer questions about the rules on a plane.",
@@ -2929,11 +2974,11 @@
      "frame": "In football, you mustn't touch the ball with your ___."
     },
     {
-     "w": "team",
-     "emoji": "👥",
-     "def": "a group of players who play together",
-     "ar": "فريق",
-     "frame": "There are ___ players in a football team."
+     "w": "goalkeeper",
+     "emoji": "🧤",
+     "def": "the player who stops the ball going into the goal",
+     "ar": "حارس المرمى",
+     "frame": "The goalkeeper can ___."
     },
     {
      "w": "foul",
@@ -2953,7 +2998,7 @@
      },
      {
       "s": "Omar",
-      "t": "Sure! There are two teams. You have to kick the ball into the other team's goal."
+      "t": "Sure! You have to kick the ball into the other team's goal. If it goes in, your team gets a point."
      },
      {
       "s": "Ali",
@@ -2971,7 +3016,7 @@
      },
      {
       "s": "Omar",
-      "t": "That's a foul. The referee is going to stop the game."
+      "t": "That's a foul. If a player pushes someone, the referee stops the game."
      },
      {
       "s": "Ali",
@@ -3017,7 +3062,10 @@
      "What rule would you like to change in your favourite sport?"
     ]
    },
-   "exit": "Tell me two rules of your favourite game."
+   "exit": "Tell me two rules of your favourite game: one with 'mustn't' and one with 'If you …, …'.",
+   "recycle": [
+    "team"
+   ]
   },
   "3-5": {
    "objective": "Today you will make rules for a new club and explain why.",
@@ -3052,18 +3100,18 @@
      "frame": "We have to respect ___."
     },
     {
-     "w": "have to",
-     "emoji": "☝️",
-     "def": "it is necessary; you need to do it",
-     "ar": "يجب عليه / مضطرّ إلى",
-     "frame": "Members have to ___ because ___."
+     "w": "reading club",
+     "emoji": "📚",
+     "def": "a group of people who meet to read and talk about books",
+     "ar": "نادي القراءة",
+     "frame": "In our reading club, we read ___."
     },
     {
-     "w": "mustn't",
-     "emoji": "🚫",
-     "def": "it's a rule not to do this; don't do it",
-     "ar": "ممنوع أن …",
-     "frame": "Members mustn't ___ because ___."
+     "w": "meeting",
+     "emoji": "🗓️",
+     "def": "a time when people come together to talk",
+     "ar": "اجتماع",
+     "frame": "Our club meeting is on ___."
     }
    ],
    "dialogue": {
@@ -3140,7 +3188,11 @@
      "Which club rule do you think is the most important? Why?"
     ]
    },
-   "exit": "Tell me two rules for your own club, with a reason."
+   "exit": "Tell me two rules for your own club, with a reason.",
+   "recycle": [
+    "have to",
+    "mustn't"
+   ]
   }
  },
  "kits": {
@@ -3172,9 +3224,9 @@
      "ex": "On Saturday evening we're going to go out for dinner."
     },
     {
-     "w": "have a barbecue",
-     "ar": "يقيم حفلة شواء",
-     "ex": "We're going to have a barbecue in the garden on Friday."
+     "w": "Have a nice weekend!",
+     "ar": "عطلة سعيدة!",
+     "ex": "Have a nice weekend, Omar! See you on Sunday!"
     }
    ],
    "dialogue": [
@@ -3200,7 +3252,7 @@
     },
     {
      "s": "B",
-     "t": "Sounds great! Have fun!"
+     "t": "Sounds great! Have a nice weekend!"
     }
    ],
    "grammar": {
@@ -3221,9 +3273,9 @@
      "ex": "Next weekend we're going to visit my uncle's farm."
     },
     {
-     "w": "farm",
-     "ar": "مزرعة",
-     "ex": "My uncle has a big farm near Buraidah."
+     "w": "anything special",
+     "ar": "شيء مميّز",
+     "ex": "Are you going to do anything special next weekend?"
     },
     {
      "w": "pick dates",
@@ -3249,7 +3301,7 @@
    "dialogue": [
     {
      "s": "A",
-     "t": "Are you going to do anything next weekend?"
+     "t": "Are you going to do anything special next weekend?"
     },
     {
      "s": "B",
@@ -3290,9 +3342,9 @@
      "ex": "We're going to make a surprise for Mum."
     },
     {
-     "w": "decorate",
-     "ar": "يزيّن",
-     "ex": "My sister is going to decorate the living room with balloons."
+     "w": "Great idea!",
+     "ar": "فكرة رائعة!",
+     "ex": "Let's make a surprise for Mum! — Great idea!"
     },
     {
      "w": "bake a cake",
@@ -3322,7 +3374,7 @@
     },
     {
      "s": "B",
-     "t": "OK! I'm going to bake a cake with Dad."
+     "t": "Great idea! I'm going to bake a cake with Dad."
     },
     {
      "s": "A",
@@ -3443,9 +3495,9 @@
      "ex": "We're going to travel abroad to Malaysia."
     },
     {
-     "w": "get up late",
-     "ar": "يستيقظ متأخراً",
-     "ex": "In the holidays, I'm not going to get up early. I'm going to get up late!"
+     "w": "travel",
+     "ar": "يسافر",
+     "ex": "We're going to travel to Malaysia in July."
     },
     {
      "w": "join",
@@ -3460,7 +3512,7 @@
     },
     {
      "s": "B",
-     "t": "I'm going to get up late every day!"
+     "t": "First, I'm going to sleep a lot!"
     },
     {
      "s": "A",
@@ -3497,14 +3549,14 @@
      "ex": "Here's our plan for the weekend."
     },
     {
-     "w": "in the evening",
-     "ar": "في المساء",
-     "ex": "In the evening, we're going to walk by the sea."
+     "w": "walk on the Corniche",
+     "ar": "نتمشّى على الكورنيش",
+     "ex": "In the evening, we're going to walk on the Corniche."
     },
     {
-     "w": "after that",
-     "ar": "بعد ذلك",
-     "ex": "After that, we're going to have lunch at Grandma's house."
+     "w": "have lunch",
+     "ar": "نتناول الغداء",
+     "ex": "We're going to have lunch at my grandma's house."
     },
     {
      "w": "go sightseeing",
@@ -3512,14 +3564,14 @@
      "ex": "On Friday morning we're going to go sightseeing in the old town."
     },
     {
-     "w": "go out",
-     "ar": "يخرج (للتنزّه)",
-     "ex": "Are we going to go out in the evening?"
+     "w": "show you around",
+     "ar": "أعرّفك على المكان",
+     "ex": "I'm going to show you around Jeddah."
     },
     {
-     "w": "this weekend",
-     "ar": "عطلة نهاية هذا الأسبوع",
-     "ex": "This weekend is going to be great!"
+     "w": "the old town",
+     "ar": "البلدة القديمة",
+     "ex": "Al-Balad is the old town in Jeddah."
     }
    ],
    "dialogue": [
@@ -3529,7 +3581,7 @@
     },
     {
      "s": "B",
-     "t": "On Friday morning, we're going to go sightseeing."
+     "t": "I'm going to show you around! On Friday morning, we're going to go sightseeing in the old town."
     },
     {
      "s": "A",
@@ -3576,9 +3628,9 @@
      "ex": "Can you come over after school on Thursday?"
     },
     {
-     "w": "board game",
-     "ar": "لعبة لوحية",
-     "ex": "We're going to play board games after lunch."
+     "w": "chess set",
+     "ar": "رقعة الشطرنج",
+     "ex": "Would you like to bring your new chess set?"
     },
     {
      "w": "ask my parents",
@@ -3610,7 +3662,7 @@
     },
     {
      "s": "A",
-     "t": "OK. It's at four o'clock."
+     "t": "OK. It's at four. Bring your chess set!"
     },
     {
      "s": "B",
@@ -3788,9 +3840,9 @@
      "ex": "Can I bring my telescope?"
     },
     {
-     "w": "campfire",
-     "ar": "نار المخيّم",
-     "ex": "We're going to sit around the campfire."
+     "w": "telescope",
+     "ar": "تلسكوب",
+     "ex": "Can I bring my telescope to look at the stars?"
     },
     {
      "w": "stars",
@@ -3926,14 +3978,14 @@
      "ex": "The place is Classroom 6B."
     },
     {
-     "w": "I'd love to.",
-     "ar": "يسعدني ذلك",
-     "ex": "I'd love to come to your party!"
+     "w": "end-of-year party",
+     "ar": "حفلة نهاية العام",
+     "ex": "You're invited to our end-of-year party!"
     },
     {
-     "w": "I'm afraid I can't.",
-     "ar": "أخشى أنني لا أستطيع",
-     "ex": "I'm afraid I can't come. We're going to be in Abu Dhabi."
+     "w": "Read it to me",
+     "ar": "اقرأها لي",
+     "ex": "Read it to me, please. I want to hear it."
     }
    ],
    "dialogue": [
@@ -3990,9 +4042,9 @@
      "ex": "The journey from Riyadh to Dammam takes about four hours."
     },
     {
-     "w": "tired",
-     "ar": "متعَب",
-     "ex": "I'm tired because I got up at five."
+     "w": "halfway",
+     "ar": "في منتصف الطريق",
+     "ex": "We're only halfway. Two more hours!"
     },
     {
      "w": "because",
@@ -4012,7 +4064,7 @@
     },
     {
      "s": "B",
-     "t": "About four hours."
+     "t": "About four hours. We're only halfway."
     },
     {
      "s": "A",
@@ -4118,9 +4170,9 @@
      "ex": "I'm worried about my maths test."
     },
     {
-     "w": "relaxed",
-     "ar": "مرتاح / هادئ",
-     "ex": "I was relaxed because I went to bed early."
+     "w": "slept well",
+     "ar": "نمتُ جيداً",
+     "ex": "I slept well, so I felt calm in the test."
     },
     {
      "w": "revise",
@@ -4162,7 +4214,7 @@
     },
     {
      "s": "A",
-     "t": "Go to bed early, so you feel relaxed."
+     "t": "Go to bed early, so you sleep well."
     },
     {
      "s": "B",
@@ -4340,14 +4392,14 @@
      "ex": "Can you read your feelings diary to the class?"
     },
     {
-     "w": "excited",
-     "ar": "متحمّس",
-     "ex": "I was excited because we had a new science teacher."
+     "w": "storm",
+     "ar": "عاصفة",
+     "ex": "There was a big storm on Tuesday night."
     },
     {
-     "w": "bored",
-     "ar": "يشعر بالملل",
-     "ex": "I felt bored because we couldn't play outside."
+     "w": "thunder",
+     "ar": "الرعد",
+     "ex": "The thunder was very loud."
     }
    ],
    "dialogue": [
@@ -4361,7 +4413,7 @@
     },
     {
      "s": "A",
-     "t": "And on Tuesday?"
+     "t": "And on Tuesday? Was there a storm?"
     },
     {
      "s": "B",
@@ -4414,9 +4466,9 @@
      "ex": "Do I have to put up my hand to speak?"
     },
     {
-     "w": "break time",
-     "ar": "وقت الفسحة",
-     "ex": "At break time, we can play outside."
+     "w": "gates",
+     "ar": "البوّابات",
+     "ex": "You mustn't be late because the gates close."
     }
    ],
    "dialogue": [
@@ -4478,9 +4530,9 @@
      "ex": "My bedtime is nine o'clock on school days."
     },
     {
-     "w": "take out the rubbish",
-     "ar": "يُخرج القمامة",
-     "ex": "I have to take out the rubbish every evening."
+     "w": "Lucky you!",
+     "ar": "محظوظ!",
+     "ex": "I don't have to cook. — Lucky you!"
     },
     {
      "w": "pocket money",
@@ -4572,7 +4624,7 @@
     },
     {
      "s": "B",
-     "t": "Because the water isn't deep."
+     "t": "Because the water isn't deep. If you dive here, you hit the bottom."
     },
     {
      "s": "A",
@@ -4581,15 +4633,23 @@
     {
      "s": "B",
      "t": "No! You mustn't run. The floor is slippery."
+    },
+    {
+     "s": "A",
+     "t": "Sorry! What does the whistle mean?"
+    },
+    {
+     "s": "B",
+     "t": "When the lifeguard blows it, everyone gets out."
     }
    ],
    "grammar": {
-    "title": "must / mustn't",
-    "ar": "must تعني أنّ القاعدة مهمّة جداً، وmustn't تعني ممنوع. لا نضع to بعد must.",
+    "title": "must / mustn't + If / When … (rules and facts)",
+    "ar": "must = قاعدة مهمّة، mustn't = ممنوع. وللقواعد والحقائق التي تحدث دائماً نستخدم If أو When + المضارع البسيط، ثم المضارع البسيط (الشرط الصفري): If you dive here, you hit the bottom.",
     "examples": [
      "You must listen to the lifeguard.",
-     "You mustn't run.",
-     "You must wear a swimming hat."
+     "If the floor is wet, it's slippery, so you mustn't run.",
+     "When the lifeguard blows the whistle, everyone gets out."
     ]
    }
   },
@@ -4656,9 +4716,9 @@
     "title": "Do I have to …?",
     "ar": "للسؤال: Do I / Do you have to …? / Does he have to …? والجواب القصير: Yes, you do. / No, you don't.",
     "examples": [
-     "Do I have to wear a seat belt?",
-     "Yes, you do.",
-     "No, you don't have to stay in your seat."
+     "Do I have to wear a seat belt? — Yes, you do.",
+     "No, you don't have to stay in your seat.",
+     "When the seat belt sign is off, you can walk."
     ]
    }
   },
@@ -4685,9 +4745,9 @@
      "ex": "You mustn't touch the ball with your hands."
     },
     {
-     "w": "team",
-     "ar": "فريق",
-     "ex": "There are two teams in a football match."
+     "w": "goalkeeper",
+     "ar": "حارس المرمى",
+     "ex": "Only the goalkeeper can touch the ball with his hands."
     },
     {
      "w": "foul",
@@ -4710,7 +4770,7 @@
     },
     {
      "s": "B",
-     "t": "That's a foul. The referee stops the game."
+     "t": "That's a foul. If you push, the referee stops the game."
     },
     {
      "s": "A",
@@ -4722,12 +4782,12 @@
     }
    ],
    "grammar": {
-    "title": "mustn't or don't have to?",
-    "ar": "mustn't = ممنوع. don't have to = غير ضروري، ويمكنك أن تختار.",
+    "title": "mustn't or don't have to? + If …, … (zero conditional)",
+    "ar": "mustn't = ممنوع. don't have to = غير ضروري. ولنقول ما يحدث دائماً عند كسر القاعدة: If + المضارع البسيط، ثم المضارع البسيط.",
     "examples": [
      "You mustn't touch the ball with your hands.",
      "You don't have to run all the time.",
-     "You have to work with your team."
+     "If you touch the ball with your hands, it's a foul."
     ]
    }
   },
@@ -4754,14 +4814,14 @@
      "ex": "Everyone has to respect other people's ideas."
     },
     {
-     "w": "have to",
-     "ar": "يجب عليه / مضطرّ إلى",
-     "ex": "Members have to come on time."
+     "w": "reading club",
+     "ar": "نادي القراءة",
+     "ex": "Let's write the rules for our reading club."
     },
     {
-     "w": "mustn't",
-     "ar": "ممنوع أن …",
-     "ex": "They mustn't write in the library books."
+     "w": "meeting",
+     "ar": "اجتماع",
+     "ex": "The meeting is only thirty minutes."
     }
    ],
    "dialogue": [
@@ -4873,12 +4933,13 @@
      "We're",
      "going",
      "to",
-     "visit",
-     "my",
-     "uncle's",
-     "farm."
+     "do",
+     "something",
+     "special",
+     "next",
+     "weekend."
     ],
-    "answer": "We're going to visit my uncle's farm.",
+    "answer": "We're going to do something special next weekend.",
     "ar": "رتّب الجملة"
    },
    {
@@ -4982,12 +5043,12 @@
    },
    {
     "type": "mc",
-    "q": "We're going to put balloons and lights in the room. We're going to ___ it.",
+    "q": "Let's make a card for Mum! — ___",
     "options": [
-     "decorate",
-     "bake",
-     "keep",
-     "feed"
+     "Great idea!",
+     "Excuse me.",
+     "Bad luck.",
+     "Never mind."
     ],
     "answer": 0
    }
@@ -5238,14 +5299,14 @@
    },
    {
     "type": "mc",
-    "q": "Ludo is a game you play on a table. It's a ___ game.",
+    "q": "The black and white board and pieces for chess are a ___.",
     "options": [
-     "video",
-     "race",
-     "board",
-     "ball"
+     "chess set",
+     "ball",
+     "racket",
+     "kite"
     ],
-    "answer": 2
+    "answer": 0
    }
   ],
   "1-1": [
@@ -5406,7 +5467,7 @@
     "q": "A small house made of cloth for sleeping outside is a ___.",
     "options": [
      "picnic",
-     "campfire",
+     "telescope",
      "garden",
      "tent"
     ],
@@ -5559,15 +5620,14 @@
    {
     "type": "order",
     "words": [
+     "We're",
+     "only",
+     "halfway,",
+     "so",
      "I'm",
-     "tired",
-     "because",
-     "I",
-     "got",
-     "up",
-     "early."
+     "bored."
     ],
-    "answer": "I'm tired because I got up early.",
+    "answer": "We're only halfway, so I'm bored.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5977,12 +6037,12 @@
    },
    {
     "type": "mc",
-    "q": "The short time between lessons to eat and play is ___.",
+    "q": "The school ___ close at seven, so don't be late!",
     "options": [
-     "break time",
-     "bedtime",
-     "homework",
-     "uniform"
+     "gates",
+     "uniforms",
+     "lessons",
+     "phones"
     ],
     "answer": 0
    }
@@ -6083,14 +6143,14 @@
    },
    {
     "type": "mc",
-    "q": "You ___ wear a swimming hat in this pool.",
+    "q": "If you heat ice, it ___.",
     "options": [
-     "must to",
-     "musts",
-     "must",
-     "mustn't to"
+     "melts",
+     "melted",
+     "melting",
+     "to melt"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6197,15 +6257,16 @@
    {
     "type": "order",
     "words": [
-     "You",
-     "have",
-     "to",
-     "work",
-     "with",
-     "your",
-     "team."
+     "If",
+     "you",
+     "push",
+     "a",
+     "player,",
+     "it's",
+     "a",
+     "foul."
     ],
-    "answer": "You have to work with your team.",
+    "answer": "If you push a player, it's a foul.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6214,7 +6275,7 @@
     "options": [
      "goalkeeper",
      "referee",
-     "team",
+     "member",
      "guest"
     ],
     "answer": 1
@@ -6783,14 +6844,14 @@
     {
      "type": "order",
      "words": [
-      "You",
-      "mustn't",
-      "run",
-      "near",
-      "the",
-      "pool."
+      "If",
+      "you",
+      "heat",
+      "ice,",
+      "it",
+      "melts."
      ],
-     "answer": "You mustn't run near the pool.",
+     "answer": "If you heat ice, it melts.",
      "ar": "رتّب الجملة"
     },
     {
