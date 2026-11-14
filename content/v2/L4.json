@@ -918,11 +918,11 @@
      "frame": "The girl is buying a ___ ice cream."
     },
     {
-     "w": "taking photos",
-     "emoji": "📷",
-     "def": "using a phone to make pictures",
-     "ar": "يلتقط صوراً",
-     "frame": "A man is taking photos of the ___."
+     "w": "watching a show",
+     "emoji": "🎭",
+     "def": "looking at people who sing, dance or act",
+     "ar": "يشاهدون عرضاً",
+     "frame": "In the picture, ___ are watching a show."
     }
    ],
    "dialogue": {
@@ -1015,7 +1015,10 @@
      "Which show do you want to watch?"
     ]
    },
-   "exit": "Describe a busy place to me in two sentences. Start with 'In the picture, …'."
+   "exit": "Describe a busy place to me in two sentences. Start with 'In the picture, …'.",
+   "recycle": [
+    "taking photos"
+   ]
   },
   "1-0": {
    "objective": "Today you will say how often you do things in your week.",
@@ -1050,11 +1053,11 @@
      "frame": "I never ___ at night."
     },
     {
-     "w": "play outside",
-     "emoji": "⚽",
-     "def": "have fun out of the house",
-     "ar": "يلعب خارج البيت",
-     "frame": "I play outside with ___."
+     "w": "go to the mall",
+     "emoji": "🛍️",
+     "def": "visit a big building with many shops",
+     "ar": "نذهب إلى المول",
+     "frame": "I sometimes go to the mall with ___."
     },
     {
      "w": "visit Grandma",
@@ -1154,7 +1157,10 @@
      "Do you like a big family lunch?"
     ]
    },
-   "exit": "Tell me two things you always or sometimes do in your week."
+   "exit": "Tell me two things you always or sometimes do in your week.",
+   "recycle": [
+    "play outside"
+   ]
   },
   "1-1": {
    "objective": "Today you will ask and answer how often you do sports.",
@@ -1182,11 +1188,11 @@
      "frame": "I go ___ twice a week."
     },
     {
-     "w": "every day",
-     "emoji": "🌞",
-     "def": "on all the days",
-     "ar": "كل يوم",
-     "frame": "I ___ every day."
+     "w": "sports club",
+     "emoji": "🏟️",
+     "def": "a place where people play and learn sports",
+     "ar": "نادٍ رياضي",
+     "frame": "At the sports club, I ___."
     },
     {
      "w": "go swimming",
@@ -1251,7 +1257,7 @@
      },
      {
       "s": "Coach Sam",
-      "t": "Come on Thursday. We play basketball then."
+      "t": "Come to the sports club on Thursday. We play basketball then."
      },
      {
       "s": "Faisal",
@@ -1293,7 +1299,10 @@
      "How often do you want to go there?"
     ]
    },
-   "exit": "Ask me one 'How often …?' question and tell me how often you play a sport."
+   "exit": "Ask me one 'How often …?' question and tell me how often you play a sport.",
+   "recycle": [
+    "every day"
+   ]
   },
   "1-2": {
    "objective": "Today you will talk about how often you and other people use screens.",
@@ -1321,11 +1330,11 @@
      "frame": "I watch cartoons about ___."
     },
     {
-     "w": "at the weekend",
-     "emoji": "📅",
-     "def": "on Friday and Saturday",
-     "ar": "في عطلة نهاية الأسبوع",
-     "frame": "At the weekend, I ___."
+     "w": "after school",
+     "emoji": "🎒",
+     "def": "when the school day finishes",
+     "ar": "بعد المدرسة",
+     "frame": "After school, I often ___."
     },
     {
      "w": "screen",
@@ -1432,7 +1441,10 @@
      "What can you do without a screen?"
     ]
    },
-   "exit": "Tell me how often you and one person in your family use a screen."
+   "exit": "Tell me how often you and one person in your family use a screen.",
+   "recycle": [
+    "at the weekend"
+   ]
   },
   "1-3": {
    "objective": "Today you will talk about your hobbies and how often you do them.",
@@ -1734,18 +1746,18 @@
      "frame": "My friend's answer is ___."
     },
     {
-     "w": "often",
-     "emoji": "🔁",
-     "def": "many times",
-     "ar": "غالباً / كثيراً",
-     "frame": "My friend often ___."
+     "w": "read books",
+     "emoji": "📖",
+     "def": "look at and understand the words in books",
+     "ar": "يقرأ الكتب",
+     "frame": "I like to read books about ___."
     },
     {
-     "w": "never",
-     "emoji": "🚫",
-     "def": "not one time",
-     "ar": "أبداً",
-     "frame": "My friend never ___."
+     "w": "tell the class",
+     "emoji": "🗣️",
+     "def": "say something to all the students in your class",
+     "ar": "يخبر الفصل",
+     "frame": "I can tell the class about ___."
     },
     {
      "w": "most of",
@@ -1845,7 +1857,11 @@
      "Do you want more free time?"
     ]
    },
-   "exit": "Ask me two survey questions with 'How often …?'"
+   "exit": "Ask me two survey questions with 'How often …?'",
+   "recycle": [
+    "often",
+    "never"
+   ]
   },
   "2-0": {
    "objective": "Today you will say where places are in your school and give simple directions.",
@@ -1873,18 +1889,18 @@
      "frame": "Turn right at the ___."
     },
     {
-     "w": "next to",
-     "emoji": "↔️",
-     "def": "very near, at the side of",
-     "ar": "بجانب",
-     "frame": "The library is next to the ___."
+     "w": "go down the stairs",
+     "emoji": "⬇️",
+     "def": "walk to a lower floor",
+     "ar": "انزل الدرج",
+     "frame": "Go down the stairs to the ___."
     },
     {
-     "w": "library",
-     "emoji": "📚",
-     "def": "a room with lots of books",
-     "ar": "المكتبة",
-     "frame": "In the library, I read ___."
+     "w": "canteen",
+     "emoji": "🥪",
+     "def": "a room at school where you buy and eat food",
+     "ar": "المقصف",
+     "frame": "In the canteen, I buy ___."
     },
     {
      "w": "on your left",
@@ -1984,7 +2000,11 @@
      "Is there a garden at your school?"
     ]
    },
-   "exit": "Tell me how to go from your classroom to the library or the canteen."
+   "exit": "Tell me how to go from your classroom to the library or the canteen.",
+   "recycle": [
+    "next to",
+    "library"
+   ]
   },
   "2-1": {
    "objective": "Today you will give directions in a shopping mall.",
@@ -2012,11 +2032,11 @@
      "frame": "Go past the ___."
     },
     {
-     "w": "toy shop",
-     "emoji": "🧸",
-     "def": "a shop that sells toys",
-     "ar": "محل ألعاب",
-     "frame": "In the toy shop, I want a ___."
+     "w": "bookshop",
+     "emoji": "📚",
+     "def": "a shop that sells books",
+     "ar": "مكتبة لبيع الكتب",
+     "frame": "In the bookshop, I want a book about ___."
     },
     {
      "w": "lift",
@@ -2123,7 +2143,10 @@
      "What do you do there?"
     ]
    },
-   "exit": "Tell me where one shop is, using 'between' or 'opposite'."
+   "exit": "Tell me where one shop is, using 'between' or 'opposite'.",
+   "recycle": [
+    "toy shop"
+   ]
   },
   "2-2": {
    "objective": "Today you will give directions in the street.",
@@ -2158,11 +2181,11 @@
      "frame": "The shop is on the corner of ___ Street."
     },
     {
-     "w": "street",
-     "emoji": "🛣️",
-     "def": "a road in a town",
-     "ar": "شارع",
-     "frame": "I live on ___ Street."
+     "w": "I'm lost",
+     "emoji": "😕",
+     "def": "I don't know where I am",
+     "ar": "أنا تائه",
+     "frame": "Excuse me, I'm lost. Where's the ___?"
     },
     {
      "w": "behind",
@@ -2178,7 +2201,7 @@
     "p1": [
      {
       "s": "Mr Brown",
-      "t": "Excuse me. Where's the park, please?"
+      "t": "Excuse me. I'm lost. Where's the park, please?"
      },
      {
       "s": "Omar",
@@ -2262,7 +2285,10 @@
      "What can you see on your street?"
     ]
    },
-   "exit": "Give me directions from your house to a shop near you. Use two steps."
+   "exit": "Give me directions from your house to a shop near you. Use two steps.",
+   "recycle": [
+    "street"
+   ]
   },
   "2-3": {
    "objective": "Today you will give directions with a map at the zoo.",
@@ -2547,18 +2573,18 @@
    "warmup": "Do you like games where you look for things?",
    "expressions": [
     {
-     "w": "first",
-     "emoji": "1️⃣",
-     "def": "before all the others",
-     "ar": "أولاً",
-     "frame": "First, go to the ___."
+     "w": "treasure map",
+     "emoji": "🗺️",
+     "def": "a picture that shows where the treasure is",
+     "ar": "خريطة الكنز",
+     "frame": "On my treasure map, the treasure is ___."
     },
     {
-     "w": "then",
-     "emoji": "➡️",
-     "def": "after that",
-     "ar": "ثم",
-     "frame": "Then turn ___."
+     "w": "Where do I go?",
+     "emoji": "❓",
+     "def": "a question to ask for directions",
+     "ar": "إلى أين أذهب؟",
+     "frame": "I'm at the ___. Where do I go?"
     },
     {
      "w": "treasure",
@@ -2568,25 +2594,25 @@
      "frame": "The treasure is under the ___."
     },
     {
-     "w": "find",
-     "emoji": "🔎",
-     "def": "see something you are looking for",
-     "ar": "يجد",
-     "frame": "Can you find the ___?"
+     "w": "well",
+     "emoji": "🪣",
+     "def": "a deep hole in the ground with water",
+     "ar": "بئر",
+     "frame": "There is a well next to the ___."
     },
     {
-     "w": "under",
-     "emoji": "⬇️",
-     "def": "below something",
-     "ar": "تحت",
-     "frame": "It's under the ___."
+     "w": "big stone",
+     "emoji": "🪨",
+     "def": "a large, hard piece of rock",
+     "ar": "حجر كبير",
+     "frame": "The treasure is under the big ___."
     },
     {
-     "w": "between",
-     "emoji": "↔️",
-     "def": "in the middle of two things",
-     "ar": "بين",
-     "frame": "It's between the ___ and the tree."
+     "w": "chocolates",
+     "emoji": "🍫",
+     "def": "small sweets made of chocolate, often in a box",
+     "ar": "شوكولاتة",
+     "frame": "I like ___ chocolates."
     }
    ],
    "dialogue": {
@@ -2595,7 +2621,7 @@
     "p1": [
      {
       "s": "Lama",
-      "t": "Can you find my treasure, Emma?"
+      "t": "Here's my treasure map, Emma. Can you find the treasure?"
      },
      {
       "s": "Emma",
@@ -2675,7 +2701,14 @@
      "What treasure do you want to find?"
     ]
    },
-   "exit": "Give me three directions to your treasure, with 'First', 'Then' and a place word."
+   "exit": "Give me three directions to your treasure, with 'First', 'Then' and a place word like 'under the big stone'.",
+   "recycle": [
+    "first",
+    "then",
+    "find",
+    "under",
+    "between"
+   ]
   },
   "3-0": {
    "objective": "Today you will ask for and offer help in the kitchen.",
@@ -2828,11 +2861,11 @@
      "frame": "Could you ___, please?"
     },
     {
-     "w": "tidy up",
-     "emoji": "🧹",
-     "def": "put things in the right place",
-     "ar": "يرتّب",
-     "frame": "I tidy up my ___."
+     "w": "Let me show you",
+     "emoji": "🙋",
+     "def": "offer to do something so someone can learn",
+     "ar": "دعني أريك",
+     "frame": "I can't ___. — Let me show you!"
     },
     {
      "w": "pick up",
@@ -2953,7 +2986,10 @@
      "What's the messiest place in your home?"
     ]
    },
-   "exit": "Ask me two polite questions with 'Could you …, please?'"
+   "exit": "Ask me two polite questions with 'Could you …, please?'",
+   "recycle": [
+    "tidy up"
+   ]
   },
   "3-2": {
    "objective": "Today you will offer help with 'Can I help?' and 'Let me …'.",
@@ -3113,11 +3149,11 @@
      "frame": "Could you bring the ___, please?"
     },
     {
-     "w": "dates",
-     "emoji": "🌴",
-     "def": "sweet brown fruit from palm trees",
-     "ar": "تمر",
-     "frame": "I like dates with ___."
+     "w": "at the door",
+     "emoji": "🚪",
+     "def": "near the way into a house",
+     "ar": "عند الباب",
+     "frame": "I welcome my ___ at the door."
     },
     {
      "w": "Arabic coffee",
@@ -3231,7 +3267,10 @@
      "Do you like Arabic coffee or tea?"
     ]
    },
-   "exit": "Our guests are coming! Ask me for one thing with 'Could you …?' and offer one thing with 'Let me …'."
+   "exit": "Our guests are coming! Ask me for one thing with 'Could you …?' and offer one thing with 'Let me …'.",
+   "recycle": [
+    "dates"
+   ]
   },
   "3-4": {
    "objective": "Today you will ask for help with plants and pets and say no politely.",
@@ -3266,11 +3305,11 @@
      "frame": "I sweep the floor in the ___."
     },
     {
-     "w": "busy",
-     "emoji": "🏃",
-     "def": "having lots of things to do",
-     "ar": "مشغول",
-     "frame": "I'm busy because I'm ___."
+     "w": "on the roof",
+     "emoji": "🏠",
+     "def": "on the top of a house",
+     "ar": "على السطح",
+     "frame": "On the roof, there are ___."
     },
     {
      "w": "No problem",
@@ -3366,7 +3405,10 @@
      "What can you do on a roof?"
     ]
    },
-   "exit": "Ask me for help with a plant or a pet, and say no politely to one of my questions."
+   "exit": "Ask me for help with a plant or a pet, and say no politely to one of my questions.",
+   "recycle": [
+    "busy"
+   ]
   },
   "3-5": {
    "objective": "Today you will plan the jobs for Eid and ask for and offer help with each one.",
@@ -3408,11 +3450,11 @@
      "frame": "My job is to ___."
     },
     {
-     "w": "Could you",
-     "emoji": "🙏",
-     "def": "a very polite way to ask",
-     "ar": "هل يمكنك (بأدب)",
-     "frame": "Could you help me ___?"
+     "w": "reach",
+     "emoji": "🙆",
+     "def": "to touch something high with your hand",
+     "ar": "يصل إلى",
+     "frame": "I can't reach the ___."
     }
    ],
    "dialogue": {
@@ -3505,7 +3547,10 @@
      "How do you help your family before Eid?"
     ]
    },
-   "exit": "Tell me two Eid jobs: ask me to do one, and offer to do one."
+   "exit": "Tell me two Eid jobs: ask me to do one, and offer to do one.",
+   "recycle": [
+    "Could you"
+   ]
   }
  },
  "kits": {
@@ -3902,9 +3947,9 @@
      "ex": "My sister is buying a chocolate ice cream."
     },
     {
-     "w": "taking photos",
-     "ar": "يلتقط صوراً",
-     "ex": "Dad is taking photos of the lights."
+     "w": "watching a show",
+     "ar": "يشاهدون عرضاً",
+     "ex": "People are watching a show."
     }
    ],
    "dialogue": [
@@ -3941,7 +3986,7 @@
     "title": "Describing a picture: In the picture, … is/are …ing",
     "ar": "لوصف صورة نقول In the picture ثم الشخص + is/are + الفعل ing.",
     "examples": [
-     "In the picture, a man is taking photos.",
+     "In the picture, people are watching a show.",
      "The children are clapping.",
      "What's happening? People are watching a show."
     ]
@@ -3970,9 +4015,9 @@
      "ex": "I never drink coffee."
     },
     {
-     "w": "play outside",
-     "ar": "يلعب خارج البيت",
-     "ex": "In winter, I play outside with my cousins."
+     "w": "go to the mall",
+     "ar": "نذهب إلى المول",
+     "ex": "I sometimes go to the mall with my sister."
     },
     {
      "w": "visit Grandma",
@@ -4038,9 +4083,9 @@
      "ex": "I go swimming twice a week."
     },
     {
-     "w": "every day",
-     "ar": "كل يوم",
-     "ex": "I run every day."
+     "w": "sports club",
+     "ar": "نادٍ رياضي",
+     "ex": "I swim at the sports club twice a week."
     },
     {
      "w": "go swimming",
@@ -4080,7 +4125,7 @@
     },
     {
      "s": "Coach Sam",
-     "t": "Good! Do you play football?"
+     "t": "Good! Come to the sports club on Thursday."
     }
    ],
    "grammar": {
@@ -4111,9 +4156,9 @@
      "ex": "My sister watches cartoons at the weekend."
     },
     {
-     "w": "at the weekend",
-     "ar": "في عطلة نهاية الأسبوع",
-     "ex": "At the weekend, I play video games."
+     "w": "after school",
+     "ar": "بعد المدرسة",
+     "ex": "After school, I often play video games."
     },
     {
      "w": "screen",
@@ -4330,14 +4375,14 @@
      "ex": "Omar's answer is 'every day'."
     },
     {
-     "w": "often",
-     "ar": "غالباً / كثيراً",
-     "ex": "Sam often reads books."
+     "w": "read books",
+     "ar": "يقرأ الكتب",
+     "ex": "How often do you read books?"
     },
     {
-     "w": "never",
-     "ar": "أبداً",
-     "ex": "Omar never watches TV."
+     "w": "tell the class",
+     "ar": "يخبر الفصل",
+     "ex": "Now I can tell the class about Omar."
     },
     {
      "w": "most of",
@@ -4403,14 +4448,14 @@
      "ex": "Go down the stairs and turn right."
     },
     {
-     "w": "next to",
-     "ar": "بجانب",
-     "ex": "The canteen is next to the playground."
+     "w": "go down the stairs",
+     "ar": "انزل الدرج",
+     "ex": "Go down the stairs and turn right."
     },
     {
-     "w": "library",
-     "ar": "المكتبة",
-     "ex": "Our library is upstairs."
+     "w": "canteen",
+     "ar": "المقصف",
+     "ex": "The canteen is next to the playground."
     },
     {
      "w": "on your left",
@@ -4476,9 +4521,9 @@
      "ex": "Go past the bookshop."
     },
     {
-     "w": "toy shop",
-     "ar": "محل ألعاب",
-     "ex": "The toy shop is on the first floor."
+     "w": "bookshop",
+     "ar": "مكتبة لبيع الكتب",
+     "ex": "The bookshop is on the first floor."
     },
     {
      "w": "lift",
@@ -4554,9 +4599,9 @@
      "ex": "There's a shop on the corner."
     },
     {
-     "w": "street",
-     "ar": "شارع",
-     "ex": "My school is on a big street."
+     "w": "I'm lost",
+     "ar": "أنا تائه",
+     "ex": "Excuse me, I'm lost. Where's the park?"
     },
     {
      "w": "behind",
@@ -4567,7 +4612,7 @@
    "dialogue": [
     {
      "s": "Mr Brown",
-     "t": "Excuse me. Where's the park, please?"
+     "t": "Excuse me. I'm lost. Where's the park, please?"
     },
     {
      "s": "Omar",
@@ -4753,14 +4798,14 @@
   "2-5": {
    "words": [
     {
-     "w": "first",
-     "ar": "أولاً",
-     "ex": "First, go to the big tree."
+     "w": "treasure map",
+     "ar": "خريطة الكنز",
+     "ex": "Here's my treasure map."
     },
     {
-     "w": "then",
-     "ar": "ثم",
-     "ex": "Then turn right."
+     "w": "Where do I go?",
+     "ar": "إلى أين أذهب؟",
+     "ex": "I'm at the tree. Where do I go?"
     },
     {
      "w": "treasure",
@@ -4768,25 +4813,25 @@
      "ex": "Our treasure is a box of chocolates."
     },
     {
-     "w": "find",
-     "ar": "يجد",
-     "ex": "Can you find my treasure?"
+     "w": "well",
+     "ar": "بئر",
+     "ex": "There is an old well on the farm."
     },
     {
-     "w": "under",
-     "ar": "تحت",
-     "ex": "The box is under the stone."
+     "w": "big stone",
+     "ar": "حجر كبير",
+     "ex": "Look under the big stone."
     },
     {
-     "w": "between",
-     "ar": "بين",
-     "ex": "Go between the well and the tent."
+     "w": "chocolates",
+     "ar": "شوكولاتة",
+     "ex": "The treasure is a box of chocolates."
     }
    ],
    "dialogue": [
     {
      "s": "Lama",
-     "t": "Can you find my treasure, Emma?"
+     "t": "Here's my treasure map, Emma. Can you find the treasure?"
     },
     {
      "s": "Emma",
@@ -4811,6 +4856,10 @@
     {
      "s": "Lama",
      "t": "No. Look behind the tent, under the big stone."
+    },
+    {
+     "s": "Emma",
+     "t": "Here it is! Chocolates!"
     }
    ],
    "grammar": {
@@ -4904,9 +4953,9 @@
      "ex": "Could you help me, please?"
     },
     {
-     "w": "tidy up",
-     "ar": "يرتّب",
-     "ex": "I tidy up my room on Saturday."
+     "w": "Let me show you",
+     "ar": "دعني أريك",
+     "ex": "Let me show you. Look!"
     },
     {
      "w": "pick up",
@@ -5055,9 +5104,9 @@
      "ex": "Could you bring the dates, please?"
     },
     {
-     "w": "dates",
-     "ar": "تمر",
-     "ex": "Grandpa loves dates."
+     "w": "at the door",
+     "ar": "عند الباب",
+     "ex": "Reem welcomes the guests at the door."
     },
     {
      "w": "Arabic coffee",
@@ -5103,6 +5152,10 @@
     {
      "s": "Dad",
      "t": "No, it's very hot. Let me make it."
+    },
+    {
+     "s": "Reem",
+     "t": "Can I welcome the guests at the door?"
     }
    ],
    "grammar": {
@@ -5138,9 +5191,9 @@
      "ex": "Mum sweeps the kitchen floor."
     },
     {
-     "w": "busy",
-     "ar": "مشغول",
-     "ex": "Sorry, I'm busy. I'm doing my homework."
+     "w": "on the roof",
+     "ar": "على السطح",
+     "ex": "Our plants are on the roof."
     },
     {
      "w": "No problem",
@@ -5216,9 +5269,9 @@
      "ex": "My job is to decorate the door."
     },
     {
-     "w": "Could you",
-     "ar": "هل يمكنك (بأدب)",
-     "ex": "Could you help me with the balloons?"
+     "w": "reach",
+     "ar": "يصل إلى",
+     "ex": "I can't reach the top. Let me get a chair."
     }
    ],
    "dialogue": [
@@ -5249,6 +5302,10 @@
     {
      "s": "Faisal",
      "t": "Mum, can you help me? I can't reach the top."
+    },
+    {
+     "s": "Mum",
+     "t": "Let me get a chair."
     }
    ],
    "grammar": {
@@ -5618,10 +5675,12 @@
     "words": [
      "We",
      "sometimes",
-     "play",
-     "outside."
+     "go",
+     "to",
+     "the",
+     "mall."
     ],
-    "answer": "We sometimes play outside.",
+    "answer": "We sometimes go to the mall.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5688,19 +5747,19 @@
     "options": [
      "twice a week",
      "once a week",
-     "every day"
+     "three times a day"
     ],
     "answer": 0
    },
    {
     "type": "mc",
-    "q": "How often do you play football?",
+    "q": "Where do you play basketball?",
     "options": [
-     "Yes, I do.",
-     "At the club.",
-     "Every day."
+     "At the sports club.",
+     "Twice a week.",
+     "Yes, I do."
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5901,12 +5960,14 @@
    {
     "type": "order",
     "words": [
-     "She",
-     "never",
-     "watches",
-     "TV."
+     "Now",
+     "I",
+     "can",
+     "tell",
+     "the",
+     "class."
     ],
-    "answer": "She never watches TV.",
+    "answer": "Now I can tell the class.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5958,27 +6019,26 @@
    {
     "type": "order",
     "words": [
-     "The",
-     "library",
-     "is",
-     "next",
+     "Go",
+     "down",
+     "the",
+     "stairs",
      "to",
      "the",
-     "art",
-     "room."
+     "canteen."
     ],
-    "answer": "The library is next to the art room.",
+    "answer": "Go down the stairs to the canteen.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "A room with lots of books is a ___.",
+    "q": "At school, you buy food in the ___.",
     "options": [
      "canteen",
      "library",
      "playground"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6244,14 +6304,13 @@
    {
     "type": "order",
     "words": [
-     "First,",
-     "go",
-     "to",
+     "Look",
+     "at",
      "the",
-     "big",
-     "tree."
+     "treasure",
+     "map."
     ],
-    "answer": "First, go to the big tree.",
+    "answer": "Look at the treasure map.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6279,11 +6338,11 @@
    },
    {
     "type": "mc",
-    "q": "Gold or nice things people look for = ___.",
+    "q": "A deep hole in the ground with water = a ___.",
     "options": [
      "map",
      "path",
-     "treasure"
+     "well"
     ],
     "answer": 2
    },
@@ -6385,7 +6444,7 @@
    },
    {
     "type": "mc",
-    "q": "Could you tidy up your room?",
+    "q": "Could you put away your toys?",
     "options": [
      "Of course.",
      "Yes, I am.",
@@ -6520,13 +6579,13 @@
    },
    {
     "type": "mc",
-    "q": "Sweet brown fruit from palm trees = ___.",
+    "q": "The guests are here! Reem says hello ___.",
     "options": [
-     "coffee",
-     "dates",
-     "juice"
+     "at the door",
+     "on the roof",
+     "under the bed"
     ],
-    "answer": 1
+    "answer": 0
    }
   ],
   "3-4": [
@@ -6552,9 +6611,11 @@
      "I",
      "can't.",
      "I'm",
-     "busy."
+     "doing",
+     "my",
+     "homework."
     ],
-    "answer": "Sorry, I can't. I'm busy.",
+    "answer": "Sorry, I can't. I'm doing my homework.",
     "ar": "رتّب الجملة"
    },
    {
