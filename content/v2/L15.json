@@ -46,7 +46,7 @@
     [
      "Make Your Case",
      "Make the case for a change in your city, supporting it with evidence and answering objections",
-     "Research suggests that … / It is estimated that … / If we weigh up the evidence, …"
+     "Research suggests that … / It is estimated that … / On the strength of the evidence, …"
     ]
    ]
   },
@@ -69,9 +69,9 @@
      "I am writing to enquire about … / I look forward to hearing from you. / Just a quick message to …"
     ],
     [
-     "Put Off or Postpone?",
+     "Push Back or Postpone?",
      "Give the same news formally and informally, choosing formal verbs or phrasal verbs",
-     "We regret to inform you that … has been postponed. / They've put it off. / I'll get in touch."
+     "We regret to inform you that … has been postponed. / They've pushed it back. / I'll get in touch."
     ],
     [
      "In the Majlis",
@@ -86,12 +86,12 @@
     [
      "Sorry About That!",
      "Apologise formally to a teacher and informally to a friend for the same mistake",
-     "Please accept my apologies for … / I apologise for any inconvenience caused. / My bad! / I'll make it up to you."
+     "Please accept my apologies for … / I apologise for any inconvenience caused. / My bad! / … is on me."
     ],
     [
      "Same Message, Two Ways",
      "Deliver the same invitation to an adult guest and to your friends, in two different registers",
-     "On behalf of … / We would be delighted if … / Fancy …ing? / It'd be great if …"
+     "On behalf of … / We would be delighted if … / Are you up for …ing? / It'd be great if …"
     ]
    ]
   },
@@ -111,7 +111,7 @@
     [
      "The Canteen Queue",
      "Propose and discuss solutions to long queues in the school canteen",
-     "It might be worth …ing / What if we …? / That could work, but …"
+     "It might be worth …ing / Supposing we …? / That could work, but …"
     ],
     [
      "Balancing the Budget",
@@ -136,7 +136,7 @@
     [
      "The Full Meeting",
      "Take part in a full meeting to solve a problem in your neighbourhood, from proposals to a final decision",
-     "It might be worth … / What if we …? / The beauty of … / To recap, … / Have we reached a consensus?"
+     "It might be worth … / What if we …? / The main selling point of … / To recap, … / Have we reached a consensus?"
     ]
    ]
   },
@@ -156,7 +156,7 @@
     [
      "Someone Who Inspired Me",
      "Describe a person who has inspired you in a long, well-organised answer",
-     "The person I've chosen to talk about is … / I've always looked up to … / …, which meant that …"
+     "The person I've chosen to talk about is … / I've always thought the world of … / …, which meant that …"
     ],
     [
      "A Place I'd Love to Visit",
@@ -166,12 +166,12 @@
     [
      "A Time I Helped Someone",
      "Tell the story of a time you helped someone and reflect on how you felt",
-     "At the time, … / Out of the blue, … / …, which meant that … / Looking back, …"
+     "At the time, … / Without warning, … / …, which meant that … / Looking back, …"
     ],
     [
      "Bigger Questions",
      "Answer abstract Part 3 questions about role models, balancing your answers with contrasts",
-     "To some extent, … / Having said that, … / By contrast, … / It's not that …, it's just that …"
+     "To a certain degree, … / Having said that, … / By contrast, … / It's not that …, it's just that …"
     ],
     [
      "Then and Now",
@@ -181,7 +181,7 @@
     [
      "The Full Long Turn",
      "Complete a full IELTS-style Part 2 long turn and answer Part 3 questions",
-     "The skill I'd most like to pick up is … / …, which meant that … / Having said that, … / To wrap up, …"
+     "The skill I'd most like to pick up is … / …, which meant that … / All the same, … / To round things off, …"
     ]
    ]
   }
@@ -190,44 +190,6 @@
   "0-0": {
    "objective": "Today you will support a claim about sleep and school performance with evidence.",
    "warmup": "How many hours do you usually sleep on a school night? Is it enough?",
-   "expressions": [
-    {
-     "w": "according to",
-     "def": "as stated by a person, study or organisation",
-     "ar": "وفقاً لـ / حسب",
-     "frame": "According to ___, teenagers need more sleep than adults."
-    },
-    {
-     "w": "research suggests that",
-     "def": "studies show that something is probably true",
-     "ar": "تشير الأبحاث إلى أنّ",
-     "frame": "Research suggests that ___ improves concentration."
-    },
-    {
-     "w": "there is strong evidence that",
-     "def": "many facts clearly show that something is true",
-     "ar": "هناك أدلة قوية على أنّ",
-     "frame": "There is strong evidence that ___ is good for the brain."
-    },
-    {
-     "w": "lack of sleep",
-     "def": "not having enough sleep",
-     "ar": "قلّة النوم",
-     "frame": "Lack of sleep can make it hard to ___."
-    },
-    {
-     "w": "a reliable source",
-     "def": "a person or place you can trust for information",
-     "ar": "مصدر موثوق",
-     "frame": "___ is a reliable source of health information."
-    },
-    {
-     "w": "have an impact on",
-     "def": "to have a strong effect on something",
-     "ar": "يؤثّر في",
-     "frame": "Sleep has a big impact on ___."
-    }
-   ],
    "dialogue": {
     "scene": "Reem finds her brother Khalid revising at one o'clock in the morning before an exam.",
     "p1": [
@@ -259,7 +221,7 @@
      },
      {
       "s": "Khalid",
-      "t": "Where did you read that? It could be some random website."
+      "t": "Where did you read that? Can you cite a source, or is it some random website?"
      },
      {
       "s": "Reem",
@@ -305,7 +267,48 @@
      "What else could schools do to help students get enough sleep?"
     ]
    },
-   "exit": "Make a claim about sleep and support it with two pieces of evidence."
+   "exit": "Make a claim about sleep and support it with two pieces of evidence.",
+   "expressions": [
+    {
+     "w": "cite a source",
+     "def": "to name where your information comes from",
+     "ar": "يذكر المصدر",
+     "frame": "If you want people to believe you, cite a source such as ___."
+    },
+    {
+     "w": "research suggests that",
+     "def": "studies show that something is probably true",
+     "ar": "تشير الأبحاث إلى أنّ",
+     "frame": "Research suggests that ___ improves concentration."
+    },
+    {
+     "w": "there is strong evidence that",
+     "def": "many facts clearly show that something is true",
+     "ar": "هناك أدلة قوية على أنّ",
+     "frame": "There is strong evidence that ___ is good for the brain."
+    },
+    {
+     "w": "lack of sleep",
+     "def": "not having enough sleep",
+     "ar": "قلّة النوم",
+     "frame": "Lack of sleep can make it hard to ___."
+    },
+    {
+     "w": "a reliable source",
+     "def": "a person or place you can trust for information",
+     "ar": "مصدر موثوق",
+     "frame": "___ is a reliable source of health information."
+    },
+    {
+     "w": "have an impact on",
+     "def": "to have a strong effect on something",
+     "ar": "يؤثّر في",
+     "frame": "Sleep has a big impact on ___."
+    }
+   ],
+   "recycle": [
+    "according to"
+   ]
   },
   "0-1": {
    "objective": "Today you will report and question the claims made in adverts, using what experts say.",
@@ -546,44 +549,6 @@
   "0-3": {
    "objective": "Today you will use figures and survey results to support a claim about young people and sport.",
    "warmup": "How many of your friends do sport every week? Has that changed?",
-   "expressions": [
-    {
-     "w": "the figures indicate that",
-     "def": "the numbers show that something is probably true",
-     "ar": "تشير الأرقام إلى أنّ",
-     "frame": "The figures indicate that more teenagers are ___."
-    },
-    {
-     "w": "a significant proportion of",
-     "def": "a large enough part of a group to be important",
-     "ar": "نسبة كبيرة من",
-     "frame": "A significant proportion of my classmates ___."
-    },
-    {
-     "w": "be linked to",
-     "def": "to be connected with something",
-     "ar": "مرتبط بـ",
-     "frame": "Regular exercise is linked to ___."
-    },
-    {
-     "w": "a growing body of evidence",
-     "def": "more and more research showing the same thing",
-     "ar": "عدد متزايد من الأدلة",
-     "frame": "There is a growing body of evidence that ___."
-    },
-    {
-     "w": "survey",
-     "def": "a set of questions asked to many people",
-     "ar": "استطلاع / استبيان",
-     "frame": "We could do a survey to find out ___."
-    },
-    {
-     "w": "draw a conclusion",
-     "def": "to decide what is true after looking at the facts",
-     "ar": "يستنتج / يخرج باستنتاج",
-     "frame": "From these results, I'd draw the conclusion that ___."
-    }
-   ],
    "dialogue": {
     "scene": "Lama and Grace are presenting the results of a survey they did at their own school about sport.",
     "p1": [
@@ -611,7 +576,7 @@
      },
      {
       "s": "Grace",
-      "t": "Of course, our survey was small, so we must be careful."
+      "t": "Of course, 200 students isn't a representative sample of all teenagers, so we must be careful."
      },
      {
       "s": "Lama",
@@ -657,7 +622,48 @@
      "What sports facility would you like your area to have?"
     ]
    },
-   "exit": "Make a claim about young people and support it with a number or a survey result."
+   "exit": "Make a claim about young people and support it with a number or a survey result.",
+   "expressions": [
+    {
+     "w": "the figures indicate that",
+     "def": "the numbers show that something is probably true",
+     "ar": "تشير الأرقام إلى أنّ",
+     "frame": "The figures indicate that more teenagers are ___."
+    },
+    {
+     "w": "a significant proportion of",
+     "def": "a large enough part of a group to be important",
+     "ar": "نسبة كبيرة من",
+     "frame": "A significant proportion of my classmates ___."
+    },
+    {
+     "w": "be linked to",
+     "def": "to be connected with something",
+     "ar": "مرتبط بـ",
+     "frame": "Regular exercise is linked to ___."
+    },
+    {
+     "w": "a growing body of evidence",
+     "def": "more and more research showing the same thing",
+     "ar": "عدد متزايد من الأدلة",
+     "frame": "There is a growing body of evidence that ___."
+    },
+    {
+     "w": "a representative sample",
+     "def": "a group whose results reflect the whole population",
+     "ar": "عيّنة تمثيلية",
+     "frame": "To get a representative sample of ___, we would need to ask …"
+    },
+    {
+     "w": "draw a conclusion",
+     "def": "to decide what is true after looking at the facts",
+     "ar": "يستنتج / يخرج باستنتاج",
+     "frame": "From these results, I'd draw the conclusion that ___."
+    }
+   ],
+   "recycle": [
+    "survey"
+   ]
   },
   "0-4": {
    "objective": "Today you will report what experts and reports say about clothes waste, using different reporting verbs.",
@@ -778,44 +784,6 @@
   "0-5": {
    "objective": "Today you will make the case for a change in your city, supporting it with evidence and answering objections.",
    "warmup": "If you could change one thing in your city, what would it be?",
-   "expressions": [
-    {
-     "w": "based on evidence",
-     "def": "supported by facts, not just opinion",
-     "ar": "مبني على الأدلة",
-     "frame": "My opinion about ___ is based on evidence."
-    },
-    {
-     "w": "research suggests that",
-     "def": "studies show that something is probably true",
-     "ar": "تشير الأبحاث إلى أنّ",
-     "frame": "Research suggests that ___ makes cities healthier."
-    },
-    {
-     "w": "it is estimated that",
-     "def": "experts have calculated that something is roughly true",
-     "ar": "يُقدَّر أنّ",
-     "frame": "It is estimated that most car journeys in cities are ___."
-    },
-    {
-     "w": "anecdotal evidence",
-     "def": "information from personal stories, not from research",
-     "ar": "أدلة قصصية / شخصية",
-     "frame": "My evidence about ___ is only anecdotal."
-    },
-    {
-     "w": "a strong argument",
-     "def": "a reason that is very convincing",
-     "ar": "حجّة قوية",
-     "frame": "A strong argument for ___ is that …"
-    },
-    {
-     "w": "weigh up",
-     "def": "to think carefully about facts before deciding",
-     "ar": "يوازن / يقيّم",
-     "frame": "We need to weigh up the evidence before we ___."
-    }
-   ],
    "dialogue": {
     "scene": "Faisal and Majed are taking part in a youth council discussion about whether their city should build more cycle lanes.",
     "p1": [
@@ -829,11 +797,11 @@
      },
      {
       "s": "Faisal",
-      "t": "It's a fair point, but it is estimated that many car journeys in cities are shorter than five kilometres."
+      "t": "It's a fair point, but even a rough estimate shows that many car journeys in cities are shorter than five kilometres."
      },
      {
       "s": "Majed",
-      "t": "Is that based on evidence from Saudi cities, though, or from Europe?"
+      "t": "Do you have concrete proof from Saudi cities, though, or is it from Europe?"
      }
     ],
     "p2": [
@@ -847,11 +815,11 @@
      },
      {
       "s": "Faisal",
-      "t": "Exactly. If we weigh up the evidence, the benefits for health and traffic are clear."
+      "t": "Exactly. On the strength of the evidence, the benefits for health and traffic are clear."
      },
      {
       "s": "Majed",
-      "t": "All right, I'm convinced, as long as the lanes have trees and good lighting."
+      "t": "All right, your case is based on evidence, so I'm convinced, as long as the lanes have trees and good lighting."
      }
     ],
     "focus": "Research suggests that people cycle more when they feel safe from traffic.",
@@ -873,7 +841,7 @@
      },
      {
       "q": "Some people say it's too expensive. How do you respond?",
-      "hint": "Weigh up the costs and benefits and finish with your strongest argument."
+      "hint": "Compare the costs and benefits and finish with your strongest argument."
      }
     ]
    },
@@ -889,7 +857,50 @@
      "What would make walking or cycling more popular in hot weather?"
     ]
    },
-   "exit": "Make the case for a change in your school with two pieces of evidence and two different reporting phrases."
+   "exit": "Make the case for a change in your school with two pieces of evidence and two different reporting phrases.",
+   "expressions": [
+    {
+     "w": "based on evidence",
+     "def": "supported by facts, not just opinion",
+     "ar": "مبني على الأدلة",
+     "frame": "My opinion about ___ is based on evidence."
+    },
+    {
+     "w": "concrete proof",
+     "def": "clear facts that show something is definitely true",
+     "ar": "دليل ملموس",
+     "frame": "Do you have concrete proof that ___?"
+    },
+    {
+     "w": "a rough estimate",
+     "def": "a number that is close but not exact",
+     "ar": "تقدير تقريبي",
+     "frame": "A rough estimate of ___ would be …"
+    },
+    {
+     "w": "anecdotal evidence",
+     "def": "information from personal stories, not from research",
+     "ar": "أدلة قصصية / شخصية",
+     "frame": "My evidence about ___ is only anecdotal."
+    },
+    {
+     "w": "a strong argument",
+     "def": "a reason that is very convincing",
+     "ar": "حجّة قوية",
+     "frame": "A strong argument for ___ is that …"
+    },
+    {
+     "w": "on the strength of",
+     "def": "because of; using something as your reason",
+     "ar": "بناءً على / استناداً إلى",
+     "frame": "On the strength of ___, I think we should …"
+    }
+   ],
+   "recycle": [
+    "research suggests that",
+    "it is estimated that",
+    "weigh up"
+   ]
   },
   "1-0": {
    "objective": "Today you will begin and end a formal email and an informal message in the right register.",
@@ -1014,44 +1025,6 @@
   "1-1": {
    "objective": "Today you will give the same news formally and informally, choosing formal verbs or phrasal verbs.",
    "warmup": "Has a trip or event at your school ever been cancelled or moved? What happened?",
-   "expressions": [
-    {
-     "w": "postpone",
-     "def": "(formal) to move an event to a later time",
-     "ar": "يؤجّل",
-     "frame": "The ___ has been postponed until next week."
-    },
-    {
-     "w": "put off",
-     "def": "(informal) to delay something until later",
-     "ar": "يؤجّل (غير رسمي)",
-     "frame": "I always put off ___ until the last minute."
-    },
-    {
-     "w": "get in touch",
-     "def": "(informal) to contact someone",
-     "ar": "يتواصل",
-     "frame": "I'll get in touch with ___ tomorrow."
-    },
-    {
-     "w": "for further information",
-     "def": "(formal) if you want to know more",
-     "ar": "لمزيد من المعلومات",
-     "frame": "For further information, please contact ___."
-    },
-    {
-     "w": "We regret to inform you that",
-     "def": "(formal) a polite way to give bad news",
-     "ar": "نأسف لإبلاغكم بأنّ",
-     "frame": "We regret to inform you that ___."
-    },
-    {
-     "w": "in due course",
-     "def": "(formal) later, at the right time",
-     "ar": "في الوقت المناسب",
-     "frame": "A new date for the ___ will be announced in due course."
-    }
-   ],
    "dialogue": {
     "scene": "Mr Adel makes an announcement at school. Later, Majed tells his friend Chris the news on the phone.",
     "p1": [
@@ -1079,7 +1052,7 @@
      },
      {
       "s": "Majed",
-      "t": "Nope, they've put it off because of the sandstorm."
+      "t": "Nope, they've pushed it back because of the sandstorm."
      },
      {
       "s": "Chris",
@@ -1109,7 +1082,7 @@
      },
      {
       "q": "Now send the same news to your best friend.",
-      "hint": "Switch to informal language: 'They've put off …' and short sentences."
+      "hint": "Switch to informal language: 'They've pushed … back' and short sentences."
      },
      {
       "q": "Your friend asks how to find out the new date. What do you say?",
@@ -1129,7 +1102,48 @@
      "Do you prefer online lessons or going to school on bad-weather days?"
     ]
    },
-   "exit": "Tell me the same piece of news twice: once formally and once to a friend."
+   "exit": "Tell me the same piece of news twice: once formally and once to a friend.",
+   "expressions": [
+    {
+     "w": "postpone",
+     "def": "(formal) to move an event to a later time",
+     "ar": "يؤجّل",
+     "frame": "The ___ has been postponed until next week."
+    },
+    {
+     "w": "push back",
+     "def": "(informal) to move something to a later time",
+     "ar": "يؤجّل (عامّية)",
+     "frame": "Can we push ___ back to next week?"
+    },
+    {
+     "w": "get in touch",
+     "def": "(informal) to contact someone",
+     "ar": "يتواصل",
+     "frame": "I'll get in touch with ___ tomorrow."
+    },
+    {
+     "w": "for further information",
+     "def": "(formal) if you want to know more",
+     "ar": "لمزيد من المعلومات",
+     "frame": "For further information, please contact ___."
+    },
+    {
+     "w": "We regret to inform you that",
+     "def": "(formal) a polite way to give bad news",
+     "ar": "نأسف لإبلاغكم بأنّ",
+     "frame": "We regret to inform you that ___."
+    },
+    {
+     "w": "in due course",
+     "def": "(formal) later, at the right time",
+     "ar": "في الوقت المناسب",
+     "frame": "A new date for the ___ will be announced in due course."
+    }
+   ],
+   "recycle": [
+    "put off"
+   ]
   },
   "1-2": {
    "objective": "Today you will speak respectfully to an older guest and then casually to a cousin.",
@@ -1374,44 +1388,6 @@
   "1-4": {
    "objective": "Today you will apologise formally to a teacher and informally to a friend for the same mistake.",
    "warmup": "When did you last say sorry to someone? Was it easy?",
-   "expressions": [
-    {
-     "w": "Please accept my apologies for",
-     "def": "(formal) a polite way to say sorry",
-     "ar": "أرجو قبول اعتذاري عن",
-     "frame": "Please accept my apologies for ___."
-    },
-    {
-     "w": "any inconvenience caused",
-     "def": "(formal) any problems that my action created",
-     "ar": "أي إزعاج تسبّبتُ فيه",
-     "frame": "I apologise for any inconvenience caused by ___."
-    },
-    {
-     "w": "my bad",
-     "def": "(very informal) it was my mistake",
-     "ar": "غلطتي",
-     "frame": "My bad, I forgot to ___."
-    },
-    {
-     "w": "I owe you one",
-     "def": "(informal) I must do something kind for you later",
-     "ar": "أنا مدين لك",
-     "frame": "Thanks for ___. I owe you one!"
-    },
-    {
-     "w": "due to",
-     "def": "(formal) because of",
-     "ar": "بسبب",
-     "frame": "The delay was due to ___."
-    },
-    {
-     "w": "make it up to you",
-     "def": "to do something good because you upset someone",
-     "ar": "أعوّضك",
-     "frame": "I'll make it up to you by ___."
-    }
-   ],
    "dialogue": {
     "scene": "Rakan forgot to send his part of a group project. First he speaks to his teacher, Mrs Hayes. Then he talks to his teammate Ali.",
     "p1": [
@@ -1447,7 +1423,7 @@
      },
      {
       "s": "Rakan",
-      "t": "Seriously? Thanks, I owe you one. I'll make it up to you, I promise. Shawarma's on me tomorrow."
+      "t": "Seriously? Thanks, I owe you one. Shawarma's on me tomorrow, I promise."
      }
     ],
     "focus": "Mrs Hayes, please accept my apologies for missing the deadline yesterday.",
@@ -1469,7 +1445,7 @@
      },
      {
       "q": "(As your friend) Where's my book? I need it for the test!",
-      "hint": "Apologise informally and promise to make it up to them."
+      "hint": "Apologise informally and offer a treat with '… is on me'."
      }
     ]
    },
@@ -1485,49 +1461,52 @@
      "What makes an apology sound sincere?"
     ]
    },
-   "exit": "Apologise for being late twice: once to a teacher and once to a friend."
+   "exit": "Apologise for being late twice: once to a teacher and once to a friend.",
+   "expressions": [
+    {
+     "w": "Please accept my apologies for",
+     "def": "(formal) a polite way to say sorry",
+     "ar": "أرجو قبول اعتذاري عن",
+     "frame": "Please accept my apologies for ___."
+    },
+    {
+     "w": "any inconvenience caused",
+     "def": "(formal) any problems that my action created",
+     "ar": "أي إزعاج تسبّبتُ فيه",
+     "frame": "I apologise for any inconvenience caused by ___."
+    },
+    {
+     "w": "my bad",
+     "def": "(very informal) it was my mistake",
+     "ar": "غلطتي",
+     "frame": "My bad, I forgot to ___."
+    },
+    {
+     "w": "I owe you one",
+     "def": "(informal) I must do something kind for you later",
+     "ar": "أنا مدين لك",
+     "frame": "Thanks for ___. I owe you one!"
+    },
+    {
+     "w": "due to",
+     "def": "(formal) because of",
+     "ar": "بسبب",
+     "frame": "The delay was due to ___."
+    },
+    {
+     "w": "it's on me",
+     "def": "(informal) I will pay for it",
+     "ar": "على حسابي",
+     "frame": "Let's go for ___. It's on me!"
+    }
+   ],
+   "recycle": [
+    "make it up to you"
+   ]
   },
   "1-5": {
    "objective": "Today you will deliver the same invitation to an adult guest and to your friends, in two different registers.",
    "warmup": "Have you ever helped to organise an event? Who did you invite?",
-   "expressions": [
-    {
-     "w": "on behalf of",
-     "def": "(formal) speaking for a group or for another person",
-     "ar": "نيابةً عن",
-     "frame": "On behalf of ___, I'd like to thank you."
-    },
-    {
-     "w": "We would be delighted if",
-     "def": "(formal) we would be very happy if",
-     "ar": "يسعدنا لو",
-     "frame": "We would be delighted if you could ___."
-    },
-    {
-     "w": "Fancy",
-     "def": "(informal) do you want to …?",
-     "ar": "ودّك…؟ / تحب…؟",
-     "frame": "Fancy ___ this weekend?"
-    },
-    {
-     "w": "kindly",
-     "def": "(formal) please",
-     "ar": "يُرجى / تفضّلاً",
-     "frame": "Kindly ___ by Thursday."
-    },
-    {
-     "w": "It'd be great if",
-     "def": "(informal) I'd really like it if",
-     "ar": "سيكون رائعاً لو",
-     "frame": "It'd be great if you could ___."
-    },
-    {
-     "w": "I look forward to hearing from you",
-     "def": "(formal) a polite way to end and ask for a reply",
-     "ar": "أتطلّع إلى ردّكم",
-     "frame": "Thank you for considering ___. I look forward to hearing from you."
-    }
-   ],
    "dialogue": {
     "scene": "Lulwa and Mia are organising a charity bake sale at school. They prepare two messages: one to a local bakery owner and one to their friends.",
     "p1": [
@@ -1541,7 +1520,7 @@
      },
      {
       "s": "Lulwa",
-      "t": "And 'Kindly reply by Thursday.' Then we finish with 'I look forward to hearing from you.'"
+      "t": "And 'Kindly reply by Thursday.' Then: 'Please do not hesitate to contact us with any questions.'"
      },
      {
       "s": "Mia",
@@ -1551,7 +1530,7 @@
     "p2": [
      {
       "s": "Lulwa",
-      "t": "Ha, true. 'Hey everyone! Fancy helping at our bake sale on Saturday?'"
+      "t": "Ha, true. 'Hey everyone! Are you up for helping at our bake sale on Saturday?'"
      },
      {
       "s": "Mia",
@@ -1585,7 +1564,7 @@
      },
      {
       "q": "(As a classmate) Hey, what's this event about?",
-      "hint": "Explain informally and invite them with 'Fancy …?' or 'It'd be great if …'."
+      "hint": "Explain informally and invite them with 'Are you up for …?' or 'It'd be great if …'."
      },
      {
       "q": "Which invitation was harder to give, and why?",
@@ -1605,49 +1584,53 @@
      "Why do you think young people enjoy helping during Ramadan?"
     ]
    },
-   "exit": "Invite a guest to an event formally, then invite a friend informally."
+   "exit": "Invite a guest to an event formally, then invite a friend informally.",
+   "expressions": [
+    {
+     "w": "on behalf of",
+     "def": "(formal) speaking for a group or for another person",
+     "ar": "نيابةً عن",
+     "frame": "On behalf of ___, I'd like to thank you."
+    },
+    {
+     "w": "We would be delighted if",
+     "def": "(formal) we would be very happy if",
+     "ar": "يسعدنا لو",
+     "frame": "We would be delighted if you could ___."
+    },
+    {
+     "w": "Are you up for",
+     "def": "(informal) would you like to do something?",
+     "ar": "هل لديك رغبة في …؟",
+     "frame": "Are you up for ___ this weekend?"
+    },
+    {
+     "w": "kindly",
+     "def": "(formal) please",
+     "ar": "يُرجى / تفضّلاً",
+     "frame": "Kindly ___ by Thursday."
+    },
+    {
+     "w": "It'd be great if",
+     "def": "(informal) I'd really like it if",
+     "ar": "سيكون رائعاً لو",
+     "frame": "It'd be great if you could ___."
+    },
+    {
+     "w": "Please do not hesitate to contact",
+     "def": "(formal) please feel free to contact",
+     "ar": "لا تتردد في التواصل",
+     "frame": "If you have any questions about ___, please do not hesitate to contact us."
+    }
+   ],
+   "recycle": [
+    "Fancy",
+    "I look forward to hearing from you"
+   ]
   },
   "2-0": {
    "objective": "Today you will propose and discuss solutions to long queues in the school canteen.",
    "warmup": "What's the most annoying queue you have to wait in at school or in town?",
-   "expressions": [
-    {
-     "w": "It might be worth",
-     "def": "it could be useful to try something",
-     "ar": "قد يكون من المفيد",
-     "frame": "It might be worth ___ before we decide."
-    },
-    {
-     "w": "What if we",
-     "def": "used to suggest a new idea as a question",
-     "ar": "ماذا لو",
-     "frame": "What if we ___?"
-    },
-    {
-     "w": "tackle a problem",
-     "def": "to start dealing with a difficult problem",
-     "ar": "يعالج مشكلة",
-     "frame": "The best way to tackle ___ is …"
-    },
-    {
-     "w": "That could work",
-     "def": "that idea may be successful",
-     "ar": "قد ينجح ذلك",
-     "frame": "That could work, but ___."
-    },
-    {
-     "w": "bottleneck",
-     "def": "a point where things slow down because too much has to pass through",
-     "ar": "نقطة اختناق / عنق زجاجة",
-     "frame": "The bottleneck at our school is ___."
-    },
-    {
-     "w": "staggered",
-     "def": "starting at different times, not all at once",
-     "ar": "على فترات متفاوتة",
-     "frame": "Staggered ___ would reduce the crowds."
-    }
-   ],
    "dialogue": {
     "scene": "The student council meets to solve the problem of long queues in the school canteen.",
     "p1": [
@@ -1671,7 +1654,7 @@
     "p2": [
      {
       "s": "Jana",
-      "t": "What if we had staggered breaks? Younger students could eat first, and older students ten minutes later."
+      "t": "Supposing we had staggered breaks? Younger students could eat first, and older students ten minutes later."
      },
      {
       "s": "Rana",
@@ -1701,7 +1684,7 @@
      },
      {
       "q": "Any other ideas?",
-      "hint": "Suggest a second idea with 'What if we …?'."
+      "hint": "Suggest a second idea with 'Supposing we …?'."
      },
      {
       "q": "I'm not sure that would work. It might be too expensive.",
@@ -1721,7 +1704,48 @@
      "What is the first problem you would try to solve at your school?"
     ]
    },
-   "exit": "Propose two solutions to a problem at your school using 'It might be worth …' and 'What if we …?'."
+   "exit": "Propose two solutions to a problem at your school using 'It might be worth …' and 'Supposing we …?'.",
+   "expressions": [
+    {
+     "w": "It might be worth",
+     "def": "it could be useful to try something",
+     "ar": "قد يكون من المفيد",
+     "frame": "It might be worth ___ before we decide."
+    },
+    {
+     "w": "Supposing we",
+     "def": "used to suggest an idea by imagining it",
+     "ar": "لنفترض أننا …",
+     "frame": "Supposing we ___, would that help?"
+    },
+    {
+     "w": "tackle a problem",
+     "def": "to start dealing with a difficult problem",
+     "ar": "يعالج مشكلة",
+     "frame": "The best way to tackle ___ is …"
+    },
+    {
+     "w": "That could work",
+     "def": "that idea may be successful",
+     "ar": "قد ينجح ذلك",
+     "frame": "That could work, but ___."
+    },
+    {
+     "w": "bottleneck",
+     "def": "a point where things slow down because too much has to pass through",
+     "ar": "نقطة اختناق / عنق زجاجة",
+     "frame": "The bottleneck at our school is ___."
+    },
+    {
+     "w": "staggered",
+     "def": "starting at different times, not all at once",
+     "ar": "على فترات متفاوتة",
+     "frame": "Staggered ___ would reduce the crowds."
+    }
+   ],
+   "recycle": [
+    "What if we"
+   ]
   },
   "2-1": {
    "objective": "Today you will propose ways to cut costs and raise funds for a school club.",
@@ -1842,50 +1866,12 @@
   "2-2": {
    "objective": "Today you will evaluate proposals for solving traffic jams outside a school.",
    "warmup": "How do you get to school? How long does it take in the morning?",
-   "expressions": [
-    {
-     "w": "Have we considered",
-     "def": "used to bring in an idea nobody has mentioned",
-     "ar": "هل فكّرنا في",
-     "frame": "Have we considered ___?"
-    },
-    {
-     "w": "I can't see that working",
-     "def": "I don't think that idea will succeed",
-     "ar": "لا أظنّ أنّ ذلك سينجح",
-     "frame": "I can't see that working because ___."
-    },
-    {
-     "w": "the beauty of",
-     "def": "the best thing about an idea",
-     "ar": "الميزة الرائعة في",
-     "frame": "The beauty of ___ is that it's simple."
-    },
-    {
-     "w": "drop off",
-     "def": "to take someone somewhere by car and leave them there",
-     "ar": "يوصل / يُنزل",
-     "frame": "My ___ drops me off at school."
-    },
-    {
-     "w": "ease congestion",
-     "def": "to reduce traffic",
-     "ar": "يخفّف الازدحام",
-     "frame": "___ would help ease congestion."
-    },
-    {
-     "w": "a knock-on effect",
-     "def": "an effect that causes other effects",
-     "ar": "أثر متسلسل / تبعات",
-     "frame": "Late buses have a knock-on effect on ___."
-    }
-   ],
    "dialogue": {
     "scene": "Parents and students meet the head teacher, Mr Fahad, to discuss the traffic jams outside the school every morning. Huda represents the students.",
     "p1": [
      {
       "s": "Mr Fahad",
-      "t": "Every morning, cars block the street for twenty minutes. It's dangerous, and it has a knock-on effect on the whole neighbourhood."
+      "t": "Every morning, cars block the street for twenty minutes. It's dangerous, and it has a ripple effect on the whole neighbourhood."
      },
      {
       "s": "Huda",
@@ -1929,7 +1915,7 @@
     "prompts": [
      {
       "q": "What do you think is causing the problem?",
-      "hint": "Describe the cause and its knock-on effect."
+      "hint": "Describe the cause and its ripple effect."
      },
      {
       "q": "Someone suggests closing the road. What do you think?",
@@ -1953,55 +1939,58 @@
      "What would persuade more parents not to drive right up to the school gate?"
     ]
    },
-   "exit": "Evaluate one idea positively and one idea negatively, giving reasons."
+   "exit": "Evaluate one idea positively and one idea negatively, giving reasons.",
+   "expressions": [
+    {
+     "w": "Have we considered",
+     "def": "used to bring in an idea nobody has mentioned",
+     "ar": "هل فكّرنا في",
+     "frame": "Have we considered ___?"
+    },
+    {
+     "w": "I can't see that working",
+     "def": "I don't think that idea will succeed",
+     "ar": "لا أظنّ أنّ ذلك سينجح",
+     "frame": "I can't see that working because ___."
+    },
+    {
+     "w": "the beauty of",
+     "def": "the best thing about an idea",
+     "ar": "الميزة الرائعة في",
+     "frame": "The beauty of ___ is that it's simple."
+    },
+    {
+     "w": "drop off",
+     "def": "to take someone somewhere by car and leave them there",
+     "ar": "يوصل / يُنزل",
+     "frame": "My ___ drops me off at school."
+    },
+    {
+     "w": "ease congestion",
+     "def": "to reduce traffic",
+     "ar": "يخفّف الازدحام",
+     "frame": "___ would help ease congestion."
+    },
+    {
+     "w": "a ripple effect",
+     "def": "a situation where one event causes a spread of other effects",
+     "ar": "أثر متتابع (كتموّجات الماء)",
+     "frame": "Late buses have a ripple effect on ___."
+    }
+   ],
+   "recycle": [
+    "a knock-on effect"
+   ]
   },
   "2-3": {
    "objective": "Today you will propose and evaluate ways to reduce food waste at a family event.",
    "warmup": "What happens to the leftover food after a big family meal in your home?",
-   "expressions": [
-    {
-     "w": "That's worth a try",
-     "def": "the idea is good enough to test",
-     "ar": "تستحقّ التجربة",
-     "frame": "___? That's worth a try."
-    },
-    {
-     "w": "The trouble with that is",
-     "def": "the problem with that idea is",
-     "ar": "المشكلة في ذلك هي",
-     "frame": "The trouble with that is that ___."
-    },
-    {
-     "w": "go to waste",
-     "def": "to be thrown away without being used",
-     "ar": "يُهدَر / يذهب هدراً",
-     "frame": "It's a shame when ___ goes to waste."
-    },
-    {
-     "w": "leftovers",
-     "def": "food that is not eaten at the end of a meal",
-     "ar": "بقايا الطعام",
-     "frame": "We usually give our leftovers to ___."
-    },
-    {
-     "w": "It would mean",
-     "def": "it would have this result or need this",
-     "ar": "سيعني ذلك",
-     "frame": "It would mean ___, but it's worth it."
-    },
-    {
-     "w": "food bank",
-     "def": "a charity that gives food to people who need it",
-     "ar": "بنك الطعام",
-     "frame": "A food bank could collect ___."
-    }
-   ],
    "dialogue": {
-    "scene": "Rahaf's family is planning a big Eid lunch. Rahaf and her cousin Sami discuss how to stop so much food going to waste.",
+    "scene": "Rahaf's family is planning a big Eid lunch. Rahaf and her cousin Sami discuss how to stop so much food being thrown away.",
     "p1": [
      {
       "s": "Rahaf",
-      "t": "Last Eid, we threw away trays of rice and meat. I hate seeing food go to waste."
+      "t": "Last Eid, trays of rice and meat went off before anyone ate them. I hate seeing that."
      },
      {
       "s": "Sami",
@@ -2019,7 +2008,7 @@
     "p2": [
      {
       "s": "Rahaf",
-      "t": "That's worth a try. And what about the leftovers?"
+      "t": "That's worth a try. And what about the surplus food?"
      },
      {
       "s": "Sami",
@@ -2037,7 +2026,7 @@
     "focus": "The trouble with that is that Grandma will worry there isn't enough for the guests.",
     "qs": [
      "Why won't Grandma like the idea of cooking less?",
-     "What will happen to the leftovers?"
+     "What will happen to the surplus food?"
     ]
    },
    "speakout": {
@@ -2048,7 +2037,7 @@
       "hint": "Propose a solution with 'What if we …?' or 'It might be worth …'."
      },
      {
-      "q": "What about giving the leftovers away?",
+      "q": "What about giving the surplus food away?",
       "hint": "Evaluate it with 'That's worth a try' or 'The trouble with that is …'."
      },
      {
@@ -2069,49 +2058,53 @@
      "How can families stay generous without wasting food?"
     ]
    },
-   "exit": "Propose one way to reduce food waste and say what it would mean."
+   "exit": "Propose one way to reduce food waste and say what it would mean.",
+   "expressions": [
+    {
+     "w": "That's worth a try",
+     "def": "the idea is good enough to test",
+     "ar": "تستحقّ التجربة",
+     "frame": "___? That's worth a try."
+    },
+    {
+     "w": "The trouble with that is",
+     "def": "the problem with that idea is",
+     "ar": "المشكلة في ذلك هي",
+     "frame": "The trouble with that is that ___."
+    },
+    {
+     "w": "go off",
+     "def": "(of food) to become bad and unsafe to eat",
+     "ar": "يفسد (الطعام)",
+     "frame": "___ goes off quickly in hot weather."
+    },
+    {
+     "w": "surplus food",
+     "def": "extra food that is not needed",
+     "ar": "فائض الطعام",
+     "frame": "Restaurants could give their surplus food to ___."
+    },
+    {
+     "w": "It would mean",
+     "def": "it would have this result or need this",
+     "ar": "سيعني ذلك",
+     "frame": "It would mean ___, but it's worth it."
+    },
+    {
+     "w": "food bank",
+     "def": "a charity that gives food to people who need it",
+     "ar": "بنك الطعام",
+     "frame": "A food bank could collect ___."
+    }
+   ],
+   "recycle": [
+    "go to waste",
+    "leftovers"
+   ]
   },
   "2-4": {
    "objective": "Today you will chair a meeting, keep it moving and sum up the decisions.",
    "warmup": "Have you ever been in charge of a group? How did you keep everyone focused?",
-   "expressions": [
-    {
-     "w": "get down to business",
-     "def": "to start dealing with the main topic",
-     "ar": "ندخل في صلب الموضوع",
-     "frame": "Let's get down to business: today we need to ___."
-    },
-    {
-     "w": "item on the agenda",
-     "def": "one topic on the list of things to discuss",
-     "ar": "بند في جدول الأعمال",
-     "frame": "The first item on the agenda is ___."
-    },
-    {
-     "w": "To recap",
-     "def": "to repeat the main points briefly",
-     "ar": "للتلخيص",
-     "frame": "To recap, we've agreed to ___."
-    },
-    {
-     "w": "Are we all agreed",
-     "def": "does everyone accept this decision?",
-     "ar": "هل نحن متفقون جميعاً؟",
-     "frame": "Are we all agreed on ___?"
-    },
-    {
-     "w": "take a vote",
-     "def": "to decide by asking everyone to choose",
-     "ar": "نصوّت",
-     "frame": "Let's take a vote on ___."
-    },
-    {
-     "w": "action point",
-     "def": "a task someone agrees to do after a meeting",
-     "ar": "مهمة مطلوب تنفيذها",
-     "frame": "My action point is to ___."
-    }
-   ],
    "dialogue": {
     "scene": "Majd is chairing the planning meeting for his class's end-of-year trip. Luke and Waleed are also there.",
     "p1": [
@@ -2143,7 +2136,7 @@
      },
      {
       "s": "Waleed",
-      "t": "Fine by me. Should we take a vote on the date as well?"
+      "t": "Fine by me. Should we decide the date by a show of hands as well?"
      },
      {
       "s": "Majd",
@@ -2185,49 +2178,52 @@
      "Would you prefer to chair a meeting or take part? Why?"
     ]
    },
-   "exit": "Open a meeting, then recap one decision and give one action point."
+   "exit": "Open a meeting, then recap one decision and give one action point.",
+   "expressions": [
+    {
+     "w": "get down to business",
+     "def": "to start dealing with the main topic",
+     "ar": "ندخل في صلب الموضوع",
+     "frame": "Let's get down to business: today we need to ___."
+    },
+    {
+     "w": "item on the agenda",
+     "def": "one topic on the list of things to discuss",
+     "ar": "بند في جدول الأعمال",
+     "frame": "The first item on the agenda is ___."
+    },
+    {
+     "w": "To recap",
+     "def": "to repeat the main points briefly",
+     "ar": "للتلخيص",
+     "frame": "To recap, we've agreed to ___."
+    },
+    {
+     "w": "Are we all agreed",
+     "def": "does everyone accept this decision?",
+     "ar": "هل نحن متفقون جميعاً؟",
+     "frame": "Are we all agreed on ___?"
+    },
+    {
+     "w": "a show of hands",
+     "def": "a vote where people raise their hands",
+     "ar": "تصويت برفع الأيدي",
+     "frame": "Let's decide ___ by a show of hands."
+    },
+    {
+     "w": "action point",
+     "def": "a task someone agrees to do after a meeting",
+     "ar": "مهمة مطلوب تنفيذها",
+     "frame": "My action point is to ___."
+    }
+   ],
+   "recycle": [
+    "take a vote"
+   ]
   },
   "2-5": {
    "objective": "Today you will take part in a full meeting to solve a problem in your neighbourhood, from proposals to a final decision.",
    "warmup": "Where do teenagers in your area spend their free time in the evenings?",
-   "expressions": [
-    {
-     "w": "It might be worth",
-     "def": "it could be useful to try something",
-     "ar": "قد يكون من المفيد",
-     "frame": "It might be worth ___ first."
-    },
-    {
-     "w": "a feasible option",
-     "def": "an idea that can realistically be done",
-     "ar": "خيار قابل للتنفيذ",
-     "frame": "The most feasible option is ___."
-    },
-    {
-     "w": "pilot scheme",
-     "def": "a small test of a plan before doing it fully",
-     "ar": "مشروع تجريبي",
-     "frame": "We could run a pilot scheme for ___."
-    },
-    {
-     "w": "strike a balance",
-     "def": "to find a fair middle point between two things",
-     "ar": "يحقّق التوازن",
-     "frame": "We need to strike a balance between ___ and rest."
-    },
-    {
-     "w": "reach a consensus",
-     "def": "to reach an agreement that everyone accepts",
-     "ar": "يتوصّل إلى إجماع",
-     "frame": "We reached a consensus on ___."
-    },
-    {
-     "w": "the beauty of",
-     "def": "the best thing about an idea",
-     "ar": "الميزة الرائعة في",
-     "frame": "The beauty of ___ is that anyone can join."
-    }
-   ],
    "dialogue": {
     "scene": "At a neighbourhood youth meeting, Bader (the chair), Laith and Jack discuss how to give teenagers in the area somewhere to spend their free time.",
     "p1": [
@@ -2251,11 +2247,11 @@
     "p2": [
      {
       "s": "Bader",
-      "t": "The beauty of a pilot is that we can see if people actually come. But what about noise for the neighbours?"
+      "t": "The main selling point of a pilot is that we can test the waters first. But what about noise for the neighbours?"
      },
      {
       "s": "Jack",
-      "t": "We need to strike a balance. If we close by ten, it shouldn't disturb anyone."
+      "t": "Closing by ten seems a happy medium. That shouldn't disturb anyone."
      },
      {
       "s": "Bader",
@@ -2301,11 +2297,128 @@
      "Who should pay for youth facilities: the government, businesses or families?"
     ]
    },
-   "exit": "Propose a solution to a problem in your area, evaluate it and say what the next step is."
+   "exit": "Propose a solution to a problem in your area, evaluate it and say what the next step is.",
+   "expressions": [
+    {
+     "w": "test the waters",
+     "def": "to try something on a small scale to see how people react",
+     "ar": "يجسّ النبض",
+     "frame": "Before ___, we could test the waters with a small trial."
+    },
+    {
+     "w": "a feasible option",
+     "def": "an idea that can realistically be done",
+     "ar": "خيار قابل للتنفيذ",
+     "frame": "The most feasible option is ___."
+    },
+    {
+     "w": "pilot scheme",
+     "def": "a small test of a plan before doing it fully",
+     "ar": "مشروع تجريبي",
+     "frame": "We could run a pilot scheme for ___."
+    },
+    {
+     "w": "a happy medium",
+     "def": "a sensible middle point between two extremes",
+     "ar": "حلّ وسط مناسب",
+     "frame": "The happy medium between ___ and ___ is …"
+    },
+    {
+     "w": "reach a consensus",
+     "def": "to reach an agreement that everyone accepts",
+     "ar": "يتوصّل إلى إجماع",
+     "frame": "We reached a consensus on ___."
+    },
+    {
+     "w": "the main selling point",
+     "def": "the feature that makes something most attractive",
+     "ar": "أبرز ميزة جاذبة",
+     "frame": "The main selling point of ___ is that …"
+    }
+   ],
+   "recycle": [
+    "It might be worth",
+    "strike a balance",
+    "the beauty of"
+   ]
   },
   "3-0": {
    "objective": "Today you will describe a person who has inspired you in a long, well-organised answer.",
    "warmup": "Who is someone in your family or community that people often ask for advice?",
+   "dialogue": {
+    "scene": "In an IELTS practice lesson, the teacher, Mr Bennett, gives Abdullah a Part 2 task: describe a person who has inspired you.",
+    "p1": [
+     {
+      "s": "Mr Bennett",
+      "t": "You've had one minute to prepare. Describe a person who has inspired you. Please begin."
+     },
+     {
+      "s": "Abdullah",
+      "t": "The person I've chosen to talk about is my uncle Majid, who's a paramedic in Riyadh."
+     },
+     {
+      "s": "Abdullah",
+      "t": "I've always thought the world of him because he stays calm in situations that would terrify most people."
+     },
+     {
+      "s": "Abdullah",
+      "t": "For instance, he once treated a whole family after a car accident on the highway, at two in the morning."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Abdullah",
+      "t": "What's more, he goes out of his way to help our neighbours, even on his days off."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Last year he taught first aid at my school, which meant that dozens of students learnt basic life-saving skills."
+     },
+     {
+      "s": "Abdullah",
+      "t": "He's a real source of inspiration, and that class left a lasting impression on me. It's partly why I want to study medicine."
+     },
+     {
+      "s": "Mr Bennett",
+      "t": "Thank you. That was well organised, and your examples made it vivid."
+     }
+    ],
+    "focus": "Last year he taught first aid at my school, which meant that dozens of students learnt basic life-saving skills.",
+    "qs": [
+     "Why does Abdullah admire his uncle so much?",
+     "What did his uncle do at Abdullah's school?"
+    ]
+   },
+   "speakout": {
+    "scene": "This is IELTS Speaking Part 2. Describe a person you admire. Say who the person is, how you know them and what they have done, and explain why you admire them.",
+    "prompts": [
+     {
+      "q": "Who is the person, and how do you know them?",
+      "hint": "Start with 'The person I've chosen to talk about is …'."
+     },
+     {
+      "q": "What has this person done?",
+      "hint": "Give a specific example and add a result with ', which meant that …'."
+     },
+     {
+      "q": "Why do you admire them?",
+      "hint": "Use 'think the world of' or 'a source of inspiration' and finish with how they have influenced you."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the World: The IELTS Speaking Test",
+    "points": [
+     "The IELTS Speaking test is a face-to-face conversation with an examiner and lasts 11 to 14 minutes.",
+     "In Part 2, you have one minute to prepare and then speak for up to two minutes.",
+     "Examiners score fluency, vocabulary, grammar and pronunciation."
+    ],
+    "qs": [
+     "Which part of a speaking test would you find hardest?",
+     "How could you practise speaking for two minutes without stopping?"
+    ]
+   },
+   "exit": "Talk for thirty seconds about someone you think the world of, using 'which meant that'.",
    "expressions": [
     {
      "w": "The person I've chosen to talk about is",
@@ -2314,16 +2427,16 @@
      "frame": "The person I've chosen to talk about is ___."
     },
     {
-     "w": "look up to",
-     "def": "to admire and respect someone",
-     "ar": "يُعجب به ويقتدي به",
-     "frame": "I've always looked up to ___."
+     "w": "think the world of",
+     "def": "to admire and love someone very much",
+     "ar": "يُكنّ له تقديراً كبيراً",
+     "frame": "I've always thought the world of ___."
     },
     {
-     "w": "a role model",
-     "def": "a person you want to be like",
-     "ar": "قدوة",
-     "frame": "___ is a great role model for young people."
+     "w": "a source of inspiration",
+     "def": "a person or thing that makes you want to do well",
+     "ar": "مصدر إلهام",
+     "frame": "___ has always been a source of inspiration to me."
     },
     {
      "w": "which meant that",
@@ -2344,122 +2457,14 @@
      "frame": "___ left a lasting impression on me."
     }
    ],
-   "dialogue": {
-    "scene": "In an IELTS practice lesson, the teacher, Mr Bennett, gives Abdullah a Part 2 task: describe a person who has inspired you.",
-    "p1": [
-     {
-      "s": "Mr Bennett",
-      "t": "You've had one minute to prepare. Describe a person who has inspired you. Please begin."
-     },
-     {
-      "s": "Abdullah",
-      "t": "The person I've chosen to talk about is my uncle Majid, who's a paramedic in Riyadh."
-     },
-     {
-      "s": "Abdullah",
-      "t": "I've always looked up to him because he stays calm in situations that would terrify most people."
-     },
-     {
-      "s": "Abdullah",
-      "t": "For instance, he once treated a whole family after a car accident on the highway, at two in the morning."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Abdullah",
-      "t": "What's more, he goes out of his way to help our neighbours, even on his days off."
-     },
-     {
-      "s": "Abdullah",
-      "t": "Last year he taught first aid at my school, which meant that dozens of students learnt basic life-saving skills."
-     },
-     {
-      "s": "Abdullah",
-      "t": "He's a real role model, and that class left a lasting impression on me. It's partly why I want to study medicine."
-     },
-     {
-      "s": "Mr Bennett",
-      "t": "Thank you. That was well organised, and your examples made it vivid."
-     }
-    ],
-    "focus": "Last year he taught first aid at my school, which meant that dozens of students learnt basic life-saving skills.",
-    "qs": [
-     "Why does Abdullah look up to his uncle?",
-     "What did his uncle do at Abdullah's school?"
-    ]
-   },
-   "speakout": {
-    "scene": "This is IELTS Speaking Part 2. Describe a person you admire. Say who the person is, how you know them and what they have done, and explain why you admire them.",
-    "prompts": [
-     {
-      "q": "Who is the person, and how do you know them?",
-      "hint": "Start with 'The person I've chosen to talk about is …'."
-     },
-     {
-      "q": "What has this person done?",
-      "hint": "Give a specific example and add a result with ', which meant that …'."
-     },
-     {
-      "q": "Why do you admire them?",
-      "hint": "Use 'look up to' or 'role model' and finish with how they have influenced you."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around the World: The IELTS Speaking Test",
-    "points": [
-     "The IELTS Speaking test is a face-to-face conversation with an examiner and lasts 11 to 14 minutes.",
-     "In Part 2, you have one minute to prepare and then speak for up to two minutes.",
-     "Examiners score fluency, vocabulary, grammar and pronunciation."
-    ],
-    "qs": [
-     "Which part of a speaking test would you find hardest?",
-     "How could you practise speaking for two minutes without stopping?"
-    ]
-   },
-   "exit": "Talk for thirty seconds about someone you look up to, using 'which meant that'."
+   "recycle": [
+    "look up to",
+    "a role model"
+   ]
   },
   "3-1": {
    "objective": "Today you will describe a place you would like to visit, developing your answer with examples.",
    "warmup": "If you could fly anywhere tomorrow, where would you go?",
-   "expressions": [
-    {
-     "w": "be on my bucket list",
-     "def": "to be something I really want to do in my life",
-     "ar": "ضمن قائمة أمنياتي",
-     "frame": "___ has been on my bucket list for years."
-    },
-    {
-     "w": "A good example of this is",
-     "def": "used to introduce a specific example",
-     "ar": "ومثال جيد على ذلك",
-     "frame": "A good example of this is ___."
-    },
-    {
-     "w": "such as",
-     "def": "for example (before one or more nouns)",
-     "ar": "مثل",
-     "frame": "I'd love to try local food such as ___."
-    },
-    {
-     "w": "breathtaking",
-     "def": "extremely beautiful or impressive",
-     "ar": "يحبس الأنفاس",
-     "frame": "The views of ___ are breathtaking."
-    },
-    {
-     "w": "What really appeals to me is",
-     "def": "the thing that attracts me most is",
-     "ar": "ما يجذبني حقاً هو",
-     "frame": "What really appeals to me is ___."
-    },
-    {
-     "w": "off the beaten track",
-     "def": "far from the places tourists usually go",
-     "ar": "بعيد عن الأماكن السياحية المعتادة",
-     "frame": "I'd like to visit somewhere off the beaten track, like ___."
-    }
-   ],
    "dialogue": {
     "scene": "Reem is practising an IELTS Part 2 answer with her friend Hannah, who is timing her. The task is: describe a place you would like to visit.",
     "p1": [
@@ -2487,11 +2492,11 @@
     "p2": [
      {
       "s": "Reem",
-      "t": "Having said that, I don't only want to see the famous sights. I'd like to go somewhere off the beaten track, too."
+      "t": "Having said that, I don't only want to see the famous sights. I'd like to see somewhere unspoilt, too."
      },
      {
       "s": "Reem",
-      "t": "I've read about small mountain villages where the scenery is breathtaking, especially in autumn."
+      "t": "I've read about small mountain villages where the scenery is awe-inspiring, especially in autumn."
      },
      {
       "s": "Hannah",
@@ -2537,49 +2542,53 @@
      "What would a visitor find most surprising about your city?"
     ]
    },
-   "exit": "Tell me about a place on your bucket list and give two examples of what you would do there."
+   "exit": "Tell me about a place on your bucket list and give two examples of what you would do there.",
+   "expressions": [
+    {
+     "w": "be on my bucket list",
+     "def": "to be something I really want to do in my life",
+     "ar": "ضمن قائمة أمنياتي",
+     "frame": "___ has been on my bucket list for years."
+    },
+    {
+     "w": "A good example of this is",
+     "def": "used to introduce a specific example",
+     "ar": "ومثال جيد على ذلك",
+     "frame": "A good example of this is ___."
+    },
+    {
+     "w": "such as",
+     "def": "for example (before one or more nouns)",
+     "ar": "مثل",
+     "frame": "I'd love to try local food such as ___."
+    },
+    {
+     "w": "awe-inspiring",
+     "def": "so impressive that it fills you with wonder",
+     "ar": "مهيب يبعث على الدهشة",
+     "frame": "Standing in front of ___ was awe-inspiring."
+    },
+    {
+     "w": "What really appeals to me is",
+     "def": "the thing that attracts me most is",
+     "ar": "ما يجذبني حقاً هو",
+     "frame": "What really appeals to me is ___."
+    },
+    {
+     "w": "unspoilt",
+     "def": "still natural and not changed by tourism or building",
+     "ar": "بِكر لم تمسّه السياحة",
+     "frame": "I'd love to visit an unspoilt place like ___."
+    }
+   ],
+   "recycle": [
+    "breathtaking",
+    "off the beaten track"
+   ]
   },
   "3-2": {
    "objective": "Today you will tell the story of a time you helped someone and reflect on how you felt.",
    "warmup": "When did someone last help you in a way you didn't expect?",
-   "expressions": [
-    {
-     "w": "Looking back",
-     "def": "when I think about it now",
-     "ar": "عندما أنظر إلى الماضي",
-     "frame": "Looking back, I'm glad I ___."
-    },
-    {
-     "w": "lend a hand",
-     "def": "to help someone",
-     "ar": "يمدّ يد العون",
-     "frame": "I offered to lend a hand with ___."
-    },
-    {
-     "w": "at the time",
-     "def": "at that moment in the past",
-     "ar": "في ذلك الوقت",
-     "frame": "At the time, I didn't realise ___."
-    },
-    {
-     "w": "out of the blue",
-     "def": "suddenly and unexpectedly",
-     "ar": "فجأة / دون سابق إنذار",
-     "frame": "Out of the blue, ___."
-    },
-    {
-     "w": "rewarding",
-     "def": "making you feel happy because it is useful or important",
-     "ar": "مُجزٍ / يمنح الرضا",
-     "frame": "___ was really rewarding."
-    },
-    {
-     "w": "make all the difference",
-     "def": "to change a situation in a very positive way",
-     "ar": "يصنع فرقاً كبيراً",
-     "frame": "Your help with ___ made all the difference."
-    }
-   ],
    "dialogue": {
     "scene": "In class, Ghada answers an IELTS Part 2 task: describe a time when you helped someone.",
     "p1": [
@@ -2593,11 +2602,11 @@
      },
      {
       "s": "Ghada",
-      "t": "I was waiting for my flight when, out of the blue, a woman asked me for help. She had missed her connection."
+      "t": "I was waiting for my flight when, without warning, a woman asked me for help. She had missed her connection."
      },
      {
       "s": "Ghada",
-      "t": "At the time, I was nervous about speaking English to a stranger, but I decided to lend a hand."
+      "t": "At the time, I was nervous about speaking English to a stranger, but I decided to step in."
      }
     ],
     "p2": [
@@ -2607,7 +2616,7 @@
      },
      {
       "s": "Ghada",
-      "t": "She said my help made all the difference, and she even sent me a thank-you email later."
+      "t": "She said I was a lifesaver, and she even sent me a thank-you email later."
      },
      {
       "s": "Ghada",
@@ -2629,7 +2638,7 @@
     "prompts": [
      {
       "q": "Who did you help, and what was the situation?",
-      "hint": "Set the scene with 'At the time, …' or 'Out of the blue, …'."
+      "hint": "Set the scene with 'At the time, …' or 'Without warning, …'."
      },
      {
       "q": "What exactly did you do?",
@@ -2637,7 +2646,7 @@
      },
      {
       "q": "How did you feel about it afterwards?",
-      "hint": "Reflect with 'Looking back, …' and use 'rewarding' or 'made all the difference'."
+      "hint": "Reflect with 'Looking back, …' and use 'rewarding' or 'a lifesaver'."
      }
     ]
    },
@@ -2653,49 +2662,54 @@
      "What would you show a tourist in your city first?"
     ]
    },
-   "exit": "Describe a time you helped someone in three sentences, finishing with 'Looking back, …'."
+   "exit": "Describe a time you helped someone in three sentences, finishing with 'Looking back, …'.",
+   "expressions": [
+    {
+     "w": "Looking back",
+     "def": "when I think about it now",
+     "ar": "عندما أنظر إلى الماضي",
+     "frame": "Looking back, I'm glad I ___."
+    },
+    {
+     "w": "step in",
+     "def": "to get involved in a situation in order to help",
+     "ar": "يتدخّل للمساعدة",
+     "frame": "When ___, I decided to step in."
+    },
+    {
+     "w": "at the time",
+     "def": "at that moment in the past",
+     "ar": "في ذلك الوقت",
+     "frame": "At the time, I didn't realise ___."
+    },
+    {
+     "w": "without warning",
+     "def": "suddenly, with no sign that it would happen",
+     "ar": "فجأة ودون سابق إنذار",
+     "frame": "Without warning, ___."
+    },
+    {
+     "w": "rewarding",
+     "def": "making you feel happy because it is useful or important",
+     "ar": "مُجزٍ / يمنح الرضا",
+     "frame": "___ was really rewarding."
+    },
+    {
+     "w": "a lifesaver",
+     "def": "someone or something that helps you greatly in a difficult moment",
+     "ar": "منقذ / مُنجد",
+     "frame": "My ___ was a real lifesaver when …"
+    }
+   ],
+   "recycle": [
+    "lend a hand",
+    "out of the blue",
+    "make all the difference"
+   ]
   },
   "3-3": {
    "objective": "Today you will answer abstract Part 3 questions about role models, balancing your answers with contrasts.",
    "warmup": "Who do young people in your country follow most online? Why?",
-   "expressions": [
-    {
-     "w": "Having said that",
-     "def": "used to add a point that contrasts with what you just said",
-     "ar": "ومع ذلك / رغم ما قلته",
-     "frame": "Social media is useful. Having said that, ___."
-    },
-    {
-     "w": "It's not that …, it's just that …",
-     "def": "used to explain the real reason for something",
-     "ar": "ليس الأمر أنّ… بل إنّ…",
-     "frame": "It's not that I dislike ___, it's just that …"
-    },
-    {
-     "w": "to some extent",
-     "def": "partly, but not completely",
-     "ar": "إلى حدٍّ ما",
-     "frame": "I agree to some extent that ___."
-    },
-    {
-     "w": "By contrast",
-     "def": "used to show that something is very different from what you just said",
-     "ar": "في المقابل",
-     "frame": "Older people prefer ___. By contrast, young people …"
-    },
-    {
-     "w": "That's a tricky question",
-     "def": "used to give yourself time to think",
-     "ar": "هذا سؤال صعب",
-     "frame": "That's a tricky question, but I'd say ___."
-    },
-    {
-     "w": "on the whole",
-     "def": "generally, when you consider everything",
-     "ar": "بشكل عام / إجمالاً",
-     "frame": "On the whole, I think ___."
-    }
-   ],
    "dialogue": {
     "scene": "After her Part 2 talk, the examiner asks Mariam some Part 3 questions about role models.",
     "p1": [
@@ -2705,7 +2719,7 @@
      },
      {
       "s": "Mariam",
-      "t": "That's a tricky question. To some extent, yes, because millions of young people follow them online."
+      "t": "That's a tricky question. To a certain degree, yes, because millions of young people follow them online."
      },
      {
       "s": "Mariam",
@@ -2719,7 +2733,7 @@
     "p2": [
      {
       "s": "Mariam",
-      "t": "On the whole, I'd say family members. You see how they deal with real problems every day."
+      "t": "For the most part, I'd say family members. You see how they deal with real problems every day."
      },
      {
       "s": "Mariam",
@@ -2749,11 +2763,11 @@
      },
      {
       "q": "Should schools make community service compulsory?",
-      "hint": "Start with 'To some extent …', then add 'Having said that, …'."
+      "hint": "Start with 'To a certain degree …', then add 'Having said that, …'."
      },
      {
       "q": "Are people today less helpful than in the past?",
-      "hint": "Begin with 'That's a tricky question' and finish with 'On the whole, …'."
+      "hint": "Begin with 'That's a tricky question' and finish with 'For the most part, …'."
      }
     ]
    },
@@ -2769,7 +2783,49 @@
      "What small act of kindness have you seen recently?"
     ]
    },
-   "exit": "Answer this question in three sentences with a contrast: Is it better to have many friends or a few close friends?"
+   "exit": "Answer this question in three sentences with a contrast: Is it better to have many friends or a few close friends?",
+   "expressions": [
+    {
+     "w": "Having said that",
+     "def": "used to add a point that contrasts with what you just said",
+     "ar": "ومع ذلك / رغم ما قلته",
+     "frame": "Social media is useful. Having said that, ___."
+    },
+    {
+     "w": "It's not that …, it's just that …",
+     "def": "used to explain the real reason for something",
+     "ar": "ليس الأمر أنّ… بل إنّ…",
+     "frame": "It's not that I dislike ___, it's just that …"
+    },
+    {
+     "w": "to a certain degree",
+     "def": "partly, but not completely",
+     "ar": "إلى حدّ ما",
+     "frame": "I agree to a certain degree that ___."
+    },
+    {
+     "w": "By contrast",
+     "def": "used to show that something is very different from what you just said",
+     "ar": "في المقابل",
+     "frame": "Older people prefer ___. By contrast, young people …"
+    },
+    {
+     "w": "That's a tricky question",
+     "def": "used to give yourself time to think",
+     "ar": "هذا سؤال صعب",
+     "frame": "That's a tricky question, but I'd say ___."
+    },
+    {
+     "w": "for the most part",
+     "def": "mostly; in most cases",
+     "ar": "في الغالب",
+     "frame": "For the most part, I think ___."
+    }
+   ],
+   "recycle": [
+    "to some extent",
+    "on the whole"
+   ]
   },
   "3-4": {
    "objective": "Today you will compare the past and the present and speculate about the future in Part 3 answers.",
@@ -2890,44 +2946,6 @@
   "3-5": {
    "objective": "Today you will complete a full IELTS-style Part 2 long turn and answer Part 3 questions.",
    "warmup": "What skill would you like to learn if you had more free time?",
-   "expressions": [
-    {
-     "w": "pick up a skill",
-     "def": "to learn a skill, often without formal lessons",
-     "ar": "يكتسب مهارة",
-     "frame": "I'd love to pick up ___."
-    },
-    {
-     "w": "get the hang of",
-     "def": "to learn how to do something after some practice",
-     "ar": "يتقن / يتمكّن من",
-     "frame": "It took me ages to get the hang of ___."
-    },
-    {
-     "w": "a steep learning curve",
-     "def": "something that is hard to learn at the beginning",
-     "ar": "صعب التعلّم في البداية",
-     "frame": "___ has a steep learning curve."
-    },
-    {
-     "w": "To wrap up",
-     "def": "used to finish what you are saying",
-     "ar": "ختاماً",
-     "frame": "To wrap up, ___."
-    },
-    {
-     "w": "which meant that",
-     "def": "used to add a result to what you have just said",
-     "ar": "مما يعني أنّ",
-     "frame": "I missed the bus, which meant that ___."
-    },
-    {
-     "w": "Having said that",
-     "def": "used to add a point that contrasts with what you just said",
-     "ar": "ومع ذلك / رغم ما قلته",
-     "frame": "It's expensive. Having said that, ___."
-    }
-   ],
    "dialogue": {
     "scene": "Sultan is taking a full mock IELTS Speaking test. In Part 2 he must describe a skill he would like to learn. Then the examiner asks Part 3 questions.",
     "p1": [
@@ -2945,11 +2963,11 @@
      },
      {
       "s": "Sultan",
-      "t": "I know it has a steep learning curve. It can take months to get the hang of training a falcon."
+      "t": "I know it has a steep learning curve. My cousin tried it alone, with the result that his falcon flew away!"
      },
      {
       "s": "Sultan",
-      "t": "To wrap up, it's a way to keep a family tradition alive."
+      "t": "It can take months to learn the ropes. To round things off, it's a way to keep a family tradition alive."
      }
     ],
     "p2": [
@@ -2959,7 +2977,7 @@
      },
      {
       "s": "Sultan",
-      "t": "Definitely. They connect us to our history. Having said that, young people also need modern skills, such as coding."
+      "t": "Definitely. They connect us to our history. All the same, young people also need modern skills, such as coding."
      },
      {
       "s": "Examiner",
@@ -2981,15 +2999,15 @@
     "prompts": [
      {
       "q": "Describe the skill and explain why you'd like to learn it. You have two minutes.",
-      "hint": "Say what, why and how; add a result with 'which meant that …' and finish with 'To wrap up, …'."
+      "hint": "Say what, why and how; add a result with 'which meant that …' and finish with 'To round things off, …'."
      },
      {
       "q": "What skills will be most important for young people in the future?",
-      "hint": "Give two skills with examples and a contrast with 'Having said that, …'."
+      "hint": "Give two skills with examples and a contrast with 'All the same, …'."
      },
      {
       "q": "Is it harder for adults to learn new skills than children?",
-      "hint": "Start with 'To some extent …', give reasons and finish with 'On the whole, …'."
+      "hint": "Start with 'To a certain degree …', give reasons and finish with 'For the most part, …'."
      }
     ]
    },
@@ -3005,16 +3023,60 @@
      "Would you rather learn a traditional skill or a modern one? Why?"
     ]
    },
-   "exit": "Speak for one minute about a skill you'd like to learn, including an example, a result and a contrast."
+   "exit": "Speak for one minute about a skill you'd like to learn, including an example, a result and a contrast.",
+   "expressions": [
+    {
+     "w": "pick up a skill",
+     "def": "to learn a skill, often without formal lessons",
+     "ar": "يكتسب مهارة",
+     "frame": "I'd love to pick up ___."
+    },
+    {
+     "w": "learn the ropes",
+     "def": "to learn the basic skills of an activity",
+     "ar": "يتعلّم الأساسيات",
+     "frame": "It took me a while to learn the ropes of ___."
+    },
+    {
+     "w": "a steep learning curve",
+     "def": "something that is hard to learn at the beginning",
+     "ar": "صعب التعلّم في البداية",
+     "frame": "___ has a steep learning curve."
+    },
+    {
+     "w": "To round things off",
+     "def": "used to introduce the final part of what you say",
+     "ar": "وفي الختام",
+     "frame": "To round things off, ___."
+    },
+    {
+     "w": "with the result that",
+     "def": "and so this happened",
+     "ar": "ممّا أدّى إلى أنّ",
+     "frame": "I practised every day, with the result that ___."
+    },
+    {
+     "w": "all the same",
+     "def": "despite what you have just said",
+     "ar": "ومع ذلك",
+     "frame": "It's expensive. All the same, ___."
+    }
+   ],
+   "recycle": [
+    "get the hang of",
+    "which meant that",
+    "Having said that",
+    "To wrap up"
+   ]
   }
  },
  "kits": {
   "0-0": {
    "words": [
     {
-     "w": "according to",
-     "ar": "وفقاً لـ / حسب",
-     "ex": "According to our biology teacher, the brain sorts memories while we sleep."
+     "w": "cite a source",
+     "ar": "يذكر المصدر",
+     "ex": "Always cite a source when you share a health fact."
     },
     {
      "w": "research suggests that",
@@ -3061,7 +3123,7 @@
     },
     {
      "s": "Khalid",
-     "t": "Where did you read that? It could be some random website."
+     "t": "Where did you read that? Can you cite a source, or is it some random website?"
     },
     {
      "s": "Reem",
@@ -3255,9 +3317,9 @@
      "ex": "There is a growing body of evidence that time outdoors reduces stress."
     },
     {
-     "w": "survey",
-     "ar": "استطلاع / استبيان",
-     "ex": "Our survey asked 200 students about their hobbies."
+     "w": "a representative sample",
+     "ar": "عيّنة تمثيلية",
+     "ex": "Asking only your friends is not a representative sample."
     },
     {
      "w": "draw a conclusion",
@@ -3288,7 +3350,7 @@
     },
     {
      "s": "Grace",
-     "t": "Of course, our survey was small, so we must be careful."
+     "t": "Of course, 200 students isn't a representative sample of all teenagers, so we must be careful."
     },
     {
      "s": "Lama",
@@ -3386,14 +3448,14 @@
      "ex": "A good argument is based on evidence, not feelings."
     },
     {
-     "w": "research suggests that",
-     "ar": "تشير الأبحاث إلى أنّ",
-     "ex": "Research suggests that green spaces make people calmer."
+     "w": "concrete proof",
+     "ar": "دليل ملموس",
+     "ex": "There is no concrete proof that the drink improves memory."
     },
     {
-     "w": "it is estimated that",
-     "ar": "يُقدَّر أنّ",
-     "ex": "It is estimated that the new park will attract thousands of visitors."
+     "w": "a rough estimate",
+     "ar": "تقدير تقريبي",
+     "ex": "A rough estimate is that the trip takes ten minutes by bike."
     },
     {
      "w": "anecdotal evidence",
@@ -3406,9 +3468,9 @@
      "ex": "Cost is a strong argument against the plan."
     },
     {
-     "w": "weigh up",
-     "ar": "يوازن / يقيّم",
-     "ex": "The council weighed up the costs and the benefits."
+     "w": "on the strength of",
+     "ar": "بناءً على / استناداً إلى",
+     "ex": "On the strength of the survey, the council built two new parks."
     }
    ],
    "dialogue": [
@@ -3422,11 +3484,11 @@
     },
     {
      "s": "Faisal",
-     "t": "It's a fair point, but it is estimated that many car journeys in cities are shorter than five kilometres."
+     "t": "It's a fair point, but even a rough estimate shows that many car journeys in cities are shorter than five kilometres."
     },
     {
      "s": "Majed",
-     "t": "Is that based on evidence from Saudi cities, though, or from Europe?"
+     "t": "Do you have concrete proof from Saudi cities, though, or is it from Europe?"
     },
     {
      "s": "Faisal",
@@ -3438,16 +3500,16 @@
     },
     {
      "s": "Faisal",
-     "t": "Exactly. If we weigh up the evidence, the benefits for health and traffic are clear."
+     "t": "Exactly. On the strength of the evidence, the benefits for health and traffic are clear."
     }
    ],
    "grammar": {
     "title": "Building an evidence-based argument",
-    "ar": "الحجة القوية = رأي + دليل (Research suggests / It is estimated / According to) + تقييم للدليل (anecdotal أو based on research) + خلاصة (If we weigh up the evidence, …).",
+    "ar": "الحجة القوية = رأي + دليل (Research suggests / It is estimated / According to) + تقييم للدليل (anecdotal أو based on research) + خلاصة (On the strength of the evidence, …).",
     "examples": [
      "Research suggests that shaded streets encourage walking.",
      "My evidence is only anecdotal, but I've noticed a change.",
-     "If we weigh up the evidence, the benefits are clear."
+     "On the strength of the evidence, the benefits are clear."
     ]
    }
   },
@@ -3536,9 +3598,9 @@
      "ex": "The match has been postponed because of the weather."
     },
     {
-     "w": "put off",
-     "ar": "يؤجّل (غير رسمي)",
-     "ex": "They've put off the trip till next month."
+     "w": "push back",
+     "ar": "يؤجّل (عامّية)",
+     "ex": "They've pushed the trip back till next month."
     },
     {
      "w": "get in touch",
@@ -3580,7 +3642,7 @@
     },
     {
      "s": "Majed",
-     "t": "Nope, they've put it off because of the sandstorm."
+     "t": "Nope, they've pushed it back because of the sandstorm."
     },
     {
      "s": "Chris",
@@ -3593,9 +3655,9 @@
    ],
    "grammar": {
     "title": "Formal single verbs vs informal phrasal verbs",
-    "ar": "الكلام الرسمي يفضّل أفعالاً من كلمة واحدة: postpone, contact, discover, tolerate. الكلام الودي يستخدم الأفعال المركّبة: put off, get in touch, find out, put up with.",
+    "ar": "الكلام الرسمي يفضّل أفعالاً من كلمة واحدة: postpone, contact, discover, tolerate. الكلام الودي يستخدم الأفعال المركّبة: push back, get in touch, find out, put up with.",
     "examples": [
-     "The meeting has been postponed. / They've put off the meeting.",
+     "The meeting has been postponed. / They've pushed the meeting back.",
      "Please contact us. / Get in touch!",
      "We discovered the problem. / We found out about the problem."
     ]
@@ -3783,9 +3845,9 @@
      "ex": "The flight was cancelled due to bad weather."
     },
     {
-     "w": "make it up to you",
-     "ar": "أعوّضك",
-     "ex": "Sorry I missed your party. I'll make it up to you."
+     "w": "it's on me",
+     "ar": "على حسابي",
+     "ex": "Let's get juice after school. It's on me."
     }
    ],
    "dialogue": [
@@ -3815,16 +3877,16 @@
     },
     {
      "s": "Rakan",
-     "t": "Seriously? Thanks, I owe you one. I'll make it up to you, I promise. Shawarma's on me tomorrow."
+     "t": "Seriously? Thanks, I owe you one. Shawarma's on me tomorrow, I promise."
     }
    ],
    "grammar": {
     "title": "Formal and informal apologies",
-    "ar": "الاعتذار الرسمي: Please accept my apologies for + ‎-ing / I apologise for …. الاعتذار الودي: Sorry! / My bad / I'll make it up to you. نستخدم due to في الرسمي و because of في الكلام العادي.",
+    "ar": "الاعتذار الرسمي: Please accept my apologies for + ‎-ing / I apologise for …. الاعتذار الودي: Sorry! / My bad / … is on me. نستخدم due to في الرسمي و because of في الكلام العادي.",
     "examples": [
      "Please accept my apologies for the mistake.",
      "I apologise for any inconvenience caused.",
-     "Sorry, my bad! I'll make it up to you."
+     "Sorry, my bad! Lunch is on me."
     ]
    }
   },
@@ -3841,9 +3903,9 @@
      "ex": "We would be delighted if you could join us."
     },
     {
-     "w": "Fancy",
-     "ar": "ودّك…؟ / تحب…؟",
-     "ex": "Fancy coming to the bake sale?"
+     "w": "Are you up for",
+     "ar": "هل لديك رغبة في …؟",
+     "ex": "Are you up for a game of padel later?"
     },
     {
      "w": "kindly",
@@ -3856,9 +3918,9 @@
      "ex": "It'd be great if you could bring some cookies."
     },
     {
-     "w": "I look forward to hearing from you",
-     "ar": "أتطلّع إلى ردّكم",
-     "ex": "Thank you for your time. I look forward to hearing from you."
+     "w": "Please do not hesitate to contact",
+     "ar": "لا تتردد في التواصل",
+     "ex": "Please do not hesitate to contact us if you need more details."
     }
    ],
    "dialogue": [
@@ -3872,7 +3934,7 @@
     },
     {
      "s": "Lulwa",
-     "t": "And 'Kindly reply by Thursday.' Then we finish with 'I look forward to hearing from you.'"
+     "t": "And 'Kindly reply by Thursday.' Then: 'Please do not hesitate to contact us with any questions.'"
     },
     {
      "s": "Mia",
@@ -3880,7 +3942,7 @@
     },
     {
      "s": "Lulwa",
-     "t": "Ha, true. 'Hey everyone! Fancy helping at our bake sale on Saturday?'"
+     "t": "Ha, true. 'Hey everyone! Are you up for helping at our bake sale on Saturday?'"
     },
     {
      "s": "Mia",
@@ -3893,10 +3955,10 @@
    ],
    "grammar": {
     "title": "Changing register",
-    "ar": "الرسمي: on behalf of / We would be delighted if / kindly. الودي: Fancy + ‎-ing / It'd be great if / Let me know. نغيّر الكلمات وطول الجملة حسب المستمع.",
+    "ar": "الرسمي: on behalf of / We would be delighted if / kindly. الودي: Are you up for + ‎-ing / It'd be great if / Let me know. نغيّر الكلمات وطول الجملة حسب المستمع.",
     "examples": [
      "On behalf of the team, we would be delighted if you could attend.",
-     "Fancy coming to the match on Friday?",
+     "Are you up for coming to the match on Friday?",
      "It'd be great if you could bring your camera."
     ]
    }
@@ -3909,9 +3971,9 @@
      "ex": "It might be worth asking the students what they think."
     },
     {
-     "w": "What if we",
-     "ar": "ماذا لو",
-     "ex": "What if we opened a second counter?"
+     "w": "Supposing we",
+     "ar": "لنفترض أننا …",
+     "ex": "Supposing we opened a second counter?"
     },
     {
      "w": "tackle a problem",
@@ -3953,7 +4015,7 @@
     },
     {
      "s": "Jana",
-     "t": "What if we had staggered breaks? Younger students could eat first, and older students ten minutes later."
+     "t": "Supposing we had staggered breaks? Younger students could eat first, and older students ten minutes later."
     },
     {
      "s": "Rana",
@@ -3961,12 +4023,12 @@
     }
    ],
    "grammar": {
-    "title": "It might be worth + -ing / What if we …?",
-    "ar": "It might be worth بعدها فعل ‎-ing لاقتراح لطيف غير مباشر. What if we بعدها مضارع (What if we start …?) أو ماضٍ ليصبح الاقتراح أكثر تحفّظاً (What if we started …?).",
+    "title": "It might be worth + -ing / Supposing we …?",
+    "ar": "It might be worth بعدها فعل ‎-ing لاقتراح لطيف غير مباشر. Supposing we بعدها مضارع (Supposing we start …?) أو ماضٍ ليصبح الاقتراح أكثر تحفّظاً (Supposing we started …?).",
     "examples": [
      "It might be worth checking the prices first.",
-     "What if we start the meeting earlier?",
-     "What if we asked the parents to help?"
+     "Supposing we started the meeting earlier?",
+     "Supposing we asked the parents to help?"
     ]
    }
   },
@@ -4071,15 +4133,15 @@
      "ex": "More buses would help ease congestion in the city centre."
     },
     {
-     "w": "a knock-on effect",
-     "ar": "أثر متسلسل / تبعات",
-     "ex": "The traffic jam had a knock-on effect on the whole morning."
+     "w": "a ripple effect",
+     "ar": "أثر متتابع (كتموّجات الماء)",
+     "ex": "The traffic jam had a ripple effect on the whole morning."
     }
    ],
    "dialogue": [
     {
      "s": "Mr Fahad",
-     "t": "Every morning, cars block the street for twenty minutes. It's dangerous, and it has a knock-on effect on the whole neighbourhood."
+     "t": "Every morning, cars block the street for twenty minutes. It's dangerous, and it has a ripple effect on the whole neighbourhood."
     },
     {
      "s": "Huda",
@@ -4129,14 +4191,14 @@
      "ex": "The trouble with that is that it takes too long."
     },
     {
-     "w": "go to waste",
-     "ar": "يُهدَر / يذهب هدراً",
-     "ex": "Don't let all that rice go to waste!"
+     "w": "go off",
+     "ar": "يفسد (الطعام)",
+     "ex": "The milk went off because we left it outside the fridge."
     },
     {
-     "w": "leftovers",
-     "ar": "بقايا الطعام",
-     "ex": "We had the leftovers for lunch the next day."
+     "w": "surplus food",
+     "ar": "فائض الطعام",
+     "ex": "The bakery gives its surplus food to a charity every night."
     },
     {
      "w": "It would mean",
@@ -4152,7 +4214,7 @@
    "dialogue": [
     {
      "s": "Rahaf",
-     "t": "Last Eid, we threw away trays of rice and meat. I hate seeing food go to waste."
+     "t": "Last Eid, trays of rice and meat went off before anyone ate them. I hate seeing that."
     },
     {
      "s": "Sami",
@@ -4168,7 +4230,7 @@
     },
     {
      "s": "Rahaf",
-     "t": "That's worth a try. And what about the leftovers?"
+     "t": "That's worth a try. And what about the surplus food?"
     },
     {
      "s": "Sami",
@@ -4212,9 +4274,9 @@
      "ex": "Are we all agreed that we'll meet again on Sunday?"
     },
     {
-     "w": "take a vote",
-     "ar": "نصوّت",
-     "ex": "We took a vote, and the museum won."
+     "w": "a show of hands",
+     "ar": "تصويت برفع الأيدي",
+     "ex": "We chose the museum by a show of hands."
     },
     {
      "w": "action point",
@@ -4245,7 +4307,7 @@
     },
     {
      "s": "Waleed",
-     "t": "Fine by me. Should we take a vote on the date as well?"
+     "t": "Fine by me. Should we decide the date by a show of hands as well?"
     },
     {
      "s": "Majd",
@@ -4265,9 +4327,9 @@
   "2-5": {
    "words": [
     {
-     "w": "It might be worth",
-     "ar": "قد يكون من المفيد",
-     "ex": "It might be worth asking the neighbours first."
+     "w": "test the waters",
+     "ar": "يجسّ النبض",
+     "ex": "Let's test the waters with one evening a week."
     },
     {
      "w": "a feasible option",
@@ -4280,9 +4342,9 @@
      "ex": "The school ran a three-month pilot scheme."
     },
     {
-     "w": "strike a balance",
-     "ar": "يحقّق التوازن",
-     "ex": "It's hard to strike a balance between study and sport."
+     "w": "a happy medium",
+     "ar": "حلّ وسط مناسب",
+     "ex": "Two hours of study a day is a happy medium."
     },
     {
      "w": "reach a consensus",
@@ -4290,9 +4352,9 @@
      "ex": "After an hour, the group reached a consensus."
     },
     {
-     "w": "the beauty of",
-     "ar": "الميزة الرائعة في",
-     "ex": "The beauty of a pilot is that it's low-risk."
+     "w": "the main selling point",
+     "ar": "أبرز ميزة جاذبة",
+     "ex": "The main selling point of the plan is that it's cheap."
     }
    ],
    "dialogue": [
@@ -4314,11 +4376,11 @@
     },
     {
      "s": "Bader",
-     "t": "The beauty of a pilot is that we can see if people actually come. But what about noise for the neighbours?"
+     "t": "The main selling point of a pilot is that we can test the waters first. But what about noise for the neighbours?"
     },
     {
      "s": "Jack",
-     "t": "We need to strike a balance. If we close by ten, it shouldn't disturb anyone."
+     "t": "Closing by ten seems a happy medium. That shouldn't disturb anyone."
     },
     {
      "s": "Bader",
@@ -4327,7 +4389,7 @@
    ],
    "grammar": {
     "title": "Meeting language: the full cycle",
-    "ar": "الاجتماع الناجح: نفتح (Let's get down to business) ← نقترح (It might be worth / What if we) ← نقيّم (The beauty of … / Is it feasible?) ← نلخّص ونتفق (To recap / Have we reached a consensus?) ← نوزّع المهام (action points).",
+    "ar": "الاجتماع الناجح: نفتح (Let's get down to business) ← نقترح (It might be worth / What if we) ← نقيّم (The main selling point of … / Is it feasible?) ← نلخّص ونتفق (To recap / Have we reached a consensus?) ← نوزّع المهام (action points).",
     "examples": [
      "What if we ran a pilot scheme for three months?",
      "Is that a feasible option with our budget?",
@@ -4343,14 +4405,14 @@
      "ex": "The person I've chosen to talk about is my football coach."
     },
     {
-     "w": "look up to",
-     "ar": "يُعجب به ويقتدي به",
-     "ex": "I've always looked up to my older sister."
+     "w": "think the world of",
+     "ar": "يُكنّ له تقديراً كبيراً",
+     "ex": "My little brother thinks the world of his football coach."
     },
     {
-     "w": "a role model",
-     "ar": "قدوة",
-     "ex": "Our science teacher is a real role model for me."
+     "w": "a source of inspiration",
+     "ar": "مصدر إلهام",
+     "ex": "My grandmother is a real source of inspiration."
     },
     {
      "w": "which meant that",
@@ -4379,7 +4441,7 @@
     },
     {
      "s": "Abdullah",
-     "t": "I've always looked up to him because he stays calm in situations that would terrify most people."
+     "t": "I've always thought the world of him because he stays calm in situations that would terrify most people."
     },
     {
      "s": "Abdullah",
@@ -4391,7 +4453,7 @@
     },
     {
      "s": "Abdullah",
-     "t": "He's a real role model, and that class left a lasting impression on me. It's partly why I want to study medicine."
+     "t": "He's a real source of inspiration, and that class left a lasting impression on me. It's partly why I want to study medicine."
     }
    ],
    "grammar": {
@@ -4422,9 +4484,9 @@
      "ex": "We visited cities such as Tokyo and Osaka."
     },
     {
-     "w": "breathtaking",
-     "ar": "يحبس الأنفاس",
-     "ex": "The view from the mountain was breathtaking."
+     "w": "awe-inspiring",
+     "ar": "مهيب يبعث على الدهشة",
+     "ex": "The night sky in the desert is awe-inspiring."
     },
     {
      "w": "What really appeals to me is",
@@ -4432,9 +4494,9 @@
      "ex": "What really appeals to me is the peace and quiet."
     },
     {
-     "w": "off the beaten track",
-     "ar": "بعيد عن الأماكن السياحية المعتادة",
-     "ex": "We found a small village off the beaten track."
+     "w": "unspoilt",
+     "ar": "بِكر لم تمسّه السياحة",
+     "ex": "The island is still unspoilt, with no big hotels."
     }
    ],
    "dialogue": [
@@ -4456,11 +4518,11 @@
     },
     {
      "s": "Reem",
-     "t": "Having said that, I don't only want to see the famous sights. I'd like to go somewhere off the beaten track, too."
+     "t": "Having said that, I don't only want to see the famous sights. I'd like to see somewhere unspoilt, too."
     },
     {
      "s": "Reem",
-     "t": "I've read about small mountain villages where the scenery is breathtaking, especially in autumn."
+     "t": "I've read about small mountain villages where the scenery is awe-inspiring, especially in autumn."
     },
     {
      "s": "Hannah",
@@ -4485,9 +4547,9 @@
      "ex": "Looking back, it was the best decision I've made."
     },
     {
-     "w": "lend a hand",
-     "ar": "يمدّ يد العون",
-     "ex": "Can you lend me a hand with these boxes?"
+     "w": "step in",
+     "ar": "يتدخّل للمساعدة",
+     "ex": "When the little boy got lost, a guard stepped in."
     },
     {
      "w": "at the time",
@@ -4495,9 +4557,9 @@
      "ex": "At the time, I was too nervous to speak."
     },
     {
-     "w": "out of the blue",
-     "ar": "فجأة / دون سابق إنذار",
-     "ex": "Out of the blue, my old friend called me."
+     "w": "without warning",
+     "ar": "فجأة ودون سابق إنذار",
+     "ex": "Without warning, the lights went out."
     },
     {
      "w": "rewarding",
@@ -4505,9 +4567,9 @@
      "ex": "Teaching my little brother to read was really rewarding."
     },
     {
-     "w": "make all the difference",
-     "ar": "يصنع فرقاً كبيراً",
-     "ex": "A kind word can make all the difference."
+     "w": "a lifesaver",
+     "ar": "منقذ / مُنجد",
+     "ex": "Thanks for the charger. You were a lifesaver!"
     }
    ],
    "dialogue": [
@@ -4517,11 +4579,11 @@
     },
     {
      "s": "Ghada",
-     "t": "I was waiting for my flight when, out of the blue, a woman asked me for help. She had missed her connection."
+     "t": "I was waiting for my flight when, without warning, a woman asked me for help. She had missed her connection."
     },
     {
      "s": "Ghada",
-     "t": "At the time, I was nervous about speaking English to a stranger, but I decided to lend a hand."
+     "t": "At the time, I was nervous about speaking English to a stranger, but I decided to step in."
     },
     {
      "s": "Ghada",
@@ -4529,7 +4591,7 @@
     },
     {
      "s": "Ghada",
-     "t": "She said my help made all the difference, and she even sent me a thank-you email later."
+     "t": "She said I was a lifesaver, and she even sent me a thank-you email later."
     },
     {
      "s": "Ghada",
@@ -4538,10 +4600,10 @@
    ],
    "grammar": {
     "title": "Signposts in a story",
-    "ar": "لترتيب القصة في الإجابة المطوّلة: At the time (وقتها)، Out of the blue (فجأة)، ثم نتيجة بـ which meant that، ونختم بتأمّل: Looking back, …. ونستخدم أزمنة الماضي التي درستها سابقاً.",
+    "ar": "لترتيب القصة في الإجابة المطوّلة: At the time (وقتها)، Without warning (فجأة)، ثم نتيجة بـ which meant that، ونختم بتأمّل: Looking back, …. ونستخدم أزمنة الماضي التي درستها سابقاً.",
     "examples": [
      "At the time, I didn't know what to do.",
-     "Out of the blue, the lights went out.",
+     "Without warning, the lights went out.",
      "Looking back, I learnt a lot from that day."
     ]
    }
@@ -4559,9 +4621,9 @@
      "ex": "It's not that I don't like football, it's just that I prefer swimming."
     },
     {
-     "w": "to some extent",
-     "ar": "إلى حدٍّ ما",
-     "ex": "To some extent, money can buy happiness."
+     "w": "to a certain degree",
+     "ar": "إلى حدّ ما",
+     "ex": "To a certain degree, money can buy comfort."
     },
     {
      "w": "By contrast",
@@ -4574,9 +4636,9 @@
      "ex": "That's a tricky question, but I'd say both are important."
     },
     {
-     "w": "on the whole",
-     "ar": "بشكل عام / إجمالاً",
-     "ex": "On the whole, the trip was a success."
+     "w": "for the most part",
+     "ar": "في الغالب",
+     "ex": "For the most part, the trip was a success."
     }
    ],
    "dialogue": [
@@ -4586,7 +4648,7 @@
     },
     {
      "s": "Mariam",
-     "t": "That's a tricky question. To some extent, yes, because millions of young people follow them online."
+     "t": "That's a tricky question. To a certain degree, yes, because millions of young people follow them online."
     },
     {
      "s": "Mariam",
@@ -4598,7 +4660,7 @@
     },
     {
      "s": "Mariam",
-     "t": "On the whole, I'd say family members. You see how they deal with real problems every day."
+     "t": "For the most part, I'd say family members. You see how they deal with real problems every day."
     },
     {
      "s": "Examiner",
@@ -4611,9 +4673,9 @@
    ],
    "grammar": {
     "title": "Balancing and contrasting in Part 3",
-    "ar": "في الجزء الثالث نوازن الإجابة: To some extent … ثم Having said that, …. ونقارن بـ By contrast, … أو whereas. ونوضّح السبب الحقيقي بـ It's not that …, it's just that ….",
+    "ar": "في الجزء الثالث نوازن الإجابة: To a certain degree … ثم Having said that, …. ونقارن بـ By contrast, … أو whereas. ونوضّح السبب الحقيقي بـ It's not that …, it's just that ….",
     "examples": [
-     "To some extent, yes. Having said that, there are exceptions.",
+     "To a certain degree, yes. Having said that, there are exceptions.",
      "Cities are noisy. By contrast, villages are peaceful.",
      "It's not that I'm lazy, it's just that I'm tired."
     ]
@@ -4700,9 +4762,9 @@
      "ex": "I picked up some Spanish on holiday."
     },
     {
-     "w": "get the hang of",
-     "ar": "يتقن / يتمكّن من",
-     "ex": "I finally got the hang of riding a bike."
+     "w": "learn the ropes",
+     "ar": "يتعلّم الأساسيات",
+     "ex": "New players need a few weeks to learn the ropes."
     },
     {
      "w": "a steep learning curve",
@@ -4710,19 +4772,19 @@
      "ex": "Coding has a steep learning curve, but it gets easier."
     },
     {
-     "w": "To wrap up",
-     "ar": "ختاماً",
-     "ex": "To wrap up, it's a skill worth learning."
+     "w": "To round things off",
+     "ar": "وفي الختام",
+     "ex": "To round things off, it would make me more creative."
     },
     {
-     "w": "which meant that",
-     "ar": "مما يعني أنّ",
-     "ex": "He moved abroad, which meant that I had to find a new coach."
+     "w": "with the result that",
+     "ar": "ممّا أدّى إلى أنّ",
+     "ex": "He trained every day, with the result that he made the team."
     },
     {
-     "w": "Having said that",
-     "ar": "ومع ذلك / رغم ما قلته",
-     "ex": "Falconry is hard. Having said that, it's very rewarding."
+     "w": "all the same",
+     "ar": "ومع ذلك",
+     "ex": "Falconry is hard. All the same, it's very rewarding."
     }
    ],
    "dialogue": [
@@ -4740,7 +4802,7 @@
     },
     {
      "s": "Sultan",
-     "t": "I know it has a steep learning curve. It can take months to get the hang of training a falcon."
+     "t": "I know it has a steep learning curve. My cousin tried it alone, with the result that his falcon flew away!"
     },
     {
      "s": "Examiner",
@@ -4748,7 +4810,7 @@
     },
     {
      "s": "Sultan",
-     "t": "Definitely. They connect us to our history. Having said that, young people also need modern skills, such as coding."
+     "t": "Definitely. They connect us to our history. All the same, young people also need modern skills, such as coding."
     },
     {
      "s": "Examiner",
@@ -4761,11 +4823,11 @@
    ],
    "grammar": {
     "title": "Structuring a full long turn",
-    "ar": "الجزء الثاني: نفتح بجملة واضحة، نطوّر بأمثلة (such as / A good example)، نضيف نتائج (which meant that)، ونختم (To wrap up). الجزء الثالث: نوازن (Having said that / whereas / It depends on).",
+    "ar": "الجزء الثاني: نفتح بجملة واضحة، نطوّر بأمثلة (such as / A good example)، نضيف نتائج (which meant that)، ونختم (To round things off). الجزء الثالث: نوازن (All the same / whereas / It depends on).",
     "examples": [
      "The skill I'd most like to pick up is photography.",
      "It has a steep learning curve, but I'm patient.",
-     "To wrap up, it would make me more creative."
+     "To round things off, it would make me more creative."
     ]
    }
   }
@@ -5025,18 +5087,15 @@
    {
     "type": "order",
     "words": [
-     "We",
-     "can't",
-     "draw",
+     "Our",
+     "survey",
+     "was",
+     "not",
      "a",
-     "conclusion",
-     "from",
-     "such",
-     "a",
-     "small",
-     "survey."
+     "representative",
+     "sample."
     ],
-    "answer": "We can't draw a conclusion from such a small survey.",
+    "answer": "Our survey was not a representative sample.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5109,10 +5168,10 @@
    {
     "type": "order",
     "words": [
-     "If",
-     "we",
-     "weigh",
-     "up",
+     "On",
+     "the",
+     "strength",
+     "of",
      "the",
      "evidence,",
      "the",
@@ -5120,7 +5179,7 @@
      "are",
      "clear."
     ],
-    "answer": "If we weigh up the evidence, the benefits are clear.",
+    "answer": "On the strength of the evidence, the benefits are clear.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5255,12 +5314,12 @@
    },
    {
     "type": "mc",
-    "q": "Which is the most formal way to say 'They've put off the match'?",
+    "q": "Which is the most formal way to say 'They've pushed the match back'?",
     "options": [
      "They've moved it back a bit.",
      "The match has been postponed.",
      "The match is off for now.",
-     "They've pushed the match back."
+     "They've shifted the match."
     ],
     "answer": 1
    },
@@ -5482,15 +5541,13 @@
    {
     "type": "order",
     "words": [
-     "I'll",
-     "make",
-     "it",
-     "up",
-     "to",
-     "you",
+     "Lunch",
+     "is",
+     "on",
+     "me",
      "tomorrow."
     ],
-    "answer": "I'll make it up to you tomorrow.",
+    "answer": "Lunch is on me tomorrow.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5516,7 +5573,7 @@
     "q": "Which invitation is informal?",
     "options": [
      "We would be delighted if you could attend.",
-     "Fancy coming to our bake sale?",
+     "Are you up for our bake sale?",
      "Kindly confirm your attendance.",
      "On behalf of the school, we invite you."
     ],
@@ -5524,7 +5581,7 @@
    },
    {
     "type": "mc",
-    "q": "Fancy ___ to the park later?",
+    "q": "Are you up for ___ to the park later?",
     "options": [
      "to go",
      "go",
@@ -5601,22 +5658,21 @@
      "Do it now.",
      "We must close the canteen.",
      "Stop complaining.",
-     "What if we had two break times?"
+     "Supposing we had two break times?"
     ],
     "answer": 3
    },
    {
     "type": "order",
     "words": [
-     "What",
-     "if",
+     "Supposing",
      "we",
      "had",
      "staggered",
      "break",
      "times?"
     ],
-    "answer": "What if we had staggered break times?",
+    "answer": "Supposing we had staggered break times?",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5722,7 +5778,7 @@
    },
    {
     "type": "mc",
-    "q": "'A knock-on effect' is …",
+    "q": "'A ripple effect' is …",
     "options": [
      "a loud noise",
      "an effect that causes other effects",
@@ -5775,14 +5831,14 @@
    },
    {
     "type": "mc",
-    "q": "Food that is not eaten at the end of a meal is called …",
+    "q": "Extra food that a restaurant does not need is called …",
     "options": [
+     "surplus food",
      "groceries",
      "ingredients",
-     "recipes",
-     "leftovers"
+     "recipes"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5798,16 +5854,16 @@
    {
     "type": "order",
     "words": [
-     "I",
-     "hate",
-     "seeing",
-     "good",
-     "food",
-     "go",
-     "to",
-     "waste."
+     "Cooked",
+     "rice",
+     "goes",
+     "off",
+     "quickly",
+     "in",
+     "hot",
+     "weather."
     ],
-    "answer": "I hate seeing good food go to waste.",
+    "answer": "Cooked rice goes off quickly in hot weather.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5900,14 +5956,14 @@
    },
    {
     "type": "mc",
-    "q": "It's important to strike a ___ between study and rest.",
+    "q": "Two hours of study a day is a happy ___ for me.",
     "options": [
-     "deal",
-     "point",
-     "match",
-     "balance"
+     "medium",
+     "middle",
+     "centre",
+     "average"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5924,7 +5980,9 @@
     "type": "order",
     "words": [
      "The",
-     "beauty",
+     "main",
+     "selling",
+     "point",
      "of",
      "a",
      "pilot",
@@ -5933,7 +5991,7 @@
      "it's",
      "low-risk."
     ],
-    "answer": "The beauty of a pilot is that it's low-risk.",
+    "answer": "The main selling point of a pilot is that it's low-risk.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5943,13 +6001,14 @@
     "words": [
      "I've",
      "always",
-     "looked",
-     "up",
-     "to",
+     "thought",
+     "the",
+     "world",
+     "of",
      "my",
      "uncle."
     ],
-    "answer": "I've always looked up to my uncle.",
+    "answer": "I've always thought the world of my uncle.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5968,7 +6027,7 @@
     "q": "A person you want to be like is …",
     "options": [
      "a role play",
-     "a role model",
+     "a source of inspiration",
      "a model answer",
      "a team player"
     ],
@@ -6031,23 +6090,23 @@
    },
    {
     "type": "mc",
-    "q": "Which word means 'extremely beautiful or impressive'?",
+    "q": "Which word means 'so impressive that it fills you with wonder'?",
     "options": [
      "boring",
      "crowded",
-     "breathtaking",
+     "awe-inspiring",
      "ordinary"
     ],
     "answer": 2
    },
    {
     "type": "mc",
-    "q": "A place 'off the beaten track' is …",
+    "q": "An 'unspoilt' beach is …",
     "options": [
-     "very popular with tourists",
-     "next to a main road",
-     "a sports stadium",
-     "far from the usual tourist places"
+     "full of hotels and shops",
+     "dirty and crowded",
+     "closed to visitors",
+     "still natural and not built on"
     ],
     "answer": 3
    },
@@ -6088,7 +6147,7 @@
    },
    {
     "type": "mc",
-    "q": "'Out of the blue' means …",
+    "q": "'Without warning' means …",
     "options": [
      "very sadly",
      "suddenly and unexpectedly",
@@ -6099,14 +6158,14 @@
    },
    {
     "type": "mc",
-    "q": "Could you lend me a ___ with these boxes?",
+    "q": "When nobody else helped, Ghada decided to ___ in.",
     "options": [
-     "arm",
-     "finger",
-     "help",
-     "hand"
+     "step",
+     "put",
+     "make",
+     "take"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6122,14 +6181,13 @@
    {
     "type": "order",
     "words": [
-     "Your",
-     "help",
-     "made",
-     "all",
-     "the",
-     "difference."
+     "You",
+     "were",
+     "a",
+     "real",
+     "lifesaver."
     ],
-    "answer": "Your help made all the difference.",
+    "answer": "You were a real lifesaver.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -6162,7 +6220,7 @@
    },
    {
     "type": "mc",
-    "q": "'To some extent' means …",
+    "q": "'To a certain degree' means …",
     "options": [
      "completely",
      "partly, but not completely",
@@ -6185,9 +6243,10 @@
    {
     "type": "order",
     "words": [
-     "On",
+     "For",
      "the",
-     "whole,",
+     "most",
+     "part,",
      "family",
      "members",
      "are",
@@ -6195,7 +6254,7 @@
      "role",
      "models."
     ],
-    "answer": "On the whole, family members are better role models.",
+    "answer": "For the most part, family members are better role models.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -6271,13 +6330,11 @@
      "me",
      "months",
      "to",
-     "get",
+     "learn",
      "the",
-     "hang",
-     "of",
-     "it."
+     "ropes."
     ],
-    "answer": "It took me months to get the hang of it.",
+    "answer": "It took me months to learn the ropes.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6298,7 +6355,7 @@
      "Out of the blue,",
      "At the time,",
      "Having said that,",
-     "To wrap up,"
+     "To round things off,"
     ],
     "answer": 3
    },
@@ -6316,16 +6373,16 @@
    {
     "type": "order",
     "words": [
-     "Having",
-     "said",
-     "that,",
+     "All",
+     "the",
+     "same,",
      "it's",
      "a",
      "very",
      "rewarding",
      "skill."
     ],
-    "answer": "Having said that, it's a very rewarding skill.",
+    "answer": "All the same, it's a very rewarding skill.",
     "ar": "رتّب الجملة"
    }
   ]
@@ -6335,14 +6392,14 @@
    "items": [
     {
      "type": "mc",
-     "q": "'According ___ the report, most teenagers sleep too little.'",
+     "q": "When you share a health fact, it's good practice to ___ a source.",
      "options": [
-      "for",
-      "with",
-      "to",
-      "by"
+      "cite",
+      "sight",
+      "say",
+      "tell"
      ],
-     "answer": 2
+     "answer": 0
     },
     {
      "type": "mc",
@@ -6467,7 +6524,7 @@
    "items": [
     {
      "type": "mc",
-     "q": "Which is the formal way to say 'put off'?",
+     "q": "Which is the formal way to say 'push back'?",
      "options": [
       "cancel out",
       "push on",
@@ -6674,15 +6731,14 @@
     {
      "type": "order",
      "words": [
-      "What",
-      "if",
+      "Supposing",
       "we",
       "had",
       "staggered",
       "break",
       "times?"
      ],
-     "answer": "What if we had staggered break times?",
+     "answer": "Supposing we had staggered break times?",
      "ar": "رتّب الجملة"
     },
     {
@@ -6735,22 +6791,22 @@
     },
     {
      "type": "mc",
-     "q": "Walking in the desert was ___: the views were amazing.",
+     "q": "Walking in the desert at night was ___: the stars were amazing.",
      "options": [
-      "breathless",
+      "awe-inspiring",
       "tiring",
-      "breathtaking",
+      "awful",
       "boring"
      ],
-     "answer": 2
+     "answer": 0
     },
     {
      "type": "mc",
-     "q": "'Out of the blue' means …",
+     "q": "'Without warning' means …",
      "options": [
       "in bad weather",
       "very slowly",
-      "suddenly and unexpectedly",
+      "suddenly, with no sign beforehand",
       "far away"
      ],
      "answer": 2

@@ -46,7 +46,7 @@
     [
      "The Academic Debate",
      "Take part in a formal academic debate, arguing with precision and responding to the other side",
-     "The motion before us … / My opponent contends that …, but … / On balance, … / The weight of evidence suggests …"
+     "The motion before us … / My opponent contends that …, but … / In the final analysis, … / The weight of evidence suggests …"
     ]
    ]
   },
@@ -121,12 +121,12 @@
     [
      "Food on the Table",
      "Discuss food as part of cultural identity, using food idioms figuratively",
-     "an acquired taste / food for thought / a recipe for … / bring … to the table"
+     "an acquired taste / chew over / a recipe for … / bring … to the table"
     ],
     [
      "Between Two Worlds",
      "Discuss living between two cultures, using idioms about adapting",
-     "a fish out of water / find your feet / the best of both worlds / straddle two cultures"
+     "a fish out of water / find your feet / a foot in both camps / straddle two cultures"
     ],
     [
      "Threads of Tradition",
@@ -136,7 +136,7 @@
     [
      "The Identity Podcast",
      "Record a podcast discussion about what shapes identity, using rich figurative language",
-     "at the heart of … / a melting pot or a mosaic? / a double-edged sword / the best of both worlds"
+     "at the heart of … / a melting pot or a mosaic? / a mixed bag / a foot in both camps"
     ]
    ]
   },
@@ -161,7 +161,7 @@
     [
      "Guiding Through the Data",
      "Guide an audience through data using precise C2 signposting",
-     "Turning now to … / As illustrated by … / To put this into perspective, … / Bear in mind that …"
+     "Turning now to … / As illustrated by … / To give you a sense of scale, … / Bear in mind that …"
     ],
     [
      "Fielding Questions",
@@ -176,7 +176,7 @@
     [
      "Closing With Impact",
      "Conclude a presentation memorably, summarising the key message and its implications",
-     "To draw the threads together, … / The take-home message is … / I'll leave you with …"
+     "To draw the threads together, … / The key takeaway is … / I'll leave you with …"
     ],
     [
      "The Conference Presentation",
@@ -190,6 +190,96 @@
   "0-0": {
    "objective": "Today you will define key terms before you argue and make a precise claim about fast fashion.",
    "warmup": "How long do you usually keep a piece of clothing before you stop wearing it?",
+   "dialogue": {
+    "scene": "Lina and Hala are preparing for their school debating club. The motion is: 'Fast fashion can never be sustainable.'",
+    "p1": [
+     {
+      "s": "Lina",
+      "t": "Before we write a word, we need to define our terms. What exactly do we mean by 'sustainable'?"
+     },
+     {
+      "s": "Hala",
+      "t": "Anything that doesn't damage the planet, I suppose. By that standard, fast fashion fails completely."
+     },
+     {
+      "s": "Lina",
+      "t": "That's an oversimplification, though. Some brands now use recycled fabric."
+     },
+     {
+      "s": "Hala",
+      "t": "True, but in the strict sense, a T-shirt worn three times isn't sustainable, whatever it's made of."
+     },
+     {
+      "s": "Lina",
+      "t": "So we need a definition that covers how a product is used, not just how it's made."
+     },
+     {
+      "s": "Hala",
+      "t": "Exactly. Otherwise the other team will pick the narrowest definition and win on a technicality."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Lina",
+      "t": "So the crux of the matter isn't the material; it's how long clothes are actually worn."
+     },
+     {
+      "s": "Hala",
+      "t": "Exactly. Our whole case hinges on that distinction."
+     },
+     {
+      "s": "Lina",
+      "t": "Then we'll contend that the business model, not the fabric, is the real problem."
+     },
+     {
+      "s": "Hala",
+      "t": "Perfect. If we define it that way, the other team can't hide behind recycled labels."
+     },
+     {
+      "s": "Lina",
+      "t": "Shall we prepare a reply in case they say people can't afford expensive clothes?"
+     },
+     {
+      "s": "Hala",
+      "t": "Yes. Our point isn't buying expensive clothes; it's buying fewer and wearing them for longer."
+     }
+    ],
+    "focus": "True, but in the strict sense, a T-shirt worn three times isn't sustainable, whatever it's made of.",
+    "qs": [
+     "Why does Hala think recycled fabric is not enough?",
+     "What does their whole case depend on?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are on a debate team arguing that fast fashion can never be sustainable. Your teacher plays the other side and keeps using vague, general claims.",
+    "prompts": [
+     {
+      "q": "Surely recycled clothes solve the problem, don't they?",
+      "hint": "Say that it hinges on how 'sustainable' is defined, then give your definition. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Everyone who buys cheap clothes is destroying the planet. Agree?",
+      "hint": "Call it an oversimplification and offer a more precise version of the claim. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So what, in your view, is the real issue here?",
+      "hint": "State the crux of the matter in one exact sentence. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: The Cost of Clothes",
+    "points": [
+     "The fashion industry is one of the world's biggest users of water.",
+     "Second-hand clothing apps and vintage shops have become popular in many countries.",
+     "In Saudi Arabia, many men still have their thobes made to measure by local tailors."
+    ],
+    "qs": [
+     "Are made-to-measure clothes more sustainable than mass-produced ones? Why?",
+     "How would you define 'sustainable fashion' in one precise sentence?"
+    ]
+   },
+   "exit": "Define one key term precisely, then make one exact claim about fast fashion.",
    "expressions": [
     {
      "w": "define our terms",
@@ -204,10 +294,10 @@
      "frame": "The whole debate hinges on ___."
     },
     {
-     "w": "a sweeping generalisation",
-     "def": "a claim that something is true of everyone or everything",
-     "ar": "تعميم شامل",
-     "frame": "Saying that ___ is a sweeping generalisation."
+     "w": "an oversimplification",
+     "def": "a description that makes something seem simpler than it is",
+     "ar": "تبسيط مُخِلّ",
+     "frame": "Saying that ___ is an oversimplification."
     },
     {
      "w": "contend",
@@ -228,80 +318,9 @@
      "frame": "In the strict sense, ___ isn't really sustainable."
     }
    ],
-   "dialogue": {
-    "scene": "Lina and Hala are preparing for their school debating club. The motion is: 'Fast fashion can never be sustainable.'",
-    "p1": [
-     {
-      "s": "Lina",
-      "t": "Before we write a word, we need to define our terms. What exactly do we mean by 'sustainable'?"
-     },
-     {
-      "s": "Hala",
-      "t": "Anything that doesn't damage the planet, I suppose. By that standard, fast fashion fails completely."
-     },
-     {
-      "s": "Lina",
-      "t": "That's a sweeping generalisation, though. Some brands now use recycled fabric."
-     },
-     {
-      "s": "Hala",
-      "t": "True, but in the strict sense, a T-shirt worn three times isn't sustainable, whatever it's made of."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Lina",
-      "t": "So the crux of the matter isn't the material; it's how long clothes are actually worn."
-     },
-     {
-      "s": "Hala",
-      "t": "Exactly. Our whole case hinges on that distinction."
-     },
-     {
-      "s": "Lina",
-      "t": "Then we'll contend that the business model, not the fabric, is the real problem."
-     },
-     {
-      "s": "Hala",
-      "t": "Perfect. If we define it that way, the other team can't hide behind recycled labels."
-     }
-    ],
-    "focus": "True, but in the strict sense, a T-shirt worn three times isn't sustainable, whatever it's made of.",
-    "qs": [
-     "Why does Hala think recycled fabric is not enough?",
-     "What does their whole case depend on?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are on a debate team arguing that fast fashion can never be sustainable. Your teacher plays the other side and keeps using vague, general claims.",
-    "prompts": [
-     {
-      "q": "Surely recycled clothes solve the problem, don't they?",
-      "hint": "Say that it hinges on how 'sustainable' is defined, then give your definition."
-     },
-     {
-      "q": "Everyone who buys cheap clothes is destroying the planet. Agree?",
-      "hint": "Call it a sweeping generalisation and offer a more precise version of the claim."
-     },
-     {
-      "q": "So what, in your view, is the real issue here?",
-      "hint": "State the crux of the matter in one exact sentence."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around the world: The Cost of Clothes",
-    "points": [
-     "The fashion industry is one of the world's biggest users of water.",
-     "Second-hand clothing apps and vintage shops have become popular in many countries.",
-     "In Saudi Arabia, many men still have their thobes made to measure by local tailors."
-    ],
-    "qs": [
-     "Are made-to-measure clothes more sustainable than mass-produced ones? Why?",
-     "How would you define 'sustainable fashion' in one precise sentence?"
-    ]
-   },
-   "exit": "Define one key term precisely, then make one exact claim about fast fashion."
+   "recycle": [
+    "a sweeping generalisation"
+   ]
   },
   "0-1": {
    "objective": "Today you will report other people's arguments accurately using precise reporting verbs.",
@@ -362,6 +381,14 @@
      {
       "s": "Reem",
       "t": "Yes. And she concedes that modern greenhouses still use a lot of energy for cooling."
+     },
+     {
+      "s": "Mai",
+      "t": "So she's not completely against farming in the desert, then?"
+     },
+     {
+      "s": "Reem",
+      "t": "No. She maintains that the crop matters. Dates and vegetables in greenhouses are very different from huge wheat fields."
      }
     ],
     "p2": [
@@ -380,6 +407,18 @@
      {
       "s": "Reem",
       "t": "No. They focus on different crops, so neither refutes the other directly."
+     },
+     {
+      "s": "Mai",
+      "t": "Then our summary should make that clear, or readers will think they disagree completely."
+     },
+     {
+      "s": "Reem",
+      "t": "Exactly. Reporting a view fairly means keeping its limits, not just its headline."
+     },
+     {
+      "s": "Mai",
+      "t": "Got it. I'll quote one sentence from each author, so readers can judge for themselves."
      }
     ],
     "focus": "Not quite. That would misrepresent the author. She maintains that farming wheat in the desert wastes water.",
@@ -393,15 +432,15 @@
     "prompts": [
      {
       "q": "What does the first author argue, exactly?",
-      "hint": "Use 'maintains that' and keep her claim as narrow as she made it."
+      "hint": "Use 'maintains that' and keep her claim as narrow as she made it. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Does she admit any weakness in her own argument?",
-      "hint": "Use 'concedes that' and name the weakness."
+      "hint": "Use 'concedes that' and name the weakness. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "So the second writer simply rejects greenhouses?",
-      "hint": "Correct the summary with 'dismisses … as …' and add his exact limit."
+      "hint": "Correct the summary with 'dismisses … as …' and add his exact limit. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -478,6 +517,14 @@
      {
       "s": "Hessa",
       "t": "How about: 'A sharp reduction in panel costs has led to the wider adoption of solar technology.'"
+     },
+     {
+      "s": "Danielle",
+      "t": "That sounds far more academic. But isn't it harder to read?"
+     },
+     {
+      "s": "Hessa",
+      "t": "A little, so don't overdo it. One nominalisation per sentence is usually enough."
      }
     ],
     "p2": [
@@ -496,6 +543,14 @@
      {
       "s": "Hessa",
       "t": "Good, and say why it's now viable: sunshine all year and falling costs."
+     },
+     {
+      "s": "Danielle",
+      "t": "And should I mention any problems, like dust on the panels?"
+     },
+     {
+      "s": "Hessa",
+      "t": "Definitely. Admitting a limitation makes the rest of your argument more convincing."
      }
     ],
     "focus": "How about: 'A sharp reduction in panel costs has led to the wider adoption of solar technology.'",
@@ -509,15 +564,15 @@
     "prompts": [
      {
       "q": "Rewrite this: 'Cities used gas more and more.'",
-      "hint": "Turn the verb into a noun phrase with 'a growing reliance on'."
+      "hint": "Turn the verb into a noun phrase with 'a growing reliance on'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Rewrite this: 'Panels got cheaper, so people bought more.'",
-      "hint": "Use 'a reduction in' and 'led to the adoption of'."
+      "hint": "Use 'a reduction in' and 'led to the adoption of'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Is solar really practical here? Answer academically.",
-      "hint": "Say whether it is 'viable' and give one precise reason."
+      "hint": "Say whether it is 'viable' and give one precise reason. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -538,6 +593,100 @@
   "0-3": {
    "objective": "Today you will challenge weak reasoning precisely, pointing out exactly where an argument fails.",
    "warmup": "Have you ever read a headline that sounded convincing but turned out to be misleading?",
+   "dialogue": {
+    "scene": "Sultan and Adam are reviewing a school blog post titled 'Breakfast Makes You Smarter' for their critical thinking class.",
+    "p1": [
+     {
+      "s": "Sultan",
+      "t": "The post says students who eat breakfast get higher grades, so breakfast makes you smarter."
+     },
+     {
+      "s": "Adam",
+      "t": "It doesn't necessarily follow. Higher grades and breakfast might both come from something else, like regular sleep."
+     },
+     {
+      "s": "Sultan",
+      "t": "So the survey shows a pattern, not a causal relationship?"
+     },
+     {
+      "s": "Adam",
+      "t": "Exactly. And the writer conflates 'getting higher grades' with 'being smarter', which isn't the same thing."
+     },
+     {
+      "s": "Sultan",
+      "t": "Fair point. Being organised enough to get good grades isn't the same as being clever."
+     },
+     {
+      "s": "Adam",
+      "t": "And the survey only included students who chose to answer it online, who might already be the more motivated ones."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Sultan",
+      "t": "She also quotes only two studies. I found five more with mixed results."
+     },
+     {
+      "s": "Adam",
+      "t": "Then she's cherry-picking. That's a serious weakness."
+     },
+     {
+      "s": "Sultan",
+      "t": "So what can we fairly infer?"
+     },
+     {
+      "s": "Adam",
+      "t": "That breakfast may help, but any link to intelligence is tenuous at best."
+     },
+     {
+      "s": "Sultan",
+      "t": "So our review should praise the topic but criticise the method."
+     },
+     {
+      "s": "Adam",
+      "t": "Exactly. We could even suggest a fairer test: compare the same students on days with and without breakfast."
+     },
+     {
+      "s": "Sultan",
+      "t": "Good idea. Then any difference couldn't simply be explained by sleep or motivation."
+     }
+    ],
+    "focus": "It doesn't necessarily follow. Higher grades and breakfast might both come from something else, like regular sleep.",
+    "qs": [
+     "Which two ideas does the blog writer conflate?",
+     "Why does Adam say the writer is cherry-picking?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher reads out weak arguments from a newspaper and asks you to explain precisely what is wrong with each one.",
+    "prompts": [
+     {
+      "q": "Teens who play chess get better maths marks, so chess makes you good at maths. Convincing?",
+      "hint": "Say it doesn't necessarily follow and suggest another explanation. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "This article only mentions the two studies that agree with it. Is that a problem?",
+      "hint": "Use 'cherry-pick' and say what a fair writer would do. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Then what can we safely conclude?",
+      "hint": "Make a careful inference and say whether the link is causal or tenuous. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Thinking Critically",
+    "points": [
+     "Many universities teach critical thinking as a separate course in the first year.",
+     "Scientists use controlled experiments to test whether one thing really causes another.",
+     "Fact-checking organisations now examine viral claims online every day."
+    ],
+    "qs": [
+     "Which kind of weak reasoning do you notice most often online?",
+     "How could schools teach students to spot cherry-picked evidence?"
+    ]
+   },
+   "exit": "Give me one weak argument and explain exactly what is wrong with it, using two of today's expressions.",
    "expressions": [
     {
      "w": "it doesn't necessarily follow",
@@ -570,90 +719,113 @@
      "frame": "To prove a causal relationship between ___ and ___, we'd need ___."
     },
     {
-     "w": "draw a conclusion",
-     "def": "decide something is true after looking at evidence",
-     "ar": "يستخلص نتيجة",
-     "frame": "From this data, I'd draw the conclusion that ___."
+     "w": "infer",
+     "def": "to decide that something is probably true from the evidence",
+     "ar": "يستنتج",
+     "frame": "From this data, I'd infer that ___."
     }
    ],
-   "dialogue": {
-    "scene": "Sultan and Adam are reviewing a school blog post titled 'Breakfast Makes You Smarter' for their critical thinking class.",
-    "p1": [
-     {
-      "s": "Sultan",
-      "t": "The post says students who eat breakfast get higher grades, so breakfast makes you smarter."
-     },
-     {
-      "s": "Adam",
-      "t": "It doesn't necessarily follow. Higher grades and breakfast might both come from something else, like regular sleep."
-     },
-     {
-      "s": "Sultan",
-      "t": "So the survey shows a pattern, not a causal relationship?"
-     },
-     {
-      "s": "Adam",
-      "t": "Exactly. And the writer conflates 'getting higher grades' with 'being smarter', which isn't the same thing."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Sultan",
-      "t": "She also quotes only two studies. I found five more with mixed results."
-     },
-     {
-      "s": "Adam",
-      "t": "Then she's cherry-picking. That's a serious weakness."
-     },
-     {
-      "s": "Sultan",
-      "t": "So what conclusion can we fairly draw?"
-     },
-     {
-      "s": "Adam",
-      "t": "That breakfast may help, but any link to intelligence is tenuous at best."
-     }
-    ],
-    "focus": "It doesn't necessarily follow. Higher grades and breakfast might both come from something else, like regular sleep.",
-    "qs": [
-     "Which two ideas does the blog writer conflate?",
-     "Why does Adam say the writer is cherry-picking?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your teacher reads out weak arguments from a newspaper and asks you to explain precisely what is wrong with each one.",
-    "prompts": [
-     {
-      "q": "Teens who play chess get better maths marks, so chess makes you good at maths. Convincing?",
-      "hint": "Say it doesn't necessarily follow and suggest another explanation."
-     },
-     {
-      "q": "This article only mentions the two studies that agree with it. Is that a problem?",
-      "hint": "Use 'cherry-pick' and say what a fair writer would do."
-     },
-     {
-      "q": "Then what can we safely conclude?",
-      "hint": "Draw a careful conclusion and say whether the link is causal or tenuous."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around the world: Thinking Critically",
-    "points": [
-     "Many universities teach critical thinking as a separate course in the first year.",
-     "Scientists use controlled experiments to test whether one thing really causes another.",
-     "Fact-checking organisations now examine viral claims online every day."
-    ],
-    "qs": [
-     "Which kind of weak reasoning do you notice most often online?",
-     "How could schools teach students to spot cherry-picked evidence?"
-    ]
-   },
-   "exit": "Give me one weak argument and explain exactly what is wrong with it, using two of today's expressions."
+   "recycle": [
+    "draw a conclusion"
+   ]
   },
   "0-4": {
    "objective": "Today you will qualify your claims exactly, saying how far and in which cases they are true.",
    "warmup": "Would you prefer a four-day school week with longer days? Why?",
+   "dialogue": {
+    "scene": "Abdullah and Nabil are presenting the results of an imaginary trial of a four-day school week to their student council.",
+    "p1": [
+     {
+      "s": "Abdullah",
+      "t": "So, did the four-day week work? Can we say it was a success?"
+     },
+     {
+      "s": "Nabil",
+      "t": "In the main, yes. Students reported feeling less tired, with the possible exception of the youngest classes."
+     },
+     {
+      "s": "Abdullah",
+      "t": "And grades? Some people are saying they shot up."
+     },
+     {
+      "s": "Nabil",
+      "t": "It would be an overstatement to say they shot up. They improved only marginally."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Marginally? The school newsletter's headline said 'Grades Soar'."
+     },
+     {
+      "s": "Nabil",
+      "t": "That's exactly the kind of overstatement we need to correct. In our imaginary data, the average rose by about two per cent."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Abdullah",
+      "t": "So the benefit was mainly about wellbeing, not results?"
+     },
+     {
+      "s": "Nabil",
+      "t": "To a large extent, yes. Longer days were hard for some students to concentrate through."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Then should we recommend it to the school?"
+     },
+     {
+      "s": "Nabil",
+      "t": "Only under certain conditions: shorter lessons, a proper lunch break and more time outdoors."
+     },
+     {
+      "s": "Abdullah",
+      "t": "And what about parents? Did they support it?"
+     },
+     {
+      "s": "Nabil",
+      "t": "Most did, with the possible exception of working parents, who had to find childcare on the fifth day."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Then our recommendation needs to mention them, or the plan could cause new problems for families."
+     }
+    ],
+    "focus": "It would be an overstatement to say they shot up. They improved only marginally.",
+    "qs": [
+     "Which students did not benefit as much?",
+     "Under what conditions would Nabil recommend the four-day week?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are on the student council. A parent says the four-day week was 'a total success'. Respond with precise, qualified claims.",
+    "prompts": [
+     {
+      "q": "So it was a total success, wasn't it?",
+      "hint": "Qualify the claim with 'in the main' and mention one exception. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Grades went up dramatically, I heard.",
+      "hint": "Correct the overstatement and say how much they really changed. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Should every school switch, then?",
+      "hint": "Say it works only under certain conditions and name two. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around the world: Shorter School Weeks",
+    "points": [
+     "Some schools in the United States have tried a four-day week, often to save money.",
+     "Results from these schools are mixed, so researchers disagree about the benefits.",
+     "Saudi schools follow a five-day week, from Sunday to Thursday."
+    ],
+    "qs": [
+     "Would a four-day week suit students in your city? Under what conditions?",
+     "Qualify this claim: 'Longer school days are bad for learning.'"
+    ]
+   },
+   "exit": "Make one claim about school life, then qualify it precisely in a second sentence.",
    "expressions": [
     {
      "w": "to a large extent",
@@ -674,10 +846,10 @@
      "frame": "It would be an overstatement to say that ___."
     },
     {
-     "w": "by and large",
-     "def": "generally, when everything is considered",
-     "ar": "عموماً",
-     "frame": "By and large, students feel that ___."
+     "w": "in the main",
+     "def": "generally; in most cases",
+     "ar": "في الغالب",
+     "frame": "In the main, students feel that ___."
     },
     {
      "w": "marginally",
@@ -692,90 +864,105 @@
      "frame": "A shorter week works only under certain conditions, such as ___."
     }
    ],
-   "dialogue": {
-    "scene": "Abdullah and Nabil are presenting the results of an imaginary trial of a four-day school week to their student council.",
-    "p1": [
-     {
-      "s": "Abdullah",
-      "t": "So, did the four-day week work? Can we say it was a success?"
-     },
-     {
-      "s": "Nabil",
-      "t": "By and large, yes. Students reported feeling less tired, with the possible exception of the youngest classes."
-     },
-     {
-      "s": "Abdullah",
-      "t": "And grades? Some people are saying they shot up."
-     },
-     {
-      "s": "Nabil",
-      "t": "It would be an overstatement to say they shot up. They improved only marginally."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Abdullah",
-      "t": "So the benefit was mainly about wellbeing, not results?"
-     },
-     {
-      "s": "Nabil",
-      "t": "To a large extent, yes. Longer days were hard for some students to concentrate through."
-     },
-     {
-      "s": "Abdullah",
-      "t": "Then should we recommend it to the school?"
-     },
-     {
-      "s": "Nabil",
-      "t": "Only under certain conditions: shorter lessons, a proper lunch break and more time outdoors."
-     }
-    ],
-    "focus": "It would be an overstatement to say they shot up. They improved only marginally.",
-    "qs": [
-     "Which students did not benefit as much?",
-     "Under what conditions would Nabil recommend the four-day week?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are on the student council. A parent says the four-day week was 'a total success'. Respond with precise, qualified claims.",
-    "prompts": [
-     {
-      "q": "So it was a total success, wasn't it?",
-      "hint": "Qualify the claim with 'by and large' and mention one exception."
-     },
-     {
-      "q": "Grades went up dramatically, I heard.",
-      "hint": "Correct the overstatement and say how much they really changed."
-     },
-     {
-      "q": "Should every school switch, then?",
-      "hint": "Say it works only under certain conditions and name two."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around the world: Shorter School Weeks",
-    "points": [
-     "Some schools in the United States have tried a four-day week, often to save money.",
-     "Results from these schools are mixed, so researchers disagree about the benefits.",
-     "Saudi schools follow a five-day week, from Sunday to Thursday."
-    ],
-    "qs": [
-     "Would a four-day week suit students in your city? Under what conditions?",
-     "Qualify this claim: 'Longer school days are bad for learning.'"
-    ]
-   },
-   "exit": "Make one claim about school life, then qualify it precisely in a second sentence."
+   "recycle": [
+    "by and large"
+   ]
   },
   "0-5": {
    "objective": "Today you will take part in a formal academic debate, arguing with precision and responding to the other side.",
    "warmup": "Should universities choose students only by exam results? What else might matter?",
+   "dialogue": {
+    "scene": "In a school debate, Noura proposes and Khulood opposes the motion: 'University places should depend on interviews as well as exam scores.'",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "The motion before us is that universities should interview applicants, not rely on exam scores alone."
+     },
+     {
+      "s": "Noura",
+      "t": "Exam scores fall short of showing motivation, communication or curiosity, all of which predict success at university."
+     },
+     {
+      "s": "Khulood",
+      "t": "My opponent contends that interviews reveal motivation. In practice, they often reward confidence and coaching."
+     },
+     {
+      "s": "Khulood",
+      "t": "The weight of evidence suggests that exam results remain the fairest single predictor."
+     },
+     {
+      "s": "Noura",
+      "t": "The opposing side talks about fairness, but fairness isn't only giving everyone the same test; it's seeing the whole person."
+     },
+     {
+      "s": "Khulood",
+      "t": "Seeing the whole person sounds attractive, but in practice it often means seeing whoever performs best on the day."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "I concede that interviews can be coached. That's why I'm proposing structured interviews with fixed questions."
+     },
+     {
+      "s": "Khulood",
+      "t": "Even structured interviews take time and money that many universities simply don't have."
+     },
+     {
+      "s": "Noura",
+      "t": "A cost, certainly, but not a reason to ignore everything an exam can't measure."
+     },
+     {
+      "s": "Khulood",
+      "t": "I acknowledge that exams can't measure everything. But interviews could introduce new forms of bias rather than remove them."
+     },
+     {
+      "s": "Noura",
+      "t": "In the final analysis, combining both gives a fairer, more complete picture of every applicant."
+     }
+    ],
+    "focus": "My opponent contends that interviews reveal motivation. In practice, they often reward confidence and coaching.",
+    "qs": [
+     "What weakness of interviews does Khulood point out?",
+     "How does Noura respond to the problem of coaching?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are speaking in a formal debate on the motion: 'University places should depend on interviews as well as exam scores.' Your teacher is your opponent.",
+    "prompts": [
+     {
+      "q": "Please open your case for or against the motion.",
+      "hint": "State the motion, take a side and define one key term precisely. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Interviews simply reward confident students. How do you respond?",
+      "hint": "Report the point with 'My opponent contends that …', then answer it exactly. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Please give your closing statement.",
+      "hint": "Concede one point, then finish with 'In the final analysis, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Getting into University",
+    "points": [
+     "Saudi universities usually look at secondary school grades and national test scores.",
+     "Students take national tests that measure general ability and subject knowledge.",
+     "Some programmes, such as medicine, may also use interviews or extra assessments."
+    ],
+    "qs": [
+     "Which is fairer, a single exam or several types of assessment? Argue precisely.",
+     "What is one skill that exams cannot measure well?"
+    ]
+   },
+   "exit": "Give a short closing statement for your side of today's motion, using 'In the final analysis' and one precise reporting verb.",
    "expressions": [
     {
-     "w": "the motion",
-     "def": "the statement that a formal debate is about",
-     "ar": "موضوع المناظرة",
-     "frame": "The motion before us today is that ___."
+     "w": "the opposing side",
+     "def": "the team or people arguing against you",
+     "ar": "الفريق المعارض",
+     "frame": "The opposing side will probably argue that ___."
     },
     {
      "w": "my opponent contends that",
@@ -796,92 +983,23 @@
      "frame": "Exam results alone fall short of ___."
     },
     {
-     "w": "concede that",
-     "def": "admit, often unwillingly, that something is true",
+     "w": "acknowledge that",
+     "def": "to accept or admit that something is true",
      "ar": "يُقرّ بأنّ",
-     "frame": "I'm willing to concede that ___."
+     "frame": "I'm willing to acknowledge that ___."
     },
     {
-     "w": "on balance",
-     "def": "after considering all the arguments on both sides",
-     "ar": "بعد الموازنة",
-     "frame": "On balance, I believe that ___."
+     "w": "in the final analysis",
+     "def": "after everything has been considered",
+     "ar": "في التحليل الأخير",
+     "frame": "In the final analysis, I believe that ___."
     }
    ],
-   "dialogue": {
-    "scene": "In a school debate, Noura proposes and Khulood opposes the motion: 'University places should depend on interviews as well as exam scores.'",
-    "p1": [
-     {
-      "s": "Noura",
-      "t": "The motion before us is that universities should interview applicants, not rely on exam scores alone."
-     },
-     {
-      "s": "Noura",
-      "t": "Exam scores fall short of showing motivation, communication or curiosity, all of which predict success at university."
-     },
-     {
-      "s": "Khulood",
-      "t": "My opponent contends that interviews reveal motivation. In practice, they often reward confidence and coaching."
-     },
-     {
-      "s": "Khulood",
-      "t": "The weight of evidence suggests that exam results remain the fairest single predictor."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Noura",
-      "t": "I concede that interviews can be coached. That's why I'm proposing structured interviews with fixed questions."
-     },
-     {
-      "s": "Khulood",
-      "t": "Even structured interviews take time and money that many universities simply don't have."
-     },
-     {
-      "s": "Noura",
-      "t": "A cost, certainly, but not a reason to ignore everything an exam can't measure."
-     },
-     {
-      "s": "Noura",
-      "t": "On balance, combining both gives a fairer, more complete picture of every applicant."
-     }
-    ],
-    "focus": "My opponent contends that interviews reveal motivation. In practice, they often reward confidence and coaching.",
-    "qs": [
-     "What weakness of interviews does Khulood point out?",
-     "How does Noura respond to the problem of coaching?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are speaking in a formal debate on the motion: 'University places should depend on interviews as well as exam scores.' Your teacher is your opponent.",
-    "prompts": [
-     {
-      "q": "Please open your case for or against the motion.",
-      "hint": "State the motion, take a side and define one key term precisely."
-     },
-     {
-      "q": "Interviews simply reward confident students. How do you respond?",
-      "hint": "Report the point with 'My opponent contends that …', then answer it exactly."
-     },
-     {
-      "q": "Please give your closing statement.",
-      "hint": "Concede one point, then finish with 'On balance, …'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: Getting into University",
-    "points": [
-     "Saudi universities usually look at secondary school grades and national test scores.",
-     "Students take national tests that measure general ability and subject knowledge.",
-     "Some programmes, such as medicine, may also use interviews or extra assessments."
-    ],
-    "qs": [
-     "Which is fairer, a single exam or several types of assessment? Argue precisely.",
-     "What is one skill that exams cannot measure well?"
-    ]
-   },
-   "exit": "Give a short closing statement for your side of today's motion, using 'On balance' and one precise reporting verb."
+   "recycle": [
+    "the motion",
+    "concede that",
+    "on balance"
+   ]
   },
   "1-0": {
    "objective": "Today you will speculate about how cities will have changed by 2050 using the future perfect.",
@@ -942,6 +1060,14 @@
      {
       "s": "Max",
       "t": "And a lot of people will have stopped driving to work, I imagine."
+     },
+     {
+      "s": "Turki",
+      "t": "Some will. By then, the metro will have been running for over twenty-five years, so it'll feel completely normal."
+     },
+     {
+      "s": "Max",
+      "t": "And the summers will have got even hotter, which might push more people underground."
      }
     ],
     "p2": [
@@ -960,6 +1086,18 @@
      {
       "s": "Turki",
       "t": "In all likelihood, yes, which is exactly why they should start now."
+     },
+     {
+      "s": "Max",
+      "t": "What would you start with, if you were a planner?"
+     },
+     {
+      "s": "Turki",
+      "t": "Shade and green space. Were the city to keep growing without them, walking anywhere would become almost impossible."
+     },
+     {
+      "s": "Max",
+      "t": "So the real question isn't whether Riyadh will grow, but how pleasant it will be to live in."
      }
     ],
     "focus": "Probably. By 2050, the metro will have reshaped the way people move around the city.",
@@ -973,15 +1111,15 @@
     "prompts": [
      {
       "q": "What will have changed most in your city by 2050?",
-      "hint": "Use 'By 2050, … will have …' and name one big change."
+      "hint": "Use 'By 2050, … will have …' and name one big change. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Is the population on course to keep growing?",
-      "hint": "Speculate with 'in all likelihood' and give a reason."
+      "hint": "Speculate with 'in all likelihood' and give a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What could go wrong?",
-      "hint": "Mention one unforeseen consequence and how planners could prevent it."
+      "hint": "Mention one unforeseen consequence and how planners could prevent it. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1058,6 +1196,14 @@
      {
       "s": "Salman",
       "t": "For simple results, maybe. But a match report is a far cry from a real investigation."
+     },
+     {
+      "s": "George",
+      "t": "So investigations would always need people?"
+     },
+     {
+      "s": "Salman",
+      "t": "I think so. A machine can't build trust with a frightened witness or notice that someone is avoiding a question."
      }
     ],
     "p2": [
@@ -1076,6 +1222,18 @@
      {
       "s": "Salman",
       "t": "Exactly. In the end, trust could be the deciding factor."
+     },
+     {
+      "s": "George",
+      "t": "Should a newspaper tell readers when an article was written by AI?"
+     },
+     {
+      "s": "Salman",
+      "t": "Definitely. Were they to hide it and get caught, they'd lose that trust overnight."
+     },
+     {
+      "s": "George",
+      "t": "So in your view, AI might change journalism, but it won't replace the people who make it trustworthy."
      }
     ],
     "focus": "Were that to come to pass, I think reporters would still be needed to find the stories.",
@@ -1089,15 +1247,15 @@
     "prompts": [
      {
       "q": "Were AI to write all your school textbooks, what would change?",
-      "hint": "Start with 'Were that to happen, …' and give one effect."
+      "hint": "Start with 'Were that to happen, …' and give one effect. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Could AI render any jobs obsolete?",
-      "hint": "Name one job and use 'render … obsolete'."
+      "hint": "Name one job and use 'render … obsolete'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Which jobs will always need people?",
-      "hint": "Use 'the human touch' and explain why."
+      "hint": "Use 'the human touch' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1174,6 +1332,14 @@
      {
       "s": "Rayan",
       "t": "That's why missions to the Moon matter. They pave the way for longer journeys."
+     },
+     {
+      "s": "Sami",
+      "t": "And the Moon is only about three days away, so a rescue there is at least possible."
+     },
+     {
+      "s": "Rayan",
+      "t": "Exactly. Mars can be more than half a year away, so the Moon is the perfect place to practise."
      }
     ],
     "p2": [
@@ -1192,6 +1358,14 @@
      {
       "s": "Rayan",
       "t": "I do. Pushing the boundaries is how we learn, and a landing would be a giant leap for science."
+     },
+     {
+      "s": "Sami",
+      "t": "Should you be offered a seat on the first mission, would you go?"
+     },
+     {
+      "s": "Rayan",
+      "t": "Honestly? Only on the second one. I'd like someone else to test the shelters first!"
      }
     ],
     "focus": "Shelter. Should a dust storm hit, they would need somewhere safe immediately.",
@@ -1205,15 +1379,15 @@
     "prompts": [
      {
       "q": "Should the main computer fail, what would you do?",
-      "hint": "Start with 'Should that happen, …' and describe a backup plan."
+      "hint": "Start with 'Should that happen, …' and describe a backup plan. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What would you do in the event of a medical emergency?",
-      "hint": "Use 'In the event of …' and give two steps."
+      "hint": "Use 'In the event of …' and give two steps. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Why should we explore space at all?",
-      "hint": "Use 'pave the way for' or 'push the boundaries' in your answer."
+      "hint": "Use 'pave the way for' or 'push the boundaries' in your answer. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1234,6 +1408,104 @@
   "1-3": {
    "objective": "Today you will speculate about future water supplies and what we could do to prevent a crisis.",
    "warmup": "How much water do you think your family uses in a day?",
+   "dialogue": {
+    "scene": "Fahad and Amir are preparing a talk on the future of water for their school's environment club.",
+    "p1": [
+     {
+      "s": "Amir",
+      "t": "Should demand keep rising, could our underground water eventually run dry?"
+     },
+     {
+      "s": "Fahad",
+      "t": "Some ancient underground supplies could, yes. They refill extremely slowly."
+     },
+     {
+      "s": "Amir",
+      "t": "So desalination is what staves off a crisis?"
+     },
+     {
+      "s": "Fahad",
+      "t": "For now. But should energy costs rise sharply, desalinated water would become far more expensive."
+     },
+     {
+      "s": "Amir",
+      "t": "Because desalination plants need so much energy to run?"
+     },
+     {
+      "s": "Fahad",
+      "t": "Exactly. Most of them still burn oil or gas, although some newer plants are starting to use solar power."
+     },
+     {
+      "s": "Amir",
+      "t": "So cheap water today depends on cheap energy. That's a link most people never think about."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Amir",
+      "t": "Then we need a contingency plan. What happens if demand outstrips supply?"
+     },
+     {
+      "s": "Fahad",
+      "t": "Water would have to be rationed. Were that to happen, farms would probably be hit first."
+     },
+     {
+      "s": "Amir",
+      "t": "Is there a tipping point we should worry about?"
+     },
+     {
+      "s": "Fahad",
+      "t": "Possibly. In the years to come, saving water will be far cheaper than producing more of it."
+     },
+     {
+      "s": "Amir",
+      "t": "So our talk should end with what each family can do."
+     },
+     {
+      "s": "Fahad",
+      "t": "Yes: fix leaks quickly, water gardens at night and choose plants that don't need much water."
+     },
+     {
+      "s": "Amir",
+      "t": "Simple steps, but if millions of households took them, the savings would be enormous."
+     }
+    ],
+    "focus": "For now. But should energy costs rise sharply, desalinated water would become far more expensive.",
+    "qs": [
+     "Why might desalinated water become more expensive?",
+     "What does Fahad think will be cheaper in the years to come?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are on a youth panel about water. A journalist asks you to speculate about the future and suggest solutions.",
+    "prompts": [
+     {
+      "q": "Should rainfall drop even further, what would happen?",
+      "hint": "Begin with 'Should that happen, …' and describe one effect. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "How can we stave off a crisis?",
+      "hint": "Suggest two actions using 'stave off' and 'in the years to come'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "What if demand outstrips supply anyway?",
+      "hint": "Describe a contingency plan in two or three steps. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Water from the Sea",
+    "points": [
+     "Saudi Arabia is one of the world's largest producers of desalinated water.",
+     "Desalination plants turn seawater into drinking water but use a lot of energy.",
+     "Newer plants are designed to use less energy, and some use solar power."
+    ],
+    "qs": [
+     "Should desalination become much cheaper, how might life in the region change?",
+     "What is one simple way families could save water at home?"
+    ]
+   },
+   "exit": "Speculate about the future of water in two sentences, using 'Should …' and 'in the years to come'.",
    "expressions": [
     {
      "w": "run dry",
@@ -1266,96 +1538,25 @@
      "frame": "We may reach a tipping point when ___."
     },
     {
-     "w": "in the long run",
-     "def": "over a long period of time in the future",
-     "ar": "على المدى البعيد",
-     "frame": "In the long run, ___ is cheaper than ___."
+     "w": "in the years to come",
+     "def": "in the future",
+     "ar": "في السنوات القادمة",
+     "frame": "In the years to come, ___ will be cheaper than ___."
     }
    ],
-   "dialogue": {
-    "scene": "Fahad and Amir are preparing a talk on the future of water for their school's environment club.",
-    "p1": [
-     {
-      "s": "Amir",
-      "t": "Should demand keep rising, could our underground water eventually run dry?"
-     },
-     {
-      "s": "Fahad",
-      "t": "Some ancient underground supplies could, yes. They refill extremely slowly."
-     },
-     {
-      "s": "Amir",
-      "t": "So desalination is what staves off a crisis?"
-     },
-     {
-      "s": "Fahad",
-      "t": "For now. But should energy costs rise sharply, desalinated water would become far more expensive."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Amir",
-      "t": "Then we need a contingency plan. What happens if demand outstrips supply?"
-     },
-     {
-      "s": "Fahad",
-      "t": "Water would have to be rationed. Were that to happen, farms would probably be hit first."
-     },
-     {
-      "s": "Amir",
-      "t": "Is there a tipping point we should worry about?"
-     },
-     {
-      "s": "Fahad",
-      "t": "Possibly. In the long run, saving water is far cheaper than producing more of it."
-     }
-    ],
-    "focus": "For now. But should energy costs rise sharply, desalinated water would become far more expensive.",
-    "qs": [
-     "Why might desalinated water become more expensive?",
-     "What does Fahad think is cheaper in the long run?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are on a youth panel about water. A journalist asks you to speculate about the future and suggest solutions.",
-    "prompts": [
-     {
-      "q": "Should rainfall drop even further, what would happen?",
-      "hint": "Begin with 'Should that happen, …' and describe one effect."
-     },
-     {
-      "q": "How can we stave off a crisis?",
-      "hint": "Suggest two actions using 'stave off' and 'in the long run'."
-     },
-     {
-      "q": "What if demand outstrips supply anyway?",
-      "hint": "Describe a contingency plan in two or three steps."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: Water from the Sea",
-    "points": [
-     "Saudi Arabia is one of the world's largest producers of desalinated water.",
-     "Desalination plants turn seawater into drinking water but use a lot of energy.",
-     "Newer plants are designed to use less energy, and some use solar power."
-    ],
-    "qs": [
-     "Should desalination become much cheaper, how might life in the region change?",
-     "What is one simple way families could save water at home?"
-    ]
-   },
-   "exit": "Speculate about the future of water in two sentences, using 'Should …' and 'in the long run'."
+   "recycle": [
+    "in the long run"
+   ]
   },
   "1-4": {
    "objective": "Today you will speculate about future careers using the future perfect continuous.",
    "warmup": "What job do you imagine yourself doing in fifteen years?",
    "expressions": [
     {
-     "w": "by the time",
-     "def": "before or when a particular future moment arrives",
-     "ar": "بحلول الوقت الذي",
-     "frame": "By the time I'm thirty, I'll have been ___ for ___."
+     "w": "keep your skills sharp",
+     "def": "to keep practising so your abilities stay strong",
+     "ar": "يحافظ على مهاراته متجددة",
+     "frame": "To keep my skills sharp, I ___."
     },
     {
      "w": "future-proof",
@@ -1406,6 +1607,14 @@
      {
       "s": "Nawaf",
       "t": "Lifelong learning, I think. By 2040, I'll have been upskilling for years, just to keep up."
+     },
+     {
+      "s": "Laith",
+      "t": "Upskilling sounds exhausting. Will we really have to keep studying after university?"
+     },
+     {
+      "s": "Nawaf",
+      "t": "Probably, but not always in classrooms. Short online courses and projects at work will help us keep our skills sharp."
      }
     ],
     "p2": [
@@ -1424,6 +1633,14 @@
      {
       "s": "Nawaf",
       "t": "Exactly. By the time we graduate, half of today's software will have changed."
+     },
+     {
+      "s": "Laith",
+      "t": "Then maybe the most useful thing school can teach us is how to stay curious."
+     },
+     {
+      "s": "Nawaf",
+      "t": "Agreed. By the time today's toddlers start work, curiosity may matter more than any single qualification."
      }
     ],
     "focus": "Lifelong learning, I think. By 2040, I'll have been upskilling for years, just to keep up.",
@@ -1437,15 +1654,15 @@
     "prompts": [
      {
       "q": "By 2040, how long will you have been working?",
-      "hint": "Use 'By 2040, I'll have been …ing for …'."
+      "hint": "Use 'By 2040, I'll have been …ing for …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "How will you future-proof your career?",
-      "hint": "Name two things you will do, including 'upskill' or 'lifelong learning'."
+      "hint": "Name two things you will do, including 'upskill' or 'lifelong learning'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Should your dream job disappear, what would you do?",
-      "hint": "Start with 'Should that happen, …' and give a plan B."
+      "hint": "Start with 'Should that happen, …' and give a plan B. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1461,7 +1678,10 @@
      "Is it the school's job or the student's job to future-proof a career?"
     ]
    },
-   "exit": "Tell me two things you will have been doing by 2040, using the future perfect continuous."
+   "exit": "Tell me two things you will have been doing by 2040, using the future perfect continuous.",
+   "recycle": [
+    "by the time"
+   ]
   },
   "1-5": {
    "objective": "Today you will take part in a panel discussion, speculating about best- and worst-case futures for schools.",
@@ -1492,10 +1712,10 @@
      "frame": "To plan for every eventuality, schools should ___."
     },
     {
-     "w": "in all likelihood",
-     "def": "very probably",
-     "ar": "على الأرجح",
-     "frame": "In all likelihood, schools will still ___."
+     "w": "it's anyone's guess",
+     "def": "nobody can know for certain",
+     "ar": "لا أحد يعلم يقيناً",
+     "frame": "What ___ will look like in 2050 is anyone's guess."
     },
     {
      "w": "Were that to happen",
@@ -1522,6 +1742,10 @@
      {
       "s": "Dana",
       "t": "Let's look at both extremes. What's the best-case scenario?"
+     },
+     {
+      "s": "Zoe",
+      "t": "Honestly, it's anyone's guess. Technology is changing so fast that any prediction about 2050 could look silly by 2030."
      }
     ],
     "p2": [
@@ -1534,12 +1758,28 @@
       "t": "And the worst-case scenario is that students become isolated and lose social skills."
      },
      {
+      "s": "Hessa",
+      "t": "That's why schools will have to protect face-to-face time, even if most content is online."
+     },
+     {
+      "s": "Dana",
+      "t": "So the building might matter less than the people inside it."
+     },
+     {
+      "s": "Zoe",
+      "t": "Exactly. A school is a community first and a building second."
+     },
+     {
       "s": "Dana",
       "t": "So how should schools prepare?"
      },
      {
       "s": "Hessa",
       "t": "By planning for every eventuality. Should online learning fail, we'll still need strong schools."
+     },
+     {
+      "s": "Dana",
+      "t": "Thank you both. In all likelihood, we'll be discussing this again long before 2050!"
      }
     ],
     "focus": "It's conceivable that most lessons will be online. Were that to happen, buildings would become community centres.",
@@ -1553,15 +1793,15 @@
     "prompts": [
      {
       "q": "What will have changed most about schools by 2050?",
-      "hint": "Use the future perfect and say how likely you think it is."
+      "hint": "Use the future perfect and say how likely you think it is. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What's your best-case and worst-case scenario?",
-      "hint": "Give one of each and explain briefly."
+      "hint": "Give one of each and explain briefly. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Imagine all lessons moved online. What then?",
-      "hint": "Start with 'Were that to happen, …' and give two consequences."
+      "hint": "Start with 'Were that to happen, …' and give two consequences. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1577,7 +1817,10 @@
      "What will education in Saudi Arabia have achieved by 2030, in your view?"
     ]
    },
-   "exit": "Give me your best-case and worst-case scenario for schools in 2050, using two different future forms."
+   "exit": "Give me your best-case and worst-case scenario for schools in 2050, using two different future forms.",
+   "recycle": [
+    "in all likelihood"
+   ]
   },
   "2-0": {
    "objective": "Today you will talk about family heritage and belonging using idioms and metaphors.",
@@ -1638,6 +1881,14 @@
      {
       "s": "Ghada",
       "t": "Definitely. We're a tight-knit family; Friday lunch at my grandparents' house never gets cancelled."
+     },
+     {
+      "s": "Lea",
+      "t": "That sounds lovely. Moving so often, I've learnt to make friends quickly, but I always have to leave them."
+     },
+     {
+      "s": "Ghada",
+      "t": "That must be hard, but it's also a skill. I'd probably be terrified in a new school."
      }
     ],
     "p2": [
@@ -1656,6 +1907,14 @@
      {
       "s": "Ghada",
       "t": "It certainly doesn't! For me, roots aren't a place where you're stuck; they're what keep you steady."
+     },
+     {
+      "s": "Lea",
+      "t": "Maybe I carry my roots with me, then: my family, my language and our Sunday pancakes."
+     },
+     {
+      "s": "Ghada",
+      "t": "Exactly. Roots don't have to be in the ground; they can be in the people you love."
      }
     ],
     "focus": "For me, roots aren't a place where you're stuck; they're what keep you steady.",
@@ -1669,15 +1928,15 @@
     "prompts": [
      {
       "q": "Where does your family come from, and have they always lived there?",
-      "hint": "Use 'put down roots' and describe your family's story briefly."
+      "hint": "Use 'put down roots' and describe your family's story briefly. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Is there a talent that runs in your family?",
-      "hint": "Use 'run in the family' and give an example."
+      "hint": "Use 'run in the family' and give an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What gives you a sense of belonging?",
-      "hint": "Answer with a metaphor, such as 'Family is my anchor'."
+      "hint": "Answer with a metaphor, such as 'Family is my anchor'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1754,6 +2013,14 @@
      {
       "s": "Bushra",
       "t": "All the time. Some Arabic expressions of hospitality sound flat in English."
+     },
+     {
+      "s": "Ines",
+      "t": "Can you give me an example?"
+     },
+     {
+      "s": "Bushra",
+      "t": "When a guest leaves, we say something that roughly means 'you've honoured us'. In English, 'thanks for coming' feels much smaller."
      }
     ],
     "p2": [
@@ -1772,6 +2039,18 @@
      {
       "s": "Bushra",
       "t": "When my baby cousin was born, yes. Only Arabic could express how I felt."
+     },
+     {
+      "s": "Ines",
+      "t": "So in a way, each language lets you feel different things."
+     },
+     {
+      "s": "Bushra",
+      "t": "Or at least express them differently. Being bilingual is like having two keys to the same house."
+     },
+     {
+      "s": "Ines",
+      "t": "I love that image. Maybe that's why I dream in Spanish but argue in English!"
      }
     ],
     "focus": "Exactly. Language is the heart and soul of a culture, not just a set of words.",
@@ -1785,15 +2064,15 @@
     "prompts": [
      {
       "q": "When do you switch between languages, and why?",
-      "hint": "Give two situations and say whether it's second nature to you."
+      "hint": "Give two situations and say whether it's second nature to you. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Is there an Arabic word or phrase that gets lost in translation?",
-      "hint": "Name one and explain what English misses."
+      "hint": "Name one and explain what English misses. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Is language part of who you are?",
-      "hint": "Use a metaphor, for example 'Language is a window into …'."
+      "hint": "Use a metaphor, for example 'Language is a window into …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1814,6 +2093,104 @@
   "2-2": {
    "objective": "Today you will discuss food as part of cultural identity, using food idioms figuratively.",
    "warmup": "Which dish reminds you most of home?",
+   "dialogue": {
+    "scene": "Yara is welcoming Tess, a visiting exchange student, to her family's home in Hail.",
+    "p1": [
+     {
+      "s": "Tess",
+      "t": "This Saudi coffee is lighter than I expected. Is it always flavoured with cardamom?"
+     },
+     {
+      "s": "Yara",
+      "t": "Usually, and sometimes saffron. For some visitors, it's an acquired taste."
+     },
+     {
+      "s": "Tess",
+      "t": "And dates always come with it?"
+     },
+     {
+      "s": "Yara",
+      "t": "Always. In our culture, serving coffee and dates is how you say 'welcome' without words."
+     },
+     {
+      "s": "Tess",
+      "t": "So refusing coffee would be rude?"
+     },
+     {
+      "s": "Yara",
+      "t": "Not rude exactly, but most guests accept at least one cup. You gently shake the cup when you've had enough."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Tess",
+      "t": "My grandmother's apple pie is similar: a labour of love that says 'you belong here'."
+     },
+     {
+      "s": "Yara",
+      "t": "So food is really a language of its own. That's something to chew over."
+     },
+     {
+      "s": "Tess",
+      "t": "Variety is the spice of life, but every family brings its own traditions to the table."
+     },
+     {
+      "s": "Yara",
+      "t": "And forgetting those traditions would be a recipe for losing part of who we are."
+     },
+     {
+      "s": "Tess",
+      "t": "Then I'd better learn to like cardamom quickly!"
+     },
+     {
+      "s": "Yara",
+      "t": "You will. Give it a week of family visits, and you'll be asking for a second cup."
+     },
+     {
+      "s": "Tess",
+      "t": "Deal. And I'll teach you my grandmother's apple pie in return."
+     },
+     {
+      "s": "Yara",
+      "t": "Perfect. Food really is the best way to share a culture."
+     }
+    ],
+    "focus": "Always. In our culture, serving coffee and dates is how you say 'welcome' without words.",
+    "qs": [
+     "What does serving coffee and dates mean in Yara's culture?",
+     "Why does Tess mention her grandmother's apple pie?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are hosting a foreign student at your home. They are curious about Saudi food and what it says about your culture.",
+    "prompts": [
+     {
+      "q": "Why is coffee so important when guests arrive?",
+      "hint": "Explain using a metaphor, such as 'Coffee is our way of saying …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Is there a Saudi dish visitors find strange at first?",
+      "hint": "Use 'an acquired taste' and describe it. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Do young people still cook traditional dishes?",
+      "hint": "Use 'a labour of love' or 'a recipe for' in your answer. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: The Year of Saudi Coffee",
+    "points": [
+     "The Ministry of Culture named 2022 the Year of Saudi Coffee.",
+     "Saudi coffee is usually served in small cups, often with dates.",
+     "UNESCO lists Arabic coffee as a symbol of generosity in its intangible cultural heritage."
+    ],
+    "qs": [
+     "What does the way a family welcomes guests say about its culture?",
+     "Which food would you choose to represent your identity, and why?"
+    ]
+   },
+   "exit": "Tell me what one dish says about your identity, using two food idioms from today.",
    "expressions": [
     {
      "w": "an acquired taste",
@@ -1822,10 +2199,10 @@
      "frame": "For many visitors, ___ is an acquired taste."
     },
     {
-     "w": "food for thought",
-     "def": "an idea worth thinking about carefully",
-     "ar": "مادة للتفكير",
-     "frame": "What you said about ___ is real food for thought."
+     "w": "chew over",
+     "def": "to think carefully about something for a while",
+     "ar": "يتأمّل الأمر ملياً",
+     "frame": "Your point about ___ is something I'll chew over."
     },
     {
      "w": "a recipe for",
@@ -1852,84 +2229,107 @@
      "frame": "I agree that variety is the spice of life because ___."
     }
    ],
-   "dialogue": {
-    "scene": "Yara is welcoming Tess, a visiting exchange student, to her family's home in Hail.",
-    "p1": [
-     {
-      "s": "Tess",
-      "t": "This Saudi coffee is lighter than I expected. Is it always flavoured with cardamom?"
-     },
-     {
-      "s": "Yara",
-      "t": "Usually, and sometimes saffron. For some visitors, it's an acquired taste."
-     },
-     {
-      "s": "Tess",
-      "t": "And dates always come with it?"
-     },
-     {
-      "s": "Yara",
-      "t": "Always. In our culture, serving coffee and dates is how you say 'welcome' without words."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Tess",
-      "t": "My grandmother's apple pie is similar: a labour of love that says 'you belong here'."
-     },
-     {
-      "s": "Yara",
-      "t": "So food is really a language of its own. That's food for thought."
-     },
-     {
-      "s": "Tess",
-      "t": "Variety is the spice of life, but every family brings its own traditions to the table."
-     },
-     {
-      "s": "Yara",
-      "t": "And forgetting those traditions would be a recipe for losing part of who we are."
-     }
-    ],
-    "focus": "Always. In our culture, serving coffee and dates is how you say 'welcome' without words.",
-    "qs": [
-     "What does serving coffee and dates mean in Yara's culture?",
-     "Why does Tess mention her grandmother's apple pie?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are hosting a foreign student at your home. They are curious about Saudi food and what it says about your culture.",
-    "prompts": [
-     {
-      "q": "Why is coffee so important when guests arrive?",
-      "hint": "Explain using a metaphor, such as 'Coffee is our way of saying …'."
-     },
-     {
-      "q": "Is there a Saudi dish visitors find strange at first?",
-      "hint": "Use 'an acquired taste' and describe it."
-     },
-     {
-      "q": "Do young people still cook traditional dishes?",
-      "hint": "Use 'a labour of love' or 'a recipe for' in your answer."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: The Year of Saudi Coffee",
-    "points": [
-     "The Ministry of Culture named 2022 the Year of Saudi Coffee.",
-     "Saudi coffee is usually served in small cups, often with dates.",
-     "UNESCO lists Arabic coffee as a symbol of generosity in its intangible cultural heritage."
-    ],
-    "qs": [
-     "What does the way a family welcomes guests say about its culture?",
-     "Which food would you choose to represent your identity, and why?"
-    ]
-   },
-   "exit": "Tell me what one dish says about your identity, using two food idioms from today."
+   "recycle": [
+    "food for thought"
+   ]
   },
   "2-3": {
    "objective": "Today you will discuss living between two cultures, using idioms about adapting.",
    "warmup": "Have you ever felt like an outsider somewhere new? What helped?",
+   "dialogue": {
+    "scene": "Abdulaziz is asking his older sister Maha about the four years she spent studying in Melbourne, Australia.",
+    "p1": [
+     {
+      "s": "Abdulaziz",
+      "t": "When you first arrived in Melbourne, how did you feel?"
+     },
+     {
+      "s": "Maha",
+      "t": "Like a fish out of water. The weather, the food, even the jokes were unfamiliar."
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "So the culture shock was real?"
+     },
+     {
+      "s": "Maha",
+      "t": "Very real. It took me a whole semester to find my feet."
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "What helped you most in that first semester?"
+     },
+     {
+      "s": "Maha",
+      "t": "Joining the Saudi students' club. Having people who understood me made it easier to be brave with everyone else."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Abdulaziz",
+      "t": "And now that you're back, have you readjusted to life here?"
+     },
+     {
+      "s": "Maha",
+      "t": "Mostly. But I straddle two cultures now, like someone standing with one foot on each bank of a river."
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "Is that a bad thing?"
+     },
+     {
+      "s": "Maha",
+      "t": "Not at all. I've got a foot in both camps: my roots here and a wider view of the world."
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "Would you go back to Melbourne one day?"
+     },
+     {
+      "s": "Maha",
+      "t": "For a visit, definitely. Part of me will always belong there, just as part of me never left home."
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "That sounds like a good way to live: proud of where you're from, but curious about everywhere else."
+     }
+    ],
+    "focus": "Mostly. But I straddle two cultures now, like someone standing with one foot on each bank of a river.",
+    "qs": [
+     "How long did it take Maha to find her feet?",
+     "What image does Maha use to describe her identity now?"
+    ]
+   },
+   "speakout": {
+    "scene": "A younger student is about to study abroad and is nervous. They ask you for advice about adapting to a new culture.",
+    "prompts": [
+     {
+      "q": "What will it feel like in the first few weeks?",
+      "hint": "Use 'a fish out of water' or 'culture shock' to prepare them. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "How can I find my feet quickly?",
+      "hint": "Give two practical tips using 'find your feet' and 'readjust to'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Will I lose my own culture?",
+      "hint": "Reassure them with 'a foot in both camps' and an image of your own. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Studying Abroad",
+    "points": [
+     "The King Abdullah Scholarship Program, launched in 2005, sent many thousands of Saudi students abroad.",
+     "Many returning graduates now work in universities, hospitals and companies across the Kingdom.",
+     "Saudi universities also welcome international students from many countries."
+    ],
+    "qs": [
+     "What would you miss most about home if you studied abroad?",
+     "Can someone truly belong to two cultures at once? Explain."
+    ]
+   },
+   "exit": "Describe how someone adapts to a new culture in two sentences, using two idioms from today.",
    "expressions": [
     {
      "w": "a fish out of water",
@@ -1956,96 +2356,120 @@
      "frame": "People who straddle two cultures often ___."
     },
     {
-     "w": "the best of both worlds",
-     "def": "the advantages of two different situations together",
-     "ar": "أفضل ما في العالمين",
-     "frame": "Studying abroad and coming home gives you the best of both worlds because ___."
+     "w": "a foot in both camps",
+     "def": "a connection with two different groups or cultures",
+     "ar": "قدم في كلٍّ من العالمَين",
+     "frame": "Living abroad and coming home gives you a foot in both camps because ___."
     },
     {
-     "w": "feel at home",
-     "def": "feel relaxed and comfortable somewhere",
-     "ar": "يشعر وكأنه في بيته",
-     "frame": "I feel most at home when ___."
+     "w": "readjust to",
+     "def": "to get used to something again after a change",
+     "ar": "يعيد التأقلم مع",
+     "frame": "After ___, it took me a while to readjust to ___."
     }
    ],
-   "dialogue": {
-    "scene": "Abdulaziz is asking his older sister Maha about the four years she spent studying in Melbourne, Australia.",
-    "p1": [
-     {
-      "s": "Abdulaziz",
-      "t": "When you first arrived in Melbourne, how did you feel?"
-     },
-     {
-      "s": "Maha",
-      "t": "Like a fish out of water. The weather, the food, even the jokes were unfamiliar."
-     },
-     {
-      "s": "Abdulaziz",
-      "t": "So the culture shock was real?"
-     },
-     {
-      "s": "Maha",
-      "t": "Very real. It took me a whole semester to find my feet."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Abdulaziz",
-      "t": "And now that you're back, do you feel completely at home again?"
-     },
-     {
-      "s": "Maha",
-      "t": "Mostly. But I straddle two cultures now, like someone standing with one foot on each bank of a river."
-     },
-     {
-      "s": "Abdulaziz",
-      "t": "Is that a bad thing?"
-     },
-     {
-      "s": "Maha",
-      "t": "Not at all. I've got the best of both worlds: my roots here and a wider view of the world."
-     }
-    ],
-    "focus": "Mostly. But I straddle two cultures now, like someone standing with one foot on each bank of a river.",
-    "qs": [
-     "How long did it take Maha to find her feet?",
-     "What image does Maha use to describe her identity now?"
-    ]
-   },
-   "speakout": {
-    "scene": "A younger student is about to study abroad and is nervous. They ask you for advice about adapting to a new culture.",
-    "prompts": [
-     {
-      "q": "What will it feel like in the first few weeks?",
-      "hint": "Use 'a fish out of water' or 'culture shock' to prepare them."
-     },
-     {
-      "q": "How can I find my feet quickly?",
-      "hint": "Give two practical tips using 'find your feet' and 'feel at home'."
-     },
-     {
-      "q": "Will I lose my own culture?",
-      "hint": "Reassure them with 'the best of both worlds' and an image of your own."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: Studying Abroad",
-    "points": [
-     "The King Abdullah Scholarship Program, launched in 2005, sent many thousands of Saudi students abroad.",
-     "Many returning graduates now work in universities, hospitals and companies across the Kingdom.",
-     "Saudi universities also welcome international students from many countries."
-    ],
-    "qs": [
-     "What would you miss most about home if you studied abroad?",
-     "Can someone truly belong to two cultures at once? Explain."
-    ]
-   },
-   "exit": "Describe how someone adapts to a new culture in two sentences, using two idioms from today."
+   "recycle": [
+    "the best of both worlds",
+    "feel at home"
+   ]
   },
   "2-4": {
    "objective": "Today you will discuss how traditions can be kept alive, using figurative verbs and metaphors.",
    "warmup": "Is there a traditional craft or skill in your family that young people no longer learn?",
+   "dialogue": {
+    "scene": "Shahad is showing Ana, a design student from Brazil, some Sadu weaving at a heritage exhibition in Riyadh.",
+    "p1": [
+     {
+      "s": "Ana",
+      "t": "These Sadu patterns are stunning. Is it still a living tradition?"
+     },
+     {
+      "s": "Shahad",
+      "t": "It was becoming a dying art. Fewer girls were learning it from their grandmothers."
+     },
+     {
+      "s": "Ana",
+      "t": "That's a shame. Skills like this are usually handed down within families."
+     },
+     {
+      "s": "Shahad",
+      "t": "Exactly, but young designers are breathing new life into it, putting Sadu patterns on bags and notebooks."
+     },
+     {
+      "s": "Ana",
+      "t": "That's clever. In Brazil, some designers do the same with indigenous patterns."
+     },
+     {
+      "s": "Shahad",
+      "t": "Then you understand the challenge: respecting the meaning of the patterns while making them appeal to young buyers."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ana",
+      "t": "Doesn't that risk turning it into a passing fashion?"
+     },
+     {
+      "s": "Shahad",
+      "t": "Maybe, but a tradition that's frozen in time eventually disappears."
+     },
+     {
+      "s": "Ana",
+      "t": "So adapting it helps it stay relevant?"
+     },
+     {
+      "s": "Shahad",
+      "t": "I think so. These patterns are woven into the fabric of our history; they deserve a future too."
+     },
+     {
+      "s": "Ana",
+      "t": "Who decides what counts as respectful, though?"
+     },
+     {
+      "s": "Shahad",
+      "t": "Ideally, the weavers themselves. Some projects now pay older women to teach and to approve the new designs."
+     },
+     {
+      "s": "Ana",
+      "t": "That seems fair. A tradition should belong to the people who kept it alive, not just to the people who sell it."
+     }
+    ],
+    "focus": "Maybe, but a tradition that's frozen in time eventually disappears.",
+    "qs": [
+     "Why was Sadu weaving becoming a dying art?",
+     "How are young designers changing the tradition?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are a guide at a heritage festival. A visitor asks you about a Saudi tradition and whether it can survive in the modern world.",
+    "prompts": [
+     {
+      "q": "Which tradition would you show me, and why does it matter?",
+      "hint": "Use 'woven into the fabric of' to explain its importance. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Isn't it a dying art these days?",
+      "hint": "Agree or disagree, and say who is breathing new life into it. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Should traditions change or stay exactly the same?",
+      "hint": "Use 'frozen in time' and 'stay relevant' to give a balanced view. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Al-Sadu Weaving",
+    "points": [
+     "Al-Sadu is a traditional Bedouin weaving craft that uses wool from sheep, camels and goats.",
+     "Its patterns use bold geometric shapes, often in red, black and white.",
+     "UNESCO lists Al-Sadu weaving as part of the world's intangible cultural heritage."
+    ],
+    "qs": [
+     "Is it acceptable to use traditional patterns on modern products? Why or why not?",
+     "Which Saudi tradition do you think will best stand the test of time?"
+    ]
+   },
+   "exit": "Tell me how one tradition could be kept alive, using one figurative verb and one metaphor from today.",
    "expressions": [
     {
      "w": "a dying art",
@@ -2072,10 +2496,10 @@
      "frame": "If a tradition is frozen in time, ___."
     },
     {
-     "w": "stand the test of time",
-     "def": "remain good or popular for a long time",
-     "ar": "يصمد أمام الزمن",
-     "frame": "___ has stood the test of time because ___."
+     "w": "stay relevant",
+     "def": "to remain important or useful as times change",
+     "ar": "يبقى محافظاً على أهميته",
+     "frame": "___ has stayed relevant because ___."
     },
     {
      "w": "woven into the fabric of",
@@ -2084,122 +2508,13 @@
      "frame": "___ is woven into the fabric of Saudi life."
     }
    ],
-   "dialogue": {
-    "scene": "Shahad is showing Ana, a design student from Brazil, some Sadu weaving at a heritage exhibition in Riyadh.",
-    "p1": [
-     {
-      "s": "Ana",
-      "t": "These Sadu patterns are stunning. Is it still a living tradition?"
-     },
-     {
-      "s": "Shahad",
-      "t": "It was becoming a dying art. Fewer girls were learning it from their grandmothers."
-     },
-     {
-      "s": "Ana",
-      "t": "That's a shame. Skills like this are usually handed down within families."
-     },
-     {
-      "s": "Shahad",
-      "t": "Exactly, but young designers are breathing new life into it, putting Sadu patterns on bags and notebooks."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Ana",
-      "t": "Doesn't that risk turning it into a passing fashion?"
-     },
-     {
-      "s": "Shahad",
-      "t": "Maybe, but a tradition that's frozen in time eventually disappears."
-     },
-     {
-      "s": "Ana",
-      "t": "So adapting it helps it stand the test of time?"
-     },
-     {
-      "s": "Shahad",
-      "t": "I think so. These patterns are woven into the fabric of our history; they deserve a future too."
-     }
-    ],
-    "focus": "Maybe, but a tradition that's frozen in time eventually disappears.",
-    "qs": [
-     "Why was Sadu weaving becoming a dying art?",
-     "How are young designers changing the tradition?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are a guide at a heritage festival. A visitor asks you about a Saudi tradition and whether it can survive in the modern world.",
-    "prompts": [
-     {
-      "q": "Which tradition would you show me, and why does it matter?",
-      "hint": "Use 'woven into the fabric of' to explain its importance."
-     },
-     {
-      "q": "Isn't it a dying art these days?",
-      "hint": "Agree or disagree, and say who is breathing new life into it."
-     },
-     {
-      "q": "Should traditions change or stay exactly the same?",
-      "hint": "Use 'frozen in time' and 'stand the test of time' to give a balanced view."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: Al-Sadu Weaving",
-    "points": [
-     "Al-Sadu is a traditional Bedouin weaving craft that uses wool from sheep, camels and goats.",
-     "Its patterns use bold geometric shapes, often in red, black and white.",
-     "UNESCO lists Al-Sadu weaving as part of the world's intangible cultural heritage."
-    ],
-    "qs": [
-     "Is it acceptable to use traditional patterns on modern products? Why or why not?",
-     "Which Saudi tradition do you think will best stand the test of time?"
-    ]
-   },
-   "exit": "Tell me how one tradition could be kept alive, using one figurative verb and one metaphor from today."
+   "recycle": [
+    "stand the test of time"
+   ]
   },
   "2-5": {
    "objective": "Today you will record a podcast discussion about what shapes identity, using rich figurative language.",
    "warmup": "If you had to describe your identity in three words, what would they be?",
-   "expressions": [
-    {
-     "w": "at the heart of",
-     "def": "at the centre of; the most important part of",
-     "ar": "في صميم",
-     "frame": "For me, ___ is at the heart of who I am."
-    },
-    {
-     "w": "a melting pot",
-     "def": "a place where different cultures mix and become one",
-     "ar": "بوتقة انصهار",
-     "frame": "___ is a melting pot of ___."
-    },
-    {
-     "w": "a double-edged sword",
-     "def": "something with both good and bad effects",
-     "ar": "سلاح ذو حدّين",
-     "frame": "Social media is a double-edged sword because ___."
-    },
-    {
-     "w": "a sense of belonging",
-     "def": "the feeling of being accepted as part of a group or place",
-     "ar": "الشعور بالانتماء",
-     "frame": "My ___ gives me a sense of belonging."
-    },
-    {
-     "w": "the best of both worlds",
-     "def": "the advantages of two different situations together",
-     "ar": "أفضل ما في العالمين",
-     "frame": "Young Saudis can have the best of both worlds by ___."
-    },
-    {
-     "w": "shape who we are",
-     "def": "influence the kind of person we become",
-     "ar": "يشكّل هويتنا",
-     "frame": "I think ___ shapes who we are more than ___."
-    }
-   ],
    "dialogue": {
     "scene": "Mishal and Chris are recording an episode of their school podcast, 'Who We Are', about the forces that shape identity.",
     "p1": [
@@ -2218,6 +2533,14 @@
      {
       "s": "Chris",
       "t": "I'd call it a mosaic rather than a melting pot. Each piece keeps its own colour."
+     },
+     {
+      "s": "Mishal",
+      "t": "Nice image. Then what holds the mosaic together?"
+     },
+     {
+      "s": "Chris",
+      "t": "A shared heritage, I think: language, values and memories that every piece recognises, even when the colours differ."
      }
     ],
     "p2": [
@@ -2227,21 +2550,29 @@
      },
      {
       "s": "Chris",
-      "t": "It's a double-edged sword. It connects cultures, but it can also wash out the differences between them."
+      "t": "It's a mixed bag. It connects cultures, but it can also wash out the differences between them."
      },
      {
       "s": "Mishal",
-      "t": "So can young people have the best of both worlds, global and local?"
+      "t": "So can young people be global citizens and still stay local?"
      },
      {
       "s": "Chris",
       "t": "Absolutely, as long as our roots run deep enough to keep us steady."
+     },
+     {
+      "s": "Mishal",
+      "t": "That's a good place to stop. Listeners, tell us one thing that keeps your roots deep."
+     },
+     {
+      "s": "Chris",
+      "t": "And remember, every voice makes the mosaic richer. See you next week!"
      }
     ],
     "focus": "I'd call it a mosaic rather than a melting pot. Each piece keeps its own colour.",
     "qs": [
      "Why does Chris prefer the image of a mosaic to a melting pot?",
-     "Why does Chris call the internet a double-edged sword?"
+     "Why does Chris call the internet a mixed bag?"
     ]
    },
    "speakout": {
@@ -2249,15 +2580,15 @@
     "prompts": [
      {
       "q": "What is at the heart of your identity?",
-      "hint": "Name one thing and explain it with a metaphor."
+      "hint": "Name one thing and explain it with a metaphor. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Is your city more of a melting pot or a mosaic?",
-      "hint": "Choose one image and justify it with an example."
+      "hint": "Choose one image and justify it with an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Is globalisation good or bad for young people's identity?",
-      "hint": "Use 'a double-edged sword' and 'the best of both worlds'."
+      "hint": "Use 'a mixed bag' and 'a global citizen'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2273,7 +2604,50 @@
      "What will shape your generation's identity most?"
     ]
    },
-   "exit": "Sum up what shapes your identity in two sentences, using one idiom and one extended metaphor."
+   "exit": "Sum up what shapes your identity in two sentences, using one idiom and one extended metaphor.",
+   "expressions": [
+    {
+     "w": "at the heart of",
+     "def": "at the centre of; the most important part of",
+     "ar": "في صميم",
+     "frame": "For me, ___ is at the heart of who I am."
+    },
+    {
+     "w": "a melting pot",
+     "def": "a place where different cultures mix and become one",
+     "ar": "بوتقة انصهار",
+     "frame": "___ is a melting pot of ___."
+    },
+    {
+     "w": "a mixed bag",
+     "def": "a mixture of good and bad things",
+     "ar": "خليط من الجيد والسيئ",
+     "frame": "Social media is a mixed bag because ___."
+    },
+    {
+     "w": "a shared heritage",
+     "def": "history and traditions that a group has in common",
+     "ar": "تراث مشترك",
+     "frame": "Our shared heritage includes ___."
+    },
+    {
+     "w": "a global citizen",
+     "def": "a person who feels part of the whole world community",
+     "ar": "مواطن عالمي",
+     "frame": "A young Saudi can be a global citizen by ___."
+    },
+    {
+     "w": "shape who we are",
+     "def": "influence the kind of person we become",
+     "ar": "يشكّل هويتنا",
+     "frame": "I think ___ shapes who we are more than ___."
+    }
+   ],
+   "recycle": [
+    "a double-edged sword",
+    "a sense of belonging",
+    "the best of both worlds"
+   ]
   },
   "3-0": {
    "objective": "Today you will open an academic presentation by framing your research question and its rationale.",
@@ -2333,6 +2707,14 @@
      },
      {
       "s": "Elena",
+      "t": "Is there evidence for that, or is it just a common belief?"
+     },
+     {
+      "s": "Jana",
+      "t": "There's plenty. Sleep researchers broadly agree that teenagers naturally fall asleep later than adults."
+     },
+     {
+      "s": "Elena",
       "t": "Good. And your actual research question?"
      }
     ],
@@ -2352,6 +2734,18 @@
      {
       "s": "Elena",
       "t": "Then say you hope to shed light on it, and define the scope: which students and which ages."
+     },
+     {
+      "s": "Jana",
+      "t": "So: only secondary students aged thirteen to seventeen, in three schools in our city."
+     },
+     {
+      "s": "Elena",
+      "t": "Perfect. A narrow, clear scope makes your findings far easier to defend."
+     },
+     {
+      "s": "Jana",
+      "t": "Thanks. I'll also mention what we didn't study, like younger pupils, so nobody expects too much."
      }
     ],
     "focus": "This study set out to find out whether later start times improve concentration in class.",
@@ -2365,15 +2759,15 @@
     "prompts": [
      {
       "q": "Please introduce your research. What did you set out to do?",
-      "hint": "Start with 'By way of introduction, …' and state your aim with 'set out to'."
+      "hint": "Start with 'By way of introduction, …' and state your aim with 'set out to'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Why did you choose this topic?",
-      "hint": "Explain the rationale behind it and mention a gap in the research."
+      "hint": "Explain the rationale behind it and mention a gap in the research. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What does your study include, and what doesn't it?",
-      "hint": "Define the scope of your study precisely."
+      "hint": "Define the scope of your study precisely. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2394,12 +2788,98 @@
   "3-1": {
    "objective": "Today you will guide an audience through data using precise C2 signposting.",
    "warmup": "Do you read more or less for pleasure than you did when you were twelve?",
+   "dialogue": {
+    "scene": "Haya and Zainab are presenting the results of their school survey on teenagers' reading habits to their class.",
+    "p1": [
+     {
+      "s": "Haya",
+      "t": "Turning now to our results, as illustrated by this chart, reading for pleasure fell sharply between the ages of twelve and sixteen."
+     },
+     {
+      "s": "Zainab",
+      "t": "To give you a sense of scale, nearly every twelve-year-old in our survey read for fun weekly; among sixteen-year-olds, fewer than half did."
+     },
+     {
+      "s": "Haya",
+      "t": "However, we saw a marked increase in audiobook listening over the same period."
+     },
+     {
+      "s": "Zainab",
+      "t": "In fact, audiobooks account for nearly a third of the reading older students reported."
+     },
+     {
+      "s": "Haya",
+      "t": "So older students haven't stopped enjoying stories; they've just changed the way they consume them."
+     },
+     {
+      "s": "Zainab",
+      "t": "Many told us they listen on the bus or at the gym, when holding a book isn't practical."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Haya",
+      "t": "Bear in mind that our sample was small: just 120 students from one school."
+     },
+     {
+      "s": "Zainab",
+      "t": "So the figures suggest a trend rather than prove one."
+     },
+     {
+      "s": "Haya",
+      "t": "Having looked at the numbers, let's shift our attention to what students told us in interviews."
+     },
+     {
+      "s": "Zainab",
+      "t": "Their answers help explain why the drop happens."
+     },
+     {
+      "s": "Haya",
+      "t": "For example, several students said exam pressure left no time for books they had chosen themselves."
+     }
+    ],
+    "focus": "Turning now to our results, as illustrated by this chart, reading for pleasure fell sharply between the ages of twelve and sixteen.",
+    "qs": [
+     "What increased while reading for pleasure fell?",
+     "Why does Haya tell the audience to be careful with the figures?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are presenting a chart about students' free-time activities to a panel of teachers. Your teacher asks you to talk them through it.",
+    "prompts": [
+     {
+      "q": "What does the chart show overall?",
+      "hint": "Start with 'As illustrated by this chart, …' and give the main trend. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Is that a big change? Help us understand it.",
+      "hint": "Use 'To give you a sense of scale, …' with a familiar comparison. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Are there any limits to your data?",
+      "hint": "Use 'Bear in mind that …' and name one limitation. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Reading Culture",
+    "points": [
+     "The Riyadh International Book Fair attracts large crowds every year.",
+     "Ithra, the King Abdulaziz Center for World Culture in Dhahran, runs a national reading competition.",
+     "Audiobooks and reading apps in Arabic have grown in popularity among young people."
+    ],
+    "qs": [
+     "Does listening to an audiobook count as reading? Defend your view.",
+     "How would you put the number '120 students' into perspective for an audience?"
+    ]
+   },
+   "exit": "Describe the main trend in any chart you know in two sentences, using two signposting phrases from today.",
    "expressions": [
     {
-     "w": "turning now to",
-     "def": "a formal phrase to move to a new part of a talk",
-     "ar": "ننتقل الآن إلى",
-     "frame": "Turning now to ___, we can see that ___."
+     "w": "shift our attention to",
+     "def": "to start focusing on a different topic",
+     "ar": "ننقل تركيزنا إلى",
+     "frame": "Let's now shift our attention to ___."
     },
     {
      "w": "as illustrated by",
@@ -2420,10 +2900,10 @@
      "frame": "___ account for nearly half of ___."
     },
     {
-     "w": "to put this into perspective",
-     "def": "to compare a figure with something familiar so it is easier to understand",
-     "ar": "لتوضيح حجم الأمر",
-     "frame": "To put this into perspective, ___."
+     "w": "to give you a sense of scale",
+     "def": "used to compare a figure with something familiar",
+     "ar": "لتتصوّروا الحجم",
+     "frame": "To give you a sense of scale, ___."
     },
     {
      "w": "bear in mind",
@@ -2432,80 +2912,10 @@
      "frame": "Bear in mind that ___."
     }
    ],
-   "dialogue": {
-    "scene": "Haya and Zainab are presenting the results of their school survey on teenagers' reading habits to their class.",
-    "p1": [
-     {
-      "s": "Haya",
-      "t": "Turning now to our results, as illustrated by this chart, reading for pleasure fell sharply between the ages of twelve and sixteen."
-     },
-     {
-      "s": "Zainab",
-      "t": "To put this into perspective, nearly every twelve-year-old in our survey read for fun weekly; among sixteen-year-olds, fewer than half did."
-     },
-     {
-      "s": "Haya",
-      "t": "However, we saw a marked increase in audiobook listening over the same period."
-     },
-     {
-      "s": "Zainab",
-      "t": "In fact, audiobooks account for nearly a third of the reading older students reported."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Haya",
-      "t": "Bear in mind that our sample was small: just 120 students from one school."
-     },
-     {
-      "s": "Zainab",
-      "t": "So the figures suggest a trend rather than prove one."
-     },
-     {
-      "s": "Haya",
-      "t": "Having looked at the numbers, let's move on to what students told us in interviews."
-     },
-     {
-      "s": "Zainab",
-      "t": "Their answers help explain why the drop happens."
-     }
-    ],
-    "focus": "Turning now to our results, as illustrated by this chart, reading for pleasure fell sharply between the ages of twelve and sixteen.",
-    "qs": [
-     "What increased while reading for pleasure fell?",
-     "Why does Haya tell the audience to be careful with the figures?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are presenting a chart about students' free-time activities to a panel of teachers. Your teacher asks you to talk them through it.",
-    "prompts": [
-     {
-      "q": "What does the chart show overall?",
-      "hint": "Start with 'As illustrated by this chart, …' and give the main trend."
-     },
-     {
-      "q": "Is that a big change? Help us understand it.",
-      "hint": "Use 'To put this into perspective, …' with a familiar comparison."
-     },
-     {
-      "q": "Are there any limits to your data?",
-      "hint": "Use 'Bear in mind that …' and name one limitation."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: Reading Culture",
-    "points": [
-     "The Riyadh International Book Fair attracts large crowds every year.",
-     "Ithra, the King Abdulaziz Center for World Culture in Dhahran, runs a national reading competition.",
-     "Audiobooks and reading apps in Arabic have grown in popularity among young people."
-    ],
-    "qs": [
-     "Does listening to an audiobook count as reading? Defend your view.",
-     "How would you put the number '120 students' into perspective for an audience?"
-    ]
-   },
-   "exit": "Describe the main trend in any chart you know in two sentences, using two signposting phrases from today."
+   "recycle": [
+    "turning now to",
+    "to put this into perspective"
+   ]
   },
   "3-2": {
    "objective": "Today you will answer audience questions clearly, checking what the questioner means and staying within your topic.",
@@ -2566,6 +2976,14 @@
      {
       "s": "Lama",
       "t": "To address your point, they're more heat-tolerant than many reefs, but not immune. Pollution and coastal building still threaten them."
+     },
+     {
+      "s": "Amal",
+      "t": "So the danger isn't only heat?"
+     },
+     {
+      "s": "Lama",
+      "t": "Exactly. Heat tolerance buys them time, but not if we damage them in other ways."
      }
     ],
     "p2": [
@@ -2584,6 +3002,18 @@
      {
       "s": "Lama",
       "t": "I'd be happy to elaborate. One theory is that their ancestors passed through very warm southern waters thousands of years ago."
+     },
+     {
+      "s": "Amal",
+      "t": "That's fascinating. So their history might help them survive the future?"
+     },
+     {
+      "s": "Lama",
+      "t": "Possibly, which is why scientists around the world are studying them so closely."
+     },
+     {
+      "s": "Amal",
+      "t": "Thank you. That was clear, and you were honest about what your study could and couldn't answer."
      }
     ],
     "focus": "To address your point, they're more heat-tolerant than many reefs, but not immune. Pollution and coastal building still threaten them.",
@@ -2597,15 +3027,15 @@
     "prompts": [
      {
       "q": "So are you saying the problem is completely solved?",
-      "hint": "Check the meaning with 'If I understand you correctly, …', then answer precisely."
+      "hint": "Check the meaning with 'If I understand you correctly, …', then answer precisely. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What about the cost of your solution?",
-      "hint": "Politely say it falls outside the scope of your study and suggest who could study it."
+      "hint": "Politely say it falls outside the scope of your study and suggest who could study it. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Can you tell us more about your method?",
-      "hint": "Begin with 'I'd be happy to elaborate' and give two details."
+      "hint": "Begin with 'I'd be happy to elaborate' and give two details. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2634,10 +3064,10 @@
      "frame": "That's a fair criticism. We should have ___."
     },
     {
-     "w": "stand by",
-     "def": "continue to say that something is true or right",
-     "ar": "يتمسّك بـ",
-     "frame": "I stand by our finding that ___."
+     "w": "hold firm",
+     "def": "to refuse to change your position under pressure",
+     "ar": "يثبت على موقفه",
+     "frame": "I would hold firm on ___ because ___."
     },
     {
      "w": "the data don't allow us to",
@@ -2682,6 +3112,14 @@
      {
       "s": "Omar",
       "t": "No. I stand by the finding itself: all three beaches contained microplastics. The data just don't allow us to generalise further."
+     },
+     {
+      "s": "Laura",
+      "t": "Fair enough. But wouldn't a newspaper report your findings as 'Jeddah's beaches are polluted'?"
+     },
+     {
+      "s": "Omar",
+      "t": "It might, which is why I'd hold firm on our wording: 'microplastics were found on three beaches', nothing more."
      }
     ],
     "p2": [
@@ -2700,6 +3138,14 @@
      {
       "s": "Omar",
       "t": "Let me come back to that in my conclusion, where I suggest a wider study."
+     },
+     {
+      "s": "Laura",
+      "t": "Good. One more thing: how did you avoid contaminating the samples yourselves?"
+     },
+     {
+      "s": "Omar",
+      "t": "We used glass jars and metal tools, and we tested a blank sample to check for fibres from our own clothes."
      }
     ],
     "focus": "No. I stand by the finding itself: all three beaches contained microplastics. The data just don't allow us to generalise further.",
@@ -2713,15 +3159,15 @@
     "prompts": [
      {
       "q": "Your survey only had 40 people. Why should we trust it?",
-      "hint": "Accept the criticism, then say what you still stand by."
+      "hint": "Accept the criticism, then say what you still stand by. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Doesn't this prove that the problem affects the whole country?",
-      "hint": "Use 'The data don't allow us to …' to avoid overclaiming."
+      "hint": "Use 'The data don't allow us to …' to avoid overclaiming. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What will the government do about it?",
-      "hint": "Say politely that you're not in a position to answer, and explain why."
+      "hint": "Say politely that you're not in a position to answer, and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2737,11 +3183,108 @@
      "How would you respond if someone said your research was useless?"
     ]
    },
-   "exit": "Respond to this criticism in two sentences: 'Your study was far too small.' Accept part of it and stand by your main point."
+   "exit": "Respond to this criticism in two sentences: 'Your study was far too small.' Accept part of it and stand by your main point.",
+   "recycle": [
+    "stand by"
+   ]
   },
   "3-4": {
    "objective": "Today you will conclude a presentation memorably, summarising the key message and its implications.",
    "warmup": "Which presentation or talk do you still remember, and why did it stay with you?",
+   "dialogue": {
+    "scene": "Khalid and Saad are rehearsing the conclusion of their science project on turning date palm waste into building boards.",
+    "p1": [
+     {
+      "s": "Khalid",
+      "t": "So, to draw the threads together: palm waste, which is often burned, could become useful building material."
+     },
+     {
+      "s": "Saad",
+      "t": "The key takeaway is simple: what we throw away might be a resource."
+     },
+     {
+      "s": "Khalid",
+      "t": "And that has far-reaching implications for farmers, builders and the environment."
+     },
+     {
+      "s": "Saad",
+      "t": "One question merits further research, though: how well do the boards cope with humidity?"
+     },
+     {
+      "s": "Khalid",
+      "t": "Good point. Our samples were only tested in dry conditions."
+     },
+     {
+      "s": "Saad",
+      "t": "So let's be honest about that. Admitting what we don't know makes our conclusions more credible."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Khalid",
+      "t": "How should we finish?"
+     },
+     {
+      "s": "Saad",
+      "t": "Let's come full circle. We opened with a photo of palm fronds being burned on a farm."
+     },
+     {
+      "s": "Khalid",
+      "t": "Then I'll leave you with the same farm, now with a storeroom built from palm-fibre boards."
+     },
+     {
+      "s": "Saad",
+      "t": "Perfect. It shows our whole argument in a single image."
+     },
+     {
+      "s": "Khalid",
+      "t": "And then we thank the judges and invite questions?"
+     },
+     {
+      "s": "Saad",
+      "t": "Yes, and keep the photo on the screen while we answer. It'll keep our message in their minds."
+     },
+     {
+      "s": "Khalid",
+      "t": "Great. Let's rehearse it twice tonight and time ourselves, so we don't rush the ending."
+     }
+    ],
+    "focus": "So, to draw the threads together: palm waste, which is often burned, could become useful building material.",
+    "qs": [
+     "What is the key takeaway of the project?",
+     "How do Khalid and Saad plan to come full circle?"
+    ]
+   },
+   "speakout": {
+    "scene": "You have just finished presenting a project. Your teacher asks you to deliver and then discuss your conclusion.",
+    "prompts": [
+     {
+      "q": "Please give us your conclusion.",
+      "hint": "Start with 'To draw the threads together, …' and state your key takeaway. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Why should anyone outside this room care?",
+      "hint": "Explain the far-reaching implications in one or two sentences. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "How would you end your talk memorably?",
+      "hint": "Use 'I'll leave you with …' or come full circle to your opening. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: The Date Palm",
+    "points": [
+     "Saudi Arabia has tens of millions of date palms and is one of the world's leading date producers.",
+     "Al-Ahsa Oasis, one of the largest palm oases in the world, is a UNESCO World Heritage Site.",
+     "Palm fronds have traditionally been used to make baskets, mats and roofs."
+    ],
+    "qs": [
+     "Which traditional material could be used in new ways today?",
+     "What makes a conclusion memorable: a fact, a story or a question?"
+    ]
+   },
+   "exit": "Conclude a talk on any topic in two sentences, using 'The key takeaway is …' and 'I'll leave you with …'.",
    "expressions": [
     {
      "w": "to draw the threads together",
@@ -2750,10 +3293,10 @@
      "frame": "To draw the threads together, ___."
     },
     {
-     "w": "the take-home message",
-     "def": "the main idea you want the audience to remember",
-     "ar": "الرسالة الأساسية",
-     "frame": "The take-home message is that ___."
+     "w": "the key takeaway",
+     "def": "the most important idea people should remember",
+     "ar": "الخلاصة الأهم",
+     "frame": "The key takeaway from ___ is ___."
     },
     {
      "w": "far-reaching implications",
@@ -2780,80 +3323,9 @@
      "frame": "I'll leave you with ___."
     }
    ],
-   "dialogue": {
-    "scene": "Khalid and Saad are rehearsing the conclusion of their science project on turning date palm waste into building boards.",
-    "p1": [
-     {
-      "s": "Khalid",
-      "t": "So, to draw the threads together: palm waste, which is often burned, could become useful building material."
-     },
-     {
-      "s": "Saad",
-      "t": "The take-home message is simple: what we throw away might be a resource."
-     },
-     {
-      "s": "Khalid",
-      "t": "And that has far-reaching implications for farmers, builders and the environment."
-     },
-     {
-      "s": "Saad",
-      "t": "One question merits further research, though: how well do the boards cope with humidity?"
-     }
-    ],
-    "p2": [
-     {
-      "s": "Khalid",
-      "t": "How should we finish?"
-     },
-     {
-      "s": "Saad",
-      "t": "Let's come full circle. We opened with a photo of palm fronds being burned on a farm."
-     },
-     {
-      "s": "Khalid",
-      "t": "Then I'll leave you with the same farm, now with a storeroom built from palm-fibre boards."
-     },
-     {
-      "s": "Saad",
-      "t": "Perfect. It shows our whole argument in a single image."
-     }
-    ],
-    "focus": "So, to draw the threads together: palm waste, which is often burned, could become useful building material.",
-    "qs": [
-     "What is the take-home message of the project?",
-     "How do Khalid and Saad plan to come full circle?"
-    ]
-   },
-   "speakout": {
-    "scene": "You have just finished presenting a project. Your teacher asks you to deliver and then discuss your conclusion.",
-    "prompts": [
-     {
-      "q": "Please give us your conclusion.",
-      "hint": "Start with 'To draw the threads together, …' and state your take-home message."
-     },
-     {
-      "q": "Why should anyone outside this room care?",
-      "hint": "Explain the far-reaching implications in one or two sentences."
-     },
-     {
-      "q": "How would you end your talk memorably?",
-      "hint": "Use 'I'll leave you with …' or come full circle to your opening."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: The Date Palm",
-    "points": [
-     "Saudi Arabia has tens of millions of date palms and is one of the world's leading date producers.",
-     "Al-Ahsa Oasis, one of the largest palm oases in the world, is a UNESCO World Heritage Site.",
-     "Palm fronds have traditionally been used to make baskets, mats and roofs."
-    ],
-    "qs": [
-     "Which traditional material could be used in new ways today?",
-     "What makes a conclusion memorable: a fact, a story or a question?"
-    ]
-   },
-   "exit": "Conclude a talk on any topic in two sentences, using 'The take-home message is …' and 'I'll leave you with …'."
+   "recycle": [
+    "the take-home message"
+   ]
   },
   "3-5": {
    "objective": "Today you will give a short conference presentation and handle questions from the audience.",
@@ -2872,10 +3344,10 @@
      "frame": "Having established that ___, let's turn to ___."
     },
     {
-     "w": "this brings me to",
-     "def": "a phrase that links one point to the next",
-     "ar": "وهذا يقودني إلى",
-     "frame": "This brings me to ___."
+     "w": "segue into",
+     "def": "to move smoothly from one topic to the next",
+     "ar": "ينتقل بسلاسة إلى",
+     "frame": "This finding segues neatly into ___."
     },
     {
      "w": "in light of",
@@ -2884,16 +3356,16 @@
      "frame": "In light of these results, ___."
     },
     {
-     "w": "that's a pertinent question",
-     "def": "that question is relevant and useful",
-     "ar": "هذا سؤال في محلّه",
-     "frame": "That's a pertinent question. Briefly, ___."
+     "w": "I'm glad you asked",
+     "def": "a polite way to welcome a useful question",
+     "ar": "يسعدني أنك سألت",
+     "frame": "I'm glad you asked about ___. Briefly, …"
     },
     {
-     "w": "fall outside the scope of",
-     "def": "not be included in what a study or talk covers",
-     "ar": "يقع خارج نطاق",
-     "frame": "___ falls outside the scope of this project."
+     "w": "beyond the remit of",
+     "def": "outside the official area of responsibility of",
+     "ar": "خارج نطاق اختصاص",
+     "frame": "___ is beyond the remit of this project."
     }
    ],
    "dialogue": {
@@ -2906,6 +3378,10 @@
      {
       "s": "Nouf",
       "t": "Thank you. I'd like to begin by asking why so many playgrounds are empty at midday."
+     },
+     {
+      "s": "Nouf",
+      "t": "We measured surface temperatures in four playgrounds every hour for six weeks, which segues neatly into our first finding."
      },
      {
       "s": "Nouf",
@@ -2930,6 +3406,14 @@
       "t": "That's a pertinent question. Artificial grass falls outside the scope of this project, but it can get very hot, so it would be worth testing."
      },
      {
+      "s": "Lily",
+      "t": "And the cost of building shade? Was that part of it?"
+     },
+     {
+      "s": "Nouf",
+      "t": "I'm glad you asked. Costs are beyond the remit of this study, but the council has offered to share its figures."
+     },
+     {
       "s": "Hassan",
       "t": "Thank you. Let's give Nouf a round of applause."
      }
@@ -2945,15 +3429,15 @@
     "prompts": [
      {
       "q": "Please open your presentation.",
-      "hint": "Begin with 'I'd like to begin by …' and state your research question."
+      "hint": "Begin with 'I'd like to begin by …' and state your research question. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Take us from your findings to your main point.",
-      "hint": "Use 'Having established …, let me turn to …' and 'This brings me to …'."
+      "hint": "Use 'Having established …, let me turn to …' and 'This brings me to …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Did you also study the cost of your idea?",
-      "hint": "Thank the questioner, then say what falls inside and outside your scope."
+      "hint": "Thank the questioner, then say what falls inside and outside your scope. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2969,7 +3453,12 @@
      "What problem at your school would make a good research project?"
     ]
    },
-   "exit": "Give the opening and closing sentences of your own conference talk, then answer one imagined question."
+   "exit": "Give the opening and closing sentences of your own conference talk, then answer one imagined question.",
+   "recycle": [
+    "this brings me to",
+    "that's a pertinent question",
+    "fall outside the scope of"
+   ]
   }
  },
  "kits": {
@@ -2986,9 +3475,9 @@
      "ex": "The result of the debate hinges on one key definition."
     },
     {
-     "w": "a sweeping generalisation",
-     "ar": "تعميم شامل",
-     "ex": "'All teenagers waste money' is a sweeping generalisation."
+     "w": "an oversimplification",
+     "ar": "تبسيط مُخِلّ",
+     "ex": "'Exams are useless' is an oversimplification."
     },
     {
      "w": "contend",
@@ -3017,7 +3506,7 @@
     },
     {
      "s": "Lina",
-     "t": "That's a sweeping generalisation. Some brands use recycled fabric."
+     "t": "That's an oversimplification. Some brands use recycled fabric."
     },
     {
      "s": "Hala",
@@ -3208,9 +3697,9 @@
      "ex": "A survey alone can't show a causal relationship."
     },
     {
-     "w": "draw a conclusion",
-     "ar": "يستخلص نتيجة",
-     "ex": "It's too early to draw a firm conclusion."
+     "w": "infer",
+     "ar": "يستنتج",
+     "ex": "From the figures, we can infer that sleep matters."
     }
    ],
    "dialogue": [
@@ -3267,9 +3756,9 @@
      "ex": "It would be an overstatement to say the trial failed."
     },
     {
-     "w": "by and large",
-     "ar": "عموماً",
-     "ex": "By and large, the feedback was positive."
+     "w": "in the main",
+     "ar": "في الغالب",
+     "ex": "In the main, the feedback was positive."
     },
     {
      "w": "marginally",
@@ -3289,7 +3778,7 @@
     },
     {
      "s": "Nabil",
-     "t": "By and large, yes, with the possible exception of the youngest classes."
+     "t": "In the main, yes, with the possible exception of the youngest classes."
     },
     {
      "s": "Abdullah",
@@ -3321,9 +3810,9 @@
   "0-5": {
    "words": [
     {
-     "w": "the motion",
-     "ar": "موضوع المناظرة",
-     "ex": "The motion was narrowly defeated."
+     "w": "the opposing side",
+     "ar": "الفريق المعارض",
+     "ex": "The opposing side made a strong opening speech."
     },
     {
      "w": "my opponent contends that",
@@ -3341,14 +3830,14 @@
      "ex": "The plan falls short of its own goals."
     },
     {
-     "w": "concede that",
+     "w": "acknowledge that",
      "ar": "يُقرّ بأنّ",
-     "ex": "I concede that interviews take time."
+     "ex": "She acknowledged that the plan would be expensive."
     },
     {
-     "w": "on balance",
-     "ar": "بعد الموازنة",
-     "ex": "On balance, the benefits outweigh the costs."
+     "w": "in the final analysis",
+     "ar": "في التحليل الأخير",
+     "ex": "In the final analysis, a combined approach is fairer."
     }
    ],
    "dialogue": [
@@ -3374,16 +3863,16 @@
     },
     {
      "s": "Noura",
-     "t": "On balance, combining both is fairer."
+     "t": "In the final analysis, combining both is fairer."
     }
    ],
    "grammar": {
     "title": "Structuring a precise debate speech",
-    "ar": "في المناظرة: اذكر الموضوع (the motion)، انقل رأي الخصم بدقة (My opponent contends that)، اعترف بنقطة (I concede)، ثم احسم (On balance).",
+    "ar": "في المناظرة: اذكر الموضوع (the motion)، انقل رأي الخصم بدقة (My opponent contends that)، اعترف بنقطة (I concede)، ثم احسم (In the final analysis).",
     "examples": [
      "The motion before us is that exams should be abolished.",
      "My opponent contends that interviews are unfair, but the evidence is mixed.",
-     "On balance, a combined approach is the most reliable."
+     "In the final analysis, a combined approach is the most reliable."
     ]
    }
   },
@@ -3622,9 +4111,9 @@
      "ex": "Scientists fear we are near a tipping point."
     },
     {
-     "w": "in the long run",
-     "ar": "على المدى البعيد",
-     "ex": "In the long run, saving water costs less."
+     "w": "in the years to come",
+     "ar": "في السنوات القادمة",
+     "ex": "In the years to come, solar power will become even cheaper."
     }
    ],
    "dialogue": [
@@ -3650,7 +4139,7 @@
     },
     {
      "s": "Fahad",
-     "t": "In the long run, saving water is cheaper."
+     "t": "In the years to come, saving water will be cheaper."
     }
    ],
    "grammar": {
@@ -3666,9 +4155,9 @@
   "1-4": {
    "words": [
     {
-     "w": "by the time",
-     "ar": "بحلول الوقت الذي",
-     "ex": "By the time we graduate, the software will have changed."
+     "w": "keep your skills sharp",
+     "ar": "يحافظ على مهاراته متجددة",
+     "ex": "Short online courses help nurses keep their skills sharp."
     },
     {
      "w": "future-proof",
@@ -3755,9 +4244,9 @@
      "ex": "Good leaders plan for every eventuality."
     },
     {
-     "w": "in all likelihood",
-     "ar": "على الأرجح",
-     "ex": "In all likelihood, teachers will still be needed."
+     "w": "it's anyone's guess",
+     "ar": "لا أحد يعلم يقيناً",
+     "ex": "Who will win the league is anyone's guess."
     },
     {
      "w": "Were that to happen",
@@ -3951,9 +4440,9 @@
      "ex": "Black coffee is an acquired taste for many people."
     },
     {
-     "w": "food for thought",
-     "ar": "مادة للتفكير",
-     "ex": "Her talk gave us plenty of food for thought."
+     "w": "chew over",
+     "ar": "يتأمّل الأمر ملياً",
+     "ex": "Let me chew over your offer and reply tomorrow."
     },
     {
      "w": "a recipe for",
@@ -3995,7 +4484,7 @@
     },
     {
      "s": "Tess",
-     "t": "So food is a language of its own. That's food for thought."
+     "t": "So food is a language of its own. That's something to chew over."
     },
     {
      "s": "Yara",
@@ -4004,9 +4493,9 @@
    ],
    "grammar": {
     "title": "Food idioms used figuratively",
-    "ar": "كثير من تعابير الطعام تُستخدم مجازياً: food for thought = فكرة تستحق التفكير، a recipe for disaster = سبب لكارثة. المعنى ليس عن الأكل حرفياً.",
+    "ar": "كثير من تعابير الطعام تُستخدم مجازياً: chew over = يتأمّل الأمر ملياً، a recipe for disaster = سبب لكارثة. المعنى ليس عن الأكل حرفياً.",
     "examples": [
-     "Your question is real food for thought.",
+     "Your question is something to chew over.",
      "Skipping practice is a recipe for failure.",
      "Each team member brings different skills to the table."
     ]
@@ -4035,14 +4524,14 @@
      "ex": "Third-culture kids often straddle two cultures."
     },
     {
-     "w": "the best of both worlds",
-     "ar": "أفضل ما في العالمين",
-     "ex": "Living near the city and the desert is the best of both worlds."
+     "w": "a foot in both camps",
+     "ar": "قدم في كلٍّ من العالمَين",
+     "ex": "Bilingual families often have a foot in both camps."
     },
     {
-     "w": "feel at home",
-     "ar": "يشعر وكأنه في بيته",
-     "ex": "The friendly teachers made us feel at home."
+     "w": "readjust to",
+     "ar": "يعيد التأقلم مع",
+     "ex": "After the summer, it took me a week to readjust to early mornings."
     }
    ],
    "dialogue": [
@@ -4064,11 +4553,11 @@
     },
     {
      "s": "Abdulaziz",
-     "t": "Do you feel at home again now?"
+     "t": "Have you readjusted to life here?"
     },
     {
      "s": "Maha",
-     "t": "I straddle two cultures, so I have the best of both worlds."
+     "t": "I straddle two cultures, so I have a foot in both camps."
     }
    ],
    "grammar": {
@@ -4077,7 +4566,7 @@
     "examples": [
      "She felt like a fish out of water at first.",
      "It took him a month to find his feet.",
-     "Bilingual families often enjoy the best of both worlds."
+     "Bilingual families often enjoy a foot in both camps."
     ]
    }
   },
@@ -4104,9 +4593,9 @@
      "ex": "The old village feels frozen in time."
     },
     {
-     "w": "stand the test of time",
-     "ar": "يصمد أمام الزمن",
-     "ex": "Najdi mud houses have stood the test of time."
+     "w": "stay relevant",
+     "ar": "يبقى محافظاً على أهميته",
+     "ex": "Libraries stay relevant by offering digital services."
     },
     {
      "w": "woven into the fabric of",
@@ -4133,7 +4622,7 @@
     },
     {
      "s": "Ana",
-     "t": "Will it stand the test of time?"
+     "t": "Will it stay relevant?"
     },
     {
      "s": "Shahad",
@@ -4163,19 +4652,19 @@
      "ex": "Big port cities are often a melting pot of cultures."
     },
     {
-     "w": "a double-edged sword",
-     "ar": "سلاح ذو حدّين",
-     "ex": "Fame can be a double-edged sword."
+     "w": "a mixed bag",
+     "ar": "خليط من الجيد والسيئ",
+     "ex": "The reviews were a mixed bag."
     },
     {
-     "w": "a sense of belonging",
-     "ar": "الشعور بالانتماء",
-     "ex": "Volunteering gave him a sense of belonging."
+     "w": "a shared heritage",
+     "ar": "تراث مشترك",
+     "ex": "Arabic poetry is part of our shared heritage."
     },
     {
-     "w": "the best of both worlds",
-     "ar": "أفضل ما في العالمين",
-     "ex": "Bilingual students often enjoy the best of both worlds."
+     "w": "a global citizen",
+     "ar": "مواطن عالمي",
+     "ex": "Learning languages helps you become a global citizen."
     },
     {
      "w": "shape who we are",
@@ -4206,11 +4695,11 @@
     },
     {
      "s": "Chris",
-     "t": "It's a double-edged sword."
+     "t": "It's a mixed bag."
     },
     {
      "s": "Mishal",
-     "t": "Can we have the best of both worlds?"
+     "t": "Can we be global citizens and stay local?"
     },
     {
      "s": "Chris",
@@ -4222,7 +4711,7 @@
     "ar": "الاستعارة الممتدّة تطوّر صورة واحدة عبر أكثر من جملة: a mosaic … each piece keeps its own colour. هذا يجعل الكلام أعمق وأكثر إقناعاً في مستوى C2.",
     "examples": [
      "Our society is a mosaic; each piece keeps its own colour, but together they form one picture.",
-     "The internet is a double-edged sword.",
+     "The internet is a mixed bag.",
      "Family is at the heart of our identity."
     ]
    }
@@ -4299,9 +4788,9 @@
   "3-1": {
    "words": [
     {
-     "w": "turning now to",
-     "ar": "ننتقل الآن إلى",
-     "ex": "Turning now to the second chart, the picture changes."
+     "w": "shift our attention to",
+     "ar": "ننقل تركيزنا إلى",
+     "ex": "Let's shift our attention to the second chart."
     },
     {
      "w": "as illustrated by",
@@ -4319,9 +4808,9 @@
      "ex": "Teenagers account for a third of the app's users."
     },
     {
-     "w": "to put this into perspective",
-     "ar": "لتوضيح حجم الأمر",
-     "ex": "To put this into perspective, that's the size of ten football pitches."
+     "w": "to give you a sense of scale",
+     "ar": "لتتصوّروا الحجم",
+     "ex": "To give you a sense of scale, the park is the size of ten football pitches."
     },
     {
      "w": "bear in mind",
@@ -4336,7 +4825,7 @@
     },
     {
      "s": "Zainab",
-     "t": "To put this into perspective, fewer than half of sixteen-year-olds read for fun."
+     "t": "To give you a sense of scale, fewer than half of sixteen-year-olds read for fun."
     },
     {
      "s": "Haya",
@@ -4357,7 +4846,7 @@
    ],
    "grammar": {
     "title": "Signposting with data",
-    "ar": "عند عرض البيانات: انتقل بوضوح (Turning now to)، أشر إلى الرسم (As illustrated by)، قرّب الرقم للجمهور (To put this into perspective)، ونبّه إلى الحدود (Bear in mind).",
+    "ar": "عند عرض البيانات: انتقل بوضوح (Turning now to)، أشر إلى الرسم (As illustrated by)، قرّب الرقم للجمهور (To give you a sense of scale)، ونبّه إلى الحدود (Bear in mind).",
     "examples": [
      "Turning now to the second chart, the trend reverses.",
      "As illustrated by this graph, usage peaks at night.",
@@ -4442,9 +4931,9 @@
      "ex": "That's a fair criticism, and we'll fix it next time."
     },
     {
-     "w": "stand by",
-     "ar": "يتمسّك بـ",
-     "ex": "I stand by what I said in my presentation."
+     "w": "hold firm",
+     "ar": "يثبت على موقفه",
+     "ex": "The researchers held firm on their main finding."
     },
     {
      "w": "the data don't allow us to",
@@ -4511,9 +5000,9 @@
      "ex": "To draw the threads together, all three studies point the same way."
     },
     {
-     "w": "the take-home message",
-     "ar": "الرسالة الأساسية",
-     "ex": "The take-home message is simple: sleep matters."
+     "w": "the key takeaway",
+     "ar": "الخلاصة الأهم",
+     "ex": "The key takeaway of the lesson was 'check your sources'."
     },
     {
      "w": "far-reaching implications",
@@ -4543,7 +5032,7 @@
     },
     {
      "s": "Saad",
-     "t": "The take-home message: waste might be a resource."
+     "t": "The key takeaway: waste might be a resource."
     },
     {
      "s": "Khalid",
@@ -4564,10 +5053,10 @@
    ],
    "grammar": {
     "title": "Concluding a presentation",
-    "ar": "الخاتمة القوية: اجمع الأفكار (To draw the threads together)، أعطِ رسالة واحدة (The take-home message)، اذكر الأثر (implications)، واختم بصورة أو سؤال (I'll leave you with).",
+    "ar": "الخاتمة القوية: اجمع الأفكار (To draw the threads together)، أعطِ رسالة واحدة (The key takeaway)، اذكر الأثر (implications)، واختم بصورة أو سؤال (I'll leave you with).",
     "examples": [
      "To draw the threads together, the evidence points one way.",
-     "The take-home message is that small changes matter.",
+     "The key takeaway is that small changes matter.",
      "I'll leave you with one image."
     ]
    }
@@ -4585,9 +5074,9 @@
      "ex": "Having established the problem, I'll present our solution."
     },
     {
-     "w": "this brings me to",
-     "ar": "وهذا يقودني إلى",
-     "ex": "This brings me to my final point."
+     "w": "segue into",
+     "ar": "ينتقل بسلاسة إلى",
+     "ex": "Her story segued neatly into the main topic."
     },
     {
      "w": "in light of",
@@ -4595,14 +5084,14 @@
      "ex": "In light of the heat, the match was moved to the evening."
     },
     {
-     "w": "that's a pertinent question",
-     "ar": "هذا سؤال في محلّه",
-     "ex": "That's a pertinent question; let me explain."
+     "w": "I'm glad you asked",
+     "ar": "يسعدني أنك سألت",
+     "ex": "I'm glad you asked. The costs were lower than expected."
     },
     {
-     "w": "fall outside the scope of",
-     "ar": "يقع خارج نطاق",
-     "ex": "Long-term effects fall outside the scope of this study."
+     "w": "beyond the remit of",
+     "ar": "خارج نطاق اختصاص",
+     "ex": "Building costs were beyond the remit of our study."
     }
    ],
    "dialogue": [
@@ -4671,7 +5160,7 @@
    },
    {
     "type": "mc",
-    "q": "Which sentence is a sweeping generalisation?",
+    "q": "Which sentence is an oversimplification?",
     "options": [
      "Nobody ever repairs their clothes any more.",
      "Many T-shirts are worn fewer than ten times.",
@@ -4871,7 +5360,7 @@
      "cherry-picking",
      "defining her terms",
      "conceding a point",
-     "drawing a conclusion"
+     "making an inference"
     ],
     "answer": 0
    },
@@ -4915,15 +5404,15 @@
    {
     "type": "order",
     "words": [
-     "By",
-     "and",
-     "large,",
+     "In",
+     "the",
+     "main,",
      "the",
      "feedback",
      "was",
      "positive."
     ],
-    "answer": "By and large, the feedback was positive.",
+    "answer": "In the main, the feedback was positive.",
     "ar": "رتّب الجملة"
    },
    {
@@ -4969,9 +5458,9 @@
   "0-5": [
    {
     "type": "mc",
-    "q": "In a formal debate, 'the motion' is …",
+    "q": "In a debate, 'the opposing side' is …",
     "options": [
-     "the statement being debated",
+     "the team arguing against you",
      "the final vote",
      "the judge's comment",
      "the person who speaks first"
@@ -5005,14 +5494,16 @@
    {
     "type": "order",
     "words": [
-     "On",
-     "balance,",
+     "In",
+     "the",
+     "final",
+     "analysis,",
      "combining",
      "both",
      "is",
      "fairer."
     ],
-    "answer": "On balance, combining both is fairer.",
+    "answer": "In the final analysis, combining both is fairer.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5272,14 +5763,16 @@
     "words": [
      "In",
      "the",
-     "long",
-     "run,",
+     "years",
+     "to",
+     "come,",
      "saving",
      "water",
-     "is",
+     "will",
+     "be",
      "cheaper."
     ],
-    "answer": "In the long run, saving water is cheaper.",
+    "answer": "In the years to come, saving water will be cheaper.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5412,12 +5905,12 @@
    },
    {
     "type": "mc",
-    "q": "'In all likelihood' means …",
+    "q": "'It's anyone's guess' means …",
     "options": [
      "definitely not",
-     "in every case",
+     "everyone agrees",
      "only in theory",
-     "very probably"
+     "nobody can know for sure"
     ],
     "answer": 3
    }
@@ -5548,12 +6041,12 @@
   "2-2": [
    {
     "type": "mc",
-    "q": "'Food for thought' is …",
+    "q": "To 'chew over' an idea means to …",
     "options": [
-     "an idea worth thinking about",
-     "a type of recipe book",
-     "a snack before exams",
-     "a healthy meal"
+     "think about it carefully",
+     "eat while talking",
+     "forget it quickly",
+     "write it down"
     ],
     "answer": 0
    },
@@ -5654,13 +6147,13 @@
      "Now",
      "I",
      "have",
-     "the",
-     "best",
-     "of",
+     "a",
+     "foot",
+     "in",
      "both",
-     "worlds."
+     "camps."
     ],
-    "answer": "Now I have the best of both worlds.",
+    "answer": "Now I have a foot in both camps.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5704,14 +6197,14 @@
    },
    {
     "type": "mc",
-    "q": "'Najdi mud houses have stood the ___ of time.'",
+    "q": "For a tradition to 'stay relevant', it must …",
     "options": [
-     "exam",
-     "trial",
-     "proof",
-     "test"
+     "keep its importance as times change",
+     "never change at all",
+     "be sold in shops",
+     "be forgotten"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "order",
@@ -5744,9 +6237,9 @@
   "2-5": [
    {
     "type": "mc",
-    "q": "Something that has both good and bad effects is …",
+    "q": "Something with a mix of good and bad parts is …",
     "options": [
-     "a double-edged sword",
+     "a mixed bag",
      "a dying art",
      "an acquired taste",
      "a melting pot"
@@ -5874,7 +6367,7 @@
     "q": "Which phrase moves the talk to a new section?",
     "options": [
      "Bear in mind that …",
-     "Turning now to …",
+     "Let's shift our attention to …",
      "In a nutshell, …",
      "As far as I know, …"
     ],
@@ -5923,7 +6416,7 @@
    },
    {
     "type": "mc",
-    "q": "Which sentence best puts a figure into perspective?",
+    "q": "Which sentence best gives a sense of scale?",
     "options": [
      "The area exists.",
      "The area was measured.",
@@ -6079,12 +6572,12 @@
     "type": "order",
     "words": [
      "The",
-     "take-home",
-     "message",
+     "key",
+     "takeaway",
      "is",
      "simple."
     ],
-    "answer": "The take-home message is simple.",
+    "answer": "The key takeaway is simple.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6251,7 +6744,7 @@
      "options": [
       "Online lessons are useless.",
       "Online lessons are perfect for everyone.",
-      "By and large, online lessons suit older students better.",
+      "In the main, online lessons suit older students better.",
       "Everybody hates online lessons."
      ],
      "answer": 2
@@ -6435,14 +6928,16 @@
      "words": [
       "In",
       "the",
-      "long",
-      "run,",
+      "years",
+      "to",
+      "come,",
       "saving",
       "water",
-      "is",
+      "will",
+      "be",
       "cheaper."
      ],
-     "answer": "In the long run, saving water is cheaper.",
+     "answer": "In the years to come, saving water will be cheaper.",
      "ar": "رتّب الجملة"
     }
    ],
@@ -6521,7 +7016,7 @@
     },
     {
      "type": "mc",
-     "q": "'Social media is a double-edged sword' means it …",
+     "q": "'Social media is a mixed bag' means it …",
      "options": [
       "is only harmful",
       "is used by soldiers",
@@ -6575,7 +7070,7 @@
    ],
    "speak": [
     "What shapes your identity more: your family, your city or your language? Discuss using at least two idioms and one metaphor.",
-    "Choose one Saudi tradition and explain how it could stand the test of time in a globalised world."
+    "Choose one Saudi tradition and explain how it could stay relevant in a globalised world."
    ]
   },
   "3": {

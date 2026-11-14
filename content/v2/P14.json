@@ -57,14 +57,14 @@
    "skill": "vocabulary"
   },
   {
-   "q": "The benefits of the scheme clearly ___ the costs.",
+   "q": "The panels are expensive, but for cleaner air that's a price worth ___.",
    "options": [
-    "overcome",
-    "overtake",
-    "outweigh",
-    "outrun"
+    "paying",
+    "to pay",
+    "paid",
+    "pay"
    ],
-   "answer": 2,
+   "answer": 0,
    "skill": "vocabulary"
   },
   {
@@ -197,7 +197,7 @@
  },
  "aloud": [
   "I'm not entirely sure that this plan will work, but it seems worth discussing.",
-  "Sorry to interrupt, but going back to what Reem said earlier, I think she makes a valid point.",
+  "Sorry to interrupt, but going back to what Reem said earlier, I think that was a point well made.",
   "What I really admire about the project is that it was the quietest student who came up with the best idea."
  ],
  "speak": [
