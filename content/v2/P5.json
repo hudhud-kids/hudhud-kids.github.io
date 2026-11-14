@@ -92,7 +92,7 @@
    "cid": "b2"
   },
   {
-   "q": "This is ___ film I know. I laughed all the time!",
+   "q": "Ali is ___ boy in our class. He always makes us laugh!",
    "options": [
     "funnier",
     "the funniest",
@@ -229,7 +229,7 @@
    "cid": "b7"
   },
   {
-   "script": "Boy: Where did you go in the holidays, Reem? Reem: We went to Abha. Boy: Did you fly? Reem: No, we didn't. We went by car. It took ten hours, but the mountains were beautiful.",
+   "script": "Sara: Where did you go in the holidays, Reem? Reem: We went to Abha. Sara: Did you fly? Reem: No, we didn't. We went by car. It took ten hours, but the mountains were beautiful.",
    "q": "How did Reem's family travel to Abha?",
    "options": [
     "By car.",
@@ -274,8 +274,8 @@
    "cid": "b3"
   },
   {
-   "script": "Boy: Did you enjoy the trip to the zoo? Girl: Yes, it was great! We saw lions and giraffes. Boy: Did you see the elephants? Girl: No, we didn't. They were asleep inside.",
-   "q": "Which animals didn't the girl see?",
+   "script": "Hind: Did you enjoy the trip to the zoo, Lina? Lina: Yes, it was great! We saw lions and giraffes. Hind: Did you see the elephants? Lina: No, we didn't. They were asleep inside.",
+   "q": "Which animals didn't Lina see?",
    "options": [
     "the lions",
     "the giraffes",

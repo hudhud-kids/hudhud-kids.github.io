@@ -47,14 +47,14 @@
    "cid": "i3"
   },
   {
-   "q": "'Not only ___ the data, but he also took the expert's words out of context.'",
+   "q": "'Under no circumstances ___ the exam room before the end.'",
    "options": [
-    "did he cherry-pick",
-    "he cherry-picked",
-    "cherry-picked he",
-    "he did cherry-pick"
+    "candidates should leave",
+    "should candidates leave",
+    "candidates leave",
+    "leave candidates"
    ],
-   "answer": 0,
+   "answer": 1,
    "skill": "grammar",
    "d": 20.0,
    "cefr": "C1",
@@ -62,14 +62,14 @@
    "cid": "i1"
   },
   {
-   "q": "'Drawing the ___ together, we seem to agree that cost matters most.'",
+   "q": "'The project was ___ with problems from the very start.'",
    "options": [
-    "strings",
-    "ropes",
-    "lines",
-    "threads"
+    "crowded",
+    "weighted",
+    "fraught",
+    "stuffed"
    ],
-   "answer": 3,
+   "answer": 2,
    "skill": "vocabulary",
    "d": 20.0,
    "cefr": "C1",
@@ -107,14 +107,14 @@
    "cid": "i3"
   },
   {
-   "q": "'___ the speaker kept her composure, she would have won the debate.'",
+   "q": "'Try ___ she might, she could not persuade the committee.'",
    "options": [
-    "Had",
-    "Should",
-    "Were",
-    "Did"
+    "so",
+    "as",
+    "how",
+    "if"
    ],
-   "answer": 0,
+   "answer": 1,
    "skill": "grammar",
    "d": 20.0,
    "cefr": "C1",
@@ -244,8 +244,8 @@
    "cid": "i2"
   },
   {
-   "script": "Interviewer: So you admit your plan has failed? Minister: I'd reject that premise. We haven't hit every target, and I'll concede that the timing was poor, but two of our three goals have already been met.",
-   "q": "What does the minister concede?",
+   "script": "Interviewer: So you admit your plan has failed? Director: I'd reject that premise. We haven't hit every target, and I'll concede that the timing was poor, but two of our three goals have already been met.",
+   "q": "What does the director concede?",
    "options": [
     "The timing was poor.",
     "The plan has failed.",
@@ -289,8 +289,8 @@
    "cid": "i4"
   },
   {
-   "script": "Boy: Her review called the film 'ambitious'. Girl: Which, coming from her, is hardly a compliment. Boy: Meaning? Girl: Meaning it tried to do too much and didn't quite manage it.",
-   "q": "According to the girl, what did the critic mean?",
+   "script": "Omar: Her review called the film 'ambitious'. Faisal: Which, coming from her, is hardly a compliment. Omar: Meaning? Faisal: Meaning it tried to do too much and didn't quite manage it.",
+   "q": "According to Faisal, what did the critic mean?",
    "options": [
     "The film tried too much and fell short.",
     "The film was a masterpiece.",

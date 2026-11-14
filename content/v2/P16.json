@@ -182,7 +182,7 @@
    "cid": "h1"
   },
   {
-   "q": "The minister's comments ___ a heated debate on social media.",
+   "q": "The referee's decision ___ a heated debate on social media.",
    "options": [
     "lit",
     "fired",
@@ -229,8 +229,8 @@
    "cid": "h4"
   },
   {
-   "script": "Girl: Have you seen this advert for the spot cream? Boy: Yes. It claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. That raises a red flag for me.",
-   "q": "Why does the boy doubt the reviews?",
+   "script": "Omar: Have you seen this advert for the spot cream? Faisal: Yes. It claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. That raises a red flag for me.",
+   "q": "Why does Faisal doubt the reviews?",
    "options": [
     "They were all posted on the same day.",
     "They were written in another language.",
@@ -244,8 +244,8 @@
    "cid": "h4"
   },
   {
-   "script": "Chair: Please go on. Speaker: So far, I've talked about why we need sleep. This brings me to my second point: what happens to our brains when we don't get enough of it. After that, I'll share three simple tips you can start using tonight.",
-   "q": "What will the speaker talk about next?",
+   "script": "Chair: Please go on. Presenter: So far, I've talked about why we need sleep. This brings me to my second point: what happens to our brains when we don't get enough of it. After that, I'll share three simple tips you can start using tonight.",
+   "q": "What will the presenter talk about next?",
    "options": [
     "Why we need sleep",
     "Three tips for better sleep",
@@ -289,8 +289,8 @@
    "cid": "h4"
   },
   {
-   "script": "Boy: Granted, the new timetable gives us longer breaks. Girl: But? Boy: But it means finishing at four, which rules out training for half the team.",
-   "q": "What is the boy's main objection?",
+   "script": "Saad: Granted, the new timetable gives us longer breaks. Ali: But? Saad: But it means finishing at four, which rules out training for half the team.",
+   "q": "What is Saad's main objection?",
    "options": [
     "The breaks are too long.",
     "The timetable starts too early.",

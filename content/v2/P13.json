@@ -182,14 +182,14 @@
    "cid": "f3"
   },
   {
-   "q": "The teacher asked us to ___ our main points in the last paragraph.",
+   "q": "Let me ___ my point with an example from our school.",
    "options": [
-    "sum up",
-    "sum over",
-    "add up",
-    "bring up"
+    "explain about",
+    "illustrate",
+    "discuss about",
+    "describe of"
    ],
-   "answer": 0,
+   "answer": 1,
    "d": 13.0,
    "cefr": "B2",
    "skill": "vocabulary",
@@ -259,8 +259,8 @@
    "cid": "f7"
   },
   {
-   "script": "A: How about a reading competition? B: The problem with that is that weaker readers might give up. Why don't we start a book club instead? A: I'd go along with that. So shall we go for the book club? B: Agreed.",
-   "q": "What do the speakers decide?",
+   "script": "Omar: How about a reading competition? Faisal: The problem with that is that weaker readers might give up. Why don't we start a book club instead? Omar: I'd go along with that. So shall we go for the book club? Faisal: Agreed.",
+   "q": "What do Omar and Faisal decide?",
    "options": [
     "To organise a reading competition",
     "To do both ideas",
@@ -289,7 +289,7 @@
    "cid": "f2"
   },
   {
-   "script": "Boy: I'd argue we should spend the money on new computers. Girl: I take your point, but the library needs books more urgently. Boy: Could we split it between both? Girl: That seems fair.",
+   "script": "Reem: I'd argue we should spend the money on new computers. Dana: I take your point, but the library needs books more urgently. Reem: Could we split it between both? Dana: That seems fair.",
    "q": "What do they agree on?",
    "options": [
     "buying only computers",

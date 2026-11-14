@@ -92,12 +92,12 @@
    "cid": "f6"
   },
   {
-   "q": "After weighing ___ the pros and cons, she chose the online course.",
+   "q": "Don't ___ off your homework until Sunday night. Do it now!",
    "options": [
-    "up",
-    "out",
-    "off",
-    "down"
+    "put",
+    "take",
+    "give",
+    "bring"
    ],
    "answer": 0,
    "skill": "vocabulary",
@@ -152,12 +152,12 @@
    "cid": "f1"
   },
   {
-   "q": "___ he was exhausted, he finished the race.",
+   "q": "My brother passed all his exams, ___ made my parents very proud.",
    "options": [
-    "However",
-    "Although",
-    "Despite",
-    "In spite"
+    "that",
+    "which",
+    "what",
+    "who"
    ],
    "answer": 1,
    "d": 12.0,
@@ -167,19 +167,19 @@
    "cid": "f3"
   },
   {
-   "q": "By the time the guests arrived, we ___ all the food.",
+   "q": "I'm not sure why Faisal isn't answering. He ___ have left his phone at home.",
    "options": [
-    "had prepared",
-    "have prepared",
-    "prepared already",
-    "were prepared"
+    "might",
+    "ought",
+    "must to",
+    "can"
    ],
    "answer": 0,
    "d": 12.0,
    "cefr": "B2",
    "skill": "grammar",
-   "cando": "Can use the past perfect and third and mixed conditionals.",
-   "cid": "f2"
+   "cando": "Can speculate about the past (must have, can't have).",
+   "cid": "f1"
   },
   {
    "q": "I'm not sure about the plan. Can I ___ it over and tell you tomorrow?",
@@ -197,14 +197,14 @@
    "cid": "f6"
   },
   {
-   "q": "In a discussion, which phrase introduces a counter-argument?",
+   "q": "Your friend says, 'Online lessons are a waste of time.' Which reply disagrees most tactfully?",
    "options": [
-    "In addition, …",
-    "As a result, …",
-    "On the other hand, …",
-    "For example, …"
+    "That's nonsense.",
+    "I take your point, but they can be really useful for revision.",
+    "You never know what you're talking about.",
+    "Whatever you say."
    ],
-   "answer": 2,
+   "answer": 1,
    "d": 12.0,
    "cefr": "B2",
    "skill": "function",
@@ -274,7 +274,7 @@
    "cid": "f2"
   },
   {
-   "script": "Girl: Shall we take the metro or a taxi? Boy: The taxi's quicker, but it costs four times as much. Girl: True. And the metro station's right next to the stadium. Boy: Metro it is, then.",
+   "script": "Faisal: Shall we take the metro or a taxi? Omar: The taxi's quicker, but it costs four times as much. Faisal: True. And the metro station's right next to the stadium. Omar: Metro it is, then.",
    "q": "What do they decide?",
    "options": [
     "to take the metro",

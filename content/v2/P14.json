@@ -2,12 +2,12 @@
  "level": 14,
  "mcq": [
   {
-   "q": "Teenagers ___ to spend more time online at weekends.",
+   "q": "After finishing her studies in Riyadh, she went on ___ a famous engineer.",
    "options": [
-    "tend",
-    "tends",
-    "are tending",
-    "tending"
+    "to become",
+    "becoming",
+    "become",
+    "to becoming"
    ],
    "answer": 0,
    "skill": "grammar",
@@ -47,7 +47,7 @@
    "cid": "g1"
   },
   {
-   "q": "A walking day is ___ near as effective as a daily school bus.",
+   "q": "The second book in the series is ___ near as good as the first.",
    "options": [
     "no",
     "nowhere",
@@ -88,8 +88,8 @@
    "skill": "vocabulary",
    "d": 14.0,
    "cefr": "B2+",
-   "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
-   "cid": "g1"
+   "cando": "Can use precise vocabulary and collocations for arguments and evidence.",
+   "cid": "g5"
   },
   {
    "q": "We had to ___ out the cheaper option because it wasn't safe.",
@@ -167,14 +167,14 @@
    "cid": "g2"
   },
   {
-   "q": "___ the weather improves, the race will be cancelled.",
+   "q": "The teacher had us ___ the whole essay again.",
    "options": [
-    "Provided",
-    "As long as",
-    "Unless",
-    "If"
+    "rewrite",
+    "to rewrite",
+    "rewriting",
+    "rewritten"
    ],
-   "answer": 2,
+   "answer": 0,
    "d": 14.0,
    "cefr": "B2+",
    "skill": "grammar",
@@ -214,8 +214,8 @@
  ],
  "listen": [
   {
-   "script": "Girl: What did you think of my presentation? Boy: On the whole, it was really clear. The only thing is, the slides seemed a little crowded. You could perhaps use fewer words on each one.",
-   "q": "What does the boy suggest?",
+   "script": "Girl: What did you think of my presentation? Teacher: On the whole, it was really clear. The only thing is, the slides seemed a little crowded. You could perhaps use fewer words on each one.",
+   "q": "What does the teacher suggest?",
    "options": [
     "Adding more slides",
     "Putting fewer words on the slides",
@@ -229,8 +229,8 @@
    "cid": "g6"
   },
   {
-   "script": "Girl: So, as I was saying, the trip should be in March because— Boy: Sorry to interrupt, but March is exam month. Girl: Ah, good point. Going back to the dates, then, how about late April?",
-   "q": "Why does the boy interrupt?",
+   "script": "Lama: So, as I was saying, the trip should be in March because— Sara: Sorry to interrupt, but March is exam month. Lama: Ah, good point. Going back to the dates, then, how about late April?",
+   "q": "Why does Sara interrupt?",
    "options": [
     "To say March is a bad time",
     "To suggest a new place",
@@ -247,9 +247,9 @@
    "script": "Friend: So your brother planned the party? Girl: Everyone thinks it was my brother who planned the surprise party, but it wasn't. It was my little sister who organised everything. What I really admire is that she kept it a secret for a whole month.",
    "q": "Who organised the party?",
    "options": [
-    "The speaker's brother",
-    "The speaker",
-    "The speaker's sister"
+    "The girl's brother",
+    "The girl",
+    "The girl's sister"
    ],
    "answer": 2,
    "d": 13.5,
@@ -289,7 +289,7 @@
    "cid": "g6"
   },
   {
-   "script": "Girl: What I don't understand is why the club changed the timetable. Boy: Apparently it's because the hall is needed for exams. Girl: Couldn't they have told us earlier? Boy: That's exactly what I said.",
+   "script": "Noura: What I don't understand is why the club changed the timetable. Dana: Apparently it's because the hall is needed for exams. Noura: Couldn't they have told us earlier? Dana: That's exactly what I said.",
    "q": "Why did the club change the timetable?",
    "options": [
     "The hall is needed for exams.",
@@ -432,7 +432,7 @@
   "What I really admire about the project is that it was the quietest student who came up with the best idea."
  ],
  "speak": [
-  "Your friend asks for your honest opinion of a song they wrote, but you don't like it much. What would you say?",
+  "Your friend asks for your honest opinion of a short film they made, but you don't like it much. What would you say?",
   "What do you think is the most important skill in a group discussion? Explain why, emphasising your main point.",
   "Your city wants to close its main street to cars every Friday evening. Judge the idea: what are its main strengths and drawbacks?"
  ]

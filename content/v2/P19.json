@@ -2,7 +2,7 @@
  "level": 19,
  "mcq": [
   {
-   "q": "'___ well-meant the rule is, it goes too far.'",
+   "q": "'___ tempting the offer may seem, we should read the small print first.'",
    "options": [
     "Whatever",
     "However",
@@ -17,12 +17,12 @@
    "cid": "i1"
   },
   {
-   "q": "'Much ___ I admire her, I can't support the plan.'",
+   "q": "'Such ___ the demand that the tickets sold out in minutes.'",
    "options": [
-    "as",
-    "so",
-    "like",
-    "than"
+    "was",
+    "were",
+    "did",
+    "had"
    ],
    "answer": 0,
    "skill": "grammar",
@@ -167,14 +167,14 @@
    "cid": "i1"
   },
   {
-   "q": "The committee, ___ members had been appointed only weeks earlier, rejected the proposal outright.",
+   "q": "The two proposals, neither of ___ addressed the cost, were rejected.",
    "options": [
-    "whom",
-    "of which",
+    "them",
     "which",
-    "whose"
+    "whom",
+    "that"
    ],
-   "answer": 3,
+   "answer": 1,
    "d": 19.0,
    "cefr": "C1",
    "skill": "grammar",
@@ -214,8 +214,8 @@
  ],
  "listen": [
   {
-   "script": "Chair: The opposition may now respond. Speaker: Our opponents claim that a ban on cars would ruin local shops. But their argument rests on the flawed assumption that shoppers only arrive by car. In fact, when the old market street in our town was closed to traffic, visitor numbers went up.",
-   "q": "What is the speaker doing?",
+   "script": "Chair: The opposition may now respond. Student: Our opponents claim that a ban on cars would ruin local shops. But their argument rests on the flawed assumption that shoppers only arrive by car. In fact, when the old market street in our town was closed to traffic, visitor numbers went up.",
+   "q": "What is the student doing?",
    "options": [
     "agreeing with the opponents",
     "rebutting the opponents' argument",
@@ -289,8 +289,8 @@
    "cid": "i4"
   },
   {
-   "script": "Girl: Isn't it ironic that the anti-waste campaign printed ten thousand leaflets? Boy: Ironic is putting it kindly. Girl: To be fair, they were on recycled paper. Boy: Small consolation.",
-   "q": "What does the boy think of the leaflets?",
+   "script": "Hind: Isn't it ironic that the anti-waste campaign printed ten thousand leaflets? Sara: Ironic is putting it kindly. Hind: To be fair, they were on recycled paper. Sara: Small consolation.",
+   "q": "What does Sara think of the leaflets?",
    "options": [
     "They were a clever idea.",
     "They were too expensive.",

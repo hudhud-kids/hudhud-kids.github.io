@@ -146,8 +146,8 @@
    ],
    "answer": 0,
    "skill": "vocabulary",
-   "d": 8.6,
-   "cefr": "B1",
+   "d": 9.5,
+   "cefr": "B1+",
    "cando": "Can use vocabulary to describe opinions, feelings and everyday problems.",
    "cid": "d10"
   },
@@ -214,8 +214,8 @@
  ],
  "listen": [
   {
-   "script": "Boy: What did you think of the match last night? Girl: To be honest, I found it a bit boring. Nobody scored until the last minute. But the way I see it, the better team won.",
-   "q": "What was the girl's opinion of the match?",
+   "script": "Faisal: What did you think of the match last night, Omar? Omar: To be honest, I found it a bit boring. Nobody scored until the last minute. But the way I see it, the better team won.",
+   "q": "What was Omar's opinion of the match?",
    "options": [
     "It was exciting from the start.",
     "It was boring, but the better team won.",
@@ -274,8 +274,8 @@
    "cid": "d3"
   },
   {
-   "script": "Boy: What did you think of the new science museum? Girl: Honestly, I thought it was amazing. The space room was the best part. Boy: Really? I found it a bit crowded.",
-   "q": "What was the boy's opinion?",
+   "script": "Lama: What did you think of the new science museum, Hind? Hind: Honestly, I thought it was amazing. The space room was the best part. Lama: Really? I found it a bit crowded.",
+   "q": "What was Lama's opinion?",
    "options": [
     "The space room was the best part.",
     "It was amazing.",
@@ -353,7 +353,7 @@
     "q": "How did Nawaf disagree with Fahad?",
     "options": [
      "He shouted at him.",
-     "He politely accepted Fahad's idea first and then gave his own.",
+     "He politely showed he understood Fahad's point, then gave his own.",
      "He didn't say anything."
     ],
     "answer": 1,
@@ -399,7 +399,7 @@
    {
     "q": "Why are some parents against the idea?",
     "options": [
-     "It could make driving to work difficult.",
+     "It would be hard to drive their children to school before work.",
      "Their children would sleep too much.",
      "It costs too much money."
     ],

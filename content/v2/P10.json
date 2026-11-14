@@ -62,7 +62,7 @@
    "cid": "e2"
   },
   {
-   "q": "'The concert was _____ off because of the storm.'",
+   "q": "'The match was _____ off because of the storm.'",
    "options": [
     "called",
     "put on",
@@ -274,12 +274,12 @@
    "cid": "e2"
   },
   {
-   "script": "Girl: How long have you been learning the oud? Boy: For about two years. My uncle taught me at first, and now I'm having lessons at a music centre. Girl: Is it hard? Boy: It was at the beginning.",
-   "q": "Who taught the boy first?",
+   "script": "Hind: How long have you been learning Arabic calligraphy, Lama? Lama: For about two years. My uncle taught me at first, and now I'm having lessons at an art centre. Hind: Is it hard? Lama: It was at the beginning.",
+   "q": "Who taught Lama first?",
    "options": [
-    "his sister",
-    "his uncle",
-    "a teacher at the music centre"
+    "her sister",
+    "her uncle",
+    "a teacher at the art centre"
    ],
    "answer": 1,
    "d": 10.0,

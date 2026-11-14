@@ -114,13 +114,13 @@
    "cid": "p8"
   },
   {
-   "q": "The shoes are ___ the bed. (below)",
+   "q": "Dad: Where's your ball, Ali? Ali: It's ___ the box. Open it and look!",
    "options": [
     "on",
     "in",
     "under"
    ],
-   "answer": 2,
+   "answer": 1,
    "skill": "grammar",
    "d": 2.0,
    "cefr": "Pre-A1",
@@ -215,7 +215,7 @@
    "cid": "p5"
   },
   {
-   "script": "Girl: Do you like fish, Omar? Omar: No, I don't. I like chicken and rice. Girl: Do you like salad? Omar: Yes, I do. I love salad!",
+   "script": "Sister: Do you like fish, Omar? Omar: No, I don't. I like chicken and rice. Sister: Do you like salad? Omar: Yes, I do. I love salad!",
    "q": "What food doesn't Omar like?",
    "options": [
     "salad",
@@ -230,7 +230,7 @@
    "cid": "p7"
   },
   {
-   "script": "Boy: This is my pet. It's small and green. It can jump and it can swim, but it can't fly. Girl: Wow! Can I see it?",
+   "script": "Brother: This is my pet. It's small and green. It can jump and it can swim, but it can't fly. Sister: Wow! Can I see it?",
    "q": "What is the pet?",
    "options": [
     "a bird",
@@ -260,7 +260,7 @@
    "cid": "p8"
   },
   {
-   "script": "Girl: Is your bag blue, Omar? Omar: No, it isn't. It's red. Girl: And your pencil case? Omar: It's green.",
+   "script": "Ali: Is your bag blue, Omar? Omar: No, it isn't. It's red. Ali: And your pencil case? Omar: It's green.",
    "q": "What colour is Omar's bag?",
    "options": [
     "blue",
@@ -460,7 +460,7 @@
   },
   {
    "type": "pic",
-   "say": "I'm thirsty. I want some water.",
+   "say": "I'm thirsty. What do I want?",
    "options": [
     "🍞",
     "💧",

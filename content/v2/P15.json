@@ -47,17 +47,17 @@
    "cid": "g1"
   },
   {
-   "q": "It might be worth ___ a second opinion.",
+   "q": "It's high time we ___ a decision about the trip.",
    "options": [
-    "get",
-    "to get",
-    "got",
-    "getting"
+    "make",
+    "made",
+    "will make",
+    "have made"
    ],
-   "answer": 3,
+   "answer": 1,
    "skill": "grammar",
-   "d": 12.0,
-   "cefr": "B2",
+   "d": 14.5,
+   "cefr": "B2+",
    "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
    "cid": "g1"
   },
@@ -289,8 +289,8 @@
    "cid": "g6"
   },
   {
-   "script": "Boy: This article claims homework doesn't improve results. Girl: I'd like to see the evidence. Who carried out the research? Boy: It doesn't say. Girl: Then I'd be cautious about believing it.",
-   "q": "Why is the girl cautious?",
+   "script": "Sara: This article claims homework doesn't improve results. Noura: I'd like to see the evidence. Who carried out the research? Sara: It doesn't say. Noura: Then I'd be cautious about believing it.",
+   "q": "Why is Noura cautious?",
    "options": [
     "She disagrees with all research.",
     "The source of the research isn't given.",

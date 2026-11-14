@@ -92,7 +92,7 @@
    "cid": "b9"
   },
   {
-   "q": "It was very cold, ___ I wore my jacket.",
+   "q": "I was really tired, ___ I went to bed early.",
    "options": [
     "because",
     "or",
@@ -229,7 +229,7 @@
    "cid": "b4"
   },
   {
-   "script": "Girl: Omar, would you like to come to the park with us on Thursday? Omar: Thanks for inviting me, but I'm afraid I can't. I'm going to the dentist after school. Girl: That's a shame. Maybe next time!",
+   "script": "Fahad: Omar, would you like to come to the park with us on Thursday? Omar: Thanks for inviting me, but I'm afraid I can't. I'm going to the dentist after school. Fahad: That's a shame. Maybe next time!",
    "q": "Why can't Omar go to the park?",
    "options": [
     "He has a football match.",
@@ -274,8 +274,8 @@
    "cid": "b6"
   },
   {
-   "script": "Girl: Are you going to enter the drawing competition? Boy: No, I'm not. I'm going to enter the science fair. Girl: What are you going to make? Boy: A small robot.",
-   "q": "What is the boy going to enter?",
+   "script": "Saad: Are you going to enter the drawing competition, Ali? Ali: No, I'm not. I'm going to enter the science fair. Saad: What are you going to make? Ali: A small robot.",
+   "q": "What is Ali going to enter?",
    "options": [
     "the science fair",
     "the drawing competition",
@@ -289,7 +289,7 @@
    "cid": "b4"
   },
   {
-   "script": "Man: You look worried, Lama. Lama: I've got a maths test tomorrow and I don't understand fractions. Man: Don't worry. Let's practise together after dinner.",
+   "script": "Dad: You look worried, Lama. Lama: I've got a maths test tomorrow and I don't understand fractions. Dad: Don't worry. Let's practise together after dinner.",
    "q": "Why is Lama worried?",
    "options": [
     "She is late for dinner.",
@@ -397,7 +397,7 @@
     "cid": "b8"
    },
    {
-    "q": "Why does he need it?",
+    "q": "Why does Ziyad need a warm jacket?",
     "options": [
      "The tent is small.",
      "It's cold at night.",
