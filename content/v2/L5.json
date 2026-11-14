@@ -148,18 +148,20 @@
    "e": "🥗",
    "fn": "Giving simple advice",
    "fnAr": "تقديم نصائح بسيطة",
-   "cando": "Can ask what is wrong, ask for advice and give simple advice about food, sleep, exercise and staying well.",
+   "cando": "Can ask what is wrong, ask for advice and give simple advice about food, sleep, exercise and staying well, saying how much or how many.",
    "grammar": [
     "should / shouldn't + base verb",
     "Should I …? Yes, you should. / No, you shouldn't.",
     "What's the matter? I've got a cold / a sore throat.",
-    "When / What should I …?"
+    "When / What should I …?",
+    "quantifiers with food and drink: some / any / a lot of / much (water, sugar) / many (eggs, sweets)",
+    "How much …? (uncountable: water, sugar) / How many …? (countable: eggs, drinks)"
    ],
    "lessons": [
     [
      "A Healthy Breakfast",
      "Give simple advice about a healthy breakfast",
-     "You should eat … You shouldn't skip breakfast."
+     "You should eat some … / You shouldn't skip breakfast. / We haven't got any … / not much sugar"
     ],
     [
      "I Don't Feel Well",
@@ -174,7 +176,7 @@
     [
      "Hot Summer Days",
      "Give advice about staying safe and healthy on hot days",
-     "You should drink plenty of water. We shouldn't play outside at midday. When should we …?"
+     "You should drink plenty of water. / How much water …? How many …? / We shouldn't play outside at midday."
     ],
     [
      "Get Moving!",
@@ -184,7 +186,7 @@
     [
      "Our Health Poster",
      "Make a health poster with tips and explain your advice",
-     "Tip one: you should … Tip two: you shouldn't … because …"
+     "Tip one: you should … Tip two: you shouldn't eat too much / too many … because …"
     ]
    ]
   }
@@ -325,11 +327,11 @@
      "frame": "Last Friday we visited my ___."
     },
     {
-     "w": "last weekend",
-     "emoji": "📅",
-     "def": "the Friday and Saturday just before this week",
-     "ar": "عطلة نهاية الأسبوع الماضية",
-     "frame": "Last weekend I visited ___."
+     "w": "picked",
+     "emoji": "🌴",
+     "def": "took fruit or flowers from a tree or plant",
+     "ar": "قطفنا",
+     "frame": "We picked ___ from the garden."
     },
     {
      "w": "helped … with",
@@ -434,7 +436,10 @@
      "What do you usually eat or drink when you visit family?"
     ]
    },
-   "exit": "Tell me two things you did when you visited your family, using verbs with -ed."
+   "exit": "Tell me two things you did when you visited your family, using verbs with -ed.",
+   "recycle": [
+    "last weekend"
+   ]
   },
   "0-2": {
    "objective": "Today you will tell what happened at school yesterday.",
@@ -476,11 +481,11 @@
      "frame": "I finished my ___ before the bell."
     },
     {
-     "w": "chatted",
-     "emoji": "💬",
-     "def": "talked in a friendly way",
-     "ar": "دردش / تحدّث",
-     "frame": "At break I chatted with ___ about ___."
+     "w": "raced",
+     "emoji": "🏃",
+     "def": "ran against other people to see who was fastest",
+     "ar": "تسابقنا",
+     "frame": "We raced to the ___."
     }
    ],
    "dialogue": {
@@ -557,7 +562,10 @@
      "What do you usually do at break?"
     ]
    },
-   "exit": "Tell me two things that happened at school yesterday."
+   "exit": "Tell me two things that happened at school yesterday.",
+   "recycle": [
+    "chatted"
+   ]
   },
   "0-3": {
    "objective": "Today you will tell what happened in a football match.",
@@ -571,11 +579,11 @@
      "frame": "Two days ago I played ___ with ___."
     },
     {
-     "w": "yesterday",
-     "emoji": "⏪",
-     "def": "the day before today",
-     "ar": "أمس",
-     "frame": "Yesterday I watched a match between ___ and ___."
+     "w": "celebrated",
+     "emoji": "🎉",
+     "def": "did something fun because something good happened",
+     "ar": "احتفلنا",
+     "frame": "We celebrated when ___."
     },
     {
      "w": "passed",
@@ -680,7 +688,10 @@
      "Would you like to watch a World Cup match in Saudi Arabia? Why?"
     ]
    },
-   "exit": "Tell me two things that happened in a match you played or watched."
+   "exit": "Tell me two things that happened in a match you played or watched.",
+   "recycle": [
+    "yesterday"
+   ]
   },
   "0-4": {
    "objective": "Today you will tell how you helped at home last weekend.",
@@ -715,18 +726,18 @@
      "frame": "I emptied the bin in the ___."
     },
     {
-     "w": "helped … with",
-     "emoji": "🤝",
-     "def": "did part of a job for someone",
-     "ar": "ساعد في",
-     "frame": "I helped my ___ with the ___."
+     "w": "arrived",
+     "emoji": "🚪",
+     "def": "came to a place",
+     "ar": "وصلوا",
+     "frame": "When the guests arrived, I ___."
     },
     {
-     "w": "after that",
-     "emoji": "⏭️",
-     "def": "next; when the first thing finished",
-     "ar": "بعد ذلك",
-     "frame": "I tidied my room. After that, I ___."
+     "w": "thanked",
+     "emoji": "🙏",
+     "def": "said thank you to someone",
+     "ar": "شكرَ",
+     "frame": "My mum thanked me for ___."
     }
    ],
    "dialogue": {
@@ -803,32 +814,36 @@
      "Is it important for children to help at home? Why?"
     ]
    },
-   "exit": "Tell me two ways you helped at home, using 'First' and 'After that'."
+   "exit": "Tell me two ways you helped at home, using 'First' and 'After that'.",
+   "recycle": [
+    "helped … with",
+    "after that"
+   ]
   },
   "0-5": {
    "objective": "Today you will tell the whole story of your weekend in the right order.",
    "warmup": "What was your favourite part of last weekend?",
    "expressions": [
     {
-     "w": "first",
-     "emoji": "1️⃣",
-     "def": "before everything else",
-     "ar": "أولاً",
-     "frame": "First, I ___."
+     "w": "rained",
+     "emoji": "🌧️",
+     "def": "water fell from the sky",
+     "ar": "أمطرت",
+     "frame": "On ___, it rained."
     },
     {
-     "w": "then",
-     "emoji": "➡️",
-     "def": "next; after this",
-     "ar": "ثمّ",
-     "frame": "Then we ___."
+     "w": "walked",
+     "emoji": "🚶",
+     "def": "went somewhere on foot",
+     "ar": "مشينا",
+     "frame": "We walked to the ___."
     },
     {
-     "w": "after that",
-     "emoji": "⏭️",
-     "def": "next; when the first thing finished",
-     "ar": "بعد ذلك",
-     "frame": "After that, my family ___."
+     "w": "video diary",
+     "emoji": "🎥",
+     "def": "short films you make about your days",
+     "ar": "مذكّرات بالفيديو",
+     "frame": "In my video diary, I talk about ___."
     },
     {
      "w": "finally",
@@ -845,11 +860,11 @@
      "frame": "I really enjoyed ___."
     },
     {
-     "w": "visited",
-     "emoji": "🏡",
-     "def": "went to see a person or a place",
-     "ar": "زار",
-     "frame": "On Saturday we visited ___."
+     "w": "watched the stars",
+     "emoji": "✨",
+     "def": "looked at the stars in the night sky",
+     "ar": "شاهدنا النجوم",
+     "frame": "We watched the stars from the ___."
     }
    ],
    "dialogue": {
@@ -858,7 +873,7 @@
     "p1": [
      {
       "s": "Ms Sarah",
-      "t": "Ready, Reem? Tell us about your weekend."
+      "t": "Ready, Reem? Tell us about your weekend for our video diary."
      },
      {
       "s": "Reem",
@@ -926,7 +941,13 @@
      "What weekend activity do you enjoy with your family?"
     ]
    },
-   "exit": "Tell me about your weekend in two sentences, using 'First' and 'Finally'."
+   "exit": "Tell me about your weekend in two sentences, using 'First' and 'Finally'.",
+   "recycle": [
+    "first",
+    "then",
+    "after that",
+    "visited"
+   ]
   },
   "1-0": {
    "objective": "Today you will ask and answer questions about a day at the beach.",
@@ -1056,11 +1077,11 @@
    "warmup": "What can you see and do in the desert?",
    "expressions": [
     {
-     "w": "went to",
-     "emoji": "🚶",
-     "def": "the past of 'go to'; travelled to a place",
-     "ar": "ذهب إلى",
-     "frame": "Last winter we went to the desert near ___."
+     "w": "sat by the fire",
+     "emoji": "🔥",
+     "def": "sat near a fire to keep warm",
+     "ar": "جلسنا بجانب النار",
+     "frame": "We sat by the fire and ___."
     },
     {
      "w": "drove",
@@ -1172,7 +1193,10 @@
      "What would you take on a camping trip?"
     ]
    },
-   "exit": "Ask me two questions about a trip to the desert."
+   "exit": "Ask me two questions about a trip to the desert.",
+   "recycle": [
+    "went to"
+   ]
   },
   "1-2": {
    "objective": "Today you will ask and answer questions about a museum visit.",
@@ -1337,11 +1361,11 @@
      "frame": "The view from the ___ was amazing."
     },
     {
-     "w": "took photos",
-     "emoji": "📸",
-     "def": "made pictures with a camera or a phone",
-     "ar": "التقط صوراً",
-     "frame": "In ___ I took photos of ___."
+     "w": "sunset",
+     "emoji": "🌅",
+     "def": "the time when the sun goes down in the evening",
+     "ar": "غروب الشمس",
+     "frame": "At sunset, I like to ___."
     }
    ],
    "dialogue": {
@@ -1418,7 +1442,10 @@
      "Which other Saudi city would you like to visit? Why?"
     ]
    },
-   "exit": "Ask me two questions about my last holiday: one with 'How' and one with 'Where'."
+   "exit": "Ask me two questions about my last holiday: one with 'How' and one with 'Where'.",
+   "recycle": [
+    "took photos"
+   ]
   },
   "1-4": {
    "objective": "Today you will ask and answer questions about an evening at a fun event.",
@@ -1576,18 +1603,18 @@
      "frame": "What did you do in ___?"
     },
     {
-     "w": "had fun",
-     "emoji": "🥳",
-     "def": "enjoyed yourself and had a good time",
-     "ar": "استمتع",
-     "frame": "We had fun when we ___."
+     "w": "a reporter",
+     "emoji": "🎙️",
+     "def": "a person who asks questions and tells the news",
+     "ar": "مراسل / صحفي",
+     "frame": "As a reporter, I want to ask ___."
     },
     {
-     "w": "came back",
-     "emoji": "🔙",
-     "def": "returned to the place you started from",
-     "ar": "عاد / رجع",
-     "frame": "We came back from ___ after ___."
+     "w": "cable car",
+     "emoji": "🚡",
+     "def": "a small cabin that carries people up mountains on a wire",
+     "ar": "التلفريك",
+     "frame": "I rode a cable car in ___."
     }
    ],
    "dialogue": {
@@ -1596,7 +1623,7 @@
     "p1": [
      {
       "s": "Omar",
-      "t": "Welcome to School Radio! Yousef, where did you go in the holidays?"
+      "t": "Welcome to School Radio! I'm your reporter, Omar. Yousef, where did you go in the holidays?"
      },
      {
       "s": "Yousef",
@@ -1664,7 +1691,11 @@
      "What questions would you ask someone after a safari in Kenya?"
     ]
    },
-   "exit": "Ask me three different questions about a trip, using 'Where', 'How' and 'Who'."
+   "exit": "Ask me three different questions about a trip, using 'Where', 'How' and 'Who'.",
+   "recycle": [
+    "had fun",
+    "came back"
+   ]
   },
   "2-0": {
    "objective": "Today you will compare animals and say which is faster, stronger or heavier.",
@@ -1829,11 +1860,11 @@
      "frame": "The biggest city I know is ___."
     },
     {
-     "w": "the fastest",
-     "emoji": "⚡",
-     "def": "faster than all the others",
-     "ar": "الأسرع",
-     "frame": "The fastest way to get to ___ is by ___."
+     "w": "cooler than",
+     "emoji": "❄️",
+     "def": "less hot than",
+     "ar": "أبرد من / ألطف جوّاً",
+     "frame": "___ is cooler than Riyadh in summer."
     }
    ],
    "dialogue": {
@@ -1910,7 +1941,10 @@
      "Is your city bigger or smaller than Riyadh?"
     ]
    },
-   "exit": "Compare two cities for me in two sentences."
+   "exit": "Compare two cities for me in two sentences.",
+   "recycle": [
+    "the fastest"
+   ]
   },
   "2-2": {
    "objective": "Today you will compare sports and games and say which is better for you.",
@@ -1952,11 +1986,11 @@
      "frame": "The most popular sport at my school is ___."
     },
     {
-     "w": "faster than",
-     "emoji": "🏃",
-     "def": "moving more quickly than another",
-     "ar": "أسرع من",
-     "frame": "___ is faster than ___."
+     "w": "younger",
+     "emoji": "👦",
+     "def": "not as old as someone else",
+     "ar": "أصغر سنّاً",
+     "frame": "My ___ is younger than me."
     }
    ],
    "dialogue": {
@@ -2033,7 +2067,10 @@
      "Is football more popular than basketball in your family?"
     ]
    },
-   "exit": "Compare two sports for me, using 'more … than' and 'better than'."
+   "exit": "Compare two sports for me, using 'more … than' and 'better than'.",
+   "recycle": [
+    "faster than"
+   ]
   },
   "2-3": {
    "objective": "Today you will compare famous buildings and say which is the tallest or the oldest.",
@@ -2075,11 +2112,11 @@
      "frame": "From the top of the tower, you can see ___."
     },
     {
-     "w": "the biggest",
-     "emoji": "🏟️",
-     "def": "bigger than all the others",
-     "ar": "الأكبر",
-     "frame": "The biggest building I visited was ___."
+     "w": "the oldest",
+     "emoji": "🏛️",
+     "def": "older than all the others",
+     "ar": "الأقدم",
+     "frame": "___ is the oldest building in my city."
     }
    ],
    "dialogue": {
@@ -2156,7 +2193,10 @@
      "Which famous building in the world would you like to visit?"
     ]
    },
-   "exit": "Tell me about two buildings, using 'taller than' and 'the most famous'."
+   "exit": "Tell me about two buildings, using 'taller than' and 'the most famous'.",
+   "recycle": [
+    "the biggest"
+   ]
   },
   "2-4": {
    "objective": "Today you will compare things in a shop and choose the best one.",
@@ -2198,11 +2238,11 @@
      "frame": "The cheapest ___ in the shop is ___ riyals."
     },
     {
-     "w": "better than",
-     "emoji": "👍",
-     "def": "the comparative of 'good'; of a higher level than another",
-     "ar": "أفضل من",
-     "frame": "The ___ is better than the ___ because ___."
+     "w": "brakes",
+     "emoji": "🛑",
+     "def": "the parts that stop a bike or a car",
+     "ar": "الفرامل",
+     "frame": "My bike's brakes are ___."
     }
    ],
    "dialogue": {
@@ -2279,7 +2319,10 @@
      "What is the best thing you bought with your own money?"
     ]
    },
-   "exit": "Compare two things you want to buy, using 'cheaper than' and 'better than'."
+   "exit": "Compare two things you want to buy, using 'cheaper than' and 'better than'.",
+   "recycle": [
+    "better than"
+   ]
   },
   "2-5": {
    "objective": "Today you will compare and choose the winners of fun class awards.",
@@ -2314,11 +2357,11 @@
      "frame": "The most interesting lesson this year was ___."
     },
     {
-     "w": "the most popular",
-     "emoji": "⭐",
-     "def": "liked by more people than all the others",
-     "ar": "الأكثر شعبية",
-     "frame": "The most popular game in our class is ___."
+     "w": "an award",
+     "emoji": "🏆",
+     "def": "a prize for doing something well",
+     "ar": "جائزة",
+     "frame": "I want an award for the ___."
     },
     {
      "w": "the longest",
@@ -2402,7 +2445,10 @@
      "What world record would you like to have? Why?"
     ]
    },
-   "exit": "Give me two class awards, using 'the best' and 'the most …'."
+   "exit": "Give me two class awards, using 'the best' and 'the most …'.",
+   "recycle": [
+    "the most popular"
+   ]
   },
   "3-0": {
    "objective": "Today you will give simple advice about a healthy breakfast.",
@@ -2475,25 +2521,25 @@
     "p2": [
      {
       "s": "Lama",
-      "t": "Those are very sugary. You should eat something healthy, like eggs or yoghurt."
+      "t": "Those are very sugary. You should eat something healthy, like some eggs or yoghurt."
      },
      {
       "s": "Reem",
-      "t": "What about fruit?"
+      "t": "We haven't got any eggs at home. What about fruit?"
      },
      {
       "s": "Lama",
-      "t": "Yes! You should eat fresh fruit too. Then you can feel full of energy in class."
+      "t": "Fruit is great! You should eat a lot of fresh fruit. Then you can feel full of energy in class."
      },
      {
       "s": "Reem",
-      "t": "Thanks, Lama. Tomorrow I can get up earlier and eat a banana and an egg."
+      "t": "Thanks, Lama. Tomorrow I can have a banana, some yoghurt and not much sugar!"
      }
     ],
     "focus": "You shouldn't skip breakfast.",
     "qs": [
      "Why did Reem skip breakfast?",
-     "What healthy food does Lama tell Reem to eat?"
+     "What does Lama say Reem should eat a lot of?"
     ]
    },
    "speakout": {
@@ -2505,7 +2551,7 @@
      },
      {
       "q": "What should I eat in the morning?",
-      "hint": "Say 'You should eat …' and name two healthy foods."
+      "hint": "Say 'You should eat some …' or 'a lot of …' and name two healthy foods."
      },
      {
       "q": "I'm always tired in my first lesson. What can I do?",
@@ -2690,11 +2736,11 @@
      "frame": "After a good night's sleep, I feel ___."
     },
     {
-     "w": "get some rest",
-     "emoji": "🛌",
-     "def": "stop and relax so your body feels better",
-     "ar": "يرتاح قليلاً",
-     "frame": "After school, I get some rest by ___."
+     "w": "fell asleep",
+     "emoji": "😴",
+     "def": "started sleeping",
+     "ar": "غلبه النوم",
+     "frame": "Last night I fell asleep at ___."
     }
    ],
    "dialogue": {
@@ -2771,7 +2817,10 @@
      "Do you think a short sleep after lunch is a good idea? Why?"
     ]
    },
-   "exit": "Give a friend two pieces of advice about sleep or screens."
+   "exit": "Give a friend two pieces of advice about sleep or screens.",
+   "recycle": [
+    "get some rest"
+   ]
   },
   "3-3": {
    "objective": "Today you will give advice about staying safe and healthy on hot days.",
@@ -2806,18 +2855,18 @@
      "frame": "You should wear a cap when you ___."
     },
     {
-     "w": "sun cream",
-     "emoji": "🧴",
-     "def": "cream you put on your skin to protect it from the sun",
-     "ar": "واقي الشمس",
-     "frame": "You should put on sun cream before ___."
+     "w": "midday",
+     "emoji": "☀️",
+     "def": "12 o'clock in the daytime",
+     "ar": "منتصف النهار",
+     "frame": "At midday, it is very ___."
     },
     {
-     "w": "sugary",
-     "emoji": "🍭",
-     "def": "with lots of sugar in it",
-     "ar": "مليء بالسكر",
-     "frame": "On hot days, ___ is better than sugary drinks."
+     "w": "fizzy drinks",
+     "emoji": "🥤",
+     "def": "sweet drinks with lots of small bubbles",
+     "ar": "المشروبات الغازية",
+     "frame": "Instead of fizzy drinks, I drink ___."
     }
    ],
    "dialogue": {
@@ -2844,7 +2893,7 @@
     "p2": [
      {
       "s": "Emma",
-      "t": "OK. What else should I take?"
+      "t": "OK. How much water should I take?"
      },
      {
       "s": "Hind",
@@ -2852,17 +2901,17 @@
      },
      {
       "s": "Emma",
-      "t": "Can I take a cold fizzy drink?"
+      "t": "Can I take a cold fizzy drink too? How many drinks can I have?"
      },
      {
       "s": "Hind",
-      "t": "You shouldn't have sugary drinks. Water is better. And put on sun cream too!"
+      "t": "You shouldn't have many fizzy drinks. They're very sugary. Water is better. And put on sun cream too!"
      }
     ],
     "focus": "You should drink plenty of water, even before you feel thirsty.",
     "qs": [
      "Why shouldn't Emma and Hind play football at midday?",
-     "Which drink is better than a fizzy drink?"
+     "How many fizzy drinks should Emma have?"
     ]
    },
    "speakout": {
@@ -2894,7 +2943,11 @@
      "Where would you like to spend a hot summer? Why?"
     ]
    },
-   "exit": "Give me two pieces of advice for a very hot day."
+   "exit": "Give me two pieces of advice for a very hot day.",
+   "recycle": [
+    "sun cream",
+    "sugary"
+   ]
   },
   "3-4": {
    "objective": "Today you will give advice about exercise and staying fit.",
@@ -2936,11 +2989,11 @@
      "frame": "When I'm tired, I take a break and ___."
     },
     {
-     "w": "full of energy",
-     "emoji": "⚡",
-     "def": "ready to move, play and work",
-     "ar": "مليء بالنشاط",
-     "frame": "After exercise, I feel full of energy and ___."
+     "w": "win the race",
+     "emoji": "🏁",
+     "def": "be first at the end of a race",
+     "ar": "يفوز بالسباق",
+     "frame": "To win the race, you should ___."
     }
    ],
    "dialogue": {
@@ -3017,7 +3070,10 @@
      "Do you think an hour of exercise every day is easy or hard? Why?"
     ]
    },
-   "exit": "Give me two pieces of advice about exercise."
+   "exit": "Give me two pieces of advice about exercise.",
+   "recycle": [
+    "full of energy"
+   ]
   },
   "3-5": {
    "objective": "Today you will make a health poster with tips and explain your advice.",
@@ -3052,18 +3108,18 @@
      "frame": "To stay fit, I ___."
     },
     {
-     "w": "drink plenty of water",
-     "emoji": "💧",
-     "def": "drink a lot of water",
-     "ar": "يشرب الكثير من الماء",
-     "frame": "You should drink plenty of water when ___."
+     "w": "a poster",
+     "emoji": "🖼️",
+     "def": "a big paper with pictures and words on a wall",
+     "ar": "ملصق / بوستر",
+     "frame": "Our poster says: ___."
     },
     {
-     "w": "go to bed early",
-     "emoji": "🛏️",
-     "def": "go to sleep before it is late",
-     "ar": "ينام مبكراً",
-     "frame": "You should go to bed early before ___."
+     "w": "too much",
+     "emoji": "🚫",
+     "def": "more than is good for you",
+     "ar": "أكثر من اللازم",
+     "frame": "You shouldn't eat too much ___."
     }
    ],
    "dialogue": {
@@ -3072,7 +3128,7 @@
     "p1": [
      {
       "s": "Noura",
-      "t": "Our poster needs five tips. What's the first one?"
+      "t": "How many tips does our poster need? Five, I think. What's the first one?"
      },
      {
       "s": "Lama",
@@ -3102,7 +3158,7 @@
      },
      {
       "s": "Lama",
-      "t": "I always eat fruit at break. So, tip five: you should bring fruit to school!"
+      "t": "I eat a lot of fruit at break. So, tip five: you should bring fruit to school!"
      }
     ],
     "focus": "You should drink plenty of water.",
@@ -3140,7 +3196,11 @@
      "What healthy snack do you like to eat at school?"
     ]
    },
-   "exit": "Give me your three best health tips, using 'should' and 'shouldn't'."
+   "exit": "Give me your three best health tips, using 'should' and 'shouldn't'.",
+   "recycle": [
+    "drink plenty of water",
+    "go to bed early"
+   ]
   }
  },
  "kits": {
@@ -3221,9 +3281,9 @@
      "ex": "Last Friday we visited my grandparents in Qassim."
     },
     {
-     "w": "last weekend",
-     "ar": "عطلة نهاية الأسبوع الماضية",
-     "ex": "Last weekend I visited my aunt and her new baby."
+     "w": "picked",
+     "ar": "قطفنا",
+     "ex": "We picked lots of dates from the palm trees."
     },
     {
      "w": "helped … with",
@@ -3261,7 +3321,7 @@
     },
     {
      "s": "B",
-     "t": "I helped my grandpa with the palm trees."
+     "t": "I helped my grandpa with the palm trees. We picked lots of dates."
     },
     {
      "s": "A",
@@ -3314,9 +3374,9 @@
      "ex": "I finished my maths homework in the library."
     },
     {
-     "w": "chatted",
-     "ar": "دردش / تحدّث",
-     "ex": "At break we chatted about the football match."
+     "w": "raced",
+     "ar": "تسابقنا",
+     "ex": "We raced across the playground."
     }
    ],
    "dialogue": [
@@ -3342,7 +3402,7 @@
     },
     {
      "s": "B",
-     "t": "We practised for Sports Day."
+     "t": "We practised for Sports Day. We raced and jumped!"
     }
    ],
    "grammar": {
@@ -3363,9 +3423,9 @@
      "ex": "Two days ago our team played against Class 5B."
     },
     {
-     "w": "yesterday",
-     "ar": "أمس",
-     "ex": "Yesterday I watched a match between Al Hilal and Al Nassr."
+     "w": "celebrated",
+     "ar": "احتفلنا",
+     "ex": "We celebrated all the way back to class."
     },
     {
      "w": "passed",
@@ -3412,6 +3472,14 @@
     {
      "s": "B",
      "t": "Then he scored a goal, and everyone cheered!"
+    },
+    {
+     "s": "A",
+     "t": "Great! Did you celebrate?"
+    },
+    {
+     "s": "B",
+     "t": "Yes! We celebrated all the way back to class."
     }
    ],
    "grammar": {
@@ -3447,14 +3515,14 @@
      "ex": "Faisal emptied the bin in the kitchen last night."
     },
     {
-     "w": "helped … with",
-     "ar": "ساعد في",
-     "ex": "I helped my dad with the car."
+     "w": "arrived",
+     "ar": "وصلوا",
+     "ex": "When the guests arrived, I carried the coffee."
     },
     {
-     "w": "after that",
-     "ar": "بعد ذلك",
-     "ex": "We cleaned the car. After that, we watched TV."
+     "w": "thanked",
+     "ar": "شكرَ",
+     "ex": "Mum thanked me with a big hug."
     }
    ],
    "dialogue": [
@@ -3481,6 +3549,14 @@
     {
      "s": "B",
      "t": "After that, I washed the dishes and carried the coffee."
+    },
+    {
+     "s": "A",
+     "t": "Well done! Did your mum say thank you?"
+    },
+    {
+     "s": "B",
+     "t": "Yes, she thanked me with a big hug."
     }
    ],
    "grammar": {
@@ -3496,19 +3572,19 @@
   "0-5": {
    "words": [
     {
-     "w": "first",
-     "ar": "أولاً",
-     "ex": "First, we visited my uncle."
+     "w": "rained",
+     "ar": "أمطرت",
+     "ex": "On Friday it rained all morning."
     },
     {
-     "w": "then",
-     "ar": "ثمّ",
-     "ex": "Then we walked in the park."
+     "w": "walked",
+     "ar": "مشينا",
+     "ex": "We walked in the park near our house."
     },
     {
-     "w": "after that",
-     "ar": "بعد ذلك",
-     "ex": "After that, my family cooked dinner together."
+     "w": "video diary",
+     "ar": "مذكّرات بالفيديو",
+     "ex": "Our class is making a weekend video diary."
     },
     {
      "w": "finally",
@@ -3521,9 +3597,9 @@
      "ex": "We really enjoyed the cool evening in the park."
     },
     {
-     "w": "visited",
-     "ar": "زار",
-     "ex": "On Saturday we visited the new science museum."
+     "w": "watched the stars",
+     "ar": "شاهدنا النجوم",
+     "ex": "We watched the stars from the roof."
     }
    ],
    "dialogue": [
@@ -3533,7 +3609,7 @@
     },
     {
      "s": "B",
-     "t": "First, we stayed at home and played board games."
+     "t": "On Friday it rained, so first we stayed at home."
     },
     {
      "s": "A",
@@ -3634,9 +3710,9 @@
   "1-1": {
    "words": [
     {
-     "w": "went to",
-     "ar": "ذهب إلى",
-     "ex": "Last winter we went to the desert near Riyadh."
+     "w": "sat by the fire",
+     "ar": "جلسنا بجانب النار",
+     "ex": "We sat by the fire and drank tea."
     },
     {
      "w": "drove",
@@ -3688,6 +3764,14 @@
     {
      "s": "B",
      "t": "We slept in a tent and saw hundreds of stars."
+    },
+    {
+     "s": "A",
+     "t": "Was it cold at night?"
+    },
+    {
+     "s": "B",
+     "t": "Very cold! But we sat by the fire."
     }
    ],
    "grammar": {
@@ -3797,9 +3881,9 @@
      "ex": "The view from the mountain was amazing."
     },
     {
-     "w": "took photos",
-     "ar": "التقط صوراً",
-     "ex": "In AlUla I took photos of the huge rocks."
+     "w": "sunset",
+     "ar": "غروب الشمس",
+     "ex": "The view at sunset was amazing."
     }
    ],
    "dialogue": [
@@ -3826,6 +3910,14 @@
     {
      "s": "B",
      "t": "We met a family from Spain."
+    },
+    {
+     "s": "A",
+     "t": "What was your favourite place?"
+    },
+    {
+     "s": "B",
+     "t": "Elephant Rock! The view at sunset was amazing."
     }
    ],
    "grammar": {
@@ -3930,20 +4022,20 @@
      "ex": "What did you do in Jeddah? — We swam and fished."
     },
     {
-     "w": "had fun",
-     "ar": "استمتع",
-     "ex": "We had fun when we rode the cable car."
+     "w": "a reporter",
+     "ar": "مراسل / صحفي",
+     "ex": "I'm the reporter for School Radio today."
     },
     {
-     "w": "came back",
-     "ar": "عاد / رجع",
-     "ex": "We came back from Abha after a week."
+     "w": "cable car",
+     "ar": "التلفريك",
+     "ex": "We rode the cable car in Abha."
     }
    ],
    "dialogue": [
     {
      "s": "A",
-     "t": "Where did you go in the holidays?"
+     "t": "I'm the school reporter. Where did you go in the holidays?"
     },
     {
      "s": "B",
@@ -4073,9 +4165,9 @@
      "ex": "Riyadh is the biggest city in Saudi Arabia."
     },
     {
-     "w": "the fastest",
-     "ar": "الأسرع",
-     "ex": "The fastest way to get from Makkah to Madinah is by train."
+     "w": "cooler than",
+     "ar": "أبرد من / ألطف جوّاً",
+     "ex": "Abha is cooler than Riyadh in summer."
     }
    ],
    "dialogue": [
@@ -4142,9 +4234,9 @@
      "ex": "The most popular sport at my school is football."
     },
     {
-     "w": "faster than",
-     "ar": "أسرع من",
-     "ex": "Basketball is faster than volleyball."
+     "w": "younger",
+     "ar": "أصغر سنّاً",
+     "ex": "Basketball is hard for the younger children."
     }
    ],
    "dialogue": [
@@ -4162,7 +4254,7 @@
     },
     {
      "s": "B",
-     "t": "Yes, but it's harder."
+     "t": "Yes, but it's harder for the younger children."
     },
     {
      "s": "A",
@@ -4211,9 +4303,9 @@
      "ex": "From the top of the tower, you can see the whole city."
     },
     {
-     "w": "the biggest",
-     "ar": "الأكبر",
-     "ex": "The biggest building I visited was a huge mall in Riyadh."
+     "w": "the oldest",
+     "ar": "الأقدم",
+     "ex": "The pyramids are the oldest of all."
     }
    ],
    "dialogue": [
@@ -4280,9 +4372,9 @@
      "ex": "The cheapest bike in the shop is 400 riyals."
     },
     {
-     "w": "better than",
-     "ar": "أفضل من",
-     "ex": "The blue bike is better than the green one because it has good brakes."
+     "w": "brakes",
+     "ar": "الفرامل",
+     "ex": "Good brakes are important on a bike."
     }
    ],
    "dialogue": [
@@ -4344,9 +4436,9 @@
      "ex": "The most interesting lesson this year was about volcanoes."
     },
     {
-     "w": "the most popular",
-     "ar": "الأكثر شعبية",
-     "ex": "The most popular game in our class is football."
+     "w": "an award",
+     "ar": "جائزة",
+     "ex": "Khalid won the award for the funniest jokes."
     },
     {
      "w": "the longest",
@@ -4442,20 +4534,24 @@
     },
     {
      "s": "A",
-     "t": "That's very sugary. You should eat eggs and fresh fruit."
+     "t": "That's very sugary. You should eat some eggs and a lot of fruit."
     },
     {
      "s": "B",
-     "t": "OK, thanks!"
+     "t": "We haven't got any eggs. Is yoghurt OK?"
+    },
+    {
+     "s": "A",
+     "t": "Yes! And don't have much sugar."
     }
    ],
    "grammar": {
-    "title": "should / shouldn't",
-    "ar": "نستخدم should + الفعل الأساسي لنعطي نصيحة (من الأفضل أن)، وshouldn't لنقول إن الشيء ليس فكرة جيدة. لا نضع to بعد should.",
+    "title": "should + some / any / a lot of / much / many",
+    "ar": "نعطي النصيحة بـ should / shouldn't + الفعل الأساسي. ومع الطعام نستخدم some في الجملة المثبتة، وany في النفي والسؤال، وa lot of للكمية الكبيرة. much مع ما لا يُعدّ (sugar, water) وmany مع ما يُعدّ (eggs, sweets)، وغالباً في النفي والسؤال.",
     "examples": [
-     "You should eat fresh fruit.",
-     "You shouldn't skip breakfast.",
-     "He should drink milk, not fizzy drinks."
+     "You should eat some fresh fruit.",
+     "We haven't got any eggs. Have you got any yoghurt?",
+     "You shouldn't have much sugar or many sweets."
     ]
    }
   },
@@ -4556,15 +4652,15 @@
      "ex": "After a good night's sleep, I feel happy and ready for school."
     },
     {
-     "w": "get some rest",
-     "ar": "يرتاح قليلاً",
-     "ex": "After school, I get some rest by reading on the sofa."
+     "w": "fell asleep",
+     "ar": "غلبه النوم",
+     "ex": "You fell asleep on the sofa again!"
     }
    ],
    "dialogue": [
     {
      "s": "A",
-     "t": "Why are you so tired?"
+     "t": "You fell asleep on the sofa again! Why are you so tired?"
     },
     {
      "s": "B",
@@ -4620,14 +4716,14 @@
      "ex": "You should wear a cap when you walk in the sun."
     },
     {
-     "w": "sun cream",
-     "ar": "واقي الشمس",
-     "ex": "You should put on sun cream before you go to the beach."
+     "w": "midday",
+     "ar": "منتصف النهار",
+     "ex": "It's midday. We shouldn't play outside now."
     },
     {
-     "w": "sugary",
-     "ar": "مليء بالسكر",
-     "ex": "On hot days, cold water is better than sugary drinks."
+     "w": "fizzy drinks",
+     "ar": "المشروبات الغازية",
+     "ex": "You shouldn't have many fizzy drinks."
     }
    ],
    "dialogue": [
@@ -4649,20 +4745,28 @@
     },
     {
      "s": "A",
-     "t": "What should I take?"
+     "t": "How much water should I take?"
     },
     {
      "s": "B",
      "t": "You should take plenty of water."
+    },
+    {
+     "s": "A",
+     "t": "How many fizzy drinks can I have?"
+    },
+    {
+     "s": "B",
+     "t": "Not many. Water is better!"
     }
    ],
    "grammar": {
-    "title": "When / What should I …?",
-    "ar": "لطلب النصيحة يمكن أن نبدأ بكلمة سؤال: When should we play? What should I take? والفعل بعد should يبقى في صورته الأساسية.",
+    "title": "When / What should I …? + How much / How many …?",
+    "ar": "نطلب النصيحة بـ When / What should I …? ونسأل عن الكمية: How much + ما لا يُعدّ (water, sugar, juice) وHow many + الجمع المعدود (drinks, bottles, sweets). انتبه: How much is it? تسأل عن السعر.",
     "examples": [
      "When should we play? — In the evening.",
-     "What should I take? — Water and a cap.",
-     "Where should we sit? — In the shade."
+     "How much water should I drink? — A lot!",
+     "How many fizzy drinks can I have? — Not many."
     ]
    }
   },
@@ -4694,9 +4798,9 @@
      "ex": "When I'm tired, I take a break and drink some water."
     },
     {
-     "w": "full of energy",
-     "ar": "مليء بالنشاط",
-     "ex": "After exercise, I feel full of energy and happy."
+     "w": "win the race",
+     "ar": "يفوز بالسباق",
+     "ex": "I want to win the race next week."
     }
    ],
    "dialogue": [
@@ -4758,20 +4862,20 @@
      "ex": "To stay fit, I swim twice a week."
     },
     {
-     "w": "drink plenty of water",
-     "ar": "يشرب الكثير من الماء",
-     "ex": "You should drink plenty of water when it's hot."
+     "w": "a poster",
+     "ar": "ملصق / بوستر",
+     "ex": "We made a poster for Health Week."
     },
     {
-     "w": "go to bed early",
-     "ar": "ينام مبكراً",
-     "ex": "You should go to bed early before a big test."
+     "w": "too much",
+     "ar": "أكثر من اللازم",
+     "ex": "You shouldn't eat too much junk food."
     }
    ],
    "dialogue": [
     {
      "s": "A",
-     "t": "What's our first tip?"
+     "t": "How many tips does our poster need? What's the first one?"
     },
     {
      "s": "B",
@@ -4804,7 +4908,7 @@
     "examples": [
      "You should drink plenty of water because it keeps you cool.",
      "You shouldn't eat too much junk food because it isn't healthy.",
-     "You should exercise every day because it keeps you fit."
+     "You shouldn't have too many sweets because they're bad for your teeth."
     ]
    }
   }
@@ -4877,13 +4981,15 @@
     "type": "order",
     "words": [
      "We",
-     "visited",
-     "my",
-     "grandparents",
-     "last",
-     "weekend."
+     "picked",
+     "lots",
+     "of",
+     "dates",
+     "on",
+     "the",
+     "farm."
     ],
-    "answer": "We visited my grandparents last weekend.",
+    "answer": "We picked lots of dates on the farm.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5957,46 +6063,47 @@
      "You",
      "should",
      "eat",
+     "some",
      "fresh",
      "fruit",
      "every",
      "day."
     ],
-    "answer": "You should eat fresh fruit every day.",
+    "answer": "You should eat some fresh fruit every day.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "You ___ eat lots of sweets. They're bad for your teeth.",
+    "q": "Fresh fruit is healthy. You ___ eat it every day.",
     "options": [
      "should",
      "shouldn't",
-     "can",
-     "do"
+     "can't",
+     "don't"
+    ],
+    "answer": 0
+   },
+   {
+    "type": "mc",
+    "q": "There isn't ___ milk in the fridge.",
+    "options": [
+     "many",
+     "much",
+     "a",
+     "some"
     ],
     "answer": 1
    },
    {
     "type": "mc",
-    "q": "'Sugary' means …",
+    "q": "You shouldn't eat ___ sweets. They're bad for your teeth.",
     "options": [
-     "with lots of salt",
-     "very cold",
-     "with lots of sugar",
-     "very healthy"
+     "much",
+     "a lot of",
+     "a",
+     "any of"
     ],
-    "answer": 2
-   },
-   {
-    "type": "mc",
-    "q": "Which sentence is correct?",
-    "options": [
-     "You should eat eggs.",
-     "You should to eat eggs.",
-     "You should eats eggs.",
-     "You should eating eggs."
-    ],
-    "answer": 0
+    "answer": 1
    }
   ],
   "3-1": [
@@ -6136,26 +6243,26 @@
    {
     "type": "order",
     "words": [
-     "We",
-     "shouldn't",
-     "play",
-     "outside",
-     "at",
-     "midday."
+     "How",
+     "much",
+     "water",
+     "should",
+     "I",
+     "drink?"
     ],
-    "answer": "We shouldn't play outside at midday.",
+    "answer": "How much water should I drink?",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "It's very sunny. You should ___.",
+    "q": "How ___ fizzy drinks do you have every week?",
     "options": [
-     "wear a cap",
-     "stay in the sun all day",
-     "drink sugary drinks",
-     "skip lunch"
+     "much",
+     "many",
+     "lot",
+     "any"
     ],
-    "answer": 0
+    "answer": 1
    },
    {
     "type": "mc",
@@ -6738,14 +6845,14 @@
     },
     {
      "type": "mc",
-     "q": "I've got a high temperature. — You ___ see a doctor.",
+     "q": "How ___ sugar do you put in your tea?",
      "options": [
-      "should",
-      "shouldn't",
-      "did",
-      "aren't"
+      "many",
+      "much",
+      "lot",
+      "any"
      ],
-     "answer": 0
+     "answer": 1
     },
     {
      "type": "mc",
@@ -6800,15 +6907,15 @@
     {
      "type": "order",
      "words": [
-      "Should",
-      "I",
-      "go",
-      "to",
-      "bed",
-      "early",
-      "tonight?"
+      "You",
+      "shouldn't",
+      "eat",
+      "a",
+      "lot",
+      "of",
+      "sweets."
      ],
-     "answer": "Should I go to bed early tonight?",
+     "answer": "You shouldn't eat a lot of sweets.",
      "ar": "رتّب الجملة"
     }
    ],

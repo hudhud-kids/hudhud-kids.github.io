@@ -1,5 +1,5 @@
 /* Hudhud service worker: offline shell + push notifications */
-const V = 'hh-v3';
+const V = 'hh-v4';
 const CORE = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'icon-180.png',
   'fonts/dubai-regular.woff2', 'fonts/dubai-medium.woff2', 'fonts/dubai-bold.woff2', 'content/i18n-en.json', 'content/index.json'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => Promise.all(CORE.map(u => c.add(u).catch(() => {})))).then(() => self.skipWaiting())); });
@@ -10,8 +10,12 @@ self.addEventListener('fetch', e => {
   const put = res => { if(res && res.ok){ const cp = res.clone(); caches.open(V).then(c => c.put(r, cp)); } return res; };
   if(r.mode === 'navigate' || /\/(index\.html)?$/.test(u.pathname)){
     e.respondWith(fetch(r).then(put).catch(() => caches.match(r).then(m => m || caches.match('index.html')))); return; }
+  // lessons and placement banks: network first, so an edited lesson reaches the child on the very next visit (cache-first showed
+  // it only on the second one); a slow or missing connection falls back to the cached copy after 2.5 s
   if(/\/content\//.test(u.pathname)){
-    e.respondWith(caches.match(r).then(m => { const net = fetch(r).then(put).catch(() => m); return m || net; })); return; }
+    e.respondWith(caches.match(r).then(m => { const net = fetch(r).then(put);
+      if(!m) return net;
+      return Promise.race([net.catch(() => m), new Promise(res => setTimeout(() => res(m), 2500))]); })); return; }
   e.respondWith(caches.match(r).then(m => m || fetch(r).then(put)));
 });
 self.addEventListener('push', e => {

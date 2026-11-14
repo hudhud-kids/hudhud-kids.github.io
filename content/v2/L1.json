@@ -125,7 +125,7 @@
     ],
     [
      "Big and Small",
-     "describe toys with big, small, new, old, long and beautiful",
+     "describe toys with big, small, new, old, long and pretty",
      "It's a big car. / It's a small red ball. / It's old."
     ],
     [
@@ -742,11 +742,11 @@
      "frame": "Hello! It's me, ___!"
     },
     {
-     "w": "how are you",
-     "emoji": "💬",
-     "def": "a question to ask about someone's day",
-     "ar": "كيف حالك؟",
-     "frame": "Hi, ___! How are you?"
+     "w": "I'm fine",
+     "emoji": "🙂",
+     "def": "words to say you are well",
+     "ar": "أنا بخير",
+     "frame": "I'm fine, thank you, ___!"
     },
     {
      "w": "bye",
@@ -756,11 +756,11 @@
      "frame": "Bye, ___!"
     },
     {
-     "w": "see you",
-     "emoji": "👀",
-     "def": "a friendly way to say goodbye",
-     "ar": "أراك لاحقاً",
-     "frame": "See you, ___!"
+     "w": "call",
+     "emoji": "📞",
+     "def": "to talk to someone on the phone",
+     "ar": "يتّصل",
+     "frame": "I call my ___ on the phone."
     },
     {
      "w": "take care",
@@ -814,7 +814,7 @@
      },
      {
       "s": "Grandma",
-      "t": "See you! Bye-bye!"
+      "t": "Call me again, Sara! Bye-bye!"
      }
     ],
     "focus": "Hello, Grandma! It's me, Sara!",
@@ -836,7 +836,7 @@
      },
      {
       "q": "OK, bye! Take care!",
-      "hint": "Say 'Bye!' or 'See you!' and 'Uncle'."
+      "hint": "Say 'Bye!' or 'Take care!' and 'Uncle'."
      }
     ]
    },
@@ -852,7 +852,11 @@
      "Do you like phone calls or video calls?"
     ]
    },
-   "exit": "Pretend to call a friend. Say hello and goodbye."
+   "exit": "Pretend to call a friend. Say hello and goodbye.",
+   "recycle": [
+    "how are you",
+    "see you"
+   ]
   },
   "0-5": {
    "objective": "Today you will meet a new friend: say hello, introduce yourself and say goodbye.",
@@ -873,32 +877,32 @@
      "frame": "___ is my friend."
     },
     {
-     "w": "nice to meet you",
+     "w": "shake hands",
      "emoji": "🤝",
-     "def": "a kind thing to say to a new friend",
-     "ar": "تشرّفت بمعرفتك",
-     "frame": "Nice to meet you, ___!"
+     "def": "to hold and move hands to say hello",
+     "ar": "نتصافح",
+     "frame": "I shake hands with ___."
     },
     {
-     "w": "I'm from",
-     "emoji": "🌍",
-     "def": "words to say your country or city",
-     "ar": "أنا من",
-     "frame": "I'm from ___."
+     "w": "country",
+     "emoji": "🗺️",
+     "def": "a big place with a name, like Saudi Arabia",
+     "ar": "دولة / بلد",
+     "frame": "My country is ___."
     },
     {
-     "w": "how are you",
-     "emoji": "💬",
-     "def": "a question to ask about someone's day",
-     "ar": "كيف حالك؟",
-     "frame": "How are you, ___?"
+     "w": "pool",
+     "emoji": "🏊",
+     "def": "a place with water for swimming",
+     "ar": "مسبح",
+     "frame": "The pool is ___."
     },
     {
-     "w": "see you",
-     "emoji": "👋",
-     "def": "a friendly way to say goodbye",
-     "ar": "أراك لاحقاً",
-     "frame": "Goodbye, ___. See you!"
+     "w": "Me too!",
+     "emoji": "🙋",
+     "def": "say this when you like the same thing",
+     "ar": "وأنا أيضاً!",
+     "frame": "I like ___. Me too!"
     }
    ],
    "dialogue": {
@@ -919,7 +923,7 @@
      },
      {
       "s": "Tom",
-      "t": "Nice to meet you, too."
+      "t": "Nice to meet you, too. Let's shake hands!"
      },
      {
       "s": "Ali",
@@ -927,7 +931,7 @@
      },
      {
       "s": "Tom",
-      "t": "I'm fine, thank you."
+      "t": "I'm fine, thank you. I love this pool!"
      }
     ],
     "p2": [
@@ -937,15 +941,15 @@
      },
      {
       "s": "Tom",
-      "t": "I'm from Canada. And you?"
+      "t": "I'm from Canada. It's a big country."
      },
      {
       "s": "Ali",
-      "t": "I'm from Saudi Arabia."
+      "t": "I'm from Saudi Arabia. I like swimming!"
      },
      {
       "s": "Tom",
-      "t": "You're my new friend, Ali!"
+      "t": "Me too! You're my new friend, Ali!"
      },
      {
       "s": "Ali",
@@ -975,7 +979,7 @@
      },
      {
       "q": "It's time to go home. Goodbye!",
-      "hint": "Say 'Goodbye' and 'See you!'"
+      "hint": "Shake hands and say 'Goodbye!'"
      }
     ]
    },
@@ -991,7 +995,13 @@
      "Which hello do you like?"
     ]
    },
-   "exit": "Introduce yourself: say hello, your name and where you are from."
+   "exit": "Introduce yourself: say hello, your name and where you are from.",
+   "recycle": [
+    "nice to meet you",
+    "I'm from",
+    "how are you",
+    "see you"
+   ]
   },
   "1-0": {
    "objective": "Today you will show your family and say who they are.",
@@ -1415,11 +1425,11 @@
    "warmup": "Who do you play with at school?",
    "expressions": [
     {
-     "w": "friend",
-     "emoji": "🧑‍🤝‍🧑",
-     "def": "a person you like and play with",
-     "ar": "صديق",
-     "frame": "___ is my friend."
+     "w": "class",
+     "emoji": "🏫",
+     "def": "all the children in your room at school",
+     "ar": "الفصل / الصف",
+     "frame": "___ is in my class."
     },
     {
      "w": "best friend",
@@ -1505,11 +1515,11 @@
      },
      {
       "s": "Sam",
-      "t": "Cool!"
+      "t": "Cool! Is Ali in your class?"
      },
      {
       "s": "Omar",
-      "t": "Come and play with us, Sam!"
+      "t": "Yes! Come and play with us, Sam!"
      }
     ],
     "focus": "He's my friend, Ali.",
@@ -1547,7 +1557,10 @@
      "What games do you play with your friends?"
     ]
    },
-   "exit": "Tell me about your best friend: 'This is my … He's/She's …'."
+   "exit": "Tell me about your best friend: 'This is my … He's/She's …'.",
+   "recycle": [
+    "friend"
+   ]
   },
   "1-4": {
    "objective": "Today you will say Eid Mubarak and say who your family are at Eid.",
@@ -1582,18 +1595,18 @@
      "frame": "Sweets from ___!"
     },
     {
-     "w": "family",
-     "emoji": "👨‍👩‍👧‍👦",
-     "def": "your mum, dad, brothers and sisters",
-     "ar": "عائلة",
-     "frame": "My family is at ___ house."
+     "w": "gift",
+     "emoji": "🎁",
+     "def": "a nice thing you give to someone",
+     "ar": "هدية",
+     "frame": "My Eid gift is a ___."
     },
     {
-     "w": "happy",
-     "emoji": "😊",
-     "def": "feeling good, with a big smile",
-     "ar": "سعيد",
-     "frame": "I'm happy at ___."
+     "w": "hug",
+     "emoji": "🤗",
+     "def": "to hold someone in your arms",
+     "ar": "يحضن / حضن",
+     "frame": "I hug my ___ at Eid."
     }
    ],
    "dialogue": {
@@ -1628,7 +1641,7 @@
     "p2": [
      {
       "s": "Saad",
-      "t": "Look! Sweets from Grandma!"
+      "t": "Look! Sweets and a gift from Grandma!"
      },
      {
       "s": "Faisal",
@@ -1640,7 +1653,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Oh yes! Hello, Uncle!"
+      "t": "Oh yes! Hello, Uncle! A big hug!"
      },
      {
       "s": "Saad",
@@ -1682,7 +1695,11 @@
      "What do you like about Eid?"
     ]
    },
-   "exit": "Tell me two people you see at Eid: 'This is my …'."
+   "exit": "Tell me two people you see at Eid: 'This is my …'.",
+   "recycle": [
+    "family",
+    "happy"
+   ]
   },
   "1-5": {
    "objective": "Today you will show your family tree and say who everyone is.",
@@ -1710,25 +1727,25 @@
      "frame": "This is ___, and this is me."
     },
     {
-     "w": "grandma",
-     "emoji": "👵",
-     "def": "your mum's mum or your dad's mum",
-     "ar": "جدّة",
-     "frame": "My grandma's name is ___."
+     "w": "at the top",
+     "emoji": "⬆️",
+     "def": "in the highest place",
+     "ar": "في الأعلى",
+     "frame": "At the top of my tree is my ___."
     },
     {
-     "w": "cousin",
-     "emoji": "🧒",
-     "def": "your aunt's or uncle's child",
-     "ar": "ابن أو بنت العم أو الخال",
-     "frame": "___ is my cousin."
+     "w": "draw",
+     "emoji": "✏️",
+     "def": "to make a picture with a pen or pencil",
+     "ar": "يرسم",
+     "frame": "I draw my ___."
     },
     {
-     "w": "brother",
-     "emoji": "👦",
-     "def": "a boy with the same mum and dad as you",
-     "ar": "أخ",
-     "frame": "He's my brother, ___."
+     "w": "mum and dad",
+     "emoji": "👨‍👩‍👧",
+     "def": "your mother and your father",
+     "ar": "أمي وأبي",
+     "frame": "My mum and dad like ___."
     }
    ],
    "dialogue": {
@@ -1741,7 +1758,7 @@
      },
      {
       "s": "Noura",
-      "t": "Yes! Look, this is me."
+      "t": "Yes! I like to draw. Look, this is me."
      },
      {
       "s": "Ms Sara",
@@ -1753,7 +1770,7 @@
      },
      {
       "s": "Ms Sara",
-      "t": "Who's this boy?"
+      "t": "Your mum and dad! Who's this boy?"
      },
      {
       "s": "Noura",
@@ -1797,7 +1814,7 @@
     "prompts": [
      {
       "q": "Who's at the top of your family tree?",
-      "hint": "Say 'This is my grandpa' or 'This is my grandma'."
+      "hint": "Say who is at the top: 'This is my grandpa.'"
      },
      {
       "q": "Who's in the middle?",
@@ -1821,7 +1838,12 @@
      "What's your grandpa's name?"
     ]
    },
-   "exit": "Tell me about three people in your family tree."
+   "exit": "Tell me about three people in your family tree.",
+   "recycle": [
+    "grandma",
+    "cousin",
+    "brother"
+   ]
   },
   "2-0": {
    "objective": "Today you will name colours and say what colour things are.",
@@ -2237,7 +2259,7 @@
    "exit": "Name two things: one with 'a' and one with 'an'."
   },
   "2-3": {
-   "objective": "Today you will describe toys with big, small, new, old, long and beautiful.",
+   "objective": "Today you will describe toys with big, small, new, old, long and pretty.",
    "warmup": "What's a big toy in your home?",
    "expressions": [
     {
@@ -2276,11 +2298,11 @@
      "frame": "A ___ is long."
     },
     {
-     "w": "beautiful",
+     "w": "pretty",
      "emoji": "🌸",
-     "def": "very nice to look at",
-     "ar": "جميل",
-     "frame": "It's a beautiful ___."
+     "def": "nice to look at",
+     "ar": "جميل / جميلة",
+     "frame": "My ___ is pretty."
     }
    ],
    "dialogue": {
@@ -2323,7 +2345,7 @@
      },
      {
       "s": "Khalid",
-      "t": "It's a beautiful doll."
+      "t": "It's a pretty doll."
      },
      {
       "s": "Hessa",
@@ -2373,7 +2395,10 @@
      "Is your bedroom big or small?"
     ]
    },
-   "exit": "Tell me about one big thing and one small thing near you."
+   "exit": "Tell me about one big thing and one small thing near you.",
+   "recycle": [
+    "beautiful"
+   ]
   },
   "2-4": {
    "objective": "Today you will name and describe toys in a toy shop.",
@@ -2554,11 +2579,11 @@
      "frame": "It's soft. It's a ___."
     },
     {
-     "w": "new",
-     "emoji": "✨",
-     "def": "from the shop just now, not old",
-     "ar": "جديد",
-     "frame": "It's a new ___."
+     "w": "teacher",
+     "emoji": "👩‍🏫",
+     "def": "a person who helps you learn at school",
+     "ar": "معلّم / معلّمة",
+     "frame": "My teacher is ___."
     }
    ],
    "dialogue": {
@@ -2609,11 +2634,11 @@
      },
      {
       "s": "Ms Emma",
-      "t": "Thank you for Show and Tell, Reem!"
+      "t": "Great job, Reem! Thank you for Show and Tell!"
      },
      {
       "s": "Reem",
-      "t": "You're welcome!"
+      "t": "Thank you, teacher!"
      }
     ],
     "focus": "It's a soft white teddy bear.",
@@ -2651,7 +2676,10 @@
      "What's your favourite soft toy?"
     ]
    },
-   "exit": "Tell me two sentences about your favourite toy."
+   "exit": "Tell me two sentences about your favourite toy.",
+   "recycle": [
+    "new"
+   ]
   },
   "3-0": {
    "objective": "Today you will count from one to ten and say your favourite number.",
@@ -3362,25 +3390,25 @@
      "frame": "___ cups on the table."
     },
     {
-     "w": "party",
-     "emoji": "🎉",
-     "def": "a time when friends meet, eat and play",
-     "ar": "حفلة",
-     "frame": "The party is on ___."
+     "w": "candles",
+     "emoji": "🕯️",
+     "def": "small sticks with fire on top, on a cake",
+     "ar": "شموع",
+     "frame": "___ candles on my cake!"
     },
     {
-     "w": "How many …?",
-     "emoji": "🔢",
-     "def": "a question about the number of things",
-     "ar": "كم عدد …؟",
-     "frame": "How many ___?"
-    },
-    {
-     "w": "How old …?",
+     "w": "birthday cake",
      "emoji": "🎂",
-     "def": "a question about how many years someone has",
-     "ar": "كم عمر …؟",
-     "frame": "How old is your ___?"
+     "def": "a special cake for your birthday",
+     "ar": "كعكة عيد الميلاد",
+     "frame": "My birthday cake is ___."
+    },
+    {
+     "w": "party hat",
+     "emoji": "🥳",
+     "def": "a fun hat you wear at a party",
+     "ar": "قبعة الحفلة",
+     "frame": "My party hat is ___."
     }
    ],
    "dialogue": {
@@ -3397,7 +3425,7 @@
      },
      {
       "s": "Reem",
-      "t": "She's five."
+      "t": "She's five. Five candles on her cake!"
      },
      {
       "s": "Faisal",
@@ -3435,7 +3463,7 @@
      },
      {
       "s": "Faisal",
-      "t": "It's a big party!"
+      "t": "Party hats and a big birthday cake!"
      }
     ],
     "focus": "How many balloons?",
@@ -3473,7 +3501,12 @@
      "How many friends do you want at your party?"
     ]
    },
-   "exit": "Tell me two things about your birthday party with numbers."
+   "exit": "Tell me two things about your birthday party with numbers.",
+   "recycle": [
+    "party",
+    "How many …?",
+    "How old …?"
+   ]
   }
  },
  "kits": {
@@ -3790,9 +3823,9 @@
      "ex": "Hello, Uncle! It's me, Ali!"
     },
     {
-     "w": "how are you",
-     "ar": "كيف حالك؟",
-     "ex": "Hi, Grandpa! How are you?"
+     "w": "I'm fine",
+     "ar": "أنا بخير",
+     "ex": "I'm fine, thank you, Grandma."
     },
     {
      "w": "bye",
@@ -3800,9 +3833,9 @@
      "ex": "Bye, Mum!"
     },
     {
-     "w": "see you",
-     "ar": "أراك لاحقاً",
-     "ex": "See you on Friday!"
+     "w": "call",
+     "ar": "يتّصل",
+     "ex": "I call my grandma on Friday."
     },
     {
      "w": "take care",
@@ -3841,16 +3874,16 @@
     },
     {
      "s": "Sara",
-     "t": "Bye, Grandma! See you on Friday!"
+     "t": "Bye, Grandma! Please call me on Friday!"
     }
    ],
    "grammar": {
-    "title": "On the phone: It's me, … / Bye! / See you!",
-    "ar": "على الهاتف نقول It's me + اسمنا، ونودّع بـ Bye أو See you أو Take care.",
+    "title": "On the phone: It's me, … / I'm fine. / Bye!",
+    "ar": "على الهاتف نقول It's me + اسمنا، ونجيب I'm fine، ونودّع بـ Bye أو Take care.",
     "examples": [
-     "Hello! It's me, Sara.",
-     "Bye, Grandma!",
-     "See you on Friday!"
+     "Hello, Grandma! It's me, Sara!",
+     "I'm fine, thank you.",
+     "Bye, Grandma! Take care!"
     ]
    }
   },
@@ -3867,24 +3900,24 @@
      "ex": "Tom is my new friend."
     },
     {
-     "w": "nice to meet you",
-     "ar": "تشرّفت بمعرفتك",
-     "ex": "Nice to meet you, Tom!"
+     "w": "shake hands",
+     "ar": "نتصافح",
+     "ex": "Let's shake hands, Tom!"
     },
     {
-     "w": "I'm from",
-     "ar": "أنا من",
-     "ex": "I'm from Canada."
+     "w": "country",
+     "ar": "دولة / بلد",
+     "ex": "Canada is a big country."
     },
     {
-     "w": "how are you",
-     "ar": "كيف حالك؟",
-     "ex": "How are you, Ali?"
+     "w": "pool",
+     "ar": "مسبح",
+     "ex": "I swim in the pool."
     },
     {
-     "w": "see you",
-     "ar": "أراك لاحقاً",
-     "ex": "Goodbye, Tom. See you!"
+     "w": "Me too!",
+     "ar": "وأنا أيضاً!",
+     "ex": "I like swimming. Me too!"
     }
    ],
    "dialogue": [
@@ -3902,7 +3935,7 @@
     },
     {
      "s": "Tom",
-     "t": "Nice to meet you, too."
+     "t": "Nice to meet you, too. Let's shake hands!"
     },
     {
      "s": "Ali",
@@ -3910,15 +3943,15 @@
     },
     {
      "s": "Tom",
-     "t": "I'm from Canada. And you?"
+     "t": "I'm from Canada. It's a big country."
     },
     {
      "s": "Ali",
-     "t": "I'm from Saudi Arabia."
+     "t": "I'm from Saudi Arabia. I like swimming!"
     },
     {
      "s": "Tom",
-     "t": "You're my new friend, Ali!"
+     "t": "Me too! You're my new friend, Ali!"
     }
    ],
    "grammar": {
@@ -4165,9 +4198,9 @@
   "1-3": {
    "words": [
     {
-     "w": "friend",
-     "ar": "صديق",
-     "ex": "Ali is my friend."
+     "w": "class",
+     "ar": "الفصل / الصف",
+     "ex": "Ali is in my class."
     },
     {
      "w": "best friend",
@@ -4222,11 +4255,11 @@
     },
     {
      "s": "Sam",
-     "t": "Do you play football?"
+     "t": "Is Ali in your class?"
     },
     {
      "s": "Omar",
-     "t": "Yes, we play every day."
+     "t": "Yes, and we play every day."
     }
    ],
    "grammar": {
@@ -4262,14 +4295,14 @@
      "ex": "Sweets from Grandma!"
     },
     {
-     "w": "family",
-     "ar": "عائلة",
-     "ex": "My family is at Grandpa's house."
+     "w": "gift",
+     "ar": "هدية",
+     "ex": "A gift from Grandma! Thank you!"
     },
     {
-     "w": "happy",
-     "ar": "سعيد",
-     "ex": "I'm happy at Eid."
+     "w": "hug",
+     "ar": "يحضن / حضن",
+     "ex": "I hug my grandpa at Eid."
     }
    ],
    "dialogue": [
@@ -4291,7 +4324,7 @@
     },
     {
      "s": "Saad",
-     "t": "Look! Sweets from Grandma!"
+     "t": "Look! Sweets and a gift from Grandma!"
     },
     {
      "s": "Faisal",
@@ -4303,7 +4336,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Oh yes! Hello, Uncle!"
+     "t": "Oh yes! Hello, Uncle! A big hug!"
     }
    ],
    "grammar": {
@@ -4334,19 +4367,19 @@
      "ex": "This is my brother, and this is me."
     },
     {
-     "w": "grandma",
-     "ar": "جدّة",
-     "ex": "My grandma's name is Hessa."
+     "w": "at the top",
+     "ar": "في الأعلى",
+     "ex": "My grandpa is at the top."
     },
     {
-     "w": "cousin",
-     "ar": "ابن أو بنت العم أو الخال",
-     "ex": "Lina is my cousin."
+     "w": "draw",
+     "ar": "يرسم",
+     "ex": "I draw my family tree."
     },
     {
-     "w": "brother",
-     "ar": "أخ",
-     "ex": "He's my brother, Omar."
+     "w": "mum and dad",
+     "ar": "أمي وأبي",
+     "ex": "My mum and dad are in the photo."
     }
    ],
    "dialogue": [
@@ -4356,7 +4389,7 @@
     },
     {
      "s": "Noura",
-     "t": "Yes! Look, this is me."
+     "t": "Yes! I like to draw. Look, this is me."
     },
     {
      "s": "Ms Sara",
@@ -4368,7 +4401,7 @@
     },
     {
      "s": "Ms Sara",
-     "t": "And who's at the top?"
+     "t": "Your mum and dad! And who's at the top?"
     },
     {
      "s": "Noura",
@@ -4644,9 +4677,9 @@
      "ex": "A train is long."
     },
     {
-     "w": "beautiful",
-     "ar": "جميل",
-     "ex": "It's a beautiful doll."
+     "w": "pretty",
+     "ar": "جميل / جميلة",
+     "ex": "It's a pretty doll."
     }
    ],
    "dialogue": [
@@ -4676,7 +4709,7 @@
     },
     {
      "s": "Khalid",
-     "t": "It's a beautiful doll."
+     "t": "It's a pretty doll."
     },
     {
      "s": "Hessa",
@@ -4798,9 +4831,9 @@
      "ex": "It's soft. It's a teddy bear."
     },
     {
-     "w": "new",
-     "ar": "جديد",
-     "ex": "It's a new car."
+     "w": "teacher",
+     "ar": "معلّم / معلّمة",
+     "ex": "My teacher is Ms Emma."
     }
    ],
    "dialogue": [
@@ -4834,7 +4867,7 @@
     },
     {
      "s": "Reem",
-     "t": "No, it's small."
+     "t": "No, it's small, teacher."
     }
    ],
    "grammar": {
@@ -5250,19 +5283,19 @@
      "ex": "Eleven cups on the table."
     },
     {
-     "w": "party",
-     "ar": "حفلة",
-     "ex": "The party is on Friday."
+     "w": "candles",
+     "ar": "شموع",
+     "ex": "Five candles on the cake!"
     },
     {
-     "w": "How many …?",
-     "ar": "كم عدد …؟",
-     "ex": "How many friends?"
+     "w": "birthday cake",
+     "ar": "كعكة عيد الميلاد",
+     "ex": "The birthday cake is pink."
     },
     {
-     "w": "How old …?",
-     "ar": "كم عمر …؟",
-     "ex": "How old is your sister?"
+     "w": "party hat",
+     "ar": "قبعة الحفلة",
+     "ex": "My party hat is red."
     }
    ],
    "dialogue": [
@@ -5276,7 +5309,7 @@
     },
     {
      "s": "Reem",
-     "t": "She's five."
+     "t": "She's five. Five candles on her cake!"
     },
     {
      "s": "Faisal",
@@ -5541,12 +5574,12 @@
    {
     "type": "order",
     "words": [
-     "See",
-     "you",
-     "on",
-     "Friday!"
+     "I",
+     "call",
+     "my",
+     "grandma."
     ],
-    "answer": "See you on Friday!",
+    "answer": "I call my grandma.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5561,13 +5594,13 @@
    },
    {
     "type": "mc",
-    "q": "Your friend says 'Bye!' You say:",
+    "q": "Grandma says 'How are you?' You say:",
     "options": [
-     "Good morning!",
-     "See you!",
-     "How are you?"
+     "I'm fine, thank you.",
+     "It's a phone.",
+     "I'm seven."
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5604,21 +5637,21 @@
    },
    {
     "type": "mc",
-    "q": "What's your name?",
+    "q": "Saudi Arabia is a ___.",
     "options": [
-     "I'm fine.",
-     "I'm from Riyadh.",
-     "My name is Ali."
+     "country",
+     "friend",
+     "pool"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "mc",
-    "q": "Hello, I'm Tom. Nice to ___ you.",
+    "q": "I like football. You like football, too. You say:",
     "options": [
-     "meet",
-     "from",
-     "name"
+     "Me too!",
+     "Good night!",
+     "What's your name?"
     ],
     "answer": 0
    },
@@ -5816,7 +5849,7 @@
    },
    {
     "type": "mc",
-    "q": "Reem is a girl. ___ my friend.",
+    "q": "Reem is a girl. ___ in my class.",
     "options": [
      "He's",
      "She's",
@@ -5890,11 +5923,11 @@
    },
    {
     "type": "mc",
-    "q": "Yum! ___ from Grandma!",
+    "q": "Yum! Sweets and a ___ from Grandma!",
     "options": [
-     "Sweets",
-     "Sisters",
-     "Cousins"
+     "gift",
+     "sister",
+     "cousin"
     ],
     "answer": 0
    }
@@ -5915,12 +5948,14 @@
    {
     "type": "order",
     "words": [
-     "She's",
-     "my",
-     "cousin,",
-     "Lina."
+     "My",
+     "grandpa",
+     "is",
+     "at",
+     "the",
+     "top."
     ],
-    "answer": "She's my cousin, Lina.",
+    "answer": "My grandpa is at the top.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5935,17 +5970,17 @@
    },
    {
     "type": "mc",
-    "q": "My dad's mum is my ___.",
+    "q": "I make a picture with a pencil. I ___.",
     "options": [
-     "sister",
-     "grandma",
-     "aunt"
+     "eat",
+     "draw",
+     "sleep"
     ],
     "answer": 1
    },
    {
     "type": "mc",
-    "q": "Omar is a boy. ___ my brother.",
+    "q": "Ahmed is a man. ___ my dad.",
     "options": [
      "She's",
      "I'm",
@@ -6563,23 +6598,24 @@
    {
     "type": "order",
     "words": [
-     "How",
-     "old",
-     "is",
-     "she?"
+     "Five",
+     "candles",
+     "on",
+     "the",
+     "cake!"
     ],
-    "answer": "How old is she?",
+    "answer": "Five candles on the cake!",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "How ___ is Lina? She's five.",
+    "q": "You wear a ___ on your head.",
     "options": [
-     "many",
-     "old",
-     "are"
+     "party hat",
+     "plate",
+     "balloon"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",

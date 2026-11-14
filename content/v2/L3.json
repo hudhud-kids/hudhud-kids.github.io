@@ -1331,11 +1331,11 @@
      "frame": "There are some baby goats next to the ___."
     },
     {
-     "w": "chicken",
-     "emoji": "🐔",
-     "def": "a farm bird that gives us eggs",
-     "ar": "دجاجة",
-     "frame": "We get ___ from the chickens."
+     "w": "cow",
+     "emoji": "🐄",
+     "def": "a big farm animal that gives us milk",
+     "ar": "بقرة",
+     "frame": "A cow gives us ___."
     },
     {
      "w": "palm tree",
@@ -1363,7 +1363,7 @@
      },
      {
       "s": "Khalid",
-      "t": "There are some sheep and baby goats."
+      "t": "There are some sheep, cows and baby goats."
      }
     ],
     "p2": [
@@ -1419,7 +1419,10 @@
      "Which farm animal is your favourite?"
     ]
    },
-   "exit": "Ask me one question with 'Are there any …?' and tell me two animals on a farm."
+   "exit": "Ask me one question with 'Are there any …?' and tell me two animals on a farm.",
+   "recycle": [
+    "chicken"
+   ]
   },
   "1-4": {
    "objective": "Today you will describe a town by the sea and say where things are.",
@@ -1427,7 +1430,7 @@
    "expressions": [
     {
      "w": "sea",
-     "emoji": "🌊",
+     "emoji": "🌅",
      "def": "a very big area of salty water",
      "ar": "بحر",
      "frame": "The sea is blue and ___."
@@ -1440,11 +1443,11 @@
      "frame": "On the beach, there are ___."
     },
     {
-     "w": "boat",
-     "emoji": "⛵",
-     "def": "it takes people on the water",
-     "ar": "قارب",
-     "frame": "There is a ___ boat on the sea."
+     "w": "waves",
+     "emoji": "🌊",
+     "def": "water that moves up and down in the sea",
+     "ar": "أمواج",
+     "frame": "The waves are ___."
     },
     {
      "w": "hotel",
@@ -1496,7 +1499,7 @@
      },
      {
       "s": "Noura",
-      "t": "It's next to the beach."
+      "t": "It's next to the beach. I can see the waves!"
      },
      {
       "s": "Emma",
@@ -1542,7 +1545,10 @@
      "What do you do at the beach?"
     ]
    },
-   "exit": "Tell me about a town by the sea. Say two things that are there."
+   "exit": "Tell me about a town by the sea. Say two things that are there.",
+   "recycle": [
+    "boat"
+   ]
   },
   "1-5": {
    "objective": "Today you will describe your dream town and answer questions about it.",
@@ -1570,11 +1576,11 @@
      "frame": "There's an ice cream shop next to the ___."
     },
     {
-     "w": "train",
-     "emoji": "🚆",
-     "def": "it goes on tracks and takes lots of people",
-     "ar": "قطار",
-     "frame": "There is a train to the ___."
+     "w": "bridge",
+     "emoji": "🌉",
+     "def": "a road that goes over water or another road",
+     "ar": "جسر",
+     "frame": "In my dream town, there is a ___ bridge."
     },
     {
      "w": "tower",
@@ -1619,7 +1625,7 @@
      },
      {
       "s": "Lama",
-      "t": "No, there aren't. There's a fast train."
+      "t": "No, there aren't. There's a train on a long bridge."
      },
      {
       "s": "Mia",
@@ -1665,7 +1671,10 @@
      "How do you go to school?"
     ]
    },
-   "exit": "Tell me three things there are in your dream town, and one thing there isn't."
+   "exit": "Tell me three things there are in your dream town, and one thing there isn't.",
+   "recycle": [
+    "train"
+   ]
   },
   "2-0": {
    "objective": "Today you will ask for food politely at a bakery.",
@@ -1686,25 +1695,25 @@
      "frame": "A piece of ___, please."
     },
     {
-     "w": "Here you are.",
-     "emoji": "🫴",
-     "def": "you say it when you give something",
-     "ar": "تفضّل",
-     "frame": "Here you are. Your ___ is hot!"
+     "w": "croissant",
+     "emoji": "🥐",
+     "def": "a soft bread from France with a curved shape",
+     "ar": "كرواسون",
+     "frame": "Can I have a ___ croissant, please?"
     },
     {
-     "w": "bread",
-     "emoji": "🍞",
-     "def": "a food made from flour, often for breakfast",
-     "ar": "خبز",
-     "frame": "I eat bread with ___."
+     "w": "baker",
+     "emoji": "👨‍🍳",
+     "def": "a person who makes bread and cakes",
+     "ar": "خبّاز",
+     "frame": "The baker makes ___."
     },
     {
-     "w": "cake",
+     "w": "a piece of",
      "emoji": "🍰",
-     "def": "a sweet food for birthdays and parties",
-     "ar": "كعكة",
-     "frame": "My favourite cake is ___ cake."
+     "def": "one part of a cake, pie or bread",
+     "ar": "قطعة من",
+     "frame": "Can I have a piece of ___, please?"
     },
     {
      "w": "cookie",
@@ -1742,7 +1751,7 @@
      },
      {
       "s": "Reem",
-      "t": "Yes, please. A piece of chocolate cake."
+      "t": "Yes, please. A croissant and a piece of chocolate cake."
      },
      {
       "s": "Mr Saleh",
@@ -1750,7 +1759,7 @@
      },
      {
       "s": "Reem",
-      "t": "Thank you. Goodbye!"
+      "t": "Thank you. You're a great baker! Goodbye!"
      }
     ],
     "focus": "Can I have some bread, please?",
@@ -1788,7 +1797,12 @@
      "Do you eat bread for breakfast?"
     ]
    },
-   "exit": "Ask me for two things at a bakery. Don't forget 'please'!"
+   "exit": "Ask me for two things at a bakery. Don't forget 'please'!",
+   "recycle": [
+    "Here you are.",
+    "bread",
+    "cake"
+   ]
   },
   "2-1": {
    "objective": "Today you will ask and say how much one thing costs.",
@@ -1932,11 +1946,11 @@
      "frame": "Can I have a kilo of ___, please?"
     },
     {
-     "w": "grapes",
-     "emoji": "🍇",
-     "def": "small round green or purple fruit",
-     "ar": "عنب",
-     "frame": "I like ___ grapes."
+     "w": "peaches",
+     "emoji": "🍑",
+     "def": "soft, sweet, round fruit with a big seed",
+     "ar": "خوخ",
+     "frame": "I like ___ peaches."
     },
     {
      "w": "mango",
@@ -1992,7 +2006,7 @@
      },
      {
       "s": "Sara",
-      "t": "Those grapes look nice. How much are they?"
+      "t": "Those peaches look nice. How much are they?"
      },
      {
       "s": "Seller",
@@ -2002,7 +2016,7 @@
     "focus": "How much are these mangoes?",
     "qs": [
      "Where are the mangoes from?",
-     "How much are the grapes?"
+     "How much are the peaches?"
     ]
    },
    "speakout": {
@@ -2034,25 +2048,28 @@
      "Do you eat fruit every day?"
     ]
    },
-   "exit": "Ask me 'How much are …?' about two kinds of fruit or vegetables."
+   "exit": "Ask me 'How much are …?' about two kinds of fruit or vegetables.",
+   "recycle": [
+    "grapes"
+   ]
   },
   "2-3": {
    "objective": "Today you will ask for toys with 'this', 'that', 'these' and 'those'.",
    "warmup": "What is your favourite toy?",
    "expressions": [
     {
-     "w": "robot",
-     "emoji": "🤖",
-     "def": "a machine toy that can move",
-     "ar": "روبوت",
-     "frame": "My robot can ___."
+     "w": "toy plane",
+     "emoji": "✈️",
+     "def": "a small plane to play with",
+     "ar": "طائرة لعبة",
+     "frame": "My toy plane is ___."
     },
     {
-     "w": "kite",
-     "emoji": "🪁",
-     "def": "a toy that flies in the wind on a string",
-     "ar": "طائرة ورقية",
-     "frame": "I fly my kite at the ___."
+     "w": "yo-yo",
+     "emoji": "🪀",
+     "def": "a round toy that goes up and down on a string",
+     "ar": "يويو",
+     "frame": "My yo-yo is ___."
     },
     {
      "w": "puzzle",
@@ -2093,7 +2110,7 @@
      },
      {
       "s": "Seller",
-      "t": "This one? It's eighty riyals."
+      "t": "This one? It's eighty riyals. The toy plane is forty."
      },
      {
       "s": "Faisal",
@@ -2111,7 +2128,7 @@
      },
      {
       "s": "Seller",
-      "t": "Sure. Do you want a puzzle too?"
+      "t": "Sure. Do you want a puzzle or a yo-yo too?"
      },
      {
       "s": "Faisal",
@@ -2165,7 +2182,12 @@
      "What is your favourite toy?"
     ]
    },
-   "exit": "Ask me for two toys. Use 'this one', 'that' or 'those'."
+   "exit": "Ask me for two toys. Use 'this one', 'that' or 'those'.",
+   "recycle": [
+    "robot",
+    "kite",
+    "doll"
+   ]
   },
   "2-4": {
    "objective": "Today you will order food and drinks and ask how much it is.",
@@ -3829,9 +3851,9 @@
      "ex": "There are some baby goats next to the camels."
     },
     {
-     "w": "chicken",
-     "ar": "دجاجة",
-     "ex": "We get eggs from the chickens."
+     "w": "cow",
+     "ar": "بقرة",
+     "ex": "There are two cows on the farm."
     },
     {
      "w": "palm tree",
@@ -3854,7 +3876,7 @@
     },
     {
      "s": "Khalid",
-     "t": "No, there aren't. But there are chickens."
+     "t": "No, there aren't. But there are cows and chickens."
     },
     {
      "s": "Ali",
@@ -3888,9 +3910,9 @@
      "ex": "On the beach, there are lots of children."
     },
     {
-     "w": "boat",
-     "ar": "قارب",
-     "ex": "There is a white boat on the sea."
+     "w": "waves",
+     "ar": "أمواج",
+     "ex": "The waves are big today."
     },
     {
      "w": "hotel",
@@ -3931,7 +3953,7 @@
     },
     {
      "s": "Noura",
-     "t": "It's next to the beach."
+     "t": "It's next to the beach. I can see the waves!"
     }
    ],
    "grammar": {
@@ -3962,9 +3984,9 @@
      "ex": "There's an ice cream shop next to the park."
     },
     {
-     "w": "train",
-     "ar": "قطار",
-     "ex": "There is a train to the beach."
+     "w": "bridge",
+     "ar": "جسر",
+     "ex": "There is a long bridge over the river."
     },
     {
      "w": "tower",
@@ -4000,7 +4022,7 @@
     },
     {
      "s": "Lama",
-     "t": "No, there aren't. There's a fast train."
+     "t": "No, there aren't. There's a train on a long bridge."
     }
    ],
    "grammar": {
@@ -4026,19 +4048,19 @@
      "ex": "A piece of cake, please."
     },
     {
-     "w": "Here you are.",
-     "ar": "تفضّل",
-     "ex": "Here you are. Your bread is hot!"
+     "w": "croissant",
+     "ar": "كرواسون",
+     "ex": "Can I have a cheese croissant, please?"
     },
     {
-     "w": "bread",
-     "ar": "خبز",
-     "ex": "I eat bread with cheese."
+     "w": "baker",
+     "ar": "خبّاز",
+     "ex": "The baker makes hot bread."
     },
     {
-     "w": "cake",
-     "ar": "كعكة",
-     "ex": "My favourite cake is chocolate cake."
+     "w": "a piece of",
+     "ar": "قطعة من",
+     "ex": "A piece of chocolate cake, please."
     },
     {
      "w": "cookie",
@@ -4069,7 +4091,11 @@
     },
     {
      "s": "Reem",
-     "t": "Yes, please. A piece of chocolate cake."
+     "t": "Yes, please. A croissant and a piece of chocolate cake."
+    },
+    {
+     "s": "Reem",
+     "t": "Thank you. You're a great baker!"
     }
    ],
    "grammar": {
@@ -4077,8 +4103,8 @@
     "ar": "نطلب الأشياء بأدب بـ Can I have ثم الشيء ثم please.",
     "examples": [
      "Can I have some bread, please?",
-     "Can I have two cookies, please?",
-     "Here you are. Thank you!"
+     "Can I have a croissant, please?",
+     "A piece of cake, please. Thank you!"
     ]
    }
   },
@@ -4172,9 +4198,9 @@
      "ex": "Can I have a kilo of apples, please?"
     },
     {
-     "w": "grapes",
-     "ar": "عنب",
-     "ex": "I like green grapes."
+     "w": "peaches",
+     "ar": "خوخ",
+     "ex": "These peaches are soft and sweet."
     },
     {
      "w": "mango",
@@ -4211,7 +4237,7 @@
     },
     {
      "s": "Sara",
-     "t": "Those grapes look nice. How much are they?"
+     "t": "Those peaches look nice. How much are they?"
     },
     {
      "s": "Seller",
@@ -4224,21 +4250,21 @@
     "examples": [
      "How much are these mangoes?",
      "They're twelve riyals a kilo.",
-     "How much are the grapes? They're ten riyals."
+     "How much are the peaches? They're ten riyals."
     ]
    }
   },
   "2-3": {
    "words": [
     {
-     "w": "robot",
-     "ar": "روبوت",
-     "ex": "My robot can walk and talk."
+     "w": "toy plane",
+     "ar": "طائرة لعبة",
+     "ex": "The toy plane is forty riyals."
     },
     {
-     "w": "kite",
-     "ar": "طائرة ورقية",
-     "ex": "I fly my kite at the beach."
+     "w": "yo-yo",
+     "ar": "يويو",
+     "ex": "This yo-yo is only ten riyals."
     },
     {
      "w": "puzzle",
@@ -4268,7 +4294,7 @@
     },
     {
      "s": "Seller",
-     "t": "This one? It's eighty riyals."
+     "t": "This one? It's eighty riyals. The toy plane is forty."
     },
     {
      "s": "Faisal",
@@ -4284,7 +4310,15 @@
     },
     {
      "s": "Seller",
-     "t": "Sure. That's twenty riyals, please."
+     "t": "Sure. Do you want a yo-yo too?"
+    },
+    {
+     "s": "Faisal",
+     "t": "No, thanks. Just the kite."
+    },
+    {
+     "s": "Seller",
+     "t": "OK. That's twenty riyals, please."
     }
    ],
    "grammar": {
@@ -5443,11 +5477,11 @@
    },
    {
     "type": "mc",
-    "q": "We get eggs from ___.",
+    "q": "We get milk from ___.",
     "options": [
      "camels",
-     "sheep",
-     "chickens"
+     "palm trees",
+     "cows"
     ],
     "answer": 2
    }
@@ -5506,7 +5540,7 @@
     "options": [
      "sea",
      "sand",
-     "boat"
+     "waves"
     ],
     "answer": 1
    }
@@ -5531,15 +5565,15 @@
    {
     "type": "order",
     "words": [
-     "Are",
+     "Is",
      "there",
-     "any",
-     "trains",
+     "a",
+     "bridge",
      "in",
      "your",
      "town?"
     ],
-    "answer": "Are there any trains in your town?",
+    "answer": "Is there a bridge in your town?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5548,7 +5582,7 @@
     "options": [
      "garden",
      "tower",
-     "train"
+     "bridge"
     ],
     "answer": 1
    },
@@ -5590,11 +5624,14 @@
    {
     "type": "order",
     "words": [
-     "Here",
-     "you",
-     "are."
+     "Can",
+     "I",
+     "have",
+     "a",
+     "croissant,",
+     "please?"
     ],
-    "answer": "Here you are.",
+    "answer": "Can I have a croissant, please?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5609,23 +5646,23 @@
    },
    {
     "type": "mc",
-    "q": "The baker gives you the bread. He says: ___",
+    "q": "He makes bread and cakes. He is a ___.",
     "options": [
-     "Here you are.",
-     "Can I help you?",
-     "How much is it?"
+     "baker",
+     "teacher",
+     "farmer"
     ],
     "answer": 0
    },
    {
     "type": "mc",
-    "q": "A sweet food for birthdays = ___.",
+    "q": "Can I have a ___ cake, please?",
     "options": [
-     "bread",
-     "cheese",
-     "cake"
+     "piece of",
+     "kilo",
+     "cup"
     ],
-    "answer": 2
+    "answer": 0
    }
   ],
   "2-1": [
@@ -5691,9 +5728,9 @@
      "much",
      "are",
      "these",
-     "grapes?"
+     "peaches?"
     ],
-    "answer": "How much are these grapes?",
+    "answer": "How much are these peaches?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5735,7 +5772,7 @@
     "type": "mc",
     "q": "A round red vegetable for salad = a ___.",
     "options": [
-     "grape",
+     "peach",
      "tomato",
      "mango"
     ],
@@ -5783,14 +5820,14 @@
     "q": "A game with small pieces you put together = a ___.",
     "options": [
      "puzzle",
-     "kite",
-     "robot"
+     "yo-yo",
+     "toy plane"
     ],
     "answer": 0
    },
    {
     "type": "mc",
-    "q": "I like ___ robot here. Can I have it?",
+    "q": "I like ___ yo-yo here. Can I have it?",
     "options": [
      "these",
      "those",

@@ -32,12 +32,34 @@ Deno.serve(async (req) => {
   if (req.headers.get("x-cron-secret") !== Deno.env.get("CRON_SECRET")) return new Response("forbidden", { status: 403 });
   try { return await run(); } catch (e) { return new Response("ERR " + ((e && (e as any).stack) || String(e)), { status: 500 }); }
 });
+// AI relay watchdog: the "ai" function must answer a request with an unknown session with 401 JSON within 5 s
+// (that exercises the function and its database lookup without spending anything). State lives in tk_health (schema_8).
+// Returns true when the family admins should be told now: 3 failures in a row, at most one alert per hour.
+async function relayDown(nowMs: number): Promise<{ alert: boolean; stamp: string }> {
+  let ok = false, detail = "";
+  try {
+    const r = await fetch(Deno.env.get("SUPABASE_URL")! + "/functions/v1/ai/claude", { method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ t: "00000000-0000-0000-0000-000000000000", body: {} }), signal: AbortSignal.timeout(5000) });
+    const txt = await r.text(); let j: any = null; try { j = JSON.parse(txt); } catch { /* not JSON */ }
+    ok = r.status === 401 && !!j && j.error === "bad_session";
+    if (!ok) detail = `status ${r.status}: ${txt.slice(0, 120)}`;
+  } catch (e) { detail = String((e && (e as any).message) || e).slice(0, 160); }
+  const now = new Date(nowMs).toISOString();
+  const { data: cur, error } = await sb.from("tk_health").select("*").eq("id", "ai").maybeSingle();
+  if (error) return { alert: false, stamp: "" }; // table missing (schema_8 not applied yet): the watchdog stays quiet
+  if (ok) { if (!cur || cur.fails) await sb.from("tk_health").upsert({ id: "ai", fails: 0, last_ok: now, detail: "" }); else if (!cur.last_ok || nowMs - Date.parse(cur.last_ok) > 10 * 60e3) await sb.from("tk_health").update({ last_ok: now }).eq("id", "ai"); return { alert: false, stamp: "" }; }
+  const fails = ((cur && cur.fails) || 0) + 1;
+  const due = fails >= 3 && (!cur || !cur.last_alert || nowMs - Date.parse(cur.last_alert) >= 3600e3);
+  await sb.from("tk_health").upsert({ id: "ai", fails, last_fail: now, detail, last_ok: cur ? cur.last_ok : null, last_alert: due ? now : (cur ? cur.last_alert : null) });
+  return { alert: due, stamp: now.slice(0, 13) };
+}
 async function run() {
   if (!vapidOk) { webpush.setVapidDetails("mailto:info@sahla-sa.com", Deno.env.get("VAPID_PUBLIC")!, Deno.env.get("VAPID_PRIVATE")!); vapidOk = true; }
   const nowMs = Date.now(), now = toLocal(nowMs);
   const { data: rows, error: e1 } = await sb.from("tk_rows").select("family_id,path,value,updated_at").or("path.like.kids/%,path.like.sched/%,path.like.guardians/%,path.like.cheers/%,path.like.livefeed/%,path.like.progress/%,path.like.balance/%,path.like.prices/%,path.like.live/%,path.eq.perLesson,path.eq.attendance,path.eq.reports");
   if (e1) throw new Error("rows: " + e1.message);
   const { data: subs, error: e2 } = await sb.from("tk_push_subs").select("*"); if (e2) throw new Error("subs: " + e2.message);
+  let down = { alert: false, stamp: "" }; try { down = await relayDown(nowMs); } catch (_e) { /* the watchdog must never stop the reminders */ }
   const fam: Record<string, any> = {};
   for (const r of rows || []) { const f = fam[r.family_id] = fam[r.family_id] || { kids: {}, sched: {}, guardians: {}, cheers: {}, livefeed: {}, progress: {}, balance: {}, prices: {}, live: {}, perLesson: 10, attendance: [], reports: [] };
     const [top, sub] = r.path.split("/"); if (sub === "") continue;
@@ -131,6 +153,11 @@ async function run() {
   for (const su of sus || []) {
     const d: any = (su.data && typeof su.data === "object") ? su.data : {}, names = (Array.isArray(d.kids) ? d.kids : []).map((k: any) => k && k.ar).filter(Boolean).map(String).join("، ");
     msgs.push({ fam: su.family_id, key: `signup:${su.id}`, to: (x: any) => x.family_id === su.family_id && x.role === "parent", title: "📥 طلب تسجيل جديد", body: `${d.g_name || "ولي أمر"} يبي يسجّل: ${names || "طفل"}. افتح لوحة الإدارة للقبول أو الرفض.` });
+  }
+  if (down.alert) {
+    // every family's admin (parent) devices; the push log key allows one per family per hour
+    for (const fid of new Set((subs || []).filter((s: any) => s.role === "parent").map((s: any) => s.family_id)))
+      msgs.push({ fam: fid as string, key: `aidown:${down.stamp}`, to: (x: any) => x.family_id === fid && x.role === "parent", title: "⚠️ خدمة المعلمة متوقفة", body: "خدمة المعلمة ما ترد من 3 دقائق، والحصص ما تشتغل الآن. افتح لوحة الإدارة وتأكد من الخدمة." });
   }
   if (!msgs.length) return Response.json({ sent: 0 });
   const { data: done } = await sb.from("tk_push_log").select("key").in("key", msgs.map((m) => m.fam + "|" + m.key));

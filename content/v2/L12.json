@@ -212,10 +212,10 @@
      "frame": "It looks as if they're ___."
     },
     {
-     "w": "get together",
-     "def": "to meet as a group, often for a celebration",
-     "ar": "يجتمعون",
-     "frame": "My family usually gets together at ___."
+     "w": "a family reunion",
+     "def": "a party where relatives who live apart meet again",
+     "ar": "لمّة العائلة / اجتماع عائلي",
+     "frame": "We have a big family reunion every ___."
     },
     {
      "w": "judging by",
@@ -247,7 +247,7 @@
      },
      {
       "s": "Reem",
-      "t": "Exactly. That's my grandparents' house in Qassim. The whole family gets together there every year."
+      "t": "Exactly. That's my grandparents' house in Qassim. It's where we have a big family reunion every year."
      }
     ],
     "p2": [
@@ -307,17 +307,20 @@
      "Would you rather keep photos on your phone or print them? Why?"
     ]
    },
-   "exit": "Describe a photo you remember and make two guesses about it, using 'It looks as if …' and 'must'."
+   "exit": "Describe a photo you remember and make two guesses about it, using 'It looks as if …' and 'must'.",
+   "recycle": [
+    "get together"
+   ]
   },
   "0-1": {
    "objective": "Today you will describe a busy street scene and speculate about what people are doing.",
    "warmup": "What's the busiest place you have ever been to?",
    "expressions": [
     {
-     "w": "it looks as if",
-     "def": "a phrase for guessing from what you can see",
-     "ar": "يبدو كأنّ",
-     "frame": "It looks as if the man in the corner is ___."
+     "w": "at a guess",
+     "def": "used when you give an answer you are not sure about",
+     "ar": "على سبيل التخمين",
+     "frame": "At a guess, the man in the corner is ___."
     },
     {
      "w": "seem to be",
@@ -338,10 +341,10 @@
      "frame": "People often haggle over ___ at the market."
     },
     {
-     "w": "in the middle of",
-     "def": "busy doing something at this moment",
-     "ar": "منشغل بـ / في خضمّ",
-     "frame": "The woman seems to be in the middle of ___."
+     "w": "browse",
+     "def": "to look at things in a shop without a clear plan to buy",
+     "ar": "يتصفّح / يتفرّج على البضائع",
+     "frame": "The woman seems to be browsing ___."
     },
     {
      "w": "stall",
@@ -378,11 +381,11 @@
      },
      {
       "s": "Omar",
-      "t": "She appears to be in the middle of choosing something. Maybe saffron or cardamom?"
+      "t": "She appears to be browsing the spices. Maybe saffron or cardamom?"
      },
      {
       "s": "Sam",
-      "t": "Judging by the lights, it looks as if it's evening."
+      "t": "At a guess, it's evening, judging by the lights."
      },
      {
       "s": "Omar",
@@ -424,7 +427,11 @@
      "Why do you think traditional markets are still popular today?"
     ]
    },
-   "exit": "Describe a busy place you know and say two things the people there seem to be doing."
+   "exit": "Describe a busy place you know and say two things the people there seem to be doing.",
+   "recycle": [
+    "in the middle of",
+    "it looks as if"
+   ]
   },
   "0-2": {
    "objective": "Today you will speculate about what mystery objects were used for in the past.",
@@ -449,22 +456,22 @@
      "frame": "It can't have been a toy because ___."
     },
     {
-     "w": "ancient",
-     "def": "very old, from hundreds or thousands of years ago",
-     "ar": "قديم جداً / أثري",
-     "frame": "I'd love to see the ancient ___."
+     "w": "antique",
+     "def": "an old object that is valuable because of its age",
+     "ar": "تحفة أثرية / قطعة قديمة ثمينة",
+     "frame": "My grandparents have an antique ___ at home."
     },
     {
-     "w": "judging by",
-     "def": "using something you notice to make a guess",
-     "ar": "استناداً إلى",
-     "frame": "Judging by its shape, it was probably used to ___."
+     "w": "a telltale sign",
+     "def": "a small detail that shows something is true",
+     "ar": "علامة دالّة",
+     "frame": "A telltale sign that ___ is ___."
     },
     {
-     "w": "date back to",
-     "def": "to have existed since a time in the past",
-     "ar": "يعود تاريخه إلى",
-     "frame": "The oldest building in my city dates back to ___."
+     "w": "have been around since",
+     "def": "to have existed from a time in the past until now",
+     "ar": "موجود منذ",
+     "frame": "___ have been around since ___."
     }
    ],
    "dialogue": {
@@ -491,15 +498,15 @@
     "p2": [
      {
       "s": "Noura",
-      "t": "That makes sense. It might have belonged to a Bedouin family."
+      "t": "That makes sense. The burn marks are a telltale sign. It might have belonged to a Bedouin family."
      },
      {
       "s": "Faisal",
-      "t": "The sign over there says these objects date back to the 1800s."
+      "t": "The sign over there says objects like this have been around since the 1800s."
      },
      {
       "s": "Noura",
-      "t": "So it's not exactly ancient, but it's still older than our great-grandparents!"
+      "t": "So it's a real antique. It's older than our great-grandparents!"
      },
      {
       "s": "Faisal",
@@ -541,7 +548,12 @@
      "Why do you think people find old objects so interesting?"
     ]
    },
-   "exit": "Choose any object in the room and say two things it must have or might have been used for in the past."
+   "exit": "Choose any object in the room and say two things it must have or might have been used for in the past.",
+   "recycle": [
+    "ancient",
+    "date back to",
+    "judging by"
+   ]
   },
   "0-3": {
    "objective": "Today you will describe a sports photo and speculate about what has just happened and how the players feel.",
@@ -578,10 +590,10 @@
      "frame": "The fans were on the edge of their seats when ___."
     },
     {
-     "w": "must have been",
-     "def": "used when you are almost sure about something in the past",
-     "ar": "لا بدّ أنّه كان",
-     "frame": "The match must have been ___ because everyone looks exhausted."
+     "w": "nail-biting",
+     "def": "very exciting because you do not know what will happen",
+     "ar": "مثير ومشوّق جداً",
+     "frame": "The most nail-biting match I remember was ___."
     }
    ],
    "dialogue": {
@@ -611,7 +623,7 @@
      },
      {
       "s": "Omar",
-      "t": "Wow, everyone must have been on the edge of their seats."
+      "t": "Wow, what a nail-biting finish! Everyone must have been on the edge of their seats."
      },
      {
       "s": "Khalid",
@@ -657,7 +669,10 @@
      "Which sports moment would you most like to have photographed?"
     ]
    },
-   "exit": "Describe a sports moment you remember and make two guesses about how the players felt."
+   "exit": "Describe a sports moment you remember and make two guesses about how the players felt.",
+   "recycle": [
+    "must have been"
+   ]
   },
   "0-4": {
    "objective": "Today you will compare two photos and speculate about the people in them.",
@@ -688,16 +703,16 @@
      "frame": "The man looks worn out, probably because ___."
     },
     {
-     "w": "set off",
-     "def": "to start a journey",
-     "ar": "ينطلق في رحلة",
-     "frame": "They might have set off early because ___."
+     "w": "at the crack of dawn",
+     "def": "very early in the morning",
+     "ar": "مع أول خيوط الفجر",
+     "frame": "They might have left at the crack of dawn because ___."
     },
     {
-     "w": "it looks as if",
-     "def": "a phrase for guessing from what you can see",
-     "ar": "يبدو كأنّ",
-     "frame": "It looks as if the family in the car ___."
+     "w": "a long haul",
+     "def": "a long and tiring journey or task",
+     "ar": "رحلة طويلة ومتعبة",
+     "frame": "For the family in the car, it looks like a long haul because ___."
     }
    ],
    "dialogue": {
@@ -727,7 +742,7 @@
      },
      {
       "s": "Reem",
-      "t": "The people in the car look worn out. They might have set off very early."
+      "t": "The people in the car look worn out. They might have left at the crack of dawn."
      },
      {
       "s": "Ms Sarah",
@@ -735,13 +750,13 @@
      },
      {
       "s": "Reem",
-      "t": "Judging by the empty coffee cups, it looks as if they've been driving for hours."
+      "t": "Judging by the empty coffee cups, it's been a long haul for them."
      }
     ],
     "focus": "I'd say the family on the train is quite relaxed.",
     "qs": [
      "What do the two photos have in common?",
-     "Why does Reem think the family in the car set off early?"
+     "Why does Reem think the family in the car left so early?"
     ]
    },
    "speakout": {
@@ -773,7 +788,11 @@
      "How do you think travel in Saudi Arabia will change in the next twenty years?"
     ]
    },
-   "exit": "Compare two places you know using 'both' and 'unlike', and make one guess about the people there."
+   "exit": "Compare two places you know using 'both' and 'unlike', and make one guess about the people there.",
+   "recycle": [
+    "set off",
+    "it looks as if"
+   ]
   },
   "0-5": {
    "objective": "Today you will give a one-minute talk comparing two photos and speculating about them.",
@@ -804,16 +823,16 @@
      "frame": "Before the photo was taken, they might have been ___."
     },
     {
-     "w": "look as though",
-     "def": "to seem, from what you can see",
-     "ar": "يبدو كما لو أنّ",
-     "frame": "The girl on the right looks as though ___."
+     "w": "give the impression that",
+     "def": "to make people think that something is true",
+     "ar": "يعطي انطباعاً بأنّ",
+     "frame": "The girl on the right gives the impression that ___."
     },
     {
-     "w": "both pictures show",
-     "def": "a phrase to say what two photos have in common",
-     "ar": "كلتا الصورتين تُظهر",
-     "frame": "Both pictures show people who ___."
+     "w": "what they have in common",
+     "def": "the things that two people or pictures share",
+     "ar": "القاسم المشترك بينهما",
+     "frame": "What they have in common is that ___."
     }
    ],
    "dialogue": {
@@ -826,7 +845,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Both pictures show teams of young people. At first glance, they seem very different."
+      "t": "What they have in common is that they show teams of young people. At first glance, they seem very different."
      },
      {
       "s": "Faisal",
@@ -834,7 +853,7 @@
      },
      {
       "s": "Faisal",
-      "t": "On closer inspection, though, both teams look as though they've worked really hard."
+      "t": "On closer inspection, though, both teams give the impression that they've worked really hard."
      }
     ],
     "p2": [
@@ -866,7 +885,7 @@
     "prompts": [
      {
       "q": "Compare the photos. What do you notice at first glance?",
-      "hint": "Use 'Both pictures show …' and 'At first glance …'."
+      "hint": "Use 'What they have in common is …' and 'At first glance …'."
      },
      {
       "q": "What do you think the people did before the photos were taken?",
@@ -874,7 +893,7 @@
      },
      {
       "q": "How do you think the people feel, and why?",
-      "hint": "Use 'look as though' and support your guess with a detail."
+      "hint": "Use 'give the impression that' and support your guess with a detail."
      }
     ]
    },
@@ -890,7 +909,11 @@
      "What else could young people do to protect the environment?"
     ]
    },
-   "exit": "Without notes, describe a photo you took recently and make two guesses about what happened before or after it."
+   "exit": "Without notes, describe a photo you took recently and make two guesses about what happened before or after it.",
+   "recycle": [
+    "look as though",
+    "both pictures show"
+   ]
   },
   "1-0": {
    "objective": "Today you will discuss the pros and cons of living in a big city or a small village.",
@@ -903,10 +926,10 @@
      "frame": "On the one hand, living in a city means ___."
     },
     {
-     "w": "on the other hand",
-     "def": "used to introduce the opposite side of an argument",
-     "ar": "من ناحية أخرى",
-     "frame": "On the other hand, villages are ___."
+     "w": "sleepy",
+     "def": "very quiet, where not much happens",
+     "ar": "هادئ وخامل (مكان)",
+     "frame": "I would / wouldn't like to live in a sleepy ___ because ___."
     },
     {
      "w": "the main advantage",
@@ -957,7 +980,7 @@
     "p2": [
      {
       "s": "Khalid",
-      "t": "Well, the village has its drawbacks too. There's no cinema or big mall."
+      "t": "Well, the village has its drawbacks too. It's a sleepy place, with no cinema or big mall."
      },
      {
       "s": "Omar",
@@ -1007,7 +1030,10 @@
      "What could cities learn from villages?"
     ]
    },
-   "exit": "Give me one advantage and one drawback of the place where you live, using 'on the one hand' and 'on the other hand'."
+   "exit": "Give me one advantage and one drawback of the place where you live, using 'on the one hand' and 'on the other hand'.",
+   "recycle": [
+    "on the other hand"
+   ]
   },
   "1-1": {
    "objective": "Today you will weigh up the advantages and disadvantages of online learning.",
@@ -1044,10 +1070,10 @@
      "frame": "I easily get distracted by ___."
     },
     {
-     "w": "a drawback",
-     "def": "a bad point or problem with something",
-     "ar": "عيب / سلبية",
-     "frame": "The biggest drawback of online learning is ___."
+     "w": "a trade-off",
+     "def": "a balance between two things you cannot have together",
+     "ar": "مقايضة / موازنة بين أمرين",
+     "frame": "There is a trade-off between ___ and ___."
     }
    ],
    "dialogue": {
@@ -1081,7 +1107,7 @@
      },
      {
       "s": "Hind",
-      "t": "So maybe the best option is a mix of both?"
+      "t": "So it's a trade-off. Maybe the best option is a mix of both?"
      },
      {
       "s": "Reem",
@@ -1123,7 +1149,10 @@
      "Do you think schools will be completely online one day?"
     ]
    },
-   "exit": "Tell me one good thing and one bad thing about online learning in a single sentence with 'although'."
+   "exit": "Tell me one good thing and one bad thing about online learning in a single sentence with 'although'.",
+   "recycle": [
+    "a drawback"
+   ]
   },
   "1-2": {
    "objective": "Today you will discuss the pros and cons of teenagers having smartphones.",
@@ -1148,10 +1177,10 @@
      "frame": "The downside of social media is ___."
     },
     {
-     "w": "keep in touch",
-     "def": "to keep talking to someone, especially someone far away",
-     "ar": "يبقى على تواصل",
-     "frame": "I use my phone to keep in touch with ___."
+     "w": "stay connected",
+     "def": "to keep in contact with people",
+     "ar": "يبقى على اتصال",
+     "frame": "I use my phone to stay connected with ___."
     },
     {
      "w": "be addicted to",
@@ -1160,10 +1189,10 @@
      "frame": "Some teenagers are addicted to ___."
     },
     {
-     "w": "on the other hand",
-     "def": "used to introduce the opposite side of an argument",
-     "ar": "من ناحية أخرى",
-     "frame": "On the other hand, phones can help with ___."
+     "w": "there's a risk that",
+     "def": "used to say something bad might happen",
+     "ar": "هناك خطر أن",
+     "frame": "There's a risk that phones ___."
     }
    ],
    "dialogue": {
@@ -1180,7 +1209,7 @@
      },
      {
       "s": "Faisal",
-      "t": "I know, but I'd use it to keep in touch with you and Dad."
+      "t": "I know, but I'd use it to stay connected with you and Dad."
      },
      {
       "s": "Mum",
@@ -1194,7 +1223,7 @@
      },
      {
       "s": "Mum",
-      "t": "On the other hand, you might stay up late playing games."
+      "t": "But there's a risk that you'll stay up late playing games."
      },
      {
       "s": "Faisal",
@@ -1216,7 +1245,7 @@
     "prompts": [
      {
       "q": "What are the good things about having a smartphone at that age?",
-      "hint": "Give two benefits, for example keeping in touch or learning."
+      "hint": "Give two benefits, for example staying connected or learning."
      },
      {
       "q": "What worries you about it?",
@@ -1240,7 +1269,11 @@
      "What's a fair age for a first smartphone, in your opinion?"
     ]
    },
-   "exit": "Give me one sentence about smartphones with 'despite' and one with 'the downside is'."
+   "exit": "Give me one sentence about smartphones with 'despite' and one with 'the downside is'.",
+   "recycle": [
+    "keep in touch",
+    "on the other hand"
+   ]
   },
   "1-3": {
    "objective": "Today you will compare the pros and cons of fast food and home-cooked meals.",
@@ -1277,10 +1310,10 @@
      "frame": "All things considered, I think ___."
     },
     {
-     "w": "despite",
-     "def": "without being stopped by something",
-     "ar": "رغم / بالرغم من",
-     "frame": "Despite being expensive, ___."
+     "w": "do you good",
+     "def": "to be good for your health or your mood",
+     "ar": "يفيدك / مفيد لك",
+     "frame": "Eating ___ will do you good."
     }
    ],
    "dialogue": {
@@ -1311,7 +1344,7 @@
      },
      {
       "s": "Noura",
-      "t": "Exactly. Despite the extra time, we'd feel better for the match tomorrow."
+      "t": "Exactly. A proper meal will do us good, and we'd feel better for the match tomorrow."
      },
      {
       "s": "Emma",
@@ -1357,7 +1390,10 @@
      "Would you like to learn to cook a traditional dish? Which one?"
     ]
    },
-   "exit": "Tell me what you think about fast food using 'even though', and finish with 'all things considered'."
+   "exit": "Tell me what you think about fast food using 'even though', and finish with 'all things considered'.",
+   "recycle": [
+    "despite"
+   ]
   },
   "1-4": {
    "objective": "Today you will discuss the advantages and disadvantages of tourism for a historic place.",
@@ -1388,10 +1424,10 @@
      "frame": "Tourism helps the local community by ___."
     },
     {
-     "w": "whereas",
-     "def": "used to compare two facts that are different",
-     "ar": "بينما / في حين",
-     "frame": "Some people think tourism is good, whereas others ___."
+     "w": "opinions are divided",
+     "def": "people do not agree about something",
+     "ar": "الآراء منقسمة",
+     "frame": "Opinions are divided about ___."
     },
     {
      "w": "outweigh",
@@ -1424,7 +1460,7 @@
     "p2": [
      {
       "s": "Faisal",
-      "t": "Some people want unlimited visitors, whereas others think there should be strict limits."
+      "t": "Opinions are divided: some people want unlimited visitors, but others think there should be strict limits."
      },
      {
       "s": "Omar",
@@ -1474,17 +1510,20 @@
      "Should there be a limit on the number of visitors to famous places? Why?"
     ]
    },
-   "exit": "Give me one benefit and one concern about tourism, and say which one outweighs the other."
+   "exit": "Give me one benefit and one concern about tourism, and say which one outweighs the other.",
+   "recycle": [
+    "whereas"
+   ]
   },
   "1-5": {
    "objective": "Today you will present a balanced argument and reach a conclusion on a school issue.",
    "warmup": "What time does your school day start, and how do you feel about it?",
    "expressions": [
     {
-     "w": "weigh up",
-     "def": "to think carefully about the good and bad points",
-     "ar": "يوازن بين",
-     "frame": "Before I decide, I need to weigh up ___."
+     "w": "take into account",
+     "def": "to think about something when you decide",
+     "ar": "يأخذ بعين الاعتبار",
+     "frame": "Before I decide, I take ___ into account."
     },
     {
      "w": "there's a lot to be said for",
@@ -1505,16 +1544,16 @@
      "frame": "On balance, I believe ___."
     },
     {
-     "w": "on the one hand",
-     "def": "used to introduce the first side of an argument",
-     "ar": "من ناحية",
-     "frame": "On the one hand, a later start would ___."
+     "w": "point taken",
+     "def": "used to say you accept what someone said",
+     "ar": "وجهة نظرك مفهومة",
+     "frame": "Point taken, but ___."
     },
     {
-     "w": "all things considered",
-     "def": "after thinking about every side of something",
-     "ar": "بعد النظر في كل الجوانب",
-     "frame": "All things considered, the best solution is ___."
+     "w": "when all is said and done",
+     "def": "when you think about everything together",
+     "ar": "في نهاية المطاف",
+     "frame": "When all is said and done, the best solution is ___."
     }
    ],
    "dialogue": {
@@ -1530,7 +1569,7 @@
      },
      {
       "s": "Dana",
-      "t": "On the one hand, that's true. On the other hand, we'd concentrate much better."
+      "t": "Point taken, but we'd concentrate much better."
      },
      {
       "s": "Noura",
@@ -1544,11 +1583,11 @@
      },
      {
       "s": "Noura",
-      "t": "Let's weigh up both sides: better sleep and focus versus traffic and heat."
+      "t": "Let's take everything into account: better sleep and focus versus traffic and heat."
      },
      {
       "s": "Dana",
-      "t": "So, all things considered, what's your conclusion?"
+      "t": "So, when all is said and done, what's your conclusion?"
      },
      {
       "s": "Noura",
@@ -1590,7 +1629,12 @@
      "Apart from start times, what else could help students get enough sleep?"
     ]
    },
-   "exit": "Without help, give me one argument for and one against longer school holidays, then tell me what you think on balance."
+   "exit": "Without help, give me one argument for and one against longer school holidays, then tell me what you think on balance.",
+   "recycle": [
+    "weigh up",
+    "on the one hand",
+    "all things considered"
+   ]
   },
   "2-0": {
    "objective": "Today you will negotiate screen-time rules with a parent.",
@@ -1621,10 +1665,10 @@
      "frame": "If you ___, that's a deal!"
     },
     {
-     "w": "cut down on",
-     "def": "to do or use less of something",
-     "ar": "يقلّل من",
-     "frame": "I'd like to cut down on ___."
+     "w": "put a limit on",
+     "def": "to say how much of something is allowed",
+     "ar": "يضع حدّاً لـ",
+     "frame": "I'd like to put a limit on ___."
     },
     {
      "w": "fair enough",
@@ -1639,7 +1683,7 @@
     "p1": [
      {
       "s": "Dad",
-      "t": "Omar, you've been on that game for three hours. You need to cut down on screen time."
+      "t": "Omar, you've been on that game for three hours. We need to put a limit on screen time."
      },
      {
       "s": "Omar",
@@ -1707,7 +1751,10 @@
      "What one rule would you add to your family's agreement?"
     ]
    },
-   "exit": "Make me an offer about your screen time using 'How about if …?' and 'as long as'."
+   "exit": "Make me an offer about your screen time using 'How about if …?' and 'as long as'.",
+   "recycle": [
+    "cut down on"
+   ]
   },
   "2-1": {
    "objective": "Today you will negotiate with a cousin to agree on a family day out.",
@@ -1732,10 +1779,10 @@
      "frame": "If we ___, I could live with that."
     },
     {
-     "w": "come to an agreement",
-     "def": "to decide something together",
-     "ar": "نتوصّل إلى اتّفاق",
-     "frame": "We came to an agreement about ___."
+     "w": "strike a deal",
+     "def": "to agree on something after discussing it",
+     "ar": "يعقد صفقة / يتّفق",
+     "frame": "We struck a deal about ___."
     },
     {
      "w": "within budget",
@@ -1744,10 +1791,10 @@
      "frame": "We need a trip that's within budget, like ___."
     },
     {
-     "w": "how about if",
-     "def": "a polite way to suggest a deal",
-     "ar": "ما رأيك لو",
-     "frame": "How about if we ___ on the way back?"
+     "w": "settle for",
+     "def": "to accept something that is less than you wanted",
+     "ar": "يرضى بـ / يقبل بـ",
+     "frame": "I'd settle for ___ if ___."
     }
    ],
    "dialogue": {
@@ -1778,7 +1825,7 @@
      },
      {
       "s": "Noura",
-      "t": "Ten is a bit late for some parents. How about if we're back by nine?"
+      "t": "Ten is a bit late for some parents. Would you settle for nine?"
      },
      {
       "s": "Reem",
@@ -1786,7 +1833,7 @@
      },
      {
       "s": "Noura",
-      "t": "Great, so we've come to an agreement. Let's tell our mums."
+      "t": "Great, so we've struck a deal. Let's tell our mums."
      }
     ],
     "focus": "I'd go, provided that we leave after the afternoon heat.",
@@ -1824,7 +1871,11 @@
      "If you could plan a class trip anywhere in Saudi Arabia, where would you go?"
     ]
    },
-   "exit": "Suggest a weekend plan to me and add a condition with 'provided that'."
+   "exit": "Suggest a weekend plan to me and add a condition with 'provided that'.",
+   "recycle": [
+    "come to an agreement",
+    "how about if"
+   ]
   },
   "2-2": {
    "objective": "Today you will negotiate household chores and reach a fair deal with a sibling.",
@@ -1861,10 +1912,10 @@
      "frame": "I'll do the dishes, and in return ___."
     },
     {
-     "w": "meet halfway",
-     "def": "to accept part of what the other person wants",
-     "ar": "نلتقي في منتصف الطريق",
-     "frame": "If you ___, I'll meet you halfway."
+     "w": "split the difference",
+     "def": "to agree on an amount halfway between two others",
+     "ar": "نتقاسم الفرق / نلتقي في المنتصف",
+     "frame": "If you want ___ and I want ___, let's split the difference."
     }
    ],
    "dialogue": {
@@ -1884,7 +1935,7 @@
      },
      {
       "s": "Faisal",
-      "t": "OK, let's meet halfway. We'll take turns: one bathroom each."
+      "t": "OK, let's split the difference. We'll take turns: one bathroom each."
      }
     ],
     "p2": [
@@ -1940,7 +1991,10 @@
      "What is one chore every teenager should learn to do?"
     ]
    },
-   "exit": "Offer to do a chore for me and ask for something in return, using 'on condition that'."
+   "exit": "Offer to do a chore for me and ask for something in return, using 'on condition that'.",
+   "recycle": [
+    "meet halfway"
+   ]
   },
   "2-3": {
    "objective": "Today you will negotiate roles in a team and handle disagreement politely.",
@@ -1971,10 +2025,10 @@
      "frame": "It would be a win-win if ___."
     },
     {
-     "w": "as long as",
-     "def": "only if this condition is true",
-     "ar": "طالما أنّ / بشرط أنّ",
-     "frame": "I'll do the slides as long as ___."
+     "w": "on the understanding that",
+     "def": "on the condition that something is agreed",
+     "ar": "على أساس أن / بشرط أن",
+     "frame": "I'll do the slides on the understanding that ___."
     },
     {
      "w": "take on",
@@ -2011,7 +2065,7 @@
      },
      {
       "s": "Khalid",
-      "t": "I'm happy with that, as long as we both help Omar with the research."
+      "t": "I'm happy with that, on the understanding that we both help Omar with the research."
      },
      {
       "s": "Sam",
@@ -2037,7 +2091,7 @@
      },
      {
       "q": "But who will edit the video then?",
-      "hint": "Offer to take on a task, with a condition using 'as long as'."
+      "hint": "Offer to take on a task, with a condition using 'on the understanding that'."
      },
      {
       "q": "Do you think this plan is fair for both of us?",
@@ -2057,7 +2111,10 @@
      "How do you usually solve disagreements in a group?"
     ]
    },
-   "exit": "Tell me how you'd share the work in a team, using 'be willing to' and 'as long as'."
+   "exit": "Tell me how you'd share the work in a team, using 'be willing to' and 'on the understanding that'.",
+   "recycle": [
+    "as long as"
+   ]
   },
   "2-4": {
    "objective": "Today you will bargain politely for a better price at a market.",
@@ -2076,10 +2133,10 @@
      "frame": "If you throw in ___, I'll buy it."
     },
     {
-     "w": "a bargain",
-     "def": "something bought for less than its usual price",
-     "ar": "صفقة رابحة",
-     "frame": "The best bargain I ever got was ___."
+     "w": "a steal",
+     "def": "something that is very cheap for its quality",
+     "ar": "لقطة / سعر رخيص جداً",
+     "frame": "At ___ riyals, it was a steal."
     },
     {
      "w": "my final offer",
@@ -2088,10 +2145,10 @@
      "frame": "___ riyals is my final offer."
     },
     {
-     "w": "provided that",
-     "def": "only if; on the condition that",
-     "ar": "شريطة أن",
-     "frame": "I'll pay that, provided that ___."
+     "w": "on one condition",
+     "def": "used to say what must happen before you agree",
+     "ar": "بشرط واحد",
+     "frame": "I'll pay that on one condition: ___."
     },
     {
      "w": "drive a hard bargain",
@@ -2131,11 +2188,11 @@
      },
      {
       "s": "Emma",
-      "t": "A hundred and fifty is my final offer, provided that the purse is included."
+      "t": "A hundred and fifty is my final offer, on one condition: the purse is included."
      },
      {
       "s": "Seller",
-      "t": "OK, it's a deal. You've got yourself a bargain!"
+      "t": "OK, it's a deal. At that price, it's a steal!"
      }
     ],
     "focus": "How about a hundred and fifty, if you throw in that small purse?",
@@ -2157,7 +2214,7 @@
      },
      {
       "q": "OK, so do we have a deal?",
-      "hint": "Use 'my final offer' or 'provided that' to finish the deal."
+      "hint": "Use 'my final offer' or 'on one condition' to finish the deal."
      }
     ]
    },
@@ -2173,7 +2230,11 @@
      "What's the best thing to buy at a traditional market?"
     ]
    },
-   "exit": "Imagine I'm selling you a phone for 1,000 riyals. Make me an offer and add a condition."
+   "exit": "Imagine I'm selling you a phone for 1,000 riyals. Make me an offer and add a condition.",
+   "recycle": [
+    "a bargain",
+    "provided that"
+   ]
   },
   "2-5": {
    "objective": "Today you will negotiate a full weekend plan that everyone in the family can accept.",
@@ -2204,16 +2265,16 @@
      "frame": "___? Sounds like a plan!"
     },
     {
-     "w": "as long as",
-     "def": "only if this condition is true",
-     "ar": "طالما أنّ / بشرط أنّ",
-     "frame": "I'll come to the farm as long as ___."
+     "w": "assuming that",
+     "def": "if we accept that something is true",
+     "ar": "على افتراض أنّ",
+     "frame": "I'll come to the farm, assuming that ___."
     },
     {
-     "w": "I could live with that",
-     "def": "I can accept it, even if it isn't perfect",
-     "ar": "يمكنني تقبّل ذلك",
-     "frame": "If we ___, I could live with that."
+     "w": "that works for me",
+     "def": "used to say you are happy with a plan",
+     "ar": "هذا يناسبني",
+     "frame": "If we ___, that works for me."
     }
    ],
    "dialogue": {
@@ -2239,7 +2300,7 @@
     "p2": [
      {
       "s": "Dad",
-      "t": "Hmm, I could live with that, as long as we come home before midnight."
+      "t": "Hmm, that works for me, assuming that we come home before midnight."
      },
      {
       "s": "Reem",
@@ -2269,7 +2330,7 @@
      },
      {
       "q": "I'll agree, but only if we don't spend too much money.",
-      "hint": "Accept with 'as long as' or 'provided that' and add a detail."
+      "hint": "Accept with 'assuming that' or 'that works for me' and add a detail."
      },
      {
       "q": "So what's our final plan?",
@@ -2289,23 +2350,27 @@
      "Why do you think istirahas are so popular in Saudi Arabia?"
     ]
    },
-   "exit": "Without help, negotiate a plan for next Friday with me, using two of this unit's expressions."
+   "exit": "Without help, negotiate a plan for next Friday with me, using two of this unit's expressions.",
+   "recycle": [
+    "as long as",
+    "I could live with that"
+   ]
   },
   "3-0": {
    "objective": "Today you will tell a story about a trip using the past simple, past continuous and past perfect.",
    "warmup": "Have you ever been camping in the desert? What happened?",
    "expressions": [
     {
-     "w": "suddenly",
-     "def": "very quickly and when you don't expect it",
-     "ar": "فجأة",
-     "frame": "We were having dinner when suddenly ___."
+     "w": "a narrow escape",
+     "def": "a situation where you nearly had an accident or problem",
+     "ar": "نجاة بأعجوبة",
+     "frame": "I once had a narrow escape when ___."
     },
     {
-     "w": "eventually",
-     "def": "in the end, after a long time",
-     "ar": "في النهاية / أخيراً",
-     "frame": "Eventually, we ___."
+     "w": "after what felt like hours",
+     "def": "after a time that seemed very long",
+     "ar": "بعد ما بدا وكأنه ساعات",
+     "frame": "After what felt like hours, we ___."
     },
     {
      "w": "get stuck",
@@ -2363,11 +2428,11 @@
      },
      {
       "s": "Sam",
-      "t": "What a relief!"
+      "t": "What a relief! That was a narrow escape."
      },
      {
       "s": "Faisal",
-      "t": "Eventually, he pulled us out, and we all drank tea together by the fire."
+      "t": "After what felt like hours, he pulled us out, and we all drank tea together by the fire."
      }
     ],
     "focus": "We were driving over the dunes when suddenly the car got stuck.",
@@ -2405,7 +2470,11 @@
      "What would you take with you on a desert trip?"
     ]
    },
-   "exit": "Tell me two sentences about a trip: one with 'suddenly' and one with 'eventually'."
+   "exit": "Tell me two sentences about a trip: one with 'suddenly' and one with 'eventually'.",
+   "recycle": [
+    "suddenly",
+    "eventually"
+   ]
   },
   "3-1": {
    "objective": "Today you will tell a funny story about an embarrassing moment and keep your listener interested.",
@@ -2442,10 +2511,10 @@
      "frame": "Everyone burst out laughing when ___."
     },
     {
-     "w": "suddenly",
-     "def": "very quickly and when you don't expect it",
-     "ar": "فجأة",
-     "frame": "Suddenly, the whole room ___."
+     "w": "you could have heard a pin drop",
+     "def": "it was completely silent",
+     "ar": "ساد صمت تام",
+     "frame": "When ___, you could have heard a pin drop."
     }
    ],
    "dialogue": {
@@ -2475,7 +2544,7 @@
      },
      {
       "s": "Reem",
-      "t": "It landed right on the teacher's desk! Suddenly, the whole room went silent."
+      "t": "It landed right on the teacher's desk! You could have heard a pin drop."
      },
      {
       "s": "Noura",
@@ -2521,7 +2590,10 @@
      "Is it easy for you to laugh at yourself? Why?"
     ]
    },
-   "exit": "Tell me a short funny story in two sentences, using 'had just' and 'to make matters worse'."
+   "exit": "Tell me a short funny story in two sentences, using 'had just' and 'to make matters worse'.",
+   "recycle": [
+    "suddenly"
+   ]
   },
   "3-2": {
    "objective": "Today you will tell a story about a journey that went wrong, putting the events in a clear order.",
@@ -2558,10 +2630,10 @@
      "frame": "I arrived in the nick of time for ___."
     },
     {
-     "w": "eventually",
-     "def": "in the end, after a long time",
-     "ar": "في النهاية / أخيراً",
-     "frame": "Eventually, we ___."
+     "w": "a mad dash",
+     "def": "a very fast and hurried run to get somewhere",
+     "ar": "ركض مسرع / اندفاع",
+     "frame": "There was a mad dash to ___ when ___."
     }
    ],
    "dialogue": {
@@ -2600,7 +2672,7 @@
      },
      {
       "s": "Omar",
-      "t": "Eventually, we ran onto the plane in the nick of time. Everyone was staring at us!"
+      "t": "After a mad dash, we got onto the plane in the nick of time. Everyone was staring at us!"
      }
     ],
     "focus": "By the time we reached the airport, most passengers had already boarded.",
@@ -2638,7 +2710,10 @@
      "What's the most stressful part of travelling, in your opinion?"
     ]
    },
-   "exit": "Tell me about a time you were nearly late, using 'by the time' and 'in the nick of time'."
+   "exit": "Tell me about a time you were nearly late, using 'by the time' and 'in the nick of time'.",
+   "recycle": [
+    "eventually"
+   ]
   },
   "3-3": {
    "objective": "Today you will tell a story about a surprise, using dramatic language to build suspense.",
@@ -2675,10 +2750,10 @@
      "frame": "I was lost for words when ___."
     },
     {
-     "w": "had just",
-     "def": "used for something that happened very shortly before",
-     "ar": "كان قد … للتوّ",
-     "frame": "She had just ___ when everyone shouted 'Surprise!'"
+     "w": "jump out of your skin",
+     "def": "to be suddenly very surprised or frightened",
+     "ar": "يفزع / يقفز من مكانه",
+     "frame": "I nearly jumped out of my skin when ___."
     }
    ],
    "dialogue": {
@@ -2712,7 +2787,7 @@
      },
      {
       "s": "Emma",
-      "t": "She must have been shocked!"
+      "t": "She must have jumped out of her skin!"
      },
      {
       "s": "Noura",
@@ -2754,7 +2829,10 @@
      "What's the best surprise you could give a family member?"
     ]
    },
-   "exit": "Describe a surprise in two sentences using 'all of a sudden' and 'it turned out that'."
+   "exit": "Describe a surprise in two sentences using 'all of a sudden' and 'it turned out that'.",
+   "recycle": [
+    "had just"
+   ]
   },
   "3-4": {
    "objective": "Today you will retell a traditional tale with a clear beginning, middle and end.",
@@ -2791,10 +2869,10 @@
      "frame": "The moral of the story is that ___."
     },
     {
-     "w": "eventually",
-     "def": "in the end, after a long time",
-     "ar": "في النهاية / أخيراً",
-     "frame": "Eventually, the hero ___."
+     "w": "a laughing stock",
+     "def": "a person everyone laughs at because they look silly",
+     "ar": "أضحوكة",
+     "frame": "In the story, ___ became a laughing stock because ___."
     }
    ],
    "dialogue": {
@@ -2832,7 +2910,7 @@
      },
      {
       "s": "Reem",
-      "t": "Ha! Everyone must have laughed at them."
+      "t": "Ha! They must have become a laughing stock."
      },
      {
       "s": "Grandpa",
@@ -2878,7 +2956,10 @@
      "Which story from your childhood do you still remember?"
     ]
    },
-   "exit": "Tell me the ending of any story you know, and say what the moral is."
+   "exit": "Tell me the ending of any story you know, and say what the moral is.",
+   "recycle": [
+    "eventually"
+   ]
   },
   "3-5": {
    "objective": "Today you will tell a complete story with impact, using narrative tenses and dramatic language.",
@@ -2891,10 +2972,10 @@
      "frame": "To set the scene, it was a ___ evening."
     },
     {
-     "w": "out of the blue",
-     "def": "completely unexpectedly",
-     "ar": "على غير توقّع",
-     "frame": "Out of the blue, ___."
+     "w": "a happy ending",
+     "def": "the good way a story finishes",
+     "ar": "نهاية سعيدة",
+     "frame": "My favourite story has a happy ending because ___."
     },
     {
      "w": "my heart was pounding",
@@ -2909,16 +2990,16 @@
      "frame": "To cut a long story short, ___."
     },
     {
-     "w": "by the time",
-     "def": "used to say something had happened before a certain moment",
-     "ar": "بحلول الوقت الذي",
-     "frame": "By the time I got there, ___."
+     "w": "before I knew it",
+     "def": "very quickly, so that you hardly noticed",
+     "ar": "قبل أن أنتبه / بسرعة",
+     "frame": "Before I knew it, ___."
     },
     {
-     "w": "it turned out that",
-     "def": "used to say what was finally discovered",
-     "ar": "اتّضح أنّ",
-     "frame": "It turned out that ___."
+     "w": "my heart sank",
+     "def": "used to say you suddenly felt sad or worried",
+     "ar": "انقبض قلبي / خاب أملي",
+     "frame": "My heart sank when ___."
     }
    ],
    "dialogue": {
@@ -2945,15 +3026,15 @@
     "p2": [
      {
       "s": "Sam",
-      "t": "By the time I got there, his father had already climbed halfway up."
+      "t": "Before I knew it, his father had already climbed halfway up."
      },
      {
       "s": "Sam",
-      "t": "To cut a long story short, we got the kite down together, but it turned out that it was ripped."
+      "t": "To cut a long story short, we got the kite down together, but my heart sank: it was ripped."
      },
      {
       "s": "Faisal",
-      "t": "Oh no! How did it end?"
+      "t": "Oh no! Was there a happy ending?"
      },
      {
       "s": "Sam",
@@ -2999,7 +3080,12 @@
      "Do you think stories are better heard, read or watched?"
     ]
    },
-   "exit": "Without notes, tell me a 30-second story with a clear beginning, a surprise and an ending."
+   "exit": "Without notes, tell me a 30-second story with a clear beginning, a surprise and an ending.",
+   "recycle": [
+    "out of the blue",
+    "by the time",
+    "it turned out that"
+   ]
   }
  },
  "kits": {
@@ -3021,9 +3107,9 @@
      "ex": "It looks as if they're celebrating something special."
     },
     {
-     "w": "get together",
-     "ar": "يجتمعون",
-     "ex": "The whole family gets together at my grandmother's house on Eid."
+     "w": "a family reunion",
+     "ar": "لمّة العائلة / اجتماع عائلي",
+     "ex": "Our family reunion is always on the second day of Eid."
     },
     {
      "w": "judging by",
@@ -3079,9 +3165,9 @@
   "0-1": {
    "words": [
     {
-     "w": "it looks as if",
-     "ar": "يبدو كأنّ",
-     "ex": "It looks as if the shop is about to close."
+     "w": "at a guess",
+     "ar": "على سبيل التخمين",
+     "ex": "At a guess, it's about six o'clock in the picture."
     },
     {
      "w": "seem to be",
@@ -3099,9 +3185,9 @@
      "ex": "The man is haggling over the price of a carpet."
     },
     {
-     "w": "in the middle of",
-     "ar": "منشغل بـ / في خضمّ",
-     "ex": "The boy is in the middle of choosing a gift."
+     "w": "browse",
+     "ar": "يتصفّح / يتفرّج على البضائع",
+     "ex": "We browsed the stalls for an hour but bought nothing."
     },
     {
      "w": "stall",
@@ -3128,11 +3214,11 @@
     },
     {
      "s": "Omar",
-     "t": "She appears to be in the middle of choosing something. Maybe saffron or cardamom?"
+     "t": "She appears to be browsing the spices. Maybe saffron or cardamom?"
     },
     {
      "s": "Sam",
-     "t": "Judging by the lights, it looks as if it's evening."
+     "t": "At a guess, it's evening, judging by the lights."
     },
     {
      "s": "Omar",
@@ -3167,19 +3253,19 @@
      "ex": "It can't have been a toy; it's far too heavy."
     },
     {
-     "w": "ancient",
-     "ar": "قديم جداً / أثري",
-     "ex": "AlUla is full of ancient tombs and inscriptions."
+     "w": "antique",
+     "ar": "تحفة أثرية / قطعة قديمة ثمينة",
+     "ex": "This antique coffee pot belonged to my great-grandfather."
     },
     {
-     "w": "judging by",
-     "ar": "استناداً إلى",
-     "ex": "Judging by its size, it must have been very expensive."
+     "w": "a telltale sign",
+     "ar": "علامة دالّة",
+     "ex": "The black marks are a telltale sign that it was used over a fire."
     },
     {
-     "w": "date back to",
-     "ar": "يعود تاريخه إلى",
-     "ex": "These rock carvings date back to the Nabataean period."
+     "w": "have been around since",
+     "ar": "موجود منذ",
+     "ex": "Dallahs have been around since long before electric kettles."
     }
    ],
    "dialogue": [
@@ -3197,15 +3283,15 @@
     },
     {
      "s": "Noura",
-     "t": "That makes sense. It might have belonged to a Bedouin family."
+     "t": "That makes sense. The burn marks are a telltale sign. It might have belonged to a Bedouin family."
     },
     {
      "s": "Faisal",
-     "t": "The sign over there says these objects date back to the 1800s."
+     "t": "The sign over there says objects like this have been around since the 1800s."
     },
     {
      "s": "Noura",
-     "t": "So it's not exactly ancient, but it's still older than our great-grandparents!"
+     "t": "So it's a real antique. It's older than our great-grandparents!"
     },
     {
      "s": "Faisal",
@@ -3250,9 +3336,9 @@
      "ex": "The final minutes kept everyone on the edge of their seats."
     },
     {
-     "w": "must have been",
-     "ar": "لا بدّ أنّه كان",
-     "ex": "The race must have been really tough."
+     "w": "nail-biting",
+     "ar": "مثير ومشوّق جداً",
+     "ex": "The final was nail-biting until the last second."
     }
    ],
    "dialogue": [
@@ -3274,7 +3360,7 @@
     },
     {
      "s": "Omar",
-     "t": "Wow, everyone must have been on the edge of their seats."
+     "t": "Wow, what a nail-biting finish! Everyone must have been on the edge of their seats."
     },
     {
      "s": "Khalid",
@@ -3318,14 +3404,14 @@
      "ex": "The children in the back seat look worn out."
     },
     {
-     "w": "set off",
-     "ar": "ينطلق في رحلة",
-     "ex": "We set off at dawn to avoid the heat."
+     "w": "at the crack of dawn",
+     "ar": "مع أول خيوط الفجر",
+     "ex": "We left at the crack of dawn to beat the traffic."
     },
     {
-     "w": "it looks as if",
-     "ar": "يبدو كأنّ",
-     "ex": "It looks as if they've been driving all night."
+     "w": "a long haul",
+     "ar": "رحلة طويلة ومتعبة",
+     "ex": "Driving from Riyadh to Abha is a long haul."
     }
    ],
    "dialogue": [
@@ -3347,7 +3433,7 @@
     },
     {
      "s": "Reem",
-     "t": "The people in the car look worn out. They might have set off very early."
+     "t": "The people in the car look worn out. They might have left at the crack of dawn."
     },
     {
      "s": "Ms Sarah",
@@ -3355,7 +3441,7 @@
     },
     {
      "s": "Reem",
-     "t": "Judging by the empty coffee cups, it looks as if they've been driving for hours."
+     "t": "Judging by the empty coffee cups, it's been a long haul for them."
     }
    ],
    "grammar": {
@@ -3391,14 +3477,14 @@
      "ex": "They might have been practising for weeks."
     },
     {
-     "w": "look as though",
-     "ar": "يبدو كما لو أنّ",
-     "ex": "She looks as though she's about to cry with happiness."
+     "w": "give the impression that",
+     "ar": "يعطي انطباعاً بأنّ",
+     "ex": "The team gives the impression that they are very tired."
     },
     {
-     "w": "both pictures show",
-     "ar": "كلتا الصورتين تُظهر",
-     "ex": "Both pictures show teams working together."
+     "w": "what they have in common",
+     "ar": "القاسم المشترك بينهما",
+     "ex": "What the two photos have in common is the desert."
     }
    ],
    "dialogue": [
@@ -3408,7 +3494,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Both pictures show teams of young people. At first glance, they seem very different."
+     "t": "What they have in common is that they show teams of young people. At first glance, they seem very different."
     },
     {
      "s": "Faisal",
@@ -3449,9 +3535,9 @@
      "ex": "On the one hand, the city has great schools and hospitals."
     },
     {
-     "w": "on the other hand",
-     "ar": "من ناحية أخرى",
-     "ex": "On the other hand, the rent is very expensive."
+     "w": "sleepy",
+     "ar": "هادئ وخامل (مكان)",
+     "ex": "My grandparents live in a sleepy village near Taif."
     },
     {
      "w": "the main advantage",
@@ -3489,7 +3575,7 @@
     },
     {
      "s": "Khalid",
-     "t": "Well, the village has its drawbacks too. There's no cinema or big mall."
+     "t": "Well, the village has its drawbacks too. It's a sleepy place, with no cinema or big mall."
     },
     {
      "s": "Omar",
@@ -3542,9 +3628,9 @@
      "ex": "I get distracted when my phone keeps buzzing."
     },
     {
-     "w": "a drawback",
-     "ar": "عيب / سلبية",
-     "ex": "One drawback of online exams is a weak internet connection."
+     "w": "a trade-off",
+     "ar": "مقايضة / موازنة بين أمرين",
+     "ex": "There is always a trade-off between price and quality."
     }
    ],
    "dialogue": [
@@ -3570,7 +3656,7 @@
     },
     {
      "s": "Hind",
-     "t": "So maybe the best option is a mix of both?"
+     "t": "So it's a trade-off. Maybe the best option is a mix of both?"
     },
     {
      "s": "Reem",
@@ -3605,9 +3691,9 @@
      "ex": "The downside of a big phone is that it doesn't fit in my pocket."
     },
     {
-     "w": "keep in touch",
-     "ar": "يبقى على تواصل",
-     "ex": "I keep in touch with my cousins in Dammam online."
+     "w": "stay connected",
+     "ar": "يبقى على اتصال",
+     "ex": "Video calls help us stay connected with our cousins abroad."
     },
     {
      "w": "be addicted to",
@@ -3615,9 +3701,9 @@
      "ex": "My brother is addicted to football videos."
     },
     {
-     "w": "on the other hand",
-     "ar": "من ناحية أخرى",
-     "ex": "On the other hand, a phone can be useful in an emergency."
+     "w": "there's a risk that",
+     "ar": "هناك خطر أن",
+     "ex": "There's a risk that you'll waste hours on games."
     }
    ],
    "dialogue": [
@@ -3631,7 +3717,7 @@
     },
     {
      "s": "Faisal",
-     "t": "I know, but I'd use it to keep in touch with you and Dad."
+     "t": "I know, but I'd use it to stay connected with you and Dad."
     },
     {
      "s": "Faisal",
@@ -3639,7 +3725,7 @@
     },
     {
      "s": "Mum",
-     "t": "On the other hand, you might stay up late playing games."
+     "t": "But there's a risk that you'll stay up late playing games."
     },
     {
      "s": "Faisal",
@@ -3688,9 +3774,9 @@
      "ex": "All things considered, it was a great day."
     },
     {
-     "w": "despite",
-     "ar": "رغم / بالرغم من",
-     "ex": "Despite the long queue, the food was worth it."
+     "w": "do you good",
+     "ar": "يفيدك / مفيد لك",
+     "ex": "A walk after dinner will do you good."
     }
    ],
    "dialogue": [
@@ -3712,7 +3798,7 @@
     },
     {
      "s": "Noura",
-     "t": "Exactly. Despite the extra time, we'd feel better for the match tomorrow."
+     "t": "Exactly. A proper meal will do us good, and we'd feel better for the match tomorrow."
     },
     {
      "s": "Emma",
@@ -3756,9 +3842,9 @@
      "ex": "The festival brings money to the local community."
     },
     {
-     "w": "whereas",
-     "ar": "بينما / في حين",
-     "ex": "Summer is quiet, whereas winter is very busy."
+     "w": "opinions are divided",
+     "ar": "الآراء منقسمة",
+     "ex": "Opinions are divided about building a hotel near the tombs."
     },
     {
      "w": "outweigh",
@@ -3781,7 +3867,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Some people want unlimited visitors, whereas others think there should be strict limits."
+     "t": "Opinions are divided: some people want unlimited visitors, but others think there should be strict limits."
     },
     {
      "s": "Omar",
@@ -3809,9 +3895,9 @@
   "1-5": {
    "words": [
     {
-     "w": "weigh up",
-     "ar": "يوازن بين",
-     "ex": "Let's weigh up the pros and cons before we vote."
+     "w": "take into account",
+     "ar": "يأخذ بعين الاعتبار",
+     "ex": "We have to take the heat into account."
     },
     {
      "w": "there's a lot to be said for",
@@ -3829,14 +3915,14 @@
      "ex": "On balance, I think uniforms are a good idea."
     },
     {
-     "w": "on the one hand",
-     "ar": "من ناحية",
-     "ex": "On the one hand, we'd get more sleep."
+     "w": "point taken",
+     "ar": "وجهة نظرك مفهومة",
+     "ex": "Point taken, but I still think it's too early."
     },
     {
-     "w": "all things considered",
-     "ar": "بعد النظر في كل الجوانب",
-     "ex": "All things considered, eight o'clock is a fair time."
+     "w": "when all is said and done",
+     "ar": "في نهاية المطاف",
+     "ex": "When all is said and done, health matters most."
     }
    ],
    "dialogue": [
@@ -3850,7 +3936,7 @@
     },
     {
      "s": "Dana",
-     "t": "On the one hand, that's true. On the other hand, we'd concentrate much better."
+     "t": "Point taken, but we'd concentrate much better."
     },
     {
      "s": "Dana",
@@ -3858,11 +3944,11 @@
     },
     {
      "s": "Noura",
-     "t": "Let's weigh up both sides: better sleep and focus versus traffic and heat."
+     "t": "Let's take everything into account: better sleep and focus versus traffic and heat."
     },
     {
      "s": "Dana",
-     "t": "So, all things considered, what's your conclusion?"
+     "t": "So, when all is said and done, what's your conclusion?"
     },
     {
      "s": "Noura",
@@ -3902,9 +3988,9 @@
      "ex": "Two hours on Friday? That's a deal!"
     },
     {
-     "w": "cut down on",
-     "ar": "يقلّل من",
-     "ex": "I'm trying to cut down on sugary drinks."
+     "w": "put a limit on",
+     "ar": "يضع حدّاً لـ",
+     "ex": "My parents put a limit on my gaming time."
     },
     {
      "w": "fair enough",
@@ -3915,7 +4001,7 @@
    "dialogue": [
     {
      "s": "Dad",
-     "t": "Omar, you've been on that game for three hours. You need to cut down on screen time."
+     "t": "Omar, you've been on that game for three hours. We need to put a limit on screen time."
     },
     {
      "s": "Omar",
@@ -3970,9 +4056,9 @@
      "ex": "It's not my first choice, but I could live with that."
     },
     {
-     "w": "come to an agreement",
-     "ar": "نتوصّل إلى اتّفاق",
-     "ex": "After a long chat, we came to an agreement."
+     "w": "strike a deal",
+     "ar": "يعقد صفقة / يتّفق",
+     "ex": "My brother and I struck a deal about the TV remote."
     },
     {
      "w": "within budget",
@@ -3980,9 +4066,9 @@
      "ex": "The museum trip is cheap and well within budget."
     },
     {
-     "w": "how about if",
-     "ar": "ما رأيك لو",
-     "ex": "How about if we stop for ice cream on the way back?"
+     "w": "settle for",
+     "ar": "يرضى بـ / يقبل بـ",
+     "ex": "We wanted a big trip, but we settled for a picnic."
     }
    ],
    "dialogue": [
@@ -4004,7 +4090,7 @@
     },
     {
      "s": "Noura",
-     "t": "Ten is a bit late for some parents. How about if we're back by nine?"
+     "t": "Ten is a bit late for some parents. Would you settle for nine?"
     },
     {
      "s": "Reem",
@@ -4012,7 +4098,7 @@
     },
     {
      "s": "Noura",
-     "t": "Great, so we've come to an agreement. Let's tell our mums."
+     "t": "Great, so we've struck a deal. Let's tell our mums."
     }
    ],
    "grammar": {
@@ -4053,9 +4139,9 @@
      "ex": "I helped him with maths, and in return he fixed my bike."
     },
     {
-     "w": "meet halfway",
-     "ar": "نلتقي في منتصف الطريق",
-     "ex": "Let's meet halfway: you vacuum and I'll dust."
+     "w": "split the difference",
+     "ar": "نتقاسم الفرق / نلتقي في المنتصف",
+     "ex": "You said ten, I said twenty. Let's split the difference: fifteen."
     }
    ],
    "dialogue": [
@@ -4121,9 +4207,9 @@
      "ex": "Sharing the car is a win-win for both families."
     },
     {
-     "w": "as long as",
-     "ar": "طالما أنّ / بشرط أنّ",
-     "ex": "I'll present as long as you help me practise."
+     "w": "on the understanding that",
+     "ar": "على أساس أن / بشرط أن",
+     "ex": "I'll lend you my notes on the understanding that you return them."
     },
     {
      "w": "take on",
@@ -4150,7 +4236,7 @@
     },
     {
      "s": "Khalid",
-     "t": "I'm happy with that, as long as we both help Omar with the research."
+     "t": "I'm happy with that, on the understanding that we both help Omar with the research."
     },
     {
      "s": "Sam",
@@ -4166,7 +4252,7 @@
     "ar": "نستخدم Would you be willing to لطلب مهذّب، ثم نضيف شرطاً بـ as long as.",
     "examples": [
      "Would you be willing to do the slides?",
-     "I'm happy to present, as long as you help with the research.",
+     "I'm happy to present, on the understanding that you help with the research.",
      "Can we compromise on the deadline?"
     ]
    }
@@ -4184,9 +4270,9 @@
      "ex": "The seller threw in a free phone case."
     },
     {
-     "w": "a bargain",
-     "ar": "صفقة رابحة",
-     "ex": "These trainers were a real bargain."
+     "w": "a steal",
+     "ar": "لقطة / سعر رخيص جداً",
+     "ex": "These trainers were a steal at half price."
     },
     {
      "w": "my final offer",
@@ -4194,9 +4280,9 @@
      "ex": "Eighty riyals is my final offer."
     },
     {
-     "w": "provided that",
-     "ar": "شريطة أن",
-     "ex": "I'll take it, provided that you deliver it today."
+     "w": "on one condition",
+     "ar": "بشرط واحد",
+     "ex": "You can borrow it on one condition: bring it back tomorrow."
     },
     {
      "w": "drive a hard bargain",
@@ -4227,11 +4313,11 @@
     },
     {
      "s": "Emma",
-     "t": "A hundred and fifty is my final offer, provided that the purse is included."
+     "t": "A hundred and fifty is my final offer, on one condition: the purse is included."
     },
     {
      "s": "Seller",
-     "t": "OK, it's a deal. You've got yourself a bargain!"
+     "t": "OK, it's a deal. At that price, it's a steal!"
     }
    ],
    "grammar": {
@@ -4240,7 +4326,7 @@
     "examples": [
      "Would you take eighty riyals?",
      "If you throw in the case, I'll buy it.",
-     "I'll pay 150, provided that the purse is included."
+     "I'll pay 150 on one condition: the purse is included."
     ]
    }
   },
@@ -4267,14 +4353,14 @@
      "ex": "Lunch at one and the park after? Sounds like a plan!"
     },
     {
-     "w": "as long as",
-     "ar": "طالما أنّ / بشرط أنّ",
-     "ex": "We can stay late as long as we drive carefully."
+     "w": "assuming that",
+     "ar": "على افتراض أنّ",
+     "ex": "We'll have the barbecue outside, assuming that it doesn't rain."
     },
     {
-     "w": "I could live with that",
-     "ar": "يمكنني تقبّل ذلك",
-     "ex": "Home by eleven? I could live with that."
+     "w": "that works for me",
+     "ar": "هذا يناسبني",
+     "ex": "Saturday at five? That works for me."
     }
    ],
    "dialogue": [
@@ -4292,7 +4378,7 @@
     },
     {
      "s": "Dad",
-     "t": "Hmm, I could live with that, as long as we come home before midnight."
+     "t": "Hmm, that works for me, assuming that we come home before midnight."
     },
     {
      "s": "Reem",
@@ -4312,22 +4398,22 @@
     "ar": "مراجعة: الاقتراح (How about if / What if)، الشرط (as long as / provided that)، الموافقة (That's a deal / Sounds like a plan).",
     "examples": [
      "How about if we go on Friday instead?",
-     "I'll agree, as long as we're home by ten.",
-     "Provided that it's cheap, I could live with that."
+     "I'll agree, assuming that we're home by ten.",
+     "Provided that it's cheap, that works for me."
     ]
    }
   },
   "3-0": {
    "words": [
     {
-     "w": "suddenly",
-     "ar": "فجأة",
-     "ex": "We were sitting by the fire when suddenly the wind started."
+     "w": "a narrow escape",
+     "ar": "نجاة بأعجوبة",
+     "ex": "The car stopped just in front of us. It was a narrow escape!"
     },
     {
-     "w": "eventually",
-     "ar": "في النهاية / أخيراً",
-     "ex": "Eventually, we found the right road."
+     "w": "after what felt like hours",
+     "ar": "بعد ما بدا وكأنه ساعات",
+     "ex": "After what felt like hours, the bus finally came."
     },
     {
      "w": "get stuck",
@@ -4373,11 +4459,11 @@
     },
     {
      "s": "Sam",
-     "t": "What a relief!"
+     "t": "What a relief! That was a narrow escape."
     },
     {
      "s": "Faisal",
-     "t": "Eventually, he pulled us out, and we all drank tea together by the fire."
+     "t": "After what felt like hours, he pulled us out, and we all drank tea together by the fire."
     }
    ],
    "grammar": {
@@ -4386,7 +4472,7 @@
     "examples": [
      "We were driving when the car got stuck.",
      "The sun had already set.",
-     "Eventually, a man pulled us out."
+     "After what felt like hours, a man pulled us out."
     ]
    }
   },
@@ -4418,9 +4504,9 @@
      "ex": "We all burst out laughing at the cat video."
     },
     {
-     "w": "suddenly",
-     "ar": "فجأة",
-     "ex": "Suddenly, the lights went out."
+     "w": "you could have heard a pin drop",
+     "ar": "ساد صمت تام",
+     "ex": "When the head teacher walked in, you could have heard a pin drop."
     }
    ],
    "dialogue": [
@@ -4442,7 +4528,7 @@
     },
     {
      "s": "Reem",
-     "t": "It landed right on the teacher's desk! Suddenly, the whole room went silent."
+     "t": "It landed right on the teacher's desk! You could have heard a pin drop."
     },
     {
      "s": "Noura",
@@ -4491,9 +4577,9 @@
      "ex": "We got to the station in the nick of time."
     },
     {
-     "w": "eventually",
-     "ar": "في النهاية / أخيراً",
-     "ex": "Eventually, we found a taxi."
+     "w": "a mad dash",
+     "ar": "ركض مسرع / اندفاع",
+     "ex": "There was a mad dash for the door when the bell rang."
     }
    ],
    "dialogue": [
@@ -4523,7 +4609,7 @@
     },
     {
      "s": "Omar",
-     "t": "Eventually, we ran onto the plane in the nick of time. Everyone was staring at us!"
+     "t": "After a mad dash, we got onto the plane in the nick of time. Everyone was staring at us!"
     }
    ],
    "grammar": {
@@ -4564,9 +4650,9 @@
      "ex": "Grandpa was lost for words when he saw the old photos."
     },
     {
-     "w": "had just",
-     "ar": "كان قد … للتوّ",
-     "ex": "He had just opened the door when the lights came on."
+     "w": "jump out of your skin",
+     "ar": "يفزع / يقفز من مكانه",
+     "ex": "I jumped out of my skin when the door slammed."
     }
    ],
    "dialogue": [
@@ -4592,7 +4678,7 @@
     },
     {
      "s": "Emma",
-     "t": "She must have been shocked!"
+     "t": "She must have jumped out of her skin!"
     },
     {
      "s": "Noura",
@@ -4637,9 +4723,9 @@
      "ex": "The moral of the story is that honesty pays."
     },
     {
-     "w": "eventually",
-     "ar": "في النهاية / أخيراً",
-     "ex": "Eventually, the clever girl found the way home."
+     "w": "a laughing stock",
+     "ar": "أضحوكة",
+     "ex": "He became a laughing stock after the photo went online."
     }
    ],
    "dialogue": [
@@ -4661,7 +4747,7 @@
     },
     {
      "s": "Reem",
-     "t": "Ha! Everyone must have laughed at them."
+     "t": "Ha! They must have become a laughing stock."
     },
     {
      "s": "Grandpa",
@@ -4690,9 +4776,9 @@
      "ex": "To set the scene, it was a cold night in the mountains."
     },
     {
-     "w": "out of the blue",
-     "ar": "على غير توقّع",
-     "ex": "Out of the blue, my old friend called me."
+     "w": "a happy ending",
+     "ar": "نهاية سعيدة",
+     "ex": "Don't worry, the film has a happy ending."
     },
     {
      "w": "my heart was pounding",
@@ -4705,14 +4791,14 @@
      "ex": "To cut a long story short, we got home safely."
     },
     {
-     "w": "by the time",
-     "ar": "بحلول الوقت الذي",
-     "ex": "By the time help arrived, we had fixed the tyre ourselves."
+     "w": "before I knew it",
+     "ar": "قبل أن أنتبه / بسرعة",
+     "ex": "Before I knew it, the holiday was over."
     },
     {
-     "w": "it turned out that",
-     "ar": "اتّضح أنّ",
-     "ex": "It turned out that the shop had moved."
+     "w": "my heart sank",
+     "ar": "انقبض قلبي / خاب أملي",
+     "ex": "My heart sank when I saw my exam mark."
     }
    ],
    "dialogue": [
@@ -4730,11 +4816,11 @@
     },
     {
      "s": "Sam",
-     "t": "To cut a long story short, we got the kite down together, but it turned out that it was ripped."
+     "t": "To cut a long story short, we got the kite down together, but my heart sank: it was ripped."
     },
     {
      "s": "Faisal",
-     "t": "Oh no! How did it end?"
+     "t": "Oh no! Was there a happy ending?"
     },
     {
      "s": "Sam",
@@ -4830,15 +4916,12 @@
      "appears",
      "to",
      "be",
-     "in",
-     "the",
-     "middle",
-     "of",
-     "choosing",
+     "browsing",
+     "for",
      "a",
      "gift."
     ],
-    "answer": "She appears to be in the middle of choosing a gift.",
+    "answer": "She appears to be browsing for a gift.",
     "ar": "رتّب الجملة"
    },
    {
@@ -4947,12 +5030,12 @@
    },
    {
     "type": "mc",
-    "q": "Which word means 'thousands of years old'?",
+    "q": "An old object that is valuable because of its age is ___.",
     "options": [
-     "ancient",
-     "modern",
-     "recent",
-     "current"
+     "an antique",
+     "a gadget",
+     "a souvenir",
+     "a bargain"
     ],
     "answer": 0
    }
@@ -5045,15 +5128,14 @@
      "I'd",
      "say",
      "they",
-     "set",
-     "off",
-     "very",
-     "early",
-     "in",
+     "left",
+     "at",
      "the",
-     "morning."
+     "crack",
+     "of",
+     "dawn."
     ],
-    "answer": "I'd say they set off very early in the morning.",
+    "answer": "I'd say they left at the crack of dawn.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5080,14 +5162,14 @@
    },
    {
     "type": "mc",
-    "q": "We ___ at 5 a.m. to avoid the traffic.",
+    "q": "We left at ___ of dawn to avoid the traffic.",
     "options": [
-     "set up",
-     "took up",
-     "set off",
-     "put off"
+     "the crack",
+     "the crash",
+     "the crumb",
+     "the crown"
     ],
-    "answer": 2
+    "answer": 0
    }
   ],
   "0-5": [
@@ -5161,17 +5243,14 @@
    {
     "type": "order",
     "words": [
-     "On",
-     "the",
-     "other",
-     "hand,",
-     "the",
+     "The",
      "village",
      "is",
-     "very",
-     "peaceful."
+     "quiet",
+     "and",
+     "sleepy."
     ],
-    "answer": "On the other hand, the village is very peaceful.",
+    "answer": "The village is quiet and sleepy.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5313,14 +5392,13 @@
      "my",
      "phone",
      "to",
-     "keep",
-     "in",
-     "touch",
+     "stay",
+     "connected",
      "with",
      "my",
      "grandparents."
     ],
-    "answer": "I use my phone to keep in touch with my grandparents.",
+    "answer": "I use my phone to stay connected with my grandparents.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5533,14 +5611,14 @@
    },
    {
     "type": "mc",
-    "q": "Before deciding, let's ___ the pros and cons.",
+    "q": "Before deciding, we need to take the traffic into ___.",
     "options": [
-     "make up",
-     "weigh up",
-     "look up",
-     "give up"
+     "account",
+     "mind",
+     "notice",
+     "place"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5602,14 +5680,14 @@
    },
    {
     "type": "mc",
-    "q": "I want to ___ sugar this month.",
+    "q": "Dad wants to put a ___ on my screen time.",
     "options": [
-     "put up with",
-     "look forward to",
-     "get on with",
-     "cut down on"
+     "limit",
+     "list",
+     "line",
+     "label"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5942,7 +6020,7 @@
     "options": [
      "We went to the farm.",
      "I'm not keen on the farm.",
-     "We'll go, as long as it doesn't rain.",
+     "We'll go, assuming that it doesn't rain.",
      "Sounds like a plan."
     ],
     "answer": 2
@@ -6286,16 +6364,15 @@
    {
     "type": "order",
     "words": [
-     "Out",
-     "of",
+     "Luckily,",
      "the",
-     "blue,",
-     "I",
-     "heard",
-     "someone",
-     "shouting."
+     "story",
+     "had",
+     "a",
+     "happy",
+     "ending."
     ],
-    "answer": "Out of the blue, I heard someone shouting.",
+    "answer": "Luckily, the story had a happy ending.",
     "ar": "رتّب الجملة"
    },
    {
