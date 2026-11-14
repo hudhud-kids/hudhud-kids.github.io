@@ -36,7 +36,7 @@
     [
      "Junk Food at School",
      "Argue for or against banning junk food in school canteens",
-     "There's no doubt that … / In the long run, … / You have a point, but …"
+     "There's no doubt that … / Sooner or later, … / I can see why you'd say that, but …"
     ],
     [
      "Online or Classroom?",
@@ -204,22 +204,22 @@
      "frame": "I'd argue that teenagers ___."
     },
     {
-     "w": "screen time",
-     "def": "the time someone spends using a phone, tablet, computer or TV",
-     "ar": "وقت الشاشة",
-     "frame": "My screen time goes up when ___."
+     "w": "endless scrolling",
+     "def": "looking through posts or videos for a long time without stopping",
+     "ar": "التصفّح بلا نهاية",
+     "frame": "Endless scrolling makes me feel ___."
     },
     {
-     "w": "addictive",
-     "def": "so enjoyable that it is very hard to stop",
-     "ar": "يسبّب الإدمان",
-     "frame": "I find ___ really addictive."
+     "w": "habit-forming",
+     "def": "making you want to do something again and again",
+     "ar": "يسبّب التعوّد / يصعب تركه",
+     "frame": "I think ___ can be habit-forming because ___."
     },
     {
-     "w": "a waste of time",
-     "def": "something that gives you no real benefit",
-     "ar": "مضيعة للوقت",
-     "frame": "In my view, ___ is a waste of time."
+     "w": "time well spent",
+     "def": "time used in a useful or enjoyable way",
+     "ar": "وقت مستثمر بشكل جيد",
+     "frame": "An hour of ___ is always time well spent."
     },
     {
      "w": "set limits on",
@@ -234,11 +234,11 @@
     "p1": [
      {
       "s": "Reem",
-      "t": "Seven hours a day! That's shocking. I'd argue that phones have become far too addictive for people our age."
+      "t": "Seven hours a day! That's shocking. I'd argue that phones have become far too habit-forming for people our age."
      },
      {
       "s": "Faisal",
-      "t": "Come on, Reem. Not all screen time is a waste of time. I use my phone to learn coding too."
+      "t": "Come on, Reem. Some screen time is time well spent. I use my phone to learn coding too."
      },
      {
       "s": "Reem",
@@ -246,7 +246,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Fair question. Maybe an hour. The rest is probably games and videos, if I'm honest."
+      "t": "Fair question. Maybe an hour. The rest is probably games and endless scrolling, if I'm honest."
      }
     ],
     "p2": [
@@ -267,7 +267,7 @@
       "t": "That may be true, but teenagers also need to learn to control it themselves."
      }
     ],
-    "focus": "I'd argue that phones have become far too addictive for people our age.",
+    "focus": "I'd argue that phones have become far too habit-forming for people our age.",
     "qs": [
      "What does Reem think families should do?",
      "What does Faisal use his phone for apart from games and videos?"
@@ -302,7 +302,12 @@
      "Should apps warn users when they have spent too long on them?"
     ]
    },
-   "exit": "Tell me your position on teenagers' screen time in two sentences, with one clear reason."
+   "exit": "Tell me your position on teenagers' screen time in two sentences, with one clear reason.",
+   "recycle": [
+    "addictive",
+    "a waste of time",
+    "screen time"
+   ]
   },
   "0-1": {
    "objective": "Today you will defend your position on homework when someone disagrees with you.",
@@ -339,10 +344,10 @@
      "frame": "You've made a fair point about ___."
     },
     {
-     "w": "I'd argue that",
-     "def": "a phrase for stating your opinion clearly and firmly",
-     "ar": "أرى بقوة أنّ",
-     "frame": "I'd argue that weekends should be ___."
+     "w": "as I see it",
+     "def": "used to give your personal opinion",
+     "ar": "كما أراه / في رأيي",
+     "frame": "As I see it, homework should ___."
     }
    ],
    "dialogue": {
@@ -372,7 +377,7 @@
      },
      {
       "s": "Sara",
-      "t": "No, just short tasks. I'd argue that twenty minutes a day is enough."
+      "t": "No, just short tasks. As I see it, twenty minutes a day is enough."
      },
      {
       "s": "Noura",
@@ -418,7 +423,10 @@
      "Is a project more useful than a worksheet? Defend your view."
     ]
    },
-   "exit": "Give me your position on homework, then answer one argument against it with 'That may be true, but …'."
+   "exit": "Give me your position on homework, then answer one argument against it with 'That may be true, but …'.",
+   "recycle": [
+    "I'd argue that"
+   ]
   },
   "0-2": {
    "objective": "Today you will make a case for or against calling esports a real sport.",
@@ -455,10 +463,10 @@
      "frame": "My reaction time is fastest when ___."
     },
     {
-     "w": "take a stand on",
-     "def": "to say clearly and publicly what you think about an issue",
-     "ar": "تتخذ موقفاً من",
-     "frame": "Our club should take a stand on ___."
+     "w": "agree to disagree",
+     "def": "to accept that two people have different opinions",
+     "ar": "نتّفق على أن نختلف",
+     "frame": "On the topic of ___, my friend and I agree to disagree."
     }
    ],
    "dialogue": {
@@ -535,7 +543,10 @@
      "Should esports ever be part of the Olympic Games? Defend your view."
     ]
    },
-   "exit": "Make a case for or against esports as a real sport in two sentences."
+   "exit": "Make a case for or against esports as a real sport in two sentences.",
+   "recycle": [
+    "take a stand on"
+   ]
   },
   "0-3": {
    "objective": "Today you will argue for or against banning junk food in school canteens.",
@@ -548,16 +559,16 @@
      "frame": "There's no doubt that ___."
     },
     {
-     "w": "in the long run",
-     "def": "after a long period of time; in the future",
-     "ar": "على المدى البعيد",
-     "frame": "In the long run, ___ will help us."
+     "w": "sooner or later",
+     "def": "at some time in the future, even if not soon",
+     "ar": "عاجلاً أم آجلاً",
+     "frame": "Sooner or later, students will ___."
     },
     {
-     "w": "have a point",
-     "def": "to say something that is partly true or reasonable",
-     "ar": "معك حق في جزء",
-     "frame": "You have a point about ___, but …"
+     "w": "I can see why you'd say that",
+     "def": "used to accept part of an argument before disagreeing",
+     "ar": "أفهم لماذا تقول ذلك",
+     "frame": "I can see why you'd say that, but ___."
     },
     {
      "w": "freedom of choice",
@@ -572,10 +583,10 @@
      "frame": "Schools should be responsible for ___."
     },
     {
-     "w": "set limits on",
-     "def": "to decide the most you will allow of something",
-     "ar": "تضع حدوداً لـ",
-     "frame": "The canteen could set limits on ___."
+     "w": "restrict",
+     "def": "to control something and stop it from becoming too much",
+     "ar": "يقيّد / يحدّ من",
+     "frame": "The school should restrict ___."
     }
    ],
    "dialogue": {
@@ -591,7 +602,7 @@
      },
      {
       "s": "Lama",
-      "t": "You have a point, but schools are responsible for keeping students healthy during the day."
+      "t": "I can see why you'd say that, but schools are responsible for keeping students healthy during the day."
      },
      {
       "s": "Joud",
@@ -601,7 +612,7 @@
     "p2": [
      {
       "s": "Lama",
-      "t": "Maybe at first. But in the long run, people get used to healthier options."
+      "t": "Maybe at first. But sooner or later, people get used to healthier options."
      },
      {
       "s": "Joud",
@@ -609,14 +620,14 @@
      },
      {
       "s": "Lama",
-      "t": "Not completely. The canteen could set limits on sugary things, like one day a week."
+      "t": "Not completely. The canteen could restrict sugary things, like one day a week."
      },
      {
       "s": "Joud",
       "t": "Now that's a plan I could actually support."
      }
     ],
-    "focus": "You have a point, but schools are responsible for keeping students healthy during the day.",
+    "focus": "I can see why you'd say that, but schools are responsible for keeping students healthy during the day.",
     "qs": [
      "Why is Joud against the ban at first?",
      "What compromise does Lama suggest?"
@@ -631,7 +642,7 @@
      },
      {
       "q": "Some parents say it's their choice, not the school's. What do you think?",
-      "hint": "Accept their point with 'You have a point, but …', then defend your view."
+      "hint": "Accept their point with 'I can see why you'd say that, but …', then defend your view."
      },
      {
       "q": "What would happen in the long run if we followed your idea?",
@@ -651,7 +662,12 @@
      "Do calorie labels really change what people eat? Defend your answer."
     ]
    },
-   "exit": "Tell me your position on junk food at school and answer one argument against it."
+   "exit": "Tell me your position on junk food at school and answer one argument against it.",
+   "recycle": [
+    "in the long run",
+    "have a point",
+    "set limits on"
+   ]
   },
   "0-4": {
    "objective": "Today you will defend your view on whether online learning is better than classroom learning.",
@@ -664,16 +680,16 @@
      "frame": "I'm firmly in favour of ___."
     },
     {
-     "w": "face-to-face",
-     "def": "with people meeting in the same place",
-     "ar": "وجهاً لوجه",
-     "frame": "I prefer face-to-face ___ because …"
+     "w": "in person",
+     "def": "by being in the same place, not online",
+     "ar": "حضورياً / وجهاً لوجه",
+     "frame": "I prefer to ___ in person because ___."
     },
     {
-     "w": "at your own pace",
-     "def": "as fast or as slowly as you want",
-     "ar": "حسب سرعتك الخاصة",
-     "frame": "I like learning ___ at my own pace."
+     "w": "on your own schedule",
+     "def": "at times that you choose yourself",
+     "ar": "حسب جدولك الخاص",
+     "frame": "If I studied on my own schedule, I would ___."
     },
     {
      "w": "lose motivation",
@@ -688,10 +704,10 @@
      "frame": "___ is convenient. Even so, …"
     },
     {
-     "w": "I'm convinced that",
-     "def": "a phrase showing you are completely sure of your opinion",
-     "ar": "أنا مقتنع بأنّ",
-     "frame": "I'm convinced that online learning ___."
+     "w": "I firmly believe that",
+     "def": "used to say you are completely sure about your opinion",
+     "ar": "أؤمن بشدّة بأنّ",
+     "frame": "I firmly believe that schools should ___."
     }
    ],
    "dialogue": {
@@ -699,7 +715,7 @@
     "p1": [
      {
       "s": "Dana",
-      "t": "I'm firmly in favour of an online day. I could study at my own pace and sleep a bit longer."
+      "t": "I'm firmly in favour of an online day. I could study on my own schedule and sleep a bit longer."
      },
      {
       "s": "Reem",
@@ -711,7 +727,7 @@
      },
      {
       "s": "Reem",
-      "t": "Maybe you would. I'm convinced that most students would lose motivation without a teacher in the room."
+      "t": "Maybe you would. I firmly believe that most students would lose motivation without a teacher in the room."
      }
     ],
     "p2": [
@@ -721,7 +737,7 @@
      },
      {
       "s": "Reem",
-      "t": "Even so, face-to-face lessons are better for group work and asking quick questions."
+      "t": "Even so, lessons in person are better for group work and asking quick questions."
      },
      {
       "s": "Dana",
@@ -767,7 +783,12 @@
      "Will schools still have classrooms in fifty years? Defend your view."
     ]
    },
-   "exit": "Tell me where you stand on online learning, and add one point using 'Even so'."
+   "exit": "Tell me where you stand on online learning, and add one point using 'Even so'.",
+   "recycle": [
+    "at your own pace",
+    "face-to-face",
+    "I'm convinced that"
+   ]
   },
   "0-5": {
    "objective": "Today you will take part in a short debate, stating, supporting and defending your position.",
@@ -792,22 +813,22 @@
      "frame": "One counter-argument is that ___."
     },
     {
-     "w": "win someone over",
+     "w": "bring someone round",
      "def": "to persuade someone to agree with you",
-     "ar": "تكسب تأييد شخص",
-     "frame": "I won my friends over by ___."
+     "ar": "يُقنع شخصاً برأيه",
+     "frame": "I finally brought my ___ round to the idea of ___."
     },
     {
-     "w": "make a case for",
-     "def": "to give reasons why something is right or good",
-     "ar": "تقدّم حججاً لصالح",
-     "frame": "Today I will make a case for ___."
+     "w": "argue in favour of",
+     "def": "to give reasons why you support something",
+     "ar": "يدافع عن / يؤيّد بالحجّة",
+     "frame": "I'd like to argue in favour of ___."
     },
     {
-     "w": "That may be true, but",
-     "def": "a phrase to accept a point and then disagree",
-     "ar": "قد يكون هذا صحيحاً، لكن",
-     "frame": "That may be true, but ___."
+     "w": "I hear you, but",
+     "def": "used to show you listened before you disagree",
+     "ar": "أسمعك، لكن",
+     "frame": "I hear you, but ___."
     }
    ],
    "dialogue": {
@@ -815,7 +836,7 @@
     "p1": [
      {
       "s": "Lulwa",
-      "t": "The motion is that teenagers should volunteer in the summer. I'd like to make a case for it."
+      "t": "The motion is that teenagers should volunteer in the summer. I'd like to argue in favour of it."
      },
      {
       "s": "Lulwa",
@@ -833,7 +854,7 @@
     "p2": [
      {
       "s": "Lulwa",
-      "t": "That may be true, but volunteering can be just a few hours a week."
+      "t": "I hear you, but volunteering can be just a few hours a week."
      },
      {
       "s": "Hessa",
@@ -845,10 +866,10 @@
      },
      {
       "s": "Hessa",
-      "t": "A strong point, but you haven't won me over yet. Encouraging is better than requiring."
+      "t": "A strong point, but you haven't brought me round yet. Encouraging is better than requiring."
      }
     ],
-    "focus": "That may be true, but volunteering can be just a few hours a week.",
+    "focus": "I hear you, but volunteering can be just a few hours a week.",
     "qs": [
      "What example does Lulwa use to back up her argument?",
      "What is Hessa's main counter-argument?"
@@ -883,7 +904,12 @@
      "What skills does debating give young people?"
     ]
    },
-   "exit": "State your position on one motion from today and answer one counter-argument, without help."
+   "exit": "State your position on one motion from today and answer one counter-argument, without help.",
+   "recycle": [
+    "win someone over",
+    "That may be true, but",
+    "make a case for"
+   ]
   },
   "1-0": {
    "objective": "Today you will talk about a missed chance and say how things could have been different.",
@@ -902,16 +928,16 @@
      "frame": "I missed ___ by a few minutes."
     },
     {
-     "w": "if only",
-     "def": "a phrase that shows you wish something had been different",
-     "ar": "ليت / لو أنّ",
-     "frame": "If only I had ___!"
+     "w": "if it hadn't been for",
+     "def": "used to say something else would have happened without this",
+     "ar": "لولا",
+     "frame": "If it hadn't been for ___, I would have ___."
     },
     {
-     "w": "set off",
-     "def": "to start a journey",
-     "ar": "تنطلق (في رحلة)",
-     "frame": "We usually set off at ___ on school days."
+     "w": "cut it fine",
+     "def": "to leave yourself only just enough time",
+     "ar": "يترك وقتاً ضيقاً جداً",
+     "frame": "I cut it fine when ___."
     },
     {
      "w": "a close call",
@@ -940,11 +966,11 @@
      },
      {
       "s": "Bandar",
-      "t": "Oh no! Did you leave late?"
+      "t": "Oh no! Did you cut it too fine?"
      },
      {
       "s": "Turki",
-      "t": "A bit. If we had set off half an hour earlier, we would have caught the plane."
+      "t": "A bit. If we had left half an hour earlier, we would have caught the plane."
      }
     ],
     "p2": [
@@ -954,7 +980,7 @@
      },
      {
       "s": "Turki",
-      "t": "No, we flew the next morning. If only my dad hadn't wanted one more coffee before leaving!"
+      "t": "No, we flew the next morning. If it hadn't been for my dad's last coffee, we'd have made it!"
      },
      {
       "s": "Bandar",
@@ -965,7 +991,7 @@
       "t": "True. On the way back we nearly missed the plane again. That was a close call, so now we leave three hours early."
      }
     ],
-    "focus": "If we had set off half an hour earlier, we would have caught the plane.",
+    "focus": "If we had left half an hour earlier, we would have caught the plane.",
     "qs": [
      "Why did Turki's family miss the flight?",
      "What does the family do differently now?"
@@ -1000,7 +1026,11 @@
      "Why do people enjoy visiting dramatic places like this?"
     ]
    },
-   "exit": "Tell me about one missed chance and say what would have happened if you had acted differently."
+   "exit": "Tell me about one missed chance and say what would have happened if you had acted differently.",
+   "recycle": [
+    "set off",
+    "if only"
+   ]
   },
   "1-1": {
    "objective": "Today you will discuss how a match could have ended differently.",
@@ -1031,16 +1061,16 @@
      "frame": "The fans blamed the defeat on ___."
     },
     {
-     "w": "in hindsight",
-     "def": "when you think about the past with what you know now",
-     "ar": "بعد فوات الأوان / بالنظر للماضي",
-     "frame": "In hindsight, the coach should have ___."
+     "w": "in retrospect",
+     "def": "when you think about a past event now",
+     "ar": "عند النظر إلى الماضي",
+     "frame": "In retrospect, I should have ___."
     },
     {
-     "w": "a close call",
+     "w": "a near miss",
      "def": "a situation where something bad almost happened",
-     "ar": "نجاة بأعجوبة / كادت أن تحدث",
-     "frame": "It was a close call when ___."
+     "ar": "كاد أن يحدث / نجاة في اللحظة الأخيرة",
+     "frame": "There was a near miss when ___."
     }
    ],
    "dialogue": {
@@ -1061,7 +1091,7 @@
      },
      {
       "s": "Ziyad",
-      "t": "In hindsight, the red card was the turning point. We were playing with ten men after that."
+      "t": "In retrospect, the red card was the turning point. We were playing with ten men after that."
      }
     ],
     "p2": [
@@ -1075,7 +1105,7 @@
      },
      {
       "s": "Saad",
-      "t": "And their striker nearly scored a third in the last minute. That was a close call!"
+      "t": "And their striker nearly scored a third in the last minute. That was a near miss!"
      },
      {
       "s": "Ziyad",
@@ -1117,17 +1147,21 @@
      "How might hosting the 2034 World Cup change Saudi football?"
     ]
    },
-   "exit": "Tell me about a match you remember and how it could have ended differently."
+   "exit": "Tell me about a match you remember and how it could have ended differently.",
+   "recycle": [
+    "in hindsight",
+    "a close call"
+   ]
   },
   "1-2": {
    "objective": "Today you will discuss how history would have been different without certain inventions.",
    "warmup": "Which invention could you not live without? Why?",
    "expressions": [
     {
-     "w": "come up with",
-     "def": "to think of a new idea or plan",
-     "ar": "يبتكر / يخطر بفكرة",
-     "frame": "I wish I had come up with ___."
+     "w": "dream up",
+     "def": "to invent a new idea, especially an unusual one",
+     "ar": "يبتكر / يتخيّل فكرة",
+     "frame": "If I could dream up a new invention, it would ___."
     },
     {
      "w": "change the course of history",
@@ -1142,22 +1176,22 @@
      "frame": "Without ___, life would be much harder."
     },
     {
-     "w": "by accident",
-     "def": "without planning it",
-     "ar": "بالصدفة",
-     "frame": "___ was discovered by accident."
+     "w": "stumble upon",
+     "def": "to find something by chance",
+     "ar": "يعثر على شيء بالصدفة",
+     "frame": "I once stumbled upon ___ when ___."
     },
     {
-     "w": "take something for granted",
-     "def": "to not value something because it is always there",
-     "ar": "تعتبره أمراً مسلّماً به",
-     "frame": "We take ___ for granted."
+     "w": "can't imagine life without",
+     "def": "to feel that something is necessary in your life",
+     "ar": "لا يتخيّل الحياة بدون",
+     "frame": "I can't imagine life without ___."
     },
     {
-     "w": "turn out",
-     "def": "to happen in a particular way in the end",
-     "ar": "تنتهي إلى / يتّضح",
-     "frame": "The idea turned out to be ___."
+     "w": "unfold",
+     "def": "to happen or develop over time",
+     "ar": "تتكشّف / تتطوّر الأحداث",
+     "frame": "If ___ had been different, history would have unfolded ___."
     }
    ],
    "dialogue": {
@@ -1166,7 +1200,7 @@
     "p1": [
      {
       "s": "Huda",
-      "t": "Let's start with penicillin. Fleming discovered it by accident when he left some lab dishes out before a holiday."
+      "t": "Let's start with penicillin. Fleming stumbled upon it when he left some lab dishes out before a holiday."
      },
      {
       "s": "Maha",
@@ -1178,13 +1212,13 @@
      },
      {
       "s": "Maha",
-      "t": "We really take medicine for granted, don't we?"
+      "t": "We can't imagine life without medicine now, can we?"
      }
     ],
     "p2": [
      {
       "s": "Huda",
-      "t": "What about Al-Jazari? He came up with amazing machines over 800 years ago."
+      "t": "What about Al-Jazari? He dreamed up amazing machines over 800 years ago."
      },
      {
       "s": "Maha",
@@ -1196,7 +1230,7 @@
      },
      {
       "s": "Maha",
-      "t": "So history turned out the way it did partly because of one curious inventor. Great video idea!"
+      "t": "So history unfolded the way it did partly because of one curious inventor. Great video idea!"
      }
     ],
     "focus": "If he hadn't been so untidy, he wouldn't have noticed the mould.",
@@ -1234,7 +1268,13 @@
      "Which modern invention would have amazed him most?"
     ]
    },
-   "exit": "Choose one invention and tell me how history would have been different without it."
+   "exit": "Choose one invention and tell me how history would have been different without it.",
+   "recycle": [
+    "come up with",
+    "by accident",
+    "take something for granted",
+    "turn out"
+   ]
   },
   "1-3": {
    "objective": "Today you will explain how choices you made in the past affect your life now.",
@@ -1247,22 +1287,22 @@
      "frame": "The best decision I ever made was ___."
     },
     {
-     "w": "end up",
-     "def": "to finally be in a place or situation",
-     "ar": "ينتهي بك الأمر",
-     "frame": "If I hadn't ___, I would have ended up …"
+     "w": "rediscover",
+     "def": "to find and enjoy something again after a long time",
+     "ar": "يعيد اكتشاف",
+     "frame": "I'd like to rediscover ___."
     },
     {
-     "w": "pay off",
-     "def": "to bring good results after hard work",
+     "w": "bear fruit",
+     "def": "to finally bring good results",
      "ar": "يؤتي ثماره",
-     "frame": "My hard work on ___ paid off."
+     "frame": "My hard work in ___ finally bore fruit when ___."
     },
     {
-     "w": "give up",
-     "def": "to stop trying to do something",
-     "ar": "تستسلم / تتوقف",
-     "frame": "I almost gave up ___, but I continued."
+     "w": "pack in",
+     "def": "to stop doing an activity (informal)",
+     "ar": "يترك / يتوقّف عن (هواية)",
+     "frame": "I packed in ___ when I was ___."
     },
     {
      "w": "fluent in",
@@ -1271,10 +1311,10 @@
      "frame": "I'd like to be fluent in ___."
     },
     {
-     "w": "in hindsight",
-     "def": "when you think about the past with what you know now",
-     "ar": "بالنظر إلى ما مضى",
-     "frame": "In hindsight, I'm glad I ___."
+     "w": "now that I think about it",
+     "def": "used when you realise something as you speak",
+     "ar": "الآن وأنا أفكّر في الأمر",
+     "frame": "Now that I think about it, I should have ___."
     }
    ],
    "dialogue": {
@@ -1286,7 +1326,7 @@
      },
      {
       "s": "Mishari",
-      "t": "When I was ten, I made a decision to watch cartoons only in English. It really paid off."
+      "t": "When I was ten, I made a decision to watch cartoons only in English. It really bore fruit."
      },
      {
       "s": "Nasser",
@@ -1300,7 +1340,7 @@
     "p2": [
      {
       "s": "Nasser",
-      "t": "True. But I gave up drawing at twelve, and in hindsight that was a mistake."
+      "t": "True. But I packed in drawing at twelve, and now that I think about it, that was a mistake."
      },
      {
       "s": "Mishari",
@@ -1308,14 +1348,14 @@
      },
      {
       "s": "Nasser",
-      "t": "If I hadn't given up, I would probably be studying design at the art academy now."
+      "t": "If I hadn't packed it in, I would probably be studying design at the art academy now."
      },
      {
       "s": "Mishari",
-      "t": "Then start again! You might end up loving it even more."
+      "t": "Then start again! You might rediscover how much you love it."
      }
     ],
-    "focus": "If I hadn't given up, I would probably be studying design at the art academy now.",
+    "focus": "If I hadn't packed it in, I would probably be studying design at the art academy now.",
     "qs": [
      "What decision did Mishari make when he was ten?",
      "What does Nasser regret giving up?"
@@ -1350,7 +1390,13 @@
      "Is it ever too late to learn something new? Defend your view."
     ]
    },
-   "exit": "Tell me about one past choice and how it affects your life now, using a mixed conditional."
+   "exit": "Tell me about one past choice and how it affects your life now, using a mixed conditional.",
+   "recycle": [
+    "give up",
+    "pay off",
+    "in hindsight",
+    "end up"
+   ]
   },
   "1-4": {
    "objective": "Today you will explain how your personality and situation now explain things that happened in the past.",
@@ -1381,16 +1427,16 @@
      "frame": "If I weren't so outgoing, I wouldn't have ___."
     },
     {
-     "w": "make a decision",
-     "def": "to choose what to do after thinking",
-     "ar": "تتخذ قراراً",
-     "frame": "I once made a quick decision to ___, and it worked."
+     "w": "seize the moment",
+     "def": "to use a chance immediately when it comes",
+     "ar": "يغتنم الفرصة",
+     "frame": "If I hadn't seized the moment, I wouldn't have ___."
     },
     {
-     "w": "end up",
-     "def": "to finally be in a place or situation",
-     "ar": "ينتهي بك الأمر",
-     "frame": "I ended up ___ by pure chance."
+     "w": "get a part",
+     "def": "to be chosen to act in a film or play",
+     "ar": "يحصل على دور",
+     "frame": "If I got a part in a film, I would ___."
     }
    ],
    "dialogue": {
@@ -1425,11 +1471,11 @@
      },
      {
       "s": "Hamad",
-      "t": "What a lucky break! So what happened next?"
+      "t": "What a lucky break! You really seized the moment. So what happened next?"
      },
      {
       "s": "Sultan",
-      "t": "I ended up with two lines in the film. If I hadn't said hello, I wouldn't be a 'film star' now!"
+      "t": "I got a small part with two lines in the film. If I hadn't said hello, I wouldn't be a 'film star' now!"
      }
     ],
     "focus": "If I weren't so outgoing, I wouldn't have spoken to him at all.",
@@ -1467,17 +1513,21 @@
      "Why do you think film makers choose AlUla?"
     ]
    },
-   "exit": "Tell me about a lucky break and how your personality or situation helped, without looking at the slides."
+   "exit": "Tell me about a lucky break and how your personality or situation helped, without looking at the slides.",
+   "recycle": [
+    "end up",
+    "make a decision"
+   ]
   },
   "1-5": {
    "objective": "Today you will tell the story of a turning point and explain its consequences then and now.",
    "warmup": "Can you think of a moment that changed your family, your city or your country?",
    "expressions": [
     {
-     "w": "a turning point",
-     "def": "a moment when a situation changes completely",
-     "ar": "نقطة تحوّل",
-     "frame": "A turning point in my life was ___."
+     "w": "a defining moment",
+     "def": "an event that changes a situation in an important way",
+     "ar": "لحظة فارقة",
+     "frame": "A defining moment in my life was when ___."
     },
     {
      "w": "it all started when",
@@ -1504,10 +1554,10 @@
      "frame": "I was on the verge of ___ when …"
     },
     {
-     "w": "change the course of history",
-     "def": "to change what happened to the world in an important way",
-     "ar": "يغيّر مجرى التاريخ",
-     "frame": "I think ___ changed the course of history."
+     "w": "make history",
+     "def": "to do something important that people will remember",
+     "ar": "يصنع التاريخ",
+     "frame": "If ___ had happened, someone would have made history."
     }
    ],
    "dialogue": {
@@ -1534,7 +1584,7 @@
     "p2": [
      {
       "s": "Rakan",
-      "t": "Exactly. They kept drilling and struck oil at Well No. 7 in 1938. It was a real turning point."
+      "t": "Exactly. They kept drilling and struck oil at Well No. 7 in 1938. It was a defining moment."
      },
      {
       "s": "Saud",
@@ -1546,7 +1596,7 @@
      },
      {
       "s": "Saud",
-      "t": "Amazing. One decision not to give up changed the course of history."
+      "t": "Amazing. One decision not to give up made history."
      }
     ],
     "focus": "If they hadn't kept going, the Kingdom would probably look very different today.",
@@ -1584,7 +1634,11 @@
      "What modern turning point will people talk about in 100 years?"
     ]
    },
-   "exit": "Tell me the story of a turning point and give one past and one present consequence."
+   "exit": "Tell me the story of a turning point and give one past and one present consequence.",
+   "recycle": [
+    "a turning point",
+    "change the course of history"
+   ]
   },
   "2-0": {
    "objective": "Today you will introduce a short talk about a hobby and say how it is organised.",
@@ -1609,10 +1663,10 @@
      "frame": "Let me start by telling you ___."
     },
     {
-     "w": "get into",
-     "def": "to start being interested in something",
-     "ar": "يبدأ الاهتمام بـ",
-     "frame": "I got into ___ when I was …"
+     "w": "fall in love with",
+     "def": "to start to like something very much",
+     "ar": "يقع في حبّ",
+     "frame": "I fell in love with ___ when I was ___."
     },
     {
      "w": "a passion for",
@@ -1651,7 +1705,7 @@
     "p2": [
      {
       "s": "Noura",
-      "t": "Let me start by telling you how I got into it. My grandmother showed me her pens when I was nine."
+      "t": "Let me start by telling you how I fell in love with it. My grandmother showed me her pens when I was nine."
      },
      {
       "s": "Hannah",
@@ -1701,7 +1755,10 @@
      "Why is it important to keep traditional arts alive?"
     ]
    },
-   "exit": "Give me the first three sentences of a talk about your favourite hobby."
+   "exit": "Give me the first three sentences of a talk about your favourite hobby.",
+   "recycle": [
+    "get into"
+   ]
   },
   "2-1": {
    "objective": "Today you will organise the main points of a talk about a place in a clear order.",
@@ -1720,10 +1777,10 @@
      "frame": "Moving on to ___, …"
     },
     {
-     "w": "Last but not least",
-     "def": "the final point, but still an important one",
-     "ar": "وأخيراً وليس آخراً",
-     "frame": "Last but not least, ___."
+     "w": "To finish with",
+     "def": "used to introduce the last point in a talk",
+     "ar": "وفي الختام / وأخيراً",
+     "frame": "To finish with, ___."
     },
     {
      "w": "be home to",
@@ -1732,16 +1789,16 @@
      "frame": "My city is home to ___."
     },
     {
-     "w": "breathtaking",
-     "def": "extremely beautiful or surprising",
-     "ar": "يخطف الأنفاس",
-     "frame": "The view from ___ is breathtaking."
+     "w": "spectacular",
+     "def": "very exciting to look at",
+     "ar": "مذهل / خلّاب",
+     "frame": "The most spectacular place I have seen is ___."
     },
     {
-     "w": "divide into",
-     "def": "to separate something into smaller parts",
-     "ar": "تقسّم إلى",
-     "frame": "I've divided this section into ___."
+     "w": "structure",
+     "def": "to organise the parts of something in a clear order",
+     "ar": "يُنظّم / يرتّب الأجزاء",
+     "frame": "I would structure a talk about ___ like this: ___."
     }
    ],
    "dialogue": {
@@ -1758,11 +1815,11 @@
      },
      {
       "s": "Bandar",
-      "t": "Moving on to nature, the rock formations are breathtaking, especially Elephant Rock at sunset."
+      "t": "Moving on to nature, the rock formations are spectacular, especially Elephant Rock at sunset."
      },
      {
       "s": "Bandar",
-      "t": "Last but not least, visit in winter, when the weather is perfect for walking."
+      "t": "To finish with, here's a tip: visit in winter, when the weather is perfect for walking."
      }
     ],
     "p2": [
@@ -1772,7 +1829,7 @@
      },
      {
       "s": "Bandar",
-      "t": "I wanted to start with history, then move on to nature, and finish with practical tips."
+      "t": "I structured it in three parts: history first, then nature, and practical tips at the end."
      },
      {
       "s": "Ms Carter",
@@ -1783,7 +1840,7 @@
       "t": "I used words like 'firstly' and 'moving on to' so people always knew where we were."
      }
     ],
-    "focus": "Moving on to nature, the rock formations are breathtaking, especially Elephant Rock at sunset.",
+    "focus": "Moving on to nature, the rock formations are spectacular, especially Elephant Rock at sunset.",
     "qs": [
      "What is Hegra?",
      "When does Bandar suggest visiting AlUla?"
@@ -1818,7 +1875,12 @@
      "Which Saudi place should become the next World Heritage Site?"
     ]
    },
-   "exit": "Give me three ordered points about a place you love, using signposting words."
+   "exit": "Give me three ordered points about a place you love, using signposting words.",
+   "recycle": [
+    "breathtaking",
+    "Last but not least",
+    "divide into"
+   ]
   },
   "2-2": {
    "objective": "Today you will support the points in a talk with examples and extra information.",
@@ -1855,10 +1917,10 @@
      "frame": "We learnt to work as a team when ___."
     },
     {
-     "w": "Moving on to",
-     "def": "used to change to the next point in a talk",
-     "ar": "ننتقل الآن إلى",
-     "frame": "Moving on to my next point, ___."
+     "w": "turn to",
+     "def": "to start talking about a new subject",
+     "ar": "ينتقل إلى (موضوع)",
+     "frame": "Now let me turn to ___."
     }
    ],
    "dialogue": {
@@ -1897,7 +1959,7 @@
      },
      {
       "s": "Yazeed",
-      "t": "Good idea. Doctors say one hour a day for teenagers. I'll add it before moving on to stress."
+      "t": "Good idea. Doctors say one hour a day for teenagers. I'll add it before I turn to stress."
      }
     ],
     "focus": "Take my basketball team for example.",
@@ -1935,7 +1997,10 @@
      "Is one day a year enough to change people's habits? Why or why not?"
     ]
    },
-   "exit": "Give me one point about sport and support it with a clear example."
+   "exit": "Give me one point about sport and support it with a clear example.",
+   "recycle": [
+    "Moving on to"
+   ]
   },
   "2-3": {
    "objective": "Today you will present the results of a survey and explain what the numbers show.",
@@ -1972,10 +2037,10 @@
      "frame": "We carried out a survey about ___."
     },
     {
-     "w": "For instance",
-     "def": "used to introduce an example",
-     "ar": "على سبيل المثال",
-     "frame": "Some answers surprised us. For instance, ___."
+     "w": "interestingly",
+     "def": "used to introduce a fact that is surprising or unusual",
+     "ar": "ومن المثير للاهتمام أنّ",
+     "frame": "Interestingly, ___."
     }
    ],
    "dialogue": {
@@ -2014,7 +2079,7 @@
      },
      {
       "s": "Razan",
-      "t": "Yes. For instance, players who train every day said they fall asleep much faster."
+      "t": "Yes. Interestingly, players who train every day said they fall asleep much faster."
      }
     ],
     "focus": "As you can see from this chart, the majority of players sleep less than seven hours on weeknights.",
@@ -2052,7 +2117,10 @@
      "What is one simple habit that could help students sleep better?"
     ]
    },
-   "exit": "Describe the results of a simple survey about your friends, using at least two number phrases."
+   "exit": "Describe the results of a simple survey about your friends, using at least two number phrases.",
+   "recycle": [
+    "For instance"
+   ]
   },
   "2-4": {
    "objective": "Today you will conclude a talk clearly and answer questions from the audience.",
@@ -2083,16 +2151,16 @@
      "frame": "I'll come back to that when I talk about ___."
     },
     {
-     "w": "go over",
-     "def": "to look at or explain something again",
-     "ar": "تراجع / تستعرض",
-     "frame": "Let me quickly go over ___."
+     "w": "run through",
+     "def": "to repeat or explain something quickly",
+     "ar": "يستعرض بسرعة",
+     "frame": "Let me quickly run through ___."
     },
     {
-     "w": "As you can see",
-     "def": "used to point to a chart, picture or slide",
-     "ar": "كما ترون",
-     "frame": "As you can see in this photo, ___."
+     "w": "if you look at",
+     "def": "used to direct people to a chart or slide",
+     "ar": "إذا نظرتم إلى",
+     "frame": "If you look at this chart, you'll see that ___."
     }
    ],
    "dialogue": {
@@ -2105,7 +2173,7 @@
      },
      {
       "s": "Ziyad",
-      "t": "Let me quickly go over the three main points: it's cheap, easy to fit and works on any tap."
+      "t": "Let me quickly run through the three main points: it's cheap, easy to fit and works on any tap."
      },
      {
       "s": "Ziyad",
@@ -2131,7 +2199,7 @@
      },
      {
       "s": "Ziyad",
-      "t": "About fifteen riyals. As you can see on this last slide, it pays for itself in a few months."
+      "t": "About fifteen riyals. If you look at this last slide, you'll see it pays for itself in a few months."
      }
     ],
     "focus": "To sum up, our device saves around twenty litres of water per person every day.",
@@ -2169,7 +2237,11 @@
      "Why is saving water important even in a rich country?"
     ]
    },
-   "exit": "Give me a two-sentence conclusion to a talk about any topic, then answer one question I ask you."
+   "exit": "Give me a two-sentence conclusion to a talk about any topic, then answer one question I ask you.",
+   "recycle": [
+    "go over",
+    "As you can see"
+   ]
   },
   "2-5": {
    "objective": "Today you will plan and give a complete two-minute talk with a clear beginning, middle and end.",
@@ -2200,16 +2272,16 @@
      "frame": "I'll stick to ___ main points."
     },
     {
-     "w": "Moving on to",
-     "def": "used to change to the next point in a talk",
-     "ar": "ننتقل الآن إلى",
-     "frame": "Moving on to my second point, ___."
+     "w": "as for",
+     "def": "used to start talking about another subject",
+     "ar": "أمّا بالنسبة لـ",
+     "frame": "As for ___, I think ___."
     },
     {
-     "w": "To sum up",
-     "def": "used to begin a short summary at the end",
-     "ar": "للتلخيص",
-     "frame": "To sum up, ___ is my hero because …"
+     "w": "all in all",
+     "def": "when you consider everything",
+     "ar": "إجمالاً / بشكل عام",
+     "frame": "All in all, ___."
     }
    ],
    "dialogue": {
@@ -2226,11 +2298,11 @@
      },
      {
       "s": "Lulwa",
-      "t": "For instance, you can see turtles and even dolphins near Umluj. Moving on to the dangers, warmer seas are damaging the coral."
+      "t": "For instance, you can see turtles and even dolphins near Umluj. As for the dangers, warmer seas are damaging the coral."
      },
      {
       "s": "Lulwa",
-      "t": "To sum up, these reefs are a treasure, and we must protect them. Thank you."
+      "t": "All in all, these reefs are a treasure, and we must protect them. Thank you."
      }
     ],
     "p2": [
@@ -2251,7 +2323,7 @@
       "t": "Okay, I'll rehearse it twice more without notes. Then you can time me again."
      }
     ],
-    "focus": "Moving on to the dangers, warmer seas are damaging the coral.",
+    "focus": "As for the dangers, warmer seas are damaging the coral.",
     "qs": [
      "What example does Lulwa give in her talk?",
      "What does Hamad think Lulwa should improve?"
@@ -2286,7 +2358,11 @@
      "How can tourists enjoy the sea without harming it?"
     ]
    },
-   "exit": "Give me a complete thirty-second talk on any topic, with a beginning, two points and an end."
+   "exit": "Give me a complete thirty-second talk on any topic, with a beginning, two points and an end.",
+   "recycle": [
+    "Moving on to",
+    "To sum up"
+   ]
   },
   "3-0": {
    "objective": "Today you will make and respond to suggestions while planning a day out with a partner.",
@@ -2323,10 +2399,10 @@
      "frame": "I'm not so keen on ___ because …"
     },
     {
-     "w": "work as a team",
-     "def": "to cooperate with others to reach a goal",
-     "ar": "يعمل بروح الفريق",
-     "frame": "We need to work as a team to ___."
+     "w": "be on the same page",
+     "def": "to agree and understand each other",
+     "ar": "متّفقان / على نفس الموجة",
+     "frame": "My friend and I are on the same page about ___."
     }
    ],
    "dialogue": {
@@ -2365,7 +2441,7 @@
      },
      {
       "s": "Yousef",
-      "t": "Yes, let's. See, we work well as a team!"
+      "t": "Yes, let's. See, we're on the same page!"
      }
     ],
     "focus": "We could always go to Diriyah instead.",
@@ -2403,7 +2479,10 @@
      "Which place in your city should every teenager visit?"
     ]
    },
-   "exit": "Suggest a place for a day out and respond to one other suggestion politely."
+   "exit": "Suggest a place for a day out and respond to one other suggestion politely.",
+   "recycle": [
+    "work as a team"
+   ]
   },
   "3-1": {
    "objective": "Today you will evaluate different options with a partner before choosing one.",
@@ -2434,16 +2513,16 @@
      "frame": "___ is definitely worth considering."
     },
     {
-     "w": "It depends on",
-     "def": "used to say a decision is linked to something else",
-     "ar": "يعتمد على",
-     "frame": "It depends on ___."
+     "w": "it all comes down to",
+     "def": "the most important thing that decides it is",
+     "ar": "الأمر كلّه يتوقّف على",
+     "frame": "It all comes down to ___."
     },
     {
-     "w": "How about + -ing",
-     "def": "a friendly way to suggest an idea",
-     "ar": "ما رأيك في أن …؟",
-     "frame": "How about ___ing for the project?"
+     "w": "What would you say to …?",
+     "def": "a polite way to suggest something",
+     "ar": "ما رأيك في …؟",
+     "frame": "What would you say to ___ing?"
     }
    ],
    "dialogue": {
@@ -2452,7 +2531,7 @@
     "p1": [
      {
       "s": "Hind",
-      "t": "How about preparing iftar meals for workers? That would be really helpful."
+      "t": "What would you say to preparing iftar meals for workers? That would be really helpful."
      },
      {
       "s": "Isabel",
@@ -2474,7 +2553,7 @@
      },
      {
       "s": "Isabel",
-      "t": "It depends on how many we collect. If every girl in the club brings five items, that's hundreds."
+      "t": "It all comes down to how many we collect. If every girl in the club brings five items, that's hundreds."
      },
      {
       "s": "Hind",
@@ -2520,7 +2599,11 @@
      "Which kind of help makes the biggest difference: money, time or skills?"
     ]
    },
-   "exit": "Evaluate two options for a charity project, giving one good point and one problem."
+   "exit": "Evaluate two options for a charity project, giving one good point and one problem.",
+   "recycle": [
+    "It depends on",
+    "How about + -ing"
+   ]
   },
   "3-2": {
    "objective": "Today you will invite your partner's opinions and keep a discussion moving.",
@@ -2557,10 +2640,10 @@
      "frame": "___ would keep the children entertained."
     },
     {
-     "w": "worth considering",
-     "def": "good enough to think about seriously",
-     "ar": "يستحق النظر فيه",
-     "frame": "___ is worth considering for little kids."
+     "w": "have potential",
+     "def": "to be possibly good or successful in the future",
+     "ar": "لديه إمكانيات / واعد",
+     "frame": "I think ___ has potential because ___."
     }
    ],
    "dialogue": {
@@ -2577,7 +2660,7 @@
      },
      {
       "s": "Joud",
-      "t": "It's worth considering, but some little ones might be scared of the paint."
+      "t": "It has potential, but some little ones might be scared of the paint."
      },
      {
       "s": "Jana",
@@ -2637,7 +2720,10 @@
      "How could Eid celebrations be made more fun for teenagers?"
     ]
    },
-   "exit": "Ask me my opinion about two ideas for a party, using two different phrases."
+   "exit": "Ask me my opinion about two ideas for a party, using two different phrases.",
+   "recycle": [
+    "worth considering"
+   ]
   },
   "3-3": {
    "objective": "Today you will disagree politely and reach an agreement with your partner.",
@@ -2650,10 +2736,10 @@
      "frame": "I see what you mean, but ___."
     },
     {
-     "w": "meet halfway",
-     "def": "to agree to accept part of what each person wants",
-     "ar": "نلتقي في منتصف الطريق",
-     "frame": "Let's meet halfway and ___."
+     "w": "find a middle ground",
+     "def": "to find a solution that both sides can accept",
+     "ar": "يجد حلاً وسطاً",
+     "frame": "We found a middle ground about ___."
     },
     {
      "w": "So shall we go for",
@@ -2674,10 +2760,10 @@
      "frame": "I'm with you on ___."
     },
     {
-     "w": "The problem with … is that",
-     "def": "used to explain the weak side of an option",
-     "ar": "المشكلة في … هي أنّ",
-     "frame": "The problem with ___ is that …"
+     "w": "the snag with … is that",
+     "def": "the small problem with something is that",
+     "ar": "المشكلة الصغيرة في … هي أنّ",
+     "frame": "The snag with ___ is that ___."
     }
    ],
    "dialogue": {
@@ -2694,7 +2780,7 @@
      },
      {
       "s": "Abdullah",
-      "t": "True. The problem with a playground, though, is that we already have one."
+      "t": "True. The snag with a playground, though, is that we already have one."
      },
      {
       "s": "Mohammed",
@@ -2708,7 +2794,7 @@
      },
      {
       "s": "Mohammed",
-      "t": "So why don't we meet halfway? Trees around a new playground, with a small skate area next to it."
+      "t": "So why don't we find a middle ground? Trees around a new playground, with a small skate area next to it."
      },
      {
       "s": "Abdullah",
@@ -2754,7 +2840,11 @@
      "Should young people have a say in how parks are designed? Why?"
     ]
    },
-   "exit": "Disagree with one idea politely, then suggest a compromise and a final decision."
+   "exit": "Disagree with one idea politely, then suggest a compromise and a final decision.",
+   "recycle": [
+    "meet halfway",
+    "The problem with … is that"
+   ]
   },
   "3-4": {
    "objective": "Today you will discuss a wider question with a partner, giving extended opinions and asking for theirs.",
@@ -2791,10 +2881,10 @@
      "frame": "I think ___. What's your view?"
     },
     {
-     "w": "I see what you mean, but",
-     "def": "a polite way to show you understand but disagree",
-     "ar": "أفهم ما تقصده، لكن",
-     "frame": "I see what you mean, but ___."
+     "w": "partly true",
+     "def": "true in some ways but not completely",
+     "ar": "صحيح جزئياً",
+     "frame": "That's partly true, but ___."
     }
    ],
    "dialogue": {
@@ -2810,7 +2900,7 @@
      },
      {
       "s": "Abeer",
-      "t": "I see what you mean, but not every family has the time for that."
+      "t": "That's partly true, but not every family has the time for that."
      },
      {
       "s": "Dana",
@@ -2870,7 +2960,10 @@
      "What makes a good speaking partner?"
     ]
    },
-   "exit": "Answer this question in three sentences and then ask for my view: Should teenagers have part-time jobs?"
+   "exit": "Answer this question in three sentences and then ask for my view: Should teenagers have part-time jobs?",
+   "recycle": [
+    "I see what you mean, but"
+   ]
   },
   "3-5": {
    "objective": "Today you will complete a full B2 First Speaking Part 3 and Part 4 task with a partner.",
@@ -2883,34 +2976,34 @@
      "frame": "Let's start with ___."
     },
     {
-     "w": "reach a decision",
-     "def": "to finally decide something together",
-     "ar": "نتوصّل إلى قرار",
-     "frame": "We need to reach a decision about ___."
+     "w": "once and for all",
+     "def": "finally and completely",
+     "ar": "بشكل نهائي",
+     "frame": "Let's decide once and for all whether ___."
     },
     {
-     "w": "That would be",
-     "def": "used to say what result an option would have",
-     "ar": "سيكون ذلك",
-     "frame": "That would be ___ for young readers."
+     "w": "a great way to",
+     "def": "a very good method for doing something",
+     "ar": "طريقة رائعة لـ",
+     "frame": "___ would be a great way to ___."
     },
     {
-     "w": "So shall we go for",
-     "def": "used to suggest a final decision",
-     "ar": "إذن هل نختار",
-     "frame": "So shall we go for ___?"
+     "w": "Are we agreed on …?",
+     "def": "a question to check that everyone accepts a decision",
+     "ar": "هل اتّفقنا على …؟",
+     "frame": "So are we agreed on ___?"
     },
     {
-     "w": "What do you reckon",
-     "def": "an informal way to ask someone's opinion",
-     "ar": "ما رأيك؟",
-     "frame": "What do you reckon about ___?"
+     "w": "What are your thoughts on …?",
+     "def": "a polite way to ask someone's opinion",
+     "ar": "ما رأيك في …؟",
+     "frame": "What are your thoughts on ___?"
     },
     {
-     "w": "Generally speaking",
-     "def": "used to talk about what is usually true",
-     "ar": "بشكل عام",
-     "frame": "Generally speaking, young people ___."
+     "w": "for the most part",
+     "def": "mostly; in most cases",
+     "ar": "في معظم الأحيان",
+     "frame": "For the most part, teenagers ___."
     }
    ],
    "dialogue": {
@@ -2918,11 +3011,11 @@
     "p1": [
      {
       "s": "Salman",
-      "t": "Let's start with the reading competition. That would be motivating, especially with prizes."
+      "t": "Let's start with the reading competition. It'd be a great way to motivate people, especially with prizes."
      },
      {
       "s": "Jack",
-      "t": "Maybe, but the problem with competitions is that weaker readers might give up. What do you reckon about a book club?"
+      "t": "Maybe, but the problem with competitions is that weaker readers might give up. What are your thoughts on a book club?"
      },
      {
       "s": "Salman",
@@ -2936,7 +3029,7 @@
     "p2": [
      {
       "s": "Salman",
-      "t": "Good idea. We need to reach a decision, though. So shall we go for the book club and audiobooks?"
+      "t": "Good idea. We need to decide once and for all, though. So are we agreed on the book club and audiobooks?"
      },
      {
       "s": "Jack",
@@ -2944,14 +3037,14 @@
      },
      {
       "s": "Salman",
-      "t": "Generally speaking, I think teenagers read more than adults think, just on screens."
+      "t": "For the most part, I think teenagers read more than adults think, just on screens."
      },
      {
       "s": "Jack",
       "t": "I see what you mean, but reading a whole book is different from reading posts."
      }
     ],
-    "focus": "So shall we go for the book club and audiobooks?",
+    "focus": "So are we agreed on the book club and audiobooks?",
     "qs": [
      "What is Jack's problem with reading competitions?",
      "Which two ideas do they choose?"
@@ -2986,7 +3079,14 @@
      "Should reading for pleasure be part of the school timetable?"
     ]
    },
-   "exit": "Discuss with me how to choose a gift for a friend: suggest, evaluate, ask my opinion, and reach a decision."
+   "exit": "Discuss with me how to choose a gift for a friend: suggest, evaluate, ask my opinion, and reach a decision.",
+   "recycle": [
+    "reach a decision",
+    "That would be",
+    "What do you reckon",
+    "So shall we go for",
+    "Generally speaking"
+   ]
   }
  },
  "kits": {
@@ -3003,19 +3103,19 @@
      "ex": "I'd argue that phones help us learn more than they distract us."
     },
     {
-     "w": "screen time",
-     "ar": "وقت الشاشة",
-     "ex": "My screen time doubles during the summer holidays."
+     "w": "endless scrolling",
+     "ar": "التصفّح بلا نهاية",
+     "ex": "An hour of endless scrolling left me feeling tired."
     },
     {
-     "w": "addictive",
-     "ar": "يسبّب الإدمان",
-     "ex": "Short-video apps are designed to be addictive."
+     "w": "habit-forming",
+     "ar": "يسبّب التعوّد / يصعب تركه",
+     "ex": "Short-video apps are designed to be habit-forming."
     },
     {
-     "w": "a waste of time",
-     "ar": "مضيعة للوقت",
-     "ex": "Scrolling for hours is a complete waste of time."
+     "w": "time well spent",
+     "ar": "وقت مستثمر بشكل جيد",
+     "ex": "Reading with my little brother is time well spent."
     },
     {
      "w": "set limits on",
@@ -3026,11 +3126,11 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "Seven hours a day! That's shocking. I'd argue that phones have become far too addictive for people our age."
+     "t": "Seven hours a day! That's shocking. I'd argue that phones have become far too habit-forming for people our age."
     },
     {
      "s": "Faisal",
-     "t": "Come on, Reem. Not all screen time is a waste of time. I use my phone to learn coding too."
+     "t": "Come on, Reem. Some screen time is time well spent. I use my phone to learn coding too."
     },
     {
      "s": "Reem",
@@ -3038,7 +3138,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Fair question. Maybe an hour. The rest is probably games and videos, if I'm honest."
+     "t": "Fair question. Maybe an hour. The rest is probably games and endless scrolling, if I'm honest."
     },
     {
      "s": "Reem",
@@ -3095,9 +3195,9 @@
      "ex": "That's a fair point, but I still disagree."
     },
     {
-     "w": "I'd argue that",
-     "ar": "أرى بقوة أنّ",
-     "ex": "I'd argue that weekends should be homework-free."
+     "w": "as I see it",
+     "ar": "كما أراه / في رأيي",
+     "ex": "As I see it, short tasks are more useful than long ones."
     }
    ],
    "dialogue": [
@@ -3123,7 +3223,7 @@
     },
     {
      "s": "Sara",
-     "t": "No, just short tasks. I'd argue that twenty minutes a day is enough."
+     "t": "No, just short tasks. As I see it, twenty minutes a day is enough."
     },
     {
      "s": "Noura",
@@ -3172,9 +3272,9 @@
      "ex": "Pro gamers train their reaction time every day."
     },
     {
-     "w": "take a stand on",
-     "ar": "تتخذ موقفاً من",
-     "ex": "The coach took a stand on fair play."
+     "w": "agree to disagree",
+     "ar": "نتّفق على أن نختلف",
+     "ex": "We'll never agree about football, so let's agree to disagree."
     }
    ],
    "dialogue": [
@@ -3229,14 +3329,14 @@
      "ex": "There's no doubt that sugary drinks are bad for our teeth."
     },
     {
-     "w": "in the long run",
-     "ar": "على المدى البعيد",
-     "ex": "In the long run, healthy habits save money."
+     "w": "sooner or later",
+     "ar": "عاجلاً أم آجلاً",
+     "ex": "Sooner or later, everyone gets used to the new rules."
     },
     {
-     "w": "have a point",
-     "ar": "معك حق في جزء",
-     "ex": "You have a point, but students will just buy snacks outside."
+     "w": "I can see why you'd say that",
+     "ar": "أفهم لماذا تقول ذلك",
+     "ex": "I can see why you'd say that, but the rule is still unfair."
     },
     {
      "w": "freedom of choice",
@@ -3249,9 +3349,9 @@
      "ex": "Who is responsible for students' health at school?"
     },
     {
-     "w": "set limits on",
-     "ar": "تضع حدوداً لـ",
-     "ex": "The canteen could set limits on fizzy drinks."
+     "w": "restrict",
+     "ar": "يقيّد / يحدّ من",
+     "ex": "The canteen restricts fizzy drinks to one day a week."
     }
    ],
    "dialogue": [
@@ -3265,7 +3365,7 @@
     },
     {
      "s": "Lama",
-     "t": "You have a point, but schools are responsible for keeping students healthy during the day."
+     "t": "I can see why you'd say that, but schools are responsible for keeping students healthy during the day."
     },
     {
      "s": "Joud",
@@ -3273,7 +3373,7 @@
     },
     {
      "s": "Lama",
-     "t": "Maybe at first. But in the long run, people get used to healthier options."
+     "t": "Maybe at first. But sooner or later, people get used to healthier options."
     },
     {
      "s": "Joud",
@@ -3281,7 +3381,7 @@
     },
     {
      "s": "Lama",
-     "t": "Not completely. The canteen could set limits on sugary things, like one day a week."
+     "t": "Not completely. The canteen could restrict sugary things, like one day a week."
     },
     {
      "s": "Joud",
@@ -3290,10 +3390,10 @@
    ],
    "grammar": {
     "title": "Showing certainty and conceding",
-    "ar": "عبّر عن يقينك بـ There's no doubt that، واعترف برأي الآخر بـ You have a point, but.",
+    "ar": "عبّر عن يقينك بـ There's no doubt that، واعترف برأي الآخر بـ I can see why you'd say that, but.",
     "examples": [
      "There's no doubt that sugar affects concentration.",
-     "You have a point, but a total ban isn't realistic.",
+     "I can see why you'd say that, but a total ban isn't realistic.",
      "While students want choice, schools must think about health."
     ]
    }
@@ -3306,14 +3406,14 @@
      "ex": "I'm firmly in favour of keeping some lessons online."
     },
     {
-     "w": "face-to-face",
-     "ar": "وجهاً لوجه",
-     "ex": "Face-to-face lessons make it easier to ask questions."
+     "w": "in person",
+     "ar": "حضورياً / وجهاً لوجه",
+     "ex": "It is easier to ask questions in person."
     },
     {
-     "w": "at your own pace",
-     "ar": "حسب سرعتك الخاصة",
-     "ex": "Online courses let you study at your own pace."
+     "w": "on your own schedule",
+     "ar": "حسب جدولك الخاص",
+     "ex": "Online courses let you learn on your own schedule."
     },
     {
      "w": "lose motivation",
@@ -3326,15 +3426,15 @@
      "ex": "Online lessons are convenient. Even so, I miss my friends."
     },
     {
-     "w": "I'm convinced that",
-     "ar": "أنا مقتنع بأنّ",
-     "ex": "I'm convinced that teachers can't be replaced by apps."
+     "w": "I firmly believe that",
+     "ar": "أؤمن بشدّة بأنّ",
+     "ex": "I firmly believe that every child should learn to swim."
     }
    ],
    "dialogue": [
     {
      "s": "Dana",
-     "t": "I'm firmly in favour of an online day. I could study at my own pace and sleep a bit longer."
+     "t": "I'm firmly in favour of an online day. I could study on my own schedule and sleep a bit longer."
     },
     {
      "s": "Reem",
@@ -3346,7 +3446,7 @@
     },
     {
      "s": "Reem",
-     "t": "Maybe you would. I'm convinced that most students would lose motivation without a teacher in the room."
+     "t": "Maybe you would. I firmly believe that most students would lose motivation without a teacher in the room."
     },
     {
      "s": "Dana",
@@ -3354,7 +3454,7 @@
     },
     {
      "s": "Reem",
-     "t": "Even so, face-to-face lessons are better for group work and asking quick questions."
+     "t": "Even so, lessons in person are better for group work and asking quick questions."
     },
     {
      "s": "Dana",
@@ -3393,25 +3493,25 @@
      "ex": "She answered every counter-argument calmly."
     },
     {
-     "w": "win someone over",
-     "ar": "تكسب تأييد شخص",
-     "ex": "A good example can win the audience over."
+     "w": "bring someone round",
+     "ar": "يُقنع شخصاً برأيه",
+     "ex": "It took a week, but I brought my dad round to the idea."
     },
     {
-     "w": "make a case for",
-     "ar": "تقدّم حججاً لصالح",
-     "ex": "He made a clear case for longer breaks."
+     "w": "argue in favour of",
+     "ar": "يدافع عن / يؤيّد بالحجّة",
+     "ex": "Our team will argue in favour of the motion."
     },
     {
-     "w": "That may be true, but",
-     "ar": "قد يكون هذا صحيحاً، لكن",
-     "ex": "That may be true, but it doesn't solve the problem."
+     "w": "I hear you, but",
+     "ar": "أسمعك، لكن",
+     "ex": "I hear you, but it still isn't fair."
     }
    ],
    "dialogue": [
     {
      "s": "Lulwa",
-     "t": "The motion is that teenagers should volunteer in the summer. I'd like to make a case for it."
+     "t": "The motion is that teenagers should volunteer in the summer. I'd like to argue in favour of it."
     },
     {
      "s": "Lulwa",
@@ -3427,7 +3527,7 @@
     },
     {
      "s": "Lulwa",
-     "t": "That may be true, but volunteering can be just a few hours a week."
+     "t": "I hear you, but volunteering can be just a few hours a week."
     },
     {
      "s": "Hessa",
@@ -3439,7 +3539,7 @@
     },
     {
      "s": "Hessa",
-     "t": "A strong point, but you haven't won me over yet. Encouraging is better than requiring."
+     "t": "A strong point, but you haven't brought me round yet. Encouraging is better than requiring."
     }
    ],
    "grammar": {
@@ -3465,14 +3565,14 @@
      "ex": "We missed the flight by a few minutes."
     },
     {
-     "w": "if only",
-     "ar": "ليت / لو أنّ",
-     "ex": "If only I had checked the time!"
+     "w": "if it hadn't been for",
+     "ar": "لولا",
+     "ex": "If it hadn't been for the traffic, we would have made it."
     },
     {
-     "w": "set off",
-     "ar": "تنطلق (في رحلة)",
-     "ex": "If we had set off earlier, we'd have been fine."
+     "w": "cut it fine",
+     "ar": "يترك وقتاً ضيقاً جداً",
+     "ex": "Leaving at seven for an eight o'clock flight is cutting it fine."
     },
     {
      "w": "a close call",
@@ -3496,11 +3596,11 @@
     },
     {
      "s": "Bandar",
-     "t": "Oh no! Did you leave late?"
+     "t": "Oh no! Did you cut it too fine?"
     },
     {
      "s": "Turki",
-     "t": "A bit. If we had set off half an hour earlier, we would have caught the plane."
+     "t": "A bit. If we had left half an hour earlier, we would have caught the plane."
     },
     {
      "s": "Bandar",
@@ -3508,7 +3608,7 @@
     },
     {
      "s": "Turki",
-     "t": "No, we flew the next morning. If only my dad hadn't wanted one more coffee before leaving!"
+     "t": "No, we flew the next morning. If it hadn't been for my dad's last coffee, we'd have made it!"
     },
     {
      "s": "Bandar",
@@ -3552,14 +3652,14 @@
      "ex": "Don't blame the loss on the referee."
     },
     {
-     "w": "in hindsight",
-     "ar": "بعد فوات الأوان / بالنظر للماضي",
-     "ex": "In hindsight, we should have defended more."
+     "w": "in retrospect",
+     "ar": "عند النظر إلى الماضي",
+     "ex": "In retrospect, the coach chose the wrong team."
     },
     {
-     "w": "a close call",
-     "ar": "نجاة بأعجوبة / كادت أن تحدث",
-     "ex": "Our keeper saved it, but it was a close call."
+     "w": "a near miss",
+     "ar": "كاد أن يحدث / نجاة في اللحظة الأخيرة",
+     "ex": "The ball hit the bar. What a near miss!"
     }
    ],
    "dialogue": [
@@ -3577,7 +3677,7 @@
     },
     {
      "s": "Ziyad",
-     "t": "In hindsight, the red card was the turning point. We were playing with ten men after that."
+     "t": "In retrospect, the red card was the turning point. We were playing with ten men after that."
     },
     {
      "s": "Saad",
@@ -3589,7 +3689,7 @@
     },
     {
      "s": "Saad",
-     "t": "And their striker nearly scored a third in the last minute. That was a close call!"
+     "t": "And their striker nearly scored a third in the last minute. That was a near miss!"
     },
     {
      "s": "Ziyad",
@@ -3609,9 +3709,9 @@
   "1-2": {
    "words": [
     {
-     "w": "come up with",
-     "ar": "يبتكر / يخطر بفكرة",
-     "ex": "Who came up with the idea of the internet?"
+     "w": "dream up",
+     "ar": "يبتكر / يتخيّل فكرة",
+     "ex": "He dreamed up a robot that waters plants."
     },
     {
      "w": "change the course of history",
@@ -3624,25 +3724,25 @@
      "ex": "Without electricity, we couldn't use our phones."
     },
     {
-     "w": "by accident",
-     "ar": "بالصدفة",
-     "ex": "Penicillin was discovered by accident in 1928."
+     "w": "stumble upon",
+     "ar": "يعثر على شيء بالصدفة",
+     "ex": "We stumbled upon a lovely café in Diriyah."
     },
     {
-     "w": "take something for granted",
-     "ar": "تعتبره أمراً مسلّماً به",
-     "ex": "We take clean water for granted."
+     "w": "can't imagine life without",
+     "ar": "لا يتخيّل الحياة بدون",
+     "ex": "My grandmother can't imagine life without her morning coffee."
     },
     {
-     "w": "turn out",
-     "ar": "تنتهي إلى / يتّضح",
-     "ex": "His mistake turned out to be a great discovery."
+     "w": "unfold",
+     "ar": "تتكشّف / تتطوّر الأحداث",
+     "ex": "We watched the story unfold on the news."
     }
    ],
    "dialogue": [
     {
      "s": "Huda",
-     "t": "Let's start with penicillin. Fleming discovered it by accident when he left some lab dishes out before a holiday."
+     "t": "Let's start with penicillin. Fleming stumbled upon it when he left some lab dishes out before a holiday."
     },
     {
      "s": "Maha",
@@ -3654,11 +3754,11 @@
     },
     {
      "s": "Maha",
-     "t": "We really take medicine for granted, don't we?"
+     "t": "We can't imagine life without medicine now, can we?"
     },
     {
      "s": "Huda",
-     "t": "What about Al-Jazari? He came up with amazing machines over 800 years ago."
+     "t": "What about Al-Jazari? He dreamed up amazing machines over 800 years ago."
     },
     {
      "s": "Maha",
@@ -3670,7 +3770,7 @@
     },
     {
      "s": "Maha",
-     "t": "So history turned out the way it did partly because of one curious inventor. Great video idea!"
+     "t": "So history unfolded the way it did partly because of one curious inventor. Great video idea!"
     }
    ],
    "grammar": {
@@ -3691,19 +3791,19 @@
      "ex": "I made a decision to join the swimming club."
     },
     {
-     "w": "end up",
-     "ar": "ينتهي بك الأمر",
-     "ex": "I ended up loving a subject I used to hate."
+     "w": "rediscover",
+     "ar": "يعيد اكتشاف",
+     "ex": "She rediscovered her love of reading last summer."
     },
     {
-     "w": "pay off",
+     "w": "bear fruit",
      "ar": "يؤتي ثماره",
-     "ex": "All those hours of practice finally paid off."
+     "ex": "Months of training finally bore fruit."
     },
     {
-     "w": "give up",
-     "ar": "تستسلم / تتوقف",
-     "ex": "If I had given up piano, I wouldn't play today."
+     "w": "pack in",
+     "ar": "يترك / يتوقّف عن (هواية)",
+     "ex": "He packed in piano lessons when he was ten."
     },
     {
      "w": "fluent in",
@@ -3711,9 +3811,9 @@
      "ex": "If I had started earlier, I'd be fluent in French now."
     },
     {
-     "w": "in hindsight",
-     "ar": "بالنظر إلى ما مضى",
-     "ex": "In hindsight, joining the club was a great choice."
+     "w": "now that I think about it",
+     "ar": "الآن وأنا أفكّر في الأمر",
+     "ex": "Now that I think about it, the trip was great."
     }
    ],
    "dialogue": [
@@ -3723,7 +3823,7 @@
     },
     {
      "s": "Mishari",
-     "t": "When I was ten, I made a decision to watch cartoons only in English. It really paid off."
+     "t": "When I was ten, I made a decision to watch cartoons only in English. It really bore fruit."
     },
     {
      "s": "Nasser",
@@ -3735,7 +3835,7 @@
     },
     {
      "s": "Nasser",
-     "t": "True. But I gave up drawing at twelve, and in hindsight that was a mistake."
+     "t": "True. But I packed in drawing at twelve, and now that I think about it, that was a mistake."
     },
     {
      "s": "Mishari",
@@ -3743,11 +3843,11 @@
     },
     {
      "s": "Nasser",
-     "t": "If I hadn't given up, I would probably be studying design at the art academy now."
+     "t": "If I hadn't packed it in, I would probably be studying design at the art academy now."
     },
     {
      "s": "Mishari",
-     "t": "Then start again! You might end up loving it even more."
+     "t": "Then start again! You might rediscover how much you love it."
     }
    ],
    "grammar": {
@@ -3783,14 +3883,14 @@
      "ex": "My brother is outgoing, so he makes friends easily."
     },
     {
-     "w": "make a decision",
-     "ar": "تتخذ قراراً",
-     "ex": "He made a quick decision and it worked."
+     "w": "seize the moment",
+     "ar": "يغتنم الفرصة",
+     "ex": "When the coach asked for volunteers, I seized the moment."
     },
     {
-     "w": "end up",
-     "ar": "ينتهي بك الأمر",
-     "ex": "We ended up winning the competition."
+     "w": "get a part",
+     "ar": "يحصل على دور",
+     "ex": "My cousin got a part in the school play."
     }
    ],
    "dialogue": [
@@ -3820,11 +3920,11 @@
     },
     {
      "s": "Hamad",
-     "t": "What a lucky break! So what happened next?"
+     "t": "What a lucky break! You really seized the moment. So what happened next?"
     },
     {
      "s": "Sultan",
-     "t": "I ended up with two lines in the film. If I hadn't said hello, I wouldn't be a 'film star' now!"
+     "t": "I got a small part with two lines in the film. If I hadn't said hello, I wouldn't be a 'film star' now!"
     }
    ],
    "grammar": {
@@ -3840,9 +3940,9 @@
   "1-5": {
    "words": [
     {
-     "w": "a turning point",
-     "ar": "نقطة تحوّل",
-     "ex": "Moving to Jeddah was a turning point for our family."
+     "w": "a defining moment",
+     "ar": "لحظة فارقة",
+     "ex": "Winning the cup was a defining moment for the club."
     },
     {
      "w": "it all started when",
@@ -3865,9 +3965,9 @@
      "ex": "The team was on the verge of giving up."
     },
     {
-     "w": "change the course of history",
-     "ar": "يغيّر مجرى التاريخ",
-     "ex": "One well changed the course of history."
+     "w": "make history",
+     "ar": "يصنع التاريخ",
+     "ex": "The first Saudi woman in space made history."
     }
    ],
    "dialogue": [
@@ -3889,7 +3989,7 @@
     },
     {
      "s": "Rakan",
-     "t": "Exactly. They kept drilling and struck oil at Well No. 7 in 1938. It was a real turning point."
+     "t": "Exactly. They kept drilling and struck oil at Well No. 7 in 1938. It was a defining moment."
     },
     {
      "s": "Saud",
@@ -3901,7 +4001,7 @@
     },
     {
      "s": "Saud",
-     "t": "Amazing. One decision not to give up changed the course of history."
+     "t": "Amazing. One decision not to give up made history."
     }
    ],
    "grammar": {
@@ -3932,9 +4032,9 @@
      "ex": "Let me start by explaining how I got interested."
     },
     {
-     "w": "get into",
-     "ar": "يبدأ الاهتمام بـ",
-     "ex": "I got into calligraphy when I was eleven."
+     "w": "fall in love with",
+     "ar": "يقع في حبّ",
+     "ex": "I fell in love with football when I was six."
     },
     {
      "w": "a passion for",
@@ -3966,7 +4066,7 @@
     },
     {
      "s": "Noura",
-     "t": "Let me start by telling you how I got into it. My grandmother showed me her pens when I was nine."
+     "t": "Let me start by telling you how I fell in love with it. My grandmother showed me her pens when I was nine."
     },
     {
      "s": "Hannah",
@@ -4004,9 +4104,9 @@
      "ex": "Moving on to my second point, the food."
     },
     {
-     "w": "Last but not least",
-     "ar": "وأخيراً وليس آخراً",
-     "ex": "Last but not least, don't forget your camera."
+     "w": "To finish with",
+     "ar": "وفي الختام / وأخيراً",
+     "ex": "To finish with, here's a practical tip."
     },
     {
      "w": "be home to",
@@ -4014,14 +4114,14 @@
      "ex": "AlUla is home to Hegra, a UNESCO site."
     },
     {
-     "w": "breathtaking",
-     "ar": "يخطف الأنفاس",
-     "ex": "The view from Elephant Rock is breathtaking."
+     "w": "spectacular",
+     "ar": "مذهل / خلّاب",
+     "ex": "The fireworks over the Corniche were spectacular."
     },
     {
-     "w": "divide into",
-     "ar": "تقسّم إلى",
-     "ex": "I've divided my tips into three groups."
+     "w": "structure",
+     "ar": "يُنظّم / يرتّب الأجزاء",
+     "ex": "She structured her talk around three questions."
     }
    ],
    "dialogue": [
@@ -4035,11 +4135,11 @@
     },
     {
      "s": "Bandar",
-     "t": "Moving on to nature, the rock formations are breathtaking, especially Elephant Rock at sunset."
+     "t": "Moving on to nature, the rock formations are spectacular, especially Elephant Rock at sunset."
     },
     {
      "s": "Bandar",
-     "t": "Last but not least, visit in winter, when the weather is perfect for walking."
+     "t": "To finish with, here's a tip: visit in winter, when the weather is perfect for walking."
     },
     {
      "s": "Ms Carter",
@@ -4047,7 +4147,7 @@
     },
     {
      "s": "Bandar",
-     "t": "I wanted to start with history, then move on to nature, and finish with practical tips."
+     "t": "I structured it in three parts: history first, then nature, and practical tips at the end."
     },
     {
      "s": "Ms Carter",
@@ -4096,9 +4196,9 @@
      "ex": "Our class worked as a team to win the quiz."
     },
     {
-     "w": "Moving on to",
-     "ar": "ننتقل الآن إلى",
-     "ex": "Moving on to health, sport protects your heart."
+     "w": "turn to",
+     "ar": "ينتقل إلى (موضوع)",
+     "ex": "Now I'd like to turn to the results."
     }
    ],
    "dialogue": [
@@ -4132,7 +4232,7 @@
     },
     {
      "s": "Yazeed",
-     "t": "Good idea. Doctors say one hour a day for teenagers. I'll add it before moving on to stress."
+     "t": "Good idea. Doctors say one hour a day for teenagers. I'll add it before I turn to stress."
     }
    ],
    "grammar": {
@@ -4173,9 +4273,9 @@
      "ex": "We carried out a survey of 60 students."
     },
     {
-     "w": "For instance",
-     "ar": "على سبيل المثال",
-     "ex": "For instance, three students sleep only five hours."
+     "w": "interestingly",
+     "ar": "ومن المثير للاهتمام أنّ",
+     "ex": "Interestingly, most players sleep better after training."
     }
    ],
    "dialogue": [
@@ -4205,7 +4305,7 @@
     },
     {
      "s": "Razan",
-     "t": "Yes. For instance, players who train every day said they fall asleep much faster."
+     "t": "Yes. Interestingly, players who train every day said they fall asleep much faster."
     }
    ],
    "grammar": {
@@ -4241,14 +4341,14 @@
      "ex": "I'll come back to that at the end."
     },
     {
-     "w": "go over",
-     "ar": "تراجع / تستعرض",
-     "ex": "Let me go over the three main points again."
+     "w": "run through",
+     "ar": "يستعرض بسرعة",
+     "ex": "Let's run through the plan one more time."
     },
     {
-     "w": "As you can see",
-     "ar": "كما ترون",
-     "ex": "As you can see, our device is very simple."
+     "w": "if you look at",
+     "ar": "إذا نظرتم إلى",
+     "ex": "If you look at the second slide, you'll see the costs."
     }
    ],
    "dialogue": [
@@ -4258,7 +4358,7 @@
     },
     {
      "s": "Ziyad",
-     "t": "Let me quickly go over the three main points: it's cheap, easy to fit and works on any tap."
+     "t": "Let me quickly run through the three main points: it's cheap, easy to fit and works on any tap."
     },
     {
      "s": "Ziyad",
@@ -4282,7 +4382,7 @@
     },
     {
      "s": "Ziyad",
-     "t": "About fifteen riyals. As you can see on this last slide, it pays for itself in a few months."
+     "t": "About fifteen riyals. If you look at this last slide, you'll see it pays for itself in a few months."
     }
    ],
    "grammar": {
@@ -4318,14 +4418,14 @@
      "ex": "Stick to three points and you'll finish on time."
     },
     {
-     "w": "Moving on to",
-     "ar": "ننتقل الآن إلى",
-     "ex": "Moving on to her achievements, she was the first …"
+     "w": "as for",
+     "ar": "أمّا بالنسبة لـ",
+     "ex": "As for the cost, it is very low."
     },
     {
-     "w": "To sum up",
-     "ar": "للتلخيص",
-     "ex": "To sum up, he taught me never to give up."
+     "w": "all in all",
+     "ar": "إجمالاً / بشكل عام",
+     "ex": "All in all, it was a great day."
     }
    ],
    "dialogue": [
@@ -4339,11 +4439,11 @@
     },
     {
      "s": "Lulwa",
-     "t": "For instance, you can see turtles and even dolphins near Umluj. Moving on to the dangers, warmer seas are damaging the coral."
+     "t": "For instance, you can see turtles and even dolphins near Umluj. As for the dangers, warmer seas are damaging the coral."
     },
     {
      "s": "Lulwa",
-     "t": "To sum up, these reefs are a treasure, and we must protect them. Thank you."
+     "t": "All in all, these reefs are a treasure, and we must protect them. Thank you."
     },
     {
      "s": "Hamad",
@@ -4400,9 +4500,9 @@
      "ex": "I'm not so keen on the zoo. It's too hot."
     },
     {
-     "w": "work as a team",
-     "ar": "يعمل بروح الفريق",
-     "ex": "Let's work as a team and plan this properly."
+     "w": "be on the same page",
+     "ar": "متّفقان / على نفس الموجة",
+     "ex": "Before we start, let's make sure we're on the same page."
     }
    ],
    "dialogue": [
@@ -4436,7 +4536,7 @@
     },
     {
      "s": "Yousef",
-     "t": "Yes, let's. See, we work well as a team!"
+     "t": "Yes, let's. See, we're on the same page!"
     }
    ],
    "grammar": {
@@ -4472,20 +4572,20 @@
      "ex": "A clothes collection is definitely worth considering."
     },
     {
-     "w": "It depends on",
-     "ar": "يعتمد على",
-     "ex": "It depends on how much time we have."
+     "w": "it all comes down to",
+     "ar": "الأمر كلّه يتوقّف على",
+     "ex": "Winning the match all comes down to teamwork."
     },
     {
-     "w": "How about + -ing",
-     "ar": "ما رأيك في أن …؟",
-     "ex": "How about collecting books for the hospital?"
+     "w": "What would you say to …?",
+     "ar": "ما رأيك في …؟",
+     "ex": "What would you say to having a picnic on Friday?"
     }
    ],
    "dialogue": [
     {
      "s": "Hind",
-     "t": "How about preparing iftar meals for workers? That would be really helpful."
+     "t": "What would you say to preparing iftar meals for workers? That would be really helpful."
     },
     {
      "s": "Isabel",
@@ -4505,7 +4605,7 @@
     },
     {
      "s": "Isabel",
-     "t": "It depends on how many we collect. If every girl in the club brings five items, that's hundreds."
+     "t": "It all comes down to how many we collect. If every girl in the club brings five items, that's hundreds."
     },
     {
      "s": "Hind",
@@ -4554,9 +4654,9 @@
      "ex": "A puppet show would keep them entertained for hours."
     },
     {
-     "w": "worth considering",
-     "ar": "يستحق النظر فيه",
-     "ex": "A face-painting stand is worth considering."
+     "w": "have potential",
+     "ar": "لديه إمكانيات / واعد",
+     "ex": "The idea has potential, but it needs more work."
     }
    ],
    "dialogue": [
@@ -4570,7 +4670,7 @@
     },
     {
      "s": "Joud",
-     "t": "It's worth considering, but some little ones might be scared of the paint."
+     "t": "It has potential, but some little ones might be scared of the paint."
     },
     {
      "s": "Jana",
@@ -4611,9 +4711,9 @@
      "ex": "I see what you mean, but a café would cost too much."
     },
     {
-     "w": "meet halfway",
-     "ar": "نلتقي في منتصف الطريق",
-     "ex": "Let's meet halfway: a small café and a big garden."
+     "w": "find a middle ground",
+     "ar": "يجد حلاً وسطاً",
+     "ex": "We couldn't agree, so we found a middle ground."
     },
     {
      "w": "So shall we go for",
@@ -4631,9 +4731,9 @@
      "ex": "I'm with you on the trees. We need more shade."
     },
     {
-     "w": "The problem with … is that",
-     "ar": "المشكلة في … هي أنّ",
-     "ex": "The problem with a pool is that it's expensive to run."
+     "w": "the snag with … is that",
+     "ar": "المشكلة الصغيرة في … هي أنّ",
+     "ex": "The snag with that plan is that it costs too much."
     }
    ],
    "dialogue": [
@@ -4647,7 +4747,7 @@
     },
     {
      "s": "Abdullah",
-     "t": "True. The problem with a playground, though, is that we already have one."
+     "t": "True. The snag with a playground, though, is that we already have one."
     },
     {
      "s": "Mohammed",
@@ -4659,7 +4759,7 @@
     },
     {
      "s": "Mohammed",
-     "t": "So why don't we meet halfway? Trees around a new playground, with a small skate area next to it."
+     "t": "So why don't we find a middle ground? Trees around a new playground, with a small skate area next to it."
     },
     {
      "s": "Abdullah",
@@ -4708,9 +4808,9 @@
      "ex": "I think schools should teach first aid. What's your view?"
     },
     {
-     "w": "I see what you mean, but",
-     "ar": "أفهم ما تقصده، لكن",
-     "ex": "I see what you mean, but parents can't teach everything."
+     "w": "partly true",
+     "ar": "صحيح جزئياً",
+     "ex": "That's partly true, but it isn't the whole story."
     }
    ],
    "dialogue": [
@@ -4724,7 +4824,7 @@
     },
     {
      "s": "Abeer",
-     "t": "I see what you mean, but not every family has the time for that."
+     "t": "That's partly true, but not every family has the time for that."
     },
     {
      "s": "Dana",
@@ -4765,39 +4865,39 @@
      "ex": "Let's start with the book club idea."
     },
     {
-     "w": "reach a decision",
-     "ar": "نتوصّل إلى قرار",
-     "ex": "We reached a decision after five minutes."
+     "w": "once and for all",
+     "ar": "بشكل نهائي",
+     "ex": "Let's decide once and for all where to go."
     },
     {
-     "w": "That would be",
-     "ar": "سيكون ذلك",
-     "ex": "That would be very motivating for young readers."
+     "w": "a great way to",
+     "ar": "طريقة رائعة لـ",
+     "ex": "A book swap is a great way to share stories."
     },
     {
-     "w": "So shall we go for",
-     "ar": "إذن هل نختار",
-     "ex": "So shall we go for the reading app?"
+     "w": "Are we agreed on …?",
+     "ar": "هل اتّفقنا على …؟",
+     "ex": "So are we agreed on the museum trip?"
     },
     {
-     "w": "What do you reckon",
-     "ar": "ما رأيك؟",
-     "ex": "What do you reckon about a reading competition?"
+     "w": "What are your thoughts on …?",
+     "ar": "ما رأيك في …؟",
+     "ex": "What are your thoughts on a class trip to Taif?"
     },
     {
-     "w": "Generally speaking",
-     "ar": "بشكل عام",
-     "ex": "Generally speaking, teenagers read more on screens."
+     "w": "for the most part",
+     "ar": "في معظم الأحيان",
+     "ex": "For the most part, the trip went well."
     }
    ],
    "dialogue": [
     {
      "s": "Salman",
-     "t": "Let's start with the reading competition. That would be motivating, especially with prizes."
+     "t": "Let's start with the reading competition. It'd be a great way to motivate people, especially with prizes."
     },
     {
      "s": "Jack",
-     "t": "Maybe, but the problem with competitions is that weaker readers might give up. What do you reckon about a book club?"
+     "t": "Maybe, but the problem with competitions is that weaker readers might give up. What are your thoughts on a book club?"
     },
     {
      "s": "Salman",
@@ -4809,7 +4909,7 @@
     },
     {
      "s": "Salman",
-     "t": "Good idea. We need to reach a decision, though. So shall we go for the book club and audiobooks?"
+     "t": "Good idea. We need to decide once and for all, though. So are we agreed on the book club and audiobooks?"
     },
     {
      "s": "Jack",
@@ -4817,7 +4917,7 @@
     },
     {
      "s": "Salman",
-     "t": "Generally speaking, I think teenagers read more than adults think, just on screens."
+     "t": "For the most part, I think teenagers read more than adults think, just on screens."
     },
     {
      "s": "Jack",
@@ -4847,9 +4947,9 @@
      "are",
      "far",
      "too",
-     "addictive."
+     "habit-forming."
     ],
-    "answer": "I'd argue that phones are far too addictive.",
+    "answer": "I'd argue that phones are far too habit-forming.",
     "ar": "رتّب الجملة"
    },
    {
@@ -4860,10 +4960,10 @@
      "set",
      "limits",
      "on",
-     "screen",
-     "time."
+     "phone",
+     "use."
     ],
-    "answer": "Parents should set limits on screen time.",
+    "answer": "Parents should set limits on phone use.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5043,16 +5143,15 @@
    {
     "type": "order",
     "words": [
-     "In",
-     "the",
-     "long",
-     "run,",
+     "Sooner",
+     "or",
+     "later,",
      "healthy",
      "habits",
      "save",
      "money."
     ],
-    "answer": "In the long run, healthy habits save money.",
+    "answer": "Sooner or later, healthy habits save money.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5070,7 +5169,7 @@
     "type": "mc",
     "q": "Which reply concedes a point but keeps your position?",
     "options": [
-     "You have a point, but a ban is still necessary.",
+     "I can see why you'd say that, but a ban is still necessary.",
      "You're completely right, so I give up.",
      "That's nonsense.",
      "I have no idea."
@@ -5200,7 +5299,7 @@
      "Hello, everyone.",
      "My name is Hessa.",
      "Thank you for listening.",
-     "That may be true, but it doesn't solve the problem."
+     "I hear you, but it doesn't solve the problem."
     ],
     "answer": 3
    },
@@ -5210,13 +5309,13 @@
      "I'd",
      "like",
      "to",
-     "make",
-     "a",
-     "case",
-     "for",
+     "argue",
+     "in",
+     "favour",
+     "of",
      "volunteering."
     ],
-    "answer": "I'd like to make a case for volunteering.",
+    "answer": "I'd like to argue in favour of volunteering.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5227,8 +5326,7 @@
      "If",
      "we",
      "had",
-     "set",
-     "off",
+     "left",
      "earlier,",
      "we",
      "would",
@@ -5237,7 +5335,7 @@
      "the",
      "plane."
     ],
-    "answer": "If we had set off earlier, we would have caught the plane.",
+    "answer": "If we had left earlier, we would have caught the plane.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5277,14 +5375,20 @@
     "type": "order",
     "words": [
      "If",
-     "only",
-     "I",
-     "had",
-     "checked",
+     "it",
+     "hadn't",
+     "been",
+     "for",
      "the",
-     "time!"
+     "traffic,",
+     "we",
+     "would",
+     "have",
+     "arrived",
+     "on",
+     "time."
     ],
-    "answer": "If only I had checked the time!",
+    "answer": "If it hadn't been for the traffic, we would have arrived on time.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5320,7 +5424,7 @@
     "options": [
      "In advance",
      "In time",
-     "In hindsight",
+     "In retrospect",
      "In case"
     ],
     "answer": 2
@@ -5355,13 +5459,12 @@
    {
     "type": "order",
     "words": [
-     "Penicillin",
-     "was",
-     "discovered",
-     "by",
-     "accident."
+     "Fleming",
+     "stumbled",
+     "upon",
+     "penicillin."
     ],
-    "answer": "Penicillin was discovered by accident.",
+    "answer": "Fleming stumbled upon penicillin.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5388,14 +5491,14 @@
    },
    {
     "type": "mc",
-    "q": "Who 'came up with' the idea?",
+    "q": "If you 'dream up' an idea, you …",
     "options": [
-     "Who copied the idea?",
-     "Who forgot the idea?",
-     "Who disliked the idea?",
-     "Who first thought of the idea?"
+     "imagine and invent it",
+     "forget it",
+     "sleep badly",
+     "copy it"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "order",
@@ -5433,10 +5536,10 @@
      "hard",
      "work",
      "finally",
-     "paid",
-     "off."
+     "bore",
+     "fruit."
     ],
-    "answer": "All my hard work finally paid off.",
+    "answer": "All my hard work finally bore fruit.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5452,25 +5555,25 @@
    },
    {
     "type": "mc",
-    "q": "If you 'end up' somewhere, you …",
+    "q": "If you 'rediscover' a hobby, you …",
     "options": [
-     "refuse to go there",
-     "finally find yourself there",
-     "leave it quickly",
-     "visit it every day"
+     "enjoy it again after a long time",
+     "stop it forever",
+     "try it for the first time",
+     "teach it"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
     "words": [
      "I",
      "almost",
-     "gave",
-     "up",
+     "packed",
+     "in",
      "drawing."
     ],
-    "answer": "I almost gave up drawing.",
+    "answer": "I almost packed in drawing.",
     "ar": "رتّب الجملة"
    }
   ],
@@ -5673,7 +5776,7 @@
     "options": [
      "Firstly,",
      "Moving on to …",
-     "Last but not least,",
+     "To finish with,",
      "Let me start by …"
     ],
     "answer": 2
@@ -5712,9 +5815,9 @@
      "the",
      "top",
      "is",
-     "breathtaking."
+     "spectacular."
     ],
-    "answer": "The view from the top is breathtaking.",
+    "answer": "The view from the top is spectacular.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5948,7 +6051,7 @@
    },
    {
     "type": "mc",
-    "q": "Put the talk in the best order: A) To sum up B) Today I'd like to talk about C) Moving on to",
+    "q": "Put the talk in the best order: A) All in all B) Today I'd like to talk about C) As for …",
     "options": [
      "A, B, C",
      "C, A, B",
@@ -6077,7 +6180,7 @@
     "type": "mc",
     "q": "Which sentence evaluates an option?",
     "options": [
-     "How about a garden?",
+     "What would you say to a garden?",
      "Let's go.",
      "Do you agree?",
      "That would be useful because students need shade."
@@ -6302,7 +6405,7 @@
     "options": [
      "Talk only about yourself",
      "Stop talking",
-     "Reach a decision together",
+     "Decide together once and for all",
      "Ask the examiner the answer"
     ],
     "answer": 2
@@ -6325,8 +6428,8 @@
     "type": "mc",
     "q": "Which phrase moves the discussion towards a decision?",
     "options": [
-     "So shall we go for these two?",
-     "Generally speaking, I read a lot.",
+     "So are we agreed on these two?",
+     "For the most part, I read a lot.",
      "That's an interesting question.",
      "In my experience, books are boring."
     ],
@@ -6338,12 +6441,13 @@
      "We",
      "need",
      "to",
-     "reach",
-     "a",
-     "decision",
-     "now."
+     "decide",
+     "once",
+     "and",
+     "for",
+     "all."
     ],
-    "answer": "We need to reach a decision now.",
+    "answer": "We need to decide once and for all.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6352,8 +6456,8 @@
     "options": [
      "I go along.",
      "It's depends.",
-     "Reach a decision.",
-     "That would be motivating, but some might give up."
+     "Decide once and for all.",
+     "It'd be a great way to motivate people, but some might give up."
     ],
     "answer": 3
    }
@@ -6375,12 +6479,12 @@
     },
     {
      "type": "mc",
-     "q": "Short-video apps are designed to be ___.",
+     "q": "Short-video apps are designed to be ___, so people keep watching.",
      "options": [
-      "addictive",
-      "addicted",
-      "addiction",
-      "addict"
+      "habit-forming",
+      "habit-formed",
+      "habits forming",
+      "habit form"
      ],
      "answer": 0
     },
@@ -6603,13 +6707,12 @@
     {
      "type": "order",
      "words": [
-      "Penicillin",
-      "was",
-      "discovered",
-      "by",
-      "accident."
+      "Fleming",
+      "stumbled",
+      "upon",
+      "penicillin."
      ],
-     "answer": "Penicillin was discovered by accident.",
+     "answer": "Fleming stumbled upon penicillin.",
      "ar": "رتّب الجملة"
     }
    ],
@@ -6679,7 +6782,7 @@
      "type": "mc",
      "q": "Which phrase introduces an example?",
      "options": [
-      "Last but not least,",
+      "To finish with,",
       "To sum up,",
       "For instance,",
       "Firstly,"
@@ -6716,16 +6819,15 @@
     {
      "type": "order",
      "words": [
-      "Last",
-      "but",
-      "not",
-      "least,",
+      "To",
+      "finish",
+      "with,",
       "don't",
       "forget",
       "your",
       "camera."
      ],
-     "answer": "Last but not least, don't forget your camera.",
+     "answer": "To finish with, don't forget your camera.",
      "ar": "رتّب الجملة"
     },
     {
@@ -7100,10 +7202,12 @@
      "Why",
      "don't",
      "we",
-     "meet",
-     "halfway?"
+     "find",
+     "a",
+     "middle",
+     "ground?"
     ],
-    "answer": "Why don't we meet halfway?",
+    "answer": "Why don't we find a middle ground?",
     "ar": "رتّب الجملة"
    },
    {
