@@ -2809,6 +2809,7 @@ function renderRoom(){
   $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } if(L.review){ finishReview(); return; } teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
   setState('idle'); setMood('happy');
   L.firstWave = true; blinkLoop(); idleGlance();
+  liveSetup();
 }
 function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt.getTime())/1000), t = $('#timer');
   if(t){ t.textContent = `${pad(Math.floor(s/60))}:${pad(s%60)} / 25:00`; t.classList.toggle('over', s > LESSON_MIN*60); }
@@ -2878,6 +2879,7 @@ function pump(){
 }
 function speakOne(text, slow, done){ if(azOn() && L) return speakOneAZ(text, slow, done); return speakOneWS(text, slow, done); }
 function speakOneWS(text, slow, done){
+  ackStop();
   let finished = false; const fin = () => { if(finished) return; finished = true; clearTimeout(guard); stopMouth(); if(L) setMouth('rest'); done && done(); };
   const words = text.split(/\s+/).length; const guard = setTimeout(fin, (slow?700:420)*words + 2500);
   const rate = slow ? 0.7 : (DB.kids[L.kid].level <= 6 ? 0.88 : 0.96);
@@ -2898,6 +2900,35 @@ function interrupt(listenAfter){
   try{ speechSynthesis.cancel(); }catch(e){}
   if(listenAfter) startListening(true); else setState('idle');
 }
+/* ---- instant acknowledgement: a tiny "Mm-hm!" in the teacher's voice the moment the child's turn is sent, so the wait for the
+   real answer feels like listening, not silence. Cached at lesson start (own blobs, never evicted); the real reply replaces it. */
+const ACKS = ['Mm-hm!', 'Okay!', 'Oh, nice!', 'Hmm…', 'Aha!', 'I see!', 'Ooh!', 'Right!'];
+let ACK_URL = {}, ACK_LAST = '', ACK_ON = false;
+const ackRate = () => L && DB.kids[L.kid] && DB.kids[L.kid].level <= 6 ? .92 : 1;
+function ackPrefetch(){
+  if(!L || !azOn()) return; const vn = kidVoices(L.kid).teacher, rate = ackRate();
+  ACKS.forEach(a => { const key = vn + '|' + rate + '|' + a; if(ACK_URL[key]) return; ACK_URL[key] = 'loading';
+    azFetchNet(a, vn, rate).then(u => { ACK_URL[key] = u; }, () => { delete ACK_URL[key]; }); });
+}
+function ackPlay(){
+  if(!L || L.done || L.speaking || L.queue.length) return;
+  const pool = ACKS.filter(a => a !== ACK_LAST), a = pool[Math.floor(Math.random() * pool.length)];
+  if(azOn()){
+    const url = ACK_URL[kidVoices(L.kid).teacher + '|' + ackRate() + '|' + a];
+    if(!url || url === 'loading' || AZ_RES) return; // not cached yet: say nothing rather than arrive late
+    ACK_LAST = a; ACK_ON = true;
+    try{ const el = azEl(); el.onplaying = null; el.onerror = () => { ACK_ON = false; }; el.onended = () => { ACK_ON = false; };
+      el.src = url; const p = el.play(); if(p && p.catch) p.catch(() => { ACK_ON = false; }); mouthWalk(a.replace(/[^a-z ]/gi, ''), 70); }catch(e){ ACK_ON = false; }
+    return;
+  }
+  if(!('speechSynthesis' in window)) return;
+  try{ ACK_LAST = a; const u = new SpeechSynthesisUtterance(a.replace('…', '')), male = !teacherOf(L.kid).female; u.lang = 'en-US'; u.rate = DB.kids[L.kid].level <= 6 ? .88 : .96; u.pitch = male ? .88 : 1.04;
+    speechSynthesis.speak(u); }catch(e){}
+}
+/* the first real sentence is ready: stop the acknowledgement if it is still playing (never overlap the reply) */
+function ackStop(){ if(!ACK_ON) return; ACK_ON = false; try{ azEl().pause(); }catch(e){} }
+/* once per lesson room (lesson, mission, review): warm up everything the turn pipeline needs */
+function liveSetup(){ if(!L) return; ackPrefetch(); }
 
 /* ---- teacher turn (streaming) ---- */
 function parseTags(full){
@@ -3025,7 +3056,8 @@ function stopListening(submit){
 }
 function studentSaid(text){
   if(L){ L.sw += countWords(text); updateTalk(); }
-  const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live'); you.textContent = text; }
+  const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; }
+  if(L){ setState('thinking'); ackPlay(); }
   teacherTurn(`Student: ${text}`);
 }
 
@@ -4052,6 +4084,7 @@ function speakOneAZ(text, slow, done){
   azFetch(text, vn, rate).then(url => { if(finished || gen !== AZ_GEN) return;
     // the sound must START within 4 s (iPad sometimes never starts or ends an <audio>): otherwise use the device voice
     clearTimeout(guard); guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; try{ azEl().pause(); }catch(e){} speakOneWS(text, slow, done); } }, 4000);
+    ackStop();
     return azPlay(url, dur => { clearTimeout(guard); guard = setTimeout(fin, dur ? dur*1000 + 1500 : text.length*90 + 3000); mouthWalk(text, Math.max(35, Math.round((dur ? dur*1000 : text.length*65) / text.length))); }).then(fin);
   }).catch(e => { azFail(e); if(!finished && gen === AZ_GEN){ finished = true; clearTimeout(guard); speakOneWS(text, slow, done); } });
 }
