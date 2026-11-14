@@ -10,7 +10,10 @@
    ],
    "answer": 0,
    "skill": "grammar",
-   "d": 2.3
+   "d": 2.3,
+   "cefr": "Pre-A1",
+   "cando": "Can say what they like and what they have got.",
+   "cid": "p7"
   },
   {
    "q": "This is my sister. ___ hair is long.",
@@ -21,7 +24,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "cando": "Can use my/his/her and he/she correctly in simple sentences.",
+   "cid": "p3"
   },
   {
    "q": "one foot, two ___",
@@ -32,7 +38,10 @@
    ],
    "answer": 2,
    "skill": "grammar",
-   "d": 2.5
+   "d": 2.5,
+   "cefr": "A1",
+   "cando": "Can use plural nouns and can/can't for ability.",
+   "cid": "p9"
   },
   {
    "q": "Do you like bananas?",
@@ -43,29 +52,38 @@
    ],
    "answer": 1,
    "skill": "function",
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "cando": "Can say what they like and what they have got.",
+   "cid": "p7"
   },
   {
-   "q": "A cold sweet food: ___",
+   "q": "Boy: It's very hot today! Mum: Have an ___. It's cold and sweet.",
    "options": [
     "ice cream",
     "soup",
-    "rice"
+    "egg"
    ],
    "answer": 0,
+   "d": 2.0,
+   "cefr": "Pre-A1",
    "skill": "vocabulary",
-   "d": 2.0
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
-   "q": "Move in the air: ___",
+   "q": "Look at the bird! It can ___ high in the sky.",
    "options": [
-    "swim",
     "walk",
-    "fly"
+    "fly",
+    "swim"
    ],
-   "answer": 2,
+   "answer": 1,
+   "d": 2.0,
+   "cefr": "Pre-A1",
    "skill": "vocabulary",
-   "d": 2.0
+   "cando": "Can use plural nouns and can/can't for ability.",
+   "cid": "p9"
   },
   {
    "q": "Can a horse fly?",
@@ -76,7 +94,10 @@
    ],
    "answer": 0,
    "skill": "function",
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "cando": "Can use plural nouns and can/can't for ability.",
+   "cid": "p9"
   },
   {
    "q": "Where's my pencil?",
@@ -87,7 +108,10 @@
    ],
    "answer": 1,
    "skill": "function",
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "cando": "Can say where things are (in, on, under, next to).",
+   "cid": "p8"
   },
   {
    "q": "The shoes are ___ the bed. (below)",
@@ -98,23 +122,85 @@
    ],
    "answer": 2,
    "skill": "grammar",
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "cando": "Can say where things are (in, on, under, next to).",
+   "cid": "p8"
   },
   {
-   "q": "You sit on it: ___",
+   "q": "Teacher: Please sit on your ___, Faisal.",
    "options": [
-    "a chair",
-    "a lamp",
-    "a board"
+    "lamp",
+    "board",
+    "chair"
+   ],
+   "answer": 2,
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
+  },
+  {
+   "q": "My sisters ___ long hair.",
+   "options": [
+    "have got",
+    "has got",
+    "is got"
    ],
    "answer": 0,
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "grammar",
+   "cando": "Can say what they like and what they have got.",
+   "cid": "p7"
+  },
+  {
+   "q": "I sleep in my ___.",
+   "options": [
+    "bedroom",
+    "kitchen",
+    "garden"
+   ],
+   "answer": 0,
+   "d": 2.0,
+   "cefr": "Pre-A1",
    "skill": "vocabulary",
-   "d": 2.0
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
+  },
+  {
+   "q": "Grandpa: What's your favourite fruit? Reem: I love ___!",
+   "options": [
+    "mangoes",
+    "carrots",
+    "chairs"
+   ],
+   "answer": 0,
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
+  },
+  {
+   "q": "Ali: Can you swim, Sara? Sara: ___",
+   "options": [
+    "Yes, I can.",
+    "Yes, I do.",
+    "Yes, I am."
+   ],
+   "answer": 0,
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "function",
+   "cando": "Can use plural nouns and can/can't for ability.",
+   "cid": "p9"
   }
  ],
  "listen": [
   {
-   "script": "Hello! I'm Hind. I've got long black hair and brown eyes. Today I've got a yellow dress and white shoes.",
+   "script": "Teacher: Hind, tell us about you. Hind: Hello! I'm Hind. I've got long black hair and brown eyes. Today I've got a yellow dress and white shoes.",
    "q": "What colour is Hind's dress?",
    "options": [
     "yellow",
@@ -122,7 +208,11 @@
     "black"
    ],
    "answer": 0,
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   },
   {
    "script": "Girl: Do you like fish, Omar? Omar: No, I don't. I like chicken and rice. Girl: Do you like salad? Omar: Yes, I do. I love salad!",
@@ -133,10 +223,14 @@
     "chicken"
    ],
    "answer": 1,
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can say what they like and what they have got.",
+   "cid": "p7"
   },
   {
-   "script": "This is my pet. It's small and green. It can jump and it can swim, but it can't fly. What is it?",
+   "script": "Boy: This is my pet. It's small and green. It can jump and it can swim, but it can't fly. Girl: Wow! Can I see it?",
    "q": "What is the pet?",
    "options": [
     "a bird",
@@ -144,7 +238,11 @@
     "a frog"
    ],
    "answer": 2,
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can use plural nouns and can/can't for ability.",
+   "cid": "p9"
   },
   {
    "script": "Faisal: Mum, where's my ruler? Is it in my bag? Mum: No, it isn't. Look, Faisal! It's on the desk, next to your book.",
@@ -155,7 +253,41 @@
     "under the desk"
    ],
    "answer": 1,
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can say where things are (in, on, under, next to).",
+   "cid": "p8"
+  },
+  {
+   "script": "Girl: Is your bag blue, Omar? Omar: No, it isn't. It's red. Girl: And your pencil case? Omar: It's green.",
+   "q": "What colour is Omar's bag?",
+   "options": [
+    "blue",
+    "green",
+    "red"
+   ],
+   "answer": 2,
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
+  },
+  {
+   "script": "Mum: How many brothers have you got, Saad? Saad: I've got two brothers and one sister. Mum: Has your sister got a cat? Saad: No, she hasn't. She's got a fish.",
+   "q": "What has Saad's sister got?",
+   "options": [
+    "a fish",
+    "a cat",
+    "a brother"
+   ],
+   "answer": 0,
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can say what they like and what they have got.",
+   "cid": "p7"
   }
  ],
  "read": {
@@ -169,7 +301,11 @@
      "short hair"
     ],
     "answer": 1,
-    "d": 2.0
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    },
    {
     "q": "What doesn't Reem like?",
@@ -179,7 +315,11 @@
      "apples"
     ],
     "answer": 0,
-    "d": 2.0
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    },
    {
     "q": "What can't the cat do?",
@@ -189,7 +329,11 @@
      "swim"
     ],
     "answer": 2,
-    "d": 2.0
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    },
    {
     "q": "Where is the cat's bed?",
@@ -199,20 +343,75 @@
      "in the box"
     ],
     "answer": 1,
-    "d": 2.0
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    }
   ]
  },
- "aloud": [
-  "I've got black hair and brown eyes.",
-  "Do you like bananas? Yes, I do.",
-  "My cat can jump. It's on the bed."
- ],
- "speak": [
-  "What do you look like? Tell me about your hair and your eyes.",
-  "What food do you like? What food don't you like?",
-  "What can your pet or your favourite animal do? Where is your school bag now?"
- ],
+ "read2": {
+  "passage": "My name is Majed. I'm eight. I've got a big family: two brothers and a baby sister. We've got a dog. It's black and white and it can run very fast. My brothers can swim, but I can't. I can ride a bike! I like football, but I don't like basketball.",
+  "qs": [
+   {
+    "q": "How many brothers has Majed got?",
+    "options": [
+     "one",
+     "three",
+     "two"
+    ],
+    "answer": 2,
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   },
+   {
+    "q": "What colour is the dog?",
+    "options": [
+     "grey",
+     "black and white",
+     "brown"
+    ],
+    "answer": 1,
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   },
+   {
+    "q": "What can Majed do?",
+    "options": [
+     "ride a bike",
+     "swim",
+     "fly"
+    ],
+    "answer": 0,
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   },
+   {
+    "q": "What doesn't Majed like?",
+    "options": [
+     "football",
+     "bikes",
+     "basketball"
+    ],
+    "answer": 2,
+    "d": 2.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   }
+  ]
+ },
  "pic": [
   {
    "type": "pic",
@@ -223,7 +422,11 @@
     "🐔"
    ],
    "answer": 0,
-   "d": 2.2
+   "d": 2.2,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   },
   {
    "type": "pic",
@@ -234,7 +437,11 @@
     "🎩"
    ],
    "answer": 2,
-   "d": 2.0
+   "d": 2.0,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   },
   {
    "type": "pic",
@@ -245,7 +452,11 @@
     "🐄"
    ],
    "answer": 1,
-   "d": 2.3
+   "d": 2.3,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   },
   {
    "type": "pic",
@@ -256,7 +467,21 @@
     "🧸"
    ],
    "answer": 1,
-   "d": 2.5
+   "d": 2.5,
+   "cefr": "A1",
+   "skill": "vocabulary",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   }
+ ],
+ "aloud": [
+  "I've got black hair and brown eyes.",
+  "Do you like bananas? Yes, I do.",
+  "My cat can jump. It's on the bed."
+ ],
+ "speak": [
+  "What do you look like? Tell me about your hair and your eyes.",
+  "What food do you like? What food don't you like?",
+  "What can your pet or your favourite animal do? Where is your school bag now?"
  ]
 }

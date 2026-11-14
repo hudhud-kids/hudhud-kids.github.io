@@ -11,7 +11,10 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "cando": "Can use rare idioms and subtle vocabulary accurately.",
+   "cid": "i3"
   },
   {
    "q": "A manager says, 'You might want to double-check those figures.' What is she most likely implying?",
@@ -23,7 +26,10 @@
    ],
    "answer": 1,
    "skill": "function",
-   "d": 17.0
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can understand understatement, irony and rhetorical devices.",
+   "cid": "i4"
   },
   {
    "q": "'With respect, you're putting words in my ___.'",
@@ -35,7 +41,10 @@
    ],
    "answer": 3,
    "skill": "vocabulary",
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "cando": "Can use rare idioms and subtle vocabulary accurately.",
+   "cid": "i3"
   },
   {
    "q": "'Not only ___ the data, but he also took the expert's words out of context.'",
@@ -47,7 +56,10 @@
    ],
    "answer": 0,
    "skill": "grammar",
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "cando": "Can use formal and literary structures (Were it not for …, Scarcely had …) accurately.",
+   "cid": "i1"
   },
   {
    "q": "'Drawing the ___ together, we seem to agree that cost matters most.'",
@@ -59,7 +71,10 @@
    ],
    "answer": 3,
    "skill": "vocabulary",
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "cando": "Can use rare idioms and subtle vocabulary accurately.",
+   "cid": "i3"
   },
   {
    "q": "As chair of a seminar, which sentence synthesises two opposing views?",
@@ -71,7 +86,10 @@
    ],
    "answer": 2,
    "skill": "function",
-   "d": 18.0
+   "d": 18.0,
+   "cefr": "C1",
+   "cando": "Can argue with precision, rebut points and handle difficult questions diplomatically.",
+   "cid": "i2"
   },
   {
    "q": "'The effect of the new rule has been ___: almost nobody has noticed any change.'",
@@ -83,7 +101,10 @@
    ],
    "answer": 0,
    "skill": "vocabulary",
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "cando": "Can use rare idioms and subtle vocabulary accurately.",
+   "cid": "i3"
   },
   {
    "q": "'___ the speaker kept her composure, she would have won the debate.'",
@@ -95,19 +116,25 @@
    ],
    "answer": 0,
    "skill": "grammar",
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "cando": "Can use formal and literary structures (Were it not for …, Scarcely had …) accurately.",
+   "cid": "i1"
   },
   {
-   "q": "An interviewer asks, 'Why do teenagers never take anything seriously?' Which reply handles the question best?",
+   "q": "An interviewer asks, 'Why do teenagers never take anything seriously?' Which reply challenges the question most effectively?",
    "options": [
-    "You're right, we don't.",
-    "That's a rude question.",
-    "Next question, please.",
-    "With respect, that's a sweeping generalisation; many teenagers volunteer every week."
+    "With respect, that's a sweeping generalisation; plenty of teenagers volunteer every week.",
+    "With respect, teenagers take some things seriously, sometimes, maybe.",
+    "Respectfully, you've never been a teenager, have you?",
+    "With respect, I'd rather not answer that kind of question."
    ],
-   "answer": 3,
+   "answer": 0,
+   "d": 18.0,
+   "cefr": "C1",
    "skill": "function",
-   "d": 16.0
+   "cando": "Can argue with precision, rebut points and handle difficult questions diplomatically.",
+   "cid": "i2"
   },
   {
    "q": "'Rising temperatures will only ___ the water shortage.'",
@@ -119,23 +146,90 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "cando": "Can use rare idioms and subtle vocabulary accurately.",
+   "cid": "i3"
+  },
+  {
+   "q": "Scarcely ___ the stage when the lights went out.",
+   "options": [
+    "she stepped onto",
+    "had she stepped onto",
+    "she had stepped onto",
+    "did she step onto"
+   ],
+   "answer": 1,
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use formal and literary structures (Were it not for …, Scarcely had …) accurately.",
+   "cid": "i1"
+  },
+  {
+   "q": "It is vital that he ___ informed immediately.",
+   "options": [
+    "be",
+    "is being",
+    "will be",
+    "has been"
+   ],
+   "answer": 0,
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use formal and literary structures (Were it not for …, Scarcely had …) accurately.",
+   "cid": "i1"
+  },
+  {
+   "q": "___ the merits of the proposal, its timing could hardly have been worse.",
+   "options": [
+    "However",
+    "Whichever",
+    "Whenever",
+    "Whatever"
+   ],
+   "answer": 3,
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use formal and literary structures (Were it not for …, Scarcely had …) accurately.",
+   "cid": "i1"
+  },
+  {
+   "q": "Which reply most politely declines a request while leaving the door open?",
+   "options": [
+    "That's not possible, but maybe, I don't know.",
+    "No, thanks, perhaps never.",
+    "I'm afraid that won't be possible this time, but do keep me in mind for the future.",
+    "I'm afraid that won't be possible, and please don't ask again."
+   ],
+   "answer": 2,
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "function",
+   "cando": "Can argue with precision, rebut points and handle difficult questions diplomatically.",
+   "cid": "i2"
   }
  ],
  "listen": [
   {
-   "script": "So, how was your first week at the new job? — Well, let's just say the training could have been a tad more organised. On the first day, nobody knew I was coming, and my laptop arrived on Thursday.",
-   "q": "How does the speaker really feel about the first week?",
+   "script": "Friend: So, how was your first week at the new job? Woman: Well, let's just say the training could have been a tad more organised. On the first day, nobody knew I was coming, and my laptop arrived on Thursday.",
+   "q": "How does the woman really feel about the first week?",
    "options": [
     "Very pleased",
     "Rather disappointed",
     "Furious and ready to leave"
    ],
    "answer": 1,
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand understatement, irony and rhetorical devices.",
+   "cid": "i4"
   },
   {
-   "script": "Thanks, everyone. Let me draw the threads together. Although Ali focused on cost and Saad on safety, you both seem to want a plan that families will actually use. So perhaps our position is: affordable, safe and simple.",
+   "script": "Member: So where does that leave us? Chair: Thanks, everyone. Let me draw the threads together. Although Ali focused on cost and Saad on safety, you both seem to want a plan that families will actually use. So perhaps our position is: affordable, safe and simple.",
    "q": "What is the chair doing?",
    "options": [
     "Asking someone to speak",
@@ -143,29 +237,71 @@
     "Synthesising different views"
    ],
    "answer": 2,
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can argue with precision, rebut points and handle difficult questions diplomatically.",
+   "cid": "i2"
   },
   {
-   "script": "So you admit your plan has failed? — I'd reject that premise. We haven't hit every target, and I'll concede that the timing was poor, but two of our three goals have already been met.",
-   "q": "What does the speaker concede?",
+   "script": "Interviewer: So you admit your plan has failed? Minister: I'd reject that premise. We haven't hit every target, and I'll concede that the timing was poor, but two of our three goals have already been met.",
+   "q": "What does the minister concede?",
    "options": [
     "The timing was poor.",
     "The plan has failed.",
     "None of the goals were met."
    ],
    "answer": 0,
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can argue with precision, rebut points and handle difficult questions diplomatically.",
+   "cid": "i2"
   },
   {
-   "script": "That's a tricky one. Off the top of my head, I'd say tourism is a double-edged sword: it brings jobs, but, to be more precise, it can also push up rents for local families.",
-   "q": "What is the speaker's view of tourism?",
+   "script": "Examiner: What do you think about tourism? Candidate: That's a tricky one. Off the top of my head, I'd say tourism is a double-edged sword: it brings jobs, but, to be more precise, it can also push up rents for local families.",
+   "q": "What is the candidate's view of tourism?",
    "options": [
     "It has only benefits.",
     "It has both benefits and drawbacks.",
     "It mainly lowers rents for families."
    ],
    "answer": 1,
-   "d": 20.0
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand understatement, irony and rhetorical devices.",
+   "cid": "i4"
+  },
+  {
+   "script": "Woman: How did the negotiations go? Man: Let's just say both sides left with something to think about. Woman: So no agreement, then. Man: Not as such. But the door hasn't closed.",
+   "q": "What does the man suggest about the negotiations?",
+   "options": [
+    "They ended in full agreement.",
+    "They collapsed completely.",
+    "They ended without agreement but could continue."
+   ],
+   "answer": 2,
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand understatement, irony and rhetorical devices.",
+   "cid": "i4"
+  },
+  {
+   "script": "Boy: Her review called the film 'ambitious'. Girl: Which, coming from her, is hardly a compliment. Boy: Meaning? Girl: Meaning it tried to do too much and didn't quite manage it.",
+   "q": "According to the girl, what did the critic mean?",
+   "options": [
+    "The film tried too much and fell short.",
+    "The film was a masterpiece.",
+    "The film was too short."
+   ],
+   "answer": 0,
+   "d": 20.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand understatement, irony and rhetorical devices.",
+   "cid": "i4"
   }
  ],
  "read": {
@@ -179,7 +315,11 @@
      "He refused to explain his plan."
     ],
     "answer": 0,
-    "d": 20.0
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
    },
    {
     "q": "According to the passage, indirectness works only when …",
@@ -189,7 +329,11 @@
      "the message is written down"
     ],
     "answer": 1,
-    "d": 20.0
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
    },
    {
     "q": "How might a newcomer misunderstand 'You might want to look at this again'?",
@@ -199,7 +343,11 @@
      "As something optional"
     ],
     "answer": 2,
-    "d": 20.0
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
    },
    {
     "q": "What do skilled communicators do, according to the passage?",
@@ -209,7 +357,72 @@
      "Always speak as directly as possible"
     ],
     "answer": 1,
-    "d": 20.0
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Languages, like living things, are constantly evolving, and few words survive the centuries with their meanings intact. 'Nice', for instance, once meant 'foolish' before passing through 'shy' and 'precise' on its way to its present, rather bland sense. Such shifts are rarely random. Linguists distinguish between 'pejoration', whereby a word acquires negative connotations, and 'amelioration', its opposite; 'silly', which originally meant 'blessed', is a textbook case of the former. What drives these changes is, for the most part, usage rather than decree. Dictionaries, contrary to popular belief, record meanings rather than impose them, which is why attempts to 'protect' a word's original sense have almost invariably failed. To lament such change, the author suggests, is to misunderstand what a language is: not a monument to be preserved, but a conversation that never ends.",
+  "qs": [
+   {
+    "q": "What did 'nice' originally mean?",
+    "options": [
+     "precise",
+     "shy",
+     "foolish"
+    ],
+    "answer": 2,
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
+   },
+   {
+    "q": "What is 'pejoration'?",
+    "options": [
+     "a word disappearing",
+     "a word gaining negative connotations",
+     "a word gaining positive connotations"
+    ],
+    "answer": 1,
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
+   },
+   {
+    "q": "According to the passage, what do dictionaries do?",
+    "options": [
+     "They record how words are used.",
+     "They decide what words mean.",
+     "They protect original meanings."
+    ],
+    "answer": 0,
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
+   },
+   {
+    "q": "What is the author's view of language change?",
+    "options": [
+     "It should be prevented by dictionaries.",
+     "It happens randomly.",
+     "It is natural and should not be lamented."
+    ],
+    "answer": 2,
+    "d": 20.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand demanding texts and the writer's stance in detail.",
+    "cid": "i5"
    }
   ]
  },

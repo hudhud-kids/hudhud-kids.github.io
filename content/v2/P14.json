@@ -10,7 +10,11 @@
     "tending"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.0,
+   "cefr": "B2+",
+   "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
+   "cid": "g1"
   },
   {
    "q": "'It was my coach ___ encouraged me to keep going.'",
@@ -21,7 +25,11 @@
     "whose"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.0,
+   "cefr": "B2+",
+   "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
+   "cid": "g1"
   },
   {
    "q": "'What I need right now ___ a long holiday.'",
@@ -32,7 +40,11 @@
     "it is"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.5,
+   "cefr": "B2",
+   "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
+   "cid": "g1"
   },
   {
    "q": "A walking day is ___ near as effective as a daily school bus.",
@@ -43,7 +55,11 @@
     "never"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.0,
+   "cefr": "B2+",
+   "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
+   "cid": "g1"
   },
   {
    "q": "I think you've got the wrong end of the ___. I wasn't criticising you.",
@@ -54,7 +70,11 @@
     "stick"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 14.0,
+   "cefr": "B2+",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
   },
   {
    "q": "The panels are expensive, but for cleaner air that's a price worth ___.",
@@ -65,7 +85,11 @@
     "pay"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 14.0,
+   "cefr": "B2+",
+   "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
+   "cid": "g1"
   },
   {
    "q": "We had to ___ out the cheaper option because it wasn't safe.",
@@ -76,18 +100,26 @@
     "hand"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 14.0,
+   "cefr": "B2+",
+   "cando": "Can use precise vocabulary and collocations for arguments and evidence.",
+   "cid": "g5"
   },
   {
-   "q": "Which reply disagrees most tactfully?",
+   "q": "In a discussion, which phrase gives you time to think before you answer?",
    "options": [
-    "You're completely wrong.",
-    "I'm not entirely sure that's true.",
-    "That's a stupid idea.",
-    "Whatever."
+    "Be that as it may, …",
+    "That's a good question. Let me think about how to put this.",
+    "To cut a long story short, …",
+    "As far as I'm concerned, …"
    ],
    "answer": 1,
-   "skill": "function"
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "function",
+   "cando": "Can manage a discussion: interrupt politely, return to the point, hedge and evaluate.",
+   "cid": "g3"
   },
   {
    "q": "In a discussion, someone interrupts you. Which phrase helps you continue?",
@@ -98,60 +130,178 @@
     "If I could just finish, …"
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 13.5,
+   "cefr": "B2+",
+   "cando": "Can manage a discussion: interrupt politely, return to the point, hedge and evaluate.",
+   "cid": "g3"
   },
   {
-   "q": "Which sentence evaluates an idea?",
+   "q": "Which sentence hedges a claim most carefully?",
    "options": [
-    "The main drawback is that it's expensive to run.",
-    "The app has a blue logo.",
-    "I downloaded it yesterday.",
-    "My brother uses it."
+    "This proves that the scheme has been a total success.",
+    "The scheme has clearly worked for everyone.",
+    "Without doubt, the scheme has succeeded.",
+    "This would seem to suggest that the scheme has been partly successful."
+   ],
+   "answer": 3,
+   "d": 14.5,
+   "cefr": "B2+",
+   "skill": "function",
+   "cando": "Can manage a discussion: interrupt politely, return to the point, hedge and evaluate.",
+   "cid": "g3"
+  },
+  {
+   "q": "The proposal ___ to have been rejected by the committee.",
+   "options": [
+    "is appeared",
+    "appearing",
+    "has appearing",
+    "appears"
+   ],
+   "answer": 3,
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "grammar",
+   "cando": "Can use the passive with reporting verbs and formal linking (according to, is thought to).",
+   "cid": "g2"
+  },
+  {
+   "q": "___ the weather improves, the race will be cancelled.",
+   "options": [
+    "Provided",
+    "As long as",
+    "Unless",
+    "If"
+   ],
+   "answer": 2,
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "grammar",
+   "cando": "Can use emphasis structures (It was … who, What I need is …) and advanced verb patterns.",
+   "cid": "g1"
+  },
+  {
+   "q": "The new rules have had a significant ___ on how students use their phones.",
+   "options": [
+    "influence to",
+    "impact",
+    "affect",
+    "result"
+   ],
+   "answer": 1,
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "vocabulary",
+   "cando": "Can use precise vocabulary and collocations for arguments and evidence.",
+   "cid": "g5"
+  },
+  {
+   "q": "Which phrase invites a quiet member of a group to speak?",
+   "options": [
+    "What's your take on this, Salma?",
+    "Let's wrap up there.",
+    "Sorry to interrupt, but …",
+    "As I was saying, …"
    ],
    "answer": 0,
-   "skill": "function"
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "function",
+   "cando": "Can manage a discussion: interrupt politely, return to the point, hedge and evaluate.",
+   "cid": "g3"
   }
  ],
  "listen": [
   {
-   "script": "A: What did you think of my presentation? B: On the whole, it was really clear. The only thing is, the slides seemed a little crowded. You could perhaps use fewer words on each one.",
-   "q": "What does B suggest?",
+   "script": "Girl: What did you think of my presentation? Boy: On the whole, it was really clear. The only thing is, the slides seemed a little crowded. You could perhaps use fewer words on each one.",
+   "q": "What does the boy suggest?",
    "options": [
     "Adding more slides",
     "Putting fewer words on the slides",
     "Speaking more slowly"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 12.5,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can understand discussions, announcements and talks and identify the speaker's view.",
+   "cid": "g6"
   },
   {
-   "script": "A: So, as I was saying, the trip should be in March because— B: Sorry to interrupt, but March is exam month. A: Ah, good point. Going back to the dates, then, how about late April?",
-   "q": "Why does B interrupt?",
+   "script": "Girl: So, as I was saying, the trip should be in March because— Boy: Sorry to interrupt, but March is exam month. Girl: Ah, good point. Going back to the dates, then, how about late April?",
+   "q": "Why does the boy interrupt?",
    "options": [
     "To say March is a bad time",
     "To suggest a new place",
     "To ask who is coming"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can understand discussions, announcements and talks and identify the speaker's view.",
+   "cid": "g6"
   },
   {
-   "script": "Everyone thinks it was my brother who planned the surprise party, but it wasn't. It was my little sister who organised everything. What I really admire is that she kept it a secret for a whole month.",
+   "script": "Friend: So your brother planned the party? Girl: Everyone thinks it was my brother who planned the surprise party, but it wasn't. It was my little sister who organised everything. What I really admire is that she kept it a secret for a whole month.",
    "q": "Who organised the party?",
    "options": [
     "The speaker's brother",
     "The speaker",
     "The speaker's sister"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 13.5,
+   "cefr": "B2+",
+   "skill": "listening",
+   "cando": "Can understand discussions, announcements and talks and identify the speaker's view.",
+   "cid": "g6"
   },
   {
-   "script": "We looked at three ways to reduce plastic at school. Banning plastic bottles is cheap, but it's questionable whether students would follow the rule. Water fountains cost more upfront, but in the long term they're by far the best option.",
-   "q": "Which option does the speaker prefer?",
+   "script": "Principal: So what did the committee find? Student: We looked at three ways to reduce plastic at school. Banning plastic bottles is cheap, but it's questionable whether students would follow the rule. Water fountains cost more upfront, but in the long term they're by far the best option.",
+   "q": "Which option does the student prefer?",
    "options": [
     "Banning plastic bottles",
     "Water fountains",
     "Recycling bins"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "listening",
+   "cando": "Can understand discussions, announcements and talks and identify the speaker's view.",
+   "cid": "g6"
+  },
+  {
+   "script": "Man: According to the forecast, the storm should pass by midday. Woman: Then there's no point cancelling the trip altogether. Man: Agreed. Let's just delay it until the afternoon.",
+   "q": "What do they decide?",
+   "options": [
+    "to cancel the trip",
+    "to leave in the morning",
+    "to delay the trip"
+   ],
+   "answer": 2,
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "listening",
+   "cando": "Can understand discussions, announcements and talks and identify the speaker's view.",
+   "cid": "g6"
+  },
+  {
+   "script": "Girl: What I don't understand is why the club changed the timetable. Boy: Apparently it's because the hall is needed for exams. Girl: Couldn't they have told us earlier? Boy: That's exactly what I said.",
+   "q": "Why did the club change the timetable?",
+   "options": [
+    "The hall is needed for exams.",
+    "The coach is away.",
+    "Members asked for it."
+   ],
+   "answer": 0,
+   "d": 14.0,
+   "cefr": "B2+",
+   "skill": "listening",
+   "cando": "Can understand discussions, announcements and talks and identify the speaker's view.",
+   "cid": "g6"
   }
  ],
  "read": {
@@ -164,7 +314,12 @@
      "He talked over other members.",
      "He invited quiet members to speak."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
    },
    {
     "q": "According to the club leader, what makes a good speaker?",
@@ -173,7 +328,12 @@
      "Speaking loudly",
      "Winning every argument"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
    },
    {
     "q": "How did Abdullah learn to judge ideas?",
@@ -182,7 +342,12 @@
      "By asking the leader to decide",
      "By looking at their strengths first"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
    },
    {
     "q": "What happened at the end of the term?",
@@ -191,7 +356,73 @@
      "Abdullah left the club.",
      "The club closed for the summer."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Headlines regularly warn that teenagers spend too long on screens, yet researchers increasingly argue that the question is not how much time young people spend online, but what they do there. A recent study of two thousand students found that those who used screens mainly for creative activities, such as editing videos or coding, reported higher well-being than those who mostly scrolled through social media. What worried researchers most was not screen use itself, but its tendency to replace sleep and exercise. The authors therefore recommend that families focus less on strict time limits and more on keeping phones out of bedrooms at night. Not everyone is convinced: some doctors point out that the study relied on students' own reports, which may not be accurate.",
+  "qs": [
+   {
+    "q": "According to the researchers, what matters most?",
+    "options": [
+     "how many hours they spend online",
+     "which device they use",
+     "what young people do online"
+    ],
+    "answer": 2,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
+   },
+   {
+    "q": "Which students reported higher well-being?",
+    "options": [
+     "those who never used screens",
+     "those who used screens creatively",
+     "those who mostly scrolled social media"
+    ],
+    "answer": 1,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
+   },
+   {
+    "q": "What do the authors recommend?",
+    "options": [
+     "keeping phones out of bedrooms at night",
+     "strict time limits",
+     "banning social media"
+    ],
+    "answer": 0,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
+   },
+   {
+    "q": "Why are some doctors not convinced?",
+    "options": [
+     "The study was too small.",
+     "The study ignored sleep.",
+     "The study relied on students' own reports."
+    ],
+    "answer": 2,
+    "d": 14.0,
+    "cefr": "B2+",
+    "skill": "reading",
+    "cando": "Can understand articles on social and scientific topics.",
+    "cid": "g7"
    }
   ]
  },

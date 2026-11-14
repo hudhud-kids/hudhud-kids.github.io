@@ -103,16 +103,25 @@ After lesson 6 there is a unit test.
 `mc.answer` is the index of the correct option (0-based); options are 3 (levels 1–4) or 4 (levels 5+), only ONE correct.
 `order.words` is the answer split into words (punctuation stays attached), in the correct order (the app shuffles).
 
-## Placement bank content/P{n}.json (write the whole file)
-Items must test what level n teaches in v2 (its functions, expressions and grammar), be clearly harder than level n-1
-and easier than n+1, and have exactly one correct answer.
+## Placement bank content/v2/P{n}.json (published to content/P{n}.json with `python3 content/v2build.py --p N`)
+Modelled on Cambridge / Oxford placement tests: grammar and vocabulary in context (a short dialogue or sentence, never
+isolated trivia), functional language, two-voice listening, graded reading, read-aloud and a spoken interview.
+Every item has exactly one correct answer; distractors are plausible learner errors. Every item carries metadata:
+`d` (difficulty on the 1–20 level scale, may be fractional, reviewed per item: an easy item in a hard bank gets a lower d),
+`cefr` (from d: 1–2 Pre-A1, 3–4 A1, 5–6 A2, 7 A2+, 8–9 B1, 10–11 B1+, 12–13 B2, 14–15 B2+, 16–20 C1),
+`skill` (grammar | vocabulary | function | listening | reading), `cando` (the CEFR-style can-do statement it gives
+evidence for) and `cid` (its id in content/cando.json, which also holds the Arabic text shown on the result card).
 ```json
 {"level": 8,
- "mcq": [10 items {"q":"…","options":[4],"answer":i,"skill":"grammar|vocabulary|function"}],
- "listen": [4 items {"script":"20–60 words","q":"…","options":[3],"answer":i}],
- "read": {"passage": "60–150 words (levels 1–4: 25–60)", "qs": [4 items {"q","options":[3],"answer":i}]},
+ "mcq": [14+ items, 5+ grammar, 4+ vocabulary, 3+ function: {"q":"…","options":[4],"answer":i,"skill":"…","d":8.0,"cefr":"B1","cando":"…","cid":"d1"}],
+ "listen": [6+ two-speaker dialogues {"script":"Girl: … Omar: …","q":"gist or detail","options":[3],"answer":i, …metadata}],
+ "read": {"passage": "graded text", "qs": [4 items {"q","options":[3],"answer":i, …metadata}]},
+ "read2": {"passage": "a second graded text of another type", "qs": [4 items]},
+ "pic": [levels 1–3 only: {"type":"pic","say":"spoken question","options":["emoji",…],"answer":i, …metadata}],
  "aloud": ["3 sentences to read aloud, at level"],
  "speak": ["3 open questions that invite the level's functions"]
 }
 ```
+Listening scripts label every turn ("Mum:", "Omar:", "A:"); labels choose the two voices and are never read aloud, so
+questions name the person ("What does the boy suggest?"), never "A"/"B" or "the speaker" when two people talk.
 Levels 1–2: questions are short, words concrete, options 3 for mcq too.

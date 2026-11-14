@@ -68,29 +68,39 @@ def main(n):
     check_items(errs, 'levelTest', lt.get('items') or [], nopt)
     txt = json.dumps(L, ensure_ascii=False)
     if re.search(r'\b(dating|girlfriend|boyfriend|alcohol|beer|wine|pork|casino|gambl)', txt, re.I): fail(errs, 'content: inappropriate word found')
-    # placement bank
+    # placement bank (Cambridge/Oxford placement style): per level at least 14 mcq (5+ grammar, 4+ vocabulary, 3+ function),
+    # 6 two-speaker listening dialogues, 2 graded reading passages with 4 questions each; every item carries d, cefr, skill, cando
     P = json.load(open(f'content/v2/P{n}.json'))
-    if len(P.get('mcq') or []) != 10: fail(errs, 'P: need 10 mcq')
-    for i, q in enumerate(P.get('mcq') or []):
+    mc = P.get('mcq') or []
+    if len(mc) < 14: fail(errs, f'P: need 14+ mcq, have {len(mc)}')
+    for sk, mn in (('grammar', 5), ('vocabulary', 4), ('function', 3)):
+        if sum(1 for q in mc if q.get('skill') == sk) < mn: fail(errs, f'P: need {mn}+ {sk} mcq')
+    for i, q in enumerate(mc):
         o = q.get('options') or []
         if len(o) not in ((3, 4) if n <= 2 else (4,)) or not isinstance(q.get('answer'), int) or not 0 <= q['answer'] < len(o): fail(errs, f'P mcq {i}: options/answer')
+        if len(set(x.strip().lower() for x in o)) != len(o): fail(errs, f'P mcq {i}: duplicate options')
         if q.get('skill') not in ('grammar', 'vocabulary', 'function'): fail(errs, f'P mcq {i}: skill')
-    if len(P.get('listen') or []) != 4: fail(errs, 'P: need 4 listen')
-    for i, q in enumerate(P.get('listen') or []):
+    ls = P.get('listen') or []
+    if len(ls) < 6: fail(errs, f'P: need 6+ listen, have {len(ls)}')
+    for i, q in enumerate(ls):
         if not q.get('script') or len(q.get('options') or []) != 3 or not 0 <= q.get('answer', -1) < 3: fail(errs, f'P listen {i}')
+        who = set(re.findall(r"(?:^|[.!?\u2026\"\u201d\u2019)\u2014\u2013]\s*)([A-Z][A-Za-z'\u2019-]{0,15}):\s", q.get('script') or ''))
+        if len(who) < 2: fail(errs, f'P listen {i}: needs two labelled speakers')
     r = P.get('read') or {}
-    if not r.get('passage') or len(r.get('qs') or []) != 4: fail(errs, 'P read: passage + 4 qs')
-    for i, q in enumerate(r.get('qs') or []):
-        if len(q.get('options') or []) != 3 or not 0 <= q.get('answer', -1) < 3: fail(errs, f'P read q {i}')
+    reads = [('read', r), ('read2', P.get('read2') or {})]
+    for nm, rr in reads:
+        if not rr.get('passage') or len(rr.get('qs') or []) != 4: fail(errs, f'P {nm}: passage + 4 qs')
+        for i, q in enumerate(rr.get('qs') or []):
+            if len(q.get('options') or []) != 3 or not 0 <= q.get('answer', -1) < 3: fail(errs, f'P {nm} q {i}')
     if len(P.get('aloud') or []) != 3 or len(P.get('speak') or []) != 3: fail(errs, 'P: 3 aloud + 3 speak')
-    # optional calibrated difficulty d (level scale) on every item, and picture items for pre-readers (levels 1-3)
-    for sec, qs in (('mcq', P.get('mcq') or []), ('listen', P.get('listen') or []), ('read', r.get('qs') or []), ('pic', P.get('pic') or [])):
+    CEFR = {1:'Pre-A1',2:'Pre-A1',3:'A1',4:'A1',5:'A2',6:'A2',7:'A2+',8:'B1',9:'B1',10:'B1+',11:'B1+',12:'B2',13:'B2',14:'B2+',15:'B2+',16:'C1',17:'C1',18:'C1',19:'C1',20:'C1'}
+    SK = {'mcq': ('grammar', 'vocabulary', 'function'), 'listen': ('listening',), 'read': ('reading',), 'read2': ('reading',), 'pic': ('vocabulary', 'listening')}
+    for sec, qs in (('mcq', mc), ('listen', ls), ('read', r.get('qs') or []), ('read2', (P.get('read2') or {}).get('qs') or []), ('pic', P.get('pic') or [])):
         for i, q in enumerate(qs):
-            if 'd' in q and not (isinstance(q['d'], (int, float)) and 0.5 <= q['d'] <= 20.5 and abs(q['d'] - n) <= 5): fail(errs, f'P {sec} {i}: d must be a number near the level')
-    for i, q in enumerate(P.get('pic') or []):
-        o = q.get('options') or []
-        if q.get('type') != 'pic' or not q.get('say') or len(o) not in (3, 4) or not isinstance(q.get('answer'), int) or not 0 <= q['answer'] < len(o): fail(errs, f'P pic {i}: type/say/options/answer')
-        if any(re.search(r'[A-Za-z]{2}', x) for x in o): fail(errs, f'P pic {i}: options must be emoji only (no reading)')
+            if not (isinstance(q.get('d'), (int, float)) and 0.5 <= q['d'] <= 20.5 and abs(q['d'] - n) <= 5): fail(errs, f'P {sec} {i}: d must be a number near the level')
+            elif q.get('cefr') != CEFR[max(1, min(20, int(q['d'] + .5)))]: fail(errs, f'P {sec} {i}: cefr does not match d')
+            if q.get('skill') not in SK[sec]: fail(errs, f'P {sec} {i}: skill')
+            if not q.get('cando') or not q.get('cid'): fail(errs, f'P {sec} {i}: cando + cid')
     if P.get('pic') and n > 3: fail(errs, 'P: picture items only in levels 1-3')
     print(f'L{n}: ' + ('OK' if not errs else f'{len(errs)} problems'))
     for e in errs[:40]: print('  -', e)

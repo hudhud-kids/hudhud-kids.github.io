@@ -11,7 +11,10 @@
    ],
    "answer": 0,
    "skill": "grammar",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can talk about plans with going to.",
+   "cid": "b4"
   },
   {
    "q": "___ you going to visit your grandparents this weekend?",
@@ -23,7 +26,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can talk about plans with going to.",
+   "cid": "b4"
   },
   {
    "q": "A: Would you like to come to my house on Friday? B: '___'",
@@ -35,7 +41,10 @@
    ],
    "answer": 2,
    "skill": "function",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can make, accept and refuse invitations and suggestions politely.",
+   "cid": "b5"
   },
   {
    "q": "Which is the most polite way to say no to an invitation?",
@@ -47,7 +56,10 @@
    ],
    "answer": 1,
    "skill": "function",
-   "d": 5.5
+   "d": 5.5,
+   "cefr": "A2",
+   "cando": "Can make, accept and refuse invitations and suggestions politely.",
+   "cid": "b5"
   },
   {
    "q": "The football match was really ___. We all shouted and cheered.",
@@ -59,7 +71,10 @@
    ],
    "answer": 3,
    "skill": "grammar",
-   "d": 6.3
+   "d": 6.3,
+   "cefr": "A2",
+   "cando": "Can describe feelings and explain rules (must, have to).",
+   "cid": "b6"
   },
   {
    "q": "I'm ___ because I have a big test tomorrow.",
@@ -71,7 +86,10 @@
    ],
    "answer": 0,
    "skill": "vocabulary",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
   },
   {
    "q": "It was very cold, ___ I wore my jacket.",
@@ -83,7 +101,10 @@
    ],
    "answer": 2,
    "skill": "grammar",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can describe feelings and explain rules (must, have to).",
+   "cid": "b6"
   },
   {
    "q": "Every student at our school wears the same clothes. We ___ wear a uniform.",
@@ -95,7 +116,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can describe feelings and explain rules (must, have to).",
+   "cid": "b6"
   },
   {
    "q": "It's Saturday and there's no school, so you ___ get up early.",
@@ -107,7 +131,10 @@
    ],
    "answer": 3,
    "skill": "function",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can describe feelings and explain rules (must, have to).",
+   "cid": "b6"
   },
   {
    "q": "A person who watches swimmers and keeps them safe is a ___.",
@@ -119,12 +146,75 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "Don't forget to ___ your suitcase tonight. The flight is at six in the morning.",
+   "options": [
+    "wear",
+    "put",
+    "carry",
+    "pack"
+   ],
+   "answer": 3,
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "vocabulary",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "Faisal was ___ when he couldn't find his phone. He looked everywhere.",
+   "options": [
+    "relaxed",
+    "bored",
+    "upset",
+    "exciting"
+   ],
+   "answer": 2,
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "vocabulary",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "We're going to ___ at my grandparents' farm for three nights.",
+   "options": [
+    "visit",
+    "stay",
+    "live",
+    "spend"
+   ],
+   "answer": 1,
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "vocabulary",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "A: I'm sorry, I can't come to your party. B: ___",
+   "options": [
+    "Never mind. Maybe next time!",
+    "You're welcome.",
+    "Yes, please.",
+    "I'm agree."
+   ],
+   "answer": 0,
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "function",
+   "cando": "Can make, accept and refuse invitations and suggestions politely.",
+   "cid": "b5"
   }
  ],
  "listen": [
   {
-   "script": "Hi, I'm Noura. This weekend is going to be busy. On Friday, we're going to visit my grandma in Unaizah. On Saturday, I'm going to stay in and finish my science project.",
+   "script": "Friend: What are you doing this weekend, Noura? Noura: It's going to be busy. On Friday, we're going to visit my grandma in Unaizah. On Saturday, I'm going to stay in and finish my science project.",
    "q": "What is Noura going to do on Saturday?",
    "options": [
     "Visit her grandma.",
@@ -132,10 +222,14 @@
     "Go to Unaizah."
    ],
    "answer": 1,
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can talk about plans with going to.",
+   "cid": "b4"
   },
   {
-   "script": "A: Omar, would you like to come to the park with us on Thursday? B: Thanks for inviting me, but I'm afraid I can't. I'm going to the dentist after school. A: That's a shame. Maybe next time!",
+   "script": "Girl: Omar, would you like to come to the park with us on Thursday? Omar: Thanks for inviting me, but I'm afraid I can't. I'm going to the dentist after school. Girl: That's a shame. Maybe next time!",
    "q": "Why can't Omar go to the park?",
    "options": [
     "He has a football match.",
@@ -143,21 +237,29 @@
     "He's going to the dentist."
    ],
    "answer": 2,
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can make, accept and refuse invitations and suggestions politely.",
+   "cid": "b5"
   },
   {
-   "script": "Yesterday was a terrible day. I lost my new pen, and then our team lost the basketball match. I was really disappointed. But in the evening, my uncle visited us with a big cake, so I felt better.",
-   "q": "How did the speaker feel in the evening?",
+   "script": "Mum: You look happy now, Saad. How was your day? Saad: Terrible at first! I lost my new pen, and then our team lost the basketball match. I was really disappointed. But in the evening, my uncle visited us with a big cake, so I felt better.",
+   "q": "How did Saad feel in the evening?",
    "options": [
     "Better.",
     "Disappointed.",
     "Bored."
    ],
    "answer": 0,
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can describe feelings and explain rules (must, have to).",
+   "cid": "b6"
   },
   {
-   "script": "Welcome to the pool, everyone. Here are the rules. You must wear a swimming hat. You mustn't run, because the floor is slippery. You don't have to bring a towel, because we have towels for you.",
+   "script": "Coach: Welcome to the pool, everyone. Here are the rules. You must wear a swimming hat. You mustn't run, because the floor is slippery. Boy: Do we have to bring a towel? Coach: No, you don't have to bring a towel. We have towels for you.",
    "q": "What don't swimmers have to bring?",
    "options": [
     "A swimming hat.",
@@ -165,7 +267,41 @@
     "Shoes."
    ],
    "answer": 1,
-   "d": 6.0
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can describe feelings and explain rules (must, have to).",
+   "cid": "b6"
+  },
+  {
+   "script": "Girl: Are you going to enter the drawing competition? Boy: No, I'm not. I'm going to enter the science fair. Girl: What are you going to make? Boy: A small robot.",
+   "q": "What is the boy going to enter?",
+   "options": [
+    "the science fair",
+    "the drawing competition",
+    "a football match"
+   ],
+   "answer": 0,
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can talk about plans with going to.",
+   "cid": "b4"
+  },
+  {
+   "script": "Man: You look worried, Lama. Lama: I've got a maths test tomorrow and I don't understand fractions. Man: Don't worry. Let's practise together after dinner.",
+   "q": "Why is Lama worried?",
+   "options": [
+    "She is late for dinner.",
+    "She has a maths test.",
+    "She lost her book."
+   ],
+   "answer": 1,
+   "d": 6.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can describe feelings and explain rules (must, have to).",
+   "cid": "b6"
   }
  ],
  "read": {
@@ -179,7 +315,11 @@
      "Run in a race."
     ],
     "answer": 2,
-    "d": 6.0
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    },
    {
     "q": "Why is Sam nervous?",
@@ -189,7 +329,11 @@
      "He has no T-shirt."
     ],
     "answer": 0,
-    "d": 6.0
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    },
    {
     "q": "What don't students have to bring?",
@@ -199,7 +343,11 @@
      "Water."
     ],
     "answer": 2,
-    "d": 6.0
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    },
    {
     "q": "Why can't Sam go to Faisal's house?",
@@ -209,7 +357,72 @@
      "He is going to be at the race."
     ],
     "answer": 1,
-    "d": 6.0
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Hi Ziyad, Thanks for your message. Yes, we're going to go camping in the desert next weekend, and you're invited! We're going to leave on Thursday afternoon and come back on Saturday. You don't have to bring a tent, because my dad has a big one, but you have to bring a warm jacket. It gets really cold at night. My mum is going to cook dinner on the fire, and we're going to look at the stars with my brother's telescope. Please ask your parents and tell me by Tuesday. I hope you can come! Hamad",
+  "qs": [
+   {
+    "q": "When are they going to come back?",
+    "options": [
+     "on Saturday",
+     "on Thursday",
+     "on Tuesday"
+    ],
+    "answer": 0,
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   },
+   {
+    "q": "What does Ziyad have to bring?",
+    "options": [
+     "a tent",
+     "a telescope",
+     "a warm jacket"
+    ],
+    "answer": 2,
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   },
+   {
+    "q": "Why does he need it?",
+    "options": [
+     "The tent is small.",
+     "It's cold at night.",
+     "It's going to rain."
+    ],
+    "answer": 1,
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   },
+   {
+    "q": "What must Ziyad do by Tuesday?",
+    "options": [
+     "tell Hamad his answer",
+     "buy a tent",
+     "cook dinner"
+    ],
+    "answer": 0,
+    "d": 6.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    }
   ]
  },

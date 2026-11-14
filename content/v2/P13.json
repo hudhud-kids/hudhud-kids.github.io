@@ -11,7 +11,10 @@
    ],
    "answer": 0,
    "skill": "grammar",
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "cando": "Can link ideas with contrast, condition and relative structures (despite, as long as, which).",
+   "cid": "f3"
   },
   {
    "q": "If I ___ about the test, I would have studied harder.",
@@ -23,7 +26,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
   },
   {
    "q": "If I hadn't moved to Jeddah, I ___ my best friend now.",
@@ -35,7 +41,10 @@
    ],
    "answer": 3,
    "skill": "grammar",
-   "d": 13.8
+   "d": 13.8,
+   "cefr": "B2+",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
   },
   {
    "q": "If he weren't so shy, he ___ a question in class yesterday.",
@@ -47,7 +56,10 @@
    ],
    "answer": 0,
    "skill": "grammar",
-   "d": 14.2
+   "d": 14.2,
+   "cefr": "B2+",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
   },
   {
    "q": "Can you back ___ your argument with an example?",
@@ -59,7 +71,10 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
   },
   {
    "q": "We caught the plane, but it was a close ___.",
@@ -71,7 +86,10 @@
    ],
    "answer": 3,
    "skill": "vocabulary",
-   "d": 13.6
+   "d": 13.6,
+   "cefr": "B2+",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
   },
   {
    "q": "In a talk, which phrase best introduces your second point?",
@@ -83,31 +101,40 @@
    ],
    "answer": 1,
    "skill": "function",
-   "d": 12.0
+   "d": 12.0,
+   "cefr": "B2",
+   "cando": "Can structure a short talk and defend a position.",
+   "cid": "f5"
   },
   {
-   "q": "Your partner suggests an expensive idea. Which reply is the most polite disagreement?",
+   "q": "Your partner suggests an expensive idea. Which reply disagrees most tactfully?",
    "options": [
-    "That's a silly idea.",
-    "No, we're not doing that.",
-    "I see what you mean, but it might cost too much.",
-    "Whatever you want."
-   ],
-   "answer": 2,
-   "skill": "function",
-   "d": 9.0
-  },
-  {
-   "q": "Which sentence states and defends a position?",
-   "options": [
-    "I'd argue that phones help learning, because they give instant access to information.",
-    "Phones are things that people have.",
-    "I have a phone and a tablet.",
-    "Do you like phones?"
+    "I see what you mean, but I wonder if it might be a bit too costly.",
+    "I see what you mean, but it's obviously far too costly.",
+    "You might be right, but that's a silly idea.",
+    "I disagree, because you never think about money."
    ],
    "answer": 0,
+   "d": 13.0,
+   "cefr": "B2",
    "skill": "function",
-   "d": 10.0
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
+  },
+  {
+   "q": "Which sentence both states a position and supports it?",
+   "options": [
+    "Do phones help learning? It's hard to say.",
+    "I'd argue that phones help learning, since they give instant access to information.",
+    "I'd like to talk about whether phones help learning or not.",
+    "Phones give instant access to information and are very popular."
+   ],
+   "answer": 1,
+   "d": 12.5,
+   "cefr": "B2",
+   "skill": "function",
+   "cando": "Can structure a short talk and defend a position.",
+   "cid": "f5"
   },
   {
    "q": "'In the end, we settled ___ the second option.'",
@@ -119,34 +146,105 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
+  },
+  {
+   "q": "I'd rather you ___ my phone without asking.",
+   "options": [
+    "not use",
+    "won't use",
+    "didn't use",
+    "don't use"
+   ],
+   "answer": 2,
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "grammar",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
+  },
+  {
+   "q": "The final, ___ was watched by millions, ended in a draw.",
+   "options": [
+    "who",
+    "which",
+    "that",
+    "what"
+   ],
+   "answer": 1,
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "grammar",
+   "cando": "Can link ideas with contrast, condition and relative structures (despite, as long as, which).",
+   "cid": "f3"
+  },
+  {
+   "q": "The teacher asked us to ___ our main points in the last paragraph.",
+   "options": [
+    "sum up",
+    "sum over",
+    "add up",
+    "bring up"
+   ],
+   "answer": 0,
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "vocabulary",
+   "cando": "Can structure a short talk and defend a position.",
+   "cid": "f5"
+  },
+  {
+   "q": "In a presentation, which phrase is best for starting your conclusion?",
+   "options": [
+    "Firstly, …",
+    "Moving on to …",
+    "For instance, …",
+    "To sum up, …"
+   ],
+   "answer": 3,
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "function",
+   "cando": "Can structure a short talk and defend a position.",
+   "cid": "f5"
   }
  ],
  "listen": [
   {
-   "script": "Many people say that homework should be banned. That may be true for very young children, but I'd argue that teenagers need some homework. Without regular practice, it's easy to forget what we learn in class.",
-   "q": "What is the speaker's position?",
+   "script": "Host: What's your view on homework? Student: Many people say that homework should be banned. That may be true for very young children, but I'd argue that teenagers need some homework. Without regular practice, it's easy to forget what we learn in class.",
+   "q": "What is the student's position?",
    "options": [
     "All homework should be banned.",
     "Teenagers need some homework.",
     "Young children need more homework."
    ],
    "answer": 1,
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can structure a short talk and defend a position.",
+   "cid": "f5"
   },
   {
-   "script": "We left home at seven, but the traffic was terrible. If we had taken the metro instead of the car, we would have arrived on time. In the end, we missed the first half of the match.",
-   "q": "What does the speaker regret?",
+   "script": "Friend: Did you get to the match on time? Man: No. We left home at seven, but the traffic was terrible. If we had taken the metro instead of the car, we would have arrived on time. In the end, we missed the first half of the match.",
+   "q": "What does the man regret?",
    "options": [
     "Not taking the metro",
     "Leaving home at seven",
     "Going to the match"
    ],
    "answer": 0,
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
   },
   {
-   "script": "As you can see from this chart, just over half of the students in our year walk to school. Just under a third come by car, and the rest take the bus. This suggests that most students live close to the school.",
+   "script": "Teacher: What does your chart show, Lama? Lama: As you can see from this chart, just over half of the students in our year walk to school. Just under a third come by car, and the rest take the bus. This suggests that most students live close to the school.",
    "q": "How do most students get to school?",
    "options": [
     "By car",
@@ -154,7 +252,11 @@
     "On foot"
    ],
    "answer": 2,
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can understand opinions, conditions and decisions in natural speech.",
+   "cid": "f7"
   },
   {
    "script": "A: How about a reading competition? B: The problem with that is that weaker readers might give up. Why don't we start a book club instead? A: I'd go along with that. So shall we go for the book club? B: Agreed.",
@@ -165,7 +267,41 @@
     "To start a book club"
    ],
    "answer": 2,
-   "d": 13.0
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
+  },
+  {
+   "script": "Woman: If I'd known the museum was closed on Fridays, I wouldn't have come all this way. Man: It's a shame, but the park next door is open. Woman: Fine, let's go there instead.",
+   "q": "What will they do?",
+   "options": [
+    "wait for the museum to open",
+    "go to the park",
+    "go home"
+   ],
+   "answer": 1,
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
+  },
+  {
+   "script": "Boy: I'd argue we should spend the money on new computers. Girl: I take your point, but the library needs books more urgently. Boy: Could we split it between both? Girl: That seems fair.",
+   "q": "What do they agree on?",
+   "options": [
+    "buying only computers",
+    "buying only books",
+    "sharing the money between both"
+   ],
+   "answer": 2,
+   "d": 13.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
   }
  ],
  "read": {
@@ -179,7 +315,11 @@
      "To join a different club"
     ],
     "answer": 1,
-    "d": 13.0
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    },
    {
     "q": "What did Hessa prepare before every debate, apart from her reasons?",
@@ -189,7 +329,11 @@
      "Questions for the judges"
     ],
     "answer": 0,
-    "d": 13.0
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    },
    {
     "q": "What happened at the national competition?",
@@ -199,7 +343,11 @@
      "Hessa's team didn't win, but she valued the experience."
     ],
     "answer": 2,
-    "d": 13.0
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    },
    {
     "q": "How does Hessa feel about speaking now?",
@@ -209,7 +357,72 @@
      "She only speaks to friends."
     ],
     "answer": 1,
-    "d": 13.0
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "When the town council proposed turning the main car park into a weekly night market, opinions were sharply divided. Shop owners feared that the stalls would take their customers, while residents complained about noise. Nevertheless, the council decided to run a three-month trial. The results surprised almost everyone. Local shops reported a twenty percent rise in sales on market nights, as visitors who came for the stalls also wandered into nearby stores. Although noise remained a concern, the council introduced a ten o'clock closing time, which most residents accepted. Had the trial not taken place, the town might have lost one of its most popular events. The market now opens every Thursday.",
+  "qs": [
+   {
+    "q": "Why were shop owners worried at first?",
+    "options": [
+     "They thought the car park would close.",
+     "They thought the stalls would take their customers.",
+     "They wanted stalls of their own."
+    ],
+    "answer": 1,
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   },
+   {
+    "q": "What happened to local shops during the trial?",
+    "options": [
+     "Their sales went up.",
+     "Many of them closed.",
+     "They opened later."
+    ],
+    "answer": 0,
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   },
+   {
+    "q": "How did the council deal with the noise?",
+    "options": [
+     "by moving the market",
+     "by ending the trial",
+     "by setting a closing time"
+    ],
+    "answer": 2,
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   },
+   {
+    "q": "What does 'Had the trial not taken place' suggest?",
+    "options": [
+     "The trial only took place on Thursdays.",
+     "The trial was important for the market's success.",
+     "The trial was cancelled."
+    ],
+    "answer": 1,
+    "d": 13.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    }
   ]
  },

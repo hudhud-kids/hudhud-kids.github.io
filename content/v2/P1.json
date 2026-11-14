@@ -10,7 +10,10 @@
    ],
    "answer": 0,
    "skill": "function",
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "cando": "Can answer simple greetings and personal questions.",
+   "cid": "p2"
   },
   {
    "q": "___ name is Ali.",
@@ -21,7 +24,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "cando": "Can use my/his/her and he/she correctly in simple sentences.",
+   "cid": "p3"
   },
   {
    "q": "How are you?",
@@ -32,7 +38,10 @@
    ],
    "answer": 2,
    "skill": "function",
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "cando": "Can answer simple greetings and personal questions.",
+   "cid": "p2"
   },
   {
    "q": "My dad's dad is my ___.",
@@ -43,7 +52,10 @@
    ],
    "answer": 0,
    "skill": "vocabulary",
-   "d": 1.5
+   "d": 1.5,
+   "cefr": "Pre-A1",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "q": "Reem is a girl. ___ my friend.",
@@ -54,7 +66,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "cando": "Can use my/his/her and he/she correctly in simple sentences.",
+   "cid": "p3"
   },
   {
    "q": "It's ___ apple.",
@@ -65,7 +80,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 1.5
+   "d": 1.5,
+   "cefr": "Pre-A1",
+   "cando": "Can use my/his/her and he/she correctly in simple sentences.",
+   "cid": "p3"
   },
   {
    "q": "A banana is ___.",
@@ -76,7 +94,10 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "q": "How old are you?",
@@ -87,18 +108,24 @@
    ],
    "answer": 0,
    "skill": "function",
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "cando": "Can introduce themselves and say their age.",
+   "cid": "p1"
   },
   {
-   "q": "5 + 5 = ___",
+   "q": "Mum: What's in your bag, Ali? Ali: My ___ and my pencils.",
    "options": [
-    "eight",
-    "ten",
-    "twelve"
+    "books",
+    "eyes",
+    "birds"
    ],
-   "answer": 1,
+   "answer": 0,
+   "d": 1.0,
+   "cefr": "Pre-A1",
    "skill": "vocabulary",
-   "d": 1.0
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "q": "How many balls?",
@@ -109,12 +136,71 @@
    ],
    "answer": 2,
    "skill": "function",
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "cando": "Can answer simple greetings and personal questions.",
+   "cid": "p2"
+  },
+  {
+   "q": "Look! ___ is my cat. Her name is Lulu.",
+   "options": [
+    "These",
+    "They",
+    "This"
+   ],
+   "answer": 2,
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "grammar",
+   "cando": "Can use my/his/her and he/she correctly in simple sentences.",
+   "cid": "p3"
+  },
+  {
+   "q": "Omar is my brother. ___ is nine.",
+   "options": [
+    "She",
+    "His",
+    "He"
+   ],
+   "answer": 2,
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "grammar",
+   "cando": "Can use my/his/her and he/she correctly in simple sentences.",
+   "cid": "p3"
+  },
+  {
+   "q": "It's hot and sunny today. The sky is ___.",
+   "options": [
+    "black",
+    "pink",
+    "blue"
+   ],
+   "answer": 2,
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
+  },
+  {
+   "q": "Sara: How many legs has a cat got? Ali: It's got ___ legs.",
+   "options": [
+    "two",
+    "six",
+    "four"
+   ],
+   "answer": 2,
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   }
  ],
  "listen": [
   {
-   "script": "Hi! My name is Lina. I'm seven years old. I'm from Dammam. This is my brother, Fahad. He's nine. Nice to meet you!",
+   "script": "Teacher: Hello! What's your name? Lina: Hi! My name is Lina. I'm seven years old. I'm from Dammam. This is my brother, Fahad. He's nine. Teacher: Nice to meet you!",
    "q": "How old is Lina?",
    "options": [
     "six",
@@ -122,10 +208,14 @@
     "nine"
    ],
    "answer": 1,
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   },
   {
-   "script": "Look at my toys! This is my robot. It's big and grey. This is my ball. It's small and red. And this is my kite. It's yellow.",
+   "script": "Girl: What's in your box? Boy: Look at my toys! This is my robot. It's big and grey. This is my ball. It's small and red. And this is my kite. It's yellow.",
    "q": "What colour is the ball?",
    "options": [
     "red",
@@ -133,10 +223,14 @@
     "yellow"
    ],
    "answer": 0,
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   },
   {
-   "script": "This is my family. This is my mum, and this is my dad. This boy is my cousin, Saad. This woman is my aunt. She's very kind. And this baby is my sister.",
+   "script": "Teacher: Who's in your photo, Reem? Reem: This is my family. This is my mum, and this is my dad. This boy is my cousin, Saad. This woman is my aunt. She's very kind. And this baby is my sister.",
    "q": "Who is Saad?",
    "options": [
     "a dad",
@@ -144,7 +238,11 @@
     "a cousin"
    ],
    "answer": 2,
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
   },
   {
    "script": "Teacher: How many pencils, Omar? Omar: One, two, three, four, five, six. Six pencils! Teacher: Good. And how many books? Omar: Two books.",
@@ -155,7 +253,41 @@
     "four"
    ],
    "answer": 1,
-   "d": 1.3
+   "d": 1.3,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
+  },
+  {
+   "script": "Mum: Where's your cat, Hind? Hind: She's under the bed. Mum: And where's your ball? Hind: It's on the chair.",
+   "q": "Where is the cat?",
+   "options": [
+    "in the box",
+    "under the bed",
+    "on the chair"
+   ],
+   "answer": 1,
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can say where things are (in, on, under, next to).",
+   "cid": "p8"
+  },
+  {
+   "script": "Boy: Do you like apples? Girl: Yes, I do. I like apples and bananas. Boy: Do you like milk? Girl: No, I don't.",
+   "q": "What doesn't the girl like?",
+   "options": [
+    "apples",
+    "bananas",
+    "milk"
+   ],
+   "answer": 2,
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "listening",
+   "cando": "Can say what they like and what they have got.",
+   "cid": "p7"
   }
  ],
  "read": {
@@ -169,7 +301,11 @@
      "seven"
     ],
     "answer": 1,
-    "d": 1.0
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    },
    {
     "q": "Where is Faisal from?",
@@ -179,7 +315,11 @@
      "Dammam"
     ],
     "answer": 0,
-    "d": 1.0
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    },
    {
     "q": "What colour is Faisal's car?",
@@ -189,7 +329,11 @@
      "blue"
     ],
     "answer": 2,
-    "d": 1.0
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    },
    {
     "q": "Who is Reem?",
@@ -199,20 +343,75 @@
      "Faisal's friend"
     ],
     "answer": 0,
-    "d": 1.0
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
    }
   ]
  },
- "aloud": [
-  "Hello, my name is Sara.",
-  "This is my big brother.",
-  "It's a red ball."
- ],
- "speak": [
-  "What's your name, and how old are you?",
-  "Who is in your family?",
-  "What's your favourite toy? What colour is it?"
- ],
+ "read2": {
+  "passage": "This is my friend Noura. She is seven. She has got a white cat. Its name is Snow. Noura likes red and pink. Her bag is pink. She likes rice and chicken, but she doesn't like fish.",
+  "qs": [
+   {
+    "q": "How old is Noura?",
+    "options": [
+     "eight",
+     "seven",
+     "six"
+    ],
+    "answer": 1,
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   },
+   {
+    "q": "What colour is the cat?",
+    "options": [
+     "white",
+     "pink",
+     "red"
+    ],
+    "answer": 0,
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   },
+   {
+    "q": "What colour is Noura's bag?",
+    "options": [
+     "red",
+     "white",
+     "pink"
+    ],
+    "answer": 2,
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   },
+   {
+    "q": "What doesn't Noura like?",
+    "options": [
+     "chicken",
+     "fish",
+     "rice"
+    ],
+    "answer": 1,
+    "d": 1.0,
+    "cefr": "Pre-A1",
+    "skill": "reading",
+    "cando": "Can understand a very short, simple text about a child's life.",
+    "cid": "p6"
+   }
+  ]
+ },
  "pic": [
   {
    "type": "pic",
@@ -223,7 +422,11 @@
     "🐟"
    ],
    "answer": 0,
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "type": "pic",
@@ -234,7 +437,11 @@
     "🍇"
    ],
    "answer": 1,
-   "d": 1.0
+   "d": 1.0,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "type": "pic",
@@ -245,7 +452,11 @@
     "1️⃣"
    ],
    "answer": 0,
-   "d": 1.2
+   "d": 1.2,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "type": "pic",
@@ -256,7 +467,11 @@
     "🔵"
    ],
    "answer": 1,
-   "d": 1.3
+   "d": 1.3,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "type": "pic",
@@ -267,7 +482,21 @@
     "😠"
    ],
    "answer": 1,
-   "d": 1.5
+   "d": 1.5,
+   "cefr": "Pre-A1",
+   "skill": "vocabulary",
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   }
+ ],
+ "aloud": [
+  "Hello, my name is Sara.",
+  "This is my big brother.",
+  "It's a red ball."
+ ],
+ "speak": [
+  "What's your name, and how old are you?",
+  "Who is in your family?",
+  "What's your favourite toy? What colour is it?"
  ]
 }

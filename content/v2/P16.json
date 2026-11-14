@@ -11,7 +11,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 16.0
+   "d": 16.0,
+   "cefr": "C1",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
   },
   {
    "q": "Not only ___ the project on time, but they also won first prize.",
@@ -23,7 +26,10 @@
    ],
    "answer": 2,
    "skill": "grammar",
-   "d": 16.0
+   "d": 16.0,
+   "cefr": "C1",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
   },
   {
    "q": "The door was locked from the inside, so the thief ___ through it.",
@@ -35,7 +41,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 14.0
+   "d": 14.0,
+   "cefr": "B2+",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
   },
   {
    "q": "The photo ___ by AI; the people in it have six fingers.",
@@ -47,7 +56,10 @@
    ],
    "answer": 3,
    "skill": "grammar",
-   "d": 16.0
+   "d": 16.0,
+   "cefr": "C1",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
   },
   {
    "q": "The evidence is far from ___: the study only looked at twenty people.",
@@ -58,8 +70,11 @@
     "exclusive"
    ],
    "answer": 0,
+   "d": 16.0,
+   "cefr": "C1",
    "skill": "vocabulary",
-   "d": 16.0
+   "cando": "Can use idiomatic and academic vocabulary precisely.",
+   "cid": "h3"
   },
   {
    "q": "The story about the school closing spread like ___.",
@@ -71,7 +86,10 @@
    ],
    "answer": 1,
    "skill": "vocabulary",
-   "d": 16.0
+   "d": 16.0,
+   "cefr": "C1",
+   "cando": "Can use idiomatic and academic vocabulary precisely.",
+   "cid": "h3"
   },
   {
    "q": "Her story about moving to a new country really struck a ___ with me.",
@@ -83,7 +101,10 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 16.0
+   "d": 16.0,
+   "cefr": "C1",
+   "cando": "Can use idiomatic and academic vocabulary precisely.",
+   "cid": "h3"
   },
   {
    "q": "Which phrase is best for summarising at the end of a talk?",
@@ -95,7 +116,10 @@
    ],
    "answer": 0,
    "skill": "function",
-   "d": 14.5
+   "d": 14.5,
+   "cefr": "B2+",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "Which sentence justifies a choice correctly?",
@@ -106,47 +130,121 @@
     "I'd go for the library, the reason is it's open to everyone."
    ],
    "answer": 0,
+   "d": 15.0,
+   "cefr": "B2+",
    "skill": "function",
-   "d": 15.0
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "Which sentence speculates about a picture correctly?",
    "options": [
+    "Judging his expression, I'd imagine he's just been missed the bus.",
     "Judging by his expression, I'd imagine he's just missed his bus.",
     "Judging by his expression, I'd imagine he just misses his bus.",
-    "Judged by his expression, I imagine he's just missing his bus.",
-    "Judging his expression, I'd imagine he's just been missed the bus."
+    "Judged by his expression, I imagine he's just missing his bus."
+   ],
+   "answer": 1,
+   "d": 15.5,
+   "cefr": "C1",
+   "skill": "function",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
+  },
+  {
+   "q": "Little ___ that the decision would change his life.",
+   "options": [
+    "he did know",
+    "did he know",
+    "he knew",
+    "knew he"
+   ],
+   "answer": 1,
+   "d": 16.0,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
+  },
+  {
+   "q": "She ___ have left already; her coat is still here.",
+   "options": [
+    "can't",
+    "mustn't",
+    "needn't",
+    "shouldn't"
    ],
    "answer": 0,
+   "d": 16.0,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
+  },
+  {
+   "q": "The minister's comments ___ a heated debate on social media.",
+   "options": [
+    "lit",
+    "fired",
+    "burned",
+    "sparked"
+   ],
+   "answer": 3,
+   "d": 16.0,
+   "cefr": "C1",
+   "skill": "vocabulary",
+   "cando": "Can use idiomatic and academic vocabulary precisely.",
+   "cid": "h3"
+  },
+  {
+   "q": "Which phrase is best for rephrasing a complicated idea more simply?",
+   "options": [
+    "Be that as it may, …",
+    "By the same token, …",
+    "In other words, …",
+    "On the contrary, …"
+   ],
+   "answer": 2,
+   "d": 16.0,
+   "cefr": "C1",
    "skill": "function",
-   "d": 15.5
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   }
  ],
  "listen": [
   {
-   "script": "Never have I seen our school so united. Last year, we collected two hundred food baskets for families in need. This year, we're aiming for five hundred. Can we really let those families down? Join us on Thursday after school.",
-   "q": "What is the speaker trying to do?",
+   "script": "Host: Our next speaker is from the volunteering club. Student: Never have I seen our school so united. Last year, we collected two hundred food baskets for families in need. This year, we're aiming for five hundred. Can we really let those families down? Join us on Thursday after school.",
+   "q": "What is the student trying to do?",
    "options": [
     "Complain about last year's event",
     "Persuade students to volunteer",
     "Explain how to make food baskets"
    ],
    "answer": 1,
-   "d": 15.0
+   "d": 15.0,
+   "cefr": "B2+",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
   },
   {
-   "script": "This advert claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. That raises a red flag for me.",
-   "q": "Why does the speaker doubt the reviews?",
+   "script": "Girl: Have you seen this advert for the spot cream? Boy: Yes. It claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. That raises a red flag for me.",
+   "q": "Why does the boy doubt the reviews?",
    "options": [
     "They were all posted on the same day.",
     "They were written in another language.",
     "They were very negative."
    ],
    "answer": 0,
-   "d": 16.0
+   "d": 16.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
   },
   {
-   "script": "So far, I've talked about why we need sleep. This brings me to my second point: what happens to our brains when we don't get enough of it. After that, I'll share three simple tips you can start using tonight.",
+   "script": "Chair: Please go on. Speaker: So far, I've talked about why we need sleep. This brings me to my second point: what happens to our brains when we don't get enough of it. After that, I'll share three simple tips you can start using tonight.",
    "q": "What will the speaker talk about next?",
    "options": [
     "Why we need sleep",
@@ -154,10 +252,14 @@
     "The effects of too little sleep on the brain"
    ],
    "answer": 2,
-   "d": 15.5
+   "d": 15.5,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
   },
   {
-   "script": "Both pictures show people travelling, but the key difference is the pace. The family on the train seems relaxed, whereas the businessman at the airport looks under pressure. Judging by the way he's checking his watch, I'd imagine his flight is about to leave.",
+   "script": "Examiner: Compare the two pictures, please. Candidate: Both pictures show people travelling, but the key difference is the pace. The family on the train seems relaxed, whereas the businessman at the airport looks under pressure. Judging by the way he's checking his watch, I'd imagine his flight is about to leave.",
    "q": "How does the businessman seem?",
    "options": [
     "Relaxed",
@@ -165,7 +267,41 @@
     "Bored"
    ],
    "answer": 1,
-   "d": 15.0
+   "d": 15.0,
+   "cefr": "B2+",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
+  },
+  {
+   "script": "Woman: Did you enjoy the lecture? Man: Well, the speaker certainly knew her subject. Woman: That's not really an answer. Man: Let's just say I've heard livelier talks.",
+   "q": "What does the man imply?",
+   "options": [
+    "He didn't attend the lecture.",
+    "The lecture was boring.",
+    "The speaker was badly informed."
+   ],
+   "answer": 1,
+   "d": 16.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
+  },
+  {
+   "script": "Boy: Granted, the new timetable gives us longer breaks. Girl: But? Boy: But it means finishing at four, which rules out training for half the team.",
+   "q": "What is the boy's main objection?",
+   "options": [
+    "The breaks are too long.",
+    "The timetable starts too early.",
+    "Some students won't be able to train."
+   ],
+   "answer": 2,
+   "d": 16.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
   }
  ],
  "read": {
@@ -179,7 +315,11 @@
      "Too few fact-checkers"
     ],
     "answer": 1,
-    "d": 16.0
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    },
    {
     "q": "What should you do with a claim that has no named source?",
@@ -189,7 +329,11 @@
      "Report it to the police"
     ],
     "answer": 0,
-    "d": 16.0
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    },
    {
     "q": "Which posts are most likely to be misleading?",
@@ -199,7 +343,11 @@
      "Posts that make us angry or afraid"
     ],
     "answer": 2,
-    "d": 16.0
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    },
    {
     "q": "What is the writer's main message?",
@@ -209,7 +357,72 @@
      "Social media should be banned."
     ],
     "answer": 1,
-    "d": 16.0
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "It is often claimed that humans use only ten percent of their brains. The idea has been repeated in films, advertisements and self-help books, yet neuroscientists dismiss it outright. Brain scans show that virtually every region is active over the course of a day, and even simple tasks draw on networks spread across the whole brain. So why does the myth persist? Partly, it seems, because it is flattering: if most of our brain lies unused, we must all have hidden potential waiting to be unlocked. Psychologists also note that the claim has no clear origin, which makes it hard to disprove for anyone who does not check the original research. The lesson, researchers argue, extends well beyond the brain: the more appealing a claim is, the more carefully it deserves to be examined.",
+  "qs": [
+   {
+    "q": "What do brain scans show?",
+    "options": [
+     "Simple tasks use one small region.",
+     "Nearly every region is active during a day.",
+     "Only ten percent of the brain is used."
+    ],
+    "answer": 1,
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   },
+   {
+    "q": "According to the passage, why does the myth persist?",
+    "options": [
+     "It is flattering.",
+     "Scientists support it.",
+     "It is easy to test."
+    ],
+    "answer": 0,
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   },
+   {
+    "q": "What makes the claim hard to disprove for many people?",
+    "options": [
+     "It is too scientific.",
+     "It only appears in films.",
+     "It has no clear origin."
+    ],
+    "answer": 2,
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   },
+   {
+    "q": "What is the wider lesson?",
+    "options": [
+     "Brain scans are always accurate.",
+     "Appealing claims need careful examination.",
+     "Films are always unreliable."
+    ],
+    "answer": 1,
+    "d": 16.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    }
   ]
  },

@@ -11,7 +11,10 @@
    ],
    "answer": 2,
    "skill": "grammar",
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "cando": "Can use the present perfect continuous and the passive.",
+   "cid": "e1"
   },
   {
    "q": "'The bridge _____ in 1995.'",
@@ -23,7 +26,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "cando": "Can use the present perfect continuous and the passive.",
+   "cid": "e1"
   },
   {
    "q": "'If I _____ more time, I'd learn to play the oud.'",
@@ -35,7 +41,10 @@
    ],
    "answer": 3,
    "skill": "grammar",
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "cando": "Can talk about wishes, regrets and imaginary situations.",
+   "cid": "e2"
   },
   {
    "q": "'I wish I _____ swim. All my friends are in the pool.'",
@@ -47,7 +56,10 @@
    ],
    "answer": 1,
    "skill": "grammar",
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "cando": "Can talk about wishes, regrets and imaginary situations.",
+   "cid": "e2"
   },
   {
    "q": "'The concert was _____ off because of the storm.'",
@@ -59,7 +71,10 @@
    ],
    "answer": 0,
    "skill": "vocabulary",
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "cando": "Can understand common idioms and phrasal verbs in context.",
+   "cid": "e6"
   },
   {
    "q": "'I'm finally getting the _____ of using the new app.'",
@@ -71,7 +86,10 @@
    ],
    "answer": 2,
    "skill": "vocabulary",
-   "d": 10.6
+   "d": 10.6,
+   "cefr": "B1+",
+   "cando": "Can understand common idioms and phrasal verbs in context.",
+   "cid": "e6"
   },
   {
    "q": "'My headphones arrived broken, so I asked for a _____.'",
@@ -83,7 +101,10 @@
    ],
    "answer": 0,
    "skill": "vocabulary",
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "cando": "Can complain politely and solve everyday problems.",
+   "cid": "e3"
   },
   {
    "q": "You want to complain politely in a restaurant. What do you say?",
@@ -95,7 +116,10 @@
    ],
    "answer": 1,
    "skill": "function",
-   "d": 9.0
+   "d": 9.0,
+   "cefr": "B1",
+   "cando": "Can complain politely and solve everyday problems.",
+   "cid": "e3"
   },
   {
    "q": "Your friend asks, 'How long have you been living here?' Which answer is correct?",
@@ -107,7 +131,10 @@
    ],
    "answer": 2,
    "skill": "function",
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "cando": "Can use the present perfect continuous and the passive.",
+   "cid": "e1"
   },
   {
    "q": "Which sentence imagines an unreal situation?",
@@ -119,23 +146,90 @@
    ],
    "answer": 3,
    "skill": "function",
-   "d": 9.5
+   "d": 9.5,
+   "cefr": "B1+",
+   "cando": "Can talk about wishes, regrets and imaginary situations.",
+   "cid": "e2"
+  },
+  {
+   "q": "Our classroom ___ at the moment, so we're having lessons in the hall.",
+   "options": [
+    "is painting",
+    "has painted",
+    "paints",
+    "is being painted"
+   ],
+   "answer": 3,
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "grammar",
+   "cando": "Can use the present perfect continuous and the passive.",
+   "cid": "e1"
+  },
+  {
+   "q": "This phone doesn't work. Can I ___ it for a new one?",
+   "options": [
+    "return back",
+    "replace",
+    "exchange",
+    "change back"
+   ],
+   "answer": 2,
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "vocabulary",
+   "cando": "Can complain politely and solve everyday problems.",
+   "cid": "e3"
+  },
+  {
+   "q": "My cousin ___ me to join the robotics club. She said it was really fun.",
+   "options": [
+    "suggested",
+    "persuaded",
+    "said",
+    "told about"
+   ],
+   "answer": 1,
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "vocabulary",
+   "cando": "Can persuade, recommend and say how certain they are.",
+   "cid": "e5"
+  },
+  {
+   "q": "Customer: Excuse me, this soup is cold. What is the best reply from the waiter?",
+   "options": [
+    "I do apologise. I'll get you a fresh one right away.",
+    "I apologise you. I'll get a fresh one.",
+    "Sorry for that, I bring another.",
+    "I'm sorry, but that's how we serve it."
+   ],
+   "answer": 0,
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "function",
+   "cando": "Can complain politely and solve everyday problems.",
+   "cid": "e3"
   }
  ],
  "listen": [
   {
-   "script": "Hi, Sara. Sorry I'm late. I've been waiting for the bus for forty minutes! When it finally came, it was completely full, so I had to walk the last part.",
-   "q": "Why is the speaker late?",
+   "script": "Sara: Where were you? The film has started! Huda: Sorry I'm late. I've been waiting for the bus for forty minutes! When it finally came, it was completely full, so I had to walk the last part.",
+   "q": "Why is Huda late?",
    "options": [
     "She overslept.",
     "She waited a long time for the bus.",
     "She forgot the address."
    ],
    "answer": 1,
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "listening",
+   "cando": "Can use the present perfect continuous and the passive.",
+   "cid": "e1"
   },
   {
-   "script": "Welcome to the old town. This house was built about two hundred years ago from coral stone taken from the Red Sea. It was restored a few years ago, and today it is used as a small museum.",
+   "script": "Boy: What's this old house used for now? Guide: This house was built about two hundred years ago from coral stone taken from the Red Sea. It was restored a few years ago, and today it is used as a small museum.",
    "q": "What is the house used for today?",
    "options": [
     "a hotel",
@@ -143,10 +237,14 @@
     "a museum"
    ],
    "answer": 2,
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "listening",
+   "cando": "Can use the present perfect continuous and the passive.",
+   "cid": "e1"
   },
   {
-   "script": "Good morning. I'm calling about my order. Unfortunately, the shoes I ordered are the wrong size. I don't want a refund. Could you possibly send me a size 40 instead?",
+   "script": "Assistant: Good morning, how can I help? Customer: I'm calling about my order. Unfortunately, the shoes I ordered are the wrong size. I don't want a refund. Could you possibly send me a size 40 instead?",
    "q": "What does the caller want?",
    "options": [
     "a different size",
@@ -154,18 +252,56 @@
     "a different colour"
    ],
    "answer": 0,
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "listening",
+   "cando": "Can complain politely and solve everyday problems.",
+   "cid": "e3"
   },
   {
-   "script": "If I could change one thing about my school, I'd make the library bigger. Right now it's tiny, and there's nowhere to sit. I wish we had comfortable chairs and more books in English.",
-   "q": "What does the speaker wish the library had?",
+   "script": "Teacher: If you could change one thing about your school, what would it be? Girl: I'd make the library bigger. Right now it's tiny, and there's nowhere to sit. I wish we had comfortable chairs and more books in English.",
+   "q": "What does the girl wish the library had?",
    "options": [
     "more computers",
     "comfortable chairs",
     "a café"
    ],
    "answer": 1,
-   "d": 10.0
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "listening",
+   "cando": "Can talk about wishes, regrets and imaginary situations.",
+   "cid": "e2"
+  },
+  {
+   "script": "Girl: How long have you been learning the oud? Boy: For about two years. My uncle taught me at first, and now I'm having lessons at a music centre. Girl: Is it hard? Boy: It was at the beginning.",
+   "q": "Who taught the boy first?",
+   "options": [
+    "his sister",
+    "his uncle",
+    "a teacher at the music centre"
+   ],
+   "answer": 1,
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "listening",
+   "cando": "Can use the present perfect continuous and the passive.",
+   "cid": "e1"
+  },
+  {
+   "script": "Man: I wish I hadn't bought this game. Woman: Why? Man: It's too easy. I finished it in two days. Woman: Can't you return it? Man: No, I've already opened it.",
+   "q": "Why can't the man return the game?",
+   "options": [
+    "He finished it.",
+    "He lost the receipt.",
+    "He has opened it."
+   ],
+   "answer": 2,
+   "d": 10.0,
+   "cefr": "B1+",
+   "skill": "listening",
+   "cando": "Can talk about wishes, regrets and imaginary situations.",
+   "cid": "e2"
   }
  ],
  "read": {
@@ -179,7 +315,11 @@
      "since last spring"
     ],
     "answer": 0,
-    "d": 10.0
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
    },
    {
     "q": "What was his first robot made from?",
@@ -189,7 +329,11 @@
      "pieces from his uncle's farm"
     ],
     "answer": 1,
-    "d": 10.0
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
    },
    {
     "q": "Where was the new robot tested?",
@@ -199,7 +343,11 @@
      "on his uncle's farm"
     ],
     "answer": 2,
-    "d": 10.0
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
    },
    {
     "q": "What does Faisal wish?",
@@ -209,7 +357,72 @@
      "that he could stop building robots"
     ],
     "answer": 1,
-    "d": 10.0
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "The Arabian leopard is one of the rarest big cats in the world. Fewer than two hundred are thought to live in the wild. For years, they have been losing their homes as towns have grown. In Saudi Arabia, a programme was started to protect them. Several leopard cubs have been born at a centre in Taif, and scientists hope that one day some of them can be returned to the mountains of AlUla. 'If people understood how special these animals are, they would protect them,' says one of the scientists. Visitors can't see the leopards at the centre, but the programme has been sharing videos online so that people can follow the cubs as they grow.",
+  "qs": [
+   {
+    "q": "Why have the leopards been losing their homes?",
+    "options": [
+     "There are too many tourists.",
+     "Towns have grown.",
+     "There is not enough water."
+    ],
+    "answer": 1,
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
+   },
+   {
+    "q": "Where have the cubs been born?",
+    "options": [
+     "at a centre in Taif",
+     "in the mountains of AlUla",
+     "in a zoo in Riyadh"
+    ],
+    "answer": 0,
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
+   },
+   {
+    "q": "What do scientists hope?",
+    "options": [
+     "to open the centre to visitors",
+     "to send the cubs abroad",
+     "to return some leopards to the wild"
+    ],
+    "answer": 2,
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
+   },
+   {
+    "q": "How can people follow the cubs?",
+    "options": [
+     "by reading a book",
+     "by watching videos online",
+     "by visiting the centre"
+    ],
+    "answer": 1,
+    "d": 10.0,
+    "cefr": "B1+",
+    "skill": "reading",
+    "cando": "Can understand personal stories and explanations in detail.",
+    "cid": "e8"
    }
   ]
  },
