@@ -50,7 +50,7 @@ Grammar that appears in a level must not be "taught" again as new in a later lev
 1. In My Opinion | giving and asking for opinions | I think / In my opinion / What do you think about …?
 2. I Agree … or Not | agreeing and disagreeing politely | So do I / Neither do I / I see your point, but …
 3. What Should I Do? | asking for and giving advice | If I were you …, Why don't you …?, first conditional
-4. People and Places in Detail | describing in detail | relative clauses who / which / where / whose
+4. People and Places in Detail | describing in detail | relative clauses who / which / where / whose; used to / didn't use to (past habits and states, L8 4.1 and 4.6)
 
 ## L9 — B1 (Preliminary) · GSE 47-50
 1. Just Checking | checking and confirming understanding | question tags; Do you mean …? So you're saying …

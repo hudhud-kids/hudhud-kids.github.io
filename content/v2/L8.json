@@ -152,13 +152,14 @@
     "Relative clauses with who (people)",
     "which / that (things)",
     "where (places)",
-    "whose (possession)"
+    "whose (possession)",
+    "used to / didn't use to + base verb (past habits and states)"
    ],
    "lessons": [
     [
      "People I Admire",
      "describe a person you admire using 'who' to add information",
-     "He's / She's the person who … / someone who …"
+     "He's / She's the person who … / someone who … / We used to …"
     ],
     [
      "Clever Inventions",
@@ -183,7 +184,7 @@
     [
      "Be a Tour Guide",
      "show a visitor around your city and describe people, places and things in detail",
-     "… which is located … / It's the place where … / Someone who …"
+     "… which is located … / It's the place where … / … used to … / They didn't use to …"
     ]
    ]
   }
@@ -212,10 +213,10 @@
      "frame": "I think ___ is a waste of time."
     },
     {
-     "w": "screen time",
-     "def": "the time you spend looking at phones, tablets, TV or computers",
-     "ar": "وقت الشاشة",
-     "frame": "My screen time is about ___ hours a day."
+     "w": "glued to the screen",
+     "def": "looking at a screen for a very long time without stopping",
+     "ar": "ملتصق بالشاشة",
+     "frame": "I'm glued to the screen when ___."
     },
     {
      "w": "to be honest",
@@ -236,7 +237,7 @@
     "p1": [
      {
       "s": "Reem",
-      "t": "Omar, that's three hours on that game! What do you think about your screen time today?"
+      "t": "Omar, you've been glued to the screen for three hours! What do you think about your screen time today?"
      },
      {
       "s": "Omar",
@@ -304,7 +305,10 @@
      "In your opinion, what is a good screen-time rule for families?"
     ]
    },
-   "exit": "Give me your opinion about video games in two sentences, and use 'because' in one of them."
+   "exit": "Give me your opinion about video games in two sentences, and use 'because' in one of them.",
+   "recycle": [
+    "screen time"
+   ]
   },
   "0-1": {
    "objective": "Today you will give your opinion about school food and ask what others think of it.",
@@ -568,10 +572,10 @@
      "frame": "I think it's unfair when ___."
     },
     {
-     "w": "referee",
-     "def": "the person who controls a match and makes sure players follow the rules",
-     "ar": "الحَكَم",
-     "frame": "The referee made a bad decision when ___."
+     "w": "a controversial decision",
+     "def": "a decision that many people strongly disagree with",
+     "ar": "قرار مثير للجدل",
+     "frame": "One controversial decision I remember is ___."
     },
     {
      "w": "Who do you think will …?",
@@ -585,7 +589,7 @@
     "p1": [
      {
       "s": "Daniel",
-      "t": "That was never a penalty! The referee made a terrible mistake."
+      "t": "That was never a penalty! What a controversial decision!"
      },
      {
       "s": "Khalid",
@@ -653,7 +657,10 @@
      "In your opinion, how will the 2034 World Cup change Saudi Arabia?"
     ]
    },
-   "exit": "Give me your opinion about your favourite team in two sentences. Use 'If you ask me' or 'The way I see it'."
+   "exit": "Give me your opinion about your favourite team in two sentences. Use 'If you ask me' or 'The way I see it'.",
+   "recycle": [
+    "referee"
+   ]
   },
   "0-4": {
    "objective": "Today you will give careful opinions about places to live and ask others what they think.",
@@ -666,10 +673,10 @@
      "frame": "It seems to me that ___ is more relaxing."
     },
     {
-     "w": "crowded",
-     "def": "full of too many people",
-     "ar": "مزدحم",
-     "frame": "___ gets really crowded at the weekend."
+     "w": "packed",
+     "def": "so full of people that it is hard to move",
+     "ar": "مكتظ / مزدحم جداً",
+     "frame": "___ is always packed on Thursday nights."
     },
     {
      "w": "peaceful",
@@ -714,7 +721,7 @@
      },
      {
       "s": "Lama",
-      "t": "That's true, but Riyadh is so crowded. How long does it take you to get to your swimming club?"
+      "t": "That's true, but Riyadh is so packed. How long does it take you to get to your swimming club?"
      }
     ],
     "p2": [
@@ -770,7 +777,10 @@
      "What do you think is the perfect size for a city?"
     ]
    },
-   "exit": "Tell me your opinion about where you live, in two sentences. Give one good thing and one problem."
+   "exit": "Tell me your opinion about where you live, in two sentences. Give one good thing and one problem.",
+   "recycle": [
+    "crowded"
+   ]
   },
   "0-5": {
    "objective": "Today you will share your opinions on a school question with clear reasons and ask for other people's views.",
@@ -905,10 +915,10 @@
      "frame": "A: I don't like ___. B: Neither do I."
     },
     {
-     "w": "spicy",
-     "def": "having a hot, strong taste",
-     "ar": "حارّ (فيه شطة)",
-     "frame": "I can't eat ___ because it's too spicy."
+     "w": "fiery",
+     "def": "very hot and spicy, like chilli",
+     "ar": "حارّ جداً / لاذع",
+     "frame": "___ is too fiery for me."
     },
     {
      "w": "I'm in the mood for …",
@@ -943,7 +953,7 @@
      },
      {
       "s": "Omar",
-      "t": "But I don't like it when the sauce is too spicy."
+      "t": "But I don't like it when the sauce is too fiery."
      },
      {
       "s": "Faisal",
@@ -990,7 +1000,7 @@
       "hint": "Use 'Neither do I' or 'Really? I do.' and give an example."
      },
      {
-      "q": "I'm in the mood for something spicy. What about you?",
+      "q": "I'm in the mood for something fiery. What about you?",
       "hint": "Say what you're in the mood for, and agree or disagree."
      }
     ]
@@ -1007,7 +1017,10 @@
      "Do you think food is just a matter of taste? Why or why not?"
     ]
    },
-   "exit": "Listen: 'I love dates.' 'I don't drink coffee.' Agree or disagree with both sentences without looking at the slides."
+   "exit": "Listen: 'I love dates.' 'I don't drink coffee.' Agree or disagree with both sentences without looking at the slides.",
+   "recycle": [
+    "spicy"
+   ]
   },
   "1-1": {
    "objective": "Today you will agree and disagree with short answers while planning a family holiday.",
@@ -1032,10 +1045,10 @@
      "frame": "A: I've been to ___. B: So have I."
     },
     {
-     "w": "can't wait",
-     "def": "to be very excited about something that will happen soon",
-     "ar": "متشوّق جداً",
-     "frame": "I can't wait for ___."
+     "w": "count the days",
+     "def": "to wait with great excitement for something that is coming",
+     "ar": "يعدّ الأيام بشوق",
+     "frame": "I'm counting the days until ___."
     },
     {
      "w": "cool weather",
@@ -1044,10 +1057,10 @@
      "frame": "I love the cool weather in ___."
     },
     {
-     "w": "go camping",
-     "def": "to stay outdoors in a tent for fun",
-     "ar": "يذهب للتخييم",
-     "frame": "My family likes to go camping in ___."
+     "w": "sleep under the stars",
+     "def": "to spend the night outside with no roof above you",
+     "ar": "ينام في العراء تحت النجوم",
+     "frame": "I'd love to sleep under the stars in ___."
     }
    ],
    "dialogue": {
@@ -1055,7 +1068,7 @@
     "p1": [
      {
       "s": "Saud",
-      "t": "I'm so tired of the heat in Riyadh. I can't wait for the summer holidays!"
+      "t": "I'm so tired of the heat in Riyadh. I'm counting the days until the summer holidays!"
      },
      {
       "s": "Noura",
@@ -1073,7 +1086,7 @@
     "p2": [
      {
       "s": "Saud",
-      "t": "We could go camping in the mountains near Abha."
+      "t": "We could sleep under the stars in the mountains near Abha."
      },
      {
       "s": "Noura",
@@ -1081,11 +1094,11 @@
      },
      {
       "s": "Saud",
-      "t": "Neither can I, to be honest! Let's stay in a hotel and go camping for one night only."
+      "t": "Neither can I, to be honest! Let's stay in a hotel and sleep under the stars for one night only."
      },
      {
       "s": "Noura",
-      "t": "Good idea. I can't wait to tell Mum and Dad."
+      "t": "Good idea. Let's tell Mum and Dad. I'm counting the days already!"
      }
     ],
     "focus": "So have I. Let's choose Abha this time.",
@@ -1119,11 +1132,15 @@
      "Visitors enjoy the green mountains, the cable car and the colourful houses of Rijal Almaa."
     ],
     "qs": [
-     "Have you been to Abha? Would you like to go camping there?",
+     "Have you been to Abha? Would you like to sleep under the stars there?",
      "Which is better for a summer holiday: the mountains or the beach?"
     ]
    },
-   "exit": "Listen: 'I'm hungry.' 'I can't swim very well.' Answer both sentences with a short agreement, then add one more idea."
+   "exit": "Listen: 'I'm hungry.' 'I can't swim very well.' Answer both sentences with a short agreement, then add one more idea.",
+   "recycle": [
+    "go camping",
+    "can't wait"
+   ]
   },
   "1-2": {
    "objective": "Today you will disagree politely about learning online by agreeing with part of an idea first.",
@@ -1386,10 +1403,10 @@
      "frame": "A: ___ is always better. B: Not necessarily."
     },
     {
-     "w": "recycle",
-     "def": "to make used things like paper and plastic into new things",
-     "ar": "يعيد التدوير",
-     "frame": "We recycle ___ at home."
+     "w": "sort your rubbish",
+     "def": "to put paper, plastic and glass into different bins",
+     "ar": "يفرز النفايات",
+     "frame": "At home, we sort our rubbish into ___."
     },
     {
      "w": "make a difference",
@@ -1428,7 +1445,7 @@
     "p2": [
      {
       "s": "Sam",
-      "t": "True. My family recycles paper and bottles now."
+      "t": "True. My family sorts our rubbish now: paper in one bin, bottles in another."
      },
      {
       "s": "Omar",
@@ -1478,7 +1495,10 @@
      "What can your family do to make a difference?"
     ]
    },
-   "exit": "I'll say: 'Recycling is a waste of time.' Disagree with me politely in two sentences."
+   "exit": "I'll say: 'Recycling is a waste of time.' Disagree with me politely in two sentences.",
+   "recycle": [
+    "recycle"
+   ]
   },
   "1-5": {
    "objective": "Today you will discuss choices for a team trip, agree and disagree politely, and reach an agreement.",
@@ -1636,10 +1656,10 @@
      "frame": "Have you tried ___?"
     },
     {
-     "w": "upset",
-     "def": "unhappy or worried because something bad happened",
-     "ar": "منزعج / حزين",
-     "frame": "I feel upset when ___."
+     "w": "feel down",
+     "def": "to feel sad and without energy",
+     "ar": "يشعر بالحزن والضيق",
+     "frame": "I feel down when ___."
     }
    ],
    "dialogue": {
@@ -1647,7 +1667,7 @@
     "p1": [
      {
       "s": "Fahad",
-      "t": "What's wrong, Omar? You look upset."
+      "t": "What's wrong, Omar? You look really down."
      },
      {
       "s": "Omar",
@@ -1690,7 +1710,7 @@
     "scene": "I'm your friend, and I have a problem: my best friend is always with a new student now, and I feel left out. Give me advice.",
     "prompts": [
      {
-      "q": "I feel so upset. What should I do?",
+      "q": "I feel so down. What should I do?",
       "hint": "Give advice with 'Why don't you …?'."
      },
      {
@@ -1715,7 +1735,10 @@
      "What advice can you give to a new student who has no friends yet?"
     ]
    },
-   "exit": "Give me two pieces of advice for a friend who fell out with a classmate. Use 'Why don't you …?' once."
+   "exit": "Give me two pieces of advice for a friend who fell out with a classmate. Use 'Why don't you …?' once.",
+   "recycle": [
+    "upset"
+   ]
   },
   "2-1": {
    "objective": "Today you will give advice to someone who is stressed about exams using 'If I were you'.",
@@ -1734,16 +1757,16 @@
      "frame": "I get stressed out when ___."
     },
     {
-     "w": "revise",
-     "def": "to study again before an exam",
-     "ar": "يراجع (للاختبار)",
-     "frame": "I need to revise ___ for my test."
+     "w": "review your notes",
+     "def": "to read and study your notes again",
+     "ar": "يراجع ملاحظاته",
+     "frame": "Before a test, I review my notes on ___."
     },
     {
-     "w": "take a break",
-     "def": "to stop working for a short time and rest",
-     "ar": "يأخذ استراحة",
-     "frame": "I usually take a break after ___ minutes."
+     "w": "recharge your batteries",
+     "def": "to rest so that you have energy again",
+     "ar": "يستعيد نشاطه وطاقته",
+     "frame": "I recharge my batteries by ___."
     },
     {
      "w": "fall behind",
@@ -1767,7 +1790,7 @@
      },
      {
       "s": "Hind",
-      "t": "Don't worry, that's normal. Have you started to revise?"
+      "t": "Don't worry, that's normal. Have you started to review your notes?"
      },
      {
       "s": "Lama",
@@ -1785,7 +1808,7 @@
      },
      {
       "s": "Hind",
-      "t": "Then take a break every forty minutes. Your brain needs rest."
+      "t": "Then stop every forty minutes to recharge your batteries. Your brain needs rest."
      },
      {
       "s": "Lama",
@@ -1803,19 +1826,19 @@
     "focus": "If I were you, I'd make a timetable.",
     "qs": [
      "Which subject is Lama falling behind in?",
-     "How often does Hind say Lama should take a break?"
+     "How often does Hind say Lama should stop and rest?"
     ]
    },
    "speakout": {
-    "scene": "I'm a student in your class. Our science exam is next Sunday, and I haven't started revising. I'm really stressed out. Give me advice.",
+    "scene": "I'm a student in your class. Our science exam is next Sunday, and I haven't started reviewing my notes. I'm really stressed out. Give me advice.",
     "prompts": [
      {
       "q": "I don't know where to start. What should I do?",
       "hint": "Start with 'If I were you, I'd …'."
      },
      {
-      "q": "I always get sleepy when I revise at night.",
-      "hint": "Give advice about when to study and when to take a break."
+      "q": "I always get sleepy when I review my notes at night.",
+      "hint": "Give advice about when to study and when to recharge your batteries."
      },
      {
       "q": "My phone keeps distracting me.",
@@ -1835,7 +1858,11 @@
      "What do you tell a friend who is stressed out before exams?"
     ]
    },
-   "exit": "Give me two pieces of advice for exam week. Start one of them with 'If I were you, I'd …'."
+   "exit": "Give me two pieces of advice for exam week. Start one of them with 'If I were you, I'd …'.",
+   "recycle": [
+    "take a break",
+    "revise"
+   ]
   },
   "2-2": {
    "objective": "Today you will give advice about sleep and food and say what will happen if someone follows it.",
@@ -1848,16 +1875,16 @@
      "frame": "If I don't get enough sleep, I ___."
     },
     {
-     "w": "stay up late",
-     "def": "to go to bed later than usual",
-     "ar": "يسهر",
-     "frame": "I stay up late when ___."
+     "w": "a night owl",
+     "def": "a person who likes to stay awake until late at night",
+     "ar": "شخص يحب السهر",
+     "frame": "I turn into a night owl when ___."
     },
     {
-     "w": "junk food",
-     "def": "unhealthy food like crisps, sweets and fast food",
-     "ar": "الأكل غير الصحي",
-     "frame": "I try not to eat ___ because it's junk food."
+     "w": "empty calories",
+     "def": "food energy with no vitamins or other healthy things",
+     "ar": "سعرات فارغة بلا فائدة",
+     "frame": "___ is full of empty calories."
     },
     {
      "w": "exhausted",
@@ -1888,7 +1915,7 @@
      },
      {
       "s": "Faisal",
-      "t": "I stayed up late again, sir. I was playing online with my cousins."
+      "t": "I'm a real night owl, sir. I was playing online with my cousins until midnight."
      },
      {
       "s": "Mr Saleh",
@@ -1910,7 +1937,7 @@
      },
      {
       "s": "Mr Saleh",
-      "t": "That's junk food! If you eat eggs or labneh and bread, you'll have more energy."
+      "t": "Crisps are full of empty calories! If you eat eggs or labneh and bread, you'll have more energy."
      },
      {
       "s": "Faisal",
@@ -1931,11 +1958,11 @@
     "scene": "I'm your younger cousin. I eat sweets all day, I go to bed at midnight, and I never exercise. Give me advice and tell me what will happen.",
     "prompts": [
      {
-      "q": "I always stay up late. Is that a problem?",
+      "q": "I'm a night owl. I never sleep before midnight. Is that a problem?",
       "hint": "Use 'If you …, you'll …' or 'If you don't …, you won't …'."
      },
      {
-      "q": "But I love junk food! What should I eat instead?",
+      "q": "But I love crisps and sweets! What should I eat instead?",
       "hint": "Suggest two healthy foods and say what will happen if I eat them."
      },
      {
@@ -1956,7 +1983,11 @@
      "What will happen if children don't get enough sleep before school?"
     ]
    },
-   "exit": "Tell me two healthy habits and what will happen if I follow them. Use 'If you …, you'll …'."
+   "exit": "Tell me two healthy habits and what will happen if I follow them. Use 'If you …, you'll …'.",
+   "recycle": [
+    "stay up late",
+    "junk food"
+   ]
   },
   "2-3": {
    "objective": "Today you will give advice about saving and spending money and warn about what will happen.",
@@ -1969,10 +2000,10 @@
      "frame": "I'm saving up for ___."
     },
     {
-     "w": "pocket money",
-     "def": "money that parents give children every week or month",
-     "ar": "المصروف",
-     "frame": "I spend my pocket money on ___."
+     "w": "weekly allowance",
+     "def": "money that parents give a child every week",
+     "ar": "المصروف الأسبوعي",
+     "frame": "I spend most of my weekly allowance on ___."
     },
     {
      "w": "You'd better …",
@@ -2008,7 +2039,7 @@
      },
      {
       "s": "Majed",
-      "t": "How much pocket money do you get?"
+      "t": "How big is your weekly allowance?"
      },
      {
       "s": "Saud",
@@ -2076,7 +2107,10 @@
      "What are you saving up for at the moment?"
     ]
    },
-   "exit": "Give me two pieces of advice about saving money. Use 'You'd better' or 'unless'."
+   "exit": "Give me two pieces of advice about saving money. Use 'You'd better' or 'unless'.",
+   "recycle": [
+    "pocket money"
+   ]
   },
   "2-4": {
    "objective": "Today you will ask someone for advice politely when you are in a new situation.",
@@ -2113,10 +2147,10 @@
      "frame": "It took me a while to get used to ___."
     },
     {
-     "w": "nervous",
-     "def": "a bit afraid or worried about something",
-     "ar": "متوتر / قلق",
-     "frame": "I feel nervous before ___."
+     "w": "on edge",
+     "def": "nervous and unable to relax",
+     "ar": "متوتر / على أعصابه",
+     "frame": "I'm always on edge before ___."
     }
    ],
    "dialogue": {
@@ -2128,7 +2162,7 @@
      },
      {
       "s": "Noura",
-      "t": "Of course! Are you nervous?"
+      "t": "Of course! Are you feeling on edge?"
      },
      {
       "s": "Emma",
@@ -2192,7 +2226,10 @@
      "What advice can you give to a visitor who is coming to Saudi Arabia?"
     ]
    },
-   "exit": "Imagine you have a problem with your homework. Ask me for advice in two different ways."
+   "exit": "Imagine you have a problem with your homework. Ask me for advice in two different ways.",
+   "recycle": [
+    "nervous"
+   ]
   },
   "2-5": {
    "objective": "Today you will be the expert on an advice podcast and give helpful advice for different problems.",
@@ -2217,10 +2254,10 @@
      "frame": "It might help to ___."
     },
     {
-     "w": "give up",
-     "def": "to stop trying to do something",
-     "ar": "يستسلم",
-     "frame": "Don't give up on ___."
+     "w": "throw in the towel",
+     "def": "to stop trying because you think you can't succeed",
+     "ar": "يستسلم ويتوقف عن المحاولة",
+     "frame": "I almost threw in the towel when ___."
     },
     {
      "w": "look on the bright side",
@@ -2245,7 +2282,7 @@
      },
      {
       "s": "Sultan",
-      "t": "Poor Turki! Well, Turki, whatever you do, don't give up."
+      "t": "Poor Turki! Well, Turki, whatever you do, don't throw in the towel."
      },
      {
       "s": "Majed",
@@ -2274,7 +2311,7 @@
       "t": "Great advice! Send us your problems, everyone, and we'll try to help."
      }
     ],
-    "focus": "Well, Turki, whatever you do, don't give up.",
+    "focus": "Well, Turki, whatever you do, don't throw in the towel.",
     "qs": [
      "What is Turki's problem?",
      "What does Sultan say Turki should tell his friends?"
@@ -2309,7 +2346,10 @@
      "Do you think kids give better advice to other kids than adults do?"
     ]
    },
-   "exit": "Your friend says: 'I always forget my homework.' Give two pieces of advice without looking at the slides."
+   "exit": "Your friend says: 'I always forget my homework.' Give two pieces of advice without looking at the slides.",
+   "recycle": [
+    "give up"
+   ]
   },
   "3-0": {
    "objective": "Today you will describe a person you admire using 'who' to add information.",
@@ -2362,7 +2402,7 @@
      },
      {
       "s": "Ali",
-      "t": "My uncle Hamad. He's the person who taught me to swim."
+      "t": "My uncle Hamad. He's the person who taught me to swim. We used to go to the beach every Friday."
      },
      {
       "s": "Daniel",
@@ -2568,10 +2608,10 @@
      "frame": "The view from ___ is breathtaking."
     },
     {
-     "w": "ancient",
-     "def": "very, very old",
-     "ar": "قديم جداً / أثري",
-     "frame": "I'd love to see the ancient ___ in ___."
+     "w": "centuries-old",
+     "def": "hundreds of years old",
+     "ar": "عمره قرون / أثري",
+     "frame": "I'd love to see the centuries-old ___ in ___."
     },
     {
      "w": "be worth a visit",
@@ -2599,7 +2639,7 @@
      },
      {
       "s": "Sam",
-      "t": "Wow, it looks ancient! How old is it?"
+      "t": "Wow, it looks centuries-old! How old is it?"
      },
      {
       "s": "Omar",
@@ -2659,7 +2699,10 @@
      "Why do you think it's important to protect historic places?"
     ]
    },
-   "exit": "Describe a place you love in two sentences. Use 'where' in one of them."
+   "exit": "Describe a place you love in two sentences. Use 'where' in one of them.",
+   "recycle": [
+    "ancient"
+   ]
   },
   "3-3": {
    "objective": "Today you will describe people in your family using 'whose' and other details.",
@@ -2919,7 +2962,7 @@
      "w": "surrounded by",
      "def": "having things all around",
      "ar": "محاط بـ",
-     "frame": "My grandparents' farm is surrounded by ___."
+     "frame": "My grandparents used to live in a house surrounded by ___."
     },
     {
      "w": "local",
@@ -2971,15 +3014,23 @@
      },
      {
       "s": "Hamad",
-      "t": "At-Turaif, an old district which is surrounded by mud-brick walls. Then we'll try some local food."
+      "t": "At-Turaif, an old district which is surrounded by mud-brick walls. The royal family used to live there."
      },
      {
       "s": "Kenji",
-      "t": "Perfect! And where can I buy a souvenir for my family?"
+      "t": "Did people use to build all their houses from mud?"
      },
      {
       "s": "Hamad",
-      "t": "Souq Al-Zal, where you can find old coins, carpets and Arabic coffee pots."
+      "t": "Yes, they did. They didn't use to have concrete, and mud kept the houses cool."
+     },
+     {
+      "s": "Kenji",
+      "t": "Interesting! And where can I buy a souvenir for my family?"
+     },
+     {
+      "s": "Hamad",
+      "t": "Souq Al-Zal, where you can find old coins, carpets and coffee pots. Then we'll try some local food."
      }
     ],
     "focus": "It's the place where the first Saudi state began.",
@@ -3017,7 +3068,7 @@
      "What's the best souvenir from Saudi Arabia, in your opinion?"
     ]
    },
-   "exit": "In two sentences, describe your city to a visitor. Use 'which', 'where' or 'who'."
+   "exit": "In two sentences, describe your city to a visitor. Use 'which', 'where' or 'who', and say what people used to do there."
   }
  },
  "kits": {
@@ -3039,9 +3090,9 @@
      "ex": "My dad thinks watching other people play games is a waste of time."
     },
     {
-     "w": "screen time",
-     "ar": "وقت الشاشة",
-     "ex": "My mum checks my screen time every evening."
+     "w": "glued to the screen",
+     "ar": "ملتصق بالشاشة",
+     "ex": "My little brother is glued to the screen when cartoons are on."
     },
     {
      "w": "to be honest",
@@ -3057,7 +3108,7 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "Omar, that's three hours on that game! What do you think about your screen time today?"
+     "t": "Omar, you've been glued to the screen for three hours! What do you think about your screen time today?"
     },
     {
      "s": "Omar",
@@ -3275,9 +3326,9 @@
      "ex": "It's unfair that the older boys always choose the teams."
     },
     {
-     "w": "referee",
-     "ar": "الحَكَم",
-     "ex": "The referee gave a yellow card to their captain."
+     "w": "a controversial decision",
+     "ar": "قرار مثير للجدل",
+     "ex": "The penalty in the last minute was a controversial decision."
     },
     {
      "w": "Who do you think will …?",
@@ -3288,7 +3339,7 @@
    "dialogue": [
     {
      "s": "Daniel",
-     "t": "That was never a penalty! The referee made a terrible mistake."
+     "t": "That was never a penalty! What a controversial decision!"
     },
     {
      "s": "Khalid",
@@ -3337,9 +3388,9 @@
      "ex": "It seems to me that our town needs more parks."
     },
     {
-     "w": "crowded",
-     "ar": "مزدحم",
-     "ex": "The mall was so crowded that we went home early."
+     "w": "packed",
+     "ar": "مكتظ / مزدحم جداً",
+     "ex": "The mall was so packed that we went home early."
     },
     {
      "w": "peaceful",
@@ -3377,7 +3428,7 @@
     },
     {
      "s": "Lama",
-     "t": "That's true, but Riyadh is so crowded. How long does it take you to get to your swimming club?"
+     "t": "That's true, but Riyadh is so packed. How long does it take you to get to your swimming club?"
     },
     {
      "s": "Reem",
@@ -3496,9 +3547,9 @@
      "ex": "A: I don't eat fish. B: Neither do I."
     },
     {
-     "w": "spicy",
-     "ar": "حارّ (فيه شطة)",
-     "ex": "This chicken is too spicy for my little sister."
+     "w": "fiery",
+     "ar": "حارّ جداً / لاذع",
+     "ex": "This chicken is too fiery for my little sister."
     },
     {
      "w": "I'm in the mood for …",
@@ -3527,7 +3578,7 @@
     },
     {
      "s": "Omar",
-     "t": "But I don't like it when the sauce is too spicy."
+     "t": "But I don't like it when the sauce is too fiery."
     },
     {
      "s": "Faisal",
@@ -3578,9 +3629,9 @@
      "ex": "A: I've visited Abha twice. B: So have I."
     },
     {
-     "w": "can't wait",
-     "ar": "متشوّق جداً",
-     "ex": "I can't wait to see my cousins at Eid."
+     "w": "count the days",
+     "ar": "يعدّ الأيام بشوق",
+     "ex": "I'm counting the days until Eid."
     },
     {
      "w": "cool weather",
@@ -3588,15 +3639,15 @@
      "ex": "We go to Taif in summer for the cool weather."
     },
     {
-     "w": "go camping",
-     "ar": "يذهب للتخييم",
-     "ex": "We go camping in the desert every winter."
+     "w": "sleep under the stars",
+     "ar": "ينام في العراء تحت النجوم",
+     "ex": "We slept under the stars in the desert last winter."
     }
    ],
    "dialogue": [
     {
      "s": "Saud",
-     "t": "I'm so tired of the heat in Riyadh. I can't wait for the summer holidays!"
+     "t": "I'm so tired of the heat in Riyadh. I'm counting the days until the summer holidays!"
     },
     {
      "s": "Noura",
@@ -3612,7 +3663,7 @@
     },
     {
      "s": "Saud",
-     "t": "We could go camping in the mountains near Abha."
+     "t": "We could sleep under the stars in the mountains near Abha."
     },
     {
      "s": "Noura",
@@ -3620,11 +3671,11 @@
     },
     {
      "s": "Saud",
-     "t": "Neither can I, to be honest! Let's stay in a hotel and go camping for one night only."
+     "t": "Neither can I, to be honest! Let's stay in a hotel and sleep under the stars for one night only."
     },
     {
      "s": "Noura",
-     "t": "Good idea. I can't wait to tell Mum and Dad."
+     "t": "Good idea. Let's tell Mum and Dad. I'm counting the days already!"
     }
    ],
    "grammar": {
@@ -3805,9 +3856,9 @@
      "ex": "A: New phones are always better. B: Not necessarily."
     },
     {
-     "w": "recycle",
-     "ar": "يعيد التدوير",
-     "ex": "Our school recycles paper and cans."
+     "w": "sort your rubbish",
+     "ar": "يفرز النفايات",
+     "ex": "We sort our rubbish into three bins at school."
     },
     {
      "w": "make a difference",
@@ -3839,7 +3890,7 @@
     },
     {
      "s": "Sam",
-     "t": "True. My family recycles paper and bottles now."
+     "t": "True. My family sorts our rubbish now: paper in one bin, bottles in another."
     },
     {
      "s": "Omar",
@@ -3965,15 +4016,15 @@
      "ex": "Have you tried talking to your teacher about it?"
     },
     {
-     "w": "upset",
-     "ar": "منزعج / حزين",
-     "ex": "She was upset because nobody remembered her birthday."
+     "w": "feel down",
+     "ar": "يشعر بالحزن والضيق",
+     "ex": "She felt down because nobody remembered her birthday."
     }
    ],
    "dialogue": [
     {
      "s": "Fahad",
-     "t": "What's wrong, Omar? You look upset."
+     "t": "What's wrong, Omar? You look really down."
     },
     {
      "s": "Omar",
@@ -4019,7 +4070,7 @@
     {
      "w": "If I were you, I'd …",
      "ar": "لو كنت مكانك، لـ ...",
-     "ex": "If I were you, I'd start revising this weekend."
+     "ex": "If I were you, I'd start reviewing your notes this weekend."
     },
     {
      "w": "stressed out",
@@ -4027,14 +4078,14 @@
      "ex": "My sister gets stressed out before every exam."
     },
     {
-     "w": "revise",
-     "ar": "يراجع (للاختبار)",
-     "ex": "I revise my English words on the bus."
+     "w": "review your notes",
+     "ar": "يراجع ملاحظاته",
+     "ex": "I review my English notes on the bus."
     },
     {
-     "w": "take a break",
-     "ar": "يأخذ استراحة",
-     "ex": "Let's take a break and have some juice."
+     "w": "recharge your batteries",
+     "ar": "يستعيد نشاطه وطاقته",
+     "ex": "After the exams, I'm going to the beach to recharge my batteries."
     },
     {
      "w": "fall behind",
@@ -4054,7 +4105,7 @@
     },
     {
      "s": "Hind",
-     "t": "Don't worry, that's normal. Have you started to revise?"
+     "t": "Don't worry, that's normal. Have you started to review your notes?"
     },
     {
      "s": "Lama",
@@ -4070,7 +4121,7 @@
     },
     {
      "s": "Hind",
-     "t": "Then take a break every forty minutes. Your brain needs rest."
+     "t": "Then stop every forty minutes to recharge your batteries. Your brain needs rest."
     },
     {
      "s": "Lama",
@@ -4099,14 +4150,14 @@
      "ex": "Children need to get enough sleep to grow well."
     },
     {
-     "w": "stay up late",
-     "ar": "يسهر",
-     "ex": "We stayed up late on the last night of Ramadan."
+     "w": "a night owl",
+     "ar": "شخص يحب السهر",
+     "ex": "My brother is a night owl. He reads until midnight."
     },
     {
-     "w": "junk food",
-     "ar": "الأكل غير الصحي",
-     "ex": "There's too much junk food in my lunch box."
+     "w": "empty calories",
+     "ar": "سعرات فارغة بلا فائدة",
+     "ex": "Fizzy drinks are full of empty calories."
     },
     {
      "w": "exhausted",
@@ -4131,7 +4182,7 @@
     },
     {
      "s": "Faisal",
-     "t": "I stayed up late again, sir. I was playing online with my cousins."
+     "t": "I'm a real night owl, sir. I was playing online with my cousins until midnight."
     },
     {
      "s": "Mr Saleh",
@@ -4151,7 +4202,7 @@
     },
     {
      "s": "Mr Saleh",
-     "t": "That's junk food! If you eat eggs or labneh and bread, you'll have more energy."
+     "t": "Crisps are full of empty calories! If you eat eggs or labneh and bread, you'll have more energy."
     },
     {
      "s": "Faisal",
@@ -4163,7 +4214,7 @@
     "ar": "If + مضارع بسيط، ثم will أو won't + فعل: نستخدمه لنشرح نتيجة النصيحة في المستقبل. لا نضع will بعد If.",
     "examples": [
      "If you go to bed early, you'll feel better.",
-     "If you eat junk food every day, you won't have much energy.",
+     "If you eat crisps for breakfast, you won't have much energy.",
      "You'll get stronger if you exercise every day."
     ]
    }
@@ -4176,9 +4227,9 @@
      "ex": "My brother is saving up for a new bike."
     },
     {
-     "w": "pocket money",
-     "ar": "المصروف",
-     "ex": "I get my pocket money every Thursday."
+     "w": "weekly allowance",
+     "ar": "المصروف الأسبوعي",
+     "ex": "My weekly allowance is fifty riyals."
     },
     {
      "w": "You'd better …",
@@ -4208,7 +4259,7 @@
     },
     {
      "s": "Majed",
-     "t": "How much pocket money do you get?"
+     "t": "How big is your weekly allowance?"
     },
     {
      "s": "Saud",
@@ -4273,9 +4324,9 @@
      "ex": "I'm getting used to waking up early."
     },
     {
-     "w": "nervous",
-     "ar": "متوتر / قلق",
-     "ex": "I always feel nervous before I speak in front of the class."
+     "w": "on edge",
+     "ar": "متوتر / على أعصابه",
+     "ex": "I always feel on edge before I speak in front of the class."
     }
    ],
    "dialogue": [
@@ -4285,7 +4336,7 @@
     },
     {
      "s": "Noura",
-     "t": "Of course! Are you nervous?"
+     "t": "Of course! Are you feeling on edge?"
     },
     {
      "s": "Emma",
@@ -4317,7 +4368,7 @@
     "ar": "نطلب النصيحة بأدب: Can I ask your advice? / What do you suggest? / What should I do? والرد يكون: My advice is to + فعل.",
     "examples": [
      "Can I ask your advice about something?",
-     "I'm nervous about the test. What do you suggest?",
+     "I'm on edge about the test. What do you suggest?",
      "My advice is to practise every day."
     ]
    }
@@ -4340,9 +4391,9 @@
      "ex": "It might help to write your new words in a notebook."
     },
     {
-     "w": "give up",
-     "ar": "يستسلم",
-     "ex": "I nearly gave up, but then I scored a goal."
+     "w": "throw in the towel",
+     "ar": "يستسلم ويتوقف عن المحاولة",
+     "ex": "I nearly threw in the towel, but then I scored a goal."
     },
     {
      "w": "look on the bright side",
@@ -4362,7 +4413,7 @@
     },
     {
      "s": "Sultan",
-     "t": "Poor Turki! Well, Turki, whatever you do, don't give up."
+     "t": "Poor Turki! Well, Turki, whatever you do, don't throw in the towel."
     },
     {
      "s": "Majed",
@@ -4394,7 +4445,7 @@
     "ar": "نصيحة لطيفة: It might help to … / You could … . نصيحة قوية: You'd better … / Whatever you do, don't … . ونذكر النتيجة بـ If you …, you'll … .",
     "examples": [
      "It might help to make a list.",
-     "Whatever you do, don't give up.",
+     "Whatever you do, don't throw in the towel.",
      "If you practise every day, you'll get better."
     ]
    }
@@ -4439,7 +4490,7 @@
     },
     {
      "s": "Ali",
-     "t": "My uncle Hamad. He's the person who taught me to swim."
+     "t": "My uncle Hamad. He's the person who taught me to swim. We used to go to the beach every Friday."
     },
     {
      "s": "Daniel",
@@ -4472,7 +4523,7 @@
     "examples": [
      "My uncle is a doctor who works in a village.",
      "She's the teacher who helped me most.",
-     "People who read a lot know many words."
+     "He's the uncle who used to take me swimming."
     ]
    }
   },
@@ -4571,9 +4622,9 @@
      "ex": "The view from the top of the mountain was breathtaking."
     },
     {
-     "w": "ancient",
-     "ar": "قديم جداً / أثري",
-     "ex": "We saw ancient writing on the rocks near Hail."
+     "w": "centuries-old",
+     "ar": "عمره قرون / أثري",
+     "ex": "We saw centuries-old writing on the rocks near Hail."
     },
     {
      "w": "be worth a visit",
@@ -4597,7 +4648,7 @@
     },
     {
      "s": "Sam",
-     "t": "Wow, it looks ancient! How old is it?"
+     "t": "Wow, it looks centuries-old! How old is it?"
     },
     {
      "s": "Omar",
@@ -4824,15 +4875,7 @@
     },
     {
      "s": "Kenji",
-     "t": "It's amazing! What's at the top?"
-    },
-    {
-     "s": "Hamad",
-     "t": "A sky bridge which gives you a view of the whole city."
-    },
-    {
-     "s": "Kenji",
-     "t": "Great! What else should I see?"
+     "t": "It's amazing! What else should I see?"
     },
     {
      "s": "Hamad",
@@ -4844,20 +4887,28 @@
     },
     {
      "s": "Hamad",
-     "t": "At-Turaif, an old district which is surrounded by mud-brick walls. Then we'll try some local food."
+     "t": "At-Turaif, an old district which is surrounded by mud-brick walls. The royal family used to live there."
     },
     {
      "s": "Kenji",
-     "t": "Perfect! And where can I buy a souvenir for my family?"
+     "t": "Did people use to build all their houses from mud?"
+    },
+    {
+     "s": "Hamad",
+     "t": "Yes, they did. They didn't use to have concrete, and mud kept the houses cool."
+    },
+    {
+     "s": "Kenji",
+     "t": "Interesting! And where can I buy a souvenir for my family?"
     }
    ],
    "grammar": {
-    "title": "Mixing relative clauses",
-    "ar": "who للأشخاص، which/that للأشياء، where للأماكن، whose للملكية. ونضع فاصلة قبل which إذا كانت معلومة إضافية: Diriyah, which is near Riyadh, … .",
+    "title": "Relative clauses and used to",
+    "ar": "نضيف تفاصيل بـ which / where / who، ونستخدم used to + الفعل للعادات القديمة التي لم تعد موجودة، والنفي didn't use to، والسؤال Did … use to …?",
     "examples": [
      "Diriyah, which is near Riyadh, is very old.",
-     "Kenji is a visitor who loves history.",
-     "This is the market where you can buy coffee pots."
+     "People used to build their houses from mud.",
+     "They didn't use to have concrete. Did they use to have shops?"
     ]
    }
   }
@@ -5064,11 +5115,11 @@
      "ask",
      "me,",
      "the",
-     "referee",
+     "decision",
      "was",
      "wrong."
     ],
-    "answer": "If you ask me, the referee was wrong.",
+    "answer": "If you ask me, the decision was wrong.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5088,14 +5139,14 @@
    },
    {
     "type": "mc",
-    "q": "The person who controls a football match is the ___.",
+    "q": "A decision that many people strongly disagree with is ___.",
     "options": [
-     "coach",
-     "captain",
-     "referee",
-     "fan"
+     "a fair decision",
+     "a controversial decision",
+     "a quick decision",
+     "an easy decision"
     ],
-    "answer": 2
+    "answer": 1
    },
    {
     "type": "mc",
@@ -5133,9 +5184,9 @@
      "cities",
      "are",
      "too",
-     "crowded."
+     "packed."
     ],
-    "answer": "It seems to me that big cities are too crowded.",
+    "answer": "It seems to me that big cities are too packed.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5156,7 +5207,7 @@
     "type": "mc",
     "q": "A place that is quiet and calm is ___.",
     "options": [
-     "crowded",
+     "packed",
      "noisy",
      "peaceful",
      "busy"
@@ -5269,7 +5320,7 @@
     "type": "order",
     "words": [
      "Liking",
-     "spicy",
+     "fiery",
      "food",
      "is",
      "a",
@@ -5277,7 +5328,7 @@
      "of",
      "taste."
     ],
-    "answer": "Liking spicy food is a matter of taste.",
+    "answer": "Liking fiery food is a matter of taste.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5308,7 +5359,7 @@
     "options": [
      "sweet",
      "tasteless",
-     "spicy",
+     "fiery",
      "fair"
     ],
     "answer": 2
@@ -5318,15 +5369,16 @@
    {
     "type": "order",
     "words": [
-     "I",
-     "can't",
-     "wait",
-     "for",
+     "I'm",
+     "counting",
+     "the",
+     "days",
+     "until",
      "the",
      "summer",
      "holidays."
     ],
-    "answer": "I can't wait for the summer holidays.",
+    "answer": "I'm counting the days until the summer holidays.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5336,13 +5388,15 @@
      "family",
      "likes",
      "to",
-     "go",
-     "camping",
+     "sleep",
+     "under",
+     "the",
+     "stars",
      "in",
      "the",
      "desert."
     ],
-    "answer": "My family likes to go camping in the desert.",
+    "answer": "My family likes to sleep under the stars in the desert.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5557,7 +5611,7 @@
     "type": "mc",
     "q": "'We should use cloth bags instead of ___ plastic.'",
     "options": [
-     "recycle",
+     "sorted",
      "green",
      "planting",
      "single-use"
@@ -5680,7 +5734,7 @@
     "type": "mc",
     "q": "Which sentence gives advice?",
     "options": [
-     "I'm upset.",
+     "I feel down.",
      "He walked away.",
      "We fell out.",
      "You could say sorry."
@@ -5697,11 +5751,12 @@
      "were",
      "you,",
      "I'd",
-     "take",
-     "a",
-     "break."
+     "recharge",
+     "my",
+     "batteries",
+     "first."
     ],
-    "answer": "If I were you, I'd take a break.",
+    "answer": "If I were you, I'd recharge my batteries first.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5731,12 +5786,12 @@
    },
    {
     "type": "mc",
-    "q": "To study again before an exam is to ___.",
+    "q": "'I read my notes again before the test.' This means I ___ my notes.",
     "options": [
-     "revise",
-     "fall behind",
-     "forget",
-     "relax"
+     "reviewed",
+     "forgot",
+     "lost",
+     "fell behind"
     ],
     "answer": 0
    },
@@ -5771,15 +5826,18 @@
    {
     "type": "order",
     "words": [
-     "Don't",
-     "stay",
-     "up",
-     "late",
-     "before",
+     "If",
+     "you're",
      "a",
-     "test."
+     "night",
+     "owl,",
+     "you'll",
+     "feel",
+     "tired",
+     "at",
+     "school."
     ],
-    "answer": "Don't stay up late before a test.",
+    "answer": "If you're a night owl, you'll feel tired at school.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5795,7 +5853,7 @@
    },
    {
     "type": "mc",
-    "q": "'If you eat junk food every day, you ___ healthy.'",
+    "q": "'If you eat sweets every day, you ___ healthy.'",
     "options": [
      "not are",
      "not be",
@@ -5950,10 +6008,12 @@
      "you",
      "do,",
      "don't",
-     "give",
-     "up."
+     "throw",
+     "in",
+     "the",
+     "towel."
     ],
-    "answer": "Whatever you do, don't give up.",
+    "answer": "Whatever you do, don't throw in the towel.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5977,7 +6037,7 @@
     "options": [
      "sort out",
      "deal with",
-     "give up",
+     "throw in the towel",
      "look on"
     ],
     "answer": 2
@@ -6159,10 +6219,10 @@
      "famous",
      "for",
      "its",
-     "ancient",
+     "centuries-old",
      "tombs."
     ],
-    "answer": "AlUla is famous for its ancient tombs.",
+    "answer": "AlUla is famous for its centuries-old tombs.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6178,11 +6238,11 @@
    },
    {
     "type": "mc",
-    "q": "'Very, very old' means ___.",
+    "q": "'Hundreds of years old' means ___.",
     "options": [
      "modern",
-     "crowded",
-     "ancient",
+     "busy",
+     "centuries-old",
      "peaceful"
     ],
     "answer": 2
@@ -6346,16 +6406,16 @@
    {
     "type": "order",
     "words": [
-     "A",
-     "good",
-     "souvenir",
-     "from",
-     "Taif",
-     "is",
-     "rose",
-     "water."
+     "The",
+     "royal",
+     "family",
+     "used",
+     "to",
+     "live",
+     "in",
+     "At-Turaif."
     ],
-    "answer": "A good souvenir from Taif is rose water.",
+    "answer": "The royal family used to live in At-Turaif.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6382,12 +6442,12 @@
    },
    {
     "type": "mc",
-    "q": "'The ___ of the trip was the night in the desert camp.'",
+    "q": "'When my grandfather was young, people ___ have mobile phones.'",
     "options": [
-     "highlight",
-     "souvenir",
-     "landmark",
-     "guide"
+     "didn't use to",
+     "don't use to",
+     "weren't use to",
+     "didn't using to"
     ],
     "answer": 0
    }
@@ -6413,7 +6473,7 @@
      "options": [
       "peaceful",
       "honest",
-      "crowded",
+      "packed",
       "overrated"
      ],
      "answer": 2
@@ -6431,14 +6491,14 @@
     },
     {
      "type": "mc",
-     "q": "The person who controls a match is the ___.",
+     "q": "'Half the fans were angry and half were happy. It was a ___ decision.'",
      "options": [
-      "captain",
-      "player",
-      "coach",
-      "referee"
+      "controversial",
+      "boring",
+      "silent",
+      "tiny"
      ],
-     "answer": 3
+     "answer": 0
     },
     {
      "type": "mc",
@@ -6677,7 +6737,7 @@
      "type": "mc",
      "q": "'These trainers were only 50 riyals. What a ___!'",
      "options": [
-      "pocket money",
+      "receipt",
       "timetable",
       "distraction",
       "bargain"
@@ -6688,7 +6748,7 @@
      "type": "mc",
      "q": "'Don't ___. You're nearly at the top of the mountain!'",
      "options": [
-      "give up",
+      "throw in the towel",
       "make up",
       "stay up",
       "fall behind"
@@ -6762,11 +6822,11 @@
       "were",
       "you,",
       "I'd",
-      "take",
+      "make",
       "a",
-      "break."
+      "timetable."
      ],
-     "answer": "If I were you, I'd take a break.",
+     "answer": "If I were you, I'd make a timetable.",
      "ar": "رتّب الجملة"
     }
    ],
@@ -6873,16 +6933,17 @@
     {
      "type": "order",
      "words": [
-      "He's",
-      "the",
-      "man",
-      "who",
-      "taught",
-      "me",
+      "My",
+      "grandparents",
+      "used",
       "to",
-      "swim."
+      "live",
+      "in",
+      "a",
+      "mud",
+      "house."
      ],
-     "answer": "He's the man who taught me to swim.",
+     "answer": "My grandparents used to live in a mud house.",
      "ar": "رتّب الجملة"
     },
     {
@@ -7112,11 +7173,11 @@
      "Why",
      "don't",
      "you",
-     "take",
+     "have",
      "a",
-     "break?"
+     "rest?"
     ],
-    "answer": "Why don't you take a break?",
+    "answer": "Why don't you have a rest?",
     "ar": "رتّب الجملة"
    },
    {
