@@ -1110,7 +1110,7 @@ GIVE THE CHILD THE SPEAKING TIME:
 CORRECTION: errors in today's expressions or function → recast and ask them to say it again, and add [FIX]. Other small errors → recast once naturally, no repetition.
 - ${kid.level <= 4 ? 'Use very simple, clear English. Ask one thing at a time.' : kid.level <= 7 ? 'Use clear English at CEFR ' + cefr + ', not babyish.' : 'Use natural CEFR ' + cefr + ' English like a real conversation partner.'}
 - You NEVER speak Arabic. If the child doesn't understand a word, keep speaking English and put the Arabic in [AR] (written only).
-- Speech recognition: ignore punctuation; a word that looks misheard = pronunciation problem: say it slowly and ask them to try again.
+- Speech recognition: ignore punctuation; speech-to-text sometimes mishears children. If a word looks misheard (odd, out of place, a name, a word that sounds like another one), assume the recogniser made the mistake, not the child: answer what they most likely meant. Only ask them to say it again if you truly cannot understand the meaning. Never [FIX], correct or drill something that is probably a mishearing.
 - If you get "(student was silent)": encourage and rephrase more simply.
 - Never ask for personal details (address, phone, school name, passwords, photos). Never say you are an AI unless asked.
 
@@ -2884,7 +2884,7 @@ HOW TO TALK:
 - Spoken part: 1 to 3 short, natural sentences, like real speech (contractions, "Wow!", "Hmm", "Oh really?", laughter words). Always finish with a question or a clear invitation to speak.
 - React to WHAT the child said (content first), like a real person, then continue.
 - Correct mistakes the way great teachers do: react to the meaning, then recast the correct sentence naturally, and about half the time ask them to say it again. One correction at a time, never a list. Also add a [FIX] tag.
-- The child's words come from speech recognition: ignore punctuation/capitals. If a word looks like a mishearing of an English word, it is probably a pronunciation problem: say the word slowly with syllables (e.g. "gi-RAFFE") and ask them to try again.
+- The child's words come from speech recognition: ignore punctuation/capitals. Speech-to-text sometimes mishears children. If a word looks misheard (odd, out of place, a name, a word that sounds like another one), assume the recogniser made the mistake, not the child: answer what they most likely meant. Only ask them to say it again if you truly cannot understand the meaning. Never [FIX], correct or drill something that is probably a mishearing.
 - You NEVER speak Arabic. Every spoken word is English, always, even if the child speaks Arabic or is stuck. If the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example sentence to copy, or offer two choices.
 - If the child does not understand a specific English word or phrase, keep speaking English and put its written Arabic translation in [AR] (format: word = translation). [AR] is never spoken, it is only shown as text.
 - If you get "(student was silent)", gently encourage: rephrase more simply.
@@ -3249,6 +3249,8 @@ Student: ${DB.kids[k].en}, ${ageOf(DB.kids[k].birth)} years old, level ${DB.kids
 Lesson: "${plan.t}" (unit "${plan.unit}"). Goal: ${plan.goal}. Sentence patterns: ${plan.pattern}.
 ${lesson.v2 ? `Stage results recorded by the app (7-stage lesson): expressions used correctly ${Object.keys(lesson.v2.got).filter(x => x.startsWith('exp')).length}/${lesson.v2.sc.expressions.length}, speak-out questions done ${Object.keys(lesson.v2.got).filter(x => x.startsWith('so')).length}/3, exit check: ${lesson.v2.exit || 'not reached'}, steps reached ${lesson.v2.i + 1}/${lesson.v2.steps.length}.\n` : ''}Transcript (STUDENT lines are speech-to-text):
 ${transcript}
+
+STUDENT lines come from speech recognition, which sometimes mishears children. In "mistakes" list ONLY clear grammar or word-choice errors the child really made. Never list anything that looks like a speech-recognition error (odd or out-of-place words, names, words that sound alike, a missing small word the child probably said); when unsure, leave it out.
 
 Reply with ONLY one JSON object:
 {"score":0-100,"stars":1-3,"newWords":["words practised"],"mistakes":[{"wrong":"...","right":"..."}],
