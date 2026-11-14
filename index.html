@@ -1113,7 +1113,7 @@ CORRECTION: errors in today's expressions or function → recast and ask them to
 - If you get "(student was silent)": encourage and rephrase more simply.
 - Never ask for personal details (address, phone, school name, passwords, photos). Never say you are an AI unless asked.
 
-FORMAT (strict): Line 1 = [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Then tags, each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [END]
+FORMAT (strict): start DIRECTLY with the spoken text (nothing before it). After the spoken text, tags each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [END], and ALWAYS finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
 No markdown, no emojis, no Arabic letters in the spoken text.`;
 }
 
@@ -2646,6 +2646,8 @@ function linkedAbort(signal, ms){ const c = new AbortController(); let t = null;
   if(signal){ if(signal.aborted) c.abort(); else signal.addEventListener('abort', () => c.abort(), {once:true}); }
   if(ms) arm(ms); return {signal:c.signal, arm, clear:() => clearTimeout(t), ctl:c}; }
 const timeoutErr = () => ({status:'timeout', body:''});
+/* per-turn latency marks (filled in by the speech pipeline; step 8 records them) */
+function latMark(){}
 async function* streamClaude(body, signal){
   if(DEMO || DB.apiKey === 'demo'){ yield* demoStream(body); return; }
   // watchdog: 12 s for the answer to start, then 12 s max between pieces (a stalled connection used to hang the lesson forever)
@@ -2743,13 +2745,14 @@ HOW TO TALK:
 - Never say you are an AI unless asked directly; you are ${teacherOf(k).name}.
 
 FORMAT (strict):
-Line 1 starts with a mood tag, then the spoken text: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] spoken text...
+Start DIRECTLY with the spoken text (nothing before it).
 After the spoken text, optional tags each on its own line:
 [BOARD:word|one emoji|Arabic meaning|short example sentence]
 [FIX:what the child said wrong|correct version|very short Arabic explanation]
 [AR:English word = Arabic translation]  (written only, for a word the child did not understand)
 [STAGE:words|talk|review|wrapup]
 [END]  (only in wrapup, after minute 23)
+Last line, always: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
 No markdown, no emojis, and no Arabic letters in the spoken text, no other text outside this format.`;
 }
 const elapsedMin = () => L ? Math.floor((Date.now()-L.startedAt.getTime())/60000) : 0;
@@ -2935,7 +2938,7 @@ function parseTags(full){
   const out = {mood:null, board:null, fix:null, ar:'', stage:null, end:false, goals:[], next:false, got:false, exit:null};
   if(/\[NEXT\]/i.test(full)) out.next = true; if(/\[GOT\]/i.test(full)) out.got = true; out.star = (full.match(/\[STAR\]/gi) || []).length;
   const ex = full.match(/\[EXIT:(yes|partly|no)\]/i); if(ex) out.exit = ex[1].toLowerCase();
-  const m = full.match(/^\s*\[MOOD:([a-z]+)\]/i); if(m) out.mood = m[1].toLowerCase();
+  const m = full.match(/\[MOOD:([a-z]+)\]/i); if(m) out.mood = m[1].toLowerCase();
   const re = /\[(BOARD|FIX|AR|STAGE|END|GOAL)(?::([^\]]*))?\]/gi; let x;
   while((x = re.exec(full))){ const tag = x[1].toUpperCase(), v = (x[2]||'').trim(), p = v.split('|').map(s => s.trim());
     if(tag === 'BOARD') out.board = {word:p[0], emoji:p[1]||'', ar:p[2]||'', example:p[3]||''};
@@ -2943,7 +2946,7 @@ function parseTags(full){
     else if(tag === 'AR') out.ar = v; else if(tag === 'STAGE') out.stage = v.toLowerCase(); else if(tag === 'END') out.end = true; else if(tag === 'GOAL') out.goals.push(Number(v)); }
   return out;
 }
-function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
+function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
 function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
 async function teacherTurn(userText, attempt){
@@ -2958,14 +2961,16 @@ async function teacherTurn(userText, attempt){
   let full = '', sent = 0, moodSet = false;
   const sub = $('#sub');
   try{
-    for await (const t of streamClaude({model:LIVE_MODEL, max_tokens:400, system:[{type:'text', text:lesson.rules, cache_control:{type:'ephemeral'}}], messages:apiMsgs}, lesson.ctl.signal)){
+    for await (const t of streamClaude({model:LIVE_MODEL, max_tokens:250, system:[{type:'text', text:lesson.rules, cache_control:{type:'ephemeral'}}], messages:apiMsgs}, lesson.ctl.signal)){
       if(L !== lesson) return;
-      full += t;
-      if(!moodSet){ const mm = full.match(/^\s*\[MOOD:([a-z]+)\]/i); if(mm){ moodSet = true; setMood(mm[1].toLowerCase()); } else if(full.length > 20 && !/^\s*\[/.test(full)) moodSet = true; }
-      if(!moodSet) continue;
+      full += t; latMark('tok');
+      // the mood tag now comes LAST (older replies put it first): speech starts with the first sentence, the face follows the tag
+      if(!moodSet){ const mm = full.match(/\[MOOD:([a-z]+)\]/i); if(mm){ moodSet = true; setMood(mm[1].toLowerCase()); } }
       const spoken = spokenOf(full);
-      if(sub) sub.innerHTML = esc(spoken);
-      const rest = spoken.slice(sent); const mm2 = rest.match(/^[\s\S]*[.!?](?=\s)/);
+      if(sub && spoken.trim()) sub.innerHTML = esc(spoken);
+      const rest = spoken.slice(sent); let mm2 = rest.match(/^[\s\S]*[.!?](?=\s)/);
+      // a long first sentence: start speaking at a comma instead of waiting for its end
+      if(!mm2 && !sent){ const c = rest.match(/^[\s\S]*?,(?=\s)/); if(c && countWords(c[0]) >= 6) mm2 = c; }
       if(mm2){ enqueue(mm2[0]); sent += mm2[0].length; }
     }
     if(L !== lesson) return;
@@ -3730,7 +3735,7 @@ RULES:
 - If you receive "(student asks for a hint)", step out of character for one sentence, give an example sentence they could say for the next goal, then continue.
 - When all 3 goals are done, end the scene warmly in character, then add [END].
 - Never ask for personal details. If asked, say you are an AI teacher playing a character.
-FORMAT: first line starts with [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Tags each on their own line after it: [GOAL:n] [FIX:...] [AR:word = Arabic] [END]. No markdown, no Arabic in the spoken text.`;
+FORMAT: start directly with the spoken text. Then tags each on their own line: [GOAL:n] [FIX:...] [AR:word = Arabic] [END], and always finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]. No markdown, no Arabic in the spoken text.`;
 }
 function startMission(k, id){
   const m = MISSIONS.find(x => x.id === id); if(!m) return;
@@ -4855,7 +4860,7 @@ This month the child kept making these mistakes (wrong -> right):
 ${items.map((it, i) => `${i + 1}. "${it.wrong || '?'}" -> "${it.right}"`).join('\n')}
 GOAL: in about 10-12 minutes, make the child SAY each correct sentence pattern several times in their OWN sentences inside a friendly conversation (not drills). Work through the items one by one: create a natural situation, ask a question that needs the pattern, and if the child repeats the old mistake, recast it kindly and ask them to try again with a new example.
 Rules: English only in speech, 1-2 short sentences per turn, always end with a question. Add [FIX:wrong|right|very short Arabic tip] when you correct. When all items are practised, praise specifically what improved, say goodbye, and add [END].
-FORMAT: first line starts with [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging] then the spoken text. Tags each on their own line: [FIX:...] [AR:word = Arabic] [END]. No markdown, no Arabic in the spoken text.`;
+FORMAT: start directly with the spoken text. Then tags each on their own line: [FIX:...] [AR:word = Arabic] [END], and always finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]. No markdown, no Arabic in the spoken text.`;
 }
 function startReviewLesson(k, items, before){
   const plan = Object.assign({}, lessonPlan(k), {t:'Monthly Review'});
