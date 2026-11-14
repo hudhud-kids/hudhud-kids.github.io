@@ -137,14 +137,14 @@
    "cid": "a8"
   },
   {
-   "q": "Could you ___ the plates on the table, please? We're eating soon.",
+   "q": "Mum: Could you ___ the cat, please? She's hungry. Ali: Of course!",
    "options": [
     "sweep",
     "feed",
     "wear",
-    "put"
+    "set"
    ],
-   "answer": 3,
+   "answer": 1,
    "skill": "vocabulary",
    "d": 4.0,
    "cefr": "A1",
@@ -230,7 +230,7 @@
   },
   {
    "script": "Coach: Do you do any sport, Faisal? Faisal: I love sport. I go swimming twice a week, on Sunday and Wednesday. I play football every day after school. I never play tennis.",
-   "q": "How often does the boy go swimming?",
+   "q": "How often does Faisal go swimming?",
    "options": [
     "every day",
     "never",
@@ -274,7 +274,7 @@
    "cid": "a8"
   },
   {
-   "script": "Boy: What are you doing, Reem? Reem: I'm making a card for Mum. It's her birthday. Boy: Can I help? Reem: Yes, please! Can you draw a flower?",
+   "script": "Brother: What are you doing, Reem? Reem: I'm making a card for Mum. It's her birthday. Brother: Can I help? Reem: Yes, please! Can you draw a flower?",
    "q": "Why is Reem making a card?",
    "options": [
     "Her mum is ill.",
@@ -289,8 +289,8 @@
    "cid": "a5"
   },
   {
-   "script": "Girl: How often do you visit your grandparents? Boy: Every Friday. We have lunch with them. Girl: Do you stay the night? Boy: Sometimes, in the holidays.",
-   "q": "When does the boy visit his grandparents?",
+   "script": "Sara: How often do you visit your grandparents, Noura? Noura: Every Friday. We have lunch with them. Sara: Do you stay the night? Noura: Sometimes, in the holidays.",
+   "q": "When does Noura visit her grandparents?",
    "options": [
     "every day",
     "only in the holidays",

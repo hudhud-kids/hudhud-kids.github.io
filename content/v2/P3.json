@@ -77,12 +77,12 @@
    "cid": "a3"
   },
   {
-   "q": "Doctors and nurses work in a ___.",
+   "q": "My uncle works on a farm. He's a ___.",
    "options": [
-    "library",
-    "hospital",
-    "bakery",
-    "farm"
+    "pilot",
+    "farmer",
+    "nurse",
+    "chef"
    ],
    "answer": 1,
    "skill": "vocabulary",
@@ -167,14 +167,14 @@
    "cid": "a2"
   },
   {
-   "q": "It's raining. Take your ___ with you.",
+   "q": "Take your sunglasses. It's very ___ today.",
    "options": [
-    "sunglasses",
-    "towel",
-    "kite",
-    "umbrella"
+    "rainy",
+    "cold",
+    "sunny",
+    "windy"
    ],
-   "answer": 3,
+   "answer": 2,
    "d": 3.0,
    "cefr": "A1",
    "skill": "vocabulary",

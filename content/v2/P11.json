@@ -17,7 +17,7 @@
    "cid": "e4"
   },
   {
-   "q": "That can't ___ Ahmed at the door. He's travelling in Jeddah.",
+   "q": "That can't ___ Ahmed at the door. He's in Jeddah this week.",
    "options": [
     "be",
     "being",
@@ -92,17 +92,17 @@
    "cid": "e6"
   },
   {
-   "q": "I can never keep my Eid money for long. It always burns a hole in my ___.",
+   "q": "Don't worry about the test tomorrow. It'll be a piece of ___.",
    "options": [
-    "hand",
-    "box",
-    "bag",
-    "pocket"
+    "bread",
+    "pie",
+    "cake",
+    "paper"
    ],
-   "answer": 3,
+   "answer": 2,
    "skill": "vocabulary",
-   "d": 14.0,
-   "cefr": "B2+",
+   "d": 10.5,
+   "cefr": "B1+",
    "cando": "Can understand common idioms and phrasal verbs in context.",
    "cid": "e6"
   },
@@ -116,8 +116,8 @@
    ],
    "answer": 0,
    "skill": "vocabulary",
-   "d": 14.0,
-   "cefr": "B2+",
+   "d": 13.0,
+   "cefr": "B2",
    "cando": "Can understand common idioms and phrasal verbs in context.",
    "cid": "e6"
   },
@@ -244,7 +244,7 @@
    "cid": "e5"
   },
   {
-   "script": "Friend: How was the desert trip? Man: Honestly? I wish I had planned our desert trip better. We ran out of water by lunchtime, and the car nearly ran out of fuel too. We should have filled up in the last town. Still, it could have been worse. A kind family stopped and helped us.",
+   "script": "Friend: How was the desert trip? Man: Honestly? I wish I'd planned it better. We ran out of water by lunchtime, and the car nearly ran out of fuel too. We should have filled up in the last town. Still, it could have been worse. A kind family stopped and helped us.",
    "q": "What does the man regret?",
    "options": [
     "not planning the trip well",
@@ -274,11 +274,11 @@
    "cid": "e7"
   },
   {
-   "script": "Girl: Whose bag is this? Boy: It can't be Ahmed's. His is black. It might be Turki's. He was sitting there earlier. Girl: Let's ask him.",
+   "script": "Teacher: Whose bag is this? Boy: It can't be Ahmed's. His is black. It might be Turki's. He was sitting there earlier. Teacher: Let's ask him.",
    "q": "Who might the bag belong to?",
    "options": [
     "Ahmed",
-    "the girl",
+    "the teacher",
     "Turki"
    ],
    "answer": 2,

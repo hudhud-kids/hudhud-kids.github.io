@@ -10,7 +10,7 @@
     "posits"
    ],
    "answer": 1,
-   "skill": "grammar",
+   "skill": "vocabulary",
    "d": 18.0,
    "cefr": "C1",
    "cando": "Can argue with precision, rebut points and handle difficult questions diplomatically.",
@@ -56,7 +56,7 @@
    ],
    "answer": 0,
    "skill": "grammar",
-   "d": 18.0,
+   "d": 16.5,
    "cefr": "C1",
    "cando": "Can use formal and literary structures (Were it not for …, Scarcely had …) accurately.",
    "cid": "i1"
@@ -107,12 +107,12 @@
    "cid": "i3"
   },
   {
-   "q": "'Generosity is woven into the ___ of Saudi society.'",
+   "q": "'The new evidence ___ doubt on the original theory.'",
    "options": [
-    "thread",
-    "string",
-    "fabric",
-    "cloth"
+    "puts",
+    "makes",
+    "casts",
+    "gives"
    ],
    "answer": 2,
    "skill": "vocabulary",
@@ -289,8 +289,8 @@
    "cid": "i2"
   },
   {
-   "script": "Girl: The novel's ending was rather abrupt, wasn't it? Boy: Deliberately so, I'd say. The author leaves us to draw our own conclusions. Girl: Or she simply ran out of ideas. Boy: That's a rather uncharitable reading.",
-   "q": "What does the boy think about the ending?",
+   "script": "Reem: The novel's ending was rather abrupt, wasn't it? Dana: Deliberately so, I'd say. The author leaves us to draw our own conclusions. Reem: Or she simply ran out of ideas. Dana: That's a rather uncharitable reading.",
+   "q": "What does Dana think about the ending?",
    "options": [
     "It was far too long.",
     "It was intentionally open.",
@@ -305,7 +305,7 @@
   }
  ],
  "read": {
-  "passage": "Few crafts are as closely woven into the fabric of Arabian life as Al-Sadu, the Bedouin art of weaving wool from sheep, camels and goats. For generations, the skill was handed down from grandmother to granddaughter, and its bold geometric patterns decorated tents, cushions and camel saddles. As families settled in cities, however, Sadu came close to becoming a dying art. Critics of recent revivals contend that printing Sadu patterns on phone cases and notebooks reduces a living tradition to a decorative trend. Supporters concede that some products are superficial, but maintain that a tradition frozen in time is more likely to disappear than one that adapts. Were young designers to stop experimenting, they argue, Sadu would survive only in museums.",
+  "passage": "Few crafts are as closely woven into the fabric of Arabian life as Al-Sadu, the Bedouin art of weaving wool from sheep, camels and goats. For generations, the skill was handed down from grandmother to granddaughter, and its bold geometric patterns decorated tents, cushions and camel saddles. As families settled in cities, however, Sadu came close to becoming a dying art. Critics of recent revivals contend that printing Sadu patterns on phone cases and notebooks reduces a living tradition to a decorative trend. Supporters concede that some products are superficial, but maintain that a tradition that never changes is more likely to disappear than one that adapts. Were young designers to stop experimenting, they argue, Sadu would survive only in museums.",
   "qs": [
    {
     "q": "Why did Sadu come close to disappearing?",

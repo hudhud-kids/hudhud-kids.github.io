@@ -128,7 +128,7 @@
    "cid": "p4"
   },
   {
-   "q": "How many balls?",
+   "q": "Mum: How many balls are in the box? Ali: ___",
    "options": [
     "It's a ball.",
     "Yes, it is.",
@@ -138,8 +138,8 @@
    "skill": "function",
    "d": 1.0,
    "cefr": "Pre-A1",
-   "cando": "Can answer simple greetings and personal questions.",
-   "cid": "p2"
+   "cando": "Can name everyday things: colours, numbers, food, animals and family.",
+   "cid": "p4"
   },
   {
    "q": "Look! ___ is my cat. Her name is Lulu.",
@@ -215,7 +215,7 @@
    "cid": "p5"
   },
   {
-   "script": "Girl: What's in your box? Boy: Look at my toys! This is my robot. It's big and grey. This is my ball. It's small and red. And this is my kite. It's yellow.",
+   "script": "Sister: What's in your box? Brother: Look at my toys! This is my robot. It's big and grey. This is my ball. It's small and red. And this is my kite. It's yellow.",
    "q": "What colour is the ball?",
    "options": [
     "red",
@@ -275,8 +275,8 @@
    "cid": "p8"
   },
   {
-   "script": "Boy: Do you like apples? Girl: Yes, I do. I like apples and bananas. Boy: Do you like milk? Girl: No, I don't.",
-   "q": "What doesn't the girl like?",
+   "script": "Hind: Do you like apples, Sara? Sara: Yes, I do. I like apples and bananas. Hind: Do you like milk? Sara: No, I don't.",
+   "q": "What doesn't Sara like?",
    "options": [
     "apples",
     "bananas",
