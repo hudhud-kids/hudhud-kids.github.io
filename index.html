@@ -952,8 +952,8 @@ function reportCardHTML(r){
   const fitTxt = {easy:['سهل عليه', 'good', '🟢'], right:['مناسب لمستواه', 'brand', '🎯'], hard:['صعب عليه شوي', 'bad', '🟠']}[r.levelFit] || null;
   // trend: last lessons, talk share and confidence as paired bars
   const trend = hist.length >= 2 ? `<div class="rc-sec"><h4>📈 التطور في آخر ${hist.length} حصص</h4><div class="rc-trend">${hist.map((x, i) => { const t = num(x.talkPct), c = num(x.confidence), s2 = num(x.score);
-      return `<div class="rc-col ${i === hist.length - 1 ? 'cur' : ''}"><div class="rc-bars"><i style="height:${s2 == null ? 2 : Math.max(4, s2)}%;background:#F05A38" title="النتيجة"></i><i style="height:${t == null ? 2 : Math.max(4, t)}%;background:#3B7BE8" title="الكلام"></i><i style="height:${c == null ? 2 : Math.max(4, c)}%;background:#E8A317" title="الثقة"></i></div><span>${i === hist.length - 1 ? 'اليوم' : new Date(x.at).toLocaleDateString(LOC, {day:'numeric', month:'numeric'})}</span></div>`; }).join('')}</div>
-      <div class="rc-legend"><span><i style="background:#F05A38"></i>النتيجة</span><span><i style="background:#3B7BE8"></i>نسبة الكلام</span><span><i style="background:#E8A317"></i>الثقة</span></div></div>` : '';
+      return `<div class="rc-col ${i === hist.length - 1 ? 'cur' : ''}"><div class="rc-bars"><i style="height:${s2 == null ? 2 : Math.max(4, s2)}%;background:#F05A38" title="النتيجة"></i><i style="height:${t == null ? 2 : Math.max(4, t)}%;background:#3B7BE8" title="حصته من الكلمات"></i><i style="height:${c == null ? 2 : Math.max(4, c)}%;background:#E8A317" title="الثقة"></i></div><span>${i === hist.length - 1 ? 'اليوم' : new Date(x.at).toLocaleDateString(LOC, {day:'numeric', month:'numeric'})}</span></div>`; }).join('')}</div>
+      <div class="rc-legend"><span><i style="background:#F05A38"></i>النتيجة</span><span><i style="background:#3B7BE8"></i>نسبة كلماته</span><span><i style="background:#E8A317"></i>الثقة</span></div></div>` : '';
   const sec = (icon, title, body) => body ? `<div class="rc-sec"><h4>${icon} ${title}</h4>${body}</div>` : '';
   const p = t => t ? `<p class="rc-note">${bidiAr(t)}</p>` : '';
   return `<article class="rcard">
@@ -962,13 +962,13 @@ function reportCardHTML(r){
       <div class="rc-ring" style="--p:${sc}"><div><b>${sc}%</b><small>النتيجة</small></div></div></header>
     <div class="rc-kpis">
       ${ring(r.score, 'النتيجة', '#F05A38', delta(r.score, prev && prev.score))}
-      ${ring(r.talkPct, 'نسبة كلامه', '#3B7BE8', `<span class="rc-goal">الهدف <bdi dir="ltr">${num(r.talkGoal) || 55}%</bdi></span>${delta(r.talkPct, prev && prev.talkPct)}`, num(r.talkGoal) || 55)}
+      ${ring(r.talkPct, 'نسبة كلماته', '#3B7BE8', `<span class="rc-goal">الهدف <bdi dir="ltr">${num(r.talkGoal) || 40}%</bdi></span>${delta(r.talkPct, prev && prev.talkPct)}`, num(r.talkGoal) || 40)}
       ${ring(r.confidence, 'الثقة', '#E8A317', delta(r.confidence, prev && prev.confidence))}
     </div>
     <div class="rc-stats"><div><b>⏱️ ${Number(r.minutes) || 0}</b><span>دقيقة</span></div><div><b>${num(r.avgWords) != null ? `<bdi dir="ltr">${num(r.avgWords)}</bdi>` : '—'}</b><span>كلمة في كل رد</span></div><div><b style="color:var(--gold);direction:ltr">${(() => { const st = Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)); return '★'.repeat(st) + '☆'.repeat(3 - st); })()}</b><span>التقييم</span></div></div>
     ${r.v2 ? `<div class="rc-v2"><span>📚 التعابير <b><bdi dir="ltr">${Number(r.v2.exp)||0}/${Number(r.v2.of)||6}</bdi></b></span><span>🎭 المواقف <b><bdi dir="ltr">${Number(r.v2.so)||0}/3</bdi></b></span>${r.v2.stars ? `<span>⭐ نجوم الحصة <b><bdi dir="ltr">${Number(r.v2.stars)}</bdi></b></span>` : ''}<span>🎯 هدف الدرس <b>${{yes:'تحقق ✓', partly:'جزئياً', no:'يحتاج إعادة'}[r.v2.exit] || '—'}</b></span>${r.v2.fn ? `<span class="en">${esc(r.v2.fn)}</span>` : ''}${r.v2.review ? '<span>🔁 حصة مراجعة</span>' : ''}</div>` : ''}
     ${sec('💬', 'ملخص المعلمة', p(r.parentNote))}
-    ${sec('🗣️', 'نسبة الكلام', p(r.talkNote))}
+    ${sec('🗣️', 'حصته من كلمات الحصة', p(r.talkNote))}
     ${sec('💪', 'الثقة في الكلام', p(r.confidenceNote))}
     ${fitTxt || r.levelNote ? sec('🎯', 'هل الدرس مناسب لمستواه؟', `${fitTxt ? `<span class="chip ${fitTxt[1]} rc-fit">${fitTxt[2]} ${fitTxt[0]}</span>` : ''}${p(r.levelNote)}`) : ''}
     ${trend}
@@ -2538,8 +2538,9 @@ function stopCam(){ if(camStream){ camStream.getTracks().forEach(t => t.stop());
 function talkPctOf(l){ const t = l.sw + l.tw; return t ? Math.round(l.sw / t * 100) : null; }
 const countWords = s => (String(s).match(/[A-Za-z']+/g) || []).length;
 function talkPct(){ if(!L) return 0; const t = L.sw + L.tw; return t ? Math.round(L.sw / t * 100) : 0; }
-function talkGoal(k){ return Math.min(75, 55 + Math.floor(DB.attendance.filter(a => a.kid === k).length / 2)); }
-function updateTalk(){ const el = $('#talk'); if(!el || !L) return; const p = talkPct(), g = talkGoal(L.kid); el.innerHTML = `🗣️ أنت <b class="num">${p}%</b> <span class="small">(هدفك ${g}%)</span>`; el.classList.toggle('ok', p >= g); }
+/* goal for the child's share of all words said in the lesson (child words / all words, not time): grows with the level */
+function talkGoal(k){ const lv = (DB.kids[k] || {}).level || 1; return lv <= 3 ? 30 : lv <= 7 ? 40 : 50; }
+function updateTalk(){ const el = $('#talk'); if(!el || !L) return; const p = talkPct(), g = talkGoal(L.kid); el.title = 'نسبة كلماتك من كل كلمات الحصة'; el.innerHTML = `🗣️ كلماتك <b class="num">${p}%</b> <span class="small">(هدفك ${g}%)</span>`; el.classList.toggle('ok', p >= g); }
 
 /* =============== MONTHLY REPORT =============== */
 async function monthlyReport(k){
@@ -2942,7 +2943,7 @@ How the 25 minutes flow (each student message starts with [minute X]):
 - wrapup (23-25): specific praise about the sentences they built, goodbye, then [END].
 
 GIVE THE CHILD THE SPEAKING TIME (very important):
-- Every student message starts with [minute X · child talk Y% · goal Z%]. Y is how much of the lesson the CHILD has spoken so far. Your job is to get Y above Z.
+- Every student message starts with [minute X · child talk Y% · goal Z%]. Y is the CHILD's share of all the words said so far (child words / all words). Your job is to get Y above Z.
 - Keep your turns SHORT: one reaction (a few words) + ONE question. Maximum about 20 words, never a speech. If Y is below Z, be even shorter (under 12 words) and ask questions that need a long answer ("Tell me about...", "Why...?", "What happened next?").
 - Make the child FINISH: when a sentence is incomplete, or the child skips the pattern, or changes the topic before finishing, do not move on. Say "Finish your sentence: I'd describe myself as... because..." or give the first words and wait. Only ask a new question after the child has said one complete sentence.
 - Ask for one more sentence before you add anything: "Great! Can you give me an example?", "And then?", "Say it again with because".
@@ -3326,7 +3327,7 @@ Reply with ONLY one JSON object:
     p.xp = (p.xp||0) + 50; save();
   }
   ov.innerHTML = `<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
-    ${report.talkPct != null ? `<div class="chip ${report.talkPct >= talkGoal(k) ? 'good' : 'brand'}" style="text-align:center">🗣️ تكلمت ${report.talkPct}% من وقت الحصة · هدفك ${talkGoal(k)}%</div>` : ''}
+    ${report.talkPct != null ? `<div class="chip ${report.talkPct >= talkGoal(k) ? 'good' : 'brand'}" style="text-align:center">🗣️ قلت ${report.talkPct}% من كلمات الحصة · هدفك ${talkGoal(k)}%</div>` : ''}
     ${lesson.freeReview ? '<div class="chip good" style="text-align:center">🎁 حصة مراجعة مجانية: لم تُحتسب في الرصيد · +50 نقطة</div>' : lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${priceNow(k)} ريال صارت خضراء · +50 نقطة</div>`}
     ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
     ${book ? `<div class="gift">🎁 هدية جديدة! فتحت كتاب: <span class="en">${esc(book[0])}</span></div>` : ''}
@@ -4033,7 +4034,7 @@ function runSound(k, S, ov, back){
 const SKILLS = [['speaking','المحادثة'],['grammar','القواعد'],['vocabulary','المفردات'],['pronunciation','النطق'],['listening','الاستماع'],['reading','القراءة']];
 function skillScores(k){
   const p = DB.progress[k], reps = DB.reports.filter(r => r.kid === k).slice(-6), avg = xs => xs.length ? Math.round(xs.reduce((a,b) => a+b, 0)/xs.length) : null;
-  const talk = reps.filter(r => r.talkPct != null).map(r => Math.min(100, Math.round(r.talkPct / talkGoal(k) * 100)));
+  const talk = reps.filter(r => r.talkPct != null).map(r => Math.min(100, Math.round(r.talkPct / (Number(r.talkGoal) || talkGoal(k)) * 100)));
   const missions = Object.values(p.missions||{}).map(s => s/3*100);
   const snd = SOUNDS.map(s => soundStat(k, s.id)), sOk = snd.reduce((a,s) => a + s.ok, 0), sN = snd.reduce((a,s) => a + s.n, 0), lOk = snd.reduce((a,s) => a + s.lok, 0), lN = snd.reduce((a,s) => a + s.ln, 0);
   const aloud = (p.aloud||[]).slice(-6).map(a => a.pct);
@@ -5104,7 +5105,7 @@ function weekReportHTML(k){
   return `<div class="small muted" style="margin:-4px 0 8px">من ${fd(w.start)} إلى ${fd(w.end - 1)} · يوصلك ملخصه كإشعار كل خميس الساعة 8 مساءً</div>
     <div class="stat"><div><span class="small muted">الحضور</span><b style="color:${w.att >= w.sched ? 'var(--good)' : 'var(--bad)'}">${w.att} من ${w.sched}</b></div>
       <div><span class="small muted">معدل الحصص</span><b>${w.avg == null ? '—' : w.avg + '%'}${d == null ? '' : ` <span class="small" style="color:${d >= 0 ? 'var(--good)' : 'var(--bad)'}">${d >= 0 ? '▲' : '▼'}${Math.abs(d)}</span>`}</b></div>
-      <div><span class="small muted">نسبة كلامه</span><b>${w.talk == null ? '—' : w.talk + '%'}</b></div><div><span class="small muted">نقاط الأسبوع</span><b>${w.xp}</b></div></div>
+      <div><span class="small muted">نسبة كلماته</span><b>${w.talk == null ? '—' : w.talk + '%'}</b></div><div><span class="small muted">نقاط الأسبوع</span><b>${w.xp}</b></div></div>
     <h3 style="margin:12px 0 6px;font-size:1rem">🔁 أكثر 3 أخطاء تكررت</h3>
     ${w.top.length ? `<div class="wtop">${w.top.map(m => `<div class="wtm"><span class="chip">×${m.n}</span><div>${m.wrong ? `<div class="en small muted"><s>${esc(m.wrong)}</s></div>` : ''}<div class="en"><b>${esc(m.right)}</b></div></div></div>`).join('')}</div>
       <p class="small muted" style="margin:6px 0 0">هذي الجمل تنضاف تلقائياً لبطاقات المراجعة عنده.</p>` : `<p class="small muted" style="margin:0">${w.lessons ? 'ما تكررت أخطاء هذا الأسبوع 👏' : 'ما فيه حصص هذا الأسبوع بعد.'}</p>`}`;
