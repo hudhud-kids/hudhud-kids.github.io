@@ -19,7 +19,7 @@
    "lessons": [
     [
      "Getting the Instructions Right",
-     "Check and confirm your teacher's instructions for a project",
+     "check and confirm the instructions for a competition",
      "Do you mean …? / So you're saying … / …, don't we?"
     ],
     [
@@ -44,7 +44,7 @@
     ],
     [
      "The Big Trip Briefing",
-     "Check and confirm all the details of a school trip",
+     "check and confirm all the details of a group trip",
      "Question tags (won't we? / didn't you?) / Do you mean …? / So you're saying … / Just to double-check …"
     ]
    ]
@@ -62,8 +62,8 @@
    ],
    "lessons": [
     [
-     "What the Teacher Said",
-     "Report school announcements to a friend who missed them",
+     "What the Coach Said",
+     "report announcements to a friend who missed them",
      "He said (that) … / She told us (that) … / She told us to …"
     ],
     [
@@ -175,7 +175,7 @@
      "… isn't as healthy as … / It would be better to … / Let's get one … between us."
     ],
     [
-     "Our Class Project",
+     "Our Charity Day",
      "Discuss options with a group and reach a final decision",
      "not as … as / much more … than / It would be better to … / Let's go for … / I'll go along with …"
     ]
@@ -184,8 +184,8 @@
  ],
  "scripts": {
   "0-0": {
-   "objective": "Today you will check and confirm your teacher's instructions for a project.",
-   "warmup": "Have you ever misunderstood your homework? What happened?",
+   "objective": "Today you will check and confirm the instructions for a competition.",
+   "warmup": "Have you ever misunderstood the rules of a game or a competition? What happened?",
    "expressions": [
     {
      "w": "hand in",
@@ -225,11 +225,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Ms Huda explains a science project to her class. Reem checks the details.",
+    "scene": "Ms Huda runs a kids' nature-video competition at a science centre in Riyadh. She explains the rules, and Reem checks the details.",
+    "scene_emoji": "🎬",
     "p1": [
      {
       "s": "Ms Huda",
-      "t": "For this project, you'll work in pairs and make a poster about saving water."
+      "t": "For this competition, you'll work in pairs and make a two-minute video about saving water."
      },
      {
       "s": "Reem",
@@ -237,11 +238,11 @@
      },
      {
       "s": "Ms Huda",
-      "t": "Yes, you do. Each poster also needs a short report with a word limit of two hundred words."
+      "t": "Yes, you do. Each video also needs a short description with a word limit of two hundred words."
      },
      {
       "s": "Reem",
-      "t": "Do you mean a written report, not a spoken one?"
+      "t": "Do you mean a written description, not a spoken one?"
      },
      {
       "s": "Ms Huda",
@@ -255,36 +256,36 @@
      },
      {
       "s": "Reem",
-      "t": "So you're saying we hand in the poster and the report together?"
+      "t": "So you're saying we hand in the video and the description together?"
      },
      {
       "s": "Ms Huda",
-      "t": "Exactly. Bring both to class on that day."
+      "t": "Exactly. Upload both to the competition website on that day."
      },
      {
       "s": "Reem",
-      "t": "Could you clarify one more thing? We can use photos from the internet, can't we?"
+      "t": "Could you clarify one more thing? We can use music from the internet, can't we?"
      },
      {
       "s": "Ms Huda",
-      "t": "Yes, but you must write where each photo comes from."
+      "t": "Yes, but only free music, and you must write where it comes from."
      }
     ],
-    "focus": "So you're saying we hand in the poster and the report together?",
+    "focus": "So you're saying we hand in the video and the description together?",
     "qs": [
-     "How many words can the report have?",
-     "What must the students write about each photo?"
+     "How many words can the description have?",
+     "What must the competitors write about the music?"
     ]
    },
    "speakout": {
-    "scene": "Your teacher has just explained a homework task very quickly, and you are not sure about the details. I am your teacher. Check everything with me.",
+    "scene": "A cooking competition for kids has just explained its rules very quickly, and you are not sure about the details. I am the organiser. Check everything with me.",
     "prompts": [
      {
-      "q": "Your homework is a presentation about your favourite Saudi city. Any questions?",
-      "hint": "Check one detail with 'Do you mean …?' (for example, how long it should be)."
+      "q": "Your task is to cook a dish from your favourite Saudi city. Any questions?",
+      "hint": "Check one detail with 'Do you mean …?' (for example, how many people it should serve)."
      },
      {
-      "q": "Please hand it in next week.",
+      "q": "Please hand in your recipe next week.",
       "hint": "Confirm the day with a question tag, for example '…, isn't it?'"
      },
      {
@@ -294,18 +295,18 @@
     ]
    },
    "culture": {
-    "title": "School Projects in Saudi Arabia",
+    "title": "Competitions for Young Saudis",
     "points": [
-     "Many Saudi schools now ask students to do projects, not just exams.",
-     "Students often present their work to the class, and some show it at school science fairs.",
-     "The Mawhiba programme supports talented Saudi students with special projects and competitions."
+     "Many young Saudis take part in competitions for science, art, reading and coding.",
+     "The Mawhiba programme supports talented Saudi students with special projects and competitions.",
+     "Some competitions around the world ask young people to make short videos about the environment."
     ],
     "qs": [
-     "Do you prefer projects or exams? Why?",
-     "What project would you like to do this year?"
+     "Do you prefer to work alone or in pairs in a competition? Why?",
+     "What competition would you like to enter this year?"
     ]
    },
-   "exit": "Imagine your teacher has given you new homework. Say two sentences to check the details, for example with a question tag and 'Do you mean …?'"
+   "exit": "Imagine you've just joined a competition. Say two sentences to check the rules, for example with a question tag and 'Do you mean …?'"
   },
   "0-1": {
    "objective": "Today you will confirm the time and place of a plan with a friend.",
@@ -804,8 +805,8 @@
    "exit": "Tell me two steps of a recipe you know, and check one step with 'Do you mean …?' or a question tag."
   },
   "0-5": {
-   "objective": "Today you will check and confirm all the details of a school trip.",
-   "warmup": "What's the best school trip you've ever been on?",
+   "objective": "Today you will check and confirm all the details of a group trip.",
+   "warmup": "What's the best trip you've ever been on?",
    "expressions": [
     {
      "w": "set off",
@@ -845,11 +846,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Mr Adel tells his class about a trip to AlUla. Omar asks questions to check the details.",
+    "scene": "Mr Adel, the leader of Omar's scout group, tells the group about a trip to AlUla. Omar asks questions to check the details.",
+    "scene_emoji": "🏜️",
     "p1": [
      {
       "s": "Mr Adel",
-      "t": "Great news! Next month our class is going on a two-day trip to AlUla."
+      "t": "Great news! Next month our scout group is going on a two-day trip to AlUla."
      },
      {
       "s": "Omar",
@@ -857,7 +859,7 @@
      },
      {
       "s": "Mr Adel",
-      "t": "Yes. We'll set off from school at six on Wednesday morning and head back on Thursday evening."
+      "t": "Yes. We'll set off from the club at six on Wednesday morning and head back on Thursday evening."
      },
      {
       "s": "Omar",
@@ -897,7 +899,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your class is going on a trip to the National Museum in Riyadh. I am your teacher. Check every detail so you can tell your parents correctly.",
+    "scene": "Your football club is going on a trip to the National Museum in Riyadh. I am your coach. Check every detail so you can tell your parents correctly.",
     "prompts": [
      {
       "q": "We'll set off at half past seven and head back at two.",
@@ -925,11 +927,11 @@
      "Why is it important to protect old places like Hegra?"
     ]
    },
-   "exit": "Imagine your teacher has just told you about a trip. Check three details without looking at the slides."
+   "exit": "Imagine your coach has just told you about a trip. Check three details without looking at the slides."
   },
   "1-0": {
-   "objective": "Today you will report school announcements to a friend who missed them.",
-   "warmup": "How do you find out school news: from teachers, friends or online?",
+   "objective": "Today you will report announcements to a friend who missed them.",
+   "warmup": "How do you find out news: from friends, family or online?",
    "expressions": [
     {
      "w": "announcement",
@@ -969,15 +971,16 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam was ill yesterday. His friend Faisal tells him what the teachers said at school.",
+    "scene": "Sam was ill yesterday and missed football training at the club. His friend Faisal tells him what the coaches said.",
+    "scene_emoji": "⚽",
     "p1": [
      {
       "s": "Sam",
-      "t": "I missed school yesterday. Can you fill me in? Was there any news?"
+      "t": "I missed training yesterday. Can you fill me in? Was there any news?"
      },
      {
       "s": "Faisal",
-      "t": "Yes, there was a big announcement. Mr Khalid said that sports day would take place next Thursday."
+      "t": "Yes, there was a big announcement. Coach Khalid said that the club sports day would take place next Thursday."
      },
      {
       "s": "Sam",
@@ -999,37 +1002,37 @@
      },
      {
       "s": "Faisal",
-      "t": "Ms Huda said that our science test would be on Monday."
+      "t": "Coach Saleh said that the team photo would be on Monday."
      },
      {
       "s": "Sam",
-      "t": "Oh no! Did she say which pages we need to study?"
+      "t": "Oh no! Did he say what we have to wear?"
      },
      {
       "s": "Faisal",
-      "t": "According to Ms Huda, it's pages twenty to thirty-five. She told us to bring a calculator, too."
+      "t": "According to Coach Saleh, we need our new blue shirts. He told us to bring our medals, too."
      },
      {
       "s": "Sam",
       "t": "Thanks, Faisal. You're a lifesaver!"
      }
     ],
-    "focus": "Mr Khalid said that sports day would take place next Thursday.",
+    "focus": "Coach Khalid said that the club sports day would take place next Thursday.",
     "qs": [
-     "When will sports day take place?",
-     "What did Ms Huda tell the students to bring?"
+     "When will the club sports day take place?",
+     "What did Coach Saleh tell the players to bring?"
     ]
    },
    "speakout": {
-    "scene": "Your friend was absent today and calls you to ask about the school news. I am your friend. Report what the teachers said.",
+    "scene": "Your friend missed the first day of a summer camp and calls you to ask what happened. I am your friend. Report what the camp leaders said.",
     "prompts": [
      {
-      "q": "Hi! I wasn't at school today. Did the teacher say anything about homework?",
+      "q": "Hi! I wasn't at camp today. Did the leaders say anything about tomorrow?",
       "hint": "Report it with 'She/He said that …' (remember: is → was, will → would)."
      },
      {
-      "q": "Was there any news in assembly?",
-      "hint": "Use 'The head teacher told us that …'"
+      "q": "Was there any news at the big meeting?",
+      "hint": "Use 'The camp leader told us that …'"
      },
      {
       "q": "Did anyone tell us to bring anything tomorrow?",
@@ -1038,18 +1041,18 @@
     ]
    },
    "culture": {
-    "title": "School Radio in Saudi Arabia",
+    "title": "Sports Clubs in Saudi Arabia",
     "points": [
-     "Many Saudi schools have a morning school radio programme.",
-     "Students read news, poems and interesting facts to the whole school.",
-     "Taking part in the school radio helps students become confident speakers."
+     "Many Saudi cities have sports clubs and academies for children.",
+     "Football is the most popular sport in Saudi Arabia.",
+     "Some young players from local academies go on to play for big clubs."
     ],
     "qs": [
-     "Would you like to read the news on your school radio? Why or why not?",
-     "What kind of news do students enjoy hearing?"
+     "Would you like to join a sports academy? Which sport?",
+     "How do you find out news about your favourite team?"
     ]
    },
-   "exit": "Tell me two things a teacher said to your class this week, using 'said that' and 'told us'."
+   "exit": "Tell me two things someone told you this week, using 'said that' and 'told me'."
   },
   "1-1": {
    "objective": "Today you will report family news from a phone call.",
@@ -1466,6 +1469,7 @@
    ],
    "dialogue": {
     "scene": "Faisal tells his sister Reem about two news stories he saw this morning.",
+    "scene_emoji": "🌧️",
     "p1": [
      {
       "s": "Reem",
@@ -1481,11 +1485,11 @@
      },
      {
       "s": "Faisal",
-      "t": "They warned people to stay indoors if possible, and they said schools might close."
+      "t": "They warned people to stay indoors if possible, and they said the big match might be cancelled."
      },
      {
       "s": "Reem",
-      "t": "No school? I hope it's true!"
+      "t": "Cancel the match? I hope not!"
      }
     ],
     "p2": [
@@ -2210,6 +2214,7 @@
    ],
    "dialogue": {
     "scene": "Omar wants to play an online game with his cousins. First he asks his father, then he talks to his sister Reem.",
+    "scene_emoji": "🎮",
     "p1": [
      {
       "s": "Omar",
@@ -2221,7 +2226,7 @@
      },
      {
       "s": "Omar",
-      "t": "I know. Would you mind if I played for thirty minutes, just this once? I've finished my homework."
+      "t": "I know. Would you mind if I played for thirty minutes, just this once? I've already tidied my room."
      },
      {
       "s": "Dad",
@@ -2334,6 +2339,7 @@
    ],
    "dialogue": {
     "scene": "Noura and her brother Faisal are planning a surprise Eid gathering for their grandparents with help from Aunt Hessa.",
+    "scene_emoji": "🌙",
     "p1": [
      {
       "s": "Noura",
@@ -2385,7 +2391,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your school is having an Eid celebration, and you are organising it. I am the head teacher. Ask for my help and permission.",
+    "scene": "Your neighbourhood is having an Eid celebration in the park, and you are organising it. I am the park manager. Ask for my help and permission.",
     "prompts": [
      {
       "q": "So, how can I help with the celebration?",
@@ -2393,10 +2399,10 @@
      },
      {
       "q": "What else do you need?",
-      "hint": "Ask for permission: 'Is it OK if we …?' (for example, use the school hall)."
+      "hint": "Ask for permission: 'Is it OK if we …?' (for example, use the big tent)."
      },
      {
-      "q": "I'm afraid the hall is busy on Thursday.",
+      "q": "I'm afraid the big tent is busy on Thursday.",
       "hint": "Answer politely and ask for another option with 'Would it be possible to …?'"
      }
     ]
@@ -3077,7 +3083,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam, Fahad and Khalid must choose a class project: a bake sale for charity, a school garden or a beach clean-up.",
+    "scene": "Sam, Fahad and Khalid's football team has a free Saturday for a charity day. They must choose: a bake sale, a garden at the community centre or a beach clean-up.",
+    "scene_emoji": "🤝",
     "p1": [
      {
       "s": "Sam",
@@ -3107,7 +3114,7 @@
      },
      {
       "s": "Sam",
-      "t": "Good idea. I vote for the garden. It would be better to make something the whole school can enjoy."
+      "t": "Good idea. I vote for the garden. It would be better to make something the whole neighbourhood can enjoy."
      },
      {
       "s": "Fahad",
@@ -3115,7 +3122,7 @@
      },
      {
       "s": "Khalid",
-      "t": "Then let's go for the garden! Maybe we can do a bake sale next term to buy the plants."
+      "t": "Then let's go for the garden! Maybe we can do a bake sale next month to buy the plants."
      },
      {
       "s": "Sam",
@@ -3129,14 +3136,14 @@
     ]
    },
    "speakout": {
-    "scene": "Your class has 2,000 riyals to improve the school. The options are new sports equipment, a reading corner or a water fountain. Discuss them with me and reach a decision.",
+    "scene": "Your football club has 2,000 riyals to improve the clubhouse. The options are new sports equipment, a games corner or a water fountain. Discuss them with me and reach a decision.",
     "prompts": [
      {
       "q": "So, which option do you think is best?",
       "hint": "Choose one and compare it with another, using 'not as … as' or 'much more … than'."
      },
      {
-      "q": "But a reading corner would be useful for everyone.",
+      "q": "But a games corner would be useful for everyone.",
       "hint": "Weigh up the pros and cons: give one good and one bad point, using 'On the other hand'."
      },
      {
@@ -3197,7 +3204,7 @@
    "dialogue": [
     {
      "s": "Ms Huda",
-     "t": "For this project, you'll work in pairs and make a poster about saving water."
+     "t": "For this competition, you'll work in pairs and make a two-minute video about saving water."
     },
     {
      "s": "Reem",
@@ -3205,15 +3212,11 @@
     },
     {
      "s": "Ms Huda",
-     "t": "Yes, you do. Each poster also needs a short report with a word limit of two hundred words."
+     "t": "Yes, you do. Each video also needs a short description with a word limit of two hundred words."
     },
     {
      "s": "Reem",
-     "t": "Do you mean a written report, not a spoken one?"
-    },
-    {
-     "s": "Ms Huda",
-     "t": "Yes, a written one, please."
+     "t": "Do you mean a written description, not a spoken one?"
     },
     {
      "s": "Ms Huda",
@@ -3221,11 +3224,11 @@
     },
     {
      "s": "Reem",
-     "t": "So you're saying we hand in the poster and the report together?"
+     "t": "So you're saying we hand in the video and the description together?"
     },
     {
      "s": "Ms Huda",
-     "t": "Exactly. Bring both to class on that day."
+     "t": "Exactly. Upload both to the competition website on that day."
     }
    ],
    "grammar": {
@@ -3582,7 +3585,7 @@
    "dialogue": [
     {
      "s": "Mr Adel",
-     "t": "Great news! Next month our class is going on a two-day trip to AlUla."
+     "t": "Great news! Next month our scout group is going on a two-day trip to AlUla."
     },
     {
      "s": "Omar",
@@ -3590,7 +3593,7 @@
     },
     {
      "s": "Mr Adel",
-     "t": "Yes. We'll set off from school at six on Wednesday morning and head back on Thursday evening."
+     "t": "Yes. We'll set off from the club at six on Wednesday morning and head back on Thursday evening."
     },
     {
      "s": "Omar",
@@ -3659,11 +3662,11 @@
    "dialogue": [
     {
      "s": "Sam",
-     "t": "I missed school yesterday. Can you fill me in? Was there any news?"
+     "t": "I missed training yesterday. Can you fill me in? Was there any news?"
     },
     {
      "s": "Faisal",
-     "t": "Yes, there was a big announcement. Mr Khalid said that sports day would take place next Thursday."
+     "t": "Yes, there was a big announcement. Coach Khalid said that the club sports day would take place next Thursday."
     },
     {
      "s": "Sam",
@@ -3679,15 +3682,15 @@
     },
     {
      "s": "Faisal",
-     "t": "Ms Huda said that our science test would be on Monday."
+     "t": "Coach Saleh said that the team photo would be on Monday."
     },
     {
      "s": "Sam",
-     "t": "Oh no! Did she say which pages we need to study?"
+     "t": "Oh no! Did he say what we have to wear?"
     },
     {
      "s": "Faisal",
-     "t": "According to Ms Huda, it's pages twenty to thirty-five. She told us to bring a calculator, too."
+     "t": "According to Coach Saleh, we need our new blue shirts. He told us to bring our medals, too."
     }
    ],
    "grammar": {
@@ -3979,7 +3982,7 @@
     },
     {
      "s": "Faisal",
-     "t": "They warned people to stay indoors if possible, and they said schools might close."
+     "t": "They warned people to stay indoors if possible, and they said the big match might be cancelled."
     },
     {
      "s": "Reem",
@@ -4437,7 +4440,7 @@
     },
     {
      "s": "Omar",
-     "t": "I know. Would you mind if I played for thirty minutes, just this once? I've finished my homework."
+     "t": "I know. Would you mind if I played for thirty minutes, just this once? I've already tidied my room."
     },
     {
      "s": "Dad",
@@ -4988,7 +4991,7 @@
     },
     {
      "s": "Sam",
-     "t": "Good idea. I vote for the garden. It would be better to make something the whole school can enjoy."
+     "t": "Good idea. I vote for the garden. It would be better to make something the whole neighbourhood can enjoy."
     },
     {
      "s": "Fahad",
@@ -4996,7 +4999,7 @@
     },
     {
      "s": "Khalid",
-     "t": "Then let's go for the garden! Maybe we can do a bake sale next term to buy the plants."
+     "t": "Then let's go for the garden! Maybe we can do a bake sale next month to buy the plants."
     }
    ],
    "grammar": {
@@ -5391,7 +5394,7 @@
     "q": "Which sentence checks information?",
     "options": [
      "So you're saying lunch is included?",
-     "I love school trips.",
+     "I love trips to the desert.",
      "AlUla is beautiful.",
      "Let's go next year."
     ],
@@ -5433,7 +5436,7 @@
    },
    {
     "type": "mc",
-    "q": "Complete: Ms Huda ___ us to bring a calculator.",
+    "q": "Complete: Coach Saleh ___ us to bring our medals.",
     "options": [
      "said",
      "spoke",
