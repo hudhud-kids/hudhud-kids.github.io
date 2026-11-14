@@ -1226,6 +1226,8 @@ function buildRulesV2(k, plan, sc, v){
   v = v || {fmt:'classic'}; const fmt = v.fmt || 'classic', small = kid.level <= 6, d0 = sc.dialogue || {}, alt = v.alt || v2AltTheme(k, plan);
   const u = (levelUnits(kid.level) || [])[plan.ui] || {}, steps = v.steps || v2Steps(sc, {fmt, level:kid.level});
   const culShort = (steps.find(x => x.k === 'cul') || {}).short, rec = v.rec = typeof recycleList === 'function' ? recycleList(k, `${kid.level}-${plan.ui}-${plan.li}`) : [];
+  // the lesson's own recycle words (old expressions the curriculum moved out of the "new" list) fill any free review slots
+  (Array.isArray(sc.recycle) ? sc.recycle : []).forEach(w => { if(rec.length < 4 && w && !rec.some(r => r.w.toLowerCase() === String(w).toLowerCase())) rec.push({w:String(w), key:'', lvl:kid.level, due:''}); });
   return `You are ${teacherOf(k).name} (a ${teacherOf(k).female ? 'woman' : 'man'}), a warm, funny, energetic English teacher giving a LIVE one-to-one VOICE class to a Saudi child on an iPad. Everything you write in the spoken part is read aloud by text-to-speech, and the child answers by speaking (speech-to-text).
 
 STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'girl'}, Hudhud level ${kid.level} (CEFR ${cefr}). First language Arabic.
