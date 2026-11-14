@@ -25,8 +25,8 @@
     ],
     [
      "The Real Cost of Fast Fashion",
-     "Qualify your arguments about fast fashion with 'up to a point' and 'to some extent'",
-     "It's true that …, but … / up to a point / to some extent / at the expense of …"
+     "Qualify your arguments about fast fashion with 'up to a point' and 'partly to blame'",
+     "It's true that …, but … / up to a point / partly to blame / at the expense of …"
     ],
     [
      "Working While You Study",
@@ -36,7 +36,7 @@
     [
      "Tourism: A Mixed Blessing?",
      "Weigh up the benefits and drawbacks of growing tourism and reach a qualified conclusion",
-     "While it's true that …, … / I'll grant you that … / On balance, …"
+     "There's no denying that …, but … / I'll grant you that … / On balance, …"
     ],
     [
      "Are Athletes Paid Too Much?",
@@ -71,7 +71,7 @@
     [
      "Why Does Everything Cost More?",
      "Explain what inflation is to a younger listener, using a comparison and checking they understand",
-     "Put another way, … / Think of it as … / In a nutshell, … / Does that make sense?"
+     "Put another way, … / Think of it as … / The long and short of it is … / Does that make sense?"
     ],
     [
      "How Do Machines Learn?",
@@ -161,22 +161,22 @@
     [
      "Part 2: Someone Who Inspired You",
      "Give a fluent two-minute IELTS Part 2 talk about a person who inspired you",
-     "I'd have to say … / I've always held … in high regard / She would bend over backwards to … / It had a profound influence on me."
+     "The first person who springs to mind is … / I've always held … in high regard / She would bend over backwards to … / It had a profound influence on me."
     ],
     [
      "Part 3: Technology and Society",
      "Discuss abstract questions about technology and society with idiomatic language and balanced reasoning",
-     "It's a double-edged sword. / By and large, … / It's a matter of … / … is just the tip of the iceberg."
+     "There's a catch. / As a rule, … / It's a matter of … / … is just the tip of the iceberg."
     ],
     [
      "Part 3: Success and Happiness",
      "Discuss abstract ideas about success and happiness, using idioms accurately and supporting every point",
-     "It boils down to … / There's more to life than … / On the whole, … / peace of mind"
+     "It boils down to … / There's more to life than … / All in all, … / peace of mind"
     ],
     [
      "Part 3: Tradition and Change",
      "Discuss how traditions change over time, giving balanced, idiomatic answers to abstract questions",
-     "… has stood the test of time. / … go hand in hand. / We need to strike a balance. / … is dying out."
+     "… has stood the test of time. / … go hand in hand. / We need to get the mix right. / … is dying out."
     ],
     [
      "Full Mock Speaking Test",
@@ -246,6 +246,14 @@
      {
       "s": "Reem",
       "t": "Admittedly, that's a risk. Getting back into studying after a long break isn't easy."
+     },
+     {
+      "s": "Lina",
+      "t": "So how would you stop that from happening?"
+     },
+     {
+      "s": "Reem",
+      "t": "I'd keep a study routine, maybe two hours of maths a week, so I don't forget everything I learnt at school."
      }
     ],
     "p2": [
@@ -264,6 +272,14 @@
      {
       "s": "Reem",
       "t": "I will. A gap year only works if it has a real purpose."
+     },
+     {
+      "s": "Lina",
+      "t": "Have you talked to anyone who actually did one?"
+     },
+     {
+      "s": "Reem",
+      "t": "My cousin did. Admittedly, she said the first month felt strange, but she came back far more confident and organised."
      }
     ],
     "focus": "That said, most of my plans are free or very cheap.",
@@ -277,15 +293,15 @@
     "prompts": [
      {
       "q": "Surely a gap year just delays your career?",
-      "hint": "Admit part of the point with 'Granted, …', then add 'but' and your own view."
+      "hint": "Admit part of the point with 'Granted, …', then add 'but' and your own view. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What would you actually gain from a year off?",
-      "hint": "Give two benefits, for example with 'broaden your horizons'."
+      "hint": "Give two benefits, for example with 'broaden your horizons'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What's the biggest risk, in your opinion?",
-      "hint": "Name the risk with 'Admittedly, …', then say how to manage it with 'That said, …'."
+      "hint": "Name the risk with 'Admittedly, …', then say how to manage it with 'That said, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -304,8 +320,98 @@
    "exit": "Give me your view on gap years in two sentences: admit one point against it, then qualify it with 'That said, …'."
   },
   "0-1": {
-   "objective": "Today you will qualify your arguments about fast fashion with 'up to a point' and 'to some extent'.",
+   "objective": "Today you will qualify your arguments about fast fashion with 'up to a point' and 'partly to blame'.",
    "warmup": "How often do you buy new clothes, and what makes you choose one shop over another?",
+   "dialogue": {
+    "scene": "Sara and Noura are preparing a short talk for their school's environment club about fast fashion.",
+    "p1": [
+     {
+      "s": "Noura",
+      "t": "Fast fashion is a disaster. These brands cut corners everywhere to keep prices low."
+     },
+     {
+      "s": "Sara",
+      "t": "I agree with you up to a point. It's true that quality is poor, but not everyone can afford expensive clothes."
+     },
+     {
+      "s": "Noura",
+      "t": "Granted, but cheap clothes fall apart quickly, so people end up buying more."
+     },
+     {
+      "s": "Sara",
+      "t": "That's fair. We're all partly to blame; we've become part of a throwaway culture."
+     },
+     {
+      "s": "Noura",
+      "t": "Exactly. My cousin bought ten T-shirts last summer and threw most of them away by winter."
+     },
+     {
+      "s": "Sara",
+      "t": "I've done the same, honestly. When something costs twenty riyals, you don't think twice about replacing it."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "And the low prices come at the expense of factory workers and the environment."
+     },
+     {
+      "s": "Sara",
+      "t": "Admittedly, the environmental cost is huge. Some brands are trying to improve, though."
+     },
+     {
+      "s": "Noura",
+      "t": "Up to a point. A small recycled collection doesn't change the whole business model."
+     },
+     {
+      "s": "Sara",
+      "t": "So in our talk, let's suggest buying less, rather than never buying cheap clothes."
+     },
+     {
+      "s": "Noura",
+      "t": "Fair enough. Maybe we can end with a challenge: no new clothes for a month."
+     },
+     {
+      "s": "Sara",
+      "t": "Good idea, as long as we admit it'll be harder for some people than for others."
+     }
+    ],
+    "focus": "It's true that quality is poor, but not everyone can afford expensive clothes.",
+    "qs": [
+     "Why does Sara only partly agree with Noura?",
+     "What do they decide to suggest in their talk?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are on a radio show for young people. The presenter says fast fashion should be banned. Respond and qualify your opinion carefully.",
+    "prompts": [
+     {
+      "q": "Shouldn't fast fashion simply be banned?",
+      "hint": "Agree only partly with 'up to a point' and explain where you disagree. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Who is to blame: the brands or the shoppers?",
+      "hint": "Share the blame with 'partly to blame' and give a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "What can a teenager realistically do?",
+      "hint": "Accept a fact with 'It's true that …, but …' and suggest one action. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Clothes With a Second Life",
+    "points": [
+     "The fashion industry is often described as one of the world's major polluters.",
+     "Second-hand clothing apps and thrift shops have become popular with young people in many countries.",
+     "In Saudi Arabia, several charities collect used clothes and give them to families in need."
+    ],
+    "qs": [
+     "Would you buy second-hand clothes? Why or why not?",
+     "Is it fair to expect teenagers to change their shopping habits?"
+    ]
+   },
+   "exit": "Tell me what you think about fast fashion in two sentences, using 'up to a point' or 'partly to blame'.",
    "expressions": [
     {
      "w": "up to a point",
@@ -314,10 +420,10 @@
      "frame": "I agree with you up to a point, but ___."
     },
     {
-     "w": "to some extent",
-     "def": "partly; not in every way",
-     "ar": "إلى حدٍّ معيّن",
-     "frame": "To some extent, ___ is responsible for ___."
+     "w": "partly to blame",
+     "def": "responsible for some, but not all, of a problem",
+     "ar": "مسؤول جزئياً",
+     "frame": "I think ___ is partly to blame for ___."
     },
     {
      "w": "It's true that",
@@ -344,84 +450,103 @@
      "frame": "Low prices often come at the expense of ___."
     }
    ],
-   "dialogue": {
-    "scene": "Sara and Noura are preparing a short talk for their school's environment club about fast fashion.",
-    "p1": [
-     {
-      "s": "Noura",
-      "t": "Fast fashion is a disaster. These brands cut corners everywhere to keep prices low."
-     },
-     {
-      "s": "Sara",
-      "t": "I agree with you up to a point. It's true that quality is poor, but not everyone can afford expensive clothes."
-     },
-     {
-      "s": "Noura",
-      "t": "Granted, but cheap clothes fall apart quickly, so people end up buying more."
-     },
-     {
-      "s": "Sara",
-      "t": "That's fair. To some extent, we've all become part of a throwaway culture."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Noura",
-      "t": "And the low prices come at the expense of factory workers and the environment."
-     },
-     {
-      "s": "Sara",
-      "t": "Admittedly, the environmental cost is huge. Some brands are trying to improve, though."
-     },
-     {
-      "s": "Noura",
-      "t": "Up to a point. A small recycled collection doesn't change the whole business model."
-     },
-     {
-      "s": "Sara",
-      "t": "So in our talk, let's suggest buying less, rather than never buying cheap clothes."
-     }
-    ],
-    "focus": "It's true that quality is poor, but not everyone can afford expensive clothes.",
-    "qs": [
-     "Why does Sara only partly agree with Noura?",
-     "What do they decide to suggest in their talk?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are on a radio show for young people. The presenter says fast fashion should be banned. Respond and qualify your opinion carefully.",
-    "prompts": [
-     {
-      "q": "Shouldn't fast fashion simply be banned?",
-      "hint": "Agree only partly with 'up to a point' and explain where you disagree."
-     },
-     {
-      "q": "Who is to blame: the brands or the shoppers?",
-      "hint": "Share the blame with 'to some extent' and give a reason."
-     },
-     {
-      "q": "What can a teenager realistically do?",
-      "hint": "Accept a fact with 'It's true that …, but …' and suggest one action."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Clothes With a Second Life",
-    "points": [
-     "The fashion industry is often described as one of the world's major polluters.",
-     "Second-hand clothing apps and thrift shops have become popular with young people in many countries.",
-     "In Saudi Arabia, several charities collect used clothes and give them to families in need."
-    ],
-    "qs": [
-     "Would you buy second-hand clothes? Why or why not?",
-     "Is it fair to expect teenagers to change their shopping habits?"
-    ]
-   },
-   "exit": "Tell me what you think about fast fashion in two sentences, using 'up to a point' or 'to some extent'."
+   "recycle": [
+    "to some extent"
+   ]
   },
   "0-2": {
    "objective": "Today you will discuss part-time jobs for students, accepting the other side's points and limiting your own claims.",
    "warmup": "Do you know any students who have a part-time job? What do they do?",
+   "dialogue": {
+    "scene": "Faisal wants to work weekends at a café in Riyadh. His older sister Hessa is not sure it's a good idea in his final school year.",
+    "p1": [
+     {
+      "s": "Faisal",
+      "t": "The café pays well, and I'd get hands-on experience with real customers."
+     },
+     {
+      "s": "Hessa",
+      "t": "I take your point, but this is your final year. Can you really juggle a job and exams?"
+     },
+     {
+      "s": "Faisal",
+      "t": "It's only weekends. In most cases, students who work learn to manage their time better."
+     },
+     {
+      "s": "Hessa",
+      "t": "That's true for some people. That's not to say it'll be true for you."
+     },
+     {
+      "s": "Faisal",
+      "t": "Fair enough. But the manager said I could choose my hours, so I'd never work the night before an exam."
+     },
+     {
+      "s": "Hessa",
+      "t": "Managers say that at the start. When the café gets busy, they'll expect you to cover extra shifts."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Faisal",
+      "t": "Granted, I'm not the most organised person. That said, I'm saving for university."
+     },
+     {
+      "s": "Hessa",
+      "t": "Then why not work in the summer instead? You'd earn money without risking your grades."
+     },
+     {
+      "s": "Faisal",
+      "t": "Hmm. I suppose I'd still reap the rewards with a summer job."
+     },
+     {
+      "s": "Hessa",
+      "t": "Exactly. You'd get the experience and keep your marks safe."
+     },
+     {
+      "s": "Faisal",
+      "t": "And if my grades are good by spring, could I try a few weekend shifts then?"
+     },
+     {
+      "s": "Hessa",
+      "t": "Maybe. Let's see your mid-year results first, and then we'll talk to Mum and Dad together."
+     }
+    ],
+    "focus": "I take your point, but this is your final year.",
+    "qs": [
+     "Why does Faisal want the café job?",
+     "What compromise does Hessa suggest?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your parents are worried about you taking a part-time job during the school year. Discuss it with them, accepting their good points.",
+    "prompts": [
+     {
+      "q": "Won't a job hurt your grades?",
+      "hint": "Show you understand with 'I take your point, but …', then give your plan. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What will you gain apart from money?",
+      "hint": "Mention 'hands-on experience' and one skill you'd learn. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So are you saying every student should work?",
+      "hint": "Limit your claim with 'That's not to say …' or 'in most cases'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Young Saudis at Work",
+    "points": [
+     "More Saudi teenagers and young adults now work part-time in cafés, shops and events.",
+     "Many university students in the UK and the USA have part-time jobs to help pay their costs.",
+     "Employers often value hands-on experience as much as good grades."
+    ],
+    "qs": [
+     "What is the best age to start a part-time job, in your view?",
+     "Which job would teach a teenager the most useful skills?"
+    ]
+   },
+   "exit": "Tell me in two sentences whether students should work during the school year, using 'I take your point, but …' or 'That's not to say …'.",
    "expressions": [
     {
      "w": "I take your point, but",
@@ -448,10 +573,10 @@
      "frame": "It's hard to juggle ___ and ___."
     },
     {
-     "w": "pay off",
-     "def": "to bring good results later after hard work",
-     "ar": "يؤتي ثماره",
-     "frame": "All the effort will pay off when ___."
+     "w": "reap the rewards",
+     "def": "to get the good results of your efforts",
+     "ar": "يجني الثمار",
+     "frame": "If you ___ now, you'll reap the rewards later."
     },
     {
      "w": "hands-on experience",
@@ -460,84 +585,103 @@
      "frame": "I'd like to get hands-on experience in ___."
     }
    ],
-   "dialogue": {
-    "scene": "Faisal wants to work weekends at a café in Riyadh. His older sister Hessa is not sure it's a good idea in his final school year.",
-    "p1": [
-     {
-      "s": "Faisal",
-      "t": "The café pays well, and I'd get hands-on experience with real customers."
-     },
-     {
-      "s": "Hessa",
-      "t": "I take your point, but this is your final year. Can you really juggle a job and exams?"
-     },
-     {
-      "s": "Faisal",
-      "t": "It's only weekends. In most cases, students who work learn to manage their time better."
-     },
-     {
-      "s": "Hessa",
-      "t": "That's true for some people. That's not to say it'll be true for you."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Faisal",
-      "t": "Granted, I'm not the most organised person. That said, I'm saving for university."
-     },
-     {
-      "s": "Hessa",
-      "t": "Then why not work in the summer instead? You'd earn money without risking your grades."
-     },
-     {
-      "s": "Faisal",
-      "t": "Hmm. I suppose the summer job would still pay off in the end."
-     },
-     {
-      "s": "Hessa",
-      "t": "Exactly. You'd get the experience and keep your marks safe."
-     }
-    ],
-    "focus": "I take your point, but this is your final year.",
-    "qs": [
-     "Why does Faisal want the café job?",
-     "What compromise does Hessa suggest?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your parents are worried about you taking a part-time job during the school year. Discuss it with them, accepting their good points.",
-    "prompts": [
-     {
-      "q": "Won't a job hurt your grades?",
-      "hint": "Show you understand with 'I take your point, but …', then give your plan."
-     },
-     {
-      "q": "What will you gain apart from money?",
-      "hint": "Mention 'hands-on experience' and one skill you'd learn."
-     },
-     {
-      "q": "So are you saying every student should work?",
-      "hint": "Limit your claim with 'That's not to say …' or 'in most cases'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Young Saudis at Work",
-    "points": [
-     "More Saudi teenagers and young adults now work part-time in cafés, shops and events.",
-     "Many university students in the UK and the USA have part-time jobs to help pay their costs.",
-     "Employers often value hands-on experience as much as good grades."
-    ],
-    "qs": [
-     "What is the best age to start a part-time job, in your view?",
-     "Which job would teach a teenager the most useful skills?"
-    ]
-   },
-   "exit": "Tell me in two sentences whether students should work during the school year, using 'I take your point, but …' or 'That's not to say …'."
+   "recycle": [
+    "pay off"
+   ]
   },
   "0-3": {
    "objective": "Today you will weigh up the benefits and drawbacks of growing tourism and reach a qualified conclusion.",
    "warmup": "Which place in Saudi Arabia would you most like to show a foreign visitor, and why?",
+   "dialogue": {
+    "scene": "Omar and his friend Daniel, an exchange student, are discussing the rapid growth of tourism on Saudi Arabia's Red Sea coast.",
+    "p1": [
+     {
+      "s": "Daniel",
+      "t": "The new resorts on the Red Sea look amazing. They must boost the local economy."
+     },
+     {
+      "s": "Omar",
+      "t": "They do, but tourism can be a mixed blessing. Large resorts can put a strain on fragile coral reefs."
+     },
+     {
+      "s": "Daniel",
+      "t": "I'll grant you that, but aren't many of the projects designed to protect the environment?"
+     },
+     {
+      "s": "Omar",
+      "t": "Some are, yes. There's no denying that the plans are ambitious, but we'll only know the impact in a few years."
+     },
+     {
+      "s": "Daniel",
+      "t": "That's fair. Back home in England, some seaside towns became so crowded that local families moved away."
+     },
+     {
+      "s": "Omar",
+      "t": "That's exactly my worry. A place can lose its character if it's built only for visitors."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Daniel",
+      "t": "What about local people? Do they actually benefit?"
+     },
+     {
+      "s": "Omar",
+      "t": "Admittedly, there are new jobs. That said, prices for rent and food can go up as well."
+     },
+     {
+      "s": "Daniel",
+      "t": "So overall, are you for it or against it?"
+     },
+     {
+      "s": "Omar",
+      "t": "On balance, I'm for it, as long as growth is carefully managed."
+     },
+     {
+      "s": "Daniel",
+      "t": "What would 'carefully managed' actually mean in practice?"
+     },
+     {
+      "s": "Omar",
+      "t": "Limits on visitor numbers, training local people for the new jobs, and protecting the reefs before building, not after."
+     }
+    ],
+    "focus": "On balance, I'm for it, as long as growth is carefully managed.",
+    "qs": [
+     "What environmental worry does Omar mention?",
+     "What is Omar's final position on tourism?"
+    ]
+   },
+   "speakout": {
+    "scene": "A visitor from abroad asks you whether more tourism is good for Saudi Arabia. Give a balanced answer and reach a conclusion.",
+    "prompts": [
+     {
+      "q": "Tourism brings money, so it's good, isn't it?",
+      "hint": "Agree partly and add a drawback with 'There's no denying that …, but …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "I think tourism ruins quiet towns. Don't you?",
+      "hint": "Accept one point with 'I'll grant you that', then disagree. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So what's your overall view?",
+      "hint": "Give your conclusion with 'On balance, …' and add a condition. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Tourism on the Red Sea",
+    "points": [
+     "Saudi Arabia's Red Sea coast has coral reefs, islands and clear water that attract divers.",
+     "Several large tourism projects along the coast say they aim to protect the natural environment.",
+     "Around the world, places such as Venice and Bali have introduced rules to manage the number of visitors."
+    ],
+    "qs": [
+     "Should popular places limit the number of tourists? Why or why not?",
+     "How can tourism help local people rather than only big companies?"
+    ]
+   },
+   "exit": "Give me your balanced view on tourism in two sentences, ending with 'On balance, …'.",
    "expressions": [
     {
      "w": "a mixed blessing",
@@ -546,10 +690,10 @@
      "frame": "For my town, ___ has been a mixed blessing."
     },
     {
-     "w": "While it's true that",
-     "def": "used to accept one fact before presenting a contrasting one",
-     "ar": "مع أنّه صحيح أنّ",
-     "frame": "While it's true that ___, we shouldn't forget ___."
+     "w": "There's no denying that",
+     "def": "used to accept that something is clearly true",
+     "ar": "لا يمكن إنكار أنّ",
+     "frame": "There's no denying that ___, but ___."
     },
     {
      "w": "I'll grant you that",
@@ -576,84 +720,103 @@
      "frame": "New hotels could boost the local economy by ___."
     }
    ],
-   "dialogue": {
-    "scene": "Omar and his friend Daniel, an exchange student, are discussing the rapid growth of tourism on Saudi Arabia's Red Sea coast.",
-    "p1": [
-     {
-      "s": "Daniel",
-      "t": "The new resorts on the Red Sea look amazing. They must boost the local economy."
-     },
-     {
-      "s": "Omar",
-      "t": "They do, but tourism can be a mixed blessing. Large resorts can put a strain on fragile coral reefs."
-     },
-     {
-      "s": "Daniel",
-      "t": "I'll grant you that, but aren't many of the projects designed to protect the environment?"
-     },
-     {
-      "s": "Omar",
-      "t": "Some are, yes. While it's true that the plans are ambitious, we'll only know the impact in a few years."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Daniel",
-      "t": "What about local people? Do they actually benefit?"
-     },
-     {
-      "s": "Omar",
-      "t": "Admittedly, there are new jobs. That said, prices for rent and food can go up as well."
-     },
-     {
-      "s": "Daniel",
-      "t": "So overall, are you for it or against it?"
-     },
-     {
-      "s": "Omar",
-      "t": "On balance, I'm for it, as long as growth is carefully managed."
-     }
-    ],
-    "focus": "On balance, I'm for it, as long as growth is carefully managed.",
-    "qs": [
-     "What environmental worry does Omar mention?",
-     "What is Omar's final position on tourism?"
-    ]
-   },
-   "speakout": {
-    "scene": "A visitor from abroad asks you whether more tourism is good for Saudi Arabia. Give a balanced answer and reach a conclusion.",
-    "prompts": [
-     {
-      "q": "Tourism brings money, so it's good, isn't it?",
-      "hint": "Agree partly and add a drawback with 'While it's true that …'."
-     },
-     {
-      "q": "I think tourism ruins quiet towns. Don't you?",
-      "hint": "Accept one point with 'I'll grant you that', then disagree."
-     },
-     {
-      "q": "So what's your overall view?",
-      "hint": "Give your conclusion with 'On balance, …' and add a condition."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Tourism on the Red Sea",
-    "points": [
-     "Saudi Arabia's Red Sea coast has coral reefs, islands and clear water that attract divers.",
-     "Several large tourism projects along the coast say they aim to protect the natural environment.",
-     "Around the world, places such as Venice and Bali have introduced rules to manage the number of visitors."
-    ],
-    "qs": [
-     "Should popular places limit the number of tourists? Why or why not?",
-     "How can tourism help local people rather than only big companies?"
-    ]
-   },
-   "exit": "Give me your balanced view on tourism in two sentences, ending with 'On balance, …'."
+   "recycle": [
+    "While it's true that"
+   ]
   },
   "0-4": {
    "objective": "Today you will argue about top athletes' salaries while conceding strong points with 'Much as …' and 'Be that as it may'.",
    "warmup": "Who is your favourite athlete, and what do you admire about them?",
+   "dialogue": {
+    "scene": "In their school's debating club, Abdullah and Ethan are discussing the very high salaries of football stars in the Saudi Pro League and in Europe.",
+    "p1": [
+     {
+      "s": "Ethan",
+      "t": "Much as I love football, I think these salaries are out of all proportion. A nurse earns a tiny fraction of that."
+     },
+     {
+      "s": "Abdullah",
+      "t": "I'll grant you that. But star players generate revenue through tickets, TV rights and shirt sales."
+     },
+     {
+      "s": "Ethan",
+      "t": "Be that as it may, nobody needs that much money for kicking a ball."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Their careers are short, though. Many retire before thirty-five."
+     },
+     {
+      "s": "Ethan",
+      "t": "True, and injuries can end a career overnight. I hadn't really thought about that."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Exactly. A doctor can work until sixty-five, but a footballer might be finished at thirty after one bad tackle."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ethan",
+      "t": "Admittedly, a short career is a fair point. Even so, the gap with other jobs is shocking."
+     },
+     {
+      "s": "Abdullah",
+      "t": "Big salaries are fine, within reason. What matters more is how players behave."
+     },
+     {
+      "s": "Ethan",
+      "t": "You mean because they're an inspiration to young people?"
+     },
+     {
+      "s": "Abdullah",
+      "t": "Exactly. A player who's a true inspiration to children is worth the money."
+     },
+     {
+      "s": "Ethan",
+      "t": "So you'd pay players well, but expect them to behave well in return?"
+     },
+     {
+      "s": "Abdullah",
+      "t": "Yes. That said, I'd also like clubs to spend more on youth academies, not just on stars."
+     }
+    ],
+    "focus": "Much as I love football, I think these salaries are out of all proportion.",
+    "qs": [
+     "Why does Abdullah think star players deserve high salaries?",
+     "Which point does Ethan admit is fair?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher, playing devil's advocate, says athletes deserve every riyal they earn. Discuss it, conceding good points but keeping your view.",
+    "prompts": [
+     {
+      "q": "Athletes entertain millions. Don't they deserve it?",
+      "hint": "Start with 'Much as I …' and then give your view. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "But clubs earn even more than they pay players.",
+      "hint": "Keep your view with 'Be that as it may, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So what would a fair salary look like?",
+      "hint": "Use 'within reason' or 'out of all proportion' and give an example. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Sport and Money",
+    "points": [
+     "In recent years, the Saudi Pro League has signed several famous international footballers.",
+     "Top athletes often earn more from sponsorship and advertising than from their salaries.",
+     "Many athletes use their fame to support charities and sports programmes for children."
+    ],
+    "qs": [
+     "Should famous athletes be expected to give back to society? Why?",
+     "Which other jobs do you think deserve higher salaries?"
+    ]
+   },
+   "exit": "Give me your opinion on athletes' salaries in two sentences, starting with 'Much as I …'.",
    "expressions": [
     {
      "w": "Much as I",
@@ -680,10 +843,10 @@
      "frame": "The price of ___ is out of all proportion."
     },
     {
-     "w": "a role model",
-     "def": "a person whom others admire and copy",
-     "ar": "قدوة",
-     "frame": "___ is a good role model because ___."
+     "w": "an inspiration to",
+     "def": "a person who makes others want to do well",
+     "ar": "مصدر إلهام لـ",
+     "frame": "___ is an inspiration to ___ because …"
     },
     {
      "w": "generate revenue",
@@ -692,128 +855,19 @@
      "frame": "Star players generate revenue through ___."
     }
    ],
-   "dialogue": {
-    "scene": "In their school's debating club, Abdullah and Ethan are discussing the very high salaries of football stars in the Saudi Pro League and in Europe.",
-    "p1": [
-     {
-      "s": "Ethan",
-      "t": "Much as I love football, I think these salaries are out of all proportion. A nurse earns a tiny fraction of that."
-     },
-     {
-      "s": "Abdullah",
-      "t": "I'll grant you that. But star players generate revenue through tickets, TV rights and shirt sales."
-     },
-     {
-      "s": "Ethan",
-      "t": "Be that as it may, nobody needs that much money for kicking a ball."
-     },
-     {
-      "s": "Abdullah",
-      "t": "Their careers are short, though. Many retire before thirty-five."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Ethan",
-      "t": "Admittedly, a short career is a fair point. Even so, the gap with other jobs is shocking."
-     },
-     {
-      "s": "Abdullah",
-      "t": "Big salaries are fine, within reason. What matters more is how players behave."
-     },
-     {
-      "s": "Ethan",
-      "t": "You mean because they're role models for young people?"
-     },
-     {
-      "s": "Abdullah",
-      "t": "Exactly. To some extent, a great role model is worth the money."
-     }
-    ],
-    "focus": "Much as I love football, I think these salaries are out of all proportion.",
-    "qs": [
-     "Why does Abdullah think star players deserve high salaries?",
-     "Which point does Ethan admit is fair?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your teacher, playing devil's advocate, says athletes deserve every riyal they earn. Discuss it, conceding good points but keeping your view.",
-    "prompts": [
-     {
-      "q": "Athletes entertain millions. Don't they deserve it?",
-      "hint": "Start with 'Much as I …' and then give your view."
-     },
-     {
-      "q": "But clubs earn even more than they pay players.",
-      "hint": "Keep your view with 'Be that as it may, …'."
-     },
-     {
-      "q": "So what would a fair salary look like?",
-      "hint": "Use 'within reason' or 'out of all proportion' and give an example."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Sport and Money",
-    "points": [
-     "In recent years, the Saudi Pro League has signed several famous international footballers.",
-     "Top athletes often earn more from sponsorship and advertising than from their salaries.",
-     "Many athletes use their fame to support charities and sports programmes for children."
-    ],
-    "qs": [
-     "Should famous athletes be expected to give back to society? Why?",
-     "Which other jobs do you think deserve higher salaries?"
-    ]
-   },
-   "exit": "Give me your opinion on athletes' salaries in two sentences, starting with 'Much as I …'."
+   "recycle": [
+    "a role model"
+   ]
   },
   "0-5": {
    "objective": "Today you will give a balanced two-minute argument on whether every student should learn to code, conceding and qualifying throughout.",
    "warmup": "Have you ever tried coding or building an app? What did you think of it?",
-   "expressions": [
-    {
-     "w": "the case for",
-     "def": "the reasons that support an idea",
-     "ar": "الحجج المؤيدة لـ",
-     "frame": "The case for ___ is strong because ___."
-    },
-    {
-     "w": "weigh up",
-     "def": "to consider the advantages and disadvantages carefully",
-     "ar": "يوازن ويقيّم",
-     "frame": "Before deciding, we should weigh up ___."
-    },
-    {
-     "w": "It's not that …, it's just that",
-     "def": "used to explain your real reason and avoid being misunderstood",
-     "ar": "ليس الأمر أنّ …، بل إنّ",
-     "frame": "It's not that ___, it's just that ___."
-    },
-    {
-     "w": "All things considered,",
-     "def": "after thinking about every part of the situation",
-     "ar": "بعد أخذ كل شيء في الاعتبار",
-     "frame": "All things considered, I believe ___."
-    },
-    {
-     "w": "Admittedly",
-     "def": "used to accept that something is true, often reluctantly",
-     "ar": "لا بدّ من الاعتراف بأنّ",
-     "frame": "Admittedly, ___ can be difficult."
-    },
-    {
-     "w": "That said,",
-     "def": "used to introduce a point that contrasts with what you just said",
-     "ar": "ومع ذلك",
-     "frame": "Coding is useful. That said, ___."
-    }
-   ],
    "dialogue": {
     "scene": "Lama is practising a balanced talk for her English class on the question 'Should every student learn to code?'. Her friend Reem is listening and asking questions.",
     "p1": [
      {
       "s": "Lama",
-      "t": "Let me weigh up both sides. The case for coding is clear: it teaches logic, and many future jobs will need it."
+      "t": "Let me look at both sides. The case for coding is clear: it teaches logic, and many future jobs will need it."
      },
      {
       "s": "Reem",
@@ -822,6 +876,14 @@
      {
       "s": "Lama",
       "t": "Admittedly, coding can be frustrating at first. That said, the basics are within everyone's reach."
+     },
+     {
+      "s": "Reem",
+      "t": "Nevertheless, isn't it unfair to give low marks to students who just don't think that way?"
+     },
+     {
+      "s": "Lama",
+      "t": "I must admit that it could be. That's why I'd grade effort and projects, not just tests."
      },
      {
       "s": "Reem",
@@ -844,6 +906,10 @@
      {
       "s": "Reem",
       "t": "That's a balanced argument. It concedes the problems but still takes a clear position."
+     },
+     {
+      "s": "Lama",
+      "t": "Thanks. I'll finish by asking the class what they think, so it doesn't sound like a lecture."
      }
     ],
     "focus": "All things considered, one year of compulsory coding is fair.",
@@ -857,15 +923,15 @@
     "prompts": [
      {
       "q": "Present both sides of the question. What's the case for and against?",
-      "hint": "Use 'the case for …' and 'Admittedly, …', and give one example for each side."
+      "hint": "Use 'the case for …' and 'Admittedly, …', and give one example for each side. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Isn't it a waste of time for students who love art or sport?",
-      "hint": "Avoid a misunderstanding with 'It's not that …, it's just that …'."
+      "hint": "Avoid a misunderstanding with 'It's not that …, it's just that …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "So what's your final position?",
-      "hint": "Conclude with 'All things considered, …' and add one condition or limit."
+      "hint": "Conclude with 'All things considered, …' and add one condition or limit. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -881,7 +947,50 @@
      "What other modern skill should every student learn?"
     ]
    },
-   "exit": "In two or three sentences, give me a balanced view on compulsory coding: concede one point and finish with 'All things considered, …'."
+   "exit": "In two or three sentences, give me a balanced view on compulsory coding: concede one point and finish with 'All things considered, …'.",
+   "expressions": [
+    {
+     "w": "the case for",
+     "def": "the reasons that support an idea",
+     "ar": "الحجج المؤيدة لـ",
+     "frame": "The case for ___ is strong because ___."
+    },
+    {
+     "w": "look at both sides",
+     "def": "to consider the arguments for and against",
+     "ar": "ينظر إلى الجانبين",
+     "frame": "Before deciding about ___, let's look at both sides."
+    },
+    {
+     "w": "It's not that …, it's just that",
+     "def": "used to explain your real reason and avoid being misunderstood",
+     "ar": "ليس الأمر أنّ …، بل إنّ",
+     "frame": "It's not that ___, it's just that ___."
+    },
+    {
+     "w": "All things considered,",
+     "def": "after thinking about every part of the situation",
+     "ar": "بعد أخذ كل شيء في الاعتبار",
+     "frame": "All things considered, I believe ___."
+    },
+    {
+     "w": "I must admit",
+     "def": "used to accept a point, often reluctantly",
+     "ar": "لا بدّ أن أعترف",
+     "frame": "I must admit that ___, but …"
+    },
+    {
+     "w": "Nevertheless",
+     "def": "despite what was just said",
+     "ar": "ومع ذلك",
+     "frame": "___ is difficult. Nevertheless, ___."
+    }
+   ],
+   "recycle": [
+    "weigh up",
+    "Admittedly",
+    "That said,"
+   ]
   },
   "1-0": {
    "objective": "Today you will explain how desalination works and rephrase the difficult parts in simpler words.",
@@ -942,6 +1051,14 @@
      {
       "s": "Hamad",
       "t": "To put it simply, desalination means taking the salt out of seawater. Huge plants turn seawater into drinking water."
+     },
+     {
+      "s": "Sara",
+      "t": "So those huge buildings on the coast near Jubail are desalination plants?"
+     },
+     {
+      "s": "Hamad",
+      "t": "Exactly. Some of the biggest in the world are here, and they supply water to cities hundreds of kilometres inland."
      }
     ],
     "p2": [
@@ -960,6 +1077,14 @@
      {
       "s": "Hamad",
       "t": "Because it uses a vast amount of energy, so it's expensive. That's why we shouldn't waste water."
+     },
+     {
+      "s": "Sara",
+      "t": "So every time I leave the tap running, I'm wasting energy as well as water?"
+     },
+     {
+      "s": "Hamad",
+      "t": "In other words, yes. Turning off the tap while you brush your teeth actually saves electricity, too."
      }
     ],
     "focus": "To put it simply, desalination means taking the salt out of seawater.",
@@ -973,15 +1098,15 @@
     "prompts": [
      {
       "q": "What does 'desalination' actually mean?",
-      "hint": "Explain it in easy words, starting with 'To put it simply, …'."
+      "hint": "Explain it in easy words, starting with 'To put it simply, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Why do we need it here?",
-      "hint": "Give a fact about rain or rivers, then explain with 'What this means is …'."
+      "hint": "Give a fact about rain or rivers, then explain with 'What this means is …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "I still don't understand the filters part.",
-      "hint": "Say it again in a different way with 'In other words, …'."
+      "hint": "Say it again in a different way with 'In other words, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1002,6 +1127,96 @@
   "1-1": {
    "objective": "Today you will explain what inflation is to a younger listener, using a comparison and checking they understand.",
    "warmup": "Can you think of something that costs more now than it did a few years ago?",
+   "dialogue": {
+    "scene": "Ten-year-old Yousef is annoyed that his favourite snack now costs more. His older sister Noura explains the idea of inflation.",
+    "p1": [
+     {
+      "s": "Yousef",
+      "t": "This chocolate bar used to cost two riyals. Now it's three! The shop is cheating."
+     },
+     {
+      "s": "Noura",
+      "t": "Not really. It's called inflation. The long and short of it is that prices slowly go up over time."
+     },
+     {
+      "s": "Yousef",
+      "t": "But why does that matter? I've still got my two riyals."
+     },
+     {
+      "s": "Noura",
+      "t": "Think of it as your money getting weaker. Put another way, the same two riyals buy less than before."
+     },
+     {
+      "s": "Yousef",
+      "t": "Weaker? But it's the same coin. It hasn't changed at all."
+     },
+     {
+      "s": "Noura",
+      "t": "The coin is the same, but what it can buy has changed. Remember when two riyals bought a juice as well?"
+     }
+    ],
+    "p2": [
+     {
+      "s": "Yousef",
+      "t": "So my money has less... power?"
+     },
+     {
+      "s": "Noura",
+      "t": "Exactly! Economists call it purchasing power. If prices rise and your pocket money doesn't keep up with them, you can buy less."
+     },
+     {
+      "s": "Yousef",
+      "t": "Then I need Dad to give me more pocket money!"
+     },
+     {
+      "s": "Noura",
+      "t": "Nice try. To put it simply, saving and spending wisely matter even more. Does that make sense?"
+     },
+     {
+      "s": "Yousef",
+      "t": "Sort of. So if I keep my riyals in a box for years, they slowly lose value?"
+     },
+     {
+      "s": "Noura",
+      "t": "Exactly. That's why grown-ups try to save in ways that grow over time, not just under the bed."
+     }
+    ],
+    "focus": "Put another way, the same two riyals buy less than before.",
+    "qs": [
+     "What does Noura compare inflation to?",
+     "What does Yousef think the solution is?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your younger cousin asks why their favourite meal at a restaurant now costs more. Explain inflation in a way a child can understand.",
+    "prompts": [
+     {
+      "q": "Why is everything more expensive now?",
+      "hint": "Give a short explanation with 'The long and short of it is …'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "I don't get it. Money is money!",
+      "hint": "Compare it to something familiar with 'Think of it as …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "So what can I do about it?",
+      "hint": "Explain one idea simply, then check with 'Does that make sense?'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Prices and Money",
+    "points": [
+     "Most central banks try to keep inflation low and stable, often around two percent a year.",
+     "The Saudi riyal has been pegged to the US dollar for decades, which helps keep its value stable.",
+     "In some countries, very high inflation has made prices change from week to week."
+    ],
+    "qs": [
+     "Why do you think stable prices are important for families?",
+     "Should schools teach students how to manage money? Why?"
+    ]
+   },
+   "exit": "Explain inflation to me in two sentences: one short definition and one comparison with 'Think of it as …'.",
    "expressions": [
     {
      "w": "Put another way,",
@@ -1016,10 +1231,10 @@
      "frame": "Think of it as ___."
     },
     {
-     "w": "in a nutshell",
-     "def": "in a very short summary",
-     "ar": "باختصار شديد",
-     "frame": "In a nutshell, inflation means ___."
+     "w": "the long and short of it",
+     "def": "the most basic facts, said briefly",
+     "ar": "خلاصة القول",
+     "frame": "The long and short of it is that ___."
     },
     {
      "w": "purchasing power",
@@ -1040,80 +1255,9 @@
      "frame": "___. Does that make sense?"
     }
    ],
-   "dialogue": {
-    "scene": "Ten-year-old Yousef is annoyed that his favourite snack now costs more. His older sister Noura explains the idea of inflation.",
-    "p1": [
-     {
-      "s": "Yousef",
-      "t": "This chocolate bar used to cost two riyals. Now it's three! The shop is cheating."
-     },
-     {
-      "s": "Noura",
-      "t": "Not really. It's called inflation. In a nutshell, prices slowly go up over time."
-     },
-     {
-      "s": "Yousef",
-      "t": "But why does that matter? I've still got my two riyals."
-     },
-     {
-      "s": "Noura",
-      "t": "Think of it as your money getting weaker. Put another way, the same two riyals buy less than before."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Yousef",
-      "t": "So my money has less... power?"
-     },
-     {
-      "s": "Noura",
-      "t": "Exactly! Economists call it purchasing power. If prices rise and your pocket money doesn't keep up with them, you can buy less."
-     },
-     {
-      "s": "Yousef",
-      "t": "Then I need Dad to give me more pocket money!"
-     },
-     {
-      "s": "Noura",
-      "t": "Nice try. To put it simply, saving and spending wisely matter even more. Does that make sense?"
-     }
-    ],
-    "focus": "Put another way, the same two riyals buy less than before.",
-    "qs": [
-     "What does Noura compare inflation to?",
-     "What does Yousef think the solution is?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your younger cousin asks why their favourite meal at a restaurant now costs more. Explain inflation in a way a child can understand.",
-    "prompts": [
-     {
-      "q": "Why is everything more expensive now?",
-      "hint": "Give a short explanation with 'In a nutshell, …'."
-     },
-     {
-      "q": "I don't get it. Money is money!",
-      "hint": "Compare it to something familiar with 'Think of it as …'."
-     },
-     {
-      "q": "So what can I do about it?",
-      "hint": "Explain one idea simply, then check with 'Does that make sense?'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Prices and Money",
-    "points": [
-     "Most central banks try to keep inflation low and stable, often around two percent a year.",
-     "The Saudi riyal has been pegged to the US dollar for decades, which helps keep its value stable.",
-     "In some countries, very high inflation has made prices change from week to week."
-    ],
-    "qs": [
-     "Why do you think stable prices are important for families?",
-     "Should schools teach students how to manage money? Why?"
-    ]
-   },
-   "exit": "Explain inflation to me in two sentences: one short definition and one comparison with 'Think of it as …'."
+   "recycle": [
+    "in a nutshell"
+   ]
   },
   "1-2": {
    "objective": "Today you will explain in plain language how artificial intelligence learns from data, using an analogy.",
@@ -1174,6 +1318,14 @@
      {
       "s": "Majed",
       "t": "A good analogy would be a child with a picture book. After seeing lots of mint leaves, the child recognises mint."
+     },
+     {
+      "s": "Grandpa",
+      "t": "Like your little cousin learning the names of animals from her picture book?"
+     },
+     {
+      "s": "Majed",
+      "t": "Exactly. Except the machine needs millions of pictures, while my cousin needed only a few."
      }
     ],
     "p2": [
@@ -1192,6 +1344,14 @@
      {
       "s": "Majed",
       "t": "Not exactly. By trial and error, it learns to spot patterns, like leaf shape. To put it simply, it makes a very good guess."
+     },
+     {
+      "s": "Grandpa",
+      "t": "And does it ever get it wrong?"
+     },
+     {
+      "s": "Majed",
+      "t": "Sometimes. If it has never seen a plant before, it might confuse it with a similar one, so always double-check before you eat anything!"
      }
     ],
     "focus": "A good analogy would be a child with a picture book.",
@@ -1205,15 +1365,15 @@
     "prompts": [
      {
       "q": "What is AI, in simple words?",
-      "hint": "Give the basic idea, starting with 'Essentially, …'."
+      "hint": "Give the basic idea, starting with 'Essentially, …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "How can a machine possibly learn?",
-      "hint": "Use a comparison: 'A good analogy would be …'."
+      "hint": "Use a comparison: 'A good analogy would be …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Can it make mistakes?",
-      "hint": "Explain 'trial and error' or 'spot patterns' and say it again with 'That is to say, …'."
+      "hint": "Explain 'trial and error' or 'spot patterns' and say it again with 'That is to say, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1290,6 +1450,14 @@
      {
       "s": "Mona",
       "t": "The words are clear, but the feeling is stronger in Arabic. In other words, it isn't just advice; it's real comfort."
+     },
+     {
+      "s": "Lucy",
+      "t": "So when people say it to a friend, it's more like a hug than a lesson?"
+     },
+     {
+      "s": "Mona",
+      "t": "That's a lovely way to put it. We say it when someone's waiting for exam results or going through a hard time."
      }
     ],
     "p2": [
@@ -1308,6 +1476,14 @@
      {
       "s": "Mona",
       "t": "Exactly. What I'm getting at is that the gist survives, but some of the warmth doesn't."
+     },
+     {
+      "s": "Lucy",
+      "t": "Then I'll learn the Arabic version and use it properly."
+     },
+     {
+      "s": "Mona",
+      "t": "Good idea. The students will love it, especially if you say it at the right moment."
      }
     ],
     "focus": "What I'm getting at is that the gist survives, but some of the warmth doesn't.",
@@ -1321,15 +1497,15 @@
     "prompts": [
      {
       "q": "What does that expression mean in English?",
-      "hint": "Give a translation with 'It roughly translates as …'."
+      "hint": "Give a translation with 'It roughly translates as …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Is there an English phrase that means the same?",
-      "hint": "Say if there is one, or use 'There's no direct equivalent …'."
+      "hint": "Say if there is one, or use 'There's no direct equivalent …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Why is it so hard to translate?",
-      "hint": "Explain your main point with 'What I'm getting at is …'."
+      "hint": "Explain your main point with 'What I'm getting at is …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1406,6 +1582,14 @@
      {
       "s": "Ahmed",
       "t": "Usually only in experiments. The idea behind it is to compare it with the real medicine."
+     },
+     {
+      "s": "Khalid",
+      "t": "So in the experiment, nobody knows whether they've got the real pill or the fake one?"
+     },
+     {
+      "s": "Ahmed",
+      "t": "Exactly. Otherwise, people's expectations would affect the results, and the comparison wouldn't be fair."
      }
     ],
     "p2": [
@@ -1424,6 +1608,14 @@
      {
       "s": "Ahmed",
       "t": "No. Let me rephrase that. The pill does nothing; your expectations do. It's a bit like mind over matter."
+     },
+     {
+      "s": "Khalid",
+      "t": "That's fascinating. So should doctors give fake pills to make people feel better?"
+     },
+     {
+      "s": "Ahmed",
+      "t": "No, that wouldn't be honest. But it does show how much our thoughts can affect our bodies."
      }
     ],
     "focus": "In layman's terms, believing you'll get better can sometimes help your body a little.",
@@ -1437,15 +1629,15 @@
     "prompts": [
      {
       "q": "What does 'placebo' mean?",
-      "hint": "Define it with '… refers to …'."
+      "hint": "Define it with '… refers to …'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "So fake medicine works as well as real medicine?",
-      "hint": "Correct the idea with 'Let me rephrase that.' and explain again."
+      "hint": "Correct the idea with 'Let me rephrase that.' and explain again. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Can you say it without science words?",
-      "hint": "Explain it with 'In layman's terms, …'."
+      "hint": "Explain it with 'In layman's terms, …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1492,16 +1684,16 @@
      "frame": "The system checks ___ in real time."
     },
     {
-     "w": "To put it simply,",
-     "def": "used before explaining something in an easier way",
-     "ar": "ببساطة",
-     "frame": "To put it simply, the train ___."
+     "w": "in plain English",
+     "def": "in simple words that are easy to understand",
+     "ar": "بكلام بسيط واضح",
+     "frame": "In plain English, ___ means …"
     },
     {
-     "w": "What this means is",
-     "def": "used to explain the meaning or result of what you just said",
-     "ar": "ما يعنيه هذا هو",
-     "frame": "The trains are automatic. What this means is ___."
+     "w": "The upshot is",
+     "def": "the final result is",
+     "ar": "والنتيجة هي",
+     "frame": "The upshot is that ___."
     }
    ],
    "dialogue": {
@@ -1531,6 +1723,14 @@
      },
      {
       "s": "Asma",
+      "t": "So, in plain English, the computer does the driving and people watch the screens?"
+     },
+     {
+      "s": "Jana",
+      "t": "Exactly. The upshot is that trains can arrive every few minutes, because computers react faster than human drivers."
+     },
+     {
+      "s": "Asma",
       "t": "And what if something goes wrong?"
      },
      {
@@ -1540,6 +1740,14 @@
      {
       "s": "Asma",
       "t": "Right, so the computer drives, but humans supervise. That's much clearer now."
+     },
+     {
+      "s": "Asma",
+      "t": "One last question: why did Riyadh choose driverless trains in the first place?"
+     },
+     {
+      "s": "Jana",
+      "t": "Mainly for safety and frequency. Bear in mind that it's one of the largest driverless networks in the world."
      }
     ],
     "focus": "To clarify, people are always in charge, but from the control centre, not from a cab at the front.",
@@ -1553,15 +1761,15 @@
     "prompts": [
      {
       "q": "Can you give me the main idea first?",
-      "hint": "Start with 'To put it simply, …' and then say you'll 'break it down'."
+      "hint": "Start with 'To put it simply, …' and then say you'll 'break it down'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Sorry, I'm lost. Can you explain the second step again?",
-      "hint": "Rephrase with 'To clarify, …' or 'In other words, …'."
+      "hint": "Rephrase with 'To clarify, …' or 'In other words, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "Is there anything people usually misunderstand about it?",
-      "hint": "Correct a common mistake, beginning with 'Bear in mind that …'."
+      "hint": "Correct a common mistake, beginning with 'Bear in mind that …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1577,11 +1785,109 @@
      "What other jobs might be done without humans in the future?"
     ]
    },
-   "exit": "Explain one process you know well in three short steps, using 'Let me break it down' and 'To clarify, …'."
+   "exit": "Explain one process you know well in three short steps, using 'Let me break it down' and 'To clarify, …'.",
+   "recycle": [
+    "To put it simply,",
+    "What this means is"
+   ]
   },
   "2-0": {
    "objective": "Today you will discuss what causes land to turn into desert and what effects this has.",
    "warmup": "Have you noticed more trees being planted in your city recently? Where?",
+   "dialogue": {
+    "scene": "Rakan and Liam are preparing a presentation on desertification for their geography class.",
+    "p1": [
+     {
+      "s": "Liam",
+      "t": "So what actually causes desertification? Is it just the hot weather?"
+     },
+     {
+      "s": "Rakan",
+      "t": "Not only that. In many areas, it stems from human activity, especially overgrazing and cutting down trees."
+     },
+     {
+      "s": "Liam",
+      "t": "How does overgrazing make things worse?"
+     },
+     {
+      "s": "Rakan",
+      "t": "Animals eat all the plants, so the soil is left bare. Bare soil can give rise to more sand and dust storms."
+     },
+     {
+      "s": "Liam",
+      "t": "I didn't realise dust storms were partly caused by people."
+     },
+     {
+      "s": "Rakan",
+      "t": "Not all of them, of course, but bare ground makes them more frequent and much worse."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Liam",
+      "t": "And I suppose that has a domino effect on wildlife and farming."
+     },
+     {
+      "s": "Rakan",
+      "t": "Exactly. Fewer plants mean fewer animals and poorer harvests. This has led to big plans for planting native trees."
+     },
+     {
+      "s": "Liam",
+      "t": "Do you think we can really reverse the trend?"
+     },
+     {
+      "s": "Rakan",
+      "t": "To some extent, yes, if we choose plants that need little water and protect the areas we plant."
+     },
+     {
+      "s": "Liam",
+      "t": "Which plants would work best here?"
+     },
+     {
+      "s": "Rakan",
+      "t": "Native trees like ghaf and acacia. Their deep roots find water underground, so they survive long, dry summers."
+     },
+     {
+      "s": "Liam",
+      "t": "Then let's end our presentation with that: a problem people caused, and a solution people can lead."
+     }
+    ],
+    "focus": "In many areas, it stems from human activity, especially overgrazing and cutting down trees.",
+    "qs": [
+     "What human activities cause desertification, according to Rakan?",
+     "How does Rakan think we can reverse the trend?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are a guest on a school podcast about the environment in Saudi Arabia. The host asks you about land turning into desert.",
+    "prompts": [
+     {
+      "q": "What are the main causes of desertification?",
+      "hint": "Name two causes, using 'stem from'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What effects does it have on people and animals?",
+      "hint": "Use 'give rise to' or 'a domino effect' to link causes to results. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Is there any hope?",
+      "hint": "Mention a solution and say whether it could 'reverse the trend'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "The Saudi Green Initiative",
+    "points": [
+     "The Saudi Green Initiative aims to plant billions of trees across the Kingdom over the coming decades.",
+     "Native trees such as the ghaf and the acacia need very little water.",
+     "Countries in Africa's Sahel region are working on the 'Great Green Wall' to stop the desert spreading."
+    ],
+    "qs": [
+     "Why is it better to plant native trees than imported ones?",
+     "What could your school do to support greening projects?"
+    ]
+   },
+   "exit": "Tell me one cause and one effect of desertification in two sentences, using 'stem from' and 'give rise to'.",
    "expressions": [
     {
      "w": "stem from",
@@ -1602,10 +1908,10 @@
      "frame": "Rainfall has decreased. This has led to ___."
     },
     {
-     "w": "a knock-on effect",
-     "def": "an indirect result that causes further results",
-     "ar": "أثر متسلسل / تأثير غير مباشر",
-     "frame": "Losing plants has a knock-on effect on ___."
+     "w": "a domino effect",
+     "def": "a situation where one event causes a series of others",
+     "ar": "أثر الدومينو",
+     "frame": "Losing plants has a domino effect on ___."
     },
     {
      "w": "overgrazing",
@@ -1620,80 +1926,9 @@
      "frame": "We could reverse the trend by ___."
     }
    ],
-   "dialogue": {
-    "scene": "Rakan and Liam are preparing a presentation on desertification for their geography class.",
-    "p1": [
-     {
-      "s": "Liam",
-      "t": "So what actually causes desertification? Is it just the hot weather?"
-     },
-     {
-      "s": "Rakan",
-      "t": "Not only that. In many areas, it stems from human activity, especially overgrazing and cutting down trees."
-     },
-     {
-      "s": "Liam",
-      "t": "How does overgrazing make things worse?"
-     },
-     {
-      "s": "Rakan",
-      "t": "Animals eat all the plants, so the soil is left bare. Bare soil can give rise to more sand and dust storms."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Liam",
-      "t": "And I suppose that has a knock-on effect on wildlife and farming."
-     },
-     {
-      "s": "Rakan",
-      "t": "Exactly. Fewer plants mean fewer animals and poorer harvests. This has led to big plans for planting native trees."
-     },
-     {
-      "s": "Liam",
-      "t": "Do you think we can really reverse the trend?"
-     },
-     {
-      "s": "Rakan",
-      "t": "To some extent, yes, if we choose plants that need little water and protect the areas we plant."
-     }
-    ],
-    "focus": "In many areas, it stems from human activity, especially overgrazing and cutting down trees.",
-    "qs": [
-     "What human activities cause desertification, according to Rakan?",
-     "How does Rakan think we can reverse the trend?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are a guest on a school podcast about the environment in Saudi Arabia. The host asks you about land turning into desert.",
-    "prompts": [
-     {
-      "q": "What are the main causes of desertification?",
-      "hint": "Name two causes, using 'stem from'."
-     },
-     {
-      "q": "What effects does it have on people and animals?",
-      "hint": "Use 'give rise to' or 'a knock-on effect' to link causes to results."
-     },
-     {
-      "q": "Is there any hope?",
-      "hint": "Mention a solution and say whether it could 'reverse the trend'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "The Saudi Green Initiative",
-    "points": [
-     "The Saudi Green Initiative aims to plant billions of trees across the Kingdom over the coming decades.",
-     "Native trees such as the ghaf and the acacia need very little water.",
-     "Countries in Africa's Sahel region are working on the 'Great Green Wall' to stop the desert spreading."
-    ],
-    "qs": [
-     "Why is it better to plant native trees than imported ones?",
-     "What could your school do to support greening projects?"
-    ]
-   },
-   "exit": "Tell me one cause and one effect of desertification in two sentences, using 'stem from' and 'give rise to'."
+   "recycle": [
+    "a knock-on effect"
+   ]
   },
   "2-1": {
    "objective": "Today you will explain the causes and consequences of rapid urban growth in big cities.",
@@ -1754,6 +1989,14 @@
      {
       "s": "Sultan",
       "t": "And more cars result in terrible traffic congestion, especially in the morning."
+     },
+     {
+      "s": "Mansour",
+      "t": "My dad leaves home at six just to avoid the worst of it."
+     },
+     {
+      "s": "Sultan",
+      "t": "Lots of people do. The trouble is, if everyone leaves early, six o'clock becomes the new rush hour."
      }
     ],
     "p2": [
@@ -1772,6 +2015,14 @@
      {
       "s": "Sultan",
       "t": "Up to a point. People will only leave their cars if the stations are close to their homes."
+     },
+     {
+      "s": "Mansour",
+      "t": "So building more homes near the stations could matter as much as the trains themselves."
+     },
+     {
+      "s": "Sultan",
+      "t": "Exactly. Many cities have planned new neighbourhoods around their stations, and it has worked well."
      }
     ],
     "focus": "Much of the city's growth can be attributed to new jobs and universities.",
@@ -1785,15 +2036,15 @@
     "prompts": [
      {
       "q": "Why do you think your city has grown so much?",
-      "hint": "Give two reasons with 'can be attributed to'."
+      "hint": "Give two reasons with 'can be attributed to'. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What problems has this growth caused?",
-      "hint": "Link causes and results with 'result in' or 'As a consequence, …'."
+      "hint": "Link causes and results with 'result in' or 'As a consequence, …'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What should the city do next?",
-      "hint": "Suggest one solution and say what it would result in."
+      "hint": "Suggest one solution and say what it would result in. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -1814,6 +2065,100 @@
   "2-2": {
    "objective": "Today you will discuss the causes and effects of food waste, including during celebrations.",
    "warmup": "What usually happens to the leftover food after a big family meal in your home?",
+   "dialogue": {
+    "scene": "During Ramadan, Lama and her brother Turki are clearing the table after a big family iftar.",
+    "p1": [
+     {
+      "s": "Lama",
+      "t": "Look at all these leftovers. Half of this food is going to go uneaten."
+     },
+     {
+      "s": "Turki",
+      "t": "Every year it's the same. I think it's largely due to cooking far too much."
+     },
+     {
+      "s": "Lama",
+      "t": "Mum always says it's better to have too much than to run out in front of guests."
+     },
+     {
+      "s": "Lama",
+      "t": "I agree. It stems from the wish to be generous; nobody wants a guest to go hungry."
+     },
+     {
+      "s": "Turki",
+      "t": "That's a lovely value. But throwing food away contributes to so many problems."
+     },
+     {
+      "s": "Lama",
+      "t": "Exactly. Our hospitality is rooted in tradition, so cooking less can feel almost rude."
+     },
+     {
+      "s": "Turki",
+      "t": "But nobody thinks a host is mean for serving what guests can actually eat."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Lama",
+      "t": "Like what? Apart from the cost, I mean."
+     },
+     {
+      "s": "Turki",
+      "t": "Owing to the gases that rotting food produces, waste even contributes to climate change."
+     },
+     {
+      "s": "Lama",
+      "t": "So the rising food bills are a direct consequence of our habits, too."
+     },
+     {
+      "s": "Turki",
+      "t": "Exactly. Let's cook a bit less tomorrow and give what's left to a food bank."
+     },
+     {
+      "s": "Lama",
+      "t": "And we could freeze some dishes in portions for suhoor."
+     },
+     {
+      "s": "Turki",
+      "t": "Good idea. Planning the menu with Mum beforehand would help, too."
+     }
+    ],
+    "focus": "I think it's largely due to cooking far too much.",
+    "qs": [
+     "Why do families cook too much, according to Lama?",
+     "What do Turki and Lama decide to do?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your school is starting a campaign against food waste during Ramadan. You are interviewed for the school newsletter.",
+    "prompts": [
+     {
+      "q": "Why is so much food wasted during celebrations?",
+      "hint": "Give a cause with 'be largely due to' or 'stem from'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Why does it matter if some food is thrown away?",
+      "hint": "Explain an effect with 'contribute to' or 'a direct consequence of'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "What should families do differently?",
+      "hint": "Suggest one change and explain what it would achieve. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Food Waste and the Climate",
+    "points": [
+     "Around the world, a large share of the food that is produced is lost or wasted.",
+     "Food that rots in landfill releases methane, a gas that traps far more heat than carbon dioxide.",
+     "Some supermarkets in Europe sell 'ugly' fruit and vegetables at lower prices so they don't go to waste."
+    ],
+    "qs": [
+     "Would you buy 'ugly' fruit and vegetables? Why or why not?",
+     "How can families stay generous without wasting food?"
+    ]
+   },
+   "exit": "Tell me in two sentences why food is wasted and what effect this has, using 'be largely due to' and 'contribute to'.",
    "expressions": [
     {
      "w": "be largely due to",
@@ -1834,10 +2179,10 @@
      "frame": "Throwing away food contributes to ___."
     },
     {
-     "w": "go to waste",
-     "def": "to be thrown away or not used",
-     "ar": "يذهب هدراً",
-     "frame": "It's a shame when ___ goes to waste."
+     "w": "go uneaten",
+     "def": "to be left on the plate and not eaten",
+     "ar": "يبقى دون أن يؤكل",
+     "frame": "It's a shame when ___ goes uneaten."
     },
     {
      "w": "a direct consequence of",
@@ -1846,90 +2191,110 @@
      "frame": "___ is a direct consequence of ___."
     },
     {
-     "w": "stem from",
-     "def": "to be caused by something",
-     "ar": "ينبع من / ينتج عن",
-     "frame": "Our habits stem from ___."
+     "w": "be rooted in",
+     "def": "to have its origin in something deep or old",
+     "ar": "متجذّر في",
+     "frame": "Our habit of ___ is rooted in ___."
     }
    ],
-   "dialogue": {
-    "scene": "During Ramadan, Lama and her brother Turki are clearing the table after a big family iftar.",
-    "p1": [
-     {
-      "s": "Lama",
-      "t": "Look at all these leftovers. Half of this food is going to go to waste."
-     },
-     {
-      "s": "Turki",
-      "t": "Every year it's the same. I think it's largely due to cooking far too much."
-     },
-     {
-      "s": "Lama",
-      "t": "I agree. It stems from the wish to be generous; nobody wants a guest to go hungry."
-     },
-     {
-      "s": "Turki",
-      "t": "That's a lovely value. But throwing food away contributes to so many problems."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Lama",
-      "t": "Like what? Apart from the cost, I mean."
-     },
-     {
-      "s": "Turki",
-      "t": "Owing to the gases that rotting food produces, waste even contributes to climate change."
-     },
-     {
-      "s": "Lama",
-      "t": "So the rising food bills are a direct consequence of our habits, too."
-     },
-     {
-      "s": "Turki",
-      "t": "Exactly. Let's cook a bit less tomorrow and give what's left to a food bank."
-     }
-    ],
-    "focus": "I think it's largely due to cooking far too much.",
-    "qs": [
-     "Why do families cook too much, according to Lama?",
-     "What do Turki and Lama decide to do?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your school is starting a campaign against food waste during Ramadan. You are interviewed for the school newsletter.",
-    "prompts": [
-     {
-      "q": "Why is so much food wasted during celebrations?",
-      "hint": "Give a cause with 'be largely due to' or 'stem from'."
-     },
-     {
-      "q": "Why does it matter if some food is thrown away?",
-      "hint": "Explain an effect with 'contribute to' or 'a direct consequence of'."
-     },
-     {
-      "q": "What should families do differently?",
-      "hint": "Suggest one change and explain what it would achieve."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Food Waste and the Climate",
-    "points": [
-     "Around the world, a large share of the food that is produced is lost or wasted.",
-     "Food that rots in landfill releases methane, a gas that traps far more heat than carbon dioxide.",
-     "Some supermarkets in Europe sell 'ugly' fruit and vegetables at lower prices so they don't go to waste."
-    ],
-    "qs": [
-     "Would you buy 'ugly' fruit and vegetables? Why or why not?",
-     "How can families stay generous without wasting food?"
-    ]
-   },
-   "exit": "Tell me in two sentences why food is wasted and what effect this has, using 'be largely due to' and 'contribute to'."
+   "recycle": [
+    "go to waste",
+    "stem from"
+   ]
   },
   "2-3": {
    "objective": "Today you will describe a chain of causes and effects linking plastic pollution to damage in the oceans.",
    "warmup": "Have you ever seen rubbish on a beach? How did it make you feel?",
+   "dialogue": {
+    "scene": "On a school trip to a beach near Yanbu, marine biology student Dana explains plastic pollution to a group of students. Ziyad asks questions.",
+    "p1": [
+     {
+      "s": "Ziyad",
+      "t": "Why is there so much plastic on this beach? Nobody lives near here."
+     },
+     {
+      "s": "Dana",
+      "t": "Most of it comes from elsewhere. Plastic from cities and ships often ends up in the sea, and currents carry it here."
+     },
+     {
+      "s": "Ziyad",
+      "t": "And is it really that harmful? It's just rubbish."
+     },
+     {
+      "s": "Dana",
+      "t": "It poses a threat to almost all sea life. Turtles mistake plastic bags for jellyfish and swallow them."
+     },
+     {
+      "s": "Ziyad",
+      "t": "That's awful. Can't they tell the difference?"
+     },
+     {
+      "s": "Dana",
+      "t": "Not easily. In the water, a floating bag moves just like a jellyfish, and turtles have eaten jellyfish for millions of years."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ziyad",
+      "t": "What about the coral reefs? Are they affected, too?"
+     },
+     {
+      "s": "Dana",
+      "t": "Yes. Plastic can carry disease to coral, and stress from pollution and warmer water can trigger bleaching."
+     },
+     {
+      "s": "Ziyad",
+      "t": "So damaged reefs mean fewer fish?"
+     },
+     {
+      "s": "Dana",
+      "t": "Exactly, and that sets off a chain reaction: fishermen, in turn, lose their income. Some damage may be irreversible."
+     },
+     {
+      "s": "Ziyad",
+      "t": "So what can we actually do, apart from picking up rubbish today?"
+     },
+     {
+      "s": "Dana",
+      "t": "Use fewer single-use bottles and support clean-up groups. Small habits, repeated by millions, really add up."
+     }
+    ],
+    "focus": "It poses a threat to almost all sea life.",
+    "qs": [
+     "Why does plastic end up on a beach where nobody lives?",
+     "How does reef damage affect fishermen?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are leading a beach clean-up with younger students. One of them asks you why it matters. Explain the chain of effects.",
+    "prompts": [
+     {
+      "q": "Where does all this plastic come from?",
+      "hint": "Explain how it 'ends up in' the sea. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Why is plastic dangerous for animals?",
+      "hint": "Use 'pose a threat to' and give an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Does it affect people, too?",
+      "hint": "Describe a chain using 'in turn' or 'a chain reaction'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "The Problem with Plastic",
+    "points": [
+     "Plastic does not rot away; it slowly breaks into tiny pieces called microplastics.",
+     "Microplastics have been found in seawater, in fish and even in sea salt.",
+     "Many countries have banned or charged for single-use plastic bags to reduce pollution."
+    ],
+    "qs": [
+     "Should single-use plastic be banned completely? Why or why not?",
+     "What is one plastic item you could stop using?"
+    ]
+   },
+   "exit": "Describe a chain of three effects of plastic pollution in two sentences, using 'in turn'.",
    "expressions": [
     {
      "w": "end up in",
@@ -1956,10 +2321,10 @@
      "frame": "Fish eat plastic, and in turn, ___."
     },
     {
-     "w": "a knock-on effect",
-     "def": "an indirect result that causes further results",
-     "ar": "أثر متسلسل / تأثير غير مباشر",
-     "frame": "Damage to reefs has a knock-on effect on ___."
+     "w": "a chain reaction",
+     "def": "a series of events, each causing the next",
+     "ar": "سلسلة تفاعلات متتابعة",
+     "frame": "___ can set off a chain reaction."
     },
     {
      "w": "irreversible damage",
@@ -1968,90 +2333,109 @@
      "frame": "We must act before ___ causes irreversible damage."
     }
    ],
-   "dialogue": {
-    "scene": "On a school trip to a beach near Yanbu, marine biology student Dana explains plastic pollution to a group of students. Ziyad asks questions.",
-    "p1": [
-     {
-      "s": "Ziyad",
-      "t": "Why is there so much plastic on this beach? Nobody lives near here."
-     },
-     {
-      "s": "Dana",
-      "t": "Most of it comes from elsewhere. Plastic from cities and ships often ends up in the sea, and currents carry it here."
-     },
-     {
-      "s": "Ziyad",
-      "t": "And is it really that harmful? It's just rubbish."
-     },
-     {
-      "s": "Dana",
-      "t": "It poses a threat to almost all sea life. Turtles mistake plastic bags for jellyfish and swallow them."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Ziyad",
-      "t": "What about the coral reefs? Are they affected, too?"
-     },
-     {
-      "s": "Dana",
-      "t": "Yes. Plastic can carry disease to coral, and stress from pollution and warmer water can trigger bleaching."
-     },
-     {
-      "s": "Ziyad",
-      "t": "So damaged reefs mean fewer fish?"
-     },
-     {
-      "s": "Dana",
-      "t": "Exactly, and that has a knock-on effect on fishermen, who in turn lose their income. Some damage may be irreversible."
-     }
-    ],
-    "focus": "It poses a threat to almost all sea life.",
-    "qs": [
-     "Why does plastic end up on a beach where nobody lives?",
-     "How does reef damage affect fishermen?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are leading a beach clean-up with younger students. One of them asks you why it matters. Explain the chain of effects.",
-    "prompts": [
-     {
-      "q": "Where does all this plastic come from?",
-      "hint": "Explain how it 'ends up in' the sea."
-     },
-     {
-      "q": "Why is plastic dangerous for animals?",
-      "hint": "Use 'pose a threat to' and give an example."
-     },
-     {
-      "q": "Does it affect people, too?",
-      "hint": "Describe a chain using 'in turn' or 'a knock-on effect'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "The Problem with Plastic",
-    "points": [
-     "Plastic does not rot away; it slowly breaks into tiny pieces called microplastics.",
-     "Microplastics have been found in seawater, in fish and even in sea salt.",
-     "Many countries have banned or charged for single-use plastic bags to reduce pollution."
-    ],
-    "qs": [
-     "Should single-use plastic be banned completely? Why or why not?",
-     "What is one plastic item you could stop using?"
-    ]
-   },
-   "exit": "Describe a chain of three effects of plastic pollution in two sentences, using 'in turn'."
+   "recycle": [
+    "a knock-on effect"
+   ]
   },
   "2-4": {
    "objective": "Today you will analyse why false information spreads online and what consequences it has.",
    "warmup": "Have you ever believed something online that turned out to be false?",
+   "dialogue": {
+    "scene": "Hessa and Amal are working on a media-literacy project. They are looking at how a fake rumour about a brand of bottled water spread in their town's WhatsApp groups (an invented example for the project).",
+    "p1": [
+     {
+      "s": "Hessa",
+      "t": "In our example, the fake message saying a popular brand of bottled water was unsafe was doing the rounds in less than an hour."
+     },
+     {
+      "s": "Amal",
+      "t": "Because nobody checked it. Wanting to be the first to share is at the root of the problem."
+     },
+     {
+      "s": "Hessa",
+      "t": "And exciting news fuels the sharing. People forward it before they think."
+     },
+     {
+      "s": "Amal",
+      "t": "In the example, it gave rise to real confusion. Some families threw away bottles that were perfectly safe."
+     },
+     {
+      "s": "Hessa",
+      "t": "So one message managed to sow confusion across a whole town."
+     },
+     {
+      "s": "Amal",
+      "t": "And it only took a few minutes. The correction, by comparison, took two days to reach the same people."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Hessa",
+      "t": "The worst part is the long-term effect. Rumours like this erode trust in official announcements."
+     },
+     {
+      "s": "Amal",
+      "t": "And when people stop trusting official sources, they believe rumours even more."
+     },
+     {
+      "s": "Hessa",
+      "t": "So it's a vicious circle: less trust leads to more rumours, and more rumours lead to less trust."
+     },
+     {
+      "s": "Amal",
+      "t": "Then our solution should be simple: check the source before you share."
+     },
+     {
+      "s": "Hessa",
+      "t": "Simple, but maybe not enough. Should we add a short checklist people can remember?"
+     },
+     {
+      "s": "Amal",
+      "t": "Yes: who sent it, where's the evidence, and would an official source say the same?"
+     }
+    ],
+    "focus": "Wanting to be the first to share is at the root of the problem.",
+    "qs": [
+     "What was the real-life effect of the fake message in their example?",
+     "Why do Hessa and Amal call it a vicious circle?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your class is making a short video about fake news. You are explaining to the camera why false information spreads and why it's harmful.",
+    "prompts": [
+     {
+      "q": "Why do false stories spread so fast?",
+      "hint": "Give a root cause with 'be at the root of' and mention how messages 'do the rounds'. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What harm can one fake message do?",
+      "hint": "Use 'give rise to' or 'erode trust' with an example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Why does the problem keep getting worse?",
+      "hint": "Explain the 'vicious circle' step by step. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Checking the Facts",
+    "points": [
+     "Around the world, fact-checking websites investigate viral claims and explain whether they are true.",
+     "Many experts advise checking who published a story and whether other reliable sources report it.",
+     "Saudi government bodies often use their official accounts to deny false rumours quickly."
+    ],
+    "qs": [
+     "What do you usually do before sharing a surprising message?",
+     "Should social media companies be responsible for removing false information?"
+    ]
+   },
+   "exit": "Explain in two sentences why false information spreads and one effect it has, using 'be at the root of' and 'erode trust'.",
    "expressions": [
     {
-     "w": "go viral",
-     "def": "to spread very quickly to many people online",
-     "ar": "ينتشر بسرعة كبيرة على الإنترنت",
-     "frame": "A post goes viral when ___."
+     "w": "do the rounds",
+     "def": "to be passed from person to person",
+     "ar": "يتداوله الناس",
+     "frame": "A rumour about ___ is doing the rounds."
     },
     {
      "w": "fuel",
@@ -2078,86 +2462,16 @@
      "frame": "It's a vicious circle: ___."
     },
     {
-     "w": "give rise to",
-     "def": "to cause something to happen or exist",
-     "ar": "يؤدي إلى / يتسبب في",
-     "frame": "Rumours can give rise to ___."
+     "w": "sow confusion",
+     "def": "to cause people to feel unsure about what is true",
+     "ar": "يزرع البلبلة",
+     "frame": "Fake news can sow confusion about ___."
     }
    ],
-   "dialogue": {
-    "scene": "Hessa and Amal are working on a media-literacy project. They are looking at how a fake rumour about a brand of bottled water spread in their town's WhatsApp groups (an invented example for the project).",
-    "p1": [
-     {
-      "s": "Hessa",
-      "t": "In our example, the fake message saying a popular brand of bottled water was unsafe went viral in less than an hour."
-     },
-     {
-      "s": "Amal",
-      "t": "Because nobody checked it. Wanting to be the first to share is at the root of the problem."
-     },
-     {
-      "s": "Hessa",
-      "t": "And exciting news fuels the sharing. People forward it before they think."
-     },
-     {
-      "s": "Amal",
-      "t": "In the example, it gave rise to real confusion. Some families threw away bottles that were perfectly safe."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Hessa",
-      "t": "The worst part is the long-term effect. Rumours like this erode trust in official announcements."
-     },
-     {
-      "s": "Amal",
-      "t": "And when people stop trusting official sources, they believe rumours even more."
-     },
-     {
-      "s": "Hessa",
-      "t": "So it's a vicious circle: less trust leads to more rumours, and more rumours lead to less trust."
-     },
-     {
-      "s": "Amal",
-      "t": "Then our solution should be simple: check the source before you share."
-     }
-    ],
-    "focus": "Wanting to be the first to share is at the root of the problem.",
-    "qs": [
-     "What was the real-life effect of the fake message in their example?",
-     "Why do Hessa and Amal call it a vicious circle?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your class is making a short video about fake news. You are explaining to the camera why false information spreads and why it's harmful.",
-    "prompts": [
-     {
-      "q": "Why do false stories spread so fast?",
-      "hint": "Give a root cause with 'be at the root of' and mention how things 'go viral'."
-     },
-     {
-      "q": "What harm can one fake message do?",
-      "hint": "Use 'give rise to' or 'erode trust' with an example."
-     },
-     {
-      "q": "Why does the problem keep getting worse?",
-      "hint": "Explain the 'vicious circle' step by step."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Checking the Facts",
-    "points": [
-     "Around the world, fact-checking websites investigate viral claims and explain whether they are true.",
-     "Many experts advise checking who published a story and whether other reliable sources report it.",
-     "Saudi government bodies often use their official accounts to deny false rumours quickly."
-    ],
-    "qs": [
-     "What do you usually do before sharing a surprising message?",
-     "Should social media companies be responsible for removing false information?"
-    ]
-   },
-   "exit": "Explain in two sentences why false information spreads and one effect it has, using 'be at the root of' and 'erode trust'."
+   "recycle": [
+    "go viral",
+    "give rise to"
+   ]
   },
   "2-5": {
    "objective": "Today you will present the causes, effects and possible solutions of a global issue on a panel and answer follow-up questions.",
@@ -2188,16 +2502,16 @@
      "frame": "To tackle the problem at its source, we should ___."
     },
     {
-     "w": "result in",
-     "def": "to cause a particular result",
-     "ar": "يؤدي إلى",
-     "frame": "Sitting all day can result in ___."
+     "w": "take a toll on",
+     "def": "to have a bad effect on something over time",
+     "ar": "يُلحق ضرراً تدريجياً بـ",
+     "frame": "Too much ___ takes a toll on ___."
     },
     {
-     "w": "contribute to",
-     "def": "to be one of the causes of something",
-     "ar": "يسهم في",
-     "frame": "Long journeys by car contribute to ___."
+     "w": "lay the groundwork for",
+     "def": "to prepare the basis for something in the future",
+     "ar": "يضع الأساس لـ",
+     "frame": "Small changes now could lay the groundwork for ___."
     }
    ],
    "dialogue": {
@@ -2218,6 +2532,14 @@
      {
       "s": "Sami",
       "t": "Inactivity has far-reaching consequences. It can result in obesity and diabetes, and it contributes to stress and poor sleep."
+     },
+     {
+      "s": "Moderator",
+      "t": "Are those effects already visible?"
+     },
+     {
+      "s": "Sami",
+      "t": "Sadly, yes. Long hours of sitting take a toll on young people's backs and eyes, not just their weight."
      }
     ],
     "p2": [
@@ -2232,6 +2554,18 @@
      {
       "s": "Sami",
       "t": "Admittedly, that costs money. That said, treating diabetes later costs far more."
+     },
+     {
+      "s": "Nawaf",
+      "t": "And small changes now could lay the groundwork for bigger ones, like car-free streets around schools."
+     },
+     {
+      "s": "Moderator",
+      "t": "An interesting idea. Would parents really accept that?"
+     },
+     {
+      "s": "Nawaf",
+      "t": "Many would, if the walking routes were shaded and safe."
      },
      {
       "s": "Moderator",
@@ -2249,15 +2583,15 @@
     "prompts": [
      {
       "q": "What are the underlying causes of the issue you chose?",
-      "hint": "Name at least two causes and say which is 'the main driving force behind' it."
+      "hint": "Name at least two causes and say which is 'the main driving force behind' it. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "What are its consequences, now and in the future?",
-      "hint": "Use 'far-reaching consequences', 'result in' or 'contribute to'."
+      "hint": "Use 'far-reaching consequences', 'result in' or 'contribute to'. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "What is the most effective solution?",
-      "hint": "Suggest how to 'tackle the problem at its source' and admit one difficulty."
+      "hint": "Suggest how to 'tackle the problem at its source' and admit one difficulty. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
@@ -2273,11 +2607,105 @@
      "Can young people really influence global problems? How?"
     ]
    },
-   "exit": "In two or three sentences, give me one global issue, its main cause and one far-reaching consequence."
+   "exit": "In two or three sentences, give me one global issue, its main cause and one far-reaching consequence.",
+   "recycle": [
+    "result in",
+    "contribute to"
+   ]
   },
   "3-0": {
    "objective": "Today you will answer IELTS Part 1 questions about your home town naturally, with idiomatic language and extended answers.",
    "warmup": "If a visitor had only one day in your town, where would you take them?",
+   "dialogue": {
+    "scene": "Abdulaziz is doing an IELTS Speaking practice test. The examiner is asking Part 1 questions about his home town, Buraidah.",
+    "p1": [
+     {
+      "s": "Examiner",
+      "t": "Let's talk about your home town. Where is it, and what's it like?"
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "I'm from Buraidah, in Qassim. It's famous for its dates, and my house is a stone's throw from the biggest date market."
+     },
+     {
+      "s": "Examiner",
+      "t": "Do you enjoy living there?"
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "Mostly, yes. I'm not much of a big-city person, so I prefer it to the hustle and bustle of Riyadh."
+     },
+     {
+      "s": "Examiner",
+      "t": "Why don't you like big cities?"
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "It's not the cities themselves; it's the traffic. In Riyadh, a short trip can take an hour, whereas at home everything is ten minutes away."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Examiner",
+      "t": "Has your town changed much in recent years?"
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "Quite a lot. There are new cafés and parks now. I wasn't keen on the changes at first, but they've grown on me."
+     },
+     {
+      "s": "Examiner",
+      "t": "Is there anywhere you like to go to relax?"
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "Every so often, we drive to a farm in the back of beyond. It's peaceful, and the stars are incredible."
+     },
+     {
+      "s": "Examiner",
+      "t": "Do you think you'll live there in the future?"
+     },
+     {
+      "s": "Abdulaziz",
+      "t": "Probably, although I'd like to study abroad first. Buraidah will always be home, but I want to see more of the world."
+     }
+    ],
+    "focus": "I'm not much of a big-city person, so I prefer it to the hustle and bustle of Riyadh.",
+    "qs": [
+     "What is Buraidah famous for, according to Abdulaziz?",
+     "How does he feel about the changes in his town?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are taking an IELTS Speaking Part 1 practice test. Answer the examiner's questions about where you live in two to four natural sentences each.",
+    "prompts": [
+     {
+      "q": "Can you describe the area where you live?",
+      "hint": "Give a location with 'a stone's throw from' and one more detail. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What do you like to do in your free time there?",
+      "hint": "Use 'every so often' and add a reason. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Would you like to live somewhere else in the future?",
+      "hint": "Use 'I'm not much of a …' or 'the hustle and bustle' and explain why. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Around Saudi Arabia: Towns on the Move",
+    "points": [
+     "In many Saudi towns, new parks, cafés and walking tracks have changed daily life in recent years.",
+     "Many families still spend winter weekends at a farm or an istiraha (a rest house) outside town.",
+     "Around the world, many young people move to big cities for study and work, then miss the calm of home."
+    ],
+    "qs": [
+     "What has changed most in your town in the last few years?",
+     "What makes a town a good place for teenagers to live?"
+    ]
+   },
+   "exit": "Tell me about your home town in two or three natural sentences, using two of today's expressions.",
    "expressions": [
     {
      "w": "a stone's throw from",
@@ -2286,10 +2714,10 @@
      "frame": "My house is a stone's throw from ___."
     },
     {
-     "w": "off the beaten track",
-     "def": "far from the places most people visit",
-     "ar": "بعيد عن الأماكن المزدحمة المعتادة",
-     "frame": "A place off the beaten track that I love is ___."
+     "w": "in the back of beyond",
+     "def": "very far from towns and other people",
+     "ar": "في مكان ناءٍ بعيد",
+     "frame": "I'd love a quiet weekend in the back of beyond, like ___."
     },
     {
      "w": "I'm not much of a",
@@ -2316,90 +2744,105 @@
      "frame": "I enjoy the hustle and bustle of ___."
     }
    ],
-   "dialogue": {
-    "scene": "Abdulaziz is doing an IELTS Speaking practice test. The examiner is asking Part 1 questions about his home town, Buraidah.",
-    "p1": [
-     {
-      "s": "Examiner",
-      "t": "Let's talk about your home town. Where is it, and what's it like?"
-     },
-     {
-      "s": "Abdulaziz",
-      "t": "I'm from Buraidah, in Qassim. It's famous for its dates, and my house is a stone's throw from the biggest date market."
-     },
-     {
-      "s": "Examiner",
-      "t": "Do you enjoy living there?"
-     },
-     {
-      "s": "Abdulaziz",
-      "t": "Mostly, yes. I'm not much of a big-city person, so I prefer it to the hustle and bustle of Riyadh."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Examiner",
-      "t": "Has your town changed much in recent years?"
-     },
-     {
-      "s": "Abdulaziz",
-      "t": "Quite a lot. There are new cafés and parks now. I wasn't keen on the changes at first, but they've grown on me."
-     },
-     {
-      "s": "Examiner",
-      "t": "Is there anywhere you like to go to relax?"
-     },
-     {
-      "s": "Abdulaziz",
-      "t": "Every so often, we drive to a farm off the beaten track. It's peaceful, and the stars are incredible."
-     }
-    ],
-    "focus": "I'm not much of a big-city person, so I prefer it to the hustle and bustle of Riyadh.",
-    "qs": [
-     "What is Buraidah famous for, according to Abdulaziz?",
-     "How does he feel about the changes in his town?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are taking an IELTS Speaking Part 1 practice test. Answer the examiner's questions about where you live in two to four natural sentences each.",
-    "prompts": [
-     {
-      "q": "Can you describe the area where you live?",
-      "hint": "Give a location with 'a stone's throw from' and one more detail."
-     },
-     {
-      "q": "What do you like to do in your free time there?",
-      "hint": "Use 'every so often' and add a reason."
-     },
-     {
-      "q": "Would you like to live somewhere else in the future?",
-      "hint": "Use 'I'm not much of a …' or 'the hustle and bustle' and explain why."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Around Saudi Arabia: Towns on the Move",
-    "points": [
-     "In many Saudi towns, new parks, cafés and walking tracks have changed daily life in recent years.",
-     "Many families still spend winter weekends at a farm or an istiraha (a rest house) outside town.",
-     "Around the world, many young people move to big cities for study and work, then miss the calm of home."
-    ],
-    "qs": [
-     "What has changed most in your town in the last few years?",
-     "What makes a town a good place for teenagers to live?"
-    ]
-   },
-   "exit": "Tell me about your home town in two or three natural sentences, using two of today's expressions."
+   "recycle": [
+    "off the beaten track"
+   ]
   },
   "3-1": {
    "objective": "Today you will give a fluent two-minute IELTS Part 2 talk about a person who inspired you.",
    "warmup": "Who is someone, apart from your parents, who has had a big influence on you?",
+   "dialogue": {
+    "scene": "Noura is practising IELTS Speaking Part 2 with her tutor, Mr Peterson. The task card says: 'Describe a person who has inspired you.'",
+    "p1": [
+     {
+      "s": "Mr Peterson",
+      "t": "You've had a minute to prepare. Please talk about a person who has inspired you."
+     },
+     {
+      "s": "Noura",
+      "t": "The first person who springs to mind is my chemistry teacher in secondary school, Ms Huda. I've always held her in high regard, even though she was strict."
+     },
+     {
+      "s": "Noura",
+      "t": "She had a way of making complicated topics feel simple, and she would bend over backwards to help anyone who was struggling."
+     },
+     {
+      "s": "Noura",
+      "t": "For instance, she ran free revision sessions every Thursday, which she didn't have to do."
+     },
+     {
+      "s": "Noura",
+      "t": "Some of my classmates only passed chemistry because of those sessions, and a few even chose science because of her."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Noura",
+      "t": "What inspired me most was her attitude. She led by example and never gave up on a student."
+     },
+     {
+      "s": "Noura",
+      "t": "Thanks to her, I'm now considering studying pharmacy. Her belief in me has had a profound influence on my plans."
+     },
+     {
+      "s": "Mr Peterson",
+      "t": "Thank you. That was very fluent, with good examples. Do you still keep in touch with her?"
+     },
+     {
+      "s": "Noura",
+      "t": "Every so often, yes. I sent her a message when I got my exam results."
+     },
+     {
+      "s": "Mr Peterson",
+      "t": "And how did she react?"
+     },
+     {
+      "s": "Noura",
+      "t": "She replied within minutes, which was typical of her. She said she'd always known I could do it."
+     }
+    ],
+    "focus": "She had a way of making complicated topics feel simple, and she would bend over backwards to help anyone who was struggling.",
+    "qs": [
+     "What example does Noura give of her teacher bending over backwards to help?",
+     "How has the teacher influenced Noura's future plans?"
+    ]
+   },
+   "speakout": {
+    "scene": "Your teacher gives you an IELTS Part 2 task card: 'Describe a person who has inspired you. Say who they are, how you know them, what they did, and why they inspired you.' Speak for up to two minutes.",
+    "prompts": [
+     {
+      "q": "Who is the person, and how do you know them?",
+      "hint": "Start with 'The first person who springs to mind is …' and give some background. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "What did they do that was special?",
+      "hint": "Use 'bend over backwards to' or 'have a way of' with a specific example. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Why did this person inspire you?",
+      "hint": "Explain the effect with 'have a profound influence on' or 'lead by example'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Inspiring Teachers",
+    "points": [
+     "Many countries celebrate teachers on World Teachers' Day, which is held every year on 5 October.",
+     "The Egyptian poet Ahmed Shawqi wrote a famous line telling people to stand up and honour the teacher.",
+     "Research suggests that one supportive adult can make a big difference to a young person's confidence."
+    ],
+    "qs": [
+     "What makes a teacher truly inspiring, in your opinion?",
+     "Is it better to have one role model or many? Why?"
+    ]
+   },
+   "exit": "In two or three sentences, tell me about someone you hold in high regard and one thing they did that had a profound influence on you.",
    "expressions": [
     {
-     "w": "I'd have to say",
-     "def": "used to introduce your answer after thinking about it",
-     "ar": "يمكنني القول إنّ",
-     "frame": "If I had to choose, I'd have to say ___."
+     "w": "spring to mind",
+     "def": "to come into your thoughts quickly",
+     "ar": "يخطر على البال فوراً",
+     "frame": "The first person who springs to mind is ___."
     },
     {
      "w": "hold someone in high regard",
@@ -2420,10 +2863,10 @@
      "frame": "___ had a profound influence on my ___."
     },
     {
-     "w": "set an example",
-     "def": "to behave in a way that others should copy",
-     "ar": "يكون قدوة حسنة",
-     "frame": "___ always set an example by ___."
+     "w": "lead by example",
+     "def": "to show others how to behave by doing it yourself",
+     "ar": "يقود بالقدوة",
+     "frame": "___ always led by example by ___."
     },
     {
      "w": "have a way of",
@@ -2432,96 +2875,116 @@
      "frame": "He had a way of making ___."
     }
    ],
-   "dialogue": {
-    "scene": "Noura is practising IELTS Speaking Part 2 with her tutor, Mr Peterson. The task card says: 'Describe a person who has inspired you.'",
-    "p1": [
-     {
-      "s": "Mr Peterson",
-      "t": "You've had a minute to prepare. Please talk about a person who has inspired you."
-     },
-     {
-      "s": "Noura",
-      "t": "I'd have to say my chemistry teacher in secondary school, Ms Huda. I've always held her in high regard, even though she was strict."
-     },
-     {
-      "s": "Noura",
-      "t": "She had a way of making complicated topics feel simple, and she would bend over backwards to help anyone who was struggling."
-     },
-     {
-      "s": "Noura",
-      "t": "For instance, she ran free revision sessions every Thursday, which she didn't have to do."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Noura",
-      "t": "What inspired me most was her attitude. She set an example by never giving up on a student."
-     },
-     {
-      "s": "Noura",
-      "t": "Thanks to her, I'm now considering studying pharmacy. Her belief in me has had a profound influence on my plans."
-     },
-     {
-      "s": "Mr Peterson",
-      "t": "Thank you. That was very fluent, with good examples. Do you still keep in touch with her?"
-     },
-     {
-      "s": "Noura",
-      "t": "Every so often, yes. I sent her a message when I got my exam results."
-     }
-    ],
-    "focus": "She had a way of making complicated topics feel simple, and she would bend over backwards to help anyone who was struggling.",
-    "qs": [
-     "What example does Noura give of her teacher bending over backwards to help?",
-     "How has the teacher influenced Noura's future plans?"
-    ]
-   },
-   "speakout": {
-    "scene": "Your teacher gives you an IELTS Part 2 task card: 'Describe a person who has inspired you. Say who they are, how you know them, what they did, and why they inspired you.' Speak for up to two minutes.",
-    "prompts": [
-     {
-      "q": "Who is the person, and how do you know them?",
-      "hint": "Start with 'I'd have to say …' and give some background."
-     },
-     {
-      "q": "What did they do that was special?",
-      "hint": "Use 'bend over backwards to' or 'have a way of' with a specific example."
-     },
-     {
-      "q": "Why did this person inspire you?",
-      "hint": "Explain the effect with 'have a profound influence on' or 'set an example'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Inspiring Teachers",
-    "points": [
-     "Many countries celebrate teachers on World Teachers' Day, which is held every year on 5 October.",
-     "The Egyptian poet Ahmed Shawqi wrote a famous line telling people to stand up and honour the teacher.",
-     "Research suggests that one supportive adult can make a big difference to a young person's confidence."
-    ],
-    "qs": [
-     "What makes a teacher truly inspiring, in your opinion?",
-     "Is it better to have one role model or many? Why?"
-    ]
-   },
-   "exit": "In two or three sentences, tell me about someone you hold in high regard and one thing they did that had a profound influence on you."
+   "recycle": [
+    "I'd have to say",
+    "set an example"
+   ]
   },
   "3-2": {
    "objective": "Today you will discuss abstract questions about technology and society with idiomatic language and balanced reasoning.",
    "warmup": "What piece of technology could you not live without, and why?",
+   "dialogue": {
+    "scene": "In the Part 3 discussion of a practice test, the examiner asks Majed some abstract questions about technology and society.",
+    "p1": [
+     {
+      "s": "Examiner",
+      "t": "Do you think technology has improved the way people communicate?"
+     },
+     {
+      "s": "Majed",
+      "t": "As a rule, yes. We can talk to relatives abroad for free. That said, there's a catch."
+     },
+     {
+      "s": "Examiner",
+      "t": "Why do you say that?"
+     },
+     {
+      "s": "Majed",
+      "t": "Because instant messages can replace real conversations. Families sit together, but everyone's looking at a different device."
+     },
+     {
+      "s": "Examiner",
+      "t": "Has that happened in your own family?"
+     },
+     {
+      "s": "Majed",
+      "t": "Sometimes. At big family dinners, my younger cousins spend more time on their phones than talking to our grandparents."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Examiner",
+      "t": "Some people say governments can't control new technology. What's your view?"
+     },
+     {
+      "s": "Majed",
+      "t": "I agree up to a point. Laws can't keep pace with technology, so the problems we hear about are just the tip of the iceberg."
+     },
+     {
+      "s": "Examiner",
+      "t": "So is technology a good or a bad thing overall?"
+     },
+     {
+      "s": "Majed",
+      "t": "I don't think it's either. It's a matter of how we use it. Convenience often comes at a cost, so we need to be careful."
+     },
+     {
+      "s": "Examiner",
+      "t": "Could you give an example of that cost?"
+     },
+     {
+      "s": "Majed",
+      "t": "Free apps, for instance. We don't pay with money, but they collect our data, and most people never read what they've agreed to."
+     }
+    ],
+    "focus": "As a rule, yes. We can talk to relatives abroad for free. That said, there's a catch.",
+    "qs": [
+     "What catch does Majed see in modern communication?",
+     "What does Majed say technology's value depends on?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are in IELTS Speaking Part 3. The examiner asks you abstract questions about technology. Give developed answers of three to five sentences.",
+    "prompts": [
+     {
+      "q": "How has technology changed the way young people learn?",
+      "hint": "Generalise with 'as a rule', then add a contrast and an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Are there any dangers in relying too much on technology?",
+      "hint": "Use 'there's a catch' or 'come at a cost' and explain one danger. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Will governments ever be able to control technology properly?",
+      "hint": "Use 'keep pace with' and finish with your overall view. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Technology and Society",
+    "points": [
+     "Many countries are writing new laws about data protection and artificial intelligence.",
+     "Saudi Arabia introduced a Personal Data Protection Law to regulate how organisations use personal information.",
+     "Some families around the world now have 'device-free' meal times to protect real conversation."
+    ],
+    "qs": [
+     "Should there be limits on how companies use our personal data? Why?",
+     "What rule about technology would you make for your own home?"
+    ]
+   },
+   "exit": "Give me your view on technology and society in two or three sentences, using 'there's a catch' and 'as a rule'.",
    "expressions": [
     {
-     "w": "a double-edged sword",
-     "def": "something that has both good and bad effects",
-     "ar": "سلاح ذو حدّين",
-     "frame": "___ is a double-edged sword because ___."
+     "w": "there's a catch",
+     "def": "there is a hidden problem or disadvantage",
+     "ar": "هناك عيب خفي",
+     "frame": "___ sounds great, but there's a catch: ___."
     },
     {
-     "w": "by and large",
-     "def": "generally; in most cases",
-     "ar": "عموماً / في الغالب",
-     "frame": "By and large, people today ___."
+     "w": "as a rule",
+     "def": "usually; in most cases",
+     "ar": "عادةً / كقاعدة عامة",
+     "frame": "As a rule, people today ___."
     },
     {
      "w": "it's a matter of",
@@ -2548,84 +3011,112 @@
      "frame": "___ is just the tip of the iceberg."
     }
    ],
-   "dialogue": {
-    "scene": "In the Part 3 discussion of a practice test, the examiner asks Majed some abstract questions about technology and society.",
-    "p1": [
-     {
-      "s": "Examiner",
-      "t": "Do you think technology has improved the way people communicate?"
-     },
-     {
-      "s": "Majed",
-      "t": "By and large, yes. We can talk to relatives abroad for free. That said, it's a double-edged sword."
-     },
-     {
-      "s": "Examiner",
-      "t": "Why do you say that?"
-     },
-     {
-      "s": "Majed",
-      "t": "Because instant messages can replace real conversations. Families sit together, but everyone's looking at a different device."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Examiner",
-      "t": "Some people say governments can't control new technology. What's your view?"
-     },
-     {
-      "s": "Majed",
-      "t": "I agree up to a point. Laws can't keep pace with technology, so the problems we hear about are just the tip of the iceberg."
-     },
-     {
-      "s": "Examiner",
-      "t": "So is technology a good or a bad thing overall?"
-     },
-     {
-      "s": "Majed",
-      "t": "I don't think it's either. It's a matter of how we use it. Convenience often comes at a cost, so we need to be careful."
-     }
-    ],
-    "focus": "By and large, yes. We can talk to relatives abroad for free. That said, it's a double-edged sword.",
-    "qs": [
-     "Why does Majed call technology 'a double-edged sword'?",
-     "What does Majed say technology's value depends on?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are in IELTS Speaking Part 3. The examiner asks you abstract questions about technology. Give developed answers of three to five sentences.",
-    "prompts": [
-     {
-      "q": "How has technology changed the way young people learn?",
-      "hint": "Generalise with 'by and large', then add a contrast and an example."
-     },
-     {
-      "q": "Are there any dangers in relying too much on technology?",
-      "hint": "Use 'a double-edged sword' or 'come at a cost' and explain one danger."
-     },
-     {
-      "q": "Will governments ever be able to control technology properly?",
-      "hint": "Use 'keep pace with' and finish with your overall view."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Technology and Society",
-    "points": [
-     "Many countries are writing new laws about data protection and artificial intelligence.",
-     "Saudi Arabia introduced a Personal Data Protection Law to regulate how organisations use personal information.",
-     "Some families around the world now have 'device-free' meal times to protect real conversation."
-    ],
-    "qs": [
-     "Should there be limits on how companies use our personal data? Why?",
-     "What rule about technology would you make for your own home?"
-    ]
-   },
-   "exit": "Give me your view on technology and society in two or three sentences, using 'a double-edged sword' and 'by and large'."
+   "recycle": [
+    "a double-edged sword",
+    "by and large"
+   ]
   },
   "3-3": {
    "objective": "Today you will discuss abstract ideas about success and happiness, using idioms accurately and supporting every point.",
    "warmup": "What does a successful life look like to you?",
+   "dialogue": {
+    "scene": "Reem is practising Part 3 questions about success and happiness with her tutor, Ms Clarke.",
+    "p1": [
+     {
+      "s": "Ms Clarke",
+      "t": "How do people in your country usually measure success?"
+     },
+     {
+      "s": "Reem",
+      "t": "All in all, people look at your job and your income. Climbing the career ladder is seen as a sign of success."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "Do you think that's the right way to measure it?"
+     },
+     {
+      "s": "Reem",
+      "t": "Only partly. There's more to life than a job title. My grandmother never worked in an office, but she's the most respected person I know."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "Why is she so respected?"
+     },
+     {
+      "s": "Reem",
+      "t": "She raised six children, helped half the neighbourhood and always had time to listen. Nobody ever asked about her salary."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Ms Clarke",
+      "t": "So what does happiness depend on, in your view?"
+     },
+     {
+      "s": "Reem",
+      "t": "I think it boils down to two things: strong relationships and peace of mind."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "That's interesting. Why peace of mind rather than excitement or adventure?"
+     },
+     {
+      "s": "Reem",
+      "t": "Because excitement fades quickly, whereas feeling secure lets you enjoy everything else."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "Not achievement?"
+     },
+     {
+      "s": "Reem",
+      "t": "Achievement matters, admittedly. Helping others gives me a sense of fulfilment that no salary could."
+     },
+     {
+      "s": "Ms Clarke",
+      "t": "Do you think that view is common among young people?"
+     },
+     {
+      "s": "Reem",
+      "t": "More and more, I think. My friends talk about jobs they'll enjoy, not just jobs that pay well."
+     }
+    ],
+    "focus": "I think it boils down to two things: strong relationships and peace of mind.",
+    "qs": [
+     "How do people usually measure success, according to Reem?",
+     "What two things does Reem think happiness depends on?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are in IELTS Speaking Part 3. The examiner asks you about success and happiness. Develop each answer with a reason and an example.",
+    "prompts": [
+     {
+      "q": "Is money the most important thing for a happy life?",
+      "hint": "Disagree or qualify with 'There's more to life than …' and give an example. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Why do some successful people still feel unhappy?",
+      "hint": "Use 'peace of mind' or 'a sense of fulfilment' to explain. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "What, in the end, is the secret of happiness?",
+      "hint": "Sum up your view with 'it boils down to …'. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Measuring Happiness",
+    "points": [
+     "The World Happiness Report ranks countries using surveys about how satisfied people are with their lives.",
+     "Researchers often find that relationships matter more to happiness than income, once basic needs are met.",
+     "Bhutan is famous for measuring 'Gross National Happiness' alongside its economy."
+    ],
+    "qs": [
+     "Can happiness really be measured? Why or why not?",
+     "Should governments care about happiness as much as about the economy?"
+    ]
+   },
+   "exit": "Tell me what success means to you in two or three sentences, using 'it boils down to' and one more idiom.",
    "expressions": [
     {
      "w": "it boils down to",
@@ -2658,90 +3149,109 @@
      "frame": "I get a sense of fulfilment from ___."
     },
     {
-     "w": "on the whole",
-     "def": "generally; considering everything",
-     "ar": "بشكل عام",
-     "frame": "On the whole, I think ___."
+     "w": "all in all",
+     "def": "considering everything",
+     "ar": "إجمالاً",
+     "frame": "All in all, I think ___."
     }
    ],
-   "dialogue": {
-    "scene": "Reem is practising Part 3 questions about success and happiness with her tutor, Ms Clarke.",
-    "p1": [
-     {
-      "s": "Ms Clarke",
-      "t": "How do people in your country usually measure success?"
-     },
-     {
-      "s": "Reem",
-      "t": "On the whole, people look at your job and your income. Climbing the career ladder is seen as a sign of success."
-     },
-     {
-      "s": "Ms Clarke",
-      "t": "Do you think that's the right way to measure it?"
-     },
-     {
-      "s": "Reem",
-      "t": "Only partly. There's more to life than a job title. My grandmother never worked in an office, but she's the most respected person I know."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Ms Clarke",
-      "t": "So what does happiness depend on, in your view?"
-     },
-     {
-      "s": "Reem",
-      "t": "I think it boils down to two things: strong relationships and peace of mind."
-     },
-     {
-      "s": "Ms Clarke",
-      "t": "Not achievement?"
-     },
-     {
-      "s": "Reem",
-      "t": "Achievement matters, admittedly. Helping others gives me a sense of fulfilment that no salary could."
-     }
-    ],
-    "focus": "I think it boils down to two things: strong relationships and peace of mind.",
-    "qs": [
-     "How do people usually measure success, according to Reem?",
-     "What two things does Reem think happiness depends on?"
-    ]
-   },
-   "speakout": {
-    "scene": "You are in IELTS Speaking Part 3. The examiner asks you about success and happiness. Develop each answer with a reason and an example.",
-    "prompts": [
-     {
-      "q": "Is money the most important thing for a happy life?",
-      "hint": "Disagree or qualify with 'There's more to life than …' and give an example."
-     },
-     {
-      "q": "Why do some successful people still feel unhappy?",
-      "hint": "Use 'peace of mind' or 'a sense of fulfilment' to explain."
-     },
-     {
-      "q": "What, in the end, is the secret of happiness?",
-      "hint": "Sum up your view with 'it boils down to …'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Measuring Happiness",
-    "points": [
-     "The World Happiness Report ranks countries using surveys about how satisfied people are with their lives.",
-     "Researchers often find that relationships matter more to happiness than income, once basic needs are met.",
-     "Bhutan is famous for measuring 'Gross National Happiness' alongside its economy."
-    ],
-    "qs": [
-     "Can happiness really be measured? Why or why not?",
-     "Should governments care about happiness as much as about the economy?"
-    ]
-   },
-   "exit": "Tell me what success means to you in two or three sentences, using 'it boils down to' and one more idiom."
+   "recycle": [
+    "on the whole"
+   ]
   },
   "3-4": {
    "objective": "Today you will discuss how traditions change over time, giving balanced, idiomatic answers to abstract questions.",
    "warmup": "Which family tradition do you hope will never change?",
+   "dialogue": {
+    "scene": "In a Part 3 practice discussion, the examiner asks Turki about traditions and change in Saudi Arabia.",
+    "p1": [
+     {
+      "s": "Examiner",
+      "t": "Are traditional customs still important to young people in your country?"
+     },
+     {
+      "s": "Turki",
+      "t": "By and large, yes. Some traditions, like Arabic coffee for guests, have stood the test of time."
+     },
+     {
+      "s": "Examiner",
+      "t": "Are any traditions disappearing?"
+     },
+     {
+      "s": "Turki",
+      "t": "Unfortunately, some crafts, such as traditional weaving, are dying out because few young people learn them."
+     },
+     {
+      "s": "Examiner",
+      "t": "Why do you think young people aren't interested in them?"
+     },
+     {
+      "s": "Turki",
+      "t": "Mainly because they take years to master and don't pay well. Most teenagers would rather study something with a clear career path."
+     }
+    ],
+    "p2": [
+     {
+      "s": "Examiner",
+      "t": "Is there a generation gap in attitudes to tradition?"
+     },
+     {
+      "s": "Turki",
+      "t": "To some extent. My grandparents hold on to every custom, while my generation picks the ones that fit modern life."
+     },
+     {
+      "s": "Examiner",
+      "t": "Can a country modernise and keep its traditions?"
+     },
+     {
+      "s": "Turki",
+      "t": "Definitely. I think tradition and progress can go hand in hand. It's about getting the mix right, not choosing one side."
+     },
+     {
+      "s": "Examiner",
+      "t": "Can you give an example of that kind of mix?"
+     },
+     {
+      "s": "Turki",
+      "t": "Heritage festivals are a good one: traditional food, music and architecture, but presented with modern lighting and technology."
+     }
+    ],
+    "focus": "I think tradition and progress can go hand in hand.",
+    "qs": [
+     "Which tradition has stood the test of time, according to Turki?",
+     "How do Turki's grandparents and his generation differ?"
+    ]
+   },
+   "speakout": {
+    "scene": "You are in IELTS Speaking Part 3. The examiner asks about traditions and modern life. Give fluent, balanced answers with examples.",
+    "prompts": [
+     {
+      "q": "Which traditions in your country have lasted the longest, and why?",
+      "hint": "Use 'stand the test of time' and give a specific example. Then state your position, give a reason and a real example, and answer one counterpoint."
+     },
+     {
+      "q": "Do older and younger people see traditions differently?",
+      "hint": "Talk about 'a generation gap' and contrast the two groups. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+     },
+     {
+      "q": "Should governments try to protect traditional crafts?",
+      "hint": "Use 'die out' or 'get the mix right' and give your overall view. Then give your view, a reason and an example, and admit one point against you before answering it."
+     }
+    ]
+   },
+   "culture": {
+    "title": "Traditions in a Changing World",
+    "points": [
+     "Arabic coffee and the customs around serving it are recognised by UNESCO as cultural heritage.",
+     "Al-Sadu weaving, made by Bedouin women, is also on UNESCO's list of heritage that needs protection.",
+     "In Japan and many other countries, young designers mix traditional crafts with modern fashion."
+    ],
+    "qs": [
+     "Which Saudi tradition would you most like the world to know about?",
+     "How can young people keep traditional crafts alive?"
+    ]
+   },
+   "exit": "Tell me about one tradition in two or three sentences: is it dying out or standing the test of time, and why?",
    "expressions": [
     {
      "w": "stand the test of time",
@@ -2756,10 +3266,10 @@
      "frame": "Tradition and ___ can go hand in hand."
     },
     {
-     "w": "strike a balance",
-     "def": "to find a sensible middle point between two things",
-     "ar": "يحقق التوازن",
-     "frame": "We need to strike a balance between ___ and ___."
+     "w": "get the mix right",
+     "def": "to combine different things in the best way",
+     "ar": "يحقق المزيج الصحيح",
+     "frame": "To get the mix right between ___ and ___, we should …"
     },
     {
      "w": "die out",
@@ -2780,84 +3290,103 @@
      "frame": "It's important to hold on to ___."
     }
    ],
+   "recycle": [
+    "strike a balance"
+   ]
+  },
+  "3-5": {
+   "objective": "Today you will complete a full IELTS-style speaking test, buying time naturally and sustaining fluent, idiomatic answers.",
+   "warmup": "How do you usually feel before an exam, and what helps you stay calm?",
    "dialogue": {
-    "scene": "In a Part 3 practice discussion, the examiner asks Turki about traditions and change in Saudi Arabia.",
+    "scene": "Lina is taking a full mock IELTS Speaking test at her school. This extract is from Part 3, where the examiner asks about ambition and competition.",
     "p1": [
      {
       "s": "Examiner",
-      "t": "Are traditional customs still important to young people in your country?"
+      "t": "Do you think competition between students is a good thing?"
      },
      {
-      "s": "Turki",
-      "t": "By and large, yes. Some traditions, like Arabic coffee for guests, have stood the test of time."
+      "s": "Lina",
+      "t": "That's an interesting question. From my perspective, it can backfire. It motivates some students, but it can make others anxious."
      },
      {
       "s": "Examiner",
-      "t": "Are any traditions disappearing?"
+      "t": "Are young people today more ambitious than their parents were?"
      },
      {
-      "s": "Turki",
-      "t": "Unfortunately, some crafts, such as traditional weaving, are dying out because few young people learn them."
+      "s": "Lina",
+      "t": "Let me think about that for a moment. It's hard to generalise, but I'd say young Saudis have more options, so their ambitions are broader."
+     },
+     {
+      "s": "Examiner",
+      "t": "Why do you think their options are broader?"
+     },
+     {
+      "s": "Lina",
+      "t": "There are new industries here now, like tourism, gaming and renewable energy, which hardly existed when my parents were at school."
      }
     ],
     "p2": [
      {
       "s": "Examiner",
-      "t": "Is there a generation gap in attitudes to tradition?"
+      "t": "What makes some people more successful than others?"
      },
      {
-      "s": "Turki",
-      "t": "To some extent. My grandparents hold on to every custom, while my generation picks the ones that fit modern life."
+      "s": "Lina",
+      "t": "Talent helps, admittedly. But in the end, I think it boils down to hard work and the people around you."
      },
      {
       "s": "Examiner",
-      "t": "Can a country modernise and keep its traditions?"
+      "t": "Can schools teach students to be ambitious?"
      },
      {
-      "s": "Turki",
-      "t": "Definitely. I think tradition and progress can go hand in hand. It's about striking a balance, not choosing one side."
+      "s": "Lina",
+      "t": "Up to a point. Schools can open doors, but the desire to go through them has to come from the student."
+     },
+     {
+      "s": "Examiner",
+      "t": "Is it possible to be too ambitious?"
+     },
+     {
+      "s": "Lina",
+      "t": "I think so. When push comes to shove, I'd choose my health and my friendships over any job title."
      }
     ],
-    "focus": "I think tradition and progress can go hand in hand.",
+    "focus": "Let me think about that for a moment.",
     "qs": [
-     "Which tradition has stood the test of time, according to Turki?",
-     "How do Turki's grandparents and his generation differ?"
+     "What does Lina say is good and bad about competition?",
+     "What does Lina think success boils down to?"
     ]
    },
    "speakout": {
-    "scene": "You are in IELTS Speaking Part 3. The examiner asks about traditions and modern life. Give fluent, balanced answers with examples.",
+    "scene": "This is your full mock speaking test. Your teacher is the examiner and will ask Part 1, Part 2 and Part 3 style questions. Keep talking, buy time naturally and use idiomatic language.",
     "prompts": [
      {
-      "q": "Which traditions in your country have lasted the longest, and why?",
-      "hint": "Use 'stand the test of time' and give a specific example."
+      "q": "Part 1: What do you enjoy most about studying English?",
+      "hint": "Give a natural answer of two or three sentences with one idiom. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
-      "q": "Do older and younger people see traditions differently?",
-      "hint": "Talk about 'a generation gap' and contrast the two groups."
+      "q": "Part 2: Describe an achievement you are proud of. Talk for up to two minutes.",
+      "hint": "Say what, when and how, then why you're proud, using expressions from this unit. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
-      "q": "Should governments try to protect traditional crafts?",
-      "hint": "Use 'die out' or 'strike a balance' and give your overall view."
+      "q": "Part 3: Do you think people today put too much pressure on themselves to succeed?",
+      "hint": "Buy time with 'Let me think about that for a moment', then give a balanced answer with 'It's hard to generalise, but …'. Then give your view, a reason and an example, and admit one point against you before answering it."
      }
     ]
    },
    "culture": {
-    "title": "Traditions in a Changing World",
+    "title": "Preparing for Speaking Exams",
     "points": [
-     "Arabic coffee and the customs around serving it are recognised by UNESCO as cultural heritage.",
-     "Al-Sadu weaving, made by Bedouin women, is also on UNESCO's list of heritage that needs protection.",
-     "In Japan and many other countries, young designers mix traditional crafts with modern fashion."
+     "Many universities in English-speaking countries ask for an overall IELTS score of around 6.5 or 7.",
+     "Examiners reward natural, flexible language more than memorised, complicated phrases.",
+     "Practising with a timer and recording yourself can help you notice hesitation and repeated words."
     ],
     "qs": [
-     "Which Saudi tradition would you most like the world to know about?",
-     "How can young people keep traditional crafts alive?"
+     "What's the most useful way to practise speaking on your own?",
+     "Do you think exam scores show how well someone can really communicate?"
     ]
    },
-   "exit": "Tell me about one tradition in two or three sentences: is it dying out or standing the test of time, and why?"
-  },
-  "3-5": {
-   "objective": "Today you will complete a full IELTS-style speaking test, buying time naturally and sustaining fluent, idiomatic answers.",
-   "warmup": "How do you usually feel before an exam, and what helps you stay calm?",
+   "exit": "I'll ask you one Part 3 question: Is ambition always a good thing? Answer in three or four sentences, buying time naturally at the start.",
    "expressions": [
     {
      "w": "That's an interesting question.",
@@ -2884,92 +3413,22 @@
      "frame": "It's hard to generalise, but most ___."
     },
     {
-     "w": "it boils down to",
-     "def": "the most basic or important point is",
-     "ar": "الأمر في النهاية يتلخّص في",
-     "frame": "In the end, it boils down to ___."
+     "w": "when push comes to shove",
+     "def": "when a difficult decision really has to be made",
+     "ar": "عند الجدّ / حين يحين الحسم",
+     "frame": "When push comes to shove, I'd choose ___."
     },
     {
-     "w": "a double-edged sword",
-     "def": "something that has both good and bad effects",
-     "ar": "سلاح ذو حدّين",
-     "frame": "___ can be a double-edged sword."
+     "w": "backfire",
+     "def": "to have the opposite result to what was intended",
+     "ar": "يأتي بنتيجة عكسية",
+     "frame": "___ can backfire if ___."
     }
    ],
-   "dialogue": {
-    "scene": "Lina is taking a full mock IELTS Speaking test at her school. This extract is from Part 3, where the examiner asks about ambition and competition.",
-    "p1": [
-     {
-      "s": "Examiner",
-      "t": "Do you think competition between students is a good thing?"
-     },
-     {
-      "s": "Lina",
-      "t": "That's an interesting question. From my perspective, it's a double-edged sword. It motivates some students, but it can make others anxious."
-     },
-     {
-      "s": "Examiner",
-      "t": "Are young people today more ambitious than their parents were?"
-     },
-     {
-      "s": "Lina",
-      "t": "Let me think about that for a moment. It's hard to generalise, but I'd say young Saudis have more options, so their ambitions are broader."
-     }
-    ],
-    "p2": [
-     {
-      "s": "Examiner",
-      "t": "What makes some people more successful than others?"
-     },
-     {
-      "s": "Lina",
-      "t": "Talent helps, admittedly. But in the end, I think it boils down to hard work and the people around you."
-     },
-     {
-      "s": "Examiner",
-      "t": "Can schools teach students to be ambitious?"
-     },
-     {
-      "s": "Lina",
-      "t": "Up to a point. Schools can open doors, but the desire to go through them has to come from the student."
-     }
-    ],
-    "focus": "Let me think about that for a moment.",
-    "qs": [
-     "What does Lina say is good and bad about competition?",
-     "What does Lina think success boils down to?"
-    ]
-   },
-   "speakout": {
-    "scene": "This is your full mock speaking test. Your teacher is the examiner and will ask Part 1, Part 2 and Part 3 style questions. Keep talking, buy time naturally and use idiomatic language.",
-    "prompts": [
-     {
-      "q": "Part 1: What do you enjoy most about studying English?",
-      "hint": "Give a natural answer of two or three sentences with one idiom."
-     },
-     {
-      "q": "Part 2: Describe an achievement you are proud of. Talk for up to two minutes.",
-      "hint": "Say what, when and how, then why you're proud, using expressions from this unit."
-     },
-     {
-      "q": "Part 3: Do you think people today put too much pressure on themselves to succeed?",
-      "hint": "Buy time with 'Let me think about that for a moment', then give a balanced answer with 'It's hard to generalise, but …'."
-     }
-    ]
-   },
-   "culture": {
-    "title": "Preparing for Speaking Exams",
-    "points": [
-     "Many universities in English-speaking countries ask for an overall IELTS score of around 6.5 or 7.",
-     "Examiners reward natural, flexible language more than memorised, complicated phrases.",
-     "Practising with a timer and recording yourself can help you notice hesitation and repeated words."
-    ],
-    "qs": [
-     "What's the most useful way to practise speaking on your own?",
-     "Do you think exam scores show how well someone can really communicate?"
-    ]
-   },
-   "exit": "I'll ask you one Part 3 question: Is ambition always a good thing? Answer in three or four sentences, buying time naturally at the start."
+   "recycle": [
+    "it boils down to",
+    "a double-edged sword"
+   ]
   }
  },
  "kits": {
@@ -3050,9 +3509,9 @@
      "ex": "I agree with you up to a point, but cheap clothes don't last."
     },
     {
-     "w": "to some extent",
-     "ar": "إلى حدٍّ معيّن",
-     "ex": "To some extent, shoppers are responsible for the problem."
+     "w": "partly to blame",
+     "ar": "مسؤول جزئياً",
+     "ex": "Shoppers are partly to blame for the problem."
     },
     {
      "w": "It's true that",
@@ -3094,7 +3553,7 @@
     },
     {
      "s": "Noura",
-     "t": "To some extent, it's a throwaway culture."
+     "t": "We're all partly to blame."
     },
     {
      "s": "Sara",
@@ -3102,11 +3561,11 @@
     }
    ],
    "grammar": {
-    "title": "Qualifying a claim: up to a point / to some extent",
-    "ar": "نستخدم up to a point و to some extent لنقول إننا نوافق جزئياً فقط، فنجعل الحجة أدق وأقل تطرفاً.",
+    "title": "Qualifying a claim: up to a point / partly to blame",
+    "ar": "نستخدم up to a point و partly to blame لنقول إننا نوافق جزئياً فقط، فنجعل الحجة أدق وأقل تطرفاً.",
     "examples": [
      "I agree with you up to a point.",
-     "To some extent, we are all responsible.",
+     "We are all partly to blame.",
      "It's true that it's cheap, but it doesn't last."
     ]
    }
@@ -3134,9 +3593,9 @@
      "ex": "It's hard to juggle a job and exams."
     },
     {
-     "w": "pay off",
-     "ar": "يؤتي ثماره",
-     "ex": "Her hard work paid off when she got a scholarship."
+     "w": "reap the rewards",
+     "ar": "يجني الثمار",
+     "ex": "She studied hard and reaped the rewards with a scholarship."
     },
     {
      "w": "hands-on experience",
@@ -3167,7 +3626,7 @@
     },
     {
      "s": "Hessa",
-     "t": "A summer job would still pay off."
+     "t": "You'd still reap the rewards with a summer job."
     }
    ],
    "grammar": {
@@ -3188,9 +3647,9 @@
      "ex": "For many coastal towns, tourism has been a mixed blessing."
     },
     {
-     "w": "While it's true that",
-     "ar": "مع أنّه صحيح أنّ",
-     "ex": "While it's true that tourism creates jobs, it also raises prices."
+     "w": "There's no denying that",
+     "ar": "لا يمكن إنكار أنّ",
+     "ex": "There's no denying that tourism creates jobs, but it also raises prices."
     },
     {
      "w": "I'll grant you that",
@@ -3228,7 +3687,7 @@
     },
     {
      "s": "Omar",
-     "t": "While it's true that plans are ambitious, we'll see the impact later."
+     "t": "There's no denying that the plans are ambitious."
     },
     {
      "s": "Daniel",
@@ -3240,10 +3699,10 @@
     }
    ],
    "grammar": {
-    "title": "Concession clauses: While it's true that … / I'll grant you that …",
-    "ar": "نبدأ بـ While it's true that لنعترف بحقيقة ثم نعرض الفكرة المقابلة في الجملة نفسها، ونختم بـ On balance لنعطي حكماً متوازناً.",
+    "title": "Concession clauses: There's no denying that … / I'll grant you that …",
+    "ar": "نبدأ بـ There's no denying that لنعترف بحقيقة ثم نعرض الفكرة المقابلة في الجملة نفسها، ونختم بـ On balance لنعطي حكماً متوازناً.",
     "examples": [
-     "While it's true that it creates jobs, it raises prices.",
+     "There's no denying that it creates jobs, but it raises prices.",
      "I'll grant you that it's crowded, but it's lively.",
      "On balance, the benefits are greater."
     ]
@@ -3272,9 +3731,9 @@
      "ex": "Some transfer fees are out of all proportion to a player's value."
     },
     {
-     "w": "a role model",
-     "ar": "قدوة",
-     "ex": "A good athlete can be a role model for millions of children."
+     "w": "an inspiration to",
+     "ar": "مصدر إلهام لـ",
+     "ex": "A good athlete can be an inspiration to millions of children."
     },
     {
      "w": "generate revenue",
@@ -3326,9 +3785,9 @@
      "ex": "The case for teaching coding is strong because jobs need it."
     },
     {
-     "w": "weigh up",
-     "ar": "يوازن ويقيّم",
-     "ex": "We need to weigh up the costs and the benefits."
+     "w": "look at both sides",
+     "ar": "ينظر إلى الجانبين",
+     "ex": "We need to look at both sides before we vote."
     },
     {
      "w": "It's not that …, it's just that",
@@ -3341,14 +3800,14 @@
      "ex": "All things considered, a short coding course should be compulsory."
     },
     {
-     "w": "Admittedly",
-     "ar": "لا بدّ من الاعتراف بأنّ",
-     "ex": "Admittedly, coding can be difficult at first."
+     "w": "I must admit",
+     "ar": "لا بدّ أن أعترف",
+     "ex": "I must admit that coding was hard for me at first."
     },
     {
-     "w": "That said,",
+     "w": "Nevertheless",
      "ar": "ومع ذلك",
-     "ex": "Coding is useful. That said, art and music matter too."
+     "ex": "Coding is hard. Nevertheless, everyone can learn the basics."
     }
    ],
    "dialogue": [
@@ -3473,9 +3932,9 @@
      "ex": "Think of inflation as your money slowly shrinking."
     },
     {
-     "w": "in a nutshell",
-     "ar": "باختصار شديد",
-     "ex": "In a nutshell, inflation means rising prices."
+     "w": "the long and short of it",
+     "ar": "خلاصة القول",
+     "ex": "The long and short of it is that prices keep rising."
     },
     {
      "w": "purchasing power",
@@ -3500,7 +3959,7 @@
     },
     {
      "s": "Noura",
-     "t": "In a nutshell, that's inflation: prices go up over time."
+     "t": "That's inflation. The long and short of it is that prices rise."
     },
     {
      "s": "Noura",
@@ -3525,7 +3984,7 @@
     "examples": [
      "Think of it as a slow leak in your wallet.",
      "Put another way, your money buys less.",
-     "In a nutshell, prices rise over time."
+     "The long and short of it is that prices rise."
     ]
    }
   },
@@ -3759,14 +4218,14 @@
      "ex": "The control centre tracks every train in real time."
     },
     {
-     "w": "To put it simply,",
-     "ar": "ببساطة",
-     "ex": "To put it simply, the train drives itself."
+     "w": "in plain English",
+     "ar": "بكلام بسيط واضح",
+     "ex": "In plain English, the train drives itself."
     },
     {
-     "w": "What this means is",
-     "ar": "ما يعنيه هذا هو",
-     "ex": "The trains are automatic. What this means is that they can run more often."
+     "w": "The upshot is",
+     "ar": "والنتيجة هي",
+     "ex": "The upshot is that trains can run every few minutes."
     }
    ],
    "dialogue": [
@@ -3823,9 +4282,9 @@
      "ex": "Rainfall has decreased. This has led to drier soil."
     },
     {
-     "w": "a knock-on effect",
-     "ar": "أثر متسلسل / تأثير غير مباشر",
-     "ex": "Losing plants has a knock-on effect on wildlife."
+     "w": "a domino effect",
+     "ar": "أثر الدومينو",
+     "ex": "Losing plants has a domino effect on wildlife."
     },
     {
      "w": "overgrazing",
@@ -3853,7 +4312,7 @@
     },
     {
      "s": "Liam",
-     "t": "That must have a knock-on effect on wildlife."
+     "t": "That must have a domino effect on wildlife."
     },
     {
      "s": "Rakan",
@@ -3961,9 +4420,9 @@
      "ex": "Food waste contributes to climate change."
     },
     {
-     "w": "go to waste",
-     "ar": "يذهب هدراً",
-     "ex": "It's a shame when good food goes to waste."
+     "w": "go uneaten",
+     "ar": "يبقى دون أن يؤكل",
+     "ex": "It's a shame when good food goes uneaten."
     },
     {
      "w": "a direct consequence of",
@@ -3971,15 +4430,15 @@
      "ex": "The extra cost is a direct consequence of waste."
     },
     {
-     "w": "stem from",
-     "ar": "ينبع من / ينتج عن",
-     "ex": "The habit stems from the wish to be generous."
+     "w": "be rooted in",
+     "ar": "متجذّر في",
+     "ex": "Our generosity is rooted in a long tradition of hospitality."
     }
    ],
    "dialogue": [
     {
      "s": "Lama",
-     "t": "Half of this food will go to waste."
+     "t": "Half of this food will go uneaten."
     },
     {
      "s": "Turki",
@@ -4035,9 +4494,9 @@
      "ex": "Fish eat microplastics, and in turn, people eat the fish."
     },
     {
-     "w": "a knock-on effect",
-     "ar": "أثر متسلسل / تأثير غير مباشر",
-     "ex": "Damaged reefs have a knock-on effect on fishing."
+     "w": "a chain reaction",
+     "ar": "سلسلة تفاعلات متتابعة",
+     "ex": "Damaged reefs set off a chain reaction in the fishing industry."
     },
     {
      "w": "irreversible damage",
@@ -4068,25 +4527,25 @@
     },
     {
      "s": "Dana",
-     "t": "That has a knock-on effect on fishermen, who in turn lose income."
+     "t": "That sets off a chain reaction: fishermen, in turn, lose income."
     }
    ],
    "grammar": {
     "title": "Describing chains: which in turn / trigger",
-    "ar": "لوصف سلسلة من النتائج نستخدم in turn (وبدوره)، و trigger لسبب يُطلق حدثاً، و a knock-on effect لنتيجة غير مباشرة.",
+    "ar": "لوصف سلسلة من النتائج نستخدم in turn (وبدوره)، و trigger لسبب يُطلق حدثاً، و a chain reaction لسلسلة نتائج غير مباشرة.",
     "examples": [
      "Warm water triggers bleaching.",
      "Fish eat plastic, and in turn, people eat the fish.",
-     "This has a knock-on effect on fishing."
+     "This sets off a chain reaction in fishing."
     ]
    }
   },
   "2-4": {
    "words": [
     {
-     "w": "go viral",
-     "ar": "ينتشر بسرعة كبيرة على الإنترنت",
-     "ex": "The fake video went viral within an hour."
+     "w": "do the rounds",
+     "ar": "يتداوله الناس",
+     "ex": "A fake video was doing the rounds within an hour."
     },
     {
      "w": "fuel",
@@ -4109,15 +4568,15 @@
      "ex": "It's a vicious circle: less trust means more rumours."
     },
     {
-     "w": "give rise to",
-     "ar": "يؤدي إلى / يتسبب في",
-     "ex": "One false message gave rise to panic buying."
+     "w": "sow confusion",
+     "ar": "يزرع البلبلة",
+     "ex": "One false message sowed confusion across the town."
     }
    ],
    "dialogue": [
     {
      "s": "Hessa",
-     "t": "The fake message went viral in an hour."
+     "t": "The fake message was doing the rounds within an hour."
     },
     {
      "s": "Amal",
@@ -4173,14 +4632,14 @@
      "ex": "To tackle the problem at its source, schools need more sport."
     },
     {
-     "w": "result in",
-     "ar": "يؤدي إلى",
-     "ex": "Sitting all day can result in back problems."
+     "w": "take a toll on",
+     "ar": "يُلحق ضرراً تدريجياً بـ",
+     "ex": "Long hours of sitting take a toll on your back."
     },
     {
-     "w": "contribute to",
-     "ar": "يسهم في",
-     "ex": "Fast food contributes to rising obesity."
+     "w": "lay the groundwork for",
+     "ar": "يضع الأساس لـ",
+     "ex": "The pilot project laid the groundwork for a national programme."
     }
    ],
    "dialogue": [
@@ -4227,9 +4686,9 @@
      "ex": "Our flat is a stone's throw from the main market."
     },
     {
-     "w": "off the beaten track",
-     "ar": "بعيد عن الأماكن المزدحمة المعتادة",
-     "ex": "There's a lovely farm off the beaten track near my town."
+     "w": "in the back of beyond",
+     "ar": "في مكان ناءٍ بعيد",
+     "ex": "Their farm is in the back of beyond, two hours from the nearest town."
     },
     {
      "w": "I'm not much of a",
@@ -4275,7 +4734,7 @@
     },
     {
      "s": "Abdulaziz",
-     "t": "Every so often, we go somewhere off the beaten track."
+     "t": "Every so often, we drive to a farm in the back of beyond."
     }
    ],
    "grammar": {
@@ -4291,9 +4750,9 @@
   "3-1": {
    "words": [
     {
-     "w": "I'd have to say",
-     "ar": "يمكنني القول إنّ",
-     "ex": "If I had to choose, I'd have to say my maths teacher."
+     "w": "spring to mind",
+     "ar": "يخطر على البال فوراً",
+     "ex": "When I think of kindness, my grandmother springs to mind."
     },
     {
      "w": "hold someone in high regard",
@@ -4311,9 +4770,9 @@
      "ex": "That book had a profound influence on me."
     },
     {
-     "w": "set an example",
-     "ar": "يكون قدوة حسنة",
-     "ex": "The captain set an example by training harder than anyone."
+     "w": "lead by example",
+     "ar": "يقود بالقدوة",
+     "ex": "The captain led by example and trained harder than anyone."
     },
     {
      "w": "have a way of",
@@ -4324,7 +4783,7 @@
    "dialogue": [
     {
      "s": "Noura",
-     "t": "I'd have to say my chemistry teacher, Ms Huda."
+     "t": "The first person who springs to mind is Ms Huda."
     },
     {
      "s": "Noura",
@@ -4340,7 +4799,7 @@
     },
     {
      "s": "Noura",
-     "t": "She set an example by never giving up on a student."
+     "t": "She led by example and never gave up on a student."
     },
     {
      "s": "Noura",
@@ -4360,14 +4819,14 @@
   "3-2": {
    "words": [
     {
-     "w": "a double-edged sword",
-     "ar": "سلاح ذو حدّين",
-     "ex": "Social media is a double-edged sword."
+     "w": "there's a catch",
+     "ar": "هناك عيب خفي",
+     "ex": "The app is free, but there's a catch: it collects your data."
     },
     {
-     "w": "by and large",
-     "ar": "عموماً / في الغالب",
-     "ex": "By and large, technology has made life easier."
+     "w": "as a rule",
+     "ar": "عادةً / كقاعدة عامة",
+     "ex": "As a rule, technology has made life easier."
     },
     {
      "w": "it's a matter of",
@@ -4397,7 +4856,7 @@
     },
     {
      "s": "Majed",
-     "t": "By and large, yes. That said, it's a double-edged sword."
+     "t": "As a rule, yes. That said, there's a catch."
     },
     {
      "s": "Examiner",
@@ -4418,10 +4877,10 @@
    ],
    "grammar": {
     "title": "Developing a Part 3 answer: generalise, contrast, conclude",
-    "ar": "في الجزء الثالث: ابدأ بتعميم (By and large)، ثم أضف مقابلاً (That said)، ثم مثالاً، ثم خلاصة (It's a matter of …).",
+    "ar": "في الجزء الثالث: ابدأ بتعميم (As a rule)، ثم أضف مقابلاً (That said)، ثم مثالاً، ثم خلاصة (It's a matter of …).",
     "examples": [
-     "By and large, it has helped us.",
-     "That said, it's a double-edged sword.",
+     "As a rule, it has helped us.",
+     "That said, there's a catch.",
      "In the end, it's a matter of balance."
     ]
    }
@@ -4454,9 +4913,9 @@
      "ex": "Volunteering gives me a real sense of fulfilment."
     },
     {
-     "w": "on the whole",
-     "ar": "بشكل عام",
-     "ex": "On the whole, young people today are quite ambitious."
+     "w": "all in all",
+     "ar": "إجمالاً",
+     "ex": "All in all, young people today are quite ambitious."
     }
    ],
    "dialogue": [
@@ -4466,7 +4925,7 @@
     },
     {
      "s": "Reem",
-     "t": "On the whole, by their job and income."
+     "t": "All in all, by their job and income."
     },
     {
      "s": "Reem",
@@ -4486,11 +4945,11 @@
     }
    ],
    "grammar": {
-    "title": "Summarising abstract ideas: it boils down to / on the whole",
-    "ar": "it boils down to تلخّص الفكرة في أهم عنصر، و on the whole تعطي تعميماً حذراً قبل الأمثلة.",
+    "title": "Summarising abstract ideas: it boils down to / all in all",
+    "ar": "it boils down to تلخّص الفكرة في أهم عنصر، و all in all تعطي تعميماً حذراً قبل الأمثلة.",
     "examples": [
      "It boils down to good relationships.",
-     "On the whole, people value stability.",
+     "All in all, people value stability.",
      "There's more to life than money."
     ]
    }
@@ -4508,9 +4967,9 @@
      "ex": "Modern design and tradition can go hand in hand."
     },
     {
-     "w": "strike a balance",
-     "ar": "يحقق التوازن",
-     "ex": "We need to strike a balance between old and new."
+     "w": "get the mix right",
+     "ar": "يحقق المزيج الصحيح",
+     "ex": "Good festivals get the mix right between old and new."
     },
     {
      "w": "die out",
@@ -4560,7 +5019,7 @@
     "examples": [
      "Older people hold on to customs, while young people adapt them.",
      "Arabic coffee has stood the test of time.",
-     "We need to strike a balance."
+     "We need to get the mix right."
     ]
    }
   },
@@ -4587,14 +5046,14 @@
      "ex": "It's hard to generalise, but most teenagers love sport."
     },
     {
-     "w": "it boils down to",
-     "ar": "الأمر في النهاية يتلخّص في",
-     "ex": "In the end, it boils down to motivation."
+     "w": "when push comes to shove",
+     "ar": "عند الجدّ / حين يحين الحسم",
+     "ex": "When push comes to shove, family comes first."
     },
     {
-     "w": "a double-edged sword",
-     "ar": "سلاح ذو حدّين",
-     "ex": "Ambition can be a double-edged sword."
+     "w": "backfire",
+     "ar": "يأتي بنتيجة عكسية",
+     "ex": "The strict rule backfired: students broke it even more."
     }
    ],
    "dialogue": [
@@ -4604,7 +5063,7 @@
     },
     {
      "s": "Lina",
-     "t": "That's an interesting question. It's a double-edged sword."
+     "t": "That's an interesting question. It can backfire."
     },
     {
      "s": "Examiner",
@@ -4715,12 +5174,12 @@
    },
    {
     "type": "mc",
-    "q": "'To some extent' means …",
+    "q": "If you are 'partly to blame', you are …",
     "options": [
-     "completely and always",
-     "partly, but not totally",
-     "never",
-     "by accident"
+     "completely responsible",
+     "responsible for some of the problem",
+     "not responsible at all",
+     "responsible by accident"
     ],
     "answer": 1
    },
@@ -4731,7 +5190,7 @@
      "Fast fashion is always evil.",
      "Every brand cheats its workers.",
      "Nobody should ever buy cheap clothes.",
-     "To some extent, shoppers share the blame."
+     "Shoppers are partly to blame, too."
     ],
     "answer": 3
    },
@@ -4816,12 +5275,12 @@
    },
    {
     "type": "mc",
-    "q": "If your hard work 'pays off', it …",
+    "q": "If you 'reap the rewards' of hard work, you …",
     "options": [
-     "costs you a lot of money",
-     "is completely wasted",
-     "has to be repeated",
-     "brings good results in the end"
+     "lose a lot of money",
+     "waste your time",
+     "have to repeat it",
+     "enjoy the good results"
     ],
     "answer": 3
    }
@@ -4854,14 +5313,14 @@
    },
    {
     "type": "mc",
-    "q": "'___ tourism creates jobs, it also raises prices.'",
+    "q": "'There's no ___ that tourism creates jobs, but it also raises prices.'",
     "options": [
-     "Owing to",
-     "In spite",
-     "While it's true that",
-     "As long as"
+     "denying",
+     "refusing",
+     "rejecting",
+     "declining"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "order",
@@ -4934,11 +5393,12 @@
      "athlete",
      "can",
      "be",
-     "a",
-     "role",
-     "model."
+     "an",
+     "inspiration",
+     "to",
+     "children."
     ],
-    "answer": "A good athlete can be a role model.",
+    "answer": "A good athlete can be an inspiration to children.",
     "ar": "رتّب الجملة"
    },
    {
@@ -4960,13 +5420,13 @@
      "We",
      "need",
      "to",
-     "weigh",
-     "up",
+     "look",
+     "at",
      "both",
      "sides",
      "carefully."
     ],
-    "answer": "We need to weigh up both sides carefully.",
+    "answer": "We need to look at both sides carefully.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5084,15 +5544,18 @@
    {
     "type": "order",
     "words": [
-     "In",
-     "a",
-     "nutshell,",
-     "inflation",
-     "means",
-     "rising",
-     "prices."
+     "The",
+     "long",
+     "and",
+     "short",
+     "of",
+     "it",
+     "is",
+     "that",
+     "prices",
+     "rise."
     ],
-    "answer": "In a nutshell, inflation means rising prices.",
+    "answer": "The long and short of it is that prices rise.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5424,10 +5887,10 @@
    },
    {
     "type": "mc",
-    "q": "'A knock-on effect' is …",
+    "q": "'A domino effect' is …",
     "options": [
-     "a loud noise at the door",
-     "an indirect result that causes more results",
+     "a game played at the door",
+     "a series of events, each causing the next",
      "a sudden accident",
      "a successful solution"
     ],
@@ -5550,10 +6013,10 @@
    },
    {
     "type": "mc",
-    "q": "If food 'goes to waste', it …",
+    "q": "If food 'goes uneaten', it …",
     "options": [
      "is given to a guest",
-     "is thrown away or not used",
+     "is not eaten by anyone",
      "is stored in the fridge",
      "is cooked again"
     ],
@@ -5569,10 +6032,9 @@
      "good",
      "food",
      "goes",
-     "to",
-     "waste."
+     "uneaten."
     ],
-    "answer": "It's a shame when good food goes to waste.",
+    "answer": "It's a shame when good food goes uneaten.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5670,14 +6132,16 @@
     "words": [
      "The",
      "fake",
-     "video",
-     "went",
-     "viral",
+     "message",
+     "was",
+     "doing",
+     "the",
+     "rounds",
      "within",
      "an",
      "hour."
     ],
-    "answer": "The fake video went viral within an hour.",
+    "answer": "The fake message was doing the rounds within an hour.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5780,11 +6244,11 @@
   "3-0": [
    {
     "type": "mc",
-    "q": "If a place is 'off the beaten track', it is …",
+    "q": "If a farm is 'in the back of beyond', it is …",
     "options": [
-     "far from the places most people visit",
+     "very far from towns and other people",
      "on a busy main road",
-     "closed to visitors",
+     "behind a shopping centre",
      "very easy to find"
     ],
     "answer": 0
@@ -5913,28 +6377,28 @@
   "3-2": [
    {
     "type": "mc",
-    "q": "'A double-edged sword' is something that …",
+    "q": "If someone says 'there's a catch', they mean …",
     "options": [
-     "is very sharp",
-     "has both good and bad effects",
-     "is only harmful",
-     "is old-fashioned"
+     "something is easy to hold",
+     "there is a hidden problem",
+     "nothing is harmful",
+     "it is old-fashioned"
     ],
     "answer": 1
    },
    {
     "type": "order",
     "words": [
-     "By",
-     "and",
-     "large,",
+     "As",
+     "a",
+     "rule,",
      "technology",
      "has",
      "made",
      "life",
      "easier."
     ],
-    "answer": "By and large, technology has made life easier.",
+    "answer": "As a rule, technology has made life easier.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6044,11 +6508,12 @@
      "It's",
      "important",
      "to",
-     "strike",
-     "a",
-     "balance."
+     "get",
+     "the",
+     "mix",
+     "right."
     ],
-    "answer": "It's important to strike a balance.",
+    "answer": "It's important to get the mix right.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6161,7 +6626,7 @@
      "Yes, competition is good.",
      "No.",
      "Competition is when people compete.",
-     "It's a double-edged sword: it motivates some students but makes others anxious."
+     "It can backfire: it motivates some students but makes others anxious."
     ],
     "answer": 3
    }
@@ -6628,7 +7093,7 @@
      "options": [
       "Technology is good.",
       "I like technology very much.",
-      "By and large, technology helps us, but it's a double-edged sword because it can isolate people.",
+      "As a rule, technology helps us, but there's a catch: it can isolate people.",
       "Technology is technology."
      ],
      "answer": 2
@@ -6847,7 +7312,7 @@
      "Yes, I think so.",
      "Money is important.",
      "I don't know much about it.",
-     "By and large, money matters, but there's more to life than income, as my grandmother's life shows."
+     "As a rule, money matters, but there's more to life than income, as my grandmother's life shows."
     ],
     "answer": 3
    },
