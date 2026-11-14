@@ -10,7 +10,8 @@
     "Whereas"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 13.0
   },
   {
    "q": "If I ___ about the test, I would have studied harder.",
@@ -21,7 +22,8 @@
     "have known"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 13.0
   },
   {
    "q": "If I hadn't moved to Jeddah, I ___ my best friend now.",
@@ -32,7 +34,8 @@
     "wouldn't know"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 13.8
   },
   {
    "q": "If he weren't so shy, he ___ a question in class yesterday.",
@@ -43,7 +46,8 @@
     "had asked"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.2
   },
   {
    "q": "Can you back ___ your argument with an example?",
@@ -54,7 +58,8 @@
     "off"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 13.0
   },
   {
    "q": "We caught the plane, but it was a close ___.",
@@ -65,7 +70,8 @@
     "call"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 13.6
   },
   {
    "q": "In a talk, which phrase best introduces your second point?",
@@ -76,7 +82,8 @@
     "Let me start by …"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 12.0
   },
   {
    "q": "Your partner suggests an expensive idea. Which reply is the most polite disagreement?",
@@ -87,7 +94,8 @@
     "Whatever you want."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 9.0
   },
   {
    "q": "Which sentence states and defends a position?",
@@ -98,7 +106,8 @@
     "Do you like phones?"
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 10.0
   },
   {
    "q": "'In the end, we settled ___ the second option.'",
@@ -109,7 +118,8 @@
     "to"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 13.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "Teenagers need some homework.",
     "Young children need more homework."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 13.0
   },
   {
    "script": "We left home at seven, but the traffic was terrible. If we had taken the metro instead of the car, we would have arrived on time. In the end, we missed the first half of the match.",
@@ -131,7 +142,8 @@
     "Leaving home at seven",
     "Going to the match"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 13.0
   },
   {
    "script": "As you can see from this chart, just over half of the students in our year walk to school. Just under a third come by car, and the rest take the bus. This suggests that most students live close to the school.",
@@ -141,7 +153,8 @@
     "By bus",
     "On foot"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 13.0
   },
   {
    "script": "A: How about a reading competition? B: The problem with that is that weaker readers might give up. Why don't we start a book club instead? A: I'd go along with that. So shall we go for the book club? B: Agreed.",
@@ -151,7 +164,8 @@
     "To do both ideas",
     "To start a book club"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 13.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "To prepare a clear structure",
      "To join a different club"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 13.0
    },
    {
     "q": "What did Hessa prepare before every debate, apart from her reasons?",
@@ -173,7 +188,8 @@
      "A long story about herself",
      "Questions for the judges"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 13.0
    },
    {
     "q": "What happened at the national competition?",
@@ -182,7 +198,8 @@
      "Hessa decided to give up.",
      "Hessa's team didn't win, but she valued the experience."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 13.0
    },
    {
     "q": "How does Hessa feel about speaking now?",
@@ -191,7 +208,8 @@
      "She is no longer afraid.",
      "She only speaks to friends."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 13.0
    }
   ]
  },

@@ -10,7 +10,8 @@
     "heard I"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 16.0
   },
   {
    "q": "Not only ___ the project on time, but they also won first prize.",
@@ -21,7 +22,8 @@
     "finished they"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 16.0
   },
   {
    "q": "The door was locked from the inside, so the thief ___ through it.",
@@ -32,7 +34,8 @@
     "needn't escape"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.0
   },
   {
    "q": "The photo ___ by AI; the people in it have six fingers.",
@@ -43,18 +46,20 @@
     "must have been created"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 16.0
   },
   {
-   "q": "Before using a website for your essay, check that it is a ___ source.",
+   "q": "The evidence is far from ___: the study only looked at twenty people.",
    "options": [
-    "reliable",
-    "reliant",
-    "relied",
-    "relying"
+    "conclusive",
+    "concluded",
+    "inclusive",
+    "exclusive"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 16.0
   },
   {
    "q": "The story about the school closing spread like ___.",
@@ -65,7 +70,8 @@
     "wind"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 16.0
   },
   {
    "q": "Her story about moving to a new country really struck a ___ with me.",
@@ -76,7 +82,8 @@
     "song"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 16.0
   },
   {
    "q": "Which phrase is best for summarising at the end of a talk?",
@@ -87,29 +94,32 @@
     "Turning now to …"
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 14.5
   },
   {
-   "q": "Which sentence best justifies a choice in a discussion?",
+   "q": "Which sentence justifies a choice correctly?",
    "options": [
-    "Because.",
     "The reason I'd go for the library is that it's open to everyone.",
-    "I don't mind.",
-    "Library is nice."
+    "The reason why I'd go for the library because it's open to everyone.",
+    "The reason I'd go for the library is because of open to everyone.",
+    "I'd go for the library, the reason is it's open to everyone."
    ],
-   "answer": 1,
-   "skill": "function"
+   "answer": 0,
+   "skill": "function",
+   "d": 15.0
   },
   {
-   "q": "Which sentence speculates about a picture?",
+   "q": "Which sentence speculates about a picture correctly?",
    "options": [
-    "The man is holding an umbrella.",
-    "There are three cars in the street.",
-    "The sky is grey.",
-    "Judging by his expression, I'd imagine he's just missed his bus."
+    "Judging by his expression, I'd imagine he's just missed his bus.",
+    "Judging by his expression, I'd imagine he just misses his bus.",
+    "Judged by his expression, I imagine he's just missing his bus.",
+    "Judging his expression, I'd imagine he's just been missed the bus."
    ],
-   "answer": 3,
-   "skill": "function"
+   "answer": 0,
+   "skill": "function",
+   "d": 15.5
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "Persuade students to volunteer",
     "Explain how to make food baskets"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 15.0
   },
   {
    "script": "This advert claims the cream removes all spots in one night. But the before-and-after photos look suspicious, and every review was posted on the same day. They must have been written by the company. I'd take it with a pinch of salt.",
@@ -131,7 +142,8 @@
     "They were written in another language.",
     "They were very negative."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 16.0
   },
   {
    "script": "So far, I've talked about why we need sleep. This brings me to my second point: what happens to our brains when we don't get enough of it. After that, I'll share three simple tips you can start using tonight.",
@@ -141,7 +153,8 @@
     "Three tips for better sleep",
     "The effects of too little sleep on the brain"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 15.5
   },
   {
    "script": "Both pictures show people travelling, but the key difference is the pace. The family on the train seems relaxed, whereas the businessman at the airport looks under pressure. Judging by the way he's checking his watch, I'd imagine his flight is about to leave.",
@@ -151,7 +164,8 @@
     "Stressed",
     "Bored"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 15.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "Too little patience",
      "Too few fact-checkers"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 16.0
    },
    {
     "q": "What should you do with a claim that has no named source?",
@@ -173,7 +188,8 @@
      "Share it with your friends",
      "Report it to the police"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 16.0
    },
    {
     "q": "Which posts are most likely to be misleading?",
@@ -182,7 +198,8 @@
      "Posts that are very short",
      "Posts that make us angry or afraid"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 16.0
    },
    {
     "q": "What is the writer's main message?",
@@ -191,7 +208,8 @@
      "Simple habits can help anyone avoid being misled.",
      "Social media should be banned."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 16.0
    }
   ]
  },

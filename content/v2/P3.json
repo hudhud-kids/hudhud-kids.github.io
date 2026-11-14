@@ -10,7 +10,8 @@
     "nine half"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 3.0
   },
   {
    "q": "We ___ to school at seven o'clock.",
@@ -21,7 +22,8 @@
     "are go"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.0
   },
   {
    "q": "Do you play outside after school?",
@@ -32,7 +34,8 @@
     "Yes, I do."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0
   },
   {
    "q": "There ___ three bakeries in my town.",
@@ -43,7 +46,8 @@
     "be"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.0
   },
   {
    "q": "Is there a swimming pool in your town?",
@@ -54,7 +58,8 @@
     "No, it don't."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0
   },
   {
    "q": "Doctors and nurses work in a ___.",
@@ -65,7 +70,8 @@
     "farm"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 3.0
   },
   {
    "q": "You want a bottle of water in a shop. What do you say?",
@@ -76,7 +82,8 @@
     "Where is water?"
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0
   },
   {
    "q": "How much ___ these mangoes?",
@@ -87,7 +94,8 @@
     "do"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.0
   },
   {
    "q": "It's cold today. My sister ___ a coat and gloves.",
@@ -98,7 +106,8 @@
     "wears"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.4
   },
   {
    "q": "Does your dad take an umbrella on rainy days?",
@@ -109,7 +118,8 @@
     "Yes, he takes."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "at half past six",
     "at seven o'clock"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 3.0
   },
   {
    "script": "This is my street. There is a mosque and there are two shops. There isn't a park, but there is a big tree next to my house.",
@@ -131,7 +142,8 @@
     "a mosque",
     "a shop"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 3.0
   },
   {
    "script": "Boy: Excuse me. How much is this kite? Seller: It's twenty riyals. Boy: And those puzzles? Seller: They're fifteen riyals. Boy: Can I have the kite, please?",
@@ -141,7 +153,8 @@
     "fifty riyals",
     "twenty riyals"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 3.0
   },
   {
    "script": "Good evening! Here is the weather report. In Riyadh, it's sunny and hot. In Tabuk, it's cold and windy. People wear coats.",
@@ -151,7 +164,8 @@
     "cold and windy",
     "rainy and warm"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 3.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "in a town by the sea",
      "on a farm"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 3.0
    },
    {
     "q": "What time does Sam get up on Saturday?",
@@ -173,7 +188,8 @@
      "at seven o'clock",
      "at half past eight"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 3.0
    },
    {
     "q": "What does Sam ask about?",
@@ -182,7 +198,8 @@
      "the boats",
      "the grapes"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 3.0
    },
    {
     "q": "What does Sam's mum wear in winter?",
@@ -191,7 +208,8 @@
      "a cap",
      "sunglasses"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 3.0
    }
   ]
  },
@@ -204,5 +222,40 @@
   "What do you do every day after school? Say the times.",
   "What is there in your town? Is there a park or a library?",
   "What's the weather like today, and what do you wear?"
+ ],
+ "pic": [
+  {
+   "type": "pic",
+   "say": "It's raining! What do you need?",
+   "options": [
+    "☀️",
+    "☂️",
+    "🧤"
+   ],
+   "answer": 1,
+   "d": 3.0
+  },
+  {
+   "type": "pic",
+   "say": "My dad is a doctor. Where does he work?",
+   "options": [
+    "🏫",
+    "🏥",
+    "🏪"
+   ],
+   "answer": 1,
+   "d": 3.2
+  },
+  {
+   "type": "pic",
+   "say": "It's nine o'clock. Tap the clock.",
+   "options": [
+    "🕒",
+    "🕘",
+    "🕖"
+   ],
+   "answer": 1,
+   "d": 3.5
+  }
  ]
 }

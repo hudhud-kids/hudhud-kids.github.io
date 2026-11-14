@@ -10,7 +10,8 @@
     "tending"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.0
   },
   {
    "q": "'It was my coach ___ encouraged me to keep going.'",
@@ -21,7 +22,8 @@
     "whose"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.0
   },
   {
    "q": "'What I need right now ___ a long holiday.'",
@@ -32,7 +34,8 @@
     "it is"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.5
   },
   {
    "q": "A walking day is ___ near as effective as a daily school bus.",
@@ -43,7 +46,8 @@
     "never"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 14.0
   },
   {
    "q": "I think you've got the wrong end of the ___. I wasn't criticising you.",
@@ -54,7 +58,8 @@
     "stick"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 14.0
   },
   {
    "q": "The benefits of the scheme clearly ___ the costs.",
@@ -65,7 +70,8 @@
     "outrun"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 14.0
   },
   {
    "q": "We had to ___ out the cheaper option because it wasn't safe.",
@@ -76,18 +82,20 @@
     "hand"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 14.0
   },
   {
-   "q": "Which reply disagrees most tactfully?",
+   "q": "In a discussion, which phrase gives you time to think before you answer?",
    "options": [
-    "You're completely wrong.",
-    "I'm not entirely sure that's true.",
-    "That's a stupid idea.",
-    "Whatever."
+    "That's a good question. Let me think about how to put this.",
+    "To cut a long story short, …",
+    "As far as I'm concerned, …",
+    "Be that as it may, …"
    ],
-   "answer": 1,
-   "skill": "function"
+   "answer": 0,
+   "skill": "function",
+   "d": 14.0
   },
   {
    "q": "In a discussion, someone interrupts you. Which phrase helps you continue?",
@@ -98,18 +106,20 @@
     "If I could just finish, …"
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 13.5
   },
   {
-   "q": "Which sentence evaluates an idea?",
+   "q": "Which sentence hedges a claim most carefully?",
    "options": [
-    "The main drawback is that it's expensive to run.",
-    "The app has a blue logo.",
-    "I downloaded it yesterday.",
-    "My brother uses it."
+    "This would seem to suggest that the scheme has been partly successful.",
+    "This proves that the scheme has been a total success.",
+    "The scheme has clearly worked for everyone.",
+    "Without doubt, the scheme has succeeded."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 14.5
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "Putting fewer words on the slides",
     "Speaking more slowly"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 12.5
   },
   {
    "script": "A: So, as I was saying, the trip should be in March because— B: Sorry to interrupt, but March is exam month. A: Ah, good point. Going back to the dates, then, how about late April?",
@@ -131,7 +142,8 @@
     "To suggest a new place",
     "To ask who is coming"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 13.0
   },
   {
    "script": "Everyone thinks it was my brother who planned the surprise party, but it wasn't. It was my little sister who organised everything. What I really admire is that she kept it a secret for a whole month.",
@@ -141,7 +153,8 @@
     "The speaker",
     "The speaker's sister"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 13.5
   },
   {
    "script": "We looked at three ways to reduce plastic at school. Banning plastic bottles is cheap, but it's questionable whether students would follow the rule. Water fountains cost more upfront, but in the long term they're by far the best option.",
@@ -151,7 +164,8 @@
     "Water fountains",
     "Recycling bins"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 14.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "He talked over other members.",
      "He invited quiet members to speak."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 14.0
    },
    {
     "q": "According to the club leader, what makes a good speaker?",
@@ -173,7 +188,8 @@
      "Speaking loudly",
      "Winning every argument"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 14.0
    },
    {
     "q": "How did Abdullah learn to judge ideas?",
@@ -182,7 +198,8 @@
      "By asking the leader to decide",
      "By looking at their strengths first"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 14.0
    },
    {
     "q": "What happened at the end of the term?",
@@ -191,7 +208,8 @@
      "Abdullah left the club.",
      "The club closed for the summer."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 14.0
    }
   ]
  },

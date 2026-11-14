@@ -10,7 +10,8 @@
     "be"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 4.0
   },
   {
    "q": "What ___ they doing in the park?",
@@ -21,7 +22,8 @@
     "does"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 4.0
   },
   {
    "q": "Are you watching TV?",
@@ -32,7 +34,8 @@
     "No, I isn't."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 4.0
   },
   {
    "q": "Which sentence is correct?",
@@ -43,7 +46,8 @@
     "I always playing football."
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 4.0
   },
   {
    "q": "How often do you go swimming?",
@@ -54,7 +58,8 @@
     "Swimming is fun."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 4.0
   },
   {
    "q": "How often ___ your brother read comics?",
@@ -65,7 +70,8 @@
     "does"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 4.0
   },
   {
    "q": "The bank is on one side of the street. The shop is on the other side. The shop is ___ the bank.",
@@ -76,7 +82,8 @@
     "on"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 4.0
   },
   {
    "q": "Excuse me, how do I get to the park?",
@@ -87,7 +94,8 @@
     "Yes, it is."
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 4.0
   },
   {
    "q": "Your mum's bags are heavy. What do you say?",
@@ -98,7 +106,8 @@
     "You can't carry."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 4.0
   },
   {
    "q": "Could you ___ the plates on the table, please? We're eating soon.",
@@ -109,7 +118,8 @@
     "put"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 4.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "sleeping",
     "reading"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 4.0
   },
   {
    "script": "I love sport. I go swimming twice a week, on Sunday and Wednesday. I play football every day after school. I never play tennis.",
@@ -131,17 +142,19 @@
     "never",
     "twice a week"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 4.0
   },
   {
-   "script": "Excuse me, where's the toy shop? Go up the stairs to the first floor. Turn right. The toy shop is between the café and the bookshop.",
+   "script": "Girl: Excuse me, where's the toy shop? Man: Go up the stairs to the first floor. Turn right. The toy shop is between the café and the bookshop.",
    "q": "Where is the toy shop?",
    "options": [
     "between the café and the bookshop",
     "opposite the lift",
     "next to the bank"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 4.0
   },
   {
    "script": "Mum: Could you help me, please? The guests are coming. Reem: Of course! Let me bring the dates. Mum: Thank you. Could you clean the cups too? Reem: Sorry, I can't. I'm doing my homework.",
@@ -151,7 +164,8 @@
     "the dates",
     "the coffee"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 4.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "riding her bike",
      "flying a kite"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 4.0
    },
    {
     "q": "How often does the family come to the park?",
@@ -173,7 +188,8 @@
      "never",
      "every day"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 4.0
    },
    {
     "q": "What is Sam doing today?",
@@ -182,7 +198,8 @@
      "cooking",
      "flying a kite"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 4.0
    },
    {
     "q": "What does Mum ask Sam?",
@@ -191,7 +208,8 @@
      "to play football",
      "to go home"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 4.0
    }
   ]
  },

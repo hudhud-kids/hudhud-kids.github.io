@@ -9,7 +9,8 @@
     "Goodbye!"
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 1.0
   },
   {
    "q": "___ name is Ali.",
@@ -19,7 +20,8 @@
     "Me"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 1.0
   },
   {
    "q": "How are you?",
@@ -29,7 +31,8 @@
     "I'm fine, thank you."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 1.0
   },
   {
    "q": "My dad's dad is my ___.",
@@ -39,7 +42,8 @@
     "cousin"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 1.5
   },
   {
    "q": "Reem is a girl. ___ my friend.",
@@ -49,7 +53,8 @@
     "It's"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 1.0
   },
   {
    "q": "It's ___ apple.",
@@ -59,7 +64,8 @@
     "am"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 1.5
   },
   {
    "q": "A banana is ___.",
@@ -69,7 +75,8 @@
     "yellow"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 1.0
   },
   {
    "q": "How old are you?",
@@ -79,7 +86,8 @@
     "It's seven."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 1.0
   },
   {
    "q": "5 + 5 = ___",
@@ -89,7 +97,8 @@
     "twelve"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 1.0
   },
   {
    "q": "How many balls?",
@@ -99,7 +108,8 @@
     "Three balls."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 1.0
   }
  ],
  "listen": [
@@ -111,7 +121,8 @@
     "seven",
     "nine"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 1.0
   },
   {
    "script": "Look at my toys! This is my robot. It's big and grey. This is my ball. It's small and red. And this is my kite. It's yellow.",
@@ -121,7 +132,8 @@
     "grey",
     "yellow"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 1.0
   },
   {
    "script": "This is my family. This is my mum, and this is my dad. This boy is my cousin, Saad. This woman is my aunt. She's very kind. And this baby is my sister.",
@@ -131,7 +143,8 @@
     "a brother",
     "a cousin"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 1.0
   },
   {
    "script": "Teacher: How many pencils, Omar? Omar: One, two, three, four, five, six. Six pencils! Teacher: Good. And how many books? Omar: Two books.",
@@ -141,7 +154,8 @@
     "six",
     "four"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 1.3
   }
  ],
  "read": {
@@ -154,7 +168,8 @@
      "eight",
      "seven"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 1.0
    },
    {
     "q": "Where is Faisal from?",
@@ -163,7 +178,8 @@
      "Jeddah",
      "Dammam"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 1.0
    },
    {
     "q": "What colour is Faisal's car?",
@@ -172,7 +188,8 @@
      "yellow",
      "blue"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 1.0
    },
    {
     "q": "Who is Reem?",
@@ -181,7 +198,8 @@
      "Faisal's mum",
      "Faisal's friend"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 1.0
    }
   ]
  },
@@ -194,5 +212,62 @@
   "What's your name, and how old are you?",
   "Who is in your family?",
   "What's your favourite toy? What colour is it?"
+ ],
+ "pic": [
+  {
+   "type": "pic",
+   "say": "Tap the cat.",
+   "options": [
+    "🐱",
+    "🐶",
+    "🐟"
+   ],
+   "answer": 0,
+   "d": 1.0
+  },
+  {
+   "type": "pic",
+   "say": "Where is the apple? Tap the apple.",
+   "options": [
+    "🍌",
+    "🍎",
+    "🍇"
+   ],
+   "answer": 1,
+   "d": 1.0
+  },
+  {
+   "type": "pic",
+   "say": "Tap number three.",
+   "options": [
+    "3️⃣",
+    "5️⃣",
+    "1️⃣"
+   ],
+   "answer": 0,
+   "d": 1.2
+  },
+  {
+   "type": "pic",
+   "say": "Which one is red?",
+   "options": [
+    "🟡",
+    "🔴",
+    "🔵"
+   ],
+   "answer": 1,
+   "d": 1.3
+  },
+  {
+   "type": "pic",
+   "say": "Tap the happy face.",
+   "options": [
+    "😢",
+    "😀",
+    "😠"
+   ],
+   "answer": 1,
+   "d": 1.5
+  }
  ]
 }

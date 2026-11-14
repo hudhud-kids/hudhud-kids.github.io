@@ -83,6 +83,15 @@ def main(n):
     for i, q in enumerate(r.get('qs') or []):
         if len(q.get('options') or []) != 3 or not 0 <= q.get('answer', -1) < 3: fail(errs, f'P read q {i}')
     if len(P.get('aloud') or []) != 3 or len(P.get('speak') or []) != 3: fail(errs, 'P: 3 aloud + 3 speak')
+    # optional calibrated difficulty d (level scale) on every item, and picture items for pre-readers (levels 1-3)
+    for sec, qs in (('mcq', P.get('mcq') or []), ('listen', P.get('listen') or []), ('read', r.get('qs') or []), ('pic', P.get('pic') or [])):
+        for i, q in enumerate(qs):
+            if 'd' in q and not (isinstance(q['d'], (int, float)) and 0.5 <= q['d'] <= 20.5 and abs(q['d'] - n) <= 5): fail(errs, f'P {sec} {i}: d must be a number near the level')
+    for i, q in enumerate(P.get('pic') or []):
+        o = q.get('options') or []
+        if q.get('type') != 'pic' or not q.get('say') or len(o) not in (3, 4) or not isinstance(q.get('answer'), int) or not 0 <= q['answer'] < len(o): fail(errs, f'P pic {i}: type/say/options/answer')
+        if any(re.search(r'[A-Za-z]{2}', x) for x in o): fail(errs, f'P pic {i}: options must be emoji only (no reading)')
+    if P.get('pic') and n > 3: fail(errs, 'P: picture items only in levels 1-3')
     print(f'L{n}: ' + ('OK' if not errs else f'{len(errs)} problems'))
     for e in errs[:40]: print('  -', e)
     return 0 if not errs else 1

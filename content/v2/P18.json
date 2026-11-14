@@ -10,7 +10,8 @@
     "posits"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 18.0
   },
   {
    "q": "Which sentence uses nominalisation most effectively?",
@@ -21,7 +22,8 @@
     "Because prices dropped, people were buying more."
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 18.0
   },
   {
    "q": "'___ the government to ban cars from the city centre, air quality would improve.'",
@@ -32,7 +34,8 @@
     "If"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 18.0
   },
   {
    "q": "'By the time she graduates, she ___ Arabic and English for six years.'",
@@ -43,7 +46,8 @@
     "would study"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 18.0
   },
   {
    "q": "'___ you require further information, please contact the organisers.'",
@@ -54,7 +58,8 @@
     "Should"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 18.0
   },
   {
    "q": "A tradition that has not changed at all while everything around it has is said to be …",
@@ -65,7 +70,8 @@
     "an acquired taste"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 18.0
   },
   {
    "q": "'The argument rests on a ___ link between diet and intelligence.'",
@@ -76,7 +82,8 @@
     "tender"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 18.0
   },
   {
    "q": "'Generosity is woven into the ___ of Saudi society.'",
@@ -87,7 +94,8 @@
     "cloth"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 18.0
   },
   {
    "q": "An audience member asks about something your study did not examine. The most professional reply is:",
@@ -98,7 +106,8 @@
     "That's a pertinent question, but it falls outside the scope of this study."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 14.0
   },
   {
    "q": "Which sentence argues with the most precision?",
@@ -109,7 +118,8 @@
     "Homework is good and bad, I suppose."
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 15.5
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "Her findings may not apply to younger learners.",
     "Classroom teaching has no benefits."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 18.0
   },
   {
    "script": "Were desalination to become much cheaper, coastal cities could grow far beyond their current limits. Should that happen, though, planners would need to think carefully about energy use, since the process still requires a great deal of power.",
@@ -131,7 +142,8 @@
     "Water quality",
     "Coastal tourism"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 18.0
   },
   {
    "script": "When I first moved to Toronto, I was a fish out of water. It took me a whole year to find my feet. Now I feel I have the best of both worlds: I'm at home in two cultures, and I can move between them easily.",
@@ -141,7 +153,8 @@
     "Comfortable in both cultures",
     "Keen to return home permanently"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 18.0
   },
   {
    "script": "That's a fair criticism. Our sample was limited to two schools, so the data don't allow us to generalise to the whole country. I do, however, stand by our central finding: in both schools, shaded areas were used far more in the afternoon.",
@@ -151,7 +164,8 @@
     "That the sample was large enough",
     "That shaded areas were used more"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 18.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "Families moved to cities and the skill was passed on less.",
      "UNESCO banned its use on tents."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 18.0
    },
    {
     "q": "What do critics of the revival argue?",
@@ -173,7 +188,8 @@
      "Sadu should be taught in every school.",
      "The patterns were never important."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 18.0
    },
    {
     "q": "What do supporters concede?",
@@ -182,7 +198,8 @@
      "That adapting a tradition always destroys it",
      "That some modern products are superficial"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 18.0
    },
    {
     "q": "According to supporters, what would happen if designers stopped experimenting?",
@@ -191,7 +208,8 @@
      "Sadu would survive only in museums.",
      "Sadu patterns would become simpler."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 18.0
    }
   ]
  },

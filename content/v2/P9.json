@@ -10,7 +10,8 @@
     "have you"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0
   },
   {
    "q": "'I'm busy,' she said. → She said that she ___ busy.",
@@ -21,7 +22,8 @@
     "has been"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0
   },
   {
    "q": "'Where do you live?' → He asked me where ___.",
@@ -32,7 +34,8 @@
     "I am living"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0
   },
   {
    "q": "Complete: Would you mind ___ the window?",
@@ -43,7 +46,8 @@
     "closed"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0
   },
   {
    "q": "Complete: The bus isn't ___ fast ___ the train.",
@@ -54,7 +58,8 @@
     "as / as"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0
   },
   {
    "q": "I missed the meeting. Can you fill me ___?",
@@ -65,7 +70,8 @@
     "out"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 9.4
   },
   {
    "q": "Before we choose, let's weigh ___ the pros and cons.",
@@ -76,7 +82,8 @@
     "on"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 9.6
   },
   {
    "q": "You didn't hear the time clearly on the phone. What do you say?",
@@ -87,7 +94,8 @@
     "Sorry, did you say five or nine?"
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 8.5
   },
   {
    "q": "Which is the most polite way to ask a stranger?",
@@ -98,7 +106,8 @@
     "Pen, please, quick."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 8.0
   },
   {
    "q": "Your group must choose. Which sentence makes the final decision?",
@@ -109,7 +118,8 @@
     "What do you think?"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 9.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "on the twelfth",
     "on the third"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 9.0
   },
   {
    "script": "Noura: I've just spoken to Aunt Maha. She said they were coming to visit on Friday, and she told me to remind Mum to buy dates. She also asked if we still had the big carpet.",
@@ -131,7 +142,8 @@
     "visit her on Friday",
     "remind her mother to buy dates"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 9.0
   },
   {
    "script": "Omar: Excuse me, would you mind moving your bag? I'd like to sit here. Man: Oh, not at all. Sorry about that. There you go.",
@@ -141,7 +153,8 @@
     "He says no.",
     "He gives Omar his ticket."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 9.0
   },
   {
    "script": "Reem: The mountains are lovely, but the beach isn't as far, and it's much cheaper. Dad: You have a point. It would be better to save money this time. Let's go for the beach.",
@@ -151,7 +164,8 @@
     "It's closer and cheaper.",
     "It's Reem's birthday."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 9.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "after the mid-year holiday",
      "at the end of the year"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 9.0
    },
    {
     "q": "How many books can students take home each week?",
@@ -173,7 +188,8 @@
      "one",
      "five"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 9.0
    },
    {
     "q": "Why does Huda like the idea?",
@@ -182,7 +198,8 @@
      "The library is often crowded.",
      "She has read all the books."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 9.0
    },
    {
     "q": "What did Mr Salem ask students to do?",
@@ -191,7 +208,8 @@
      "read only in the library",
      "return the books on time"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 9.0
    }
   ]
  },

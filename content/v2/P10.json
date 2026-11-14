@@ -10,7 +10,8 @@
     "learnt"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 10.0
   },
   {
    "q": "'The bridge _____ in 1995.'",
@@ -21,7 +22,8 @@
     "has built"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 10.0
   },
   {
    "q": "'If I _____ more time, I'd learn to play the oud.'",
@@ -32,7 +34,8 @@
     "had"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 10.0
   },
   {
    "q": "'I wish I _____ swim. All my friends are in the pool.'",
@@ -43,7 +46,8 @@
     "am able"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 10.0
   },
   {
    "q": "'The concert was _____ off because of the storm.'",
@@ -54,7 +58,8 @@
     "turned"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 10.0
   },
   {
    "q": "'I'm finally getting the _____ of using the new app.'",
@@ -65,7 +70,8 @@
     "heart"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 10.6
   },
   {
    "q": "'My headphones arrived broken, so I asked for a _____.'",
@@ -76,7 +82,8 @@
     "landmark"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 10.0
   },
   {
    "q": "You want to complain politely in a restaurant. What do you say?",
@@ -87,7 +94,8 @@
     "Take this away now."
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 9.0
   },
   {
    "q": "Your friend asks, 'How long have you been living here?' Which answer is correct?",
@@ -98,7 +106,8 @@
     "In five years."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 10.0
   },
   {
    "q": "Which sentence imagines an unreal situation?",
@@ -109,7 +118,8 @@
     "If I were a pilot, I'd fly to Japan every week."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 9.5
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "She waited a long time for the bus.",
     "She forgot the address."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 10.0
   },
   {
    "script": "Welcome to the old town. This house was built about two hundred years ago from coral stone taken from the Red Sea. It was restored a few years ago, and today it is used as a small museum.",
@@ -131,7 +142,8 @@
     "a school",
     "a museum"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 10.0
   },
   {
    "script": "Good morning. I'm calling about my order. Unfortunately, the shoes I ordered are the wrong size. I don't want a refund. Could you possibly send me a size 40 instead?",
@@ -141,7 +153,8 @@
     "a refund",
     "a different colour"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 10.0
   },
   {
    "script": "If I could change one thing about my school, I'd make the library bigger. Right now it's tiny, and there's nowhere to sit. I wish we had comfortable chairs and more books in English.",
@@ -151,7 +164,8 @@
     "comfortable chairs",
     "a café"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 10.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "for two years",
      "since last spring"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 10.0
    },
    {
     "q": "What was his first robot made from?",
@@ -173,7 +188,8 @@
      "old toy cars and a broken phone",
      "pieces from his uncle's farm"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 10.0
    },
    {
     "q": "Where was the new robot tested?",
@@ -182,7 +198,8 @@
      "at a science fair",
      "on his uncle's farm"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 10.0
    },
    {
     "q": "What does Faisal wish?",
@@ -191,7 +208,8 @@
      "that every farmer could use his robot",
      "that he could stop building robots"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 10.0
    }
   ]
  },

@@ -10,7 +10,8 @@
     "goes to"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 6.0
   },
   {
    "q": "___ you going to visit your grandparents this weekend?",
@@ -21,7 +22,8 @@
     "Will"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 6.0
   },
   {
    "q": "A: Would you like to come to my house on Friday? B: '___'",
@@ -32,7 +34,8 @@
     "Yes, I'd love."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 6.0
   },
   {
    "q": "Which is the most polite way to say no to an invitation?",
@@ -43,7 +46,8 @@
     "I can't come. Bye."
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 5.5
   },
   {
    "q": "The football match was really ___. We all shouted and cheered.",
@@ -54,7 +58,8 @@
     "exciting"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 6.3
   },
   {
    "q": "I'm ___ because I have a big test tomorrow.",
@@ -65,7 +70,8 @@
     "interesting"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 6.0
   },
   {
    "q": "It was very cold, ___ I wore my jacket.",
@@ -76,7 +82,8 @@
     "but"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 6.0
   },
   {
    "q": "Every student at our school wears the same clothes. We ___ wear a uniform.",
@@ -87,7 +94,8 @@
     "doesn't have to"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 6.0
   },
   {
    "q": "It's Saturday and there's no school, so you ___ get up early.",
@@ -98,7 +106,8 @@
     "don't have to"
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 6.0
   },
   {
    "q": "A person who watches swimmers and keeps them safe is a ___.",
@@ -109,7 +118,8 @@
     "guest"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 6.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "Finish her project.",
     "Go to Unaizah."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 6.0
   },
   {
    "script": "A: Omar, would you like to come to the park with us on Thursday? B: Thanks for inviting me, but I'm afraid I can't. I'm going to the dentist after school. A: That's a shame. Maybe next time!",
@@ -131,7 +142,8 @@
     "He has to study.",
     "He's going to the dentist."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 6.0
   },
   {
    "script": "Yesterday was a terrible day. I lost my new pen, and then our team lost the basketball match. I was really disappointed. But in the evening, my uncle visited us with a big cake, so I felt better.",
@@ -141,7 +153,8 @@
     "Disappointed.",
     "Bored."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 6.0
   },
   {
    "script": "Welcome to the pool, everyone. Here are the rules. You must wear a swimming hat. You mustn't run, because the floor is slippery. You don't have to bring a towel, because we have towels for you.",
@@ -151,7 +164,8 @@
     "A towel.",
     "Shoes."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 6.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "Give out water.",
      "Run in a race."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 6.0
    },
    {
     "q": "Why is Sam nervous?",
@@ -173,7 +188,8 @@
      "He is tired.",
      "He has no T-shirt."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 6.0
    },
    {
     "q": "What don't students have to bring?",
@@ -182,7 +198,8 @@
      "Their shoes.",
      "Water."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 6.0
    },
    {
     "q": "Why can't Sam go to Faisal's house?",
@@ -191,7 +208,8 @@
      "His grandparents are going to visit.",
      "He is going to be at the race."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 6.0
    }
   ]
  },

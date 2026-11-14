@@ -10,7 +10,8 @@
     "hoped"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 20.0
   },
   {
    "q": "A manager says, 'You might want to double-check those figures.' What is she most likely implying?",
@@ -21,7 +22,8 @@
     "She has no time to check them."
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 17.0
   },
   {
    "q": "'With respect, you're putting words in my ___.'",
@@ -32,7 +34,8 @@
     "mouth"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 20.0
   },
   {
    "q": "'Not only ___ the data, but he also took the expert's words out of context.'",
@@ -43,7 +46,8 @@
     "he did cherry-pick"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 20.0
   },
   {
    "q": "'Drawing the ___ together, we seem to agree that cost matters most.'",
@@ -54,7 +58,8 @@
     "threads"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 20.0
   },
   {
    "q": "As chair of a seminar, which sentence synthesises two opposing views?",
@@ -65,7 +70,8 @@
     "Let's park that point for now."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 18.0
   },
   {
    "q": "'The effect of the new rule has been ___: almost nobody has noticed any change.'",
@@ -76,7 +82,8 @@
     "dramatic"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 20.0
   },
   {
    "q": "'___ the speaker kept her composure, she would have won the debate.'",
@@ -87,7 +94,8 @@
     "Did"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 20.0
   },
   {
    "q": "An interviewer asks, 'Why do teenagers never take anything seriously?' Which reply handles the question best?",
@@ -98,7 +106,8 @@
     "With respect, that's a sweeping generalisation; many teenagers volunteer every week."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 16.0
   },
   {
    "q": "'Rising temperatures will only ___ the water shortage.'",
@@ -109,7 +118,8 @@
     "resolve"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 20.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "Rather disappointed",
     "Furious and ready to leave"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 20.0
   },
   {
    "script": "Thanks, everyone. Let me draw the threads together. Although Ali focused on cost and Saad on safety, you both seem to want a plan that families will actually use. So perhaps our position is: affordable, safe and simple.",
@@ -131,7 +142,8 @@
     "Introducing a new topic",
     "Synthesising different views"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 20.0
   },
   {
    "script": "So you admit your plan has failed? — I'd reject that premise. We haven't hit every target, and I'll concede that the timing was poor, but two of our three goals have already been met.",
@@ -141,7 +153,8 @@
     "The plan has failed.",
     "None of the goals were met."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 20.0
   },
   {
    "script": "That's a tricky one. Off the top of my head, I'd say tourism is a double-edged sword: it brings jobs, but, to be more precise, it can also push up rents for local families.",
@@ -151,7 +164,8 @@
     "It has both benefits and drawbacks.",
     "It mainly lowers rents for families."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 20.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "He exaggerated the danger of the storm.",
      "He refused to explain his plan."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 20.0
    },
    {
     "q": "According to the passage, indirectness works only when …",
@@ -173,7 +188,8 @@
      "speaker and listener share assumptions",
      "the message is written down"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 20.0
    },
    {
     "q": "How might a newcomer misunderstand 'You might want to look at this again'?",
@@ -182,7 +198,8 @@
      "As a clear order",
      "As something optional"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 20.0
    },
    {
     "q": "What do skilled communicators do, according to the passage?",
@@ -191,7 +208,8 @@
      "Stay polite but check that the message was understood",
      "Always speak as directly as possible"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 20.0
    }
   ]
  },

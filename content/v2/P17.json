@@ -10,7 +10,8 @@
     "For instance"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 17.0
   },
   {
    "q": "'___ I respect his experience, I can't agree with his conclusion.'",
@@ -21,7 +22,8 @@
     "In spite"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 17.0
   },
   {
    "q": "Which reply concedes a point and then qualifies it?",
@@ -32,7 +34,8 @@
     "I have no opinion on that."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 15.0
   },
   {
    "q": "'The term \"urban sprawl\" ___ the spread of a city into the land around it.'",
@@ -43,7 +46,8 @@
     "is called"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 15.0
   },
   {
    "q": "Which phrase introduces the same idea in different words?",
@@ -54,7 +58,8 @@
     "Granted,"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 17.0
   },
   {
    "q": "'The water shortage ___ decades of overuse.' (The overuse is the cause.)",
@@ -65,7 +70,8 @@
     "stems from"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 17.0
   },
   {
    "q": "'___ heavy rain, the match was postponed.'",
@@ -76,7 +82,8 @@
     "As a result"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 17.0
   },
   {
    "q": "'Fewer bees mean fewer plants, which ___ affects the animals that eat them.'",
@@ -87,7 +94,8 @@
     "in fact"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 17.0
   },
   {
    "q": "'Free apps often come at a ___ to our privacy.'",
@@ -98,7 +106,8 @@
     "fee"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 17.0
   },
   {
    "q": "In a speaking exam, which is the most natural way to buy time?",
@@ -109,7 +118,8 @@
     "That's an interesting question. Let me think about that for a moment."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 13.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "It has ruined the town.",
     "It has made no difference."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 17.0
   },
   {
    "script": "Think of inflation as a slow leak in your wallet. Put another way, the same amount of money buys a little less every year. That's why keeping cash under your bed isn't the smartest way to save.",
@@ -131,7 +142,8 @@
     "A slow leak in a wallet",
     "A rising balloon"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 17.0
   },
   {
    "script": "When the city spread into the desert, most new homes were far from shops and offices. As a consequence, nearly every family needed two cars, and this, in turn, made the morning traffic much worse.",
@@ -141,7 +153,8 @@
     "New shops opened near homes.",
     "Morning traffic got worse."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 17.0
   },
   {
    "script": "That's an interesting question. It's hard to generalise, but I'd say most young people still value family traditions. Where they differ from their grandparents is that they adapt them to fit modern life, rather than following every detail.",
@@ -151,7 +164,8 @@
     "They adapt traditions to modern life.",
     "They follow every detail of traditions."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 17.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "Corals lose the algae that give them colour and food.",
      "Corals are broken by divers."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 17.0
    },
    {
     "q": "What does the writer concede about tourism?",
@@ -173,7 +188,8 @@
      "It has no effect on reefs.",
      "It can bring money for protection."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 17.0
    },
    {
     "q": "According to the passage, how can a reef be saved?",
@@ -182,7 +198,8 @@
      "By stopping all research",
      "By banning plastic only"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 17.0
    },
    {
     "q": "Why is Red Sea coral of special interest?",
@@ -191,7 +208,8 @@
      "Some of it seems to tolerate warmer water.",
      "It is not affected by pollution."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 17.0
    }
   ]
  },

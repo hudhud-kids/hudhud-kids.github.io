@@ -10,7 +10,8 @@
     "visits"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0
   },
   {
    "q": "My sister ___ the heavy bags to the car yesterday.",
@@ -21,7 +22,8 @@
     "carry"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0
   },
   {
    "q": "___ you swim in the sea last weekend?",
@@ -32,7 +34,8 @@
     "Are"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0
   },
   {
    "q": "We ___ to AlUla by plane and ___ lots of photos.",
@@ -43,7 +46,8 @@
     "went / took"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0
   },
   {
    "q": "A: 'How did you get there?' B: '___'",
@@ -54,7 +58,8 @@
     "It was great."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 4.5
   },
   {
    "q": "Riyadh is ___ than Abha.",
@@ -65,7 +70,8 @@
     "the biggest"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0
   },
   {
    "q": "This is ___ film I know. I laughed all the time!",
@@ -76,7 +82,8 @@
     "funniest than"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.4
   },
   {
    "q": "A: 'I've got a sore throat.' B: '___'",
@@ -87,7 +94,8 @@
     "You should have a warm drink."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 5.0
   },
   {
    "q": "The festival was full of people. It was very ___.",
@@ -98,7 +106,8 @@
     "thirsty"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 5.0
   },
   {
    "q": "Before a race, you do easy moves to get your body ready. You ___.",
@@ -109,7 +118,8 @@
     "stay up late"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 5.0
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "He played football.",
     "He tidied his room."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 5.0
   },
   {
    "script": "A: Where did you go in the holidays, Reem? B: We went to Abha. A: Did you fly? B: No, we didn't. We went by car. It took ten hours, but the mountains were beautiful.",
@@ -131,7 +142,8 @@
     "By plane.",
     "By train."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 5.0
   },
   {
    "script": "Look at these three bags. The red one is 90 riyals, the blue one is 60 riyals, and the green one is 120 riyals. The blue one is the cheapest, but the green one is the biggest.",
@@ -141,7 +153,8 @@
     "The green one.",
     "The blue one."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 5.0
   },
   {
    "script": "A: What's the matter, Omar? B: I'm always tired at school. I play games on my tablet until midnight. A: You shouldn't stay up late. You should go to bed early and read a book instead.",
@@ -151,7 +164,8 @@
     "Drink more coffee.",
     "Go to bed early."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 5.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "By plane.",
      "By boat."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 5.0
    },
    {
     "q": "What did Lama's brother find?",
@@ -173,7 +188,8 @@
      "A camera.",
      "A cap."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 5.0
    },
    {
     "q": "What is true about the houses in Al-Balad?",
@@ -182,7 +198,8 @@
      "They are new.",
      "They are older than most buildings in Jeddah."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 5.0
    },
    {
     "q": "Why does Lama think Jeddah is more beautiful than Riyadh?",
@@ -191,7 +208,8 @@
      "It is cooler.",
      "It is bigger."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 5.0
    }
   ]
  },

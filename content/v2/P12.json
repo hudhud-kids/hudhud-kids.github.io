@@ -10,7 +10,8 @@
     "must be had"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.0
   },
   {
    "q": "___ the heavy traffic, we arrived on time.",
@@ -21,7 +22,8 @@
     "Whereas"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.0
   },
   {
    "q": "By the time we got to the cinema, the film ___.",
@@ -32,7 +34,8 @@
     "was already start"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.0
   },
   {
    "q": "You can borrow my camera as long as you ___ careful with it.",
@@ -43,7 +46,8 @@
     "be"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 11.4
   },
   {
    "q": "The last minutes were so exciting that we were on the ___ of our seats.",
@@ -54,7 +58,8 @@
     "top"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 12.6
   },
   {
    "q": "I'll buy the phone if you ___ a free case.",
@@ -65,7 +70,8 @@
     "throw in"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 13.0
   },
   {
    "q": "After weighing ___ the pros and cons, she chose the online course.",
@@ -76,7 +82,8 @@
     "down"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 12.0
   },
   {
    "q": "Which sentence balances an argument best?",
@@ -87,7 +94,8 @@
     "It's cheap and fast and good."
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 11.0
   },
   {
    "q": "Your friend offers 50 riyals for a game you're selling for 80. What's the best way to compromise?",
@@ -98,7 +106,8 @@
     "Fine, take it for free."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 10.0
   },
   {
    "q": "Which is the best way to speculate about a photo?",
@@ -109,7 +118,8 @@
     "It looks as though they've just won something."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 10.5
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "The man had lost his umbrella.",
     "The man had just won a prize."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 12.0
   },
   {
    "script": "Moving to the city has its advantages. There are better schools and more things to do. On the other hand, the traffic is terrible and the houses are much more expensive. On balance, I'd still rather stay in the village.",
@@ -131,7 +142,8 @@
     "To stay in the village.",
     "To move to a new country."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 12.0
   },
   {
    "script": "OK, I'll let you have your friends over this weekend, provided that you tidy up afterwards and everyone has gone home before eleven. If not, that's the last time.",
@@ -141,7 +153,8 @@
     "Invite only two friends.",
     "Make sure the friends leave before eleven."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 12.0
   },
   {
    "script": "We had just put up our tents when, out of nowhere, a sandstorm hit the camp. By the time it stopped, half our things had blown away. Eventually, we found most of them behind a dune.",
@@ -151,7 +164,8 @@
     "Right after they had put up their tents.",
     "After they had found their things."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 12.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "The long bus journey",
      "Choosing an activity"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 12.0
    },
    {
     "q": "When did the guide start telling stories?",
@@ -173,7 +188,8 @@
      "When they arrived at Hegra",
      "On the last day"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 12.0
    },
    {
     "q": "What condition did the teacher set for the last day?",
@@ -182,7 +198,8 @@
      "They had to finish early.",
      "Everyone had to agree."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 12.0
    },
    {
     "q": "What did the class finally decide?",
@@ -191,7 +208,8 @@
      "To do only the balloon ride",
      "To do neither activity"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 12.0
    }
   ]
  },

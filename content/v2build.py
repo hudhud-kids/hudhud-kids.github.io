@@ -2,8 +2,16 @@
 """Publish v2 levels: python3 content/v2build.py 8 11 ...
 Copies content/v2/L{n}.json over content/L{n}.json keeping the old stories, and content/v2/P{n}.json over content/P{n}.json."""
 import json, sys, os, subprocess
-for a in sys.argv[1:]:
+# --p: publish only the placement banks (content/v2/P{n}.json -> content/P{n}.json), leaving the level files alone
+P_ONLY = '--p' in sys.argv
+for a in [x for x in sys.argv[1:] if x != '--p']:
     n = int(a)
+    if P_ONLY:
+        if subprocess.run([sys.executable, 'content/v2check.py', str(n)]).returncode != 0:
+            print(f'P{n}: not valid, skipped'); continue
+        P = json.load(open(f'content/v2/P{n}.json')); P['level'] = n; P['v'] = 2
+        json.dump(P, open(f'content/P{n}.json', 'w'), ensure_ascii=False, separators=(',', ':'))
+        print(f'P{n}: published'); continue
     if subprocess.run([sys.executable, 'content/v2check.py', str(n)]).returncode != 0:
         print(f'L{n}: not valid, skipped'); continue
     new = json.load(open(f'content/v2/L{n}.json'))

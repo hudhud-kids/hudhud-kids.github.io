@@ -10,7 +10,8 @@
     "idea of"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 8.0
   },
   {
    "q": "Which question asks for an opinion?",
@@ -21,7 +22,8 @@
     "Where is the cinema?"
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 6.5
   },
   {
    "q": "A: I can't swim very well. B: (you agree) ___",
@@ -32,7 +34,8 @@
     "So do I."
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0
   },
   {
    "q": "Which is the most polite way to disagree?",
@@ -43,7 +46,8 @@
     "I see your point, but I'm not so sure."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 7.0
   },
   {
    "q": "'If I ___ you, I'd talk to the coach.'",
@@ -54,7 +58,8 @@
     "have been"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0
   },
   {
    "q": "'If you ___ enough sleep, you'll feel better.'",
@@ -65,7 +70,8 @@
     "getting"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0
   },
   {
    "q": "'I'm saving ___ for a new bike.'",
@@ -76,7 +82,8 @@
     "off"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 8.4
   },
   {
    "q": "'That's the man ___ son plays for the national team.'",
@@ -87,7 +94,8 @@
     "whose"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0
   },
   {
    "q": "'Diriyah is the place ___ the first Saudi state began.'",
@@ -98,7 +106,8 @@
     "whose"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0
   },
   {
    "q": "'Everyone loves that series, but I think it's a bit ___.'",
@@ -109,7 +118,8 @@
     "brand-new"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 8.6
   }
  ],
  "listen": [
@@ -121,7 +131,8 @@
     "It was boring, but the better team won.",
     "The referee was unfair."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 8.0
   },
   {
    "script": "Woman: I think we should go to the beach this weekend. Man: I see your point, but it's going to be very hot. Why don't we go to the museum instead and visit the beach in winter?",
@@ -131,7 +142,8 @@
     "Staying at home.",
     "Going to the museum now and the beach later."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 8.0
   },
   {
    "script": "Teacher: You look stressed out, Saad. Boy: I've got three exams next week, and I'm falling behind in science. Teacher: If I were you, I'd make a timetable and ask your science teacher for extra help.",
@@ -141,7 +153,8 @@
     "Stop studying science.",
     "Take a week off school."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 8.0
   },
   {
    "script": "Girl: Excuse me, I left my bag behind. It's a small green bag which has a pattern of yellow flowers. I think I left it in the café where I had lunch, near the bookshop.",
@@ -151,7 +164,8 @@
     "Small and green, with yellow flowers.",
     "Small and brown, made of leather."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 8.0
   }
  ],
  "read": {
@@ -164,7 +178,8 @@
      "Students can call their parents or check homework.",
      "Teachers use them in class."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 8.0
    },
    {
     "q": "What is Nawaf worried about?",
@@ -173,7 +188,8 @@
      "Phones are too expensive.",
      "Phones will break in the playground."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 8.0
    },
    {
     "q": "What did the class decide in the end?",
@@ -182,7 +198,8 @@
      "To use phones all day.",
      "To keep phones in bags at break and use them after school."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 8.0
    },
    {
     "q": "How did Nawaf disagree with Fahad?",
@@ -191,7 +208,8 @@
      "He politely accepted Fahad's idea first and then gave his own.",
      "He didn't say anything."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 8.0
    }
   ]
  },
