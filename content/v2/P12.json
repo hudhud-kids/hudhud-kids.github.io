@@ -10,7 +10,11 @@
     "must be had"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.0,
+   "cefr": "B2",
+   "cando": "Can speculate about the past (must have, can't have).",
+   "cid": "f1"
   },
   {
    "q": "___ the heavy traffic, we arrived on time.",
@@ -21,7 +25,11 @@
     "Whereas"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.0,
+   "cefr": "B2",
+   "cando": "Can link ideas with contrast, condition and relative structures (despite, as long as, which).",
+   "cid": "f3"
   },
   {
    "q": "By the time we got to the cinema, the film ___.",
@@ -32,7 +40,11 @@
     "was already start"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 12.0,
+   "cefr": "B2",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
   },
   {
    "q": "You can borrow my camera as long as you ___ careful with it.",
@@ -43,7 +55,11 @@
     "be"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 11.4,
+   "cefr": "B1+",
+   "cando": "Can link ideas with contrast, condition and relative structures (despite, as long as, which).",
+   "cid": "f3"
   },
   {
    "q": "The last minutes were so exciting that we were on the ___ of our seats.",
@@ -54,7 +70,11 @@
     "top"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 12.6,
+   "cefr": "B2",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
   },
   {
    "q": "I'll buy the phone if you ___ a free case.",
@@ -65,7 +85,11 @@
     "throw in"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 13.0,
+   "cefr": "B2",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
   },
   {
    "q": "After weighing ___ the pros and cons, she chose the online course.",
@@ -76,7 +100,11 @@
     "down"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 12.0,
+   "cefr": "B2",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
   },
   {
    "q": "Which sentence balances an argument best?",
@@ -87,71 +115,193 @@
     "It's cheap and fast and good."
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 11.0,
+   "cefr": "B1+",
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
   },
   {
-   "q": "Your friend offers 50 riyals for a game you're selling for 80. What's the best way to compromise?",
+   "q": "Your friend offers 50 riyals for a game you're selling for 80. Which reply offers a compromise?",
    "options": [
-    "No way.",
-    "I don't care.",
-    "Let's meet halfway. How about 65?",
-    "Fine, take it for free."
+    "How about we meet halfway, at 65?",
+    "I'm afraid 80 is my final price.",
+    "Fine, you can have it for 50.",
+    "Let's not talk about the price."
    ],
-   "answer": 2,
-   "skill": "function"
+   "answer": 0,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "function",
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
   },
   {
-   "q": "Which is the best way to speculate about a photo?",
+   "q": "Which sentence speculates about a photo?",
    "options": [
-    "This is a photo.",
-    "I took this photo.",
-    "Photos are nice.",
-    "It looks as though they've just won something."
+    "This photo shows a team holding a cup.",
+    "It looks as though they've just won something.",
+    "They have just won something, and I know it.",
+    "They won something in this photo last year."
+   ],
+   "answer": 1,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "function",
+   "cando": "Can speculate about the past (must have, can't have).",
+   "cid": "f1"
+  },
+  {
+   "q": "___ he was exhausted, he finished the race.",
+   "options": [
+    "However",
+    "Although",
+    "Despite",
+    "In spite"
+   ],
+   "answer": 1,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "grammar",
+   "cando": "Can link ideas with contrast, condition and relative structures (despite, as long as, which).",
+   "cid": "f3"
+  },
+  {
+   "q": "By the time the guests arrived, we ___ all the food.",
+   "options": [
+    "had prepared",
+    "have prepared",
+    "prepared already",
+    "were prepared"
+   ],
+   "answer": 0,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "grammar",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
+  },
+  {
+   "q": "I'm not sure about the plan. Can I ___ it over and tell you tomorrow?",
+   "options": [
+    "take",
+    "see",
+    "get",
+    "think"
    ],
    "answer": 3,
-   "skill": "function"
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "vocabulary",
+   "cando": "Can use idiomatic expressions and phrasal verbs naturally.",
+   "cid": "f6"
+  },
+  {
+   "q": "In a discussion, which phrase introduces a counter-argument?",
+   "options": [
+    "In addition, …",
+    "As a result, …",
+    "On the other hand, …",
+    "For example, …"
+   ],
+   "answer": 2,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "function",
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
   }
  ],
  "listen": [
   {
-   "script": "Look at this picture. The man is soaked, and he's holding a broken umbrella. It must have been raining really hard, and judging by his face, he isn't very happy about it.",
-   "q": "What does the speaker think happened?",
+   "script": "Teacher: What can you see in this picture, Bandar? Bandar: The man is soaked, and he's holding a broken umbrella. It must have been raining really hard, and judging by his face, he isn't very happy about it.",
+   "q": "What does Bandar think happened?",
    "options": [
     "It had been raining heavily.",
     "The man had lost his umbrella.",
     "The man had just won a prize."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can speculate about the past (must have, can't have).",
+   "cid": "f1"
   },
   {
-   "script": "Moving to the city has its advantages. There are better schools and more things to do. On the other hand, the traffic is terrible and the houses are much more expensive. On balance, I'd still rather stay in the village.",
-   "q": "What does the speaker decide?",
+   "script": "Friend: So, are you moving to the city? Woman: Well, moving to the city has its advantages. There are better schools and more things to do. On the other hand, the traffic is terrible and the houses are much more expensive. On balance, I'd still rather stay in the village.",
+   "q": "What does the woman decide?",
    "options": [
     "To move to the city.",
     "To stay in the village.",
     "To move to a new country."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
   },
   {
-   "script": "OK, I'll let you have your friends over this weekend, provided that you tidy up afterwards and everyone has gone home before eleven. If not, that's the last time.",
+   "script": "Son: Can my friends come over this weekend? Mum: OK, I'll let you have your friends over, provided that you tidy up afterwards and everyone has gone home before eleven. If not, that's the last time.",
    "q": "What is one condition the parent sets?",
    "options": [
     "Cook dinner for everyone.",
     "Invite only two friends.",
     "Make sure the friends leave before eleven."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can understand opinions, conditions and decisions in natural speech.",
+   "cid": "f7"
   },
   {
-   "script": "We had just put up our tents when, out of nowhere, a sandstorm hit the camp. By the time it stopped, half our things had blown away. Eventually, we found most of them behind a dune.",
+   "script": "Reporter: What happened at the camp? Boy: We had just put up our tents when, out of nowhere, a sandstorm hit the camp. By the time it stopped, half our things had blown away. Eventually, we found most of them behind a dune.",
    "q": "When did the sandstorm start?",
    "options": [
     "Before they arrived at the camp.",
     "Right after they had put up their tents.",
     "After they had found their things."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can use the past perfect and third and mixed conditionals.",
+   "cid": "f2"
+  },
+  {
+   "script": "Girl: Shall we take the metro or a taxi? Boy: The taxi's quicker, but it costs four times as much. Girl: True. And the metro station's right next to the stadium. Boy: Metro it is, then.",
+   "q": "What do they decide?",
+   "options": [
+    "to take the metro",
+    "to take a taxi",
+    "to walk"
+   ],
+   "answer": 0,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can balance an argument, compromise and disagree tactfully.",
+   "cid": "f4"
+  },
+  {
+   "script": "Man: You can borrow my car as long as you fill it up. Woman: Of course. And I'll bring it back by six. Man: Great. If there's traffic, just text me.",
+   "q": "What must the woman do to borrow the car?",
+   "options": [
+    "text the man every hour",
+    "fill it with petrol",
+    "bring it back by five"
+   ],
+   "answer": 1,
+   "d": 12.0,
+   "cefr": "B2",
+   "skill": "listening",
+   "cando": "Can understand opinions, conditions and decisions in natural speech.",
+   "cid": "f7"
   }
  ],
  "read": {
@@ -164,7 +314,12 @@
      "The long bus journey",
      "Choosing an activity"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    },
    {
     "q": "When did the guide start telling stories?",
@@ -173,7 +328,12 @@
      "When they arrived at Hegra",
      "On the last day"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    },
    {
     "q": "What condition did the teacher set for the last day?",
@@ -182,7 +342,12 @@
      "They had to finish early.",
      "Everyone had to agree."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    },
    {
     "q": "What did the class finally decide?",
@@ -191,7 +356,73 @@
      "To do only the balloon ride",
      "To do neither activity"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Across Saudi Arabia, more teenagers are volunteering than ever before, from helping at food banks to guiding visitors at heritage sites. Supporters argue that volunteering teaches responsibility and builds skills that schools cannot. Hind, sixteen, spent last summer helping at a hospital library. 'I had never spoken to strangers so much,' she says. 'By the end, I felt far more confident.' However, critics point out that some students only volunteer to improve their university applications. Others worry that volunteering takes time away from studying. Despite these concerns, most experts agree that, as long as it is well organised, volunteering benefits both the community and the volunteers themselves.",
+  "qs": [
+   {
+    "q": "Where did Hind volunteer?",
+    "options": [
+     "at a hospital library",
+     "at a food bank",
+     "at a heritage site"
+    ],
+    "answer": 0,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   },
+   {
+    "q": "How did Hind change?",
+    "options": [
+     "She decided to be a doctor.",
+     "She started reading more books.",
+     "She became more confident."
+    ],
+    "answer": 2,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   },
+   {
+    "q": "Which criticism is mentioned?",
+    "options": [
+     "Hospitals don't need volunteers.",
+     "Some students volunteer only to improve their applications.",
+     "Volunteering is too expensive."
+    ],
+    "answer": 1,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
+   },
+   {
+    "q": "What do most experts think?",
+    "options": [
+     "Well-organised volunteering helps everyone.",
+     "Students should study instead.",
+     "Volunteering should be compulsory."
+    ],
+    "answer": 0,
+    "d": 12.0,
+    "cefr": "B2",
+    "skill": "reading",
+    "cando": "Can understand articles that describe experiences and arguments.",
+    "cid": "f8"
    }
   ]
  },

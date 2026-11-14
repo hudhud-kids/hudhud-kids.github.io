@@ -10,7 +10,11 @@
     "idea of"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 8.0,
+   "cefr": "B1",
+   "cando": "Can give and ask for opinions, and agree or disagree politely.",
+   "cid": "d1"
   },
   {
    "q": "Which question asks for an opinion?",
@@ -21,7 +25,11 @@
     "Where is the cinema?"
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 6.5,
+   "cefr": "A2+",
+   "cando": "Can give and ask for opinions, and agree or disagree politely.",
+   "cid": "d1"
   },
   {
    "q": "A: I can't swim very well. B: (you agree) ___",
@@ -32,7 +40,11 @@
     "So do I."
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0,
+   "cefr": "B1",
+   "cando": "Can give and ask for opinions, and agree or disagree politely.",
+   "cid": "d1"
   },
   {
    "q": "Which is the most polite way to disagree?",
@@ -43,7 +55,11 @@
     "I see your point, but I'm not so sure."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 7.0,
+   "cefr": "A2+",
+   "cando": "Can give and ask for opinions, and agree or disagree politely.",
+   "cid": "d1"
   },
   {
    "q": "'If I ___ you, I'd talk to the coach.'",
@@ -54,7 +70,11 @@
     "have been"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0,
+   "cefr": "B1",
+   "cando": "Can use first and second conditionals.",
+   "cid": "d2"
   },
   {
    "q": "'If you ___ enough sleep, you'll feel better.'",
@@ -65,7 +85,11 @@
     "getting"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0,
+   "cefr": "B1",
+   "cando": "Can use first and second conditionals.",
+   "cid": "d2"
   },
   {
    "q": "'I'm saving ___ for a new bike.'",
@@ -76,7 +100,11 @@
     "off"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 8.4,
+   "cefr": "B1",
+   "cando": "Can use common phrasal verbs in everyday situations.",
+   "cid": "d6"
   },
   {
    "q": "'That's the man ___ son plays for the national team.'",
@@ -87,7 +115,11 @@
     "whose"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0,
+   "cefr": "B1",
+   "cando": "Can use relative clauses to describe people, places and things.",
+   "cid": "d3"
   },
   {
    "q": "'Diriyah is the place ___ the first Saudi state began.'",
@@ -98,7 +130,11 @@
     "whose"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 8.0,
+   "cefr": "B1",
+   "cando": "Can use relative clauses to describe people, places and things.",
+   "cid": "d3"
   },
   {
    "q": "'Everyone loves that series, but I think it's a bit ___.'",
@@ -109,7 +145,71 @@
     "brand-new"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 8.6,
+   "cefr": "B1",
+   "cando": "Can use vocabulary to describe opinions, feelings and everyday problems.",
+   "cid": "d10"
+  },
+  {
+   "q": "I'm really ___ science. I want to be an engineer one day.",
+   "options": [
+    "boring of",
+    "interested in",
+    "interesting in",
+    "keen in"
+   ],
+   "answer": 1,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "vocabulary",
+   "cando": "Can use vocabulary to describe opinions, feelings and everyday problems.",
+   "cid": "d10"
+  },
+  {
+   "q": "Could you ___ the music down? I'm trying to study.",
+   "options": [
+    "turn",
+    "put",
+    "take",
+    "make"
+   ],
+   "answer": 0,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "vocabulary",
+   "cando": "Can use common phrasal verbs in everyday situations.",
+   "cid": "d6"
+  },
+  {
+   "q": "My brother and I never ___ on which film to watch.",
+   "options": [
+    "accept",
+    "share",
+    "think",
+    "agree"
+   ],
+   "answer": 3,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "vocabulary",
+   "cando": "Can use vocabulary to describe opinions, feelings and everyday problems.",
+   "cid": "d10"
+  },
+  {
+   "q": "A: I think we should start the project early. B: ___ That way we'll have time to check it.",
+   "options": [
+    "You're wrong.",
+    "I don't think so.",
+    "I couldn't agree more.",
+    "I'm not agree."
+   ],
+   "answer": 2,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "function",
+   "cando": "Can give and ask for opinions, and agree or disagree politely.",
+   "cid": "d1"
   }
  ],
  "listen": [
@@ -121,7 +221,12 @@
     "It was boring, but the better team won.",
     "The referee was unfair."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can give and ask for opinions, and agree or disagree politely.",
+   "cid": "d1"
   },
   {
    "script": "Woman: I think we should go to the beach this weekend. Man: I see your point, but it's going to be very hot. Why don't we go to the museum instead and visit the beach in winter?",
@@ -131,7 +236,12 @@
     "Staying at home.",
     "Going to the museum now and the beach later."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can discuss options and reach a decision in a group.",
+   "cid": "d9"
   },
   {
    "script": "Teacher: You look stressed out, Saad. Boy: I've got three exams next week, and I'm falling behind in science. Teacher: If I were you, I'd make a timetable and ask your science teacher for extra help.",
@@ -141,17 +251,57 @@
     "Stop studying science.",
     "Take a week off school."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can understand the main points and details of clear conversations on familiar topics.",
+   "cid": "d7"
   },
   {
-   "script": "Girl: Excuse me, I left my bag behind. It's a small green bag which has a pattern of yellow flowers. I think I left it in the café where I had lunch, near the bookshop.",
+   "script": "Man: Lost property office. How can I help? Girl: Excuse me, I left my bag behind. It's a small green bag which has a pattern of yellow flowers. I think I left it in the café where I had lunch, near the bookshop.",
    "q": "What does the girl's bag look like?",
    "options": [
     "Big and yellow, with green stars.",
     "Small and green, with yellow flowers.",
     "Small and brown, made of leather."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can use relative clauses to describe people, places and things.",
+   "cid": "d3"
+  },
+  {
+   "script": "Boy: What did you think of the new science museum? Girl: Honestly, I thought it was amazing. The space room was the best part. Boy: Really? I found it a bit crowded.",
+   "q": "What was the boy's opinion?",
+   "options": [
+    "The space room was the best part.",
+    "It was amazing.",
+    "It was too crowded."
+   ],
+   "answer": 2,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can give and ask for opinions, and agree or disagree politely.",
+   "cid": "d1"
+  },
+  {
+   "script": "Woman: If it rains tomorrow, we'll have the picnic indoors. Boy: And if it's sunny? Woman: Then we'll go to the park as we planned.",
+   "q": "Where will they have the picnic if it rains?",
+   "options": [
+    "indoors",
+    "in the park",
+    "at the beach"
+   ],
+   "answer": 0,
+   "d": 8.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can use first and second conditionals.",
+   "cid": "d2"
   }
  ],
  "read": {
@@ -164,7 +314,12 @@
      "Students can call their parents or check homework.",
      "Teachers use them in class."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    },
    {
     "q": "What is Nawaf worried about?",
@@ -173,7 +328,12 @@
      "Phones are too expensive.",
      "Phones will break in the playground."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    },
    {
     "q": "What did the class decide in the end?",
@@ -182,7 +342,12 @@
      "To use phones all day.",
      "To keep phones in bags at break and use them after school."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    },
    {
     "q": "How did Nawaf disagree with Fahad?",
@@ -191,7 +356,73 @@
      "He politely accepted Fahad's idea first and then gave his own.",
      "He didn't say anything."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Should Schools Start Later? Many teenagers find it hard to get up early, and scientists say there is a reason. During the teenage years, the body clock changes, so teenagers often feel sleepy later at night. If school starts at seven, many students arrive tired. Some schools in other countries have tried starting an hour later. Teachers there say students are more awake and get better marks. However, not everyone agrees. Some parents say a later start would make it difficult for them to drive their children to school before work. In my opinion, schools should try it for one term and then ask students and parents what they think.",
+  "qs": [
+   {
+    "q": "Why do teenagers feel sleepy later at night?",
+    "options": [
+     "They have too much homework.",
+     "They drink too much tea.",
+     "Their body clock changes."
+    ],
+    "answer": 2,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   },
+   {
+    "q": "What happened at schools that started later?",
+    "options": [
+     "Teachers felt more tired.",
+     "Students were more awake.",
+     "Students arrived later than ever."
+    ],
+    "answer": 1,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   },
+   {
+    "q": "Why are some parents against the idea?",
+    "options": [
+     "It could make driving to work difficult.",
+     "Their children would sleep too much.",
+     "It costs too much money."
+    ],
+    "answer": 0,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   },
+   {
+    "q": "What does the writer suggest?",
+    "options": [
+     "starting school earlier",
+     "asking only teachers",
+     "trying it for one term"
+    ],
+    "answer": 2,
+    "d": 8.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    }
   ]
  },

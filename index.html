@@ -2586,6 +2586,42 @@ function listenUntilDone(ms, onText, ctl){ return new Promise(res => {
   start(); }); }
 /* listening items: never read the speaker labels ("A:", "Teacher:", "Omar:") aloud */
 const stripSpeakers = s => String(s || '').replace(/(^|[.!?…"”’)]\s+)[A-Z][A-Za-z'’-]{0,15}:\s+/g, '$1').replace(/\s+/g, ' ').trim();
+/* listening scripts with two or more speakers: every speaker gets their own voice (Azure: two different neural voices, as
+   narrate does for quotes; device voice: a different device voice when there is one, and always a clearly different pitch).
+   The labels ("A:", "Mum:", "Omar:") only choose the voice and are never read aloud. Scripts without labels whose turns are
+   separated by " — " alternate two voices; a monologue uses one voice. */
+const DLG_FEM = /^(mum|mom|mother|grandma|granny|grandmother|aunt|woman|girl|lady|sister|daughter|nurse|sara|noura|reem|hind|lina|lama|huda|hessa|maha|salma|nada|mona|fatima|aisha|layla|dana|rana|amal|hala|jana|mrs|ms)$/i;
+const DLG_MAL = /^(dad|father|grandpa|grandad|grandfather|uncle|man|boy|brother|son|omar|fahad|faisal|saad|ali|ahmed|khalid|nawaf|hamad|sam|saleh|salem|abdullah|majed|yousef|turki|mohammed|waleed|nasser|bandar|mr)$/i;
+function dialogTurns(script){
+  const s = String(script || '').replace(/\s+/g, ' ').trim(), re = /(^|[.!?…"”’)—–]\s*)([A-Z][A-Za-z'’-]{0,15}):\s+/g, marks = []; let m;
+  while((m = re.exec(s))) marks.push({who:m[2], at:m.index + m[1].length, from:m.index + m[0].length});
+  if(marks.length){ const out = []; if(marks[0].at > 0) out.push({who:null, text:s.slice(0, marks[0].at).trim()});
+    marks.forEach((x, i) => out.push({who:x.who, text:s.slice(x.from, i + 1 < marks.length ? marks[i + 1].at : s.length).trim()})); return out.filter(t => t.text); }
+  const parts = s.replace(/([.!?…])\s+[—–]\s+/g, '$1\u0001').split('\u0001').map(t => t.trim()).filter(Boolean);
+  return parts.length > 1 ? parts.map((t, i) => ({who:i % 2 ? '#B' : '#A', text:t})) : [{who:null, text:s}]; }
+function dialogVoices(turns){
+  const map = {}, n = {f:0, m:0}, AZ = {f:[AZ_VOICES.f, AZ_VOICES.q], m:[AZ_VOICES.m, 'en-US-BrianMultilingualNeural']}; let last = null;
+  turns.forEach(t => { const w = t.who || '#N'; if(map[w]){ last = map[w]; return; }
+    const g = DLG_FEM.test(w) ? 'f' : DLG_MAL.test(w) ? 'm' : last ? (last.g === 'f' ? 'm' : 'f') : 'f', i = n[g]++;
+    map[w] = last = {g, i, az:AZ[g][i % 2], pitch:g === 'f' ? (i % 2 ? 1.28 : 1.12) : (i % 2 ? .96 : .78)}; });
+  return map; }
+function dialogDevVoice(g, i){ try{
+  const vs = speechSynthesis.getVoices().filter(v => /^en[-_]/i.test(v.lang)), F = /samantha|karen|moira|tessa|victoria|allison|ava|susan|zira|serena|fiona|female|aria|jenny|emma|kate|libby|sonia/i, M = /daniel|alex\b|fred|aaron|rishi|tom\b|oliver|david|mark\b|\bmale|arthur|gordon|guy\b|ryan|andrew|brian/i;
+  const pool = vs.filter(v => g === 'f' ? F.test(v.name) : (M.test(v.name) && !F.test(v.name))); return pool.length ? pool[i % pool.length] : null; }catch(e){ return null; } }
+let DLG_GEN = 0;
+function speakDialog(script, rate){ rate = rate || .9;
+  const turns = dialogTurns(script), vm = dialogVoices(turns), gen = ++DLG_GEN, azGen = AZ_GEN; let az = azOn();
+  speakDialog.last = turns.map(t => { const v = vm[t.who || '#N']; return {who:t.who, text:t.text, g:v.g, az:v.az, pitch:v.pitch}; });
+  const alive = () => gen === DLG_GEN && AZ_GEN === azGen, wait = ms => new Promise(r => setTimeout(r, ms));
+  const dev = (text, v) => new Promise(res => { let done = false, tm = null; const fin = () => { if(done) return; done = true; clearTimeout(tm); res(); };
+    try{ const u = new SpeechSynthesisUtterance(text); u.lang = 'en-US'; u.rate = rate; u.pitch = v.pitch; const dv = dialogDevVoice(v.g, v.i); if(dv) u.voice = dv;
+      u.onend = fin; u.onerror = fin; tm = setTimeout(fin, text.split(' ').length * 650 + 3000); speechSynthesis.speak(u); }catch(e){ fin(); } });
+  const fetchOf = i => { const p = azFetch(turns[i].text, vm[turns[i].who || '#N'].az, rate); p.catch(() => {}); return p; };
+  return (async () => { let pre = az ? fetchOf(0) : null;
+    for(let i = 0; i < turns.length; i++){ if(!alive()) return; const t = turns[i], v = vm[t.who || '#N'];
+      if(az){ let url = null; try{ url = await pre; }catch(e){ azFail(e); az = false; }
+        if(az){ if(!alive()) return; pre = i + 1 < turns.length ? fetchOf(i + 1) : null; const ok = await azPlay(url); if(!alive()) return; if(ok){ await wait(280); continue; } az = false; } }
+      await dev(t.text, v); if(!alive()) return; await wait(280); } })(); }
 
 /* an unfinished placement is remembered on this device: closing the app mid-test brings the child (or the parent who
    ran it) back to the test instead of the home page, until it is finished */
@@ -2619,8 +2655,9 @@ async function placementTestRun(k, opt){
   const ov = document.createElement('div'); ov.className = 'reader'; document.body.appendChild(ov); PLACE_STARTING = 0;
   const frame = (title, body) => { ov.innerHTML = `<div class="r-top"><button class="btn sm" id="px">${KIDMODE ? 'لاحقاً' : 'إلغاء'}</button><b>🎯 ${title}</b><span class="small muted" id="pstep"></span></div><div class="ptest">${body}</div>`; ov.querySelector('#px').onclick = () => { speechSynthesis.cancel(); ov.remove(); if(KIDMODE) renderPlaceGate(k); else { placeRunClear(); if(hadNeed === false && DB.kids[k]){ delete DB.kids[k].needPlace; save(); } renderParent(); } }; };
   frame('اختبار تحديد المستوى', `<div class="card" style="text-align:center;display:grid;gap:12px"><div style="font-size:3rem">🎯</div><h2>${KIDMODE ? `أهلاً ${esc(nick(k))}! قبل ما نبدأ، خلنا نعرف مستواك` : `اختبار تحديد المستوى: ${esc(kid.ar)}`}</h2>
-    <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge: يبدأ بأسئلة سهلة جداً، ويصعب تدريجياً كلما أجبت صح، ويسهل إذا أخطأت. إذا ما تعرف الجواب اضغط «ما أعرف» ولا تخمّن. خمسة أجزاء، ويأخذ تقريباً 20 دقيقة:</p>
-    <div class="psecs"><div>📖 <b>المعرفة</b><span class="small muted">قواعد ومفردات واستماع وقراءة · 16 سؤالاً</span></div><div>👂 <b>تمييز الأصوات</b><span class="small muted">أصوات متشابهة مثل P/B وTH · 4 أسئلة</span></div><div>✍️ <b>الإملاء</b><span class="small muted">يسمع جملة ويكتبها · جملتان</span></div><div>🔊 <b>النطق</b><span class="small muted">قراءة جملتين وكلمتين بصوت عالٍ</span></div><div>🗣️ <b>التحدث</b><span class="small muted">3 أسئلة يجيب عليها بالكلام</span></div></div>
+    <p style="margin:0">اختبار تكيّفي على معايير CEFR وGSE وCambridge: أول ثمانية أسئلة تحدد المرحلة (مبتدئ، أساسي، متوسط، متقدم)، وبعدها أسئلة داخل هذه المرحلة حتى يتضح المستوى. إذا ما تعرف الجواب اضغط «ما أعرف» ولا تخمّن. خمسة أجزاء، ويأخذ تقريباً 20 دقيقة:</p>
+    ${ageOf(kid.birth) <= 7 ? '<p class="small" style="margin:0">👂 للصغار: نبدأ بأسئلة بالصور، يسمع السؤال ويضغط الصورة بدون قراءة. إذا كان يقرأ نكمل بالأسئلة المكتوبة.</p>' : ''}
+    <div class="psecs"><div>📖 <b>المعرفة</b><span class="small muted">قواعد ومفردات واستماع وقراءة · 14 إلى 20 سؤالاً</span></div><div>👂 <b>تمييز الأصوات</b><span class="small muted">أصوات متشابهة مثل P/B وTH · 4 أسئلة</span></div><div>✍️ <b>الإملاء</b><span class="small muted">يسمع جملة ويكتبها · جملتان</span></div><div>🔊 <b>النطق</b><span class="small muted">قراءة جملتين وكلمتين بصوت عالٍ</span></div><div>🗣️ <b>التحدث</b><span class="small muted">3 أسئلة يجيب عليها بالكلام</span></div></div>
     <p class="small muted" style="margin:0">${KIDMODE ? 'أجب بنفسك بدون مساعدة، وفي مكان هادئ. لا تقلق، ما فيه نجاح ورسوب، الاختبار يختار لك المستوى المناسب 💪' : 'مهم: يجيب الطفل بنفسه بدون مساعدة، في مكان هادئ.'}</p><button class="btn primary big" id="pgo">ابدأ</button>${KIDMODE ? '<button class="btn sm ghost" id="plater">لاحقاً</button>' : ''}</div>`);
   if(KIDMODE){ ov.querySelector('#px').hidden = true; const lt = ov.querySelector('#plater'); lt.onclick = () => { speechSynthesis.cancel(); ov.remove(); renderPlaceGate(k); }; }
   await new Promise(r => ov.querySelector('#pgo').onclick = r); unlockAudio();
@@ -2628,59 +2665,48 @@ async function placementTestRun(k, opt){
   // until the result is in, even when the parent started it from the dashboard and the app was closed half-way
   hadNeed = !!kid.needPlace; placeRunSet(k, KIDMODE); if(!kid.needPlace){ kid.needPlace = true; save(); }
 
-  /* --- Part 1: adaptive knowledge ---
-     Routing: start easy; a correct answer moves up one level (two after two correct in a row, until the first miss), a miss or "I don't know"
-     moves down one level. Scoring: maximum likelihood with guessing correction, P(correct | theta) = g + (1-g) / (1 + e^(-1.1 (theta - b))),
-     g = 1/options, and a prior that leans to the BOTTOM, so random tapping lands at level 1-2 instead of high.
-     Very fast correct answers (under 1.2 s, too fast to read) count half and do not move up. The result can never be more than
-     one level above the highest level the child actually answered correctly. Options are shuffled and items seen before are avoided. */
-  const log = [], used = new Set(), N1 = 18; const kinds = ['mcq','listen','mcq','read','mcq','listen'];
-  const pSeen = new Set(DB.progress[k].pSeen || []);
-  const est = () => { let best = 1, bl = -1e9;
-    for(let th = 1; th <= 20.001; th += .25){ let ll = -Math.pow(th - 1, 2) / (2 * 100);
-      // "I don't know" counts as the average outcome of a blind guess (right 1 time in n), so pressing it honestly never
-      // costs more than guessing and getting it wrong (it pulls the estimate down a little less than a wrong answer)
-      for(const x of log){ const g = 1 / (x.nopt || 4), pc = Math.min(.999, g + (1 - g) / (1 + Math.exp(-1.1 * (th - x.lv))));
-        ll += (x.w || 1) * (x.idk ? g * Math.log(pc) + (1 - g) * Math.log(1 - pc) : Math.log(x.ok ? pc : 1 - pc)); }
-      if(ll > bl){ bl = ll; best = th; } } return best; };
-  let next = start, climbing = true, streak = 0;
-  for(let n = 0; n < N1; n++){
-    const lv = Math.max(1, Math.min(20, next));
-    const b = await loadP(lv); if(!b) break;
-    const kind = kinds[n % kinds.length]; let item = null, passage = null, script = null;
-    const pickFrom = arr => { const fresh = (arr || []).filter(q => !used.has(q)); if(!fresh.length) return null; const unseen = fresh.filter(q => !pSeen.has(q.q)); const pool = unseen.length ? unseen : fresh; return pool[Math.floor(Math.random() * pool.length)]; };
-    if(kind === 'mcq') item = pickFrom(b.mcq);
-    if(kind === 'listen'){ item = pickFrom(b.listen); if(item) script = item.script; }
-    if(kind === 'read' && b.read){ item = pickFrom(b.read.qs); if(item) passage = b.read.passage; }
-    if(!item) item = pickFrom(b.mcq) || pickFrom(b.listen) || pickFrom(b.read && b.read.qs); if(!item){ next = lv + (Math.random() < .5 ? -1 : 1); continue; }
-    if(item && b.listen && b.listen.includes(item)) script = item.script; if(item && b.read && (b.read.qs || []).includes(item)) passage = b.read.passage;
-    used.add(item);
+  /* --- Part 1: two-stage adaptive knowledge test ---
+     Stage 1 "band finder": two items in each band (Starter 1-4, Elementary 5-8, Intermediate 9-13, Advanced 14-20), mixed
+     skills, stopping early when both items of a band are missed. Stage 2: testlets around the estimate inside that band (± one
+     neighbouring level) until the estimate is stable (small standard error, or the same level for the last 5 items) or 12 items.
+     Every item has a reviewed difficulty d on the level scale. Scoring: maximum likelihood with guessing correction
+     (placeEst), with a prior that leans to the BOTTOM so random tapping lands at level 1-2. Pre-readers (age 7 or less, or both
+     of the first, easiest reading items missed) answer picture items: the question is spoken, the answers are emoji cards.
+     Very fast correct answers (under 1.2 s, too fast to read) count half. The result can never be more than one level above
+     the hardest item the child actually answered correctly. Options are shuffled and items seen before are avoided. */
+  const pSeen = new Set(DB.progress[k].pSeen || []), pool = await placePool();
+  const router = placeRouter(pool, {preReader: ageOf(kid.birth) <= 7, seen: pSeen}), log = router.log, used = [];
+  for(let n = 0; n < 30; n++){
+    const it = router.next(); if(!it) break; used.push(it);
+    const item = it.ref, pic = it.kind === 'pic', script = it.script || null, passage = it.passage || null, tot = Math.max(n + 1, router.planned());
     const order = item.options.map((o, x) => x).sort(() => Math.random() - .5);
-    frame('الجزء 1: المعرفة', `<div class="card quiz"><div class="qhead"><span class="small muted">سؤال ${n+1} من ${N1}</span><div class="qbar"><i style="width:${n/N1*100}%"></i></div></div>
+    const head = `<div class="qhead"><span class="small muted">سؤال ${n+1}</span><div class="qbar"><i style="width:${Math.min(95, n / tot * 100)}%"></i></div></div>`;
+    if(pic) frame('الجزء 1: المعرفة', `<div class="card quiz" style="text-align:center">${head}<h2>👂 اسمع، واضغط الصورة الصحيحة</h2>
+      <button class="btn primary big" id="pl" style="justify-self:center">🔊 اسمع مرة ثانية</button>
+      <div class="opts" style="grid-template-columns:repeat(${item.options.length},minmax(0,1fr))">${order.map(x => `<button class="opt" data-o="${x}" style="text-align:center;font-size:clamp(2.2rem,min(10vw,10vh),4.4rem);line-height:1.15;padding:10px 4px">${esc(item.options[x])}</button>`).join('')}</div>
+      <button class="btn ghost" data-o="-1" style="justify-self:center">🤷 ما أعرف</button></div>`);
+    else frame('الجزء 1: المعرفة', `<div class="card quiz">${head}
       ${script ? `<div style="text-align:center"><button class="btn primary big" id="pl">🔊 استمع</button><div class="small muted">تقدر تسمعه أكثر من مرة</div></div>` : ''}
       ${passage ? `<div class="ppass en">${esc(passage)}</div>` : ''}
       <h2 class="en" style="direction:ltr;text-align:left">${esc(item.q)}</h2><div class="opts">${order.map(x => `<button class="opt en" data-o="${x}">${esc(item.options[x])}</button>`).join('')}</div>
       <button class="btn ghost" data-o="-1" style="justify-self:center">🤷 ما أعرف</button></div>`);
-    if(script){ const pl = ov.querySelector('#pl'), said = stripSpeakers(script); const play = async () => { pl.disabled = true; speechSynthesis.cancel(); try{ await speakText(said, .9); }finally{ pl.disabled = false; } }; pl.onclick = play; play(); }
+    const said = pic ? item.say : script;
+    if(said){ const pl = ov.querySelector('#pl'); const play = async () => { pl.disabled = true; speechSynthesis.cancel(); try{ await speakDialog(said, pic ? .85 : .9); }finally{ pl.disabled = false; } }; pl.onclick = play; play(); }
     const shownAt = Date.now();
     const choice = await new Promise(r => ov.querySelectorAll('[data-o]').forEach(bt => bt.onclick = () => r(Number(bt.dataset.o))));
-    speechSynthesis.cancel();
-    const idk = choice < 0, ok = !idk && choice === Number(item.answer), fast = ok && !script && Date.now() - shownAt < 1200;
-    log.push({lv, kind: script ? 'listen' : passage ? 'read' : 'mcq', ok, idk, w: fast ? .5 : 1, nopt:item.options.length, skill: script ? 'listening' : passage ? 'reading' : (item.skill || 'grammar')});
-    streak = ok && !fast ? streak + 1 : 0;
-    // gentle climb: one level per correct answer; two levels only after two correct in a row before the first miss
-    if(ok && !fast) next = lv + (climbing && streak >= 2 ? 2 : 1);
-    else if(!ok){ climbing = false; next = lv - 1; }
+    DLG_GEN++; speechSynthesis.cancel();
+    const idk = choice < 0, ok = !idk && choice === Number(item.answer), fast = ok && !said && Date.now() - shownAt < 1200;
+    router.record(it, ok, idk, fast ? .5 : 1);
   }
-  DB.progress[k].pSeen = [...new Set([...(DB.progress[k].pSeen || []), ...[...used].map(q => q.q)])].slice(-300);
-  const maxOk = Math.max(0, ...log.filter(x => x.ok).map(x => x.lv));
-  const knowLevel = Math.max(1, Math.min(20, Math.round(est()), maxOk + 1));
+  DB.progress[k].pSeen = [...new Set([...(DB.progress[k].pSeen || []), ...used.map(x => x.id)])].slice(-300);
+  const preRead = !!router.state.picFinal, maxOk = Math.max(0, ...log.filter(x => x.ok).map(x => x.d));
+  const knowLevel = Math.max(1, Math.min(20, Math.round(router.est()), Math.round(maxOk) + 1));
   const skillPct = s => { const xs = log.filter(x => x.skill === s); return xs.length ? Math.round(xs.filter(x => x.ok).length / xs.length * 100) : null; };
 
   /* --- Part 2: sound discrimination (minimal pairs common for Arabic speakers) --- */
   const MIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>';
   const sndSet = SOUNDS.slice().sort(() => Math.random() - .5), sounds = [], stS = DB.progress[k].sounds = DB.progress[k].sounds || {};
-  for(let i = 0; i < 4; i++){
+  for(let i = 0; i < (preRead ? 0 : 4); i++){ // pre-readers skip the written parts (2-4): they would test reading, not English
     const S = sndSet[i], pr = S.pairs[Math.floor(Math.random() * S.pairs.length)], tgt = Math.random() < .5 ? 0 : 1;
     frame('الجزء 2: تمييز الأصوات', `<div class="card quiz" style="text-align:center"><div class="qhead"><span class="small muted">سؤال ${i+1} من 4</span><div class="qbar"><i style="width:${i/4*100}%"></i></div></div><h2>👂 اسمع: أي كلمة قال؟</h2><button class="btn primary big" id="pl">🔊 استمع</button>
       <div class="opts" style="grid-template-columns:1fr 1fr">${pr.map((w,x) => `<button class="opt en" style="text-align:center;font-size:1.4rem" data-o="${x}">${esc(w)}</button>`).join('')}</div></div>`);
@@ -2690,7 +2716,7 @@ async function placementTestRun(k, opt){
   }
   /* --- Part 3: dictation (listening + spelling + writing) --- */
   const dict = [];
-  for(const [i, lv] of [Math.max(1, knowLevel - 1), knowLevel].entries()){
+  for(const [i, lv] of (preRead ? [] : [Math.max(1, knowLevel - 1), knowLevel]).entries()){
     const b = await loadP(lv); let sent = b && ((b.aloud || [])[1] || (b.aloud || [])[0]); if(!sent) continue;
     sent = String(sent).split(/(?<=[.!?])\s+/)[0]; if(sent.split(' ').length > 14) sent = sent.split(' ').slice(0, 14).join(' ');
     frame('الجزء 3: الإملاء', `<div class="card quiz" style="text-align:center"><div class="small muted">جملة ${i+1} من 2: اسمع الجملة واكتبها كما سمعتها (تقدر تسمعها أكثر من مرة)</div>
@@ -2703,7 +2729,7 @@ async function placementTestRun(k, opt){
   }
   /* --- Part 4: read aloud (pronunciation, measured word by word) --- */
   const pb = await loadP(knowLevel), aloud = [];
-  if((SR || paOn()) && pb && pb.aloud){
+  if(!preRead && (SR || paOn()) && pb && pb.aloud){
     for(const [i, sent] of pb.aloud.slice(0,2).entries()){
       frame('الجزء 4: النطق', `<div class="card quiz" style="text-align:center"><div class="small muted">جملة ${i+1} من 2: اضغط الميكروفون واقرأها بصوت واضح</div><div class="aloud en">${esc(sent)}</div>
         <button class="micbig" id="am" style="justify-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><div class="en muted" id="al"></div></div>`);
@@ -2752,40 +2778,203 @@ async function placementTestRun(k, opt){
   const pronParts = aloud.filter(x => !x.noEvidence).map(x => x.acc).concat(sounds.filter(x => x.spoken && !x.noEvidence).length ? [sAcc(sounds.filter(x => x.spoken && !x.noEvidence))] : []);
   const pron = pronParts.length ? Math.round(pronParts.reduce((a,x) => a + x, 0) / pronParts.length) : null;
   const writing = dict.length ? Math.round(dict.reduce((a,x) => a + x.acc, 0) / dict.length) : null, phonics = sAcc(sounds.filter(x => !x.spoken));
+  /* the objective part is scored by the app (knowLevel); the AI only scores the speaking interview on five CEFR criteria
+     (0-5 each, descriptors below) and writes the parent summary. The final level comes from placeCombine (documented rule). */
   let res = null;
   try{
-    { const t = await callClaude({model:REPORT_MODEL, max_tokens:1500, messages:[{role:'user', content:
-`You are a certified English assessment expert (CEFR, Pearson GSE, Cambridge). Place this learner on a 20-level scale:
-${Object.entries(LEVEL_INFO).map(([n,v]) => `${n}: ${v[0]}, GSE ${v[1]}`).join('; ')}.
+    { const t = await callClaude({model:REPORT_MODEL, max_tokens:1600, messages:[{role:'user', content:
+`You are a certified English examiner (CEFR, Cambridge English). A child took a placement test on this 20-level scale:
+${Object.entries(LEVEL_INFO).map(([n,v]) => `${n}: ${v[0]}`).join('; ')}.
 Learner: ${ageOf(kid.birth)}-year-old Arabic speaker.
-PART 1 adaptive knowledge test (${log.length} items, 4 options each so 25% can be lucky guesses; idk:true = the child honestly pressed "I don't know": count it like ONE wrong answer, never as a bigger penalty; w:0.5 = answered too fast to have read it; each: level of item, skill, correct?): ${JSON.stringify(log)}. Maximum-likelihood estimate (guessing-corrected): level ${knowLevel}. Your level must stay within ${Math.max(1, knowLevel - floor)}..${Math.min(20, knowLevel + 1)}.
-PART 2 sound discrimination (English minimal pairs that Arabic speakers confuse; heard a word, chose between the pair): ${JSON.stringify(sounds.filter(x => !x.spoken))}.
-PART 3 dictation (heard a sentence, typed it; acc = % of words written correctly in order): ${JSON.stringify(dict)}.
-PART 4 read-aloud (acc = Azure phoneme-level pronunciation accuracy when phonemes are present, otherwise speech-to-text word accuracy): ${JSON.stringify(aloud)}; minimal-pair words said aloud: ${JSON.stringify(sounds.filter(x => x.spoken))}.
-PART 5 spoken answers (speech-to-text; ignore punctuation). For each: level of prompt, what a learner at that level can do, and the answer: ${JSON.stringify(speak)}.
-noEvidence:true (in parts 4 and 5) = the recording was empty or very short (the microphone may have missed it): that is NOT evidence of weak speaking or pronunciation; ignore those items completely.${speakEv ? '' : ' There is NO usable speaking evidence: set skills.speaking to null and do not place lower because of speaking.'}
-Judge speaking with CEFR spoken descriptors (range, accuracy, fluency, coherence). Weight: knowledge 40%, speaking 35%, pronunciation and sound discrimination 15%, dictation 10%. If speaking is clearly weaker than knowledge, place lower (this is a speaking course).
-Reply ONLY JSON: {"level":1-20,"cefr":"...","gse":"range","skills":{"grammar":0-100,"vocabulary":0-100,"listening":0-100,"reading":0-100,"speaking":0-100,"pronunciation":0-100,"writing":0-100,"phonics":0-100},"summary":"3 sentences in Arabic for the parent","strengths":"Arabic, one line","focus":"Arabic, one line: what to work on first"}`}]});
-      res = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); if(!res || !res.skills) throw new Error('no placement result'); }
-  }catch(e){ res = DEMO || DB.apiKey === 'demo' ? {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:speakEv ? 60 : null, pronunciation:pron, writing, phonics}, summary:'نتيجة تجريبية.', strengths:'—', focus:'—'} : {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:null, pronunciation:pron, writing, phonics}, summary:'تعذّر تحليل جزء التحدث بسبب الاتصال، فالنتيجة مبنية على جزء المعرفة والنطق.', strengths:'', focus:''}; }
-  // the AI may lower the knowledge level by up to 3 only with real spoken evidence; empty/short audio never lowers it
-  if(!speakEv && res.skills) res.skills.speaking = null;
-  const rec = Math.max(1, Math.min(20, Math.max(knowLevel - floor, Math.min(knowLevel + 1, Number(res.level) || knowLevel))));
+PART 1 (already scored by the app, do NOT re-score): a two-stage adaptive test of grammar, vocabulary, functional language, listening (two-voice dialogues) and graded reading; ${log.length} items (d = item difficulty on the 1-20 scale, idk = "I don't know", w 0.5 = answered too fast to read; kind "pic" = spoken question answered with a picture, for a child who cannot read English yet)${preRead ? '; THIS CHILD IS A PRE-READER: the written parts were skipped' : ''}: ${JSON.stringify(log.map(x => ({d:x.d, skill:x.skill, kind:x.kind, ok:x.ok, idk:x.idk, w:x.w})))}. Objective level: ${knowLevel}.
+PART 2 sound discrimination (minimal pairs Arabic speakers confuse): ${JSON.stringify(sounds.filter(x => !x.spoken))}.
+PART 3 dictation (acc = % of words written correctly in order): ${JSON.stringify(dict)}.
+PART 4 read-aloud (acc = Azure pronunciation accuracy, or speech-to-text word accuracy): ${JSON.stringify(aloud)}; minimal-pair words said aloud: ${JSON.stringify(sounds.filter(x => x.spoken))}.
+PART 5 SPEAKING INTERVIEW (speech-to-text, ignore punctuation; each: level of the question, what a learner at that level can do, the answer): ${JSON.stringify(speak)}.
+noEvidence:true = the recording was empty or very short (the microphone may have missed it): NOT evidence of weak speaking; ignore it.${speakEv ? '' : ' There is NO usable speaking evidence: set "speaking" to null.'}
+Score the speaking interview on five CEFR criteria, each 0-5, judging all usable answers together against these descriptors:
+- range: 0 no English · 1 isolated words or memorised phrases · 2 short simple sentences on very familiar topics · 3 connected sentences with some variety on familiar topics · 4 varied vocabulary and structures, explains and gives reasons and examples · 5 wide, precise, flexible range including complex structures and idiom
+- accuracy: 0 none · 1 errors in almost everything · 2 basic structures with frequent errors · 3 reasonably accurate on familiar topics, errors rarely block meaning · 4 good control, occasional slips · 5 consistently accurate
+- fluency: 0 none · 1 single words, long pauses · 2 short phrases, frequent pauses · 3 keeps going with some pauses and reformulation · 4 extended answers with little searching for words · 5 fluent and natural
+- interaction: 0 no relevant answer · 1 one-word answers · 2 answers minimally · 3 answers relevantly and adds a little · 4 develops the answer with reasons, examples and linking · 5 develops and organises the answer fully and naturally
+- pronunciation: 0 none · 1 mostly unintelligible · 2 intelligible with effort · 3 generally intelligible, accent noticeable · 4 clear and easy to follow · 5 clear with natural stress and intonation (use parts 4 and 2; speech-to-text only shows intelligibility)
+Speech recognition mishears children: do not punish odd words that are probably recognition errors.
+The app turns the mean of your five scores into a speaking level and combines it with the objective level by a fixed rule, so do not decide the final level.
+Reply ONLY JSON: {"speaking":{"range":0-5,"accuracy":0-5,"fluency":0-5,"interaction":0-5,"pronunciation":0-5} or null,"level":1-20 (your holistic impression, for reference only),"skills":{"pronunciation":0-100,"writing":0-100,"phonics":0-100},"summary":"3 short sentences in Arabic for the parent","strengths":"Arabic, one line","focus":"Arabic, one line: what to work on first"}`}]});
+      res = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); if(!res || typeof res !== 'object') throw new Error('no placement result'); }
+  }catch(e){ console.warn('placement scoring', e); res = {speaking:null, level:null, skills:{pronunciation:pron, writing, phonics}, summary:DEMO || DB.apiKey === 'demo' ? 'نتيجة تجريبية.' : 'تعذّر تحليل جزء التحدث بسبب الاتصال، فالنتيجة مبنية على الاختبار الموضوعي.', strengths:'', focus:''}; }
+  const crit = speakEv && res.speaking && typeof res.speaking === 'object' ? res.speaking : null, S = placeSpeakLevel(crit);
+  // a child who cannot read English yet starts at most at level 4 (A1), where lessons do not depend on reading
+  const rec = Math.min(preRead ? 4 : 20, placeCombine(knowLevel, S, crit ? speakEv : 0));
+  const skillLv = Object.assign(placeSkillLevels(log, knowLevel), {speaking:S == null ? null : Math.max(1, Math.min(20, Math.round(S)))});
+  if(preRead) skillLv.reading = null;
+  await loadCando(); const cando = placeCanDo(log, 5, rec);
+  // 0-100 skill values are kept for the existing dashboards (level per skill / 20, plus the AI's pronunciation/writing/phonics)
+  const pct = v => v == null ? null : Math.round(v / 20 * 100), rs = res.skills || {};
+  res.skills = {grammar:pct(skillLv.grammar), vocabulary:pct(skillLv.vocabulary), listening:pct(skillLv.listening), reading:pct(skillLv.reading), speaking:pct(skillLv.speaking), pronunciation:rs.pronunciation ?? pron, writing:rs.writing ?? writing, phonics:rs.phonics ?? phonics};
   placeRunClear(); delete kid.needPlace;
-  DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:rec, know:knowLevel, ai:Number(res.level) || null, items:log.map(x => x.lv + (x.idk ? '?' : x.ok ? '+' : '-')).join(' '), skills:res.skills, summary:res.summary}); save();
-  const SK = [['grammar','القواعد'],['vocabulary','المفردات'],['listening','الاستماع'],['reading','القراءة'],['speaking','التحدث'],['pronunciation','النطق'],['phonics','تمييز الأصوات'],['writing','الإملاء والكتابة']];
-  if(KIDMODE){ const from = kid.level; setLevel(k, rec); DB.progress[k].levelUpPending = null; DB.progress[k].levelUps = Math.max(0, (DB.progress[k].levelUps||0) - (rec > from ? 1 : 0)); delete kid.needPlace; addXP(k, 50); save();
-    frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:3rem">🎉</div><h2>أحسنت يا ${esc(nick(k))}! مستواك: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div></div>
-      <div class="skills">${SK.map(([id,ar]) => { const v = (res.skills||{})[id]; return `<div class="sk"><span>${ar}</span><div class="bar"><i style="width:${v==null?0:v}%;background:${v==null?'var(--line)':v>=70?'var(--good)':v>=45?'var(--gold)':'var(--bad)'}"></i></div><b class="num">${v==null?'—':v+'%'}</b></div>`; }).join('')}</div>
+  DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:rec, know:knowLevel, speak:S, crit, ai:Number(res.level) || null, skillLv, cando, items:(preRead ? 'pic ' : '') + log.map(x => x.d + (x.idk ? '?' : x.ok ? '+' : '-')).join(' '), skills:res.skills, summary:res.summary}); save();
+  const body = placeResultHTML({level:rec, skillLv, cando, kidMode:KIDMODE, name:kid.ar, preRead});
+  if(KIDMODE){ const from = kid.level; setLevel(k, rec); DB.progress[k].levelUpPending = null; DB.progress[k].levelUps = Math.max(0, (DB.progress[k].levelUps||0) - (rec > from ? 1 : 0)); delete kid.needPlace; addXP(k, 50); probationStart(k, rec); save();
+    frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:3rem">🎉</div><h2>أحسنت يا ${esc(nick(k))}! مستواك: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div></div>${placeMeaningHTML(rec)}
+      ${body}
       <p class="small muted" style="margin:0">حصصك وقصصك وألعابك صارت على مستواك الجديد. أرسلنا النتيجة لولي أمرك.</p><div class="chip good" style="justify-self:center">+50 نقطة</div><button class="btn primary big" id="pgo2">🚀 ابدأ رحلتك</button></div>`);
     ov.querySelector('#px').hidden = true; ov.querySelector('#pgo2').onclick = () => { ov.remove(); TAB = 'home'; renderKid(k); if(!DB.progress[k].onboarded) onboarding(k); }; return; }
-  frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:2.6rem">🎯</div><h2>المستوى المقترح لـ ${esc(kid.ar)}: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div><div class="small muted">المستوى الحالي: ${kid.level}</div></div>
-    <div class="skills">${SK.map(([id,ar]) => { const v = (res.skills||{})[id]; return `<div class="sk"><span>${ar}</span><div class="bar"><i style="width:${v==null?0:v}%;background:${v==null?'var(--line)':v>=70?'var(--good)':v>=45?'var(--gold)':'var(--bad)'}"></i></div><b class="num">${v==null?'—':v+'%'}</b></div>`; }).join('')}</div>
+  frame('النتيجة', `<div class="card" style="display:grid;gap:12px"><div style="text-align:center"><div style="font-size:2.6rem">🎯</div><h2>المستوى المقترح لـ ${esc(kid.ar)}: ${rec}</h2><div class="en chip brand" style="justify-self:center">${levelTag(rec)}</div><div class="small muted">المستوى الحالي: ${kid.level}</div></div>${placeMeaningHTML(rec)}
+    ${body}
     <p style="margin:0">${esc(res.summary||'')}</p>${res.strengths?`<p class="small" style="margin:0">💪 ${esc(res.strengths)}</p>`:''}${res.focus?`<p class="small" style="margin:0">🎯 ${esc(res.focus)}</p>`:''}
     <div class="chips" style="justify-content:center">${rec !== kid.level ? `<button class="btn primary" id="pa">اعتمد المستوى ${rec}</button>` : '<span class="chip good">المستوى الحالي مناسب ✓</span>'}<button class="btn" id="pc">إغلاق</button></div></div>`);
-  const a = ov.querySelector('#pa'); if(a) a.onclick = () => { setLevel(k, rec); ov.remove(); toast('تم تحديث المستوى'); renderParent(); };
+  probationStart(k, kid.level);
+  const a = ov.querySelector('#pa'); if(a) a.onclick = () => { setLevel(k, rec); probationStart(k, rec); ov.remove(); toast('تم تحديث المستوى'); renderParent(); };
   ov.querySelector('#pc').onclick = () => { ov.remove(); renderParent(); };
 }
+/* PLACE-ROUTING-START: placement routing and scoring (pure, no DOM: the node simulation in the tests loads this block) */
+const PLACE_BANDS = [{lo:1, hi:4, ar:'المبتدئ', en:'Starter'}, {lo:5, hi:8, ar:'الأساسي', en:'Elementary'}, {lo:9, hi:13, ar:'المتوسط', en:'Intermediate'}, {lo:14, hi:20, ar:'المتقدم', en:'Advanced'}];
+const PLACE_A = 1.1, PLACE_SE = .7, PLACE_S1 = [[1, 2], [5.5, 7.5], [10, 12], [15, 17]], PLACE_KINDS = ['mcq', 'listen', 'read', 'mcq', 'listen', 'mcq', 'read', 'mcq'];
+function placeBandOf(th){ const l = Math.max(1, Math.min(20, Math.round(th))); return PLACE_BANDS.find(b => l <= b.hi); }
+/* P(correct | theta) = g + (1-g) / (1 + e^(-1.1 (theta - d))), g = 1/options */
+function placeP(th, x){ const g = 1 / (x.nopt || 4); return Math.max(.001, Math.min(.999, g + (1 - g) / (1 + Math.exp(-PLACE_A * (th - x.d))))); }
+/* weighted maximum likelihood with a prior that leans to the bottom. "I don't know" counts as the average outcome of a blind
+   guess (right 1 time in n), so pressing it honestly never costs more than guessing and getting it wrong */
+function placeEst(log){ let best = 1, bl = -1e9;
+  for(let th = 1; th <= 20.001; th += .1){ let ll = -Math.pow(th - 1, 2) / 200;
+    for(const x of log){ const g = 1 / (x.nopt || 4), pc = placeP(th, x); ll += (x.w || 1) * (x.idk ? g * Math.log(pc) + (1 - g) * Math.log(1 - pc) : Math.log(x.ok ? pc : 1 - pc)); }
+    if(ll > bl){ bl = ll; best = th; } }
+  return Math.round(best * 10) / 10; }
+function placeSE(log, th){ let info = 1 / 100;
+  for(const x of log){ const g = 1 / (x.nopt || 4), p = placeP(th, x); info += (x.w || 1) * PLACE_A * PLACE_A * Math.pow(p - g, 2) / Math.pow(1 - g, 2) * (1 - p) / p; }
+  return 1 / Math.sqrt(info); }
+/* the item bank: every item of P1-P20 with its difficulty d (defaults to the bank's level) */
+function placePoolFrom(banks){ const pool = [];
+  (banks || []).forEach((b, i) => { if(!b) return; const lv = Number(b.level) || i + 1;
+    const add = (x, kind, extra) => { if(!x || !Array.isArray(x.options) || !x.options.length) return;
+      pool.push(Object.assign({id:x.q || x.say, lv, d:Number(x.d) || lv, kind, nopt:x.options.length, cid:x.cid || null, skill:kind === 'listen' ? 'listening' : kind === 'read' ? 'reading' : kind === 'pic' ? 'vocabulary' : (x.skill || 'grammar'), ref:x}, extra || {})); };
+    (b.mcq || []).forEach(x => add(x, 'mcq')); (b.listen || []).forEach(x => add(x, 'listen', {script:x.script}));
+    [b.read, b.read2].forEach(r => ((r || {}).qs || []).forEach(x => add(x, 'read', {passage:r.passage}))); (b.pic || []).forEach(x => add(x, 'pic')); });
+  return pool; }
+/* two-stage routing. Stage 1 (band finder): 2 items per band, easiest band first; stops early when both items of a band are
+   missed. Both of the first two (easiest) reading items missed → picture items (pre-reader). Stage 2: items closest to the
+   estimate, kept inside the estimated band ± one level, until the standard error is under PLACE_SE or the level was the same
+   for the last 5 items (at least 6 items, at most 12). Pre-readers (opt.preReader) start with 6 picture items: 5+ right →
+   the normal test; otherwise up to 10 picture items and the knowledge part ends there. */
+function placeRouter(pool, opt){
+  opt = opt || {}; const rnd = opt.rand || Math.random, seen = opt.seen || new Set(), used = new Set(), log = [];
+  const hasPic = pool.some(x => x.kind === 'pic');
+  const st = {phase:opt.preReader && hasPic ? 'pic' : 's1', picFinal:false, picDone:false, picN:0, s1i:0, s2n:0, hist:[], n:0};
+  const est = () => placeEst(log), text = x => x.kind !== 'pic' && !used.has(x);
+  const stable = n => st.hist.length >= n && st.hist.slice(-n).every(v => v === st.hist[st.hist.length - 1]);
+  const pick = (cands, target, kind) => { if(!cands.length) return null;
+    const sc = x => Math.abs(x.d - target) + (kind && x.kind !== kind ? .35 : 0) + (seen.has(x.id) ? .6 : 0);
+    let best = Infinity; cands.forEach(x => { best = Math.min(best, sc(x)); });
+    const top = cands.filter(x => sc(x) <= best + .3); return top[Math.floor(rnd() * top.length)]; };
+  const toPics = () => { st.picDone = true; if(hasPic && st.picN < 10 && pool.some(x => x.kind === 'pic' && !used.has(x))){ st.phase = 'pic'; st.picFinal = true; } else st.phase = 'done'; };
+  function next(){
+    if(st.n >= 24) st.phase = 'done';
+    if(st.phase === 'pic'){ const c = pool.filter(x => x.kind === 'pic' && !used.has(x));
+      if(c.length) return pick(c, Math.max(1, Math.min(3.5, est())), null);
+      if(st.picFinal){ st.phase = 'done'; return null; } st.picDone = true; st.phase = 's1'; }
+    if(st.phase === 's1'){
+      while(st.s1i < 8){ const r = PLACE_S1[st.s1i >> 1], c = pool.filter(x => text(x) && x.d >= r[0] && x.d <= r[1]);
+        if(c.length) return pick(c, r[0] + rnd() * (r[1] - r[0]), PLACE_KINDS[st.s1i]); st.s1i += 2; }
+      st.phase = 's2'; }
+    if(st.phase === 's2'){ const th = est(), b = placeBandOf(th), c = pool.filter(text); if(!c.length){ st.phase = 'done'; return null; }
+      return pick(c, Math.max(b.lo - 1, Math.min(b.hi + 1, th)), PLACE_KINDS[(st.s2n + 1) % PLACE_KINDS.length]); }
+    return null; }
+  function record(it, ok, idk, w){ used.add(it); st.n++;
+    log.push({lv:it.lv, d:it.d, kind:it.kind, ok:!!ok, idk:!!idk, w:w || 1, nopt:it.nopt, skill:it.skill, cid:it.cid || null});
+    const th = est(); st.hist.push(Math.round(th));
+    if(it.kind === 'pic'){ st.picN++;
+      if(!st.picFinal && st.picN >= 6){ st.picDone = true; if(log.filter(x => x.kind === 'pic' && x.ok).length >= 5) st.phase = 's1'; else st.picFinal = true; }
+      if(st.picFinal && (st.picN >= 10 || (st.picN >= 7 && stable(4)))) st.phase = 'done';
+      return; }
+    if(st.phase === 's1'){ st.s1i++;
+      if(st.s1i % 2 === 0){ const pr = log.slice(-2); if(!pr[0].ok && !pr[1].ok){ if(st.s1i === 2) toPics(); else st.phase = 's2'; } else if(st.s1i >= 8) st.phase = 's2'; }
+      return; }
+    if(st.phase === 's2'){ st.s2n++; if(st.s2n >= 12 || (st.s2n >= 6 && (placeSE(log, th) < PLACE_SE || stable(5)))) st.phase = 'done'; } }
+  const planned = () => st.n + (st.phase === 'pic' ? (st.picFinal ? 10 - st.picN : 20 - st.picN) : st.phase === 's1' ? 8 - st.s1i + 9 : st.phase === 's2' ? Math.max(1, 9 - st.s2n) : 0);
+  return {next, record, est, se:() => placeSE(log, est()), planned, log, state:st}; }
+/* level per skill (grammar, vocabulary incl. functional language, listening, reading): the same estimator on that skill's
+   items, shrunk towards the overall level because a skill has only 3-7 items: (n·skill + 3·overall) / (n + 3) */
+const PLACE_SKILLS = {grammar:['grammar'], vocabulary:['vocabulary', 'function'], listening:['listening'], reading:['reading']};
+function placeSkillLevels(log, overall){ const out = {};
+  for(const [k, sks] of Object.entries(PLACE_SKILLS)){ const xs = log.filter(x => sks.includes(x.skill) && x.kind !== 'pic' || (k === 'listening' && x.kind === 'pic'));
+    out[k] = xs.length ? Math.max(1, Math.min(20, Math.round((xs.length * placeEst(xs) + 3 * overall) / (xs.length + 3)))) : null; }
+  return out; }
+/* speaking interview: the AI scores five CEFR criteria 0-5 (range, accuracy, fluency, interaction, pronunciation); their mean
+   maps to the level scale: 0→1, 1→2, 2→4.5, 3→8, 4→12.5, 5→17 (straight lines in between) */
+function placeSpeakLevel(c){ const v = ['range', 'accuracy', 'fluency', 'interaction', 'pronunciation'].map(k => Number((c || {})[k])).filter(x => isFinite(x) && x >= 0 && x <= 5);
+  if(!v.length) return null; const m = v.reduce((a, x) => a + x, 0) / v.length, P = [[0, 1], [1, 2], [2, 4.5], [3, 8], [4, 12.5], [5, 17]];
+  for(let i = 1; i < P.length; i++) if(m <= P[i][0]){ const [x0, y0] = P[i-1], [x1, y1] = P[i]; return Math.round((y0 + (m - x0) / (x1 - x0) * (y1 - y0)) * 10) / 10; }
+  return 17; }
+/* THE COMBINATION RULE (documented): K = objective level from part 1, S = speaking level from the interview criteria.
+   2-3 usable spoken answers: level = round(0.65·K + 0.35·S), kept within K-3 … K+1;
+   1 usable answer: round(0.85·K + 0.15·S) within K-1 … K+1; no usable speech (silence, mic problems): K.
+   Speaking can lower the level more than raise it because this is a speaking course and the objective test cannot see speech. */
+function placeCombine(K, S, speakEv){ if(!speakEv || S == null) return K; const w = speakEv >= 2 ? .35 : .15, lo = speakEv >= 2 ? 3 : 1;
+  return Math.max(1, Math.min(20, Math.max(K - lo, Math.min(K + 1, Math.round((1 - w) * K + w * S))))); }
+/* can-do statements with evidence: items answered correctly (not too fast), one per statement; statements from items near
+   the placed level (d >= level - 4) first, hardest first, then the rest */
+function placeCanDo(log, max, level){ const seen = new Set(), out = [], ok = log.filter(x => x.ok && x.cid && (x.w || 1) >= 1).sort((a, b) => b.d - a.d);
+  const near = level ? ok.filter(x => x.d >= level - 4) : ok;
+  near.concat(ok).forEach(x => { if(!seen.has(x.cid) && out.length < (max || 5)){ seen.add(x.cid); out.push(x.cid); } });
+  return out; }
+/* PLACE-ROUTING-END */
+async function placePool(){ return placePoolFrom(await Promise.all(Array.from({length:20}, (_, i) => loadP(i + 1)))); }
+/* what a level means, in plain Arabic, for the placement result card */
+const PLACE_MEANING = {'Pre-A1':'نتدرّب على كلمات وجمل قصيرة جداً: التعريف بالنفس، الأسرة، الألوان والأرقام، والرد بكلمة أو جملة قصيرة.',
+  'A1':'نتكلم بجمل بسيطة عن اليوم والمدرسة والأشياء اللي نحبها، ونفهم أسئلة سهلة تُقال ببطء.',
+  'A2':'نحكي عن أشياء صارت في الماضي وعن خططنا القادمة بجمل مترابطة بسيطة، ونتعامل مع مواقف يومية مثل الشراء والسؤال عن الطريق.',
+  'A2+':'نوصف التجارب ونقارن ونعطي أسباباً بسيطة، ونفهم محادثات يومية أطول بقليل.',
+  'B1':'نعبّر عن الرأي ونشرح السبب، ونحكي قصة أو تجربة، ونفهم الفكرة الرئيسية في كلام واضح عن مواضيع مألوفة.',
+  'B1+':'نناقش مواضيع مألوفة بثقة، ونقترح ونقنع ونتصرف في المواقف غير المتوقعة، ونفهم تفاصيل أكثر في الكلام.',
+  'B2':'نناقش مواضيع متنوعة بطلاقة جيدة، وندافع عن رأينا بأمثلة، ونفهم أغلب الكلام الطبيعي.',
+  'B2+':'نتكلم بطلاقة ودقة في النقاش والعرض، ونوازن بين الآراء، ونستخدم تعابير أكثر تنوعاً.',
+  'C1':'نتكلم بطلاقة عن مواضيع معقدة، ونستخدم تعابير اصطلاحية، ونفهم المعاني غير المباشرة ونبرة الكلام.',
+  'B2+ → C1':'مسار المحادثة المتقدمة: نبني مهارات C1 خطوة خطوة: نقاش وإقناع وعرض بطلاقة ودقة، وتعابير اصطلاحية، وفهم المعاني غير المباشرة.',
+  'C2':'مستوى قريب من المتحدث المتعلّم: نجادل ونقنع ونلخّص ونقدّم بدقة عالية في أي موقف.'};
+function placeMeaningHTML(lv){ const b = placeBandOf(lv), c = (LEVEL_INFO[lv] || [])[0];
+  return `<div style="display:grid;gap:8px;text-align:right"><div class="chips" style="justify-content:center"><span class="chip brand">المرحلة: ${b.ar} <span class="en">(${b.en})</span></span><span class="chip">المستوى ${lv} من 20${typeof levelNameAr === 'function' && levelNameAr(lv) ? ' · ' + levelNameAr(lv) : ''}</span></div>
+    ${PLACE_MEANING[c] ? `<p style="margin:0">📘 <b>ماذا يعني هذا المستوى؟</b> ${PLACE_MEANING[c]}</p>` : ''}<div class="chip good" style="justify-self:center;text-align:center">🔎 سنتأكد من المستوى في أول ٣ حصص</div></div>`; }
+/* the can-do catalogue (content/cando.json: id -> {en, ar}) for the result card */
+let CANDO_CAT = null;
+async function loadCando(){ if(CANDO_CAT) return CANDO_CAT; try{ const r = await fetch('content/cando.json', {cache:'no-cache'}); CANDO_CAT = r.ok ? await r.json() : {}; }catch(e){ CANDO_CAT = {}; } return CANDO_CAT; }
+/* result card body: what the child can do now (can-do statements of the items answered correctly) and a level per skill */
+function placeResultHTML(o){ const cat = CANDO_CAT || {}, cds = (o.cando || []).map(id => cat[id]).filter(Boolean);
+  const SK5 = [['grammar','القواعد'],['vocabulary','المفردات والتعابير'],['listening','الاستماع'],['reading','القراءة'],['speaking','التحدث']];
+  return `${cds.length ? `<div style="text-align:right"><b>✅ ${o.kidMode ? 'ماذا تقدر تسوي الحين بالإنجليزي' : `ماذا يستطيع ${esc(o.name)} الآن بالإنجليزي`}</b><ul style="margin:6px 0 0;padding-inline-start:20px;display:grid;gap:4px">${cds.map(c => `<li>${esc(c.ar)}</li>`).join('')}</ul></div>` : ''}
+    <div class="skills">${SK5.map(([id, ar]) => { const v = (o.skillLv || {})[id]; return `<div class="sk"><span>${ar}</span><div class="bar"><i style="width:${v == null ? 0 : Math.max(6, v / 20 * 100)}%;background:${v == null ? 'var(--line)' : v >= o.level + 1 ? 'var(--good)' : v >= o.level - 1 ? 'var(--gold)' : 'var(--bad)'}"></i></div><b class="num" style="white-space:nowrap"><bdi dir="ltr">${v == null ? '—' : v + '/20'}</bdi></b></div>`; }).join('')}</div>
+    <div class="small muted" style="text-align:right">الرقم = المستوى في كل مهارة من 20${o.preRead ? '. القراءة والكتابة لم تُقَس لأنه في مرحلة ما قبل القراءة' : ''}.</div>`; }
+/* probation: the first 3 lessons after a placement confirm the level.
+   CONTRACT: probationCheck(k, report) is called at the end of finishLesson with the lesson report. After the 3rd lesson:
+   3 strong lessons (objective reached and score ≥ 85) → one level up; 2 weak lessons (objective not reached or score < 50) →
+   one level down; otherwise the level is confirmed. Never more than one level, never while a unit test is open (the move
+   waits for the next lesson after it). Every outcome is noted in DB.placements[k] (the guardian sees it in the history). */
+function probationStart(k, lv){ const p = DB.progress[k]; if(!p || !lv) return; p.probation = {level:lv, at:new Date().toISOString(), results:[]}; save(); }
+function probationCheck(k, report){
+  try{
+    const kid = DB.kids[k], p = DB.progress[k], pr = p && p.probation; if(!kid || !pr || pr.done || !report) return null;
+    if(report.trial || report.free || (report.v2 && report.v2.review) || (typeof L !== 'undefined' && L && L.kid === k && (L.trial || L.freeReview))) return null;
+    if(kid.level !== pr.level){ pr.done = 'level-changed'; save(); return null; }
+    if(pr.results.length < 3){
+      const score = Math.max(0, Math.min(100, Number(report.score) || 0)), exit = (report.v2 && report.v2.exit) || null;
+      if(!score && !exit) return null; // a lost report is no evidence
+      const objective = exit ? exit === 'yes' : null;
+      pr.results.push({at:new Date().toISOString(), exit, score, talk:report.talkPct == null ? null : report.talkPct, fit:report.levelFit || null,
+        strong:(objective === true || (objective === null && report.levelFit === 'easy')) && score >= 85, weak:objective === false || score < 50});
+      if(pr.results.length < 3){ save(); return {stage:'collect', n:pr.results.length}; } }
+    const strong = pr.results.filter(x => x.strong).length, weak = pr.results.filter(x => x.weak).length, from = pr.level;
+    const to = strong >= 3 ? Math.min(20, from + 1) : weak >= 2 ? Math.max(1, from - 1) : from;
+    if(to !== from && p.unitTest && !p.unitTest.passed){ pr.pending = to; save(); return {stage:'pending', to}; }
+    delete pr.pending; pr.done = to > from ? 'up' : to < from ? 'down' : 'confirmed'; pr.to = to; pr.doneAt = new Date().toISOString();
+    const why = pr.results.map(x => `${x.score}%${x.exit ? ' (' + ({yes:'الهدف تحقق', partly:'تحقق جزئياً', no:'الهدف لم يتحقق'}[x.exit] || x.exit) + ')' : ''}`).join('، ');
+    DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:pr.doneAt, level:to, know:from, ai:null, probation:pr.done, skills:{},
+      items:'probation ' + pr.results.map(x => x.strong ? 'S' : x.weak ? 'W' : 'o').join(''),
+      summary:to > from ? `تأكيد المستوى بعد أول ٣ حصص (${why}): أداء قوي في الحصص الثلاث، فانتقل من المستوى ${from} إلى ${to}.` : to < from ? `تأكيد المستوى بعد أول ٣ حصص (${why}): الحصص كانت صعبة عليه، فرجع من المستوى ${from} إلى ${to} ليبني أساساً قوياً.` : `تأكيد المستوى بعد أول ٣ حصص (${why}): المستوى ${to} مناسب.`});
+    if(to !== from){ const ups = p.levelUps || 0; setLevel(k, to); p.levelUpPending = null; p.levelUps = ups; if(typeof loadContent === 'function') try{ loadContent(to); }catch(e){}
+      toast(to > from ? `🎉 أبدعت في أول ٣ حصص! انتقلت للمستوى ${to}` : `نكمل في المستوى ${to} عشان تبني أساساً قوياً وتستمتع أكثر 💪`, to > from ? 'gold' : ''); }
+    else toast(`✅ تأكدنا: المستوى ${to} مناسب لك تماماً`, 'gold');
+    save(); return {stage:'done', from, to};
+  }catch(e){ console.warn('probation', e); return null; } }
 
 /* =============== SIBLING CHALLENGE =============== */
 function weekStart(d = new Date()){ const x = new Date(d); x.setHours(0,0,0,0); x.setDate(x.getDate() - x.getDay()); return x; }

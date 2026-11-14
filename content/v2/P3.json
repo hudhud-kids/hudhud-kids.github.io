@@ -10,7 +10,11 @@
     "nine half"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can talk about daily routines and tell the time.",
+   "cid": "a1"
   },
   {
    "q": "We ___ to school at seven o'clock.",
@@ -21,7 +25,11 @@
     "are go"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can use the present simple, including does/doesn't.",
+   "cid": "a2"
   },
   {
    "q": "Do you play outside after school?",
@@ -32,7 +40,11 @@
     "Yes, I do."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can use the present simple, including does/doesn't.",
+   "cid": "a2"
   },
   {
    "q": "There ___ three bakeries in my town.",
@@ -43,7 +55,11 @@
     "be"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can describe a town with there is / there are.",
+   "cid": "a3"
   },
   {
    "q": "Is there a swimming pool in your town?",
@@ -54,7 +70,11 @@
     "No, it don't."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can describe a town with there is / there are.",
+   "cid": "a3"
   },
   {
    "q": "Doctors and nurses work in a ___.",
@@ -65,7 +85,11 @@
     "farm"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can use everyday words for places, jobs, weather and clothes.",
+   "cid": "a11"
   },
   {
    "q": "You want a bottle of water in a shop. What do you say?",
@@ -76,7 +100,11 @@
     "Where is water?"
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can ask for things in a shop and ask about prices.",
+   "cid": "a4"
   },
   {
    "q": "How much ___ these mangoes?",
@@ -87,7 +115,11 @@
     "do"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can ask for things in a shop and ask about prices.",
+   "cid": "a4"
   },
   {
    "q": "It's cold today. My sister ___ a coat and gloves.",
@@ -98,7 +130,11 @@
     "wears"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 3.4,
+   "cefr": "A1",
+   "cando": "Can use the present simple, including does/doesn't.",
+   "cid": "a2"
   },
   {
    "q": "Does your dad take an umbrella on rainy days?",
@@ -109,29 +145,103 @@
     "Yes, he takes."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 3.0,
+   "cefr": "A1",
+   "cando": "Can use the present simple, including does/doesn't.",
+   "cid": "a2"
+  },
+  {
+   "q": "My brother ___ like vegetables.",
+   "options": [
+    "doesn't",
+    "don't",
+    "isn't",
+    "not"
+   ],
+   "answer": 0,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "grammar",
+   "cando": "Can use the present simple, including does/doesn't.",
+   "cid": "a2"
+  },
+  {
+   "q": "It's raining. Take your ___ with you.",
+   "options": [
+    "sunglasses",
+    "towel",
+    "kite",
+    "umbrella"
+   ],
+   "answer": 3,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "vocabulary",
+   "cando": "Can use everyday words for places, jobs, weather and clothes.",
+   "cid": "a11"
+  },
+  {
+   "q": "Noura: What does your mum do? Lama: She's a ___. She teaches English at my school.",
+   "options": [
+    "farmer",
+    "driver",
+    "teacher",
+    "doctor"
+   ],
+   "answer": 2,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "vocabulary",
+   "cando": "Can use everyday words for places, jobs, weather and clothes.",
+   "cid": "a11"
+  },
+  {
+   "q": "We buy bread at the ___.",
+   "options": [
+    "pool",
+    "bakery",
+    "library",
+    "hospital"
+   ],
+   "answer": 1,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "vocabulary",
+   "cando": "Can use everyday words for places, jobs, weather and clothes.",
+   "cid": "a11"
   }
  ],
  "listen": [
   {
-   "script": "Hi, I'm Noura. I get up at six o'clock. I have breakfast at half past six. Then I go to school by bus at seven o'clock.",
+   "script": "Teacher: Noura, what do you do in the morning? Noura: I get up at six o'clock. I have breakfast at half past six. Then I go to school by bus at seven o'clock.",
    "q": "What time does Noura have breakfast?",
    "options": [
     "at six o'clock",
     "at half past six",
     "at seven o'clock"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "listening",
+   "cando": "Can talk about daily routines and tell the time.",
+   "cid": "a1"
   },
   {
-   "script": "This is my street. There is a mosque and there are two shops. There isn't a park, but there is a big tree next to my house.",
+   "script": "Grandpa: What's your street like, Sam? Sam: There is a mosque and there are two shops. There isn't a park, but there is a big tree next to my house.",
    "q": "What isn't there in the street?",
    "options": [
     "a park",
     "a mosque",
     "a shop"
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "listening",
+   "cando": "Can describe a town with there is / there are.",
+   "cid": "a3"
   },
   {
    "script": "Boy: Excuse me. How much is this kite? Seller: It's twenty riyals. Boy: And those puzzles? Seller: They're fifteen riyals. Boy: Can I have the kite, please?",
@@ -141,17 +251,57 @@
     "fifty riyals",
     "twenty riyals"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "listening",
+   "cando": "Can ask for things in a shop and ask about prices.",
+   "cid": "a4"
   },
   {
-   "script": "Good evening! Here is the weather report. In Riyadh, it's sunny and hot. In Tabuk, it's cold and windy. People wear coats.",
+   "script": "Presenter: Good evening! Here is the weather report. What's the weather like today? Reporter: In Riyadh, it's sunny and hot. In Tabuk, it's cold and windy. People wear coats.",
    "q": "What's the weather like in Tabuk?",
    "options": [
     "sunny and hot",
     "cold and windy",
     "rainy and warm"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "listening",
+   "cando": "Can understand short spoken conversations about everyday topics.",
+   "cid": "a9"
+  },
+  {
+   "script": "Girl: What time is it, Dad? Dad: It's half past seven. Girl: Oh no! The bus comes at a quarter to eight!",
+   "q": "What time does the bus come?",
+   "options": [
+    "at a quarter to eight",
+    "at half past seven",
+    "at eight o'clock"
+   ],
+   "answer": 0,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "listening",
+   "cando": "Can talk about daily routines and tell the time.",
+   "cid": "a1"
+  },
+  {
+   "script": "Seller: Can I help you? Boy: Yes, please. How much are the apples? Seller: They're five riyals a kilo. Boy: Can I have two kilos, please?",
+   "q": "How many kilos does the boy want?",
+   "options": [
+    "five",
+    "two",
+    "one"
+   ],
+   "answer": 1,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "listening",
+   "cando": "Can ask for things in a shop and ask about prices.",
+   "cid": "a4"
   }
  ],
  "read": {
@@ -164,7 +314,12 @@
      "in a town by the sea",
      "on a farm"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
    },
    {
     "q": "What time does Sam get up on Saturday?",
@@ -173,7 +328,12 @@
      "at seven o'clock",
      "at half past eight"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
    },
    {
     "q": "What does Sam ask about?",
@@ -182,7 +342,12 @@
      "the boats",
      "the grapes"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
    },
    {
     "q": "What does Sam's mum wear in winter?",
@@ -191,10 +356,123 @@
      "a cap",
      "sunglasses"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
    }
   ]
  },
+ "read2": {
+  "passage": "Hi Grandma, How are you? I'm fine. Every day I get up at half past six and I walk to school with my friend Lulwa. School starts at seven o'clock. My favourite day is Wednesday because we have art. After school I do my homework, and then I play in the garden. On Fridays we visit Aunt Maha. She lives in a big house near the beach. Love, Dana",
+  "qs": [
+   {
+    "q": "How does Dana go to school?",
+    "options": [
+     "on foot",
+     "by bus",
+     "by car"
+    ],
+    "answer": 0,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
+   },
+   {
+    "q": "Why does Dana like Wednesday?",
+    "options": [
+     "They visit Aunt Maha.",
+     "There's no school.",
+     "They have art."
+    ],
+    "answer": 2,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
+   },
+   {
+    "q": "What does Dana do after her homework?",
+    "options": [
+     "She walks to school.",
+     "She plays in the garden.",
+     "She goes to the beach."
+    ],
+    "answer": 1,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
+   },
+   {
+    "q": "Where does Aunt Maha live?",
+    "options": [
+     "near the beach",
+     "near the school",
+     "in a small flat"
+    ],
+    "answer": 0,
+    "d": 3.0,
+    "cefr": "A1",
+    "skill": "reading",
+    "cando": "Can understand short, simple texts about familiar topics.",
+    "cid": "a10"
+   }
+  ]
+ },
+ "pic": [
+  {
+   "type": "pic",
+   "say": "It's raining! What do you need?",
+   "options": [
+    "☀️",
+    "☂️",
+    "🧤"
+   ],
+   "answer": 1,
+   "d": 3.0,
+   "cefr": "A1",
+   "skill": "vocabulary",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
+  },
+  {
+   "type": "pic",
+   "say": "My dad is a doctor. Where does he work?",
+   "options": [
+    "🏫",
+    "🏥",
+    "🏪"
+   ],
+   "answer": 1,
+   "d": 3.2,
+   "cefr": "A1",
+   "skill": "vocabulary",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
+  },
+  {
+   "type": "pic",
+   "say": "It's nine o'clock. Tap the clock.",
+   "options": [
+    "🕒",
+    "🕘",
+    "🕖"
+   ],
+   "answer": 1,
+   "d": 3.5,
+   "cefr": "A1",
+   "skill": "vocabulary",
+   "cando": "Can understand very short spoken descriptions of people and things.",
+   "cid": "p5"
+  }
+ ],
  "aloud": [
   "I get up at half past six and go to school by bus.",
   "Is there a library next to the park?",

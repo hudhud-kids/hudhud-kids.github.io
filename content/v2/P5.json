@@ -10,7 +10,11 @@
     "visits"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can talk about past events using the past simple.",
+   "cid": "b1"
   },
   {
    "q": "My sister ___ the heavy bags to the car yesterday.",
@@ -21,7 +25,11 @@
     "carry"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can talk about past events using the past simple.",
+   "cid": "b1"
   },
   {
    "q": "___ you swim in the sea last weekend?",
@@ -32,7 +40,11 @@
     "Are"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can talk about past events using the past simple.",
+   "cid": "b1"
   },
   {
    "q": "We ___ to AlUla by plane and ___ lots of photos.",
@@ -43,7 +55,11 @@
     "went / took"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can talk about past events using the past simple.",
+   "cid": "b1"
   },
   {
    "q": "A: 'How did you get there?' B: '___'",
@@ -54,7 +70,11 @@
     "It was great."
    ],
    "answer": 0,
-   "skill": "function"
+   "skill": "function",
+   "d": 4.5,
+   "cefr": "A2",
+   "cando": "Can talk about past events using the past simple.",
+   "cid": "b1"
   },
   {
    "q": "Riyadh is ___ than Abha.",
@@ -65,7 +85,11 @@
     "the biggest"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can compare people, places and things.",
+   "cid": "b2"
   },
   {
    "q": "This is ___ film I know. I laughed all the time!",
@@ -76,7 +100,11 @@
     "funniest than"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 5.4,
+   "cefr": "A2",
+   "cando": "Can compare people, places and things.",
+   "cid": "b2"
   },
   {
    "q": "A: 'I've got a sore throat.' B: '___'",
@@ -87,7 +115,11 @@
     "You should have a warm drink."
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can give simple advice with should/shouldn't.",
+   "cid": "b3"
   },
   {
    "q": "The festival was full of people. It was very ___.",
@@ -98,7 +130,11 @@
     "thirsty"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
   },
   {
    "q": "Before a race, you do easy moves to get your body ready. You ___.",
@@ -109,49 +145,163 @@
     "stay up late"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 5.0,
+   "cefr": "A2",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "We missed the bus, so we ___ a taxi.",
+   "options": [
+    "did",
+    "drove",
+    "took",
+    "made"
+   ],
+   "answer": 2,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "vocabulary",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "I ate too many sweets at the party, and now I've got a ___.",
+   "options": [
+    "cough",
+    "stomach ache",
+    "sore throat",
+    "broken arm"
+   ],
+   "answer": 1,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "vocabulary",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "The museum was really ___. I learnt a lot about the history of Diriyah.",
+   "options": [
+    "interesting",
+    "interested",
+    "boring",
+    "tired"
+   ],
+   "answer": 0,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "vocabulary",
+   "cando": "Can use everyday vocabulary for travel, health, school and feelings.",
+   "cid": "b9"
+  },
+  {
+   "q": "A: Shall we go to the beach on Friday? B: ___",
+   "options": [
+    "Yes, we shall go.",
+    "I went yesterday to beach.",
+    "No, we not.",
+    "That's a good idea!"
+   ],
+   "answer": 3,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "function",
+   "cando": "Can make, accept and refuse invitations and suggestions politely.",
+   "cid": "b5"
   }
  ],
  "listen": [
   {
-   "script": "Hi, I'm Faisal. Last weekend was busy. On Friday I helped my dad with the car. On Saturday morning I tidied my room, and in the afternoon I played football with my cousins.",
+   "script": "Cousin: How was your weekend, Faisal? Faisal: It was busy. On Friday I helped my dad with the car. On Saturday morning I tidied my room, and in the afternoon I played football with my cousins.",
    "q": "What did Faisal do on Saturday afternoon?",
    "options": [
     "He helped his dad.",
     "He played football.",
     "He tidied his room."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can understand the main points of short conversations about plans, trips and feelings.",
+   "cid": "b7"
   },
   {
-   "script": "A: Where did you go in the holidays, Reem? B: We went to Abha. A: Did you fly? B: No, we didn't. We went by car. It took ten hours, but the mountains were beautiful.",
+   "script": "Boy: Where did you go in the holidays, Reem? Reem: We went to Abha. Boy: Did you fly? Reem: No, we didn't. We went by car. It took ten hours, but the mountains were beautiful.",
    "q": "How did Reem's family travel to Abha?",
    "options": [
     "By car.",
     "By plane.",
     "By train."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can understand the main points of short conversations about plans, trips and feelings.",
+   "cid": "b7"
   },
   {
-   "script": "Look at these three bags. The red one is 90 riyals, the blue one is 60 riyals, and the green one is 120 riyals. The blue one is the cheapest, but the green one is the biggest.",
+   "script": "Girl: Look at these three bags, Mum. Mum: The red one is 90 riyals, the blue one is 60 riyals, and the green one is 120 riyals. Girl: So the blue one is the cheapest, but the green one is the biggest.",
    "q": "Which bag is the cheapest?",
    "options": [
     "The red one.",
     "The green one.",
     "The blue one."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can compare people, places and things.",
+   "cid": "b2"
   },
   {
-   "script": "A: What's the matter, Omar? B: I'm always tired at school. I play games on my tablet until midnight. A: You shouldn't stay up late. You should go to bed early and read a book instead.",
+   "script": "Mum: What's the matter, Omar? Omar: I'm always tired at school. I play games on my tablet until midnight. Mum: You shouldn't stay up late. You should go to bed early and read a book instead.",
    "q": "What advice does Omar get?",
    "options": [
     "Play games at break.",
     "Drink more coffee.",
     "Go to bed early."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can give simple advice with should/shouldn't.",
+   "cid": "b3"
+  },
+  {
+   "script": "Boy: Did you enjoy the trip to the zoo? Girl: Yes, it was great! We saw lions and giraffes. Boy: Did you see the elephants? Girl: No, we didn't. They were asleep inside.",
+   "q": "Which animals didn't the girl see?",
+   "options": [
+    "the lions",
+    "the giraffes",
+    "the elephants"
+   ],
+   "answer": 2,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can understand the main points of short conversations about plans, trips and feelings.",
+   "cid": "b7"
+  },
+  {
+   "script": "Woman: Which is faster, the train or the bus? Man: The train is faster, but it's more expensive. Woman: How long does the bus take? Man: About four hours.",
+   "q": "What does the man say about the train?",
+   "options": [
+    "It's faster but more expensive.",
+    "It's slower and cheaper.",
+    "It takes four hours."
+   ],
+   "answer": 0,
+   "d": 5.0,
+   "cefr": "A2",
+   "skill": "listening",
+   "cando": "Can compare people, places and things.",
+   "cid": "b2"
   }
  ],
  "read": {
@@ -164,7 +314,12 @@
      "By plane.",
      "By boat."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    },
    {
     "q": "What did Lama's brother find?",
@@ -173,7 +328,12 @@
      "A camera.",
      "A cap."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    },
    {
     "q": "What is true about the houses in Al-Balad?",
@@ -182,7 +342,12 @@
      "They are new.",
      "They are older than most buildings in Jeddah."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    },
    {
     "q": "Why does Lama think Jeddah is more beautiful than Riyadh?",
@@ -191,7 +356,73 @@
      "It is cooler.",
      "It is bigger."
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Last Saturday was Omar's twelfth birthday. In the morning, he opened his presents. His parents gave him a new football, and his sister made him a card. In the afternoon, the family drove to a farm outside Buraidah. Omar's uncle has a lot of camels and palm trees there. Omar fed a baby camel and picked dates with his cousins. It was hotter than in the city, so they sat under the palm trees and drank cold juice. In the evening, they had a big dinner with a chocolate cake. 'It was the best birthday ever,' Omar said.",
+  "qs": [
+   {
+    "q": "What did Omar's sister give him?",
+    "options": [
+     "a football",
+     "a cake",
+     "a card"
+    ],
+    "answer": 2,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   },
+   {
+    "q": "Where did the family go in the afternoon?",
+    "options": [
+     "to a restaurant",
+     "to a farm",
+     "to the beach"
+    ],
+    "answer": 1,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   },
+   {
+    "q": "What did Omar do at the farm?",
+    "options": [
+     "He fed a baby camel.",
+     "He rode a horse.",
+     "He played football."
+    ],
+    "answer": 0,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
+   },
+   {
+    "q": "Why did they sit under the palm trees?",
+    "options": [
+     "It was raining.",
+     "They were tired.",
+     "It was hot."
+    ],
+    "answer": 2,
+    "d": 5.0,
+    "cefr": "A2",
+    "skill": "reading",
+    "cando": "Can understand short stories and messages about past events and plans.",
+    "cid": "b8"
    }
   ]
  },

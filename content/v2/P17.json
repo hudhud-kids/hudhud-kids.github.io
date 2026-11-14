@@ -10,7 +10,11 @@
     "For instance"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "'___ I respect his experience, I can't agree with his conclusion.'",
@@ -21,7 +25,11 @@
     "In spite"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "Which reply concedes a point and then qualifies it?",
@@ -32,7 +40,11 @@
     "I have no opinion on that."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 15.0,
+   "cefr": "B2+",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "'The term \"urban sprawl\" ___ the spread of a city into the land around it.'",
@@ -43,7 +55,11 @@
     "is called"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 15.0,
+   "cefr": "B2+",
+   "cando": "Can use idiomatic and academic vocabulary precisely.",
+   "cid": "h3"
   },
   {
    "q": "Which phrase introduces the same idea in different words?",
@@ -54,7 +70,11 @@
     "Granted,"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "'The water shortage ___ decades of overuse.' (The overuse is the cause.)",
@@ -65,7 +85,11 @@
     "stems from"
    ],
    "answer": 3,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "'___ heavy rain, the match was postponed.'",
@@ -76,7 +100,11 @@
     "As a result"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "'Fewer bees mean fewer plants, which ___ affects the animals that eat them.'",
@@ -87,7 +115,11 @@
     "in fact"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
    "q": "'Free apps often come at a ___ to our privacy.'",
@@ -98,60 +130,178 @@
     "fee"
    ],
    "answer": 2,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 17.0,
+   "cefr": "C1",
+   "cando": "Can use idiomatic and academic vocabulary precisely.",
+   "cid": "h3"
   },
   {
-   "q": "In a speaking exam, which is the most natural way to buy time?",
+   "q": "In a speaking exam, which is the most natural way to buy time before answering?",
    "options": [
-    "Hmm. Pass.",
-    "Can you ask someone else?",
-    "I refuse to answer that.",
-    "That's an interesting question. Let me think about that for a moment."
+    "Interesting question. I think about it a moment.",
+    "That's interesting question. Let me thinking about it.",
+    "That's an interesting question. Let me think about that for a moment.",
+    "That's an interesting question. Let me think it for a moment."
+   ],
+   "answer": 2,
+   "d": 15.0,
+   "cefr": "B2+",
+   "skill": "function",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
+  },
+  {
+   "q": "___ he apologised, she might have forgiven him.",
+   "options": [
+    "Should",
+    "Were",
+    "Had",
+    "If"
+   ],
+   "answer": 2,
+   "d": 16.5,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
+  },
+  {
+   "q": "So convincing ___ that nobody questioned it.",
+   "options": [
+    "his argument",
+    "was his argument",
+    "his argument was",
+    "did his argument"
+   ],
+   "answer": 1,
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
+  },
+  {
+   "q": "The report, ___ findings were published last week, has been widely criticised.",
+   "options": [
+    "whose",
+    "which",
+    "that",
+    "its"
+   ],
+   "answer": 0,
+   "d": 15.5,
+   "cefr": "C1",
+   "skill": "grammar",
+   "cando": "Can use complex structures accurately (inversion, advanced modals, relative clauses).",
+   "cid": "h1"
+  },
+  {
+   "q": "The government has pledged to ___ the gap between rich and poor regions.",
+   "options": [
+    "shorten",
+    "lower",
+    "tighten",
+    "narrow"
    ],
    "answer": 3,
-   "skill": "function"
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "vocabulary",
+   "cando": "Can use idiomatic and academic vocabulary precisely.",
+   "cid": "h3"
   }
  ],
  "listen": [
   {
-   "script": "Many people say tourism ruins quiet towns. Admittedly, prices have gone up in my town since the new resort opened. That said, my cousins have found jobs there, and the old market is busier than ever. On balance, I'd say it's been good for us.",
-   "q": "What is the speaker's overall view of tourism in their town?",
+   "script": "Interviewer: Has tourism been good for your town? Resident: Many people say tourism ruins quiet towns. Admittedly, prices have gone up in my town since the new resort opened. That said, my cousins have found jobs there, and the old market is busier than ever. On balance, I'd say it's been good for us.",
+   "q": "What is the resident's overall view of tourism in their town?",
    "options": [
     "It has mostly been positive.",
     "It has ruined the town.",
     "It has made no difference."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
   },
   {
-   "script": "Think of inflation as a slow leak in your wallet. Put another way, the same amount of money buys a little less every year. That's why keeping cash under your bed isn't the smartest way to save.",
-   "q": "What does the speaker compare inflation to?",
+   "script": "Student: I still don't really get what inflation is. Teacher: Think of inflation as a slow leak in your wallet. Put another way, the same amount of money buys a little less every year. That's why keeping cash under your bed isn't the smartest way to save.",
+   "q": "What does the teacher compare inflation to?",
    "options": [
     "A bank account",
     "A slow leak in a wallet",
     "A rising balloon"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
-   "script": "When the city spread into the desert, most new homes were far from shops and offices. As a consequence, nearly every family needed two cars, and this, in turn, made the morning traffic much worse.",
-   "q": "According to the speaker, what was the final effect of the city spreading out?",
+   "script": "Student: Why is traffic so bad in the new suburbs? Lecturer: When the city spread into the desert, most new homes were far from shops and offices. As a consequence, nearly every family needed two cars, and this, in turn, made the morning traffic much worse.",
+   "q": "According to the lecturer, what was the final effect of the city spreading out?",
    "options": [
     "Fewer families bought cars.",
     "New shops opened near homes.",
     "Morning traffic got worse."
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can concede and qualify points, rephrase, and explain cause and effect.",
+   "cid": "h2"
   },
   {
-   "script": "That's an interesting question. It's hard to generalise, but I'd say most young people still value family traditions. Where they differ from their grandparents is that they adapt them to fit modern life, rather than following every detail.",
-   "q": "How are young people different from their grandparents, according to the speaker?",
+   "script": "Examiner: How are young people different from their grandparents? Candidate: That's an interesting question. It's hard to generalise, but I'd say most young people still value family traditions. Where they differ from their grandparents is that they adapt them to fit modern life, rather than following every detail.",
+   "q": "How are young people different from their grandparents, according to the candidate?",
    "options": [
     "They have no interest in traditions.",
     "They adapt traditions to modern life.",
     "They follow every detail of traditions."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
+  },
+  {
+   "script": "Man: The plan is costly, granted. Woman: Costly is an understatement. Man: Be that as it may, the long-term savings are considerable. Woman: Considerable enough to justify the risk? That's what I'm asking.",
+   "q": "What is the woman's attitude to the plan?",
+   "options": [
+    "enthusiastic",
+    "indifferent",
+    "sceptical"
+   ],
+   "answer": 2,
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
+  },
+  {
+   "script": "Girl: Owing to the strike, all flights have been cancelled. Boy: Does that include ours? Girl: I'm afraid so. They're offering seats on tomorrow's first flight, though.",
+   "q": "What are the passengers being offered?",
+   "options": [
+    "seats on tomorrow's first flight",
+    "a full refund",
+    "a hotel room"
+   ],
+   "answer": 0,
+   "d": 17.0,
+   "cefr": "C1",
+   "skill": "listening",
+   "cando": "Can understand implied meaning, attitude and purpose in speech.",
+   "cid": "h4"
   }
  ],
  "read": {
@@ -164,7 +314,12 @@
      "Corals lose the algae that give them colour and food.",
      "Corals are broken by divers."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    },
    {
     "q": "What does the writer concede about tourism?",
@@ -173,7 +328,12 @@
      "It has no effect on reefs.",
      "It can bring money for protection."
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    },
    {
     "q": "According to the passage, how can a reef be saved?",
@@ -182,7 +342,12 @@
      "By stopping all research",
      "By banning plastic only"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    },
    {
     "q": "Why is Red Sea coral of special interest?",
@@ -191,7 +356,73 @@
      "Some of it seems to tolerate warmer water.",
      "It is not affected by pollution."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Planting trees in deserts is often presented as a straightforward solution to climate change. Put simply, more trees should mean more carbon absorbed. The reality, however, is considerably more complicated. Trees planted in arid regions require vast amounts of water, which in many cases must be pumped from underground reserves that took thousands of years to accumulate. Where planting has been poorly planned, survival rates have been as low as twenty percent. That said, carefully designed projects can succeed. By choosing native species such as the ghaf tree, which is adapted to extreme heat and drought, planners have achieved survival rates above eighty percent. The key lesson, experts argue, is that greening must work with the desert rather than against it.",
+  "qs": [
+   {
+    "q": "What problem with desert planting is described?",
+    "options": [
+     "It makes the desert too cool.",
+     "It is too cheap to be effective.",
+     "It can use up ancient underground water."
+    ],
+    "answer": 2,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   },
+   {
+    "q": "What happened where planting was poorly planned?",
+    "options": [
+     "Native species spread.",
+     "Few trees survived.",
+     "Water reserves increased."
+    ],
+    "answer": 1,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   },
+   {
+    "q": "Why is the ghaf tree successful?",
+    "options": [
+     "It is adapted to heat and drought.",
+     "It grows very quickly.",
+     "It needs a lot of water."
+    ],
+    "answer": 0,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
+   },
+   {
+    "q": "What does 'work with the desert rather than against it' mean?",
+    "options": [
+     "stop planting completely",
+     "bring more water into the desert",
+     "respect the desert's natural conditions"
+    ],
+    "answer": 2,
+    "d": 17.0,
+    "cefr": "C1",
+    "skill": "reading",
+    "cando": "Can understand complex texts and evaluate claims and sources.",
+    "cid": "h5"
    }
   ]
  },

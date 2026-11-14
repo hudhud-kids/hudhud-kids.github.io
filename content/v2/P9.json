@@ -10,7 +10,11 @@
     "have you"
    ],
    "answer": 0,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0,
+   "cefr": "B1",
+   "cando": "Can use question tags and indirect questions.",
+   "cid": "d11"
   },
   {
    "q": "'I'm busy,' she said. → She said that she ___ busy.",
@@ -21,7 +25,11 @@
     "has been"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0,
+   "cefr": "B1",
+   "cando": "Can report what other people said and asked.",
+   "cid": "d4"
   },
   {
    "q": "'Where do you live?' → He asked me where ___.",
@@ -32,7 +40,11 @@
     "I am living"
    ],
    "answer": 1,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0,
+   "cefr": "B1",
+   "cando": "Can report what other people said and asked.",
+   "cid": "d4"
   },
   {
    "q": "Complete: Would you mind ___ the window?",
@@ -43,7 +55,11 @@
     "closed"
    ],
    "answer": 2,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0,
+   "cefr": "B1",
+   "cando": "Can ask for clarification and make polite requests.",
+   "cid": "d5"
   },
   {
    "q": "Complete: The bus isn't ___ fast ___ the train.",
@@ -54,7 +70,11 @@
     "as / as"
    ],
    "answer": 3,
-   "skill": "grammar"
+   "skill": "grammar",
+   "d": 9.0,
+   "cefr": "B1",
+   "cando": "Can compare people, places and things.",
+   "cid": "b2"
   },
   {
    "q": "I missed the meeting. Can you fill me ___?",
@@ -65,7 +85,11 @@
     "out"
    ],
    "answer": 1,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 9.4,
+   "cefr": "B1",
+   "cando": "Can use common phrasal verbs in everyday situations.",
+   "cid": "d6"
   },
   {
    "q": "Before we choose, let's weigh ___ the pros and cons.",
@@ -76,7 +100,11 @@
     "on"
    ],
    "answer": 0,
-   "skill": "vocabulary"
+   "skill": "vocabulary",
+   "d": 9.6,
+   "cefr": "B1+",
+   "cando": "Can use common phrasal verbs in everyday situations.",
+   "cid": "d6"
   },
   {
    "q": "You didn't hear the time clearly on the phone. What do you say?",
@@ -87,7 +115,11 @@
     "Sorry, did you say five or nine?"
    ],
    "answer": 3,
-   "skill": "function"
+   "skill": "function",
+   "d": 8.5,
+   "cefr": "B1",
+   "cando": "Can ask for clarification and make polite requests.",
+   "cid": "d5"
   },
   {
    "q": "Which is the most polite way to ask a stranger?",
@@ -98,7 +130,11 @@
     "Pen, please, quick."
    ],
    "answer": 2,
-   "skill": "function"
+   "skill": "function",
+   "d": 8.0,
+   "cefr": "B1",
+   "cando": "Can ask for clarification and make polite requests.",
+   "cid": "d5"
   },
   {
    "q": "Your group must choose. Which sentence makes the final decision?",
@@ -109,29 +145,103 @@
     "What do you think?"
    ],
    "answer": 1,
-   "skill": "function"
+   "skill": "function",
+   "d": 9.0,
+   "cefr": "B1",
+   "cando": "Can discuss options and reach a decision in a group.",
+   "cid": "d9"
+  },
+  {
+   "q": "The bus was so late that we ___ the beginning of the film.",
+   "options": [
+    "forgot",
+    "passed",
+    "missed",
+    "lost"
+   ],
+   "answer": 2,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "vocabulary",
+   "cando": "Can use vocabulary to describe opinions, feelings and everyday problems.",
+   "cid": "d10"
+  },
+  {
+   "q": "Our teacher asked us to ___ a list of ideas before we start writing.",
+   "options": [
+    "have",
+    "make",
+    "do",
+    "take"
+   ],
+   "answer": 1,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "vocabulary",
+   "cando": "Can use vocabulary to describe opinions, feelings and everyday problems.",
+   "cid": "d10"
+  },
+  {
+   "q": "Please don't ___ your phone during the exam. Leave it in your bag.",
+   "options": [
+    "use",
+    "make",
+    "play",
+    "spend"
+   ],
+   "answer": 0,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "vocabulary",
+   "cando": "Can use vocabulary to describe opinions, feelings and everyday problems.",
+   "cid": "d10"
+  },
+  {
+   "q": "A: Would you mind if I opened the window? B: ___",
+   "options": [
+    "Yes, please open it.",
+    "No, I mind.",
+    "Yes, I wouldn't.",
+    "Not at all. Go ahead."
+   ],
+   "answer": 3,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "function",
+   "cando": "Can ask for clarification and make polite requests.",
+   "cid": "d5"
   }
  ],
  "listen": [
   {
-   "script": "Teacher: Listen carefully, everyone. The science project is due on the twelfth, not the twentieth. You can work alone or in pairs, but the report must be under three hundred words.",
+   "script": "Student: Excuse me, Mr Khalid, when is the science project due? Teacher: Listen carefully, everyone. The science project is due on the twelfth, not the twentieth. You can work alone or in pairs, but the report must be under three hundred words.",
    "q": "When is the project due?",
    "options": [
     "on the twentieth",
     "on the twelfth",
     "on the third"
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can understand the main points and details of clear conversations on familiar topics.",
+   "cid": "d7"
   },
   {
-   "script": "Noura: I've just spoken to Aunt Maha. She said they were coming to visit on Friday, and she told me to remind Mum to buy dates. She also asked if we still had the big carpet.",
+   "script": "Mum: Who was that on the phone, Noura? Noura: I've just spoken to Aunt Maha. She said they were coming to visit on Friday, and she told me to remind Mum to buy dates. She also asked if we still had the big carpet.",
    "q": "What did Aunt Maha tell Noura to do?",
    "options": [
     "buy a new carpet",
     "visit her on Friday",
     "remind her mother to buy dates"
    ],
-   "answer": 2
+   "answer": 2,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can report what other people said and asked.",
+   "cid": "d4"
   },
   {
    "script": "Omar: Excuse me, would you mind moving your bag? I'd like to sit here. Man: Oh, not at all. Sorry about that. There you go.",
@@ -141,7 +251,12 @@
     "He says no.",
     "He gives Omar his ticket."
    ],
-   "answer": 0
+   "answer": 0,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can ask for clarification and make polite requests.",
+   "cid": "d5"
   },
   {
    "script": "Reem: The mountains are lovely, but the beach isn't as far, and it's much cheaper. Dad: You have a point. It would be better to save money this time. Let's go for the beach.",
@@ -151,7 +266,42 @@
     "It's closer and cheaper.",
     "It's Reem's birthday."
    ],
-   "answer": 1
+   "answer": 1,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can discuss options and reach a decision in a group.",
+   "cid": "d9"
+  },
+  {
+   "script": "Girl: What did the coach say about the match? Boy: He said it had been moved to Thursday, and he asked whether we could all come early. Girl: How early? Boy: Half an hour before the start.",
+   "q": "What did the coach ask?",
+   "options": [
+    "whether they could come early",
+    "whether they wanted to play",
+    "when the match was"
+   ],
+   "answer": 0,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can report what other people said and asked.",
+   "cid": "d4"
+  },
+  {
+   "script": "Man: Sorry, could you repeat the room number? Woman: Of course. It's room two-fourteen, on the second floor. Man: Two-forty? Woman: No, two-fourteen: two, one, four.",
+   "q": "What is the room number?",
+   "options": [
+    "204",
+    "214",
+    "240"
+   ],
+   "answer": 1,
+   "d": 9.0,
+   "cefr": "B1",
+   "skill": "listening",
+   "cando": "Can ask for clarification and make polite requests.",
+   "cid": "d5"
   }
  ],
  "read": {
@@ -164,7 +314,12 @@
      "after the mid-year holiday",
      "at the end of the year"
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    },
    {
     "q": "How many books can students take home each week?",
@@ -173,7 +328,12 @@
      "one",
      "five"
     ],
-    "answer": 0
+    "answer": 0,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    },
    {
     "q": "Why does Huda like the idea?",
@@ -182,7 +342,12 @@
      "The library is often crowded.",
      "She has read all the books."
     ],
-    "answer": 1
+    "answer": 1,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    },
    {
     "q": "What did Mr Salem ask students to do?",
@@ -191,7 +356,73 @@
      "read only in the library",
      "return the books on time"
     ],
-    "answer": 2
+    "answer": 2,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   }
+  ]
+ },
+ "read2": {
+  "passage": "Last month, our class visited the offices of a local newspaper in Dammam. The editor, Ms Rania, told us that a good reporter always checks facts with at least two people. She asked us what we would write about if we worked there, and most of us said sport. Then she gave us a challenge: we had one hour to interview someone in the building and write a short article. I interviewed the photographer, who told me he had taken more than a hundred thousand photos. Our articles weren't perfect, but Ms Rania said she was impressed and promised to print the best one next week. I can't wait to see if it's mine!",
+  "qs": [
+   {
+    "q": "What did the editor say a good reporter always does?",
+    "options": [
+     "checks facts with at least two people",
+     "writes about sport",
+     "takes lots of photos"
+    ],
+    "answer": 0,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   },
+   {
+    "q": "What did most students say they would write about?",
+    "options": [
+     "the news",
+     "photography",
+     "sport"
+    ],
+    "answer": 2,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   },
+   {
+    "q": "Who did the writer interview?",
+    "options": [
+     "a teacher",
+     "the photographer",
+     "the editor"
+    ],
+    "answer": 1,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
+   },
+   {
+    "q": "What did Ms Rania promise?",
+    "options": [
+     "to print the best article",
+     "to give everyone a prize",
+     "to visit the school"
+    ],
+    "answer": 0,
+    "d": 9.0,
+    "cefr": "B1",
+    "skill": "reading",
+    "cando": "Can understand articles and reports about school and everyday life.",
+    "cid": "d8"
    }
   ]
  },

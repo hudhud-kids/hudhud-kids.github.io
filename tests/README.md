@@ -25,6 +25,7 @@ summary. Playwright must be installed (locally or globally: `npm i -g playwright
 | `ack.test.js`, `first-sentence.test.js`, `turn.test.js`, `turn-end-words.test.js` | acknowledgement sound, first sentence, interrupt, latency, word rules |
 | `loop.test.js` | 13 full turns with voice, at tablet and phone size |
 | `formats.test.js` | whole lessons in every format at 4 levels |
+| `placement.test.js` | placement routing simulation (`SIM_N=2000` for the full run), item banks, two-voice listening, probation |
 
 Helpers: `h.js` (`open()` = demo child, nothing saved; `openReal()` = the same data stored in localStorage, so saving,
 snapshots and reloads behave as in production; `check(name, ok)`), `mock.js` (scripted microphone and scripted Speech
