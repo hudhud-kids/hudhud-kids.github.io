@@ -196,36 +196,42 @@
    "expressions": [
     {
      "w": "this weekend",
+     "emoji": "📅",
      "def": "the Friday and Saturday that are coming soon",
      "ar": "عطلة نهاية هذا الأسبوع",
      "frame": "This weekend I'm going to ___."
     },
     {
      "w": "be going to",
+     "emoji": "🔜",
      "def": "words we use to talk about plans for the future",
      "ar": "سوف (لخطة مقرّرة)",
      "frame": "After school today, I'm going to ___."
     },
     {
      "w": "tomorrow",
+     "emoji": "🌅",
      "def": "the day after today",
      "ar": "غداً",
      "frame": "Tomorrow my family is going to ___."
     },
     {
      "w": "stay in",
+     "emoji": "🏠",
      "def": "to stay at home and not go out",
      "ar": "يبقى في البيت",
      "frame": "When it's too hot, I stay in and ___."
     },
     {
      "w": "go out",
+     "emoji": "🚪",
      "def": "to leave your home to do something fun",
      "ar": "يخرج (للتنزّه)",
      "frame": "On Saturday evening we're going to go out to ___."
     },
     {
      "w": "have a barbecue",
+     "emoji": "🍖",
      "def": "to cook and eat food outside on a fire",
      "ar": "يقيم حفلة شواء",
      "frame": "We're going to have a barbecue in the ___."
@@ -233,6 +239,7 @@
    ],
    "dialogue": {
     "scene": "It's Thursday. Omar and his friend Sam are walking home from school.",
+    "scene_emoji": "🚶",
     "p1": [
      {
       "s": "Omar",
@@ -312,36 +319,42 @@
    "expressions": [
     {
      "w": "next weekend",
+     "emoji": "📆",
      "def": "the weekend in the coming week",
      "ar": "عطلة نهاية الأسبوع القادمة",
      "frame": "Next weekend my family is going to ___."
     },
     {
      "w": "farm",
+     "emoji": "🚜",
      "def": "land where people grow food and keep animals",
      "ar": "مزرعة",
      "frame": "On a farm, you can ___."
     },
     {
      "w": "pick dates",
+     "emoji": "🌴",
      "def": "to take dates from a palm tree",
      "ar": "يجني التمر",
      "frame": "After we pick dates, we put them in ___."
     },
     {
      "w": "feed the animals",
+     "emoji": "🐑",
      "def": "to give food to animals",
      "ar": "يُطعم الحيوانات",
      "frame": "On the farm, I'm going to feed the ___."
     },
     {
      "w": "ride",
+     "emoji": "🐴",
      "def": "to sit on a horse, camel or bike and move",
      "ar": "يركب",
      "frame": "One day I'm going to ride a ___."
     },
     {
      "w": "spend the night",
+     "emoji": "🌙",
      "def": "to sleep in a place that is not your home",
      "ar": "يقضي الليلة / يبيت",
      "frame": "Next holiday, I'm going to spend the night at ___."
@@ -349,6 +362,7 @@
    ],
    "dialogue": {
     "scene": "Reem tells her friend Emma about her family's trip to her uncle's farm.",
+    "scene_emoji": "🚜",
     "p1": [
      {
       "s": "Emma",
@@ -428,36 +442,42 @@
    "expressions": [
     {
      "w": "surprise",
+     "emoji": "🎉",
      "def": "something nice that a person doesn't know about before",
      "ar": "مفاجأة",
      "frame": "A great surprise for my mum is ___."
     },
     {
      "w": "decorate",
+     "emoji": "🎀",
      "def": "to make a place look nice for a special day",
      "ar": "يزيّن",
      "frame": "We're going to decorate the room with ___."
     },
     {
      "w": "bake a cake",
+     "emoji": "🎂",
      "def": "to make a cake in the oven",
      "ar": "يخبز كعكة",
      "frame": "I'm going to bake a ___ cake."
     },
     {
      "w": "make a card",
+     "emoji": "💌",
      "def": "to draw and write on a card for someone",
      "ar": "يصنع بطاقة",
      "frame": "On my card, I'm going to write ___."
     },
     {
      "w": "keep a secret",
+     "emoji": "🤫",
      "def": "to not tell anyone about something",
      "ar": "يحفظ السرّ",
      "frame": "It's hard to keep a secret from ___."
     },
     {
      "w": "on time",
+     "emoji": "⏰",
      "def": "at the right time, not late",
      "ar": "في الوقت المحدّد",
      "frame": "I always try to get to ___ on time."
@@ -465,6 +485,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and his sister Noura are planning a birthday surprise for their mum.",
+    "scene_emoji": "🎂",
     "p1": [
      {
       "s": "Noura",
@@ -544,36 +565,42 @@
    "expressions": [
     {
      "w": "Eid prayer",
+     "emoji": "🕌",
      "def": "the special prayer on the morning of Eid",
      "ar": "صلاة العيد",
      "frame": "After the Eid prayer, we're going to ___."
     },
     {
      "w": "new clothes",
+     "emoji": "👗",
      "def": "clothes that you wear for the first time",
      "ar": "ملابس جديدة",
      "frame": "For Eid, I'm going to wear a new ___."
     },
     {
      "w": "Eidiya",
+     "emoji": "💵",
      "def": "money that adults give to children at Eid",
      "ar": "العيدية",
      "frame": "With my Eidiya, I'm going to buy ___."
     },
     {
      "w": "relatives",
+     "emoji": "👨‍👩‍👧‍👦",
      "def": "people in your family, like aunts, uncles and cousins",
      "ar": "الأقارب",
      "frame": "At Eid, we're going to visit our relatives in ___."
     },
     {
      "w": "fireworks",
+     "emoji": "🎆",
      "def": "colourful lights in the night sky for a celebration",
      "ar": "ألعاب نارية",
      "frame": "We're going to watch the fireworks at ___."
     },
     {
      "w": "save",
+     "emoji": "🐷",
      "def": "to keep money and not spend it now",
      "ar": "يدّخر / يوفّر",
      "frame": "I'm going to save my money for ___."
@@ -581,6 +608,7 @@
    ],
    "dialogue": {
     "scene": "Emma is new in Jeddah. Her friend Noura tells her about her family's plans for Eid.",
+    "scene_emoji": "🌙",
     "p1": [
      {
       "s": "Emma",
@@ -660,36 +688,42 @@
    "expressions": [
     {
      "w": "summer holidays",
+     "emoji": "🏖️",
      "def": "the long time in summer when there is no school",
      "ar": "الإجازة الصيفية",
      "frame": "In the summer holidays, I'm going to ___."
     },
     {
      "w": "learn to",
+     "emoji": "📚",
      "def": "to start to know how to do something",
      "ar": "يتعلّم (أن يفعل شيئاً)",
      "frame": "This summer I'm going to learn to ___."
     },
     {
      "w": "summer camp",
+     "emoji": "🏕️",
      "def": "a place where children do fun activities in the holidays",
      "ar": "مخيّم صيفي",
      "frame": "At summer camp, we're going to ___."
     },
     {
      "w": "abroad",
+     "emoji": "✈️",
      "def": "in or to another country",
      "ar": "في الخارج / خارج البلد",
      "frame": "One day I'd like to travel abroad to ___."
     },
     {
      "w": "get up late",
+     "emoji": "😴",
      "def": "to get out of bed later than usual",
      "ar": "يستيقظ متأخراً",
      "frame": "In the holidays, I get up late on ___."
     },
     {
      "w": "join",
+     "emoji": "🙋",
      "def": "to become a member of a club or group",
      "ar": "ينضمّ إلى",
      "frame": "This summer I'm going to join a ___ club."
@@ -697,6 +731,7 @@
    ],
    "dialogue": {
     "scene": "It's the last day of school. Khalid and his friend Sam talk about the summer holidays.",
+    "scene_emoji": "☀️",
     "p1": [
      {
       "s": "Sam",
@@ -776,36 +811,42 @@
    "expressions": [
     {
      "w": "plan",
+     "emoji": "📝",
      "def": "the things you decide to do in the future",
      "ar": "خطة",
      "frame": "My plan for Friday is to ___."
     },
     {
      "w": "in the evening",
+     "emoji": "🌆",
      "def": "the time between the afternoon and the night",
      "ar": "في المساء",
      "frame": "In the evening, we're going to ___."
     },
     {
      "w": "after that",
+     "emoji": "⏭️",
      "def": "next; later than the thing you said before",
      "ar": "بعد ذلك",
      "frame": "First we're going to ___. After that, we're going to ___."
     },
     {
      "w": "go sightseeing",
+     "emoji": "🗺️",
      "def": "to visit famous places as a tourist",
      "ar": "يتجوّل لمشاهدة المعالم",
      "frame": "In my city, visitors can go sightseeing at ___."
     },
     {
      "w": "go out",
+     "emoji": "🚪",
      "def": "to leave your home to do something fun",
      "ar": "يخرج (للتنزّه)",
      "frame": "On Saturday night we're going to go out to ___."
     },
     {
      "w": "this weekend",
+     "emoji": "📅",
      "def": "the Friday and Saturday that are coming soon",
      "ar": "عطلة نهاية هذا الأسبوع",
      "frame": "This weekend is going to be ___ because ___."
@@ -813,6 +854,7 @@
    ],
    "dialogue": {
     "scene": "Faisal's cousin Adam lives in London. He is going to visit Jeddah. Faisal tells him the plan on a video call.",
+    "scene_emoji": "🌊",
     "p1": [
      {
       "s": "Adam",
@@ -892,36 +934,42 @@
    "expressions": [
     {
      "w": "Would you like to …?",
+     "emoji": "💌",
      "def": "a polite way to invite someone",
      "ar": "هل تودّ أن …؟",
      "frame": "Would you like to ___ with me on Friday?"
     },
     {
      "w": "I'd love to.",
+     "emoji": "😍",
      "def": "a happy way to say yes to an invitation",
      "ar": "يسعدني ذلك",
      "frame": "I'd love to! Can I bring my ___?"
     },
     {
      "w": "come over",
+     "emoji": "🏠",
      "def": "to come to someone's house for a visit",
      "ar": "يأتي للزيارة",
      "frame": "Can you come over after ___?"
     },
     {
      "w": "board game",
+     "emoji": "♟️",
      "def": "a game you play on a table, like chess or Ludo",
      "ar": "لعبة لوحية",
      "frame": "My favourite board game is ___."
     },
     {
      "w": "ask my parents",
+     "emoji": "👨‍👩‍👦",
      "def": "to check with your mum or dad if you can do something",
      "ar": "أستأذن والديّ",
      "frame": "I need to ask my parents before I ___."
     },
     {
      "w": "See you then!",
+     "emoji": "👋",
      "def": "a friendly goodbye before you meet again",
      "ar": "أراك حينها!",
      "frame": "Great! See you on ___ at ___!"
@@ -929,6 +977,7 @@
    ],
    "dialogue": {
     "scene": "Faisal phones his friend Sam on Wednesday evening.",
+    "scene_emoji": "📞",
     "p1": [
      {
       "s": "Faisal",
@@ -1008,36 +1057,42 @@
    "expressions": [
     {
      "w": "have a party",
+     "emoji": "🎉",
      "def": "to invite people to celebrate something together",
      "ar": "يقيم حفلة",
      "frame": "I'd like to have a party at ___."
     },
     {
      "w": "I'm sorry, I can't.",
+     "emoji": "🙁",
      "def": "a polite way to say no to an invitation",
      "ar": "آسف، لا أستطيع",
      "frame": "I'm sorry, I can't. I'm going to ___."
     },
     {
      "w": "guest",
+     "emoji": "🧑‍🤝‍🧑",
      "def": "a person you invite to your home or party",
      "ar": "ضيف",
      "frame": "At my party, there are going to be ___ guests."
     },
     {
      "w": "invitation",
+     "emoji": "💌",
      "def": "a card or message that asks you to come to something",
      "ar": "دعوة",
      "frame": "I got an invitation to a ___."
     },
     {
      "w": "Thanks for inviting me.",
+     "emoji": "🙏",
      "def": "a polite thing to say when someone invites you",
      "ar": "شكراً على دعوتك لي",
      "frame": "Thanks for inviting me to your ___."
     },
     {
      "w": "Maybe next time.",
+     "emoji": "🔜",
      "def": "a kind way to say you hope to come another time",
      "ar": "ربما في المرة القادمة",
      "frame": "I can't come this ___, but maybe next time."
@@ -1045,6 +1100,7 @@
    ],
    "dialogue": {
     "scene": "Reem is having a birthday party. At school, she invites her friends Lina and Emma.",
+    "scene_emoji": "🎉",
     "p1": [
      {
       "s": "Reem",
@@ -1124,36 +1180,42 @@
    "expressions": [
     {
      "w": "Do you want to …?",
+     "emoji": "🙋",
      "def": "a friendly way to invite a friend",
      "ar": "هل تريد أن …؟",
      "frame": "Do you want to ___ with us on Friday?"
     },
     {
      "w": "ticket",
+     "emoji": "🎟️",
      "def": "a paper or code you need to go into a place",
      "ar": "تذكرة",
      "frame": "I'd like to buy a ticket for ___."
     },
     {
      "w": "support",
+     "emoji": "📣",
      "def": "to like a team and want it to win",
      "ar": "يشجّع",
      "frame": "My family supports ___."
     },
     {
      "w": "Let's meet at …",
+     "emoji": "📍",
      "def": "words to say the place where you are going to meet",
      "ar": "لنلتقِ عند …",
      "frame": "Let's meet at ___ at ___ o'clock."
     },
     {
      "w": "That sounds great!",
+     "emoji": "🤩",
      "def": "a happy way to say yes to an idea",
      "ar": "تبدو فكرة رائعة!",
      "frame": "A trip to ___? That sounds great!"
     },
     {
      "w": "pick you up",
+     "emoji": "🚗",
      "def": "to come and take you somewhere in a car",
      "ar": "يمرّ عليك ليأخذك",
      "frame": "Can you pick me up from ___?"
@@ -1161,6 +1223,7 @@
    ],
    "dialogue": {
     "scene": "Omar's dad has an extra ticket for a football match in Riyadh. Omar calls his friend Khalid.",
+    "scene_emoji": "🏟️",
     "p1": [
      {
       "s": "Omar",
@@ -1240,36 +1303,42 @@
    "expressions": [
     {
      "w": "join us",
+     "emoji": "🙌",
      "def": "to come and do something with us",
      "ar": "ينضمّ إلينا",
      "frame": "Would you like to join us for ___?"
     },
     {
      "w": "picnic",
+     "emoji": "🧺",
      "def": "a meal that you eat outside",
      "ar": "نزهة مع وجبة في الخارج",
      "frame": "For a picnic, I like to take ___."
     },
     {
      "w": "tent",
+     "emoji": "⛺",
      "def": "a small house made of cloth for sleeping outside",
      "ar": "خيمة",
      "frame": "In our tent, there's space for ___ people."
     },
     {
      "w": "Can I bring …?",
+     "emoji": "🎒",
      "def": "a polite way to ask to take something with you",
      "ar": "هل يمكنني أن أُحضر …؟",
      "frame": "Can I bring my ___?"
     },
     {
      "w": "campfire",
+     "emoji": "🔥",
      "def": "a fire that you make outside",
      "ar": "نار المخيّم",
      "frame": "Around the campfire, we like to ___."
     },
     {
      "w": "stars",
+     "emoji": "⭐",
      "def": "the small lights you see in the sky at night",
      "ar": "النجوم",
      "frame": "When I look at the stars, I feel ___."
@@ -1277,6 +1346,7 @@
    ],
    "dialogue": {
     "scene": "Noura's family is going to have a picnic in the desert near Riyadh. Noura invites her friend Emma.",
+    "scene_emoji": "🏜️",
     "p1": [
      {
       "s": "Noura",
@@ -1356,36 +1426,42 @@
    "expressions": [
     {
      "w": "science fair",
+     "emoji": "🔬",
      "def": "a school event where students show their science projects",
      "ar": "معرض العلوم",
      "frame": "At the science fair, I'd like to show ___."
     },
     {
      "w": "project",
+     "emoji": "📊",
      "def": "a big piece of work about one topic",
      "ar": "مشروع",
      "frame": "My project is about ___."
     },
     {
      "w": "I hope you can come.",
+     "emoji": "🤞",
      "def": "a polite way to say you want someone to come",
      "ar": "أتمنى أن تتمكّن من الحضور",
      "frame": "The fair is on ___. I hope you can come."
     },
     {
      "w": "That's very kind of you.",
+     "emoji": "💖",
      "def": "a polite thank-you to someone who is nice to you",
      "ar": "هذا لطف منك",
      "frame": "Thank you for ___. That's very kind of you."
     },
     {
      "w": "I'm afraid I can't.",
+     "emoji": "🙁",
      "def": "a very polite way to say no",
      "ar": "أخشى أنني لا أستطيع",
      "frame": "I'm afraid I can't come because I'm going to ___."
     },
     {
      "w": "principal",
+     "emoji": "👨‍💼",
      "def": "the person in charge of a school",
      "ar": "مدير المدرسة",
      "frame": "Our principal often talks to us about ___."
@@ -1393,6 +1469,7 @@
    ],
    "dialogue": {
     "scene": "Sam's class is having a science fair. Sam invites his science teacher, Mr Ahmed.",
+    "scene_emoji": "🔬",
     "p1": [
      {
       "s": "Sam",
@@ -1472,36 +1549,42 @@
    "expressions": [
     {
      "w": "You're invited!",
+     "emoji": "💌",
      "def": "words at the top of an invitation card",
      "ar": "أنت مدعو!",
      "frame": "You're invited to my ___ party!"
     },
     {
      "w": "date",
+     "emoji": "📅",
      "def": "the day and month of something",
      "ar": "التاريخ",
      "frame": "The date of my birthday is ___."
     },
     {
      "w": "reply",
+     "emoji": "✉️",
      "def": "to answer a message or an invitation",
      "ar": "يردّ",
      "frame": "Please reply by ___."
     },
     {
      "w": "place",
+     "emoji": "📍",
      "def": "where something happens",
      "ar": "المكان",
      "frame": "The best place for a class party is ___."
     },
     {
      "w": "I'd love to.",
+     "emoji": "😍",
      "def": "a happy way to say yes to an invitation",
      "ar": "يسعدني ذلك",
      "frame": "I'd love to come! Can I bring ___?"
     },
     {
      "w": "I'm afraid I can't.",
+     "emoji": "🙁",
      "def": "a very polite way to say no",
      "ar": "أخشى أنني لا أستطيع",
      "frame": "I'm afraid I can't come because ___."
@@ -1509,6 +1592,7 @@
    ],
    "dialogue": {
     "scene": "Reem's class is going to have an end-of-year party. Reem shows her friend Lina the invitation.",
+    "scene_emoji": "🎈",
     "p1": [
      {
       "s": "Reem",
@@ -1588,36 +1672,42 @@
    "expressions": [
     {
      "w": "bored",
+     "emoji": "😑",
      "def": "unhappy because nothing interesting is happening",
      "ar": "يشعر بالملل",
      "frame": "I get bored when ___."
     },
     {
      "w": "boring",
+     "emoji": "🥱",
      "def": "not interesting at all",
      "ar": "مُمل",
      "frame": "I think ___ is boring."
     },
     {
      "w": "journey",
+     "emoji": "🛣️",
      "def": "a trip from one place to another",
      "ar": "رحلة (مسافة الطريق)",
      "frame": "The longest journey I know is from ___ to ___."
     },
     {
      "w": "tired",
+     "emoji": "😩",
      "def": "feeling that you need to rest or sleep",
      "ar": "متعَب",
      "frame": "I'm always tired after ___."
     },
     {
      "w": "because",
+     "emoji": "🔗",
      "def": "a word that gives the reason",
      "ar": "لأنّ",
      "frame": "I'm happy today because ___."
     },
     {
      "w": "so",
+     "emoji": "➡️",
      "def": "a word that gives the result",
      "ar": "لذلك",
      "frame": "I was bored, so I ___."
@@ -1625,6 +1715,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and his sister Noura are in the car. Their family is driving from Riyadh to Dammam.",
+    "scene_emoji": "🚗",
     "p1": [
      {
       "s": "Faisal",
@@ -1704,36 +1795,42 @@
    "expressions": [
     {
      "w": "excited",
+     "emoji": "🤩",
      "def": "very happy because something good is going to happen",
      "ar": "متحمّس",
      "frame": "I'm excited about ___."
     },
     {
      "w": "exciting",
+     "emoji": "🎉",
      "def": "making you feel very happy and full of energy",
      "ar": "مثير / ممتع جداً",
      "frame": "The most exciting place I know is ___."
     },
     {
      "w": "can't wait",
+     "emoji": "⏳",
      "def": "to want something to happen very soon",
      "ar": "لا أطيق الانتظار",
      "frame": "I can't wait for ___!"
     },
     {
      "w": "roller coaster",
+     "emoji": "🎢",
      "def": "a fast ride with big ups and downs",
      "ar": "قطار الأفعوانية",
      "frame": "On a roller coaster, I feel ___."
     },
     {
      "w": "theme park",
+     "emoji": "🎡",
      "def": "a big park with rides and games",
      "ar": "مدينة ملاهٍ",
      "frame": "At a theme park, I'd like to ___."
     },
     {
      "w": "nervous",
+     "emoji": "😬",
      "def": "a little worried about something",
      "ar": "متوتّر",
      "frame": "I feel nervous before ___."
@@ -1741,6 +1838,7 @@
    ],
    "dialogue": {
     "scene": "Omar's family is going to visit Ferrari World in Abu Dhabi next week. He tells his friend Sam.",
+    "scene_emoji": "🎢",
     "p1": [
      {
       "s": "Omar",
@@ -1820,36 +1918,42 @@
    "expressions": [
     {
      "w": "worried",
+     "emoji": "😟",
      "def": "thinking a lot about a problem; not calm",
      "ar": "قلِق",
      "frame": "Sometimes I'm worried about ___."
     },
     {
      "w": "relaxed",
+     "emoji": "😌",
      "def": "calm and not worried",
      "ar": "مرتاح / هادئ",
      "frame": "I feel relaxed when ___."
     },
     {
      "w": "revise",
+     "emoji": "📖",
      "def": "to study things again before a test",
      "ar": "يراجع (للاختبار)",
      "frame": "Tonight I'm going to revise ___."
     },
     {
      "w": "tiring",
+     "emoji": "😩",
      "def": "making you feel tired",
      "ar": "مُتعِب",
      "frame": "___ is very tiring."
     },
     {
      "w": "proud",
+     "emoji": "🦚",
      "def": "very happy about something good that you or others did",
      "ar": "فخور",
      "frame": "I was proud when I ___."
     },
     {
      "w": "pass",
+     "emoji": "✅",
      "def": "to do well enough in a test",
      "ar": "ينجح (في الاختبار)",
      "frame": "I want to pass my ___ test."
@@ -1857,6 +1961,7 @@
    ],
    "dialogue": {
     "scene": "Reem has a maths test tomorrow. She talks to her older sister, Sara.",
+    "scene_emoji": "📚",
     "p1": [
      {
       "s": "Sara",
@@ -1936,36 +2041,42 @@
    "expressions": [
     {
      "w": "interested in",
+     "emoji": "🤔",
      "def": "wanting to know more about something",
      "ar": "مهتمّ بـ",
      "frame": "I'm really interested in ___."
     },
     {
      "w": "interesting",
+     "emoji": "🧐",
      "def": "making you want to know more",
      "ar": "مثير للاهتمام",
      "frame": "The most interesting subject at school is ___."
     },
     {
      "w": "amazed",
+     "emoji": "😲",
      "def": "very surprised in a good way",
      "ar": "مندهش / منبهر",
      "frame": "I was amazed when I saw ___."
     },
     {
      "w": "amazing",
+     "emoji": "🤩",
      "def": "very, very good or surprising",
      "ar": "مذهل",
      "frame": "___ is an amazing place."
     },
     {
      "w": "surprised",
+     "emoji": "😮",
      "def": "how you feel when something unusual happens suddenly",
      "ar": "متفاجئ",
      "frame": "I was surprised when ___."
     },
     {
      "w": "surprising",
+     "emoji": "🎁",
      "def": "unusual and not what you thought",
      "ar": "مفاجئ",
      "frame": "A surprising fact I know is ___."
@@ -1973,6 +2084,7 @@
    ],
    "dialogue": {
     "scene": "Sam and his friend Khalid are on a school trip to a science museum.",
+    "scene_emoji": "🔭",
     "p1": [
      {
       "s": "Sam",
@@ -2052,36 +2164,42 @@
    "expressions": [
     {
      "w": "disappointed",
+     "emoji": "😞",
      "def": "sad because something was not as good as you wanted",
      "ar": "خائب الأمل",
      "frame": "I was disappointed when ___."
     },
     {
      "w": "disappointing",
+     "emoji": "👎",
      "def": "not as good as you hoped",
      "ar": "مخيّب للآمال",
      "frame": "A disappointing day for me is when ___."
     },
     {
      "w": "upset",
+     "emoji": "😢",
      "def": "sad and a little angry",
      "ar": "منزعج / مستاء",
      "frame": "I get upset when ___."
     },
     {
      "w": "lose",
+     "emoji": "🥈",
      "def": "to not win a game",
      "ar": "يخسر",
      "frame": "When my team loses, I feel ___."
     },
     {
      "w": "Cheer up!",
+     "emoji": "😊",
      "def": "words to help a sad person feel happier",
      "ar": "ابتهج! / لا تحزن!",
      "frame": "Cheer up! Let's ___."
     },
     {
      "w": "It doesn't matter.",
+     "emoji": "🤷",
      "def": "it's not important, so don't worry",
      "ar": "لا يهمّ",
      "frame": "It doesn't matter. Next time we can ___."
@@ -2089,6 +2207,7 @@
    ],
    "dialogue": {
     "scene": "Noura's basketball team lost the final in their school league. Her friend Reem talks to her after the game.",
+    "scene_emoji": "🏀",
     "p1": [
      {
       "s": "Reem",
@@ -2168,36 +2287,42 @@
    "expressions": [
     {
      "w": "feel",
+     "emoji": "❤️",
      "def": "to have a feeling, like happy or sad",
      "ar": "يشعر",
      "frame": "Today I feel ___ because ___."
     },
     {
      "w": "frightened",
+     "emoji": "😨",
      "def": "afraid; scared",
      "ar": "خائف",
      "frame": "I'm frightened of ___."
     },
     {
      "w": "frightening",
+     "emoji": "🌩️",
      "def": "making you feel afraid",
      "ar": "مخيف",
      "frame": "I think ___ is frightening."
     },
     {
      "w": "diary",
+     "emoji": "📔",
      "def": "a book where you write about your day",
      "ar": "مذكّرات / يوميّات",
      "frame": "In my diary, I write about ___."
     },
     {
      "w": "excited",
+     "emoji": "🤩",
      "def": "very happy because something good is going to happen",
      "ar": "متحمّس",
      "frame": "Last week I was excited because ___."
     },
     {
      "w": "bored",
+     "emoji": "😑",
      "def": "unhappy because nothing interesting is happening",
      "ar": "يشعر بالملل",
      "frame": "I felt bored on ___ because ___."
@@ -2205,6 +2330,7 @@
    ],
    "dialogue": {
     "scene": "Omar reads his feelings diary to his English teacher, Mr Sam.",
+    "scene_emoji": "📔",
     "p1": [
      {
       "s": "Mr Sam",
@@ -2284,36 +2410,42 @@
    "expressions": [
     {
      "w": "have to",
+     "emoji": "☝️",
      "def": "it is necessary; you need to do it",
      "ar": "يجب عليه / مضطرّ إلى",
      "frame": "At school, we have to ___."
     },
     {
      "w": "mustn't",
+     "emoji": "🚫",
      "def": "it's a rule not to do this; don't do it",
      "ar": "ممنوع أن …",
      "frame": "In class, we mustn't ___."
     },
     {
      "w": "uniform",
+     "emoji": "👔",
      "def": "special clothes that all the students wear",
      "ar": "الزيّ المدرسي",
      "frame": "Our school uniform is ___."
     },
     {
      "w": "be late",
+     "emoji": "⏰",
      "def": "to arrive after the right time",
      "ar": "يتأخّر",
      "frame": "You mustn't be late for ___."
     },
     {
      "w": "put up your hand",
+     "emoji": "✋",
      "def": "to lift your hand when you want to speak in class",
      "ar": "يرفع يده",
      "frame": "I put up my hand when I ___."
     },
     {
      "w": "break time",
+     "emoji": "🔔",
      "def": "a short time between lessons to eat and play",
      "ar": "وقت الفسحة",
      "frame": "At break time, I usually ___."
@@ -2321,6 +2453,7 @@
    ],
    "dialogue": {
     "scene": "Emma is a new student at a school in Riyadh. Her classmate Reem tells her about the school rules.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Emma",
@@ -2400,36 +2533,42 @@
    "expressions": [
     {
      "w": "has to",
+     "emoji": "☝️",
      "def": "he or she needs to do it",
      "ar": "يجب عليه / عليها",
      "frame": "In my family, my ___ has to ___ every day."
     },
     {
      "w": "don't have to",
+     "emoji": "🆗",
      "def": "it isn't necessary; you can choose",
      "ar": "ليس مضطرّاً إلى",
      "frame": "At the weekend, I don't have to ___."
     },
     {
      "w": "make your bed",
+     "emoji": "🛏️",
      "def": "to make your bed tidy after you sleep",
      "ar": "يرتّب سريره",
      "frame": "I make my bed every ___."
     },
     {
      "w": "bedtime",
+     "emoji": "🌙",
      "def": "the time when you go to bed",
      "ar": "وقت النوم",
      "frame": "My bedtime on school days is ___."
     },
     {
      "w": "take out the rubbish",
+     "emoji": "🗑️",
      "def": "to carry the bin bag outside the house",
      "ar": "يُخرج القمامة",
      "frame": "In my house, ___ takes out the rubbish."
     },
     {
      "w": "pocket money",
+     "emoji": "💰",
      "def": "money that parents give children every week",
      "ar": "المصروف",
      "frame": "With my pocket money, I usually buy ___."
@@ -2437,6 +2576,7 @@
    ],
    "dialogue": {
     "scene": "Khalid is at his cousin Sam's house. They talk about the rules in their homes.",
+    "scene_emoji": "🏠",
     "p1": [
      {
       "s": "Khalid",
@@ -2516,36 +2656,42 @@
    "expressions": [
     {
      "w": "must",
+     "emoji": "❗",
      "def": "it is very important to do this",
      "ar": "يجب",
      "frame": "At the pool, you must ___."
     },
     {
      "w": "lifeguard",
+     "emoji": "🛟",
      "def": "a person who watches swimmers and keeps them safe",
      "ar": "المنقذ",
      "frame": "A lifeguard has to ___."
     },
     {
      "w": "deep end",
+     "emoji": "🌊",
      "def": "the part of a pool where the water is deep",
      "ar": "الجزء العميق من المسبح",
      "frame": "I can't swim in the deep end because ___."
     },
     {
      "w": "slippery",
+     "emoji": "🧊",
      "def": "wet and easy to fall on",
      "ar": "زَلِق",
      "frame": "The floor is slippery when ___."
     },
     {
      "w": "dive",
+     "emoji": "🤿",
      "def": "to jump into water with your head first",
      "ar": "يقفز في الماء (يغطس)",
      "frame": "I'd like to learn to dive into ___."
     },
     {
      "w": "sign",
+     "emoji": "🪧",
      "def": "a board with words or pictures that tell you something",
      "ar": "لافتة",
      "frame": "The sign at the pool says: 'No ___!'"
@@ -2553,6 +2699,7 @@
    ],
    "dialogue": {
     "scene": "Faisal takes his little brother Ali to the swimming pool at the sports club.",
+    "scene_emoji": "🏊",
     "p1": [
      {
       "s": "Ali",
@@ -2632,36 +2779,42 @@
    "expressions": [
     {
      "w": "passport",
+     "emoji": "🛂",
      "def": "a small book you need to travel to another country",
      "ar": "جواز السفر",
      "frame": "You need a passport to travel to ___."
     },
     {
      "w": "seat belt",
+     "emoji": "💺",
      "def": "a belt on your seat that keeps you safe",
      "ar": "حزام الأمان",
      "frame": "You have to wear a seat belt in a ___."
     },
     {
      "w": "take off",
+     "emoji": "🛫",
      "def": "when a plane leaves the ground",
      "ar": "تُقلع (الطائرة)",
      "frame": "When the plane takes off, I feel ___."
     },
     {
      "w": "land",
+     "emoji": "🛬",
      "def": "when a plane comes down to the ground",
      "ar": "تهبط (الطائرة)",
      "frame": "Our plane is going to land in ___."
     },
     {
      "w": "luggage",
+     "emoji": "🧳",
      "def": "the bags you take on a trip",
      "ar": "الأمتعة",
      "frame": "In my luggage, I always pack ___."
     },
     {
      "w": "flight attendant",
+     "emoji": "🧑‍✈️",
      "def": "a person who helps passengers on a plane",
      "ar": "مضيف الطيران",
      "frame": "A flight attendant has to ___."
@@ -2669,6 +2822,7 @@
    ],
    "dialogue": {
     "scene": "Sam is flying from Jeddah to London with his mum. It's his first flight, so he asks the flight attendant, Huda, lots of questions.",
+    "scene_emoji": "✈️",
     "p1": [
      {
       "s": "Sam",
@@ -2748,36 +2902,42 @@
    "expressions": [
     {
      "w": "rule",
+     "emoji": "📜",
      "def": "something that tells you what you can and can't do",
      "ar": "قاعدة",
      "frame": "One rule in my house is ___."
     },
     {
      "w": "referee",
+     "emoji": "🧑‍⚖️",
      "def": "the person who makes sure players follow the rules",
      "ar": "الحَكَم",
      "frame": "A referee has to ___."
     },
     {
      "w": "score a goal",
+     "emoji": "🥅",
      "def": "to get the ball into the net",
      "ar": "يسجّل هدفاً",
      "frame": "To score a goal, you have to ___."
     },
     {
      "w": "touch",
+     "emoji": "✋",
      "def": "to put your hand or body on something",
      "ar": "يلمس",
      "frame": "In football, you mustn't touch the ball with your ___."
     },
     {
      "w": "team",
+     "emoji": "👥",
      "def": "a group of players who play together",
      "ar": "فريق",
      "frame": "There are ___ players in a football team."
     },
     {
      "w": "foul",
+     "emoji": "🟨",
      "def": "something a player does that is against the rules",
      "ar": "خطأ (مخالفة)",
      "frame": "In ___, it's a foul when you push another player."
@@ -2785,6 +2945,7 @@
    ],
    "dialogue": {
     "scene": "Omar is teaching his little cousin Ali the rules of football before a family game.",
+    "scene_emoji": "⚽",
     "p1": [
      {
       "s": "Ali",
@@ -2864,36 +3025,42 @@
    "expressions": [
     {
      "w": "club",
+     "emoji": "👥",
      "def": "a group of people who meet to do something they like",
      "ar": "نادٍ",
      "frame": "I'd like to start a ___ club."
     },
     {
      "w": "member",
+     "emoji": "🪪",
      "def": "a person who is in a club or group",
      "ar": "عضو",
      "frame": "Members of my club have to ___."
     },
     {
      "w": "share",
+     "emoji": "🤲",
      "def": "to let other people use something with you",
      "ar": "يشارك / يتقاسم",
      "frame": "In my club, we share ___."
     },
     {
      "w": "respect",
+     "emoji": "🤝",
      "def": "to listen to people and be kind to them",
      "ar": "يحترم",
      "frame": "We have to respect ___."
     },
     {
      "w": "have to",
+     "emoji": "☝️",
      "def": "it is necessary; you need to do it",
      "ar": "يجب عليه / مضطرّ إلى",
      "frame": "Members have to ___ because ___."
     },
     {
      "w": "mustn't",
+     "emoji": "🚫",
      "def": "it's a rule not to do this; don't do it",
      "ar": "ممنوع أن …",
      "frame": "Members mustn't ___ because ___."
@@ -2901,6 +3068,7 @@
    ],
    "dialogue": {
     "scene": "Reem and Noura are starting a reading club at school. They are writing the club rules.",
+    "scene_emoji": "📚",
     "p1": [
      {
       "s": "Reem",

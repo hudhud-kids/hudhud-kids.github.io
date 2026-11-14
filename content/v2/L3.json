@@ -193,36 +193,42 @@
    "expressions": [
     {
      "w": "get up",
+     "emoji": "⏰",
      "def": "get out of bed in the morning",
      "ar": "يستيقظ وينهض من السرير",
      "frame": "I get up at ___ o'clock."
     },
     {
      "w": "wash my face",
+     "emoji": "🧼",
      "def": "clean my face with water",
      "ar": "أغسل وجهي",
      "frame": "I wash my face with ___ water."
     },
     {
      "w": "get dressed",
+     "emoji": "👕",
      "def": "put on your clothes",
      "ar": "يرتدي ملابسه",
      "frame": "I get dressed in my ___."
     },
     {
      "w": "have breakfast",
+     "emoji": "🥣",
      "def": "eat the first meal of the day",
      "ar": "يتناول الفطور",
      "frame": "I have ___ for breakfast."
     },
     {
      "w": "brush my teeth",
+     "emoji": "🪥",
      "def": "clean my teeth with a toothbrush",
      "ar": "أفرّش أسناني",
      "frame": "I brush my teeth after ___."
     },
     {
      "w": "go to school",
+     "emoji": "🏫",
      "def": "travel from home to school",
      "ar": "يذهب إلى المدرسة",
      "frame": "I go to school by ___."
@@ -230,6 +236,7 @@
    ],
    "dialogue": {
     "scene": "Emma lives in London. She has a video call with her friend Reem in Riyadh.",
+    "scene_emoji": "📞",
     "p1": [
      {
       "s": "Emma",
@@ -309,36 +316,42 @@
    "expressions": [
     {
      "w": "What time is it?",
+     "emoji": "⌚",
      "def": "a question to know the time",
      "ar": "كم الساعة؟",
      "frame": "What time is it? It's ___."
     },
     {
      "w": "o'clock",
+     "emoji": "🕐",
      "def": "used with a number for an exact hour",
      "ar": "تماماً (للساعة)",
      "frame": "It's ___ o'clock now."
     },
     {
      "w": "half past",
+     "emoji": "🕜",
      "def": "thirty minutes after the hour",
      "ar": "والنصف",
      "frame": "I have lunch at half past ___."
     },
     {
      "w": "in the morning",
+     "emoji": "🌅",
      "def": "the time from when you get up to midday",
      "ar": "في الصباح",
      "frame": "In the morning, I ___."
     },
     {
      "w": "in the afternoon",
+     "emoji": "☀️",
      "def": "the time after lunch",
      "ar": "بعد الظهر",
      "frame": "In the afternoon, I ___."
     },
     {
      "w": "in the evening",
+     "emoji": "🌆",
      "def": "the time before you go to bed",
      "ar": "في المساء",
      "frame": "In the evening, we ___."
@@ -346,6 +359,7 @@
    ],
    "dialogue": {
     "scene": "It's a school day. Omar is late, and he asks his mum the time.",
+    "scene_emoji": "⏰",
     "p1": [
      {
       "s": "Omar",
@@ -425,36 +439,42 @@
    "expressions": [
     {
      "w": "line up",
+     "emoji": "🧍",
      "def": "stand one behind the other in a line",
      "ar": "يصطفّون في طابور",
      "frame": "We line up in the ___."
     },
     {
      "w": "lesson",
+     "emoji": "📖",
      "def": "a time when a teacher teaches you",
      "ar": "حصّة / درس",
      "frame": "Our first lesson is ___."
     },
     {
      "w": "break time",
+     "emoji": "🔔",
      "def": "a short time to rest and eat at school",
      "ar": "وقت الفسحة",
      "frame": "At break time, I ___."
     },
     {
      "w": "have a snack",
+     "emoji": "🍎",
      "def": "eat a little food between meals",
      "ar": "يأكل وجبة خفيفة",
      "frame": "I have a snack: a ___."
     },
     {
      "w": "playground",
+     "emoji": "🛝",
      "def": "a place outside where children play",
      "ar": "ساحة اللعب",
      "frame": "We play ___ in the playground."
     },
     {
      "w": "go home",
+     "emoji": "🏠",
      "def": "leave school and go to your house",
      "ar": "يعود إلى البيت",
      "frame": "We go home at ___ o'clock."
@@ -462,6 +482,7 @@
    ],
    "dialogue": {
     "scene": "Mia is a new student from the UK. Her classmate Noura tells her about the school day.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Mia",
@@ -541,36 +562,42 @@
    "expressions": [
     {
      "w": "do my homework",
+     "emoji": "📝",
      "def": "do the school work I take home",
      "ar": "أحلّ واجبي",
      "frame": "I do my homework at ___ o'clock."
     },
     {
      "w": "play outside",
+     "emoji": "⚽",
      "def": "play in the garden, street or park",
      "ar": "يلعب في الخارج",
      "frame": "I play outside with ___."
     },
     {
      "w": "ride my bike",
+     "emoji": "🚲",
      "def": "go on my bike",
      "ar": "أركب درّاجتي",
      "frame": "I ride my bike in the ___."
     },
     {
      "w": "help at home",
+     "emoji": "🧹",
      "def": "do jobs in the house for your family",
      "ar": "يساعد في البيت",
      "frame": "I help at home. I ___."
     },
     {
      "w": "read a story",
+     "emoji": "📖",
      "def": "read a book that tells a story",
      "ar": "يقرأ قصة",
      "frame": "I read a story about ___."
     },
     {
      "w": "go to bed",
+     "emoji": "🛏️",
      "def": "go to sleep at night",
      "ar": "يذهب إلى النوم",
      "frame": "I go to bed at ___ o'clock."
@@ -578,6 +605,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and his friend Sam walk home after school. They talk about their afternoons.",
+    "scene_emoji": "🚶",
     "p1": [
      {
       "s": "Sam",
@@ -661,36 +689,42 @@
    "expressions": [
     {
      "w": "at the weekend",
+     "emoji": "📅",
      "def": "on Friday and Saturday, when there is no school",
      "ar": "في عطلة نهاية الأسبوع",
      "frame": "At the weekend, I ___."
     },
     {
      "w": "visit my grandparents",
+     "emoji": "👵",
      "def": "go to see my grandma and grandpa",
      "ar": "أزور جدّي وجدّتي",
      "frame": "We visit my grandparents on ___."
     },
     {
      "w": "family lunch",
+     "emoji": "🍽️",
      "def": "a big lunch with all the family",
      "ar": "غداء العائلة",
      "frame": "At our family lunch, we eat ___."
     },
     {
      "w": "go to the park",
+     "emoji": "🌳",
      "def": "go to a place with grass and trees",
      "ar": "يذهب إلى الحديقة",
      "frame": "We go to the park with ___."
     },
     {
      "w": "get up late",
+     "emoji": "😴",
      "def": "get out of bed after the usual time",
      "ar": "يستيقظ متأخراً",
      "frame": "On Saturday, I get up late, at ___ o'clock."
     },
     {
      "w": "go shopping",
+     "emoji": "🛍️",
      "def": "go to shops to buy things",
      "ar": "يذهب للتسوّق",
      "frame": "We go shopping at the ___."
@@ -698,6 +732,7 @@
    ],
    "dialogue": {
     "scene": "It's Thursday. Sara and Lama talk about their weekends.",
+    "scene_emoji": "📅",
     "p1": [
      {
       "s": "Sara",
@@ -777,36 +812,42 @@
    "expressions": [
     {
      "w": "first",
+     "emoji": "1️⃣",
      "def": "before all the other things",
      "ar": "أولاً",
      "frame": "First, I ___."
     },
     {
      "w": "then",
+     "emoji": "➡️",
      "def": "next, after that thing",
      "ar": "ثمّ",
      "frame": "Then I ___."
     },
     {
      "w": "after that",
+     "emoji": "⏭️",
      "def": "next, after the last thing",
      "ar": "بعد ذلك",
      "frame": "After that, I go to ___."
     },
     {
      "w": "every day",
+     "emoji": "📆",
      "def": "on all the days",
      "ar": "كل يوم",
      "frame": "I ___ every day."
     },
     {
      "w": "at night",
+     "emoji": "🌙",
      "def": "when it is dark, before sleep",
      "ar": "في الليل",
      "frame": "At night, I ___."
     },
     {
      "w": "busy",
+     "emoji": "🏃",
      "def": "with lots of things to do",
      "ar": "مشغول",
      "frame": "I'm busy on ___."
@@ -814,6 +855,7 @@
    ],
    "dialogue": {
     "scene": "Yousef shows his 'My Day' poster to his classmate Sam.",
+    "scene_emoji": "🖼️",
     "p1": [
      {
       "s": "Sam",
@@ -893,36 +935,42 @@
    "expressions": [
     {
      "w": "street",
+     "emoji": "🛣️",
      "def": "a road with houses and shops",
      "ar": "شارع",
      "frame": "I live in ___ Street."
     },
     {
      "w": "house",
+     "emoji": "🏠",
      "def": "a building where a family lives",
      "ar": "بيت",
      "frame": "There is a big ___ house in my street."
     },
     {
      "w": "mosque",
+     "emoji": "🕌",
      "def": "a building where Muslims pray",
      "ar": "مسجد",
      "frame": "There is a mosque next to the ___."
     },
     {
      "w": "shop",
+     "emoji": "🏪",
      "def": "a place where you buy things",
      "ar": "دكّان / متجر",
      "frame": "In the shop, I buy ___."
     },
     {
      "w": "tree",
+     "emoji": "🌳",
      "def": "a big plant with leaves and branches",
      "ar": "شجرة",
      "frame": "There are ___ trees in my street."
     },
     {
      "w": "bus stop",
+     "emoji": "🚏",
      "def": "a place where people wait for the bus",
      "ar": "موقف الحافلة",
      "frame": "The bus stop is next to the ___."
@@ -930,6 +978,7 @@
    ],
    "dialogue": {
     "scene": "Ben lives in Canada. Omar shows him his street on a video call.",
+    "scene_emoji": "🏘️",
     "p1": [
      {
       "s": "Ben",
@@ -1009,36 +1058,42 @@
    "expressions": [
     {
      "w": "swing",
+     "emoji": "🎠",
      "def": "a seat on ropes that goes up and down",
      "ar": "أرجوحة",
      "frame": "There are ___ swings in the park."
     },
     {
      "w": "slide",
+     "emoji": "🛝",
      "def": "you sit on it and go down fast",
      "ar": "زحليقة",
      "frame": "The slide is ___."
     },
     {
      "w": "bench",
+     "emoji": "🪑",
      "def": "a long seat for two or more people",
      "ar": "مقعد طويل",
      "frame": "There is a bench under the ___."
     },
     {
      "w": "flowers",
+     "emoji": "🌸",
      "def": "pretty parts of a plant with colours",
      "ar": "زهور",
      "frame": "There are ___ flowers in the garden."
     },
     {
      "w": "fountain",
+     "emoji": "⛲",
      "def": "a place where water goes up into the air",
      "ar": "نافورة",
      "frame": "There is a fountain next to the ___."
     },
     {
      "w": "grass",
+     "emoji": "🌱",
      "def": "short green plants on the ground",
      "ar": "عشب",
      "frame": "We sit on the grass and eat ___."
@@ -1046,6 +1101,7 @@
    ],
    "dialogue": {
     "scene": "Reem and her friend Hessa go to a new park on Saturday afternoon.",
+    "scene_emoji": "🌳",
     "p1": [
      {
       "s": "Hessa",
@@ -1125,36 +1181,42 @@
    "expressions": [
     {
      "w": "library",
+     "emoji": "📚",
      "def": "a place with lots of books to read",
      "ar": "مكتبة عامة",
      "frame": "At the library, I read books about ___."
     },
     {
      "w": "hospital",
+     "emoji": "🏥",
      "def": "a place where doctors help sick people",
      "ar": "مستشفى",
      "frame": "Doctors and ___ work in the hospital."
     },
     {
      "w": "swimming pool",
+     "emoji": "🏊",
      "def": "a place with water where you swim",
      "ar": "مسبح",
      "frame": "I go to the swimming pool on ___."
     },
     {
      "w": "sports centre",
+     "emoji": "🏟️",
      "def": "a building where you play sports",
      "ar": "مركز رياضي",
      "frame": "At the sports centre, I play ___."
     },
     {
      "w": "bakery",
+     "emoji": "🥐",
      "def": "a shop that makes and sells bread",
      "ar": "مخبز",
      "frame": "I buy ___ at the bakery."
     },
     {
      "w": "supermarket",
+     "emoji": "🛒",
      "def": "a big shop for food and drinks",
      "ar": "سوبرماركت",
      "frame": "We buy ___ at the supermarket."
@@ -1162,6 +1224,7 @@
    ],
    "dialogue": {
     "scene": "Sam's family is new in Dammam. Sam asks his new friend Faisal about the town.",
+    "scene_emoji": "🗺️",
     "p1": [
      {
       "s": "Sam",
@@ -1241,36 +1304,42 @@
    "expressions": [
     {
      "w": "farm",
+     "emoji": "🚜",
      "def": "land where people keep animals and grow food",
      "ar": "مزرعة",
      "frame": "My uncle has a farm in ___."
     },
     {
      "w": "camel",
+     "emoji": "🐪",
      "def": "a big desert animal with a hump",
      "ar": "جمل",
      "frame": "There are ___ camels on the farm."
     },
     {
      "w": "sheep",
+     "emoji": "🐑",
      "def": "a farm animal with soft white wool",
      "ar": "خروف / أغنام",
      "frame": "The sheep are ___."
     },
     {
      "w": "goat",
+     "emoji": "🐐",
      "def": "a farm animal with horns that gives milk",
      "ar": "ماعز",
      "frame": "There are some baby goats next to the ___."
     },
     {
      "w": "chicken",
+     "emoji": "🐔",
      "def": "a farm bird that gives us eggs",
      "ar": "دجاجة",
      "frame": "We get ___ from the chickens."
     },
     {
      "w": "palm tree",
+     "emoji": "🌴",
      "def": "a tall tree that gives us dates",
      "ar": "نخلة",
      "frame": "There are palm trees with ___."
@@ -1278,6 +1347,7 @@
    ],
    "dialogue": {
     "scene": "Ali visits his Uncle Khalid's farm for the first time.",
+    "scene_emoji": "🚜",
     "p1": [
      {
       "s": "Ali",
@@ -1357,36 +1427,42 @@
    "expressions": [
     {
      "w": "sea",
+     "emoji": "🌊",
      "def": "a very big area of salty water",
      "ar": "بحر",
      "frame": "The sea is blue and ___."
     },
     {
      "w": "beach",
+     "emoji": "🏖️",
      "def": "the sand next to the sea",
      "ar": "شاطئ",
      "frame": "On the beach, there are ___."
     },
     {
      "w": "boat",
+     "emoji": "⛵",
      "def": "it takes people on the water",
      "ar": "قارب",
      "frame": "There is a ___ boat on the sea."
     },
     {
      "w": "hotel",
+     "emoji": "🏨",
      "def": "a building where visitors sleep",
      "ar": "فندق",
      "frame": "There is a tall hotel next to the ___."
     },
     {
      "w": "restaurant",
+     "emoji": "🍽️",
      "def": "a place where you buy and eat meals",
      "ar": "مطعم",
      "frame": "There is a fish restaurant in ___."
     },
     {
      "w": "sand",
+     "emoji": "🏜️",
      "def": "tiny yellow bits on the beach and in the desert",
      "ar": "رمل",
      "frame": "The sand is ___."
@@ -1394,6 +1470,7 @@
    ],
    "dialogue": {
     "scene": "Noura is on holiday in Jeddah. She has a video call with her friend Emma.",
+    "scene_emoji": "🏖️",
     "p1": [
      {
       "s": "Emma",
@@ -1473,36 +1550,42 @@
    "expressions": [
     {
      "w": "dream town",
+     "emoji": "🏰",
      "def": "a town you make in your head",
      "ar": "مدينة أحلامي",
      "frame": "In my dream town, there is a ___."
     },
     {
      "w": "water park",
+     "emoji": "🛟",
      "def": "a park with pools and water slides",
      "ar": "مدينة ألعاب مائية",
      "frame": "There's a water park with ___ slides."
     },
     {
      "w": "ice cream shop",
+     "emoji": "🍦",
      "def": "a shop that sells ice cream",
      "ar": "محلّ آيس كريم",
      "frame": "There's an ice cream shop next to the ___."
     },
     {
      "w": "train",
+     "emoji": "🚆",
      "def": "it goes on tracks and takes lots of people",
      "ar": "قطار",
      "frame": "There is a train to the ___."
     },
     {
      "w": "tower",
+     "emoji": "🗼",
      "def": "a very tall building",
      "ar": "برج",
      "frame": "There's a tall tower next to the ___."
     },
     {
      "w": "garden",
+     "emoji": "🌷",
      "def": "land with grass, flowers and trees",
      "ar": "حديقة",
      "frame": "There are flowers in the ___ garden."
@@ -1510,6 +1593,7 @@
    ],
    "dialogue": {
     "scene": "Lama and Mia draw their dream towns in art class. Mia asks about Lama's picture.",
+    "scene_emoji": "🎨",
     "p1": [
      {
       "s": "Mia",
@@ -1589,36 +1673,42 @@
    "expressions": [
     {
      "w": "Can I have …?",
+     "emoji": "🤲",
      "def": "a polite way to ask for something",
      "ar": "هل يمكنني أن آخذ …؟",
      "frame": "Can I have a ___, please?"
     },
     {
      "w": "please",
+     "emoji": "🙏",
      "def": "a word that makes a question polite",
      "ar": "من فضلك",
      "frame": "A piece of ___, please."
     },
     {
      "w": "Here you are.",
+     "emoji": "🫴",
      "def": "you say it when you give something",
      "ar": "تفضّل",
      "frame": "Here you are. Your ___ is hot!"
     },
     {
      "w": "bread",
+     "emoji": "🍞",
      "def": "a food made from flour, often for breakfast",
      "ar": "خبز",
      "frame": "I eat bread with ___."
     },
     {
      "w": "cake",
+     "emoji": "🍰",
      "def": "a sweet food for birthdays and parties",
      "ar": "كعكة",
      "frame": "My favourite cake is ___ cake."
     },
     {
      "w": "cookie",
+     "emoji": "🍪",
      "def": "a small, flat, sweet food",
      "ar": "بسكويتة / كوكيز",
      "frame": "Can I have ___ cookies, please?"
@@ -1626,6 +1716,7 @@
    ],
    "dialogue": {
     "scene": "Reem goes to the bakery near her house. Mr Saleh is the baker.",
+    "scene_emoji": "🥖",
     "p1": [
      {
       "s": "Mr Saleh",
@@ -1705,36 +1796,42 @@
    "expressions": [
     {
      "w": "How much is it?",
+     "emoji": "💰",
      "def": "a question to know the price of one thing",
      "ar": "بكم هذا؟",
      "frame": "How much is this ___?"
     },
     {
      "w": "riyals",
+     "emoji": "💵",
      "def": "the money of Saudi Arabia",
      "ar": "ريالات",
      "frame": "It's ___ riyals."
     },
     {
      "w": "notebook",
+     "emoji": "📓",
      "def": "a small book for writing in",
      "ar": "دفتر",
      "frame": "I write in my ___ notebook."
     },
     {
      "w": "pencil case",
+     "emoji": "👝",
      "def": "a small bag for pens and pencils",
      "ar": "مقلمة",
      "frame": "In my pencil case, there are ___."
     },
     {
      "w": "cheap",
+     "emoji": "🪙",
      "def": "it doesn't cost a lot of money",
      "ar": "رخيص",
      "frame": "This pen is cheap. It's only ___ riyals."
     },
     {
      "w": "expensive",
+     "emoji": "💎",
      "def": "it costs a lot of money",
      "ar": "غالٍ",
      "frame": "This bag is expensive. It's ___ riyals."
@@ -1742,6 +1839,7 @@
    ],
    "dialogue": {
     "scene": "Omar buys school things at a stationery shop before the new school year.",
+    "scene_emoji": "✏️",
     "p1": [
      {
       "s": "Omar",
@@ -1821,36 +1919,42 @@
    "expressions": [
     {
      "w": "How much are they?",
+     "emoji": "💰",
      "def": "a question to know the price of two or more things",
      "ar": "بكم هذه؟",
      "frame": "How much are these ___?"
     },
     {
      "w": "a kilo of",
+     "emoji": "⚖️",
      "def": "an amount of food we weigh",
      "ar": "كيلو من",
      "frame": "Can I have a kilo of ___, please?"
     },
     {
      "w": "grapes",
+     "emoji": "🍇",
      "def": "small round green or purple fruit",
      "ar": "عنب",
      "frame": "I like ___ grapes."
     },
     {
      "w": "mango",
+     "emoji": "🥭",
      "def": "a sweet yellow fruit with a big seed",
      "ar": "مانجو",
      "frame": "Mangoes are ___ and sweet."
     },
     {
      "w": "tomato",
+     "emoji": "🍅",
      "def": "a round red vegetable for salads",
      "ar": "طماطم",
      "frame": "We put tomatoes in ___."
     },
     {
      "w": "fresh",
+     "emoji": "🌿",
      "def": "new and good to eat",
      "ar": "طازج",
      "frame": "These ___ are fresh."
@@ -1858,6 +1962,7 @@
    ],
    "dialogue": {
     "scene": "Sara and her dad are at the fruit and vegetable market. Sara asks the seller about prices.",
+    "scene_emoji": "🥭",
     "p1": [
      {
       "s": "Sara",
@@ -1937,36 +2042,42 @@
    "expressions": [
     {
      "w": "robot",
+     "emoji": "🤖",
      "def": "a machine toy that can move",
      "ar": "روبوت",
      "frame": "My robot can ___."
     },
     {
      "w": "kite",
+     "emoji": "🪁",
      "def": "a toy that flies in the wind on a string",
      "ar": "طائرة ورقية",
      "frame": "I fly my kite at the ___."
     },
     {
      "w": "puzzle",
+     "emoji": "🧩",
      "def": "a game where you put small pieces together",
      "ar": "أحجية / بزل",
      "frame": "This puzzle has ___ pieces."
     },
     {
      "w": "board game",
+     "emoji": "♟️",
      "def": "a game you play on a table with friends",
      "ar": "لعبة لوحية",
      "frame": "I play board games with ___."
     },
     {
      "w": "this one",
+     "emoji": "👇",
      "def": "the thing here, near me",
      "ar": "هذا / هذه الواحدة",
      "frame": "I like this one. It's ___."
     },
     {
      "w": "those",
+     "emoji": "👉",
      "def": "the things over there",
      "ar": "تلك (للجمع)",
      "frame": "Can I have those ___, please?"
@@ -1974,6 +2085,7 @@
    ],
    "dialogue": {
     "scene": "Faisal wants to buy a present for his little brother at the toy shop.",
+    "scene_emoji": "🎁",
     "p1": [
      {
       "s": "Faisal",
@@ -2061,36 +2173,42 @@
    "expressions": [
     {
      "w": "menu",
+     "emoji": "📋",
      "def": "a list of food and drinks in a café",
      "ar": "قائمة الطعام",
      "frame": "On the menu, I can see ___."
     },
     {
      "w": "a glass of",
+     "emoji": "🥛",
      "def": "the drink in one glass",
      "ar": "كوب من",
      "frame": "Can I have a glass of ___ juice?"
     },
     {
      "w": "a bottle of water",
+     "emoji": "💧",
      "def": "water in a plastic bottle",
      "ar": "قارورة ماء",
      "frame": "I take a bottle of water to ___."
     },
     {
      "w": "sandwich",
+     "emoji": "🥪",
      "def": "two pieces of bread with food inside",
      "ar": "شطيرة",
      "frame": "I like ___ sandwiches."
     },
     {
      "w": "Anything else?",
+     "emoji": "➕",
      "def": "a question: do you want more things?",
      "ar": "شيء آخر؟",
      "frame": "Anything else? Yes, a ___, please."
     },
     {
      "w": "That's … riyals.",
+     "emoji": "💵",
      "def": "you say it to give the price of everything",
      "ar": "المجموع … ريال",
      "frame": "That's ___ riyals, please."
@@ -2098,6 +2216,7 @@
    ],
    "dialogue": {
     "scene": "Mia is visiting Riyadh. She goes to a juice shop after a long walk.",
+    "scene_emoji": "🧃",
     "p1": [
      {
       "s": "Waiter",
@@ -2181,36 +2300,42 @@
    "expressions": [
     {
      "w": "shopkeeper",
+     "emoji": "🧑‍💼",
      "def": "a person who works in a shop",
      "ar": "صاحب المتجر / البائع",
      "frame": "The shopkeeper says, '___'"
     },
     {
      "w": "customer",
+     "emoji": "🙋",
      "def": "a person who buys things in a shop",
      "ar": "زبون",
      "frame": "The customer says, 'Can I have a ___, please?'"
     },
     {
      "w": "buy",
+     "emoji": "🛍️",
      "def": "give money to get something",
      "ar": "يشتري",
      "frame": "I want to buy a ___."
     },
     {
      "w": "sell",
+     "emoji": "🏷️",
      "def": "give something to a person for money",
      "ar": "يبيع",
      "frame": "In our shop, we sell ___."
     },
     {
      "w": "price",
+     "emoji": "💲",
      "def": "how much money something costs",
      "ar": "السعر",
      "frame": "The price is ___ riyals."
     },
     {
      "w": "change",
+     "emoji": "🪙",
      "def": "the money you get back",
      "ar": "الباقي (من المال)",
      "frame": "Here's your change: ___ riyals."
@@ -2218,6 +2343,7 @@
    ],
    "dialogue": {
     "scene": "Hessa's class has a shop day. Hessa is the shopkeeper and Noura is a customer.",
+    "scene_emoji": "🏪",
     "p1": [
      {
       "s": "Hessa",
@@ -2301,36 +2427,42 @@
    "expressions": [
     {
      "w": "sunny",
+     "emoji": "☀️",
      "def": "with lots of sun in the sky",
      "ar": "مشمس",
      "frame": "When it's sunny, I play ___."
     },
     {
      "w": "hot",
+     "emoji": "🥵",
      "def": "very warm, not cold",
      "ar": "حارّ",
      "frame": "It's hot today. I want ___."
     },
     {
      "w": "cloudy",
+     "emoji": "☁️",
      "def": "with lots of clouds in the sky",
      "ar": "غائم",
      "frame": "It's cloudy. The sky is ___."
     },
     {
      "w": "windy",
+     "emoji": "💨",
      "def": "with lots of strong wind",
      "ar": "عاصف / فيه رياح",
      "frame": "It's windy. I can fly my ___."
     },
     {
      "w": "rainy",
+     "emoji": "🌧️",
      "def": "with lots of rain",
      "ar": "ممطر",
      "frame": "On rainy days, I stay ___."
     },
     {
      "w": "cold",
+     "emoji": "🥶",
      "def": "not warm at all",
      "ar": "بارد",
      "frame": "It's cold. I drink ___."
@@ -2338,6 +2470,7 @@
    ],
    "dialogue": {
     "scene": "Faisal lives in Riyadh. He has a video call with his friend Jack in London.",
+    "scene_emoji": "🌦️",
     "p1": [
      {
       "s": "Jack",
@@ -2417,36 +2550,42 @@
    "expressions": [
     {
      "w": "cap",
+     "emoji": "🧢",
      "def": "a hat that keeps the sun off your face",
      "ar": "قبّعة رياضية",
      "frame": "My brother wears a ___ cap."
     },
     {
      "w": "sunglasses",
+     "emoji": "🕶️",
      "def": "dark glasses for sunny days",
      "ar": "نظارة شمسية",
      "frame": "Dad wears sunglasses in the ___."
     },
     {
      "w": "T-shirt",
+     "emoji": "👕",
      "def": "a light shirt with short sleeves",
      "ar": "تيشيرت",
      "frame": "She wears a ___ T-shirt."
     },
     {
      "w": "shorts",
+     "emoji": "🩳",
      "def": "short trousers for hot days",
      "ar": "سروال قصير",
      "frame": "In summer, I wear shorts at ___."
     },
     {
      "w": "sun cream",
+     "emoji": "🧴",
      "def": "cream that stops the sun hurting your skin",
      "ar": "واقي الشمس",
      "frame": "Mum puts sun cream on my ___."
     },
     {
      "w": "fan",
+     "emoji": "🪭",
      "def": "a machine that moves the air to make you cool",
      "ar": "مروحة",
      "frame": "There is a fan in my ___."
@@ -2454,6 +2593,7 @@
    ],
    "dialogue": {
     "scene": "It's a hot summer day. Lina asks Reem about her family.",
+    "scene_emoji": "☀️",
     "p1": [
      {
       "s": "Lina",
@@ -2533,36 +2673,42 @@
    "expressions": [
     {
      "w": "coat",
+     "emoji": "🧥",
      "def": "a long warm jacket for cold weather",
      "ar": "معطف",
      "frame": "In winter, my sister wears a ___ coat."
     },
     {
      "w": "scarf",
+     "emoji": "🧣",
      "def": "a long piece of warm cloth for your neck",
      "ar": "وشاح",
      "frame": "Grandma makes a scarf for ___."
     },
     {
      "w": "gloves",
+     "emoji": "🧤",
      "def": "warm clothes for your hands",
      "ar": "قفّازات",
      "frame": "My gloves are ___."
     },
     {
      "w": "snow",
+     "emoji": "❄️",
      "def": "soft, white, cold ice that falls from the sky",
      "ar": "ثلج",
      "frame": "In the snow, we make a ___."
     },
     {
      "w": "warm",
+     "emoji": "♨️",
      "def": "a little hot, nice and not cold",
      "ar": "دافئ",
      "frame": "I feel warm in my ___."
     },
     {
      "w": "campfire",
+     "emoji": "🔥",
      "def": "a fire outside for cooking or keeping warm",
      "ar": "نار المخيّم",
      "frame": "We sit next to the campfire and eat ___."
@@ -2570,6 +2716,7 @@
    ],
    "dialogue": {
     "scene": "It's winter. Khalid visits his cousin Fahad near Tabuk, in the north of Saudi Arabia.",
+    "scene_emoji": "❄️",
     "p1": [
      {
       "s": "Fahad",
@@ -2653,36 +2800,42 @@
    "expressions": [
     {
      "w": "umbrella",
+     "emoji": "☂️",
      "def": "you hold it over your head in the rain",
      "ar": "مظلّة",
      "frame": "When it's rainy, Dad takes his ___ umbrella."
     },
     {
      "w": "raincoat",
+     "emoji": "🧥",
      "def": "a coat that keeps you dry in the rain",
      "ar": "معطف المطر",
      "frame": "My sister's raincoat is ___."
     },
     {
      "w": "boots",
+     "emoji": "🥾",
      "def": "big shoes for rain or mud",
      "ar": "جزمة / حذاء طويل",
      "frame": "He wears boots in the ___."
     },
     {
      "w": "puddle",
+     "emoji": "💦",
      "def": "a small pool of rain water on the ground",
      "ar": "بِركة ماء صغيرة",
      "frame": "My little brother jumps in the puddles in the ___."
     },
     {
      "w": "sandstorm",
+     "emoji": "🌪️",
      "def": "strong wind with lots of sand in the air",
      "ar": "عاصفة رملية",
      "frame": "In a sandstorm, the sky is ___."
     },
     {
      "w": "stay inside",
+     "emoji": "🏠",
      "def": "not go out of the house",
      "ar": "يبقى في الداخل",
      "frame": "When it's windy, we stay inside and ___."
@@ -2690,6 +2843,7 @@
    ],
    "dialogue": {
     "scene": "It's a rainy afternoon. Lama and her friend Sara wait for their families after school.",
+    "scene_emoji": "🌧️",
     "p1": [
      {
       "s": "Sara",
@@ -2773,36 +2927,42 @@
    "expressions": [
     {
      "w": "season",
+     "emoji": "🗓️",
      "def": "one of the four parts of the year",
      "ar": "فصل من فصول السنة",
      "frame": "My favourite season is ___."
     },
     {
      "w": "spring",
+     "emoji": "🌷",
      "def": "the season after winter",
      "ar": "الربيع",
      "frame": "In spring, there are ___."
     },
     {
      "w": "summer",
+     "emoji": "☀️",
      "def": "the hot season, after spring",
      "ar": "الصيف",
      "frame": "In summer, my family goes to ___."
     },
     {
      "w": "autumn",
+     "emoji": "🍂",
      "def": "the season after summer",
      "ar": "الخريف",
      "frame": "In autumn, the leaves are ___."
     },
     {
      "w": "winter",
+     "emoji": "⛄",
      "def": "the cold season, after autumn",
      "ar": "الشتاء",
      "frame": "In winter, my dad wears a ___."
     },
     {
      "w": "all year",
+     "emoji": "🔁",
      "def": "in every month of the year",
      "ar": "طوال السنة",
      "frame": "It's warm all year in ___."
@@ -2810,6 +2970,7 @@
    ],
    "dialogue": {
     "scene": "Omar lives in Jeddah. He has a video call with his pen friend Ben in Canada.",
+    "scene_emoji": "🍂",
     "p1": [
      {
       "s": "Omar",
@@ -2893,36 +3054,42 @@
    "expressions": [
     {
      "w": "weather report",
+     "emoji": "📺",
      "def": "news about the weather on TV or radio",
      "ar": "النشرة الجوية",
      "frame": "Good evening! Here is the weather report for ___."
     },
     {
      "w": "degrees",
+     "emoji": "🌡️",
      "def": "the numbers that say how hot or cold it is",
      "ar": "درجات (الحرارة)",
      "frame": "In Riyadh, it's ___ degrees today."
     },
     {
      "w": "the north",
+     "emoji": "⬆️",
      "def": "the top part of a country on a map",
      "ar": "الشمال",
      "frame": "In the north, it's cold. People wear ___."
     },
     {
      "w": "the south",
+     "emoji": "⬇️",
      "def": "the bottom part of a country on a map",
      "ar": "الجنوب",
      "frame": "In the south, it's ___ in the mountains."
     },
     {
      "w": "sky",
+     "emoji": "🌤️",
      "def": "the place above us with the sun and clouds",
      "ar": "السماء",
      "frame": "Today the sky is ___."
     },
     {
      "w": "wear",
+     "emoji": "👕",
      "def": "have clothes on your body",
      "ar": "يرتدي",
      "frame": "When it's windy, my sister wears a ___."
@@ -2930,6 +3097,7 @@
    ],
    "dialogue": {
     "scene": "Saad wants to be a weather reporter. He practises his weather report for his friend Faisal.",
+    "scene_emoji": "📺",
     "p1": [
      {
       "s": "Faisal",

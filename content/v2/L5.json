@@ -196,36 +196,42 @@
    "expressions": [
     {
      "w": "last weekend",
+     "emoji": "📅",
      "def": "the Friday and Saturday just before this week",
      "ar": "عطلة نهاية الأسبوع الماضية",
      "frame": "Last weekend my family ___."
     },
     {
      "w": "stayed at home",
+     "emoji": "🏠",
      "def": "did not go out; you were in your house",
      "ar": "بقيت في البيت",
      "frame": "On Saturday I stayed at home and ___."
     },
     {
      "w": "watched a film",
+     "emoji": "🎬",
      "def": "looked at a movie on TV or a screen",
      "ar": "شاهدت فيلماً",
      "frame": "On Friday evening I watched a film about ___."
     },
     {
      "w": "played a game",
+     "emoji": "🎮",
      "def": "had fun with a board game, card game or video game",
      "ar": "لعبت لعبة",
      "frame": "I played a game of ___ with my ___."
     },
     {
      "w": "cooked",
+     "emoji": "🍳",
      "def": "made food hot and ready to eat",
      "ar": "طبخ",
      "frame": "For lunch, my ___ cooked ___."
     },
     {
      "w": "relaxed",
+     "emoji": "😌",
      "def": "rested and did nothing busy",
      "ar": "ارتاح / استرخى",
      "frame": "After lunch I relaxed on the ___."
@@ -233,6 +239,7 @@
    ],
    "dialogue": {
     "scene": "It's Sunday morning at school. Reem asks her classmate Hind about her weekend.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Reem",
@@ -312,36 +319,42 @@
    "expressions": [
     {
      "w": "visited",
+     "emoji": "🏡",
      "def": "went to see a person or a place",
      "ar": "زار",
      "frame": "Last Friday we visited my ___."
     },
     {
      "w": "last weekend",
+     "emoji": "📅",
      "def": "the Friday and Saturday just before this week",
      "ar": "عطلة نهاية الأسبوع الماضية",
      "frame": "Last weekend I visited ___."
     },
     {
      "w": "helped … with",
+     "emoji": "🤝",
      "def": "did part of a job for someone",
      "ar": "ساعد في",
      "frame": "I helped my grandma with the ___."
     },
     {
      "w": "baked",
+     "emoji": "🧁",
      "def": "cooked something like bread or a cake in an oven",
      "ar": "خَبَز (في الفرن)",
      "frame": "We baked a ___ together."
     },
     {
      "w": "chatted",
+     "emoji": "💬",
      "def": "talked in a friendly way",
      "ar": "دردش / تحدّث",
      "frame": "I chatted with my cousin about ___."
     },
     {
      "w": "laughed a lot",
+     "emoji": "😂",
      "def": "made a happy sound many times because something was funny",
      "ar": "ضحك كثيراً",
      "frame": "We laughed a lot when ___."
@@ -349,6 +362,7 @@
    ],
    "dialogue": {
     "scene": "Omar tells his friend Saad about a visit to his grandparents' farm.",
+    "scene_emoji": "🚜",
     "p1": [
      {
       "s": "Saad",
@@ -428,36 +442,42 @@
    "expressions": [
     {
      "w": "yesterday",
+     "emoji": "⏪",
      "def": "the day before today",
      "ar": "أمس",
      "frame": "Yesterday at school I ___."
     },
     {
      "w": "started",
+     "emoji": "▶️",
      "def": "began to do something",
      "ar": "بدأ",
      "frame": "Our class started a project about ___."
     },
     {
      "w": "painted",
+     "emoji": "🎨",
      "def": "made a picture with colours and a brush",
      "ar": "رسم بالألوان",
      "frame": "In art class I painted a picture of ___."
     },
     {
      "w": "practised",
+     "emoji": "🔁",
      "def": "did something many times to get better at it",
      "ar": "تدرّب على",
      "frame": "In PE we practised ___."
     },
     {
      "w": "finished",
+     "emoji": "🏁",
      "def": "came to the end of something",
      "ar": "أنهى",
      "frame": "I finished my ___ before the bell."
     },
     {
      "w": "chatted",
+     "emoji": "💬",
      "def": "talked in a friendly way",
      "ar": "دردش / تحدّث",
      "frame": "At break I chatted with ___ about ___."
@@ -465,6 +485,7 @@
    ],
    "dialogue": {
     "scene": "Faisal calls his cousin Fahad and tells him about his busy day at school yesterday.",
+    "scene_emoji": "📞",
     "p1": [
      {
       "s": "Fahad",
@@ -544,36 +565,42 @@
    "expressions": [
     {
      "w": "two days ago",
+     "emoji": "📆",
      "def": "two days before today",
      "ar": "قبل يومين",
      "frame": "Two days ago I played ___ with ___."
     },
     {
      "w": "yesterday",
+     "emoji": "⏪",
      "def": "the day before today",
      "ar": "أمس",
      "frame": "Yesterday I watched a match between ___ and ___."
     },
     {
      "w": "passed",
+     "emoji": "⚽",
      "def": "kicked or threw the ball to a player in your team",
      "ar": "مرّر (الكرة)",
      "frame": "I passed the ball to ___."
     },
     {
      "w": "scored a goal",
+     "emoji": "🥅",
      "def": "got the ball into the net",
      "ar": "سجّل هدفاً",
      "frame": "___ scored a goal in the last minute."
     },
     {
      "w": "missed",
+     "emoji": "❌",
      "def": "did not hit or catch what you wanted",
      "ar": "أضاع / أخطأ",
      "frame": "I missed the ball because ___."
     },
     {
      "w": "cheered",
+     "emoji": "📣",
      "def": "shouted loudly because you were happy or wanted to help your team",
      "ar": "هتف / شجّع",
      "frame": "The fans cheered when ___."
@@ -581,6 +608,7 @@
    ],
    "dialogue": {
     "scene": "Sam tells his friend Khalid about the class football match two days ago.",
+    "scene_emoji": "⚽",
     "p1": [
      {
       "s": "Khalid",
@@ -660,36 +688,42 @@
    "expressions": [
     {
      "w": "tidied my room",
+     "emoji": "🧹",
      "def": "put things back in the right places in my room",
      "ar": "رتّبت غرفتي",
      "frame": "I tidied my room before ___."
     },
     {
      "w": "washed the dishes",
+     "emoji": "🍽️",
      "def": "cleaned plates and cups with water and soap",
      "ar": "غسلت الصحون",
      "frame": "After ___, I washed the dishes."
     },
     {
      "w": "carried",
+     "emoji": "📦",
      "def": "held something and moved it to another place",
      "ar": "حمل",
      "frame": "I carried the ___ to the ___."
     },
     {
      "w": "emptied the bin",
+     "emoji": "🗑️",
      "def": "took all the rubbish out of the bin",
      "ar": "أفرغ سلة المهملات",
      "frame": "I emptied the bin in the ___."
     },
     {
      "w": "helped … with",
+     "emoji": "🤝",
      "def": "did part of a job for someone",
      "ar": "ساعد في",
      "frame": "I helped my ___ with the ___."
     },
     {
      "w": "after that",
+     "emoji": "⏭️",
      "def": "next; when the first thing finished",
      "ar": "بعد ذلك",
      "frame": "I tidied my room. After that, I ___."
@@ -697,6 +731,7 @@
    ],
    "dialogue": {
     "scene": "Noura's aunts visited her family last weekend. On Sunday, Noura tells her friend Emma how she helped.",
+    "scene_emoji": "🧹",
     "p1": [
      {
       "s": "Emma",
@@ -776,36 +811,42 @@
    "expressions": [
     {
      "w": "first",
+     "emoji": "1️⃣",
      "def": "before everything else",
      "ar": "أولاً",
      "frame": "First, I ___."
     },
     {
      "w": "then",
+     "emoji": "➡️",
      "def": "next; after this",
      "ar": "ثمّ",
      "frame": "Then we ___."
     },
     {
      "w": "after that",
+     "emoji": "⏭️",
      "def": "next; when the first thing finished",
      "ar": "بعد ذلك",
      "frame": "After that, my family ___."
     },
     {
      "w": "finally",
+     "emoji": "🏁",
      "def": "at the end, after everything else",
      "ar": "أخيراً",
      "frame": "Finally, I ___ and relaxed."
     },
     {
      "w": "enjoyed",
+     "emoji": "😄",
      "def": "liked doing something very much",
      "ar": "استمتع بـ",
      "frame": "I really enjoyed ___."
     },
     {
      "w": "visited",
+     "emoji": "🏡",
      "def": "went to see a person or a place",
      "ar": "زار",
      "frame": "On Saturday we visited ___."
@@ -813,6 +854,7 @@
    ],
    "dialogue": {
     "scene": "Reem's class is making a weekend video diary. Her teacher, Ms Sarah, helps her tell her story.",
+    "scene_emoji": "🎥",
     "p1": [
      {
       "s": "Ms Sarah",
@@ -892,36 +934,42 @@
    "expressions": [
     {
      "w": "went to",
+     "emoji": "🚶",
      "def": "the past of 'go to'; travelled to a place",
      "ar": "ذهب إلى",
      "frame": "Last summer we went to ___."
     },
     {
      "w": "swam",
+     "emoji": "🏊",
      "def": "the past of 'swim'; moved through water with your arms and legs",
      "ar": "سبح",
      "frame": "I swam in the ___ for ___."
     },
     {
      "w": "had a picnic",
+     "emoji": "🧺",
      "def": "ate a meal outside, often on a blanket",
      "ar": "تناول وجبة في الهواء الطلق",
      "frame": "We had a picnic on the ___."
     },
     {
      "w": "built a sandcastle",
+     "emoji": "🏰",
      "def": "made a small castle out of sand",
      "ar": "بنى قلعة من الرمل",
      "frame": "My ___ and I built a sandcastle near the ___."
     },
     {
      "w": "found",
+     "emoji": "🐚",
      "def": "the past of 'find'; saw something you were looking for",
      "ar": "وجد",
      "frame": "On the beach I found a ___."
     },
     {
      "w": "came back",
+     "emoji": "🔙",
      "def": "returned to the place you started from",
      "ar": "عاد / رجع",
      "frame": "We came back home at ___."
@@ -929,6 +977,7 @@
    ],
    "dialogue": {
     "scene": "Emma asks her friend Sara about her family's day at the beach in Jeddah.",
+    "scene_emoji": "🏖️",
     "p1": [
      {
       "s": "Emma",
@@ -1008,36 +1057,42 @@
    "expressions": [
     {
      "w": "went to",
+     "emoji": "🚶",
      "def": "the past of 'go to'; travelled to a place",
      "ar": "ذهب إلى",
      "frame": "Last winter we went to the desert near ___."
     },
     {
      "w": "drove",
+     "emoji": "🚗",
      "def": "the past of 'drive'; made a car go",
      "ar": "قاد (السيارة)",
      "frame": "My ___ drove us to ___."
     },
     {
      "w": "rode a camel",
+     "emoji": "🐪",
      "def": "sat on a camel and travelled on it",
      "ar": "ركب جملاً",
      "frame": "I rode a camel for ___ minutes."
     },
     {
      "w": "made a campfire",
+     "emoji": "🔥",
      "def": "made a fire outside to keep warm or to cook",
      "ar": "أشعل ناراً في المخيم",
      "frame": "We made a campfire and ___."
     },
     {
      "w": "saw the stars",
+     "emoji": "✨",
      "def": "could see the stars in the night sky",
      "ar": "رأى النجوم",
      "frame": "At night we saw the stars and ___."
     },
     {
      "w": "slept in a tent",
+     "emoji": "⛺",
      "def": "spent the night in a tent",
      "ar": "نام في خيمة",
      "frame": "We slept in a tent near the ___."
@@ -1045,6 +1100,7 @@
    ],
    "dialogue": {
     "scene": "Noura asks her classmate Hessa about her family's winter camping trip.",
+    "scene_emoji": "⛺",
     "p1": [
      {
       "s": "Noura",
@@ -1124,36 +1180,42 @@
    "expressions": [
     {
      "w": "saw",
+     "emoji": "👀",
      "def": "the past of 'see'; looked at something with your eyes",
      "ar": "رأى",
      "frame": "At the museum I saw ___."
     },
     {
      "w": "took photos",
+     "emoji": "📸",
      "def": "made pictures with a camera or a phone",
      "ar": "التقط صوراً",
      "frame": "I took photos of ___."
     },
     {
      "w": "learnt about",
+     "emoji": "🧠",
      "def": "got new information about a subject",
      "ar": "تعلّم عن",
      "frame": "We learnt about ___."
     },
     {
      "w": "a guide",
+     "emoji": "🧑‍💼",
      "def": "a person who shows visitors a place and explains things",
      "ar": "مرشد",
      "frame": "Our guide showed us ___."
     },
     {
      "w": "ancient",
+     "emoji": "🏺",
      "def": "very, very old; from thousands of years ago",
      "ar": "قديم جداً / أثري",
      "frame": "We saw an ancient ___."
     },
     {
      "w": "bought a souvenir",
+     "emoji": "🎁",
      "def": "paid for a small thing to remember a place",
      "ar": "اشترى تذكاراً",
      "frame": "At the shop I bought a souvenir for ___."
@@ -1161,6 +1223,7 @@
    ],
    "dialogue": {
     "scene": "Ali asks his friend Sam about his school trip to the National Museum in Riyadh.",
+    "scene_emoji": "🏛️",
     "p1": [
      {
       "s": "Ali",
@@ -1240,36 +1303,42 @@
    "expressions": [
     {
      "w": "flew",
+     "emoji": "✈️",
      "def": "the past of 'fly'; travelled by plane",
      "ar": "سافر بالطائرة",
      "frame": "Last year we flew to ___."
     },
     {
      "w": "by car",
+     "emoji": "🚗",
      "def": "travelling in a car",
      "ar": "بالسيارة",
      "frame": "We went to ___ by car."
     },
     {
      "w": "stayed at",
+     "emoji": "🏨",
      "def": "lived in a place for a short time",
      "ar": "أقام في",
      "frame": "We stayed at a ___ for ___ nights."
     },
     {
      "w": "met",
+     "emoji": "🤝",
      "def": "the past of 'meet'; saw and talked to someone",
      "ar": "قابل / التقى",
      "frame": "On the trip I met ___."
     },
     {
      "w": "the view",
+     "emoji": "🏞️",
      "def": "everything you can see from a place",
      "ar": "المنظر",
      "frame": "The view from the ___ was amazing."
     },
     {
      "w": "took photos",
+     "emoji": "📸",
      "def": "made pictures with a camera or a phone",
      "ar": "التقط صوراً",
      "frame": "In ___ I took photos of ___."
@@ -1277,6 +1346,7 @@
    ],
    "dialogue": {
     "scene": "Sara asks her cousin Lama about her family holiday in AlUla.",
+    "scene_emoji": "🏜️",
     "p1": [
      {
       "s": "Sara",
@@ -1356,36 +1426,42 @@
    "expressions": [
     {
      "w": "had fun",
+     "emoji": "🥳",
      "def": "enjoyed yourself and had a good time",
      "ar": "استمتع",
      "frame": "We had fun at ___."
     },
     {
      "w": "a ride",
+     "emoji": "🎢",
      "def": "a machine at a fun park that you sit in for fun",
      "ar": "لعبة في مدينة الملاهي",
      "frame": "My favourite ride was the ___."
     },
     {
      "w": "a ticket",
+     "emoji": "🎟️",
      "def": "a paper or code that lets you go into a place",
      "ar": "تذكرة",
      "frame": "We got tickets for ___."
     },
     {
      "w": "ate",
+     "emoji": "🍔",
      "def": "the past of 'eat'",
      "ar": "أكل",
      "frame": "For dinner we ate ___."
     },
     {
      "w": "crowded",
+     "emoji": "👥",
      "def": "full of people",
      "ar": "مزدحم",
      "frame": "The ___ was very crowded."
     },
     {
      "w": "bought",
+     "emoji": "🛍️",
      "def": "the past of 'buy'; paid money for something",
      "ar": "اشترى",
      "frame": "At the shop I bought ___."
@@ -1393,6 +1469,7 @@
    ],
    "dialogue": {
     "scene": "Emma asks her friend Noura about her family's evening at Riyadh Season.",
+    "scene_emoji": "🎡",
     "p1": [
      {
       "s": "Emma",
@@ -1472,36 +1549,42 @@
    "expressions": [
     {
      "w": "Where did you go?",
+     "emoji": "🗺️",
      "def": "a question about the place of a trip",
      "ar": "إلى أين ذهبت؟",
      "frame": "Where did you go last ___?"
     },
     {
      "w": "How did you get there?",
+     "emoji": "🚗",
      "def": "a question about travelling by plane, car, train or bus",
      "ar": "كيف وصلت إلى هناك؟",
      "frame": "How did you get to ___?"
     },
     {
      "w": "Who did you go with?",
+     "emoji": "👨‍👩‍👧",
      "def": "a question about the people on the trip",
      "ar": "مع من ذهبت؟",
      "frame": "Who did you go to ___ with?"
     },
     {
      "w": "What did you do there?",
+     "emoji": "🤔",
      "def": "a question about the things people did on a trip",
      "ar": "ماذا فعلت هناك؟",
      "frame": "What did you do in ___?"
     },
     {
      "w": "had fun",
+     "emoji": "🥳",
      "def": "enjoyed yourself and had a good time",
      "ar": "استمتع",
      "frame": "We had fun when we ___."
     },
     {
      "w": "came back",
+     "emoji": "🔙",
      "def": "returned to the place you started from",
      "ar": "عاد / رجع",
      "frame": "We came back from ___ after ___."
@@ -1509,6 +1592,7 @@
    ],
    "dialogue": {
     "scene": "Omar is a reporter for the school radio. He interviews his classmate Yousef about his holiday in Abha.",
+    "scene_emoji": "🎙️",
     "p1": [
      {
       "s": "Omar",
@@ -1588,36 +1672,42 @@
    "expressions": [
     {
      "w": "faster than",
+     "emoji": "🐆",
      "def": "moving more quickly than another",
      "ar": "أسرع من",
      "frame": "A ___ is faster than a ___."
     },
     {
      "w": "stronger than",
+     "emoji": "💪",
      "def": "having more power than another",
      "ar": "أقوى من",
      "frame": "A ___ is stronger than a ___."
     },
     {
      "w": "heavier than",
+     "emoji": "🐘",
      "def": "weighing more than another",
      "ar": "أثقل من",
      "frame": "A ___ is heavier than a ___."
     },
     {
      "w": "more dangerous than",
+     "emoji": "🦈",
      "def": "more likely to hurt you than another",
      "ar": "أخطر من",
      "frame": "I think a ___ is more dangerous than a ___."
     },
     {
      "w": "the fastest",
+     "emoji": "⚡",
      "def": "faster than all the others",
      "ar": "الأسرع",
      "frame": "The fastest animal I know is the ___."
     },
     {
      "w": "a falcon",
+     "emoji": "🦅",
      "def": "a bird that hunts other animals and flies very fast",
      "ar": "صقر",
      "frame": "A falcon is faster than a ___."
@@ -1625,6 +1715,7 @@
    ],
    "dialogue": {
     "scene": "Reem and Emma are watching a nature programme on TV and comparing the animals.",
+    "scene_emoji": "📺",
     "p1": [
      {
       "s": "Emma",
@@ -1704,36 +1795,42 @@
    "expressions": [
     {
      "w": "bigger than",
+     "emoji": "🏙️",
      "def": "larger in size than another",
      "ar": "أكبر من",
      "frame": "___ is bigger than ___."
     },
     {
      "w": "hotter than",
+     "emoji": "🌡️",
      "def": "with a higher temperature than another",
      "ar": "أحرّ من",
      "frame": "In summer, ___ is hotter than ___."
     },
     {
      "w": "busier than",
+     "emoji": "🚦",
      "def": "with more people and cars than another",
      "ar": "أكثر ازدحاماً من",
      "frame": "___ is busier than ___."
     },
     {
      "w": "more beautiful than",
+     "emoji": "😍",
      "def": "nicer to look at than another",
      "ar": "أجمل من",
      "frame": "I think ___ is more beautiful than ___."
     },
     {
      "w": "the biggest",
+     "emoji": "🏔️",
      "def": "bigger than all the others",
      "ar": "الأكبر",
      "frame": "The biggest city I know is ___."
     },
     {
      "w": "the fastest",
+     "emoji": "⚡",
      "def": "faster than all the others",
      "ar": "الأسرع",
      "frame": "The fastest way to get to ___ is by ___."
@@ -1741,6 +1838,7 @@
    ],
    "dialogue": {
     "scene": "Sam's family is new in Saudi Arabia. He asks his friend Majed about different cities.",
+    "scene_emoji": "🏙️",
     "p1": [
      {
       "s": "Sam",
@@ -1820,36 +1918,42 @@
    "expressions": [
     {
      "w": "more exciting than",
+     "emoji": "🤩",
      "def": "making you feel more excited than another",
      "ar": "أكثر إثارة من",
      "frame": "I think ___ is more exciting than ___."
     },
     {
      "w": "easier than",
+     "emoji": "😌",
      "def": "less difficult than another",
      "ar": "أسهل من",
      "frame": "___ is easier than ___ for me."
     },
     {
      "w": "harder than",
+     "emoji": "😓",
      "def": "more difficult than another",
      "ar": "أصعب من",
      "frame": "___ is harder than ___ because ___."
     },
     {
      "w": "better than",
+     "emoji": "👍",
      "def": "the comparative of 'good'; of a higher level than another",
      "ar": "أفضل من",
      "frame": "I'm better at ___ than ___."
     },
     {
      "w": "the most popular",
+     "emoji": "⭐",
      "def": "liked by more people than all the others",
      "ar": "الأكثر شعبية",
      "frame": "The most popular sport at my school is ___."
     },
     {
      "w": "faster than",
+     "emoji": "🏃",
      "def": "moving more quickly than another",
      "ar": "أسرع من",
      "frame": "___ is faster than ___."
@@ -1857,6 +1961,7 @@
    ],
    "dialogue": {
     "scene": "Omar and Saud's class must choose one sport for Sports Day. They compare the choices.",
+    "scene_emoji": "🏅",
     "p1": [
      {
       "s": "Saud",
@@ -1936,36 +2041,42 @@
    "expressions": [
     {
      "w": "taller than",
+     "emoji": "📏",
      "def": "higher from the bottom to the top than another",
      "ar": "أطول من",
      "frame": "___ is taller than ___."
     },
     {
      "w": "the tallest",
+     "emoji": "🏙️",
      "def": "taller than all the others",
      "ar": "الأطول",
      "frame": "The tallest building in my city is ___."
     },
     {
      "w": "older than",
+     "emoji": "👴",
      "def": "made or born before another",
      "ar": "أقدم من",
      "frame": "___ is older than ___."
     },
     {
      "w": "the most famous",
+     "emoji": "⭐",
      "def": "known by more people than all the others",
      "ar": "الأشهر",
      "frame": "The most famous building in ___ is ___."
     },
     {
      "w": "a tower",
+     "emoji": "🗼",
      "def": "a tall, narrow building",
      "ar": "برج",
      "frame": "From the top of the tower, you can see ___."
     },
     {
      "w": "the biggest",
+     "emoji": "🏟️",
      "def": "bigger than all the others",
      "ar": "الأكبر",
      "frame": "The biggest building I visited was ___."
@@ -1973,6 +2084,7 @@
    ],
    "dialogue": {
     "scene": "Lama and Mia are doing a school project about famous buildings.",
+    "scene_emoji": "🗼",
     "p1": [
      {
       "s": "Lama",
@@ -2052,36 +2164,42 @@
    "expressions": [
     {
      "w": "cheaper than",
+     "emoji": "🪙",
      "def": "costing less money than another",
      "ar": "أرخص من",
      "frame": "The ___ is cheaper than the ___."
     },
     {
      "w": "more expensive than",
+     "emoji": "💎",
      "def": "costing more money than another",
      "ar": "أغلى من",
      "frame": "The ___ is more expensive than the ___."
     },
     {
      "w": "lighter than",
+     "emoji": "🪶",
      "def": "weighing less than another",
      "ar": "أخفّ من",
      "frame": "This ___ is lighter than that one."
     },
     {
      "w": "worse than",
+     "emoji": "👎",
      "def": "the comparative of 'bad'; not as good as another",
      "ar": "أسوأ من",
      "frame": "The old ___ is worse than the new one because ___."
     },
     {
      "w": "the cheapest",
+     "emoji": "🏷️",
      "def": "costing less than all the others",
      "ar": "الأرخص",
      "frame": "The cheapest ___ in the shop is ___ riyals."
     },
     {
      "w": "better than",
+     "emoji": "👍",
      "def": "the comparative of 'good'; of a higher level than another",
      "ar": "أفضل من",
      "frame": "The ___ is better than the ___ because ___."
@@ -2089,6 +2207,7 @@
    ],
    "dialogue": {
     "scene": "Faisal wants a new bike for his birthday. He and his dad compare bikes in a sports shop.",
+    "scene_emoji": "🚲",
     "p1": [
      {
       "s": "Faisal",
@@ -2168,36 +2287,42 @@
    "expressions": [
     {
      "w": "the best",
+     "emoji": "🥇",
      "def": "better than all the others",
      "ar": "الأفضل",
      "frame": "The best ___ this year was ___."
     },
     {
      "w": "the worst",
+     "emoji": "👎",
      "def": "worse than all the others",
      "ar": "الأسوأ",
      "frame": "The worst day of my week is ___ because ___."
     },
     {
      "w": "the funniest",
+     "emoji": "😂",
      "def": "funnier than all the others",
      "ar": "الأكثر إضحاكاً",
      "frame": "The funniest film I know is ___."
     },
     {
      "w": "the most interesting",
+     "emoji": "🤓",
      "def": "more interesting than all the others",
      "ar": "الأكثر إثارة للاهتمام",
      "frame": "The most interesting lesson this year was ___."
     },
     {
      "w": "the most popular",
+     "emoji": "⭐",
      "def": "liked by more people than all the others",
      "ar": "الأكثر شعبية",
      "frame": "The most popular game in our class is ___."
     },
     {
      "w": "the longest",
+     "emoji": "📏",
      "def": "longer than all the others",
      "ar": "الأطول",
      "frame": "The longest trip I took was to ___."
@@ -2205,6 +2330,7 @@
    ],
    "dialogue": {
     "scene": "It's the end of the school year. Ms Sarah and her students Saad and Khalid choose winners for the fun class awards.",
+    "scene_emoji": "🏆",
     "p1": [
      {
       "s": "Ms Sarah",
@@ -2284,36 +2410,42 @@
    "expressions": [
     {
      "w": "healthy",
+     "emoji": "🥦",
      "def": "good for your body",
      "ar": "صحّي",
      "frame": "A healthy breakfast has ___."
     },
     {
      "w": "skip breakfast",
+     "emoji": "⏭️",
      "def": "not eat anything in the morning",
      "ar": "يفوّت وجبة الإفطار",
      "frame": "Some people skip breakfast because ___."
     },
     {
      "w": "fresh fruit",
+     "emoji": "🍓",
      "def": "fruit that is new and natural, not from a can",
      "ar": "فواكه طازجة",
      "frame": "My favourite fresh fruit is ___."
     },
     {
      "w": "sugary",
+     "emoji": "🍭",
      "def": "with lots of sugar in it",
      "ar": "مليء بالسكر",
      "frame": "___ are very sugary."
     },
     {
      "w": "full of energy",
+     "emoji": "⚡",
      "def": "ready to move, play and work",
      "ar": "مليء بالنشاط",
      "frame": "I feel full of energy after ___."
     },
     {
      "w": "You should …",
+     "emoji": "👉",
      "def": "a way to say 'this is a good idea for you'",
      "ar": "من الأفضل أن …",
      "frame": "You should eat ___ for breakfast."
@@ -2321,6 +2453,7 @@
    ],
    "dialogue": {
     "scene": "Reem feels tired in her first lesson. At break, her friend Lama gives her some advice.",
+    "scene_emoji": "🍎",
     "p1": [
      {
       "s": "Lama",
@@ -2400,36 +2533,42 @@
    "expressions": [
     {
      "w": "What's the matter?",
+     "emoji": "😟",
      "def": "a question to ask what is wrong",
      "ar": "ما بك؟ / ما المشكلة؟",
      "frame": "What's the matter, ___? You look ___."
     },
     {
      "w": "a cold",
+     "emoji": "🤧",
      "def": "a common illness; your nose runs and you sneeze",
      "ar": "زكام / نزلة برد",
      "frame": "When I have a cold, I ___."
     },
     {
      "w": "a sore throat",
+     "emoji": "😷",
      "def": "pain in your throat when you eat or talk",
      "ar": "ألم في الحلق",
      "frame": "For a sore throat, you should drink ___."
     },
     {
      "w": "get some rest",
+     "emoji": "🛌",
      "def": "stop and relax so your body feels better",
      "ar": "يرتاح قليلاً",
      "frame": "You should get some rest and ___."
     },
     {
      "w": "a warm drink",
+     "emoji": "☕",
      "def": "a drink that is a little hot, like tea with honey",
      "ar": "مشروب دافئ",
      "frame": "My favourite warm drink is ___."
     },
     {
      "w": "see a doctor",
+     "emoji": "🩺",
      "def": "go to a doctor and ask for help",
      "ar": "يراجع الطبيب",
      "frame": "You should see a doctor because ___."
@@ -2437,6 +2576,7 @@
    ],
    "dialogue": {
     "scene": "Omar calls his friend Sam, who is at home today because he is ill.",
+    "scene_emoji": "🤒",
     "p1": [
      {
       "s": "Omar",
@@ -2516,36 +2656,42 @@
    "expressions": [
     {
      "w": "go to bed early",
+     "emoji": "🛏️",
      "def": "go to sleep before it is late",
      "ar": "ينام مبكراً",
      "frame": "On school nights, I go to bed at ___."
     },
     {
      "w": "stay up late",
+     "emoji": "🦉",
      "def": "not go to bed until late at night",
      "ar": "يسهر",
      "frame": "At the weekend I sometimes stay up late and ___."
     },
     {
      "w": "screen time",
+     "emoji": "📱",
      "def": "time you spend looking at phones, tablets, TVs or computers",
      "ar": "وقت الشاشات",
      "frame": "My screen time every day is about ___."
     },
     {
      "w": "tired",
+     "emoji": "🥱",
      "def": "needing rest or sleep",
      "ar": "متعب",
      "frame": "I feel tired when ___."
     },
     {
      "w": "a good night's sleep",
+     "emoji": "😴",
      "def": "sleeping well for many hours at night",
      "ar": "نوم جيد طوال الليل",
      "frame": "After a good night's sleep, I feel ___."
     },
     {
      "w": "get some rest",
+     "emoji": "🛌",
      "def": "stop and relax so your body feels better",
      "ar": "يرتاح قليلاً",
      "frame": "After school, I get some rest by ___."
@@ -2553,6 +2699,7 @@
    ],
    "dialogue": {
     "scene": "Khalid plays video games every night and feels tired at school. His older sister Noura gives him some advice.",
+    "scene_emoji": "🌙",
     "p1": [
      {
       "s": "Noura",
@@ -2632,36 +2779,42 @@
    "expressions": [
     {
      "w": "drink plenty of water",
+     "emoji": "💧",
      "def": "drink a lot of water",
      "ar": "يشرب الكثير من الماء",
      "frame": "On hot days, I drink plenty of water when ___."
     },
     {
      "w": "thirsty",
+     "emoji": "🥤",
      "def": "needing or wanting a drink",
      "ar": "عطشان",
      "frame": "I feel thirsty after ___."
     },
     {
      "w": "in the shade",
+     "emoji": "🌳",
      "def": "in a place out of the sun",
      "ar": "في الظل",
      "frame": "On hot days, we sit in the shade of ___."
     },
     {
      "w": "wear a cap",
+     "emoji": "🧢",
      "def": "put on a soft hat that keeps the sun off your face",
      "ar": "يلبس قبعة",
      "frame": "You should wear a cap when you ___."
     },
     {
      "w": "sun cream",
+     "emoji": "🧴",
      "def": "cream you put on your skin to protect it from the sun",
      "ar": "واقي الشمس",
      "frame": "You should put on sun cream before ___."
     },
     {
      "w": "sugary",
+     "emoji": "🍭",
      "def": "with lots of sugar in it",
      "ar": "مليء بالسكر",
      "frame": "On hot days, ___ is better than sugary drinks."
@@ -2669,6 +2822,7 @@
    ],
    "dialogue": {
     "scene": "It's July in Riyadh. Emma is new in the city, and she wants to play outside with her friend Hind at midday.",
+    "scene_emoji": "☀️",
     "p1": [
      {
       "s": "Emma",
@@ -2748,36 +2902,42 @@
    "expressions": [
     {
      "w": "exercise",
+     "emoji": "🏋️",
      "def": "move your body to stay strong and healthy",
      "ar": "يمارس الرياضة",
      "frame": "I exercise by ___."
     },
     {
      "w": "warm up",
+     "emoji": "🤸",
      "def": "do easy moves before sport to get your body ready",
      "ar": "يقوم بالإحماء",
      "frame": "Before ___, you should warm up."
     },
     {
      "w": "stretch",
+     "emoji": "🧘",
      "def": "make your arms and legs long to relax your muscles",
      "ar": "يمدّ عضلاته",
      "frame": "After ___, I stretch my ___."
     },
     {
      "w": "out of breath",
+     "emoji": "😮‍💨",
      "def": "breathing fast after running or working hard",
      "ar": "يلهث / ضيق النفس",
      "frame": "I'm out of breath after ___."
     },
     {
      "w": "take a break",
+     "emoji": "⏸️",
      "def": "stop for a short time to rest",
      "ar": "يأخذ استراحة",
      "frame": "When I'm tired, I take a break and ___."
     },
     {
      "w": "full of energy",
+     "emoji": "⚡",
      "def": "ready to move, play and work",
      "ar": "مليء بالنشاط",
      "frame": "After exercise, I feel full of energy and ___."
@@ -2785,6 +2945,7 @@
    ],
    "dialogue": {
     "scene": "Sam wants to run in the school race next week. His PE coach, Mr Saleh, gives him advice.",
+    "scene_emoji": "🏃",
     "p1": [
      {
       "s": "Sam",
@@ -2864,36 +3025,42 @@
    "expressions": [
     {
      "w": "a tip",
+     "emoji": "💡",
      "def": "a small, useful piece of advice",
      "ar": "نصيحة صغيرة",
      "frame": "My best tip for a healthy life is ___."
     },
     {
      "w": "healthy habits",
+     "emoji": "🥗",
      "def": "good things you do again and again for your body",
      "ar": "عادات صحية",
      "frame": "One of my healthy habits is ___."
     },
     {
      "w": "junk food",
+     "emoji": "🍟",
      "def": "food that is not healthy, like crisps, sweets and fried food",
      "ar": "أطعمة غير صحية",
      "frame": "I sometimes eat junk food when ___."
     },
     {
      "w": "fit",
+     "emoji": "💪",
      "def": "healthy and strong because you exercise",
      "ar": "لائق بدنياً",
      "frame": "To stay fit, I ___."
     },
     {
      "w": "drink plenty of water",
+     "emoji": "💧",
      "def": "drink a lot of water",
      "ar": "يشرب الكثير من الماء",
      "frame": "You should drink plenty of water when ___."
     },
     {
      "w": "go to bed early",
+     "emoji": "🛏️",
      "def": "go to sleep before it is late",
      "ar": "ينام مبكراً",
      "frame": "You should go to bed early before ___."
@@ -2901,6 +3068,7 @@
    ],
    "dialogue": {
     "scene": "Noura and Lama are making a health poster for their school's Health Week.",
+    "scene_emoji": "📋",
     "p1": [
      {
       "s": "Noura",

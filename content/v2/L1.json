@@ -193,36 +193,42 @@
    "expressions": [
     {
      "w": "hello",
+     "emoji": "👋",
      "def": "a word you say when you meet someone",
      "ar": "مرحباً",
      "frame": "Hello, I'm ___."
     },
     {
      "w": "hi",
+     "emoji": "🙋",
      "def": "a short, friendly word for hello",
      "ar": "أهلاً",
      "frame": "Hi, ___!"
     },
     {
      "w": "my name is",
+     "emoji": "📛",
      "def": "words to tell people what you are called",
      "ar": "اسمي",
      "frame": "My name is ___."
     },
     {
      "w": "I'm",
+     "emoji": "🧒",
      "def": "I am",
      "ar": "أنا",
      "frame": "I'm ___."
     },
     {
      "w": "nice to meet you",
+     "emoji": "🤝",
      "def": "a kind thing to say to a new friend",
      "ar": "تشرّفت بمعرفتك",
      "frame": "Nice to meet you, ___!"
     },
     {
      "w": "goodbye",
+     "emoji": "🚶",
      "def": "a word you say when you go",
      "ar": "مع السلامة",
      "frame": "Goodbye, ___!"
@@ -230,6 +236,7 @@
    ],
    "dialogue": {
     "scene": "It's the first day of school. Faisal meets a new boy, Sam.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Faisal",
@@ -317,36 +324,42 @@
    "expressions": [
     {
      "w": "good morning",
+     "emoji": "🌅",
      "def": "what you say when you meet people in the morning",
      "ar": "صباح الخير",
      "frame": "Good morning, ___!"
     },
     {
      "w": "good afternoon",
+     "emoji": "☀️",
      "def": "what you say when you meet people after lunch",
      "ar": "مساء الخير (بعد الظهر)",
      "frame": "Good afternoon, ___!"
     },
     {
      "w": "good evening",
+     "emoji": "🌆",
      "def": "what you say when you meet people in the evening",
      "ar": "مساء الخير (في المساء)",
      "frame": "Good evening, ___!"
     },
     {
      "w": "good night",
+     "emoji": "🌙",
      "def": "what you say before you go to bed",
      "ar": "تصبح على خير",
      "frame": "Good night, ___!"
     },
     {
      "w": "see you",
+     "emoji": "👀",
      "def": "a friendly way to say goodbye",
      "ar": "أراك لاحقاً",
      "frame": "See you, ___!"
     },
     {
      "w": "sleep well",
+     "emoji": "😴",
      "def": "a kind thing to say at bedtime",
      "ar": "نوماً هانئاً",
      "frame": "Good night, ___. Sleep well!"
@@ -354,6 +367,7 @@
    ],
    "dialogue": {
     "scene": "Noura talks to her dad in the morning, the afternoon and the evening.",
+    "scene_emoji": "🌅",
     "p1": [
      {
       "s": "Dad",
@@ -445,36 +459,42 @@
    "expressions": [
     {
      "w": "how are you",
+     "emoji": "💬",
      "def": "a question to ask about someone's day",
      "ar": "كيف حالك؟",
      "frame": "How are you, ___?"
     },
     {
      "w": "fine",
+     "emoji": "👌",
      "def": "OK, good",
      "ar": "بخير",
      "frame": "I'm fine, thank you, ___."
     },
     {
      "w": "thank you",
+     "emoji": "🙏",
      "def": "what you say when someone is kind to you",
      "ar": "شكراً",
      "frame": "Thank you, ___!"
     },
     {
      "w": "happy",
+     "emoji": "😊",
      "def": "feeling good, with a big smile",
      "ar": "سعيد",
      "frame": "I'm happy with my ___."
     },
     {
      "w": "sad",
+     "emoji": "😢",
      "def": "not happy",
      "ar": "حزين",
      "frame": "Are you sad, ___?"
     },
     {
      "w": "great",
+     "emoji": "🤩",
      "def": "very, very good",
      "ar": "رائع",
      "frame": "I'm great today, ___!"
@@ -482,6 +502,7 @@
    ],
    "dialogue": {
     "scene": "Omar sees his friend Ali at the park.",
+    "scene_emoji": "🌳",
     "p1": [
      {
       "s": "Omar",
@@ -573,36 +594,42 @@
    "expressions": [
     {
      "w": "Where are you from?",
+     "emoji": "🌍",
      "def": "a question about your country or city",
      "ar": "من أين أنت؟",
      "frame": "Where are you from, ___?"
     },
     {
      "w": "I'm from",
+     "emoji": "📍",
      "def": "words to say your country or city",
      "ar": "أنا من",
      "frame": "I'm from ___."
     },
     {
      "w": "Saudi Arabia",
+     "emoji": "🇸🇦",
      "def": "our country",
      "ar": "المملكة العربية السعودية",
      "frame": "___ is in Saudi Arabia."
     },
     {
      "w": "city",
+     "emoji": "🏙️",
      "def": "a very big town",
      "ar": "مدينة",
      "frame": "My city is ___."
     },
     {
      "w": "beautiful",
+     "emoji": "😍",
      "def": "very nice to look at",
      "ar": "جميل",
      "frame": "___ is beautiful."
     },
     {
      "w": "too",
+     "emoji": "➕",
      "def": "also",
      "ar": "أيضاً",
      "frame": "I'm from ___, too."
@@ -610,6 +637,7 @@
    ],
    "dialogue": {
     "scene": "Hessa is at a summer camp in Jeddah. She meets Emma, a new girl from England.",
+    "scene_emoji": "🏕️",
     "p1": [
      {
       "s": "Emma",
@@ -701,36 +729,42 @@
    "expressions": [
     {
      "w": "phone",
+     "emoji": "📱",
      "def": "you talk to people far away with it",
      "ar": "هاتف",
      "frame": "I'm on the phone with ___."
     },
     {
      "w": "it's me",
+     "emoji": "🙋",
      "def": "words to say who is talking on the phone",
      "ar": "إنه أنا",
      "frame": "Hello! It's me, ___!"
     },
     {
      "w": "how are you",
+     "emoji": "💬",
      "def": "a question to ask about someone's day",
      "ar": "كيف حالك؟",
      "frame": "Hi, ___! How are you?"
     },
     {
      "w": "bye",
+     "emoji": "👋",
      "def": "a short word for goodbye",
      "ar": "باي / مع السلامة",
      "frame": "Bye, ___!"
     },
     {
      "w": "see you",
+     "emoji": "👀",
      "def": "a friendly way to say goodbye",
      "ar": "أراك لاحقاً",
      "frame": "See you, ___!"
     },
     {
      "w": "take care",
+     "emoji": "🤗",
      "def": "a kind thing to say when you say goodbye",
      "ar": "اعتنِ بنفسك",
      "frame": "Take care, ___!"
@@ -738,6 +772,7 @@
    ],
    "dialogue": {
     "scene": "Sara calls her grandma on the phone.",
+    "scene_emoji": "☎️",
     "p1": [
      {
       "s": "Grandma",
@@ -825,36 +860,42 @@
    "expressions": [
     {
      "w": "What's your name?",
+     "emoji": "📛",
      "def": "a question to ask someone's name",
      "ar": "ما اسمك؟",
      "frame": "Hi! I'm ___. What's your name?"
     },
     {
      "w": "friend",
+     "emoji": "🧑‍🤝‍🧑",
      "def": "a person you like and play with",
      "ar": "صديق",
      "frame": "___ is my friend."
     },
     {
      "w": "nice to meet you",
+     "emoji": "🤝",
      "def": "a kind thing to say to a new friend",
      "ar": "تشرّفت بمعرفتك",
      "frame": "Nice to meet you, ___!"
     },
     {
      "w": "I'm from",
+     "emoji": "🌍",
      "def": "words to say your country or city",
      "ar": "أنا من",
      "frame": "I'm from ___."
     },
     {
      "w": "how are you",
+     "emoji": "💬",
      "def": "a question to ask about someone's day",
      "ar": "كيف حالك؟",
      "frame": "How are you, ___?"
     },
     {
      "w": "see you",
+     "emoji": "👋",
      "def": "a friendly way to say goodbye",
      "ar": "أراك لاحقاً",
      "frame": "Goodbye, ___. See you!"
@@ -862,6 +903,7 @@
    ],
    "dialogue": {
     "scene": "At a swimming club, Ali meets a new boy, Tom.",
+    "scene_emoji": "🏊",
     "p1": [
      {
       "s": "Ali",
@@ -957,36 +999,42 @@
    "expressions": [
     {
      "w": "family",
+     "emoji": "👨‍👩‍👧‍👦",
      "def": "your mum, dad, brothers and sisters",
      "ar": "عائلة",
      "frame": "My family is ___."
     },
     {
      "w": "mum",
+     "emoji": "👩",
      "def": "your mother",
      "ar": "أمي",
      "frame": "This is my mum. She's ___."
     },
     {
      "w": "dad",
+     "emoji": "👨",
      "def": "your father",
      "ar": "أبي",
      "frame": "This is my dad. He's ___."
     },
     {
      "w": "brother",
+     "emoji": "👦",
      "def": "a boy with the same mum and dad as you",
      "ar": "أخ",
      "frame": "My brother's name is ___."
     },
     {
      "w": "sister",
+     "emoji": "👧",
      "def": "a girl with the same mum and dad as you",
      "ar": "أخت",
      "frame": "This is my sister, ___."
     },
     {
      "w": "home",
+     "emoji": "🏠",
      "def": "the place where you and your family live",
      "ar": "البيت",
      "frame": "I'm at home with my ___."
@@ -994,6 +1042,7 @@
    ],
    "dialogue": {
     "scene": "Reem shows her friend Mia a photo of her family.",
+    "scene_emoji": "🖼️",
     "p1": [
      {
       "s": "Mia",
@@ -1089,36 +1138,42 @@
    "expressions": [
     {
      "w": "grandma",
+     "emoji": "👵",
      "def": "your mum's mum or your dad's mum",
      "ar": "جدّة",
      "frame": "This is my grandma. She's ___."
     },
     {
      "w": "grandpa",
+     "emoji": "👴",
      "def": "your mum's dad or your dad's dad",
      "ar": "جدّ",
      "frame": "My grandpa is in the ___."
     },
     {
      "w": "uncle",
+     "emoji": "🧔",
      "def": "your mum's or dad's brother",
      "ar": "عمّ / خال",
      "frame": "This is my uncle, ___."
     },
     {
      "w": "aunt",
+     "emoji": "👩‍🦱",
      "def": "your mum's or dad's sister",
      "ar": "عمّة / خالة",
      "frame": "My aunt is ___."
     },
     {
      "w": "cousin",
+     "emoji": "🧒",
      "def": "your aunt's or uncle's child",
      "ar": "ابن أو بنت العم أو الخال",
      "frame": "___ is my cousin."
     },
     {
      "w": "kind",
+     "emoji": "💖",
      "def": "nice and good to other people",
      "ar": "طيّب / لطيف",
      "frame": "My ___ is very kind."
@@ -1126,6 +1181,7 @@
    ],
    "dialogue": {
     "scene": "On Friday, Yousef and his friend Sam are at Yousef's grandparents' house.",
+    "scene_emoji": "🏡",
     "p1": [
      {
       "s": "Sam",
@@ -1221,36 +1277,42 @@
    "expressions": [
     {
      "w": "Who's this?",
+     "emoji": "❓",
      "def": "a question to ask about a person",
      "ar": "من هذا؟",
      "frame": "Who's this? It's ___."
     },
     {
      "w": "boy",
+     "emoji": "👦",
      "def": "a young male child",
      "ar": "ولد",
      "frame": "This boy is my ___."
     },
     {
      "w": "girl",
+     "emoji": "👧",
      "def": "a young female child",
      "ar": "بنت",
      "frame": "This girl is my ___."
     },
     {
      "w": "man",
+     "emoji": "👨",
      "def": "a grown-up male person",
      "ar": "رجل",
      "frame": "This man is my ___."
     },
     {
      "w": "woman",
+     "emoji": "👩",
      "def": "a grown-up female person",
      "ar": "امرأة",
      "frame": "That woman is my ___."
     },
     {
      "w": "baby",
+     "emoji": "👶",
      "def": "a very, very young child",
      "ar": "طفل رضيع",
      "frame": "The baby is my ___."
@@ -1258,6 +1320,7 @@
    ],
    "dialogue": {
     "scene": "Hessa and Lina look at Lina's old family photos.",
+    "scene_emoji": "📸",
     "p1": [
      {
       "s": "Hessa",
@@ -1353,36 +1416,42 @@
    "expressions": [
     {
      "w": "friend",
+     "emoji": "🧑‍🤝‍🧑",
      "def": "a person you like and play with",
      "ar": "صديق",
      "frame": "___ is my friend."
     },
     {
      "w": "best friend",
+     "emoji": "🫂",
      "def": "the friend you like the most",
      "ar": "أفضل صديق",
      "frame": "My best friend is ___."
     },
     {
      "w": "classmate",
+     "emoji": "🎒",
      "def": "a child in your class",
      "ar": "زميل الصف",
      "frame": "___ is my classmate."
     },
     {
      "w": "nice",
+     "emoji": "😊",
      "def": "good and kind",
      "ar": "لطيف",
      "frame": "My friend is very ___."
     },
     {
      "w": "funny",
+     "emoji": "😂",
      "def": "makes you laugh",
      "ar": "مضحك",
      "frame": "___ is funny."
     },
     {
      "w": "play",
+     "emoji": "⚽",
      "def": "have fun with toys or games",
      "ar": "يلعب",
      "frame": "We play ___ at school."
@@ -1390,6 +1459,7 @@
    ],
    "dialogue": {
     "scene": "It's break time at school. Omar tells Sam, a new boy, about his friends.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Sam",
@@ -1485,36 +1555,42 @@
    "expressions": [
     {
      "w": "Eid Mubarak",
+     "emoji": "🌙",
      "def": "what we say to people at Eid",
      "ar": "عيد مبارك",
      "frame": "Eid Mubarak, ___!"
     },
     {
      "w": "little",
+     "emoji": "🐭",
      "def": "young, small (for a brother or sister)",
      "ar": "صغير / الأصغر",
      "frame": "This is my little ___."
     },
     {
      "w": "big",
+     "emoji": "🐘",
      "def": "older (for a brother or sister)",
      "ar": "كبير / الأكبر",
      "frame": "This is my big ___."
     },
     {
      "w": "sweets",
+     "emoji": "🍬",
      "def": "sugary food like chocolate",
      "ar": "حلويات",
      "frame": "Sweets from ___!"
     },
     {
      "w": "family",
+     "emoji": "👨‍👩‍👧‍👦",
      "def": "your mum, dad, brothers and sisters",
      "ar": "عائلة",
      "frame": "My family is at ___ house."
     },
     {
      "w": "happy",
+     "emoji": "😊",
      "def": "feeling good, with a big smile",
      "ar": "سعيد",
      "frame": "I'm happy at ___."
@@ -1522,6 +1598,7 @@
    ],
    "dialogue": {
     "scene": "It's Eid. Faisal and his cousin Saad meet at Grandpa's house.",
+    "scene_emoji": "🌙",
     "p1": [
      {
       "s": "Faisal",
@@ -1613,36 +1690,42 @@
    "expressions": [
     {
      "w": "family tree",
+     "emoji": "🌳",
      "def": "a picture of all the people in your family",
      "ar": "شجرة العائلة",
      "frame": "Look at my family tree! This is my ___."
     },
     {
      "w": "photo",
+     "emoji": "📷",
      "def": "a picture from a camera or phone",
      "ar": "صورة",
      "frame": "This is a photo of my ___."
     },
     {
      "w": "me",
+     "emoji": "🙋",
      "def": "the person talking: I",
      "ar": "أنا",
      "frame": "This is ___, and this is me."
     },
     {
      "w": "grandma",
+     "emoji": "👵",
      "def": "your mum's mum or your dad's mum",
      "ar": "جدّة",
      "frame": "My grandma's name is ___."
     },
     {
      "w": "cousin",
+     "emoji": "🧒",
      "def": "your aunt's or uncle's child",
      "ar": "ابن أو بنت العم أو الخال",
      "frame": "___ is my cousin."
     },
     {
      "w": "brother",
+     "emoji": "👦",
      "def": "a boy with the same mum and dad as you",
      "ar": "أخ",
      "frame": "He's my brother, ___."
@@ -1650,6 +1733,7 @@
    ],
    "dialogue": {
     "scene": "Noura shows her family tree to her teacher, Ms Sara.",
+    "scene_emoji": "🌳",
     "p1": [
      {
       "s": "Ms Sara",
@@ -1745,36 +1829,42 @@
    "expressions": [
     {
      "w": "red",
+     "emoji": "🔴",
      "def": "the colour of a tomato",
      "ar": "أحمر",
      "frame": "It's a red ___."
     },
     {
      "w": "blue",
+     "emoji": "🔵",
      "def": "the colour of the sky in the day",
      "ar": "أزرق",
      "frame": "My ___ is blue."
     },
     {
      "w": "green",
+     "emoji": "🟢",
      "def": "the colour of grass",
      "ar": "أخضر",
      "frame": "A ___ is green."
     },
     {
      "w": "yellow",
+     "emoji": "🟡",
      "def": "the colour of a banana",
      "ar": "أصفر",
      "frame": "Look! A yellow ___!"
     },
     {
      "w": "black",
+     "emoji": "⚫",
      "def": "the colour of the sky at night",
      "ar": "أسود",
      "frame": "My dad's car is ___."
     },
     {
      "w": "white",
+     "emoji": "⚪",
      "def": "the colour of milk",
      "ar": "أبيض",
      "frame": "It's a white ___."
@@ -1782,6 +1872,7 @@
    ],
    "dialogue": {
     "scene": "Noura and Reem are in art class. They look at their pictures.",
+    "scene_emoji": "🎨",
     "p1": [
      {
       "s": "Reem",
@@ -1877,36 +1968,42 @@
    "expressions": [
     {
      "w": "ball",
+     "emoji": "⚽",
      "def": "a round toy you kick or throw",
      "ar": "كرة",
      "frame": "It's a ___ ball."
     },
     {
      "w": "car",
+     "emoji": "🚗",
      "def": "a small toy like a real car",
      "ar": "سيارة",
      "frame": "My car is ___."
     },
     {
      "w": "doll",
+     "emoji": "🪆",
      "def": "a toy like a little person",
      "ar": "دمية",
      "frame": "It's a doll. It's ___."
     },
     {
      "w": "robot",
+     "emoji": "🤖",
      "def": "a toy machine that looks like a person",
      "ar": "روبوت",
      "frame": "It's a ___ robot."
     },
     {
      "w": "kite",
+     "emoji": "🪁",
      "def": "a toy that flies in the wind",
      "ar": "طائرة ورقية",
      "frame": "My kite is ___ and ___."
     },
     {
      "w": "train",
+     "emoji": "🚂",
      "def": "a long toy like a real train",
      "ar": "قطار",
      "frame": "Look! It's a ___ train."
@@ -1914,6 +2011,7 @@
    ],
    "dialogue": {
     "scene": "Sam visits Omar at home. They play in Omar's room.",
+    "scene_emoji": "🧸",
     "p1": [
      {
       "s": "Sam",
@@ -2009,36 +2107,42 @@
    "expressions": [
     {
      "w": "an apple",
+     "emoji": "🍎",
      "def": "a round red or green fruit",
      "ar": "تفاحة",
      "frame": "It's an apple. It's ___."
     },
     {
      "w": "an orange",
+     "emoji": "🍊",
      "def": "a round orange fruit",
      "ar": "برتقالة",
      "frame": "An orange for ___, please."
     },
     {
      "w": "an egg",
+     "emoji": "🥚",
      "def": "white or brown food from a chicken",
      "ar": "بيضة",
      "frame": "It's an egg. It's ___."
     },
     {
      "w": "an ice cream",
+     "emoji": "🍦",
      "def": "a cold, sweet food",
      "ar": "آيس كريم",
      "frame": "An ice cream for ___!"
     },
     {
      "w": "an elephant",
+     "emoji": "🐘",
      "def": "a very big grey animal with big ears",
      "ar": "فيل",
      "frame": "It's an elephant. It's very ___."
     },
     {
      "w": "a banana",
+     "emoji": "🍌",
      "def": "a long yellow fruit",
      "ar": "موزة",
      "frame": "A banana is ___."
@@ -2046,6 +2150,7 @@
    ],
    "dialogue": {
     "scene": "Lina and Emma play a shop game with toy food.",
+    "scene_emoji": "🛒",
     "p1": [
      {
       "s": "Emma",
@@ -2137,36 +2242,42 @@
    "expressions": [
     {
      "w": "big",
+     "emoji": "🐘",
      "def": "large, not small",
      "ar": "كبير",
      "frame": "It's a big ___."
     },
     {
      "w": "small",
+     "emoji": "🐜",
      "def": "little, not big",
      "ar": "صغير",
      "frame": "My ___ is small."
     },
     {
      "w": "new",
+     "emoji": "✨",
      "def": "from the shop just now, not old",
      "ar": "جديد",
      "frame": "It's a new ___."
     },
     {
      "w": "old",
+     "emoji": "🏚️",
      "def": "not new",
      "ar": "قديم",
      "frame": "This ___ is old."
     },
     {
      "w": "long",
+     "emoji": "📏",
      "def": "not short, like a train",
      "ar": "طويل",
      "frame": "A ___ is long."
     },
     {
      "w": "beautiful",
+     "emoji": "🌸",
      "def": "very nice to look at",
      "ar": "جميل",
      "frame": "It's a beautiful ___."
@@ -2174,6 +2285,7 @@
    ],
    "dialogue": {
     "scene": "Khalid and his sister Hessa look in their toy box.",
+    "scene_emoji": "📦",
     "p1": [
      {
       "s": "Hessa",
@@ -2269,36 +2381,42 @@
    "expressions": [
     {
      "w": "toy shop",
+     "emoji": "🏪",
      "def": "a shop with toys",
      "ar": "محل ألعاب",
      "frame": "The toy shop is in the ___."
     },
     {
      "w": "plane",
+     "emoji": "✈️",
      "def": "a toy that looks like a flying machine",
      "ar": "طائرة",
      "frame": "It's a ___ plane."
     },
     {
      "w": "boat",
+     "emoji": "⛵",
      "def": "a toy that goes on water",
      "ar": "قارب",
      "frame": "Look! A ___ boat!"
     },
     {
      "w": "bike",
+     "emoji": "🚲",
      "def": "you ride it with your feet",
      "ar": "درّاجة",
      "frame": "My bike is ___."
     },
     {
      "w": "teddy bear",
+     "emoji": "🧸",
      "def": "a soft toy bear",
      "ar": "دبدوب",
      "frame": "It's a ___ teddy bear."
     },
     {
      "w": "Look at",
+     "emoji": "👀",
      "def": "words you say when you want someone to see something",
      "ar": "انظر إلى",
      "frame": "Look at that ___!"
@@ -2306,6 +2424,7 @@
    ],
    "dialogue": {
     "scene": "Ali and his cousin Fahad are at a toy shop in the mall.",
+    "scene_emoji": "🏬",
     "p1": [
      {
       "s": "Fahad",
@@ -2401,36 +2520,42 @@
    "expressions": [
     {
      "w": "show and tell",
+     "emoji": "🙋",
      "def": "a time in class to show a thing and talk about it",
      "ar": "اعرض وتحدّث",
      "frame": "For Show and Tell, this is my ___."
     },
     {
      "w": "favourite",
+     "emoji": "⭐",
      "def": "the one you like the most",
      "ar": "المفضّل",
      "frame": "My favourite toy is a ___."
     },
     {
      "w": "toy",
+     "emoji": "🪀",
      "def": "a thing children play with",
      "ar": "لعبة",
      "frame": "It's a ___ toy."
     },
     {
      "w": "colour",
+     "emoji": "🎨",
      "def": "red, blue and green are colours",
      "ar": "لون",
      "frame": "Its colour is ___."
     },
     {
      "w": "soft",
+     "emoji": "☁️",
      "def": "nice to touch, not hard",
      "ar": "ناعم",
      "frame": "It's soft. It's a ___."
     },
     {
      "w": "new",
+     "emoji": "✨",
      "def": "from the shop just now, not old",
      "ar": "جديد",
      "frame": "It's a new ___."
@@ -2438,6 +2563,7 @@
    ],
    "dialogue": {
     "scene": "It's Show and Tell day in class. Reem shows her toy to her teacher, Ms Emma.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Ms Emma",
@@ -2533,36 +2659,42 @@
    "expressions": [
     {
      "w": "count",
+     "emoji": "🔢",
      "def": "say numbers: one, two, three …",
      "ar": "يعدّ",
      "frame": "Let's count the ___!"
     },
     {
      "w": "number",
+     "emoji": "#️⃣",
      "def": "1, 2 and 3 are numbers",
      "ar": "رقم",
      "frame": "My favourite number is ___."
     },
     {
      "w": "one",
+     "emoji": "1️⃣",
      "def": "1",
      "ar": "واحد",
      "frame": "Look! One ___!"
     },
     {
      "w": "two",
+     "emoji": "2️⃣",
      "def": "2",
      "ar": "اثنان",
      "frame": "Two ___, please!"
     },
     {
      "w": "five",
+     "emoji": "5️⃣",
      "def": "5",
      "ar": "خمسة",
      "frame": "Five ___ on the table."
     },
     {
      "w": "ten",
+     "emoji": "🔟",
      "def": "10",
      "ar": "عشرة",
      "frame": "Ten ___ in my bag."
@@ -2570,6 +2702,7 @@
    ],
    "dialogue": {
     "scene": "Omar and his little sister Lina count the dates on a plate.",
+    "scene_emoji": "🍽️",
     "p1": [
      {
       "s": "Lina",
@@ -2661,36 +2794,42 @@
    "expressions": [
     {
      "w": "How old …?",
+     "emoji": "🎂",
      "def": "a question about how many years someone has",
      "ar": "كم عمر …؟",
      "frame": "How old is your ___?"
     },
     {
      "w": "years old",
+     "emoji": "📅",
      "def": "words after your age",
      "ar": "سنوات من العمر",
      "frame": "I'm ___ years old."
     },
     {
      "w": "six",
+     "emoji": "6️⃣",
      "def": "6",
      "ar": "ستة",
      "frame": "My ___ is six."
     },
     {
      "w": "seven",
+     "emoji": "7️⃣",
      "def": "7",
      "ar": "سبعة",
      "frame": "___ is seven years old."
     },
     {
      "w": "eight",
+     "emoji": "8️⃣",
      "def": "8",
      "ar": "ثمانية",
      "frame": "Is your ___ eight?"
     },
     {
      "w": "nine",
+     "emoji": "9️⃣",
      "def": "9",
      "ar": "تسعة",
      "frame": "My ___ is nine."
@@ -2698,6 +2837,7 @@
    ],
    "dialogue": {
     "scene": "Emma and Hessa meet at a swimming club.",
+    "scene_emoji": "🏊",
     "p1": [
      {
       "s": "Emma",
@@ -2793,36 +2933,42 @@
    "expressions": [
     {
      "w": "birthday",
+     "emoji": "🎂",
      "def": "the day you are one year older",
      "ar": "عيد ميلاد",
      "frame": "It's ___'s birthday today!"
     },
     {
      "w": "happy birthday",
+     "emoji": "🥳",
      "def": "what we say on someone's birthday",
      "ar": "عيد ميلاد سعيد",
      "frame": "Happy birthday, ___!"
     },
     {
      "w": "cake",
+     "emoji": "🍰",
      "def": "a sweet food for parties",
      "ar": "كعكة",
      "frame": "It's a ___ cake."
     },
     {
      "w": "party",
+     "emoji": "🎉",
      "def": "a time when friends meet, eat and play",
      "ar": "حفلة",
      "frame": "The party is at ___ house."
     },
     {
      "w": "present",
+     "emoji": "🎁",
      "def": "a thing you give to someone",
      "ar": "هدية",
      "frame": "My present is a ___."
     },
     {
      "w": "today",
+     "emoji": "📅",
      "def": "this day",
      "ar": "اليوم",
      "frame": "Today I'm ___!"
@@ -2830,6 +2976,7 @@
    ],
    "dialogue": {
     "scene": "It's Faisal's birthday. His friend Omar comes to the party.",
+    "scene_emoji": "🎉",
     "p1": [
      {
       "s": "Omar",
@@ -2921,36 +3068,42 @@
    "expressions": [
     {
      "w": "How many …?",
+     "emoji": "🔢",
      "def": "a question about the number of things",
      "ar": "كم عدد …؟",
      "frame": "How many ___?"
     },
     {
      "w": "pencil",
+     "emoji": "✏️",
      "def": "you write and draw with it",
      "ar": "قلم رصاص",
      "frame": "___ pencils in my bag."
     },
     {
      "w": "book",
+     "emoji": "📕",
      "def": "it has pages; you read it",
      "ar": "كتاب",
      "frame": "Look! ___ books!"
     },
     {
      "w": "chair",
+     "emoji": "🪑",
      "def": "you sit on it",
      "ar": "كرسي",
      "frame": "___ chairs in my class."
     },
     {
      "w": "window",
+     "emoji": "🪟",
      "def": "you look out of it; it's in the wall",
      "ar": "نافذة",
      "frame": "___ windows in my room."
     },
     {
      "w": "bag",
+     "emoji": "🎒",
      "def": "you carry your books in it",
      "ar": "حقيبة",
      "frame": "My bag is ___."
@@ -2958,6 +3111,7 @@
    ],
    "dialogue": {
     "scene": "In class, Ms Sara asks Ali to count things.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Ms Sara",
@@ -3053,36 +3207,42 @@
    "expressions": [
     {
      "w": "eleven",
+     "emoji": "⚽",
      "def": "11",
      "ar": "أحد عشر",
      "frame": "Look! Eleven ___!"
     },
     {
      "w": "twelve",
+     "emoji": "🕛",
      "def": "12",
      "ar": "اثنا عشر",
      "frame": "My favourite player is number ___."
     },
     {
      "w": "fifteen",
+     "emoji": "🔢",
      "def": "15",
      "ar": "خمسة عشر",
      "frame": "My ___ is fifteen."
     },
     {
      "w": "twenty",
+     "emoji": "🧮",
      "def": "20",
      "ar": "عشرون",
      "frame": "Twenty ___ in my class."
     },
     {
      "w": "team",
+     "emoji": "👥",
      "def": "a group of players",
      "ar": "فريق",
      "frame": "My favourite team is ___."
     },
     {
      "w": "player",
+     "emoji": "🏃",
      "def": "a person in a game or sport",
      "ar": "لاعب",
      "frame": "He's a great ___ player."
@@ -3090,6 +3250,7 @@
    ],
    "dialogue": {
     "scene": "Khalid and Sam watch a match in their school football league.",
+    "scene_emoji": "⚽",
     "p1": [
      {
       "s": "Sam",
@@ -3181,36 +3342,42 @@
    "expressions": [
     {
      "w": "balloon",
+     "emoji": "🎈",
      "def": "a colourful toy full of air",
      "ar": "بالون",
      "frame": "___ balloons for the party!"
     },
     {
      "w": "plate",
+     "emoji": "🍽️",
      "def": "you put food on it",
      "ar": "صحن",
      "frame": "___ plates, please."
     },
     {
      "w": "cup",
+     "emoji": "🥤",
      "def": "you drink from it",
      "ar": "كوب",
      "frame": "___ cups on the table."
     },
     {
      "w": "party",
+     "emoji": "🎉",
      "def": "a time when friends meet, eat and play",
      "ar": "حفلة",
      "frame": "The party is on ___."
     },
     {
      "w": "How many …?",
+     "emoji": "🔢",
      "def": "a question about the number of things",
      "ar": "كم عدد …؟",
      "frame": "How many ___?"
     },
     {
      "w": "How old …?",
+     "emoji": "🎂",
      "def": "a question about how many years someone has",
      "ar": "كم عمر …؟",
      "frame": "How old is your ___?"
@@ -3218,6 +3385,7 @@
    ],
    "dialogue": {
     "scene": "Reem and her brother Faisal plan a party for their little sister, Lina.",
+    "scene_emoji": "🎈",
     "p1": [
      {
       "s": "Reem",

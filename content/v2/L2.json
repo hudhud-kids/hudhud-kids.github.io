@@ -193,36 +193,42 @@
    "expressions": [
     {
      "w": "eyes",
+     "emoji": "👀",
      "def": "you see with them",
      "ar": "عيون",
      "frame": "I've got ___ eyes."
     },
     {
      "w": "hair",
+     "emoji": "💇",
      "def": "it grows on your head",
      "ar": "شعر",
      "frame": "I've got ___ hair."
     },
     {
      "w": "a nose",
+     "emoji": "👃",
      "def": "you smell with it",
      "ar": "أنف",
      "frame": "I've got a ___ nose."
     },
     {
      "w": "ears",
+     "emoji": "👂",
      "def": "you hear with them",
      "ar": "أذنان",
      "frame": "I've got two ears and one ___."
     },
     {
      "w": "teeth",
+     "emoji": "🦷",
      "def": "small white things in your mouth",
      "ar": "أسنان",
      "frame": "I've got ___ teeth."
     },
     {
      "w": "a big smile",
+     "emoji": "😁",
      "def": "your mouth when you are very happy",
      "ar": "ابتسامة كبيرة",
      "frame": "My ___ has got a big smile."
@@ -230,6 +236,7 @@
    ],
    "dialogue": {
     "scene": "Reem and her little sister Lama draw pictures of their faces at home.",
+    "scene_emoji": "🖍️",
     "p1": [
      {
       "s": "Reem",
@@ -309,36 +316,42 @@
    "expressions": [
     {
      "w": "a head",
+     "emoji": "🙂",
      "def": "the top part of your body, with your face",
      "ar": "رأس",
      "frame": "I've got one head and ___ ears."
     },
     {
      "w": "arms",
+     "emoji": "💪",
      "def": "your hands are at the end of them",
      "ar": "ذراعان",
      "frame": "I've got two ___ arms."
     },
     {
      "w": "hands",
+     "emoji": "🙌",
      "def": "you hold things with them",
      "ar": "يدان",
      "frame": "I've got two hands and ___ fingers."
     },
     {
      "w": "fingers",
+     "emoji": "🖐️",
      "def": "you have got five on each hand",
      "ar": "أصابع",
      "frame": "I can count to ___ on my fingers."
     },
     {
      "w": "legs",
+     "emoji": "🦵",
      "def": "you walk and run with them",
      "ar": "ساقان",
      "frame": "I've got two ___ legs."
     },
     {
      "w": "feet",
+     "emoji": "🦶",
      "def": "you stand on them; one foot, two feet",
      "ar": "قدمان",
      "frame": "I've got two feet and ___ toes."
@@ -346,6 +359,7 @@
    ],
    "dialogue": {
     "scene": "Sam and his friend Faisal play a game called 'Touch your …' in the garden.",
+    "scene_emoji": "🌳",
     "p1": [
      {
       "s": "Sam",
@@ -433,36 +447,42 @@
    "expressions": [
     {
      "w": "a T-shirt",
+     "emoji": "👕",
      "def": "a soft top with short arms",
      "ar": "تي شيرت",
      "frame": "I've got a ___ T-shirt."
     },
     {
      "w": "shoes",
+     "emoji": "👟",
      "def": "you wear them on your feet when you go out",
      "ar": "حذاء",
      "frame": "I've got ___ shoes."
     },
     {
      "w": "socks",
+     "emoji": "🧦",
      "def": "you wear them on your feet, in your shoes",
      "ar": "جوارب",
      "frame": "My socks are ___."
     },
     {
      "w": "a cap",
+     "emoji": "🧢",
      "def": "a small hat for the sun",
      "ar": "كاب / قبعة",
      "frame": "I've got a ___ cap."
     },
     {
      "w": "trousers",
+     "emoji": "👖",
      "def": "you wear them on your legs",
      "ar": "بنطال",
      "frame": "I've got ___ trousers."
     },
     {
      "w": "a jacket",
+     "emoji": "🧥",
      "def": "you wear it on top of your clothes when it's cold",
      "ar": "جاكيت / سترة",
      "frame": "My jacket is ___."
@@ -470,6 +490,7 @@
    ],
    "dialogue": {
     "scene": "Noura and her friend Emma get ready for a school trip.",
+    "scene_emoji": "🚌",
     "p1": [
      {
       "s": "Emma",
@@ -553,36 +574,42 @@
    "expressions": [
     {
      "w": "long hair",
+     "emoji": "💇‍♀️",
      "def": "hair that goes down a lot",
      "ar": "شعر طويل",
      "frame": "My ___ has got long hair."
     },
     {
      "w": "short hair",
+     "emoji": "💇‍♂️",
      "def": "hair that is not long",
      "ar": "شعر قصير",
      "frame": "His hair is short and ___."
     },
     {
      "w": "curly hair",
+     "emoji": "👩‍🦱",
      "def": "hair that goes round and round",
      "ar": "شعر مجعّد",
      "frame": "My ___ has got curly hair."
     },
     {
      "w": "glasses",
+     "emoji": "👓",
      "def": "you wear them on your eyes to see well",
      "ar": "نظارة",
      "frame": "My ___ has got glasses."
     },
     {
      "w": "a beard",
+     "emoji": "🧔",
      "def": "hair on a man's face",
      "ar": "لحية",
      "frame": "My ___ has got a beard."
     },
     {
      "w": "tall",
+     "emoji": "🦒",
      "def": "big from the feet to the head",
      "ar": "طويل القامة",
      "frame": "My ___ is very tall."
@@ -590,6 +617,7 @@
    ],
    "dialogue": {
     "scene": "Faisal shows his friend Sam a family photo.",
+    "scene_emoji": "📸",
     "p1": [
      {
       "s": "Faisal",
@@ -677,36 +705,42 @@
    "expressions": [
     {
      "w": "new",
+     "emoji": "✨",
      "def": "not old",
      "ar": "جديد",
      "frame": "I've got new ___ for Eid."
     },
     {
      "w": "a thobe",
+     "emoji": "🥼",
      "def": "a long white shirt for men and boys",
      "ar": "ثوب",
      "frame": "My ___ has got a white thobe."
     },
     {
      "w": "a dress",
+     "emoji": "👗",
      "def": "a long top and skirt in one, for girls",
      "ar": "فستان",
      "frame": "My sister has got a ___ dress."
     },
     {
      "w": "a bag",
+     "emoji": "👜",
      "def": "you carry things in it",
      "ar": "حقيبة",
      "frame": "My mum has got a ___ bag."
     },
     {
      "w": "a watch",
+     "emoji": "⌚",
      "def": "you wear it on your arm to see the time",
      "ar": "ساعة يد",
      "frame": "My ___ has got a new watch."
     },
     {
      "w": "shoes",
+     "emoji": "👞",
      "def": "you wear them on your feet when you go out",
      "ar": "حذاء",
      "frame": "His shoes are ___."
@@ -714,6 +748,7 @@
    ],
    "dialogue": {
     "scene": "On the morning of Eid, Reem and her cousin Hind meet at Grandma's house.",
+    "scene_emoji": "🌙",
     "p1": [
      {
       "s": "Reem",
@@ -801,36 +836,42 @@
    "expressions": [
     {
      "w": "Who is it?",
+     "emoji": "❓",
      "def": "a question to find a person",
      "ar": "من هو؟ / من هي؟",
      "frame": "He's got ___. Who is it?"
     },
     {
      "w": "guess",
+     "emoji": "🤔",
      "def": "say an answer when you are not sure",
      "ar": "يخمّن",
      "frame": "I guess it's ___!"
     },
     {
      "w": "Is it …?",
+     "emoji": "❔",
      "def": "a question to check your guess",
      "ar": "هل هو …؟",
      "frame": "Is it ___?"
     },
     {
      "w": "glasses",
+     "emoji": "👓",
      "def": "you wear them on your eyes to see well",
      "ar": "نظارة",
      "frame": "She's got glasses and ___ hair."
     },
     {
      "w": "a cap",
+     "emoji": "🧢",
      "def": "a small hat for the sun",
      "ar": "كاب / قبعة",
      "frame": "He's got a ___ cap."
     },
     {
      "w": "brown eyes",
+     "emoji": "👁️",
      "def": "eyes with the colour of dates",
      "ar": "عيون بنية",
      "frame": "She's got brown eyes and ___ hair."
@@ -838,6 +879,7 @@
    ],
    "dialogue": {
     "scene": "Omar and his cousin Saad play 'Who is it?' with a page of pictures of people.",
+    "scene_emoji": "🕵️",
     "p1": [
      {
       "s": "Omar",
@@ -933,36 +975,42 @@
    "expressions": [
     {
      "w": "apples",
+     "emoji": "🍎",
      "def": "round fruit, red or green",
      "ar": "تفاح",
      "frame": "I like ___ apples."
     },
     {
      "w": "bananas",
+     "emoji": "🍌",
      "def": "long yellow fruit",
      "ar": "موز",
      "frame": "I like bananas with ___."
     },
     {
      "w": "grapes",
+     "emoji": "🍇",
      "def": "small round fruit; lots of them grow together",
      "ar": "عنب",
      "frame": "I like ___ grapes."
     },
     {
      "w": "oranges",
+     "emoji": "🍊",
      "def": "round orange fruit; you can make juice with them",
      "ar": "برتقال",
      "frame": "I like oranges, but I don't like ___."
     },
     {
      "w": "dates",
+     "emoji": "🌴",
      "def": "small sweet brown fruit from palm trees",
      "ar": "تمر",
      "frame": "I like dates with ___."
     },
     {
      "w": "watermelon",
+     "emoji": "🍉",
      "def": "a very big fruit, green outside and red inside",
      "ar": "بطيخ",
      "frame": "I like watermelon in the ___."
@@ -970,6 +1018,7 @@
    ],
    "dialogue": {
     "scene": "Sam visits his friend Saud. Saud's mum has got a big plate of fruit.",
+    "scene_emoji": "🍽️",
     "p1": [
      {
       "s": "Saud",
@@ -1057,36 +1106,42 @@
    "expressions": [
     {
      "w": "eggs",
+     "emoji": "🥚",
      "def": "food from chickens; you can cook them",
      "ar": "بيض",
      "frame": "I like eggs with ___."
     },
     {
      "w": "bread",
+     "emoji": "🍞",
      "def": "food made from flour; you make sandwiches with it",
      "ar": "خبز",
      "frame": "I like bread with ___."
     },
     {
      "w": "cheese",
+     "emoji": "🧀",
      "def": "white or yellow food made from milk",
      "ar": "جبن",
      "frame": "I like ___ cheese."
     },
     {
      "w": "milk",
+     "emoji": "🥛",
      "def": "a white drink from cows",
      "ar": "حليب",
      "frame": "I drink milk in the ___."
     },
     {
      "w": "juice",
+     "emoji": "🧃",
      "def": "a drink made from fruit",
      "ar": "عصير",
      "frame": "Do you like ___ juice?"
     },
     {
      "w": "honey",
+     "emoji": "🍯",
      "def": "sweet yellow food from bees",
      "ar": "عسل",
      "frame": "Do you like honey with ___?"
@@ -1094,6 +1149,7 @@
    ],
    "dialogue": {
     "scene": "Lama has breakfast with her grandma at the weekend.",
+    "scene_emoji": "🍳",
     "p1": [
      {
       "s": "Grandma",
@@ -1181,36 +1237,42 @@
    "expressions": [
     {
      "w": "rice",
+     "emoji": "🍚",
      "def": "small white food; we cook it in water",
      "ar": "أرز",
      "frame": "I like rice with ___."
     },
     {
      "w": "chicken",
+     "emoji": "🍗",
      "def": "meat from a chicken",
      "ar": "دجاج",
      "frame": "I like chicken and ___."
     },
     {
      "w": "fish",
+     "emoji": "🐟",
      "def": "an animal from the sea; we can eat it",
      "ar": "سمك",
      "frame": "Do you like fish? ___"
     },
     {
      "w": "salad",
+     "emoji": "🥗",
      "def": "cold vegetables, like tomatoes, in a bowl",
      "ar": "سلطة",
      "frame": "I like salad with ___."
     },
     {
      "w": "soup",
+     "emoji": "🍲",
      "def": "hot food you eat with a spoon",
      "ar": "شوربة",
      "frame": "I like ___ soup."
     },
     {
      "w": "kabsa",
+     "emoji": "🥘",
      "def": "a Saudi dish of rice with chicken or meat",
      "ar": "كبسة",
      "frame": "I like kabsa with ___."
@@ -1218,6 +1280,7 @@
    ],
    "dialogue": {
     "scene": "It's Friday. Emma has lunch with her friend Noura's family.",
+    "scene_emoji": "🍽️",
     "p1": [
      {
       "s": "Noura",
@@ -1301,36 +1364,42 @@
    "expressions": [
     {
      "w": "I love",
+     "emoji": "❤️",
      "def": "I like it very, very much",
      "ar": "أحب كثيراً",
      "frame": "I love ___!"
     },
     {
      "w": "ice cream",
+     "emoji": "🍦",
      "def": "a cold sweet food",
      "ar": "آيس كريم",
      "frame": "I love ___ ice cream."
     },
     {
      "w": "cake",
+     "emoji": "🍰",
      "def": "a sweet food for birthdays",
      "ar": "كعكة / كيك",
      "frame": "I like ___ cake."
     },
     {
      "w": "chocolate",
+     "emoji": "🍫",
      "def": "a sweet brown food",
      "ar": "شوكولاتة",
      "frame": "I like chocolate with ___."
     },
     {
      "w": "biscuits",
+     "emoji": "🍪",
      "def": "small, flat, sweet food",
      "ar": "بسكويت",
      "frame": "I've got biscuits in my ___."
     },
     {
      "w": "popcorn",
+     "emoji": "🍿",
      "def": "white snack, good with a film",
      "ar": "فشار",
      "frame": "I like popcorn with ___."
@@ -1338,6 +1407,7 @@
    ],
    "dialogue": {
     "scene": "Cousins Lama and Reem choose snacks for a family film night.",
+    "scene_emoji": "🎬",
     "p1": [
      {
       "s": "Lama",
@@ -1421,36 +1491,42 @@
    "expressions": [
     {
      "w": "a picnic",
+     "emoji": "🧺",
      "def": "a meal you eat outside",
      "ar": "نزهة / رحلة طعام",
      "frame": "I like a picnic in the ___."
     },
     {
      "w": "sandwiches",
+     "emoji": "🥪",
      "def": "bread with food in it",
      "ar": "ساندويتشات",
      "frame": "I like ___ sandwiches."
     },
     {
      "w": "tomatoes",
+     "emoji": "🍅",
      "def": "round red vegetables",
      "ar": "طماطم",
      "frame": "I like tomatoes in my ___."
     },
     {
      "w": "carrots",
+     "emoji": "🥕",
      "def": "long orange vegetables",
      "ar": "جزر",
      "frame": "Do you like carrots? ___"
     },
     {
      "w": "water",
+     "emoji": "💧",
      "def": "a drink with no colour; we need it every day",
      "ar": "ماء",
      "frame": "I drink water when I'm ___."
     },
     {
      "w": "Here you are.",
+     "emoji": "🤲",
      "def": "you say this when you give something",
      "ar": "تفضّل",
      "frame": "Here you are. A ___ for you."
@@ -1458,6 +1534,7 @@
    ],
    "dialogue": {
     "scene": "Omar's family have a picnic in the desert. Omar and his cousin Fahad help with the food.",
+    "scene_emoji": "🏜️",
     "p1": [
      {
       "s": "Omar",
@@ -1549,36 +1626,42 @@
    "expressions": [
     {
      "w": "a party",
+     "emoji": "🎉",
      "def": "a happy time with friends, food and games",
      "ar": "حفلة",
      "frame": "I've got a party on ___."
     },
     {
      "w": "a menu",
+     "emoji": "📋",
      "def": "a list of food",
      "ar": "قائمة طعام",
      "frame": "My menu: pizza, cake and ___."
     },
     {
      "w": "pizza",
+     "emoji": "🍕",
      "def": "flat bread with cheese and tomatoes on it",
      "ar": "بيتزا",
      "frame": "I like pizza with ___."
     },
     {
      "w": "lemonade",
+     "emoji": "🍋",
      "def": "a sweet drink made from lemons",
      "ar": "ليموناضة",
      "frame": "I like lemonade with ___."
     },
     {
      "w": "Let's have …",
+     "emoji": "🙌",
      "def": "you say this to choose something with friends",
      "ar": "لِنأخذ … / فلنحضّر …",
      "frame": "Let's have ___!"
     },
     {
      "w": "cake",
+     "emoji": "🍰",
      "def": "a sweet food for birthdays",
      "ar": "كعكة / كيك",
      "frame": "I like ___ cake."
@@ -1586,6 +1669,7 @@
    ],
    "dialogue": {
     "scene": "It's Sam's birthday on Saturday. Sam and his friend Omar make a party menu.",
+    "scene_emoji": "🎂",
     "p1": [
      {
       "s": "Sam",
@@ -1669,36 +1753,42 @@
    "expressions": [
     {
      "w": "a cat",
+     "emoji": "🐱",
      "def": "a small pet; it says 'meow'",
      "ar": "قطة",
      "frame": "I've got a ___ cat."
     },
     {
      "w": "a dog",
+     "emoji": "🐶",
      "def": "a pet; it says 'woof'",
      "ar": "كلب",
      "frame": "A dog can ___."
     },
     {
      "w": "a bird",
+     "emoji": "🐦",
      "def": "an animal with wings",
      "ar": "طائر",
      "frame": "A ___ can fly."
     },
     {
      "w": "run",
+     "emoji": "🏃",
      "def": "move very fast on your legs",
      "ar": "يركض",
      "frame": "I can run in the ___."
     },
     {
      "w": "fly",
+     "emoji": "🕊️",
      "def": "move in the air",
      "ar": "يطير",
      "frame": "A bird can fly, but a ___ can't."
     },
     {
      "w": "swim",
+     "emoji": "🏊",
      "def": "move in water",
      "ar": "يسبح",
      "frame": "A fish can swim, but it can't ___."
@@ -1706,6 +1796,7 @@
    ],
    "dialogue": {
     "scene": "Reem shows her friend Emma her new cat, Lulu.",
+    "scene_emoji": "🐱",
     "p1": [
      {
       "s": "Reem",
@@ -1793,36 +1884,42 @@
    "expressions": [
     {
      "w": "a camel",
+     "emoji": "🐪",
      "def": "a big desert animal with a hump",
      "ar": "جمل",
      "frame": "A camel can walk in the ___."
     },
     {
      "w": "a horse",
+     "emoji": "🐴",
      "def": "a big animal; people ride it",
      "ar": "حصان",
      "frame": "I can ride a ___ horse."
     },
     {
      "w": "a goat",
+     "emoji": "🐐",
      "def": "a small farm animal; it gives milk",
      "ar": "ماعز",
      "frame": "A goat can eat ___."
     },
     {
      "w": "a chicken",
+     "emoji": "🐔",
      "def": "a farm bird; it gives us eggs",
      "ar": "دجاجة",
      "frame": "A chicken can't ___."
     },
     {
      "w": "walk",
+     "emoji": "🚶",
      "def": "move on your legs, not fast",
      "ar": "يمشي",
      "frame": "I can walk to the ___."
     },
     {
      "w": "run",
+     "emoji": "🏃",
      "def": "move very fast on your legs",
      "ar": "يركض",
      "frame": "A ___ can run fast."
@@ -1830,6 +1927,7 @@
    ],
    "dialogue": {
     "scene": "Faisal visits his grandpa's farm in Al-Qassim.",
+    "scene_emoji": "🚜",
     "p1": [
      {
       "s": "Grandpa",
@@ -1917,36 +2015,42 @@
    "expressions": [
     {
      "w": "a monkey",
+     "emoji": "🐒",
      "def": "a funny animal; it lives in trees",
      "ar": "قرد",
      "frame": "A monkey can climb ___."
     },
     {
      "w": "an elephant",
+     "emoji": "🐘",
      "def": "a very big grey animal with a long nose",
      "ar": "فيل",
      "frame": "An elephant is big and ___."
     },
     {
      "w": "a giraffe",
+     "emoji": "🦒",
      "def": "a very tall animal with a long neck",
      "ar": "زرافة",
      "frame": "A giraffe can eat from tall ___."
     },
     {
      "w": "a lion",
+     "emoji": "🦁",
      "def": "a big wild cat; it says 'roar'",
      "ar": "أسد",
      "frame": "A lion can ___."
     },
     {
      "w": "climb",
+     "emoji": "🧗",
      "def": "go up a tree or a wall",
      "ar": "يتسلّق",
      "frame": "I can climb ___."
     },
     {
      "w": "jump",
+     "emoji": "🤸",
      "def": "go up in the air with your legs",
      "ar": "يقفز",
      "frame": "I can jump on one ___."
@@ -1954,6 +2058,7 @@
    ],
    "dialogue": {
     "scene": "Omar and his dad visit the zoo.",
+    "scene_emoji": "🦓",
     "p1": [
      {
       "s": "Omar",
@@ -2049,36 +2154,42 @@
    "expressions": [
     {
      "w": "the sea",
+     "emoji": "🌊",
      "def": "a lot of salty water; fish live in it",
      "ar": "البحر",
      "frame": "I can see the sea in ___."
     },
     {
      "w": "a dolphin",
+     "emoji": "🐬",
      "def": "a clever grey sea animal",
      "ar": "دلفين",
      "frame": "A dolphin can jump and ___."
     },
     {
      "w": "a turtle",
+     "emoji": "🐢",
      "def": "a slow animal with a hard back",
      "ar": "سلحفاة",
      "frame": "A turtle is ___."
     },
     {
      "w": "a crab",
+     "emoji": "🦀",
      "def": "a small sea animal; it walks on the sand",
      "ar": "سلطعون / سرطان البحر",
      "frame": "A crab can walk on the ___."
     },
     {
      "w": "swim",
+     "emoji": "🏊",
      "def": "move in water",
      "ar": "يسبح",
      "frame": "I can swim in the ___."
     },
     {
      "w": "jump",
+     "emoji": "🤸",
      "def": "go up in the air with your legs",
      "ar": "يقفز",
      "frame": "I can jump ___ times."
@@ -2086,6 +2197,7 @@
    ],
    "dialogue": {
     "scene": "Noura and her brother Ali are on a boat trip in the Red Sea near Jeddah.",
+    "scene_emoji": "⛵",
     "p1": [
      {
       "s": "Ali",
@@ -2173,36 +2285,42 @@
    "expressions": [
     {
      "w": "a frog",
+     "emoji": "🐸",
      "def": "a small green animal; it can jump well",
      "ar": "ضفدع",
      "frame": "A frog is small and ___."
     },
     {
      "w": "a rabbit",
+     "emoji": "🐰",
      "def": "a small animal with long ears",
      "ar": "أرنب",
      "frame": "A rabbit has got long ___."
     },
     {
      "w": "a duck",
+     "emoji": "🦆",
      "def": "a bird; it can swim and say 'quack'",
      "ar": "بطة",
      "frame": "A duck can swim and ___."
     },
     {
      "w": "hop",
+     "emoji": "🦘",
      "def": "jump on one foot or like a rabbit",
      "ar": "يقفز قفزات صغيرة",
      "frame": "I can hop on my ___ foot."
     },
     {
      "w": "like a …",
+     "emoji": "🟰",
      "def": "in the same way as an animal",
      "ar": "مثل …",
      "frame": "I can run like a ___."
     },
     {
      "w": "fly",
+     "emoji": "🪽",
      "def": "move in the air",
      "ar": "يطير",
      "frame": "I can't fly like a ___."
@@ -2210,6 +2328,7 @@
    ],
    "dialogue": {
     "scene": "Sara and her little brother Ali play an animal game at home.",
+    "scene_emoji": "🐾",
     "p1": [
      {
       "s": "Sara",
@@ -2293,36 +2412,42 @@
    "expressions": [
     {
      "w": "a long neck",
+     "emoji": "🦒",
      "def": "a neck that is not short, like a giraffe's neck",
      "ar": "رقبة طويلة",
      "frame": "A ___ has got a long neck."
     },
     {
      "w": "a long tail",
+     "emoji": "🦎",
      "def": "a tail that is not short",
      "ar": "ذيل طويل",
      "frame": "A ___ has got a long tail."
     },
     {
      "w": "four legs",
+     "emoji": "🐕",
      "def": "two legs and two more legs",
      "ar": "أربع أرجل",
      "frame": "A ___ has got four legs."
     },
     {
      "w": "a clue",
+     "emoji": "🔍",
      "def": "a small help to find the answer",
      "ar": "تلميح",
      "frame": "Here's a clue: it can ___."
     },
     {
      "w": "What is it?",
+     "emoji": "❓",
      "def": "a question to find an animal or a thing",
      "ar": "ما هو؟",
      "frame": "It can swim. It can't fly. What is it? It's a ___."
     },
     {
      "w": "a monkey",
+     "emoji": "🐒",
      "def": "a funny animal; it lives in trees",
      "ar": "قرد",
      "frame": "A monkey can ___."
@@ -2330,6 +2455,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and his sister Reem play 'Guess my animal' on a long car trip.",
+    "scene_emoji": "🚗",
     "p1": [
      {
       "s": "Faisal",
@@ -2417,36 +2543,42 @@
    "expressions": [
     {
      "w": "a bed",
+     "emoji": "🛏️",
      "def": "you sleep on it",
      "ar": "سرير",
      "frame": "My bed is ___."
     },
     {
      "w": "a lamp",
+     "emoji": "💡",
      "def": "it gives light at night",
      "ar": "مصباح",
      "frame": "My lamp is on the ___."
     },
     {
      "w": "a box",
+     "emoji": "📦",
      "def": "you put things in it",
      "ar": "صندوق",
      "frame": "I've got a ___ box."
     },
     {
      "w": "in",
+     "emoji": "📥",
      "def": "inside something",
      "ar": "في / داخل",
      "frame": "My ___ is in my bag."
     },
     {
      "w": "on",
+     "emoji": "🔝",
      "def": "on top of something",
      "ar": "على",
      "frame": "My ___ is on my bed."
     },
     {
      "w": "under",
+     "emoji": "⬇️",
      "def": "below something",
      "ar": "تحت",
      "frame": "My ___ is under my bed."
@@ -2454,6 +2586,7 @@
    ],
    "dialogue": {
     "scene": "Omar can't find his ball. His mum helps him.",
+    "scene_emoji": "⚽",
     "p1": [
      {
       "s": "Omar",
@@ -2541,36 +2674,42 @@
    "expressions": [
     {
      "w": "a pencil",
+     "emoji": "✏️",
      "def": "you write and draw with it",
      "ar": "قلم رصاص",
      "frame": "I've got a ___ pencil."
     },
     {
      "w": "a ruler",
+     "emoji": "📏",
      "def": "you draw straight lines with it",
      "ar": "مسطرة",
      "frame": "My ruler is ___."
     },
     {
      "w": "an eraser",
+     "emoji": "🧽",
      "def": "it takes pencil writing off the paper",
      "ar": "ممحاة",
      "frame": "My eraser is in my ___."
     },
     {
      "w": "a pencil case",
+     "emoji": "👝",
      "def": "a small bag for pencils",
      "ar": "مقلمة",
      "frame": "My pencil case is ___."
     },
     {
      "w": "a book",
+     "emoji": "📘",
      "def": "you read it",
      "ar": "كتاب",
      "frame": "I've got a book about ___."
     },
     {
      "w": "in",
+     "emoji": "📥",
      "def": "inside something",
      "ar": "في / داخل",
      "frame": "My ___ is in my bag."
@@ -2578,6 +2717,7 @@
    ],
    "dialogue": {
     "scene": "Lama is at school. She can't find her pencil. Her friend Noura helps.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Lama",
@@ -2661,36 +2801,42 @@
    "expressions": [
     {
      "w": "the board",
+     "emoji": "📋",
      "def": "the teacher writes on it",
      "ar": "السبورة",
      "frame": "The board is ___."
     },
     {
      "w": "a desk",
+     "emoji": "🗄️",
      "def": "a school table",
      "ar": "طاولة / مكتب",
      "frame": "My desk is next to the ___."
     },
     {
      "w": "a chair",
+     "emoji": "🪑",
      "def": "you sit on it",
      "ar": "كرسي",
      "frame": "My chair is ___."
     },
     {
      "w": "the door",
+     "emoji": "🚪",
      "def": "you go in and out of the room through it",
      "ar": "الباب",
      "frame": "The ___ is next to the door."
     },
     {
      "w": "the window",
+     "emoji": "🪟",
      "def": "you can see outside through it",
      "ar": "النافذة",
      "frame": "I can see ___ from the window."
     },
     {
      "w": "next to",
+     "emoji": "↔️",
      "def": "very near, at the side",
      "ar": "بجانب",
      "frame": "I sit next to ___."
@@ -2698,6 +2844,7 @@
    ],
    "dialogue": {
     "scene": "Sam is new in Faisal's class. Faisal shows him the classroom.",
+    "scene_emoji": "🏫",
     "p1": [
      {
       "s": "Faisal",
@@ -2781,36 +2928,42 @@
    "expressions": [
     {
      "w": "a sofa",
+     "emoji": "🛋️",
      "def": "a big soft seat for two or three people",
      "ar": "كنبة",
      "frame": "The ___ is on the sofa."
     },
     {
      "w": "a carpet",
+     "emoji": "🟫",
      "def": "it is soft and on the floor",
      "ar": "سجادة",
      "frame": "My ___ is on the carpet."
     },
     {
      "w": "the TV",
+     "emoji": "📺",
      "def": "you watch cartoons on it",
      "ar": "التلفاز",
      "frame": "The TV is next to the ___."
     },
     {
      "w": "toy cars",
+     "emoji": "🚗",
      "def": "small cars for playing",
      "ar": "سيارات ألعاب",
      "frame": "My toy cars are in the ___."
     },
     {
      "w": "a teddy",
+     "emoji": "🧸",
      "def": "a soft toy bear",
      "ar": "دبدوب",
      "frame": "My teddy is on my ___."
     },
     {
      "w": "under",
+     "emoji": "⬇️",
      "def": "below something",
      "ar": "تحت",
      "frame": "My ___ is under the sofa."
@@ -2818,6 +2971,7 @@
    ],
    "dialogue": {
     "scene": "Hind is looking for her toys. Her little brother Saud helps her.",
+    "scene_emoji": "🏠",
     "p1": [
      {
       "s": "Hind",
@@ -2901,36 +3055,42 @@
    "expressions": [
     {
      "w": "tidy up",
+     "emoji": "🧹",
      "def": "put things in the right place",
      "ar": "يرتّب",
      "frame": "Let's tidy up my ___."
     },
     {
      "w": "messy",
+     "emoji": "🌪️",
      "def": "not tidy; things are everywhere",
      "ar": "فوضوي / غير مرتّب",
      "frame": "My ___ is messy."
     },
     {
      "w": "a shelf",
+     "emoji": "📚",
      "def": "a long board on the wall for books",
      "ar": "رف",
      "frame": "My ___ are on the shelf."
     },
     {
      "w": "a cupboard",
+     "emoji": "🗄️",
      "def": "a big box with doors for clothes or toys",
      "ar": "خزانة / دولاب",
      "frame": "My ___ are in the cupboard."
     },
     {
      "w": "put",
+     "emoji": "🫳",
      "def": "move something to a place",
      "ar": "يضع",
      "frame": "Put the ___ on the shelf."
     },
     {
      "w": "shoes",
+     "emoji": "👟",
      "def": "you wear them on your feet when you go out",
      "ar": "حذاء",
      "frame": "My shoes are next to the ___."
@@ -2938,6 +3098,7 @@
    ],
    "dialogue": {
     "scene": "Emma's room is messy. Emma and her dad tidy up.",
+    "scene_emoji": "🧹",
     "p1": [
      {
       "s": "Dad",
@@ -3025,36 +3186,42 @@
    "expressions": [
     {
      "w": "a treasure hunt",
+     "emoji": "🗺️",
      "def": "a game: you look for a hidden prize",
      "ar": "لعبة البحث عن الكنز",
      "frame": "Let's play a treasure hunt in the ___."
     },
     {
      "w": "hide",
+     "emoji": "🙈",
      "def": "put something where people can't see it",
      "ar": "يخبّئ",
      "frame": "I can hide a toy under the ___."
     },
     {
      "w": "find",
+     "emoji": "🔎",
      "def": "see something after you look for it",
      "ar": "يجد",
      "frame": "I can't find my ___."
     },
     {
      "w": "Here it is!",
+     "emoji": "👉",
      "def": "you say this when you find something",
      "ar": "ها هو!",
      "frame": "Here it is! It's under the ___."
     },
     {
      "w": "next to",
+     "emoji": "↔️",
      "def": "very near, at the side",
      "ar": "بجانب",
      "frame": "My ___ is next to my bed."
     },
     {
      "w": "a clue",
+     "emoji": "🧩",
      "def": "a small help to find the answer",
      "ar": "تلميح",
      "frame": "Here's a clue: it's in the ___."
@@ -3062,6 +3229,7 @@
    ],
    "dialogue": {
     "scene": "Sara and her cousin Lama play a treasure hunt at home. Sara hides a small gold car.",
+    "scene_emoji": "🗺️",
     "p1": [
      {
       "s": "Sara",
