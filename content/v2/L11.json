@@ -45,7 +45,7 @@
     [
      "The Prediction Show",
      "make predictions about the future and rate how sure you are",
-     "Without a shadow of a doubt … / It's a long shot, but … / Odds are …"
+     "Without a shadow of a doubt … / There's only a slim chance that … / It's highly likely that …"
     ]
    ]
   },
@@ -194,10 +194,10 @@
      "frame": "I'm positive that ___ will come out on top this season."
     },
     {
-     "w": "hold all the aces",
-     "def": "to have every advantage over the other side",
-     "ar": "يملك كل أوراق القوة",
-     "frame": "In a race against ___, I would hold all the aces because ___."
+     "w": "have the upper hand",
+     "def": "to have an advantage over the other side",
+     "ar": "له الأفضلية / الطرف الأقوى",
+     "frame": "In a race against ___, I would have the upper hand because ___."
     },
     {
      "w": "give someone a run for their money",
@@ -234,7 +234,7 @@
      },
      {
       "s": "Faisal",
-      "t": "I'm positive that Al Nassr will win. They hold all the aces this year."
+      "t": "I'm positive that Al Nassr will win. They have the upper hand this year."
      },
      {
       "s": "Omar",
@@ -777,22 +777,22 @@
      "frame": "Without a shadow of a doubt, ___ will happen by 2040."
     },
     {
-     "w": "a long shot",
-     "def": "something that has only a small chance of success",
+     "w": "a slim chance",
+     "def": "a very small possibility that something will happen",
      "ar": "احتمال ضعيف",
-     "frame": "It's a long shot, but maybe ___."
+     "frame": "There's only a slim chance that ___."
     },
     {
-     "w": "odds are",
-     "def": "it is likely that",
-     "ar": "الأرجح أن",
-     "frame": "Odds are that most people will ___ in the future."
+     "w": "highly likely",
+     "def": "very probable; it will probably happen",
+     "ar": "مرجّح جداً",
+     "frame": "It's highly likely that most people will ___ in the future."
     },
     {
-     "w": "a safe bet",
-     "def": "something that is almost certain to happen",
-     "ar": "رهان مضمون / شيء شبه مؤكد",
-     "frame": "It's a safe bet that ___ will still be popular."
+     "w": "only a matter of time",
+     "def": "certain to happen; we just don't know when",
+     "ar": "مسألة وقت فقط",
+     "frame": "It's only a matter of time before ___."
     },
     {
      "w": "there's no way",
@@ -821,11 +821,11 @@
      },
      {
       "s": "Sam",
-      "t": "Really? I think it's a long shot. They might be too expensive for most people."
+      "t": "Really? I think there's only a slim chance. They might be too expensive for most people."
      },
      {
       "s": "Faisal",
-      "t": "Odds are the prices will come down. Phones were expensive once, too."
+      "t": "It's highly likely that the prices will come down. Phones were expensive once, too."
      }
     ],
     "p2": [
@@ -839,7 +839,7 @@
      },
      {
       "s": "Sam",
-      "t": "I agree. But it's a safe bet that we'll take robot helpers at home for granted."
+      "t": "I agree. But it's only a matter of time before we take robot helpers at home for granted."
      },
      {
       "s": "Faisal",
@@ -857,11 +857,11 @@
     "prompts": [
      {
       "q": "Prediction one: everyone will speak at least two languages. How sure are you?",
-      "hint": "Choose a level: 'without a shadow of a doubt', 'odds are', or 'it's a long shot', and give a reason."
+      "hint": "Choose a level: 'without a shadow of a doubt', 'it's highly likely', or 'there's only a slim chance', and give a reason."
      },
      {
       "q": "Prediction two: a Saudi astronaut will walk on the Moon. What do you think?",
-      "hint": "Use 'It might …', 'It's a safe bet …' or 'There's no way …' with a reason."
+      "hint": "Use 'It might …', 'It's only a matter of time …' or 'There's no way …' with a reason."
      },
      {
       "q": "Now make your own prediction for 2050 and rate it.",
@@ -881,7 +881,7 @@
      "How sure are you that your city will change a lot by 2030?"
     ]
    },
-   "exit": "Make two predictions about your own future: one you're sure about and one that is a long shot."
+   "exit": "Make two predictions about your own future: one you're sure about and one that has only a slim chance."
   },
   "1-0": {
    "objective": "Today you will recommend a place to visit and say why it's worth it.",
@@ -1655,7 +1655,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Never mind. It's a safe bet he'll come back next season."
+      "t": "Never mind. I'm sure he'll come back next season."
      },
      {
       "s": "Omar",
@@ -2992,9 +2992,9 @@
      "ex": "Al Hilal came out on top after a very tough match."
     },
     {
-     "w": "hold all the aces",
-     "ar": "يملك كل أوراق القوة",
-     "ex": "With their best players back, the home team holds all the aces."
+     "w": "have the upper hand",
+     "ar": "له الأفضلية / الطرف الأقوى",
+     "ex": "With their best players back, the home team has the upper hand."
     },
     {
      "w": "give someone a run for their money",
@@ -3024,7 +3024,7 @@
     },
     {
      "s": "Faisal",
-     "t": "I'm positive that Al Nassr will win. They hold all the aces this year."
+     "t": "I'm positive that Al Nassr will win. They have the upper hand this year."
     },
     {
      "s": "Omar",
@@ -3373,19 +3373,19 @@
      "ex": "Without a shadow of a doubt, cars will drive themselves one day."
     },
     {
-     "w": "a long shot",
+     "w": "a slim chance",
      "ar": "احتمال ضعيف",
-     "ex": "It's a long shot, but our school might win the national prize."
+     "ex": "There's a slim chance that our school will win the national prize."
     },
     {
-     "w": "odds are",
-     "ar": "الأرجح أن",
-     "ex": "Odds are we'll all have robot helpers at home."
+     "w": "highly likely",
+     "ar": "مرجّح جداً",
+     "ex": "It's highly likely that we'll all have robot helpers at home."
     },
     {
-     "w": "a safe bet",
-     "ar": "رهان مضمون / شيء شبه مؤكد",
-     "ex": "It's a safe bet that football will still be popular."
+     "w": "only a matter of time",
+     "ar": "مسألة وقت فقط",
+     "ex": "It's only a matter of time before electric cars are everywhere."
     },
     {
      "w": "there's no way",
@@ -3409,11 +3409,11 @@
     },
     {
      "s": "Sam",
-     "t": "Really? I think it's a long shot. They might be too expensive for most people."
+     "t": "Really? I think there's only a slim chance. They might be too expensive for most people."
     },
     {
      "s": "Faisal",
-     "t": "Odds are the prices will come down. Phones were expensive once, too."
+     "t": "It's highly likely that the prices will come down. Phones were expensive once, too."
     },
     {
      "s": "Sam",
@@ -3426,10 +3426,10 @@
    ],
    "grammar": {
     "title": "Rating predictions",
-    "ar": "نرتّب التوقعات حسب درجة اليقين: without a shadow of a doubt / a safe bet (مؤكد)، odds are (مرجّح)، a long shot (ضعيف)، there's no way (مستحيل).",
+    "ar": "نرتّب التوقعات حسب درجة اليقين: without a shadow of a doubt / only a matter of time (مؤكد)، highly likely (مرجّح جداً)، a slim chance (ضعيف)، there's no way (مستحيل).",
     "examples": [
-     "It's a safe bet that tourism will grow.",
-     "It's a long shot, but we might live on Mars.",
+     "It's only a matter of time before tourism grows.",
+     "There's a slim chance that we'll live on Mars.",
      "There's no way schools will disappear."
     ]
    }
@@ -3956,7 +3956,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Never mind. It's a safe bet he'll come back next season."
+     "t": "Never mind. I'm sure he'll come back next season."
     },
     {
      "s": "Omar",
@@ -4875,10 +4875,10 @@
    },
    {
     "type": "mc",
-    "q": "'They hold all the aces' means they …",
+    "q": "'They have the upper hand' means they …",
     "options": [
      "have every advantage",
-     "are playing cards",
+     "are holding hands",
      "have lost all hope",
      "are very tired"
     ],
@@ -5133,11 +5133,11 @@
   "0-5": [
    {
     "type": "mc",
-    "q": "Our small team winning the world cup is ___. It's possible, but very unlikely.",
+    "q": "Our small team has ___ of winning the world cup. It's possible, but very unlikely.",
     "options": [
      "a firm favourite",
-     "a safe bet",
-     "a long shot",
+     "a matter of time",
+     "a slim chance",
      "in the bag"
     ],
     "answer": 2
@@ -5146,23 +5146,24 @@
     "type": "order",
     "words": [
      "It's",
+     "only",
      "a",
-     "safe",
-     "bet",
-     "that",
+     "matter",
+     "of",
+     "time",
+     "before",
      "tourism",
-     "will",
-     "grow."
+     "grows."
     ],
-    "answer": "It's a safe bet that tourism will grow.",
+    "answer": "It's only a matter of time before tourism grows.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
     "q": "Which expression means 'completely certain'?",
     "options": [
-     "odds are",
-     "a long shot",
+     "highly likely",
+     "a slim chance",
      "without a shadow of a doubt",
      "I doubt it"
     ],
@@ -5512,7 +5513,7 @@
      "a page-turner",
      "a couch potato",
      "a no-brainer",
-     "a long shot"
+     "a must-see"
     ],
     "answer": 2
    },
@@ -5781,7 +5782,7 @@
      "worth every riyal",
      "a waste of money",
      "a golden opportunity",
-     "a safe bet"
+     "a must-see"
     ],
     "answer": 1
    },
@@ -5841,7 +5842,7 @@
      "a must-see",
      "a waste of money",
      "a blessing in disguise",
-     "a long shot"
+     "a no-brainer"
     ],
     "answer": 2
    },
@@ -6305,14 +6306,14 @@
    "items": [
     {
      "type": "mc",
-     "q": "With the best players and a home crowd, they hold all the ___.",
+     "q": "With the best players and a home crowd, they have the upper ___.",
      "options": [
-      "kings",
-      "points",
-      "cards",
-      "aces"
+      "arm",
+      "side",
+      "hand",
+      "head"
      ],
-     "answer": 3
+     "answer": 2
     },
     {
      "type": "mc",
@@ -6594,7 +6595,7 @@
      "options": [
       "a waste of money",
       "a couch potato",
-      "a long shot",
+      "a no-brainer",
       "a blessing in disguise"
      ],
      "answer": 3
@@ -6841,12 +6842,12 @@
    },
    {
     "type": "mc",
-    "q": "Winning against the world champions is ___, but we'll try.",
+    "q": "There's only ___ that we'll beat the world champions, but we'll try.",
     "options": [
      "a no-brainer",
-     "a long shot",
-     "a safe bet",
-     "in the bag"
+     "a slim chance",
+     "in the bag",
+     "a must-see"
     ],
     "answer": 1
    },
