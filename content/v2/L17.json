@@ -181,7 +181,7 @@
     [
      "Full Mock Speaking Test",
      "Complete a full IELTS-style speaking test, buying time naturally and sustaining fluent, idiomatic answers",
-     "That's an interesting question. / Let me think about that for a moment. / From my perspective, … / It's hard to generalise, but …"
+     "That's a thought-provoking question. / Let me think about that for a moment. / From my perspective, … / It's hard to generalise, but …"
     ]
    ]
   }
@@ -3306,7 +3306,7 @@
      },
      {
       "s": "Lina",
-      "t": "That's an interesting question. From my perspective, it can backfire. It motivates some students, but it can make others anxious."
+      "t": "That's a thought-provoking question. From my perspective, it can backfire. It motivates some students, but it can make others anxious."
      },
      {
       "s": "Examiner",
@@ -3389,10 +3389,10 @@
    "exit": "I'll ask you one Part 3 question: Is ambition always a good thing? Answer in three or four sentences, buying time naturally at the start.",
    "expressions": [
     {
-     "w": "That's an interesting question.",
+     "w": "That's a thought-provoking question.",
      "def": "used to show interest and give yourself time to think",
-     "ar": "هذا سؤال مثير للاهتمام.",
-     "frame": "That's an interesting question. I suppose ___."
+     "ar": "هذا سؤال يدعو للتفكير",
+     "frame": "That's a thought-provoking question. I suppose ___."
     },
     {
      "w": "Let me think about that for a moment.",
@@ -3427,7 +3427,8 @@
    ],
    "recycle": [
     "it boils down to",
-    "a double-edged sword"
+    "a double-edged sword",
+    "That's an interesting question."
    ]
   }
  },
@@ -5026,9 +5027,9 @@
   "3-5": {
    "words": [
     {
-     "w": "That's an interesting question.",
-     "ar": "هذا سؤال مثير للاهتمام.",
-     "ex": "That's an interesting question. I suppose it depends on the person."
+     "w": "That's a thought-provoking question.",
+     "ar": "هذا سؤال يدعو للتفكير",
+     "ex": "That's a thought-provoking question. I suppose it depends."
     },
     {
      "w": "Let me think about that for a moment.",
@@ -5063,7 +5064,7 @@
     },
     {
      "s": "Lina",
-     "t": "That's an interesting question. It can backfire."
+     "t": "That's a thought-provoking question. It can backfire."
     },
     {
      "s": "Examiner",
@@ -5086,7 +5087,7 @@
     "title": "Buying time and generalising carefully",
     "ar": "استخدم عبارات كسب الوقت (Let me think about that for a moment) بدلاً من الصمت، و It's hard to generalise, but لتعميم حذر يناسب أسئلة الجزء الثالث.",
     "examples": [
-     "That's an interesting question. I suppose it depends.",
+     "That's a thought-provoking question. I suppose it depends.",
      "It's hard to generalise, but most people agree.",
      "From my perspective, it boils down to effort."
     ]

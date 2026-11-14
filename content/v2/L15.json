@@ -181,7 +181,7 @@
     [
      "The Full Long Turn",
      "Complete a full IELTS-style Part 2 long turn and answer Part 3 questions",
-     "The skill I'd most like to pick up is … / …, which meant that … / All the same, … / To wrap up, …"
+     "The skill I'd most like to pick up is … / …, which meant that … / All the same, … / To round things off, …"
     ]
    ]
   }
@@ -2376,7 +2376,7 @@
      },
      {
       "s": "Abdullah",
-      "t": "He's a real role model, and that class left a lasting impression on me. It's partly why I want to study medicine."
+      "t": "He's a real source of inspiration, and that class left a lasting impression on me. It's partly why I want to study medicine."
      },
      {
       "s": "Mr Bennett",
@@ -2402,7 +2402,7 @@
      },
      {
       "q": "Why do you admire them?",
-      "hint": "Use 'think the world of' or 'role model' and finish with how they have influenced you."
+      "hint": "Use 'think the world of' or 'a source of inspiration' and finish with how they have influenced you."
      }
     ]
    },
@@ -2433,10 +2433,10 @@
      "frame": "I've always thought the world of ___."
     },
     {
-     "w": "a role model",
-     "def": "a person you want to be like",
-     "ar": "قدوة",
-     "frame": "___ is a great role model for young people."
+     "w": "a source of inspiration",
+     "def": "a person or thing that makes you want to do well",
+     "ar": "مصدر إلهام",
+     "frame": "___ has always been a source of inspiration to me."
     },
     {
      "w": "which meant that",
@@ -2458,7 +2458,8 @@
     }
    ],
    "recycle": [
-    "look up to"
+    "look up to",
+    "a role model"
    ]
   },
   "3-1": {
@@ -2966,7 +2967,7 @@
      },
      {
       "s": "Sultan",
-      "t": "It can take months to learn the ropes. To wrap up, it's a way to keep a family tradition alive."
+      "t": "It can take months to learn the ropes. To round things off, it's a way to keep a family tradition alive."
      }
     ],
     "p2": [
@@ -2998,7 +2999,7 @@
     "prompts": [
      {
       "q": "Describe the skill and explain why you'd like to learn it. You have two minutes.",
-      "hint": "Say what, why and how; add a result with 'which meant that …' and finish with 'To wrap up, …'."
+      "hint": "Say what, why and how; add a result with 'which meant that …' and finish with 'To round things off, …'."
      },
      {
       "q": "What skills will be most important for young people in the future?",
@@ -3043,10 +3044,10 @@
      "frame": "___ has a steep learning curve."
     },
     {
-     "w": "To wrap up",
-     "def": "used to finish what you are saying",
-     "ar": "ختاماً",
-     "frame": "To wrap up, ___."
+     "w": "To round things off",
+     "def": "used to introduce the final part of what you say",
+     "ar": "وفي الختام",
+     "frame": "To round things off, ___."
     },
     {
      "w": "with the result that",
@@ -3064,7 +3065,8 @@
    "recycle": [
     "get the hang of",
     "which meant that",
-    "Having said that"
+    "Having said that",
+    "To wrap up"
    ]
   }
  },
@@ -4408,9 +4410,9 @@
      "ex": "My little brother thinks the world of his football coach."
     },
     {
-     "w": "a role model",
-     "ar": "قدوة",
-     "ex": "Our science teacher is a real role model for me."
+     "w": "a source of inspiration",
+     "ar": "مصدر إلهام",
+     "ex": "My grandmother is a real source of inspiration."
     },
     {
      "w": "which meant that",
@@ -4451,7 +4453,7 @@
     },
     {
      "s": "Abdullah",
-     "t": "He's a real role model, and that class left a lasting impression on me. It's partly why I want to study medicine."
+     "t": "He's a real source of inspiration, and that class left a lasting impression on me. It's partly why I want to study medicine."
     }
    ],
    "grammar": {
@@ -4770,9 +4772,9 @@
      "ex": "Coding has a steep learning curve, but it gets easier."
     },
     {
-     "w": "To wrap up",
-     "ar": "ختاماً",
-     "ex": "To wrap up, it's a skill worth learning."
+     "w": "To round things off",
+     "ar": "وفي الختام",
+     "ex": "To round things off, it would make me more creative."
     },
     {
      "w": "with the result that",
@@ -4821,11 +4823,11 @@
    ],
    "grammar": {
     "title": "Structuring a full long turn",
-    "ar": "الجزء الثاني: نفتح بجملة واضحة، نطوّر بأمثلة (such as / A good example)، نضيف نتائج (which meant that)، ونختم (To wrap up). الجزء الثالث: نوازن (All the same / whereas / It depends on).",
+    "ar": "الجزء الثاني: نفتح بجملة واضحة، نطوّر بأمثلة (such as / A good example)، نضيف نتائج (which meant that)، ونختم (To round things off). الجزء الثالث: نوازن (All the same / whereas / It depends on).",
     "examples": [
      "The skill I'd most like to pick up is photography.",
      "It has a steep learning curve, but I'm patient.",
-     "To wrap up, it would make me more creative."
+     "To round things off, it would make me more creative."
     ]
    }
   }
@@ -6025,7 +6027,7 @@
     "q": "A person you want to be like is …",
     "options": [
      "a role play",
-     "a role model",
+     "a source of inspiration",
      "a model answer",
      "a team player"
     ],
@@ -6353,7 +6355,7 @@
      "Out of the blue,",
      "At the time,",
      "Having said that,",
-     "To wrap up,"
+     "To round things off,"
     ],
     "answer": 3
    },

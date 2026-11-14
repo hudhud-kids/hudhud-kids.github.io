@@ -176,7 +176,7 @@
     [
      "Closing With Impact",
      "Conclude a presentation memorably, summarising the key message and its implications",
-     "To draw the threads together, … / The take-home message is … / I'll leave you with …"
+     "To draw the threads together, … / The key takeaway is … / I'll leave you with …"
     ],
     [
      "The Conference Presentation",
@@ -190,44 +190,6 @@
   "0-0": {
    "objective": "Today you will define key terms before you argue and make a precise claim about fast fashion.",
    "warmup": "How long do you usually keep a piece of clothing before you stop wearing it?",
-   "expressions": [
-    {
-     "w": "define our terms",
-     "def": "explain exactly what the key words in a debate mean",
-     "ar": "نحدّد المصطلحات",
-     "frame": "Before we argue, let's define what we mean by ___."
-    },
-    {
-     "w": "hinge on",
-     "def": "depend completely on one thing",
-     "ar": "يتوقّف على",
-     "frame": "The whole debate hinges on ___."
-    },
-    {
-     "w": "a sweeping generalisation",
-     "def": "a claim that something is true of everyone or everything",
-     "ar": "تعميم شامل",
-     "frame": "Saying that ___ is a sweeping generalisation."
-    },
-    {
-     "w": "contend",
-     "def": "argue firmly, in a formal way, that something is true",
-     "ar": "يُحاجّ / يؤكّد",
-     "frame": "Some critics contend that ___."
-    },
-    {
-     "w": "the crux of the matter",
-     "def": "the most important and central part of an issue",
-     "ar": "جوهر المسألة",
-     "frame": "The crux of the matter is ___."
-    },
-    {
-     "w": "in the strict sense",
-     "def": "using the exact, narrow meaning of a word",
-     "ar": "بالمعنى الدقيق",
-     "frame": "In the strict sense, ___ isn't really sustainable."
-    }
-   ],
    "dialogue": {
     "scene": "Lina and Hala are preparing for their school debating club. The motion is: 'Fast fashion can never be sustainable.'",
     "p1": [
@@ -241,7 +203,7 @@
      },
      {
       "s": "Lina",
-      "t": "That's a sweeping generalisation, though. Some brands now use recycled fabric."
+      "t": "That's an oversimplification, though. Some brands now use recycled fabric."
      },
      {
       "s": "Hala",
@@ -297,7 +259,7 @@
      },
      {
       "q": "Everyone who buys cheap clothes is destroying the planet. Agree?",
-      "hint": "Call it a sweeping generalisation and offer a more precise version of the claim. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
+      "hint": "Call it an oversimplification and offer a more precise version of the claim. Then take a clear position, back it with a reason and a concrete example, and deal with one counterargument."
      },
      {
       "q": "So what, in your view, is the real issue here?",
@@ -317,7 +279,48 @@
      "How would you define 'sustainable fashion' in one precise sentence?"
     ]
    },
-   "exit": "Define one key term precisely, then make one exact claim about fast fashion."
+   "exit": "Define one key term precisely, then make one exact claim about fast fashion.",
+   "expressions": [
+    {
+     "w": "define our terms",
+     "def": "explain exactly what the key words in a debate mean",
+     "ar": "نحدّد المصطلحات",
+     "frame": "Before we argue, let's define what we mean by ___."
+    },
+    {
+     "w": "hinge on",
+     "def": "depend completely on one thing",
+     "ar": "يتوقّف على",
+     "frame": "The whole debate hinges on ___."
+    },
+    {
+     "w": "an oversimplification",
+     "def": "a description that makes something seem simpler than it is",
+     "ar": "تبسيط مُخِلّ",
+     "frame": "Saying that ___ is an oversimplification."
+    },
+    {
+     "w": "contend",
+     "def": "argue firmly, in a formal way, that something is true",
+     "ar": "يُحاجّ / يؤكّد",
+     "frame": "Some critics contend that ___."
+    },
+    {
+     "w": "the crux of the matter",
+     "def": "the most important and central part of an issue",
+     "ar": "جوهر المسألة",
+     "frame": "The crux of the matter is ___."
+    },
+    {
+     "w": "in the strict sense",
+     "def": "using the exact, narrow meaning of a word",
+     "ar": "بالمعنى الدقيق",
+     "frame": "In the strict sense, ___ isn't really sustainable."
+    }
+   ],
+   "recycle": [
+    "a sweeping generalisation"
+   ]
   },
   "0-1": {
    "objective": "Today you will report other people's arguments accurately using precise reporting verbs.",
@@ -3188,44 +3191,6 @@
   "3-4": {
    "objective": "Today you will conclude a presentation memorably, summarising the key message and its implications.",
    "warmup": "Which presentation or talk do you still remember, and why did it stay with you?",
-   "expressions": [
-    {
-     "w": "to draw the threads together",
-     "def": "to bring the main ideas of a talk together",
-     "ar": "لنجمع الخيوط معاً",
-     "frame": "To draw the threads together, ___."
-    },
-    {
-     "w": "the take-home message",
-     "def": "the main idea you want the audience to remember",
-     "ar": "الرسالة الأساسية",
-     "frame": "The take-home message is that ___."
-    },
-    {
-     "w": "far-reaching implications",
-     "def": "important effects on many people or areas",
-     "ar": "آثار بعيدة المدى",
-     "frame": "This finding has far-reaching implications for ___."
-    },
-    {
-     "w": "merit further research",
-     "def": "be important enough to study more",
-     "ar": "يستحق مزيداً من البحث",
-     "frame": "One question that merits further research is ___."
-    },
-    {
-     "w": "come full circle",
-     "def": "return to where you started",
-     "ar": "يعود إلى نقطة البداية",
-     "frame": "To come full circle, let's go back to ___."
-    },
-    {
-     "w": "leave you with",
-     "def": "end a talk by giving the audience something to remember",
-     "ar": "أترككم مع",
-     "frame": "I'll leave you with ___."
-    }
-   ],
    "dialogue": {
     "scene": "Khalid and Saad are rehearsing the conclusion of their science project on turning date palm waste into building boards.",
     "p1": [
@@ -3235,7 +3200,7 @@
      },
      {
       "s": "Saad",
-      "t": "The take-home message is simple: what we throw away might be a resource."
+      "t": "The key takeaway is simple: what we throw away might be a resource."
      },
      {
       "s": "Khalid",
@@ -3286,7 +3251,7 @@
     ],
     "focus": "So, to draw the threads together: palm waste, which is often burned, could become useful building material.",
     "qs": [
-     "What is the take-home message of the project?",
+     "What is the key takeaway of the project?",
      "How do Khalid and Saad plan to come full circle?"
     ]
    },
@@ -3295,7 +3260,7 @@
     "prompts": [
      {
       "q": "Please give us your conclusion.",
-      "hint": "Start with 'To draw the threads together, …' and state your take-home message. Then state your position, give a reason and a real example, and answer one counterpoint."
+      "hint": "Start with 'To draw the threads together, …' and state your key takeaway. Then state your position, give a reason and a real example, and answer one counterpoint."
      },
      {
       "q": "Why should anyone outside this room care?",
@@ -3319,7 +3284,48 @@
      "What makes a conclusion memorable: a fact, a story or a question?"
     ]
    },
-   "exit": "Conclude a talk on any topic in two sentences, using 'The take-home message is …' and 'I'll leave you with …'."
+   "exit": "Conclude a talk on any topic in two sentences, using 'The key takeaway is …' and 'I'll leave you with …'.",
+   "expressions": [
+    {
+     "w": "to draw the threads together",
+     "def": "to bring the main ideas of a talk together",
+     "ar": "لنجمع الخيوط معاً",
+     "frame": "To draw the threads together, ___."
+    },
+    {
+     "w": "the key takeaway",
+     "def": "the most important idea people should remember",
+     "ar": "الخلاصة الأهم",
+     "frame": "The key takeaway from ___ is ___."
+    },
+    {
+     "w": "far-reaching implications",
+     "def": "important effects on many people or areas",
+     "ar": "آثار بعيدة المدى",
+     "frame": "This finding has far-reaching implications for ___."
+    },
+    {
+     "w": "merit further research",
+     "def": "be important enough to study more",
+     "ar": "يستحق مزيداً من البحث",
+     "frame": "One question that merits further research is ___."
+    },
+    {
+     "w": "come full circle",
+     "def": "return to where you started",
+     "ar": "يعود إلى نقطة البداية",
+     "frame": "To come full circle, let's go back to ___."
+    },
+    {
+     "w": "leave you with",
+     "def": "end a talk by giving the audience something to remember",
+     "ar": "أترككم مع",
+     "frame": "I'll leave you with ___."
+    }
+   ],
+   "recycle": [
+    "the take-home message"
+   ]
   },
   "3-5": {
    "objective": "Today you will give a short conference presentation and handle questions from the audience.",
@@ -3469,9 +3475,9 @@
      "ex": "The result of the debate hinges on one key definition."
     },
     {
-     "w": "a sweeping generalisation",
-     "ar": "تعميم شامل",
-     "ex": "'All teenagers waste money' is a sweeping generalisation."
+     "w": "an oversimplification",
+     "ar": "تبسيط مُخِلّ",
+     "ex": "'Exams are useless' is an oversimplification."
     },
     {
      "w": "contend",
@@ -3500,7 +3506,7 @@
     },
     {
      "s": "Lina",
-     "t": "That's a sweeping generalisation. Some brands use recycled fabric."
+     "t": "That's an oversimplification. Some brands use recycled fabric."
     },
     {
      "s": "Hala",
@@ -4994,9 +5000,9 @@
      "ex": "To draw the threads together, all three studies point the same way."
     },
     {
-     "w": "the take-home message",
-     "ar": "الرسالة الأساسية",
-     "ex": "The take-home message is simple: sleep matters."
+     "w": "the key takeaway",
+     "ar": "الخلاصة الأهم",
+     "ex": "The key takeaway of the lesson was 'check your sources'."
     },
     {
      "w": "far-reaching implications",
@@ -5026,7 +5032,7 @@
     },
     {
      "s": "Saad",
-     "t": "The take-home message: waste might be a resource."
+     "t": "The key takeaway: waste might be a resource."
     },
     {
      "s": "Khalid",
@@ -5047,10 +5053,10 @@
    ],
    "grammar": {
     "title": "Concluding a presentation",
-    "ar": "الخاتمة القوية: اجمع الأفكار (To draw the threads together)، أعطِ رسالة واحدة (The take-home message)، اذكر الأثر (implications)، واختم بصورة أو سؤال (I'll leave you with).",
+    "ar": "الخاتمة القوية: اجمع الأفكار (To draw the threads together)، أعطِ رسالة واحدة (The key takeaway)، اذكر الأثر (implications)، واختم بصورة أو سؤال (I'll leave you with).",
     "examples": [
      "To draw the threads together, the evidence points one way.",
-     "The take-home message is that small changes matter.",
+     "The key takeaway is that small changes matter.",
      "I'll leave you with one image."
     ]
    }
@@ -5154,7 +5160,7 @@
    },
    {
     "type": "mc",
-    "q": "Which sentence is a sweeping generalisation?",
+    "q": "Which sentence is an oversimplification?",
     "options": [
      "Nobody ever repairs their clothes any more.",
      "Many T-shirts are worn fewer than ten times.",
@@ -6566,12 +6572,12 @@
     "type": "order",
     "words": [
      "The",
-     "take-home",
-     "message",
+     "key",
+     "takeaway",
      "is",
      "simple."
     ],
-    "answer": "The take-home message is simple.",
+    "answer": "The key takeaway is simple.",
     "ar": "رتّب الجملة"
    },
    {

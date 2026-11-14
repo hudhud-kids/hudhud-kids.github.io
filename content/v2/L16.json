@@ -70,7 +70,7 @@
     ],
     [
      "Who Wrote This?",
-     "Decide whether a website is a reliable source for a school project",
+     "Decide whether a website is a reputable outlet for a school project",
      "can't have been + past participle / There's every reason to believe …"
     ],
     [
@@ -1161,46 +1161,8 @@
    ]
   },
   "1-1": {
-   "objective": "Today you will decide whether a website is a reliable source for a school project.",
+   "objective": "Today you will decide whether a website is a reputable outlet for a school project.",
    "warmup": "Where do you usually look for information when you do homework?",
-   "expressions": [
-    {
-     "w": "reliable source",
-     "def": "a place to get information you can trust",
-     "ar": "مصدر موثوق",
-     "frame": "For ___, the most reliable source is ___."
-    },
-    {
-     "w": "biased",
-     "def": "unfairly supporting one side",
-     "ar": "منحاز",
-     "frame": "The article seemed biased because ___."
-    },
-    {
-     "w": "out of date",
-     "def": "old and no longer correct or useful",
-     "ar": "قديم / لم يعد صالحاً",
-     "frame": "The information about ___ was out of date."
-    },
-    {
-     "w": "cross-check",
-     "def": "to check information using a different source",
-     "ar": "يتحقّق من مصادر أخرى",
-     "frame": "I always cross-check ___ before I use it."
-    },
-    {
-     "w": "vested interest",
-     "def": "a personal reason, often money, for wanting something to happen",
-     "ar": "مصلحة شخصية",
-     "frame": "A company that sells ___ has a vested interest in ___."
-    },
-    {
-     "w": "credentials",
-     "def": "qualifications that show someone is an expert",
-     "ar": "المؤهلات",
-     "frame": "Before trusting a writer, I check their credentials, such as ___."
-    }
-   ],
    "dialogue": {
     "scene": "Bader and Adam are writing a school report on whether energy drinks are harmful. They are comparing two websites.",
     "p1": [
@@ -1218,7 +1180,7 @@
      },
      {
       "s": "Bader",
-      "t": "And the author has no credentials listed. Not a reliable source, then."
+      "t": "And the author has no credentials listed. Not a reputable outlet, then."
      },
      {
       "s": "Adam",
@@ -1290,7 +1252,48 @@
      "Which questions should you ask before trusting a website?"
     ]
    },
-   "exit": "Tell me about a source you would not trust, using 'can't have been' or 'might have been'."
+   "exit": "Tell me about a source you would not trust, using 'can't have been' or 'might have been'.",
+   "expressions": [
+    {
+     "w": "a reputable outlet",
+     "def": "a news source with a good reputation for accuracy",
+     "ar": "وسيلة إعلامية موثوقة",
+     "frame": "For ___, the most reputable outlet is ___."
+    },
+    {
+     "w": "biased",
+     "def": "unfairly supporting one side",
+     "ar": "منحاز",
+     "frame": "The article seemed biased because ___."
+    },
+    {
+     "w": "out of date",
+     "def": "old and no longer correct or useful",
+     "ar": "قديم / لم يعد صالحاً",
+     "frame": "The information about ___ was out of date."
+    },
+    {
+     "w": "cross-check",
+     "def": "to check information using a different source",
+     "ar": "يتحقّق من مصادر أخرى",
+     "frame": "I always cross-check ___ before I use it."
+    },
+    {
+     "w": "vested interest",
+     "def": "a personal reason, often money, for wanting something to happen",
+     "ar": "مصلحة شخصية",
+     "frame": "A company that sells ___ has a vested interest in ___."
+    },
+    {
+     "w": "credentials",
+     "def": "qualifications that show someone is an expert",
+     "ar": "المؤهلات",
+     "frame": "Before trusting a writer, I check their credentials, such as ___."
+    }
+   ],
+   "recycle": [
+    "reliable source"
+   ]
   },
   "1-2": {
    "objective": "Today you will examine a viral photo and deduce whether it is real or fake.",
@@ -4014,9 +4017,9 @@
   "1-1": {
    "words": [
     {
-     "w": "reliable source",
-     "ar": "مصدر موثوق",
-     "ex": "A university website is usually a reliable source."
+     "w": "a reputable outlet",
+     "ar": "وسيلة إعلامية موثوقة",
+     "ex": "A national newspaper is usually a reputable outlet."
     },
     {
      "w": "biased",
@@ -4059,7 +4062,7 @@
     },
     {
      "s": "Bader",
-     "t": "And the author has no credentials listed. Not a reliable source, then."
+     "t": "And the author has no credentials listed. Not a reputable outlet, then."
     },
     {
      "s": "Adam",
