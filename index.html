@@ -2960,7 +2960,8 @@ const echoWords = s => String(s || '').toLowerCase().replace(/'/g, '').replace(/
 function echoLike(text, said){ const w = echoWords(text); if(!w.length) return true; const set = new Set(echoWords(said)); if(!set.size) return false;
   return w.filter(x => set.has(x)).length / w.length >= .6; }
 /* kill switch: DB.earlyMic = false (whole family, synced) or localStorage 'hh:earlyMic' = '0' (this device) restores the old behaviour */
-const earlyMicOn = () => { try{ if(localStorage.getItem('hh:earlyMic') === '0') return false; }catch(e){} return !!DB && DB.earlyMic !== false && streamSttOn(); };
+/* OFF by default until checked on a real iPad speaker: turn on with DB.earlyMic = true (family) or localStorage 'hh:earlyMic' = '1' (this device) */
+const earlyMicOn = () => { let dev = null; try{ dev = localStorage.getItem('hh:earlyMic'); }catch(e){} if(dev === '0') return false; return !!DB && (dev === '1' || DB.earlyMic === true) && streamSttOn(); };
 class LiveSR {
   constructor(){ this.lang = 'en-US'; this.continuous = true; this.interimResults = true; this.maxAlternatives = 1; this.selfEnds = true;
     this.onresult = this.onerror = this.onend = this.onspeechstart = this.onspeechend = null;

@@ -7,7 +7,7 @@ const MOCK = fs.readFileSync(__dirname + '/mock.js', 'utf8');
   const {b, p, errs} = await open();
   await p.evaluate(MOCK);
   const r = await p.evaluate(async () => {
-    __install(); window.SpeechSDK = __mkSDK();
+    __install(); window.SpeechSDK = __mkSDK(); DB.earlyMic = true; // early mic is opt-in
     window.streamSttOn = () => !STREAM_DOWN; window.azAuth = async () => ({region:'r', h:{Authorization:'Bearer T'}});
     window.azRecognize = async () => ({text:'', conf:null});
     const ends = []; window.speakOne = (t, s, d) => { setTimeout(() => { ends.push(Date.now()); d(); }, 1500); };
