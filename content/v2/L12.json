@@ -116,8 +116,8 @@
      "How about if I …? / As long as … / Let's meet halfway."
     ],
     [
-     "Planning a Class Trip",
-     "Negotiate with a classmate to agree on a class trip",
+     "Planning a Day Out",
+     "negotiate with a cousin to agree on a family day out",
      "What if we …? / Provided that … / I could live with that."
     ],
     [
@@ -126,8 +126,8 @@
      "I'll … if you … / on condition that … / in return …"
     ],
     [
-     "Group Project Roles",
-     "Negotiate roles in a group project and handle disagreement politely",
+     "Team Roles",
+     "negotiate roles in a team and handle disagreement politely",
      "Would you be willing to …? / I'm happy to …, as long as … / Can we compromise on …?"
     ],
     [
@@ -351,7 +351,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Sam look at a photo of Souq Al-Zal in Riyadh for a school project.",
+    "scene": "Omar and Sam look at a photo of Souq Al-Zal in Riyadh for a photography competition.",
+    "scene_emoji": "🛍️",
     "p1": [
      {
       "s": "Sam",
@@ -468,6 +469,7 @@
    ],
    "dialogue": {
     "scene": "Noura and her brother Faisal are at the National Museum in Riyadh, looking at an object without a label.",
+    "scene_emoji": "🏺",
     "p1": [
      {
       "s": "Noura",
@@ -511,7 +513,7 @@
     ]
    },
    "speakout": {
-    "scene": "You and your friend are on a school trip to a museum. You find a strange old object with no label, and your friend asks what you think it is.",
+    "scene": "You and your friend are on a family trip to a museum. You find a strange old object with no label, and your friend asks what you think it is.",
     "prompts": [
      {
       "q": "What do you think this was used for?",
@@ -815,7 +817,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Faisal is preparing for a school speaking competition. His friend Sam times him while he talks about two photos: a robotics team and a football team.",
+    "scene": "Faisal is preparing for a kids' TV quiz show called 'Picture Detective'. His friend Sam times him while he talks about two photos: a robotics team and a football team.",
+    "scene_emoji": "🕵️",
     "p1": [
      {
       "s": "Sam",
@@ -823,7 +826,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Both pictures show teams of students. At first glance, they seem very different."
+      "t": "Both pictures show teams of young people. At first glance, they seem very different."
      },
      {
       "s": "Faisal",
@@ -932,10 +935,11 @@
    ],
    "dialogue": {
     "scene": "Omar lives in Riyadh. His cousin Khalid lives in a village near Abha. They're chatting on a video call.",
+    "scene_emoji": "🚦",
     "p1": [
      {
       "s": "Khalid",
-      "t": "So, how was your journey to school today?"
+      "t": "So, how was your journey to football training today?"
      },
      {
       "s": "Omar",
@@ -943,7 +947,7 @@
      },
      {
       "s": "Khalid",
-      "t": "That's the biggest drawback of the city, isn't it? I walk to school in five minutes."
+      "t": "That's the biggest drawback of the city, isn't it? I walk to the club in five minutes."
      },
      {
       "s": "Omar",
@@ -1164,10 +1168,11 @@
    ],
    "dialogue": {
     "scene": "Faisal wants a smartphone for his fourteenth birthday. His mother isn't sure it's a good idea.",
+    "scene_emoji": "📱",
     "p1": [
      {
       "s": "Faisal",
-      "t": "Mum, everyone in my class has a smartphone. I really need one."
+      "t": "Mum, all my friends have a smartphone. I really need one."
      },
      {
       "s": "Mum",
@@ -1279,7 +1284,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura and Emma are deciding what to have for dinner during a busy exam week.",
+    "scene": "Noura and Emma are deciding what to have for dinner the night before their big basketball final.",
+    "scene_emoji": "🍕",
     "p1": [
      {
       "s": "Emma",
@@ -1305,7 +1311,7 @@
      },
      {
       "s": "Noura",
-      "t": "Exactly. Despite the extra time, we'd feel better for the exam tomorrow."
+      "t": "Exactly. Despite the extra time, we'd feel better for the match tomorrow."
      },
      {
       "s": "Emma",
@@ -1323,7 +1329,7 @@
     ]
    },
    "speakout": {
-    "scene": "Your school canteen wants to replace its home-style meals with a fast-food chain. The student council asks for your opinion.",
+    "scene": "Your sports club café wants to replace its home-style meals with a fast-food chain. The club manager asks for your opinion.",
     "prompts": [
      {
       "q": "What would students like about the fast-food option?",
@@ -1395,7 +1401,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar and Faisal are preparing a school presentation about tourism in AlUla.",
+    "scene": "Omar and Faisal are making a short travel video about tourism in AlUla for a video competition.",
+    "scene_emoji": "🏜️",
     "p1": [
      {
       "s": "Faisal",
@@ -1628,6 +1635,7 @@
    ],
    "dialogue": {
     "scene": "Omar wants to play a new online game all weekend. His father thinks he spends too much time on screens.",
+    "scene_emoji": "🎮",
     "p1": [
      {
       "s": "Dad",
@@ -1649,7 +1657,7 @@
     "p2": [
      {
       "s": "Dad",
-      "t": "Fair enough, as long as you finish your homework first."
+      "t": "Fair enough, as long as you tidy your room first."
      },
      {
       "s": "Omar",
@@ -1664,7 +1672,7 @@
       "t": "That's a deal, Dad!"
      }
     ],
-    "focus": "Fair enough, as long as you finish your homework first.",
+    "focus": "Fair enough, as long as you tidy your room first.",
     "qs": [
      "What does Omar's father want him to do?",
      "What condition does Dad set?"
@@ -1702,8 +1710,8 @@
    "exit": "Make me an offer about your screen time using 'How about if …?' and 'as long as'."
   },
   "2-1": {
-   "objective": "Today you will negotiate with a classmate to agree on a class trip.",
-   "warmup": "What's the best school trip you've ever been on?",
+   "objective": "Today you will negotiate with a cousin to agree on a family day out.",
+   "warmup": "What's the best day out you've ever had with your family?",
    "expressions": [
     {
      "w": "what if we",
@@ -1743,7 +1751,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem and Noura are on the class council. They must choose a trip for their class.",
+    "scene": "Reem and Noura are cousins. They must choose a day out for all the cousins during the holidays.",
+    "scene_emoji": "🏕️",
     "p1": [
      {
       "s": "Reem",
@@ -1777,17 +1786,17 @@
      },
      {
       "s": "Noura",
-      "t": "Great, so we've come to an agreement. Let's tell our teacher."
+      "t": "Great, so we've come to an agreement. Let's tell our mums."
      }
     ],
     "focus": "I'd go, provided that we leave after the afternoon heat.",
     "qs": [
      "Why doesn't Noura want to go to Boulevard World?",
-     "What time will the class come back?"
+     "What time will the cousins come back?"
     ]
    },
    "speakout": {
-    "scene": "You and a classmate must agree on a place for the end-of-year class trip. You want to go to the science museum; your classmate wants a theme park.",
+    "scene": "You and your cousin must agree on a place for a family day out. You want to go to the science museum; your cousin wants a theme park.",
     "prompts": [
      {
       "q": "I really want the theme park. Why not go there?",
@@ -1934,8 +1943,8 @@
    "exit": "Offer to do a chore for me and ask for something in return, using 'on condition that'."
   },
   "2-3": {
-   "objective": "Today you will negotiate roles in a group project and handle disagreement politely.",
-   "warmup": "Do you prefer working alone or in a group on school projects?",
+   "objective": "Today you will negotiate roles in a team and handle disagreement politely.",
+   "warmup": "Do you prefer working alone or in a team? Why?",
    "expressions": [
     {
      "w": "be willing to",
@@ -1975,11 +1984,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam and Khalid are planning a science project on solar energy with their classmate Omar. Sam and Khalid both want to be the presenter.",
+    "scene": "Sam and Khalid are making a short film about solar energy for a science-centre competition with their friend Omar. Sam and Khalid both want to be the presenter.",
+    "scene_emoji": "🎬",
     "p1": [
      {
       "s": "Sam",
-      "t": "I really want to present our project. I'm good at speaking in public."
+      "t": "I really want to present our film. I'm good at speaking in public."
      },
      {
       "s": "Khalid",
@@ -2019,7 +2029,7 @@
     ]
    },
    "speakout": {
-    "scene": "You're in a group making a short video for a school competition. You and another team member both want to be the director.",
+    "scene": "You're in a team making a short video for a kids' film competition. You and another team member both want to be the director.",
     "prompts": [
      {
       "q": "Why should you be the director instead of me?",
@@ -2047,7 +2057,7 @@
      "How do you usually solve disagreements in a group?"
     ]
    },
-   "exit": "Tell me how you'd share the work in a group project, using 'be willing to' and 'as long as'."
+   "exit": "Tell me how you'd share the work in a team, using 'be willing to' and 'as long as'."
   },
   "2-4": {
    "objective": "Today you will bargain politely for a better price at a market.",
@@ -2555,7 +2565,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar tells his English teacher, Mr Ben, about his family's flight to Malaysia for the holidays.",
+    "scene": "Omar tells his British neighbour, Mr Ben, about his family's flight to Malaysia for the holidays.",
+    "scene_emoji": "✈️",
     "p1": [
      {
       "s": "Mr Ben",
@@ -2571,7 +2582,7 @@
      },
      {
       "s": "Omar",
-      "t": "Yes, and by the time we reached the airport, most passengers had already boarded."
+      "t": "Yes. By the time we reached the airport, most passengers had already boarded."
      }
     ],
     "p2": [
@@ -2599,7 +2610,7 @@
     ]
    },
    "speakout": {
-    "scene": "You're telling your class about a day when everything went wrong on the way to an important event, like a match or a wedding.",
+    "scene": "You're telling your friends about a day when everything went wrong on the way to an important event, like a match or a wedding.",
     "prompts": [
      {
       "q": "Where were you going, and what happened first?",
@@ -2911,7 +2922,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam is practising his story for the school storytelling competition. His friend Faisal gives him feedback.",
+    "scene": "Sam is practising his story for a storytelling competition at the book fair. His friend Faisal gives him feedback.",
+    "scene_emoji": "📖",
     "p1": [
      {
       "s": "Sam",
@@ -3396,7 +3408,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Both pictures show teams of students. At first glance, they seem very different."
+     "t": "Both pictures show teams of young people. At first glance, they seem very different."
     },
     {
      "s": "Faisal",
@@ -3465,7 +3477,7 @@
    "dialogue": [
     {
      "s": "Khalid",
-     "t": "So, how was your journey to school today?"
+     "t": "So, how was your journey to football training today?"
     },
     {
      "s": "Omar",
@@ -3611,7 +3623,7 @@
    "dialogue": [
     {
      "s": "Faisal",
-     "t": "Mum, everyone in my class has a smartphone. I really need one."
+     "t": "Mum, all my friends have a smartphone. I really need one."
     },
     {
      "s": "Mum",
@@ -3700,7 +3712,7 @@
     },
     {
      "s": "Noura",
-     "t": "Exactly. Despite the extra time, we'd feel better for the exam tomorrow."
+     "t": "Exactly. Despite the extra time, we'd feel better for the match tomorrow."
     },
     {
      "s": "Emma",
@@ -3915,7 +3927,7 @@
     },
     {
      "s": "Dad",
-     "t": "Fair enough, as long as you finish your homework first."
+     "t": "Fair enough, as long as you tidy your room first."
     },
     {
      "s": "Omar",
@@ -4000,7 +4012,7 @@
     },
     {
      "s": "Noura",
-     "t": "Great, so we've come to an agreement. Let's tell our teacher."
+     "t": "Great, so we've come to an agreement. Let's tell our mums."
     }
    ],
    "grammar": {
@@ -4122,7 +4134,7 @@
    "dialogue": [
     {
      "s": "Sam",
-     "t": "I really want to present our project. I'm good at speaking in public."
+     "t": "I really want to present our film. I'm good at speaking in public."
     },
     {
      "s": "Khalid",
@@ -4495,7 +4507,7 @@
     },
     {
      "s": "Omar",
-     "t": "Yes, and by the time we reached the airport, most passengers had already boarded."
+     "t": "Yes. By the time we reached the airport, most passengers had already boarded."
     },
     {
      "s": "Mr Ben",
