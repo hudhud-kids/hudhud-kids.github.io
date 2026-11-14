@@ -2800,7 +2800,10 @@ function captureOnce(o, fresh){
     const finish = manual => { if(done) return; done = true; clearTimeout(maxT); clearTimeout(dogT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease();
       let use = heard ? chunks : (manual && peak > Math.max(.006, noise * 2.5) ? all : null);
       resolve({heard: !!use, wav: use ? encodeWav(downsample(use, rate, 16000), 16000) : null, frames, quiet: heard ? quiet : 0}); };
-    if(ctl){ ctl.stop = () => finish(true); if(ctl.pending){ setTimeout(() => finish(true), 0); } }
+    if(ctl){ ctl.stop = () => finish(true); if(ctl.pending){ setTimeout(() => finish(true), 0); }
+      // early mic: ctl.hold = the teacher is still speaking (the wait-for-speech clock does not run yet);
+      // ctl.rearm() = forget what was picked up so far and wait for speech again from now (keeps the 0.4 s before it)
+      ctl.rearm = () => { if(done) return; heard = false; quiet = 0; waited = 0; speechPeak = 0; chunks.length = 0; all.length = 0; }; }
     maxT = setTimeout(() => finish(true), maxMs);
     // watchdog: no audio frames → the context is still suspended; report it instead of hanging
     dogT = setTimeout(() => { if(!frames && !done){ try{ ac.resume(); }catch(e){} dogT = setTimeout(() => { if(!frames && !done) fail('AudioSuspended'); }, 1500); } }, 1500);
@@ -2809,7 +2812,7 @@ function captureOnce(o, fresh){
       onLevel && onLevel(rms); if(rms > peak) peak = rms; if(all.length < Math.ceil(rate * 30 / 4096)) all.push(d);
       // a real mic always has some hiss; pure digital zeros for 1.5 s mean iOS gave us a muted/dead stream
       if(rms === 0){ zero += dt; if(zero > 1.5 && peak === 0){ fail('DeadMic'); return; } } else zero = 0;
-      if(!heard){ waited += dt; noise = noise * .9 + Math.min(rms, .03) * .1; pre.push(d); if(pre.length > preMax) pre.shift();
+      if(!heard){ if(!(ctl && ctl.hold)) waited += dt; noise = noise * .9 + Math.min(rms, .03) * .1; pre.push(d); if(pre.length > preMax) pre.shift();
         if(frames > 2 && rms > Math.max(.008, noise * 3.2)){ heard = true; chunks.push(...pre); onSpeech && onSpeech(); if(onFrame) pre.forEach(f => onFrame(f, rate)); }
         else if(waitMs && waited * 1000 > waitMs){ finish(false); } }
       else { chunks.push(d); if(rms > speechPeak) speechPeak = rms; if(onFrame) onFrame(d, rate);
@@ -2842,10 +2845,10 @@ class AzSR {
     // children pause to think mid-sentence: wait ~2 s of silence before sending (was 1.2 s and cut them off),
     // and keep ONE recording open for the whole wait instead of restarting it (speech in the restart gap was lost)
     const pause = L && L.kid && DB.kids[L.kid] && DB.kids[L.kid].level <= 6 ? 2.2 : 1.9;
-    try{ rec = await recordUtterance(this._ctl, 40000, pause, NUDGE_MS, () => { try{ this.onspeechstart && this.onspeechstart(); }catch(e){} }); }
+    try{ rec = await recordUtterance(this._ctl, 40000, pause, NUDGE_MS, () => { this.speechStartAt = Date.now(); try{ this.onspeechstart && this.onspeechstart(); }catch(e){} }); }
     catch(e){ this._err(e && e.name === 'NotAllowedError' ? 'not-allowed' : 'audio-capture'); return this._end(); }
     if(this._aborted || !rec.heard) return this._end();
-    this.speechEndAt = Date.now() - (rec.quiet || 0) * 1000;
+    this.speechEndAt = Date.now() - (rec.quiet || 0) * 1000; this.wav = rec.wav || null;
     try{ this.onspeechend && this.onspeechend(); }catch(e){}
     try{
       const res = await azRecognize(rec.wav, this.lang), text = res.text; this.conf = res.conf;
@@ -2910,20 +2913,71 @@ function joinSegs(segs){ let out = '';
     if(out && soundsUnfinished(out.replace(/[.!?]+$/, ''))) out = out.replace(/[.!?]+$/, '') + ' ' + (SEG_LOWER.test(s) ? s.charAt(0).toLowerCase() + s.slice(1) : s);
     else out = out ? out + ' ' + s : s; }
   return out; }
+/* ---- warm recogniser: built and connected while the teacher is still speaking, so the child's first word finds an open
+   connection (before: SDK object + websocket were created only after voice was detected, and "Yes" waited for the handshake).
+   One recogniser serves one turn; the next one is prepared during the teacher's reply. The token is refreshed before it
+   expires (Azure tokens last 10 minutes). Anything that fails here only means the turn builds its own, as before. */
+let STT_WARM = null, STT_WARMING = null;
+const sttBearer = au => au && au.h && au.h.Authorization ? String(au.h.Authorization).replace(/^Bearer\s+/i, '') : null;
+async function sttBuild(lang){
+  const S = await loadSpeechSDK(), au = await azAuth(), tok = sttBearer(au);
+  const cfg = tok ? S.SpeechConfig.fromAuthorizationToken(tok, au.region) : S.SpeechConfig.fromSubscription(au.h['Ocp-Apim-Subscription-Key'], au.region);
+  cfg.speechRecognitionLanguage = lang || 'en-US'; cfg.outputFormat = S.OutputFormat.Detailed;
+  try{ cfg.setProfanity(S.ProfanityOption.Masked); }catch(e){}
+  try{ cfg.setProperty(S.PropertyId.Speech_SegmentationSilenceTimeoutMs, '500'); }catch(e){}
+  const push = S.AudioInputStream.createPushStream(S.AudioStreamFormat.getWaveFormatPCM(16000, 16, 1));
+  const rec = new S.SpeechRecognizer(cfg, S.AudioConfig.fromStreamInput(push));
+  try{ const pl = S.PhraseListGrammar.fromRecognizer(rec); livePhrases().forEach(x => pl.addPhrase(x)); }catch(e){ console.warn('phrase list', e); }
+  const w = {S, rec, push, owner:null, dead:false, started:false, open:false, lang:lang || 'en-US', at:Date.now(), tok:!!tok, tokAt:tok && AZ_TOK ? AZ_TOK.at : Date.now()};
+  rec.recognizing = (s, e) => { const o = w.owner; if(o) o._onPartial(e); };
+  rec.recognized = (s, e) => { const o = w.owner; if(o) o._onFinal(S, e); };
+  rec.canceled = (s, e) => { w.dead = true; const o = w.owner; if(o) o._onCancel(S, e); };
+  rec.sessionStopped = () => { w.dead = true; const o = w.owner; if(o) o._onStop(); };
+  // open the websocket now (the SDK otherwise connects on the first recognition)
+  try{ if(S.Connection && S.Connection.fromRecognizer){ const c = S.Connection.fromRecognizer(rec); w.conn = c; c.connected = () => { w.open = true; }; c.disconnected = () => { w.open = false; };
+    c.openConnection(() => {}, err => console.warn('stt preconnect', err)); } }catch(e){ console.warn('stt preconnect', e); }
+  return w;
+}
+function sttDrop(w){ if(!w || w.gone) return; w.gone = true; w.owner = null; const rec = w.rec, bye = () => { try{ rec.close(); }catch(e){} };
+  if(!w.started){ bye(); return; } try{ rec.stopContinuousRecognitionAsync(bye, bye); }catch(e){ bye(); } }
+/* prepare the next turn's recogniser (no-op when one is ready); called when the teacher starts thinking/speaking */
+function sttWarm(){
+  if(typeof L === 'undefined' || !L || L.done || !streamSttOn() || STT_WARMING) return;
+  const w = STT_WARM;
+  if(w && !w.dead && !w.gone && Date.now() - w.at < 9*60e3){
+    if(w.tok && Date.now() - w.tokAt > 7*60e3 && !w.refreshing){ w.refreshing = true; if(AZ_TOK && AZ_TOK.at === w.tokAt) AZ_TOK = null;
+      azAuth().then(au => { const t = sttBearer(au); if(t && !w.gone){ try{ w.rec.authorizationToken = t; }catch(e){} w.tokAt = AZ_TOK ? AZ_TOK.at : Date.now(); } }, () => {}).then(() => { w.refreshing = false; }); }
+    return; }
+  if(w){ STT_WARM = null; sttDrop(w); }
+  const lesson = L;
+  STT_WARMING = sttBuild('en-US').then(nw => { if(L !== lesson || lesson.done || STT_WARM){ sttDrop(nw); return; } STT_WARM = nw; }, e => { console.warn('stt warm', (e && e.message) || e); }).then(() => { STT_WARMING = null; });
+}
+function sttTake(lang){ const w = STT_WARM; STT_WARM = null; if(!w) return null;
+  if(w.dead || w.gone || w.lang !== (lang || 'en-US') || (w.tok && Date.now() - w.tokAt > 9.5*60e3) || Date.now() - w.at > 9.5*60e3){ sttDrop(w); return null; } return w; }
+function sttCool(){ const w = STT_WARM; STT_WARM = null; if(w) sttDrop(w); }
+/* early mic: is this text just the teacher's own voice coming back through the speaker? (60% or more of its words are hers) */
+const echoWords = s => String(s || '').toLowerCase().replace(/'/g, '').replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean).map(x => x.replace(/ou/g, 'o'));
+function echoLike(text, said){ const w = echoWords(text); if(!w.length) return true; const set = new Set(echoWords(said)); if(!set.size) return false;
+  return w.filter(x => set.has(x)).length / w.length >= .6; }
+/* kill switch: DB.earlyMic = false (whole family, synced) or localStorage 'hh:earlyMic' = '0' (this device) restores the old behaviour */
+const earlyMicOn = () => { try{ if(localStorage.getItem('hh:earlyMic') === '0') return false; }catch(e){} return !!DB && DB.earlyMic !== false && streamSttOn(); };
 class LiveSR {
   constructor(){ this.lang = 'en-US'; this.continuous = true; this.interimResults = true; this.maxAlternatives = 1; this.selfEnds = true;
     this.onresult = this.onerror = this.onend = this.onspeechstart = this.onspeechend = null;
     this._ctl = {}; this._aborted = this._ended = this._started = this._manual = false;
-    this.finals = []; this.partial = ''; this.lastWordsAt = 0; this.q = []; this.rs = null; this.push = null; this.rec = null; this.S = null;
-    this.sdkErr = null; this.stopped = false; this.audioDone = false; this.conf = null; this.lowConf = false; this.heardEmpty = false; this.speechEndAt = 0; }
+    this.finals = []; this.partial = ''; this.partialEcho = false; this.lastWordsAt = 0; this.q = []; this.rs = null; this.push = null; this.rec = null; this.S = null; this.w = null; this._gen = 0; this._sdkOn = false;
+    this.sdkErr = null; this.stopped = false; this.audioDone = false; this.conf = null; this.lowConf = false; this.heardEmpty = false; this.speechEndAt = 0; this.speechStartAt = 0; this.wav = null;
+    // early mic: set teacherOn = true and echoText = what the teacher is saying before start(); call teacherDone() when her audio ends
+    this.teacherOn = false; this.echoText = ''; }
   start(){ if(this._started) throw new Error('already started'); this._started = true; loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); this._run(); }
   stop(){ this._manual = true; this._ctl.pending = true; this._ctl.stop && this._ctl.stop(); }
   abort(){ this._aborted = true; this._ctl.pending = true; this._ctl.stop && this._ctl.stop(); this._close(); this._wake && this._wake(); }
-  text(){ return joinSegs(this.finals.map(f => f.text).concat(this.partial ? [this.partial] : [])); }
+  text(){ return joinSegs(this.finals.filter(f => !f.echo).map(f => f.text).concat(this.partial && !this.partialEcho ? [this.partial] : [])); }
   _emit(){ if(this._aborted) return; const t = this.text(); if(!t) return; const alt = [{transcript:t, confidence:.9}]; try{ this.onresult && this.onresult({results:[alt], resultIndex:0}); }catch(e){ console.warn(e); } }
   _poke(){ const w = this._wake; this._wake = null; w && w(); }
   /* end of turn: ~0.8 s of quiet after a finished sentence; up to 3.5 s more after "because/and/the..."; never while words are still arriving */
   _shouldEnd(quiet){
+    if(this.teacherOn) return false; // early mic: the turn cannot end before the teacher has finished speaking
     const sinceWords = this.lastWordsAt ? (Date.now() - this.lastWordsAt) / 1000 + .4 : 99, q = Math.min(quiet, sinceWords);
     if(q < TURN_END_S) return false;
     const t = this.text().trim();
@@ -2939,44 +2993,58 @@ class LiveSR {
     const used = Math.floor(n * ratio); this.rs = used < buf.length ? buf.slice(used) : null;
     if(this.push){ try{ this.push.write(out.buffer); }catch(e){} } else this.q.push(out.buffer);
   }
+  _isEcho(t){ return this.teacherOn && echoLike(t, typeof this.echoText === 'function' ? this.echoText() : this.echoText); }
+  _onPartial(e){ if(this._aborted) return; const t = (e.result && e.result.text) || ''; if(t === this.partial) return;
+    this.partial = t; this.partialEcho = !!t && this._isEcho(t); if(this.partialEcho) return; this.lastWordsAt = Date.now(); this._emit(); }
+  _onFinal(S, e){ if(this._aborted) return; const r = e.result || {};
+    if(r.reason === S.ResultReason.RecognizedSpeech && r.text){ let c = null;
+      try{ const j = JSON.parse(r.properties.getProperty(S.PropertyId.SpeechServiceResponse_JsonResult)); const b = (j.NBest || [])[0]; if(b && typeof b.Confidence === 'number') c = b.Confidence; }catch(x){}
+      const echo = this._isEcho(r.text); this.finals.push({text:r.text, conf:c, n:countWords(r.text), echo}); if(!echo) this.lastWordsAt = Date.now(); }
+    this.partial = ''; this.partialEcho = false; this._emit(); this._poke(); }
+  _onCancel(S, e){ if(e.reason === S.CancellationReason.Error){ this.sdkErr = String(e.errorCode || 'error'); console.warn('stt stream', e.errorCode, e.errorDetails); } this.stopped = true; this._poke(); }
+  _onStop(){ this.stopped = true; this._poke(); }
   async _sdk(){
-    let S; try{ S = await loadSpeechSDK(); }catch(e){ this.sdkErr = 'load'; this._poke(); return; }
-    if(this._aborted || this._ended) return;
-    let au; try{ au = await azAuth(); }catch(e){ this.sdkErr = 'auth'; this._poke(); return; }
-    if(this._aborted || this._ended) return;
+    if(this._sdkOn) return; this._sdkOn = true; const g = ++this._gen, stale = () => g !== this._gen || this._aborted || this._ended;
+    let w = sttTake(this.lang);
+    if(!w){
+      try{ await loadSpeechSDK(); }catch(e){ if(g === this._gen){ this.sdkErr = 'load'; this._poke(); } return; }
+      if(stale()) return;
+      try{ await azAuth(); }catch(e){ if(g === this._gen){ this.sdkErr = 'auth'; this._poke(); } return; }
+      if(stale()) return;
+      try{ w = await sttBuild(this.lang); }catch(e){ console.warn('stt stream setup', e); if(g === this._gen){ this.sdkErr = 'setup'; this._poke(); } return; }
+      if(stale()){ sttDrop(w); return; }
+    }
     try{
-      const tok = au.h.Authorization ? String(au.h.Authorization).replace(/^Bearer\s+/i, '') : null;
-      const cfg = tok ? S.SpeechConfig.fromAuthorizationToken(tok, au.region) : S.SpeechConfig.fromSubscription(au.h['Ocp-Apim-Subscription-Key'], au.region);
-      cfg.speechRecognitionLanguage = this.lang || 'en-US'; cfg.outputFormat = S.OutputFormat.Detailed;
-      try{ cfg.setProfanity(S.ProfanityOption.Masked); }catch(e){}
-      try{ cfg.setProperty(S.PropertyId.Speech_SegmentationSilenceTimeoutMs, '500'); }catch(e){}
-      const push = S.AudioInputStream.createPushStream(S.AudioStreamFormat.getWaveFormatPCM(16000, 16, 1));
-      const rec = new S.SpeechRecognizer(cfg, S.AudioConfig.fromStreamInput(push));
-      try{ const pl = S.PhraseListGrammar.fromRecognizer(rec); livePhrases().forEach(x => pl.addPhrase(x)); }catch(e){ console.warn('phrase list', e); }
-      rec.recognizing = (s, e) => { if(this._aborted) return; const t = (e.result && e.result.text) || ''; if(t !== this.partial){ this.partial = t; this.lastWordsAt = Date.now(); this._emit(); } };
-      rec.recognized = (s, e) => { if(this._aborted) return; const r = e.result || {};
-        if(r.reason === S.ResultReason.RecognizedSpeech && r.text){ let c = null;
-          try{ const j = JSON.parse(r.properties.getProperty(S.PropertyId.SpeechServiceResponse_JsonResult)); const b = (j.NBest || [])[0]; if(b && typeof b.Confidence === 'number') c = b.Confidence; }catch(x){}
-          this.finals.push({text:r.text, conf:c, n:countWords(r.text)}); this.lastWordsAt = Date.now(); }
-        this.partial = ''; this._emit(); this._poke(); };
-      rec.canceled = (s, e) => { if(e.reason === S.CancellationReason.Error){ this.sdkErr = String(e.errorCode || 'error'); console.warn('stt stream', e.errorCode, e.errorDetails); } this.stopped = true; this._poke(); };
-      rec.sessionStopped = () => { this.stopped = true; this._poke(); };
-      this.S = S; this.rec = rec; this.push = push;
-      this.q.forEach(b => push.write(b)); this.q = [];
-      if(this.audioDone) push.close();
-      rec.startContinuousRecognitionAsync(() => {}, err => { this.sdkErr = String(err || 'start'); console.warn('stt stream start', err); this._poke(); });
+      w.owner = this; this.w = w; this.S = w.S; this.rec = w.rec; this.push = w.push;
+      this.q.forEach(b => w.push.write(b)); this.q = [];
+      if(this.audioDone) w.push.close();
+      w.started = true;
+      w.rec.startContinuousRecognitionAsync(() => {}, err => { if(this.w !== w) return; this.sdkErr = String(err || 'start'); console.warn('stt stream start', err); this._poke(); });
     }catch(e){ console.warn('stt stream setup', e); this.sdkErr = 'setup'; this._poke(); }
   }
-  _close(){ const rec = this.rec; this.rec = null; if(!rec) return; const bye = () => { try{ rec.close(); }catch(e){} };
+  _close(){ const rec = this.rec; this.rec = null; if(!rec) return; if(this.w) this.w.gone = true; const bye = () => { try{ rec.close(); }catch(e){} };
     try{ rec.stopContinuousRecognitionAsync(bye, bye); }catch(e){ bye(); } }
-  _conf(){ const f = this.finals.filter(x => x.conf != null); if(!f.length) return null; const n = f.reduce((a, x) => a + Math.max(1, x.n), 0); return f.reduce((a, x) => a + x.conf * Math.max(1, x.n), 0) / n; }
+  _conf(){ const f = this.finals.filter(x => x.conf != null && !x.echo); if(!f.length) return null; const n = f.reduce((a, x) => a + Math.max(1, x.n), 0); return f.reduce((a, x) => a + x.conf * Math.max(1, x.n), 0) / n; }
+  /* early mic: the teacher's audio has ended. Returns true when the child is already talking (their words are kept and the
+     turn goes on); otherwise whatever the mic picked up from the speaker is thrown away and listening starts clean from now. */
+  teacherDone(){
+    if(!this.teacherOn) return false; this.teacherOn = false; this._ctl.hold = false;
+    if(this._ended || this._aborted) return false;
+    if(this.text().trim()) return true;
+    // the stream broke while she was speaking: keep the recording, the REST recogniser gets it as before (her own words are dropped there too)
+    if(this.sdkErr){ this.wasEarly = true; return false; }
+    try{ this._ctl.rearm && this._ctl.rearm(); }catch(e){}
+    if(this._sdkOn){ this._gen++; this._sdkOn = false; const w = this.w; this.w = null; if(w) sttDrop(w);
+      this.rec = this.push = this.S = null; this.finals = []; this.partial = ''; this.partialEcho = false; this.q = []; this.rs = null; this.sdkErr = null; this.stopped = false; this.lastWordsAt = 0; sttWarm(); }
+    this.speechStartAt = 0; return false;
+  }
   async _run(){
-    let rec;
+    let rec; this._ctl.hold = !!this.teacherOn;
     try{ rec = await captureAudio({ctl:this._ctl, maxMs:40000, waitMs:NUDGE_MS, silence:2,
-      onSpeech: () => { try{ this.onspeechstart && this.onspeechstart(); }catch(e){} this._sdk(); },
+      onSpeech: () => { this.speechStartAt = Date.now(); if(!this.teacherOn){ try{ this.onspeechstart && this.onspeechstart(); }catch(e){} } this._sdk(); },
       onFrame: (d, rate) => this._frame(d, rate), shouldEnd: q => this._shouldEnd(q)}); }
     catch(e){ this._close(); this._err(e && e.name === 'NotAllowedError' ? 'not-allowed' : 'audio-capture'); return this._end(); }
-    this.audioDone = true; this.speechEndAt = Date.now() - (rec.quiet || 0) * 1000;
+    this.audioDone = true; this.speechEndAt = Date.now() - (rec.quiet || 0) * 1000; this.wav = rec.wav || null;
     if(this.push){ try{ this.push.close(); }catch(e){} } // end of audio: the service finalises the last words now
     if(this._aborted || !rec.heard){ this._close(); return this._end(); }
     // wait for the last words to become final (normally < 0.3 s, they usually already are)
@@ -2991,11 +3059,14 @@ class LiveSR {
     else if(sdkOK) STREAM_ERRS = 0;
     if(!sdkOK && rec.wav){
       // the stream failed or never finished: the same recording through the REST recogniser (words seen so far are the backup)
+      hcAdd('fbRest');
       try{ const r2 = await azRecognize(rec.wav, this.lang); if(r2.text || !text){ text = r2.text; conf = r2.conf; } }
       catch(e){ console.warn('stt', e); if(!text){ if(!this._aborted) this._err(e.status === 401 || e.status === 403 ? 'service-not-allowed' : 'network'); return this._end(); } }
       if(this._aborted) return this._end();
     }
-    this.conf = conf; this.lowConf = !!text && conf != null && conf < STT_MIN_CONF; this.heardEmpty = !text;
+    // a recording that began under the teacher's voice and holds nothing but her words: nobody answered yet (no "I didn't hear you")
+    let echoOnly = false; if(this.wasEarly && text && echoLike(text, typeof this.echoText === 'function' ? this.echoText() : this.echoText)){ text = ''; conf = null; echoOnly = true; }
+    this.conf = conf; this.lowConf = !!text && conf != null && conf < STT_MIN_CONF; this.heardEmpty = !text && !echoOnly;
     if(text){ const alt = [{transcript:text, confidence:conf == null ? .9 : conf}]; alt.isFinal = true; try{ this.onresult && this.onresult({results:[alt], resultIndex:0}); }catch(e){ console.warn(e); } }
     this._end();
   }
@@ -3025,6 +3096,52 @@ function audioStarted(){ const t = typeof L !== 'undefined' && L && L.turnT; if(
 function latSummary(lesson){ const a = (lesson && lesson.lat) || []; if(!a.length) return null;
   const avg = k => { const v = a.map(x => x[k]).filter(x => x != null); return v.length ? Math.round(v.reduce((s, x) => s + x, 0) / v.length) : null; };
   return {stt:avg('stt'), llm:avg('llm'), tts:avg('tts'), total:avg('total'), n:a.length}; }
+/* ---- lesson health: how well the pipeline worked in a lesson (turns, reply time, recognition trouble, connection errors,
+   fallbacks). Counted in L.hc during the lesson, saved on the report (report.health) and in DB.health (last 30). ---- */
+function hcAdd(k, n){ if(typeof L !== 'undefined' && L){ const h = L.hc = L.hc || {}; h[k] = (h[k] || 0) + (n || 1); } }
+function healthOf(lesson){ const h = (lesson && lesson.hc) || {}, lat = latSummary(lesson) || {}, n = x => (x == null ? null : x);
+  return {turns:h.turns || 0, lat:n(lat.total), stt:n(lat.stt), llm:n(lat.llm), tts:n(lat.tts), sttFails:h.sttFails || 0, unclear:h.unclear || 0, retries:h.retries || 0,
+    relayErr:h.relayErr || 0, fbVoice:h.fbVoice || 0, fbRest:h.fbRest || 0, resumes:h.resumes || 0}; }
+function healthSave(lesson, at){
+  const h = healthOf(lesson);
+  try{ const row = Object.assign({kid:lesson.kid, at:at || new Date().toISOString(), title:(lesson.plan && lesson.plan.t) || '', trial:!!lesson.trial}, h);
+    DB.health = (Array.isArray(DB.health) ? DB.health : []).concat(row).slice(-30);
+    if(lesson.trial && !lesson.freeReview) save(); /* a real lesson is saved by finishLesson right after */ }catch(e){ console.warn('health', e); }
+  return h;
+}
+/* totals for the last 7 days (DB.health + the health saved on reports, without counting a lesson twice) */
+function healthSummary(){
+  const since = Date.now() - 7 * 864e5, seen = new Set(), rows = [];
+  const add = x => { if(!x || !x.at) return; const t = Date.parse(x.at); if(!(t >= since)) return; const key = x.kid + '|' + x.at; if(seen.has(key)) return; seen.add(key); rows.push(Object.assign({t}, x)); };
+  ((DB && Array.isArray(DB.health)) ? DB.health : []).forEach(add);
+  ((DB && DB.reports) || []).forEach(r => { if(r && r.health) add(Object.assign({kid:r.kid, at:r.at, title:r.title}, r.health)); });
+  rows.sort((a, b) => a.t - b.t);
+  const sum = k => rows.reduce((a, r) => a + (Number(r[k]) || 0), 0);
+  const timed = rows.filter(r => r.lat != null && r.turns > 0), tw = timed.reduce((a, r) => a + r.turns, 0);
+  return {days:7, lessons:rows.length, turns:sum('turns'), lat:tw ? Math.round(timed.reduce((a, r) => a + r.lat * r.turns, 0) / tw) : null,
+    unclear:sum('unclear'), sttFails:sum('sttFails'), retries:sum('retries'), relayErr:sum('relayErr'), fbVoice:sum('fbVoice'), fbRest:sum('fbRest'), resumes:sum('resumes'),
+    last:rows.length ? rows[rows.length - 1] : null, rows};
+}
+/* CONTRACT (owner dashboard): an Arabic card with the last 7 days. Returns a full <section class="card">. */
+function healthCardHTML(){
+  const h = healthSummary(), sec = ms => (ms / 1000).toFixed(1).replace(/\.0$/, '');
+  if(!h.lessons) return `<section class="card" id="healthCard"><h2>🩺 صحة الحصص <span class="muted small">آخر 7 أيام</span></h2><p class="muted small" style="margin:6px 0 0">لا توجد حصص مسجّلة في آخر 7 أيام.</p></section>`;
+  const conn = h.relayErr + h.retries, heard = h.unclear + h.sttFails;
+  const latBad = h.lat != null && h.lat > 4000, latOk = h.lat != null && h.lat <= 2500;
+  const connBad = h.relayErr > 0, heardBad = h.turns > 0 && heard / h.turns > .15;
+  const all = !latBad && !connBad && !heardBad, col = (bad, ok) => bad ? ' style="color:var(--bad)"' : ok ? ' style="color:var(--good)"' : '';
+  const l = h.last, kid = l && DB.kids && DB.kids[l.kid], when = l ? new Date(l.t) : null;
+  const more = [`عدد الحصص: ${h.lessons}`, `أجوبة الأطفال: ${h.turns}`];
+  if(h.fbVoice) more.push(`الرجوع لصوت الجهاز: ${h.fbVoice}`); if(h.fbRest) more.push(`التعرّف الاحتياطي على الصوت: ${h.fbRest}`); if(h.resumes) more.push(`حصص كُمّلت بعد انقطاع: ${h.resumes}`);
+  return `<section class="card" id="healthCard"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h2 style="margin:0">🩺 صحة الحصص <span class="muted small">آخر 7 أيام</span></h2><span class="chip ${all ? 'good' : 'bad'}">${all ? '✓ كل شيء يعمل' : '⚠️ يحتاج متابعة'}</span></div>
+    <div class="stat">
+      <div><span class="small muted">متوسط زمن الرد</span><b${col(latBad, latOk)}>${h.lat == null ? '—' : sec(h.lat) + ' ث'}</b></div>
+      <div><span class="small muted">مرات «ما سمعتك»</span><b${col(heardBad, !heard)}>${heard}</b></div>
+      <div><span class="small muted">أخطاء الاتصال</span><b${col(connBad, !conn)}>${conn}</b></div>
+      <div><span class="small muted">آخر حصة</span><b style="font-size:1rem;line-height:1.5">${l ? `${esc(kid ? kid.ar : '')} · ${fmtTime(when)}` : '—'}</b>${l ? `<span class="small muted">${when.toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'short'})}${l.lat != null ? ` · ${sec(l.lat)} ث` : ''}</span>` : ''}</div>
+    </div>
+    <div class="small muted" style="margin-top:10px">${more.join(' · ')}</div></section>`;
+}
 async function* streamClaude(body, signal){
   if(DEMO || DB.apiKey === 'demo'){ yield* demoStream(body); return; }
   // watchdog: 12 s for the answer to start, then 12 s max between pieces (a stalled connection used to hang the lesson forever)
@@ -3157,6 +3274,74 @@ function startLesson(k, trial, opt){
   L.tick = setInterval(tickRoom, 1000); tickRoom();
   teacherTurn(L.history.length ? '(The student came back to the class. Welcome them back and continue.)' : '(The student just joined the class. Greet them warmly by nickname and start chatting.)');
 }
+/* ---- lesson resume: a reload, a crash or iOS closing the app mid-lesson used to lose the whole conversation.
+   After every completed teacher turn a small snapshot goes to localStorage; on the next start (same child, less than 40
+   minutes later, lesson still open) the child is asked «تكمل حصتك؟» and returns to the same step with the same history.
+   Attendance is written once, by finishLesson, for the same slot; the snapshot is removed when the lesson finishes or is
+   left on purpose. Missions and monthly reviews are short and are not resumed. ---- */
+const SNAP_KEY = 'hh:lesson', SNAP_MAX_MS = 40 * 60e3;
+function lessonSnap(lesson){
+  if(DEMO || !lesson || lesson.done || lesson.mission || lesson.review) return;
+  try{ const v = lesson.v2;
+    localStorage.setItem(SNAP_KEY, JSON.stringify({v:1, at:Date.now(), kid:lesson.kid, trial:!!lesson.trial, freeReview:!!lesson.freeReview, slot:lesson.slot, n:lesson.n, plan:lesson.plan, rules:lesson.rules,
+      startedAt:lesson.startedAt.getTime(), history:lesson.history, histFrom:lesson.histFrom || 0, sw:lesson.sw, tw:lesson.tw, lastSay:lesson.lastSay, giftsBefore:lesson.giftsBefore,
+      lat:lesson.lat || [], hc:lesson.hc || {}, boardWords:lesson.boardWords || [], fixes:lesson.fixes || [], v2:v ? Object.assign({}, v, {sc:null}) : null}));
+  }catch(e){ console.warn('lesson snapshot', e); }
+}
+function snapRead(){ try{ return JSON.parse(localStorage.getItem(SNAP_KEY) || 'null'); }catch(e){ return null; } }
+function snapClear(lesson){ try{ if(lesson){ const s = snapRead(); if(s && s.kid !== lesson.kid) return; } localStorage.removeItem(SNAP_KEY); }catch(e){} }
+/* the lesson is over (report time): nothing to resume any more, and what the lesson changed is saved now */
+function lessonWrap(lesson){ snapClear(lesson); sttCool(); clearTimeout(lesson.netT); lesson.net = null; lessonFlush(); }
+/* the room is being left (finished, or the child chose to leave) */
+function lessonLeft(lesson){
+  if(!lesson.mission && !lesson.review && !lesson.keepSnap) snapClear(lesson);
+  sttCool(); clearTimeout(lesson.netT); lesson.net = null;
+  // cloud pulls were paused during the lesson: catch up once now
+  if(!DEMO && cloudOn() && CLOUD.token) setTimeout(() => { if(L && !L.done) return; cloudPull(false).then(ch => { if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); }).catch(() => {}); }, 1500);
+}
+/* returns 'shown' | 'busy' (try again shortly) | false (nothing to resume) */
+function resumeCheck(){
+  if(DEMO || !DB || !DB.kids) return false;
+  const s = snapRead(); if(!s) return false;
+  const drop = () => { snapClear(); return false; };
+  if(s.v !== 1 || !s.kid || !s.plan || !Array.isArray(s.history) || !s.history.length || Date.now() - s.at > SNAP_MAX_MS) return drop();
+  if(WHO !== s.kid) return false;   // someone else is signed in: it simply expires
+  if(!DB.kids[s.kid]) return drop();
+  if(!s.trial){ // a real lesson: only while its slot is still open and not yet recorded (never charged or recorded twice)
+    if((DB.attendance || []).some(a => a.kid === s.kid && a.slot === s.slot)) return drop();
+    const led = ledger(s.kid); if(led.ended || !led.open || led.open.key !== s.slot) return drop(); }
+  if(L || document.getElementById('splash') || document.querySelector('.ov,.reader')) return 'busy';
+  if(!aiReady()) return false;
+  const ov = overlay(`<h2>تكمل حصتك؟ 🦜</h2><p style="margin:0">طلعت من حصة <b class="en">${esc(s.plan.t || '')}</b> قبل ما تخلص. تقدر تكمل من نفس المكان، والمعلمة بانتظارك.</p><div class="chips"><button class="btn primary" id="rsY">كمّل</button><button class="btn" id="rsN">ابدأ من جديد</button></div>`);
+  ov.id = 'resumeAsk';
+  ov.querySelector('#rsY').onclick = () => { ov.remove(); lessonResume(s); };
+  ov.querySelector('#rsN').onclick = () => { ov.remove(); snapClear(); if(!s.freeReview) enterLesson(s.kid, s.trial); };
+  return 'shown';
+}
+function resumeBoot(n){ n = n || 0; let r = false; try{ r = resumeCheck(); }catch(e){ console.warn('resume', e); } if(r === 'busy' && n < 8) setTimeout(() => resumeBoot(n + 1), 1500); }
+/* after signing in again (the session had ended mid-lesson): offer the lesson once the child is back */
+function resumeWatch(){ clearInterval(window.__resT); const t0 = Date.now();
+  window.__resT = setInterval(() => { if(Date.now() - t0 > SNAP_MAX_MS || !snapRead()){ clearInterval(window.__resT); return; }
+    if(WHO && DB && DB.kids && DB.kids[WHO] && !L){ const r = resumeCheck(); if(r !== 'busy') clearInterval(window.__resT); } }, 1500); }
+async function lessonResume(s){
+  unlockAudio(); const k = s.kid;
+  try{ await loadContent(DB.kids[k].level); }catch(e){}
+  if(L) return;
+  const sc = s.v2 ? scriptFor(DB.kids[k].level, s.plan.ui, s.plan.li) : null;
+  if(s.v2 && !sc){ snapClear(); enterLesson(k, s.trial); return; } // the lesson content is not available any more: start it normally
+  const away = Date.now() - s.at;
+  L = {kid:k, trial:!!s.trial, slot:s.slot, n:s.n, plan:s.plan, history:s.history, histFrom:s.histFrom || 0, startedAt:new Date(s.startedAt + (s.trial ? away : 0)), state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
+       queue:[], speaking:false, streamDone:true, lastSay:s.lastSay || '', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:s.giftsBefore || 0, typing:false, sw:s.sw || 0, tw:s.tw || 0, freeReview:!!s.freeReview,
+       lat:s.lat || [], hc:s.hc || {}, boardWords:s.boardWords || [], fixes:s.fixes || [], rules:s.rules, resumed:true};
+  hcAdd('resumes');
+  // the time away does not count against the current step
+  if(s.v2){ L.v2 = Object.assign({}, s.v2, {sc}); ['at', 't0', 'chAt', 'idleAt'].forEach(f => { if(L.v2[f]) L.v2[f] += away; }); }
+  if(!s.trial && !(DB.live[k] && DB.live[k].slot === s.slot)){ DB.live[k] = {slot:s.slot, startedAt:new Date(s.startedAt).toISOString()}; save(); }
+  demoN = 0;
+  renderRoom(); v2Slide();
+  L.tick = setInterval(tickRoom, 1000); tickRoom();
+  teacherTurn('(the child reconnected: welcome back in one short sentence and continue the current step)');
+}
 
 function renderRoom(){
   $('#app').innerHTML = `<div class="room">
@@ -3257,12 +3442,21 @@ function enqueue(s){ s = s.replace(/[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE
   pump(); }
 function pump(){
   if(!L) return;
-  if(L.speaking) return;
+  if(L.speaking){ earlyListen(); return; }
   if(!L.queue.length){ if(L.streamDone) teacherFinished(); return; }
-  const s = L.queue.shift(); L.speaking = true; setState('speaking');
+  const s = L.queue.shift(); L.speaking = true; L.saying = s; setState('speaking');
   if(L.firstWave){ L.firstWave = false; setPose('wave', 2800); }
   { const tb = $('#tbox'); if(tb) tb.classList.toggle('ask', /\?\s*$/.test(s)); }
   speakOne(s, false, () => { if(!L) return; L.speaking = false; pump(); });
+  sttWarm(); earlyListen();
+}
+/* early mic: the teacher's LAST sentence is playing and nothing more will come, so the recorder opens now; a child who answers
+   at once no longer loses the first words. The recogniser ignores the teacher's own voice (see LiveSR.teacherOn) and the turn
+   cannot end before her audio does. Streaming recognition only. */
+function earlyListen(){
+  if(!L || L.done || L.endSeen || !L.speaking || !L.streamDone || L.queue.length || L.rec || L.ctl || L.net || L.state !== 'speaking' || !SR || !micOK || !earlyMicOn()) return;
+  const ty = $('#typer'); if(ty && !ty.hidden) return;
+  startListening(false, true);
 }
 function speakOne(text, slow, done){ if(azOn() && L) return speakOneAZ(text, slow, done); return speakOneWS(text, slow, done); }
 function speakOneWS(text, slow, done){
@@ -3315,7 +3509,7 @@ function ackPlay(){
 /* the first real sentence is ready: stop the acknowledgement if it is still playing (never overlap the reply) */
 function ackStop(){ if(!ACK_ON) return; ACK_ON = false; try{ azEl().pause(); }catch(e){} }
 /* once per lesson room (lesson, mission, review): warm up everything the turn pipeline needs */
-function liveSetup(){ if(!L) return; ackPrefetch(); wakeOn(); if(streamSttOn()){ loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); } }
+function liveSetup(){ if(!L) return; ackPrefetch(); wakeOn(); if(streamSttOn()){ loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); sttWarm(); } }
 /* keep the iPad screen awake during a lesson (it slept mid-lesson); the browser drops the lock when the app is hidden */
 let WAKE = null;
 async function wakeOn(){ try{ if(!L || L.done || document.hidden || !navigator.wakeLock || (WAKE && !WAKE.released)) return; const w = await navigator.wakeLock.request('screen'); if(!L || L.done){ try{ w.release(); }catch(e){} return; } WAKE = w; }catch(e){} }
@@ -3342,6 +3536,10 @@ async function teacherTurn(userText, attempt){
   if(!L || L.done) return;
   stopListening(); L.unclear = 0;
   const lesson = L, m = elapsedMin();
+  // a message that was waiting for the internet goes first (the child said something new meanwhile)
+  if(lesson.net){ const old = lesson.net.userText; clearTimeout(lesson.netT); lesson.net = null; if(old && old !== userText && /^Student: /.test(old) && /^Student: /.test(userText)) userText = old + '\n' + userText; }
+  if(navigator.onLine === false && !(DEMO || DB.apiKey === 'demo')){ netWait(lesson, userText); return; }
+  sttWarm();
   if(!/^Student: /.test(userText)) lesson.turnT = null; // latency is measured for the child's turns only
   // a turn the child interrupted is kept: the new message joins it, so roles still alternate
   const entry = `[minute ${m} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}] ${userText}`, prev = lesson.history[lesson.history.length - 1];
@@ -3349,7 +3547,7 @@ async function teacherTurn(userText, attempt){
   else { const mine = {role:'user', content:entry}; lesson.history.push(mine); undo = () => { const i = lesson.history.lastIndexOf(mine); if(i >= 0) lesson.history.splice(i, 1); }; }
   liveFeed(lesson, 'k', userText);
   setState('thinking');
-  const msgs = lesson.history.slice(-40); while(msgs.length && msgs[0].role !== 'user') msgs.shift();
+  const msgs = histWindow(lesson);
   const apiMsgs = msgs.map((x,i) => i === msgs.length-1 ? {role:x.role, content:[{type:'text', text:x.content, cache_control:{type:'ephemeral'}}]} : {role:x.role, content:x.content});
   lesson.ctl = new AbortController(); lesson.streamDone = false; lesson.queue = [];
   let full = '', sent = 0, moodSet = false;
@@ -3387,6 +3585,7 @@ async function teacherTurn(userText, attempt){
       // the script is finished: the lesson may end even a little before the usual minimum
       if(tags.end && v.doneAll) lesson.endSeen = true; }
     if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
+    lesson.netN = 0; lessonSnap(lesson); lessonPull();
     lesson.ctl = null; lesson.streamDone = true; pump();
   }catch(e){
     if(L !== lesson) return;
@@ -3395,7 +3594,12 @@ async function teacherTurn(userText, attempt){
     undo();
     // one quiet automatic retry for a dropped/stalled connection or a busy service, before bothering the child
     const soft = !e || e.status === 'timeout' || e.status === 429 || e.status === 529 || e.status >= 500 || e instanceof TypeError;
-    if(soft && !attempt && !full){ console.warn('teacher retry', e); setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn(userText, 1); }, 1200); return; }
+    if(soft && !attempt && !full && navigator.onLine !== false){ hcAdd('retries'); console.warn('teacher retry', e); setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn(userText, 1); }, 1200); return; }
+    hcAdd('relayErr');
+    // no internet (or the request never left the device): say so and continue by itself when the connection is back
+    if(navigator.onLine === false || e instanceof TypeError){ console.warn(e); netWait(lesson, userText); return; }
+    // the login session ended on the server (not a wrong key): the child signs in again and can continue the lesson
+    if(e && e.status === 401 && /bad_session/.test(e.body || '')){ console.warn(e); sessionLost(lesson); return; }
     let msg = 'انقطع الاتصال بالمعلمة. تأكد من الإنترنت ثم اضغط «حاول مرة ثانية».';
     if(e && e.status === 401) msg = 'مفتاح التشغيل غير صحيح. اطلب من ولي الأمر تحديثه من لوحته.';
     else if(e && (e.status === 429 || e.status === 529)) msg = 'الخدمة مزدحمة الآن. انتظر لحظة ثم اضغط «حاول مرة ثانية».';
@@ -3406,11 +3610,46 @@ async function teacherTurn(userText, attempt){
     console.warn(e);
   }
 }
+/* the messages sent with a turn. Sending "the last 40" made the window slide on every turn once the lesson was long, so the
+   prompt cache was missed on every turn (slower and dearer for most of the lesson). The window now starts at a fixed
+   message and only jumps forward by 20 when it holds more than 60, so between jumps every turn extends the cached prefix. */
+function histWindow(lesson){
+  const h = lesson.history; let from = Math.min(lesson.histFrom || 0, h.length);
+  while(h.length - from > 60) from += 20;
+  while(from < h.length && h[from].role !== 'user') from++;
+  lesson.histFrom = from; return h.slice(from);
+}
+/* no internet: say so in the room and go on by itself when the connection is back, instead of an endless «المعلمة تفكر» */
+function netWait(lesson, userText){
+  if(L !== lesson || lesson.done) return; clearTimeout(lesson.netT);
+  lesson.net = {userText}; lesson.netN = (lesson.netN || 0) + 1;
+  lesson.ctl = null; lesson.streamDone = true; setState('idle');
+  const st = $('#state'); if(st) st.textContent = 'لا يوجد إنترنت…';
+  const sub = $('#sub'); if(sub){ sub.innerHTML = `<div class="ar" id="netMsg" style="border-top:0;margin-top:0;padding-top:0">📡 لا يوجد إنترنت… نحاول الاتصال تلقائياً، وتكمل الحصة أول ما يرجع.</div><div style="text-align:right;margin-top:8px"><button class="btn sm" id="retry" type="button">حاول الآن</button></div>`;
+    $('#retry').onclick = () => netRetry(lesson); try{ sub.scrollIntoView({block:'nearest'}); }catch(e){} }
+  // the browser tells us when the connection is back ('online'); when it believes it is online, try again by itself, slower each time
+  const wait = Math.min(4000 + lesson.netN * 3000, 20000);
+  const tick = () => { if(L !== lesson || !lesson.net) return; if(navigator.onLine === false || document.hidden){ lesson.netT = setTimeout(tick, 3000); return; } netRetry(lesson); };
+  lesson.netT = setTimeout(tick, wait);
+}
+function netRetry(lesson){ if(!lesson || L !== lesson || lesson.done || !lesson.net) return; const u = lesson.net.userText; clearTimeout(lesson.netT); lesson.net = null; teacherTurn(u, 1); }
+window.addEventListener('online', () => { if(typeof L !== 'undefined' && L && L.net){ const lesson = L; setTimeout(() => netRetry(lesson), 600); } });
+/* the server no longer knows this login (signed out elsewhere, or the session expired): not a key problem */
+function sessionLost(lesson){
+  if(L !== lesson) return; setState('idle');
+  const st = $('#state'); if(st) st.textContent = 'انتهت جلسة الدخول';
+  const sub = $('#sub'); if(!sub) return;
+  sub.innerHTML = `<div class="ar" style="border-top:0;margin-top:0;padding-top:0">🔑 انتهت جلسة الدخول. سجّل الدخول من جديد</div><div style="text-align:right;margin-top:8px"><button class="btn sm primary" id="relog" type="button">تسجيل الدخول</button></div>`;
+  $('#relog').onclick = () => { lesson.keepSnap = true; leaveRoomQuiet(); logout(); resumeWatch(); }; try{ sub.scrollIntoView({block:'nearest'}); }catch(e){}
+}
 function teacherFinished(){
   if(!L) return;
+  L.tAudioEnd = Date.now();
   if(L.endSeen){ L.mission ? finishMission() : L.review ? finishReview() : finishLesson(); return; }
   if(L.state === 'listening') return;
-  if($('#typer') && !$('#typer').hidden){ setState('idle'); return; }
+  if($('#typer') && !$('#typer').hidden){ if(L.rec && L.rec.teacherOn) stopListening(); setState('idle'); return; }
+  // early mic already open during the last sentence: it simply becomes the child's turn (no restart, nothing lost)
+  const er = L.rec; if(er && er.teacherOn){ L.listenStart = Date.now(); L.talking = !!er.teacherDone(); setState('listening'); er._arm && er._arm(); return; }
   startListening(false);
 }
 function showBoard(b){ const el = $('#boardBox'); if(!el) return; boardWrite(b.emoji, b.word); setPose('point', 3000); look(6,-5); setTimeout(() => { if(L) look(0,0); }, 3000);
@@ -3424,6 +3663,7 @@ function onMicTap(){
   if(!L || L.done) return;
   // second tap while listening = stop now: send what was said, or (if nothing) stop and wait for the next tap
   if(L.state === 'listening'){ if(!L.rec){ startListening(true); return; } L.manualStop = true; stopListening(true); setState('thinking'); return; }
+  if(L.net){ netRetry(L); return; } // waiting for the internet: a tap tries again now
   interrupt(true);
 }
 /* a short Arabic note in the child's bubble (recognition trouble); optional button to answer by typing instead */
@@ -3433,34 +3673,41 @@ function youNote(msg, offerTyping){
   const b = document.getElementById('youType'); if(b) b.onclick = () => { const t = $('#typer'); if(!t) return; t.hidden = false; stopListening(); const m = $('#msg'); if(m) m.focus(); };
   if(offerTyping){ const kb = $('#kb'); if(kb){ kb.classList.add('primary'); setTimeout(() => kb.classList.remove('primary'), 6000); } }
 }
-function startListening(fromTap){
+function startListening(fromTap, early){
   if(!L || L.done) return;
-  if(!SR || !micOK){ setState('tap'); return; }
+  if(!SR || !micOK){ if(!early) setState('tap'); return; }
   stopListening();
-  if(!L.listenStart) L.listenStart = Date.now();
-  L.manualStop = false; L.talking = false; let text = '', failed = false, lastAt = 0; const began = Date.now();
+  if(!early && !L.listenStart) L.listenStart = Date.now();
+  L.manualStop = false; L.talking = false; let text = '', failed = false, lastAt = 0, spAt = 0; const began = Date.now();
   const rec = liveRecognizer(); L.rec = rec; rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = true; rec.maxAlternatives = 1;
+  // early = opened while the teacher's last sentence is still playing: her own words are ignored and the turn starts when she ends (teacherFinished)
+  if(early){ if(!(rec instanceof LiveSR)){ L.rec = null; return; } rec.teacherOn = true; rec.echoText = () => L ? [L.lastSay, L.saying].concat(L.boardWords || []).join(' ') : ''; }
   const you = $('#you'), show = t => { if(you){ you.hidden = false; you.classList.remove('note'); you.classList.add('live'); you.textContent = t; } };
-  rec.onspeechstart = () => { if(L && L.rec === rec){ L.talking = true; show('🎙️ …'); } };
+  rec.onspeechstart = () => { if(L && L.rec === rec){ spAt = Date.now(); L.talking = true; show('🎙️ …'); } };
   rec.onspeechend = () => { if(L && L.rec === rec) show('… 👂'); };
   rec.onresult = e => { if(!L || L.rec !== rec) return; let t = ''; for(const r of e.results) t += r[0].transcript; if(!t.trim()) return;
     if(t.split(' ').length !== text.split(' ').length && Math.random() < .5) nod(); text = t; lastAt = Date.now(); show(t);
     if(rec.selfEnds) return; // the streaming recogniser decides the end of the turn itself
     clearTimeout(L.silT); L.silT = setTimeout(() => { try{ rec.stop(); }catch(x){} }, SILENCE_MS); };
-  rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); }
+  rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(rec.teacherOn){ if(L && L.rec === rec) L.rec = null; return; } if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); }
     else if(e.error === 'network') failed = true; };
   // listen again after a recognition problem (a pause if it failed at once, so a dead connection never spins)
   const again = quick => { L.listenStart = 0; L.manualStop = false; clearTimeout(L.relT); if(L.state === 'thinking') setState('listening'); /* the child tapped stop but nothing was understood: go back to listening, not a stuck "thinking" */ L.relT = setTimeout(() => { if(L && !L.done && L.state === 'listening' && !L.rec) startListening(false); }, quick ? 1500 : 250); };
   rec.onend = () => { if(!L || L.rec !== rec) return; L.rec = null; clearTimeout(L.silT);
+    if(rec.teacherOn) return; // the early recorder stopped before the teacher finished: normal listening starts when she does
     const t = text.trim(), unclear = L.unclear || 0;
     if(t && !(rec.lowConf && !L.manualStop && unclear < 2)){
-      L.listenStart = 0; L.unclear = 0; L.sttFails = 0; clearTimeout(L.nudgeT); L.tSpeechEnd = rec.speechEndAt || lastAt || Date.now(); L.tConf = rec.conf; studentSaid(t); return; }
-    if(failed){ L.sttFails = (L.sttFails || 0) + 1; youNote('ما وصلني صوتك، جرّب مرة ثانية', L.sttFails >= 2); again(Date.now() - began < 1500); return; }
-    if((t || rec.heardEmpty) && unclear < 2){ L.unclear = unclear + 1; youNote('ما سمعتك زين، قلها مرة ثانية 🙂'); again(false); return; }
+      L.listenStart = 0; L.unclear = 0; L.sttFails = 0; clearTimeout(L.nudgeT); L.tSpeechEnd = rec.speechEndAt || lastAt || Date.now(); L.tConf = rec.conf;
+      { const sp = rec.speechStartAt || spAt || 0, en = rec.speechEndAt || lastAt || 0, delayMs = sp && L.tAudioEnd ? Math.max(0, Math.round(sp - L.tAudioEnd)) : null, durMs = sp && en > sp ? Math.round(en - sp) : null;
+        if(typeof lessonUtterance === 'function') try{ lessonUtterance({text:t, wav:rec.wav || null, conf:rec.conf, delayMs, durMs}); }catch(e){} }
+      studentSaid(t); return; }
+    if(failed){ hcAdd('sttFails'); L.sttFails = (L.sttFails || 0) + 1; youNote('ما وصلني صوتك، جرّب مرة ثانية', L.sttFails >= 2); again(Date.now() - began < 1500); return; }
+    if((t || rec.heardEmpty) && unclear < 2){ hcAdd('unclear'); L.unclear = unclear + 1; youNote('ما سمعتك زين، قلها مرة ثانية 🙂'); again(false); return; }
     if(L.manualStop){ L.manualStop = false; L.listenStart = 0; clearTimeout(L.nudgeT); setState('tap'); return; }
     if(L.state === 'listening'){ if(Date.now() - L.listenStart > NUDGE_MS){ L.listenStart = 0; teacherTurn('(student was silent)'); } else startListening(false); } };
-  try{ rec.start(); setState('listening'); }catch(e){ L.rec = null; setState('tap'); }
-  clearTimeout(L.nudgeT); L.nudgeT = setTimeout(() => { if(L && L.state === 'listening' && !text.trim() && !L.talking){ try{ rec.stop(); }catch(x){} } }, NUDGE_MS + 500);
+  try{ rec.start(); if(!early) setState('listening'); }catch(e){ L.rec = null; if(!early) setState('tap'); }
+  const arm = () => { if(!L) return; clearTimeout(L.nudgeT); L.nudgeT = setTimeout(() => { if(L && L.state === 'listening' && !text.trim() && !L.talking){ try{ rec.stop(); }catch(x){} } }, NUDGE_MS + 500); };
+  if(early) rec._arm = arm; else arm();
 }
 function stopListening(submit){
   if(!L) return; clearTimeout(L.silT); clearTimeout(L.nudgeT); clearTimeout(L.relT);
@@ -3470,7 +3717,7 @@ function stopListening(submit){
   if(L.state === 'listening') setState('idle');
 }
 function studentSaid(text){
-  if(L){ L.sw += countWords(text); updateTalk(); }
+  if(L){ L.sw += countWords(text); updateTalk(); hcAdd('turns'); }
   const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; }
   if(L){ L.turnT = {end:L.tSpeechEnd || 0, text:Date.now(), conf:L.tConf}; L.tSpeechEnd = 0; L.tConf = undefined; setState('thinking'); ackPlay(); }
   teacherTurn(`Student: ${text}`);
@@ -3480,6 +3727,7 @@ function studentSaid(text){
 async function finishLesson(){
   const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; stopListening(); setState('idle'); clearInterval(lesson.tick); wakeOff();
   const k = lesson.kid, mins = elapsedMin(), plan = lesson.plan;
+  lessonWrap(lesson);
   const ov = document.createElement('div'); ov.className = 'ov';
   ov.innerHTML = `<div class="card" style="text-align:center"><h2>انتهت الحصة 🎉</h2><p class="muted" style="margin:0">المعلمة تكتب تقريرك وتجهّز اختبار الدرس…</p></div>`;
   document.body.appendChild(ov);
@@ -3527,6 +3775,7 @@ Reply with ONLY one JSON object:
     levelFit:['easy','right','hard'].includes(rep.levelFit) ? rep.levelFit : null, levelNote:String(rep.levelNote||''), strengths:(Array.isArray(rep.strengths)?rep.strengths:[]).slice(0,4).map(String), homePractice:String(rep.homePractice||''),
     v2:lesson.v2 ? {exp:Object.keys(lesson.v2.got).filter(x => x.startsWith('exp')).length, of:lesson.v2.sc.expressions.length, so:Object.keys(lesson.v2.got).filter(x => x.startsWith('so')).length, exit:lesson.v2.exit, stars:lesson.v2.stars||0, steps:lesson.v2.i + 1, total:lesson.v2.steps.length, review:!!plan.review, fn:((levelUnits(DB.kids[k].level)||[])[plan.ui]||{}).fn || ''} : null};
   report.lat = latSummary(lesson); if(report.lat) console.log('lesson latency avg ms', JSON.stringify(report.lat));
+  report.health = healthSave(lesson, att0 && att0.at);
   if(Array.isArray(rep.interests) && !lesson.trial){ const p0 = DB.progress[k]; p0.interests = [...new Set(rep.interests.map(String).concat(p0.interests||[]))].slice(0,15); }
   let book = null, cert = null;
   if(!lesson.trial){
@@ -4505,13 +4754,13 @@ function speakOneAZ(text, slow, done){
   const gen = ++AZ_GEN; let finished = false, guard = null;
   const fin = () => { if(finished) return; finished = true; clearTimeout(guard); stopMouth(); if(L) setMouth('rest'); done && done(); };
   const rate = slow ? .75 : (DB.kids[L.kid].level <= 6 ? .92 : 1), vn = kidVoices(L.kid).teacher;
-  guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; speakOneWS(text, slow, done); } }, 7000);
+  guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; hcAdd('fbVoice'); speakOneWS(text, slow, done); } }, 7000);
   azFetch(text, vn, rate).then(url => { if(finished || gen !== AZ_GEN) return;
     // the sound must START within 4 s (iPad sometimes never starts or ends an <audio>): otherwise use the device voice
-    clearTimeout(guard); guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; try{ azEl().pause(); }catch(e){} speakOneWS(text, slow, done); } }, 4000);
+    clearTimeout(guard); guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; try{ azEl().pause(); }catch(e){} hcAdd('fbVoice'); speakOneWS(text, slow, done); } }, 4000);
     ackStop();
     return azPlay(url, dur => { audioStarted(); clearTimeout(guard); guard = setTimeout(fin, dur ? dur*1000 + 1500 : text.length*90 + 3000); mouthWalk(text, Math.max(35, Math.round((dur ? dur*1000 : text.length*65) / text.length))); }).then(fin);
-  }).catch(e => { azFail(e); if(!finished && gen === AZ_GEN){ finished = true; clearTimeout(guard); speakOneWS(text, slow, done); } });
+  }).catch(e => { azFail(e); if(!finished && gen === AZ_GEN){ finished = true; clearTimeout(guard); hcAdd('fbVoice'); speakOneWS(text, slow, done); } });
 }
 function narrateAZ(text, o){
   azStop(); const ps = phrasesOf(text); let i = 0, stopped = false, timer = null; const gen = AZ_GEN;
@@ -4713,11 +4962,11 @@ async function cloudLogout(){ const t = CLOUD.token; if(t){ try{ await cloudPush
 function cloudSafeToRender(){ return !L && !document.querySelector('.ov,.reader') && !(document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)); }
 function cloudStart(){
   if(!cloudOn()) return; clearInterval(cloudPullT);
-  cloudPullT = setInterval(async () => { if(document.hidden || !CLOUD.token) return; const ch = await cloudPull(false); if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); if(WHO && DB && DB.kids && DB.kids[WHO] && !L) checkCheers(WHO); }, 25000);
+  cloudPullT = setInterval(async () => { if(document.hidden || !CLOUD.token || (L && !L.done)) return; /* no pulls during a lesson: see lessonPull */ const ch = await cloudPull(false); if(ch && cloudSafeToRender() && WHO) go(WHO, TAB); if(WHO && DB && DB.kids && DB.kids[WHO] && !L) checkCheers(WHO); }, 25000);
   clearInterval(window.__fastT); window.__fastT = setInterval(async () => { if(document.hidden || !CLOUD.token || !DB) return;
     const watching = typeof WHO === 'string' && WHO.startsWith('g:') && G_KID && (liveOf(G_KID) || ((DB.sched || {})[G_KID] && ledger(G_KID).open));
     const inClass = L && !L.done;
-    if(!watching && !inClass) return;
+    if(!watching || inClass) return; // in class: lessonPull() pulls at a safe moment instead of this timer
     const ch = await cloudPull(false);
     if(ch && watching && !document.querySelector('.ov') && !(document.activeElement && /INPUT|TEXTAREA/.test(document.activeElement.tagName))) renderGuardian(WHO.slice(2));
     if(ch && inClass) checkCheers(L.kid); }, 6000);
@@ -5079,9 +5328,29 @@ function liveFeed(lesson, who, text){
   DB.livefeed = DB.livefeed || {};
   const f = DB.livefeed[k] && DB.livefeed[k].start === lesson.startedAt.getTime() ? DB.livefeed[k] : {start:lesson.startedAt.getTime(), title:(lesson.mission ? '🎯 ' + lesson.mission.m.t : lesson.plan.t), lines:[]};
   f.lines = (f.lines || []).concat({w:who, t:text.slice(0, 220)}).slice(-14); f.at = Date.now(); f.talk = talkPctOf(lesson); f.done = false;
-  DB.livefeed[k] = f; save();
+  DB.livefeed[k] = f; lessonSave();
 }
-function liveEnd(lesson){ if(!lesson || DEMO || !DB.livefeed || !DB.livefeed[lesson.kid]) return; DB.livefeed[lesson.kid].done = true; DB.livefeed[lesson.kid].at = Date.now(); save(); }
+function liveEnd(lesson){ if(!lesson) return; lessonLeft(lesson); if(DEMO) return; if(DB.livefeed && DB.livefeed[lesson.kid]){ DB.livefeed[lesson.kid].done = true; DB.livefeed[lesson.kid].at = Date.now(); lessonSave(true); } else lessonFlush(); }
+/* ---- saving and syncing during a lesson ----
+   save() serialises the whole DB and schedules a cloud push; twice per turn that stalled the main thread while the recorder
+   (a ScriptProcessor, also on the main thread) was running. During a lesson there is at most one save every ~10 s, and only
+   while the teacher is thinking or speaking (never while listening). Everything is flushed when the lesson ends, the room
+   is left, or the page is hidden/closed. Cloud pulls are paused too (see cloudStart): lessonPull() does one at most every
+   20 s at the moment the teacher starts to speak, so a guardian's cheer still arrives in class. */
+let LSAVE_AT = 0, LSAVE_DIRTY = false, LPULL_AT = 0;
+function lessonSave(force){
+  if(DEMO) return;
+  if(!force && L && !L.done){ LSAVE_DIRTY = true; if(Date.now() - LSAVE_AT < 10000 || L.state === 'listening') return; }
+  LSAVE_DIRTY = false; LSAVE_AT = Date.now(); save();
+}
+function lessonFlush(){ if(LSAVE_DIRTY) lessonSave(true); }
+window.addEventListener('pagehide', lessonFlush);
+document.addEventListener('visibilitychange', () => { if(document.hidden) lessonFlush(); });
+function lessonPull(){
+  if(DEMO || !L || L.done || !cloudOn() || !CLOUD.token || document.hidden || Date.now() - LPULL_AT < 20000) return;
+  LPULL_AT = Date.now(); const lesson = L;
+  cloudPull(false).then(ch => { if(ch && L === lesson && !lesson.done) checkCheers(lesson.kid); }).catch(() => {});
+}
 
 /* =============== PUSH NOTIFICATIONS =============== */
 const VAPID_PUB = 'BCjFs-VsW7Xi268aTmxky7axCcnTkOGU3Cf59IzD24OJSYBHyLT2ajrmQF1dLgaVacyAic2inwj8b3t3E9qGitk';
@@ -5456,6 +5725,7 @@ if(/^#setup=/.test(location.hash)){
     ov.querySelector('#sy').onclick = () => { ov.remove(); applyFullSetup(cfg); setWho(null); go(null); toast('تم تجهيز الجهاز ✓ ادخل باليوزر والباسورد'); };
   }).catch(() => alertBox('رابط التجهيز غير مكتمل. انسخه كاملاً من لوحة ولي الأمر وافتحه مرة ثانية.'));
 }
+setTimeout(resumeBoot, 900);
 
 </script>
 </body>
