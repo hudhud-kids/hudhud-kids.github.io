@@ -16,7 +16,8 @@
     "present perfect continuous",
     "for / since",
     "How long have you been …?",
-    "present perfect continuous vs simple"
+    "present perfect continuous vs simple",
+    "verb + -ing / verb + to (enjoy doing, want to do, stop doing vs stop to do)"
    ],
    "lessons": [
     [
@@ -27,17 +28,17 @@
     [
      "Learning a New Skill",
      "Talk about a skill you have been learning and how it is going",
-     "I've been learning … since … / At first I struggled with … / I'm getting the hang of …"
+     "I've been learning … since … / At first I struggled with … / I enjoy …ing / I want to …"
     ],
     [
      "Where I've Been Living",
      "Describe how long you have been living, studying or going somewhere",
-     "I've been living in … for … / I've been going to … since … / It took me … to settle in"
+     "I've been living in … for … / I've been going to … since … / It took me … to get my bearings"
     ],
     [
      "Training Hard",
      "Describe how long you have been training or preparing for an event",
-     "I've been training for … / What have you been doing? / I've been …ing, that's why …"
+     "I've been training for … / What have you been doing? / I've stopped …ing / I stop to …"
     ],
     [
      "Our School Project",
@@ -87,7 +88,7 @@
     [
      "In the News",
      "Report facts about recent events using the passive",
-     "… was called off / put off until … / … was won by … / According to …"
+     "… was called off / put off until … / … was won by … / It is reported that …"
     ],
     [
      "Fact File: AlUla",
@@ -123,7 +124,7 @@
     [
      "At the Hotel",
      "Report a problem in a hotel room politely and ask for it to be fixed",
-     "Sorry to bother you, but … / … isn't working / … has broken down / Could you possibly …?"
+     "I hate to complain, but … / … isn't working / … has broken down / Could you possibly …?"
     ],
     [
      "At the Sports Club",
@@ -195,10 +196,10 @@
    "warmup": "What do you do in your spare time these days?",
    "expressions": [
     {
-     "w": "take up",
-     "def": "to start a new hobby or activity",
-     "ar": "يبدأ (هواية جديدة)",
-     "frame": "I took up ___ when I was ___."
+     "w": "get hooked on",
+     "def": "to start to like something so much that you do it all the time",
+     "ar": "يتعلّق بـ / يُدمن (هواية)",
+     "frame": "I got hooked on ___ when I was ___."
     },
     {
      "w": "get into",
@@ -241,7 +242,7 @@
      },
      {
       "s": "Noura",
-      "t": "Yes! I took up painting last summer, and I've been doing it every weekend since then."
+      "t": "Yes! I got hooked on painting last summer, and I've been doing it every weekend since then."
      },
      {
       "s": "Reem",
@@ -305,17 +306,20 @@
      "Why do you think hobbies are important for teenagers?"
     ]
    },
-   "exit": "Tell me two things you've been doing in your spare time and for how long, without looking at the slides."
+   "exit": "Tell me two things you've been doing in your spare time and for how long, without looking at the slides.",
+   "recycle": [
+    "take up"
+   ]
   },
   "0-1": {
    "objective": "Today you will talk about a skill you have been learning and how it is going.",
    "warmup": "What is a skill you would love to learn?",
    "expressions": [
     {
-     "w": "pick up",
-     "def": "to learn something without much effort",
-     "ar": "يتعلّم بسهولة / يلتقط",
-     "frame": "I picked up ___ by ___."
+     "w": "soak up",
+     "def": "to learn a lot quickly and easily, like a sponge",
+     "ar": "يستوعب بسرعة / يتشرّب",
+     "frame": "I soaked up a lot of ___ from ___."
     },
     {
      "w": "get the hang of",
@@ -345,7 +349,7 @@
      "w": "confident",
      "def": "sure that you can do something well",
      "ar": "واثق من نفسه",
-     "frame": "I feel more confident when I ___."
+     "frame": "I enjoy ___ because it makes me feel confident."
     }
    ],
    "dialogue": {
@@ -376,7 +380,7 @@
      },
      {
       "s": "Sam",
-      "t": "I've been chatting with my neighbours. I've picked up lots of useful phrases from them."
+      "t": "I've been chatting with my neighbours. I've soaked up lots of useful phrases from them."
      },
      {
       "s": "Omar",
@@ -384,7 +388,7 @@
      },
      {
       "s": "Sam",
-      "t": "Thanks! I'm making progress step by step. Practice makes perfect, as they say."
+      "t": "Thanks! I really enjoy chatting in Arabic, and I want to keep improving step by step. Practice makes perfect!"
      }
     ],
     "focus": "I've been studying it since September.",
@@ -422,17 +426,20 @@
      "Do you think short daily practice is better than long lessons? Why?"
     ]
    },
-   "exit": "Tell me two sentences about a skill you've been learning and for how long, without help."
+   "exit": "Tell me two sentences about a skill you've been learning and for how long, without help.",
+   "recycle": [
+    "pick up"
+   ]
   },
   "0-2": {
    "objective": "Today you will describe how long you have been living, studying or going somewhere.",
    "warmup": "How long have you been living in your town or city?",
    "expressions": [
     {
-     "w": "settle in",
-     "def": "to start to feel comfortable in a new place",
-     "ar": "يتأقلم / يستقر",
-     "frame": "It took me ___ to settle in at ___."
+     "w": "get your bearings",
+     "def": "to understand where you are and how things work in a new place",
+     "ar": "يتعرّف على المكان ويتأقلم",
+     "frame": "It took me ___ to get my bearings at ___."
     },
     {
      "w": "move to",
@@ -453,16 +460,16 @@
      "frame": "The best thing about my neighbourhood is ___."
     },
     {
-     "w": "get used to",
-     "def": "to become familiar with something new",
-     "ar": "يعتاد على",
-     "frame": "I'm still getting used to ___."
+     "w": "adjust to",
+     "def": "to change a little so you are comfortable with something new",
+     "ar": "يتكيّف مع",
+     "frame": "I'm still adjusting to ___."
     },
     {
-     "w": "make friends",
-     "def": "to start new friendships",
-     "ar": "يكوّن صداقات",
-     "frame": "I made friends by ___."
+     "w": "hit it off",
+     "def": "to like someone and become friends very quickly",
+     "ar": "يتوافق مع شخص بسرعة",
+     "frame": "I hit it off with ___ because ___."
     }
    ],
    "dialogue": {
@@ -479,17 +486,17 @@
      },
      {
       "s": "Reem",
-      "t": "Was it hard to settle in?"
+      "t": "Was it hard to get your bearings?"
      },
      {
       "s": "Emma",
-      "t": "A little. I had to get used to the heat, and I missed my old friends."
+      "t": "A little. I had to adjust to the heat, and I missed my old friends."
      }
     ],
     "p2": [
      {
       "s": "Reem",
-      "t": "And now? Have you made friends?"
+      "t": "And now? Have you hit it off with anyone?"
      },
      {
       "s": "Emma",
@@ -522,7 +529,7 @@
       "hint": "Give the year or the number of years with 'since' or 'for'."
      },
      {
-      "q": "What's your neighbourhood like? Any tips to settle in?",
+      "q": "What's your neighbourhood like? Any tips to get my bearings?",
       "hint": "Describe one place and give one piece of advice."
      }
     ]
@@ -539,7 +546,12 @@
      "How would you help a new family settle in your area?"
     ]
    },
-   "exit": "Tell me two sentences about how long you've been living or studying somewhere, without help."
+   "exit": "Tell me two sentences about how long you've been living or studying somewhere, without help.",
+   "recycle": [
+    "get used to",
+    "settle in",
+    "make friends"
+   ]
   },
   "0-3": {
    "objective": "Today you will describe how long you have been training or preparing for an event.",
@@ -558,16 +570,16 @@
      "frame": "To get in shape, I've been ___."
     },
     {
-     "w": "warm up",
-     "def": "to do gentle exercise before sport",
-     "ar": "يقوم بالإحماء",
-     "frame": "Before I play, I always warm up by ___."
+     "w": "loosen up",
+     "def": "to do gentle exercise so your muscles are less stiff",
+     "ar": "يليّن عضلاته / يُحمّي",
+     "frame": "Before I play, I always loosen up by ___."
     },
     {
-     "w": "out of breath",
-     "def": "breathing very fast after hard exercise",
-     "ar": "يلهث / منقطع النَّفَس",
-     "frame": "I get out of breath when I ___."
+     "w": "run out of steam",
+     "def": "to suddenly have no energy left to continue",
+     "ar": "تنفد طاقته",
+     "frame": "I run out of steam when I ___."
     },
     {
      "w": "keep going",
@@ -600,7 +612,7 @@
      },
      {
       "s": "Faisal",
-      "t": "For about six weeks. At first I was out of breath after one kilometre!"
+      "t": "For about six weeks. At first I ran out of steam after one kilometre!"
      }
     ],
     "p2": [
@@ -610,15 +622,15 @@
      },
      {
       "s": "Faisal",
-      "t": "I've made real progress. Now I can run four kilometres. I've been working out with Dad to build my stamina."
+      "t": "I've stopped eating sweets. Now I can run four kilometres, and I've been working out with Dad to build my stamina."
      },
      {
       "s": "Lama",
-      "t": "Do you warm up first?"
+      "t": "Do you loosen up first?"
      },
      {
       "s": "Faisal",
-      "t": "Always. And when it gets hard, I just keep going. I really want to get in shape."
+      "t": "Always. And when it gets hard, I stop to drink some water, then keep going. I really want to get in shape."
      }
     ],
     "focus": "I've been running in the park.",
@@ -656,7 +668,11 @@
      "What event would you like to train for one day?"
     ]
    },
-   "exit": "Tell me two things you've been doing to stay fit and for how long, without help."
+   "exit": "Tell me two things you've been doing to stay fit and for how long, without help.",
+   "recycle": [
+    "warm up",
+    "out of breath"
+   ]
   },
   "0-4": {
    "objective": "Today you will talk about a project you have been working on and what you have done so far.",
@@ -675,10 +691,10 @@
      "frame": "So far, we have ___."
     },
     {
-     "w": "come up with",
-     "def": "to think of an idea or a plan",
-     "ar": "يبتكر / يأتي بفكرة",
-     "frame": "We came up with the idea of ___."
+     "w": "think up",
+     "def": "to invent an idea or a plan in your mind",
+     "ar": "يبتكر / يخترع فكرة",
+     "frame": "We thought up the idea of ___."
     },
     {
      "w": "behind schedule",
@@ -712,7 +728,7 @@
      },
      {
       "s": "Ms Hana",
-      "t": "Great idea! Who came up with it?"
+      "t": "Great idea! Who thought it up?"
      },
      {
       "s": "Noura",
@@ -772,23 +788,26 @@
      "Do you prefer working alone or teaming up with others? Why?"
     ]
    },
-   "exit": "Tell me two sentences about a project you've been working on, without help."
+   "exit": "Tell me two sentences about a project you've been working on, without help.",
+   "recycle": [
+    "come up with"
+   ]
   },
   "0-5": {
    "objective": "Today you will describe your experiences in detail in an interview for a summer programme.",
    "warmup": "What have you been doing outside school this year?",
    "expressions": [
     {
-     "w": "take up",
-     "def": "to start a new hobby or activity",
-     "ar": "يبدأ (نشاطاً جديداً)",
-     "frame": "Recently, I've taken up ___."
+     "w": "try your hand at",
+     "def": "to try doing something for the first time",
+     "ar": "يجرّب (نشاطاً جديداً)",
+     "frame": "Recently, I've tried my hand at ___."
     },
     {
-     "w": "make progress",
-     "def": "to get better at something step by step",
-     "ar": "يحرز تقدّماً",
-     "frame": "I've made a lot of progress in ___."
+     "w": "come a long way",
+     "def": "to improve a lot since you started",
+     "ar": "قطع شوطاً طويلاً / تحسّن كثيراً",
+     "frame": "I've come a long way in ___."
     },
     {
      "w": "gain experience",
@@ -797,10 +816,10 @@
      "frame": "I've gained experience in ___ by ___."
     },
     {
-     "w": "be proud of",
-     "def": "to feel happy about something you did well",
-     "ar": "فخور بـ",
-     "frame": "I'm really proud of ___."
+     "w": "proudest moment",
+     "def": "the time when you felt most proud of yourself",
+     "ar": "أكثر لحظة شعرت فيها بالفخر",
+     "frame": "My proudest moment was when ___."
     },
     {
      "w": "strength",
@@ -839,15 +858,15 @@
     "p2": [
      {
       "s": "Mr Khalid",
-      "t": "Have you taken up anything else recently?"
+      "t": "Have you tried your hand at anything else recently?"
      },
      {
       "s": "Noura",
-      "t": "Yes, I've been learning to code for about six months. I've made a lot of progress."
+      "t": "Yes, I've been learning to code for about six months. I've come a long way since then."
      },
      {
       "s": "Mr Khalid",
-      "t": "Wonderful. What are you most proud of?"
+      "t": "Wonderful. What has been your proudest moment?"
      },
      {
       "s": "Noura",
@@ -889,17 +908,22 @@
      "Why do you think real examples are better than a list of hobbies?"
     ]
    },
-   "exit": "Introduce yourself in two sentences: say what you've been doing and for how long, without help."
+   "exit": "Introduce yourself in two sentences: say what you've been doing and for how long, without help.",
+   "recycle": [
+    "take up",
+    "make progress",
+    "be proud of"
+   ]
   },
   "1-0": {
    "objective": "Today you will give precise information about local products using the present passive.",
    "warmup": "What food or product is your region famous for?",
    "expressions": [
     {
-     "w": "be famous for",
-     "def": "known by many people because of something",
-     "ar": "مشهور بـ",
-     "frame": "My city is famous for ___."
+     "w": "be renowned for",
+     "def": "to be famous and admired for something",
+     "ar": "مشهور ومعروف بـ",
+     "frame": "My city is renowned for ___."
     },
     {
      "w": "be made from",
@@ -941,7 +965,7 @@
      },
      {
       "s": "Reem",
-      "t": "Most of them are grown here in Al-Qassim. Our region is famous for its dates."
+      "t": "Most of them are grown here in Al-Qassim. Our region is renowned for its dates."
      },
      {
       "s": "Emma",
@@ -981,7 +1005,7 @@
     "prompts": [
      {
       "q": "What is your region famous for?",
-      "hint": "Name a product and use 'is famous for'."
+      "hint": "Name a product and use 'is renowned for'."
      },
      {
       "q": "Where is it grown or made?",
@@ -1005,7 +1029,10 @@
      "Why do you think some things are still made by hand?"
     ]
    },
-   "exit": "Tell me two facts about a product from your region using 'is made' or 'is grown', without help."
+   "exit": "Tell me two facts about a product from your region using 'is made' or 'is grown', without help.",
+   "recycle": [
+    "be famous for"
+   ]
   },
   "1-1": {
    "objective": "Today you will give facts about famous buildings using the past passive.",
@@ -1030,10 +1057,10 @@
      "frame": "___ was designed by ___."
     },
     {
-     "w": "take place",
-     "def": "to happen, especially when planned",
-     "ar": "يحدث / يُقام",
-     "frame": "Every year, ___ takes place in ___."
+     "w": "be held",
+     "def": "to happen; used for events that people organise",
+     "ar": "يُقام / يُعقد",
+     "frame": "Every year, ___ is held in ___."
     },
     {
      "w": "restore",
@@ -1042,10 +1069,10 @@
      "frame": "___ was restored in ___."
     },
     {
-     "w": "landmark",
-     "def": "a famous building or place that is easy to recognise",
-     "ar": "معلم بارز",
-     "frame": "A famous landmark in my country is ___."
+     "w": "iconic",
+     "def": "very famous and easy to recognise as a symbol of a place",
+     "ar": "أيقوني / رمز معروف",
+     "frame": "The most iconic building in my country is ___."
     }
    ],
    "dialogue": {
@@ -1066,7 +1093,7 @@
      },
      {
       "s": "Omar",
-      "t": "No, it was restored, and now it's a museum. Festivals sometimes take place in the square outside."
+      "t": "No, it was restored, and now it's a museum. Festivals are sometimes held in the square outside."
      }
     ],
     "p2": [
@@ -1076,7 +1103,7 @@
      },
      {
       "s": "Omar",
-      "t": "That's Kingdom Centre, another famous landmark. It was designed by an international team."
+      "t": "That's Kingdom Centre, another iconic building. It was designed by an international team."
      },
      {
       "s": "Jack",
@@ -1122,17 +1149,21 @@
      "Should old buildings always be restored, or is it better to build new ones?"
     ]
    },
-   "exit": "Tell me two facts about a famous building using 'was built' or 'was designed', without help."
+   "exit": "Tell me two facts about a famous building using 'was built' or 'was designed', without help.",
+   "recycle": [
+    "landmark",
+    "take place"
+   ]
   },
   "1-2": {
    "objective": "Today you will give precise information about inventions and who they were invented by.",
    "warmup": "Which invention could you not live without? Why?",
    "expressions": [
     {
-     "w": "be used for",
-     "def": "to help you do a particular job",
-     "ar": "يُستخدم لـ",
-     "frame": "___ is used for ___ing."
+     "w": "serve as",
+     "def": "to be used as something or do the job of something",
+     "ar": "يُستخدم كـ / يؤدي دور",
+     "frame": "In the past, ___ served as ___."
     },
     {
      "w": "change the world",
@@ -1193,7 +1224,7 @@
      },
      {
       "s": "Faisal",
-      "t": "It was used for telling the time. Every half hour, a little figure moved and a sound was made."
+      "t": "It served as a clock. Every half hour, a little figure moved and a sound was made."
      },
      {
       "s": "Sam",
@@ -1239,23 +1270,26 @@
      "Why is it important to learn about early scientists?"
     ]
    },
-   "exit": "Tell me two facts about an invention using the passive, without help."
+   "exit": "Tell me two facts about an invention using the passive, without help.",
+   "recycle": [
+    "be used for"
+   ]
   },
   "1-3": {
    "objective": "Today you will give precise information about how things are organised at your school.",
    "warmup": "What time does your school day start, and how do you get there?",
    "expressions": [
     {
-     "w": "be in charge of",
-     "def": "to be responsible for something or someone",
-     "ar": "مسؤول عن",
-     "frame": "At my school, ___ is in charge of ___."
+     "w": "be on duty",
+     "def": "to be working and responsible for something at a certain time",
+     "ar": "مناوب / في نوبة عمل",
+     "frame": "At break, ___ is on duty in the ___."
     },
     {
-     "w": "hand in",
-     "def": "to give your work to a teacher",
-     "ar": "يسلّم (واجباً)",
-     "frame": "Homework must be handed in by ___."
+     "w": "submit",
+     "def": "to give your work to a teacher or an office",
+     "ar": "يسلّم / يقدّم",
+     "frame": "Homework must be submitted by ___."
     },
     {
      "w": "be allowed to",
@@ -1309,7 +1343,7 @@
      },
      {
       "s": "Omar",
-      "t": "It's posted on the school app, and it has to be handed in by Thursday."
+      "t": "It's posted on the school app, and it has to be submitted by Thursday."
      },
      {
       "s": "Jack",
@@ -1317,7 +1351,7 @@
      },
      {
       "s": "Omar",
-      "t": "Only at break. Mr Saad is in charge of that too, so be careful! Your timetable is on the app as well."
+      "t": "Only at break. Mr Saad is on duty then too, so be careful! Your timetable is on the app as well."
      }
     ],
     "focus": "Morning assembly is held at seven.",
@@ -1355,7 +1389,11 @@
      "Should students be asked to clean their classrooms? Why or why not?"
     ]
    },
-   "exit": "Tell me two facts about how things are done at your school, using the passive, without help."
+   "exit": "Tell me two facts about how things are done at your school, using the passive, without help.",
+   "recycle": [
+    "hand in",
+    "be in charge of"
+   ]
   },
   "1-4": {
    "objective": "Today you will report facts about recent events using the passive.",
@@ -1374,16 +1412,16 @@
      "frame": "___ was put off until ___."
     },
     {
-     "w": "according to",
-     "def": "as said by someone or something",
-     "ar": "وفقاً لـ / بحسب",
-     "frame": "According to ___, ___."
+     "w": "it is reported that",
+     "def": "used in the news to give information that people have said",
+     "ar": "أفادت التقارير بأنّ",
+     "frame": "It is reported that ___."
     },
     {
-     "w": "heavy rain",
-     "def": "a lot of rain in a short time",
-     "ar": "أمطار غزيرة",
-     "frame": "When there is heavy rain in my city, ___."
+     "w": "torrential rain",
+     "def": "very heavy rain that falls fast",
+     "ar": "أمطار غزيرة جداً",
+     "frame": "When there is torrential rain in my city, ___."
     },
     {
      "w": "spectators",
@@ -1412,7 +1450,7 @@
      },
      {
       "s": "Faisal",
-      "t": "According to the weather website, heavy rain is expected in Riyadh tomorrow."
+      "t": "It is reported that torrential rain is expected in Riyadh tomorrow."
      },
      {
       "s": "Noura",
@@ -1456,7 +1494,7 @@
      },
      {
       "q": "Where did you get this information?",
-      "hint": "Use 'According to …'."
+      "hint": "Use 'It is reported that …'."
      }
     ]
    },
@@ -1472,7 +1510,11 @@
      "Where do you usually get your news from? Do you trust it?"
     ]
    },
-   "exit": "Report two pieces of news using the passive, without help."
+   "exit": "Report two pieces of news using the passive, without help.",
+   "recycle": [
+    "according to",
+    "heavy rain"
+   ]
   },
   "1-5": {
    "objective": "Today you will present a short fact file about a famous place using the passive.",
@@ -1485,10 +1527,10 @@
      "frame": "___ is located in ___."
     },
     {
-     "w": "date back to",
-     "def": "to have existed since a time in the past",
-     "ar": "يعود تاريخه إلى",
-     "frame": "The oldest buildings in ___ date back to ___."
+     "w": "steeped in history",
+     "def": "having a very long and interesting history",
+     "ar": "عريق / غني بالتاريخ",
+     "frame": "___ is a town steeped in history."
     },
     {
      "w": "be carved into",
@@ -1503,16 +1545,16 @@
      "frame": "___ is a World Heritage Site because ___."
     },
     {
-     "w": "be famous for",
-     "def": "known by many people because of something",
-     "ar": "مشهور بـ",
-     "frame": "___ is famous for its ___."
+     "w": "be best known for",
+     "def": "to be famous mainly because of one thing",
+     "ar": "أشهر ما يُعرف به",
+     "frame": "___ is best known for its ___."
     },
     {
-     "w": "breathtaking",
-     "def": "extremely beautiful or exciting",
-     "ar": "يخطف الأنفاس / رائع جداً",
-     "frame": "The view from ___ is breathtaking."
+     "w": "awe-inspiring",
+     "def": "so beautiful or big that it surprises you",
+     "ar": "مهيب / يبعث على الدهشة",
+     "frame": "The view from ___ is awe-inspiring."
     }
    ],
    "dialogue": {
@@ -1525,7 +1567,7 @@
      },
      {
       "s": "Reem",
-      "t": "AlUla is located in the north-west of Saudi Arabia. It's famous for its huge rocks and ancient tombs."
+      "t": "AlUla is located in the north-west of Saudi Arabia. It's steeped in history and best known for its huge rocks and tombs."
      },
      {
       "s": "Emma",
@@ -1551,7 +1593,7 @@
      },
      {
       "s": "Reem",
-      "t": "It's visited by thousands of tourists every year. The views are breathtaking, especially at sunset."
+      "t": "It's visited by thousands of tourists every year. The views are awe-inspiring, especially at sunset."
      }
     ],
     "focus": "They were carved into the rocks by the Nabataeans.",
@@ -1565,7 +1607,7 @@
     "prompts": [
      {
       "q": "Where is the place located, and what is it famous for?",
-      "hint": "Use 'It's located in …' and 'It's famous for …'."
+      "hint": "Use 'It's located in …' and 'It's best known for …'."
      },
      {
       "q": "When was it built or discovered, and by whom?",
@@ -1589,7 +1631,12 @@
      "Why do you think it's important to protect old places?"
     ]
    },
-   "exit": "Give me two precise facts about a famous place using the passive, without help."
+   "exit": "Give me two precise facts about a famous place using the passive, without help.",
+   "recycle": [
+    "be famous for",
+    "date back to",
+    "breathtaking"
+   ]
   },
   "2-0": {
    "objective": "Today you will complain politely about a problem with your food and ask for a solution.",
@@ -1828,10 +1875,10 @@
    "warmup": "Have you ever stayed in a hotel? What did you like or dislike about it?",
    "expressions": [
     {
-     "w": "sorry to bother you",
-     "def": "a polite way to start when you interrupt someone",
-     "ar": "آسف على الإزعاج",
-     "frame": "Sorry to bother you, but ___."
+     "w": "I hate to complain, but …",
+     "def": "a polite way to start a complaint",
+     "ar": "لا أحب أن أشتكي، لكن …",
+     "frame": "I hate to complain, but ___."
     },
     {
      "w": "break down",
@@ -1869,7 +1916,7 @@
     "p1": [
      {
       "s": "Omar",
-      "t": "Good evening. Sorry to bother you, but there's a problem in room 214."
+      "t": "Good evening. I hate to complain, but there's a problem in room 214."
      },
      {
       "s": "Receptionist",
@@ -1913,7 +1960,7 @@
     "prompts": [
      {
       "q": "Reception, good evening. How can I help?",
-      "hint": "Start with 'Sorry to bother you, but …' and give your room number."
+      "hint": "Start with 'I hate to complain, but …' and give your room number."
      },
      {
       "q": "What exactly is wrong?",
@@ -1937,7 +1984,10 @@
      "What is the most annoying problem you could have in a hotel?"
     ]
    },
-   "exit": "Tell me two sentences to report a problem in a hotel and ask for it to be fixed, without help."
+   "exit": "Tell me two sentences to report a problem in a hotel and ask for it to be fixed, without help.",
+   "recycle": [
+    "sorry to bother you"
+   ]
   },
   "2-3": {
    "objective": "Today you will make a polite complaint about a service and ask for a fair solution.",
@@ -2004,7 +2054,7 @@
     "p2": [
      {
       "s": "Noura",
-      "t": "It's not the first time, either. We had the same problem last week."
+      "t": "It's not the first time, either. Last week, the receptionist told us that the app would be fixed."
      },
      {
       "s": "Manager",
@@ -2178,16 +2228,16 @@
    "warmup": "Have you ever lost something important while travelling?",
    "expressions": [
     {
-     "w": "I'm afraid …",
-     "def": "a polite way to start bad news or a complaint",
-     "ar": "للأسف / أخشى أنّ",
-     "frame": "I'm afraid my ___ hasn't arrived."
+     "w": "reference number",
+     "def": "a number that helps a company find your order or case",
+     "ar": "الرقم المرجعي",
+     "frame": "Could you give me a reference number for ___?"
     },
     {
-     "w": "Could you possibly …?",
-     "def": "a very polite way to ask for something",
-     "ar": "هل من الممكن أن …؟",
-     "frame": "Could you possibly ___ by tomorrow?"
+     "w": "track down",
+     "def": "to find something after looking for it carefully",
+     "ar": "يتعقّب ويعثر على",
+     "frame": "The airline tracked down my ___."
     },
     {
      "w": "go missing",
@@ -2227,7 +2277,7 @@
      },
      {
       "s": "Agent",
-      "t": "I'm sorry to hear that. Can you describe it?"
+      "t": "I'm sorry to hear that. Here's your reference number. Can you describe it?"
      },
      {
       "s": "Faisal",
@@ -2237,7 +2287,7 @@
     "p2": [
      {
       "s": "Agent",
-      "t": "Don't worry, we'll sort it out. We think it was put on the wrong plane, so it should arrive tomorrow."
+      "t": "Don't worry, we'll track it down. We think it was put on the wrong plane, so it should arrive tomorrow."
      },
      {
       "s": "Faisal",
@@ -2287,7 +2337,11 @@
      "What's the best way to stay calm when something goes wrong on a trip?"
     ]
    },
-   "exit": "Make a short polite complaint and ask for a solution in two sentences, without help."
+   "exit": "Make a short polite complaint and ask for a solution in two sentences, without help.",
+   "recycle": [
+    "I'm afraid …",
+    "Could you possibly …?"
+   ]
   },
   "3-0": {
    "objective": "Today you will imagine having a superpower and say what you would do with it.",
@@ -2306,10 +2360,10 @@
      "frame": "If I could read people's minds, I'd ___."
     },
     {
-     "w": "make a difference",
-     "def": "to have a good effect on people or a situation",
-     "ar": "يُحدث فرقاً",
-     "frame": "I'd like to make a difference by ___."
+     "w": "people in need",
+     "def": "people who don't have enough money, food or help",
+     "ar": "المحتاجون",
+     "frame": "With a superpower, I'd help people in need by ___."
     },
     {
      "w": "become invisible",
@@ -2358,7 +2412,7 @@
      },
      {
       "s": "Omar",
-      "t": "Fun! But I'd rather use my power to make a difference."
+      "t": "Fun! But I'd rather use my power to help people in need."
      },
      {
       "s": "Sam",
@@ -2372,7 +2426,7 @@
     "focus": "If I could fly, I'd get to the front of this queue in the blink of an eye.",
     "qs": [
      "Why does Omar want to fly?",
-     "How would Omar use his power to make a difference?"
+     "How would Omar use his power to help people in need?"
     ]
    },
    "speakout": {
@@ -2384,7 +2438,7 @@
      },
      {
       "q": "How would your hero help people?",
-      "hint": "Give one example with 'would' to show how they'd make a difference."
+      "hint": "Give one example with 'would' to show how they'd help people in need."
      },
      {
       "q": "What would your hero do just for fun?",
@@ -2404,7 +2458,10 @@
      "If you created an Arab superhero, what would they be like?"
     ]
    },
-   "exit": "Tell me two sentences about what you would do if you had a superpower, without help."
+   "exit": "Tell me two sentences about what you would do if you had a superpower, without help.",
+   "recycle": [
+    "make a difference"
+   ]
   },
   "3-1": {
    "objective": "Today you will imagine being in charge of your school or city and say what you would change.",
@@ -2429,22 +2486,22 @@
      "frame": "I'd bring in a rule that ___."
     },
     {
-     "w": "make sure",
-     "def": "to check that something happens",
-     "ar": "يتأكّد من",
-     "frame": "I'd make sure that every student ___."
+     "w": "see to it that",
+     "def": "to make certain that something happens",
+     "ar": "يحرص على أن",
+     "frame": "I'd see to it that every student ___."
     },
     {
-     "w": "on the other hand",
-     "def": "used to give a different point",
-     "ar": "من ناحية أخرى",
-     "frame": "___ is a great idea. On the other hand, ___."
+     "w": "then again",
+     "def": "used to add a different idea to what you just said",
+     "ar": "لكن من جهة أخرى",
+     "frame": "___ would be fun. Then again, ___."
     },
     {
-     "w": "budget",
-     "def": "the amount of money you have to spend",
-     "ar": "ميزانية",
-     "frame": "If our school had a bigger budget, I'd ___."
+     "w": "funding",
+     "def": "money given for a special purpose",
+     "ar": "تمويل",
+     "frame": "If our school had more funding, I'd ___."
     }
    ],
    "dialogue": {
@@ -2470,15 +2527,15 @@
     "p2": [
      {
       "s": "Noura",
-      "t": "That sounds expensive. Would the school have a big enough budget?"
+      "t": "That sounds expensive. Would the school have enough funding?"
      },
      {
       "s": "Reem",
-      "t": "Probably not. On the other hand, we could ask local companies to help."
+      "t": "Probably not. Then again, we could ask local companies to help."
      },
      {
       "s": "Noura",
-      "t": "True. And I'd make sure every class went on a trip at least once a term."
+      "t": "True. And I'd see to it that every class went on a trip at least once a term."
      },
      {
       "s": "Reem",
@@ -2504,7 +2561,7 @@
      },
      {
       "q": "Wouldn't that be very expensive?",
-      "hint": "Answer with 'On the other hand, …' and suggest how to pay for it."
+      "hint": "Answer with 'Then again, …' and suggest how to pay for it."
      }
     ]
    },
@@ -2520,7 +2577,12 @@
      "What is one problem in your area that young people could help solve?"
     ]
    },
-   "exit": "Tell me two things you would change if you were in charge of your school, without help."
+   "exit": "Tell me two things you would change if you were in charge of your school, without help.",
+   "recycle": [
+    "make sure",
+    "on the other hand",
+    "budget"
+   ]
   },
   "3-2": {
    "objective": "Today you will talk about things you wish were different in your life right now.",
@@ -2539,16 +2601,16 @@
      "frame": "I wish I could ___."
     },
     {
-     "w": "stay up late",
-     "def": "to go to bed later than usual",
-     "ar": "يسهر",
-     "frame": "I wish I could stay up late on ___."
+     "w": "lie in",
+     "def": "to stay in bed later than usual in the morning",
+     "ar": "يبقى في السرير متأخراً صباحاً",
+     "frame": "I wish I could lie in on ___."
     },
     {
-     "w": "pocket money",
-     "def": "money that parents give children to spend",
-     "ar": "المصروف",
-     "frame": "If I had more pocket money, I'd ___."
+     "w": "spending money",
+     "def": "money you can use to buy things you want",
+     "ar": "مصروف للإنفاق الشخصي",
+     "frame": "If I had more spending money, I would ___."
     },
     {
      "w": "the latest",
@@ -2576,7 +2638,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Fair point. And I wish I could stay up late every night, not just on Thursdays."
+      "t": "Fair point. And I wish I could lie in every morning, not just at the weekend."
      },
      {
       "s": "Lama",
@@ -2594,7 +2656,7 @@
      },
      {
       "s": "Faisal",
-      "t": "And I wish I had more pocket money. Then I could buy the latest football game."
+      "t": "And I wish I had more spending money. Then I could buy the latest football game."
      },
      {
       "s": "Lama",
@@ -2636,7 +2698,11 @@
      "Do you think wishing is useful, or is it better to make a plan?"
     ]
    },
-   "exit": "Tell me two things you wish were different in your life right now, without help."
+   "exit": "Tell me two things you wish were different in your life right now, without help.",
+   "recycle": [
+    "stay up late",
+    "pocket money"
+   ]
   },
   "3-3": {
    "objective": "Today you will imagine a dream trip and describe what you would do and see.",
@@ -2655,16 +2721,16 @@
      "frame": "I'd love to visit somewhere off the beaten track, like ___."
     },
     {
-     "w": "set off",
-     "def": "to start a journey",
-     "ar": "ينطلق (في رحلة)",
-     "frame": "On my dream trip, I'd set off from ___."
+     "w": "head off",
+     "def": "to leave a place to start a journey",
+     "ar": "ينطلق / يغادر",
+     "frame": "On my dream trip, I'd head off from ___."
     },
     {
-     "w": "go sightseeing",
-     "def": "to visit famous places as a tourist",
-     "ar": "يتجوّل لمشاهدة المعالم",
-     "frame": "If I were in ___, I'd go sightseeing at ___."
+     "w": "take in the sights",
+     "def": "to look at and enjoy the famous places somewhere",
+     "ar": "يستمتع بمشاهدة المعالم",
+     "frame": "If I were in ___, I'd take in the sights of ___."
     },
     {
      "w": "a dream come true",
@@ -2697,7 +2763,7 @@
      },
      {
       "s": "Noura",
-      "t": "I'd go sightseeing in Kyoto, and I'd try real Japanese food. What about you?"
+      "t": "I'd take in the sights of Kyoto, and I'd try real Japanese food. What about you?"
      }
     ],
     "p2": [
@@ -2711,7 +2777,7 @@
      },
      {
       "s": "Emma",
-      "t": "I'd set off from Jeddah and fly to Bali, then take a boat. The beaches would be stunning."
+      "t": "I'd head off from Jeddah and fly to Bali, then take a boat. The beaches would be stunning."
      },
      {
       "s": "Noura",
@@ -2753,7 +2819,11 @@
      "Would you rather explore the desert or the sea? Why?"
     ]
    },
-   "exit": "Tell me two sentences about your dream trip using 'would', without help."
+   "exit": "Tell me two sentences about your dream trip using 'would', without help.",
+   "recycle": [
+    "go sightseeing",
+    "set off"
+   ]
   },
   "3-4": {
    "objective": "Today you will imagine difficult situations and say what you would do and why.",
@@ -2778,10 +2848,10 @@
      "frame": "I'm in two minds about ___."
     },
     {
-     "w": "turn down",
-     "def": "to say no to an offer",
-     "ar": "يرفض (عرضاً)",
-     "frame": "I'd turn down ___ if ___."
+     "w": "pass up",
+     "def": "to not use a good chance when you have it",
+     "ar": "يفوّت (فرصة)",
+     "frame": "I'd never pass up the chance to ___."
     },
     {
      "w": "own up",
@@ -2832,13 +2902,13 @@
      },
      {
       "s": "Omar",
-      "t": "Hmm, I'd probably turn it down. I wouldn't want to leave my friends."
+      "t": "Hmm, I'd probably pass up the chance. I wouldn't want to leave my friends."
      }
     ],
     "focus": "I think I'd do the right thing and take it to the police station.",
     "qs": [
      "What would Omar do with the money he found?",
-     "Why would Omar turn down the team's offer?"
+     "Why would Omar pass up the team's offer?"
     ]
    },
    "speakout": {
@@ -2870,23 +2940,26 @@
      "What would you do if you lost something important?"
     ]
    },
-   "exit": "Tell me what you would do in one difficult situation and why, in two sentences, without help."
+   "exit": "Tell me what you would do in one difficult situation and why, in two sentences, without help.",
+   "recycle": [
+    "turn down"
+   ]
   },
   "3-5": {
    "objective": "Today you will describe your ideal city in a short talk using the second conditional and I wish.",
    "warmup": "What's one thing you wish everyone in the world had?",
    "expressions": [
     {
-     "w": "make a difference",
-     "def": "to have a good effect on people or a situation",
-     "ar": "يُحدث فرقاً",
-     "frame": "If everyone recycled, it would make a big difference to ___."
+     "w": "go a long way",
+     "def": "to help a lot to achieve something",
+     "ar": "يساهم كثيراً في",
+     "frame": "If everyone recycled, it would go a long way towards ___."
     },
     {
-     "w": "get rid of",
-     "def": "to remove something you don't want",
-     "ar": "يتخلّص من",
-     "frame": "In my ideal city, we'd get rid of ___."
+     "w": "do away with",
+     "def": "to stop using something or get rid of it completely",
+     "ar": "يلغي / يتخلّص من",
+     "frame": "In my ideal city, we'd do away with ___."
     },
     {
      "w": "cut down on",
@@ -2937,11 +3010,11 @@
     "p2": [
      {
       "s": "Mum",
-      "t": "And what would you get rid of?"
+      "t": "And what would you do away with?"
      },
      {
       "s": "Reem",
-      "t": "I'd get rid of plastic bags. If everyone cut down on plastic, it would make a huge difference."
+      "t": "I'd do away with plastic bags. If everyone cut down on plastic, it would go a long way towards cleaner seas."
      },
      {
       "s": "Mum",
@@ -2955,7 +3028,7 @@
     "focus": "If there were more public transport, people wouldn't need to drive everywhere.",
     "qs": [
      "What would every neighbourhood have in Reem's ideal city?",
-     "What would Reem get rid of?"
+     "What would Reem do away with?"
     ]
    },
    "speakout": {
@@ -2987,16 +3060,20 @@
      "What small change could you make to help your city become greener?"
     ]
    },
-   "exit": "Describe your ideal world in two sentences, using 'would' and 'I wish', without help."
+   "exit": "Describe your ideal world in two sentences, using 'would' and 'I wish', without help.",
+   "recycle": [
+    "make a difference",
+    "get rid of"
+   ]
   }
  },
  "kits": {
   "0-0": {
    "words": [
     {
-     "w": "take up",
-     "ar": "يبدأ (هواية جديدة)",
-     "ex": "My brother took up photography last year."
+     "w": "get hooked on",
+     "ar": "يتعلّق بـ / يُدمن (هواية)",
+     "ex": "My brother got hooked on photography last year."
     },
     {
      "w": "get into",
@@ -3031,7 +3108,7 @@
     },
     {
      "s": "Noura",
-     "t": "Yes! I took up painting last summer, and I've been doing it every weekend since then."
+     "t": "Yes! I got hooked on painting last summer, and I've been doing it every weekend since then."
     },
     {
      "s": "Reem",
@@ -3071,9 +3148,9 @@
   "0-1": {
    "words": [
     {
-     "w": "pick up",
-     "ar": "يتعلّم بسهولة / يلتقط",
-     "ex": "Sam picked up some Arabic words from his neighbours."
+     "w": "soak up",
+     "ar": "يستوعب بسرعة / يتشرّب",
+     "ex": "Sam soaked up lots of Arabic words from his neighbours."
     },
     {
      "w": "get the hang of",
@@ -3124,7 +3201,7 @@
     },
     {
      "s": "Sam",
-     "t": "I've been chatting with my neighbours. I've picked up lots of useful phrases from them."
+     "t": "I've been chatting with my neighbours. I've soaked up lots of useful phrases from them."
     },
     {
      "s": "Omar",
@@ -3132,25 +3209,25 @@
     },
     {
      "s": "Sam",
-     "t": "Thanks! I'm making progress step by step. Practice makes perfect, as they say."
+     "t": "Thanks! I really enjoy chatting in Arabic, and I want to keep improving step by step. Practice makes perfect!"
     }
    ],
    "grammar": {
-    "title": "for vs since",
-    "ar": "for + مدة زمنية (for two weeks)، وsince + نقطة بداية (since Monday / since 2024).",
+    "title": "Verb patterns: enjoy …ing / want to …",
+    "ar": "بعض الأفعال يأتي بعدها فعل بـ ing مثل enjoy / finish / keep / practise، وبعضها يأتي بعده to + الفعل مثل want / decide / hope / learn.",
     "examples": [
-     "I've been learning to swim for six months.",
-     "He's been studying Arabic since September.",
-     "We've been practising since the summer holiday."
+     "I enjoy chatting with my neighbours.",
+     "I want to take an Arabic exam next year.",
+     "She's learning to read Arabic, and she keeps practising."
     ]
    }
   },
   "0-2": {
    "words": [
     {
-     "w": "settle in",
-     "ar": "يتأقلم / يستقر",
-     "ex": "It took Emma a month to settle in at her new school."
+     "w": "get your bearings",
+     "ar": "يتعرّف على المكان ويتأقلم",
+     "ex": "It took Emma a month to get her bearings at her new school."
     },
     {
      "w": "move to",
@@ -3168,14 +3245,14 @@
      "ex": "Our neighbourhood has a big park."
     },
     {
-     "w": "get used to",
-     "ar": "يعتاد على",
-     "ex": "I'm getting used to the hot weather."
+     "w": "adjust to",
+     "ar": "يتكيّف مع",
+     "ex": "I'm adjusting to the hot weather."
     },
     {
-     "w": "make friends",
-     "ar": "يكوّن صداقات",
-     "ex": "Reem made friends quickly at her new school."
+     "w": "hit it off",
+     "ar": "يتوافق مع شخص بسرعة",
+     "ex": "Reem and Emma hit it off on the first day."
     }
    ],
    "dialogue": [
@@ -3189,15 +3266,15 @@
     },
     {
      "s": "Reem",
-     "t": "Was it hard to settle in?"
+     "t": "Was it hard to get your bearings?"
     },
     {
      "s": "Emma",
-     "t": "A little. I had to get used to the heat, and I missed my old friends."
+     "t": "A little. I had to adjust to the heat, and I missed my old friends."
     },
     {
      "s": "Reem",
-     "t": "And now? Have you made friends?"
+     "t": "And now? Have you hit it off with anyone?"
     },
     {
      "s": "Emma",
@@ -3235,14 +3312,14 @@
      "ex": "Faisal has been running to get in shape."
     },
     {
-     "w": "warm up",
-     "ar": "يقوم بالإحماء",
-     "ex": "Always warm up before you run."
+     "w": "loosen up",
+     "ar": "يليّن عضلاته / يُحمّي",
+     "ex": "Always loosen up before you run."
     },
     {
-     "w": "out of breath",
-     "ar": "يلهث / منقطع النَّفَس",
-     "ex": "I was out of breath after the race."
+     "w": "run out of steam",
+     "ar": "تنفد طاقته",
+     "ex": "I ran out of steam halfway through the race."
     },
     {
      "w": "keep going",
@@ -3270,7 +3347,7 @@
     },
     {
      "s": "Faisal",
-     "t": "For about six weeks. At first I was out of breath after one kilometre!"
+     "t": "For about six weeks. At first I ran out of steam after one kilometre!"
     },
     {
      "s": "Lama",
@@ -3278,24 +3355,24 @@
     },
     {
      "s": "Faisal",
-     "t": "I've made real progress. Now I can run four kilometres. I've been working out with Dad to build my stamina."
+     "t": "I've stopped eating sweets. Now I can run four kilometres, and I've been working out with Dad to build my stamina."
     },
     {
      "s": "Lama",
-     "t": "Do you warm up first?"
+     "t": "Do you loosen up first?"
     },
     {
      "s": "Faisal",
-     "t": "Always. And when it gets hard, I just keep going. I really want to get in shape."
+     "t": "Always. And when it gets hard, I stop to drink some water, then keep going. I really want to get in shape."
     }
    ],
    "grammar": {
     "title": "Present perfect continuous for visible results",
-    "ar": "نستخدم هذا الزمن لنشرح نتيجة نراها الآن: You look tired. — I've been running.",
+    "ar": "نستخدم هذا الزمن لنشرح نتيجة نراها الآن: You look tired. — I've been running. وانتبه: stop + ing = يتوقّف عن عادة، أمّا stop + to = يتوقّف لكي يفعل شيئاً.",
     "examples": [
      "Your face is red. Have you been running?",
      "I'm tired because I've been training all morning.",
-     "He hasn't been sleeping well before the match."
+     "I've stopped eating sweets, but I stop to drink water when I run."
     ]
    }
   },
@@ -3312,9 +3389,9 @@
      "ex": "So far, we've built the base of the model."
     },
     {
-     "w": "come up with",
-     "ar": "يبتكر / يأتي بفكرة",
-     "ex": "Reem came up with a brilliant name for the team."
+     "w": "think up",
+     "ar": "يبتكر / يخترع فكرة",
+     "ex": "Reem thought up a brilliant name for the team."
     },
     {
      "w": "behind schedule",
@@ -3343,7 +3420,7 @@
     },
     {
      "s": "Ms Hana",
-     "t": "Great idea! Who came up with it?"
+     "t": "Great idea! Who thought it up?"
     },
     {
      "s": "Noura",
@@ -3379,14 +3456,14 @@
   "0-5": {
    "words": [
     {
-     "w": "take up",
-     "ar": "يبدأ (نشاطاً جديداً)",
-     "ex": "Last year, Faisal took up karate."
+     "w": "try your hand at",
+     "ar": "يجرّب (نشاطاً جديداً)",
+     "ex": "Last year, Faisal tried his hand at karate."
     },
     {
-     "w": "make progress",
-     "ar": "يحرز تقدّماً",
-     "ex": "She has made great progress in maths."
+     "w": "come a long way",
+     "ar": "قطع شوطاً طويلاً / تحسّن كثيراً",
+     "ex": "Her English has come a long way this year."
     },
     {
      "w": "gain experience",
@@ -3394,9 +3471,9 @@
      "ex": "She gained experience by helping at her uncle's shop."
     },
     {
-     "w": "be proud of",
-     "ar": "فخور بـ",
-     "ex": "I'm proud of finishing the fun run."
+     "w": "proudest moment",
+     "ar": "أكثر لحظة شعرت فيها بالفخر",
+     "ex": "My proudest moment was finishing the fun run."
     },
     {
      "w": "strength",
@@ -3428,15 +3505,15 @@
     },
     {
      "s": "Mr Khalid",
-     "t": "Have you taken up anything else recently?"
+     "t": "Have you tried your hand at anything else recently?"
     },
     {
      "s": "Noura",
-     "t": "Yes, I've been learning to code for about six months. I've made a lot of progress."
+     "t": "Yes, I've been learning to code for about six months. I've come a long way since then."
     },
     {
      "s": "Mr Khalid",
-     "t": "Wonderful. What are you most proud of?"
+     "t": "Wonderful. What has been your proudest moment?"
     },
     {
      "s": "Noura",
@@ -3456,9 +3533,9 @@
   "1-0": {
    "words": [
     {
-     "w": "be famous for",
-     "ar": "مشهور بـ",
-     "ex": "Al-Qassim is famous for its dates."
+     "w": "be renowned for",
+     "ar": "مشهور ومعروف بـ",
+     "ex": "Al-Qassim is renowned for its dates."
     },
     {
      "w": "be made from",
@@ -3493,7 +3570,7 @@
     },
     {
      "s": "Reem",
-     "t": "Most of them are grown here in Al-Qassim. Our region is famous for its dates."
+     "t": "Most of them are grown here in Al-Qassim. Our region is renowned for its dates."
     },
     {
      "s": "Emma",
@@ -3548,9 +3625,9 @@
      "ex": "The museum was designed by a famous architect."
     },
     {
-     "w": "take place",
-     "ar": "يحدث / يُقام",
-     "ex": "Concerts take place there every winter."
+     "w": "be held",
+     "ar": "يُقام / يُعقد",
+     "ex": "Concerts are held there every winter."
     },
     {
      "w": "restore",
@@ -3558,9 +3635,9 @@
      "ex": "The old palace was restored a few years ago."
     },
     {
-     "w": "landmark",
-     "ar": "معلم بارز",
-     "ex": "Kingdom Centre is a famous Riyadh landmark."
+     "w": "iconic",
+     "ar": "أيقوني / رمز معروف",
+     "ex": "Kingdom Centre is an iconic Riyadh building."
     }
    ],
    "dialogue": [
@@ -3578,7 +3655,7 @@
     },
     {
      "s": "Omar",
-     "t": "No, it was restored, and now it's a museum. Festivals sometimes take place in the square outside."
+     "t": "No, it was restored, and now it's a museum. Festivals are sometimes held in the square outside."
     },
     {
      "s": "Jack",
@@ -3586,7 +3663,7 @@
     },
     {
      "s": "Omar",
-     "t": "That's Kingdom Centre, another famous landmark. It was designed by an international team."
+     "t": "That's Kingdom Centre, another iconic building. It was designed by an international team."
     },
     {
      "s": "Jack",
@@ -3610,9 +3687,9 @@
   "1-2": {
    "words": [
     {
-     "w": "be used for",
-     "ar": "يُستخدم لـ",
-     "ex": "A compass is used for finding directions."
+     "w": "serve as",
+     "ar": "يُستخدم كـ / يؤدي دور",
+     "ex": "This old building now serves as a museum."
     },
     {
      "w": "change the world",
@@ -3663,7 +3740,7 @@
     },
     {
      "s": "Faisal",
-     "t": "It was used for telling the time. Every half hour, a little figure moved and a sound was made."
+     "t": "It served as a clock. Every half hour, a little figure moved and a sound was made."
     },
     {
      "s": "Sam",
@@ -3687,14 +3764,14 @@
   "1-3": {
    "words": [
     {
-     "w": "be in charge of",
-     "ar": "مسؤول عن",
-     "ex": "Mr Saad is in charge of the sports teams."
+     "w": "be on duty",
+     "ar": "مناوب / في نوبة عمل",
+     "ex": "Mr Saad is on duty in the playground today."
     },
     {
-     "w": "hand in",
-     "ar": "يسلّم (واجباً)",
-     "ex": "Please hand in your projects on Sunday."
+     "w": "submit",
+     "ar": "يسلّم / يقدّم",
+     "ex": "Please submit your projects on Sunday."
     },
     {
      "w": "be allowed to",
@@ -3740,7 +3817,7 @@
     },
     {
      "s": "Omar",
-     "t": "It's posted on the school app, and it has to be handed in by Thursday."
+     "t": "It's posted on the school app, and it has to be submitted by Thursday."
     },
     {
      "s": "Jack",
@@ -3748,7 +3825,7 @@
     },
     {
      "s": "Omar",
-     "t": "Only at break. Mr Saad is in charge of that too, so be careful! Your timetable is on the app as well."
+     "t": "Only at break. Mr Saad is on duty then too, so be careful! Your timetable is on the app as well."
     }
    ],
    "grammar": {
@@ -3774,14 +3851,14 @@
      "ex": "The trip was put off until next week."
     },
     {
-     "w": "according to",
-     "ar": "وفقاً لـ / بحسب",
-     "ex": "According to the news, the road was closed."
+     "w": "it is reported that",
+     "ar": "أفادت التقارير بأنّ",
+     "ex": "It is reported that the road is closed."
     },
     {
-     "w": "heavy rain",
-     "ar": "أمطار غزيرة",
-     "ex": "Heavy rain fell in Jeddah last night."
+     "w": "torrential rain",
+     "ar": "أمطار غزيرة جداً",
+     "ex": "Torrential rain fell in Jeddah last night."
     },
     {
      "w": "spectators",
@@ -3805,7 +3882,7 @@
     },
     {
      "s": "Faisal",
-     "t": "According to the weather website, heavy rain is expected in Riyadh tomorrow."
+     "t": "It is reported that torrential rain is expected in Riyadh tomorrow."
     },
     {
      "s": "Noura",
@@ -3846,9 +3923,9 @@
      "ex": "AlUla is located in the north-west of Saudi Arabia."
     },
     {
-     "w": "date back to",
-     "ar": "يعود تاريخه إلى",
-     "ex": "The tombs date back about 2,000 years."
+     "w": "steeped in history",
+     "ar": "عريق / غني بالتاريخ",
+     "ex": "Diriyah is a place steeped in history."
     },
     {
      "w": "be carved into",
@@ -3861,14 +3938,14 @@
      "ex": "Hegra was Saudi Arabia's first World Heritage Site."
     },
     {
-     "w": "be famous for",
-     "ar": "مشهور بـ",
-     "ex": "AlUla is famous for its huge rocks."
+     "w": "be best known for",
+     "ar": "أشهر ما يُعرف به",
+     "ex": "AlUla is best known for its huge rocks."
     },
     {
-     "w": "breathtaking",
-     "ar": "يخطف الأنفاس / رائع جداً",
-     "ex": "The sunset over the rocks was breathtaking."
+     "w": "awe-inspiring",
+     "ar": "مهيب / يبعث على الدهشة",
+     "ex": "The sunset over the rocks was awe-inspiring."
     }
    ],
    "dialogue": [
@@ -3878,7 +3955,7 @@
     },
     {
      "s": "Reem",
-     "t": "AlUla is located in the north-west of Saudi Arabia. It's famous for its huge rocks and ancient tombs."
+     "t": "AlUla is located in the north-west of Saudi Arabia. It's steeped in history and best known for its huge rocks and tombs."
     },
     {
      "s": "Emma",
@@ -3902,7 +3979,7 @@
     },
     {
      "s": "Reem",
-     "t": "It's visited by thousands of tourists every year. The views are breathtaking, especially at sunset."
+     "t": "It's visited by thousands of tourists every year. The views are awe-inspiring, especially at sunset."
     }
    ],
    "grammar": {
@@ -4072,9 +4149,9 @@
   "2-2": {
    "words": [
     {
-     "w": "sorry to bother you",
-     "ar": "آسف على الإزعاج",
-     "ex": "Sorry to bother you, but the lift isn't working."
+     "w": "I hate to complain, but …",
+     "ar": "لا أحب أن أشتكي، لكن …",
+     "ex": "I hate to complain, but the lift isn't working."
     },
     {
      "w": "break down",
@@ -4105,7 +4182,7 @@
    "dialogue": [
     {
      "s": "Omar",
-     "t": "Good evening. Sorry to bother you, but there's a problem in room 214."
+     "t": "Good evening. I hate to complain, but there's a problem in room 214."
     },
     {
      "s": "Receptionist",
@@ -4198,7 +4275,7 @@
     },
     {
      "s": "Noura",
-     "t": "It's not the first time, either. We had the same problem last week."
+     "t": "It's not the first time, either. Last week, the receptionist told us that the app would be fixed."
     },
     {
      "s": "Manager",
@@ -4303,14 +4380,14 @@
   "2-5": {
    "words": [
     {
-     "w": "I'm afraid …",
-     "ar": "للأسف / أخشى أنّ",
-     "ex": "I'm afraid my bag hasn't arrived."
+     "w": "reference number",
+     "ar": "الرقم المرجعي",
+     "ex": "Please keep your reference number safe."
     },
     {
-     "w": "Could you possibly …?",
-     "ar": "هل من الممكن أن …؟",
-     "ex": "Could you possibly deliver it by tomorrow?"
+     "w": "track down",
+     "ar": "يتعقّب ويعثر على",
+     "ex": "They tracked down my bag in Dubai."
     },
     {
      "w": "go missing",
@@ -4344,7 +4421,7 @@
     },
     {
      "s": "Agent",
-     "t": "I'm sorry to hear that. Can you describe it?"
+     "t": "I'm sorry to hear that. Here's your reference number. Can you describe it?"
     },
     {
      "s": "Faisal",
@@ -4352,7 +4429,7 @@
     },
     {
      "s": "Agent",
-     "t": "Don't worry, we'll sort it out. We think it was put on the wrong plane, so it should arrive tomorrow."
+     "t": "Don't worry, we'll track it down. We think it was put on the wrong plane, so it should arrive tomorrow."
     },
     {
      "s": "Faisal",
@@ -4371,7 +4448,7 @@
     "title": "A complete complaint: problem → request → check",
     "ar": "الشكوى الكاملة: نشرح المشكلة (I'm afraid …) ثم نطلب الحل (Could you possibly …?) ثم نتأكّد (So, just to confirm, …).",
     "examples": [
-     "I'm afraid my suitcase went missing.",
+     "My suitcase went missing on the flight.",
      "Could you possibly deliver it to my hotel?",
      "So, just to confirm, it'll arrive tomorrow?"
     ]
@@ -4390,9 +4467,9 @@
      "ex": "My mum always seems to read my mind."
     },
     {
-     "w": "make a difference",
-     "ar": "يُحدث فرقاً",
-     "ex": "Volunteers really make a difference in our city."
+     "w": "people in need",
+     "ar": "المحتاجون",
+     "ex": "Volunteers bring food to people in need every Ramadan."
     },
     {
      "w": "become invisible",
@@ -4433,7 +4510,7 @@
     },
     {
      "s": "Omar",
-     "t": "Fun! But I'd rather use my power to make a difference."
+     "t": "Fun! But I'd rather use my power to help people in need."
     },
     {
      "s": "Sam",
@@ -4472,19 +4549,19 @@
      "ex": "The school brought in a new phone rule this year."
     },
     {
-     "w": "make sure",
-     "ar": "يتأكّد من",
-     "ex": "Make sure you lock the door when you leave."
+     "w": "see to it that",
+     "ar": "يحرص على أن",
+     "ex": "The coach saw to it that everyone got a turn."
     },
     {
-     "w": "on the other hand",
-     "ar": "من ناحية أخرى",
-     "ex": "Trips are fun. On the other hand, they're expensive."
+     "w": "then again",
+     "ar": "لكن من جهة أخرى",
+     "ex": "Trips are fun. Then again, they're expensive."
     },
     {
-     "w": "budget",
-     "ar": "ميزانية",
-     "ex": "The club has a very small budget."
+     "w": "funding",
+     "ar": "تمويل",
+     "ex": "The club needs more funding for new equipment."
     }
    ],
    "dialogue": [
@@ -4506,15 +4583,15 @@
     },
     {
      "s": "Noura",
-     "t": "That sounds expensive. Would the school have a big enough budget?"
+     "t": "That sounds expensive. Would the school have enough funding?"
     },
     {
      "s": "Reem",
-     "t": "Probably not. On the other hand, we could ask local companies to help."
+     "t": "Probably not. Then again, we could ask local companies to help."
     },
     {
      "s": "Noura",
-     "t": "True. And I'd make sure every class went on a trip at least once a term."
+     "t": "True. And I'd see to it that every class went on a trip at least once a term."
     },
     {
      "s": "Reem",
@@ -4544,14 +4621,14 @@
      "ex": "I wish I could speak Japanese."
     },
     {
-     "w": "stay up late",
-     "ar": "يسهر",
-     "ex": "On Thursdays, we stay up late as a family."
+     "w": "lie in",
+     "ar": "يبقى في السرير متأخراً صباحاً",
+     "ex": "On Fridays, we lie in until nine."
     },
     {
-     "w": "pocket money",
-     "ar": "المصروف",
-     "ex": "I save my pocket money for books."
+     "w": "spending money",
+     "ar": "مصروف للإنفاق الشخصي",
+     "ex": "I keep my spending money in a small box."
     },
     {
      "w": "the latest",
@@ -4575,7 +4652,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Fair point. And I wish I could stay up late every night, not just on Thursdays."
+     "t": "Fair point. And I wish I could lie in every morning, not just at the weekend."
     },
     {
      "s": "Lama",
@@ -4591,7 +4668,7 @@
     },
     {
      "s": "Faisal",
-     "t": "And I wish I had more pocket money. Then I could buy the latest football game."
+     "t": "And I wish I had more spending money. Then I could buy the latest football game."
     },
     {
      "s": "Lama",
@@ -4621,14 +4698,14 @@
      "ex": "We found a lovely village off the beaten track."
     },
     {
-     "w": "set off",
-     "ar": "ينطلق (في رحلة)",
-     "ex": "We set off early in the morning."
+     "w": "head off",
+     "ar": "ينطلق / يغادر",
+     "ex": "We headed off early in the morning."
     },
     {
-     "w": "go sightseeing",
-     "ar": "يتجوّل لمشاهدة المعالم",
-     "ex": "We went sightseeing in Istanbul last summer."
+     "w": "take in the sights",
+     "ar": "يستمتع بمشاهدة المعالم",
+     "ex": "We took in the sights of Istanbul last summer."
     },
     {
      "w": "a dream come true",
@@ -4656,7 +4733,7 @@
     },
     {
      "s": "Noura",
-     "t": "I'd go sightseeing in Kyoto, and I'd try real Japanese food. What about you?"
+     "t": "I'd take in the sights of Kyoto, and I'd try real Japanese food. What about you?"
     },
     {
      "s": "Emma",
@@ -4668,7 +4745,7 @@
     },
     {
      "s": "Emma",
-     "t": "I'd set off from Jeddah and fly to Bali, then take a boat. The beaches would be stunning."
+     "t": "I'd head off from Jeddah and fly to Bali, then take a boat. The beaches would be stunning."
     },
     {
      "s": "Noura",
@@ -4680,7 +4757,7 @@
     "ar": "بعد جملة If نستمرّ بـ would لوصف تفاصيل الموقف الخيالي: I'd go … I'd see … It would be …",
     "examples": [
      "If I could go anywhere, I'd go to Japan.",
-     "I'd go sightseeing in Kyoto.",
+     "I'd take in the sights of Kyoto.",
      "The views would be stunning."
     ]
    }
@@ -4703,9 +4780,9 @@
      "ex": "I'm in two minds about joining the club."
     },
     {
-     "w": "turn down",
-     "ar": "يرفض (عرضاً)",
-     "ex": "She turned down the offer because she was too busy."
+     "w": "pass up",
+     "ar": "يفوّت (فرصة)",
+     "ex": "She passed up a place on the team to stay with her friends."
     },
     {
      "w": "own up",
@@ -4749,7 +4826,7 @@
     },
     {
      "s": "Omar",
-     "t": "Hmm, I'd probably turn it down. I wouldn't want to leave my friends."
+     "t": "Hmm, I'd probably pass up the chance. I wouldn't want to leave my friends."
     }
    ],
    "grammar": {
@@ -4765,14 +4842,14 @@
   "3-5": {
    "words": [
     {
-     "w": "make a difference",
-     "ar": "يُحدث فرقاً",
-     "ex": "Small changes can make a big difference."
+     "w": "go a long way",
+     "ar": "يساهم كثيراً في",
+     "ex": "A smile can go a long way."
     },
     {
-     "w": "get rid of",
-     "ar": "يتخلّص من",
-     "ex": "We should get rid of plastic bags."
+     "w": "do away with",
+     "ar": "يلغي / يتخلّص من",
+     "ex": "We should do away with plastic bags."
     },
     {
      "w": "cut down on",
@@ -4814,11 +4891,11 @@
     },
     {
      "s": "Mum",
-     "t": "And what would you get rid of?"
+     "t": "And what would you do away with?"
     },
     {
      "s": "Reem",
-     "t": "I'd get rid of plastic bags. If everyone cut down on plastic, it would make a huge difference."
+     "t": "I'd do away with plastic bags. If everyone cut down on plastic, it would go a long way towards cleaner seas."
     },
     {
      "s": "Mum",
@@ -4885,12 +4962,12 @@
     "type": "mc",
     "q": "'I _____ photography last year, and now I love it.'",
     "options": [
-     "took up",
-     "took off",
-     "took over",
-     "took after"
+     "got over",
+     "got hooked on",
+     "got off",
+     "got through"
     ],
-    "answer": 0
+    "answer": 1
    },
    {
     "type": "mc",
@@ -4958,14 +5035,14 @@
    },
    {
     "type": "mc",
-    "q": "Which sentence is about an activity that is still continuing?",
+    "q": "'I really enjoy _____ in Arabic with my neighbours.'",
     "options": [
-     "I learnt to swim in 2020.",
-     "I'll learn to swim next year.",
-     "I've been learning to swim for a year.",
-     "I learn swimming every summer."
+     "to chat",
+     "chatting",
+     "chat",
+     "chatted"
     ],
-    "answer": 2
+    "answer": 1
    }
   ],
   "0-2": [
@@ -4992,22 +5069,23 @@
      "a",
      "month",
      "to",
-     "settle",
-     "in."
+     "get",
+     "my",
+     "bearings."
     ],
-    "answer": "It took me a month to settle in.",
+    "answer": "It took me a month to get my bearings.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "'I'm still getting _____ to the hot weather.'",
+    "q": "'It took me a few weeks to _____ to the hot weather.'",
     "options": [
-     "use",
-     "using",
-     "uses",
-     "used"
+     "adjust",
+     "arrive",
+     "accept",
+     "agree"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5053,18 +5131,18 @@
     "type": "order",
     "words": [
      "Always",
-     "warm",
+     "loosen",
      "up",
      "before",
      "you",
      "play."
     ],
-    "answer": "Always warm up before you play.",
+    "answer": "Always loosen up before you play.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "'You're out of breath! What _____?'",
+    "q": "'You look exhausted! What _____?'",
     "options": [
      "have you been doing",
      "are you been doing",
@@ -5086,14 +5164,14 @@
    },
    {
     "type": "mc",
-    "q": "'I'm trying to _____ in shape before the summer.'",
+    "q": "'Faisal stopped _____ some water.' (He stopped because he wanted a drink.)",
     "options": [
-     "take",
-     "make",
-     "do",
-     "get"
+     "drinking",
+     "to drink",
+     "drink",
+     "drank"
     ],
-    "answer": 3
+    "answer": 1
    }
   ],
   "0-4": [
@@ -5117,13 +5195,12 @@
     "type": "order",
     "words": [
      "Who",
-     "came",
+     "thought",
      "up",
-     "with",
      "the",
      "idea?"
     ],
-    "answer": "Who came up with the idea?",
+    "answer": "Who thought up the idea?",
     "ar": "رتّب الجملة"
    },
    {
@@ -5340,14 +5417,14 @@
    },
    {
     "type": "mc",
-    "q": "A famous building that is easy to recognise is a …",
+    "q": "A building that is very famous and easy to recognise is ___.",
     "options": [
-     "neighbour",
-     "harvest",
-     "deadline",
-     "landmark"
+     "iconic",
+     "ordinary",
+     "tiny",
+     "hidden"
     ],
-    "answer": 3
+    "answer": 0
    }
   ],
   "1-2": [
@@ -5367,14 +5444,14 @@
    {
     "type": "order",
     "words": [
-     "What",
-     "is",
-     "this",
+     "This",
      "machine",
-     "used",
-     "for?"
+     "served",
+     "as",
+     "a",
+     "clock."
     ],
-    "answer": "What is this machine used for?",
+    "answer": "This machine served as a clock.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5433,12 +5510,11 @@
      "has",
      "to",
      "be",
-     "handed",
-     "in",
+     "submitted",
      "by",
      "Thursday."
     ],
-    "answer": "Homework has to be handed in by Thursday.",
+    "answer": "Homework has to be submitted by Thursday.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5454,12 +5530,12 @@
    },
    {
     "type": "mc",
-    "q": "Who is 'in charge of' something?",
+    "q": "A teacher who is 'on duty' at break …",
     "options": [
-     "the person responsible for it",
-     "the person who doesn't like it",
-     "the newest student",
-     "a visitor"
+     "is responsible for the students then",
+     "is on holiday",
+     "is at home",
+     "is asleep"
     ],
     "answer": 0
    },
@@ -5467,10 +5543,10 @@
     "type": "mc",
     "q": "'Please _____ your essays by Sunday.'",
     "options": [
-     "hand out",
-     "hand up",
-     "hand in",
-     "hand off"
+     "subscribe",
+     "supply",
+     "submit",
+     "suggest"
     ],
     "answer": 2
    }
@@ -5494,16 +5570,16 @@
    {
     "type": "order",
     "words": [
-     "According",
-     "to",
-     "the",
-     "news,",
+     "It",
+     "is",
+     "reported",
+     "that",
      "the",
      "road",
-     "was",
+     "is",
      "closed."
     ],
-    "answer": "According to the news, the road was closed.",
+    "answer": "It is reported that the road is closed.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5586,10 +5662,10 @@
     "type": "mc",
     "q": "'The view from the mountain was _____.' (extremely beautiful)",
     "options": [
-     "breathtaking",
+     "awe-inspiring",
+     "awful",
      "breathless",
-     "out of breath",
-     "breathing"
+     "awake"
     ],
     "answer": 0
    },
@@ -5737,17 +5813,17 @@
    {
     "type": "order",
     "words": [
-     "Sorry",
+     "I",
+     "hate",
      "to",
-     "bother",
-     "you,",
+     "complain,",
      "but",
      "the",
      "lift",
      "isn't",
      "working."
     ],
-    "answer": "Sorry to bother you, but the lift isn't working.",
+    "answer": "I hate to complain, but the lift isn't working.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5929,14 +6005,15 @@
    {
     "type": "order",
     "words": [
-     "I'm",
-     "afraid",
-     "my",
+     "My",
      "suitcase",
      "went",
-     "missing."
+     "missing",
+     "on",
+     "the",
+     "flight."
     ],
-    "answer": "I'm afraid my suitcase went missing.",
+    "answer": "My suitcase went missing on the flight.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5958,7 +6035,7 @@
     "options": [
      "Sorry to bother you.",
      "So, just to confirm, …",
-     "I'm afraid …",
+     "Can you describe it?",
      "It's not the first time."
     ],
     "answer": 1
@@ -6076,15 +6153,17 @@
     "words": [
      "I",
      "would",
-     "make",
-     "sure",
+     "see",
+     "to",
+     "it",
+     "that",
      "everyone",
      "went",
      "on",
      "a",
      "trip."
     ],
-    "answer": "I would make sure everyone went on a trip.",
+    "answer": "I would see to it that everyone went on a trip.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6175,10 +6254,10 @@
     "type": "mc",
     "q": "Which sentence shows a strong wish?",
     "options": [
-     "If only I could stay up late!",
-     "I stay up late on Thursdays.",
-     "I will stay up late.",
-     "I stayed up late yesterday."
+     "If only I could lie in!",
+     "I lie in on Fridays.",
+     "I will lie in tomorrow.",
+     "I lay in yesterday."
     ],
     "answer": 0
    }
@@ -6385,47 +6464,47 @@
    "items": [
     {
      "type": "mc",
-     "q": "'I _____ chess when I was nine, and I still play it.'",
+     "q": "'I _____ chess when I was nine, and I still play it every day.'",
      "options": [
-      "took up",
-      "took off",
-      "took in",
-      "took over"
-     ],
-     "answer": 0
-    },
-    {
-     "type": "mc",
-     "q": "'It took Emma a month to _____ at her new school.'",
-     "options": [
-      "set off",
-      "stand in",
-      "settle in",
-      "sit back"
+      "got over",
+      "got off",
+      "got hooked on",
+      "got through"
      ],
      "answer": 2
     },
     {
      "type": "mc",
-     "q": "If you are 'out of breath', you …",
+     "q": "'It took Emma a month to get her _____ at her new school.'",
+     "options": [
+      "bearings",
+      "feelings",
+      "directions",
+      "belongings"
+     ],
+     "answer": 0
+    },
+    {
+     "type": "mc",
+     "q": "If you 'run out of steam', you …",
      "options": [
       "are very hungry",
       "are lost",
       "are bored",
-      "are breathing very fast"
+      "have no energy left"
      ],
      "answer": 3
     },
     {
      "type": "mc",
-     "q": "'We came _____ a great idea for our project.'",
+     "q": "'Reem _____ a brilliant name for the team.'",
      "options": [
-      "out of",
-      "up with",
-      "in for",
-      "down to"
+      "thought up",
+      "thought down",
+      "thought in",
+      "thought off"
      ],
-     "answer": 1
+     "answer": 0
     },
     {
      "type": "mc",
@@ -6492,16 +6571,16 @@
     {
      "type": "order",
      "words": [
-      "I've",
-      "made",
-      "a",
-      "lot",
-      "of",
-      "progress",
-      "this",
-      "year."
+      "I",
+      "stopped",
+      "eating",
+      "sweets",
+      "to",
+      "get",
+      "in",
+      "shape."
      ],
-     "answer": "I've made a lot of progress this year.",
+     "answer": "I stopped eating sweets to get in shape.",
      "ar": "رتّب الجملة"
     }
    ],

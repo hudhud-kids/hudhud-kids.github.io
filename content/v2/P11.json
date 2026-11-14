@@ -103,9 +103,9 @@
   {
    "q": "Which sentence shows the speaker is almost certain?",
    "options": [
-    "It's a long shot, but they could win.",
+    "There's only a slim chance that they'll win.",
     "I doubt they'll win.",
-    "It's a safe bet that they'll win.",
+    "It's only a matter of time before they win.",
     "They might win, I suppose."
    ],
    "answer": 2,
@@ -155,7 +155,7 @@
   }
  ],
  "read": {
-  "passage": "Last year, Reem left her science project to the last minute. The night before the deadline, her laptop crashed, and she lost everything. 'I could kick myself,' she says. 'I should have saved my work online.' She had to start again and finished at three in the morning. In hindsight, Reem thinks the problem was a blessing in disguise. Her teacher noticed how tired she was and walked her through a better way to plan her work, step by step. Now Reem uses a planner app, which she says has been a game changer. 'If you ask me, every student should try it,' she says. 'It's easier than it sounds, and you'll get the hang of it in a day.'",
+  "passage": "Last year, Reem left her science project to the last minute. The night before the deadline, her laptop crashed, and she lost everything. 'I could kick myself,' she says. 'I should have saved my work online.' She had to start again and finished at three in the morning. In hindsight, Reem thinks the problem was a blessing in disguise. Her teacher noticed how tired she was and walked her through a better way to plan her work, step by step. Now Reem uses a planner app, which she says has been a game changer. 'If you ask me, every student should try it,' she says. 'It's easier than it sounds, and you'll learn it in no time.'",
   "qs": [
    {
     "q": "What should Reem have done, according to her?",
@@ -185,11 +185,11 @@
     "answer": 0
    },
    {
-    "q": "The phrase 'get the hang of it' means …",
+    "q": "The phrase 'in no time' means …",
     "options": [
-     "to learn how to use it",
-     "to keep it in a safe place",
-     "to stop using it"
+     "very quickly",
+     "never",
+     "at night"
     ],
     "answer": 0
    }
