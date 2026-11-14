@@ -143,6 +143,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .sub .ar{direction:rtl;text-align:right;font-family:var(--font);font-size:1rem;color:var(--muted);font-weight:500;border-top:1px dashed var(--line);margin-top:8px;padding-top:8px}
 .you{align-self:flex-end;max-width:90%;background:var(--brand);color:#fff;border-radius:18px 18px 4px 18px;padding:10px 16px;direction:ltr;text-align:left;font-family:var(--en);font-size:1.2rem;min-height:48px}
 .you.live{background:var(--brand-soft);color:var(--brand-ink)}
+.you.note{direction:rtl;text-align:right;font-family:var(--font);font-size:1rem;background:var(--brand-soft);color:var(--brand-ink)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
 .board{background:#22543D;color:#F5F5DC;border:6px solid #A0703C;border-radius:14px;padding:14px;text-align:center;box-shadow:inset 0 0 30px rgba(0,0,0,.25)}
 .board button{background:none;border:0;color:inherit;padding:0}
@@ -2566,7 +2567,9 @@ async function captureAudio(o){
   }
 }
 function captureOnce(o, fresh){
-  const {maxMs = 15000, silence = 1.3, onLevel = null, ctl = null, waitMs = 0, onSpeech = null} = o || {};
+  // onFrame(samples, rate): every audio frame from the start of speech (with the 0.4 s before it), for streaming recognition
+  // shouldEnd(quietSec): replaces the fixed `silence` rule, so the caller decides when the turn is over
+  const {maxMs = 15000, silence = 1.3, onLevel = null, ctl = null, waitMs = 0, onSpeech = null, onFrame = null, shouldEnd = null} = o || {};
   return new Promise(async (resolve, reject) => {
     let stream; try{ stream = await micStream(fresh); }catch(e){ reject(e); return; }
     let ac = recAC(fresh); try{ await Promise.race([ac.resume(), new Promise(r => setTimeout(r, 600))]); }catch(e){}
@@ -2577,7 +2580,7 @@ function captureOnce(o, fresh){
     const fail = name => { if(done) return; done = true; clearTimeout(maxT); clearTimeout(dogT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micDrop(); const e = new Error(name); e.name = name; reject(e); };
     const finish = manual => { if(done) return; done = true; clearTimeout(maxT); clearTimeout(dogT); try{ proc.disconnect(); src.disconnect(); }catch(e){} micRelease();
       let use = heard ? chunks : (manual && peak > Math.max(.006, noise * 2.5) ? all : null);
-      resolve({heard: !!use, wav: use ? encodeWav(downsample(use, rate, 16000), 16000) : null, frames}); };
+      resolve({heard: !!use, wav: use ? encodeWav(downsample(use, rate, 16000), 16000) : null, frames, quiet: heard ? quiet : 0}); };
     if(ctl){ ctl.stop = () => finish(true); if(ctl.pending){ setTimeout(() => finish(true), 0); } }
     maxT = setTimeout(() => finish(true), maxMs);
     // watchdog: no audio frames → the context is still suspended; report it instead of hanging
@@ -2588,24 +2591,26 @@ function captureOnce(o, fresh){
       // a real mic always has some hiss; pure digital zeros for 1.5 s mean iOS gave us a muted/dead stream
       if(rms === 0){ zero += dt; if(zero > 1.5 && peak === 0){ fail('DeadMic'); return; } } else zero = 0;
       if(!heard){ waited += dt; noise = noise * .9 + Math.min(rms, .03) * .1; pre.push(d); if(pre.length > preMax) pre.shift();
-        if(frames > 2 && rms > Math.max(.008, noise * 3.2)){ heard = true; chunks.push(...pre); onSpeech && onSpeech(); }
+        if(frames > 2 && rms > Math.max(.008, noise * 3.2)){ heard = true; chunks.push(...pre); onSpeech && onSpeech(); if(onFrame) pre.forEach(f => onFrame(f, rate)); }
         else if(waitMs && waited * 1000 > waitMs){ finish(false); } }
-      else { chunks.push(d); if(rms > speechPeak) speechPeak = rms;
+      else { chunks.push(d); if(rms > speechPeak) speechPeak = rms; if(onFrame) onFrame(d, rate);
         // end of speech: quiet relative to the room AND to how loud the child spoke (a noisy room no longer keeps it recording)
         if(rms > Math.max(.006, noise * 2, speechPeak * .08)) quiet = 0; else quiet += dt;
-        if(quiet > silence || chunks.length * 4096 / rate > 30) finish(false); } };
+        if((shouldEnd ? shouldEnd(quiet) : quiet > silence) || chunks.length * 4096 / rate > 30) finish(false); } };
     src.connect(proc); proc.connect(ac.destination);
   });
 }
 function recordUtterance(ctl, maxMs, silence, waitMs, onSpeech){ return captureAudio({ctl, maxMs, silence, waitMs, onSpeech}); }
+/* one recorded utterance -> {text, conf} (Azure short-audio REST; conf = the recogniser's confidence 0..1, null if unknown) */
 async function azRecognize(wav, lang, again){
-  const w = linkedAbort(null, 10000); let r;
-  try{ const au = await azAuth(); r = await fetch(`https://${au.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=simple&profanity=masked`,
+  const w = linkedAbort(null, 8000); let r;
+  try{ const au = await azAuth(); r = await fetch(`https://${au.region}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=${encodeURIComponent(lang || 'en-US')}&format=detailed&profanity=masked`,
     {method:'POST', headers:{...au.h, 'Content-Type':'audio/wav; codecs=audio/pcm; samplerate=16000', 'Accept':'application/json'}, body:wav, signal:w.signal}); }
   catch(e){ w.clear(); if(!again) return azRecognize(wav, lang, true); throw e; }
   w.clear();
   if(!r.ok){ if(r.status >= 500 && !again) return azRecognize(wav, lang, true); const e = new Error('stt ' + r.status); e.status = r.status; throw e; }
-  const j = await r.json(); return j.RecognitionStatus === 'Success' ? String(j.DisplayText || '').trim() : '';
+  const j = await r.json(); if(j.RecognitionStatus !== 'Success') return {text:'', conf:null};
+  const b = (j.NBest || [])[0]; return {text:String((b && b.Display) || j.DisplayText || '').trim(), conf:b && typeof b.Confidence === 'number' ? b.Confidence : null};
 }
 class AzSR {
   constructor(){ this.lang = 'en-US'; this.continuous = false; this.interimResults = false; this.maxAlternatives = 1; this.onresult = null; this.onerror = null; this.onend = null; this._ctl = {}; this._aborted = false; this._ended = false; this._started = false; }
@@ -2621,17 +2626,159 @@ class AzSR {
     try{ rec = await recordUtterance(this._ctl, 40000, pause, NUDGE_MS, () => { try{ this.onspeechstart && this.onspeechstart(); }catch(e){} }); }
     catch(e){ this._err(e && e.name === 'NotAllowedError' ? 'not-allowed' : 'audio-capture'); return this._end(); }
     if(this._aborted || !rec.heard) return this._end();
+    this.speechEndAt = Date.now() - (rec.quiet || 0) * 1000;
     try{ this.onspeechend && this.onspeechend(); }catch(e){}
     try{
-      const text = await azRecognize(rec.wav, this.lang);
-      if(!this._aborted && text){ const alt = [{transcript:text, confidence:.9}]; alt.isFinal = true; const results = [alt]; try{ this.onresult && this.onresult({results, resultIndex:0}); }catch(e){ console.warn(e); } }
+      const res = await azRecognize(rec.wav, this.lang), text = res.text; this.conf = res.conf;
+      this.lowConf = res.conf != null && res.conf < STT_MIN_CONF; this.heardEmpty = !text;
+      if(!this._aborted && text){ const alt = [{transcript:text, confidence:res.conf == null ? .9 : res.conf}]; alt.isFinal = true; const results = [alt]; try{ this.onresult && this.onresult({results, resultIndex:0}); }catch(e){ console.warn(e); } }
     }catch(e){ console.warn('stt', e); this._err(e.status === 401 || e.status === 403 ? 'service-not-allowed' : 'network'); }
     this._end();
   }
   _err(code){ try{ this.onerror && this.onerror({error:code}); }catch(e){} }
   _end(){ if(this._ended) return; this._ended = true; try{ this.onend && this.onend(); }catch(e){} }
 }
-const SR = (NativeSR || (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) ? function SRAuto(){
+/* ---- streaming recognition for the live lesson (Azure Speech SDK) ----
+   The SDK never touches the mic: captureAudio (the iOS-safe recorder above) feeds it 16 kHz PCM through a push stream, so
+   words appear while the child talks and the turn ends ~0.8 s after a finished sentence instead of a fixed ~2 s of silence
+   plus an upload. A sentence that stops on "because", "and", "the"... gets up to 3.5 s more. Whatever goes wrong with the
+   SDK (not loaded, no connection, error mid-turn), the same recording is sent to the REST recogniser (the old AzSR path). */
+const SPEECH_SDK_URLS = ['https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@1.48.0/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js',
+  'https://unpkg.com/microsoft-cognitiveservices-speech-sdk@1.48.0/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js'];
+const STT_MIN_CONF = .45, TURN_END_S = .8, TURN_MORE_S = 3.5;
+let SDK_P = null, STREAM_DOWN = false, STREAM_ERRS = 0;
+function loadSpeechSDK(){
+  if(window.SpeechSDK) return Promise.resolve(window.SpeechSDK);
+  if(SDK_P) return SDK_P;
+  SDK_P = (async () => {
+    for(const u of SPEECH_SDK_URLS){
+      try{ await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = u; sc.async = true;
+          const t = setTimeout(() => { sc.onload = sc.onerror = null; rej(new Error('timeout')); }, 12000);
+          sc.onload = () => { clearTimeout(t); res(); }; sc.onerror = () => { clearTimeout(t); sc.remove(); rej(new Error('load')); }; document.head.appendChild(sc); });
+        if(window.SpeechSDK && window.SpeechSDK.SpeechRecognizer) return window.SpeechSDK; }
+      catch(e){ console.warn('speech sdk', u, e.message); }
+    }
+    STREAM_DOWN = true; throw new Error('speech sdk unavailable');
+  })();
+  return SDK_P;
+}
+/* the live lesson streams when Azure speech is set up; for the rest of this visit it uses the old path once the SDK is known to fail */
+function streamSttOn(){ return azSttOn() && !STREAM_DOWN; }
+function liveRecognizer(){ return streamSttOn() ? new LiveSR() : new SR(); }
+const SA_WORDS = ['Mohammed','Ahmed','Abdullah','Abdulrahman','Abdulaziz','Faisal','Fahad','Khalid','Saud','Sultan','Turki','Omar','Ali','Yousef','Saleh','Nasser','Majed','Rakan','Nawaf','Bandar','Hamad','Ziyad','Raed','Noura','Sara','Reem','Lamar','Lama','Jana','Joud','Layan','Haya','Maha','Hessa','Shahad','Ghala','Dana','Rahaf','Fatimah','Aisha','Mariam','Razan','Leen',
+  'Riyadh','Jeddah','Makkah','Mecca','Madinah','Medina','Dammam','Khobar','Buraidah','Qassim','Unaizah','Abha','Taif','Tabuk','Hail','Jazan','Najran','AlUla','NEOM','Saudi Arabia','Kabsa','Jareesh','Mutabbaq','Eid','Ramadan','Hudhud','padel'];
+function livePhrases(){
+  if(!L) return []; const out = new Set(), add = x => { x = String(x || '').trim(); if(/^[A-Za-z][A-Za-z' .-]{0,40}$/.test(x)) out.add(x); };
+  const kid = DB.kids[L.kid] || {}; add(kid.en); add(nick(L.kid)); add(teacherOf(L.kid).name); String(teacherOf(L.kid).name || '').split(' ').forEach(add);
+  const sc = L.v2 && L.v2.sc; if(sc){ (sc.expressions || []).forEach(e => add(e.w)); const d = sc.dialogue || {}; [...(d.p1 || []), ...(d.p2 || [])].forEach(l => add(l.s)); }
+  try{ const kit = kitFor(kid.level, L.plan.ui, L.plan.li); ((kit && kit.words) || []).forEach(w => add(w.w)); }catch(e){}
+  if(L.mission && L.mission.m) (L.mission.m.goals || []).forEach(g => { const q = /"([^"]{2,30})"/.exec(g[0] || ''); if(q) add(q[1]); });
+  (L.boardWords || []).forEach(add); SA_WORDS.forEach(add);
+  return [...out].slice(0, 400);
+}
+/* the child stopped on a word that needs more after it ("I like it because...") */
+const MORE_WORDS = new Set('because and but so or the a an to my i is are was were with of like um uh umm uhh er erm hmm then when if that for in on at from about his her your our their very really want am have has can will favorite favourite'.split(' '));
+function soundsUnfinished(t){ const w = String(t).toLowerCase().replace(/[^a-z' ]/g, ' ').trim().split(/\s+/); const a = w[w.length - 1] || '', b = w[w.length - 2] || '';
+  return MORE_WORDS.has(a) || (a === 'think' && (b === 'i' || b === 'you')) || /,\s*$/.test(t); }
+/* recogniser segments → one sentence ("I like it because." + "It is fun." → "I like it because it is fun.") */
+function joinSegs(segs){ let out = '';
+  for(const s0 of segs){ const s = String(s0 || '').trim(); if(!s) continue;
+    if(out && soundsUnfinished(out.replace(/[.!?]+$/, ''))){ out = out.replace(/[.!?]+$/, '') + ' ' + (/^(I|I'm|I've|I'll|I'd)\b/.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1)); }
+    else out = out ? out + ' ' + s : s; }
+  return out; }
+class LiveSR {
+  constructor(){ this.lang = 'en-US'; this.continuous = true; this.interimResults = true; this.maxAlternatives = 1; this.selfEnds = true;
+    this.onresult = this.onerror = this.onend = this.onspeechstart = this.onspeechend = null;
+    this._ctl = {}; this._aborted = this._ended = this._started = this._manual = false;
+    this.finals = []; this.partial = ''; this.lastWordsAt = 0; this.q = []; this.rs = null; this.push = null; this.rec = null; this.S = null;
+    this.sdkErr = null; this.stopped = false; this.audioDone = false; this.conf = null; this.lowConf = false; this.heardEmpty = false; this.speechEndAt = 0; }
+  start(){ if(this._started) throw new Error('already started'); this._started = true; loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); this._run(); }
+  stop(){ this._manual = true; this._ctl.pending = true; this._ctl.stop && this._ctl.stop(); }
+  abort(){ this._aborted = true; this._ctl.pending = true; this._ctl.stop && this._ctl.stop(); this._close(); this._wake && this._wake(); }
+  text(){ return joinSegs(this.finals.map(f => f.text).concat(this.partial ? [this.partial] : [])); }
+  _emit(){ if(this._aborted) return; const t = this.text(); if(!t) return; const alt = [{transcript:t, confidence:.9}]; try{ this.onresult && this.onresult({results:[alt], resultIndex:0}); }catch(e){ console.warn(e); } }
+  _poke(){ const w = this._wake; this._wake = null; w && w(); }
+  /* end of turn: ~0.8 s of quiet after a finished sentence; up to 3.5 s more after "because/and/the..."; never while words are still arriving */
+  _shouldEnd(quiet){
+    const sinceWords = this.lastWordsAt ? (Date.now() - this.lastWordsAt) / 1000 + .4 : 99, q = Math.min(quiet, sinceWords);
+    if(q < TURN_END_S) return false;
+    const t = this.text().trim();
+    if(!t) return q > ((this.rec && !this.sdkErr) || !this.S ? 2.2 : 1.9); // voice but no words yet (or no recogniser): the old ~2 s rule
+    return soundsUnfinished(t) ? q > TURN_END_S + TURN_MORE_S : true;
+  }
+  /* 16 kHz 16-bit mono PCM for the push stream (stateful, so frame edges never drop samples) */
+  _frame(d, rate){
+    if(this._aborted || this.audioDone) return;
+    const ratio = rate / 16000; let buf = this.rs ? (() => { const b = new Float32Array(this.rs.length + d.length); b.set(this.rs); b.set(d, this.rs.length); return b; })() : d;
+    const n = Math.floor(buf.length / ratio), out = new Int16Array(n);
+    for(let i = 0; i < n; i++){ const a = Math.floor(i * ratio), b = Math.min(buf.length, Math.floor((i + 1) * ratio)); let s = 0; for(let j = a; j < b; j++) s += buf[j]; const x = Math.max(-1, Math.min(1, s / Math.max(1, b - a))); out[i] = x < 0 ? x * 0x8000 : x * 0x7FFF; }
+    const used = Math.floor(n * ratio); this.rs = used < buf.length ? buf.slice(used) : null;
+    if(this.push){ try{ this.push.write(out.buffer); }catch(e){} } else this.q.push(out.buffer);
+  }
+  async _sdk(){
+    let S; try{ S = await loadSpeechSDK(); }catch(e){ this.sdkErr = 'load'; this._poke(); return; }
+    if(this._aborted || this._ended) return;
+    let au; try{ au = await azAuth(); }catch(e){ this.sdkErr = 'auth'; this._poke(); return; }
+    if(this._aborted || this._ended) return;
+    try{
+      const tok = au.h.Authorization ? String(au.h.Authorization).replace(/^Bearer\s+/i, '') : null;
+      const cfg = tok ? S.SpeechConfig.fromAuthorizationToken(tok, au.region) : S.SpeechConfig.fromSubscription(au.h['Ocp-Apim-Subscription-Key'], au.region);
+      cfg.speechRecognitionLanguage = this.lang || 'en-US'; cfg.outputFormat = S.OutputFormat.Detailed;
+      try{ cfg.setProfanity(S.ProfanityOption.Masked); }catch(e){}
+      try{ cfg.setProperty(S.PropertyId.Speech_SegmentationSilenceTimeoutMs, '500'); }catch(e){}
+      const push = S.AudioInputStream.createPushStream(S.AudioStreamFormat.getWaveFormatPCM(16000, 16, 1));
+      const rec = new S.SpeechRecognizer(cfg, S.AudioConfig.fromStreamInput(push));
+      try{ const pl = S.PhraseListGrammar.fromRecognizer(rec); livePhrases().forEach(x => pl.addPhrase(x)); }catch(e){ console.warn('phrase list', e); }
+      rec.recognizing = (s, e) => { if(this._aborted) return; const t = (e.result && e.result.text) || ''; if(t !== this.partial){ this.partial = t; this.lastWordsAt = Date.now(); this._emit(); } };
+      rec.recognized = (s, e) => { if(this._aborted) return; const r = e.result || {};
+        if(r.reason === S.ResultReason.RecognizedSpeech && r.text){ let c = null;
+          try{ const j = JSON.parse(r.properties.getProperty(S.PropertyId.SpeechServiceResponse_JsonResult)); const b = (j.NBest || [])[0]; if(b && typeof b.Confidence === 'number') c = b.Confidence; }catch(x){}
+          this.finals.push({text:r.text, conf:c, n:countWords(r.text)}); this.lastWordsAt = Date.now(); }
+        this.partial = ''; this._emit(); this._poke(); };
+      rec.canceled = (s, e) => { if(e.reason === S.CancellationReason.Error){ this.sdkErr = String(e.errorCode || 'error'); console.warn('stt stream', e.errorCode, e.errorDetails); } this.stopped = true; this._poke(); };
+      rec.sessionStopped = () => { this.stopped = true; this._poke(); };
+      this.S = S; this.rec = rec; this.push = push;
+      this.q.forEach(b => push.write(b)); this.q = [];
+      if(this.audioDone) push.close();
+      rec.startContinuousRecognitionAsync(() => {}, err => { this.sdkErr = String(err || 'start'); console.warn('stt stream start', err); this._poke(); });
+    }catch(e){ console.warn('stt stream setup', e); this.sdkErr = 'setup'; this._poke(); }
+  }
+  _close(){ const rec = this.rec; this.rec = null; if(!rec) return; const bye = () => { try{ rec.close(); }catch(e){} };
+    try{ rec.stopContinuousRecognitionAsync(bye, bye); }catch(e){ bye(); } }
+  _conf(){ const f = this.finals.filter(x => x.conf != null); if(!f.length) return null; const n = f.reduce((a, x) => a + Math.max(1, x.n), 0); return f.reduce((a, x) => a + x.conf * Math.max(1, x.n), 0) / n; }
+  async _run(){
+    let rec;
+    try{ rec = await captureAudio({ctl:this._ctl, maxMs:40000, waitMs:NUDGE_MS, silence:2,
+      onSpeech: () => { try{ this.onspeechstart && this.onspeechstart(); }catch(e){} this._sdk(); },
+      onFrame: (d, rate) => this._frame(d, rate), shouldEnd: q => this._shouldEnd(q)}); }
+    catch(e){ this._close(); this._err(e && e.name === 'NotAllowedError' ? 'not-allowed' : 'audio-capture'); return this._end(); }
+    this.audioDone = true; this.speechEndAt = Date.now() - (rec.quiet || 0) * 1000;
+    if(this.push){ try{ this.push.close(); }catch(e){} } // end of audio: the service finalises the last words now
+    if(this._aborted || !rec.heard){ this._close(); return this._end(); }
+    // wait for the last words to become final (normally < 0.3 s, they usually already are)
+    const t0 = Date.now(), live = () => this.rec && !this.sdkErr && !this.stopped;
+    while(!this._aborted && (this.partial || (!this.finals.length && (live() || (!this.S && !this.sdkErr)))) && Date.now() - t0 < (this.rec ? 1500 : 3000))
+      await new Promise(r => { this._wake = r; setTimeout(r, 120); });
+    this._close();
+    if(this._aborted) return this._end();
+    let text = this.text().trim(), conf = this._conf();
+    const sdkOK = this.S && !this.sdkErr && (this.finals.length || this.stopped);
+    if(this.sdkErr && this.sdkErr !== 'load'){ if(++STREAM_ERRS >= 3){ STREAM_DOWN = true; console.warn('stt: streaming off for this visit'); } }
+    else if(sdkOK) STREAM_ERRS = 0;
+    if(!sdkOK && rec.wav){
+      // the stream failed or never finished: the same recording through the REST recogniser (words seen so far are the backup)
+      try{ const r2 = await azRecognize(rec.wav, this.lang); if(r2.text || !text){ text = r2.text; conf = r2.conf; } }
+      catch(e){ console.warn('stt', e); if(!text){ if(!this._aborted) this._err(e.status === 401 || e.status === 403 ? 'service-not-allowed' : 'network'); return this._end(); } }
+      if(this._aborted) return this._end();
+    }
+    this.conf = conf; this.lowConf = !!text && conf != null && conf < STT_MIN_CONF; this.heardEmpty = !text;
+    if(text){ const alt = [{transcript:text, confidence:conf == null ? .9 : conf}]; alt.isFinal = true; try{ this.onresult && this.onresult({results:[alt], resultIndex:0}); }catch(e){ console.warn(e); } }
+    this._end();
+  }
+  _err(code){ try{ this.onerror && this.onerror({error:code}); }catch(e){} }
+  _end(){ if(this._ended) return; this._ended = true; this._close(); try{ this.onend && this.onend(); }catch(e){} }
+}
+const SR =(NativeSR || (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) ? function SRAuto(){
   if(useAzSR()) return new AzSR();
   if(NativeSR) return new NativeSR();
   const dead = new AzSR(); dead.start = function(){ setTimeout(() => { this._err('service-not-allowed'); this._end(); }, 0); }; return dead;
@@ -2931,7 +3078,7 @@ function ackPlay(){
 /* the first real sentence is ready: stop the acknowledgement if it is still playing (never overlap the reply) */
 function ackStop(){ if(!ACK_ON) return; ACK_ON = false; try{ azEl().pause(); }catch(e){} }
 /* once per lesson room (lesson, mission, review): warm up everything the turn pipeline needs */
-function liveSetup(){ if(!L) return; ackPrefetch(); }
+function liveSetup(){ if(!L) return; ackPrefetch(); if(streamSttOn()){ loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); } }
 
 /* ---- teacher turn (streaming) ---- */
 function parseTags(full){
@@ -2951,7 +3098,7 @@ function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
 async function teacherTurn(userText, attempt){
   if(!L || L.done) return;
-  stopListening();
+  stopListening(); L.unclear = 0;
   const lesson = L, m = elapsedMin();
   lesson.history.push({role:'user', content:`[minute ${m} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}] ${userText}`}); liveFeed(lesson, 'k', userText);
   setState('thinking');
@@ -2981,7 +3128,7 @@ async function teacherTurn(userText, attempt){
     lesson.lastSay = spoken; lesson.tw += countWords(spoken); updateTalk();
     lesson.history.push({role:'assistant', content:cleanForHistory(full)}); liveFeed(lesson, 't', spoken);
     if(sub) sub.innerHTML = esc(spoken) + (tags.ar ? `<div class="ar">${esc(tags.ar)}</div>` : '');
-    if(tags.board && tags.board.word) showBoard(tags.board);
+    if(tags.board && tags.board.word){ showBoard(tags.board); (lesson.boardWords = lesson.boardWords || []).push(tags.board.word); }
     showFix(tags.fix);
     if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
     if(lesson.mission && tags.goals.length){ tags.goals.forEach(g => { if(g >= 1 && g <= 3 && !lesson.mission.done[g-1]){ lesson.mission.done[g-1] = true; burst(); toast(`🎯 حققت الهدف ${g}!`); } }); drawMissionPanel(); }
@@ -3028,32 +3175,47 @@ function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right)
 function onMicTap(){
   if(!L || L.done) return;
   // second tap while listening = stop now: send what was said, or (if nothing) stop and wait for the next tap
-  if(L.state === 'listening'){ L.manualStop = true; stopListening(true); setState('thinking'); return; }
+  if(L.state === 'listening'){ if(!L.rec){ startListening(true); return; } L.manualStop = true; stopListening(true); setState('thinking'); return; }
   interrupt(true);
+}
+/* a short Arabic note in the child's bubble (recognition trouble); optional button to answer by typing instead */
+function youNote(msg, offerTyping){
+  const you = $('#you'); if(!you) return; you.hidden = false; you.classList.remove('live'); you.classList.add('note');
+  you.innerHTML = esc(msg) + (offerTyping ? ' <button class="btn sm" id="youType" type="button">⌨️ اكتب جوابك</button>' : '');
+  const b = document.getElementById('youType'); if(b) b.onclick = () => { const t = $('#typer'); if(!t) return; t.hidden = false; stopListening(); const m = $('#msg'); if(m) m.focus(); };
+  if(offerTyping){ const kb = $('#kb'); if(kb){ kb.classList.add('primary'); setTimeout(() => kb.classList.remove('primary'), 6000); } }
 }
 function startListening(fromTap){
   if(!L || L.done) return;
   if(!SR || !micOK){ setState('tap'); return; }
   stopListening();
   if(!L.listenStart) L.listenStart = Date.now();
-  L.manualStop = false; L.talking = false; let text = '';
-  const rec = new SR(); L.rec = rec; rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = true; rec.maxAlternatives = 1;
-  const you = $('#you');
-  rec.onspeechstart = () => { if(L && L.rec === rec){ L.talking = true; if(you){ you.hidden = false; you.classList.add('live'); you.textContent = '🎙️ …'; } } };
-  rec.onspeechend = () => { if(L && L.rec === rec && you){ you.hidden = false; you.classList.add('live'); you.textContent = '… 👂'; } };
-  rec.onresult = e => { let t = ''; for(const r of e.results) t += r[0].transcript; if(t.split(' ').length !== text.split(' ').length && Math.random() < .5) nod(); text = t;
-    if(you){ you.hidden = false; you.classList.add('live'); you.textContent = t; }
+  L.manualStop = false; L.talking = false; let text = '', failed = false, lastAt = 0; const began = Date.now();
+  const rec = liveRecognizer(); L.rec = rec; rec.lang = 'en-US'; rec.interimResults = true; rec.continuous = true; rec.maxAlternatives = 1;
+  const you = $('#you'), show = t => { if(you){ you.hidden = false; you.classList.remove('note'); you.classList.add('live'); you.textContent = t; } };
+  rec.onspeechstart = () => { if(L && L.rec === rec){ L.talking = true; show('🎙️ …'); } };
+  rec.onspeechend = () => { if(L && L.rec === rec) show('… 👂'); };
+  rec.onresult = e => { if(!L || L.rec !== rec) return; let t = ''; for(const r of e.results) t += r[0].transcript; if(!t.trim()) return;
+    if(t.split(' ').length !== text.split(' ').length && Math.random() < .5) nod(); text = t; lastAt = Date.now(); show(t);
+    if(rec.selfEnds) return; // the streaming recogniser decides the end of the turn itself
     clearTimeout(L.silT); L.silT = setTimeout(() => { try{ rec.stop(); }catch(x){} }, SILENCE_MS); };
-  rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); } };
+  rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); }
+    else if(e.error === 'network') failed = true; };
+  // listen again after a recognition problem (a pause if it failed at once, so a dead connection never spins)
+  const again = quick => { L.listenStart = 0; L.manualStop = false; clearTimeout(L.relT); L.relT = setTimeout(() => { if(L && !L.done && L.state === 'listening' && !L.rec) startListening(false); }, quick ? 1500 : 250); };
   rec.onend = () => { if(!L || L.rec !== rec) return; L.rec = null; clearTimeout(L.silT);
-    if(text.trim()){ L.listenStart = 0; clearTimeout(L.nudgeT); studentSaid(text.trim()); return; }
+    const t = text.trim(), unclear = L.unclear || 0;
+    if(t && !(rec.lowConf && !L.manualStop && unclear < 2)){
+      L.listenStart = 0; L.unclear = 0; L.sttFails = 0; clearTimeout(L.nudgeT); L.tSpeechEnd = rec.speechEndAt || lastAt || Date.now(); studentSaid(t); return; }
+    if(failed){ L.sttFails = (L.sttFails || 0) + 1; youNote('ما وصلني صوتك، جرّب مرة ثانية', L.sttFails >= 2); again(Date.now() - began < 1500); return; }
+    if((t || rec.heardEmpty) && unclear < 2){ L.unclear = unclear + 1; youNote('ما سمعتك زين، قلها مرة ثانية 🙂'); again(false); return; }
     if(L.manualStop){ L.manualStop = false; L.listenStart = 0; clearTimeout(L.nudgeT); setState('tap'); return; }
     if(L.state === 'listening'){ if(Date.now() - L.listenStart > NUDGE_MS){ L.listenStart = 0; teacherTurn('(student was silent)'); } else startListening(false); } };
   try{ rec.start(); setState('listening'); }catch(e){ L.rec = null; setState('tap'); }
   clearTimeout(L.nudgeT); L.nudgeT = setTimeout(() => { if(L && L.state === 'listening' && !text.trim() && !L.talking){ try{ rec.stop(); }catch(x){} } }, NUDGE_MS + 500);
 }
 function stopListening(submit){
-  if(!L) return; clearTimeout(L.silT); clearTimeout(L.nudgeT);
+  if(!L) return; clearTimeout(L.silT); clearTimeout(L.nudgeT); clearTimeout(L.relT);
   const r = L.rec; if(!r) return;
   if(submit){ try{ r.stop(); }catch(e){} return; }
   L.rec = null; try{ r.abort(); }catch(e){}
