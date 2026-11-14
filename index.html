@@ -3078,7 +3078,12 @@ function ackPlay(){
 /* the first real sentence is ready: stop the acknowledgement if it is still playing (never overlap the reply) */
 function ackStop(){ if(!ACK_ON) return; ACK_ON = false; try{ azEl().pause(); }catch(e){} }
 /* once per lesson room (lesson, mission, review): warm up everything the turn pipeline needs */
-function liveSetup(){ if(!L) return; ackPrefetch(); if(streamSttOn()){ loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); } }
+function liveSetup(){ if(!L) return; ackPrefetch(); wakeOn(); if(streamSttOn()){ loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); } }
+/* keep the iPad screen awake during a lesson (it slept mid-lesson); the browser drops the lock when the app is hidden */
+let WAKE = null;
+async function wakeOn(){ try{ if(!L || L.done || document.hidden || !navigator.wakeLock || (WAKE && !WAKE.released)) return; const w = await navigator.wakeLock.request('screen'); if(!L || L.done){ try{ w.release(); }catch(e){} return; } WAKE = w; }catch(e){} }
+function wakeOff(){ const w = WAKE; WAKE = null; if(w){ try{ const p = w.release(); if(p && p.catch) p.catch(() => {}); }catch(e){} } }
+document.addEventListener('visibilitychange', () => { if(!document.hidden && typeof L !== 'undefined' && L && !L.done) wakeOn(); });
 
 /* ---- teacher turn (streaming) ---- */
 function parseTags(full){
@@ -3230,7 +3235,7 @@ function studentSaid(text){
 
 /* ---- finish ---- */
 async function finishLesson(){
-  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; stopListening(); setState('idle'); clearInterval(lesson.tick);
+  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; stopListening(); setState('idle'); clearInterval(lesson.tick); wakeOff();
   const k = lesson.kid, mins = elapsedMin(), plan = lesson.plan;
   const ov = document.createElement('div'); ov.className = 'ov';
   ov.innerHTML = `<div class="card" style="text-align:center"><h2>انتهت الحصة 🎉</h2><p class="muted" style="margin:0">المعلمة تكتب تقريرك وتجهّز اختبار الدرس…</p></div>`;
@@ -3310,8 +3315,8 @@ Reply with ONLY one JSON object:
       go(WHO === 'parent' ? 'parent' : k, 'home');
     }); };
 }
-function leaveRoomQuiet(){ stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
-function leaveRoom(){ stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
+function leaveRoomQuiet(){ wakeOff(); stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
+function leaveRoom(){ wakeOff(); stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
