@@ -2802,7 +2802,7 @@ const timeoutErr = () => ({status:'timeout', body:''});
 function latMark(k){ const t = typeof L !== 'undefined' && L && L.turnT; if(t && k === 'tok' && !t.tok) t.tok = Date.now(); }
 function audioStarted(){ const t = typeof L !== 'undefined' && L && L.turnT; if(!t || !t.tok || t.audio) return; t.audio = Date.now();
   const row = {stt:t.end ? t.text - t.end : null, llm:t.tok - t.text, tts:t.audio - t.tok, total:t.audio - (t.end || t.text)};
-  (L.lat = L.lat || []).push(row); console.log('turn latency ms', JSON.stringify(row)); }
+  (L.lat = L.lat || []).push(row); console.log('turn latency ms', JSON.stringify(row), t.conf != null ? 'stt confidence ' + t.conf.toFixed(2) : ''); }
 function latSummary(lesson){ const a = (lesson && lesson.lat) || []; if(!a.length) return null;
   const avg = k => { const v = a.map(x => x[k]).filter(x => x != null); return v.length ? Math.round(v.reduce((s, x) => s + x, 0) / v.length) : null; };
   return {stt:avg('stt'), llm:avg('llm'), tts:avg('tts'), total:avg('total'), n:a.length}; }
@@ -3228,7 +3228,7 @@ function startListening(fromTap){
   rec.onend = () => { if(!L || L.rec !== rec) return; L.rec = null; clearTimeout(L.silT);
     const t = text.trim(), unclear = L.unclear || 0;
     if(t && !(rec.lowConf && !L.manualStop && unclear < 2)){
-      L.listenStart = 0; L.unclear = 0; L.sttFails = 0; clearTimeout(L.nudgeT); L.tSpeechEnd = rec.speechEndAt || lastAt || Date.now(); studentSaid(t); return; }
+      L.listenStart = 0; L.unclear = 0; L.sttFails = 0; clearTimeout(L.nudgeT); L.tSpeechEnd = rec.speechEndAt || lastAt || Date.now(); L.tConf = rec.conf; studentSaid(t); return; }
     if(failed){ L.sttFails = (L.sttFails || 0) + 1; youNote('ما وصلني صوتك، جرّب مرة ثانية', L.sttFails >= 2); again(Date.now() - began < 1500); return; }
     if((t || rec.heardEmpty) && unclear < 2){ L.unclear = unclear + 1; youNote('ما سمعتك زين، قلها مرة ثانية 🙂'); again(false); return; }
     if(L.manualStop){ L.manualStop = false; L.listenStart = 0; clearTimeout(L.nudgeT); setState('tap'); return; }
@@ -3246,7 +3246,7 @@ function stopListening(submit){
 function studentSaid(text){
   if(L){ L.sw += countWords(text); updateTalk(); }
   const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; }
-  if(L){ L.turnT = {end:L.tSpeechEnd || 0, text:Date.now()}; L.tSpeechEnd = 0; setState('thinking'); ackPlay(); }
+  if(L){ L.turnT = {end:L.tSpeechEnd || 0, text:Date.now(), conf:L.tConf}; L.tSpeechEnd = 0; L.tConf = undefined; setState('thinking'); ackPlay(); }
   teacherTurn(`Student: ${text}`);
 }
 
