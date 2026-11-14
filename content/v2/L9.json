@@ -1232,7 +1232,7 @@
     }
    ],
    "dialogue": {
-    "scene": "Reem and Emma are talking about a big match between Saudi Arabia and Japan, and what the players said afterwards.",
+    "scene": "Reem and Emma are talking about a big (invented) match between Saudi Arabia and Japan, and what the players said afterwards.",
     "p1": [
      {
       "s": "Emma",
@@ -3264,6 +3264,10 @@
     },
     {
      "s": "Ms Huda",
+     "t": "Yes, a written one, please."
+    },
+    {
+     "s": "Ms Huda",
      "t": "The due date is the fifteenth of March."
     },
     {
@@ -3332,10 +3336,6 @@
      "t": "That's right. We're meeting there at four o'clock."
     },
     {
-     "s": "Sam",
-     "t": "Let me get this straight: four in the afternoon, not four in the morning?"
-    },
-    {
      "s": "Omar",
      "t": "Oh, there's a change of plan. Khalid can't come until five."
     },
@@ -3350,6 +3350,10 @@
     {
      "s": "Sam",
      "t": "Great. Could you send me a message later to confirm the time?"
+    },
+    {
+     "s": "Omar",
+     "t": "Sure. Just make sure you're there on the dot!"
     }
    ],
    "grammar": {
@@ -3414,15 +3418,11 @@
     },
     {
      "s": "Yazeed",
-     "t": "Please ask her to call me back. My name is Yazeed."
-    },
-    {
-     "s": "Noura",
-     "t": "Hold on, let me get a pen. Could you spell your name, please?"
+     "t": "Tuesday, the day after Monday."
     },
     {
      "s": "Yazeed",
-     "t": "Y-A-Z-E-E-D. And could she confirm her address, too?"
+     "t": "Please ask her to call me back. My name is Yazeed."
     },
     {
      "s": "Noura",

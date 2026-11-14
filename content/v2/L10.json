@@ -33,7 +33,7 @@
     [
      "Where I've Been Living",
      "Describe how long you have been living, studying or going somewhere",
-     "I've been living in … for … / I've been going to … since … / It took me … to get my bearings"
+     "I've been living in … for … / I've been going to … since … / It took me … to find my way around"
     ],
     [
      "Training Hard",
@@ -436,10 +436,10 @@
    "warmup": "How long have you been living in your town or city?",
    "expressions": [
     {
-     "w": "get your bearings",
-     "def": "to understand where you are and how things work in a new place",
-     "ar": "يتعرّف على المكان ويتأقلم",
-     "frame": "It took me ___ to get my bearings at ___."
+     "w": "find your way around",
+     "def": "to learn where things are in a new place",
+     "ar": "يتعرّف على المكان ويعرف طرقه",
+     "frame": "It took me ___ to find my way around ___."
     },
     {
      "w": "move to",
@@ -486,7 +486,7 @@
      },
      {
       "s": "Reem",
-      "t": "Was it hard to get your bearings?"
+      "t": "Was it hard to find your way around?"
      },
      {
       "s": "Emma",
@@ -529,7 +529,7 @@
       "hint": "Give the year or the number of years with 'since' or 'for'."
      },
      {
-      "q": "What's your neighbourhood like? Any tips to get my bearings?",
+      "q": "What's your neighbourhood like? Any tips to help me find my way around?",
       "hint": "Describe one place and give one piece of advice."
      }
     ]
@@ -1220,11 +1220,11 @@
     "p2": [
      {
       "s": "Sam",
-      "t": "What was the clock used for?"
+      "t": "So was it just a toy?"
      },
      {
       "s": "Faisal",
-      "t": "It served as a clock. Every half hour, a little figure moved and a sound was made."
+      "t": "No, it served as a real clock. Every half hour, a little figure moved and a sound was made."
      },
      {
       "s": "Sam",
@@ -1238,7 +1238,7 @@
     "focus": "It was designed by Al-Jazari more than 800 years ago.",
     "qs": [
      "Who designed the Elephant Clock?",
-     "What was the clock used for?"
+     "What happened every half hour?"
     ]
    },
    "speakout": {
@@ -2277,7 +2277,7 @@
      },
      {
       "s": "Agent",
-      "t": "I'm sorry to hear that. Here's your reference number. Can you describe it?"
+      "t": "I'm sorry to hear that. Your reference number is RUH 4471. Can you describe the suitcase?"
      },
      {
       "s": "Faisal",
@@ -3225,9 +3225,9 @@
   "0-2": {
    "words": [
     {
-     "w": "get your bearings",
-     "ar": "يتعرّف على المكان ويتأقلم",
-     "ex": "It took Emma a month to get her bearings at her new school."
+     "w": "find your way around",
+     "ar": "يتعرّف على المكان ويعرف طرقه",
+     "ex": "It took Emma a month to find her way around her new school."
     },
     {
      "w": "move to",
@@ -3266,7 +3266,7 @@
     },
     {
      "s": "Reem",
-     "t": "Was it hard to get your bearings?"
+     "t": "Was it hard to find your way around?"
     },
     {
      "s": "Emma",
@@ -3736,11 +3736,11 @@
     },
     {
      "s": "Sam",
-     "t": "What was the clock used for?"
+     "t": "So was it just a toy?"
     },
     {
      "s": "Faisal",
-     "t": "It served as a clock. Every half hour, a little figure moved and a sound was made."
+     "t": "No, it served as a real clock. Every half hour, a little figure moved and a sound was made."
     },
     {
      "s": "Sam",
@@ -4421,7 +4421,7 @@
     },
     {
      "s": "Agent",
-     "t": "I'm sorry to hear that. Here's your reference number. Can you describe it?"
+     "t": "I'm sorry to hear that. Your reference number is RUH 4471. Can you describe the suitcase?"
     },
     {
      "s": "Faisal",
@@ -5069,11 +5069,12 @@
      "a",
      "month",
      "to",
-     "get",
+     "find",
      "my",
-     "bearings."
+     "way",
+     "around."
     ],
-    "answer": "It took me a month to get my bearings.",
+    "answer": "It took me a month to find my way around.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6475,12 +6476,12 @@
     },
     {
      "type": "mc",
-     "q": "'It took Emma a month to get her _____ at her new school.'",
+     "q": "'It took Emma a month to find her _____ around her new school.'",
      "options": [
-      "bearings",
-      "feelings",
-      "directions",
-      "belongings"
+      "way",
+      "road",
+      "path",
+      "direction"
      ],
      "answer": 0
     },

@@ -1090,7 +1090,7 @@
      },
      {
       "s": "Noura",
-      "t": "I'm not keen on that. I can't sleep well in a tent."
+      "t": "I'm not keen on that. I can't sleep well outside."
      },
      {
       "s": "Saud",
@@ -2254,10 +2254,10 @@
      "frame": "It might help to ___."
     },
     {
-     "w": "throw in the towel",
-     "def": "to stop trying because you think you can't succeed",
-     "ar": "يستسلم ويتوقف عن المحاولة",
-     "frame": "I almost threw in the towel when ___."
+     "w": "keep at it",
+     "def": "to continue trying hard, even when something is difficult",
+     "ar": "يواصل المحاولة ولا يستسلم",
+     "frame": "It's hard, but I'm going to keep at it until I can ___."
     },
     {
      "w": "look on the bright side",
@@ -2282,7 +2282,7 @@
      },
      {
       "s": "Sultan",
-      "t": "Poor Turki! Well, Turki, whatever you do, don't throw in the towel."
+      "t": "Poor Turki! Well, Turki, whatever you do, don't give up. Keep at it!"
      },
      {
       "s": "Majed",
@@ -2311,7 +2311,7 @@
       "t": "Great advice! Send us your problems, everyone, and we'll try to help."
      }
     ],
-    "focus": "Well, Turki, whatever you do, don't throw in the towel.",
+    "focus": "Well, Turki, whatever you do, don't give up.",
     "qs": [
      "What is Turki's problem?",
      "What does Sultan say Turki should tell his friends?"
@@ -3667,7 +3667,7 @@
     },
     {
      "s": "Noura",
-     "t": "I'm not keen on that. I can't sleep well in a tent."
+     "t": "I'm not keen on that. I can't sleep well outside."
     },
     {
      "s": "Saud",
@@ -3895,6 +3895,10 @@
     {
      "s": "Omar",
      "t": "So does mine! But recycling isn't enough. We need to use less plastic."
+    },
+    {
+     "s": "Sam",
+     "t": "Do you think paper bags are always better than plastic ones?"
     },
     {
      "s": "Omar",
@@ -4391,9 +4395,9 @@
      "ex": "It might help to write your new words in a notebook."
     },
     {
-     "w": "throw in the towel",
-     "ar": "يستسلم ويتوقف عن المحاولة",
-     "ex": "I nearly threw in the towel, but then I scored a goal."
+     "w": "keep at it",
+     "ar": "يواصل المحاولة ولا يستسلم",
+     "ex": "Maths is difficult for me, but I'm going to keep at it."
     },
     {
      "w": "look on the bright side",
@@ -4413,7 +4417,7 @@
     },
     {
      "s": "Sultan",
-     "t": "Poor Turki! Well, Turki, whatever you do, don't throw in the towel."
+     "t": "Poor Turki! Well, Turki, whatever you do, don't give up. Keep at it!"
     },
     {
      "s": "Majed",
@@ -4445,7 +4449,7 @@
     "ar": "نصيحة لطيفة: It might help to … / You could … . نصيحة قوية: You'd better … / Whatever you do, don't … . ونذكر النتيجة بـ If you …, you'll … .",
     "examples": [
      "It might help to make a list.",
-     "Whatever you do, don't throw in the towel.",
+     "Whatever you do, don't give up.",
      "If you practise every day, you'll get better."
     ]
    }
@@ -6008,12 +6012,10 @@
      "you",
      "do,",
      "don't",
-     "throw",
-     "in",
-     "the",
-     "towel."
+     "give",
+     "up."
     ],
-    "answer": "Whatever you do, don't throw in the towel.",
+    "answer": "Whatever you do, don't give up.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6033,11 +6035,11 @@
    },
    {
     "type": "mc",
-    "q": "'Don't ___! Keep trying and you'll get better.'",
+    "q": "'Swimming is hard at first, but ___ and you'll get better.'",
     "options": [
      "sort out",
      "deal with",
-     "throw in the towel",
+     "keep at it",
      "look on"
     ],
     "answer": 2
@@ -6746,12 +6748,12 @@
     },
     {
      "type": "mc",
-     "q": "'Don't ___. You're nearly at the top of the mountain!'",
+     "q": "'Don't stop now. ___! You're nearly at the top of the mountain.'",
      "options": [
-      "throw in the towel",
-      "make up",
-      "stay up",
-      "fall behind"
+      "Keep at it",
+      "Make up",
+      "Stay up",
+      "Fall behind"
      ],
      "answer": 0
     },
