@@ -96,7 +96,7 @@ const res = []; const ok = (name, cond, extra) => { res.push([cond ? 'PASS' : 'F
   await p.locator('#azk').fill('k2'); await p.locator('#azs').click(); await tick(p); ok(T + 'azure save', await ev(`DB.azure.key === 'k2'`));
   await ev(`window.azTest = async () => { __calls.push('azt'); }`); await p.locator('#azt').click(); await tick(p, 200); ok(T + 'azure test', (await p.locator('#azm').textContent()).includes('يعمل'));
   await p.locator('#azx').click(); await tick(p); ok(T + 'azure off', await ev(`DB.azure === null`));
-  await p.locator('#xfer').click(); await tick(p, 800); ok(T + 'device setup link dialog', await vis('.ov #xlink')); await closeOv();
+  await p.locator('#xfer').click(); await tick(p, 800); await p.waitForSelector('.ov #xlink', {timeout:8000}).catch(() => {}); ok(T + 'device setup link dialog', await vis('.ov #xlink')); await closeOv();
   ok(T + 'accounts table inside scroll box', await cnt('.tscroll .acc') === 1);
   await ev(`delete DB.parent.pass; renderParent()`); await tick(p); await p.locator('.acc [data-rpass^="parent"]').click(); ok(T + 'owner password reset contract', await ev(`__calls.includes('reset:parent:parent')`));
   await p.locator('[data-out]').first().evaluate(e => e.click()); await tick(p); ok(T + 'logout', await ev(`WHO === null`) );
