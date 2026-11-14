@@ -226,6 +226,7 @@
    ],
    "dialogue": {
     "scene": "Faisal and Omar are talking about tonight's football final between two Saudi teams.",
+    "scene_emoji": "⚽",
     "p1": [
      {
       "s": "Omar",
@@ -269,7 +270,7 @@
     ]
    },
    "speakout": {
-    "scene": "You and your cousin are watching the draw for a school sports competition. Your cousin asks you to predict the results.",
+    "scene": "You and your cousin are watching the draw for a big international football tournament. Your cousin asks you to predict the results.",
     "prompts": [
      {
       "q": "Which team do you think will come out on top, and how sure are you?",
@@ -301,7 +302,7 @@
   },
   "0-1": {
    "objective": "Today you will work out what happened using must, might and can't.",
-   "warmup": "Have you ever lost something at school? What happened to it?",
+   "warmup": "Have you ever lost something at home? What happened to it?",
    "expressions": [
     {
      "w": "put two and two together",
@@ -341,15 +342,16 @@
     }
    ],
    "dialogue": {
-    "scene": "The school football trophy has disappeared from the display case. Reem and Noura try to work out what happened.",
+    "scene": "Grandpa's falconry trophy has disappeared from its glass cabinet during a family gathering. His granddaughters, Reem and Noura, try to work out what happened.",
+    "scene_emoji": "🔍",
     "p1": [
      {
       "s": "Reem",
-      "t": "The trophy was here this morning. Someone must have taken it during the break."
+      "t": "The trophy was here this morning. Someone must have taken it during lunch."
      },
      {
       "s": "Noura",
-      "t": "Let's not jump to conclusions. Maybe a teacher moved it. But let's go all out to find it."
+      "t": "Let's not jump to conclusions. Maybe one of the adults moved it. But let's go all out to find it."
      },
      {
       "s": "Reem",
@@ -357,17 +359,17 @@
      },
      {
       "s": "Noura",
-      "t": "Blue ribbon? That rings a bell. The sports teacher had ribbons like that."
+      "t": "Blue ribbon? That rings a bell. Aunt Huda had ribbons like that on her gift boxes."
      }
     ],
     "p2": [
      {
       "s": "Reem",
-      "t": "So it can't be a thief. It must be Ms Huda. She's planning the sports day."
+      "t": "So it can't be a thief. It must be Aunt Huda. She's planning a surprise for Grandpa."
      },
      {
       "s": "Noura",
-      "t": "She might be cleaning it for the ceremony tomorrow."
+      "t": "She might be cleaning it for his party tonight."
      },
      {
       "s": "Reem",
@@ -378,25 +380,25 @@
       "t": "There's no doubt about it. Let's ask her and figure out the whole story."
      }
     ],
-    "focus": "So it can't be a thief. It must be Ms Huda.",
+    "focus": "So it can't be a thief. It must be Aunt Huda.",
     "qs": [
      "What clue did Reem find?",
      "Why are the girls sure it can't be a thief?"
     ]
    },
    "speakout": {
-    "scene": "Your class's tablet is missing from the classroom. You and a friend are the class detectives. Use the clues to work out what happened.",
+    "scene": "Your family's tablet has disappeared from the living room during a family visit. You and your cousin are the family detectives. Use the clues to work out what happened.",
     "prompts": [
      {
-      "q": "The classroom door was locked all day. Who could have taken the tablet?",
+      "q": "The living room door was locked all afternoon. Who could have taken the tablet?",
       "hint": "Use 'It must be someone who …' or 'It can't be …'."
      },
      {
-      "q": "We found a charger cable in the library. What does that tell us?",
+      "q": "We found a charger cable in the garden. What does that tell us?",
       "hint": "Use 'The tablet might be …' and give your reason."
      },
      {
-      "q": "Should we tell the head teacher now, or wait? Why?",
+      "q": "Should we tell Grandpa now, or wait? Why?",
       "hint": "Say one idea and use 'We shouldn't jump to conclusions because …'."
      }
     ]
@@ -574,6 +576,7 @@
    ],
    "dialogue": {
     "scene": "Omar can't find his phone, and his family is leaving for his grandmother's house in ten minutes. His sister Lama helps him.",
+    "scene_emoji": "📱",
     "p1": [
      {
       "s": "Omar",
@@ -617,19 +620,19 @@
     ]
    },
    "speakout": {
-    "scene": "Your little brother has lost his school bag the night before a test. He is worried. Help him find it by guessing where it could be.",
+    "scene": "Your little brother has lost his football boots the night before a big match. He is worried. Help him find them by guessing where they could be.",
     "prompts": [
      {
-      "q": "I came home and went straight to the living room. Where could my bag be?",
-      "hint": "Use 'It could be …' or 'It might be …' and name a place."
+      "q": "I came home and went straight to the living room. Where could my boots be?",
+      "hint": "Use 'They could be …' or 'They might be …' and name a place."
      },
      {
-      "q": "I didn't go upstairs at all today. Could it be in my bedroom?",
-      "hint": "Use 'It can't be … because …'."
+      "q": "I didn't go upstairs at all today. Could they be in my bedroom?",
+      "hint": "Use 'They can't be … because …'."
      },
      {
-      "q": "What if we can't find it tonight?",
-      "hint": "Reassure him: 'It's bound to turn up …' and give one plan."
+      "q": "What if we can't find them tonight?",
+      "hint": "Reassure him: 'They're bound to turn up …' and give one plan."
      }
     ]
    },
@@ -805,7 +808,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Sam and Faisal are presenting a radio show at school called 'The Prediction Show'. They rate how sure they are about the future.",
+    "scene": "Sam and Faisal are recording a video show called 'The Prediction Show' for a kids' science channel. They rate how sure they are about the future.",
+    "scene_emoji": "🚀",
     "p1": [
      {
       "s": "Sam",
@@ -827,25 +831,25 @@
     "p2": [
      {
       "s": "Sam",
-      "t": "Next: will students still go to school in 2050?"
+      "t": "Next: will families go on holiday to the Moon by 2050?"
      },
      {
       "s": "Faisal",
-      "t": "There's no way schools will disappear. People need to meet and work together."
+      "t": "There's no way ordinary families will go to the Moon by then. It's far too expensive."
      },
      {
       "s": "Sam",
-      "t": "I agree. And it's a safe bet that we'll take robot teachers for granted."
+      "t": "I agree. But it's a safe bet that we'll take robot helpers at home for granted."
      },
      {
       "s": "Faisal",
-      "t": "Maybe, but human teachers will always come out on top!"
+      "t": "Maybe, but I'm positive that people will still love a good desert trip!"
      }
     ],
     "focus": "Without a shadow of a doubt! They're already testing them, so it must happen soon.",
     "qs": [
      "Why is Faisal so sure about flying taxis?",
-     "Why does Faisal think schools won't disappear?"
+     "Why does Faisal think families won't go to the Moon by 2050?"
     ]
    },
    "speakout": {
@@ -1269,7 +1273,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar wants his friend Ali to join the padel club at school. Ali spends most of his free time gaming.",
+    "scene": "Omar wants his friend Ali to join the padel club at the sports centre. Ali spends most of his free time gaming.",
+    "scene_emoji": "🎾",
     "p1": [
      {
       "s": "Omar",
@@ -1385,11 +1390,12 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura's brother Fahad keeps forgetting his homework. Noura recommends an app to help him.",
+    "scene": "Noura's brother Fahad keeps forgetting things for his football training. Noura recommends an app to help him.",
+    "scene_emoji": "📲",
     "p1": [
      {
       "s": "Fahad",
-      "t": "I forgot my science homework again. The teacher wasn't happy."
+      "t": "I forgot my football boots again. The coach made me sit on the bench!"
      },
      {
       "s": "Noura",
@@ -1411,7 +1417,7 @@
      },
      {
       "s": "Noura",
-      "t": "It reminds you before every deadline and saves so much time. It's been a game changer for me."
+      "t": "It reminds you before every training session and match, and it saves so much time. It's been a game changer for me."
      },
      {
       "s": "Fahad",
@@ -1501,7 +1507,8 @@
     }
    ],
    "dialogue": {
-    "scene": "The student council must choose this year's class trip. Faisal wants the class to vote for a trip to Jeddah, and Sam is not sure.",
+    "scene": "Faisal's family and Sam's family are planning a long-weekend trip together. Faisal wants everyone to vote for Jeddah, but Sam is not sure.",
+    "scene_emoji": "🏖️",
     "p1": [
      {
       "s": "Faisal",
@@ -1531,7 +1538,7 @@
      },
      {
       "s": "Faisal",
-      "t": "The school will pay for the bus, so it won't cost families much. You can't go wrong with Jeddah."
+      "t": "My uncle can drive us in his big van, so it won't cost families much. You can't go wrong with Jeddah."
      },
      {
       "s": "Sam",
@@ -1545,19 +1552,19 @@
     ]
    },
    "speakout": {
-    "scene": "Your school wants ideas for a new after-school club. You have one minute to persuade the head teacher to choose your idea.",
+    "scene": "Your family wants ideas for this year's summer holiday. You have one minute to persuade everyone to choose your idea.",
     "prompts": [
      {
-      "q": "What club would you like to start, and why?",
-      "hint": "Name the club and give your main reason with 'If you ask me, …'."
+      "q": "Where would you like to go, and why?",
+      "hint": "Name the place and give your main reason with 'If you ask me, …'."
      },
      {
-      "q": "Why should we choose your club and not the others?",
-      "hint": "Use 'It's a no-brainer because …' or 'It gives students the best of both worlds …'."
+      "q": "Why should we choose your idea and not the others?",
+      "hint": "Use 'It's a no-brainer because …' or 'It gives us the best of both worlds …'."
      },
      {
-      "q": "Some parents think clubs waste time. What would you say to them?",
-      "hint": "Persuade them: 'It's worth … because …' and 'Please think it over'."
+      "q": "Grandma thinks travelling in summer is too tiring. What would you say to her?",
+      "hint": "Persuade her: 'It's worth … because …' and 'Please think it over'."
      }
     ]
    },
@@ -1618,6 +1625,7 @@
    ],
    "dialogue": {
     "scene": "Omar wanted to see a famous football player at a mall event in Riyadh, but he arrived too late.",
+    "scene_emoji": "⏰",
     "p1": [
      {
       "s": "Faisal",
@@ -1661,10 +1669,10 @@
     ]
    },
    "speakout": {
-    "scene": "Your friend didn't sign up for the school trip to the science museum in time, and now all the places are gone. They tell you about it.",
+    "scene": "Your friend didn't book tickets for the big football final in time, and now they're sold out. They tell you about it.",
     "prompts": [
      {
-      "q": "I forgot to give the form to the teacher. What should I have done?",
+      "q": "I forgot to book the tickets online. What should I have done?",
       "hint": "Use 'You should have …' and give one idea."
      },
      {
@@ -1849,7 +1857,8 @@
     }
    ],
    "dialogue": {
-    "scene": "In art class, Reem laughed at her friend Hana's painting. Now Hana won't talk to her.",
+    "scene": "At a weekend art workshop, Reem laughed at her friend Hana's painting in front of everyone. Now Hana won't talk to her.",
+    "scene_emoji": "🎨",
     "p1": [
      {
       "s": "Reem",
@@ -1893,7 +1902,7 @@
     ]
    },
    "speakout": {
-    "scene": "You made a joke about your friend's new haircut in front of the class, and your friend felt embarrassed. Now you want to say sorry.",
+    "scene": "You made a joke about your friend's new haircut in front of your other friends, and your friend felt embarrassed. Now you want to say sorry.",
     "prompts": [
      {
       "q": "Why did you say that about my hair?",
@@ -1966,6 +1975,7 @@
    ],
    "dialogue": {
     "scene": "After Eid, Khalid has already spent almost all of his Eid money (eidiya). He talks to his grandfather.",
+    "scene_emoji": "💸",
     "p1": [
      {
       "s": "Grandpa",
@@ -1999,7 +2009,7 @@
      },
      {
       "s": "Khalid",
-      "t": "I've learned my lesson. Next time I'll think twice before I spend anything."
+      "t": "That was a big mistake. Next time I'll think twice before I spend anything."
      }
     ],
     "focus": "I wish I had saved up for the boots. The chair was a waste of money.",
@@ -2197,7 +2207,8 @@
     }
    ],
    "dialogue": {
-    "scene": "For the school podcast 'Lessons I've Learned', Lama interviews her classmate Emma about her biggest mistake.",
+    "scene": "For their weekly podcast 'My Biggest Mistake', Lama interviews her friend Emma, who runs a small baking channel with her mum.",
+    "scene_emoji": "🎧",
     "p1": [
      {
       "s": "Lama",
@@ -2205,7 +2216,7 @@
      },
      {
       "s": "Emma",
-      "t": "Last year, I didn't back up my science project, and my laptop crashed the night before."
+      "t": "Last year, I didn't back up a month of baking videos, and my laptop crashed the night before I posted them."
      },
      {
       "s": "Lama",
@@ -2213,7 +2224,7 @@
      },
      {
       "s": "Emma",
-      "t": "I had to start again. I learned the hard way. I should have saved it online."
+      "t": "I had to film everything again. I learned the hard way. I should have saved them online."
      }
     ],
     "p2": [
@@ -2234,14 +2245,14 @@
       "t": "Yes, it's water under the bridge. I turned over a new leaf: now I back up everything. If only I had done it sooner!"
      }
     ],
-    "focus": "I learned the hard way. I should have saved it online.",
+    "focus": "I learned the hard way. I should have saved them online.",
     "qs": [
-     "What happened to Emma's project?",
+     "What happened to Emma's baking videos?",
      "What has Emma changed since that mistake?"
     ]
    },
    "speakout": {
-    "scene": "You are a guest on the school podcast 'Lessons I've Learned'. Tell the listeners about a mistake you made and what it taught you.",
+    "scene": "You are a guest on the podcast 'My Biggest Mistake'. Tell the listeners about a mistake you made and what it taught you.",
     "prompts": [
      {
       "q": "Tell us about a mistake you made. What happened?",
@@ -2429,7 +2440,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Omar's class is on a school trip to a date farm and factory in Qassim. The farm manager, Mr Saleh, explains the process.",
+    "scene": "Omar and his family are visiting a date farm and factory in Qassim during the date season. The farm manager, Mr Saleh, explains the process.",
+    "scene_emoji": "🌴",
     "p1": [
      {
       "s": "Omar",
@@ -2661,7 +2673,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Noura is preparing a science presentation. Her uncle Majed, an engineer at a desalination plant in Jubail, explains how it works.",
+    "scene": "Noura is visiting her uncle Majed, an engineer at a desalination plant in Jubail. She wants to know how the plant works.",
+    "scene_emoji": "💧",
     "p1": [
      {
       "s": "Noura",
@@ -2695,7 +2708,7 @@
      },
      {
       "s": "Majed",
-      "t": "Almost. It's tested, then stored in huge tanks and pumped to cities on a large scale. Make sure you explain it step by step!"
+      "t": "Almost. It's tested, then stored in huge tanks and pumped to cities on a large scale. Clever, isn't it?"
      }
     ],
     "focus": "First of all, seawater is pumped from the Gulf into the plant.",
@@ -2705,7 +2718,7 @@
     ]
    },
    "speakout": {
-    "scene": "You are giving a short explanation at your school's science fair. A visitor asks you how seawater becomes drinking water.",
+    "scene": "You are a young guide at a science museum. A visitor asks you how seawater becomes drinking water.",
     "prompts": [
      {
       "q": "Where does the water come from, and how does it get to the plant?",
@@ -2777,7 +2790,8 @@
     }
    ],
    "dialogue": {
-    "scene": "Sara and Lama are making a poster for their school's 'Green Week'. They are explaining how plastic bottles are recycled.",
+    "scene": "Sara and Lama are filming a short video for a city recycling competition. They are explaining how plastic bottles are recycled.",
+    "scene_emoji": "♻️",
     "p1": [
      {
       "s": "Lama",
@@ -2846,7 +2860,7 @@
     ],
     "qs": [
      "Do you think people should get money for recycling? Why or why not?",
-     "What could your school do to recycle more?"
+     "What could your neighbourhood do to recycle more?"
     ]
    },
    "exit": "Explain in two sentences what happens to a plastic bottle after you recycle it."
@@ -2893,7 +2907,8 @@
     }
    ],
    "dialogue": {
-    "scene": "In English club, students give one-minute 'Explain It Like an Expert' talks. Omar explains how kabsa is made, and his teacher Ms Emma asks questions.",
+    "scene": "Omar is filming a one-minute 'Explain It Like an Expert' video for a kids' cooking competition. His neighbour Ms Emma, who is from London, asks questions as he cooks.",
+    "scene_emoji": "🍛",
     "p1": [
      {
       "s": "Omar",
@@ -2937,7 +2952,7 @@
     ]
    },
    "speakout": {
-    "scene": "It's your turn in the 'Explain It Like an Expert' challenge. Choose a process you know well (a recipe, a game, a science experiment or a craft) and explain it to the club.",
+    "scene": "It's your turn in the 'Explain It Like an Expert' challenge. Choose a process you know well (a recipe, a game, a science experiment or a craft) and explain it to the judges.",
     "prompts": [
      {
       "q": "What are you going to explain, and what is it in a nutshell?",
@@ -3082,11 +3097,11 @@
    "dialogue": [
     {
      "s": "Reem",
-     "t": "The trophy was here this morning. Someone must have taken it during the break."
+     "t": "The trophy was here this morning. Someone must have taken it during lunch."
     },
     {
      "s": "Noura",
-     "t": "Let's not jump to conclusions. Maybe a teacher moved it. But let's go all out to find it."
+     "t": "Let's not jump to conclusions. Maybe one of the adults moved it. But let's go all out to find it."
     },
     {
      "s": "Reem",
@@ -3094,15 +3109,11 @@
     },
     {
      "s": "Noura",
-     "t": "Blue ribbon? That rings a bell. The sports teacher had ribbons like that."
+     "t": "Blue ribbon? That rings a bell. Aunt Huda had ribbons like that on her gift boxes."
     },
     {
      "s": "Reem",
-     "t": "So it can't be a thief. It must be Ms Huda. She's planning the sports day."
-    },
-    {
-     "s": "Noura",
-     "t": "She might be cleaning it for the ceremony tomorrow."
+     "t": "So it can't be a thief. It must be Aunt Huda. She's planning a surprise for Grandpa."
     },
     {
      "s": "Reem",
@@ -3406,19 +3417,11 @@
     },
     {
      "s": "Sam",
-     "t": "Next: will students still go to school in 2050?"
+     "t": "Next: will families go on holiday to the Moon by 2050?"
     },
     {
      "s": "Faisal",
-     "t": "There's no way schools will disappear. People need to meet and work together."
-    },
-    {
-     "s": "Sam",
-     "t": "I agree. And it's a safe bet that we'll take robot teachers for granted."
-    },
-    {
-     "s": "Faisal",
-     "t": "Maybe, but human teachers will always come out on top!"
+     "t": "There's no way ordinary families will go to the Moon by then. It's far too expensive."
     }
    ],
    "grammar": {
@@ -3775,7 +3778,7 @@
    "dialogue": [
     {
      "s": "Fahad",
-     "t": "I forgot my science homework again. The teacher wasn't happy."
+     "t": "I forgot my football boots again. The coach made me sit on the bench!"
     },
     {
      "s": "Noura",
@@ -3795,7 +3798,7 @@
     },
     {
      "s": "Noura",
-     "t": "It reminds you before every deadline and saves so much time. It's been a game changer for me."
+     "t": "It reminds you before every training session and match, and it saves so much time. It's been a game changer for me."
     },
     {
      "s": "Fahad",
@@ -3876,7 +3879,7 @@
     },
     {
      "s": "Faisal",
-     "t": "The school will pay for the bus, so it won't cost families much. You can't go wrong with Jeddah."
+     "t": "My uncle can drive us in his big van, so it won't cost families much. You can't go wrong with Jeddah."
     },
     {
      "s": "Sam",
@@ -4188,7 +4191,7 @@
     },
     {
      "s": "Khalid",
-     "t": "I've learned my lesson. Next time I'll think twice before I spend anything."
+     "t": "That was a big mistake. Next time I'll think twice before I spend anything."
     }
    ],
    "grammar": {
@@ -4650,7 +4653,7 @@
     },
     {
      "s": "Majed",
-     "t": "Almost. It's tested, then stored in huge tanks and pumped to cities on a large scale. Make sure you explain it step by step!"
+     "t": "Almost. It's tested, then stored in huge tanks and pumped to cities on a large scale. Clever, isn't it?"
     }
    ],
    "grammar": {
@@ -4885,7 +4888,7 @@
   "0-1": [
    {
     "type": "mc",
-    "q": "The door was locked and only Ms Huda had the key. It ___ be Ms Huda.",
+    "q": "The cabinet was locked and only Aunt Huda had the key. It ___ be Aunt Huda.",
     "options": [
      "shouldn't",
      "can't",
@@ -5171,11 +5174,14 @@
      "There's",
      "no",
      "way",
-     "schools",
+     "families",
      "will",
-     "disappear."
+     "go",
+     "to",
+     "the",
+     "Moon."
     ],
-    "answer": "There's no way schools will disappear.",
+    "answer": "There's no way families will go to the Moon.",
     "ar": "رتّب الجملة"
    },
    {
