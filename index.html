@@ -700,6 +700,181 @@ input[type=date].input::-webkit-date-and-time-value{text-align:right;margin:0}
 .mtoday .me2{font-size:2.2rem}
 .mission.mlock{opacity:.55}.mission.mdone{border-color:var(--gold)}
 </style>
+<style id="ui-d">
+/* ===== Interface layer: shared components, owner console, guardian reports, kid home, teen skin ===== */
+:root{--s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--warn:#8A5A00;--warn-soft:#FFF1CC}
+:root[data-theme="dark"]{--warn:#FCD34D;--warn-soft:#3A2E12}
+/* shared: section heading row, small heading, icons, empty state, notes, key/value lists, scrolling tables */
+.sech{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s3)}
+.subh{font-size:.95rem;font-weight:800;margin:var(--s2) 0 0;color:var(--brand-ink)}
+.uic{width:20px;height:20px;flex:none;display:block}
+.empty{display:grid;justify-items:center;gap:6px;text-align:center;padding:var(--s5) var(--s3)}
+.empty-i{font-size:1.9rem;line-height:1;width:60px;height:60px;border-radius:50%;background:var(--bg);display:grid;place-items:center}
+.empty p{margin:0;max-width:38ch}
+.pnote{border-radius:12px;padding:10px 12px;background:var(--bg);font-size:.92rem;font-weight:600;border-inline-start:4px solid var(--line)}
+.pnote.good{background:var(--good-soft);color:var(--good);border-color:var(--good)}.pnote.bad{background:var(--bad-soft);color:var(--bad);border-color:var(--bad)}
+.pnote.warn{background:var(--warn-soft);color:var(--warn);border-color:var(--gold)}.pnote.brand{background:var(--brand-soft);color:var(--brand-ink);border-color:var(--brand)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}.chip.plain{background:var(--bg);color:var(--muted)}
+.chip.live{background:var(--teal);color:#fff;display:inline-flex;align-items:center;gap:6px}.chip.live .livedot{width:8px;height:8px;background:#fff;margin:0}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--s2) var(--s4);margin:0}
+.kv>div{display:grid;gap:2px;min-width:0}.kv dt{font-size:.8rem;color:var(--muted)}.kv dd{margin:0;font-weight:700;overflow-wrap:anywhere}
+.kv code,.ppass0 code{direction:ltr;unicode-bidi:isolate;background:var(--bg);padding:2px 8px;border-radius:6px;font-weight:700}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.tscroll table{min-width:520px}
+.nb{font-style:normal;min-width:20px;height:20px;border-radius:99px;background:var(--brand);color:#fff;font-size:.72rem;font-weight:800;display:inline-grid;place-items:center;padding:0 6px;line-height:1}
+.pup{list-style:none;margin:0;padding:0;display:grid}.pup li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px dashed var(--line);font-size:.92rem}.pup li:first-child{border-top:0}
+/* tap targets: at least 44px on pages and dialogs (the lesson room keeps its own sizes) */
+.wrap .btn.sm,.adm .btn.sm,.ov .btn.sm{min-height:44px}.tab,.topic,.mcat{min-height:44px}.pbtn{width:44px;height:44px}
+.days label{min-height:44px;padding:4px 12px}.ico{min-width:44px;min-height:44px}
+@media (max-width:820px){.toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}}
+
+/* ---------- owner console shell: side rail on wide screens, bottom bar on phones ---------- */
+.adm{min-height:100%;display:grid;grid-template-columns:232px minmax(0,1fr)}
+.adm-top{display:none}
+.adm-nav{position:sticky;top:0;height:100vh;height:100dvh;display:flex;flex-direction:column;gap:var(--s4);padding:20px 14px;background:var(--surface);border-inline-end:1px solid var(--line);overflow-y:auto}
+.adm-brand{display:grid;gap:2px;padding-inline:8px}.adm-brand .logo{font-size:1.2rem}
+.adm-tabs{display:grid;gap:4px}
+.adm-t{display:flex;align-items:center;gap:10px;min-height:46px;padding:8px 12px;border:0;border-radius:12px;background:transparent;font-weight:700;color:var(--muted);text-align:start;position:relative}
+.adm-t .t-st{display:none}.adm-t .nb{margin-inline-start:auto}
+.adm-t:hover{background:var(--bg);color:var(--fg)}.adm-t.on{background:var(--brand-soft);color:var(--brand-ink)}
+.adm-foot{margin-top:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding-inline:4px}
+.adm-main{min-width:0;width:100%;max-width:1240px;padding:24px clamp(16px,3vw,36px) 48px}
+.adm-h{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;margin-bottom:18px}
+.adm-h h1{font-size:1.7rem;font-weight:800}
+@media (min-width:821px) and (max-height:560px){.adm-nav{padding:8px 10px;gap:6px}.adm-brand .small{display:none}.adm-t{min-height:44px;padding:4px 12px}.adm-main{padding-top:12px}}
+@media (max-width:820px){
+  .adm{display:block;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+  .adm-top{display:flex;align-items:center;gap:10px;padding:10px max(16px,env(safe-area-inset-right,0px)) 6px max(16px,env(safe-area-inset-left,0px))}.adm-top .me{margin-inline-start:auto}.adm-top>b{color:var(--muted);font-size:.9rem}
+  .adm-nav{position:fixed;inset:auto 0 0 0;height:auto;flex-direction:row;padding:6px max(6px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));border:0;border-top:1px solid var(--line);z-index:20;overflow:visible}
+  .adm-brand,.adm-foot{display:none}
+  .adm-tabs{grid-template-columns:repeat(6,minmax(0,1fr));width:100%;gap:2px}
+  .adm-t{flex-direction:column;gap:2px;padding:6px 2px;min-height:54px;font-size:.72rem;justify-content:center;text-align:center;line-height:1.2}
+  .adm-t .t-lg{display:none}.adm-t .t-st{display:block}
+  .adm-t .nb{position:absolute;top:2px;inset-inline-start:calc(50% + 4px);margin:0}
+  .adm-main{padding:8px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
+  .adm-h{margin-bottom:12px;align-items:center}.adm-h h1{font-size:1.4rem}
+}
+/* overview */
+.pstrip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:0;overflow:hidden}
+.pstrip>div{display:grid;gap:0;padding:14px 18px;align-content:start;min-width:0}.pstrip>div+div{border-inline-start:1px solid var(--line)}
+.pstrip b{font-size:1.8rem;font-weight:800;line-height:1.25}.pstrip b small{font-size:1rem;color:var(--muted);font-weight:700}
+.pstrip .is-live b{color:var(--teal-ink)}.pstrip .is-warn b{color:var(--bad)}
+.pstrip .small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pcols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+@media (max-width:900px){.pcols{grid-template-columns:minmax(0,1fr)}
+  .pstrip{grid-template-columns:repeat(2,minmax(0,1fr))}.pstrip>div{border-inline-start:0!important;border-top:1px solid var(--line);padding:12px 14px}.pstrip>div:nth-child(-n+2){border-top:0}
+  .pstrip>div:nth-child(even){border-inline-start:1px solid var(--line)!important}.pstrip>div:last-child:nth-child(odd){grid-column:1/-1}.pstrip b{font-size:1.5rem}}
+.pday{list-style:none;margin:0;padding:0;display:grid}
+.pday li{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:10px;align-items:center;padding:6px 0;border-top:1px solid var(--line)}.pday li:first-child{border-top:0}
+.pday time{font-weight:800;color:var(--muted);direction:ltr;text-align:end}.pday .st-live time{color:var(--teal-ink)}.pday .st-miss time{color:var(--bad)}
+.pwho,.pkid{display:inline-flex;align-items:center;gap:10px;text-align:start;min-height:48px;min-width:0;color:inherit}
+.pwho{border:0;background:none;padding:4px;border-radius:12px}.pwho:hover{background:var(--bg)}
+.pkid{border:1.5px solid var(--line);background:var(--surface);border-radius:14px;padding:6px 8px 6px 14px}.pkid:hover{border-color:var(--brand)}
+.pwho>span,.pkid>span,.c-name>span{display:grid;line-height:1.3;min-width:0}
+.adm .pwho .avatar,.adm .ptr .avatar,.adm .pkid .avatar{width:38px;height:38px;font-size:.95rem}
+.todo{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.sech+.todo,.sech+.todo[hidden]+.todo{border-top:0}
+.tdot{width:10px;height:10px;border-radius:50%;background:var(--line)}.tdot.bad{background:var(--bad)}.tdot.warn{background:var(--gold)}.tdot.brand{background:var(--brand)}.tdot.good{background:var(--good)}
+@media (max-width:480px){.todo{grid-template-columns:10px minmax(0,1fr)}.todo>.btn{grid-column:2;justify-self:start}}
+.phealth:empty{display:none}
+/* students */
+.ptools{display:grid;gap:10px;margin-bottom:var(--s3)}
+.psearch{position:relative;display:block}.psearch .uic{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);color:var(--muted)}.psearch .input{padding-inline-start:44px;min-height:48px}
+.ptable{display:grid}
+.pth,.ptr{display:grid;grid-template-columns:minmax(170px,1.6fr) minmax(80px,.7fr) minmax(150px,1.2fr) minmax(130px,1fr) 172px 20px;gap:12px;align-items:center;padding:10px 8px}
+.pth{font-size:.8rem;color:var(--muted);font-weight:700;border-bottom:1px solid var(--line)}
+.ptr{border:0;border-bottom:1px solid var(--line);background:transparent;text-align:start;min-height:64px;width:100%;color:inherit}.ptr:last-child{border-bottom:0}.ptr:hover{background:var(--bg)}
+.c-name{display:flex;align-items:center;gap:10px;min-width:0}.c-lv{display:grid;line-height:1.3}.c-next .lbl{display:none;font-style:normal;color:var(--muted)}.c-go{color:var(--muted);display:grid}
+@media (max-width:900px){.pth{display:none}
+  .ptr{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name st" "next next" "bal lv";gap:4px 10px;padding:12px 4px}
+  .c-name{grid-area:name}.c-st{grid-area:st}.c-next{grid-area:next;font-size:.88rem}.c-next .lbl{display:inline}.c-bal{grid-area:bal}.c-lv{grid-area:lv;display:flex;gap:6px;justify-self:end;align-items:baseline}.c-go{display:none}}
+/* sheets (student file, report viewer): centred dialog on wide screens, bottom sheet on phones */
+.ov.sheet>.card{width:min(880px,100%);padding:0;gap:0;display:flex;flex-direction:column;overflow:hidden;max-height:100%}
+.shh{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--surface);flex:none}.shh>div:not(.avatar){flex:1;min-width:0}.shh>.avatar{flex:none}
+.shb{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:auto;-webkit-overflow-scrolling:touch;min-height:0}
+.shs{padding:16px 18px;display:grid;gap:10px;align-content:start;border-bottom:1px solid var(--line);min-width:0}.shs:nth-child(odd){border-inline-end:1px solid var(--line)}
+.shs-wide{grid-column:1/-1;border-inline-end:0!important;border-bottom:0}.shs h3{font-size:1rem;font-weight:800;color:var(--brand-ink)}
+.pbal{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}.pbal b{font-size:1.5rem}
+.shs .bar{margin-block:0}.ppass0{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
+@media (max-width:720px){.ov.sheet{padding:0;place-items:end stretch}.ov.sheet>.card{width:100%;max-height:calc(100% - 28px - env(safe-area-inset-top,0px));border-radius:22px 22px 0 0;border:0;padding-bottom:env(safe-area-inset-bottom,0px)}
+  .shb{grid-template-columns:minmax(0,1fr)}.shs{border-inline-end:0!important}.shh{padding:12px 14px}}
+/* guardians (owner) */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:16px}
+.pg{display:grid;gap:12px;align-content:start}.pg-h{display:flex;gap:12px;align-items:center}
+.pg-av{width:46px;height:46px;border-radius:14px;background:var(--sky-soft);color:var(--sky);display:grid;place-items:center;font-weight:800;font-size:1.2rem;flex:none}
+
+/* ---------- guardian panel ---------- */
+.gkids{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}.gkids::-webkit-scrollbar{display:none}
+.gkid{flex:none;display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);background:var(--surface);border-radius:16px;padding:6px 8px 6px 16px;min-height:56px;text-align:start;color:inherit}
+.gkid>span{display:grid;line-height:1.25}.gkid .small{color:var(--muted)}.gkid.on{border-color:var(--brand);background:var(--brand-soft);color:var(--brand-ink)}.gkid .avatar{width:40px;height:40px;font-size:1rem}.gkid .livedot{margin:0;width:10px;height:10px}
+.gtabs .tab{display:inline-flex;align-items:center;justify-content:center;gap:6px}.gtabs .tab>span{display:grid;font-size:inherit}
+.gh-id{display:flex;gap:14px;align-items:center}
+.gfacts{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:10px;margin-top:14px}.gfacts>div{background:var(--bg);border-radius:14px;padding:10px 12px;display:grid;gap:2px;min-width:0}.gfacts b{font-size:1.02rem}
+.gfacts .is-warn{background:var(--warn-soft)}.gfacts .is-bad{background:var(--bad-soft)}
+.gtrends{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gtrend{background:var(--bg);border-radius:14px;padding:12px;display:grid;gap:2px;min-width:0}.gt-v{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.gt-v b{font-size:1.5rem;line-height:1.2}.gspark{width:100%;height:36px;display:block}
+@media (max-width:600px){.gfacts{grid-template-columns:1fr 1fr}.gfacts>div:first-child{grid-column:1/-1}.gfacts>div:last-child{grid-column:1/-1}
+  .gtrends{grid-template-columns:minmax(0,1fr)}.gtrend{grid-template-columns:minmax(0,1fr) 110px;column-gap:12px;align-items:center}.gtrend .gspark{grid-column:2;grid-row:1/3}.gtrend>.small:last-child{grid-column:1/-1}}
+.gfilter{margin-bottom:var(--s2)}
+.glist{display:grid}
+.gmonth{font-size:.85rem;color:var(--muted);font-weight:800;padding:14px 4px 6px}
+.grow{display:grid;grid-template-columns:44px minmax(0,1fr) auto 20px;gap:12px;align-items:center;padding:10px 6px;border:0;border-top:1px solid var(--line);background:transparent;text-align:start;min-height:66px;width:100%;color:inherit}
+.gmonth+.grow,.glist>.grow:first-child,.grow.sum+.grow{border-top-color:transparent}.grow:hover{background:var(--bg)}
+.g-mark{display:grid;place-items:center}.gring{width:44px;height:44px;display:block}
+.gmark{width:44px;height:44px;border-radius:14px;background:var(--surface);display:grid;place-items:center;color:var(--sky);font-size:1.2rem}
+.g-txt{display:grid;min-width:0;line-height:1.4}.g-txt b,.g-line{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.g-side{display:grid;justify-items:end;gap:2px;white-space:nowrap}.g-go{color:var(--muted);display:grid}
+.grow.sum{background:var(--sky-soft);border-radius:14px;border-top-color:transparent;margin-block:4px;padding-inline:10px}.grow.sum:hover{background:var(--sky-soft);filter:brightness(.98)}
+@media (max-width:480px){.grow{grid-template-columns:44px minmax(0,1fr) auto;gap:10px}.g-go,.d-l{display:none}.g-txt b{white-space:normal}}
+@media (max-width:600px){.gtabs{display:flex;gap:6px}.gtabs .tab{flex:1;flex-direction:row;font-size:.9rem;padding:6px 8px;border-radius:999px;min-width:0}.gtabs .tab>span{display:none}
+  /* phones: logo and buttons on one line, the name under them */
+  .kidw .topbar,.gw .topbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto auto;gap:6px 8px;align-items:center}.kidw .me,.gw .me{display:contents}
+  .kidw .me>div:first-child,.gw .me>div:first-child{grid-column:1/-1;grid-row:2;text-align:start!important;min-width:0}
+  .kidw .me>.prefs,.gw .me>.prefs{grid-column:3}.kidw .me>div:first-child .small,.gw .me>div:first-child .small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.ov.rsheet>.card{width:min(720px,100%)}
+.wrap a.btn,.adm a.btn,.ov a.btn{text-decoration:none}
+.rnav{gap:8px}.rnav-t{display:grid;justify-items:center;line-height:1.25;text-align:center}
+.rbody1{overflow:auto;-webkit-overflow-scrolling:touch;padding:0 16px 16px;flex:1;min-height:0}
+.rfoot{display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid var(--line);flex:none}
+.gsum{display:grid;gap:12px;padding-top:16px}.gsum .stat{margin-top:0}.gd-h{display:flex;gap:12px;align-items:center}.gd-h h2{font-size:1.15rem}.gd-h .gmark{background:var(--sky-soft)}
+.gbars{display:grid;gap:6px}.gbars>div{display:grid;grid-template-columns:84px minmax(0,1fr) 44px;gap:8px;align-items:center}.gbars .bar{margin:0}
+.gscroll{max-height:62vh;overflow:auto;-webkit-overflow-scrolling:touch}
+@media print{body.gprint #gRepBox,body.gprint #gRepBox *{visibility:visible}body.gprint .ov.rsheet{position:absolute;inset:0 0 auto 0;display:block;padding:0;background:none}
+  body.gprint .ov.rsheet>.card{display:block;max-height:none;overflow:visible;border:0;width:100%}body.gprint .rbody1{overflow:visible}body.gprint #app{display:none}}
+
+/* ---------- kid home ---------- */
+.ksec{margin:10px 2px -6px}.ksec h2{font-size:1.25rem}
+.tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;align-items:stretch}
+.kpath .bar{height:12px;margin-block:0 12px}
+.kmap summary{list-style:none;cursor:pointer;display:inline-block}.kmap summary::-webkit-details-marker{display:none}.kmap[open] summary .btn{background:var(--brand-soft);border-color:var(--brand)}
+.xgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.xtile{display:grid;justify-items:center;align-content:center;gap:2px;text-align:center;padding:14px 8px;border-radius:18px;border:1.5px solid var(--line);background:var(--surface);min-height:108px;color:inherit}
+.xtile .xe{font-size:1.9rem;line-height:1.15}.xtile:hover{border-color:var(--brand)}
+.xtile.on{border-color:var(--brand);background:var(--brand-soft);box-shadow:0 0 0 3px rgba(240,90,56,.12)}
+.mstat{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.mstat .topic{font-size:.88rem;padding:6px 12px}
+@media (max-width:600px){
+  .xgrid{grid-template-columns:repeat(6,minmax(0,1fr))}.xtile{grid-column:span 2;min-height:88px;padding:10px 4px}.xtile:nth-child(n+4){grid-column:span 3}.xtile .small{display:none}
+  /* six sections as a bottom bar, like an app */
+  .kidw{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .kidw>.tabs{position:fixed;inset:auto 0 0 0;z-index:20;background:var(--surface);border-top:1px solid var(--line);grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;padding:6px max(6px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px))}
+  .kidw>.tabs .tab{border:0;background:transparent;font-size:.72rem;min-height:54px;color:var(--muted);border-radius:12px;padding:4px 2px}
+  .kidw>.tabs .tab.on{background:var(--brand-soft);color:var(--brand-ink)}.kidw>.tabs .tab span{font-size:1.3rem}
+  .kidw .topbar{padding-bottom:10px}
+}
+#mAll.m6{display:none}
+@media (max-width:520px){#mAll.m6{display:inline-flex}.kidw .missions{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible;padding-bottom:0}.kidw .missions:not(.mall) .mission:nth-child(n+7){display:none}}
+/* teen skin (12+): same brand, quieter surface. CSS only, switched by .teen on the kid page root */
+.kidw.teen{--bg:#F4F2EF;--line:#E4DED7;--brand-soft:#FBE7DF;--muted:#6F625A;--r:14px;background:var(--bg);box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax);min-height:100%}
+:root[data-theme="dark"] .kidw.teen{--bg:#121110;--line:#2F2A26;--brand-soft:#33201A;--muted:#A99A8F}
+.kidw.teen .hero{background:linear-gradient(135deg,#2E1F17,#4B2A1B);border-radius:14px}
+.kidw.teen .hero .btn{background:var(--brand);border-color:var(--brand);color:#fff}
+.kidw.teen .herobird,.kidw.teen .emj{display:none}
+.kidw.teen .tab{border-radius:12px}.kidw.teen .tab span{display:none}
+.kidw.teen .xtile{border-radius:14px;min-height:92px}.kidw.teen .xtile .xe{font-size:1.35rem;filter:grayscale(1);opacity:.75}
+.kidw.teen .daily,.kidw.teen .rank{background:var(--surface)}
+.kidw.teen .mission .me2,.kidw.teen .game>span:first-child,.kidw.teen .mtoday .me2{filter:grayscale(.7)}
+.kidw.teen .mission,.kidw.teen .game,.kidw.teen .mtoday{border-radius:12px}
+@media (max-width:600px){.kidw.teen .tab span{display:block;filter:grayscale(1);opacity:.8}.kidw.teen>.tabs .tab.on span{filter:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.livedot{animation:none}}
+</style>
 </head>
 <body>
 <div id="app" style="height:100%"></div>
@@ -1527,7 +1702,7 @@ function renderKid(k){
   try{ payFamily(k); }catch(e){ console.warn(e); }
   if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
   const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
-  $('#app').innerHTML = `<div class="wrap">
+  $('#app').innerHTML = `<div class="wrap kidw ${ageOf(kid.birth) >= 12 ? 'teen' : ''}">
     <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(nick(k))}</div><div class="small muted"><span class="en">Level ${kid.level} · ${LEVEL_INFO[kid.level][0]}</span> · ${rk.r[3]} ${rk.r[2]} · <span class="num">${xp}</span> نقطة</div></div>
       ${prefsHTML()}<button class="btn ghost" id="edit" aria-label="تعديل ملفي" style="padding:0;border:0;min-height:0">${avatarHTML(k)}</button><button class="btn sm" id="out">خروج</button></div></div>
     <nav class="tabs" role="tablist">${TABS.map(t => `<button role="tab" class="tab ${TAB===t[0]?'on':''}" data-tab="${t[0]}"><span>${t[2]}</span> ${t[1]}</button>`).join('')}</nav>
@@ -1538,41 +1713,48 @@ function renderKid(k){
   checkNewBadges(k); maybeCelebrate(k); setTimeout(() => checkCheers(k), 1200);
 }
 
-/* ----- home tab ----- */
-let HOME_SEG = (() => { try{ return localStorage.getItem('hh:seg') || 'play'; }catch(e){ return 'play'; } })();
+/* ----- home tab -----
+   order: the next lesson (one primary action) -> today's tasks -> the level path -> everything else as a grid of sections */
+let HOME_SEG = (() => { try{ const v = localStorage.getItem('hh:seg'); return ({play:'missions', journey:'me'})[v] || v || 'missions'; }catch(e){ return 'missions'; } })(), KMAP_OPEN = false;
+const HOME_TILES = [['missions','المهمات','🎯','محادثات من الحياة'],['games','الألعاب','🎮','كلمات ودوري الأسبوع'],['library','القصص','📚','اقرأ واسمع'],['train','تدرّب','🗣️','النطق والتمارين'],['me','رصيدي','💰','حصصي وسجلّي']];
 function tabHome(k){
   const L0 = ledger(k), plan = lessonPlan(k), now = new Date(), units = levelUnits(DB.kids[k].level);
+  if(!HOME_TILES.some(t => t[0] === HOME_SEG && t[0] !== 'library')) HOME_SEG = 'missions';
   let when, btn, cnt = '';
   if(L0.ended){ when = 'انتهى رصيد الاشتراك. اطلب من ولي أمرك التجديد.'; btn = '<button class="btn big" disabled>انتهى الاشتراك</button>'; }
   else if(L0.open){ const left = L0.open.t.getTime()+OPEN_AFTER*60e3-now;
     when = L0.open.resumed ? 'حصتك بدأت، ارجع وكمّلها الآن' : (now < L0.open.t ? `تبدأ الساعة ${fmtTime(L0.open.t)}، المعلمة بانتظارك` : `الحصة مفتوحة الآن · تُغلق بعد ${fmtDur(left)}`);
-    btn = '<button class="btn big" id="enter">ادخل الحصة</button>'; }
+    btn = `<button class="btn big" id="enter">${L0.open.resumed ? 'كمّل حصتك' : 'ابدأ حصتك'}</button>`; }
   else if(L0.next){ when = `${fmtDay(L0.next.t)} · ${fmtTime(L0.next.t)}${L0.next.extra?' · حصة إضافية':''}`; cnt = `<div class="count num">${fmtDur(L0.next.t-now)}</div><div class="small" style="opacity:.92">على بداية الحصة · تُفتح قبلها بـ ${OPEN_BEFORE} دقائق</div>`; btn = '<button class="btn big" disabled>الحصة مقفلة</button>'; }
   else { when = 'لا توجد حصص قادمة. احجز حصة من «جدولي».'; btn = ''; }
   const pg = L0.bal ? L0.green/L0.bal*100 : 0, pr = L0.bal ? L0.red/L0.bal*100 : 0;
   const recent = L0.rows.slice().reverse().slice(0,10);
   const reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,5);
-  const pos = DB.progress[k].pos;
-  $('#tabBody').innerHTML = `<div class="grid">
+  const pos = DB.progress[k].pos, hw = homeworkCard(k);
+  const tasks = [confirmCard(k), unitTestCard(k), examCard(k), monthReviewCard(k), familyCard(k), dailyCard(k), hw || kitCard(k)].filter(Boolean);
+  const done = plan.total ? pos % plan.total : 0;
+  $('#tabBody').innerHTML = `<div class="grid khome">
     ${pushCard('k')}
     <section class="card hero"><div style="display:grid;gap:6px"><div class="eyebrow">${plan.unitE||'📘'} الوحدة ${plan.ui+1}: <span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li+1}</div><h1 class="ltr" style="text-align:right">${esc(plan.t)}</h1><div class="small" style="opacity:.92">${esc(plan.goal)}</div><div>${when}</div>${cnt}</div><div class="herocol"><div class="herobird">${hoopoeSVG(L0.open ? "cheer" : "happy", true)}</div>${btn}</div></section>
     ${(() => { const left = L0.left; return !L0.ended && left <= 3 ? `<section class="card" style="background:var(--bad-soft);border-color:var(--bad)"><b>⚠️ رصيدك قارب على الانتهاء: باقي ${left} ${left === 1 ? 'حصة' : 'حصص'} فقط.</b><div class="small">أخبر ولي أمرك ليشحن الرصيد حتى لا تتوقف حصصك.</div></section>` : ''; })()}
-    ${confirmCard(k)}${unitTestCard(k)}${examCard(k)}
-    ${monthReviewCard(k)}
-    ${familyCard(k)}
-    <div class="g2e">${dailyCard(k)}${homeworkCard(k) || kitCard(k)}</div>
-    <div class="segs" role="tablist">${[['play','🎮 العب'],['train','💪 تدرّب'],['journey','🗺️ رحلتي']].map(([id, t]) => `<button role="tab" aria-selected="${HOME_SEG === id}" class="seg2 ${HOME_SEG === id ? 'on' : ''}" data-seg="${id}">${t}</button>`).join('')}</div>
-    <div class="segp" data-segp="play" ${HOME_SEG === 'play' ? '' : 'hidden'}><div class="grid">
+    ${tasks.length ? `<div class="sech ksec"><h2><span class="emj">✅</span> مهام اليوم</h2><span class="small muted">${tasks.length} ${tasks.length === 1 ? 'مهمة' : 'مهام'}</span></div><div class="tasks">${tasks.join('')}</div>` : ''}
+    ${units ? `<section class="card kpath"><div class="sech"><h2><span class="emj">🗺️</span> رحلتي في المستوى ${DB.kids[k].level}</h2><span class="small muted">الدرس ${done + 1} من ${plan.total}</span></div>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${plan.total}" aria-valuenow="${done}"><i style="width:${plan.total ? done / plan.total * 100 : 0}%;background:var(--brand)"></i></div>
+      <details class="kmap" id="kmap" ${KMAP_OPEN ? 'open' : ''}><summary><span class="btn sm">اعرض خريطة المستوى</span></summary><div class="lmapw">${levelMap(k, units, plan)}</div></details></section>` : ''}
+    <div class="sech ksec"><h2><span class="emj">🧭</span> استكشف</h2></div>
+    <div class="xgrid" role="tablist">${HOME_TILES.map(([id, t, e, s]) => `<button role="tab" aria-selected="${HOME_SEG === id}" class="xtile ${HOME_SEG === id ? 'on' : ''}" data-seg="${id}"><span class="xe">${e}</span><b>${t}</b><span class="small muted">${s}</span></button>`).join('')}</div>
+    <div class="segp" data-segp="missions" ${HOME_SEG === 'missions' ? '' : 'hidden'}><div class="grid">
     ${missionCard(k)}
     ${sibCard(k)}
+    </div></div>
+    <div class="segp" data-segp="games" ${HOME_SEG === 'games' ? '' : 'hidden'}><div class="grid">
     <div class="g2e">${gamesCard()}${leagueCard(k, false)}</div>
     </div></div>
     <div class="segp" data-segp="train" ${HOME_SEG === 'train' ? '' : 'hidden'}><div class="grid">
-    <div class="g2e">${homeworkCard(k) ? kitCard(k) : ''}${practiceCard(k)}</div>
     <section class="card"><div class="chips" style="justify-content:space-between"><h2>🗣️ مختبر النطق</h2><button class="btn sm primary" id="pronGo">ادخل المختبر</button></div><p class="small muted" style="margin:6px 0 0">تمرّن على الأصوات الصعبة لمن يتكلم العربية مثل <span class="en">P/B</span> و <span class="en">TH</span> و <span class="en">ship/sheep</span>.</p><div class="chips" style="margin-top:8px">${SOUNDS.map(x => { const pc = soundPct(k, x.id); return `<span class="chip ${pc == null ? '' : pc >= 80 ? 'good' : pc >= 50 ? 'brand' : 'bad'} en">${x.t}${pc == null ? '' : ' ' + pc + '%'}</span>`; }).join('')}</div></section>
+    <div class="g2e">${hw ? kitCard(k) : ''}${practiceCard(k)}</div>
     </div></div>
-    <div class="segp" data-segp="journey" ${HOME_SEG === 'journey' ? '' : 'hidden'}><div class="grid">
-    ${units ? `<section class="card"><div class="chips" style="justify-content:space-between"><h2>🗺️ خريطة المستوى ${DB.kids[k].level}</h2><span class="small muted">الدرس ${pos % plan.total + 1} من ${plan.total}</span></div><div class="lmapw">${levelMap(k, units, plan)}</div></section>` : ''}
+    <div class="segp" data-segp="me" ${HOME_SEG === 'me' ? '' : 'hidden'}><div class="grid">
     <div class="g2">
       <section class="card"><h2>رصيد اشتراكك</h2>
         <div class="bal"><span class="v num">${L0.remaining.toLocaleString('en')}</span><span class="muted">ريال متبقي من ${L0.bal.toLocaleString('en')}</span></div>
@@ -1589,16 +1771,18 @@ function tabHome(k){
         <div class="hist">${reps.length ? reps.map(r => `<div class="row"><span class="stars">${'★'.repeat(r.stars||1)}${'☆'.repeat(3-(r.stars||1))}</span><div style="min-width:0"><div class="ltr en" style="text-align:right;font-weight:700">${esc(r.title)}</div><div class="small muted ltr" style="text-align:right">${esc((r.newWords||[]).join(', '))}</div></div><span class="chip brand num">${r.score||0}%</span></div>`).join('') : '<p class="muted" style="margin:0">لم تحضر أي حصة بعد.</p>'}</div>
       </section>
     </div>
-    </div>
-    </div></div>`;
+    </div></div>
+    </div>`;
   const en = $('#enter'); if(en) en.onclick = () => enterLesson(k, false);
   const mrv = $('#mrevGo'); if(mrv) mrv.onclick = () => startMonthReview(k); wirePushBtn();
-  document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => { HOME_SEG = b.dataset.seg; try{ localStorage.setItem('hh:seg', HOME_SEG); }catch(e){}
+  const km = $('#kmap'); if(km) km.ontoggle = () => { KMAP_OPEN = km.open; };
+  document.querySelectorAll('[data-seg]').forEach(b => b.onclick = () => { if(b.dataset.seg === 'library'){ TAB = 'library'; renderKid(k); window.scrollTo(0, 0); return; }
+    HOME_SEG = b.dataset.seg; try{ localStorage.setItem('hh:seg', HOME_SEG); }catch(e){}
     document.querySelectorAll('[data-seg]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
     document.querySelectorAll('[data-segp]').forEach(x => x.hidden = x.dataset.segp !== HOME_SEG); });
   const dg = $('#dailyGo'); if(dg) dg.onclick = () => { if(!aiReady()){ alertBox('المعلم غير مفعّل على هذا الجهاز بعد. اطلب من ولي الأمر نقل الإعداد لهذا الجهاز من لوحته (مرة واحدة فقط).'); return; } unlockAudio(); startDaily(k); };
   const rg = $('#revGo'); if(rg) rg.onclick = () => { unlockAudio(); startReview(k); };
-  const hw = $('#hwGo'); if(hw) hw.onclick = () => { unlockAudio(); startHomework(k); };
+  const hwb = $('#hwGo'); if(hwb) hwb.onclick = () => { unlockAudio(); startHomework(k); };
   const pn = $('#pronGo'); if(pn) pn.onclick = () => { unlockAudio(); openPronLab(k); };
   wireMissionCard(k);
   document.querySelectorAll('[data-game]').forEach(b => b.onclick = () => startGame(k, b.dataset.game));
@@ -4070,79 +4254,251 @@ function confirmExit(){
 }
 function alertBox(msg){ const ov = document.createElement('div'); ov.className = 'ov'; ov.innerHTML = `<div class="card"><p style="margin:0">${esc(msg)}</p><button class="btn primary" id="okb">حسناً</button></div>`; document.body.appendChild(ov); $('#okb').onclick = () => ov.remove(); }
 
-/* =============== PARENT =============== */
-function renderParent(){
+/* =============== PARENT (owner admin console) ===============
+   Six sections; no learning reports here (those live in the guardian panel).
+   Every admin action is wired in wireAdmin(root) so it works both in the page and inside the student sheet. */
+const UI_IC = {home:'M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10', users:'M16 19v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1M9.5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M21 19v-1a4 4 0 0 0-3-3.9M15.5 3.2a3.5 3.5 0 0 1 0 6.6',
+  heart:'M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z', inbox:'M3 13l3-8h12l3 8v6H3v-6zm0 0h5l1 3h6l1-3h5', tag:'M3 12V4h8l10 10-8 8L3 12zM7.5 8.5h.01',
+  gear:'M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0M16 4v4M10 10v4M18 16v4', search:'M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4', chev:'M15 5l-7 7 7 7', back:'M9 5l7 7-7 7', x:'M6 6l12 12M18 6L6 18',
+  plus:'M12 5v14M5 12h14', doc:'M6 3h9l4 4v14H6zM14 3v5h5M9 13h6M9 17h6', chart:'M4 20V10M10 20V4M16 20v-7M21 20H3', bell:'M6 9a6 6 0 1 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0', cal:'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4', check:'M5 12l5 5 9-10'};
+function uiIc(n){ return `<svg class="uic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${UI_IC[n] || ''}"/></svg>`; }
+function emptyHTML(icon, title, hint, action){ return `<div class="empty"><div class="empty-i">${icon}</div><b>${title}</b>${hint ? `<p class="small muted">${hint}</p>` : ''}${action || ''}</div>`; }
+let P_TAB = (() => { try{ return sessionStorage.getItem('hh:ptab') || 'overview'; }catch(e){ return 'overview'; } })(), P_Q = '', P_F = 'all', P_SHEET = null;
+const P_TABS = [['overview','نظرة عامة','home','عامة'],['students','الطلاب','users','الطلاب'],['guardians','أولياء الأمور','heart','الأولياء'],['signups','طلبات التسجيل','inbox','الطلبات'],['plans','الباقات والمكافآت','tag','الباقات'],['settings','الإعدادات','gear','الإعدادات']];
+function pSetTab(t){ P_TAB = t; try{ sessionStorage.setItem('hh:ptab', t); }catch(e){} renderParent(); window.scrollTo(0, 0); }
+/* one student's admin facts (no learning data) */
+function pKidInfo(k){
+  const kid = DB.kids[k], l = ledger(k), inClass = !!(l.open && (l.open.resumed || liveOf(k)));
+  const st = l.ended ? ['bad', 'متوقف · انتهى الرصيد'] : inClass ? ['live', 'في الحصة الآن'] : l.open ? ['brand', 'الحصة مفتوحة'] : l.left <= 3 ? ['warn', `باقي ${l.left} ${l.left === 1 ? 'حصة' : 'حصص'}`] : ['good', 'نشط'];
+  const next = l.ended ? '—' : l.open ? 'مفتوحة الآن' : l.next ? `${l.next.t.toLocaleDateString(LOC, {weekday:'short', day:'numeric', month:'short'})} · ${fmtTime(l.next.t)}` : 'لا توجد حصص قادمة';
+  return {k, kid, l, st, next, inClass};
+}
+function pToday(){
+  const now = new Date(), end = new Date(now), d0 = new Date(now), out = []; end.setHours(23, 59, 59, 999); d0.setHours(0, 0, 0, 0);
+  kidIds().forEach(k => { const l = ledger(k), att = new Set(DB.attendance.filter(a => a.kid === k).map(a => a.slot));
+    slotsFor(k, end).filter(s => s.t >= d0).forEach(s => { let st = 'next';
+      if(att.has(s.key)) st = 'att'; else if(l.ended) return; else if(l.open && l.open.key === s.key) st = (l.open.resumed || liveOf(k)) ? 'live' : 'open'; else if(now - s.t > OPEN_AFTER * 60e3) st = 'miss';
+      out.push({k, t:s.t, st}); }); });
+  return out.sort((a, b) => a.t - b.t);
+}
+function pWeek(){
+  const ws = weekStart(), we = new Date(ws.getTime() + 7 * DAY - 1); let sched = 0;
+  kidIds().forEach(k => { sched += slotsFor(k, we).filter(s => s.t >= ws).length; });
+  return {att:DB.attendance.filter(a => DB.kids[a.kid] && Date.parse(a.at) >= ws.getTime()).length, sched};
+}
+/* password cell: shows the stored password when it is readable, otherwise dots and a reset button (resetPass is provided by the accounts code) */
+function pPassHTML(kind, id, pass){ return pass ? `<code>${esc(pass)}</code>` : `<span class="ppass0"><span class="muted" aria-label="كلمة المرور مخفية">••••</span><button class="btn sm" data-rpass="${kind}:${esc(id)}">إعادة تعيين</button></span>`; }
+const P_ST = {att:['good','حضر ✓'], live:['live','في الحصة الآن'], open:['brand','مفتوحة · لم يدخل'], miss:['bad','غاب'], next:['plain','قادمة']};
+
+function pOverviewHTML(){
+  const now = new Date(), today = pToday(), wk = pWeek(), infos = kidIds().map(pKidInfo);
+  const live = infos.filter(x => x.inClass), low = infos.filter(x => !x.l.ended && x.l.left <= 3), ended = infos.filter(x => x.l.ended);
+  const pend = DB.redeems.filter(r => r.status === 'pending' && DB.kids[r.kid]), todo = [];
+  ended.forEach(x => todo.push(['bad', `انتهى رصيد ${esc(x.kid.ar)}`, (DB.renewReq || {})[x.k] ? 'أرسل طلب إعادة الشحن 📩' : 'توقفت حصصه حتى يُشحن الرصيد', `<button class="btn sm primary" data-topup="${x.k}">شحن الرصيد</button>`]));
+  low.forEach(x => todo.push(['warn', `رصيد ${esc(x.kid.ar)} قارب على الانتهاء`, `باقي ${x.l.left} ${x.l.left === 1 ? 'حصة' : 'حصص'} (${x.l.remaining} ريال)`, `<button class="btn sm" data-topup="${x.k}">شحن الرصيد</button>`]));
+  pend.forEach(r => todo.push(['brand', `${esc(DB.kids[r.kid].ar)} طلب مكافأة: ${esc(r.emoji || '')} ${esc(r.name)}`, 'سلّمها ثم علّمها كمسلَّمة', `<button class="btn sm primary" data-done="${r.id}">تم التسليم ✓</button>`]));
+  infos.forEach(x => { const p = DB.progress[x.k], plan = lessonPlan(x.k), ex = (p.exams || {})[x.kid.level];
+    if(x.kid.level < 20 && ((plan.total && p.pos >= plan.total) || (ex && ex.pct >= 70))) todo.push(['good', `${esc(x.kid.ar)} جاهز للمستوى ${x.kid.level + 1}`, ex && ex.pct >= 70 ? `نجح في اختبار نهاية المستوى (${ex.pct}%)` : `أنهى كل دروس المستوى ${x.kid.level}`, `<button class="btn sm primary" data-up="${x.k}">رفع المستوى</button>`]);
+    if(!guardianOf(x.k)) todo.push(['', `${esc(x.kid.ar)} بدون حساب ولي أمر`, 'اربطه بولي أمر ليتابع التقارير والحضور', `<button class="btn sm" data-edit="${x.k}">ربط ولي أمر</button>`]); });
+  if(!aiReady()) todo.push(['bad', 'المعلمة غير مفعّلة', 'أضف مفتاح التشغيل حتى تعمل الحصص', `<button class="btn sm primary" data-ptab="settings">الإعدادات</button>`]);
+  const doneT = today.filter(x => x.st === 'att').length;
+  const health = typeof healthCardHTML === 'function' ? (healthCardHTML() || '') : '';
+  return `
+    <section class="card pstrip" aria-label="ملخص اليوم">
+      <div><span class="small muted">حصص اليوم</span><b class="num">${doneT}<small> / ${today.length}</small></b><span class="small muted">تمّت</span></div>
+      <div class="${live.length ? 'is-live' : ''}"><span class="small muted">في الحصة الآن</span><b class="num">${live.length}</b><span class="small muted">${live.length ? live.map(x => esc(x.kid.ar)).join('، ') : 'لا أحد'}</span></div>
+      <div><span class="small muted">حصص هذا الأسبوع</span><b class="num">${wk.att}<small> / ${wk.sched}</small></b><span class="small muted">حضور</span></div>
+      <div class="${low.length + ended.length ? 'is-warn' : ''}"><span class="small muted">أرصدة تحتاج شحن</span><b class="num">${low.length + ended.length}</b><span class="small muted">${ended.length ? `${ended.length} متوقف` : 'منخفضة'}</span></div>
+      <div><span class="small muted">طلبات تسجيل جديدة</span><b class="num" data-sun>${suOn() ? '…' : '—'}</b><span class="small muted">${suOn() ? 'بانتظار قرارك' : 'تحتاج المزامنة'}</span></div>
+    </section>
+    <div class="pcols">
+      <section class="card"><div class="sech"><h2>حصص اليوم</h2><span class="small muted">${now.toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'long'})}</span></div>
+        ${today.length ? `<ul class="pday">${today.map(x => `<li class="st-${x.st}"><time class="num">${fmtTime(x.t)}</time><button class="pwho" data-sheet="${x.k}">${avatarHTML(x.k)}<span><b>${esc(DB.kids[x.k].ar)}</b><span class="small muted en">Level ${DB.kids[x.k].level}</span></span></button><span class="chip ${P_ST[x.st][0]}">${x.st === 'live' ? '<i class="livedot"></i>' : ''}${P_ST[x.st][1]}</span></li>`).join('')}</ul>` : emptyHTML('🗓️', 'لا توجد حصص اليوم', 'تظهر هنا حصص كل الطلاب المجدولة لهذا اليوم.')}
+      </section>
+      <section class="card"><div class="sech"><h2>يحتاج قرارك</h2>${todo.length ? `<span class="chip brand num">${todo.length}</span>` : ''}</div>
+        <div class="todo" data-sutodo hidden><i class="tdot brand"></i><div><b><span data-sun2></span> طلبات تسجيل جديدة</b><div class="small muted">راجعها واقبل أو ارفض</div></div><button class="btn sm primary" data-ptab="signups">فتح الطلبات</button></div>
+        ${todo.length ? todo.map(t => `<div class="todo"><i class="tdot ${t[0]}"></i><div><b>${t[1]}</b><div class="small muted">${t[2]}</div></div>${t[3]}</div>`).join('') : `<div data-notodo>${emptyHTML('✅', 'كل شيء تمام', 'لا توجد أرصدة منتهية ولا طلبات معلّقة.')}</div>`}
+      </section>
+    </div>
+    ${health ? `<div class="phealth">${health}</div>` : ''}
+    ${cloudOn() ? `<div class="cloudbar">☁️ <b>المزامنة السحابية:</b> <span id="cloudSt">${cloudStatusHTML()}</span><div style="margin-top:6px">${pushBtnHTML(true)}</div></div>` : ''}`;
+}
+function pStudentRows(){
+  const q = P_Q.trim().toLowerCase(), todayK = new Set(pToday().map(x => x.k)); let list = kidIds().map(pKidInfo);
+  if(q) list = list.filter(x => { const g = guardianOf(x.k) || {}; return [x.kid.ar, x.kid.en, x.kid.user, nick(x.k), g.name, g.phone].some(v => String(v || '').toLowerCase().includes(q)); });
+  if(P_F === 'low') list = list.filter(x => x.l.ended || x.l.left <= 3); else if(P_F === 'today') list = list.filter(x => todayK.has(x.k)); else if(P_F === 'noguard') list = list.filter(x => !guardianOf(x.k));
+  if(!list.length) return emptyHTML('🔎', kidIds().length ? 'لا يوجد طالب بهذا البحث' : 'لم تضف أي طالب بعد', kidIds().length ? 'جرّب اسماً آخر أو غيّر الفلتر.' : 'أضف أول طالب وحدّد أيام حصصه.', kidIds().length ? '' : '<button class="btn primary" data-addkid>إضافة طالب</button>');
+  return `<div class="ptable" role="table" aria-label="الطلاب"><div class="pth" role="row"><span>الطالب</span><span>المستوى</span><span>الحصة القادمة</span><span>الرصيد</span><span>الحالة</span><span></span></div>
+    ${list.map(x => `<button class="ptr" role="row" data-sheet="${x.k}" aria-label="فتح ملف ${esc(x.kid.ar)}">
+      <span class="c-name">${avatarHTML(x.k)}<span><b>${esc(x.kid.ar)}</b><span class="small muted"><span class="en">${esc(x.kid.user)}</span> · ${ageOf(x.kid.birth)} سنة</span></span></span>
+      <span class="c-lv"><b class="en">Level ${x.kid.level}</b><span class="small muted en">${LEVEL_CEFR[x.kid.level]}</span></span>
+      <span class="c-next"><i class="lbl">القادمة: </i>${x.next}</span>
+      <span class="c-bal"><b class="num">${x.l.left}</b> <span class="small">${x.l.left === 1 ? 'حصة' : 'حصص'}</span><span class="small muted num"> · ${x.l.remaining.toLocaleString('en')} ر.س</span></span>
+      <span class="c-st"><span class="chip ${x.st[0]}">${x.inClass ? '<i class="livedot"></i>' : ''}${x.st[1]}</span></span>
+      <span class="c-go">${uiIc('chev')}</span></button>`).join('')}</div>`;
+}
+function pStudentsHTML(){
+  const F = [['all','الكل'],['today','حصصهم اليوم'],['low','رصيد منخفض أو منتهٍ'],['noguard','بدون ولي أمر']];
+  return `<section class="card"><div class="ptools"><label class="psearch">${uiIc('search')}<input class="input" id="pq" type="search" placeholder="ابحث بالاسم أو الجوال" value="${esc(P_Q)}" aria-label="بحث في الطلاب"></label>
+      <div class="chips" role="tablist">${F.map(f => `<button role="tab" aria-selected="${P_F === f[0]}" class="topic ${P_F === f[0] ? 'on' : ''}" data-pf="${f[0]}">${f[1]}</button>`).join('')}</div></div>
+    <div id="pList">${pStudentRows()}</div></section>`;
+}
+/* the student sheet: everything the owner can do for one student */
+function pSheetHTML(k){
+  const x = pKidInfo(k), kid = x.kid, l = x.l, p = DB.progress[k], plan = lessonPlan(k), g = guardianOf(k), per = periodAt(k, new Date());
+  const pl = ((DB.placements || {})[k] || []).slice(-1)[0], ex = (p.exams || {})[kid.level], levelDone = plan.total && p.pos >= plan.total;
+  const up = l.upcoming.concat(l.open ? [l.open] : []).sort((a, b) => a.t - b.t).slice(0, 4), tops = (DB.topups || []).filter(t => t.kid === k).slice(-3).reverse();
+  const att = l.rows.filter(r => r.st === 'att').length, miss = l.rows.length - att;
+  return `<header class="shh">${avatarHTML(k)}<div style="min-width:0"><h2>${esc(kid.ar)} <span class="muted small">(${esc(nick(k))})</span></h2><div class="small muted">${ageOf(kid.birth)} سنة · ${kid.boy ? 'ولد' : 'بنت'} · <span class="en">Level ${kid.level}</span></div></div>
+      <span class="chip ${x.st[0]}">${x.inClass ? '<i class="livedot"></i>' : ''}${x.st[1]}</span><button class="pbtn" data-shx aria-label="إغلاق">${uiIc('x')}</button></header>
+    <div class="shb">
+    <section class="shs"><h3>الحساب</h3>
+      <dl class="kv"><div><dt>اسم المستخدم</dt><dd><code>${esc(kid.user)}</code></dd></div><div><dt>كلمة المرور</dt><dd>${pPassHTML('kid', k, kid.pass)}</dd></div>
+        <div><dt>ولي الأمر</dt><dd>${g ? `${esc(g.name)} <code>${esc(g.user)}</code>` : '<span class="muted">غير مربوط</span>'}</dd></div><div><dt>تاريخ الميلاد</dt><dd class="num">${esc(kid.birth)}</dd></div></dl>
+      <div class="chips"><button class="btn sm" data-edit="${k}">تعديل البيانات</button><button class="btn sm" data-creds="${k}">إرسال بيانات الدخول</button></div></section>
+    <section class="shs"><h3>المستوى والمنهج</h3>
+      <dl class="kv"><div><dt>المستوى</dt><dd><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span></dd></div><div><dt>الدرس الحالي</dt><dd><span class="en">${esc(plan.unit)}</span> · الدرس ${plan.li + 1}: <span class="en">${esc(plan.t)}</span></dd></div>
+        ${pl ? `<div><dt>آخر تحديد مستوى</dt><dd>${new Date(pl.at).toLocaleDateString(LOC)} · المستوى ${pl.level}</dd></div>` : ''}</dl>
+      ${ex ? `<div class="pnote ${ex.pct >= 70 ? 'good' : 'warn'}">اختبار نهاية المستوى ${kid.level}: <bdi dir="ltr">${ex.pct}%</bdi> ${ex.pct >= 70 ? '· ناجح، ننصح برفعه للمستوى التالي' : '· يحتاج مراجعة قبل الرفع'}</div>` : ''}
+      ${levelDone ? `<div class="pnote good">أنهى كل دروس المستوى ${kid.level}. تقدر ترفعه للمستوى التالي.</div>` : ''}
+      ${kid.needPlace ? `<div class="pnote">سيظهر له اختبار تحديد المستوى أول ما يدخل.</div>` : ''}
+      <div class="chips">${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">رفع للمستوى ${kid.level + 1}</button>` : ''}${kid.level > 1 ? `<button class="btn sm" data-down="${k}">خفض للمستوى ${kid.level - 1}</button>` : ''}${(p.unitTest && !p.unitTest.passed) ? `<button class="btn sm" data-uskip="${k}">تجاوز اختبار الوحدة</button>` : ''}
+        <button class="btn sm" data-place="${k}">إجراء تحديد المستوى الآن</button><button class="btn sm" data-replace="${k}">${kid.needPlace ? 'إلغاء إعادة تحديد المستوى' : 'إعادة تحديد المستوى عند دخوله'}</button><button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button></div></section>
+    <section class="shs"><h3>الجدول والحجز</h3>
+      <dl class="kv"><div><dt>أيام الحصص</dt><dd>${per.days.map(d => DAYS_AR[d]).join('، ')} · <span class="num">${esc(per.time)}</span></dd></div><div><dt>الحصة القادمة</dt><dd>${x.next}</dd></div></dl>
+      ${up.length ? `<ul class="pup">${up.map(s => `<li><span>${s.t.toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'short'})}${s.extra ? ' <span class="chip brand small">إضافية</span>' : ''}</span><span class="num muted">${fmtTime(s.t)}</span></li>`).join('')}</ul>` : ''}
+      <div class="chips"><button class="btn sm" data-edit="${k}">تغيير الأيام والوقت</button><button class="btn sm" data-ics="${k}">ملف التقويم</button></div></section>
+    <section class="shs"><h3>الرصيد والشحن</h3>
+      <div class="pbal"><div><b class="num">${l.remaining.toLocaleString('en')}</b><span class="small muted"> ريال متبقي</span></div><div class="small muted">يكفي <b class="num">${l.left}</b> ${l.left === 1 ? 'حصة' : 'حصص'} · الحصة <span class="num">${l.price}</span> ريال</div></div>
+      <div class="bar" aria-hidden="true"><i style="width:${l.bal ? l.green / l.bal * 100 : 0}%;background:var(--good)"></i><i style="width:${l.bal ? l.red / l.bal * 100 : 0}%;background:var(--bad)"></i></div>
+      <div class="chips small"><span class="chip good">حضر ${att} · ${l.green} ريال</span><span class="chip bad">غاب ${miss} · ${l.red} ريال</span></div>
+      ${l.ended ? `<div class="pnote bad">انتهى الرصيد وتوقفت المنصة عنده${(DB.renewReq || {})[k] ? ' · أرسل طلب إعادة الشحن 📩' : ''}.</div>` : ''}
+      ${tops.length ? `<ul class="pup">${tops.map(t => `<li><span>شحن ${new Date(t.at).toLocaleDateString(LOC, {day:'numeric', month:'long', year:'numeric'})}</span><span class="num">+${Number(t.amount).toLocaleString('en')} ريال</span></li>`).join('')}</ul>` : ''}
+      <div class="chips"><button class="btn sm ${l.ended || l.left <= 3 ? 'primary' : ''}" data-topup="${k}">شحن الرصيد</button><button class="btn sm" data-edit="${k}">تعديل قيمة الحصة</button></div></section>
+    <section class="shs shs-wide"><h3>الأصوات</h3>
+      ${DB.azure && DB.azure.key ? (() => { const v = kidVoices(k); const sel = (role, cur) => `<div class="vrow"><label class="small" style="font-weight:800">${role === 'teacher' ? 'صوت المعلم في الحصص' : 'صوت قراءة القصص'}</label><div class="chips"><select class="input" data-voice="${role}" data-k="${k}" style="flex:1;min-width:180px">${AZ_LIST.map(([id, n, d]) => `<option value="${id}" ${id === cur ? 'selected' : ''}>${n} · ${d}</option>`).join('')}</select><button class="btn sm" data-vprev="${role}" data-k="${k}">▶️ تجربة</button></div></div>`; return sel('teacher', v.teacher) + sel('story', v.story); })() : '<p class="small muted" style="margin:0">اختيار الأصوات يحتاج تفعيل «الصوت البشري الطبيعي» من الإعدادات. بدونه يُستخدم صوت الجهاز.</p>'}</section>
+    </div>`;
+}
+function pOpenSheet(k){
+  const old = document.getElementById('pSheet'); if(!k || !DB.kids[k]){ P_SHEET = null; if(old) old.remove(); return; }
+  P_SHEET = k; const ov = document.createElement('div'); ov.className = 'ov sheet'; ov.id = 'pSheet'; ov.innerHTML = `<div class="card" role="dialog" aria-modal="true" aria-label="ملف الطالب">${pSheetHTML(k)}</div>`;
+  if(old){ const y = old.querySelector('.card').scrollTop; old.replaceWith(ov); ov.querySelector('.card').scrollTop = y; } else document.body.appendChild(ov);
+  ov.addEventListener('click', e => { if(e.target === ov) pOpenSheet(null); });
+  ov.querySelector('[data-shx]').onclick = () => pOpenSheet(null);
+  wireAdmin(ov);
+}
+function pGuardiansHTML(){
+  const gs = Object.values(DB.guardians || {}), lone = kidIds().filter(k => !guardianOf(k));
+  return `${gs.length ? `<div class="pgrid">${gs.map(g => { const ks = gKids(g.id), wa = String(g.phone || '').replace(/^0/, '966').replace(/[^\d]/g, '');
+      return `<section class="card pg"><div class="pg-h"><div class="pg-av">${esc(String(g.name || '؟').trim().slice(0, 1))}</div><div style="min-width:0"><h2>${esc(g.name)}</h2><div class="small muted">${g.rel ? esc(g.rel) + ' · ' : ''}${g.phone ? `<span class="en num">${esc(g.phone)}</span>` : 'بدون جوال'}</div></div></div>
+        <dl class="kv"><div><dt>اسم المستخدم</dt><dd><code>${esc(g.user)}</code></dd></div><div><dt>كلمة المرور</dt><dd>${pPassHTML('guardian', g.id, g.pass)}</dd></div></dl>
+        <div><div class="small muted" style="margin-bottom:6px">الأبناء</div><div class="chips">${ks.length ? ks.map(k => `<button class="pkid" data-sheet="${k}">${avatarHTML(k)}<span><b>${esc(DB.kids[k].ar)}</b><span class="small muted en">Level ${DB.kids[k].level}</span></span></button>`).join('') : '<span class="small muted">لا يوجد أبناء مرتبطون</span>'}</div></div>
+        <div class="chips">${ks.length ? `<button class="btn sm" data-edit="${ks[0]}">تعديل بياناته</button>` : ''}${g.pass ? `<button class="btn sm" data-gcopy="${esc(g.id)}">نسخ رسالة الدخول</button>` : ''}${wa ? `<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">واتساب</a>` : ''}${g.phone ? `<a class="btn sm" href="tel:${esc(g.phone)}">اتصال</a>` : ''}</div></section>`; }).join('')}</div>`
+      : `<section class="card">${emptyHTML('👨‍👩‍👧', 'لا يوجد أولياء أمور بعد', 'حساب ولي الأمر يُنشأ من نموذج الطالب، ومنه يتابع التقارير والحضور.')}</section>`}
+    ${lone.length ? `<section class="card"><div class="sech"><h2>طلاب بدون ولي أمر</h2><span class="chip num">${lone.length}</span></div><div class="chips">${lone.map(k => `<button class="pkid" data-edit="${k}">${avatarHTML(k)}<span><b>${esc(DB.kids[k].ar)}</b><span class="small muted">اربطه بولي أمر</span></span></button>`).join('')}</div></section>` : ''}`;
+}
+function pSignupsHTML(){
+  return suOn() ? signupsCardHTML() : `<section class="card">${emptyHTML('📥', 'طلبات التسجيل تحتاج المزامنة السحابية', 'بعد تفعيلها تصلك هنا طلبات أولياء الأمور من صفحة التسجيل، وتقبلها بضغطة.', `<div class="chips" style="justify-content:center"><button class="btn sm" id="suCopy0">نسخ رابط التسجيل</button></div>`)}</section>`;
+}
+function pPlansHTML(){
+  const pend = DB.redeems.filter(r => r.status === 'pending'), tops = (DB.topups || []).filter(t => DB.kids[t.kid]).slice(-8).reverse();
+  return `<div class="pcols">
+    <section class="card"><div class="sech"><h2>قيمة الحصة</h2></div>
+      <div class="field"><label for="pl">القيمة الافتراضية لكل الطلاب (ريال)</label><div class="chips"><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:140px"><button class="btn" id="savePl">حفظ للجميع</button></div></div>
+      <div class="tscroll"><table class="acc"><tr><th>الطالب</th><th>قيمة الحصة</th><th>المتبقي</th><th></th></tr>
+        ${kidIds().map(k => { const l = ledger(k); return `<tr><td>${esc(DB.kids[k].ar)}</td><td class="num">${l.price} ريال</td><td class="num">${l.remaining.toLocaleString('en')} ريال · ${l.left} ${l.left === 1 ? 'حصة' : 'حصص'}</td><td><button class="btn sm" data-topup="${k}">شحن</button></td></tr>`; }).join('')}</table></div>
+      <p class="small muted" style="margin:0">لتغيير قيمة الحصة لطالب واحد افتح ملفه من «الطلاب».</p></section>
+    <section class="card"><div class="sech"><h2>آخر عمليات الشحن</h2></div>
+      ${tops.length ? `<ul class="pup">${tops.map(t => `<li><span><b>${esc(DB.kids[t.kid].ar)}</b> <span class="small muted">${new Date(t.at).toLocaleDateString(LOC, {day:'numeric', month:'long'})}</span></span><span class="num">+${Number(t.amount).toLocaleString('en')} ريال</span></li>`).join('')}</ul>` : emptyHTML('💳', 'لا توجد عمليات شحن بعد', 'كل شحن رصيد يُسجَّل هنا بتاريخه.')}</section></div>
+    <section class="card"><div class="sech"><h2>المكافآت</h2><button class="btn sm primary" id="addRw">${uiIc('plus')} مكافأة</button></div>
+      ${pend.length ? `<div class="pnote brand" style="margin-top:10px"><b>طلبات بانتظار التسليم</b><ul class="ledger">${pend.map(r => `<li><div><b>${esc(DB.kids[r.kid] ? DB.kids[r.kid].ar : '')}</b>: ${esc(r.emoji)} ${esc(r.name)}</div><button class="btn sm primary" data-done="${r.id}">تم التسليم ✓</button></li>`).join('')}</ul></div>` : ''}
+      ${DB.rewards.length ? `<div class="rewards">${DB.rewards.map(r => `<div class="reward">${rewardArt(r)}<b>${esc(r.name)}</b><div class="chip brand num">${r.cost} نقطة</div><div class="chips" style="justify-content:center"><button class="btn sm" data-editrw="${r.id}">تعديل</button><button class="btn sm danger" data-delrw="${r.id}">حذف</button></div></div>`).join('')}</div>` : emptyHTML('🎁', 'لا توجد مكافآت', 'أضف مكافأة يشتريها الطالب بنقاطه.')}
+      <p class="small muted" style="margin:8px 0 0">الطفل يجمع تقريباً 70 إلى 100 نقطة من كل حصة مع اختبارها، و20 من تحدي اليوم، و30 من كل قصة.</p></section>`;
+}
+function pSettingsHTML(){
   const ids = kidIds();
-  const kidCard = k => { const l = ledger(k), kid = DB.kids[k], plan = lessonPlan(k), p = DB.progress[k], rk = rankOf(p.xp);
-    const reps = DB.reports.filter(r => r.kid === k).sort((a,b) => b.slot > a.slot ? 1 : -1).slice(0,4);
-    const qz = p.quizzes.slice(-5); const qavg = qz.length ? Math.round(qz.reduce((a,q) => a + q.score/q.total, 0)/qz.length*100) : null;
-    const nxt = l.open ? 'الحصة مفتوحة الآن' : l.next ? `${fmtDay(l.next.t)} · ${fmtTime(l.next.t)}` : '—';
-    const levelDone = plan.total && p.pos >= plan.total;
-    return `<section class="card"><div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2>${esc(kid.ar)} <span class="muted small">(${esc(nick(k))}) · ${ageOf(kid.birth)} سنة</span></h2>
-      <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp} نقطة</div></div><div class="chips" style="flex-direction:column;gap:6px"><button class="btn sm" data-edit="${k}">تعديل</button><button class="btn sm" data-creds="${k}">🔑 الدخول</button></div></div>
-      <div class="small" style="margin-top:6px">👨‍👩‍👧 ${guardianOf(k) ? `ولي الأمر: <b>${esc(guardianOf(k).name)}</b> <code>${esc(guardianOf(k).user)}</code>` : '<span class="muted">بدون حساب ولي أمر · اربطه من «تعديل»</span>'}</div>
-      ${((DB.placements||{})[k]||[]).length ? (() => { const pl = DB.placements[k][DB.placements[k].length-1]; return `<div class="small" style="margin-top:8px">🎯 آخر تحديد مستوى (${new Date(pl.at).toLocaleDateString(LOC)}): المستوى ${pl.level}</div>`; })() : ''}
-      ${(p.exams||{})[kid.level] ? `<div class="gift" style="margin-top:10px">📝 اختبار نهاية المستوى ${kid.level}: ${p.exams[kid.level].pct}% ${p.exams[kid.level].pct >= 70 ? '· ناجح، ننصح برفعه للمستوى التالي ✅' : '· يحتاج مراجعة قبل الرفع'}</div>` : ''}
-      ${l.ended ? `<div class="gift" style="margin-top:10px;background:var(--bad-soft);color:var(--bad)">🔒 انتهى رصيد ${esc(kid.ar)} وتوقفت المنصة عنده${(DB.renewReq||{})[k] ? ' · طلب إعادة الشحن 📩' : ''}.</div>` : l.left <= 3 ? `<div class="gift" style="margin-top:10px">⚠️ باقي ${l.left} حصص فقط في رصيد ${esc(kid.ar)}.</div>` : ''}
-      ${levelDone ? `<div class="gift" style="margin-top:10px">🎉 أنهى ${esc(kid.ar)} كل دروس المستوى ${kid.level}. تقدر ترفعه للمستوى التالي.</div>` : ''}
-      <div class="small" style="margin-top:8px">الآن: <b class="en">${esc(plan.unit)}</b> · الدرس ${plan.li+1}: <span class="en">${esc(plan.t)}</span> · التالي: ${nxt}</div>
-      <div class="stat"><div><span class="small muted">الرصيد المتبقي · الحصة ${l.price} ر.س</span><b>${l.remaining}</b></div><div><span class="small muted">استفدنا</span><b style="color:var(--good)">${l.green}</b></div><div><span class="small muted">خسرنا</span><b style="color:var(--bad)">${l.red}</b></div><div><span class="small muted">متوسط الاختبارات</span><b>${qavg == null ? '—' : qavg + '%'}</b></div></div>
-      <div class="chips" style="margin-top:12px"><button class="btn sm ${l.ended ? 'primary' : ''}" data-topup="${k}">💳 شحن الرصيد</button>${(DB.progress[k].unitTest && !DB.progress[k].unitTest.passed) ? `<button class="btn sm" data-uskip="${k}">✅ تجاوز اختبار الوحدة</button>` : ''}${kid.level < 20 ? `<button class="btn sm primary" data-up="${k}">⬆️ رفع للمستوى ${kid.level+1}</button>` : ''}${kid.level > 1 ? `<button class="btn sm" data-down="${k}">⬇️ خفض للمستوى ${kid.level-1}</button>` : ''}<button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button><button class="btn sm" data-week="${k}">📊 التقرير الأسبوعي</button><button class="btn sm" data-place="${k}">🎯 تحديد المستوى</button><button class="btn sm" data-month="${k}">📅 التقرير الشهري</button><button class="btn sm" data-ics="${k}">📲 تقويم</button></div>
-      <details class="skills"><summary>🎙️ أصوات ${esc(kid.ar)}</summary>${DB.azure && DB.azure.key ? (() => { const v = kidVoices(k); const sel = (role, cur) => `<div class="vrow"><label class="small" style="font-weight:800">${role === 'teacher' ? '👩‍🏫 صوت المعلم في الحصص' : '📖 صوت قراءة القصص'}</label><div class="chips"><select class="input" data-voice="${role}" data-k="${k}" style="flex:1;min-width:180px">${AZ_LIST.map(([id,n,d]) => `<option value="${id}" ${id === cur ? 'selected' : ''}>${n} · ${d}</option>`).join('')}</select><button class="btn sm" data-vprev="${role}" data-k="${k}">▶️ تجربة</button></div></div>`; return sel('teacher', v.teacher) + sel('story', v.story); })() : '<p class="small muted" style="margin:8px 0 0">اختيار الأصوات يحتاج تفعيل «الصوت البشري الطبيعي» في قسم تشغيل المعلمة تحت. بدونه يُستخدم صوت الجهاز.</p>'}</details>
-      <details class="skills"><summary>📊 تقرير الأسبوع</summary>${weekReportHTML(k)}</details>
-      <details class="skills"><summary>🕸️ خريطة المهارات${(() => { const w = weakestSkill(k); return w ? ` · الأضعف: ${SKILLS.find(x => x[0] === w)[1]}` : ''; })()}</summary><div class="radarw">${radarSVG(k, 340)}</div><div class="small muted">تُحسب من الحصص والاختبارات والقراءة بصوت عالٍ ومختبر النطق والواجب والمهمات. المعلمة تركّز تلقائياً على الأضعف.</div></details>
-      <h3 style="margin-top:14px;font-size:1rem">تقارير المعلمة</h3>
-      ${reps.length ? reps.map(reportCardHTML).join('') : '<p class="small muted" style="margin:0">تظهر هنا ملاحظات المعلمة بعد كل حصة.</p>'}
-    </section>`; };
-  $('#app').innerHTML = `<div class="wrap">
-    <div class="topbar">${LOGO}<div class="me"><b>لوحة الإدارة</b>${prefsHTML()}<button class="btn sm" id="out">خروج</button></div></div>
-    <div class="grid">
-      ${cloudOn() ? `<div class="cloudbar">☁️ <b>المزامنة السحابية:</b> <span id="cloudSt">${cloudStatusHTML()}</span><div style="margin-top:6px">${pushBtnHTML(true)}</div></div>` : ''}
-      ${signupsCardHTML()}
-      <div class="chips" style="justify-content:space-between"><h2>الطلاب</h2><button class="btn primary" id="addKid">➕ إضافة طالب</button></div>
-      <div class="g2e">${ids.map(kidCard).join('')}</div>
-      <section class="card"><div class="chips" style="justify-content:space-between"><h2>🎁 المكافآت</h2><button class="btn sm primary" id="addRw">➕ مكافأة</button></div>
-        ${DB.redeems.filter(r => r.status === 'pending').length ? `<div class="gift" style="margin-top:10px;text-align:right">طلبات بانتظارك:<ul class="ledger">${DB.redeems.filter(r => r.status === 'pending').map(r => `<li><div><b>${esc(DB.kids[r.kid] ? DB.kids[r.kid].ar : '')}</b>: ${esc(r.emoji)} ${esc(r.name)}</div><button class="btn sm primary" data-done="${r.id}">تم التسليم ✓</button></li>`).join('')}</ul></div>` : ''}
-        <div class="rewards">${DB.rewards.map(r => `<div class="reward">${rewardArt(r)}<b>${esc(r.name)}</b><div class="chip brand num">${r.cost} نقطة</div><div class="chips" style="justify-content:center"><button class="btn sm" data-editrw="${r.id}">تعديل</button><button class="btn sm danger" data-delrw="${r.id}">حذف</button></div></div>`).join('')}</div>
-        <p class="small muted" style="margin:8px 0 0">الطفل يجمع تقريباً 70 إلى 100 نقطة من كل حصة مع اختبارها، و20 من تحدي اليوم، و30 من كل قصة.</p></section>
-      <section class="card grid" style="gap:10px"><h2>تشغيل المعلمة</h2>
-        ${cloudOn() ? `<div class="vguide"><div><b>☁️ المزامنة السحابية</b></div><div class="small">الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.</div></div>` : ''}
-        <p class="small muted" style="margin:0">${DB.apiKey ? (CLOUD.token ? '✅ مفتاح التشغيل محفوظ في الخادم بأمان، ولا يُرسل لأجهزة الأطفال.' : '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.') : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
-        <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
-        <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><button class="btn sm primary" id="micCheck">🎤 فحص الميكروفون</button><span class="small" id="keyMsg"></span></div>
-        <div class="field"><label>🔊 صوت المعلم وقراءة القصص</label><div class="vguide">
+  return `<div class="pcols">
+    <section class="card grid" style="gap:10px"><div class="sech"><h2>تشغيل المعلمة</h2></div>
+      <p class="small muted" style="margin:0">${DB.apiKey ? (CLOUD.token ? '✅ مفتاح التشغيل محفوظ في الخادم بأمان، ولا يُرسل لأجهزة الأطفال.' : '✅ مفتاح التشغيل محفوظ على هذا الجهاز فقط.') : '⚠️ الصق مفتاح التشغيل (يبدأ بـ sk-ant-) حتى تعمل المعلمة.'}</p>
+      <div class="field"><label for="ak">مفتاح التشغيل</label><input class="input ltr" id="ak" type="password" autocomplete="off" placeholder="${DB.apiKey ? '•••••• محفوظ' : 'sk-ant-...'}"></div>
+      <div class="chips"><button class="btn primary sm" id="saveKey">حفظ المفتاح</button><span class="small" id="keyMsg" role="status"></span></div>
+      <h3 class="subh">الفحوصات</h3>
+      <div class="chips"><button class="btn sm" id="testKey">اختبار الاتصال</button><button class="btn sm" id="testVoice">اختبار الصوت</button><button class="btn sm primary" id="micCheck">🎤 فحص الميكروفون</button></div></section>
+    <section class="card grid" style="gap:10px"><div class="sech"><h2>السحابة والأجهزة</h2></div>
+      ${cloudOn() ? `<div class="vguide"><div><b>☁️ المزامنة السحابية</b> · <span id="cloudSt">${cloudStatusHTML()}</span></div><div class="small">الحسابات والمفاتيح والتقدم محفوظة في السحابة. أي طفل يدخل بيوزره وباسورده من أي جهاز، وتقدّمه يكمل من حيث وقف.</div>${pushBtnHTML(true)}</div>` : '<p class="small muted" style="margin:0">المزامنة السحابية غير مفعّلة في هذه النسخة؛ البيانات محفوظة على هذا الجهاز.</p>'}
+      <h3 class="subh">تجهيز جهاز آخر</h3>
+      <p class="small muted" style="margin:0">رابط يُفتح مرة واحدة على الجهاز الجديد وينقل الحسابات والإعدادات.</p>
+      <div class="chips"><button class="btn sm" id="xfer">📲 نقل الإعداد لجهاز آخر</button></div></section></div>
+    <section class="card grid" style="gap:10px"><div class="sech"><h2>الأصوات</h2></div>
+      <div class="pcols">
+      <div class="field"><label>🔊 صوت المعلم وقراءة القصص (صوت الجهاز)</label><div class="vguide">
           <div>المنصة تستخدم صوت الجهاز الإنجليزي تلقائياً. لصوت طبيعي قريب من البشر، اضبطه مرة واحدة على كل جهاز (الآيباد والآيفون):</div>
           <ol><li>افتح <b>الإعدادات</b> ← <b>تسهيلات الاستخدام</b> ← <b>القراءة والنطق</b> (أو <b>المحتوى المنطوق</b>)</li>
           <li><b>الأصوات</b> ← <b>English</b> ← <b>Ava</b> ← حمّل <b>Ava (استثنائي)</b> ☁️ واختره ✓</li>
           <li>أغلق المنصة وافتحها، ثم اضغط «تجربة الصوت» هنا.</li></ol>
           <button class="btn sm" id="rvt">🔊 تجربة الصوت</button></div></div>
-        <div class="field"><label>🎙️ صوت بشري طبيعي (Azure، اختياري)</label><div class="vguide">
+      <div class="field"><label>🎙️ صوت بشري طبيعي (Azure، اختياري)</label><div class="vguide">
           <div>${DB.azure && DB.azure.key ? '✅ مفعّل: المعلمة والقصص تستخدم صوتاً عصبياً طبيعياً، ولو تعطّل يرجع لصوت الجهاز تلقائياً.' : 'يعطي المعلمة وقراءة القصص صوتاً بشرياً طبيعياً. الخطة المجانية F0 تكفي تقريباً 500 ألف حرف شهرياً.'}</div>
           <ol><li>أنشئ حساباً مجانياً: <a href="https://azure.microsoft.com/free/" target="_blank" rel="noopener">azure.microsoft.com/free</a></li>
           <li>أنشئ خدمة الكلام: <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank" rel="noopener">Speech service</a> · المنطقة <b class="en">East US</b> · الخطة <b class="en">Free F0</b></li>
           <li>من «Keys and Endpoint» انسخ <b class="en">KEY 1</b> والصقه هنا.</li></ol>
           <div class="chips"><input class="input ltr" id="azk" type="password" autocomplete="off" placeholder="${DB.azure && DB.azure.key ? '•••••• محفوظ' : 'Azure KEY 1'}" style="flex:1;min-width:180px"><input class="input ltr" id="azr" value="${esc((DB.azure && DB.azure.region) || 'eastus')}" style="max-width:130px" aria-label="region"></div>
-          <div class="chips"><button class="btn sm primary" id="azs">حفظ</button><button class="btn sm" id="azt">🔊 تجربة الصوت البشري</button>${DB.azure && DB.azure.key ? '<button class="btn sm danger" id="azx">إيقاف</button>' : ''}<span class="small" id="azm"></span></div></div></div>
-        <div class="field"><label for="pl">قيمة الحصة الواحدة (ريال)</label><div class="chips"><input class="input num" type="number" min="1" id="pl" value="${DB.perLesson}" style="max-width:140px"><button class="btn sm" id="savePl">حفظ</button></div></div>
-      </section>
-      <section class="card"><h2>الحسابات</h2><div style="overflow-x:auto"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th><th>المستوى / الأطفال</th></tr>
-        ${ids.map(k => `<tr><td>${esc(DB.kids[k].ar)}</td><td><code>${esc(DB.kids[k].user)}</code></td><td><code>${esc(DB.kids[k].pass)}</code></td><td class="en">${DB.kids[k].level}</td></tr>`).join('')}
-        ${Object.values(DB.guardians || {}).map(g => `<tr><td>👨‍👩‍👧 ${esc(g.name)}</td><td><code>${esc(g.user)}</code></td><td><code>${esc(g.pass)}</code></td><td class="small">${gKids(g.id).map(x => esc(DB.kids[x].ar)).join('، ')}</td></tr>`).join('')}
-        <tr><td>🛠️ الإدارة</td><td><code>${esc(DB.parent.user)}</code></td><td><code>${esc(DB.parent.pass)}</code></td><td></td></tr></table></div></section>
-    </div></div>`;
-  $('#out').onclick = logout;
+          <div class="chips"><button class="btn sm primary" id="azs">حفظ</button><button class="btn sm" id="azt">🔊 تجربة الصوت البشري</button>${DB.azure && DB.azure.key ? '<button class="btn sm danger" id="azx">إيقاف</button>' : ''}<span class="small" id="azm" role="status"></span></div></div></div>
+      </div>
+      <p class="small muted" style="margin:0">صوت كل طالب يُختار من ملفه في «الطلاب».</p></section>
+    <section class="card"><div class="sech"><h2>الحسابات</h2><span class="small muted">${ids.length} طالب · ${gIds().length} ولي أمر</span></div><div class="tscroll"><table class="acc"><tr><th>الحساب</th><th>اسم المستخدم</th><th>كلمة المرور</th><th>المستوى / الأطفال</th></tr>
+        ${ids.map(k => `<tr><td>${esc(DB.kids[k].ar)}</td><td><code>${esc(DB.kids[k].user)}</code></td><td>${pPassHTML('kid', k, DB.kids[k].pass)}</td><td class="en">${DB.kids[k].level}</td></tr>`).join('')}
+        ${Object.values(DB.guardians || {}).map(g => `<tr><td>👨‍👩‍👧 ${esc(g.name)}</td><td><code>${esc(g.user)}</code></td><td>${pPassHTML('guardian', g.id, g.pass)}</td><td class="small">${gKids(g.id).map(x => esc(DB.kids[x].ar)).join('، ')}</td></tr>`).join('')}
+        <tr><td>🛠️ الإدارة</td><td><code>${esc(DB.parent.user)}</code></td><td>${pPassHTML('parent', 'parent', DB.parent.pass)}</td><td></td></tr></table></div></section>`;
+}
+function renderParent(){
+  if(!P_TABS.some(t => t[0] === P_TAB)) P_TAB = 'overview';
+  const tab = P_TABS.find(t => t[0] === P_TAB), now = new Date();
+  const body = ({overview:pOverviewHTML, students:pStudentsHTML, guardians:pGuardiansHTML, signups:pSignupsHTML, plans:pPlansHTML, settings:pSettingsHTML})[P_TAB]();
+  $('#app').innerHTML = `<div class="adm">
+    <header class="adm-top">${LOGO}<b>لوحة الإدارة</b><div class="me">${prefsHTML()}<button class="btn sm" data-out>خروج</button></div></header>
+    <nav class="adm-nav" aria-label="أقسام لوحة الإدارة"><div class="adm-brand">${LOGO}<span class="small muted">لوحة الإدارة</span></div>
+      <div class="adm-tabs" role="tablist">${P_TABS.map(t => `<button role="tab" aria-selected="${P_TAB === t[0]}" class="adm-t ${P_TAB === t[0] ? 'on' : ''}" data-ptab="${t[0]}">${uiIc(t[2])}<span class="t-lg">${t[1]}</span><span class="t-st">${t[3]}</span>${t[0] === 'signups' ? '<i class="nb num" data-sunb hidden></i>' : ''}</button>`).join('')}</div>
+      <div class="adm-foot">${prefsHTML()}<button class="btn sm" data-out>خروج</button></div></nav>
+    <main class="adm-main"><div class="adm-h"><div><h1>${tab[1]}</h1><div class="small muted">${P_TAB === 'overview' ? now.toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'long', year:'numeric'}) : P_TAB === 'students' ? `${kidIds().length} طالب` : P_TAB === 'guardians' ? `${gIds().length} ولي أمر` : P_TAB === 'signups' ? 'من صفحة التسجيل العامة' : P_TAB === 'plans' ? 'الأسعار والشحن ومكافآت النقاط' : 'المفاتيح والأصوات والسحابة والحسابات'}</div></div>
+        ${P_TAB === 'overview' || P_TAB === 'students' ? `<button class="btn primary" id="addKid">${uiIc('plus')} إضافة طالب</button>` : ''}</div>
+      <div class="grid" id="pBody">${body}</div></main></div>`;
+  document.querySelectorAll('[data-out]').forEach(b => b.onclick = logout);
   if(cloudOn() && !CLOUD.token && navigator.onLine && !window.__cloudEnabling){ window.__cloudEnabling = true;
     const st = $('#cloudSt'); if(st) st.textContent = '⏳ جاري رفع بياناتك للسحابة…';
     cloudEnable().then(() => { cloudStart(); toast('☁️ تم تفعيل المزامنة السحابية'); if(cloudSafeToRender() && WHO === 'parent') renderParent(); })
       .catch(err => { console.warn(err); CLOUD.err = err.msg || err.message; cloudSave(); const s2 = $('#cloudSt'); if(s2) s2.textContent = err.msg === 'username_taken' ? '🟠 اسم مستخدم ولي الأمر محجوز، غيّره من الحسابات' : '🟠 تعذّر الاتصال بالسحابة، سنحاول لاحقاً'; })
       .finally(() => { window.__cloudEnabling = false; }); }
-  $('#addKid').onclick = () => kidForm(null); wirePushBtn();
-  $('#addRw').onclick = () => rewardForm(null);
-  document.querySelectorAll('[data-editrw]').forEach(b => b.onclick = () => rewardForm(b.dataset.editrw));
-  document.querySelectorAll('[data-delrw]').forEach(b => b.onclick = () => { DB.rewards = DB.rewards.filter(r => r.id !== b.dataset.delrw); save(); renderParent(); });
-  document.querySelectorAll('[data-done]').forEach(b => b.onclick = () => { const r = DB.redeems.find(x => x.id === b.dataset.done); if(r){ r.status = 'done'; save(); } toast('تم ✓'); renderParent(); });
-  document.querySelectorAll('[data-ics]').forEach(b => b.onclick = () => downloadICS(b.dataset.ics));
-  document.querySelectorAll('[data-topup]').forEach(b => b.onclick = () => { const k = b.dataset.topup, l = ledger(k);
+  wireAdmin(document.getElementById('app')); wirePushBtn();
+  /* students: search and filters redraw only the list, so the keyboard stays open */
+  const pq = $('#pq'); if(pq){ const redraw = () => { const box = $('#pList'); box.innerHTML = pStudentRows(); wireAdmin(box); };
+    pq.oninput = () => { P_Q = pq.value; redraw(); };
+    document.querySelectorAll('[data-pf]').forEach(b => b.onclick = () => { P_F = b.dataset.pf; document.querySelectorAll('[data-pf]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); }); redraw(); }); }
+  /* sign-ups: the list in its own section, the count everywhere */
+  if(document.getElementById('suCard')){ fillSignups(false);
+    $('#suCopy').onclick = () => { copyText(joinLink()); toast('📋 نسخت رابط التسجيل'); };
+    $('#suRe').onclick = () => { const l = document.getElementById('suList'); if(l) l.innerHTML = '<span class="small muted">جاري التحديث…</span>'; fillSignups(true); }; }
+  const su0 = $('#suCopy0'); if(su0) su0.onclick = () => { copyText(joinLink()); toast('📋 نسخت رابط التسجيل'); };
+  if(suOn()) loadSignups(false).then(list => { if(WHO !== 'parent') return; const n = (list || []).filter(s => s.status === 'pending').length;
+    document.querySelectorAll('[data-sun]').forEach(e => e.textContent = list ? n : '—'); document.querySelectorAll('[data-sunb]').forEach(e => { e.hidden = !n; e.textContent = n; });
+    document.querySelectorAll('[data-sutodo]').forEach(e => { e.hidden = !n; if(n){ e.querySelector('[data-sun2]').textContent = n; const z = document.querySelector('[data-notodo]'); if(z) z.hidden = true; } }); });
+  if(P_SHEET) pOpenSheet(P_SHEET);
+}
+/* all admin actions; root is the page or the student sheet */
+function wireAdmin(root){
+  const all = (sel, fn) => root.querySelectorAll(sel).forEach(fn), one = (sel, fn) => { const el = root.querySelector(sel); if(el) fn(el); };
+  all('[data-ptab]', b => b.onclick = () => pSetTab(b.dataset.ptab));
+  all('[data-sheet]', b => b.onclick = () => pOpenSheet(b.dataset.sheet));
+  one('#addKid', b => b.onclick = () => kidForm(null)); all('[data-addkid]', b => b.onclick = () => kidForm(null));
+  one('#addRw', b => b.onclick = () => rewardForm(null));
+  all('[data-editrw]', b => b.onclick = () => rewardForm(b.dataset.editrw));
+  all('[data-delrw]', b => b.onclick = () => { DB.rewards = DB.rewards.filter(r => r.id !== b.dataset.delrw); save(); renderParent(); });
+  all('[data-done]', b => b.onclick = () => { const r = DB.redeems.find(x => x.id === b.dataset.done); if(r){ r.status = 'done'; save(); } toast('تم ✓'); renderParent(); });
+  all('[data-ics]', b => b.onclick = () => downloadICS(b.dataset.ics));
+  all('[data-rpass]', b => b.onclick = () => { const [kind, id] = b.dataset.rpass.split(':'); if(typeof resetPass === 'function') resetPass(kind, id); else if(kind === 'kid' && DB.kids[id]) kidForm(id); else toast('إعادة التعيين غير متاحة في هذه النسخة'); });
+  all('[data-gcopy]', b => b.onclick = () => { const g = (DB.guardians || {})[b.dataset.gcopy]; if(g) copyText(credsMessage('g', g.name, g.user, g.pass), 'تم نسخ الرسالة'); });
+  all('[data-replace]', b => b.onclick = () => { const kid = DB.kids[b.dataset.replace]; if(kid.needPlace) delete kid.needPlace; else kid.needPlace = true; save(); toast(kid.needPlace ? 'سيظهر له اختبار تحديد المستوى عند الدخول' : 'تم الإلغاء'); renderParent(); });
+  all('[data-topup]', b => b.onclick = () => { const k = b.dataset.topup, l = ledger(k);
     const ov = overlay(`<h2>💳 شحن رصيد ${esc(DB.kids[k].ar)}</h2>
       <p style="margin:0">الرصيد المتبقي الآن: <b>${l.remaining}</b> ريال (${l.left} حصص). قيمة الحصة ${l.price} ريال.</p>
       <div class="chips">${[500,1000,2000].map(v => `<button class="btn" data-amt="${v}">+${v.toLocaleString('en')}</button>`).join('')}</div>
@@ -4159,43 +4515,31 @@ function renderParent(){
       else DB.balance[k] += a;
       DB.topups = DB.topups || []; DB.topups.push({kid:k, amount:a, at:new Date().toISOString()});
       if(DB.renewReq) delete DB.renewReq[k]; save(); ov.remove(); toast(`تم شحن ${a.toLocaleString('en')} ريال ✓`); renderParent(); }; });
-  document.querySelectorAll('[data-voice]').forEach(sl => sl.onchange = () => { const k = sl.dataset.k; DB.voices = DB.voices || {}; DB.voices[k] = Object.assign(kidVoices(k), {[sl.dataset.voice]: sl.value}); save(); toast('تم حفظ الصوت ✓'); });
+  all('[data-voice]', sl => sl.onchange = () => { const k = sl.dataset.k; DB.voices = DB.voices || {}; DB.voices[k] = Object.assign(kidVoices(k), {[sl.dataset.voice]: sl.value}); save(); toast('تم حفظ الصوت ✓'); });
   let vPlay = null;
-  document.querySelectorAll('[data-vprev]').forEach(b => b.onclick = () => {
-    const reset = () => { document.querySelectorAll('[data-vprev]').forEach(x => x.textContent = '▶️ تجربة'); };
+  all('[data-vprev]', b => b.onclick = () => {
+    const reset = () => { root.querySelectorAll('[data-vprev]').forEach(x => x.textContent = '▶️ تجربة'); };
     if(vPlay && vPlay.btn === b){ vPlay.c.stop(); vPlay = null; reset(); return; }
     if(vPlay){ vPlay.c.stop(); vPlay = null; reset(); }
-    const k = b.dataset.k, role = b.dataset.vprev, voiceId = b.parentNode.querySelector('select').value, nm = esc(nick(k));
+    const k = b.dataset.k, role = b.dataset.vprev, voiceId = b.parentNode.querySelector('select').value;
     const txt = role === 'teacher' ? `Hello ${DB.kids[k].en || 'there'}! I'm so happy to see you today. Tell me, what did you do this weekend?` : `Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.`;
     unlockAudio(); b.textContent = '⏹️ إيقاف';
     const c = narrateAZ(txt, {speed:.95, voice:voiceId, onWord:null, onEnd:() => { if(vPlay && vPlay.btn === b){ vPlay = null; reset(); } }});
     vPlay = {btn:b, c}; });
-  document.querySelectorAll('[data-place]').forEach(b => b.onclick = () => placementTest(b.dataset.place));
-  document.querySelectorAll('[data-month]').forEach(b => b.onclick = () => monthlyReport(b.dataset.month));
-  document.querySelectorAll('[data-week]').forEach(b => b.onclick = () => { const k = b.dataset.week, w = weeklyReport(k);
-    const ov = overlay(`<h2>📊 الأسبوع الماضي: ${esc(DB.kids[k].ar)}</h2>
-      <div class="stat"><div><span class="small muted">حضر</span><b style="color:var(--good)">${w.att}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${w.miss}</b></div><div><span class="small muted">دقائق محادثة</span><b>${w.mins}</b></div><div><span class="small muted">متوسط الحصص</span><b>${w.avg == null ? '—' : w.avg + '%'}</b></div></div>
-      <div class="stat"><div><span class="small muted">الاختبارات</span><b>${w.qavg == null ? '—' : w.qavg + '%'}</b></div><div><span class="small muted">تحدي اليوم</span><b>${w.daily}/7</b></div><div><span class="small muted">قصص</span><b>${w.books}</b></div><div><span class="small muted">كلمات</span><b>${w.words.length}</b></div></div>
-      ${w.mist.length ? `<div class="small"><b>يحتاج تدريب:</b><div class="en" style="direction:ltr;text-align:left">${w.mist.map(m => esc(m.right)).join('<br>')}</div></div>` : ''}
-      <div class="chips"><a class="btn primary" href="https://wa.me/?text=${encodeURIComponent(w.text)}" target="_blank" rel="noopener">مشاركة على واتساب</a><button class="btn" id="wc">نسخ</button><button class="btn" id="wx">إغلاق</button></div>`);
-    ov.querySelector('#wx').onclick = () => ov.remove();
-    ov.querySelector('#wc').onclick = () => { navigator.clipboard && navigator.clipboard.writeText(w.text).then(() => toast('تم النسخ'), () => {}); }; });
-  document.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => kidForm(b.dataset.edit));
-  document.querySelectorAll('[data-creds]').forEach(b => b.onclick = () => showCreds(b.dataset.creds));
-  if(document.getElementById('suCard')){ fillSignups(false);
-    $('#suCopy').onclick = () => { copyText(joinLink()); toast('📋 نسخت رابط التسجيل'); };
-    $('#suRe').onclick = () => { const l = document.getElementById('suList'); if(l) l.innerHTML = '<span class="small muted">جاري التحديث…</span>'; fillSignups(true); }; }
-  document.querySelectorAll('[data-trial]').forEach(b => b.onclick = () => enterLesson(b.dataset.trial, true));
-  document.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const k = b.dataset.up, to = DB.kids[k].level + 1;
+  all('[data-place]', b => b.onclick = () => { const k = b.dataset.place; pOpenSheet(null); placementTest(k); });
+  all('[data-edit]', b => b.onclick = () => kidForm(b.dataset.edit));
+  all('[data-creds]', b => b.onclick = () => showCreds(b.dataset.creds));
+  all('[data-trial]', b => b.onclick = () => { const k = b.dataset.trial; pOpenSheet(null); enterLesson(k, true); });
+  all('[data-up]', b => b.onclick = () => { const k = b.dataset.up, to = DB.kids[k].level + 1;
     const ov = overlay(`<h2>رفع ${esc(DB.kids[k].ar)} للمستوى ${to}؟</h2><p style="margin:0">يبدأ من أول درس في المستوى ${to} (<span class="en">${LEVEL_CEFR[to]}</span>). التقارير والنقاط والأوسمة تبقى كما هي.</p><div class="chips"><button class="btn primary" id="yes">نعم، ارفعه</button><button class="btn" id="no">رجوع</button></div>`);
     ov.querySelector('#no').onclick = () => ov.remove();
     ov.querySelector('#yes').onclick = () => { setLevel(k, to); ov.remove(); toast(`تم رفع ${DB.kids[k].ar} للمستوى ${to} 🚀`); renderParent(); }; });
-  document.querySelectorAll('[data-uskip]').forEach(b => b.onclick = () => { const p = DB.progress[b.dataset.uskip]; if(p.unitTest){ p.unitTest.passed = true; p.unitTest.skipped = true; save(); toast('تم تجاوز اختبار الوحدة'); renderParent(); } });
-  document.querySelectorAll('[data-down]').forEach(b => b.onclick = () => { const k = b.dataset.down, to = DB.kids[k].level - 1;
+  all('[data-uskip]', b => b.onclick = () => { const p = DB.progress[b.dataset.uskip]; if(p.unitTest){ p.unitTest.passed = true; p.unitTest.skipped = true; save(); toast('تم تجاوز اختبار الوحدة'); renderParent(); } });
+  all('[data-down]', b => b.onclick = () => { const k = b.dataset.down, to = DB.kids[k].level - 1;
     const ov = overlay(`<h2>خفض ${esc(DB.kids[k].ar)} للمستوى ${to}؟</h2><p style="margin:0">يبدأ من أول درس في المستوى ${to} (<span class="en">${LEVEL_CEFR[to]}</span>). التقارير والنقاط والأوسمة تبقى كما هي.</p><div class="chips"><button class="btn primary" id="yes">نعم، اخفضه</button><button class="btn" id="no">رجوع</button></div>`);
     ov.querySelector('#no').onclick = () => ov.remove();
     ov.querySelector('#yes').onclick = () => { setLevel(k, to); ov.remove(); toast(`تم نقل ${DB.kids[k].ar} للمستوى ${to}`); renderParent(); }; });
-  $('#xfer').onclick = async () => {
+  one('#xfer', b => b.onclick = async () => {
     const full = JSON.parse(JSON.stringify(DB)); Object.values(full.books||{}).forEach(arr => arr.length = 0);
     if(cloudOn() && CLOUD.token){ delete full.apiKey; delete full.azure; } // with the cloud on, the new device signs in and uses the server relay
     const code = await encodeSetup({full}), link = setupLink(code);
@@ -4209,19 +4553,19 @@ function renderParent(){
     ov.querySelector('#xlink').onclick = () => copy(link, 'تم نسخ الرابط');
     ov.querySelector('#xcopy').onclick = () => copy(code, 'تم نسخ الرمز');
     const sh = ov.querySelector('#xshare'); if(sh) sh.onclick = () => navigator.share({title:'هدهد', text:'رابط تجهيز هدهد', url:link}).catch(() => {});
-  };
-  $('#saveKey').onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); if(CLOUD.cfg) CLOUD.cfg.ai = true; renderParent(); toast('تم حفظ المفتاح'); };
-  $('#rvt') && ($('#rvt').onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
-  $('#azs').onclick = () => { const kk = $('#azk').value.trim(), rg = $('#azr').value.trim().toLowerCase().replace(/\s+/g,'') || 'eastus'; if(!kk && !(DB.azure && DB.azure.key)){ $('#azm').textContent = 'الصق المفتاح أولاً.'; return; } DB.azure = {key: kk || DB.azure.key, region: rg}; AZ_DOWN = false; AZ_TOK = null; save(); if(CLOUD.cfg) CLOUD.cfg.az = true; renderParent(); toast('تم حفظ صوت Azure'); };
-  $('#azt').onclick = async () => { const m = $('#azm'); if(!(DB.azure && DB.azure.key)){ m.textContent = 'احفظ المفتاح أولاً.'; return; } AZ_DOWN = false; m.className = 'small'; m.textContent = 'جاري التجربة…'; azUnlock();
-    try{ await azTest(); m.className = 'small ok'; m.textContent = '✅ الصوت البشري يعمل'; }catch(e){ m.className = 'small err'; m.textContent = e && (e.status === 401 || e.status === 403) ? 'المفتاح أو المنطقة غير صحيحة.' : `فشل (${(e && e.status) || 'اتصال'}).`; } };
-  $('#azx') && ($('#azx').onclick = () => { DB.azure = null; save(); if(CLOUD.cfg) CLOUD.cfg.az = false; renderParent(); toast('رجعنا لصوت الجهاز'); });
-  $('#savePl').onclick = () => { const v = Math.max(1, Math.round(Number($('#pl').value))||10); kidIds().forEach(k => setPrice(k, v)); DB.perLesson = v; save(); toast(`قيمة الحصة الآن ${v} ريال لكل الأطفال، من الآن فصاعداً`); renderParent(); };
-  $('#micCheck').onclick = () => micCheck();
-  $('#testKey').onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
+  });
+  one('#saveKey', b => b.onclick = () => { const v = $('#ak').value.trim(); if(!v){ $('#keyMsg').textContent = 'الصق المفتاح أولاً.'; return; } DB.apiKey = v; save(); if(CLOUD.cfg) CLOUD.cfg.ai = true; renderParent(); toast('تم حفظ المفتاح'); });
+  one('#rvt', b => b.onclick = () => { unlockAudio(); narrate('Once upon a time, in a quiet village near the desert, a curious girl named Salma found a tiny golden key. "What could this open?" she whispered.', {speed:.95}); });
+  one('#azs', b => b.onclick = () => { const kk = $('#azk').value.trim(), rg = $('#azr').value.trim().toLowerCase().replace(/\s+/g,'') || 'eastus'; if(!kk && !(DB.azure && DB.azure.key)){ $('#azm').textContent = 'الصق المفتاح أولاً.'; return; } DB.azure = {key: kk || DB.azure.key, region: rg}; AZ_DOWN = false; AZ_TOK = null; save(); if(CLOUD.cfg) CLOUD.cfg.az = true; renderParent(); toast('تم حفظ صوت Azure'); });
+  one('#azt', b => b.onclick = async () => { const m = $('#azm'); if(!(DB.azure && DB.azure.key)){ m.textContent = 'احفظ المفتاح أولاً.'; return; } AZ_DOWN = false; m.className = 'small'; m.textContent = 'جاري التجربة…'; azUnlock();
+    try{ await azTest(); m.className = 'small ok'; m.textContent = '✅ الصوت البشري يعمل'; }catch(e){ m.className = 'small err'; m.textContent = e && (e.status === 401 || e.status === 403) ? 'المفتاح أو المنطقة غير صحيحة.' : `فشل (${(e && e.status) || 'اتصال'}).`; } });
+  one('#azx', b => b.onclick = () => { DB.azure = null; save(); if(CLOUD.cfg) CLOUD.cfg.az = false; renderParent(); toast('رجعنا لصوت الجهاز'); });
+  one('#savePl', b => b.onclick = () => { const v = Math.max(1, Math.round(Number($('#pl').value))||10); kidIds().forEach(k => setPrice(k, v)); DB.perLesson = v; save(); toast(`قيمة الحصة الآن ${v} ريال لكل الأطفال، من الآن فصاعداً`); renderParent(); });
+  one('#micCheck', b => b.onclick = () => micCheck());
+  one('#testKey', b => b.onclick = async () => { const msg = $('#keyMsg'); msg.textContent = 'جاري الاختبار…'; msg.className = 'small';
     try{ await callClaude({model:LIVE_MODEL, max_tokens:20, messages:[{role:'user', content:'Say: ready'}]}); msg.textContent = '✅ المعلمة جاهزة'; msg.className = 'small ok'; }
-    catch(e){ msg.className = 'small err'; msg.textContent = e && e.status === 401 ? 'المفتاح غير صحيح.' : `فشل الاتصال (${(e&&e.status)||'؟'}).`; } };
-  $('#testVoice').onclick = () => { unlockAudio(); try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance("Hello! I'm Teacher Noor. I can't wait to talk with you!"); u.lang = 'en-US'; u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); $('#keyMsg').textContent = 'الصوت: ' + (voice ? voice.name : 'الافتراضي'); }catch(e){} };
+    catch(e){ msg.className = 'small err'; msg.textContent = e && e.status === 401 ? 'المفتاح غير صحيح.' : `فشل الاتصال (${(e&&e.status)||'؟'}).`; } });
+  one('#testVoice', b => b.onclick = () => { unlockAudio(); try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance("Hello! I'm Teacher Noor. I can't wait to talk with you!"); u.lang = 'en-US'; u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); $('#keyMsg').textContent = 'الصوت: ' + (voice ? voice.name : 'الافتراضي'); }catch(e){} });
 }
 const REWARD_ICONS = ['🎁','🎮','🍦','🍕','🍫','🧸','⚽','🚲','🎡','🏖️','🎬','📱','🎧','📚','🎨','🧩','🛹','🏊','🐎','✈️','🍔','🍩','💰','👟','⌚','🎂','🛍️','🏆','⭐','💎'];
 function rewardArt(r){ return r.img ? `<img class="rimg" src="${esc(r.img)}" alt="">` : `<div class="re">${esc(r.emoji||'🎁')}</div>`; }
@@ -4603,21 +4947,24 @@ MISSIONS.push(
   M('missed_bus','🚏','Missed the Bus','فاتني الباص','help',3,'the school guard','the school gate',[['Say you missed the bus','قل إن الباص فاتك'],['Ask to call your parents','اطلب تتصل بأهلك'],['Ask where to wait safely','اسأل وين تنتظر بأمان']])
 );
 
-let MCAT = (() => { try{ return localStorage.getItem('hh:mcat') || 'all'; }catch(e){ return 'all'; } })(), MALL = false;
+let MCAT = (() => { try{ return localStorage.getItem('hh:mcat') || 'all'; }catch(e){ return 'all'; } })(), MALL = false, MSTAT = 'all';
 function missionOfDay(k){ const lv = DB.kids[k].level, best = DB.progress[k].missions || {};
   const pool = MISSIONS.filter(m => m.min <= lv && (best[m.id] || 0) < 3); const list = pool.length ? pool : MISSIONS.filter(m => m.min <= lv); if(!list.length) return null;
   const d = new Date(), seed = d.getFullYear() * 400 + d.getMonth() * 32 + d.getDate() + k.length * 7; return list[seed % list.length]; }
 function missionCardInner(k){
   const lv = DB.kids[k].level, best = DB.progress[k].missions || {}, open = MISSIONS.filter(m => m.min <= lv), stars = open.reduce((a, m) => a + (best[m.id] || 0), 0);
-  const inCat = MISSIONS.filter(m => MCAT === 'all' || m.cat === MCAT).sort((a, b) => (a.min > lv) - (b.min > lv) || ((best[a.id] || 0) >= 3) - ((best[b.id] || 0) >= 3) || a.min - b.min);
+  const stOf = m => m.min > lv ? 'lock' : (best[m.id] || 0) >= 3 ? 'done' : (best[m.id] || 0) > 0 ? 'going' : 'new';
+  const inCat = MISSIONS.filter(m => (MCAT === 'all' || m.cat === MCAT) && (MSTAT === 'all' || stOf(m) === MSTAT)).sort((a, b) => (a.min > lv) - (b.min > lv) || ((best[a.id] || 0) >= 3) - ((best[b.id] || 0) >= 3) || a.min - b.min);
   const shown = MALL ? inCat : inCat.slice(0, 12), today = missionOfDay(k);
   return `<div class="chips" style="justify-content:space-between"><h2>🎯 مهمات المحادثة</h2><span class="chip brand">⭐ ${stars} / ${open.length * 3}</span></div>
     <p class="small muted" style="margin:4px 0 10px">${MISSIONS.length} موقف من الحياة اليومية تتكلم فيها مع شخصية: تطلب قهوة، تشتري، تسافر، تتعرف على صديق… ولكل مهمة 3 أهداف تحققها بكلامك.</p>
     ${today ? `<button class="mtoday" data-mission="${today.id}"><span class="me2">${today.e}</span><span style="min-width:0;flex:1;text-align:start"><span class="small" style="font-weight:800;color:var(--brand-ink)">⭐ مهمة اليوم</span><b class="en" style="display:block">${esc(today.t)}</b><span class="small muted">${esc(today.ar)}</span></span><span class="btn sm primary" aria-hidden="true">ابدأ</span></button>` : ''}
     <div class="mcats" role="tablist">${MCATS.map(([id, t, e]) => { const n = id === 'all' ? MISSIONS.length : MISSIONS.filter(m => m.cat === id).length; return n ? `<button role="tab" aria-selected="${MCAT === id}" class="mcat ${MCAT === id ? 'on' : ''}" data-mcat="${id}">${e} ${t} <i>${n}</i></button>` : ''; }).join('')}</div>
-    <div class="missions">${shown.map(m => { const lock = m.min > lv, s = best[m.id] || 0;
+    <div class="mstat" role="tablist" aria-label="حالة المهمات">${[['all','كل المهمات'],['new','جديدة'],['going','بدأتها'],['done','أكملتها ⭐⭐⭐']].map(([id, t]) => `<button role="tab" aria-selected="${MSTAT === id}" class="topic ${MSTAT === id ? 'on' : ''}" data-mstat="${id}">${t}</button>`).join('')}</div>
+    ${shown.length ? '' : emptyHTML('🎯', 'لا توجد مهمات هنا', 'غيّر القسم أو الحالة لتشوف مهمات أخرى.')}
+    <div class="missions ${MALL ? 'mall' : ''}">${shown.map(m => { const lock = m.min > lv, s = best[m.id] || 0;
       return `<button class="mission ${lock ? 'mlock' : ''} ${s >= 3 ? 'mdone' : ''}" ${lock ? `data-mlock="${m.min}"` : `data-mission="${m.id}"`}><span class="me2">${lock ? '🔒' : m.e}</span><b class="en">${esc(m.t)}</b><span class="small muted">${esc(m.ar)}</span>${lock ? `<span class="small muted">من المستوى ${m.min}</span>` : `<span class="mstars">${'★'.repeat(s)}${'☆'.repeat(3 - s)}</span>`}</button>`; }).join('')}</div>
-    <div class="chips" style="margin-top:10px;justify-content:center">${inCat.length > 12 ? `<button class="btn sm" id="mAll">${MALL ? 'عرض أقل' : `عرض الكل (${inCat.length})`}</button>` : ''}<button class="btn sm primary" id="mRand">🎲 مهمة عشوائية</button></div>`;
+    <div class="chips" style="margin-top:10px;justify-content:center">${inCat.length > 6 ? `<button class="btn sm ${inCat.length > 12 ? '' : 'm6'}" id="mAll">${MALL ? 'عرض أقل' : `عرض الكل (${inCat.length})`}</button>` : ''}<button class="btn sm primary" id="mRand">🎲 مهمة عشوائية</button></div>`;
 }
 function missionCard(k){ return `<section class="card" id="mcard">${missionCardInner(k)}</section>`; }
 function wireMissionCard(k){
@@ -4625,6 +4972,7 @@ function wireMissionCard(k){
   c.querySelectorAll('[data-mission]').forEach(b => b.onclick = () => startMission(k, b.dataset.mission));
   c.querySelectorAll('[data-mlock]').forEach(b => b.onclick = () => hoopoeSays(`هذي المهمة تفتح لك من المستوى ${b.dataset.mlock} 🔒`, 'think', 2600));
   c.querySelectorAll('[data-mcat]').forEach(b => b.onclick = () => { MCAT = b.dataset.mcat; MALL = false; try{ localStorage.setItem('hh:mcat', MCAT); }catch(e){} c.innerHTML = missionCardInner(k); wireMissionCard(k); });
+  c.querySelectorAll('[data-mstat]').forEach(b => b.onclick = () => { MSTAT = b.dataset.mstat; MALL = false; c.innerHTML = missionCardInner(k); wireMissionCard(k); });
   const a = c.querySelector('#mAll'); if(a) a.onclick = () => { MALL = !MALL; c.innerHTML = missionCardInner(k); wireMissionCard(k); if(!MALL) c.scrollIntoView({block:'start', behavior:'smooth'}); };
   const r = c.querySelector('#mRand'); if(r) r.onclick = () => { const lv = DB.kids[k].level, pool = MISSIONS.filter(m => m.min <= lv && (MCAT === 'all' || m.cat === MCAT)); if(pool.length) startMission(k, pool[Math.floor(Math.random() * pool.length)].id); };
 }
@@ -5479,14 +5827,129 @@ function monthGrid(k){
   return `<div class="mgrid">${['أحد','إثن','ثلا','أرب','خمي','جمع','سبت'].map(d => `<b>${d}</b>`).join('')}${cells.join('')}</div>
     <div class="chips" style="margin-top:8px"><span class="chip good">✅ حضر ${att}</span><span class="chip bad">❌ غاب ${miss}</span><span class="chip">🗓️ قادمة</span></div>`;
 }
-let G_KID = null;
+let G_KID = null, G_TAB = 'home', G_FILTER = 'all';
+const G_TABS = [['home','الرئيسية','home'],['reports','التقارير','doc'],['follow','المتابعة','bell']];
+/* ---------- guardian reports: one list for lessons, tests and weekly/monthly summaries ---------- */
+function gMonthStats(k, mk){
+  const [y, m] = mk.split('-').map(Number), a = new Date(y, m - 1, 1).getTime(), b = new Date(y, m, 1).getTime(), inM = t => t >= a && t < b;
+  const reps = DB.reports.filter(r => r.kid === k && inM(Date.parse(r.at))), rows = ledger(k).rows.filter(r => inM(r.t.getTime())), att = rows.filter(r => r.st === 'att').length;
+  const avg = (xs, f) => { xs = xs.map(f).filter(v => v != null && !isNaN(v)); return xs.length ? Math.round(xs.reduce((s, v) => s + Number(v), 0) / xs.length) : null; };
+  const qz = (DB.progress[k].quizzes || []).filter(q => q.at && inM(Date.parse(q.at)));
+  return {mk, from:new Date(a), end:b, lessons:reps.length, att, miss:rows.length - att, avg:avg(reps, r => r.score), talk:avg(reps, r => r.talkPct), conf:avg(reps, r => r.confidence), mins:reps.reduce((s, r) => s + (r.minutes || 0), 0),
+    words:new Set(reps.flatMap(r => r.newWords || [])).size, qavg:qz.length ? Math.round(qz.reduce((s, q) => s + q.score / q.total, 0) / qz.length * 100) : null, cur:inM(Date.now())};
+}
+function gRows(k){
+  const p = DB.progress[k], out = [], now = Date.now(), ws = weekStart().getTime();
+  DB.reports.filter(r => r.kid === k).forEach(r => out.push({type:'lesson', at:Date.parse(r.at), r}));
+  (p.quizzes || []).filter(q => q.at).forEach(q => out.push({type:'quiz', at:Date.parse(q.at), q}));
+  Object.keys(p.exams || {}).forEach(lv => { const e = p.exams[lv]; if(e && e.at) out.push({type:'exam', at:Date.parse(e.at), lv, e}); });
+  ((DB.placements || {})[k] || []).forEach(pl => out.push({type:'place', at:Date.parse(pl.at), pl}));
+  (DB.reviews || []).filter(r => r.kid === k).forEach(rv => out.push({type:'review', at:Date.parse(rv.at), rv}));
+  { const w = weekReport(k, now); if(w.lessons || w.sched) out.push({type:'week', at:now, w, cur:true}); }
+  for(let i = 0; i < 8; i++){ const end = ws - i * 7 * DAY, w = weekReport(k, end); if(w.lessons) out.push({type:'week', at:end - 1, w}); }
+  [...new Set(DB.reports.filter(r => r.kid === k).map(r => monthKey(new Date(r.at))))].forEach(mk => { const m = gMonthStats(k, mk); out.push({type:'month', at:m.cur ? now - 1 : m.end - 2, m}); });
+  return out.filter(x => isFinite(x.at)).sort((a, b) => b.at - a.at);
+}
+const G_TESTS = ['quiz','exam','place','review'];
+function gFilterRows(rows, f){ const m0 = new Date(); m0.setDate(1); m0.setHours(0, 0, 0, 0);
+  return f === 'month' ? rows.filter(x => x.at >= m0.getTime()) : f === 'lessons' ? rows.filter(x => x.type === 'lesson') : f === 'tests' ? rows.filter(x => G_TESTS.includes(x.type)) : rows; }
+function gRing(v, color){ const p = v == null ? 0 : Math.max(0, Math.min(100, v)), R = 18, C = 2 * Math.PI * R;
+  return `<svg class="gring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="${R}" fill="none" stroke="var(--line)" stroke-width="5"/><circle cx="22" cy="22" r="${R}" fill="none" stroke="${color || 'var(--brand)'}" stroke-width="5" stroke-linecap="round" stroke-dasharray="${(p / 100 * C).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 22 22)"/><text x="22" y="26.5" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--fg)" style="direction:ltr">${v == null ? '—' : Math.round(v)}</text></svg>`; }
+const gStars = n => { n = Math.max(0, Math.min(3, Number(n) || 0)); return `<span class="stars" aria-label="${n} من 3">${'★'.repeat(n)}${'☆'.repeat(3 - n)}</span>`; };
+const gFd = t => new Date(t).toLocaleDateString(LOC, {day:'numeric', month:'short'});
+/* what a row says: title, one line, and the mark on its side */
+function gRowParts(x){
+  if(x.type === 'lesson'){ const r = x.r, note = (String(r.parentNote || '').match(/^[^.!؟]*[.!؟]?/) || [''])[0].trim(); return {kind:'حصة', title:`<span class="en" dir="ltr">${esc(r.title || 'Lesson')}</span>`, plain:r.title || 'Lesson', line:note ? bidiAr(note) : `${Number(r.minutes) || 0} دقيقة`, mark:gRing(Number(r.score) || 0), extra:gStars(r.stars || Math.round((Number(r.score) || 0) / 34) || 1)}; }
+  if(x.type === 'quiz'){ const q = x.q; return {kind:'اختبار', title:`اختبار الدرس <span class="en" dir="ltr">${esc(q.title || '')}</span>`, plain:'اختبار الدرس ' + (q.title || ''), line:`أجاب ${q.score} من ${q.total}`, mark:gRing(Math.round(q.score / q.total * 100), 'var(--sky)'), extra:gStars(q.stars)}; }
+  if(x.type === 'exam'){ const ok = x.e.pct >= 70; return {kind:'اختبار', title:`اختبار نهاية المستوى ${x.lv}`, plain:`اختبار نهاية المستوى ${x.lv}`, line:ok ? 'ناجح، جاهز للمستوى التالي' : 'يحتاج مراجعة قبل الانتقال', mark:gRing(x.e.pct, ok ? 'var(--good)' : 'var(--bad)'), extra:`<span class="chip ${ok ? 'good' : 'bad'} small">${ok ? 'ناجح' : 'لم ينجح'}</span>`}; }
+  if(x.type === 'place') return {kind:'اختبار', title:'اختبار تحديد المستوى', plain:'اختبار تحديد المستوى', line:`النتيجة: المستوى ${x.pl.level} (${LEVEL_CEFR[x.pl.level] || ''})`, mark:`<span class="gmark sky">🎯</span>`, extra:`<span class="chip brand small en">Level ${x.pl.level}</span>`};
+  if(x.type === 'review') return {kind:'اختبار', title:'المراجعة الشهرية', plain:'المراجعة الشهرية', line:pctFix(`قبل المراجعة ${x.rv.before}% وبعدها ${x.rv.after}%`), mark:gRing(x.rv.after, 'var(--teal)'), extra:`<span class="chip ${x.rv.after >= x.rv.before ? 'good' : 'bad'} small num" dir="ltr">${x.rv.after >= x.rv.before ? '+' : ''}${x.rv.after - x.rv.before}</span>`};
+  if(x.type === 'week'){ const w = x.w; return {kind:'ملخص', sum:true, title:x.cur ? 'ملخص آخر 7 أيام' : `ملخص أسبوع ${gFd(w.start)} – ${gFd(w.end - 1)}`, plain:x.cur ? 'ملخص آخر 7 أيام' : `ملخص أسبوع ${gFd(w.start)} – ${gFd(w.end - 1)}`, line:pctFix(`حضر ${w.att} من ${w.sched}${w.avg == null ? '' : ` · المعدل ${w.avg}%`}`), mark:`<span class="gmark">${uiIc('chart')}</span>`, extra:''}; }
+  const m = x.m, name = m.from.toLocaleDateString(LOC, {month:'long', year:'numeric'});
+  return {kind:'ملخص', sum:true, title:`التقرير الشهري · ${name}`, plain:`التقرير الشهري · ${name}`, line:pctFix(`${m.lessons} حصص · حضر ${m.att} وغاب ${m.miss}${m.avg == null ? '' : ` · المعدل ${m.avg}%`}`), mark:`<span class="gmark">${uiIc('cal')}</span>`, extra:m.cur ? '<span class="chip small">الشهر الحالي</span>' : ''};
+}
+function gRowHTML(x, i){ const p = gRowParts(x), d = new Date(x.at);
+  return `<button class="grow ${p.sum ? 'sum' : ''} t-${x.type}" data-grow="${i}"><span class="g-mark">${p.mark}</span><span class="g-txt"><b>${p.title}</b><span class="small muted g-line">${p.line}</span></span>
+    <span class="g-side"><span class="small muted num"><span class="d-l">${d.toLocaleDateString(LOC, {weekday:'short'})}، </span>${d.toLocaleDateString(LOC, {day:'numeric', month:'short'})}</span>${p.extra}</span><span class="g-go">${uiIc('chev')}</span></button>`; }
+function gListHTML(rows, limit){
+  if(!rows.length) return emptyHTML('📝', 'لا توجد تقارير هنا بعد', 'يظهر تقرير المعلمة بعد كل حصة، ونتائج الاختبارات فور انتهائها.');
+  let last = '', html = '';
+  rows.slice(0, limit || rows.length).forEach((x, i) => { const mk = new Date(x.at).toLocaleDateString(LOC, {month:'long', year:'numeric'});
+    if(!limit && mk !== last){ html += `<h3 class="gmonth">${mk}</h3>`; last = mk; } html += gRowHTML(x, i); });
+  return `<div class="glist">${html}</div>`;
+}
+const gStat = (label, val) => `<div><span class="small muted">${label}</span><b>${val}</b></div>`;
+function gWeekHTML(w){
+  const d = w.avg != null && w.prevAvg != null ? w.avg - w.prevAvg : null;
+  return `<div class="gsum"><div class="small muted">من ${gFd(w.start)} إلى ${gFd(w.end - 1)}</div>
+    <div class="stat">${gStat('الحضور', `<span style="color:${w.att >= w.sched ? 'var(--good)' : 'var(--bad)'}">${w.att} من ${w.sched}</span>`)}${gStat('معدل الحصص', pctFix(w.avg == null ? '—' : w.avg + '%') + (d == null ? '' : ` <span class="small" style="color:${d >= 0 ? 'var(--good)' : 'var(--bad)'}">${d >= 0 ? '▲' : '▼'}${Math.abs(d)}</span>`))}${gStat('نسبة كلماته', pctFix(w.talk == null ? '—' : w.talk + '%'))}${gStat('كلمات جديدة', w.words)}</div>
+    <h3 class="subh">أكثر الأخطاء تكراراً</h3>
+    ${w.top.length ? `<div class="wtop">${w.top.map(m => `<div class="wtm"><span class="chip">×${m.n}</span><div>${m.wrong ? `<div class="en small muted"><s>${esc(m.wrong)}</s></div>` : ''}<div class="en"><b>${esc(m.right)}</b></div></div></div>`).join('')}</div><p class="small muted" style="margin:0">هذي الجمل تنضاف تلقائياً لبطاقات المراجعة عنده.</p>` : `<p class="small muted" style="margin:0">${w.lessons ? 'ما تكررت أخطاء هذا الأسبوع 👏' : 'ما فيه حصص في هذا الأسبوع.'}</p>`}</div>`;
+}
+function gDetailHTML(k, x){
+  if(x.type === 'lesson') return reportCardHTML(x.r);
+  const kid = DB.kids[k], when = new Date(x.at).toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'long', year:'numeric'}), p = gRowParts(x);
+  const head = `<div class="gd-h"><span class="g-mark">${p.mark}</span><div><h2>${p.title}</h2><div class="small muted">${esc(kid.ar)} · ${when}</div></div></div>`;
+  if(x.type === 'quiz') return `<div class="gsum">${head}<div class="stat">${gStat('الإجابات الصحيحة', `${x.q.score} من ${x.q.total}`)}${gStat('النسبة', pctFix(Math.round(x.q.score / x.q.total * 100) + '%'))}${gStat('النجوم', gStars(x.q.stars))}</div><p class="small muted" style="margin:0">اختبار قصير من 5 أسئلة يظهر للطالب بعد كل حصة.</p></div>`;
+  if(x.type === 'exam') return `<div class="gsum">${head}<div class="stat">${gStat('النتيجة', pctFix(x.e.pct + '%'))}${gStat('الأسئلة', pctFix(x.e.items == null ? '—' : x.e.items + '%'))}${gStat('التحدث', pctFix(x.e.speak == null ? '—' : x.e.speak + '%'))}</div><div class="pnote ${x.e.pct >= 70 ? 'good' : 'warn'}">${x.e.pct >= 70 ? 'نجح في الاختبار. الإدارة ترفعه للمستوى التالي.' : 'يحتاج 70% للنجاح. المعلمة تراجع معه قبل إعادة الاختبار.'}</div></div>`;
+  if(x.type === 'place'){ const sk = x.pl.skills || {}; return `<div class="gsum">${head}<div class="stat">${gStat('المستوى', `<span class="en">Level ${x.pl.level}</span>`)}${gStat('التصنيف', `<span class="en">${LEVEL_CEFR[x.pl.level] || '—'}</span>`)}</div>
+    ${x.pl.summary ? `<p class="rc-note">${bidiAr(x.pl.summary)}</p>` : ''}${SKILLS.some(s => sk[s[0]] != null) ? `<div class="gbars">${SKILLS.filter(s => sk[s[0]] != null).map(s => `<div><span class="small">${s[1]}</span><div class="bar"><i style="width:${Math.max(0, Math.min(100, sk[s[0]]))}%;background:var(--sky)"></i></div><b class="small num" dir="ltr">${Math.round(sk[s[0]])}%</b></div>`).join('')}</div>` : ''}</div>`; }
+  if(x.type === 'review') return `<div class="gsum">${head}<div class="stat">${gStat('قبل المراجعة', pctFix(x.rv.before + '%'))}${gStat('بعد المراجعة', pctFix(x.rv.after + '%'))}${gStat('المدة', `${x.rv.minutes || 0} دقيقة`)}</div>${(x.rv.items || []).length ? `<h3 class="subh">الجمل التي راجعها</h3><div class="rc-words">${x.rv.items.slice(0, 12).map(w => `<span>${esc(w)}</span>`).join('')}</div>` : ''}</div>`;
+  if(x.type === 'week') return `<div class="gsum">${head}${gWeekHTML(x.w)}</div>`;
+  const m = x.m;
+  return `<div class="gsum">${head}<div class="stat">${gStat('حضر', `<span style="color:var(--good)">${m.att}</span>`)}${gStat('غاب', `<span style="color:var(--bad)">${m.miss}</span>`)}${gStat('دقائق محادثة', m.mins)}${gStat('معدل الحصص', pctFix(m.avg == null ? '—' : m.avg + '%'))}</div>
+    <div class="stat">${gStat('نسبة كلماته', pctFix(m.talk == null ? '—' : m.talk + '%'))}${gStat('الثقة', pctFix(m.conf == null ? '—' : m.conf + '%'))}${gStat('الاختبارات', pctFix(m.qavg == null ? '—' : m.qavg + '%'))}${gStat('كلمات جديدة', m.words)}</div>
+    ${(DB.monthly || {})[k] && DB.monthly[k][m.mk] ? `<p class="rc-note">${bidiAr(DB.monthly[k][m.mk])}</p>` : ''}
+    ${m.cur ? `<button class="btn" data-gmonth>نسخة الطباعة مع ملاحظة المعلم</button>` : ''}</div>`;
+}
+function gShareText(k, x){
+  const kid = DB.kids[k], p = gRowParts(x), d = new Date(x.at).toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'long'});
+  if(x.type === 'week' && x.cur) return weeklyReport(k).text;
+  const strip = h => String(h).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  let t = `📝 هدهد · ${kid.ar}\n${p.plain} · ${d}\n`;
+  if(x.type === 'lesson'){ const r = x.r; t += `⭐ النتيجة ${r.score || 0}%${r.talkPct != null ? ` · 🗣️ نسبة كلماته ${r.talkPct}%` : ''}${r.confidence != null ? ` · 💪 الثقة ${r.confidence}%` : ''}\n${r.parentNote || ''}${(r.newWords || []).length ? `\n🆕 كلمات: ${r.newWords.slice(0, 8).join(', ')}` : ''}${r.homePractice ? `\n🏠 ${r.homePractice}` : ''}`; }
+  else t += strip(p.line);
+  return t.trim();
+}
+function gOpenReport(k, rows, i){
+  const old = document.getElementById('gRep'); if(old) old.remove();
+  const ov = document.createElement('div'); ov.className = 'ov sheet rsheet'; ov.id = 'gRep'; document.body.appendChild(ov);
+  const close = () => { ov.remove(); document.removeEventListener('keydown', key); };
+  const key = e => { if(!document.body.contains(ov)){ document.removeEventListener('keydown', key); return; } if(e.key === 'Escape') close(); else if(e.key === 'ArrowLeft' && i < rows.length - 1){ i++; draw(); } else if(e.key === 'ArrowRight' && i > 0){ i--; draw(); } };
+  const draw = () => { const x = rows[i], p = gRowParts(x), txt = gShareText(k, x);
+    ov.innerHTML = `<div class="card" role="dialog" aria-modal="true" aria-label="${esc(p.plain)}"><header class="shh rnav"><button class="btn sm" data-rn="-1" ${i === 0 ? 'disabled' : ''}>${uiIc('back')}<span>الأحدث</span></button>
+        <div class="rnav-t"><b>${p.kind}</b><span class="small muted num">${i + 1} من ${rows.length}</span></div>
+        <button class="btn sm" data-rn="1" ${i === rows.length - 1 ? 'disabled' : ''}><span>الأقدم</span>${uiIc('chev')}</button><button class="pbtn" data-shx aria-label="إغلاق">${uiIc('x')}</button></header>
+      <div class="rbody1" id="gRepBox">${gDetailHTML(k, x)}</div>
+      <footer class="rfoot"><a class="btn sm primary" href="https://wa.me/?text=${encodeURIComponent(txt)}" target="_blank" rel="noopener">مشاركة على واتساب</a><button class="btn sm" data-rcopy>نسخ الملخص</button><button class="btn sm" data-rprint>طباعة</button></footer></div>`;
+    ov.querySelector('[data-shx]').onclick = close;
+    ov.querySelectorAll('[data-rn]').forEach(b => b.onclick = () => { i += Number(b.dataset.rn); draw(); });
+    ov.querySelector('[data-rcopy]').onclick = () => copyText(txt, 'تم نسخ الملخص');
+    ov.querySelector('[data-rprint]').onclick = () => { document.body.classList.add('gprint'); window.print(); setTimeout(() => document.body.classList.remove('gprint'), 500); };
+    const gm = ov.querySelector('[data-gmonth]'); if(gm) gm.onclick = () => monthlyReport(k);
+    ov.querySelector('.rbody1').scrollTop = 0; };
+  ov.addEventListener('click', e => { if(e.target === ov) close(); });
+  document.addEventListener('keydown', key); draw();
+}
+/* progress summary: three small trends from data the guardian already has */
+function gSpark(vals, color){ const v = vals.filter(x => x != null); if(v.length < 2) return '<svg class="gspark" viewBox="0 0 120 36" aria-hidden="true"></svg>';
+  const pts = v.map((y, i) => [4 + i * (112 / (v.length - 1)), 32 - Math.max(0, Math.min(100, y)) * .28]);
+  return `<svg class="gspark" viewBox="0 0 120 36" aria-hidden="true" style="direction:ltr"><polyline points="${pts.map(p => p.map(n => n.toFixed(1)).join(',')).join(' ')}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${pts[pts.length - 1][0].toFixed(1)}" cy="${pts[pts.length - 1][1].toFixed(1)}" r="3.5" fill="${color}"/></svg>`; }
+function gTrendHTML(k){
+  const reps = DB.reports.filter(r => r.kid === k).sort((a, b) => Date.parse(a.at) - Date.parse(b.at)).slice(-8), wk = weekSeries(k, 8);
+  const avg = xs => { xs = xs.filter(v => v != null && !isNaN(v)); return xs.length ? Math.round(xs.reduce((s, v) => s + Number(v), 0) / xs.length) : null; };
+  const tile = (label, vals, color, hint) => { const cur = avg(vals.slice(-4)), old = avg(vals.slice(0, Math.max(0, vals.length - 4))), d = cur != null && old != null ? cur - old : null;
+    return `<div class="gtrend"><span class="small muted">${label}</span><div class="gt-v"><b class="num" dir="ltr">${cur == null ? '—' : cur + '%'}</b>${d == null ? '' : `<span class="rc-dl ${d > 0 ? 'up' : d < 0 ? 'down' : 'flat'}">${d > 0 ? '▲' : d < 0 ? '▼' : '='} <bdi dir="ltr">${Math.abs(d)}</bdi></span>`}</div>${gSpark(vals, color)}<span class="small muted">${hint}</span></div>`; };
+  return `<div class="gtrends">${tile('معدل النتيجة', reps.map(r => r.score), '#F05A38', 'آخر 4 حصص مقارنة بما قبلها')}${tile('نسبة كلامه في الحصة', reps.map(r => r.talkPct), '#3B7BE8', 'الهدف 40% أو أكثر')}${tile('الحضور', wk.map(x => x.att + x.miss ? Math.round(x.att / (x.att + x.miss) * 100) : null), '#14B8A6', 'آخر 4 أسابيع مقارنة بما قبلها')}</div>`;
+}
 function renderGuardian(gid){
   const g = (DB.guardians || {})[gid]; if(!g){ setWho(null); return renderLogin(); }
   const kids = gKids(gid); if(!kids.length){ $('#app').innerHTML = `<div class="center">${prefsHTML()}<div class="card panel" style="text-align:center">${LOGO}<h2>لا يوجد أطفال مرتبطون بحسابك بعد</h2><button class="btn" id="out">خروج</button></div></div>`; $('#out').onclick = logout; return; }
   if(!kids.includes(G_KID)) G_KID = kids[0];
+  if(!G_TABS.some(t => t[0] === G_TAB)) G_TAB = 'home';
   const k = G_KID, kid = DB.kids[k], p = DB.progress[k], l = ledger(k), rk = rankOf(p.xp || 0), live = liveOf(k);
   const seen = ((DB.gseen || {})[gid] || 0), notes = gNotes(k), unread = notes.filter(n => n.at.getTime() > seen).length;
-  const reps = DB.reports.filter(r => r.kid === k).slice().sort((a, b) => Date.parse(b.at) - Date.parse(a.at)).slice(0, 5);
+  const allRows = gRows(k), rows = gFilterRows(allRows, G_FILTER), lessonRows = allRows.filter(x => x.type === 'lesson');
   const cheers = ((DB.cheers || {})[k] || []).slice(-6).reverse(), cs = p.cheersSeen || [];
   const own = gLabel(g), past = [...new Set(Object.values(DB.cheers || {}).flat().filter(c => c && c.gid === gid && c.from).map(c => c.from))];
   let extra = []; try{ extra = JSON.parse(localStorage.getItem('hh:signers:' + gid)) || []; }catch(e){}
@@ -5496,51 +5959,57 @@ function renderGuardian(gid){
   const SIGNER_REL = relOf(SIGNER);
   const st = kidStats(k), badges = earnedBadges(k).length, srs = Object.keys(p.srs || {}).length;
   const words = new Set(DB.reports.filter(r => r.kid === k).flatMap(r => r.newWords || [])).size;
-  $('#app').innerHTML = `<div class="wrap">
-    <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(g.name)}</div><div class="small muted">حساب ولي الأمر</div></div>${prefsHTML()}
-      <button class="pbtn gbell" id="gb" aria-label="الإشعارات">🔔${unread ? `<i>${unread > 9 ? '9+' : unread}</i>` : ''}</button><button class="btn sm" id="out">خروج</button></div></div>
-    ${kids.length > 1 ? `<div class="chips">${kids.map(x => `<button class="topic ${x === k ? 'on' : ''}" data-gk="${x}">${esc(DB.kids[x].ar)}</button>`).join('')}</div>` : ''}
-    <div class="grid">
+  const attN = l.rows.filter(r => r.st === 'att').length, missN = l.rows.length - attN;
+  const noteHTML = (n, isNew) => `<div class="gn ${isNew ? 'new' : ''} ${n.kind}"><span class="gi">${n.ic}</span><div><div>${pctFix(esc(n.text))}</div><div class="small muted">${n.at.toLocaleDateString(LOC, {day:'numeric', month:'short'})} · ${fmtTime(n.at)}</div></div></div>`;
+  const F = [['all','الكل'],['month','هذا الشهر'],['lessons','حصص'],['tests','اختبارات']];
+  const home = () => `
     ${pushCard('g')}
     ${live ? `<section class="card livec"><div class="chips" style="justify-content:space-between"><h2><span class="livedot"></span> ${esc(kid.ar)} في الحصة الآن</h2><span class="chip brand">🗣️ تكلّم ${live.talk == null ? '—' : `<bdi class="num" dir="ltr">${live.talk}%</bdi>`}</span></div>
       <div class="small muted">${esc(live.title || '')}</div><div class="livelog" id="ll">${(live.lines || []).map(x => `<div class="${x.w === 'k' ? 'lk' : 'lt'}"><b>${x.w === 'k' ? esc(nick(k)) : 'المعلمة'}:</b> <span class="en">${esc(x.t)}</span></div>`).join('')}</div></section>` : ''}
-    <section class="card ghero"><div style="display:flex;gap:14px;align-items:center">${avatarHTML(k)}<div style="min-width:0"><h2 style="margin:0">${esc(kid.ar)} <span class="small muted">(${esc(nick(k))})</span></h2>
+    <section class="card ghero"><div class="gh-id">${avatarHTML(k)}<div style="min-width:0"><h2 style="margin:0">${esc(kid.ar)} <span class="small muted">(${esc(nick(k))})</span></h2>
       <div class="small muted"><span class="en">Level ${kid.level} · ${levelTag(kid.level)}</span> · ${rk.r[3]} ${rk.r[2]} · ${p.xp || 0} نقطة</div></div></div>
-      <div class="stat"><div><span class="small muted">الحصة القادمة</span><b style="font-size:1rem">${l.ended ? '🔒 الرصيد انتهى' : l.open ? '🟢 مفتوحة الآن' : l.next ? `${fmtDay(l.next.t)} · ${fmtTime(l.next.t)}` : '—'}</b></div>
-      <div><span class="small muted">حضر</span><b style="color:var(--good)">${l.rows.filter(r => r.st === 'att').length}</b></div><div><span class="small muted">غاب</span><b style="color:var(--bad)">${l.rows.filter(r => r.st !== 'att').length}</b></div>
-      <div><span class="small muted">الحصص المتبقية</span><b>${l.left}</b></div></div></section>
-    <section class="card"><h2>💌 شجّع ${esc(nick(k))}</h2><p class="small muted" style="margin:0 0 8px">رسالتك تطلع ${kid.boy ? 'له' : 'لها'} مع الهدهد في الصفحة الرئيسية وكإشعار، وأثناء الحصة إذا ${kid.boy ? 'كان' : 'كانت'} فيها.</p>
-        <div class="field" style="margin-bottom:8px"><label class="small" style="font-weight:800">✍️ من؟</label><div class="chips">${signers.map(x => `<button class="topic ${x === SIGNER ? 'on' : ''}" data-sg="${esc(x)}">${esc(x)}</button>`).join('')}<button class="topic" id="sgAdd">➕ شخص آخر</button></div></div>
-        <div class="chips">${(kid.boy ? ['أحسنت يا بطل! 👏', relFemale(SIGNER_REL) ? 'فخورة فيك ❤️' : 'فخور فيك ❤️', 'كمل، أنت قدها 💪', 'ركّز وتكلّم كثير 🗣️'] : ['أحسنتِ يا بطلة! 👏', relFemale(SIGNER_REL) ? 'فخورة فيكِ ❤️' : 'فخور فيكِ ❤️', 'كملي، أنتِ قدها 💪', 'ركّزي وتكلّمي كثير 🗣️']).map(t => `<button class="btn sm" data-ch="${esc(t)}">${t}</button>`).join('')}</div>
-        <div class="chips" style="margin-top:8px;flex-wrap:nowrap"><input class="input" id="cht" maxlength="120" placeholder="اكتب رسالتك…"><button class="btn primary" id="chs">إرسال</button></div>
-        ${cheers.length ? `<div class="gnl" style="margin-top:10px">${cheers.map(c => `<div class="gn"><span class="gi">💌</span><div><div>${esc(c.text)}</div><div class="small muted">من ${esc(c.from || '')} · ${fmtTime(new Date(c.at))} · ${cs.includes(c.id) ? (kid.boy ? '✓ قرأها' : '✓ قرأتها') : (kid.boy ? 'لم يقرأها بعد' : 'لم تقرأها بعد')}</div></div></div>`).join('')}</div>` : ''}</section>
-    <section class="card"><h2>📊 تقرير الأسبوع</h2>${weekReportHTML(k)}</section>
-    <div class="g2e">
-      <section class="card" id="gnotes"><div class="chips" style="justify-content:space-between"><h2>🔔 الإشعارات</h2>${unread ? `<button class="btn sm" id="gread">تعليم الكل كمقروء</button>` : ''}</div>
-        <div class="gnl">${notes.length ? notes.slice(0, 4).map(n => `<div class="gn ${n.at.getTime() > seen ? 'new' : ''} ${n.kind}"><span class="gi">${n.ic}</span><div><div>${pctFix(esc(n.text))}</div><div class="small muted">${n.at.toLocaleDateString(LOC, {day:'numeric', month:'short'})} · ${fmtTime(n.at)}</div></div></div>`).join('') : '<p class="muted small" style="margin:0">ما فيه إشعارات بعد. تطلع هنا أول ما يحضر أو يغيب أو يخلص اختبار.</p>'}</div>
-        ${notes.length > 4 ? `<button class="btn sm ghost" id="gall">عرض الكل (${notes.length})</button>` : ''}${pushBtnHTML()}</section>
-      <section class="card"><h2>📅 الحضور هذا الشهر</h2>${monthGrid(k)}</section>
-    </div>
-    <section class="card"><h2>📈 التقدم آخر 8 أسابيع</h2>${weekChartSVG(k)}
+      <div class="gfacts"><div><span class="small muted">الحصة القادمة</span><b>${l.ended ? '🔒 الرصيد انتهى' : l.open ? '🟢 مفتوحة الآن' : l.next ? `${l.next.t.toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'short'})} · ${fmtTime(l.next.t)}` : '—'}</b></div>
+      <div class="${l.ended ? 'is-bad' : l.left <= 3 ? 'is-warn' : ''}"><span class="small muted">الرصيد</span><b><span class="num">${l.left}</span> ${l.left === 1 ? 'حصة متبقية' : 'حصص متبقية'}</b></div>
+      <div><span class="small muted">الحضور</span><b><span style="color:var(--good)" class="num">${attN}</span> حضر · <span style="color:var(--bad)" class="num">${missN}</span> غاب</b></div></div></section>
+    <section class="card"><div class="sech"><h2>التقدم</h2><span class="small muted">آخر 8 أسابيع</span></div>${gTrendHTML(k)}
+      <div class="g2e" style="margin-top:14px"><div>${weekChartSVG(k)}</div><div><div class="radarw">${radarSVG(k, 300)}</div>${(() => { const w = weakestSkill(k); return w ? `<p class="small" style="margin:6px 0 0;text-align:center">يحتاج تركيز على: <b>${SKILLS.find(x => x[0] === w)[1]}</b>. المعلمة تتدرب معه عليها أكثر.</p>` : ''; })()}</div></div>
       <div class="stat" style="margin-top:10px"><div><span class="small muted">كلمات تعلّمها</span><b>${words}</b></div><div><span class="small muted">قصص قرأها</span><b>${st.books || 0}</b></div><div><span class="small muted">بطاقات الواجب</span><b>${srs}</b></div><div><span class="small muted">أوسمة</span><b>${badges}</b></div></div></section>
-    <div class="g2e">
-      <section class="card"><h2>🕸️ المهارات</h2><div class="radarw">${radarSVG(k, 340)}</div>${(() => { const w = weakestSkill(k); return w ? `<p class="small" style="margin:6px 0 0">💪 يحتاج تركيز على: <b>${SKILLS.find(x => x[0] === w)[1]}</b>. المعلمة تتدرب معه عليها أكثر.</p>` : ''; })()}</section>
-
-    </div>
-    <section class="card"><h2>📝 تقارير المعلمة</h2>${reps.length ? reps.map(reportCardHTML).join('') : '<p class="small muted" style="margin:0">تطلع هنا ملاحظات المعلمة بعد كل حصة.</p>'}</section>
-    </div></div>`;
+    <section class="card"><div class="sech"><h2>آخر التقارير</h2>${allRows.length ? `<button class="btn sm" data-gtab="reports">كل التقارير (${allRows.length})</button>` : ''}</div>
+      ${lessonRows.length ? `<div class="glist">${lessonRows.slice(0, 3).map(x => gRowHTML(x, allRows.indexOf(x))).join('')}</div>` : emptyHTML('📝', 'لا توجد تقارير بعد', 'يظهر تقرير المعلمة هنا بعد أول حصة.')}</section>
+    <section class="card"><h2>شجّع ${esc(nick(k))}</h2><p class="small muted" style="margin:0 0 8px">رسالتك تطلع ${kid.boy ? 'له' : 'لها'} مع الهدهد في الصفحة الرئيسية وكإشعار، وأثناء الحصة إذا ${kid.boy ? 'كان' : 'كانت'} فيها.</p>
+        <div class="field" style="margin-bottom:8px"><label class="small" style="font-weight:800">من؟</label><div class="chips">${signers.map(x => `<button class="topic ${x === SIGNER ? 'on' : ''}" data-sg="${esc(x)}">${esc(x)}</button>`).join('')}<button class="topic" id="sgAdd">➕ شخص آخر</button></div></div>
+        <div class="chips">${(kid.boy ? ['أحسنت يا بطل! 👏', relFemale(SIGNER_REL) ? 'فخورة فيك ❤️' : 'فخور فيك ❤️', 'كمل، أنت قدها 💪', 'ركّز وتكلّم كثير 🗣️'] : ['أحسنتِ يا بطلة! 👏', relFemale(SIGNER_REL) ? 'فخورة فيكِ ❤️' : 'فخور فيكِ ❤️', 'كملي، أنتِ قدها 💪', 'ركّزي وتكلّمي كثير 🗣️']).map(t => `<button class="btn sm" data-ch="${esc(t)}">${t}</button>`).join('')}</div>
+        <div class="chips" style="margin-top:8px;flex-wrap:nowrap"><input class="input" id="cht" maxlength="120" placeholder="اكتب رسالتك…" aria-label="رسالة تشجيع"><button class="btn primary" id="chs">إرسال</button></div>
+        ${cheers.length ? `<div class="gnl" style="margin-top:10px">${cheers.map(c => `<div class="gn"><span class="gi">💌</span><div><div>${esc(c.text)}</div><div class="small muted">من ${esc(c.from || '')} · ${fmtTime(new Date(c.at))} · ${cs.includes(c.id) ? (kid.boy ? '✓ قرأها' : '✓ قرأتها') : (kid.boy ? 'لم يقرأها بعد' : 'لم تقرأها بعد')}</div></div></div>`).join('')}</div>` : ''}</section>`;
+  const reports = () => `<section class="card"><div class="sech"><h2>تقارير ${esc(kid.ar)}</h2><span class="small muted num">${rows.length} تقرير</span></div>
+      <div class="chips gfilter" role="tablist">${F.map(f => `<button role="tab" aria-selected="${G_FILTER === f[0]}" class="topic ${G_FILTER === f[0] ? 'on' : ''}" data-gf="${f[0]}">${f[1]}<span class="cnt">${gFilterRows(allRows, f[0]).length}</span></button>`).join('')}</div>
+      ${gListHTML(rows)}</section>`;
+  const follow = () => `<div class="g2e">
+      <section class="card" id="gnotes"><div class="sech"><h2>الإشعارات</h2>${unread ? `<button class="btn sm" id="gread">تعليم الكل كمقروء</button>` : ''}</div>
+        <div class="gnl gscroll">${notes.length ? notes.map(n => noteHTML(n, n.at.getTime() > seen)).join('') : emptyHTML('🔔', 'ما فيه إشعارات بعد', 'تطلع هنا أول ما يحضر أو يغيب أو يخلص اختبار.')}</div>${pushBtnHTML()}</section>
+      <section class="card"><div class="sech"><h2>الحضور هذا الشهر</h2></div>${monthGrid(k)}</section></div>`;
+  $('#app').innerHTML = `<div class="wrap gw">
+    <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(g.name)}</div><div class="small muted">حساب ولي الأمر</div></div>${prefsHTML()}
+      <button class="pbtn gbell" id="gb" aria-label="الإشعارات">🔔${unread ? `<i>${unread > 9 ? '9+' : unread}</i>` : ''}</button><button class="btn sm" id="out">خروج</button></div></div>
+    ${kids.length > 1 ? `<div class="gkids" role="tablist" aria-label="اختر الطفل">${kids.map(x => `<button role="tab" aria-selected="${x === k}" class="gkid ${x === k ? 'on' : ''}" data-gk="${x}">${avatarHTML(x)}<span><b>${esc(DB.kids[x].ar)}</b><span class="small en">Level ${DB.kids[x].level}</span></span>${liveOf(x) ? '<i class="livedot"></i>' : ''}</button>`).join('')}</div>` : ''}
+    <nav class="tabs gtabs" role="tablist">${G_TABS.map(t => `<button role="tab" aria-selected="${G_TAB === t[0]}" class="tab ${G_TAB === t[0] ? 'on' : ''}" data-gtab="${t[0]}"><span>${uiIc(t[2])}</span> ${t[1]}${t[0] === 'follow' && unread ? ` <i class="nb num" dir="ltr">${unread > 9 ? '9+' : unread}</i>` : ''}</button>`).join('')}</nav>
+    <div class="grid">${({home, reports, follow})[G_TAB]()}</div></div>`;
   $('#out').onclick = logout;
+  const setTab = t => { G_TAB = t; renderGuardian(gid); window.scrollTo(0, 0); };
   document.querySelectorAll('[data-gk]').forEach(b => b.onclick = () => { G_KID = b.dataset.gk; renderGuardian(gid); });
-  $('#gb').onclick = () => document.getElementById('gnotes').scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('[data-gtab]').forEach(b => b.onclick = () => setTab(b.dataset.gtab));
+  document.querySelectorAll('[data-gf]').forEach(b => b.onclick = () => { G_FILTER = b.dataset.gf; renderGuardian(gid); });
+  /* a row opens the full report; next/previous walk the list the row came from */
+  document.querySelectorAll('[data-grow]').forEach(b => b.onclick = () => { const src = G_TAB === 'reports' ? rows : allRows; gOpenReport(k, src, Number(b.dataset.grow)); });
+  $('#gb').onclick = () => setTab('follow');
   const markRead = () => { DB.gseen = DB.gseen || {}; DB.gseen[gid] = Date.now(); save(); renderGuardian(gid); };
   const gr = $('#gread'); if(gr) gr.onclick = markRead;
-  const ga = $('#gall'); if(ga) ga.onclick = () => { const ov = overlay(`<h2>🔔 كل الإشعارات</h2><div class="gnl" style="max-height:60vh;overflow:auto">${notes.map(n => `<div class="gn"><span class="gi">${n.ic}</span><div><div>${pctFix(esc(n.text))}</div><div class="small muted">${n.at.toLocaleDateString(LOC)} · ${fmtTime(n.at)}</div></div></div>`).join('')}</div><button class="btn" id="gx">إغلاق</button>`); ov.querySelector('#gx').onclick = () => ov.remove(); };
   const send = t => { t = String(t || '').trim(); if(!t) return; DB.cheers = DB.cheers || {}; DB.cheers[k] = (DB.cheers[k] || []).concat({id:'c' + Date.now().toString(36) + rnd(2), at:new Date().toISOString(), from:SIGNER, gid, text:t.slice(0, 120)}).slice(-30); save(); toast('💌 وصلت رسالتك'); renderGuardian(gid); };
   document.querySelectorAll('[data-ch]').forEach(b => b.onclick = () => send(b.dataset.ch));
-  $('#chs').onclick = () => send($('#cht').value);
+  const chs = $('#chs'); if(chs) chs.onclick = () => send($('#cht').value);
   const pickSigner = x => { try{ localStorage.setItem('hh:signer:' + gid, x); }catch(e){} renderGuardian(gid); };
   document.querySelectorAll('[data-sg]').forEach(b => b.onclick = () => pickSigner(b.dataset.sg));
-  $('#sgAdd').onclick = () => { const ov = overlay(`<h2>✍️ مين يرسل الرسالة؟</h2><p class="small muted" style="margin:0">مثلاً: تيتا أمل، جدو أحمد، خالو سعيد. يطلع الاسم ${kid.boy ? 'للطفل' : 'للطفلة'} مع الرسالة.</p>
+  const sga = $('#sgAdd'); if(sga) sga.onclick = () => { const ov = overlay(`<h2>✍️ مين يرسل الرسالة؟</h2><p class="small muted" style="margin:0">مثلاً: تيتا أمل، جدو أحمد، خالو سعيد. يطلع الاسم ${kid.boy ? 'للطفل' : 'للطفلة'} مع الرسالة.</p>
       <div class="field"><label for="sr">صلة القرابة</label><select class="input" id="sr">${RELS.map(([r]) => `<option value="${r}">${r || 'أخرى (الاسم فقط)'}</option>`).join('')}</select></div>
       <div class="field"><label for="sn">الاسم</label><input class="input" id="sn" maxlength="20" placeholder="مثلاً: أمل"></div>
       <div class="chips"><button class="btn primary" id="sok">إضافة</button><button class="btn" id="sx">إلغاء</button></div>`);
