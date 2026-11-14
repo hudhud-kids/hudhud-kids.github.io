@@ -2184,6 +2184,40 @@ function listenFor(ms, onText, ctl){ return new Promise(res => {
   r.onerror = () => end(); r.onend = () => end();
   const cap = setTimeout(end, ms); if(ctl) ctl.stop = () => { try{ r.stop(); }catch(e){} setTimeout(end, 4000); }; try{ r.start(); }catch(e){ end(); }
   return {stop:end}; }); }
+/* long spoken answers (placement and test speaking parts): keep recording across thinking pauses until the child taps
+   "done" (ctl.stop) or maxMs. With Azure STT (iPad) every pause ends one recording, so recordings are chained back to back
+   and recognised in parallel; with the browser recognizer, recognition restarts whenever the browser ends it after a pause. */
+function longAzMode(){ return typeof useAzSR === 'function' && useAzSR(); }
+function listenUntilDone(ms, onText, ctl){ return new Promise(res => {
+  ctl = ctl || {}; if(!SR){ res(null); return; }
+  const t0 = Date.now(), parts = []; let stopped = false, finished = false, live = '', seg = null, r = null, capT = null;
+  const text = () => (parts.filter(Boolean).join(' ') + ' ' + live).replace(/\s+/g, ' ').trim();
+  const show = extra => { try{ onText && onText(text() + (extra || '')); }catch(e){} };
+  const done = () => { if(finished) return; finished = true; clearTimeout(capT); res(text()); };
+  if(longAzMode()){
+    const pend = [];
+    ctl.stop = () => { stopped = true; if(seg){ seg.pending = true; seg.stop && seg.stop(); } };
+    capT = setTimeout(() => ctl.stop(), ms);
+    (async () => {
+      while(!stopped && Date.now() - t0 < ms - 300){
+        seg = {}; let rec = null;
+        try{ rec = await captureAudio({maxMs:Math.max(1000, ms - (Date.now() - t0)), silence:2.5, ctl:seg, waitMs:0}); }catch(e){ console.warn('long rec', e); break; }
+        if(rec && rec.heard && rec.wav){ const i = parts.length; parts.push(''); show(' …');
+          pend.push(azRecognize(rec.wav, 'en-US').then(t => { parts[i] = t || ''; show(); }, e => console.warn('stt', e))); }
+        else if(!rec || !rec.frames) break;
+      }
+      await Promise.all(pend); done(); })();
+    return; }
+  const start = () => { if(stopped || finished) return; r = new SR(); r.lang = 'en-US'; r.continuous = true; r.interimResults = true;
+    r.onresult = e => { let t = ''; for(const x of e.results) t += x[0].transcript; live = t; show(); };
+    r.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e && e.error)) stopped = true; };
+    r.onend = () => { if(live.trim()) parts.push(live.trim()); live = ''; if(!stopped && Date.now() - t0 < ms) setTimeout(start, 120); else done(); };
+    try{ r.start(); }catch(e){ stopped = true; done(); } };
+  ctl.stop = () => { stopped = true; try{ r && r.stop(); }catch(e){} setTimeout(done, 3500); };
+  capT = setTimeout(() => ctl.stop(), ms);
+  start(); }); }
+/* listening items: never read the speaker labels ("A:", "Teacher:", "Omar:") aloud */
+const stripSpeakers = s => String(s || '').replace(/(^|[.!?…"”’)]\s+)[A-Z][A-Za-z'’-]{0,15}:\s+/g, '$1').replace(/\s+/g, ' ').trim();
 
 /* an unfinished placement is remembered on this device: closing the app mid-test brings the child (or the parent who
    ran it) back to the test instead of the home page, until it is finished */
@@ -2236,7 +2270,10 @@ async function placementTestRun(k, opt){
   const pSeen = new Set(DB.progress[k].pSeen || []);
   const est = () => { let best = 1, bl = -1e9;
     for(let th = 1; th <= 20.001; th += .25){ let ll = -Math.pow(th - 1, 2) / (2 * 100);
-      for(const x of log){ const g = x.idk ? 0 : 1 / (x.nopt || 4), pc = Math.min(.999, g + (1 - g) / (1 + Math.exp(-1.1 * (th - x.lv)))); ll += (x.w || 1) * Math.log(x.ok ? pc : 1 - pc); }
+      // "I don't know" counts as the average outcome of a blind guess (right 1 time in n), so pressing it honestly never
+      // costs more than guessing and getting it wrong (it pulls the estimate down a little less than a wrong answer)
+      for(const x of log){ const g = 1 / (x.nopt || 4), pc = Math.min(.999, g + (1 - g) / (1 + Math.exp(-1.1 * (th - x.lv))));
+        ll += (x.w || 1) * (x.idk ? g * Math.log(pc) + (1 - g) * Math.log(1 - pc) : Math.log(x.ok ? pc : 1 - pc)); }
       if(ll > bl){ bl = ll; best = th; } } return best; };
   let next = start, climbing = true, streak = 0;
   for(let n = 0; n < N1; n++){
@@ -2256,7 +2293,7 @@ async function placementTestRun(k, opt){
       ${passage ? `<div class="ppass en">${esc(passage)}</div>` : ''}
       <h2 class="en" style="direction:ltr;text-align:left">${esc(item.q)}</h2><div class="opts">${order.map(x => `<button class="opt en" data-o="${x}">${esc(item.options[x])}</button>`).join('')}</div>
       <button class="btn ghost" data-o="-1" style="justify-self:center">🤷 ما أعرف</button></div>`);
-    if(script){ const pl = ov.querySelector('#pl'); const play = async () => { pl.disabled = true; speechSynthesis.cancel(); try{ await speakText(script, .9); }finally{ pl.disabled = false; } }; pl.onclick = play; play(); }
+    if(script){ const pl = ov.querySelector('#pl'), said = stripSpeakers(script); const play = async () => { pl.disabled = true; speechSynthesis.cancel(); try{ await speakText(said, .9); }finally{ pl.disabled = false; } }; pl.onclick = play; play(); }
     const shownAt = Date.now();
     const choice = await new Promise(r => ov.querySelectorAll('[data-o]').forEach(bt => bt.onclick = () => r(Number(bt.dataset.o))));
     speechSynthesis.cancel();
@@ -2324,41 +2361,48 @@ async function placementTestRun(k, opt){
   const speak = [];
   for(const [i, lv] of [knowLevel-2, knowLevel, knowLevel+2].map(x => Math.max(1, Math.min(20, x))).entries()){
     const b = await loadP(lv); if(!b || !b.speak) continue;
-    frame('الجزء 5: التحدث', `<div class="card quiz" style="text-align:center"><div class="small muted">سؤال ${i+1} من 3: اسمع السؤال ثم اضغط الميكروفون وأجب بأكبر قدر تقدر عليه (حتى دقيقة)</div>
+    frame('الجزء 5: التحدث', `<div class="card quiz" style="text-align:center"><div class="small muted">سؤال ${i+1} من 3: اسمع السؤال ثم اضغط الميكروفون وأجب بأكبر قدر تقدر عليه. خذ وقتك، نسجّل حتى تضغط «انتهيت» (حتى دقيقة)</div>
       <h2 class="en" style="direction:ltr">${esc(b.speak.prompt)}</h2><button class="btn" id="sp">🔊 اسمع السؤال</button>
-      <button class="micbig" id="sm" style="justify-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
-      <div class="en" id="st" style="direction:ltr;text-align:left;min-height:3em"></div>${SR ? '' : '<textarea class="input en" id="stt" placeholder="Type your answer…"></textarea>'}<button class="btn primary" id="sn" hidden>التالي</button></div>`);
+      <button class="micbig" id="sm" style="justify-self:center" aria-label="ابدأ التسجيل"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      <div class="small muted" id="stm" hidden></div><div class="en" id="st" style="direction:ltr;text-align:left;min-height:3em"></div>${SR ? '' : '<textarea class="input en" id="stt" placeholder="Type your answer…"></textarea>'}<button class="btn primary big" id="sn" style="position:sticky;bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:2" hidden>التالي</button></div>`);
     ov.querySelector('#sp').onclick = () => speakText(b.speak.prompt, .9); await speakText(b.speak.prompt, .9);
     let ans = '';
-    if(SR){ await new Promise(r => ov.querySelector('#sm').onclick = r); ov.querySelector('#sm').classList.add('on');
-      const ctl = {}, sn = ov.querySelector('#sn'); sn.hidden = false; sn.textContent = '✓ انتهيت'; sn.onclick = () => ctl.stop && ctl.stop(); ov.querySelector('#sm').onclick = () => ctl.stop && ctl.stop();
-      ans = await listenFor(60000, t => { const el = ov.querySelector('#st'); if(el) el.textContent = t; }, ctl) || ''; }
+    if(SR){ await new Promise(r => ov.querySelector('#sm').onclick = r); speechSynthesis.cancel(); ov.querySelector('#sm').classList.add('on');
+      const ctl = {}, sn = ov.querySelector('#sn'), stm = ov.querySelector('#stm'), t0 = Date.now(); sn.hidden = false; sn.textContent = '✓ انتهيت'; sn.onclick = () => ctl.stop && ctl.stop(); ov.querySelector('#sm').onclick = () => ctl.stop && ctl.stop();
+      stm.hidden = false; try{ sn.scrollIntoView({block:'nearest'}); }catch(e){} const tk = setInterval(() => { const left = 60 - Math.round((Date.now() - t0) / 1000); if(stm.isConnected) stm.textContent = `🎙️ نسجّل… اضغط «انتهيت» لما تخلص (${Math.max(0, left)} ث)`; }, 500);
+      ans = await listenUntilDone(60000, t => { const el = ov.querySelector('#st'); if(el) el.textContent = t; }, ctl) || ''; clearInterval(tk); }
     else { ov.querySelector('#sn').hidden = false; await new Promise(r => ov.querySelector('#sn').onclick = r); ans = ov.querySelector('#stt').value; }
     speak.push({level:lv, prompt:b.speak.prompt, expect:b.speak.expect, answer:ans});
   }
   /* --- Scoring --- */
   frame('النتيجة', `<div class="card" style="text-align:center"><div style="font-size:2.6rem" class="spin">🧮</div><h2>نحلل الإجابات حسب معايير CEFR…</h2></div>`);
   const sAcc = xs => xs.length ? Math.round(xs.filter(x => x.ok).length / xs.length * 100) : null;
-  const pronParts = aloud.map(x => x.acc).concat(sounds.filter(x => x.spoken).length ? [sAcc(sounds.filter(x => x.spoken))] : []);
+  /* empty or very short audio is NO evidence (the mic may have missed it, the child may have paused): it never lowers the level */
+  speak.forEach(x => { if(countWords(x.answer) < 4) x.noEvidence = true; }); aloud.forEach(x => { if(!countWords(x.said)) x.noEvidence = true; });
+  sounds.forEach(x => { if(x.spoken && !countWords(x.said)) x.noEvidence = true; });
+  const speakEv = speak.filter(x => !x.noEvidence).length, floor = speakEv >= 2 ? 3 : speakEv === 1 ? 1 : 0;
+  const pronParts = aloud.filter(x => !x.noEvidence).map(x => x.acc).concat(sounds.filter(x => x.spoken && !x.noEvidence).length ? [sAcc(sounds.filter(x => x.spoken && !x.noEvidence))] : []);
   const pron = pronParts.length ? Math.round(pronParts.reduce((a,x) => a + x, 0) / pronParts.length) : null;
   const writing = dict.length ? Math.round(dict.reduce((a,x) => a + x.acc, 0) / dict.length) : null, phonics = sAcc(sounds.filter(x => !x.spoken));
   let res = null;
   try{
-    if(DEMO || DB.apiKey === 'demo') res = {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:60, pronunciation:pron, writing, phonics}, summary:'نتيجة تجريبية.', strengths:'—', focus:'—'};
-    else { const t = await callClaude({model:REPORT_MODEL, max_tokens:1500, messages:[{role:'user', content:
+    { const t = await callClaude({model:REPORT_MODEL, max_tokens:1500, messages:[{role:'user', content:
 `You are a certified English assessment expert (CEFR, Pearson GSE, Cambridge). Place this learner on a 20-level scale:
 ${Object.entries(LEVEL_INFO).map(([n,v]) => `${n}: ${v[0]}, GSE ${v[1]}`).join('; ')}.
 Learner: ${ageOf(kid.birth)}-year-old Arabic speaker.
-PART 1 adaptive knowledge test (${log.length} items, 4 options each so 25% can be lucky guesses; idk:true = the child pressed "I don't know"; w:0.5 = answered too fast to have read it; each: level of item, skill, correct?): ${JSON.stringify(log)}. Maximum-likelihood estimate (guessing-corrected): level ${knowLevel}. Your level must stay within ${Math.max(1, knowLevel - 3)}..${Math.min(20, knowLevel + 1)}.
+PART 1 adaptive knowledge test (${log.length} items, 4 options each so 25% can be lucky guesses; idk:true = the child honestly pressed "I don't know": count it like ONE wrong answer, never as a bigger penalty; w:0.5 = answered too fast to have read it; each: level of item, skill, correct?): ${JSON.stringify(log)}. Maximum-likelihood estimate (guessing-corrected): level ${knowLevel}. Your level must stay within ${Math.max(1, knowLevel - floor)}..${Math.min(20, knowLevel + 1)}.
 PART 2 sound discrimination (English minimal pairs that Arabic speakers confuse; heard a word, chose between the pair): ${JSON.stringify(sounds.filter(x => !x.spoken))}.
 PART 3 dictation (heard a sentence, typed it; acc = % of words written correctly in order): ${JSON.stringify(dict)}.
 PART 4 read-aloud (acc = Azure phoneme-level pronunciation accuracy when phonemes are present, otherwise speech-to-text word accuracy): ${JSON.stringify(aloud)}; minimal-pair words said aloud: ${JSON.stringify(sounds.filter(x => x.spoken))}.
 PART 5 spoken answers (speech-to-text; ignore punctuation). For each: level of prompt, what a learner at that level can do, and the answer: ${JSON.stringify(speak)}.
+noEvidence:true (in parts 4 and 5) = the recording was empty or very short (the microphone may have missed it): that is NOT evidence of weak speaking or pronunciation; ignore those items completely.${speakEv ? '' : ' There is NO usable speaking evidence: set skills.speaking to null and do not place lower because of speaking.'}
 Judge speaking with CEFR spoken descriptors (range, accuracy, fluency, coherence). Weight: knowledge 40%, speaking 35%, pronunciation and sound discrimination 15%, dictation 10%. If speaking is clearly weaker than knowledge, place lower (this is a speaking course).
 Reply ONLY JSON: {"level":1-20,"cefr":"...","gse":"range","skills":{"grammar":0-100,"vocabulary":0-100,"listening":0-100,"reading":0-100,"speaking":0-100,"pronunciation":0-100,"writing":0-100,"phonics":0-100},"summary":"3 sentences in Arabic for the parent","strengths":"Arabic, one line","focus":"Arabic, one line: what to work on first"}`}]});
-      res = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); }
-  }catch(e){ res = {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:null, pronunciation:pron, writing, phonics}, summary:'تعذّر تحليل جزء التحدث بسبب الاتصال، فالنتيجة مبنية على جزء المعرفة والنطق.', strengths:'', focus:''}; }
-  const rec = Math.max(1, Math.min(20, Math.max(knowLevel - 3, Math.min(knowLevel + 1, Number(res.level) || knowLevel))));
+      res = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}')+1)); if(!res || !res.skills) throw new Error('no placement result'); }
+  }catch(e){ res = DEMO || DB.apiKey === 'demo' ? {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:speakEv ? 60 : null, pronunciation:pron, writing, phonics}, summary:'نتيجة تجريبية.', strengths:'—', focus:'—'} : {level:knowLevel, cefr:LEVEL_INFO[knowLevel][0], gse:LEVEL_INFO[knowLevel][1], skills:{grammar:skillPct('grammar'), vocabulary:skillPct('vocabulary'), listening:skillPct('listening'), reading:skillPct('reading'), speaking:null, pronunciation:pron, writing, phonics}, summary:'تعذّر تحليل جزء التحدث بسبب الاتصال، فالنتيجة مبنية على جزء المعرفة والنطق.', strengths:'', focus:''}; }
+  // the AI may lower the knowledge level by up to 3 only with real spoken evidence; empty/short audio never lowers it
+  if(!speakEv && res.skills) res.skills.speaking = null;
+  const rec = Math.max(1, Math.min(20, Math.max(knowLevel - floor, Math.min(knowLevel + 1, Number(res.level) || knowLevel))));
   placeRunClear(); delete kid.needPlace;
   DB.placements = DB.placements || {}; (DB.placements[k] = DB.placements[k] || []).push({at:new Date().toISOString(), level:rec, know:knowLevel, ai:Number(res.level) || null, items:log.map(x => x.lv + (x.idk ? '?' : x.ok ? '+' : '-')).join(' '), skills:res.skills, summary:res.summary}); save();
   const SK = [['grammar','القواعد'],['vocabulary','المفردات'],['listening','الاستماع'],['reading','القراءة'],['speaking','التحدث'],['pronunciation','النطق'],['phonics','تمييز الأصوات'],['writing','الإملاء والكتابة']];
