@@ -704,11 +704,11 @@
    "warmup": "What do you wear on Eid?",
    "expressions": [
     {
-     "w": "new",
-     "emoji": "✨",
-     "def": "not old",
-     "ar": "جديد",
-     "frame": "I've got new ___ for Eid."
+     "w": "a ghutra",
+     "emoji": "🧣",
+     "def": "a white or red cloth men wear on the head",
+     "ar": "غترة",
+     "frame": "My dad's ghutra is ___."
     },
     {
      "w": "a thobe",
@@ -739,11 +739,11 @@
      "frame": "My ___ has got a new watch."
     },
     {
-     "w": "shoes",
-     "emoji": "👞",
-     "def": "you wear them on your feet when you go out",
-     "ar": "حذاء",
-     "frame": "His shoes are ___."
+     "w": "sandals",
+     "emoji": "🩴",
+     "def": "open shoes for hot days",
+     "ar": "صندل",
+     "frame": "My sandals are ___."
     }
    ],
    "dialogue": {
@@ -782,11 +782,11 @@
      },
      {
       "s": "Hind",
-      "t": "And his shoes are black and new."
+      "t": "And his sandals are black and new."
      },
      {
       "s": "Reem",
-      "t": "Dad has got a new watch too."
+      "t": "Dad has got a new watch and a ghutra."
      },
      {
       "s": "Hind",
@@ -811,8 +811,8 @@
       "hint": "Say 'He's got …' or 'She's got …'."
      },
      {
-      "q": "What colour are your new shoes?",
-      "hint": "Say 'My shoes are …' with a colour."
+      "q": "What colour are your Eid sandals?",
+      "hint": "Say 'My sandals are …' with a colour."
      }
     ]
    },
@@ -828,7 +828,11 @@
      "Who do you visit on Eid?"
     ]
    },
-   "exit": "Tell me what two people in your family have got for Eid."
+   "exit": "Tell me what two people in your family have got for Eid.",
+   "recycle": [
+    "new",
+    "shoes"
+   ]
   },
   "0-5": {
    "objective": "Today you will describe a person and play a guessing game.",
@@ -856,18 +860,18 @@
      "frame": "Is it ___?"
     },
     {
-     "w": "glasses",
-     "emoji": "👓",
-     "def": "you wear them on your eyes to see well",
-     "ar": "نظارة",
-     "frame": "She's got glasses and ___ hair."
+     "w": "a scarf",
+     "emoji": "🧣",
+     "def": "a long piece of cloth for your neck or head",
+     "ar": "وشاح / طرحة",
+     "frame": "She has got a ___ scarf."
     },
     {
-     "w": "a cap",
-     "emoji": "🧢",
-     "def": "a small hat for the sun",
-     "ar": "كاب / قبعة",
-     "frame": "He's got a ___ cap."
+     "w": "a hat",
+     "emoji": "👒",
+     "def": "a thing you wear on your head",
+     "ar": "قبّعة",
+     "frame": "He's got a ___ hat."
     },
     {
      "w": "brown eyes",
@@ -891,7 +895,7 @@
      },
      {
       "s": "Omar",
-      "t": "He's got short hair and a cap."
+      "t": "He's got short hair and a hat."
      },
      {
       "s": "Saad",
@@ -899,7 +903,7 @@
      },
      {
       "s": "Omar",
-      "t": "No, it isn't. His cap is red."
+      "t": "No, it isn't. His hat is red."
      },
      {
       "s": "Saad",
@@ -913,7 +917,7 @@
      },
      {
       "s": "Saad",
-      "t": "She's got long hair and glasses."
+      "t": "She's got long hair and a scarf."
      },
      {
       "s": "Omar",
@@ -932,10 +936,10 @@
       "t": "Yes! Good guess!"
      }
     ],
-    "focus": "He's got short hair and a cap.",
+    "focus": "He's got short hair and a hat.",
     "qs": [
      "What colour is the boy's cap?",
-     "Has the girl got glasses?"
+     "Has the girl got a scarf?"
     ]
    },
    "speakout": {
@@ -967,7 +971,11 @@
      "Are you good at guessing?"
     ]
    },
-   "exit": "Describe a friend or a cartoon in two sentences. I will guess who it is."
+   "exit": "Describe a friend or a cartoon in two sentences. I will guess who it is.",
+   "recycle": [
+    "glasses",
+    "a cap"
+   ]
   },
   "1-0": {
    "objective": "Today you will say what fruit you like and don't like.",
@@ -1377,11 +1385,11 @@
      "frame": "I love ___ ice cream."
     },
     {
-     "w": "cake",
-     "emoji": "🍰",
-     "def": "a sweet food for birthdays",
-     "ar": "كعكة / كيك",
-     "frame": "I like ___ cake."
+     "w": "doughnuts",
+     "emoji": "🍩",
+     "def": "small round sweet cakes with a hole",
+     "ar": "دونات",
+     "frame": "I like ___ doughnuts."
     },
     {
      "w": "chocolate",
@@ -1423,7 +1431,7 @@
      },
      {
       "s": "Reem",
-      "t": "I don't like biscuits. I like cake."
+      "t": "I don't like biscuits. I like doughnuts."
      }
     ],
     "p2": [
@@ -1483,7 +1491,10 @@
      "Do you like ice cream or cake?"
     ]
    },
-   "exit": "Tell me one snack you love and one snack you don't like."
+   "exit": "Tell me one snack you love and one snack you don't like.",
+   "recycle": [
+    "cake"
+   ]
   },
   "1-4": {
    "objective": "Today you will offer food and ask what people like at a picnic.",
@@ -1660,11 +1671,11 @@
      "frame": "Let's have ___!"
     },
     {
-     "w": "cake",
-     "emoji": "🍰",
-     "def": "a sweet food for birthdays",
-     "ar": "كعكة / كيك",
-     "frame": "I like ___ cake."
+     "w": "cupcakes",
+     "emoji": "🧁",
+     "def": "small cakes for one person",
+     "ar": "كب كيك",
+     "frame": "I like ___ cupcakes."
     }
    ],
    "dialogue": {
@@ -1699,11 +1710,11 @@
      },
      {
       "s": "Sam",
-      "t": "OK, orange juice. And a cake?"
+      "t": "OK, orange juice. And cupcakes?"
      },
      {
       "s": "Omar",
-      "t": "Yes! Let's have a chocolate cake."
+      "t": "Yes! Let's have chocolate cupcakes."
      },
      {
       "s": "Sam",
@@ -1713,7 +1724,7 @@
     "focus": "Do you like lemonade?",
     "qs": [
      "Does Omar like lemonade?",
-     "What cake do they want?"
+     "What cupcakes do they want?"
     ]
    },
    "speakout": {
@@ -1745,7 +1756,10 @@
      "Do you like big parties?"
     ]
    },
-   "exit": "Tell me two foods you like and one food you don't like for your party."
+   "exit": "Tell me two foods you like and one food you don't like for your party.",
+   "recycle": [
+    "cake"
+   ]
   },
   "2-0": {
    "objective": "Today you will say what pets can and can't do.",
@@ -1918,11 +1932,11 @@
      "frame": "I can walk to the ___."
     },
     {
-     "w": "run",
-     "emoji": "🏃",
-     "def": "move very fast on your legs",
-     "ar": "يركض",
-     "frame": "A ___ can run fast."
+     "w": "a sheep",
+     "emoji": "🐑",
+     "def": "a farm animal with soft white wool",
+     "ar": "خروف",
+     "frame": "A sheep can ___."
     }
    ],
    "dialogue": {
@@ -1957,7 +1971,7 @@
      },
      {
       "s": "Grandpa",
-      "t": "Yes. But the chicken can't swim."
+      "t": "Yes! The sheep can't jump. The chicken can't swim."
      },
      {
       "s": "Faisal",
@@ -2007,7 +2021,10 @@
      "Can you see camels near your city?"
     ]
    },
-   "exit": "Tell me two things a farm animal can do."
+   "exit": "Tell me two things a farm animal can do.",
+   "recycle": [
+    "run"
+   ]
   },
   "2-2": {
    "objective": "Today you will say what zoo animals can and can't do.",
@@ -2021,11 +2038,11 @@
      "frame": "A monkey can climb ___."
     },
     {
-     "w": "an elephant",
-     "emoji": "🐘",
-     "def": "a very big grey animal with a long nose",
-     "ar": "فيل",
-     "frame": "An elephant is big and ___."
+     "w": "a hippo",
+     "emoji": "🦛",
+     "def": "a big, heavy animal that loves water",
+     "ar": "فرس النهر",
+     "frame": "A hippo can ___."
     },
     {
      "w": "a giraffe",
@@ -2088,7 +2105,7 @@
     "p2": [
      {
       "s": "Omar",
-      "t": "Can elephants swim?"
+      "t": "Can hippos swim?"
      },
      {
       "s": "Dad",
@@ -2125,7 +2142,7 @@
       "hint": "Answer with 'it can' or 'it can't', then say one more thing."
      },
      {
-      "q": "Can an elephant jump?",
+      "q": "Can a hippo jump?",
       "hint": "Answer with 'it can' or 'it can't'."
      },
      {
@@ -2146,7 +2163,10 @@
      "What animal do you want to see?"
     ]
    },
-   "exit": "Tell me one thing a monkey can do and one thing an elephant can't do."
+   "exit": "Tell me one thing a monkey can do and one thing a hippo can't do.",
+   "recycle": [
+    "an elephant"
+   ]
   },
   "2-3": {
    "objective": "Today you will ask and answer about what sea animals and you can do.",
@@ -2181,18 +2201,18 @@
      "frame": "A crab can walk on the ___."
     },
     {
-     "w": "swim",
-     "emoji": "🏊",
-     "def": "move in water",
-     "ar": "يسبح",
-     "frame": "I can swim in the ___."
+     "w": "a fish",
+     "emoji": "🐟",
+     "def": "an animal that lives and swims in water",
+     "ar": "سمكة",
+     "frame": "A fish is ___."
     },
     {
-     "w": "jump",
-     "emoji": "🤸",
-     "def": "go up in the air with your legs",
-     "ar": "يقفز",
-     "frame": "I can jump ___ times."
+     "w": "a shell",
+     "emoji": "🐚",
+     "def": "the hard outside of a crab or a turtle",
+     "ar": "صَدَفة / قوقعة",
+     "frame": "I've got a ___ shell."
     }
    ],
    "dialogue": {
@@ -2201,7 +2221,7 @@
     "p1": [
      {
       "s": "Ali",
-      "t": "Look, Noura! Dolphins!"
+      "t": "Look, Noura! Dolphins and fish!"
      },
      {
       "s": "Noura",
@@ -2231,7 +2251,7 @@
      },
      {
       "s": "Noura",
-      "t": "And look at the crab!"
+      "t": "And look at the crab! It's got a shell."
      },
      {
       "s": "Ali",
@@ -2277,7 +2297,11 @@
      "Can you swim in the sea?"
     ]
    },
-   "exit": "Ask me one 'Can …?' question and tell me one thing you can do in the sea."
+   "exit": "Ask me one 'Can …?' question and tell me one thing you can do in the sea.",
+   "recycle": [
+    "swim",
+    "jump"
+   ]
   },
   "2-4": {
    "objective": "Today you will say what you can and can't do like animals.",
@@ -2319,11 +2343,11 @@
      "frame": "I can run like a ___."
     },
     {
-     "w": "fly",
-     "emoji": "🪽",
-     "def": "move in the air",
-     "ar": "يطير",
-     "frame": "I can't fly like a ___."
+     "w": "a snake",
+     "emoji": "🐍",
+     "def": "a long animal with no legs",
+     "ar": "ثعبان",
+     "frame": "A snake can't ___."
     }
    ],
    "dialogue": {
@@ -2366,7 +2390,7 @@
      },
      {
       "s": "Sara",
-      "t": "But we can run like horses!"
+      "t": "Let's move like a snake! Sss!"
      }
     ],
     "focus": "I can jump like a frog!",
@@ -2404,7 +2428,10 @@
      "What animal do you want to see?"
     ]
    },
-   "exit": "Tell me one thing you can do like an animal and one thing you can't do."
+   "exit": "Tell me one thing you can do like an animal and one thing you can't do.",
+   "recycle": [
+    "fly"
+   ]
   },
   "2-5": {
    "objective": "Today you will describe an animal with 'can' and 'can't' and play a guessing game.",
@@ -2446,11 +2473,11 @@
      "frame": "It can swim. It can't fly. What is it? It's a ___."
     },
     {
-     "w": "a monkey",
-     "emoji": "🐒",
-     "def": "a funny animal; it lives in trees",
-     "ar": "قرد",
-     "frame": "A monkey can ___."
+     "w": "Good guess!",
+     "emoji": "🎉",
+     "def": "say this when someone guesses right",
+     "ar": "تخمين صحيح!",
+     "frame": "Is it a ___? Yes! Good guess!"
     }
    ],
    "dialogue": {
@@ -2535,7 +2562,10 @@
      "Do you like falcons?"
     ]
    },
-   "exit": "Give me two clues about an animal with 'can' and 'can't'. I will guess it."
+   "exit": "Give me two clues about an animal with 'can' and 'can't'. I will guess it.",
+   "recycle": [
+    "a monkey"
+   ]
   },
   "3-0": {
    "objective": "Today you will say where things are in your bedroom.",
@@ -2708,11 +2738,11 @@
      "frame": "I've got a book about ___."
     },
     {
-     "w": "in",
-     "emoji": "📥",
-     "def": "inside something",
-     "ar": "في / داخل",
-     "frame": "My ___ is in my bag."
+     "w": "a lunch box",
+     "emoji": "🍱",
+     "def": "a box for your food at school",
+     "ar": "علبة الطعام",
+     "frame": "My lunch box is ___."
     }
    ],
    "dialogue": {
@@ -2729,7 +2759,7 @@
      },
      {
       "s": "Lama",
-      "t": "No, it isn't."
+      "t": "No, it isn't. My lunch box is there."
      },
      {
       "s": "Noura",
@@ -2793,7 +2823,10 @@
      "What's in your pencil case?"
     ]
    },
-   "exit": "Tell me where your pencil and your book are now."
+   "exit": "Tell me where your pencil and your book are now.",
+   "recycle": [
+    "in"
+   ]
   },
   "3-2": {
    "objective": "Today you will say where things are in your classroom with 'next to'.",
@@ -2962,11 +2995,11 @@
      "frame": "My teddy is on my ___."
     },
     {
-     "w": "under",
-     "emoji": "⬇️",
-     "def": "below something",
-     "ar": "تحت",
-     "frame": "My ___ is under the sofa."
+     "w": "a toy box",
+     "emoji": "🧸",
+     "def": "a big box for your toys",
+     "ar": "صندوق الألعاب",
+     "frame": "My ___ is in my toy box."
     }
    ],
    "dialogue": {
@@ -3009,7 +3042,7 @@
      },
      {
       "s": "Hind",
-      "t": "Yes, you can!"
+      "t": "Yes! Then put them in the toy box."
      }
     ],
     "focus": "They're under the sofa.",
@@ -3047,7 +3080,10 @@
      "Where do you play at home?"
     ]
    },
-   "exit": "Tell me where two of your toys are. Use 'It's' or 'They're'."
+   "exit": "Tell me where two of your toys are. Use 'It's' or 'They're'.",
+   "recycle": [
+    "under"
+   ]
   },
   "3-4": {
    "objective": "Today you will say where things are and where they go when you tidy up.",
@@ -3089,11 +3125,11 @@
      "frame": "Put the ___ on the shelf."
     },
     {
-     "w": "shoes",
-     "emoji": "👟",
-     "def": "you wear them on your feet when you go out",
-     "ar": "حذاء",
-     "frame": "My shoes are next to the ___."
+     "w": "the floor",
+     "emoji": "🟫",
+     "def": "the part of a room you walk on",
+     "ar": "الأرض",
+     "frame": "My ___ is on the floor."
     }
    ],
    "dialogue": {
@@ -3178,7 +3214,10 @@
      "Who helps you tidy up?"
     ]
    },
-   "exit": "Tell me where your shoes and your bag are now."
+   "exit": "Tell me where your shoes and your bag are now.",
+   "recycle": [
+    "shoes"
+   ]
   },
   "3-5": {
    "objective": "Today you will play a treasure hunt by asking and saying where things are.",
@@ -3213,18 +3252,18 @@
      "frame": "Here it is! It's under the ___."
     },
     {
-     "w": "next to",
-     "emoji": "↔️",
-     "def": "very near, at the side",
-     "ar": "بجانب",
-     "frame": "My ___ is next to my bed."
+     "w": "gold",
+     "emoji": "✨",
+     "def": "a shiny yellow colour",
+     "ar": "ذهبي",
+     "frame": "I've got a gold ___."
     },
     {
-     "w": "a clue",
-     "emoji": "🧩",
-     "def": "a small help to find the answer",
-     "ar": "تلميح",
-     "frame": "Here's a clue: it's in the ___."
+     "w": "Well done!",
+     "emoji": "👏",
+     "def": "say this when someone does a good job",
+     "ar": "أحسنت!",
+     "frame": "You find the ___. Well done!"
     }
    ],
    "dialogue": {
@@ -3305,7 +3344,11 @@
      "Do you like treasure hunts?"
     ]
    },
-   "exit": "Say two sentences about where things are in your room, with no help."
+   "exit": "Say two sentences about where things are in your room, with no help.",
+   "recycle": [
+    "next to",
+    "a clue"
+   ]
   }
  },
  "kits": {
@@ -3604,9 +3647,9 @@
   "0-4": {
    "words": [
     {
-     "w": "new",
-     "ar": "جديد",
-     "ex": "I've got new shoes for Eid."
+     "w": "a ghutra",
+     "ar": "غترة",
+     "ex": "Dad has got a white ghutra."
     },
     {
      "w": "a thobe",
@@ -3629,9 +3672,9 @@
      "ex": "Dad has got a new watch."
     },
     {
-     "w": "shoes",
-     "ar": "حذاء",
-     "ex": "His shoes are black."
+     "w": "sandals",
+     "ar": "صندل",
+     "ex": "His sandals are black."
     }
    ],
    "dialogue": [
@@ -3665,7 +3708,11 @@
     },
     {
      "s": "Hind",
-     "t": "And his shoes are black and new."
+     "t": "And his sandals are black and new."
+    },
+    {
+     "s": "Reem",
+     "t": "Dad has got a new watch and a ghutra."
     }
    ],
    "grammar": {
@@ -3674,7 +3721,7 @@
     "examples": [
      "He's got a new thobe.",
      "She's got a new dress.",
-     "His shoes are black."
+     "His sandals are black."
     ]
    }
   },
@@ -3696,14 +3743,14 @@
      "ex": "Is it your sister?"
     },
     {
-     "w": "glasses",
-     "ar": "نظارة",
-     "ex": "My teacher has got glasses."
+     "w": "a scarf",
+     "ar": "وشاح / طرحة",
+     "ex": "She's got long hair and a scarf."
     },
     {
-     "w": "a cap",
-     "ar": "كاب / قبعة",
-     "ex": "He's got a blue cap."
+     "w": "a hat",
+     "ar": "قبّعة",
+     "ex": "He's got a red hat."
     },
     {
      "w": "brown eyes",
@@ -3722,7 +3769,7 @@
     },
     {
      "s": "Omar",
-     "t": "He's got short hair and a cap."
+     "t": "He's got short hair and a hat."
     },
     {
      "s": "Saad",
@@ -3730,7 +3777,7 @@
     },
     {
      "s": "Omar",
-     "t": "No, it isn't. His cap is red."
+     "t": "No, it isn't. His hat is red."
     },
     {
      "s": "Saad",
@@ -3742,7 +3789,7 @@
     },
     {
      "s": "Saad",
-     "t": "She's got long hair and glasses."
+     "t": "She's got long hair and a scarf."
     }
    ],
    "grammar": {
@@ -3751,7 +3798,7 @@
     "examples": [
      "Is it Omar? Yes, it is.",
      "Is it your mum? No, it isn't.",
-     "She's got glasses. Who is it?"
+     "She's got a scarf. Who is it?"
     ]
    }
   },
@@ -3991,9 +4038,9 @@
      "ex": "I like chocolate ice cream."
     },
     {
-     "w": "cake",
-     "ar": "كعكة / كيك",
-     "ex": "We've got a birthday cake!"
+     "w": "doughnuts",
+     "ar": "دونات",
+     "ex": "I like chocolate doughnuts."
     },
     {
      "w": "chocolate",
@@ -4026,7 +4073,7 @@
     },
     {
      "s": "Reem",
-     "t": "I don't like biscuits. I like cake."
+     "t": "I don't like biscuits. I like doughnuts."
     },
     {
      "s": "Lama",
@@ -4046,7 +4093,7 @@
     "ar": "I love = أحب كثيراً، I like = أحب، I don't like = لا أحب.",
     "examples": [
      "I love ice cream!",
-     "I like cake.",
+     "I like doughnuts.",
      "I don't like biscuits."
     ]
    }
@@ -4152,9 +4199,9 @@
      "ex": "Let's have ice cream!"
     },
     {
-     "w": "cake",
-     "ar": "كعكة / كيك",
-     "ex": "I like chocolate cake."
+     "w": "cupcakes",
+     "ar": "كب كيك",
+     "ex": "Let's have chocolate cupcakes."
     }
    ],
    "dialogue": [
@@ -4181,6 +4228,14 @@
     {
      "s": "Omar",
      "t": "No, I don't. I like orange juice."
+    },
+    {
+     "s": "Sam",
+     "t": "OK, orange juice. And cupcakes?"
+    },
+    {
+     "s": "Omar",
+     "t": "Yes! Let's have chocolate cupcakes."
     }
    ],
    "grammar": {
@@ -4188,7 +4243,7 @@
     "ar": "نقول Let's have … لنختار طعاماً مع أصدقائنا.",
     "examples": [
      "Let's have pizza.",
-     "Let's have a chocolate cake.",
+     "Let's have chocolate cupcakes.",
      "Do you like lemonade? No, I don't."
     ]
    }
@@ -4298,9 +4353,9 @@
      "ex": "I can walk to school."
     },
     {
-     "w": "run",
-     "ar": "يركض",
-     "ex": "A horse can run fast."
+     "w": "a sheep",
+     "ar": "خروف",
+     "ex": "A sheep can walk, but it can't climb."
     }
    ],
    "dialogue": [
@@ -4330,7 +4385,7 @@
     },
     {
      "s": "Grandpa",
-     "t": "Yes. But the chicken can't swim."
+     "t": "Yes! The sheep can't jump. The chicken can't swim."
     }
    ],
    "grammar": {
@@ -4351,9 +4406,9 @@
      "ex": "The monkey is in the tree."
     },
     {
-     "w": "an elephant",
-     "ar": "فيل",
-     "ex": "An elephant has got big ears."
+     "w": "a hippo",
+     "ar": "فرس النهر",
+     "ex": "A hippo can swim."
     },
     {
      "w": "a giraffe",
@@ -4403,7 +4458,7 @@
     },
     {
      "s": "Omar",
-     "t": "Can elephants swim?"
+     "t": "Can hippos swim?"
     },
     {
      "s": "Dad",
@@ -4412,10 +4467,10 @@
    ],
    "grammar": {
     "title": "can't = can not",
-    "ar": "can't تعني لا يستطيع. نقول: An elephant can't jump.",
+    "ar": "can't تعني لا يستطيع. نقول: A hippo can't jump.",
     "examples": [
      "A monkey can climb.",
-     "An elephant can't jump.",
+     "A hippo can't jump.",
      "A giraffe can't climb."
     ]
    }
@@ -4443,20 +4498,20 @@
      "ex": "A crab is walking on the sand."
     },
     {
-     "w": "swim",
-     "ar": "يسبح",
-     "ex": "I can swim in the sea."
+     "w": "a fish",
+     "ar": "سمكة",
+     "ex": "A fish can swim fast."
     },
     {
-     "w": "jump",
-     "ar": "يقفز",
-     "ex": "Dolphins can jump out of the water."
+     "w": "a shell",
+     "ar": "صَدَفة / قوقعة",
+     "ex": "The crab has got a shell."
     }
    ],
    "dialogue": [
     {
      "s": "Ali",
-     "t": "Look, Noura! Dolphins!"
+     "t": "Look, Noura! Dolphins and fish!"
     },
     {
      "s": "Noura",
@@ -4484,7 +4539,7 @@
     },
     {
      "s": "Noura",
-     "t": "And look at the crab!"
+     "t": "And look at the crab! It's got a shell."
     }
    ],
    "grammar": {
@@ -4525,9 +4580,9 @@
      "ex": "I can run like a horse."
     },
     {
-     "w": "fly",
-     "ar": "يطير",
-     "ex": "I can't fly like a bird."
+     "w": "a snake",
+     "ar": "ثعبان",
+     "ex": "A snake can't jump."
     }
    ],
    "dialogue": [
@@ -4557,7 +4612,7 @@
     },
     {
      "s": "Sara",
-     "t": "No, I can't! Ha ha!"
+     "t": "No, I can't! Let's move like a snake!"
     }
    ],
    "grammar": {
@@ -4598,9 +4653,9 @@
      "ex": "It's big and grey. What is it?"
     },
     {
-     "w": "a monkey",
-     "ar": "قرد",
-     "ex": "The monkey can climb trees."
+     "w": "Good guess!",
+     "ar": "تخمين صحيح!",
+     "ex": "Is it a monkey? Yes! Good guess!"
     }
    ],
    "dialogue": [
@@ -4748,9 +4803,9 @@
      "ex": "This book is about animals."
     },
     {
-     "w": "in",
-     "ar": "في / داخل",
-     "ex": "My lunch is in my bag."
+     "w": "a lunch box",
+     "ar": "علبة الطعام",
+     "ex": "My lunch box is in my bag."
     }
    ],
    "dialogue": [
@@ -4764,7 +4819,7 @@
     },
     {
      "s": "Lama",
-     "t": "No, it isn't."
+     "t": "No, it isn't. My lunch box is there."
     },
     {
      "s": "Noura",
@@ -4890,9 +4945,9 @@
      "ex": "My teddy is on my bed."
     },
     {
-     "w": "under",
-     "ar": "تحت",
-     "ex": "The ball is under the sofa."
+     "w": "a toy box",
+     "ar": "صندوق الألعاب",
+     "ex": "Put the cars in the toy box."
     }
    ],
    "dialogue": [
@@ -4919,6 +4974,14 @@
     {
      "s": "Saud",
      "t": "They're next to the TV."
+    },
+    {
+     "s": "Saud",
+     "t": "Can I play with your cars?"
+    },
+    {
+     "s": "Hind",
+     "t": "Yes! Then put them in the toy box."
     }
    ],
    "grammar": {
@@ -4959,9 +5022,9 @@
      "ex": "Put your toys in the box."
     },
     {
-     "w": "shoes",
-     "ar": "حذاء",
-     "ex": "My shoes are next to the door."
+     "w": "the floor",
+     "ar": "الأرض",
+     "ex": "My books are on the floor."
     }
    ],
    "dialogue": [
@@ -5031,14 +5094,14 @@
      "ex": "Here it is! It's under the sofa."
     },
     {
-     "w": "next to",
-     "ar": "بجانب",
-     "ex": "The lamp is next to my bed."
+     "w": "gold",
+     "ar": "ذهبي",
+     "ex": "It's a small gold car."
     },
     {
-     "w": "a clue",
-     "ar": "تلميح",
-     "ex": "Here's a clue: it's in the kitchen."
+     "w": "Well done!",
+     "ar": "أحسنت!",
+     "ex": "You find it! Well done!"
     }
    ],
    "dialogue": [
@@ -5069,6 +5132,10 @@
     {
      "s": "Sara",
      "t": "Yes! It's in the box next to the lamp."
+    },
+    {
+     "s": "Lama",
+     "t": "Here it is! A gold car!"
     }
    ],
    "grammar": {
@@ -5348,13 +5415,13 @@
    },
    {
     "type": "mc",
-    "q": "Not old: it's ___.",
+    "q": "A man wears it on his head: ___",
     "options": [
-     "tall",
-     "short",
-     "new"
+     "a ghutra",
+     "a watch",
+     "a bag"
     ],
-    "answer": 2
+    "answer": 0
    }
   ],
   "0-5": [
@@ -5382,7 +5449,7 @@
    },
    {
     "type": "mc",
-    "q": "Is it the boy with the cap?",
+    "q": "Is it the boy with the hat?",
     "options": [
      "Yes, it does.",
      "Yes, it is.",
@@ -5392,7 +5459,7 @@
    },
    {
     "type": "mc",
-    "q": "He's got ___ cap.",
+    "q": "He's got ___ hat.",
     "options": [
      "a green",
      "green a",
@@ -5402,7 +5469,7 @@
    },
    {
     "type": "mc",
-    "q": "This is my mum. ___ glasses are new.",
+    "q": "This is my mum. ___ scarf is new.",
     "options": [
      "His",
      "She",
@@ -5582,9 +5649,9 @@
      "I",
      "love",
      "chocolate",
-     "cake."
+     "doughnuts."
     ],
-    "answer": "I love chocolate cake.",
+    "answer": "I love chocolate doughnuts.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5727,7 +5794,7 @@
    },
    {
     "type": "mc",
-    "q": "You and your friend choose food for the party: '___ a cake!'",
+    "q": "You and your friend choose food for the party: '___ cupcakes!'",
     "options": [
      "Here you are",
      "Thank you",
@@ -5814,11 +5881,11 @@
    },
    {
     "type": "mc",
-    "q": "Can a horse run?",
+    "q": "A farm animal with soft white wool: ___",
     "options": [
-     "Yes, it can.",
-     "Yes, it is.",
-     "Yes, it do."
+     "a sheep",
+     "a camel",
+     "a chicken"
     ],
     "answer": 0
    },
@@ -5859,12 +5926,12 @@
    {
     "type": "order",
     "words": [
-     "An",
-     "elephant",
+     "A",
+     "hippo",
      "can't",
      "jump."
     ],
-    "answer": "An elephant can't jump.",
+    "answer": "A hippo can't jump.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5889,7 +5956,7 @@
    },
    {
     "type": "mc",
-    "q": "Can an elephant jump?",
+    "q": "Can a hippo jump?",
     "options": [
      "Yes, it can.",
      "No, it isn't.",
@@ -5902,30 +5969,34 @@
    {
     "type": "order",
     "words": [
-     "Can",
-     "you",
-     "swim?"
+     "The",
+     "crab",
+     "has",
+     "got",
+     "a",
+     "shell."
     ],
-    "answer": "Can you swim?",
+    "answer": "The crab has got a shell.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "order",
     "words": [
-     "Dolphins",
-     "can",
-     "jump."
+     "A",
+     "fish",
+     "can't",
+     "walk."
     ],
-    "answer": "Dolphins can jump.",
+    "answer": "A fish can't walk.",
     "ar": "رتّب الجملة"
    },
    {
     "type": "mc",
-    "q": "Can you swim?",
+    "q": "Can a fish walk?",
     "options": [
-     "Yes, I can.",
-     "Yes, I am.",
-     "Yes, I do."
+     "No, it can't.",
+     "No, I don't.",
+     "Yes, I am."
     ],
     "answer": 0
    },
@@ -5969,12 +6040,12 @@
     "words": [
      "I",
      "can't",
-     "fly",
+     "walk",
      "like",
      "a",
-     "bird."
+     "snake."
     ],
-    "answer": "I can't fly like a bird.",
+    "answer": "I can't walk like a snake.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5989,9 +6060,9 @@
    },
    {
     "type": "mc",
-    "q": "Can you fly like a bird?",
+    "q": "Can a snake jump?",
     "options": [
-     "No, I can't.",
+     "No, it can't.",
      "No, I don't.",
      "No, it isn't."
     ],
@@ -6137,13 +6208,15 @@
    {
     "type": "order",
     "words": [
-     "It's",
+     "My",
+     "lunch",
+     "box",
+     "is",
      "in",
      "my",
-     "pencil",
-     "case."
+     "bag."
     ],
-    "answer": "It's in my pencil case.",
+    "answer": "My lunch box is in my bag.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6253,12 +6326,15 @@
    {
     "type": "order",
     "words": [
-     "They're",
-     "under",
+     "Put",
      "the",
-     "sofa."
+     "cars",
+     "in",
+     "the",
+     "toy",
+     "box."
     ],
-    "answer": "They're under the sofa.",
+    "answer": "Put the cars in the toy box.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6387,7 +6463,7 @@
    },
    {
     "type": "mc",
-    "q": "Is it next to the lamp?",
+    "q": "Is it in the box?",
     "options": [
      "Yes, it is.",
      "Yes, it can.",
