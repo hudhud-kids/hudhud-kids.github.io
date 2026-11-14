@@ -3450,7 +3450,7 @@ function startListening(fromTap){
   rec.onerror = e => { if(['not-allowed','service-not-allowed','audio-capture'].includes(e.error)){ if(fromTap){ micOK = false; } if(L && L.rec === rec){ L.rec = null; } setState('tap'); }
     else if(e.error === 'network') failed = true; };
   // listen again after a recognition problem (a pause if it failed at once, so a dead connection never spins)
-  const again = quick => { L.listenStart = 0; L.manualStop = false; clearTimeout(L.relT); L.relT = setTimeout(() => { if(L && !L.done && L.state === 'listening' && !L.rec) startListening(false); }, quick ? 1500 : 250); };
+  const again = quick => { L.listenStart = 0; L.manualStop = false; clearTimeout(L.relT); if(L.state === 'thinking') setState('listening'); /* the child tapped stop but nothing was understood: go back to listening, not a stuck "thinking" */ L.relT = setTimeout(() => { if(L && !L.done && L.state === 'listening' && !L.rec) startListening(false); }, quick ? 1500 : 250); };
   rec.onend = () => { if(!L || L.rec !== rec) return; L.rec = null; clearTimeout(L.silT);
     const t = text.trim(), unclear = L.unclear || 0;
     if(t && !(rec.lowConf && !L.manualStop && unclear < 2)){
