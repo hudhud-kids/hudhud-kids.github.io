@@ -2,6 +2,9 @@
 // POST /ai/claude  {t, body}  -> streams the Anthropic Messages API response (key read from the family's "apiKey" row)
 // POST /ai/aztoken {t}        -> {token, region}: a 10-minute Azure Speech token (key read from the family's "azure" row)
 // Deploy with "Verify JWT" OFF (the app authenticates with its own session token "t").
+// Daily caps (schema_9): per child and per family, requests/day and a rough token budget (sum of max_tokens).
+// Defaults below; a family can override them with the row "limits/@all" = {kidDay, famDay, kidTok, famTok}.
+// Over a cap -> 429 {error:{type:"daily_limit", scope:"kid"|"family"}}. Counters: tk_ai_usage, failures: tk_ai_err.
 import { createClient } from "npm:@supabase/supabase-js@2.45.4";
 
 const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
@@ -27,8 +30,8 @@ const rate = new Map<string, number[]>();
 async function session(t: string) {
   if (!/^[0-9a-f-]{36}$/i.test(t || "")) return null;
   const c = sessC.get(t); if (c && Date.now() - c.at < 60e3) return c;
-  const { data } = await sb.from("tk_sessions").select("family_id,role,kid_id").eq("token", t).maybeSingle();
-  if (!data) { sessC.delete(t); return null; }
+  const { data } = await sb.from("tk_sessions").select("family_id,role,kid_id,seen_at").eq("token", t).maybeSingle();
+  if (!data || Date.now() - Date.parse(data.seen_at) > 30 * 864e5) { sessC.delete(t); return null; } // idle 30 days = expired (schema_9)
   const s = { fam: data.family_id, role: data.role, kid: data.kid_id, at: Date.now() }; sessC.set(t, s); return s;
 }
 async function famRow(fam: string, path: string) {
@@ -40,7 +43,72 @@ function limited(t: string, perMin: number) {
   const now = Date.now(), a = (rate.get(t) || []).filter((x) => now - x < 60e3); a.push(now); rate.set(t, a); return a.length > perMin;
 }
 
+// ---------- daily caps: counted in memory, flushed to tk_ai_usage in batches (every ~20 requests or 30 s) ----------
+const DEF = { kidDay: 1500, famDay: 6000, kidTok: 2_000_000, famTok: 8_000_000 };
+type Ctr = { n: number; tok: number; dn: number; dtok: number; at: number }; // n/tok = known total (DB + unflushed), dn/dtok = unflushed
+const kidC = new Map<string, Ctr>(), famC = new Map<string, Ctr>(), errC = new Map<string, number>();
+let pending = 0, lastFlush = Date.now(), flushing: Promise<void> | null = null;
+const today = () => new Date(Date.now() + 3 * 3600e3).toISOString().slice(0, 10); // Riyadh day
+const who = (s: { role: string; kid: string | null }) => s.role === "kid" ? (s.kid || "") : s.role === "guardian" ? "@g:" + (s.kid || "") : "@parent";
+async function limitsOf(fam: string) {
+  const v = await famRow(fam, "limits/@all"); const o: any = v && typeof v === "object" ? v : {};
+  const num = (x: any, d: number) => (Number(x) > 0 ? Number(x) : d);
+  return { kidDay: num(o.kidDay, DEF.kidDay), famDay: num(o.famDay, DEF.famDay), kidTok: num(o.kidTok, DEF.kidTok), famTok: num(o.famTok, DEF.famTok) };
+}
+async function ctr(map: Map<string, Ctr>, key: string, load: () => Promise<{ n: number; tok: number }>) {
+  let c = map.get(key);
+  if (!c || Date.now() - c.at > 5 * 60e3) { // (re)read the shared total every 5 minutes; other instances add to it too
+    let base = { n: 0, tok: 0 }; try { base = await load(); } catch (e) { console.error("usage load", e); }
+    c = { n: base.n + (c ? c.dn : 0), tok: base.tok + (c ? c.dtok : 0), dn: c ? c.dn : 0, dtok: c ? c.dtok : 0, at: Date.now() }; map.set(key, c);
+  }
+  return c;
+}
+async function usage(fam: string, kid: string, day: string) {
+  const k = await ctr(kidC, fam + "|" + kid + "|" + day, async () => {
+    const { data } = await sb.from("tk_ai_usage").select("n,tok").eq("family_id", fam).eq("kid_id", kid).eq("day", day).maybeSingle();
+    return { n: data ? Number(data.n) : 0, tok: data ? Number(data.tok) : 0 };
+  });
+  const f = await ctr(famC, fam + "|" + day, async () => {
+    const { data } = await sb.from("tk_ai_usage").select("n,tok").eq("family_id", fam).eq("day", day);
+    return (data || []).reduce((a: any, r: any) => ({ n: a.n + Number(r.n), tok: a.tok + Number(r.tok) }), { n: 0, tok: 0 });
+  });
+  return { k, f };
+}
+function flush() {
+  if (flushing) return flushing;
+  const u: any[] = [], e: any[] = [];
+  for (const [key, c] of kidC) if (c.dn || c.dtok) { const [f, k, d] = key.split("|"); u.push({ f, k, d, n: c.dn, tok: c.dtok }); }
+  for (const [key, n] of errC) if (n) { const [d, r, st] = key.split("|"); e.push({ d, r, s: Number(st), n }); }
+  pending = 0; lastFlush = Date.now();
+  if (!u.length && !e.length) return Promise.resolve();
+  // take the deltas now; put them back if the write fails
+  const snapK = new Map([...kidC].map(([k, c]) => [k, { dn: c.dn, dtok: c.dtok }])), snapE = new Map(errC);
+  for (const c of kidC.values()) { c.dn = 0; c.dtok = 0; }
+  for (const c of famC.values()) { c.dn = 0; c.dtok = 0; }
+  errC.clear();
+  flushing = (async () => {
+    const { error } = await sb.rpc("tk_ai_bump", { u, e });
+    if (error) {
+      console.error("usage flush", error.message);
+      for (const [k, d] of snapK) { const c = kidC.get(k); if (c) { c.dn += d.dn; c.dtok += d.dtok; } }
+      for (const [k, n] of snapE) errC.set(k, (errC.get(k) || 0) + n);
+    }
+  })().catch((x) => console.error("usage flush", x)).finally(() => { flushing = null; });
+  return flushing;
+}
+function later(p: Promise<unknown>) { try { (globalThis as any).EdgeRuntime?.waitUntil?.(p); } catch { /* not on the edge runtime */ } }
+function tick() { pending++; if (pending >= 20 || Date.now() - lastFlush > 30e3) later(flush()); }
+function noteErr(route: string, status: number) {
+  const key = today() + "|" + route + "|" + status; errC.set(key, (errC.get(key) || 0) + 1);
+  console.error(`ai relay ${route} -> ${status}`); later(flush());
+}
+setInterval(() => { if (pending || errC.size) flush(); }, 30e3);
+
 Deno.serve(async (req) => {
+  try { return await handle(req); }
+  catch (e) { noteErr("crash", 500); console.error(e); return json(req, { error: { type: "server", message: "relay error" } }, 500); }
+});
+async function handle(req: Request) {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors(req) });
   if (req.method !== "POST") return json(req, { error: "method" }, 405);
   const route = new URL(req.url).pathname.split("/").pop();
@@ -53,21 +121,33 @@ Deno.serve(async (req) => {
     const body = b.body || {};
     if (!MODELS.has(body.model)) return json(req, { error: { type: "bad_model", message: "model not allowed" } }, 400);
     body.max_tokens = Math.min(Number(body.max_tokens) || 400, 4000);
-    const r = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify(body),
-    });
+    const day = today(), kid = who(s), lim = await limitsOf(s.fam), { k, f } = await usage(s.fam, kid, day);
+    const over = s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok) ? "kid"
+      : (f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok) ? "family" : "";
+    if (over) return json(req, { error: { type: "daily_limit", scope: over, message: over === "kid" ? "daily limit reached for this child" : "daily limit reached for this family" } }, 429);
+    k.n++; k.dn++; k.tok += body.max_tokens; k.dtok += body.max_tokens; f.n++; f.tok += body.max_tokens; tick();
+    let r: Response;
+    try {
+      r = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
+        body: JSON.stringify(body),
+      });
+    } catch (e) { noteErr("claude", 502); return json(req, { error: { type: "upstream", message: "could not reach the AI service" } }, 502); }
+    if (r.status >= 500) noteErr("claude", r.status);
     return new Response(r.body, { status: r.status, headers: { ...cors(req), "content-type": r.headers.get("content-type") || "application/json", "cache-control": "no-store" } });
   }
 
   if (route === "aztoken") {
     const c = azC.get(s.fam); if (c && Date.now() - c.at < 8 * 60e3) return json(req, { token: c.token, region: c.region });
     const az = await famRow(s.fam, "azure"); if (!az || !az.key || !az.region) return json(req, { error: "no_azure" }, 412);
-    const r = await fetch(`https://${az.region}.api.cognitive.microsoft.com/sts/v1.0/issueToken`, { method: "POST", headers: { "Ocp-Apim-Subscription-Key": az.key, "content-length": "0" } });
-    if (!r.ok) return json(req, { error: "azure " + r.status }, 502);
+    if (limited("az|" + b.t, 30)) return json(req, { error: { type: "rate_limit", message: "too many requests" } }, 429);
+    let r: Response;
+    try { r = await fetch(`https://${az.region}.api.cognitive.microsoft.com/sts/v1.0/issueToken`, { method: "POST", headers: { "Ocp-Apim-Subscription-Key": az.key, "content-length": "0" } }); }
+    catch (e) { noteErr("aztoken", 502); return json(req, { error: "azure unreachable" }, 502); }
+    if (!r.ok) { if (r.status >= 500) noteErr("aztoken", r.status); return json(req, { error: "azure " + r.status }, 502); }
     const token = await r.text(); azC.set(s.fam, { token, region: az.region, at: Date.now() });
     return json(req, { token, region: az.region });
   }
   return json(req, { error: "route" }, 404);
-});
+}
