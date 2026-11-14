@@ -323,10 +323,10 @@
      "frame": "I've been to ___ with my family."
     },
     {
-     "w": "abroad",
-     "def": "in or to another country",
-     "ar": "في الخارج / خارج البلد",
-     "frame": "I've never travelled abroad, but I want to go to ___."
+     "w": "all about",
+     "def": "everything about something",
+     "ar": "كل شيء عن",
+     "frame": "Tell me all about your trip to ___."
     },
     {
      "w": "a journey",
@@ -335,10 +335,10 @@
      "frame": "The journey to ___ takes about ___ hours."
     },
     {
-     "w": "the view",
-     "def": "what you can see from a place, like hills or the sea",
-     "ar": "المنظر / الإطلالة",
-     "frame": "The view from ___ is beautiful."
+     "w": "come home",
+     "def": "return to your house",
+     "ar": "يعود إلى البيت",
+     "frame": "My brother will come home from ___ next week."
     },
     {
      "w": "unforgettable",
@@ -430,7 +430,11 @@
      "Why do you think people like cool places in summer?"
     ]
    },
-   "exit": "Tell me two places you have been to and one place you have never been to."
+   "exit": "Tell me two places you have been to and one place you have never been to.",
+   "recycle": [
+    "abroad",
+    "the view"
+   ]
   },
   "0-2": {
    "objective": "Today you will say what you have already done and what you haven't done yet.",
@@ -563,10 +567,10 @@
      "frame": "I've fed ___ at a farm."
     },
     {
-     "w": "touch",
-     "def": "to put your hand on something",
-     "ar": "يلمس",
-     "frame": "I've never touched a ___."
+     "w": "gentle",
+     "def": "kind and calm, not rough",
+     "ar": "لطيف / هادئ",
+     "frame": "The ___ was very gentle with me."
     },
     {
      "w": "wild",
@@ -670,7 +674,10 @@
      "Why do you think people should protect wild animals?"
     ]
    },
-   "exit": "Tell me two things you have done with animals and one thing you have never done."
+   "exit": "Tell me two things you have done with animals and one thing you have never done.",
+   "recycle": [
+    "touch"
+   ]
   },
   "0-4": {
    "objective": "Today you will talk about skills you have learned and say when you learned them.",
@@ -951,10 +958,10 @@
      "frame": "___ is really relaxing for me."
     },
     {
-     "w": "tiring",
-     "def": "making you feel that you need to rest",
-     "ar": "مُتعِب",
-     "frame": "___ is fun, but it's tiring."
+     "w": "go cycling",
+     "def": "ride a bike for fun",
+     "ar": "نركب الدراجة",
+     "frame": "At the weekend, I like to go cycling in ___."
     }
    ],
    "dialogue": {
@@ -1034,7 +1041,10 @@
      "Do you prefer winter weekends or summer weekends? Why?"
     ]
    },
-   "exit": "Tell me which free-time activity you prefer and give two reasons."
+   "exit": "Tell me which free-time activity you prefer and give two reasons.",
+   "recycle": [
+    "tiring"
+   ]
   },
   "1-1": {
    "objective": "Today you will order food and say what you would prefer to eat and drink.",
@@ -1059,16 +1069,16 @@
      "frame": "My favourite meal of the day is ___."
     },
     {
-     "w": "share",
-     "def": "to have or use something together with another person",
-     "ar": "يتشارك / يتقاسم",
-     "frame": "Let's share a ___."
+     "w": "a portion",
+     "def": "the amount of food for one person",
+     "ar": "حصّة / طبق",
+     "frame": "I'd like a small portion of ___."
     },
     {
-     "w": "healthy",
-     "def": "good for your body",
-     "ar": "صحّي",
-     "frame": "___ is healthier than ___."
+     "w": "grilled",
+     "def": "cooked over a fire or under a hot grill",
+     "ar": "مشوي",
+     "frame": "My favourite grilled food is ___."
     },
     {
      "w": "fried",
@@ -1154,7 +1164,11 @@
      "Have you ever eaten with chopsticks? Was it easy?"
     ]
    },
-   "exit": "Order a meal from me. Use 'I'd rather …' once and 'I'd prefer …' once."
+   "exit": "Order a meal from me. Use 'I'd rather …' once and 'I'd prefer …' once.",
+   "recycle": [
+    "share",
+    "healthy"
+   ]
   },
   "1-2": {
    "objective": "Today you will choose between two holiday places and say which you would rather visit.",
@@ -1185,10 +1199,10 @@
      "frame": "I love the fresh air in ___."
     },
     {
-     "w": "crowded",
-     "def": "full of people",
-     "ar": "مزدحم",
-     "frame": "___ is always crowded at the weekend."
+     "w": "quiet",
+     "def": "with very little noise or few people",
+     "ar": "هادئ",
+     "frame": "I like quiet places like ___."
     },
     {
      "w": "Which do you prefer?",
@@ -1270,7 +1284,10 @@
      "Which do you prefer: a quiet beach or a busy one?"
     ]
    },
-   "exit": "Tell me where you would rather go on holiday and why."
+   "exit": "Tell me where you would rather go on holiday and why.",
+   "recycle": [
+    "crowded"
+   ]
   },
   "1-3": {
    "objective": "Today you will say which kinds of stories you prefer and explain why.",
@@ -1417,10 +1434,10 @@
      "frame": "___ is more comfortable than ___."
     },
     {
-     "w": "a ticket",
-     "def": "a small paper or card that shows you paid to travel or go in",
-     "ar": "تذكرة",
-     "frame": "I need a ticket for ___."
+     "w": "pay with a card",
+     "def": "use a bank card, not cash",
+     "ar": "يدفع بالبطاقة",
+     "frame": "At the ___, you can pay with a card."
     },
     {
      "w": "I'd prefer to …",
@@ -1506,7 +1523,10 @@
      "Would you rather take the metro or go by car? Why?"
     ]
    },
-   "exit": "Tell me two ways you can get to school and which one you prefer."
+   "exit": "Tell me two ways you can get to school and which one you prefer.",
+   "recycle": [
+    "a ticket"
+   ]
   },
   "1-5": {
    "objective": "Today you will discuss options for a class trip, give your preferences and help the class decide.",
@@ -1525,10 +1545,10 @@
      "frame": "I suggest ___."
     },
     {
-     "w": "prefer … to …",
-     "def": "to like one thing more than another thing",
-     "ar": "يفضّل ... على ...",
-     "frame": "I prefer ___ to ___ because ___."
+     "w": "Hands up",
+     "def": "raise your hand to vote or answer",
+     "ar": "ارفعوا أيديكم",
+     "frame": "Hands up for ___!"
     },
     {
      "w": "I don't mind.",
@@ -1626,7 +1646,10 @@
      "Which place in your city do you suggest for a class trip?"
     ]
    },
-   "exit": "Tell me which class trip you prefer, and suggest one more option."
+   "exit": "Tell me which class trip you prefer, and suggest one more option.",
+   "recycle": [
+    "prefer … to …"
+   ]
   },
   "2-0": {
    "objective": "Today you will say what you were doing when something surprising happened at home.",
@@ -1651,10 +1674,10 @@
      "frame": "My ___ was in a mess, so I tidied it."
     },
     {
-     "w": "get ready",
-     "def": "to prepare yourself or a place for something",
-     "ar": "يستعدّ / يجهّز",
-     "frame": "It takes me ___ minutes to get ready for school."
+     "w": "without calling",
+     "def": "without phoning first",
+     "ar": "دون اتصال مسبق",
+     "frame": "My ___ visited us without calling."
     },
     {
      "w": "arrive",
@@ -1663,10 +1686,10 @@
      "frame": "When I arrived at ___, I saw ___."
     },
     {
-     "w": "guests",
-     "def": "people you invite to your home",
-     "ar": "ضيوف",
-     "frame": "When we have guests, we serve ___."
+     "w": "until midnight",
+     "def": "up to 12 o'clock at night",
+     "ar": "حتى منتصف الليل",
+     "frame": "We were talking until midnight about ___."
     }
    ],
    "dialogue": {
@@ -1750,7 +1773,11 @@
      "Have you ever had a surprise visit? What happened?"
     ]
    },
-   "exit": "Tell me what you were doing yesterday at five o'clock, and what happened next."
+   "exit": "Tell me what you were doing yesterday at five o'clock, and what happened next.",
+   "recycle": [
+    "get ready",
+    "guests"
+   ]
   },
   "2-1": {
    "objective": "Today you will tell a story about bad weather and say what was happening when it started.",
@@ -2025,10 +2052,10 @@
      "frame": "We asked a security guard about ___."
     },
     {
-     "w": "worried",
-     "def": "feeling that something bad might happen",
-     "ar": "قلق",
-     "frame": "I was worried when ___."
+     "w": "nearly",
+     "def": "almost, but not completely",
+     "ar": "كدتُ / تقريباً",
+     "frame": "I nearly lost my ___ last week."
     },
     {
      "w": "luckily",
@@ -2114,7 +2141,10 @@
      "Have you ever found something that wasn't yours? What did you do?"
     ]
    },
-   "exit": "Tell me the story of something you lost. Use 'while' and 'luckily'."
+   "exit": "Tell me the story of something you lost. Use 'while' and 'luckily'.",
+   "recycle": [
+    "worried"
+   ]
   },
   "2-4": {
    "objective": "Today you will tell a funny story from school and say how people reacted.",
@@ -2265,10 +2295,10 @@
      "frame": "I once got lost in ___."
     },
     {
-     "w": "luckily",
-     "def": "used to say that something good happened by chance",
-     "ar": "لحسن الحظ",
-     "frame": "Luckily, my ___ helped me."
+     "w": "knew the way",
+     "def": "knew how to get to a place",
+     "ar": "كان يعرف الطريق",
+     "frame": "Luckily, ___ knew the way home."
     },
     {
      "w": "in the end",
@@ -2358,7 +2388,10 @@
      "Would you rather listen to a story or read one? Why?"
     ]
    },
-   "exit": "Tell me a short story with 'One day', 'suddenly' and 'in the end'."
+   "exit": "Tell me a short story with 'One day', 'suddenly' and 'in the end'.",
+   "recycle": [
+    "luckily"
+   ]
   },
   "3-0": {
    "objective": "Today you will talk about a weather forecast and predict what the weather will be like.",
@@ -2395,10 +2428,10 @@
      "frame": "The temperature today is about ___ degrees."
     },
     {
-     "w": "cloudy",
-     "def": "with a lot of clouds in the sky",
-     "ar": "غائم",
-     "frame": "When it's cloudy, I like to ___."
+     "w": "perfect for",
+     "def": "exactly right for",
+     "ar": "مثالي لـ",
+     "frame": "The weather tomorrow will be perfect for ___."
     }
    ],
    "dialogue": {
@@ -2474,7 +2507,10 @@
      "Do you think it will ever snow in your city?"
     ]
    },
-   "exit": "Tell me what the weather will probably be like tomorrow and what might happen."
+   "exit": "Tell me what the weather will probably be like tomorrow and what might happen.",
+   "recycle": [
+    "cloudy"
+   ]
   },
   "3-1": {
    "objective": "Today you will make predictions about life in the future and say how sure you are.",
@@ -2615,16 +2651,16 @@
      "frame": "I always keep my promises to ___."
     },
     {
-     "w": "on time",
-     "def": "at the right time, not late",
-     "ar": "في الوقت المحدد",
-     "frame": "I'll be home on time for ___."
+     "w": "say hello to",
+     "def": "give someone a friendly greeting from another person",
+     "ar": "يبلّغ السلام لـ",
+     "frame": "Please say hello to your ___ for me."
     },
     {
-     "w": "tidy up",
-     "def": "to make a place clean and neat",
-     "ar": "يرتّب",
-     "frame": "I'll tidy up my ___ after I play."
+     "w": "Last time",
+     "def": "the time before this one",
+     "ar": "المرة الماضية",
+     "frame": "Last time, I didn't ___."
     },
     {
      "w": "trust",
@@ -2706,7 +2742,11 @@
      "Have you ever made a promise that was hard to keep?"
     ]
    },
-   "exit": "Make two promises to me: one with 'I'll' and one with 'I won't'."
+   "exit": "Make two promises to me: one with 'I'll' and one with 'I won't'.",
+   "recycle": [
+    "on time",
+    "tidy up"
+   ]
   },
   "3-3": {
    "objective": "Today you will predict what your life might be like when you grow up.",
@@ -2851,10 +2891,10 @@
      "frame": "I'll lend you my ___."
     },
     {
-     "w": "keep a secret",
-     "def": "to not tell other people something private",
-     "ar": "يحفظ السرّ",
-     "frame": "I promise I'll keep your secret about ___."
+     "w": "give it back",
+     "def": "return something to the person who lent it",
+     "ar": "يُرجعه",
+     "frame": "I'll give it back on ___, I promise."
     },
     {
      "w": "explain",
@@ -2863,10 +2903,10 @@
      "frame": "I'll explain ___ to you after school."
     },
     {
-     "w": "nervous",
-     "def": "a little afraid before something important",
-     "ar": "متوتّر",
-     "frame": "I feel nervous before ___."
+     "w": "That's very kind.",
+     "def": "a polite way to thank someone for help",
+     "ar": "هذا لطف كبير منك.",
+     "frame": "You'll ___ for me? That's very kind."
     }
    ],
    "dialogue": {
@@ -2946,7 +2986,11 @@
      "What makes someone a good friend?"
     ]
    },
-   "exit": "Your friend is nervous about a test. Make two offers or promises to help."
+   "exit": "Your friend is nervous about a test. Make two offers or promises to help.",
+   "recycle": [
+    "keep a secret",
+    "nervous"
+   ]
   },
   "3-5": {
    "objective": "Today you will make predictions about our planet and promise what you will do to help it.",
@@ -2977,16 +3021,16 @@
      "frame": "I'd like to plant a tree in ___."
     },
     {
-     "w": "turn off",
-     "def": "to stop a machine or a light working",
-     "ar": "يُطفئ",
-     "frame": "I promise I'll turn off the ___ when I leave the room."
+     "w": "air conditioner",
+     "def": "a machine that makes a room cool",
+     "ar": "المكيّف",
+     "frame": "I turn off the air conditioner when ___."
     },
     {
-     "w": "I promise I'll …",
-     "def": "I'm telling you that I will really do this",
-     "ar": "أعدك أنني سـ...",
-     "frame": "For the planet, I promise I'll ___."
+     "w": "a green promise",
+     "def": "a promise to help the planet",
+     "ar": "وعد أخضر",
+     "frame": "My green promise is: I will ___."
     }
    ],
    "dialogue": {
@@ -3066,7 +3110,11 @@
      "Do you think people will use less plastic in the future? Why?"
     ]
    },
-   "exit": "Make one prediction about our planet and one green promise."
+   "exit": "Make one prediction about our planet and one green promise.",
+   "recycle": [
+    "turn off",
+    "I promise I'll …"
+   ]
   }
  },
  "kits": {
@@ -3147,9 +3195,9 @@
      "ex": "I've been to Jeddah three times."
     },
     {
-     "w": "abroad",
-     "ar": "في الخارج / خارج البلد",
-     "ex": "My uncle often travels abroad for work."
+     "w": "all about",
+     "ar": "كل شيء عن",
+     "ex": "Tell me all about Taif!"
     },
     {
      "w": "a journey",
@@ -3157,9 +3205,9 @@
      "ex": "The journey from Riyadh to Jeddah is very long by car."
     },
     {
-     "w": "the view",
-     "ar": "المنظر / الإطلالة",
-     "ex": "We took photos of the view from the mountain."
+     "w": "come home",
+     "ar": "يعود إلى البيت",
+     "ex": "He'll come home next week."
     },
     {
      "w": "unforgettable",
@@ -3203,7 +3251,7 @@
     },
     {
      "s": "Reem",
-     "t": "He's gone to Jeddah with my uncle."
+     "t": "He's gone to Jeddah. He'll come home next week."
     }
    ],
    "grammar": {
@@ -3293,9 +3341,9 @@
      "ex": "We fed the ducks at the park."
     },
     {
-     "w": "touch",
-     "ar": "يلمس",
-     "ex": "Don't touch the cat. It's asleep."
+     "w": "gentle",
+     "ar": "لطيف / هادئ",
+     "ex": "The baby camel was very gentle."
     },
     {
      "w": "wild",
@@ -3329,7 +3377,7 @@
     },
     {
      "s": "Noura",
-     "t": "I touched a baby camel too!"
+     "t": "It was very gentle. I touched a baby camel too!"
     },
     {
      "s": "Lily",
@@ -3528,9 +3576,9 @@
      "ex": "Reading a book before bed is relaxing."
     },
     {
-     "w": "tiring",
-     "ar": "مُتعِب",
-     "ex": "The long walk was tiring."
+     "w": "go cycling",
+     "ar": "نركب الدراجة",
+     "ex": "Do you want to go cycling on the corniche?"
     }
    ],
    "dialogue": [
@@ -3587,13 +3635,13 @@
      "ex": "Lunch is the biggest meal in our house."
     },
     {
-     "w": "share",
-     "ar": "يتشارك / يتقاسم",
-     "ex": "Let's share a big pizza."
+     "w": "a portion",
+     "ar": "حصّة / طبق",
+     "ex": "Yes, but only a small portion!"
     },
     {
-     "w": "healthy",
-     "ar": "صحّي",
+     "w": "grilled",
+     "ar": "مشوي",
      "ex": "Grilled chicken is a healthy choice."
     },
     {
@@ -3661,9 +3709,9 @@
      "ex": "Let's go for a walk and get some fresh air."
     },
     {
-     "w": "crowded",
-     "ar": "مزدحم",
-     "ex": "The beach was too crowded."
+     "w": "quiet",
+     "ar": "هادئ",
+     "ex": "Some beaches in Umluj are quiet."
     },
     {
      "w": "Which do you prefer?",
@@ -3799,9 +3847,9 @@
      "ex": "The new bus seats are very comfortable."
     },
     {
-     "w": "a ticket",
-     "ar": "تذكرة",
-     "ex": "You can buy a metro ticket with a bank card."
+     "w": "pay with a card",
+     "ar": "يدفع بالبطاقة",
+     "ex": "You can pay with a card at the station."
     },
     {
      "w": "I'd prefer to …",
@@ -3828,11 +3876,11 @@
     },
     {
      "s": "Abdullah",
-     "t": "Is the museum near the station?"
+     "t": "How do we pay? Is the museum near the station?"
     },
     {
      "s": "Faisal",
-     "t": "Yes, it's ten minutes on foot."
+     "t": "You pay with a card. And it's ten minutes on foot."
     },
     {
      "s": "Abdullah",
@@ -3862,9 +3910,9 @@
      "ex": "I suggest the science centre."
     },
     {
-     "w": "prefer … to …",
-     "ar": "يفضّل ... على ...",
-     "ex": "I prefer farms to zoos."
+     "w": "Hands up",
+     "ar": "ارفعوا أيديكم",
+     "ex": "Hands up for the science centre!"
     },
     {
      "w": "I don't mind.",
@@ -3940,9 +3988,9 @@
      "ex": "The kitchen was in a mess after the party."
     },
     {
-     "w": "get ready",
-     "ar": "يستعدّ / يجهّز",
-     "ex": "We got ready very quickly."
+     "w": "without calling",
+     "ar": "دون اتصال مسبق",
+     "ex": "They arrived from Hail without calling."
     },
     {
      "w": "arrive",
@@ -3950,9 +3998,9 @@
      "ex": "Our guests arrived at seven."
     },
     {
-     "w": "guests",
-     "ar": "ضيوف",
-     "ex": "We gave our guests coffee and dates."
+     "w": "until midnight",
+     "ar": "حتى منتصف الليل",
+     "ex": "We were talking until midnight."
     }
    ],
    "dialogue": [
@@ -3970,7 +4018,7 @@
     },
     {
      "s": "Noura",
-     "t": "My aunt and her children! It was a big surprise."
+     "t": "My aunt and her children! They came without calling."
     },
     {
      "s": "Sara",
@@ -4152,9 +4200,9 @@
      "ex": "The security guard helped the lost boy."
     },
     {
-     "w": "worried",
-     "ar": "قلق",
-     "ex": "Mum was worried because I was late."
+     "w": "nearly",
+     "ar": "كدتُ / تقريباً",
+     "ex": "I nearly lost all my money!"
     },
     {
      "w": "luckily",
@@ -4169,7 +4217,7 @@
     },
     {
      "s": "Reem",
-     "t": "Yes, but while I was trying on shoes, I dropped my purse."
+     "t": "Yes, but I nearly lost my money! While I was trying on shoes, I dropped my purse."
     },
     {
      "s": "Hana",
@@ -4290,9 +4338,9 @@
      "ex": "We got lost in the old part of the city."
     },
     {
-     "w": "luckily",
-     "ar": "لحسن الحظ",
-     "ex": "Luckily, the shop was still open."
+     "w": "knew the way",
+     "ar": "كان يعرف الطريق",
+     "ex": "The camels knew the way home."
     },
     {
      "w": "in the end",
@@ -4368,9 +4416,9 @@
      "ex": "The temperature will reach 40 degrees."
     },
     {
-     "w": "cloudy",
-     "ar": "غائم",
-     "ex": "It's cloudy, but it isn't raining."
+     "w": "perfect for",
+     "ar": "مثالي لـ",
+     "ex": "That's perfect for a picnic!"
     }
    ],
    "dialogue": [
@@ -4496,14 +4544,14 @@
      "ex": "Dad always keeps his promises."
     },
     {
-     "w": "on time",
-     "ar": "في الوقت المحدد",
-     "ex": "The bus arrived on time."
+     "w": "say hello to",
+     "ar": "يبلّغ السلام لـ",
+     "ex": "Say hello to Ziyad's mother for me."
     },
     {
-     "w": "tidy up",
-     "ar": "يرتّب",
-     "ex": "Please tidy up your toys."
+     "w": "Last time",
+     "ar": "المرة الماضية",
+     "ex": "Last time, you didn't keep your promise."
     },
     {
      "w": "trust",
@@ -4534,7 +4582,7 @@
     },
     {
      "s": "Mum",
-     "t": "OK. But be home on time."
+     "t": "OK. Be home on time, and say hello to Ziyad's mother."
     },
     {
      "s": "Fahad",
@@ -4638,9 +4686,9 @@
      "ex": "Can you lend me a pencil?"
     },
     {
-     "w": "keep a secret",
-     "ar": "يحفظ السرّ",
-     "ex": "Can you keep a secret?"
+     "w": "give it back",
+     "ar": "يُرجعه",
+     "ex": "I'll give it back on Sunday."
     },
     {
      "w": "explain",
@@ -4648,9 +4696,9 @@
      "ex": "Can you explain this question to me?"
     },
     {
-     "w": "nervous",
-     "ar": "متوتّر",
-     "ex": "I'm nervous about my maths test."
+     "w": "That's very kind.",
+     "ar": "هذا لطف كبير منك.",
+     "ex": "That's very kind. Thank you!"
     }
    ],
    "dialogue": [
@@ -4676,11 +4724,11 @@
     },
     {
      "s": "Lina",
-     "t": "Please don't tell the others I'm nervous."
+     "t": "That's very kind. I'll give it back on Sunday."
     },
     {
      "s": "Huda",
-     "t": "I won't tell anyone, I promise."
+     "t": "No problem. Good luck in the test!"
     }
    ],
    "grammar": {
@@ -4716,14 +4764,14 @@
      "ex": "We planted a tree in our garden."
     },
     {
-     "w": "turn off",
-     "ar": "يُطفئ",
-     "ex": "Turn off the lights, please."
+     "w": "air conditioner",
+     "ar": "المكيّف",
+     "ex": "I turn off the air conditioner when I leave my room."
     },
     {
-     "w": "I promise I'll …",
-     "ar": "أعدك أنني سـ...",
-     "ex": "I promise I'll walk to the shop."
+     "w": "a green promise",
+     "ar": "وعد أخضر",
+     "ex": "What's your green promise, Nasser?"
     }
    ],
    "dialogue": [
@@ -4842,13 +4890,14 @@
    {
     "type": "order",
     "words": [
-     "Have",
-     "you",
-     "ever",
-     "travelled",
-     "abroad?"
+     "Tell",
+     "me",
+     "all",
+     "about",
+     "your",
+     "trip."
     ],
-    "answer": "Have you ever travelled abroad?",
+    "answer": "Tell me all about your trip.",
     "ar": "رتّب الجملة"
    },
    {
@@ -4868,7 +4917,7 @@
     "options": [
      "spicy",
      "unforgettable",
-     "abroad",
+     "quiet",
      "asleep"
     ],
     "answer": 1
@@ -4950,13 +4999,14 @@
    {
     "type": "order",
     "words": [
-     "I've",
-     "never",
-     "touched",
-     "a",
-     "snake."
+     "The",
+     "baby",
+     "camel",
+     "was",
+     "very",
+     "gentle."
     ],
-    "answer": "I've never touched a snake.",
+    "answer": "The baby camel was very gentle.",
     "ar": "رتّب الجملة"
    },
    {
@@ -5175,8 +5225,8 @@
     "q": "Something that makes you feel calm is ___.",
     "options": [
      "relaxing",
-     "tiring",
-     "crowded",
+     "noisy",
+     "busy",
      "spicy"
     ],
     "answer": 0
@@ -5249,7 +5299,7 @@
      "grilled",
      "fried",
      "fresh",
-     "healthy"
+     "frozen"
     ],
     "answer": 1
    }
@@ -5300,14 +5350,14 @@
    },
    {
     "type": "mc",
-    "q": "'The beach was full of people. It was very ___.'",
+    "q": "'There were only a few people on the beach. It was very ___.'",
     "options": [
      "quiet",
-     "fresh",
-     "relaxing",
-     "crowded"
+     "busy",
+     "noisy",
+     "full"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5424,14 +5474,14 @@
    },
    {
     "type": "mc",
-    "q": "You need a ___ to travel on the metro.",
+    "q": "At the metro station, you can ___.",
     "options": [
-     "traffic jam",
-     "driver",
-     "view",
-     "ticket"
+     "pay with a card",
+     "take off",
+     "go snorkelling",
+     "have a vote"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5549,14 +5599,14 @@
    },
    {
     "type": "mc",
-    "q": "People you invite to your home are ___.",
+    "q": "'They came ___, so we weren't ready.'",
     "options": [
-     "pilots",
-     "drivers",
-     "doctors",
-     "guests"
+     "without calling",
+     "until midnight",
+     "in a mess",
+     "on foot"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
@@ -5751,12 +5801,12 @@
    },
    {
     "type": "mc",
-    "q": "'I was very ___ because I couldn't find my phone.'",
+    "q": "'I ___ lost my phone, but I found it in my bag.'",
     "options": [
-     "worried",
-     "lucky",
-     "relaxing",
-     "comfortable"
+     "nearly",
+     "never",
+     "already",
+     "ever"
     ],
     "answer": 0
    }
@@ -5857,14 +5907,14 @@
    },
    {
     "type": "mc",
-    "q": "Which word means 'something good happened by chance'?",
+    "q": "'The camels ___ the way home, so Grandpa followed them.'",
     "options": [
-     "Suddenly",
-     "At first",
-     "Luckily",
-     "In the end"
+     "knew",
+     "know",
+     "knowed",
+     "knowing"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6022,10 +6072,12 @@
      "I'll",
      "be",
      "home",
-     "on",
-     "time."
+     "at",
+     "half",
+     "past",
+     "six."
     ],
-    "answer": "I promise I'll be home on time.",
+    "answer": "I promise I'll be home at half past six.",
     "ar": "رتّب الجملة"
    },
    {
@@ -6176,40 +6228,40 @@
    },
    {
     "type": "mc",
-    "q": "When you don't tell other people something private, you ___ a secret.",
+    "q": "'I'll give it ___ on Sunday, I promise.'",
     "options": [
-     "tell",
-     "lend",
-     "count",
-     "keep"
+     "back",
+     "up",
+     "off",
+     "away"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "mc",
-    "q": "'I always feel ___ before a test. My hands get cold.'",
+    "q": "A: I'll lend you my notebook. B: ___",
     "options": [
-     "relaxed",
-     "nervous",
-     "proud",
-     "lucky"
+     "That's very kind.",
+     "You're welcome.",
+     "No, I don't.",
+     "Never mind."
     ],
-    "answer": 1
+    "answer": 0
    }
   ],
   "3-5": [
    {
     "type": "order",
     "words": [
-     "I",
-     "promise",
-     "I'll",
-     "turn",
-     "off",
-     "the",
-     "lights."
+     "We're",
+     "going",
+     "to",
+     "make",
+     "a",
+     "green",
+     "promise."
     ],
-    "answer": "I promise I'll turn off the lights.",
+    "answer": "We're going to make a green promise.",
     "ar": "رتّب الجملة"
    },
    {
