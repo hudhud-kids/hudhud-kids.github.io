@@ -361,6 +361,11 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .rc-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.72rem;color:var(--muted)}.rc-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}
 .rc-list{margin:0;padding-inline-start:18px;display:grid;gap:4px;font-size:.93rem;line-height:1.8}
 .rc-home{background:var(--brand-soft)}
+.rc-kpis.k4{grid-template-columns:repeat(4,1fr);padding-inline:4px}.rc-kpis.k4 .rc-donut{width:min(76px,19vw)}.rc-kpis.k4 .rc-kpi b{font-size:.8rem}
+.rc-flag{margin:10px 16px 0;padding:8px 12px;border-radius:12px;background:var(--brand-soft);font-size:.85rem;line-height:1.8}
+.rc-meas,.rc-pron{display:flex;flex-wrap:wrap;gap:6px}.rc-meas span,.rc-pron span{background:var(--bg);border-radius:99px;padding:2px 10px;font-size:.78rem}
+.rc-pron span{font-family:var(--en);font-weight:700}.rc-pron .good{color:var(--good)}.rc-pron .mid{color:#B7791F}.rc-pron .bad{color:var(--bad)}
+.rc-words span.old{background:var(--brand-soft);color:var(--brand-ink)}
 .rc-foot{padding:8px 16px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--line);display:flex;align-items:center;gap:6px}
 .acc{width:100%;border-collapse:collapse}
 .acc td,.acc th{padding:8px;border-top:1px solid var(--line);text-align:right}
@@ -678,10 +683,13 @@ const LEVEL_INFO = {
  1:['Pre-A1','10-15','Pre A1 Starters'], 2:['Pre-A1','16-21','Pre A1 Starters'], 3:['A1','22-25','A1 Movers'], 4:['A1','26-29','A1 Movers'],
  5:['A2','30-32','A2 Flyers'], 6:['A2','33-35','A2 Flyers / A2 Key'], 7:['A2+','36-42','A2 Key'], 8:['B1','43-46','B1 Preliminary'],
  9:['B1','47-50','B1 Preliminary'], 10:['B1+','51-54','B1 Preliminary'], 11:['B1+','55-58','B1 Preliminary · IELTS 4.5-5'], 12:['B2','59-62','B2 First'],
- 13:['B2','63-66','B2 First · IELTS 5.5-6'], 14:['B2+','67-71','B2 First'], 15:['B2+','72-75','B2 First · IELTS 6.5'], 16:['C1','76-80','C1 Advanced'],
- 17:['C1','81-84','C1 Advanced · IELTS 7-7.5'], 18:['C2','85-87','C2 Proficiency · Academic'], 19:['C2','88-89','C2 Proficiency · Debate'], 20:['C2','90','C2 Proficiency · Mastery']};
+ 13:['B2','63-66','B2 First · IELTS 5.5-6'], 14:['B2+','67-71','B2 First'], 15:['B2+','72-75','B2 First · IELTS 6.5'],
+ /* 16-20: an honest name, no C1/C2 or exam-equivalence claim: an advanced speaking track that builds B2+ -> C1 skills (GSE kept only as internal data for placement) */
+ 16:['B2+ → C1','76-80','Advanced speaking track 1'], 17:['B2+ → C1','81-84','Advanced speaking track 2'], 18:['B2+ → C1','85-87','Advanced speaking track 3'], 19:['B2+ → C1','88-89','Advanced speaking track 4'], 20:['B2+ → C1','90','Advanced speaking track 5']};
 const LEVEL_CEFR = Object.fromEntries(Object.entries(LEVEL_INFO).map(([k,v]) => [k, v[0]]));
-const levelTag = l => `${LEVEL_INFO[l][0]} · GSE ${LEVEL_INFO[l][1]} · ${LEVEL_INFO[l][2]}`;
+const levelTag = l => l > 15 ? `${LEVEL_INFO[l][2]} · B2+ → C1 skills` : `${LEVEL_INFO[l][0]} · GSE ${LEVEL_INFO[l][1]} · ${LEVEL_INFO[l][2]}`;
+/* Arabic name of the advanced track (levels 16-20), e.g. «مسار المحادثة المتقدمة ٢»; null for levels 1-15 */
+const levelNameAr = l => l > 15 && l <= 20 ? `مسار المحادثة المتقدمة ${'١٢٣٤٥'[l - 16]}` : null;
 const CURR_BUILTIN = {
  5:[
   {t:'All About Me',ar:'كل شيء عني',e:'🧒',lessons:[
@@ -961,20 +969,23 @@ function reportCardHTML(r){
     <header class="rc-h"><div class="rc-bird">${typeof hoopoeSVG === 'function' ? hoopoeSVG('happy') : '🐦'}</div>
       <div><div class="rc-t">${esc(r.title || '')}</div><div class="rc-d">${date}${r.lessonNo ? ` · الحصة ${Number(r.lessonNo)}` : ''}${r.level ? ` · المستوى ${Number(r.level)}` : ''}</div></div>
       <div class="rc-ring" style="--p:${sc}"><div><b>${sc}%</b><small>النتيجة</small></div></div></header>
-    <div class="rc-kpis">
+    ${r.flags && r.flags.length ? `<div class="rc-flag">🔔 <b>ملاحظة مهمة لولي الأمر:</b> ${bidiAr(r.flagNote || 'ذكر طفلك في الحصة شيئاً يستحق أن تسأله عنه بهدوء وتطمئن عليه.')}</div>` : ''}
+    <div class="rc-kpis${r.pron && num(r.pron.avg) != null ? ' k4' : ''}">
       ${ring(r.score, 'النتيجة', '#F05A38', delta(r.score, prev && prev.score))}
       ${ring(r.talkPct, 'نسبة كلماته', '#3B7BE8', `<span class="rc-goal">الهدف <bdi dir="ltr">${num(r.talkGoal) || 40}%</bdi></span>${delta(r.talkPct, prev && prev.talkPct)}`, num(r.talkGoal) || 40)}
-      ${ring(r.confidence, 'الثقة', '#E8A317', delta(r.confidence, prev && prev.confidence))}
+      ${ring(r.confidence, 'الثقة', '#E8A317', `${r.confMeasured ? '<span class="rc-goal">📏 مقاسة</span>' : ''}${delta(r.confidence, prev && prev.confidence)}`)}
+      ${r.pron && num(r.pron.avg) != null ? ring(r.pron.avg, 'النطق', '#14B8A6', delta(r.pron.avg, prev && prev.pron && prev.pron.avg)) : ''}
     </div>
     <div class="rc-stats"><div><b>⏱️ ${Number(r.minutes) || 0}</b><span>دقيقة</span></div><div><b>${num(r.avgWords) != null ? `<bdi dir="ltr">${num(r.avgWords)}</bdi>` : '—'}</b><span>كلمة في كل رد</span></div><div><b style="color:var(--gold);direction:ltr">${(() => { const st = Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)); return '★'.repeat(st) + '☆'.repeat(3 - st); })()}</b><span>التقييم</span></div></div>
-    ${r.v2 ? `<div class="rc-v2"><span>📚 التعابير <b><bdi dir="ltr">${Number(r.v2.exp)||0}/${Number(r.v2.of)||6}</bdi></b></span><span>🎭 المواقف <b><bdi dir="ltr">${Number(r.v2.so)||0}/3</bdi></b></span>${r.v2.stars ? `<span>⭐ نجوم الحصة <b><bdi dir="ltr">${Number(r.v2.stars)}</bdi></b></span>` : ''}<span>🎯 هدف الدرس <b>${{yes:'تحقق ✓', partly:'جزئياً', no:'يحتاج إعادة'}[r.v2.exit] || '—'}</b></span>${r.v2.fn ? `<span class="en">${esc(r.v2.fn)}</span>` : ''}${r.v2.review ? '<span>🔁 حصة مراجعة</span>' : ''}</div>` : ''}
+    ${r.v2 ? `<div class="rc-v2"><span>📚 التعابير <b><bdi dir="ltr">${Number(r.v2.exp)||0}/${Number(r.v2.of)||6}</bdi></b></span><span>🎭 المواقف <b><bdi dir="ltr">${Number(r.v2.so)||0}/3</bdi></b></span>${r.v2.stars ? `<span>⭐ نجوم الحصة <b><bdi dir="ltr">${Number(r.v2.stars)}</bdi></b></span>` : ''}<span>🎯 هدف الدرس <b>${{yes:'تحقق ✓', partly:'جزئياً', no:'يحتاج إعادة'}[r.v2.exit] || '—'}</b>${r.v2.judge && r.v2.judge.exit ? ' · <small>بتقييم مستقل</small>' : ''}</span>${(r.v2.rec || []).length ? `<span>🔁 مراجعة تعابير سابقة <b><bdi dir="ltr">${(r.v2.recUsed || []).length}/${r.v2.rec.length}</bdi></b></span>` : ''}${r.v2.fn ?`<span class="en">${esc(r.v2.fn)}</span>` : ''}${r.v2.review ? '<span>🔁 حصة مراجعة</span>' : ''}</div>` : ''}
     ${sec('💬', 'ملخص المعلمة', p(r.parentNote))}
     ${sec('🗣️', 'حصته من كلمات الحصة', p(r.talkNote))}
-    ${sec('💪', 'الثقة في الكلام', p(r.confidenceNote))}
+    ${sec('💪', 'الثقة في الكلام', (() => { const m = r.confMeasured; return p(r.confidenceNote) + (m ? `<div class="rc-meas">${m.medDelayMs != null ? `<span>⏳ يبدأ الرد بعد <bdi dir="ltr">${(m.medDelayMs / 1000).toFixed(1)}</bdi> ث</span>` : ''}<span>💬 <bdi dir="ltr">${num(m.avgWords) || 0}</bdi> كلمة بالرد</span><span>✅ جمل كاملة <bdi dir="ltr">${num(m.fullPct) || 0}%</bdi></span>${m.silent ? `<span>🤫 سكت <bdi dir="ltr">${num(m.silent)}</bdi> مرة</span>` : ''}</div>` : ''); })())}
+    ${r.pron && (r.pron.items || []).length ? sec('🗣️', 'نطق تعابير اليوم', `<div class="rc-pron">${r.pron.items.slice(0, 6).map(x => `<span class="${num(x.score) >= 80 ? 'good' : num(x.score) >= 60 ? 'mid' : 'bad'}"><bdi dir="ltr">${esc(x.w)}</bdi> <b><bdi dir="ltr">${Math.round(num(x.score) || 0)}%</bdi></b></span>`).join('')}</div>`) : ''}
     ${fitTxt || r.levelNote ? sec('🎯', 'هل الدرس مناسب لمستواه؟', `${fitTxt ? `<span class="chip ${fitTxt[1]} rc-fit">${fitTxt[2]} ${fitTxt[0]}</span>` : ''}${p(r.levelNote)}`) : ''}
     ${trend}
     ${(r.strengths || []).length ? sec('🌟', 'نقاط القوة', `<ul class="rc-list">${r.strengths.map(x => `<li>${bidiAr(x)}</li>`).join('')}</ul>`) : ''}
-    ${words.length ? sec('📚', 'كلمات تعلّمها', `<div class="rc-words">${words.slice(0, 12).map(w => `<span>${esc(w)}</span>`).join('')}</div>`) : ''}
+    ${words.length || (r.v2 && (r.v2.recUsed || []).length) ? sec('📚', 'كلمات تعلّمها', `<div class="rc-words">${words.slice(0, 12).map(w => `<span>${esc(w)}</span>`).join('')}${((r.v2 && r.v2.recUsed) || []).map(w => `<span class="old" title="تعبير من درس سابق استخدمه صح">🔁 ${esc(w)}</span>`).join('')}</div>`) : ''}
     ${fx.length ? sec('✏️', `تصحيحات (${fx.length})`, `<ul class="rc-fix">${fx.slice(0, 3).map(fixLi).join('')}</ul>${fx.length > 3 ? `<details><summary>عرض الباقي (${fx.length - 3}) ▾</summary><ul class="rc-fix" style="margin-top:8px">${fx.slice(3).map(fixLi).join('')}</ul></details>` : ''}`) : ''}
     ${r.homePractice ? `<div class="rc-sec rc-home"><h4>🏠 تدريب البيت هذا الأسبوع</h4>${p(r.homePractice)}</div>` : ''}
     <footer class="rc-foot"><b style="color:var(--brand)">هدهد</b> · تقرير المعلمة بعد الحصة · يُحدَّث تلقائياً</footer>
@@ -1071,19 +1082,26 @@ function v2AltTheme(k, plan){ const n = (plan.ui||0) * 6 + (plan.li||0), ints = 
   if(ints.length){ const t = ints[n % ints.length]; return {en:t, ar:'من اهتماماتك', e:(V2_EMO.find(([re]) => re.test(t)) || [0, '⭐'])[1]}; }
   const a = V2_ALT[n % V2_ALT.length]; return {en:a[0], ar:a[2], e:a[1]}; }
 const v2First = s => { const t = String(s || '').split(/(?<=[.!?])\s+/)[0]; return t.length > 90 ? t.slice(0, 87) + '…' : t; };
+/* Step timings: every format plans at most 24 min of the 25-min lesson (usual script: 6 expressions + 3 speak-out questions):
+   classic/mission 23.3 min (levels 1-6: 22.1), story 23.3 (short warm-up + short culture), game show 22.6 (short culture). V2_PLAN_MAX guards longer scripts. */
+const V2_PLAN_MAX = 24 * 60;
 function v2Steps(sc, o){
   o = o || {}; const fmt = o.fmt || 'classic', games = o.games || V2_GAMES, quiz = o.quiz || V2_QUIZ, small = (o.level || 99) <= 6;
   const st = [{k:'obj', st:0, sec:30, en:fmt === 'mission' ? 'Mission briefing (objective + the 3 goals)' : fmt === 'game' ? 'Quiz show opening (objective)' : 'Objective'},
-    {k:'warm', st:1, sec:fmt === 'story' ? 70 : 120, en:'Warm-up (the child may tap a topic card)'}];
-  if(fmt === 'story') st.push({k:'story', st:1, sec:120, lab:'القصة', en:'Mini-story with a cliff-hanger, then the child predicts'});
+    {k:'warm', st:1, sec:fmt === 'story' ? 60 : 100, en:'Warm-up (the child may tap a topic card)'}];
+  if(fmt === 'story') st.push({k:'story', st:1, sec:110, lab:'القصة', en:'Mini-story with a cliff-hanger, then the child predicts'});
   const ex = sc.expressions || [];
   for(let r = 0; r * 2 < ex.length; r++){ const pair = ex.slice(r*2, r*2+2).map(e => e.w), g = (fmt === 'game' ? quiz : games)[r % 3];
-    st.push({k:'exp', i:r, pair:[r*2, r*2+1].filter(x => x < ex.length), game:g, st:2, sec:fmt === 'game' ? 100 : 110, lab:fmt === 'game' ? 'جولة المسابقة' : '', en:`${fmt === 'game' ? 'Quiz round' : 'Word game'} ${r+1} (${g.en}): ${pair.join(' + ')}`}); }
-  if(fmt === 'game' && ex.length > 1) st.push({k:'prize', st:2, sec:70, lab:'سؤال الجائزة الكبرى', en:'Grand prize question: one sentence with 2 of today\'s expressions'});
-  st.push({k:'dlg', part:1, st:3, sec:150, en:fmt === 'story' ? 'Role-play part I: find out what happens (child acts a character)' : 'Role-play part I (child acts a character)'},
-    {k:'dlg', part:2, st:3, sec:150, en:fmt === 'story' ? 'Role-play part II + was the prediction right? + 2 questions' : 'Role-play part II + 2 questions'});
-  ((sc.speakout||{}).prompts||[]).forEach((p, i) => st.push({k:'so', i, st:4, sec:160, en:`Speak out question ${i+1}${fmt === 'mission' ? ' (mission goal 3)' : ''}`}));
-  st.push(small ? {k:'cul', st:5, sec:90, short:true, en:'Culture: ONE fun fact + ONE question'} : {k:'cul', st:5, sec:170, en:'Culture'}, {k:'exit', st:6, sec:120, en:'Exit check'});
+    st.push({k:'exp', i:r, pair:[r*2, r*2+1].filter(x => x < ex.length), game:g, st:2, sec:fmt === 'game' ? 95 : 105, lab:fmt === 'game' ? 'جولة المسابقة' : '', en:`${fmt === 'game' ? 'Quiz round' : 'Word game'} ${r+1} (${g.en}): ${pair.join(' + ')}`}); }
+  if(fmt === 'game' && ex.length > 1) st.push({k:'prize', st:2, sec:60, lab:'سؤال الجائزة الكبرى', en:'Grand prize question: one sentence with 2 of today\'s expressions'});
+  st.push({k:'dlg', part:1, st:3, sec:140, en:fmt === 'story' ? 'Role-play part I: find out what happens (child acts a character)' : 'Role-play part I (child acts a character)'},
+    {k:'dlg', part:2, st:3, sec:140, en:fmt === 'story' ? 'Role-play part II + was the prediction right? + 2 questions' : 'Role-play part II + 2 questions'});
+  ((sc.speakout||{}).prompts||[]).forEach((p, i) => st.push({k:'so', i, st:4, sec:140, en:`Speak out question ${i+1}${fmt === 'mission' ? ' (mission goal 3)' : ''}`}));
+  // story and game show have an extra step, so their culture is the short one (ONE fact + ONE question) at every level
+  st.push(small || fmt === 'story' || fmt === 'game' ? {k:'cul', st:5, sec:80, short:true, en:'Culture: ONE fun fact + ONE question'} : {k:'cul', st:5, sec:150, en:'Culture'}, {k:'exit', st:6, sec:100, en:'Exit check'});
+  // safety net for a longer script: shave the middle steps evenly until the plan fits
+  const tot = st.reduce((a, x) => a + x.sec, 0);
+  if(tot > V2_PLAN_MAX){ const f = Math.max(.5, (V2_PLAN_MAX - 130) / (tot - 130)); st.forEach(x => { if(x.k !== 'obj' && x.k !== 'exit') x.sec = Math.floor(x.sec * f); }); }
   return st;
 }
 /* Mission format: 3 goals the child unlocks, worked out from what the teacher confirmed ([GOT]) */
@@ -1155,15 +1173,25 @@ function v2Header(){ if(!L || !L.v2) return ''; const v = L.v2, stp = v.steps[Ma
   if(over > 150) tm = ' · please move on now: finish this step in one sentence and add [NEXT]';
   else if(over > 0 && !v.warn[v.i]){ v.warn[v.i] = 1; tm = ' · time to wrap up this step soon'; }
   return ch + th + ` · [step ${v.i+1}/${v.steps.length}: ${stp.en} · ${used}s of ${stp.sec}s${extra}${tm}]`; }
+/* child-safety paragraph shared by every live teacher prompt (lesson v2, the older free lesson, missions); [FLAG] is collected into the report */
+function safetyRules(){ return `CHILD SAFETY (more important than the lesson):
+- If the child mentions being hurt, hit or bullied, being scared at home or at school, wanting to hurt themselves, or an adult or stranger asking them to keep secrets or send photos: answer with ONE warm, calm sentence (for example "Thank you for telling me. That sounds hard, and it is really important to tell your mom or dad, or another grown-up you trust."). Do not ask questions about it, do not probe for details, do not promise to keep it secret. Then gently continue the lesson. Add [FLAG:short English reason] on its own line (the parent will be told discreetly).
+- Avoid these topics completely and steer kindly back to the lesson: romance or dating, religious debates, politics, violence, scary or horror content. If the child brings one up, say one neutral friendly sentence and change the subject.`; }
+/* levels 1-3: one written Arabic rescue after two failed tries (the voice never speaks Arabic: enqueue strips it, so the rescue is the [AR] text on screen) */
+function arabicRule(level){ return level <= 3
+  ? 'You speak English only. The ONE exception (beginners, levels 1-3): if the child has failed twice on the same step or clearly does not understand what to do, you may give ONE short Arabic rescue sentence, but ONLY inside the tag [AR:...] on its own line (it is shown on the screen, it is never spoken; never put Arabic in the spoken text). In the same turn say the English again VERY slowly with short words and offer two choices ("Is it A or B?"). Then go straight back to English. At most one rescue per step. For a single unknown word use [AR:word = Arabic] as usual.'
+  : 'You NEVER speak Arabic. If the child doesn\'t understand a word, keep speaking English and put the Arabic in [AR] (written only).'; }
 function buildRulesV2(k, plan, sc, v){
   const kid = DB.kids[k], prog = DB.progress[k], age = ageOf(kid.birth), nk = nick(k), cefr = LEVEL_CEFR[kid.level] || 'A2';
   v = v || {fmt:'classic'}; const fmt = v.fmt || 'classic', small = kid.level <= 6, d0 = sc.dialogue || {}, alt = v.alt || v2AltTheme(k, plan);
   const u = (levelUnits(kid.level) || [])[plan.ui] || {}, steps = v.steps || v2Steps(sc, {fmt, level:kid.level});
+  const culShort = (steps.find(x => x.k === 'cul') || {}).short, rec = v.rec = typeof recycleList === 'function' ? recycleList(k, `${kid.level}-${plan.ui}-${plan.li}`) : [];
   return `You are ${teacherOf(k).name} (a ${teacherOf(k).female ? 'woman' : 'man'}), a warm, funny, energetic English teacher giving a LIVE one-to-one VOICE class to a Saudi child on an iPad. Everything you write in the spoken part is read aloud by text-to-speech, and the child answers by speaking (speech-to-text).
 
 STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'girl'}, Hudhud level ${kid.level} (CEFR ${cefr}). First language Arabic.
 UNIT: "${plan.unit}" · language function of the unit: ${u.fn || ''} · grammar: ${(u.grammar||[]).join('; ')}. Lesson ${plan.li+1} of 6: "${plan.t}".${plan.review ? '\nTHIS IS A REVIEW LESSON before the unit test: recycle the whole unit, use new examples, be patient.' : ''}${prog.repeatOf === `${kid.level}-${plan.ui}-${plan.li}` ? '\nThe child did not master this lesson last time: same objective, but use NEW examples and situations in the warm-up and speak out.' : ''}
-What you know about the child (use it to make it personal): ${(prog.interests||[]).join('; ') || 'nothing yet, find out what they love'}. Recent mistakes to recycle: ${(prog.mistakes||[]).slice(0,5).map(m => `"${m.wrong}" -> "${m.right}"`).join('; ') || 'none'}.
+What you know about the child (use it to make it personal): ${(prog.interests||[]).join('; ') || 'nothing yet, find out what they love'}. Recent mistakes to recycle: ${(prog.mistakes||[]).slice(0,5).map(m => `"${m.wrong}" -> "${m.right}"`).join('; ') || 'none'}.${rec.length ? `
+RECYCLE TODAY (expressions from EARLIER lessons that are due for review): ${rec.map(r => `"${r.w}"`).join(', ')}. Weave them naturally into the warm-up and the speak out (a question that invites one, or use it yourself and ask the child to use it too); never make it a drill or a separate step. Each time the child uses one of them correctly in a sentence, add [REC:the expression] on its own line (once per expression).` : ''}
 
 THE LESSON SCRIPT (the child sees each step on a slide next to you; the app moves the slide when you write [NEXT]):
 ${JSON.stringify(sc)}
@@ -1177,7 +1205,7 @@ HOW TO RUN EACH STEP:
 - Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
 - Role-play part I: set the scene in one exciting sentence. YOU play the first speaker, the CHILD plays ${v2Role(sc.dialogue||{}) || 'the other character'} (the slide shows their lines as a guide). Say your line, then let the child say theirs IN THEIR OWN WORDS — they do not need to read it exactly; react in character, improvise a little, keep it moving. Then [NEXT]. Part II: continue the scene the same way, then step out of the role and ask the 2 questions on the slide; add [GOT] if both answers were right and in sentences, then [NEXT].
 - Speak out n: play the situation with the child and ask the question on the slide (in role). The child must answer with 2 or more sentences using the unit function. Ask one follow-up question. If they did it: [GOT] [NEXT]. If they are stuck, tell them to tap the hint button, or give the first words.
-- Culture: ${small ? 'keep it tiny for this young child: tell ONLY the first point as one fun fact (one or two short sentences), then ask ONLY the first question; one answer is enough; then [NEXT].' : 'read the title, tell the 3 points in a lively way (short), then ask the 2 questions; one opinion with a reason is enough; then [NEXT].'}
+- Culture: ${small || culShort ? 'keep it tiny (short culture step today): tell ONLY the first point as one fun fact (one or two short sentences), then ask ONLY the first question; one answer is enough; then [NEXT].' : 'read the title, tell the 3 points in a lively way (short), then ask the 2 questions; one opinion with a reason is enough; then [NEXT].'}
 - Exit check: ask the exit prompt and give NO help. Then write [EXIT:yes] if they said 2 correct sentences with the function, [EXIT:partly] if one or with errors, [EXIT:no] if not; then [NEXT].
 - After the last step: specific praise about what they said today, goodbye, then [END].
 - Never write [NEXT] twice in one turn. Never skip ahead by yourself. If the header says "time to wrap up this step soon", finish the step naturally within a turn or two (do not rush the child). If it says "please move on now", wrap the step up in one sentence and add [NEXT].
@@ -1200,14 +1228,44 @@ GIVE THE CHILD THE SPEAKING TIME:
 
 CORRECTION: errors in today's expressions or function → recast and ask them to say it again, and add [FIX]. Other small errors → recast once naturally, no repetition.
 - ${kid.level <= 4 ? 'Use very simple, clear English. Ask one thing at a time.' : kid.level <= 7 ? 'Use clear English at CEFR ' + cefr + ', not babyish.' : 'Use natural CEFR ' + cefr + ' English like a real conversation partner.'}
-- You NEVER speak Arabic. If the child doesn't understand a word, keep speaking English and put the Arabic in [AR] (written only).
+- ${arabicRule(kid.level)}
 - Speech recognition: ignore punctuation; speech-to-text sometimes mishears children. If a word looks misheard (odd, out of place, a name, a word that sounds like another one), assume the recogniser made the mistake, not the child: answer what they most likely meant. Only ask them to say it again if you truly cannot understand the meaning. Never [FIX], correct or drill something that is probably a mishearing.
 - If you get "(student was silent)": encourage and rephrase more simply.
 - Never ask for personal details (address, phone, school name, passwords, photos). Never say you are an AI unless asked.
 
-FORMAT (strict): start DIRECTLY with the spoken text (nothing before it). After the spoken text, tags each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [END], and ALWAYS finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
+${safetyRules()}
+
+FORMAT (strict): start DIRECTLY with the spoken text (nothing before it). After the spoken text, tags each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [REC:expression] [FLAG:short reason] [END], and ALWAYS finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
 No markdown, no emojis, no Arabic letters in the spoken text.`;
 }
+/* ---- spaced recycling: DB.progress[k].learned = {expression: {lvl, key, at, ok, miss, due}} ----
+   a correct use moves the next review to 2, 5, 12, then 30 days (by the number of correct uses); a miss brings it back tomorrow */
+const REC_DAYS = [2, 5, 12, 30], REC_MAX = 300;
+const normExp = s => String(s || '').toLowerCase().replace(/[’‘`]/g, "'").replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim();
+/* the fixed parts of an expression ("What do you think about …?" -> ["what do you think about"]) */
+const expParts = w => String(w || '').split(/\.{2,}|…|\/|_{2,}|\(|\)/).map(normExp).filter(x => x.length > 1);
+function expUsedIn(w, text){ const t = ` ${normExp(text)} `, ps = expParts(w); return ps.length > 0 && ps.every(p => t.includes(` ${p} `)); }
+function recDue(ok, missed, now){ return new Date((now || Date.now()) + (missed ? 1 : REC_DAYS[Math.max(0, Math.min(REC_DAYS.length - 1, ok - 1))]) * 864e5).toISOString(); }
+/* up to 4 expressions from EARLIER lessons that are due today (most overdue first, then the most missed) */
+function recycleList(k, curKey, now){ const m = ((DB.progress[k] || {}).learned) || {}, t = now || Date.now();
+  return Object.entries(m).filter(([w, x]) => w && x && x.key !== curKey && Date.parse(x.due) <= t)
+    .sort((a, b) => (Date.parse(a[1].due) - Date.parse(b[1].due)) || ((b[1].miss || 0) - (a[1].miss || 0))).slice(0, 4).map(([w, x]) => ({w, key:x.key, lvl:x.lvl, due:x.due})); }
+/* after a lesson: today's expressions (teacher [GOT] or the judge saw them) and the recycled ones ([REC:...] tags) */
+function updateLearned(k, lesson, judgeUsed, recUsed, now){
+  const v = lesson && lesson.v2; if(!v) return null; now = now || Date.now();
+  const p = DB.progress[k], m = p.learned = p.learned || {}, lvl = DB.kids[k].level, key = `${lvl}-${lesson.plan.ui}-${lesson.plan.li}`, iso = new Date(now).toISOString();
+  const jd = (judgeUsed || []).map(normExp), out = {ok:[], miss:[]};
+  (v.sc.expressions || []).forEach((e, i) => { const w = e && e.w; if(!w) return;
+    const ok = !!v.got['exp' + i] || jd.includes(normExp(w)), si = v.steps.findIndex(s => s.k === 'exp' && (s.pair || []).includes(i)), reached = si >= 0 && (si < v.i || !!v.doneAll);
+    if(!ok && !reached) return;   // the lesson never got to this word game: no verdict
+    const it = m[w] || {lvl, key, at:iso, ok:0, miss:0};
+    if(ok){ it.ok++; it.due = recDue(it.ok, false, now); out.ok.push(w); } else { it.miss++; it.due = recDue(it.ok, true, now); out.miss.push(w); }
+    it.seen = iso; m[w] = it; });
+  const ru = (recUsed || []).map(normExp);
+  (v.rec || []).forEach(r => { const it = m[r.w]; if(!it) return; const ok = ru.includes(normExp(r.w));
+    if(ok){ it.ok++; it.due = recDue(it.ok, false, now); } else { it.miss++; it.due = recDue(it.ok, true, now); } it.seen = iso; });
+  const keys = Object.keys(m); if(keys.length > REC_MAX) keys.sort((a, b) => Date.parse(m[a].seen || m[a].at) - Date.parse(m[b].seen || m[b].at)).slice(0, keys.length - REC_MAX).forEach(x => delete m[x]);
+  return out; }
 
 /* =============== SCHEDULE + WALLET =============== */
 function periodAt(k, t){ const ps = DB.sched[k].periods; let p = ps[0]; for(const q of ps){ if(new Date(q.from) <= t) p = q; } return p; }
@@ -3233,11 +3291,13 @@ HOW TO TALK:
 - React to WHAT the child said (content first), like a real person, then continue.
 - Correct mistakes the way great teachers do: react to the meaning, then recast the correct sentence naturally, and about half the time ask them to say it again. One correction at a time, never a list. Also add a [FIX] tag.
 - The child's words come from speech recognition: ignore punctuation/capitals. Speech-to-text sometimes mishears children. If a word looks misheard (odd, out of place, a name, a word that sounds like another one), assume the recogniser made the mistake, not the child: answer what they most likely meant. Only ask them to say it again if you truly cannot understand the meaning. Never [FIX], correct or drill something that is probably a mishearing.
-- You NEVER speak Arabic. Every spoken word is English, always, even if the child speaks Arabic or is stuck. If the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example sentence to copy, or offer two choices.
+- ${kid.level <= 3 ? arabicRule(kid.level) + ' Otherwise, if the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example sentence to copy, or offer two choices.' : 'You NEVER speak Arabic. Every spoken word is English, always, even if the child speaks Arabic or is stuck. If the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example sentence to copy, or offer two choices.'}
 - If the child does not understand a specific English word or phrase, keep speaking English and put its written Arabic translation in [AR] (format: word = translation). [AR] is never spoken, it is only shown as text.
 - If you get "(student was silent)", gently encourage: rephrase more simply.
 - Stay on English learning. Never ask for personal details (address, phone, school name, passwords, photos). If off-topic, kindly bring them back.
 - Never say you are an AI unless asked directly; you are ${teacherOf(k).name}.
+
+${safetyRules()}
 
 FORMAT (strict):
 Start DIRECTLY with the spoken text (nothing before it).
@@ -3246,6 +3306,7 @@ After the spoken text, optional tags each on its own line:
 [FIX:what the child said wrong|correct version|very short Arabic explanation]
 [AR:English word = Arabic translation]  (written only, for a word the child did not understand)
 [STAGE:words|talk|review|wrapup]
+[FLAG:short English reason]  (only for the CHILD SAFETY cases above)
 [END]  (only in wrapup, after minute 23)
 Last line, always: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
 No markdown, no emojis, and no Arabic letters in the spoken text, no other text outside this format.`;
@@ -3530,7 +3591,7 @@ function parseTags(full){
     else if(tag === 'AR') out.ar = v; else if(tag === 'STAGE') out.stage = v.toLowerCase(); else if(tag === 'END') out.end = true; else if(tag === 'GOAL') out.goals.push(Number(v)); }
   return out;
 }
-function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
+function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
 function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
 async function teacherTurn(userText, attempt){
@@ -3738,6 +3799,9 @@ async function finishLesson(){
   if(!lesson.trial){ att0 = {kid:k, slot:lesson.slot, lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:mins};
     if(!DB.attendance.some(a => a.kid === k && a.slot === lesson.slot)) DB.attendance.push(att0); DB.live[k] = null; save(); }
   const repAbort = new AbortController(), repTimer = setTimeout(() => repAbort.abort(), 75000);
+  // measured by the app (not guessed by a model): confidence numbers, safety flags, recycled expressions; the strict judge runs in parallel with the report
+  const meas = measureConfidence(lesson), flags = lessonTags(lesson, 'FLAG').slice(0, 5), recUsed = lessonV2RecUsed(lesson);
+  const judgeP = lesson.v2 ? judgeLesson(lesson, repAbort.signal).catch(e => { console.warn('judge', e); return null; }) : Promise.resolve(null);
   let rep = null;
   try{
     const txt = await callClaude({model:REPORT_MODEL, max_tokens:3000, messages:[{role:'user', content:
@@ -3749,12 +3813,13 @@ ${transcript}
 
 STUDENT lines come from speech recognition, which sometimes mishears children. In "mistakes" list ONLY clear grammar or word-choice errors the child really made. Never list anything that looks like a speech-recognition error (odd or out-of-place words, names, words that sound alike, a missing small word the child probably said); when unsure, leave it out.
 
+SCORE RUBRIC (fixed, fill "rubric" and make "score" its sum): objective reached 0-40 (the exit check: 2 correct sentences with the unit function = 40, one or with errors = 20, not reached = 0; a separate examiner also checks this and the app may replace your value), expressions used 0-20 (today's target expressions used correctly in the child's own sentences, in proportion), accuracy 0-20 (grammar and word choice in the child's sentences at this level), participation 0-20 (how much and how willingly the child spoke; the measured share of words is ${talkPctOf(lesson)}%, goal ${talkGoal(k)}%).
+${meas ? `CONFIDENCE was MEASURED by the app (do not invent another number): ${meas.score}/100 from ${meas.turns} answers: ${meas.medDelayMs != null ? `median time before answering ${(meas.medDelayMs / 1000).toFixed(1)} s, ` : ''}average ${meas.avgWords} words per answer, ${meas.fullPct}% of answers were full sentences (4+ words), ${meas.silent} time(s) the teacher had to nudge a silent child.\n` : ''}${flags.length ? `SAFETY: during the lesson the teacher flagged: ${flags.map(f => `"${f}"`).join('; ')}. Write "flagNote": ONE calm, discreet Arabic sentence for the parent saying what the child mentioned (no alarming words, no details beyond what was said) and gently suggesting they talk with the child.\n` : ''}
 Reply with ONLY one JSON object:
-{"score":0-100,"stars":1-3,"newWords":["words practised"],"mistakes":[{"wrong":"...","right":"..."}],
+{"rubric":{"objective":0-40,"expressions":0-20,"accuracy":0-20,"participation":0-20},"score":0-100,"stars":1-3,"newWords":["words practised"],"mistakes":[{"wrong":"...","right":"..."}],
 "parentNote":"3-4 sentences in Arabic for the parent: what was covered, how well the child built sentences and spoke, strengths, exactly what to practise at home",
 "talkNote":"1-2 Arabic sentences for the parent about how much the child spoke (the app measured the child's share of words: ${talkPctOf(lesson)}%, goal ${talkGoal(k)}%) and what it means",
-"confidence":0-100 (how confidently the child spoke: answer length, starting sentences alone, few long pauses, little Arabic, willingness to try; 50 = average for this level),
-"confidenceNote":"1-2 Arabic sentences explaining the confidence score with a concrete example from the lesson",
+${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer length, starting sentences alone, few long pauses, little Arabic, willingness to try; 50 = average for this level),\n`}"confidenceNote":"1-2 Arabic sentences explaining the ${meas ? 'measured ' : ''}confidence score${meas ? ' using the measured numbers above in simple words' : ''}, with a concrete example from the lesson",${flags.length ? '\n"flagNote":"one Arabic sentence (see SAFETY)",' : ''}
 "levelFit":"easy" or "right" or "hard" (was this lesson's level right for the child?),"levelNote":"1-2 Arabic sentences explaining why",
 "strengths":["2-3 short Arabic phrases: what the child did well today"],
 "homePractice":"one or two concrete Arabic sentences: exactly what to practise at home this week, with an English example sentence",
@@ -3765,18 +3830,31 @@ Reply with ONLY one JSON object:
   1 of {"type":"mc","q":"Which sentence is correct?","options":["...","...","..."],"answer":index}]}`}]}, repAbort.signal);
     const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); rep = JSON.parse(txt.slice(a, b+1));
   }catch(e){ console.warn(e); }
+  const judge = await judgeP;
   clearTimeout(repTimer);
   if(!rep) rep = {score:0, stars:2, newWords:[], mistakes:[], parentNote:'لم يُكتب التقرير بسبب مشكلة اتصال، لكن الحصة سُجّلت.', kidNote:'Great job today!', nextFocus:'', quiz:[]};
+  // the judge's verdict replaces the teacher's [EXIT] for progression; the teacher's stays as v2.exitTeacher
+  if(lesson.v2){ lesson.v2.exitTeacher = lesson.v2.exit || null; if(judge && judge.exit) lesson.v2.exit = judge.exit; }
+  const sc0 = lessonScore(rep, lesson, judge);
+  // pronunciation checks still running in the background get a few more seconds
+  if((lesson.pronP || []).length) await Promise.race([Promise.allSettled(lesson.pronP), new Promise(r => setTimeout(r, 4000))]);
   if(!(rep.quiz||[]).length) rep.quiz = lessonQuizFromBank(DB.kids[k].level, plan.ui, plan.li) || [];
-  const report = {score:Math.max(0,Math.min(100,Number(rep.score)||0)), stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
+  const report = {score:sc0.score, stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
     newWords:(Array.isArray(rep.newWords)?rep.newWords:[]).slice(0,12).map(String), mistakes:(Array.isArray(rep.mistakes)?rep.mistakes:[]).slice(0,8).map(m => ({wrong:String(m.wrong||''), right:String(m.right||'')})),
     parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!'), talkPct:talkPctOf(lesson), talkGoal:talkGoal(k),
     avgWords:(() => { const t = lesson.history.filter(h => h.role === 'user' && !/\]\s*\(/.test(h.content)).length; return t ? Math.round(lesson.sw / t * 10) / 10 : null; })(),
-    confidence:rep.confidence == null ? null : Math.max(0, Math.min(100, Number(rep.confidence) || 0)), confidenceNote:String(rep.confidenceNote||''), talkNote:String(rep.talkNote||''),
+    confidence:meas ? meas.score : rep.confidence == null ? null : Math.max(0, Math.min(100, Number(rep.confidence) || 0)), confidenceNote:String(rep.confidenceNote||''), talkNote:String(rep.talkNote||''),
     levelFit:['easy','right','hard'].includes(rep.levelFit) ? rep.levelFit : null, levelNote:String(rep.levelNote||''), strengths:(Array.isArray(rep.strengths)?rep.strengths:[]).slice(0,4).map(String), homePractice:String(rep.homePractice||''),
     v2:lesson.v2 ? {exp:Object.keys(lesson.v2.got).filter(x => x.startsWith('exp')).length, of:lesson.v2.sc.expressions.length, so:Object.keys(lesson.v2.got).filter(x => x.startsWith('so')).length, exit:lesson.v2.exit, stars:lesson.v2.stars||0, steps:lesson.v2.i + 1, total:lesson.v2.steps.length, review:!!plan.review, fn:((levelUnits(DB.kids[k].level)||[])[plan.ui]||{}).fn || ''} : null};
+  if(report.v2){ report.v2.exitTeacher = lesson.v2.exitTeacher; report.v2.judge = judge ? {exit:judge.exit || null, used:judge.expressionsUsed, evidence:judge.evidence} : null;
+    report.v2.rec = (lesson.v2.rec || []).map(r => r.w); report.v2.recUsed = recUsed; }
+  if(sc0.rubric) report.rubric = sc0.rubric;
+  if(meas) report.confMeasured = meas;
+  report.pron = lessonPronSummary(lesson);
+  if(flags.length){ report.flags = flags; report.flagNote = String(rep.flagNote || ''); }
   report.lat = latSummary(lesson); if(report.lat) console.log('lesson latency avg ms', JSON.stringify(report.lat));
   report.health = healthSave(lesson, att0 && att0.at);
+  if(!lesson.trial || lesson.freeReview) try{ updateLearned(k, lesson, judge && judge.expressionsUsed, recUsed); }catch(e){ console.warn(e); }
   if(Array.isArray(rep.interests) && !lesson.trial){ const p0 = DB.progress[k]; p0.interests = [...new Set(rep.interests.map(String).concat(p0.interests||[]))].slice(0,15); }
   let book = null, cert = null;
   if(!lesson.trial){
@@ -3800,7 +3878,8 @@ Reply with ONLY one JSON object:
     p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); seedSRS(k); report.mistakes.forEach(m => addSRS(k, m.right, 'كنت تقول: ' + m.wrong));
     p.xp = (p.xp||0) + 50; save();
   }
-  ov.innerHTML = `<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
+  if(!lesson.trial || lesson.freeReview){ if(typeof probationCheck === 'function') try{ probationCheck(k, report); }catch(e){} }
+  ov.innerHTML =`<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
     ${report.talkPct != null ? `<div class="chip ${report.talkPct >= talkGoal(k) ? 'good' : 'brand'}" style="text-align:center">🗣️ قلت ${report.talkPct}% من كلمات الحصة · هدفك ${talkGoal(k)}%</div>` : ''}
     ${lesson.freeReview ? '<div class="chip good" style="text-align:center">🎁 حصة مراجعة مجانية: لم تُحتسب في الرصيد · +50 نقطة</div>' : lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${priceNow(k)} ريال صارت خضراء · +50 نقطة</div>`}
     ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
@@ -3816,6 +3895,99 @@ Reply with ONLY one JSON object:
       go(WHO === 'parent' ? 'parent' : k, 'home');
     }); };
 }
+/* ---- lesson measurements used by finishLesson ---- */
+/* the child's own lines from the history, with the v2 step they were said in (read from the "[step n/N: …]" header of each student message) */
+function lessonChildTurns(lesson){ const v = lesson && lesson.v2, out = [];
+  ((lesson && lesson.history) || []).forEach(h => { if(h.role !== 'user') return;
+    String(h.content || '').split('\n').forEach(line => { const m = line.match(/\]\s*Student: ([\s\S]*)$/); if(!m || !m[1].trim()) return;
+      const s = line.match(/\[step (\d+)\/\d+:/), i = s ? Number(s[1]) - 1 : null;
+      out.push({text:m[1].trim(), step:i, k:v && i != null && v.steps[i] ? v.steps[i].k : null}); }); });
+  return out; }
+/* tags the teacher wrote, read from the stored assistant messages (e.g. FLAG, REC) */
+function lessonTags(lesson, tag){ const re = new RegExp(`\\[${tag}:([^\\]\\n]+)\\]`, 'gi'), out = [];
+  ((lesson && lesson.history) || []).forEach(h => { if(h.role !== 'assistant') return; let x; while((x = re.exec(String(h.content || '')))){ const t = x[1].trim(); if(t && !out.includes(t)) out.push(t); } });
+  return out; }
+/* recycled expressions the teacher confirmed with [REC:…], matched to today's recycle list */
+function lessonV2RecUsed(lesson){ const rec = (lesson && lesson.v2 && lesson.v2.rec) || []; if(!rec.length) return [];
+  const tags = lessonTags(lesson, 'REC').map(normExp);
+  return rec.map(r => r.w).filter(w => { const n = normExp(w); return tags.some(t => t === n || t.includes(n) || (n.includes(t) && t.length > 3)); }); }
+/* MEASURED confidence 0-100 (documented formula; per-turn stats come from lessonUtterance, else from the transcript):
+     delay  = median wait before the child starts answering: 1.5 s or less -> 1, 8 s or more -> 0 (linear)       weight 30
+     words  = average words per answer / target (levels 1-3: 4, 4-7: 6, 8+: 9 words), capped at 1               weight 30
+     full   = share of answers that are full sentences (4+ words)                                             weight 40
+   score = 100 x weighted mean (weights re-normalised when the delay is unknown) - 6 per "(student was silent)" nudge (max -30) */
+function measureConfidence(lesson){
+  if(!lesson) return null; const lvl = (DB.kids[lesson.kid] || {}).level || 5;
+  let turns = (lesson.utt || []).filter(u => u.words > 0), src = 'mic';
+  if(!turns.length){ src = 'transcript'; turns = lessonChildTurns(lesson).map(t => ({words:countWords(t.text), delayMs:null})).filter(t => t.words > 0); }
+  const silent = ((lesson.history) || []).filter(h => h.role === 'user').reduce((a, h) => a + (String(h.content || '').match(/\(student was silent\)/g) || []).length, 0);
+  if(!turns.length) return null;
+  const n = turns.length, dl = turns.map(t => t.delayMs).filter(x => x != null && isFinite(x) && x >= 0).sort((a, b) => a - b);
+  const med = dl.length ? (dl.length % 2 ? dl[(dl.length - 1) / 2] : (dl[dl.length / 2 - 1] + dl[dl.length / 2]) / 2) : null;
+  const avgW = turns.reduce((a, t) => a + t.words, 0) / n, full = turns.filter(t => t.words >= 4).length / n, target = lvl <= 3 ? 4 : lvl <= 7 ? 6 : 9;
+  const cl = x => Math.max(0, Math.min(1, x)), parts = [[cl(avgW / target), 30], [full, 40]];
+  if(med != null) parts.push([cl((8000 - med) / 6500), 30]);
+  const wsum = parts.reduce((a, p) => a + p[1], 0), base = parts.reduce((a, p) => a + p[0] * p[1], 0) / wsum;
+  const score = Math.round(Math.max(0, Math.min(100, base * 100 - Math.min(30, 6 * silent))));
+  return {score, medDelayMs:med == null ? null : Math.round(med), avgWords:Math.round(avgW * 10) / 10, fullPct:Math.round(full * 100), silent, turns:n, src}; }
+/* the independent judge: a strict, separate model call that sees ONLY the child's lines from the speak-out and exit-check steps */
+async function judgeLesson(lesson, signal){
+  const v = lesson.v2; if(!v) return null; const k = lesson.kid, kid = DB.kids[k], u = (levelUnits(kid.level) || [])[lesson.plan.ui] || {};
+  const turns = lessonChildTurns(lesson), so = turns.filter(t => t.k === 'so'), ex = turns.filter(t => t.k === 'exit');
+  if(!so.length && !ex.length) return null;
+  const exps = (v.sc.expressions || []).map(e => e.w).filter(Boolean);
+  const txt = await callClaude({model:REPORT_MODEL, max_tokens:600, messages:[{role:'user', content:
+`You are a STRICT, independent English speaking examiner. You did not teach this lesson and you do not care how friendly it was: judge only what the child actually said.
+Child: ${ageOf(kid.birth)} years old, Arabic speaker, level CEFR ${LEVEL_CEFR[kid.level]}.
+Unit language function: ${u.fn || lesson.plan.goal || ''}${u.cando ? ` · can-do: ${u.cando}` : ''}.
+Today's lesson objective: ${v.sc.objective || ''}
+Today's target expressions: ${exps.map(w => `"${w}"`).join(', ')}
+Exit task (no help was given): ${v.sc.exit || ''}
+
+The child's own lines (speech-to-text; the teacher's lines are NOT shown):
+SPEAK OUT answers:
+${so.map(t => '- ' + t.text).join('\n') || '(none)'}
+EXIT CHECK answers:
+${ex.map(t => '- ' + t.text).join('\n') || '(the exit check was not reached)'}
+
+Rules:
+- "exit": "yes" ONLY if in the EXIT CHECK the child said at least 2 full sentences of their own that do the exit task with the unit function, correct enough for this level. "partly" if only one such sentence, or the meaning is clear but with real errors or missing parts. "no" if single words, copying, Arabic, off-task, or nothing. Be strict: when in doubt between two grades, choose the lower one.
+- Speech recognition can mishear children: ignore odd sound-alike words, missing punctuation and capitals; never fail the child for those.
+- "expressionsUsed": the target expressions (exact strings from the list) that the child used correctly and meaningfully in ANY line above.
+- "evidence": one short English sentence quoting what the child said that decided the grade.
+Reply with ONLY JSON: {"exit":"yes|partly|no","expressionsUsed":["..."],"evidence":"..."}`}]}, signal);
+  const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); if(a < 0 || b < a) return null;
+  const j = JSON.parse(txt.slice(a, b + 1)); const e = String(j.exit || '').toLowerCase();
+  const used = (Array.isArray(j.expressionsUsed) ? j.expressionsUsed : []).map(String).map(w => exps.find(x => normExp(x) === normExp(w))).filter(Boolean);
+  return {exit:ex.length && ['yes', 'partly', 'no'].includes(e) ? e : null, expressionsUsed:[...new Set(used)], evidence:String(j.evidence || '').slice(0, 300)}; }
+/* score = fixed rubric: objective 40 + expressions 20 + accuracy 20 + participation 20.
+   Objective and expressions come from the judge (and the teacher's [GOT]) when available, accuracy and participation from the report model. */
+function lessonScore(rep, lesson, judge){
+  const cl = (x, m) => Math.max(0, Math.min(m, Math.round(Number(x) || 0))), r = rep && rep.rubric && typeof rep.rubric === 'object' ? rep.rubric : null, v = lesson.v2;
+  if(!r) return {score:cl(rep && rep.score, 100), rubric:null};
+  const ru = {objective:cl(r.objective, 40), expressions:cl(r.expressions, 20), accuracy:cl(r.accuracy, 20), participation:cl(r.participation, 20)};
+  if(v && judge){ if(judge.exit) ru.objective = {yes:40, partly:20, no:0}[judge.exit];
+    const exps = (v.sc.expressions || []).map(e => e.w), jd = (judge.expressionsUsed || []).map(normExp);
+    const n = exps.filter((w, i) => v.got['exp' + i] || jd.includes(normExp(w))).length; if(exps.length) ru.expressions = Math.round(20 * n / exps.length); }
+  return {score:ru.objective + ru.expressions + ru.accuracy + ru.participation, rubric:ru}; }
+/* CONTRACT with the speech pipeline: called for every child turn (guarded there): {text, wav, conf, delayMs, durMs}.
+   Stores per-turn stats on L.utt, and checks the pronunciation of today's target expressions in the background (Azure, max 6 per lesson, never blocking). */
+function lessonUtterance(u){ try{
+  const lesson = L; if(!lesson || lesson.done || !u) return; const text = String(u.text || ''), v = lesson.v2, nn = x => x == null || !isFinite(Number(x)) ? null : Math.round(Number(x));
+  (lesson.utt = lesson.utt || []).push({at:Date.now(), step:v ? v.i : null, k:v ? (v.steps[Math.min(v.i, v.steps.length - 1)] || {}).k : null, delayMs:nn(u.delayMs), durMs:nn(u.durMs), words:countWords(text), conf:u.conf == null ? null : Number(u.conf)});
+  if(!v || !u.wav || !lessonPaOn()) return;
+  lesson.pron = lesson.pron || []; lesson.pronP = lesson.pronP || []; if(lesson.pronP.length >= 6) return;
+  const w = (v.sc.expressions || []).map(e => e.w).find(x => x && expUsedIn(x, text) && !lesson.pron.some(p => p.w === x) && !(lesson.pronAsk || []).includes(x)); if(!w) return;
+  (lesson.pronAsk = lesson.pronAsk || []).push(w);
+  const ref = expParts(w).join(' ');
+  lesson.pronP.push(azAssess(u.wav, ref).then(res => { if(!res || !res.ok) return; const want = ref.split(' ');
+    const ws = (res.words || []).filter(x => want.includes(normExp(x.w)) && x.err !== 'Insertion');
+    const score = ws.length ? Math.round(ws.reduce((a, x) => a + x.acc, 0) / ws.length) : res.acc;
+    lesson.pron.push({w, score, acc:res.acc, flu:res.flu}); }).catch(e => console.warn('lesson pronunciation', e)));
+}catch(e){ console.warn('lessonUtterance', e); } }
+function lessonPaOn(){ return typeof paOn === 'function' && paOn(); }
+function lessonPronSummary(lesson){ const a = (lesson && lesson.pron) || []; if(!a.length) return null;
+  return {avg:Math.round(a.reduce((s, x) => s + (Number(x.score) || 0), 0) / a.length), items:a.map(x => ({w:x.w, score:x.score}))}; }
 function leaveRoomQuiet(){ wakeOff(); stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
 function leaveRoom(){ wakeOff(); stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
@@ -4405,7 +4577,8 @@ RULES:
 - If you receive "(student asks for a hint)", step out of character for one sentence, give an example sentence they could say for the next goal, then continue.
 - When all 3 goals are done, end the scene warmly in character, then add [END].
 - Never ask for personal details. If asked, say you are an AI teacher playing a character.
-FORMAT: start directly with the spoken text. Then tags each on their own line: [GOAL:n] [FIX:...] [AR:word = Arabic] [END], and always finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]. No markdown, no Arabic in the spoken text.`;
+${safetyRules()}
+FORMAT: start directly with the spoken text. Then tags each on their own line: [GOAL:n] [FIX:...] [AR:word = Arabic] [FLAG:short reason] [END], and always finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]. No markdown, no Arabic in the spoken text.`;
 }
 function startMission(k, id){
   const m = MISSIONS.find(x => x.id === id); if(!m) return;
