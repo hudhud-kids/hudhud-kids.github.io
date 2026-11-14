@@ -162,7 +162,7 @@
     [
      "Up and Running",
      "give clear instructions to set up a new device",
-     "First, plug in … / Once that's done, … / Make sure you …"
+     "First, plug in … / Once that's done, … / Be careful to …"
     ],
     [
      "From Sea to Tap",
@@ -172,7 +172,7 @@
     [
      "A Second Life",
      "explain how rubbish is recycled",
-     "Bottles are collected … / They are then broken down … / Eventually, …"
+     "Bottles are collected … / They are then shredded … / Eventually, …"
     ],
     [
      "Explain It Like an Expert",
@@ -323,10 +323,10 @@
      "frame": "The best clue in this mystery is ___."
     },
     {
-     "w": "figure out",
-     "def": "to find the answer to a problem by thinking",
-     "ar": "يكتشف / يتوصّل إلى الحل",
-     "frame": "I couldn't figure out ___ until ___."
+     "w": "get to the bottom of",
+     "def": "to find the true reason for something",
+     "ar": "يكشف حقيقة الأمر",
+     "frame": "I want to get to the bottom of ___."
     },
     {
      "w": "there's no doubt about it",
@@ -377,7 +377,7 @@
      },
      {
       "s": "Noura",
-      "t": "There's no doubt about it. Let's ask her and figure out the whole story."
+      "t": "There's no doubt about it. Let's ask her and get to the bottom of this."
      }
     ],
     "focus": "So it can't be a thief. It must be Aunt Huda.",
@@ -415,7 +415,10 @@
      "Which is more useful for solving a mystery: clues or asking people questions?"
     ]
    },
-   "exit": "Look at your desk. Tell me two things that must or can't be true about the person who uses it."
+   "exit": "Look at your desk. Tell me two things that must or can't be true about the person who uses it.",
+   "recycle": [
+    "figure out"
+   ]
   },
   "0-2": {
    "objective": "Today you will talk about the chances of good or bad weather for a trip.",
@@ -446,10 +449,10 @@
      "frame": "Before a trip, we keep an eye on ___."
     },
     {
-     "w": "call off",
-     "def": "to cancel a plan or event",
-     "ar": "يلغي",
-     "frame": "We had to call off ___ because ___."
+     "w": "at the last minute",
+     "def": "very late, just before something happens",
+     "ar": "في آخر لحظة",
+     "frame": "We had to change ___ at the last minute because ___."
     },
     {
      "w": "unlikely",
@@ -481,7 +484,7 @@
     "p2": [
      {
       "s": "Sara",
-      "t": "I hope we don't have to call off the trip again."
+      "t": "I hope we don't have to cancel the trip at the last minute again."
      },
      {
       "s": "Khalid",
@@ -510,7 +513,7 @@
       "hint": "Use 'There's a good chance of …' or 'It might …'."
      },
      {
-      "q": "Do you think we'll need to call off the trip?",
+      "q": "Do you think we'll need to cancel the trip at the last minute?",
       "hint": "Say how sure you are: 'I doubt it' or 'Chances are …'."
      },
      {
@@ -531,7 +534,10 @@
      "How do you think the weather affects people's plans in your city?"
     ]
    },
-   "exit": "Tell me two sentences about the chances of rain or wind in your city this week."
+   "exit": "Tell me two sentences about the chances of rain or wind in your city this week.",
+   "recycle": [
+    "call off"
+   ]
   },
   "0-3": {
    "objective": "Today you will guess where a lost thing might be.",
@@ -900,10 +906,10 @@
      "frame": "The view of ___ will take your breath away."
     },
     {
-     "w": "off the beaten track",
-     "def": "far from places where most tourists go",
-     "ar": "بعيد عن الأماكن المزدحمة بالسيّاح",
-     "frame": "My favourite place off the beaten track is ___."
+     "w": "a well-kept secret",
+     "def": "a great place or thing that not many people know about",
+     "ar": "كنز لا يعرفه كثيرون",
+     "frame": "A well-kept secret in my area is ___."
     },
     {
      "w": "make the most of",
@@ -951,7 +957,7 @@
      },
      {
       "s": "Noura",
-      "t": "The main sites can be busy, but there are quiet valleys off the beaten track."
+      "t": "The main sites can be busy, but the quiet valleys are a well-kept secret."
      },
      {
       "s": "Emma",
@@ -981,7 +987,7 @@
      },
      {
       "q": "Is there a hidden place that tourists don't usually know about?",
-      "hint": "Use 'off the beaten track' and say what is special there."
+      "hint": "Use 'a well-kept secret' and say what is special there."
      }
     ]
    },
@@ -994,10 +1000,13 @@
     ],
     "qs": [
      "Which place in Saudi Arabia would you recommend to a foreign visitor? Why?",
-     "Is it better to visit famous places or places off the beaten track?"
+     "Is it better to visit famous places or well-kept secrets?"
     ]
    },
-   "exit": "Recommend one place in Saudi Arabia to me in two sentences, and say why it's worth it."
+   "exit": "Recommend one place in Saudi Arabia to me in two sentences, and say why it's worth it.",
+   "recycle": [
+    "off the beaten track"
+   ]
   },
   "1-1": {
    "objective": "Today you will persuade a friend to read a book or watch a series.",
@@ -1365,10 +1374,10 @@
      "frame": "___ is really user-friendly, even for ___."
     },
     {
-     "w": "get the hang of",
-     "def": "to learn how to do something after some practice",
-     "ar": "يتقن / يتعوّد على",
-     "frame": "It took me ___ to get the hang of ___."
+     "w": "in no time",
+     "def": "very quickly; very soon",
+     "ar": "في وقت قصير جداً",
+     "frame": "You'll learn to ___ in no time."
     },
     {
      "w": "keep track of",
@@ -1383,10 +1392,10 @@
      "frame": "___ helps me save time when I ___."
     },
     {
-     "w": "cut down on",
-     "def": "to do or use less of something",
-     "ar": "يقلّل من",
-     "frame": "I'd like to cut down on ___."
+     "w": "set a reminder",
+     "def": "to tell your phone to tell you about something later",
+     "ar": "يضبط تذكيراً",
+     "frame": "I always set a reminder for ___."
     }
    ],
    "dialogue": {
@@ -1417,7 +1426,7 @@
      },
      {
       "s": "Noura",
-      "t": "It reminds you before every training session and match, and it saves so much time. It's been a game changer for me."
+      "t": "You can set a reminder before every training session and match, and it saves so much time. It's been a game changer for me."
      },
      {
       "s": "Fahad",
@@ -1425,7 +1434,7 @@
      },
      {
       "s": "Noura",
-      "t": "You'll get the hang of it in a day. Give it a shot, and stick with it for a week!"
+      "t": "You'll learn it in no time. Give it a shot, and stick with it for a week!"
      }
     ],
     "focus": "You really should download a planner app. It's worth trying, honestly.",
@@ -1443,7 +1452,7 @@
      },
      {
       "q": "Will it be difficult for me to use?",
-      "hint": "Use 'user-friendly' or 'You'll get the hang of it …'."
+      "hint": "Use 'user-friendly' or 'You'll learn it in no time …'."
      },
      {
       "q": "How exactly will it make my life easier?",
@@ -1463,7 +1472,11 @@
      "Do you think people spend too much time on apps? What could they cut down on?"
     ]
    },
-   "exit": "Recommend an app to me in two sentences and tell me why it's worth downloading."
+   "exit": "Recommend an app to me in two sentences and tell me why it's worth downloading.",
+   "recycle": [
+    "get the hang of",
+    "cut down on"
+   ]
   },
   "1-5": {
    "objective": "Today you will give a short persuasive talk to win people over to your idea.",
@@ -1716,10 +1729,10 @@
      "frame": "I had to cram for ___ the night before."
     },
     {
-     "w": "fall behind",
-     "def": "to make less progress than you should",
-     "ar": "يتأخر عن الآخرين",
-     "frame": "I fell behind in ___ when ___."
+     "w": "get left behind",
+     "def": "to learn or do less than the people around you",
+     "ar": "يتأخّر عن الآخرين / يتخلّف",
+     "frame": "I got left behind in ___ when ___."
     },
     {
      "w": "learn your lesson",
@@ -1734,10 +1747,10 @@
      "frame": "Before a test, I go over ___."
     },
     {
-     "w": "make up for",
-     "def": "to do something good to fix a bad situation",
-     "ar": "يعوّض عن",
-     "frame": "To make up for ___, I will ___."
+     "w": "put things right",
+     "def": "to fix a bad situation or a mistake",
+     "ar": "يُصلح الأمور",
+     "frame": "To put things right after ___, I will ___."
     }
    ],
    "dialogue": {
@@ -1763,11 +1776,11 @@
     "p2": [
      {
       "s": "Lama",
-      "t": "You fell behind when you missed those classes. You could have asked your teacher for help."
+      "t": "You got left behind when you missed those classes. You could have asked your teacher for help."
      },
      {
       "s": "Noura",
-      "t": "I know. In hindsight, I shouldn't have been so shy."
+      "t": "I know. My teacher said she would help me, but I was too shy to ask."
      },
      {
       "s": "Lama",
@@ -1775,7 +1788,7 @@
      },
      {
       "s": "Noura",
-      "t": "Thanks. I'll work hard to make up for this mark."
+      "t": "Thanks. I'll work hard to put things right."
      }
     ],
     "focus": "I crammed the night before, but I couldn't remember anything. I should have started earlier.",
@@ -1796,8 +1809,8 @@
       "hint": "Give two ideas with 'You could have …'."
      },
      {
-      "q": "How can I make up for it next time?",
-      "hint": "Suggest a plan and use 'go over' or 'make up for'."
+      "q": "How can I put things right next time?",
+      "hint": "Suggest a plan and use 'go over' or 'put things right'."
      }
     ]
    },
@@ -1813,7 +1826,11 @@
      "Have you ever crammed for a test? How did it go?"
     ]
    },
-   "exit": "Tell me two things you should or shouldn't have done before a test you remember."
+   "exit": "Tell me two things you should or shouldn't have done before a test you remember.",
+   "recycle": [
+    "fall behind",
+    "make up for"
+   ]
   },
   "2-2": {
    "objective": "Today you will say sorry for something you said and talk about what you should have said.",
@@ -2054,10 +2071,10 @@
    "warmup": "Have you ever been on a trip where something went wrong?",
    "expressions": [
     {
-     "w": "run out of",
-     "def": "to use all of something so none is left",
-     "ar": "ينفد منه",
-     "frame": "On our trip, we ran out of ___."
+     "w": "be stranded",
+     "def": "to be stuck somewhere with no way to leave",
+     "ar": "عالق بلا وسيلة للعودة",
+     "frame": "We were stranded at ___ because ___."
     },
     {
      "w": "plan ahead",
@@ -2078,10 +2095,10 @@
      "frame": "Missing ___ was a blessing in disguise because ___."
     },
     {
-     "w": "look on the bright side",
-     "def": "to see the good part of a bad situation",
-     "ar": "ينظر إلى الجانب المشرق",
-     "frame": "Look on the bright side: at least ___."
+     "w": "every cloud has a silver lining",
+     "def": "something good can come from every bad situation",
+     "ar": "لكل شيء سيئ جانب مشرق",
+     "frame": "Every cloud has a silver lining: ___."
     },
     {
      "w": "go wrong",
@@ -2099,7 +2116,7 @@
      },
      {
       "s": "Sam",
-      "t": "Honestly, everything went wrong. First, we ran out of fuel on the dirt road."
+      "t": "Honestly, everything went wrong. First, we were stranded on the dirt road with no fuel."
      },
      {
       "s": "Faisal",
@@ -2121,7 +2138,7 @@
      },
      {
       "s": "Faisal",
-      "t": "Well, look on the bright side. You made new friends!"
+      "t": "Well, every cloud has a silver lining. You made new friends!"
      },
      {
       "s": "Sam",
@@ -2139,7 +2156,7 @@
     "prompts": [
      {
       "q": "What went wrong on your picnic?",
-      "hint": "Describe two problems with 'We ran out of …' or 'We forgot …'."
+      "hint": "Describe two problems with 'We were stranded …' or 'We forgot …'."
      },
      {
       "q": "What could you have done differently?",
@@ -2147,7 +2164,7 @@
      },
      {
       "q": "Was there anything good about the day?",
-      "hint": "Use 'Look on the bright side …' or 'It could have been worse'."
+      "hint": "Use 'Every cloud has a silver lining …' or 'It could have been worse'."
      }
     ]
    },
@@ -2163,7 +2180,11 @@
      "Do you think trips are more fun when they are carefully planned or when they are surprises?"
     ]
    },
-   "exit": "Tell me about a trip that went wrong, in two sentences, and what you could have done."
+   "exit": "Tell me about a trip that went wrong, in two sentences, and what you could have done.",
+   "recycle": [
+    "look on the bright side",
+    "run out of"
+   ]
   },
   "2-5": {
    "objective": "Today you will tell the story of a mistake and the lesson you learned.",
@@ -2299,10 +2320,10 @@
      "frame": "To make ___, you bring the water to the boil and ___."
     },
     {
-     "w": "step by step",
-     "def": "slowly and in the right order",
-     "ar": "خطوة بخطوة",
-     "frame": "Let me explain step by step how to make ___."
+     "w": "grind",
+     "def": "to crush something into very small pieces or powder",
+     "ar": "يطحن",
+     "frame": "Fresh ___ is ground just before it is used."
     },
     {
      "w": "leave it to simmer",
@@ -2396,7 +2417,10 @@
      "What drink would you serve a guest from another country? Why?"
     ]
    },
-   "exit": "Explain to me in two sentences how you make your favourite drink, using sequencing words."
+   "exit": "Explain to me in two sentences how you make your favourite drink, using sequencing words.",
+   "recycle": [
+    "step by step"
+   ]
   },
   "3-1": {
    "objective": "Today you will explain how dates are produced and sent to shops.",
@@ -2409,10 +2433,10 @@
      "frame": "___ are usually picked by hand because ___."
     },
     {
-     "w": "sort out",
-     "def": "to separate things into groups",
-     "ar": "يفرز / يصنّف",
-     "frame": "At the factory, the ___ are sorted out by ___."
+     "w": "grade",
+     "def": "to sort things into groups by size or quality",
+     "ar": "يصنّف حسب الجودة أو الحجم",
+     "frame": "At the factory, the ___ are graded by ___."
     },
     {
      "w": "go through",
@@ -2467,7 +2491,7 @@
      },
      {
       "s": "Mr Saleh",
-      "t": "After that, they're sorted out by size. Every batch goes through quality control."
+      "t": "After that, they're graded by size. Every batch goes through quality control."
      },
      {
       "s": "Omar",
@@ -2513,17 +2537,20 @@
      "Why do you think dates are so important in Saudi culture?"
     ]
    },
-   "exit": "Explain in two sentences how dates get from the farm to the shop, using the passive."
+   "exit": "Explain in two sentences how dates get from the farm to the shop, using the passive.",
+   "recycle": [
+    "sort out"
+   ]
   },
   "3-2": {
    "objective": "Today you will give clear instructions to set up a new device.",
    "warmup": "What was the last new device your family got? Who set it up?",
    "expressions": [
     {
-     "w": "set up",
-     "def": "to prepare a machine or system so it can be used",
-     "ar": "يجهّز / يعدّ",
-     "frame": "It took me ___ minutes to set up ___."
+     "w": "connect to",
+     "def": "to join a device to a network or another device",
+     "ar": "يتّصل بـ / يربط بـ",
+     "frame": "First, I connect my ___ to the ___."
     },
     {
      "w": "plug in",
@@ -2538,10 +2565,10 @@
      "frame": "If you follow the instructions, ___."
     },
     {
-     "w": "make sure",
-     "def": "to check that something is true or done",
-     "ar": "يتأكد من",
-     "frame": "Make sure you ___ before you ___."
+     "w": "be careful to",
+     "def": "to pay attention so that you do something correctly",
+     "ar": "احرص على أن",
+     "frame": "Be careful to ___ before you ___."
     },
     {
      "w": "once that's done",
@@ -2579,11 +2606,11 @@
     "p2": [
      {
       "s": "Grandpa",
-      "t": "Done. Now it wants a password."
+      "t": "Done. Now it wants to connect to the Wi-Fi."
      },
      {
       "s": "Faisal",
-      "t": "That's the Wi-Fi password. It's written on the back of the router. Make sure you type capital letters correctly."
+      "t": "That's the Wi-Fi password. It's written on the back of the router. Be careful to type capital letters correctly."
      },
      {
       "s": "Grandpa",
@@ -2609,7 +2636,7 @@
      },
      {
       "q": "How do I connect to the internet?",
-      "hint": "Give two steps with 'Then …' and 'Make sure …'."
+      "hint": "Give two steps with 'Then …' and 'Be careful to …'."
      },
      {
       "q": "And how do I make a video call?",
@@ -2629,7 +2656,11 @@
      "Who do you usually help with technology in your family?"
     ]
    },
-   "exit": "Give me two clear instructions to set up something you use every day."
+   "exit": "Give me two clear instructions to set up something you use every day.",
+   "recycle": [
+    "make sure",
+    "set up"
+   ]
   },
   "3-3": {
    "objective": "Today you will explain how seawater is turned into drinking water.",
@@ -2666,10 +2697,10 @@
      "frame": "In my house, we store ___ in ___."
     },
     {
-     "w": "get rid of",
-     "def": "to remove something you don't want",
-     "ar": "يتخلّص من",
-     "frame": "To get rid of ___, you need to ___."
+     "w": "extract",
+     "def": "to take something out of something else",
+     "ar": "يستخرج / يفصل",
+     "frame": "To extract ___ from ___, you need to ___."
     }
    ],
    "dialogue": {
@@ -2696,7 +2727,7 @@
     "p2": [
      {
       "s": "Noura",
-      "t": "And how do you get rid of the salt?"
+      "t": "And how is the salt extracted?"
      },
      {
       "s": "Majed",
@@ -2726,7 +2757,7 @@
      },
      {
       "q": "How is the water cleaned?",
-      "hint": "Give two steps with 'Next, …' and 'filtered out' or 'get rid of'."
+      "hint": "Give two steps with 'Next, …' and 'filtered out' or 'extracted'."
      },
      {
       "q": "How does the water finally reach our homes?",
@@ -2746,7 +2777,10 @@
      "What are two easy ways your family could use less water?"
     ]
    },
-   "exit": "Explain in two sentences how seawater becomes drinking water, using 'first' and 'then'."
+   "exit": "Explain in two sentences how seawater becomes drinking water, using 'first' and 'then'.",
+   "recycle": [
+    "get rid of"
+   ]
   },
   "3-4": {
    "objective": "Today you will explain how rubbish is recycled.",
@@ -2759,10 +2793,10 @@
      "frame": "Every day, my family throws away ___."
     },
     {
-     "w": "break down",
-     "def": "to make something into smaller pieces",
-     "ar": "يفتّت / يحلّل",
-     "frame": "In a recycling plant, ___ are broken down into ___."
+     "w": "shred",
+     "def": "to cut or tear something into very small pieces",
+     "ar": "يقطّع إلى قطع صغيرة",
+     "frame": "In a recycling plant, ___ are shredded into ___."
     },
     {
      "w": "give something a second life",
@@ -2817,7 +2851,7 @@
      },
      {
       "s": "Sara",
-      "t": "They're broken down into tiny pieces, and the pieces are melted down."
+      "t": "They're shredded into tiny pieces, and the pieces are melted down."
      },
      {
       "s": "Lama",
@@ -2843,7 +2877,7 @@
      },
      {
       "q": "What happens to them at the plant?",
-      "hint": "Give two or three steps with 'Then …', 'After that …' and 'broken down'."
+      "hint": "Give two or three steps with 'Then …', 'After that …' and 'shredded'."
      },
      {
       "q": "Why should I bother recycling?",
@@ -2863,7 +2897,10 @@
      "What could your neighbourhood do to recycle more?"
     ]
    },
-   "exit": "Explain in two sentences what happens to a plastic bottle after you recycle it."
+   "exit": "Explain in two sentences what happens to a plastic bottle after you recycle it.",
+   "recycle": [
+    "break down"
+   ]
   },
   "3-5": {
    "objective": "Today you will give a short talk explaining a process of your choice.",
@@ -3079,9 +3116,9 @@
      "ex": "The muddy footprints were the first clue."
     },
     {
-     "w": "figure out",
-     "ar": "يكتشف / يتوصّل إلى الحل",
-     "ex": "It took us an hour to figure out who had the key."
+     "w": "get to the bottom of",
+     "ar": "يكشف حقيقة الأمر",
+     "ex": "The detective got to the bottom of the mystery."
     },
     {
      "w": "there's no doubt about it",
@@ -3121,7 +3158,7 @@
     },
     {
      "s": "Noura",
-     "t": "There's no doubt about it. Let's ask her and figure out the whole story."
+     "t": "There's no doubt about it. Let's ask her and get to the bottom of this."
     }
    ],
    "grammar": {
@@ -3157,9 +3194,9 @@
      "ex": "Dad keeps an eye on the weather app all day."
     },
     {
-     "w": "call off",
-     "ar": "يلغي",
-     "ex": "They called off the desert trip because of the sandstorm."
+     "w": "at the last minute",
+     "ar": "في آخر لحظة",
+     "ex": "They cancelled the desert trip at the last minute."
     },
     {
      "w": "unlikely",
@@ -3186,7 +3223,7 @@
     },
     {
      "s": "Sara",
-     "t": "I hope we don't have to call off the trip again."
+     "t": "I hope we don't have to cancel the trip at the last minute again."
     },
     {
      "s": "Khalid",
@@ -3447,9 +3484,9 @@
      "ex": "The rocks of AlUla will take your breath away."
     },
     {
-     "w": "off the beaten track",
-     "ar": "بعيد عن الأماكن المزدحمة بالسيّاح",
-     "ex": "We found a quiet village off the beaten track."
+     "w": "a well-kept secret",
+     "ar": "كنز لا يعرفه كثيرون",
+     "ex": "This quiet village is a well-kept secret."
     },
     {
      "w": "make the most of",
@@ -3490,7 +3527,7 @@
     },
     {
      "s": "Noura",
-     "t": "The main sites can be busy, but there are quiet valleys off the beaten track."
+     "t": "The main sites can be busy, but the quiet valleys are a well-kept secret."
     },
     {
      "s": "Emma",
@@ -3755,9 +3792,9 @@
      "ex": "The app is so user-friendly that my grandmother uses it."
     },
     {
-     "w": "get the hang of",
-     "ar": "يتقن / يتعوّد على",
-     "ex": "You'll get the hang of it in a day or two."
+     "w": "in no time",
+     "ar": "في وقت قصير جداً",
+     "ex": "You'll be using it in no time."
     },
     {
      "w": "keep track of",
@@ -3770,9 +3807,9 @@
      "ex": "Online shopping saves time for busy families."
     },
     {
-     "w": "cut down on",
-     "ar": "يقلّل من",
-     "ex": "This app helped me cut down on screen time."
+     "w": "set a reminder",
+     "ar": "يضبط تذكيراً",
+     "ex": "I set a reminder for my training on Thursday."
     }
    ],
    "dialogue": [
@@ -3798,7 +3835,7 @@
     },
     {
      "s": "Noura",
-     "t": "It reminds you before every training session and match, and it saves so much time. It's been a game changer for me."
+     "t": "You can set a reminder before every training session and match, and it saves so much time. It's been a game changer for me."
     },
     {
      "s": "Fahad",
@@ -3806,16 +3843,16 @@
     },
     {
      "s": "Noura",
-     "t": "You'll get the hang of it in a day. Give it a shot, and stick with it for a week!"
+     "t": "You'll learn it in no time. Give it a shot, and stick with it for a week!"
     }
    ],
    "grammar": {
     "title": "Recommending and promising results",
-    "ar": "نوصي ثم نذكر النتيجة: It's worth downloading … / It'll help you + فعل / You'll get the hang of it.",
+    "ar": "نوصي ثم نذكر النتيجة: It's worth downloading … / It'll help you + فعل / You'll learn it in no time.",
     "examples": [
      "It's worth downloading this app.",
      "It'll help you keep track of your homework.",
-     "You'll get the hang of it quickly."
+     "You'll learn it in no time."
     ]
    }
   },
@@ -3986,9 +4023,9 @@
      "ex": "Cramming the night before rarely works."
     },
     {
-     "w": "fall behind",
-     "ar": "يتأخر عن الآخرين",
-     "ex": "She fell behind in maths after being ill."
+     "w": "get left behind",
+     "ar": "يتأخّر عن الآخرين / يتخلّف",
+     "ex": "She got left behind in maths after being ill."
     },
     {
      "w": "learn your lesson",
@@ -4001,9 +4038,9 @@
      "ex": "Let's go over the main points again."
     },
     {
-     "w": "make up for",
-     "ar": "يعوّض عن",
-     "ex": "I'll study extra hours to make up for lost time."
+     "w": "put things right",
+     "ar": "يُصلح الأمور",
+     "ex": "I'll study extra hours to put things right."
     }
    ],
    "dialogue": [
@@ -4025,11 +4062,11 @@
     },
     {
      "s": "Lama",
-     "t": "You fell behind when you missed those classes. You could have asked your teacher for help."
+     "t": "You got left behind when you missed those classes. You could have asked your teacher for help."
     },
     {
      "s": "Noura",
-     "t": "I know. In hindsight, I shouldn't have been so shy."
+     "t": "I know. My teacher said she would help me, but I was too shy to ask."
     },
     {
      "s": "Lama",
@@ -4037,7 +4074,7 @@
     },
     {
      "s": "Noura",
-     "t": "Thanks. I'll work hard to make up for this mark."
+     "t": "Thanks. I'll work hard to put things right."
     }
    ],
    "grammar": {
@@ -4207,9 +4244,9 @@
   "2-4": {
    "words": [
     {
-     "w": "run out of",
-     "ar": "ينفد منه",
-     "ex": "We ran out of water in the desert."
+     "w": "be stranded",
+     "ar": "عالق بلا وسيلة للعودة",
+     "ex": "We were stranded in the desert for two hours."
     },
     {
      "w": "plan ahead",
@@ -4227,9 +4264,9 @@
      "ex": "The delay was a blessing in disguise. We saw a beautiful sunset."
     },
     {
-     "w": "look on the bright side",
-     "ar": "ينظر إلى الجانب المشرق",
-     "ex": "Look on the bright side: nobody was hurt."
+     "w": "every cloud has a silver lining",
+     "ar": "لكل شيء سيئ جانب مشرق",
+     "ex": "Every cloud has a silver lining: we missed the bus, so we walked and talked."
     },
     {
      "w": "go wrong",
@@ -4244,7 +4281,7 @@
     },
     {
      "s": "Sam",
-     "t": "Honestly, everything went wrong. First, we ran out of fuel on the dirt road."
+     "t": "Honestly, everything went wrong. First, we were stranded on the dirt road with no fuel."
     },
     {
      "s": "Faisal",
@@ -4264,7 +4301,7 @@
     },
     {
      "s": "Faisal",
-     "t": "Well, look on the bright side. You made new friends!"
+     "t": "Well, every cloud has a silver lining. You made new friends!"
     },
     {
      "s": "Sam",
@@ -4371,9 +4408,9 @@
      "ex": "The water is brought to the boil in a dallah."
     },
     {
-     "w": "step by step",
-     "ar": "خطوة بخطوة",
-     "ex": "Grandma showed me step by step."
+     "w": "grind",
+     "ar": "يطحن",
+     "ex": "The beans are ground by hand in an old brass pot."
     },
     {
      "w": "leave it to simmer",
@@ -4443,9 +4480,9 @@
      "ex": "The best dates are picked by hand."
     },
     {
-     "w": "sort out",
-     "ar": "يفرز / يصنّف",
-     "ex": "The dates are sorted out by size and colour."
+     "w": "grade",
+     "ar": "يصنّف حسب الجودة أو الحجم",
+     "ex": "The dates are graded by size and colour."
     },
     {
      "w": "go through",
@@ -4491,7 +4528,7 @@
     },
     {
      "s": "Mr Saleh",
-     "t": "After that, they're sorted out by size. Every batch goes through quality control."
+     "t": "After that, they're graded by size. Every batch goes through quality control."
     },
     {
      "s": "Omar",
@@ -4507,7 +4544,7 @@
     "ar": "نربط مراحل العملية بكلمات الترتيب مع المبني للمجهول: First, they are picked. Then, they are washed. Finally, they are shipped.",
     "examples": [
      "First, the dates are picked by hand.",
-     "After that, they are sorted out by size.",
+     "After that, they are graded by size.",
      "Finally, they are shipped abroad."
     ]
    }
@@ -4515,9 +4552,9 @@
   "3-2": {
    "words": [
     {
-     "w": "set up",
-     "ar": "يجهّز / يعدّ",
-     "ex": "Can you help me set up my new tablet?"
+     "w": "connect to",
+     "ar": "يتّصل بـ / يربط بـ",
+     "ex": "Can you help me connect my tablet to the Wi-Fi?"
     },
     {
      "w": "plug in",
@@ -4530,9 +4567,9 @@
      "ex": "Just follow the instructions on the screen."
     },
     {
-     "w": "make sure",
-     "ar": "يتأكد من",
-     "ex": "Make sure the Wi-Fi is turned on."
+     "w": "be careful to",
+     "ar": "احرص على أن",
+     "ex": "Be careful to turn the Wi-Fi on first."
     },
     {
      "w": "once that's done",
@@ -4564,11 +4601,11 @@
     },
     {
      "s": "Grandpa",
-     "t": "Done. Now it wants a password."
+     "t": "Done. Now it wants to connect to the Wi-Fi."
     },
     {
      "s": "Faisal",
-     "t": "That's the Wi-Fi password. It's written on the back of the router. Make sure you type capital letters correctly."
+     "t": "That's the Wi-Fi password. It's written on the back of the router. Be careful to type capital letters correctly."
     },
     {
      "s": "Grandpa",
@@ -4617,9 +4654,9 @@
      "ex": "Clean water is stored in huge tanks."
     },
     {
-     "w": "get rid of",
-     "ar": "يتخلّص من",
-     "ex": "Special machines get rid of the salt."
+     "w": "extract",
+     "ar": "يستخرج / يفصل",
+     "ex": "Special machines extract the salt from seawater."
     }
    ],
    "dialogue": [
@@ -4641,7 +4678,7 @@
     },
     {
      "s": "Noura",
-     "t": "And how do you get rid of the salt?"
+     "t": "And how is the salt extracted?"
     },
     {
      "s": "Majed",
@@ -4674,9 +4711,9 @@
      "ex": "Don't throw away that bottle. It can be recycled."
     },
     {
-     "w": "break down",
-     "ar": "يفتّت / يحلّل",
-     "ex": "The bottles are broken down into small pieces."
+     "w": "shred",
+     "ar": "يقطّع إلى قطع صغيرة",
+     "ex": "The bottles are shredded into small pieces."
     },
     {
      "w": "give something a second life",
@@ -4722,7 +4759,7 @@
     },
     {
      "s": "Sara",
-     "t": "They're broken down into tiny pieces, and the pieces are melted down."
+     "t": "They're shredded into tiny pieces, and the pieces are melted down."
     },
     {
      "s": "Lama",
@@ -4738,7 +4775,7 @@
     "ar": "في وصف العمليات الطويلة نستخدم: First … Then … After that … Eventually (في النهاية) مع المبني للمجهول، ويمكن حذف are الثانية: They're washed and dried.",
     "examples": [
      "The bottles are collected and taken to a plant.",
-     "Then they're broken down into tiny pieces.",
+     "Then they're shredded into tiny pieces.",
      "Eventually, they're made into T-shirts."
     ]
    }
@@ -4948,14 +4985,14 @@
   "0-2": [
    {
     "type": "mc",
-    "q": "The sandstorm was so strong that they had to ___ the trip.",
+    "q": "The sandstorm started just before we left, so they cancelled the trip ___.",
     "options": [
-     "call in",
-     "call back",
-     "call up",
-     "call off"
+     "at the last minute",
+     "on the safe side",
+     "in the bag",
+     "for granted"
     ],
-    "answer": 3
+    "answer": 0
    },
    {
     "type": "order",
@@ -5223,9 +5260,9 @@
    },
    {
     "type": "mc",
-    "q": "A quiet place where few tourists go is ___.",
+    "q": "A great place that few people know about is ___.",
     "options": [
-     "off the beaten track",
+     "a well-kept secret",
      "on the right track",
      "a must-see",
      "well worth it"
@@ -5470,25 +5507,25 @@
    },
    {
     "type": "mc",
-    "q": "It's difficult at first, but you'll ___ it soon.",
+    "q": "It's easy. You'll learn it in ___ time.",
     "options": [
-     "get the hang of",
-     "get the head of",
-     "get the hold for",
-     "get the hand of"
+     "no",
+     "any",
+     "some",
+     "little"
     ],
     "answer": 0
    },
    {
     "type": "mc",
-    "q": "I want to spend less time on games. I want to ___ games.",
+    "q": "I don't want to forget the match, so I'll ___ on my phone.",
     "options": [
-     "cut up",
-     "cut off",
-     "cut down on",
-     "cut in"
+     "set a reminder",
+     "cut in",
+     "turn off",
+     "look up"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "order",
@@ -5643,12 +5680,12 @@
    },
    {
     "type": "mc",
-    "q": "She missed a week of school and ___ in maths.",
+    "q": "She missed a week of school and got ___ in maths.",
     "options": [
-     "fell behind",
-     "fell down",
-     "fell out",
-     "fell over"
+     "left behind",
+     "left over",
+     "left out",
+     "left alone"
     ],
     "answer": 0
    },
@@ -5814,12 +5851,12 @@
   "2-4": [
    {
     "type": "mc",
-    "q": "We didn't have any water left. We ___ water.",
+    "q": "Our car broke down in the desert, and we couldn't leave. We were ___.",
     "options": [
-     "ran out of",
-     "ran into",
-     "ran away",
-     "ran over"
+     "stranded",
+     "stunning",
+     "stressed out",
+     "spoilt"
     ],
     "answer": 0
    },
@@ -6011,12 +6048,12 @@
     "type": "mc",
     "q": "At the factory, the dates are ___ by size and colour.",
     "options": [
-     "sorted in",
-     "sold out",
-     "set out",
-     "sorted out"
+     "grown",
+     "graded",
+     "grabbed",
+     "greeted"
     ],
-    "answer": 3
+    "answer": 1
    },
    {
     "type": "mc",
@@ -6080,14 +6117,14 @@
    },
    {
     "type": "mc",
-    "q": "___ you type the password correctly.",
+    "q": "Be careful ___ type the password correctly.",
     "options": [
-     "Be sure of",
-     "Make sure",
-     "Make up",
-     "Take sure"
+     "to",
+     "for",
+     "of",
+     "that"
     ],
-    "answer": 1
+    "answer": 0
    },
    {
     "type": "order",
@@ -6141,14 +6178,14 @@
    },
    {
     "type": "mc",
-    "q": "Special machines help us ___ the salt.",
+    "q": "Special machines are used to ___ the salt from seawater.",
     "options": [
      "get on with",
-     "get the hang of",
+     "extract",
      "get into",
-     "get rid of"
+     "expect"
     ],
-    "answer": 3
+    "answer": 1
    },
    {
     "type": "mc",
@@ -6193,12 +6230,12 @@
     "type": "mc",
     "q": "The bottles are ___ into tiny pieces.",
     "options": [
-     "broken in",
-     "broken out",
-     "broken down",
-     "broken up with"
+     "shredded",
+     "shrunk",
+     "shone",
+     "shared"
     ],
-    "answer": 2
+    "answer": 0
    },
    {
     "type": "mc",
@@ -6328,12 +6365,12 @@
     },
     {
      "type": "mc",
-     "q": "The match was ___ because of the storm.",
+     "q": "They cancelled the match ___ because a storm suddenly started.",
      "options": [
-      "called off",
-      "turned up",
-      "looked after",
-      "gone out"
+      "at the last minute",
+      "on the safe side",
+      "in the bag",
+      "for granted"
      ],
      "answer": 0
     },
@@ -6434,10 +6471,10 @@
    "items": [
     {
      "type": "mc",
-     "q": "A place far from busy tourist areas is ___.",
+     "q": "A great quiet place that few tourists know about is ___.",
      "options": [
       "a must-see",
-      "off the beaten track",
+      "a well-kept secret",
       "on the safe side",
       "out of this world"
      ],
@@ -6764,25 +6801,24 @@
       "The",
       "bottles",
       "are",
-      "broken",
-      "down",
+      "shredded",
       "into",
       "pieces."
      ],
-     "answer": "The bottles are broken down into pieces.",
+     "answer": "The bottles are shredded into pieces.",
      "ar": "رتّب الجملة"
     },
     {
      "type": "order",
      "words": [
-      "Make",
-      "sure",
-      "you",
+      "Be",
+      "careful",
+      "to",
       "follow",
       "the",
       "instructions."
      ],
-     "answer": "Make sure you follow the instructions.",
+     "answer": "Be careful to follow the instructions.",
      "ar": "رتّب الجملة"
     },
     {
@@ -7012,7 +7048,7 @@
     "type": "mc",
     "q": "Special filters are used to ___ the salt.",
     "options": [
-     "get rid of",
+     "extract",
      "get on with",
      "get over",
      "get away"
