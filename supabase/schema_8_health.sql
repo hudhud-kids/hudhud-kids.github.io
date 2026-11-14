@@ -11,5 +11,6 @@ create table if not exists public.tk_health (
 );
 alter table public.tk_health enable row level security;
 revoke all on public.tk_health from anon, authenticated;
+grant select, insert, update on public.tk_health to service_role;
 insert into public.tk_health(id) values ('ai') on conflict (id) do nothing;
 notify pgrst, 'reload schema';
