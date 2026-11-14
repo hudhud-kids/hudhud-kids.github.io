@@ -2287,7 +2287,7 @@ function listenUntilDone(ms, onText, ctl){ return new Promise(res => {
         seg = {}; let rec = null;
         try{ rec = await captureAudio({maxMs:Math.max(1000, ms - (Date.now() - t0)), silence:2.5, ctl:seg, waitMs:0}); }catch(e){ console.warn('long rec', e); break; }
         if(rec && rec.heard && rec.wav){ const i = parts.length; parts.push(''); show(' …');
-          pend.push(azRecognize(rec.wav, 'en-US').then(t => { parts[i] = t || ''; show(); }, e => console.warn('stt', e))); }
+          pend.push(azRecognize(rec.wav, 'en-US').then(t => { parts[i] = (t && typeof t === 'object' ? t.text : t) || ''; show(); }, e => console.warn('stt', e))); }
         else if(!rec || !rec.frames) break;
       }
       await Promise.all(pend); done(); })();
