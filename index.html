@@ -2676,14 +2676,19 @@ function livePhrases(){
   (L.boardWords || []).forEach(add); SA_WORDS.forEach(add);
   return [...out].slice(0, 400);
 }
-/* the child stopped on a word that needs more after it ("I like it because...") */
-const MORE_WORDS = new Set('because and but so or the a an to my i is are was were with of like um uh umm uhh er erm hmm then when if that for in on at from about his her your our their very really want am have has can will favorite favourite'.split(' '));
-function soundsUnfinished(t){ const w = String(t).toLowerCase().replace(/[^a-z' ]/g, ' ').trim().split(/\s+/); const a = w[w.length - 1] || '', b = w[w.length - 2] || '';
-  return MORE_WORDS.has(a) || (a === 'think' && (b === 'i' || b === 'you')) || /,\s*$/.test(t); }
-/* recogniser segments → one sentence ("I like it because." + "It is fun." → "I like it because it is fun.") */
+/* the child stopped on a word that needs more after it ("I like it because...", "my favourite food is...") */
+const MORE_WORDS = new Set('because and but so or the a an to my i with of like um uh umm uhh er erm hmm then when if for in on at from about his her your our their very want favorite favourite'.split(' '));
+const MORE_AUX = new Set('is are was were am have has can will'.split(' ')), MORE_PRON = new Set('i you he she it we they there that this who what'.split(' '));
+function soundsUnfinished(t){ if(/,\s*$/.test(t)) return true;
+  const w = String(t).toLowerCase().replace(/[^a-z' ]/g, ' ').trim().split(/\s+/); const a = w[w.length - 1] || '', b = w[w.length - 2] || '';
+  if(MORE_AUX.has(a)) return !MORE_PRON.has(b);                                    // "Yes, it is." is finished; "my favourite is..." is not
+  if(a === 'so' && /^(think|hope|guess|believe|said|do|did|not|so)$/.test(b)) return false; // "I think so."
+  return MORE_WORDS.has(a) || (a === 'think' && (b === 'i' || b === 'you')); }
+/* recogniser segments → one sentence ("I like it because." + "My brother likes it." → "I like it because my brother likes it.") */
+const SEG_LOWER = /^(The|A|An|It|It's|My|Our|Your|His|Her|Their|We|They|He|She|You|And|But|So|Then|There|This|That|Is|Are|Was|Because|To|In|On|At|With|For|Of|Some|Very|Um|Uh)\b/;
 function joinSegs(segs){ let out = '';
   for(const s0 of segs){ const s = String(s0 || '').trim(); if(!s) continue;
-    if(out && soundsUnfinished(out.replace(/[.!?]+$/, ''))){ out = out.replace(/[.!?]+$/, '') + ' ' + (/^(I|I'm|I've|I'll|I'd)\b/.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1)); }
+    if(out && soundsUnfinished(out.replace(/[.!?]+$/, ''))) out = out.replace(/[.!?]+$/, '') + ' ' + (SEG_LOWER.test(s) ? s.charAt(0).toLowerCase() + s.slice(1) : s);
     else out = out ? out + ' ' + s : s; }
   return out; }
 class LiveSR {
