@@ -1489,7 +1489,7 @@ ${steps.map((x, i) => `${i+1}. ${x.en} (about ${x.sec}s)`).join('\n')}
 HOW TO RUN EACH STEP:
 - Objective: say the objective in your own friendly words, connect it to the child, then [NEXT] in the same turn.
 - Warm-up: ask the warm-up question (personalise it). After one full-sentence answer, react, then [NEXT]. The slide also shows two topic cards for the speak out later: (A) the lesson's own situation, (B) "${alt.en}". You may say once: "Tap the topic you like!" The header tells you when they tap one (TOPIC CARD).
-- Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. In your FIRST reply of the round, already give the first clue or question and the exact sentence the child should say (for example: "I say: you use it when you meet someone. Which expression is it? Say: Nice to meet you."). The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
+- Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. In your FIRST reply of the round, already give the first clue or question (for example: "You say it when you meet someone for the first time. Which expression is it?") and do NOT say the answer. The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
 - Role-play part I: set the scene in one exciting sentence. YOU play the first speaker, the CHILD plays ${v2Role(sc.dialogue||{}) || 'the other character'} (the slide shows their lines as a guide). Say your line, then let the child say theirs IN THEIR OWN WORDS — they do not need to read it exactly; react in character, improvise a little, keep it moving. Then [NEXT]. Part II: continue the scene the same way, then step out of the role and ask the 2 questions on the slide; add [GOT] if both answers were right and in sentences, then [NEXT].
 - Speak out n: play the situation with the child and ask the question on the slide (in role). The child must answer with 2 or more sentences using the unit function. Ask one follow-up question. If they did it: [GOT] [NEXT]. If they are stuck, tell them to tap the hint button, or give the first words.
 - Culture: ${small || culShort ? 'keep it tiny (short culture step today): tell ONLY the first point as one fun fact (one or two short sentences), then ask ONLY the first question; one answer is enough; then [NEXT].' : 'read the title, tell the 3 points in a lively way (short), then ask the 2 questions; one opinion with a reason is enough; then [NEXT].'}
@@ -1512,7 +1512,8 @@ GIVE THE CHILD THE SPEAKING TIME:
 - Your turns are SHORT: a quick reaction + ONE question or instruction, about 25 words. Once in a while you may tell a 2-sentence funny mini-story to set up a game.
 - The child must FINISH sentences: if a sentence is incomplete, ask them to finish it before moving on.
 - Never answer your own question, never two questions at once.
-- NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want, then give a model answer to copy ("Say: Hello, I'm Ahmed."). If they still struggle, give two choices ("Is it A or B?").
+- NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want and give a HINT, never the answer: a sentence start with a gap ("My name is ...?"), the first word, or a clue. If the answer is wrong, say what is not right yet and let them try again. After 2 failed tries give two choices ("Is it A or B?"). Say the full correct answer only after 3 failed tries, then let the child say it.
+- NEVER put the answer inside your question (wrong: "What's your name? Say: My name is Mohammad." right: "What's your name? Start with: My name is ...").
 - EVERY reply must END with a question or a clear instruction to the child. Never end on an announcement ("Let's play a game!", "Get ready!"): say the game's first question in the same reply. When you add [NEXT], start the next step in the SAME reply with its first question.
 
 CORRECTION: errors in today's expressions or function → recast and ask them to say it again, and add [FIX]. Other small errors → recast once naturally, no repetition.
@@ -3809,7 +3810,8 @@ GIVE THE CHILD THE SPEAKING TIME (very important):
 - Make the child FINISH: when a sentence is incomplete, or the child skips the pattern, or changes the topic before finishing, do not move on. Say "Finish your sentence: I'd describe myself as... because..." or give the first words and wait. Only ask a new question after the child has said one complete sentence.
 - Ask for one more sentence before you add anything: "Great! Can you give me an example?", "And then?", "Say it again with because".
 - Never answer your own question, never give two questions at once, and never fill a silence with a long explanation.
-- NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want, then give a model answer to copy ("Say: Hello, I'm Ahmed."). If they still struggle, give two choices ("Is it A or B?").
+- NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want and give a HINT, never the answer: a sentence start with a gap ("My name is ...?"), the first word, or a clue. If the answer is wrong, say what is not right yet and let them try again. After 2 failed tries give two choices ("Is it A or B?"). Say the full correct answer only after 3 failed tries, then let the child say it.
+- NEVER put the answer inside your question (wrong: "What's your name? Say: My name is Mohammad." right: "What's your name? Start with: My name is ...").
 - EVERY reply must END with a question or a clear instruction to the child. Never end on an announcement ("Let's play a game!", "Get ready!"): say the game's first question in the same reply. When you add [NEXT], start the next step in the SAME reply with its first question.
 
 HOW TO TALK:
@@ -3818,7 +3820,7 @@ HOW TO TALK:
 - React to WHAT the child said (content first), like a real person, then continue.
 - Correct mistakes the way great teachers do: react to the meaning, then recast the correct sentence naturally, and about half the time ask them to say it again. One correction at a time, never a list. Also add a [FIX] tag.
 - The child's words come from speech recognition: ignore punctuation/capitals. Speech-to-text sometimes mishears children. If a word looks misheard (odd, out of place, a name, a word that sounds like another one), assume the recogniser made the mistake, not the child: answer what they most likely meant. Only ask them to say it again if you truly cannot understand the meaning. Never [FIX], correct or drill something that is probably a mishearing.
-- ${kid.level <= 3 ? arabicRule(kid.level) + ' Otherwise, if the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example sentence to copy, or offer two choices.' : 'You NEVER speak Arabic. Every spoken word is English, always, even if the child speaks Arabic or is stuck. If the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give an example sentence to copy, or offer two choices.'}
+- ${kid.level <= 3 ? arabicRule(kid.level) + ' Otherwise, if the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give a hint or a sentence start, or offer two choices (not the answer).' : 'You NEVER speak Arabic. Every spoken word is English, always, even if the child speaks Arabic or is stuck. If the child is silent, stuck, or speaks Arabic, answer in simple English: rephrase, slow down, give a hint or a sentence start, or offer two choices (not the answer).'}
 - If the child does not understand a specific English word or phrase, keep speaking English and put its written Arabic translation in [AR] (format: word = translation). [AR] is never spoken, it is only shown as text.
 - If you get "(student was silent)", gently encourage: rephrase more simply.
 - Stay on English learning. Never ask for personal details (address, phone, school name, passwords, photos). If off-topic, kindly bring them back.
@@ -3960,7 +3962,7 @@ function renderRoom(){
   updateTalk();
   $('#rep').onclick = () => { if(L.lastSay){ interrupt(false); sayAll(L.lastSay, true); } };
   $('#mic').onclick = onMicTap;
-  $('#tbox').onclick = () => { if(L.state === 'speaking' || L.state === 'thinking') { interrupt(true); } };
+  $('#tbox').onclick = () => { if(L.state === 'speaking' && Date.now() - (L.speakAt || 0) > 2000) { interrupt(true); } };
   $('#kb').onclick = () => { const t = $('#typer'); t.hidden = !t.hidden; if(!t.hidden){ stopListening(); $('#msg').focus(); } };
   $('#typer').addEventListener('submit', e => { e.preventDefault(); const v = $('#msg').value.trim(); if(!v) return; $('#msg').value = ''; studentSaid(v); });
   $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } if(L.review){ finishReview(); return; } teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
@@ -4001,7 +4003,7 @@ function askPick(t){ const ss = String(t || '').replace(/\s+/g, ' ').trim().matc
 function askShow(spoken, ar){ const el = $('#askb'); if(!el) return; const q = askPick(spoken);
   if(!q){ el.hidden = true; return; }
   el.innerHTML = `<div class="askl">💬 المطلوب منك الآن</div><div class="en" dir="ltr">${esc(q)}</div>${ar ? `<div class="ar">${esc(ar)}</div>` : ''}`; el.hidden = false; }
-function setState(s){ if(!L) return; L.state = s; const b = $('#tbox'); if(!b) return;
+function setState(s){ if(!L) return; if(s === 'speaking' && L.state !== 'speaking') L.speakAt = Date.now(); if(s === 'thinking' && L.state !== 'thinking') L.thinkAt = Date.now(); L.state = s; const b = $('#tbox'); if(!b) return;
   b.classList.toggle('speaking', s==='speaking'); b.classList.toggle('listening', s==='listening'); b.classList.toggle('thinking', s==='thinking');
   $('#state').textContent = (!teacherOf(L.kid).female && STATE_TXT_M[s]) || STATE_TXT[s] || '';
   const m = $('#mic'); if(m){ m.classList.toggle('on', s==='listening'); m.classList.toggle('wait', s==='thinking'||s==='speaking'); }
@@ -4202,8 +4204,8 @@ async function teacherTurn(userText, attempt){
     // a reply that asks the child nothing leaves them waiting ("what does he want?"): make the teacher ask now
     const asks = /\?/.test(spoken) || /\b(say|tell me|try|repeat|finish|complete|answer|use|describe|read|guess|choose|pick|your turn|now you)\b/i.test(spoken);
     if(spoken && !asks && !attempt && !lesson.done && !lesson.endSeen && !(DEMO || DB.apiKey === 'demo')){ lesson.ctl = null; lesson.streamDone = true; pump();
-      lesson.askAfter = () => teacherTurn('(You did not ask the child anything. Ask the next question of the current step now, short and clear, with a model answer.)', 1); return; }
-    if(!spoken && !attempt && !lesson.done){ lesson.ctl = null; lesson.streamDone = true; setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn('(Your last reply had no words for the child. Speak now: react briefly, then say clearly what the child should do next, with a model sentence.)', 1); }, 300); return; }
+      lesson.askAfter = () => teacherTurn('(You did not ask the child anything. Ask the next question of the current step now, short and clear, with a hint but not the answer.)', 1); return; }
+    if(!spoken && !attempt && !lesson.done){ lesson.ctl = null; lesson.streamDone = true; setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn('(Your last reply had no words for the child. Speak now: react briefly, then say clearly what the child should do next, with a hint but not the answer.)', 1); }, 300); return; }
     lesson.ctl = null; lesson.streamDone = true; pump();
   }catch(e){
     if(L !== lesson) return;
@@ -4284,6 +4286,10 @@ function onMicTap(){
   // second tap while listening = stop now: send what was said, or (if nothing) stop and wait for the next tap
   if(L.state === 'listening'){ if(!L.rec){ startListening(true); return; } L.manualStop = true; stopListening(true); setState('thinking'); return; }
   if(L.net){ netRetry(L); return; } // waiting for the internet: a tap tries again now
+  // a tap while the teacher prepares the reply (often the child's own "I'm done" tap, after the app already sent it)
+  // used to cancel the reply, so the teacher never answered: ignore it. Cutting in while he speaks still works (after 2 s).
+  if(L.state === 'thinking' && Date.now() - (L.thinkAt || 0) < 15000){ toast('⏳ المعلم يجهّز الرد…'); return; }
+  if(L.state === 'speaking' && Date.now() - (L.speakAt || 0) < 2000) return;
   interrupt(true);
 }
 /* a short Arabic note in the child's bubble (recognition trouble); optional button to answer by typing instead */
@@ -6756,7 +6762,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15b';
+const APP_VER = '2026-11-15c';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
