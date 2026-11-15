@@ -65,6 +65,8 @@ textarea.in{min-height:90px;resize:vertical}
 .add{width:100%;min-height:52px;border:2px dashed var(--brand);background:#fff;color:var(--brand-ink);border-radius:16px;font-weight:900;font-size:17px;cursor:pointer}
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:700;line-height:1.6;cursor:pointer}
 .consent input{width:22px;height:22px;margin-top:3px;accent-color:var(--brand);flex:none}
+.consent+.consent{margin-top:12px}
+.consent a{color:var(--brand-ink);font-weight:900}
 .send{width:100%;min-height:58px;border:0;border-radius:999px;background:var(--brand);color:#fff;font-weight:900;font-size:20px;cursor:pointer;box-shadow:0 10px 24px rgba(240,90,56,.35);transition:transform .15s}
 .send:active{transform:scale(.98)}.send[disabled]{opacity:.6;cursor:wait}
 .err{color:var(--bad);font-weight:800;min-height:24px;margin:10px 0;text-align:center}
@@ -127,6 +129,7 @@ html,body{overflow-x:hidden}
 
 <section class="card">
 <label class="consent"><input type="checkbox" id="ok"> <span>أوافق على تواصل فريق هدهد معي بخصوص التسجيل، وأن تُحفظ هذه البيانات لإنشاء حساب الطفل.</span></label>
+<label class="consent"><input type="checkbox" id="pv"> <span>أوافق على <a href="../privacy/" target="_blank" rel="noopener">سياسة الخصوصية</a> ومعالجة صوت طفلي أثناء الدروس: يُحوَّل كلامه إلى نص لتردّ عليه المعلمة، ولا يحتفظ هدهد بالتسجيل الصوتي.</span></label>
 <input class="hp" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div class="err" id="err" role="alert"></div>
 <button class="send" id="send" type="submit">إرسال طلب التسجيل</button>
@@ -192,9 +195,11 @@ $('#form').addEventListener('submit', async e => {
   if(!/^05\d{8}$/.test(phone) && !/^\+?\d{9,15}$/.test(phone)) return fail('اكتب رقم جوال صحيح مثل 05xxxxxxxx.', $('#phone'));
   if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail('البريد الإلكتروني غير صحيح.', $('#email'));
   if(!$('#ok').checked) return fail('لازم توافق على التواصل وحفظ البيانات.');
+  if(!$('#pv').checked) return fail('لازم توافق على سياسة الخصوصية ومعالجة صوت طفلك.');
   const data = {kids, kid_ar:kids.map(k => k.ar).join('، '), g_name, rel, phone, email, city:$('#city').value.trim(), device:$('#device').value,
     days:[...document.querySelectorAll('#days input:checked')].map(x => Number(x.value)), time:(document.querySelector('input[name=time]:checked') || {}).value || '',
-    notes:$('#notes').value.trim().slice(0, 800), hp:$('#hp').value};
+    notes:$('#notes').value.trim().slice(0, 800), hp:$('#hp').value,
+    consent:{privacy:'2026-11-draft', voice:true, contact:true, at:new Date().toISOString()}};
   const btn = $('#send'); btn.disabled = true; btn.textContent = 'جاري الإرسال…';
   try{
     const r = await fetch(`${SUPA_URL}/rest/v1/rpc/tk_signup_submit`, {method:'POST', headers:{apikey:SUPA_KEY, 'Content-Type':'application/json'}, body:JSON.stringify({fam:FAM, d:data})});
