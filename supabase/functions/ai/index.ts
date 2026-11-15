@@ -229,9 +229,20 @@ async function llmRoute(req: Request) {
   if ((s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok)) || f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok)
     return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "daily limit" } }), { status: 429, headers: { "content-type": "application/json" } });
   k.n++; k.dn++; k.tok += body.max_tokens; k.dtok += body.max_tokens; f.n++; f.tok += body.max_tokens; tick();
+  tidy(body);
+  const call = (b: any) => fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" }, body: JSON.stringify(b) });
   let r: Response;
   try {
-    r = await fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" }, body: JSON.stringify(body) });
+    r = await call(body);
+    if (r.status === 400) { // log why, then try once more with only the basic fields
+      const why = await r.text(); console.error("llm 400", why.slice(0, 600), JSON.stringify(Object.keys(body)), JSON.stringify((body.messages || []).map((m: any) => m.role + ":" + (typeof m.content === "string" ? "s" : (m.content || []).map((c: any) => c.type).join("+")))).slice(0, 600));
+      const lean: any = { model: body.model, max_tokens: body.max_tokens, system: body.system, messages: body.messages, stream: body.stream };
+      if (body.tools) lean.tools = body.tools;
+      if (/haiku-5/.test(body.model)) lean.thinking = { type: "disabled" };
+      r = await call(lean);
+      if (r.status === 400) { const w2 = await r.text(); console.error("llm 400 again", w2.slice(0, 600)); noteErr("llm", 400); return new Response(w2, { status: 400, headers: { "content-type": "application/json" } }); }
+      body = lean;
+    }
   } catch { noteErr("llm", 502); return new Response('{"error":"upstream"}', { status: 502 }); }
   if (r.status >= 400) { noteErr("llm", r.status); return new Response(r.body, { status: r.status, headers: { "content-type": r.headers.get("content-type") || "application/json" } }); }
   if (!body.stream) { // whole reply: move the tags out of the spoken text into a lesson_event tool call
@@ -303,4 +314,25 @@ export function tagStream() {
       }
     },
   });
+}
+
+/* Deepgram builds the request; make it one the Messages API accepts: system text in "system", no empty turns,
+   roles alternating, starting with the user and ending with the user (newer models refuse a final assistant "prefill") */
+export function tidy(body: any) {
+  const sys: string[] = []; if (typeof body.system === "string" && body.system) sys.push(body.system);
+  else if (Array.isArray(body.system)) body.system.forEach((x: any) => x && x.text && sys.push(x.text));
+  const out: any[] = [];
+  for (const m of body.messages || []) {
+    if (!m) continue;
+    if (m.role === "system") { const t = typeof m.content === "string" ? m.content : (m.content || []).map((c: any) => c.text || "").join(" "); if (t) sys.push(t); continue; }
+    let c = m.content; if (typeof c === "string") { if (!c.trim()) continue; c = [{ type: "text", text: c }]; }
+    c = (c || []).filter((x: any) => x && !(x.type === "text" && !String(x.text || "").trim())); if (!c.length) continue;
+    const last = out[out.length - 1];
+    if (last && last.role === m.role) last.content = last.content.concat(c); else out.push({ role: m.role === "assistant" ? "assistant" : "user", content: c });
+  }
+  if (!out.length || out[0].role !== "user") out.unshift({ role: "user", content: [{ type: "text", text: "(The lesson starts.)" }] });
+  if (out[out.length - 1].role === "assistant") out.push({ role: "user", content: [{ type: "text", text: "(continue)" }] });
+  body.messages = out; if (sys.length) body.system = sys.join("\n\n");
+  delete body.temperature; delete body.top_p; delete body.top_k;
+  return body;
 }

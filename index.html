@@ -4338,8 +4338,7 @@ async function dgStart(lesson){
     if(!d.open){ dgFallback(lesson); return; }
     // dropped mid-lesson: reconnect once quietly, with the conversation so far
     if(!d.retried){ d.retried = true; dgStop(lesson); setTimeout(() => { if(L === lesson && !lesson.done) dgStart(lesson); }, 800); }
-    else { setState('idle'); const sub = $('#sub'); if(sub) sub.innerHTML = '<div class="ar">انقطع الاتصال بالمعلم. اضغط «حاول مرة ثانية».</div><div style="text-align:right;margin-top:8px"><button class="btn sm" id="retry" type="button">حاول مرة ثانية</button></div>';
-      const b = $('#retry'); if(b) b.onclick = () => { d.retried = false; dgStop(lesson); dgStart(lesson); }; } };
+    else { dgNote(lesson, 'switching to the normal teacher'); dgFallback(lesson); } };
   d.ka = setInterval(() => { if(ws.readyState === 1 && d.muted) ws.send(JSON.stringify({type:'KeepAlive'})); }, 5000);
   d.st = setInterval(() => dgSync(lesson), 30000);
 }
@@ -6919,7 +6918,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15f';
+const APP_VER = '2026-11-15g';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
