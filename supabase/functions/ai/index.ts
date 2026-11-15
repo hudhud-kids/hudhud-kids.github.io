@@ -222,6 +222,9 @@ async function llmRoute(req: Request) {
   if (isOurToolResult(body)) return emptyTurn(!!body.stream);
   body.model = MODELS.has(body.model) ? body.model : LLM_MODEL;
   body.max_tokens = Math.min(Number(body.max_tokens) || 300, 600);
+  // no up-front thinking for a live voice reply: it is slow, and it counts inside max_tokens (an empty reply otherwise)
+  if (/haiku-5/.test(body.model)) { body.thinking = { type: "disabled" }; body.output_config = { effort: "medium" }; }
+  else if (/sonnet-5/.test(body.model)) { body.thinking = { type: "between_tools" }; body.output_config = { effort: "high" }; }
   const day = today(), kid = who(s), lim = await limitsOf(s.fam), { k, f } = await usage(s.fam, kid, day);
   if ((s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok)) || f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok)
     return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "daily limit" } }), { status: 429, headers: { "content-type": "application/json" } });

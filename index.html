@@ -4302,7 +4302,7 @@ async function dgStart(lesson){
   const old = lesson.dg; lesson.dg = {ws:null, ac:null, mic:null, play:[], playEnd:0, muted:!!(old && old.muted), open:false, closing:false, retried:!!(old && old.retried)};
   const d = lesson.dg;
   // the audio context is made now, inside the child's tap (iOS only lets sound start from a tap)
-  const AC = window.AudioContext || window.webkitAudioContext, ac = new AC(); d.ac = ac; try{ ac.resume(); }catch(e){}
+  const ac = recAC(); d.ac = ac; setAudioSession('play-and-record');
   setState('thinking');
   let tok;
   try{ const r = await fetch(RELAY + 'dgtoken', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token})});
@@ -4311,8 +4311,9 @@ async function dgStart(lesson){
   if(L !== lesson || lesson.dg !== d) return;
   // audio: one context for the microphone (16 kHz PCM to Deepgram) and the teacher's voice (24 kHz PCM from Deepgram)
   let stream;
-  try{ stream = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true, noiseSuppression:true, autoGainControl:true, channelCount:1}}); }
-  catch(e){ dgNote(lesson, 'mic ' + (e.name || e)); alertBox('اسمح للميكروفون من إعدادات سفاري حتى تبدأ الحصة.'); dgFallback(lesson); return; }
+  // the app's shared mic (it sets the iOS audio session to play-and-record first; a "playback" session refused the mic)
+  try{ stream = await micStream(); }
+  catch(e){ dgNote(lesson, 'mic ' + (e.name || e) + ' ' + (e.message || '')); if(e && e.name === 'NotAllowedError') alertBox('اسمح للميكروفون من إعدادات سفاري حتى تبدأ الحصة.'); dgFallback(lesson); return; }
   try{ await ac.resume(); }catch(e){}
   d.stream = stream;
   const ws = new WebSocket(DG_URL, ['bearer', tok]); ws.binaryType = 'arraybuffer'; d.ws = ws;
@@ -4358,6 +4359,7 @@ function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac) return; co
   const at = Math.max(ac.currentTime + 0.03, d.playEnd); s.start(at); d.playEnd = at + ab.duration; d.play.push(s);
   s.onended = () => { d.play = d.play.filter(x => x !== s); if(!d.play.length && d.audioDone) dgSpoke(lesson); };
   if(lesson.state !== 'speaking'){ setState('speaking'); if(lesson.firstWave){ lesson.firstWave = false; setPose('wave', 2800); } }
+  if(ac.state !== 'running'){ try{ ac.resume(); }catch(e){} }
   if(!lesson.mouthT) mouthWalk('abababababababababababababababab', 70); }
 function dgHush(lesson){ const d = lesson.dg; d.play.forEach(s => { try{ s.onended = null; s.stop(); }catch(e){} }); d.play = []; d.playEnd = 0; stopMouth(); setMouth('rest'); }
 /* the teacher's voice has finished playing */
@@ -4412,8 +4414,7 @@ function dgSync(lesson){ const d = lesson.dg; if(!d || !d.ws || d.ws.readyState 
 function dgStop(lesson){ const d = lesson && lesson.dg; if(!d) return; d.closing = true; clearInterval(d.ka); clearInterval(d.st);
   dgHush(lesson);
   try{ if(d.mic){ d.mic.sp.onaudioprocess = null; d.mic.src.disconnect(); d.mic.sp.disconnect(); } }catch(e){}
-  try{ d.stream && d.stream.getTracks().forEach(t => t.stop()); }catch(e){}
-  try{ d.ws && d.ws.close(); }catch(e){} try{ d.ac && d.ac.close(); }catch(e){} }
+  try{ d.ws && d.ws.close(); }catch(e){} try{ micRelease(); }catch(e){} }
 /* typed answers and app messages go into the same conversation */
 function dgSay(lesson, text){ const d = lesson && lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1) return false;
   d.ws.send(JSON.stringify({type:'InjectUserMessage', content:text})); setState('thinking'); return true; }
@@ -6050,7 +6051,17 @@ async function azAuth(){
     const j = await r.json(); AZ_TOK = {token:j.token, region:j.region, at:Date.now()}; }
   return {region:AZ_TOK.region, h:{'Authorization':'Bearer ' + AZ_TOK.token}};
 }
+/* The 5.5 models think by default ("adaptive thinking") and that thinking counts inside max_tokens: a live reply with
+   max_tokens 250 could be spent entirely on thinking and come back EMPTY (the teacher "listened again" instead of answering).
+   Live turns: no up-front thinking. Longer jobs (reports): less thinking and room for it on top of the answer. */
+function tuneBody(body){ const b = Object.assign({}, body), m = String(b.model || '');
+  if(b.thinking || b.output_config) return b;
+  if(/haiku-5/.test(m)){ b.thinking = {type:'disabled'}; b.output_config = {effort:'medium'}; }
+  else if(/sonnet-5/.test(m)){ b.thinking = {type:'between_tools'}; b.output_config = {effort:'high'}; }
+  else if(/opus-5/.test(m)){ b.output_config = {effort:'low'}; b.max_tokens = Math.min(4000, (b.max_tokens || 1000) + 1500); }
+  return b; }
 async function aiFetch(body, signal){
+  body = tuneBody(body);
   const direct = () => fetch(API, {method:'POST', headers:apiHeaders(), body:JSON.stringify(body), signal});
   if(!relayOn()) return direct();
   let r; try{ r = await fetch(RELAY + 'claude', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token, body}), signal}); }
@@ -6908,7 +6919,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15e';
+const APP_VER = '2026-11-15f';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
