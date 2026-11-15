@@ -1808,9 +1808,19 @@ function renderKid(k){
   $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
   document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { TAB = b.dataset.tab; renderKid(k); });
   ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins, room:tabRoom, shop:tabShop})[TAB](k);
+  pendingQuizCard(k);
   checkNewBadges(k); maybeCelebrate(k); setTimeout(() => checkCheers(k), 1200);
 }
 
+/* a lesson quiz that was not finished (the app closed, a reload…) waits on the home screen for 3 days */
+function pendingQuizCard(k){ const p = DB.progress[k] || {}, pq = p.pendingQuiz, body = $('#tabBody'); if(!pq || !body || TAB !== 'home') return;
+  if(Date.now() - Date.parse(pq.at) > 3 * 864e5 || (p.quizzes || []).some(q => q.slot === pq.slot)){ delete p.pendingQuiz; save(); return; }
+  const c = document.createElement('section'); c.className = 'card'; c.style.cssText = 'border:2px solid var(--brand)';
+  c.innerHTML = `<div class="chips" style="justify-content:space-between;align-items:center"><div><h2 style="margin:0">📝 اختبار الدرس بانتظارك</h2><div class="small muted en">${esc(pq.title || '')}</div></div><button class="btn primary" id="pqGo">ابدأ الاختبار</button></div>`;
+  body.prepend(c);
+  $('#pqGo').onclick = () => runQuiz(k, pq.quiz, pq.title, res => {
+    if(res){ (p.quizzes = p.quizzes || []).push({slot:pq.slot, title:pq.title, score:res.score, total:res.total, stars:res.stars, at:new Date().toISOString()}); }
+    delete p.pendingQuiz; save(); renderKid(k); }); }
 /* ----- home tab -----
    order: the next lesson (one primary action) -> today's tasks -> the level path -> everything else as a grid of sections */
 let HOME_SEG = (() => { try{ const v = localStorage.getItem('hh:seg'); return ({play:'missions', journey:'me'})[v] || v || 'missions'; }catch(e){ return 'missions'; } })(), KMAP_OPEN = false;
@@ -4657,8 +4667,10 @@ ${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer lengt
     ${report.newWords.length ? `<div><div style="font-weight:800">كلمات تدربت عليها</div><div class="wordchips">${report.newWords.map(w => `<span>${esc(w)}</span>`).join('')}</div></div>` : ''}
     ${report.mistakes.length ? `<div><div style="font-weight:800">انتبه لهذه</div>${report.mistakes.map(m => `<div class="ltr small" style="text-align:left"><s class="muted">${esc(m.wrong)}</s> → <b style="color:var(--good)">${esc(m.right)}</b></div>`).join('')}</div>` : ''}
     <button class="btn primary big" id="back">${(rep.quiz||[]).length ? '📝 ابدأ اختبار الدرس' : 'رجوع للرئيسية'}</button></div>`;
+  if((rep.quiz||[]).length && !lesson.trial){ DB.progress[k].pendingQuiz = {slot:lesson.slot, title:plan.t, quiz:rep.quiz, at:new Date().toISOString()}; save(); }
   $('#back').onclick = () => { ov.remove(); const wasTrial = lesson.trial; leaveRoomQuiet();
     runQuiz(k, rep.quiz, plan.t, res => {
+      if(res && DB.progress[k].pendingQuiz){ delete DB.progress[k].pendingQuiz; save(); }
       if(res && !wasTrial){ DB.progress[k].quizzes.push({slot:lesson.slot, title:plan.t, score:res.score, total:res.total, stars:res.stars, at:new Date().toISOString()}); save(); }
       if(cert) showCert(cert);
       go(WHO === 'parent' ? 'parent' : k, 'home');
@@ -6977,9 +6989,9 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15m';
-function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
-  fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
+const APP_VER = '2026-11-15n';
+function verCheck(){ if(DEMO || L || location.protocol !== 'https:' || document.querySelector('.ov, .reader')) return;
+  fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L && !document.querySelector('.ov, .reader')) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
 setInterval(verCheck, 10*60e3);
 if('serviceWorker' in navigator && !DEMO && location.protocol === 'https:'){ window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(e => console.warn('sw', e))); }
