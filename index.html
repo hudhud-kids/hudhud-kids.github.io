@@ -4130,7 +4130,9 @@ function parseTags(full){
     else if(tag === 'AR') out.ar = v; else if(tag === 'STAGE') out.stage = v.toLowerCase(); else if(tag === 'END') out.end = true; else if(tag === 'GOAL') out.goals.push(Number(v)); }
   return out;
 }
-function spokenOf(full){ let s = full.replace(/^\s*\[MOOD:[a-z]*\]?/i,''); const i = s.search(/\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC)|\n\s*\[/i); if(i >= 0) s = s.slice(0,i); s = s.replace(/\[[^\]]*$/,''); return s; }
+/* the spoken part = the reply WITHOUT its tags, wherever the model put them (a reply that started with [GOT] or [NEXT] used to be cut to nothing, so the teacher went silent) */
+function spokenOf(full){ let s = String(full || '').replace(/\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC)\b[^\]]*\]/gi, ' ');
+  s = s.replace(/\[[^\]]*$/, ''); return s.replace(/[ \t]+/g, ' ').replace(/\s*\n\s*/g, ' ').replace(/^\s+/, ''); }
 function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
 async function teacherTurn(userText, attempt){
@@ -4188,6 +4190,7 @@ async function teacherTurn(userText, attempt){
       if(tags.end && v.doneAll) lesson.endSeen = true; }
     if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
     lesson.netN = 0; lessonSnap(lesson); lessonPull();
+    if(!spoken && !attempt && !lesson.done){ lesson.ctl = null; lesson.streamDone = true; setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn('(Your last reply had no words for the child. Speak now: react briefly, then say clearly what the child should do next, with a model sentence.)', 1); }, 300); return; }
     lesson.ctl = null; lesson.streamDone = true; pump();
   }catch(e){
     if(L !== lesson) return;
