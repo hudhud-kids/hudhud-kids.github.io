@@ -4378,8 +4378,11 @@ function dgEvent(lesson, m){ const d = lesson.dg;
       const txt = String(m.content || '').trim(); if(!txt || /^\(/.test(txt)) break;
       if(m.role === 'user'){ const u = 'Student: ' + txt; lesson.talking = false; lesson.sw += countWords(txt); updateTalk(); lesson.history.push({role:'user', content:u}); liveFeed(lesson, 'k', u);
         const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('note', 'live'); you.textContent = txt; } setState('thinking'); }
-      else { lesson.lastSay = txt; lesson.tw += countWords(txt); updateTalk(); lesson.history.push({role:'assistant', content:txt}); liveFeed(lesson, 't', txt);
-        const sub = $('#sub'); if(sub) sub.innerHTML = esc(txt); askShow(txt, ''); }
+      else { // Deepgram sends the teacher's turn sentence by sentence: keep them together as one turn
+        const last = lesson.history[lesson.history.length - 1]; lesson.tw += countWords(txt); updateTalk(); liveFeed(lesson, 't', txt);
+        if(last && last.role === 'assistant' && !last.tagged){ last.content += ' ' + txt; lesson.lastSay = (lesson.lastSay ? lesson.lastSay + ' ' : '') + txt; }
+        else { lesson.history.push({role:'assistant', content:txt}); lesson.lastSay = txt; }
+        const sub = $('#sub'); if(sub) sub.innerHTML = esc(lesson.lastSay); askShow(lesson.lastSay, ''); }
       break; }
     case 'FunctionCallRequest': (m.functions || []).forEach(f => { let a = {}; try{ a = JSON.parse(f.arguments || '{}'); }catch(e){}
       if(f.name === 'lesson_event') dgTags(lesson, String(a.tags || ''));
@@ -4391,7 +4394,7 @@ function dgEvent(lesson, m){ const d = lesson.dg;
 /* the same effects as the tags of a normal teacher turn */
 function dgTags(lesson, full){ const tags = parseTags(full);
   if(tags.mood) setMood(tags.mood);
-  const last = lesson.history[lesson.history.length - 1]; if(last && last.role === 'assistant') last.content += '\n' + full.replace(/\[MOOD:[^\]]*\]/gi, '').trim();
+  const last = lesson.history[lesson.history.length - 1]; if(last && last.role === 'assistant'){ last.content += '\n' + full.replace(/\[MOOD:[^\]]*\]/gi, '').trim(); last.tagged = true; }
   const sub = $('#sub'); if(sub && tags.ar) sub.innerHTML = esc(lesson.lastSay || '') + `<div class="ar">${esc(tags.ar)}</div>`;
   if(tags.ar) askShow(lesson.lastSay || '', tags.ar);
   if(tags.board && tags.board.word){ showBoard(tags.board); (lesson.boardWords = lesson.boardWords || []).push(tags.board.word); }
@@ -6918,7 +6921,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15g';
+const APP_VER = '2026-11-15h';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
