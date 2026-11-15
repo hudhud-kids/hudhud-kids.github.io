@@ -307,3 +307,9 @@ revoke all on function public.tk_login(text, text), public.tk_login2(text, text,
 grant execute on function public.tk_login(text, text), public.tk_login2(text, text, text), public.tk_accounts_apply(uuid, jsonb),
   public.tk_account_set_pass(uuid, text, text, text), public.tk_accounts_set(uuid, jsonb) to anon, authenticated;
 notify pgrst, 'reload schema';
+
+-- The ai/notify Edge Functions read these tables with the service role; this project does not grant table rights to
+-- service_role by default, so without these grants every relay call was rejected as bad_session (fixed 2026-11-15).
+grant select on public.tk_sessions to service_role;
+grant select on public.tk_rows to service_role;
+grant select, insert, update on public.tk_ai_usage, public.tk_ai_err to service_role;
