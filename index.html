@@ -1444,6 +1444,7 @@ function v2Advance(auto){ if(!L || !L.v2) return; const v = L.v2; if(v.i >= v.st
 /* the note at the start of every child message: step, time, quick challenges, the child's topic choice, mission goals / quiz points.
    Time: a gentle "wrap up soon" once when a step runs over, "please move on now" only after a big overrun. */
 function v2Header(){ if(!L || !L.v2) return ''; const v = L.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)], used = Math.round((Date.now() - v.at)/1000);
+  if(elapsedMin() >= LESSON_MIN) return ' · [TIME IS UP (25 minutes): in this reply give short specific praise, say goodbye, and add [END]]';
   if(v.doneAll) return ` · [all ${v.steps.length} steps done: praise specifically, say goodbye, then [END]]`;
   let ch = '';
   if(!['obj','exit','prize'].includes(stp.k) && Date.now() - (v.chAt || v.t0 || 0) > 5*60e3 && v.i > 1){ v.chAt = Date.now(); v.ch = (v.ch||0) + 1;
@@ -1488,7 +1489,7 @@ ${steps.map((x, i) => `${i+1}. ${x.en} (about ${x.sec}s)`).join('\n')}
 HOW TO RUN EACH STEP:
 - Objective: say the objective in your own friendly words, connect it to the child, then [NEXT] in the same turn.
 - Warm-up: ask the warm-up question (personalise it). After one full-sentence answer, react, then [NEXT]. The slide also shows two topic cards for the speak out later: (A) the lesson's own situation, (B) "${alt.en}". You may say once: "Tap the topic you like!" The header tells you when they tap one (TOPIC CARD).
-- Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
+- Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. In your FIRST reply of the round, already give the first clue or question and the exact sentence the child should say (for example: "I say: you use it when you meet someone. Which expression is it? Say: Nice to meet you."). The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
 - Role-play part I: set the scene in one exciting sentence. YOU play the first speaker, the CHILD plays ${v2Role(sc.dialogue||{}) || 'the other character'} (the slide shows their lines as a guide). Say your line, then let the child say theirs IN THEIR OWN WORDS — they do not need to read it exactly; react in character, improvise a little, keep it moving. Then [NEXT]. Part II: continue the scene the same way, then step out of the role and ask the 2 questions on the slide; add [GOT] if both answers were right and in sentences, then [NEXT].
 - Speak out n: play the situation with the child and ask the question on the slide (in role). The child must answer with 2 or more sentences using the unit function. Ask one follow-up question. If they did it: [GOT] [NEXT]. If they are stuck, tell them to tap the hint button, or give the first words.
 - Culture: ${small || culShort ? 'keep it tiny (short culture step today): tell ONLY the first point as one fun fact (one or two short sentences), then ask ONLY the first question; one answer is enough; then [NEXT].' : 'read the title, tell the 3 points in a lively way (short), then ask the 2 questions; one opinion with a reason is enough; then [NEXT].'}
@@ -1512,6 +1513,7 @@ GIVE THE CHILD THE SPEAKING TIME:
 - The child must FINISH sentences: if a sentence is incomplete, ask them to finish it before moving on.
 - Never answer your own question, never two questions at once.
 - NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want, then give a model answer to copy ("Say: Hello, I'm Ahmed."). If they still struggle, give two choices ("Is it A or B?").
+- EVERY reply must END with a question or a clear instruction to the child. Never end on an announcement ("Let's play a game!", "Get ready!"): say the game's first question in the same reply. When you add [NEXT], start the next step in the SAME reply with its first question.
 
 CORRECTION: errors in today's expressions or function → recast and ask them to say it again, and add [FIX]. Other small errors → recast once naturally, no repetition.
 - ${kid.level <= 4 ? 'Use very simple, clear English. Ask one thing at a time.' : kid.level <= 7 ? 'Use clear English at CEFR ' + cefr + ', not babyish.' : 'Use natural CEFR ' + cefr + ' English like a real conversation partner.'}
@@ -3808,6 +3810,7 @@ GIVE THE CHILD THE SPEAKING TIME (very important):
 - Ask for one more sentence before you add anything: "Great! Can you give me an example?", "And then?", "Say it again with because".
 - Never answer your own question, never give two questions at once, and never fill a silence with a long explanation.
 - NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want, then give a model answer to copy ("Say: Hello, I'm Ahmed."). If they still struggle, give two choices ("Is it A or B?").
+- EVERY reply must END with a question or a clear instruction to the child. Never end on an announcement ("Let's play a game!", "Get ready!"): say the game's first question in the same reply. When you add [NEXT], start the next step in the SAME reply with its first question.
 
 HOW TO TALK:
 - ${lvl}
@@ -3990,7 +3993,9 @@ function teacherDress(k){ const b = $('#tbox'); if(!b) return; const t = teacher
   const sv = b.querySelector('svg'); if(sv) sv.setAttribute('aria-label', t.name); }
 /* keep the teacher's current question / instruction on screen while the child answers, so they always know what to say */
 function askPick(t){ const ss = String(t || '').replace(/\s+/g, ' ').trim().match(/[^.!?]+[.!?]*/g) || [];
-  const q = ss.filter(x => /\?\s*$/.test(x)); if(q.length) return q[q.length - 1].trim();
+  const qi = ss.map((x, i) => /\?\s*$/.test(x) ? i : -1).filter(i => i >= 0);
+  // a very short question ("What is it?") needs the clue/sentence before it
+  if(qi.length){ const i = qi[qi.length - 1]; const q = ss[i].trim(); return (countWords(q) < 5 && i > 0 ? ss[i-1].trim() + ' ' : '') + q; }
   const cmd = ss.filter(x => /^\s*(say|tell|try|repeat|finish|complete|answer|use|ask|describe|read|now|your turn|can you|could you|let's)\b/i.test(x)); if(cmd.length) return cmd[cmd.length - 1].trim();
   return (ss[ss.length - 1] || '').trim(); }
 function askShow(spoken, ar){ const el = $('#askb'); if(!el) return; const q = askPick(spoken);
@@ -4078,7 +4083,7 @@ function sayAll(text, slow){ L.queue = []; L.streamDone = true; L.speaking = tru
 function interrupt(listenAfter){
   if(!L) return;
   if(L.ctl){ try{ L.ctl.abort(); }catch(e){} L.ctl = null; }
-  L.queue = []; L.streamDone = true; L.speaking = false;
+  L.askAfter = null; L.queue = []; L.streamDone = true; L.speaking = false;
   try{ speechSynthesis.cancel(); }catch(e){}
   if(listenAfter) startListening(true); else setState('idle');
 }
@@ -4185,11 +4190,19 @@ async function teacherTurn(userText, attempt){
       if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
       if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide();
       if(tags.exit) v.exit = tags.exit;
-      if(tags.next) v2Advance(false);
+      // both words of a word-game round are done: move on even if the teacher forgot [NEXT]
+      let adv = !!tags.next;
+      if(!adv && stp.k === 'exp' && (stp.pair || [stp.i]).every(x => v.got['exp' + x])) adv = true;
+      if(adv) v2Advance(false);
       // the script is finished: the lesson may end even a little before the usual minimum
       if(tags.end && v.doneAll) lesson.endSeen = true; }
     if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
+    if(lesson.v2 && elapsedMin() >= LESSON_MIN + 4) lesson.endSeen = true; // never run far past 25 minutes
     lesson.netN = 0; lessonSnap(lesson); lessonPull();
+    // a reply that asks the child nothing leaves them waiting ("what does he want?"): make the teacher ask now
+    const asks = /\?/.test(spoken) || /\b(say|tell me|try|repeat|finish|complete|answer|use|describe|read|guess|choose|pick|your turn|now you)\b/i.test(spoken);
+    if(spoken && !asks && !attempt && !lesson.done && !lesson.endSeen && !(DEMO || DB.apiKey === 'demo')){ lesson.ctl = null; lesson.streamDone = true; pump();
+      lesson.askAfter = () => teacherTurn('(You did not ask the child anything. Ask the next question of the current step now, short and clear, with a model answer.)', 1); return; }
     if(!spoken && !attempt && !lesson.done){ lesson.ctl = null; lesson.streamDone = true; setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn('(Your last reply had no words for the child. Speak now: react briefly, then say clearly what the child should do next, with a model sentence.)', 1); }, 300); return; }
     lesson.ctl = null; lesson.streamDone = true; pump();
   }catch(e){
@@ -4254,6 +4267,8 @@ function teacherFinished(){
   if(L.state === 'listening') return;
   if($('#typer') && !$('#typer').hidden){ if(L.rec && L.rec.teacherOn) stopListening(); setState('idle'); return; }
   // early mic already open during the last sentence: it simply becomes the child's turn (no restart, nothing lost)
+  // the teacher said something but asked nothing: ask now instead of leaving the child guessing
+  if(L.askAfter){ const f = L.askAfter; L.askAfter = null; f(); return; }
   const er = L.rec; if(er && er.teacherOn){ L.listenStart = Date.now(); L.talking = !!er.teacherDone(); setState('listening'); er._arm && er._arm(); return; }
   startListening(false);
 }
@@ -6740,6 +6755,12 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
     if(WHO) go(WHO, TAB);
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
+/* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
+const APP_VER = '2026-11-15b';
+function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
+  fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
+document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
+setInterval(verCheck, 10*60e3);
 if('serviceWorker' in navigator && !DEMO && location.protocol === 'https:'){ window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(e => console.warn('sw', e))); }
 
 const LOGO_BIRD = (LOGO.match(/<svg[\s\S]*<\/svg>/) || [''])[0];
