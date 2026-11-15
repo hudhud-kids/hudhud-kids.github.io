@@ -158,5 +158,148 @@ const res = []; const ok = (name, cond, extra) => { res.push([cond ? 'PASS' : 'F
   await ev3(`window.streamClaude = async function*(){ yield '[MOOD:happy] Hello! Tell me about it.'; }; document.querySelectorAll('.ov').forEach(o => o.remove()); renderKid('sami')`); await tick(K, 300);
   await K.locator('#enter').click(); await tick(K, 1500); ok(T + 'primary action enters the lesson room', await cnt3('.room') === 1, K.errs);
   ok(T + 'no page errors (kid)', K.errs.length === 0, K.errs); await K.close();
+
+  // ===== preview/ui-notes.md items (1-3, 5-12)
+  { const U = await open(b, w, h, '#demo', {cloud:true}); const e = js => U.evaluate(js), c = sel => U.locator(sel).count();
+    await e(`window.__calls = []; window.print = () => __calls.push('print'); window.resetPass = (kind, id) => __calls.push('reset:' + kind + ':' + id); WHO = 'parent'; P_TAB = 'students'; renderParent(); pOpenSheet('noura')`); await tick(U);
+    // 1. one lesson at a time from the student sheet
+    ok(T + '#1 sheet lists next lessons with move/cancel + extra/all buttons', await c('#pSheet .pslots li') === 4 && await c('#pSheet [data-smove]') === 4 && await c('#pSheet [data-sbook]') === 1 && await c('#pSheet [data-sall]') === 1);
+    const rem0 = await e(`ledger('noura').remaining`);
+    await U.locator('#pSheet [data-sbook]').click(); await U.locator('.ov #ps_d').fill('2026-11-16'); await U.locator('.ov #ps_t').fill('10:00'); await U.locator('.ov #ps_ok').click(); await tick(U);
+    ok(T + '#1 owner books an extra lesson', await e(`DB.sched.noura.extra.includes('2026-11-16T1000') && ledger('noura').upcoming.some(s => s.key === '2026-11-16T1000' && s.extra)`) && await c('#pSheet') === 1);
+    await U.locator('#pSheet [data-sbook]').click(); await U.locator('.ov #ps_d').fill('2026-11-14'); await U.locator('.ov #ps_t').fill('17:15'); await U.locator('.ov #ps_ok').click(); await tick(U, 100);
+    ok(T + '#1 no 15-minute lead for the owner (5 minutes from now is fine)', await e(`DB.sched.noura.extra.includes('2026-11-14T1715')`));
+    await U.locator('#pSheet [data-sbook]').click(); await U.locator('.ov #ps_d').fill('2026-11-14'); await U.locator('.ov #ps_t').fill('09:00'); await U.locator('.ov #ps_ok').click(); await tick(U, 100);
+    ok(T + '#1 a time in the past is refused', /الماضي/.test(await U.locator('.ov #ps_e').textContent())); await U.locator('.ov #ps_no').click();
+    await U.locator('#pSheet [data-sbook]').click(); await U.locator('.ov #ps_d').fill('2026-11-17'); await U.locator('.ov #ps_t').fill('18:20'); await U.locator('.ov #ps_ok').click(); await tick(U, 100);
+    ok(T + '#1 clash with the same student is refused', /قريبة/.test(await U.locator('.ov #ps_e').textContent())); await U.locator('.ov #ps_no').click();
+    await e(`DB.sched.noura.extra = DB.sched.noura.extra.filter(x => x !== '2026-11-14T1715'); renderParent()`); await tick(U, 100);
+    const k1 = await e(`ledger('noura').next.key`);
+    await U.locator(`#pSheet [data-smove="${k1}"]`).click(); await U.locator('.ov #ps_t').fill('20:00'); await U.locator('.ov #ps_ok').click(); await tick(U);
+    ok(T + '#1 move one lesson (old cancelled, new booked, same month count)', await e(`DB.sched.noura.cancel.includes('${k1}') && DB.sched.noura.extra.includes('2026-11-15T2000')`), k1);
+    const r1 = await e(`ledger('noura').rows.length`), k2 = await e(`ledger('noura').upcoming.find(s => !s.extra).key`);
+    await U.locator(`#pSheet [data-scancel="${k2}"]`).click(); await U.locator('.ov #pc_y').click(); await tick(U);
+    ok(T + '#1 cancel an upcoming lesson: no charge, not counted', await e(`DB.sched.noura.cancel.includes('${k2}') && ledger('noura').rows.length === ${r1} && !ledger('noura').upcoming.some(s => s.key === '${k2}')`));
+    await U.locator('#pSheet [data-sall]').click(); await tick(U);
+    ok(T + '#1 all-lessons dialog: upcoming + recent absences', await c('#pSlots .pslots li') > 8 && await c('#pSlots [data-scancel]') > 8);
+    const miss = await e(`ledger('noura').rows.filter(r => r.st === 'miss').pop().key`), remA = await e(`ledger('noura').remaining`);
+    await U.locator(`#pSlots [data-scancel="${miss}"]`).click(); await U.locator('.ov #pc_y').click(); await tick(U);
+    ok(T + '#1 cancel an excused absence refunds it and the dialog redraws', await e(`ledger('noura').remaining === ${remA} + priceAt('noura', fromKey('${miss}'))`) && await c(`#pSlots [data-scancel="${miss}"]`) === 0);
+    const att = await e(`DB.attendance.filter(a => a.kid === 'noura').pop().slot`);
+    await e(`pCancelSlot('noura', '${att}')`); await tick(U, 100);
+    ok(T + '#1 an attended lesson cannot be cancelled', await e(`!DB.sched.noura.cancel.includes('${att}')`) && /حضرها/.test(await U.locator('.ov').last().textContent()));
+    await e(`document.querySelectorAll('.ov').forEach(o => o.remove()); P_SHEET = null`);
+    // 2. guardian page
+    await e(`P_TAB = 'guardians'; renderParent()`); await tick(U);
+    await U.locator('[data-gpage="g1"]').click(); await tick(U);
+    ok(T + '#2 guardian page opens with fields, children and reset', await c('#pGSheet #gp_name') === 1 && await c('#pGSheet [data-gpk]') === 5 && await c('#pGSheet [data-rpass="guardian:g1"]') === 1);
+    ok(T + '#2 the page never shows the stored password', !(await U.locator('#pGSheet').textContent()).includes('482913'));
+    await U.locator('#pGSheet [data-rpass]').click(); ok(T + '#2 reset password goes through resetPass("guardian", id)', await e(`__calls.includes('reset:guardian:g1')`));
+    await U.locator('#pGSheet #gp_phone').fill('12ab'); await U.locator('#pGSheet #gp_save').click(); await tick(U, 100);
+    ok(T + '#2 bad phone refused', /الجوال/.test(await U.locator('#pGSheet #gp_e').textContent()));
+    await U.locator('#pGSheet #gp_name').fill('محمد سعد العتيبي'); await U.locator('#pGSheet #gp_phone').fill('0559998887');
+    await U.locator('#pGSheet [data-gpk="layan"]').uncheck(); await U.locator('#pGSheet [data-gpk="fahad"]').check(); await U.locator('#pGSheet #gp_save').click(); await tick(U);
+    ok(T + '#2 save name, phone and children (moved from the other guardian)', await e(`(() => { const g = DB.guardians.g1; return g.name === 'محمد سعد العتيبي' && g.phone === '0559998887' && g.kids.join() === 'sami,fahad' && DB.kids.fahad.guardian === 'g1' && !DB.kids.layan.guardian && !DB.guardians.g2.kids.includes('fahad'); })()`), await e(`DB.guardians.g1.kids`));
+    ok(T + '#2 page stays open and refreshed after save', (await U.locator('#pGSheet h2').textContent()).includes('سعد'));
+    await U.locator('#pGSheet [data-gsx]').first().click(); await tick(U, 100); ok(T + '#2 close', await c('#pGSheet') === 0);
+    // 3. money log
+    await e(`P_TAB = 'plans'; renderParent()`); await tick(U); await U.locator('[data-money]').first().click(); await tick(U);
+    const nAll = await e(`(DB.topups.filter(t => DB.kids[t.kid]).length + kidIds().reduce((a, k) => a + ledger(k).rows.length, 0))`);
+    ok(T + '#3 money log lists every top-up and lesson charge', await c('#pMoney .mrows li') === nAll, [await c('#pMoney .mrows li'), nAll]);
+    ok(T + '#3 monthly totals rows', await c('#pMoney .mtab tr[data-mm]') >= 2);
+    await U.locator('#pm_s').selectOption('layan'); await tick(U, 100);
+    ok(T + '#3 filter by student', await c('#pMoney .mrows li') === await e(`DB.topups.filter(t => t.kid === 'layan').length + ledger('layan').rows.length`));
+    await U.locator('#pm_m').selectOption('2026-11'); await tick(U, 100);
+    ok(T + '#3 filter by month', await e(`[...document.querySelectorAll('#pMoney .mrows li')].length`) === await e(`DB.topups.filter(t => t.kid === 'layan' && t.at.startsWith('2026-11')).length + ledger('layan').rows.filter(r => monthKey(r.t) === '2026-11').length`));
+    const csv = await e(`pMoneyCSV()`);
+    ok(T + '#3 CSV: UTF-8 BOM, Arabic header, CRLF, monthly totals', csv.charCodeAt(0) === 0xFEFF && csv.includes('التاريخ,الوقت,الطالب') && csv.includes('\r\n') && csv.includes('المجموع الشهري') && csv.includes('ليان'));
+    const [dl] = await Promise.all([U.waitForEvent('download', {timeout:5000}).catch(() => null), U.locator('#pm_csv').click()]);
+    let dlOk = false; if(dl){ const fp = await dl.path(); const buf = require('fs').readFileSync(fp); dlOk = buf[0] === 0xEF && buf[1] === 0xBB && buf[2] === 0xBF && /\.csv$/.test(dl.suggestedFilename()); }
+    ok(T + '#3 export downloads a .csv file with BOM', dlOk, dl && dl.suggestedFilename());
+    await e(`document.querySelectorAll('.ov').forEach(o => o.remove()); P_TAB = 'students'; renderParent(); pOpenSheet('sami')`); await tick(U); await U.locator('#pSheet [data-money]').click(); await tick(U, 100);
+    ok(T + '#3 money log from a student sheet is filtered to that student', await e(`P_MS === 'sami' && document.querySelector('#pm_s').value === 'sami'`));
+    await e(`document.querySelectorAll('.ov').forEach(o => o.remove()); P_SHEET = null`);
+    // 12. new sign-ups while the dashboard is open
+    await e(`P_TAB = 'overview'; renderParent()`); await tick(U, 600);
+    await e(`__SU.push({id:'s9', status:'pending', at:new Date().toISOString(), data:{g_name:'سارة العنزي', phone:'0550001112', kids:[{ar:'ريم', boy:false, birth:'2016-02-02'}]}})`);
+    await e(`document.querySelectorAll('.toast').forEach(t => t.remove())`);
+    let seen = ''; for(let i = 0; i < 64 && !seen.includes('سارة'); i++){ await U.clock.runFor(1000); seen = await e(`[...document.querySelectorAll('.toast')].map(t => t.textContent).join('|')`); }
+    ok(T + '#12 a new sign-up shows a toast within a minute', seen.includes('سارة العنزي'), seen);
+    ok(T + '#12 badge and count update', (await U.locator('[data-sunb]').first().textContent()) === '3' && await e(`document.querySelector('[data-sunb]').classList.contains('pulse')`) && (await U.locator('[data-sun]').first().textContent()) === '3');
+    // 5. English strings for the new dashboard and report screens
+    await e(`(async () => { const r = await fetch('content/i18n-en.json'); I18N = await r.json(); I18N_KEYS = Object.keys(I18N).sort((a, b) => b.length - a.length); })()`); await tick(U, 300);
+    await e(`pOpenMoney(null); pOpenGuardian('g2'); trNode(document.body)`); await tick(U, 100);
+    ok(T + '#5 English: money log and guardian page headings', (await U.locator('#pMoney h2').textContent()) === 'Money log' && (await U.locator('#pGSheet #gp_save').textContent()) === 'Save changes' && (await U.locator('#pm_csv').textContent()).includes('Export to Excel'));
+    ok(T + '#5 i18n-en.json is valid and has the new keys', await e(`['السجل المالي','صفحة ولي الأمر','تنزيل PDF','مظهر هادئ','التقرير الشهري للطباعة مع ملاحظة المعلم','ابحث عن مهمة: مطار، قهوة…'].every(k => I18N[k])`));
+    ok(T + '#1-3,5,12 no page errors', U.errs.length === 0, U.errs); await U.close(); }
+
+  { const G = await open(b, w, h, '#demo', {cloud:true}); const e = js => G.evaluate(js), c = sel => G.locator(sel).count();
+    await e(`window.__calls = []; window.print = () => __calls.push('print:' + document.body.className); WHO = 'g:g1'; G_TAB = 'reports'; G_KID = 'sami'; G_FILTER = 'all'; renderGuardian('g1')`); await tick(G);
+    // 6. printable monthly report for past months
+    const past = await e(`gRows('sami').filter(x => x.type === 'month' && !x.m.cur).map(x => x.m.mk)`);
+    ok(T + '#6 past months are listed', past.length >= 1, past);
+    await e(`document.querySelectorAll('.grow.t-month')[1].click()`); await tick(G, 100);
+    ok(T + '#6 a past month offers the printable report', await c('#gRep [data-gmonth]') === 1 && (await G.locator('#gRep [data-gmonth]').getAttribute('data-gmonth')) === past[0]);
+    await G.locator('#gRep [data-gmonth]').click(); await tick(G, 300);
+    const name = await e(`fmtMonth(new Date(${Number(past[0].slice(0, 4))}, ${Number(past[0].slice(5)) - 1}, 1))`);
+    const att = await e(`ledger('sami').rows.filter(r => monthKey(r.t) === '${past[0]}' && r.st === 'att').length`);
+    ok(T + '#6 printable report is for that month, with its own numbers', (await G.locator('#certBox').textContent()).includes(name) && (await G.locator('#certBox .stat b').first().textContent()).trim() === String(att), [name, att]);
+    await e(`DB.monthly.sami = {'${past[0]}':'ملاحظة شهر سابق محفوظة'}; document.querySelectorAll('.ov:not(#gRep)').forEach(o => o.remove())`); await G.locator('#gRep [data-gmonth]').click(); await tick(G, 300);
+    ok(T + '#6 the teacher note is kept per month', (await G.locator('#mnote').textContent()).includes('ملاحظة شهر سابق'));
+    // 7. PDF with the Hudhud identity
+    await G.locator('.ov #mpdf').click(); await tick(G, 100);
+    ok(T + '#7 monthly PDF uses the print page', await e(`__calls.includes('print:hhpdf') && !!document.querySelector('#hhPdf .pdf-cert')`));
+    await e(`window.dispatchEvent(new Event('afterprint')); document.querySelectorAll('.ov').forEach(o => o.remove())`);
+    await G.locator('.grow.t-lesson').first().click(); await tick(G, 100); await G.locator('#gRep [data-rpdf]').click(); await tick(G, 100);
+    ok(T + '#7 report PDF: logo, title, report card, footer', await c('#hhPdf .pdf-h .logo') === 1 && await c('#hhPdf .rcard') === 1 && await c('#hhPdf .pdf-f') === 1 && await e(`document.title.startsWith('هدهد - ')`));
+    await G.emulateMedia({media:'print'});
+    ok(T + '#7 in print only the PDF page shows, in Dubai font and light colours', await e(`(() => { const p = document.getElementById('hhPdf'), s = getComputedStyle(p); return s.display === 'block' && getComputedStyle(document.getElementById('app')).display === 'none' && /Dubai/.test(s.fontFamily) && getComputedStyle(p.querySelector('.rcard')).backgroundColor === 'rgb(255, 255, 255)'; })()`));
+    const pdf = await G.pdf({format:'A4', printBackground:true}).catch(() => null); ok(T + '#7 Chromium prints it to a PDF', !!pdf && pdf.length > 20000, pdf && pdf.length);
+    await G.emulateMedia({media:'screen'}); await e(`window.dispatchEvent(new Event('afterprint'))`);
+    ok(T + '#7 after printing the page returns to normal', await e(`!document.body.classList.contains('hhpdf') && !document.title.startsWith('هدهد - ') && getComputedStyle(document.getElementById('hhPdf')).display === 'none'`));
+    await G.locator('#gRep [data-rprint]').click(); ok(T + '#7 plain print still prints the sheet (no PDF page)', await e(`__calls.slice(-1)[0] === 'print:gprint'`));
+    ok(T + '#6-7 no page errors', G.errs.length === 0, G.errs); await G.close(); }
+
+  { const Q = await open(b, w, h, '#demo-kid', {cloud:true}); const e = js => Q.evaluate(js), c = sel => Q.locator(sel).count();
+    const quiet = `document.querySelectorAll('.ov,.cheerpop,.hsay').forEach(o => o.remove())`;
+    await e(`WHO = 'sami'; TAB = 'home'; HOME_SEG = 'missions'; MQ = ''; MCAT = 'all'; MSTAT = 'all'; go('sami')`); await tick(Q, 1200); await e(quiet);
+    // 8. lighter top bar on phones
+    const vis = sel => e(`(() => { const x = document.querySelector('${sel}'); return !!x && getComputedStyle(x).display !== 'none'; })()`);
+    if(w < 600) ok(T + '#8 phone top bar: name, points, avatar only', !(await vis('.kidw>.topbar .prefs')) && !(await vis('.kidw>.topbar #out')) && await vis('.kidw>.topbar #edit') && (await Q.locator('.kidw>.topbar .me').textContent()).includes('نقطة'));
+    else ok(T + '#8 wide screens keep the full top bar', await vis('.kidw>.topbar .prefs') && await vis('.kidw>.topbar #out'));
+    await Q.locator('.kidw>.topbar #edit').click(); await tick(Q);
+    ok(T + '#8 profile page has language, dark mode and logout', await c('.pprefs [data-pref="lang"]') === 1 && await c('.pprefs [data-pref="theme"]') === 1 && await c('#pout') === 1);
+    await Q.locator('.pprefs [data-pref="theme"]').click(); await tick(Q, 100);
+    ok(T + '#8 dark-mode button works there and does not submit the form', await e(`PREF.theme !== 'auto' && !!document.getElementById('pf')`), await e(`PREF.theme`));
+    // 11. look chosen per kid
+    await Q.locator('[data-look="calm"]').click(); await Q.locator('#pf [type=submit]').click(); await tick(Q, 600); await e(quiet);
+    ok(T + '#11 calm look chosen at 10 years old (saved per kid, profile kept)', await e(`DB.profiles.sami.look === 'calm' && DB.profiles.sami.nick === 'Sam'`) && await c('.kidw.teen') === 1 && await e(`document.body.classList.contains('kteen')`));
+    await e(`DB.profiles.layan.look = 'color'; go('layan')`); await tick(Q, 600); await e(quiet);
+    ok(T + '#11 colourful look chosen at 13', await c('.kidw.teen') === 0 && await e(`!document.body.classList.contains('kteen')`));
+    await e(`DB.profiles.layan.look = 'auto'; go('layan')`); await tick(Q, 600); await e(quiet);
+    ok(T + '#11 automatic follows age (13 -> calm)', await c('.kidw.teen') === 1);
+    // 10. calm look in dialogs, lesson room and reader (CSS only)
+    await e(`slotPicker('layan', null)`); await tick(Q, 100);
+    ok(T + '#10 calm dialogs', await e(`getComputedStyle(document.querySelector('.ov>.card')).borderTopLeftRadius === '14px'`)); await e(quiet);
+    await e(`window.streamClaude = async function*(){ yield '[MOOD:happy] Hello!'; }; window.speakOne = (t, s, d) => setTimeout(d, 5); enterLesson('layan', true)`); await tick(Q, 1500);
+    ok(T + '#10 calm lesson room (flat background, teacher drawing untouched)', await c('.room') === 1 && await e(`getComputedStyle(document.querySelector('.room')).backgroundImage === 'none' && !!document.querySelector('#tbox svg')`));
+    await e(`try{ L && (L.ended = true); }catch(x){} L = null; WHO = 'parent'; renderParent()`); await tick(Q, 300);
+    ok(T + '#10 the owner page never keeps the calm look', await e(`!document.body.classList.contains('kteen')`));
+    // 9. search missions by name
+    await e(`WHO = 'noura'; MQ = ''; go('noura')`); await tick(Q, 600); await e(quiet);
+    await Q.locator('#mq').fill('مطار'); await tick(Q, 100);
+    ok(T + '#9 search "مطار" finds the airport mission and keeps focus', await c('#mcard .mission') >= 1 && await e(`[...document.querySelectorAll('#mcard .mission')].some(m => /Airport/.test(m.textContent)) && document.activeElement.id === 'mq'`), await c('#mcard .mission'));
+    await Q.locator('#mq').fill('قهوة'); await tick(Q, 100);
+    ok(T + '#9 search "قهوة" (Arabic letters folded)', await c('#mcard .mission') >= 2, await c('#mcard .mission'));
+    await Q.locator('#mq').fill('coffee'); await tick(Q, 100); const nEn = await c('#mcard .mission'); await e(quiet);
+    await Q.locator('[data-mcat="food"]').click(); await tick(Q, 100);
+    ok(T + '#9 search works with the category filter', await c('#mcard .mission') >= 1 && await c('#mcard .mission') <= nEn && (await Q.locator('#mq').inputValue()) === 'coffee');
+    await e(quiet); await Q.locator('[data-mstat="done"]').click(); await tick(Q, 100);
+    ok(T + '#9 search + status with no match -> empty state', await c('#mcard .mission') === 0 && /ما لقينا/.test(await Q.locator('#mcard .empty').textContent()));
+    await e(quiet); await Q.locator('[data-mstat="all"]').click(); await e(quiet); await Q.locator('[data-mcat="all"]').click(); await Q.locator('#mq').fill(''); await tick(Q, 100);
+    ok(T + '#9 clearing the search restores the list', await c('#mcard .mission') >= 6);
+    await e(`renderProfile('noura', false)`); await tick(Q, 100); await Q.locator('#pout').click(); await tick(Q, 300);
+    ok(T + '#8 logout from the profile', await e(`WHO === null`));
+    ok(T + '#8-11 no page errors', Q.errs.length === 0, Q.errs); await Q.close(); }
  }
  const bad = res.filter(r => r[0] === 'FAIL'); console.log(res.map(r => r.join(' | ')).join('\n')); console.log(`\n${res.length - bad.length} passed, ${bad.length} failed`); await b.close(); })().catch(e => { console.log(res.map(r => r.join(' | ')).join('\n')); console.error('CRASH', e.message.slice(0, 600)); process.exit(1); });

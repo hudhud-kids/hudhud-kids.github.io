@@ -874,6 +874,70 @@ input[type=date].input::-webkit-date-and-time-value{text-align:right;margin:0}
 .kidw.teen .mission,.kidw.teen .game,.kidw.teen .mtoday{border-radius:12px}
 @media (max-width:600px){.kidw.teen .tab span{display:block;filter:grayscale(1);opacity:.8}.kidw.teen>.tabs .tab.on span{filter:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){.livedot{animation:none}}
+/* ----- owner: lessons one by one, guardian page, money log, new sign-up badge ----- */
+.pslots li{align-items:center;flex-wrap:wrap}.pslot .ps-d{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;min-width:0}.pslot .ps-a{margin-inline-start:auto;gap:6px}
+#pSlots .card{gap:12px}#pSlots .sech{margin:0}
+.gpkids{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:8px}
+.gpk{display:flex;align-items:center;gap:10px;padding:8px 12px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);cursor:pointer;min-height:56px}
+.gpk.on{border-color:var(--brand);background:var(--brand-soft)}.gpk input{width:20px;height:20px;flex:none;accent-color:var(--brand)}.gpk>span{display:grid;min-width:0;line-height:1.35}
+#pGSheet .shs .field{margin:0}#pGSheet a.btn{color:var(--fg)}.shh>div.pg-av{flex:none}
+.mlog{overflow:auto;-webkit-overflow-scrolling:touch;min-height:0;padding:16px 18px 20px;display:flex;flex-direction:column;gap:12px}.mlog>*{flex:none}
+.mtools{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:10px;align-items:end}.mtools .field{margin:0}
+.mstrip{grid-template-columns:repeat(4,minmax(0,1fr));border:1.5px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.mtab tr[data-mm]{cursor:pointer}.mtab tr.on td{background:var(--brand-soft)}.mtab td{white-space:nowrap}
+.mrows{list-style:none;margin:0;padding:0;display:grid}
+.mrows li{display:grid;grid-template-columns:minmax(120px,auto) minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:9px 2px;border-top:1px dashed var(--line)}.mrows li:first-child{border-top:0}
+.m-who{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;min-width:0}.m-amt{color:var(--bad)}.m-amt.up{color:var(--good)}
+@media (max-width:600px){.mtools{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.mtools>.btn{grid-column:1/-1}
+  .mstrip{grid-template-columns:repeat(2,minmax(0,1fr))}.mstrip>div:last-child:nth-child(odd){grid-column:auto}
+  .mrows li{grid-template-columns:minmax(0,1fr) auto}.mrows li>.num:first-child{grid-column:1/-1}.mlog{padding:14px}
+  .pslot .ps-a{margin-inline-start:0;width:100%}}
+.nb.pulse{animation:nbpulse 1s ease-in-out 4}@keyframes nbpulse{50%{transform:scale(1.35);box-shadow:0 0 0 6px rgba(240,90,56,.25)}}
+/* ----- kid: lighter top bar on phones (language, dark mode and logout live in the profile page) ----- */
+.plook{gap:8px}.plook .topic{flex:1 1 auto}.pprefs{align-items:center}.center .pprefs .prefs{position:static}
+@media (max-width:600px){
+  .kidw>.topbar{grid-template-columns:auto minmax(0,1fr) auto}
+  .kidw>.topbar .prefs,.kidw>.topbar #out{display:none}
+  .kidw>.topbar .me>div:first-child{grid-column:2;grid-row:1;text-align:end!important}
+  .kidw>.topbar #edit{grid-column:3;grid-row:1;position:relative}
+  .kidw>.topbar #edit::after{content:"⚙";position:absolute;bottom:-2px;inset-inline-start:-4px;width:18px;height:18px;border-radius:50%;background:var(--surface);border:1.5px solid var(--line);font-size:11px;line-height:15px;text-align:center;color:var(--muted)}
+}
+/* ----- missions: search by name ----- */
+.msearch{margin:0 0 10px}.msearch .input{min-height:46px}.mqn{margin:-2px 2px 8px}
+/* ----- calm look (12+ or chosen in the profile) for the lesson room, dialogs and the story reader. CSS only; the teacher drawing is untouched ----- */
+body.kteen .room,body.kteen .reader,body.kteen .ov{--bg:#F4F2EF;--line:#E4DED7;--brand-soft:#FBE7DF;--muted:#6F625A;--sky-soft:#E9EEF5;--r:14px}
+:root[data-theme="dark"] body.kteen .room,:root[data-theme="dark"] body.kteen .reader,:root[data-theme="dark"] body.kteen .ov{--bg:#121110;--line:#2F2A26;--brand-soft:#33201A;--muted:#A99A8F;--sky-soft:#1B2230}
+body.kteen .room{background:var(--bg)}
+body.kteen .rbar,body.kteen .ctrl{box-shadow:none}
+body.kteen .slide,body.kteen .slide.fmt-game,body.kteen .slide.fmt-mission,body.kteen .slide.fmt-story{border-width:1.5px;border-color:var(--line);box-shadow:none;border-radius:14px}
+body.kteen .sub{border-width:1.5px;border-radius:14px}
+body.kteen .you{border-radius:14px 14px 4px 14px}
+body.kteen .sl-fact,body.kteen .sl-dlg p.focus{background:var(--brand-soft)}
+body.kteen .sl-star{background:var(--bg);color:var(--muted)}
+body.kteen .sl-card{border-width:1.5px;border-radius:12px}
+body.kteen .sl-emo,body.kteen .sl-semo,body.kteen .sl-card .e,body.kteen .board .emo{filter:grayscale(.6);opacity:.9}
+body.kteen .board{background:#2A2724;border-color:#4A3F37;color:#F1ECE6;border-width:4px;box-shadow:none}
+body.kteen .micbig{box-shadow:none}
+body.kteen .ov{background:rgba(25,20,17,.55)}
+body.kteen .ov>.card{border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+body.kteen .ov .bigbird,body.kteen .ov .emj{filter:grayscale(.6)}
+body.kteen .reader{background:var(--bg)}
+body.kteen .reader .card,body.kteen .reader .sub{border-radius:14px;box-shadow:none}
+body.kteen .kidw.teen .book,body.kteen .reader .book{border-radius:10px 4px 4px 10px;filter:saturate(.55)}
+/* ----- PDF page (print-only): Hudhud logo, Dubai font, brand colours, always the light palette ----- */
+#hhPdf{display:none;--bg:#FFF6EE;--surface:#FFFFFF;--fg:#2B1B0F;--muted:#86695A;--line:#F0DCCB;--brand:#F05A38;--brand-ink:#B2391C;--brand-soft:#FFE6DD;--good:#15803D;--good-soft:#DCFCE7;--bad:#DC2626;--bad-soft:#FEE2E2;--sky:#3B7BE8;--sky-soft:#E3EEFF;--teal:#14B8A6;--gold:#E9A100;font-family:var(--font);color:#2B1B0F;background:#fff}
+#hhPdf .pdf-h{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 0 10px;border-bottom:4px solid #F05A38;margin-bottom:14px}
+#hhPdf .pdf-h .logo{font-size:1.6rem}#hhPdf .pdf-t{display:grid;text-align:left;line-height:1.4}#hhPdf .pdf-t b{font-size:1.15rem;color:#B2391C}#hhPdf .pdf-t span{color:#86695A;font-size:.9rem}
+#hhPdf .pdf-f{display:flex;justify-content:space-between;margin-top:18px;padding-top:8px;border-top:2px solid #FFE6DD;color:#86695A;font-size:.8rem}
+#hhPdf button,#hhPdf .chips:has(>button){display:none!important}#hhPdf details summary{display:none}#hhPdf .rcard{box-shadow:none;break-inside:auto}
+#hhPdf .stat>div,#hhPdf .rc-head,#hhPdf .gsum>*{break-inside:avoid}#hhPdf .pdf-cert{border-width:6px}
+@media print{
+  @page{size:A4;margin:12mm}
+  body.hhpdf:not(.printing):not(.gprint){background:#fff!important}
+  body.hhpdf:not(.printing):not(.gprint)>*:not(#hhPdf){display:none!important}
+  body.hhpdf:not(.printing):not(.gprint) #hhPdf{display:block!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.hhpdf:not(.printing):not(.gprint) #hhPdf,body.hhpdf:not(.printing):not(.gprint) #hhPdf *{visibility:visible!important}
+}
 </style>
 </head>
 <body>
@@ -1649,8 +1713,9 @@ function renderLogin(){
 function logout(){ setWho(null); go('login'); try{ cloudLogout(); }catch(e){} }
 
 /* =============== PROFILE =============== */
+const PLOOKS = [['calm', 'مظهر هادئ', '🌙'], ['color', 'مظهر ملوّن', '🎨'], ['auto', 'تلقائي حسب العمر', '✨']];
 function renderProfile(k, first){
-  let tmp = (DB.profiles[k] && DB.profiles[k].avatar) || '';
+  let tmp = (DB.profiles[k] && DB.profiles[k].avatar) || '', look = ((DB.profiles[k] || {}).look) || 'auto';
   $('#app').innerHTML = `<div class="center"><form class="card panel" id="pf">
     <div style="text-align:center">${LOGO}</div>
     <h2 style="text-align:center">${first ? `أهلاً ${esc(DB.kids[k].ar)}! جهّز ملفك` : 'تعديل ملفي'}</h2>
@@ -1658,10 +1723,15 @@ function renderProfile(k, first){
       <label class="btn sm" for="ph">اختر صورتك</label><input id="ph" type="file" accept="image/*" hidden></div>
     <div class="field"><label for="tc">معلمك</label><select class="input" id="tc">${Object.entries(TEACHERS).map(([id,t]) => `<option value="${id}" ${(((DB.profiles[k]||{}).teacher) || (DB.kids[k].boy?'adam':'noor')) === id ? 'selected' : ''}>${t.ar} (${t.name})</option>`).join('')}</select></div>
     <div class="field"><label for="nk">اسمك المستعار</label><input class="input" id="nk" maxlength="20" value="${esc((DB.profiles[k]||{}).nick||'')}" placeholder="مثلاً: Captain ${esc(DB.kids[k].en)}"></div>
+    ${first ? '' : `<div class="field"><label id="lookL">شكل الصفحات</label><div class="chips plook" role="radiogroup" aria-labelledby="lookL">${PLOOKS.map(([v, t, e]) => `<button type="button" role="radio" aria-checked="${look === v}" class="topic ${look === v ? 'on' : ''}" data-look="${v}">${e} ${t}</button>`).join('')}</div><div class="small muted" id="lookH"></div></div>
+    <div class="field"><label>اللغة والوضع الليلي</label><div class="chips pprefs">${prefsHTML().replace(/<button /g, '<button type="button" ')}<span class="small muted">EN للإنجليزية · الدائرة للفاتح أو الليلي</span></div></div>`}
     <div class="err" id="pe"></div>
     <button class="btn primary big" type="submit">حفظ</button>
-    ${first ? '' : '<button class="btn ghost" type="button" id="cn">رجوع</button>'}
+    ${first ? '' : '<button class="btn ghost" type="button" id="cn">رجوع</button><button class="btn danger" type="button" id="pout">تسجيل الخروج</button>'}
   </form></div>`;
+  const lookHint = () => { const h = $('#lookH'); if(h) h.textContent = look === 'auto' ? `حسب عمرك (${ageOf(DB.kids[k].birth)} سنة): ${ageOf(DB.kids[k].birth) >= 12 ? 'المظهر الهادئ' : 'المظهر الملوّن'}` : look === 'calm' ? 'ألوان هادئة وأقل رسومات، في كل الصفحات والحصة.' : 'ألوان ورسومات مرحة، في كل الصفحات والحصة.'; };
+  document.querySelectorAll('[data-look]').forEach(b => b.onclick = () => { look = b.dataset.look; document.querySelectorAll('[data-look]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-checked', x === b); }); lookHint(); });
+  lookHint(); const po = $('#pout'); if(po) po.onclick = logout;
   $('#ph').addEventListener('change', e => {
     const f = e.target.files && e.target.files[0]; if(!f) return;
     const img = new Image(), url = URL.createObjectURL(f);
@@ -1672,7 +1742,7 @@ function renderProfile(k, first){
     img.src = url;
   });
   if(!first) $('#cn').onclick = () => go(k);
-  $('#pf').addEventListener('submit', e => { e.preventDefault(); const n = $('#nk').value.trim(); if(n.length < 2){ $('#pe').textContent = 'اكتب اسماً مستعاراً من حرفين على الأقل.'; return; } DB.profiles[k] = {nick:n, avatar:tmp, teacher:$('#tc').value}; save(); go(k); });
+  $('#pf').addEventListener('submit', e => { e.preventDefault(); const n = $('#nk').value.trim(); if(n.length < 2){ $('#pe').textContent = 'اكتب اسماً مستعاراً من حرفين على الأقل.'; return; } DB.profiles[k] = Object.assign({}, DB.profiles[k], {nick:n, avatar:tmp, teacher:$('#tc').value, look}); save(); go(k); });
 }
 
 /* =============== KID SHELL + TABS =============== */
@@ -1702,6 +1772,8 @@ function renderEnded(k){
   $('#out').onclick = logout;
   const a = $('#askRenew'); if(a) a.onclick = () => { DB.renewReq = DB.renewReq || {}; DB.renewReq[k] = new Date().toISOString(); save(); toast('📩 وصل طلبك لولي الأمر'); renderEnded(k); };
 }
+/* calm («هادئ») or colourful («ملوّن») look: the kid's own choice in the profile, or by age (12+) when left on automatic */
+function kidTeen(k){ const v = ((DB.profiles || {})[k] || {}).look; return v === 'calm' ? true : v === 'color' ? false : ageOf(DB.kids[k].birth) >= 12; }
 function renderKid(k){
   clearInterval(homeTimer); homeTimer = null;
   if(ledger(k).ended && !L){ clearInterval(homeTimer); return renderEnded(k); }
@@ -1710,8 +1782,9 @@ function renderKid(k){
   try{ settleSib(k); }catch(e){ console.warn(e); }
   try{ payFamily(k); }catch(e){ console.warn(e); }
   if(CONTENT[DB.kids[k].level] === undefined){ loadContent(DB.kids[k].level).then(() => { if(WHO === k && !L && !document.querySelector('.ov,.reader')) renderKid(k); }); }
-  const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp);
-  $('#app').innerHTML = `<div class="wrap kidw ${ageOf(kid.birth) >= 12 ? 'teen' : ''}">
+  const kid = DB.kids[k], xp = DB.progress[k].xp, rk = rankOf(xp), teen = kidTeen(k);
+  document.body.classList.toggle('kteen', teen);   /* the calm look also covers the lesson room, dialogs and the story reader */
+  $('#app').innerHTML = `<div class="wrap kidw ${teen ? 'teen' : ''}">
     <div class="topbar">${LOGO}<div class="me"><div style="text-align:left"><div style="font-weight:800">${esc(nick(k))}</div><div class="small muted"><span class="en">Level ${kid.level} · ${LEVEL_INFO[kid.level][0]}</span> · ${rk.r[3]} ${rk.r[2]} · <span class="num">${xp}</span> نقطة</div></div>
       ${prefsHTML()}<button class="btn ghost" id="edit" aria-label="تعديل ملفي" style="padding:0;border:0;min-height:0">${avatarHTML(k)}</button><button class="btn sm" id="out">خروج</button></div></div>
     <nav class="tabs" role="tablist">${TABS.map(t => `<button role="tab" class="tab ${TAB===t[0]?'on':''}" data-tab="${t[0]}"><span>${t[2]}</span> ${t[1]}</button>`).join('')}</nav>
@@ -3024,15 +3097,17 @@ function talkGoal(k){ const lv = (DB.kids[k] || {}).level || 1; return lv <= 3 ?
 function updateTalk(){ const el = $('#talk'); if(!el || !L) return; const p = talkPct(), g = talkGoal(L.kid); el.title = 'نسبة كلماتك من كل كلمات الحصة'; el.innerHTML = `🗣️ كلماتك <b class="num">${p}%</b> <span class="small">(هدفك ${g}%)</span>`; el.classList.toggle('ok', p >= g); }
 
 /* =============== MONTHLY REPORT =============== */
-async function monthlyReport(k){
-  const now = new Date(), m0 = new Date(now.getFullYear(), now.getMonth(), 1), mid = new Date(now.getFullYear(), now.getMonth(), 16);
-  const reps = DB.reports.filter(r => r.kid === k && new Date(r.at) >= m0), h1 = reps.filter(r => new Date(r.at) < mid), h2 = reps.filter(r => new Date(r.at) >= mid);
+/* the printable monthly report; mk ('YYYY-MM') opens a past month (default: this month). The teacher note is kept per month in DB.monthly. */
+async function monthlyReport(k, mk){
+  const now = /^\d{4}-\d{2}$/.test(mk || '') ? new Date(Number(mk.slice(0, 4)), Number(mk.slice(5)) - 1, 1) : new Date(), m0 = new Date(now.getFullYear(), now.getMonth(), 1), mid = new Date(now.getFullYear(), now.getMonth(), 16);
+  const m1 = new Date(now.getFullYear(), now.getMonth() + 1, 1), inM = t => { t = new Date(t); return t >= m0 && t < m1; };
+  const reps = DB.reports.filter(r => r.kid === k && inM(r.at)), h1 = reps.filter(r => new Date(r.at) < mid), h2 = reps.filter(r => new Date(r.at) >= mid);
   const avg = xs => xs.length ? Math.round(xs.reduce((a,r) => a + r.score, 0)/xs.length) : null;
-  const l = ledger(k), rows = l.rows.filter(r => r.t >= m0), att = rows.filter(r => r.st === 'att').length, miss = rows.length - att;
+  const l = ledger(k), rows = l.rows.filter(r => inM(r.t)), att = rows.filter(r => r.st === 'att').length, miss = rows.length - att;
   const mins = reps.reduce((a,r) => a + (r.minutes||0), 0), talk = reps.filter(r => r.talkPct != null), tavg = talk.length ? Math.round(talk.reduce((a,r) => a + r.talkPct, 0)/talk.length) : null;
-  const qz = DB.progress[k].quizzes.filter(q => q.at && new Date(q.at) >= m0), qavg = qz.length ? Math.round(qz.reduce((a,q) => a + q.score/q.total, 0)/qz.length*100) : null;
-  const words = [...new Set(reps.flatMap(r => r.newWords||[]))], daily = Object.keys(DB.progress[k].daily||{}).filter(d => new Date(d+'T12:00') >= m0).length;
-  const books = DB.books[k].filter(b => b.readAt && new Date(b.readAt) >= m0).length + Object.values(DB.progress[k].preAt||{}).filter(d => new Date(d) >= m0).length;
+  const qz = DB.progress[k].quizzes.filter(q => q.at && inM(q.at)), qavg = qz.length ? Math.round(qz.reduce((a,q) => a + q.score/q.total, 0)/qz.length*100) : null;
+  const words = [...new Set(reps.flatMap(r => r.newWords||[]))], daily = Object.keys(DB.progress[k].daily||{}).filter(d => inM(d+'T12:00')).length;
+  const books = DB.books[k].filter(b => b.readAt && inM(b.readAt)).length + Object.values(DB.progress[k].preAt||{}).filter(d => inM(d)).length;
   const mkey = `${now.getFullYear()}-${pad(now.getMonth()+1)}`; DB.monthly = DB.monthly || {}; DB.monthly[k] = DB.monthly[k] || {};
   const ov = overlay(`<div class="cert" id="certBox"><div class="cert-in" style="text-align:right;justify-items:stretch">
       <div class="chips" style="justify-content:space-between">${LOGO}<div class="small muted">${fmtMonth(now)}</div></div>
@@ -3042,14 +3117,15 @@ async function monthlyReport(k){
       <div class="stat"><div><span class="small muted">قصص</span><b>${books}</b></div><div><span class="small muted">تحدي اليوم</span><b>${daily}</b></div><div><span class="small muted">النقاط</span><b>${DB.progress[k].xp}</b></div><div><span class="small muted">الأوسمة</span><b>${earnedBadges(k).length}</b></div></div>
       <div class="gram" id="mnote">${DB.monthly[k][mkey] ? esc(DB.monthly[k][mkey]) : '<span class="muted small">جاري كتابة ملاحظة المعلم…</span>'}</div>
       <div class="cert-s"><div><div class="en sig">${teacherOf(k).name}</div><div class="small muted en">Teacher</div></div><div style="font-size:2.2rem">🏅</div></div></div></div>
-    <div class="chips"><button class="btn primary" id="pr">طباعة</button><button class="btn" id="cl">إغلاق</button></div>`);
+    <div class="chips"><button class="btn primary" id="pr">طباعة</button><button class="btn" id="mpdf">تنزيل PDF</button><button class="btn" id="cl">إغلاق</button></div>`);
   ov.querySelector('.card').classList.add('wide');
   ov.querySelector('#cl').onclick = () => ov.remove();
   ov.querySelector('#pr').onclick = () => { document.body.classList.add('printing'); window.print(); setTimeout(() => document.body.classList.remove('printing'), 500); };
+  ov.querySelector('#mpdf').onclick = () => { const b = ov.querySelector('.cert-in'); hhPdf(`التقرير الشهري · ${DB.kids[k].ar}`, fmtMonth(now), `<div class="cert pdf-cert"><div class="cert-in" style="text-align:right;justify-items:stretch">${b ? b.innerHTML : ''}</div></div>`); };
   if(!DB.monthly[k][mkey] && reps.length && !(DEMO || DB.apiKey === 'demo')){
     try{ const t = await callClaude({model:LIVE_MODEL, max_tokens:400, messages:[{role:'user', content:`Write a warm, specific monthly progress note in Arabic (4 sentences) from the English teacher to the parent of ${DB.kids[k].en} (level ${DB.kids[k].level}, ${LEVEL_INFO[DB.kids[k].level][0]}). Data: attended ${att}, missed ${miss}, lesson scores first half ${avg(h1)}, second half ${avg(h2)}, quiz average ${qavg}, talk share ${tavg}%, new words ${words.slice(0,15).join(', ')}. Teacher notes from lessons: ${reps.map(r => r.parentNote).join(' | ').slice(0,3000)}. Mention progress, strengths and one clear goal for next month. Reply with the note only.`}]});
       DB.monthly[k][mkey] = t.trim(); save(); const n = ov.querySelector('#mnote'); if(n) n.textContent = DB.monthly[k][mkey]; }catch(e){ const n = ov.querySelector('#mnote'); if(n) n.textContent = 'لم نتمكن من كتابة ملاحظة المعلم الآن.'; }
-  } else if(!reps.length){ const n = ov.querySelector('#mnote'); if(n) n.textContent = 'لا توجد حصص هذا الشهر بعد.'; }
+  } else if(!reps.length){ const n = ov.querySelector('#mnote'); if(n) n.textContent = inM(Date.now()) ? 'لا توجد حصص هذا الشهر بعد.' : 'لا توجد حصص في هذا الشهر.'; }
 }
 
 /* =============== TEACHER SVG =============== */
@@ -4564,15 +4640,15 @@ function pSheetHTML(k){
         <button class="btn sm" data-place="${k}">إجراء تحديد المستوى الآن</button><button class="btn sm" data-replace="${k}">${kid.needPlace ? 'إلغاء إعادة تحديد المستوى' : 'إعادة تحديد المستوى عند دخوله'}</button><button class="btn sm" data-trial="${k}">حصة تجريبية (لا تُحتسب)</button></div></section>
     <section class="shs"><h3>الجدول والحجز</h3>
       <dl class="kv"><div><dt>أيام الحصص</dt><dd>${per.days.map(d => DAYS_AR[d]).join('، ')} · <span class="num">${esc(per.time)}</span></dd></div><div><dt>الحصة القادمة</dt><dd>${x.next}</dd></div></dl>
-      ${up.length ? `<ul class="pup">${up.map(s => `<li><span>${s.t.toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'short'})}${s.extra ? ' <span class="chip brand small">إضافية</span>' : ''}</span><span class="num muted">${fmtTime(s.t)}</span></li>`).join('')}</ul>` : ''}
-      <div class="chips"><button class="btn sm" data-edit="${k}">تغيير الأيام والوقت</button><button class="btn sm" data-ics="${k}">ملف التقويم</button></div></section>
+      ${up.length ? `<ul class="pup pslots">${up.map(s => pSlotRowHTML(k, s, l)).join('')}</ul>` : ''}
+      <div class="chips"><button class="btn sm primary" data-sbook="${k}">${uiIc('plus')} حصة إضافية</button><button class="btn sm" data-sall="${k}">كل الحصص</button><button class="btn sm" data-edit="${k}">تغيير الأيام والوقت</button><button class="btn sm" data-ics="${k}">ملف التقويم</button></div></section>
     <section class="shs"><h3>الرصيد والشحن</h3>
       <div class="pbal"><div><b class="num">${l.remaining.toLocaleString('en')}</b><span class="small muted"> ريال متبقي</span></div><div class="small muted">يكفي <b class="num">${l.left}</b> ${l.left === 1 ? 'حصة' : 'حصص'} · الحصة <span class="num">${l.price}</span> ريال</div></div>
       <div class="bar" aria-hidden="true"><i style="width:${l.bal ? l.green / l.bal * 100 : 0}%;background:var(--good)"></i><i style="width:${l.bal ? l.red / l.bal * 100 : 0}%;background:var(--bad)"></i></div>
       <div class="chips small"><span class="chip good">حضر ${att} · ${l.green} ريال</span><span class="chip bad">غاب ${miss} · ${l.red} ريال</span></div>
       ${l.ended ? `<div class="pnote bad">انتهى الرصيد وتوقفت المنصة عنده${(DB.renewReq || {})[k] ? ' · أرسل طلب إعادة الشحن 📩' : ''}.</div>` : ''}
       ${tops.length ? `<ul class="pup">${tops.map(t => `<li><span>شحن ${new Date(t.at).toLocaleDateString(LOC, {day:'numeric', month:'long', year:'numeric'})}</span><span class="num">+${Number(t.amount).toLocaleString('en')} ريال</span></li>`).join('')}</ul>` : ''}
-      <div class="chips"><button class="btn sm ${l.ended || l.left <= 3 ? 'primary' : ''}" data-topup="${k}">شحن الرصيد</button><button class="btn sm" data-edit="${k}">تعديل قيمة الحصة</button></div></section>
+      <div class="chips"><button class="btn sm ${l.ended || l.left <= 3 ? 'primary' : ''}" data-topup="${k}">شحن الرصيد</button><button class="btn sm" data-edit="${k}">تعديل قيمة الحصة</button><button class="btn sm" data-money="${k}">السجل المالي</button></div></section>
     <section class="shs shs-wide"><h3>الأصوات</h3>
       ${DB.azure && DB.azure.key ? (() => { const v = kidVoices(k); const sel = (role, cur) => `<div class="vrow"><label class="small" style="font-weight:800">${role === 'teacher' ? 'صوت المعلم في الحصص' : 'صوت قراءة القصص'}</label><div class="chips"><select class="input" data-voice="${role}" data-k="${k}" style="flex:1;min-width:180px">${AZ_LIST.map(([id, n, d]) => `<option value="${id}" ${id === cur ? 'selected' : ''}>${n} · ${d}</option>`).join('')}</select><button class="btn sm" data-vprev="${role}" data-k="${k}">▶️ تجربة</button></div></div>`; return sel('teacher', v.teacher) + sel('story', v.story); })() : '<p class="small muted" style="margin:0">اختيار الأصوات يحتاج تفعيل «الصوت البشري الطبيعي» من الإعدادات. بدونه يُستخدم صوت الجهاز.</p>'}</section>
     </div>`;
@@ -4585,13 +4661,202 @@ function pOpenSheet(k){
   ov.querySelector('[data-shx]').onclick = () => pOpenSheet(null);
   wireAdmin(ov);
 }
+/* ----- owner: one lesson at a time (book an extra lesson, move or cancel one lesson on a given date).
+   Same schedule data as the student's own booking (sched.extra / sched.cancel through addExtra and cancelSlot), but the owner has
+   no 15-minute lead and no monthly minimum. A cancelled lesson is never charged; an attended lesson, or one the student is in now, cannot change. */
+const pHM = t => `${pad(t.getHours())}:${pad(t.getMinutes())}`, pISO = t => `${t.getFullYear()}-${pad(t.getMonth() + 1)}-${pad(t.getDate())}`;
+function pSlotState(k, s, l){
+  if(DB.attendance.some(a => a.kid === k && a.slot === s.key)) return 'att';
+  if(l.open && l.open.key === s.key) return (l.open.resumed || liveOf(k)) ? 'live' : 'open';
+  if(l.rows.some(r => r.key === s.key && r.st === 'miss')) return 'miss';
+  return s.t < new Date() ? 'past' : 'next';
+}
+function pSlotRowHTML(k, s, l){
+  const st = pSlotState(k, s, l), can = st === 'next' || st === 'open' || st === 'miss';
+  const tag = {miss:'<span class="chip bad small">غاب · خُصمت</span>', open:'<span class="chip brand small">مفتوحة الآن</span>', live:'<span class="chip live small">في الحصة الآن</span>', att:'<span class="chip good small">حضر</span>'}[st] || '';
+  return `<li class="pslot"><span class="ps-d"><b>${s.t.toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'short'})}</b> <span class="num muted">${fmtTime(s.t)}</span>${s.extra ? ' <span class="chip brand small">إضافية</span>' : ''} ${tag}</span>
+    ${can ? `<span class="chips ps-a">${st !== 'miss' ? `<button class="btn sm" data-smove="${s.key}" data-k="${k}">تغيير الموعد</button>` : ''}<button class="btn sm danger" data-scancel="${s.key}" data-k="${k}">${st === 'miss' ? 'إلغاء بدون خصم' : 'إلغاء'}</button></span>` : ''}</li>`;
+}
+function pSlotPicker(k, moveKey, after){
+  const kid = DB.kids[k], now = new Date(), old = moveKey ? fromKey(moveKey) : null, l = ledger(k), per = periodAt(k, now), price = priceNow(k);
+  const booked = l.upcoming.concat(l.open ? [l.open] : []).filter(s => s.t < new Date(Date.now() + 35 * DAY)).reduce((a, s) => a + priceAt(k, s.t), 0), short = !old && l.remaining - booked < price;
+  const ov = overlay(`<h2>${old ? `تغيير موعد حصة ${esc(kid.ar)}` : `حصة إضافية لـ ${esc(kid.ar)}`}</h2>
+    ${old ? `<p class="small muted" style="margin:0">الموعد الحالي: ${fmtDay(old)} · ${fmtTime(old)}</p>` : `<p class="small muted" style="margin:0">تُخصم ${price} ريال عند موعدها مثل أي حصة. المتبقي في رصيده ${l.remaining.toLocaleString('en')} ريال.</p>`}
+    ${short ? '<div class="pnote warn">الرصيد ما يكفي هذه الحصة فوق حصصه المحجوزة. تقدر تحجزها ثم تشحن الرصيد.</div>' : ''}
+    <div class="g2e" style="gap:10px"><div class="field"><label for="ps_d">اليوم</label><input class="input" type="date" id="ps_d" min="${pISO(now)}" value="${pISO(old && old > now ? old : now)}"></div>
+      <div class="field"><label for="ps_t">الوقت</label><input class="input" type="time" id="ps_t" step="300" value="${old ? pHM(old) : esc(per.time)}"></div></div>
+    <p class="small muted" style="margin:0">من لوحة الإدارة تقدر تحجز أو تغيّر في أي وقت، بدون شرط ربع الساعة وبدون الحد الأدنى ${MIN_MONTH} حصة في الشهر.</p>
+    <div class="err" id="ps_e"></div>
+    <div class="chips"><button class="btn primary" id="ps_ok">${old ? 'تأكيد الموعد الجديد' : 'احجز الحصة'}</button><button class="btn" id="ps_no">رجوع</button></div>`);
+  ov.querySelector('#ps_no').onclick = () => ov.remove();
+  ov.querySelector('#ps_ok').onclick = () => {
+    const d = ov.querySelector('#ps_d').value, tm = ov.querySelector('#ps_t').value, err = ov.querySelector('#ps_e');
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(d) || !/^\d{1,2}:\d{2}/.test(tm)){ err.textContent = 'اختر اليوم والوقت.'; return; }
+    const [y, mo, da] = d.split('-').map(Number), [h, mi] = tm.split(':').map(Number), t = new Date(y, mo - 1, da, h, mi);
+    if(isNaN(t.getTime()) || t < Date.now() - 60e3){ err.textContent = 'اختر موعداً قادماً، مو في الماضي.'; return; }
+    if(moveKey && keyOf(t) === moveKey){ ov.remove(); return; }
+    const near = slotsFor(k, new Date(t.getTime() + DAY)).find(s => s.key !== moveKey && Math.abs(s.t - t) < 45 * 60e3);
+    if(near){ err.textContent = `عنده حصة قريبة من هذا الوقت (${fmtDay(near.t)} · ${fmtTime(near.t)}). اختر وقتاً آخر.`; return; }
+    if(moveKey){ const st = pSlotState(k, {key:moveKey, t:old}, ledger(k)); if(st === 'att' || st === 'live' || st === 'past'){ err.textContent = 'ما يمكن تغيير حصة حضرها أو هو فيها الآن.'; return; } cancelSlot(k, moveKey); }
+    addExtra(k, t); ov.remove(); toast(moveKey ? `تم نقل الحصة إلى ${fmtDay(t)} · ${fmtTime(t)}` : 'تم حجز الحصة الإضافية ✓'); renderParent(); if(after) after(); };
+}
+function pCancelSlot(k, key, after){
+  const t = fromKey(key), l = ledger(k), st = pSlotState(k, {key, t}, l), row = l.rows.find(r => r.key === key);
+  if(!['next', 'open', 'miss'].includes(st)){ alertBox('ما يمكن إلغاء هذه الحصة: حضرها الطالب أو هو فيها الآن.'); return; }
+  const ov = overlay(`<h2>إلغاء حصة ${esc(DB.kids[k].ar)}؟</h2><p style="margin:0"><b>${fmtDay(t)} · ${fmtTime(t)}</b></p>
+    <p class="small muted" style="margin:0">${st === 'miss' ? `هذه الحصة احتُسبت غياباً. إلغاؤها يرجّع ${row ? row.price : priceAt(k, t)} ريال لرصيده.` : 'الحصة الملغاة لا تُخصم من الرصيد ولا تُحسب غياباً.'}</p>
+    <div class="chips"><button class="btn danger" id="pc_y">نعم، ألغِ الحصة</button><button class="btn" id="pc_n">رجوع</button></div>`);
+  ov.querySelector('#pc_n').onclick = () => ov.remove();
+  ov.querySelector('#pc_y').onclick = () => { cancelSlot(k, key); ov.remove(); toast(st === 'miss' ? 'تم الإلغاء ورجع المبلغ للرصيد ✓' : 'تم إلغاء الحصة ✓'); renderParent(); if(after) after(); };
+}
+/* every lesson of one student: the next 45 days, and absences of the last 30 days (an excused absence can be cancelled = refunded) */
+function pAllSlots(k){
+  const old = document.getElementById('pSlots'); if(old) old.remove();
+  const ov = overlay(''); ov.id = 'pSlots'; ov.querySelector('.card').classList.add('wide');
+  const draw = () => { if(!document.body.contains(ov) || !DB.kids[k]) return; const l = ledger(k), now = new Date();
+    const up = slotsFor(k, new Date(now.getTime() + 45 * DAY)).filter(s => s.t >= now || (l.open && l.open.key === s.key));
+    const miss = l.rows.filter(r => r.st === 'miss' && r.t >= new Date(now.getTime() - 30 * DAY)).map(r => ({t:r.t, key:r.key, extra:r.extra})).reverse();
+    ov.querySelector('.card').innerHTML = `<div class="sech"><h2>حصص ${esc(DB.kids[k].ar)}</h2><button class="pbtn" data-psx aria-label="إغلاق">${uiIc('x')}</button></div>
+      <div class="chips"><button class="btn sm primary" data-psb>${uiIc('plus')} حصة إضافية</button></div>
+      <h3 class="subh">القادمة · 45 يوم</h3>
+      ${up.length ? `<ul class="pup pslots">${up.map(s => pSlotRowHTML(k, s, l)).join('')}</ul>` : emptyHTML('🗓️', 'لا توجد حصص قادمة', l.ended ? 'الرصيد انتهى. اشحن الرصيد لتظهر حصصه.' : 'احجز حصة إضافية أو غيّر الأيام من «تغيير الأيام والوقت».')}
+      ${miss.length ? `<h3 class="subh">غياب آخر 30 يوم</h3><p class="small muted" style="margin:0">إذا كان الغياب بعذر تقدر تلغي الحصة ويرجع مبلغها للرصيد.</p><ul class="pup pslots">${miss.map(s => pSlotRowHTML(k, s, l)).join('')}</ul>` : ''}`;
+    ov.querySelector('[data-psx]').onclick = () => ov.remove();
+    ov.querySelector('[data-psb]').onclick = () => pSlotPicker(k, null, draw);
+    ov.querySelectorAll('[data-smove]').forEach(b => b.onclick = () => pSlotPicker(k, b.dataset.smove, draw));
+    ov.querySelectorAll('[data-scancel]').forEach(b => b.onclick = () => pCancelSlot(k, b.dataset.scancel, draw)); };
+  ov.addEventListener('click', e => { if(e.target === ov) ov.remove(); });
+  draw();
+}
+/* ----- owner: the guardian page (name, phone, linked children, new password). Passwords are stored as hashes: never shown, only reset. ----- */
+let P_GSHEET = null;
+function pGuardianSheetHTML(gid){
+  const g = DB.guardians[gid], ks = gKids(gid), wa = String(g.phone || '').replace(/^0/, '966').replace(/[^\d]/g, '');
+  return `<header class="shh"><div class="pg-av">${esc(String(g.name || '؟').trim().slice(0, 1))}</div><div style="min-width:0"><h2>${esc(g.name || 'ولي الأمر')}</h2><div class="small muted">ولي أمر · ${ks.length ? ks.map(k => esc(DB.kids[k].ar)).join('، ') : 'بدون أبناء'}</div></div><button class="pbtn" data-gsx aria-label="إغلاق">${uiIc('x')}</button></header>
+    <div class="shb">
+    <section class="shs"><h3>البيانات</h3>
+      <div class="field"><label for="gp_name">الاسم</label><input class="input" id="gp_name" maxlength="60" value="${esc(g.name || '')}"></div>
+      <div class="field"><label for="gp_phone">الجوال</label><input class="input ltr" id="gp_phone" inputmode="tel" maxlength="16" placeholder="05xxxxxxxx" value="${esc(g.phone || '')}"></div>
+      <div class="g2e" style="gap:10px"><div class="field"><label for="gp_rel">صلة القرابة</label><select class="input" id="gp_rel">${RELS.map(([r]) => `<option value="${r}" ${r === (g.rel || '') ? 'selected' : ''}>${r || 'أخرى (الاسم فقط)'}</option>`).join('')}</select></div>
+        <div class="field"><label for="gp_first">الاسم اللي يشوفه الطفل</label><input class="input" id="gp_first" maxlength="30" value="${esc(g.first || '')}"></div></div></section>
+    <section class="shs"><h3>الحساب</h3>
+      <dl class="kv"><div><dt>اسم المستخدم</dt><dd><code>${esc(g.user || '')}</code></dd></div><div><dt>كلمة المرور</dt><dd><span class="muted" aria-label="كلمة المرور مخفية">••••</span></dd></div></dl>
+      <div class="chips"><button class="btn sm primary" data-rpass="guardian:${esc(gid)}">🔑 كلمة مرور جديدة</button>${wa ? `<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">واتساب</a>` : ''}${g.phone ? `<a class="btn sm" href="tel:${esc(g.phone)}">اتصال</a>` : ''}</div>
+      <p class="small muted" style="margin:0">كلمة المرور محفوظة مشفّرة ولا تظهر لأحد. «كلمة مرور جديدة» تعطيك كلمة ترسلها له.</p></section>
+    <section class="shs shs-wide"><h3>الأبناء المرتبطون</h3>
+      <div class="gpkids">${kidIds().map(k => { const og = guardianOf(k), mine = ks.includes(k); return `<label class="gpk ${mine ? 'on' : ''}"><input type="checkbox" data-gpk="${k}" ${mine ? 'checked' : ''}>${avatarHTML(k)}<span><b>${esc(DB.kids[k].ar)}</b><span class="small muted">${mine ? 'مربوط بهذا الحساب' : og ? 'مربوط حالياً بـ ' + esc(og.name) : 'بدون ولي أمر'}</span></span></label>`; }).join('') || '<span class="small muted">لا يوجد طلاب بعد</span>'}</div>
+      <p class="small muted" style="margin:0">اختيار طالب مربوط بولي أمر آخر ينقله لهذا الحساب.</p>
+      <div class="err" id="gp_e"></div>
+      <div class="chips"><button class="btn primary" id="gp_save">حفظ التغييرات</button><button class="btn" data-gsx>إغلاق</button></div></section>
+    </div>`;
+}
+function pOpenGuardian(gid){
+  const old = document.getElementById('pGSheet'); if(!gid || !(DB.guardians || {})[gid]){ P_GSHEET = null; if(old) old.remove(); return; }
+  P_GSHEET = gid; const ov = document.createElement('div'); ov.className = 'ov sheet'; ov.id = 'pGSheet';
+  ov.innerHTML = `<div class="card" role="dialog" aria-modal="true" aria-label="صفحة ولي الأمر">${pGuardianSheetHTML(gid)}</div>`;
+  if(old) old.replaceWith(ov); else document.body.appendChild(ov);
+  ov.addEventListener('click', e => { if(e.target === ov) pOpenGuardian(null); });
+  ov.querySelectorAll('[data-gsx]').forEach(b => b.onclick = () => pOpenGuardian(null));
+  ov.querySelectorAll('[data-gpk]').forEach(c => c.onchange = () => c.closest('.gpk').classList.toggle('on', c.checked));
+  wireAdmin(ov);
+  ov.querySelector('#gp_save').onclick = () => {
+    const v = id => ov.querySelector(id).value.trim(), err = ov.querySelector('#gp_e'), g = DB.guardians[gid];
+    const name = v('#gp_name'), phone = v('#gp_phone').replace(/[\s-]+/g, '');
+    if(name.length < 2){ err.textContent = 'اكتب اسم ولي الأمر.'; return; }
+    if(phone && !/^\+?\d{9,15}$/.test(phone)){ err.textContent = 'رقم الجوال غير صحيح. مثال: 0551234567'; return; }
+    const sel = new Set([...ov.querySelectorAll('[data-gpk]')].filter(c => c.checked).map(c => c.dataset.gpk));
+    gIds().forEach(o => { if(o !== gid) DB.guardians[o].kids = (DB.guardians[o].kids || []).filter(x => !sel.has(x)); });
+    kidIds().forEach(k => { if(sel.has(k)) DB.kids[k].guardian = gid; else if(DB.kids[k].guardian === gid) delete DB.kids[k].guardian; });
+    Object.assign(g, {name, phone, rel:ov.querySelector('#gp_rel').value, first:v('#gp_first'), kids:kidIds().filter(k => sel.has(k))});
+    save(); toast('تم حفظ بيانات ولي الأمر ✓'); renderParent(); };
+}
+/* ----- owner: the full money log (every top-up and every lesson charge), monthly totals, filters, CSV export for Excel ----- */
+let P_MS = 'all', P_MM = 'all';
+const P_MT = {top:['شحن رصيد', 'good'], att:['حصة حضرها', ''], miss:['حصة غاب عنها', 'bad']};
+const pMkName = mk => fmtMonth(new Date(Number(mk.slice(0, 4)), Number(mk.slice(5)) - 1, 1));
+function pMoneyRows(){
+  const out = [];
+  (DB.topups || []).forEach(t => { if(DB.kids[t.kid]) out.push({at:new Date(t.at), k:t.kid, type:'top', amount:Math.round(Number(t.amount) || 0)}); });
+  kidIds().forEach(k => ledger(k).rows.forEach(r => out.push({at:r.t, k, type:r.st, amount:-r.price, extra:r.extra})));
+  return out.filter(x => !isNaN(x.at.getTime())).sort((a, b) => b.at - a.at);
+}
+function pMoneyData(){
+  const all = pMoneyRows(), byKid = all.filter(x => P_MS === 'all' || x.k === P_MS), rows = byKid.filter(x => P_MM === 'all' || monthKey(x.at) === P_MM);
+  const add = (o, x) => { if(x.type === 'top'){ o.top += x.amount; o.nTop++; } else if(x.type === 'att'){ o.att -= x.amount; o.nAtt++; } else { o.miss -= x.amount; o.nMiss++; } return o; }, zero = mk => ({mk, top:0, att:0, miss:0, nTop:0, nAtt:0, nMiss:0});
+  const months = {}; byKid.forEach(x => { const mk = monthKey(x.at); add(months[mk] = months[mk] || zero(mk), x); });
+  return {all, rows, mlist:Object.values(months).sort((a, b) => a.mk < b.mk ? 1 : -1), tot:rows.reduce(add, zero('')), allMonths:[...new Set(all.map(x => monthKey(x.at)))].sort().reverse()};
+}
+function pMoneyHTML(){
+  const D = pMoneyData(), T = D.tot, net = T.top - T.att - T.miss, n = v => Math.round(v).toLocaleString('en');
+  return `<header class="shh"><div class="pg-av">${uiIc('chart')}</div><div style="min-width:0"><h2>السجل المالي</h2><div class="small muted">كل عمليات الشحن وخصم الحصص</div></div><button class="pbtn" data-mx aria-label="إغلاق">${uiIc('x')}</button></header>
+  <div class="mlog">
+    <div class="mtools"><div class="field"><label for="pm_s">الطالب</label><select class="input" id="pm_s"><option value="all">كل الطلاب</option>${kidIds().map(k => `<option value="${k}" ${P_MS === k ? 'selected' : ''}>${esc(DB.kids[k].ar)}</option>`).join('')}</select></div>
+      <div class="field"><label for="pm_m">الشهر</label><select class="input" id="pm_m"><option value="all">كل الأشهر</option>${D.allMonths.map(m => `<option value="${m}" ${P_MM === m ? 'selected' : ''}>${pMkName(m)}</option>`).join('')}</select></div>
+      <button class="btn primary" id="pm_csv">${uiIc('doc')} تصدير Excel</button></div>
+    <div class="pstrip mstrip"><div><span class="small muted">الشحن</span><b class="num" style="color:var(--good)">${n(T.top)}</b><span class="small muted">${T.nTop} عملية</span></div>
+      <div><span class="small muted">خصم الحضور</span><b class="num">${n(T.att)}</b><span class="small muted">${T.nAtt} حصة</span></div>
+      <div><span class="small muted">خصم الغياب</span><b class="num" style="color:var(--bad)">${n(T.miss)}</b><span class="small muted">${T.nMiss} حصة</span></div>
+      <div><span class="small muted">الصافي</span><b class="num" dir="ltr">${net < 0 ? '−' : ''}${n(Math.abs(net))}</b><span class="small muted">ريال</span></div></div>
+    <h3 class="subh">المجموع الشهري</h3>
+    ${D.mlist.length ? `<div class="tscroll"><table class="acc mtab"><tr><th>الشهر</th><th>الشحن</th><th>خصم الحضور</th><th>خصم الغياب</th><th>الصافي</th></tr>${D.mlist.map(m => { const nt = m.top - m.att - m.miss; return `<tr class="${P_MM === m.mk ? 'on' : ''}" data-mm="${m.mk}"><td><b>${pMkName(m.mk)}</b></td><td class="num" style="color:var(--good)">${n(m.top)}</td><td class="num">${n(m.att)} <span class="small muted">(${m.nAtt})</span></td><td class="num" style="color:var(--bad)">${n(m.miss)} <span class="small muted">(${m.nMiss})</span></td><td class="num"><b dir="ltr">${nt < 0 ? '−' : ''}${n(Math.abs(nt))}</b></td></tr>`; }).join('')}</table></div>` : ''}
+    <h3 class="subh">العمليات <span class="chip num small">${D.rows.length}</span></h3>
+    ${D.rows.length ? `<ul class="mrows">${D.rows.map(x => `<li><span class="num small muted">${x.at.toLocaleDateString(LOC, {day:'numeric', month:'short', year:'numeric'})}<span class="d-l"> · ${fmtTime(x.at)}</span></span><span class="m-who"><b>${esc(DB.kids[x.k].ar)}</b> <span class="chip ${P_MT[x.type][1]} small">${P_MT[x.type][0]}</span>${x.extra ? ' <span class="small muted">إضافية</span>' : ''}</span><b class="num m-amt ${x.amount > 0 ? 'up' : ''}" dir="ltr">${x.amount > 0 ? '+' : '−'}${n(Math.abs(x.amount))}</b></li>`).join('')}</ul>` : emptyHTML('💳', 'لا توجد عمليات هنا', 'غيّر الطالب أو الشهر.')}
+  </div>`;
+}
+/* CSV for Excel: UTF-8 with a BOM (so Arabic opens correctly), CRLF lines, quoted cells; text cells never start with = + - @ */
+function pMoneyCSV(){
+  const D = pMoneyData(), q = v => { let s = String(v == null ? '' : v); if(typeof v !== 'number' && /^[=+\-@]/.test(s)) s = "'" + s; return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; }, row = a => a.map(q).join(',');
+  const lines = [row(['التاريخ', 'الوقت', 'الطالب', 'العملية', 'المبلغ (ريال)', 'الشهر'])];
+  D.rows.slice().reverse().forEach(x => lines.push(row([pISO(x.at), pHM(x.at), DB.kids[x.k].ar, P_MT[x.type][0] + (x.extra ? ' (إضافية)' : ''), x.amount, monthKey(x.at)])));
+  lines.push('', row(['المجموع الشهري']), row(['الشهر', 'الشحن', 'خصم الحضور', 'خصم الغياب', 'الصافي']));
+  D.mlist.filter(m => P_MM === 'all' || m.mk === P_MM).forEach(m => lines.push(row([m.mk, m.top, m.att, m.miss, m.top - m.att - m.miss])));
+  return '﻿' + lines.join('\r\n') + '\r\n';
+}
+function pMoneyDownload(){
+  const name = `hudhud-money-${P_MS === 'all' ? 'all' : String((DB.kids[P_MS] || {}).user || P_MS).replace(/[^a-z0-9_.-]/gi, '')}-${P_MM === 'all' ? todayISO() : P_MM}.csv`;
+  const url = URL.createObjectURL(new Blob([pMoneyCSV()], {type:'text/csv;charset=utf-8'})), a = document.createElement('a');
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 10000); toast('تم تصدير الملف ✓');
+}
+function pOpenMoney(k){
+  if(k !== undefined){ P_MS = k && DB.kids[k] ? k : 'all'; P_MM = 'all'; }
+  const old = document.getElementById('pMoney'), ov = document.createElement('div'); ov.className = 'ov sheet'; ov.id = 'pMoney';
+  ov.innerHTML = `<div class="card" role="dialog" aria-modal="true" aria-label="السجل المالي">${pMoneyHTML()}</div>`;
+  if(old) old.replaceWith(ov); else document.body.appendChild(ov);
+  ov.addEventListener('click', e => { if(e.target === ov) ov.remove(); }); ov.querySelector('[data-mx]').onclick = () => ov.remove();
+  ov.querySelector('#pm_s').onchange = e => { P_MS = e.target.value; pOpenMoney(); };
+  ov.querySelector('#pm_m').onchange = e => { P_MM = e.target.value; pOpenMoney(); };
+  ov.querySelectorAll('[data-mm]').forEach(r => r.onclick = () => { P_MM = P_MM === r.dataset.mm ? 'all' : r.dataset.mm; pOpenMoney(); });
+  ov.querySelector('#pm_csv').onclick = pMoneyDownload;
+}
+/* ----- owner: new sign-ups while the dashboard is open (checked every minute; toast + badge when a new one arrives).
+   Phone push for new sign-ups is sent by supabase/functions/notify (it already queues "📥 طلب تسجيل جديد" for the owner). ----- */
+let P_SU_T = null, P_SU_KNOWN = null;
+function pSignupCount(list, fromPoll){
+  if(!list){ document.querySelectorAll('[data-sun]').forEach(e => e.textContent = '—'); return; }
+  const pend = list.filter(s => s.status === 'pending'), n = pend.length, ids = pend.map(s => s.id), fresh = P_SU_KNOWN ? ids.filter(id => !P_SU_KNOWN.includes(id)) : [];
+  P_SU_KNOWN = ids;
+  document.querySelectorAll('[data-sun]').forEach(e => e.textContent = n);
+  document.querySelectorAll('[data-sunb]').forEach(e => { e.hidden = !n; e.textContent = n; if(fresh.length) e.classList.add('pulse'); });
+  document.querySelectorAll('[data-sutodo]').forEach(e => { e.hidden = !n; if(n){ e.querySelector('[data-sun2]').textContent = n; const z = document.querySelector('[data-notodo]'); if(z) z.hidden = true; } });
+  if(fromPoll && fresh.length){ const d = (pend.find(s => s.id === fresh[0]) || {}).data || {};
+    toast(fresh.length > 1 ? `📥 وصلت ${fresh.length} طلبات تسجيل جديدة` : `📥 طلب تسجيل جديد من ${d.g_name || 'ولي أمر'}`);
+    if(document.getElementById('suList') && !document.querySelector('.ov')) fillSignups(false); }
+}
+function pSignupPoll(){
+  if(P_SU_T || !suOn()) return;
+  P_SU_T = setInterval(async () => {
+    if(WHO !== 'parent' || !suOn()){ clearInterval(P_SU_T); P_SU_T = null; return; }
+    if(document.hidden) return;
+    const list = await loadSignups(true); if(list && WHO === 'parent') pSignupCount(list, true);
+  }, 60e3);
+}
 function pGuardiansHTML(){
   const gs = Object.values(DB.guardians || {}), lone = kidIds().filter(k => !guardianOf(k));
   return `${gs.length ? `<div class="pgrid">${gs.map(g => { const ks = gKids(g.id), wa = String(g.phone || '').replace(/^0/, '966').replace(/[^\d]/g, '');
       return `<section class="card pg"><div class="pg-h"><div class="pg-av">${esc(String(g.name || '؟').trim().slice(0, 1))}</div><div style="min-width:0"><h2>${esc(g.name)}</h2><div class="small muted">${g.rel ? esc(g.rel) + ' · ' : ''}${g.phone ? `<span class="en num">${esc(g.phone)}</span>` : 'بدون جوال'}</div></div></div>
         <dl class="kv"><div><dt>اسم المستخدم</dt><dd><code>${esc(g.user)}</code></dd></div><div><dt>كلمة المرور</dt><dd>${pPassHTML('guardian', g.id, g.pass)}</dd></div></dl>
         <div><div class="small muted" style="margin-bottom:6px">الأبناء</div><div class="chips">${ks.length ? ks.map(k => `<button class="pkid" data-sheet="${k}">${avatarHTML(k)}<span><b>${esc(DB.kids[k].ar)}</b><span class="small muted en">Level ${DB.kids[k].level}</span></span></button>`).join('') : '<span class="small muted">لا يوجد أبناء مرتبطون</span>'}</div></div>
-        <div class="chips">${ks.length ? `<button class="btn sm" data-edit="${ks[0]}">تعديل بياناته</button>` : ''}${g.pass ? `<button class="btn sm" data-gcopy="${esc(g.id)}">نسخ رسالة الدخول</button>` : ''}${wa ? `<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">واتساب</a>` : ''}${g.phone ? `<a class="btn sm" href="tel:${esc(g.phone)}">اتصال</a>` : ''}</div></section>`; }).join('')}</div>`
+        <div class="chips"><button class="btn sm primary" data-gpage="${esc(g.id)}">صفحة ولي الأمر</button>${ks.length ? `<button class="btn sm" data-edit="${ks[0]}">تعديل بياناته</button>` : ''}${g.pass ? `<button class="btn sm" data-gcopy="${esc(g.id)}">نسخ رسالة الدخول</button>` : ''}${wa ? `<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">واتساب</a>` : ''}${g.phone ? `<a class="btn sm" href="tel:${esc(g.phone)}">اتصال</a>` : ''}</div></section>`; }).join('')}</div>`
       : `<section class="card">${emptyHTML('👨‍👩‍👧', 'لا يوجد أولياء أمور بعد', 'حساب ولي الأمر يُنشأ من نموذج الطالب، ومنه يتابع التقارير والحضور.')}</section>`}
     ${lone.length ? `<section class="card"><div class="sech"><h2>طلاب بدون ولي أمر</h2><span class="chip num">${lone.length}</span></div><div class="chips">${lone.map(k => `<button class="pkid" data-edit="${k}">${avatarHTML(k)}<span><b>${esc(DB.kids[k].ar)}</b><span class="small muted">اربطه بولي أمر</span></span></button>`).join('')}</div></section>` : ''}`;
 }
@@ -4606,7 +4871,7 @@ function pPlansHTML(){
       <div class="tscroll"><table class="acc"><tr><th>الطالب</th><th>قيمة الحصة</th><th>المتبقي</th><th></th></tr>
         ${kidIds().map(k => { const l = ledger(k); return `<tr><td>${esc(DB.kids[k].ar)}</td><td class="num">${l.price} ريال</td><td class="num">${l.remaining.toLocaleString('en')} ريال · ${l.left} ${l.left === 1 ? 'حصة' : 'حصص'}</td><td><button class="btn sm" data-topup="${k}">شحن</button></td></tr>`; }).join('')}</table></div>
       <p class="small muted" style="margin:0">لتغيير قيمة الحصة لطالب واحد افتح ملفه من «الطلاب».</p></section>
-    <section class="card"><div class="sech"><h2>آخر عمليات الشحن</h2></div>
+    <section class="card"><div class="sech"><h2>آخر عمليات الشحن</h2><button class="btn sm primary" data-money="">${uiIc('chart')} السجل المالي الكامل</button></div>
       ${tops.length ? `<ul class="pup">${tops.map(t => `<li><span><b>${esc(DB.kids[t.kid].ar)}</b> <span class="small muted">${new Date(t.at).toLocaleDateString(LOC, {day:'numeric', month:'long'})}</span></span><span class="num">+${Number(t.amount).toLocaleString('en')} ريال</span></li>`).join('')}</ul>` : emptyHTML('💳', 'لا توجد عمليات شحن بعد', 'كل شحن رصيد يُسجَّل هنا بتاريخه.')}</section></div>
     <section class="card"><div class="sech"><h2>المكافآت</h2><button class="btn sm primary" id="addRw">${uiIc('plus')} مكافأة</button></div>
       ${pend.length ? `<div class="pnote brand" style="margin-top:10px"><b>طلبات بانتظار التسليم</b><ul class="ledger">${pend.map(r => `<li><div><b>${esc(DB.kids[r.kid] ? DB.kids[r.kid].ar : '')}</b>: ${esc(r.emoji)} ${esc(r.name)}</div><button class="btn sm primary" data-done="${r.id}">تم التسليم ✓</button></li>`).join('')}</ul></div>` : ''}
@@ -4677,16 +4942,22 @@ function renderParent(){
     $('#suCopy').onclick = () => { copyText(joinLink()); toast('📋 نسخت رابط التسجيل'); };
     $('#suRe').onclick = () => { const l = document.getElementById('suList'); if(l) l.innerHTML = '<span class="small muted">جاري التحديث…</span>'; fillSignups(true); }; }
   const su0 = $('#suCopy0'); if(su0) su0.onclick = () => { copyText(joinLink()); toast('📋 نسخت رابط التسجيل'); };
-  if(suOn()) loadSignups(false).then(list => { if(WHO !== 'parent') return; const n = (list || []).filter(s => s.status === 'pending').length;
-    document.querySelectorAll('[data-sun]').forEach(e => e.textContent = list ? n : '—'); document.querySelectorAll('[data-sunb]').forEach(e => { e.hidden = !n; e.textContent = n; });
-    document.querySelectorAll('[data-sutodo]').forEach(e => { e.hidden = !n; if(n){ e.querySelector('[data-sun2]').textContent = n; const z = document.querySelector('[data-notodo]'); if(z) z.hidden = true; } }); });
+  if(suOn()){ loadSignups(false).then(list => { if(WHO === 'parent') pSignupCount(list, false); }); pSignupPoll(); }
+  document.body.classList.remove('kteen');
   if(P_SHEET) pOpenSheet(P_SHEET);
+  if(P_GSHEET) pOpenGuardian(P_GSHEET);
 }
 /* all admin actions; root is the page or the student sheet */
 function wireAdmin(root){
   const all = (sel, fn) => root.querySelectorAll(sel).forEach(fn), one = (sel, fn) => { const el = root.querySelector(sel); if(el) fn(el); };
   all('[data-ptab]', b => b.onclick = () => pSetTab(b.dataset.ptab));
   all('[data-sheet]', b => b.onclick = () => pOpenSheet(b.dataset.sheet));
+  all('[data-gpage]', b => b.onclick = () => pOpenGuardian(b.dataset.gpage));
+  all('[data-money]', b => b.onclick = () => pOpenMoney(b.dataset.money || null));
+  all('[data-sbook]', b => b.onclick = () => pSlotPicker(b.dataset.sbook, null));
+  all('[data-smove]', b => b.onclick = () => pSlotPicker(b.dataset.k, b.dataset.smove));
+  all('[data-scancel]', b => b.onclick = () => pCancelSlot(b.dataset.k, b.dataset.scancel));
+  all('[data-sall]', b => b.onclick = () => pAllSlots(b.dataset.sall));
   one('#addKid', b => b.onclick = () => kidForm(null)); all('[data-addkid]', b => b.onclick = () => kidForm(null));
   one('#addRw', b => b.onclick = () => rewardForm(null));
   all('[data-editrw]', b => b.onclick = () => rewardForm(b.dataset.editrw));
@@ -5145,24 +5416,29 @@ MISSIONS.push(
   M('missed_bus','🚏','Missed the Bus','فاتني الباص','help',3,'the school guard','the school gate',[['Say you missed the bus','قل إن الباص فاتك'],['Ask to call your parents','اطلب تتصل بأهلك'],['Ask where to wait safely','اسأل وين تنتظر بأمان']])
 );
 
-let MCAT = (() => { try{ return localStorage.getItem('hh:mcat') || 'all'; }catch(e){ return 'all'; } })(), MALL = false, MSTAT = 'all';
+let MCAT = (() => { try{ return localStorage.getItem('hh:mcat') || 'all'; }catch(e){ return 'all'; } })(), MALL = false, MSTAT = 'all', MQ = '';
+/* search by name: Arabic or English title, goals and setting; Arabic letters folded (أ إ آ → ا, ة → ه, ى → ي, no tashkeel) */
+const mNorm = s => String(s || '').toLowerCase().replace(/[\u064B-\u0652\u0640]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/\s+/g, ' ').trim();
+function mMatch(m, q){ const hay = mNorm([m.t, m.ar, m.setting, m.role, ...(m.goals || []).flat()].join(' ')); return mNorm(q).split(' ').filter(Boolean).every(w => hay.includes(w) || (w.startsWith('ال') && hay.includes(w.slice(2)))); }
 function missionOfDay(k){ const lv = DB.kids[k].level, best = DB.progress[k].missions || {};
   const pool = MISSIONS.filter(m => m.min <= lv && (best[m.id] || 0) < 3); const list = pool.length ? pool : MISSIONS.filter(m => m.min <= lv); if(!list.length) return null;
   const d = new Date(), seed = d.getFullYear() * 400 + d.getMonth() * 32 + d.getDate() + k.length * 7; return list[seed % list.length]; }
 function missionCardInner(k){
   const lv = DB.kids[k].level, best = DB.progress[k].missions || {}, open = MISSIONS.filter(m => m.min <= lv), stars = open.reduce((a, m) => a + (best[m.id] || 0), 0);
   const stOf = m => m.min > lv ? 'lock' : (best[m.id] || 0) >= 3 ? 'done' : (best[m.id] || 0) > 0 ? 'going' : 'new';
-  const inCat = MISSIONS.filter(m => (MCAT === 'all' || m.cat === MCAT) && (MSTAT === 'all' || stOf(m) === MSTAT)).sort((a, b) => (a.min > lv) - (b.min > lv) || ((best[a.id] || 0) >= 3) - ((best[b.id] || 0) >= 3) || a.min - b.min);
-  const shown = MALL ? inCat : inCat.slice(0, 12), today = missionOfDay(k);
+  const inCat = MISSIONS.filter(m => (MCAT === 'all' || m.cat === MCAT) && (MSTAT === 'all' || stOf(m) === MSTAT) && (!MQ.trim() || mMatch(m, MQ))).sort((a, b) => (a.min > lv) - (b.min > lv) || ((best[a.id] || 0) >= 3) - ((best[b.id] || 0) >= 3) || a.min - b.min);
+  const shown = MALL || MQ.trim() ? inCat : inCat.slice(0, 12), today = missionOfDay(k);
   return `<div class="chips" style="justify-content:space-between"><h2>🎯 مهمات المحادثة</h2><span class="chip brand">⭐ ${stars} / ${open.length * 3}</span></div>
     <p class="small muted" style="margin:4px 0 10px">${MISSIONS.length} موقف من الحياة اليومية تتكلم فيها مع شخصية: تطلب قهوة، تشتري، تسافر، تتعرف على صديق… ولكل مهمة 3 أهداف تحققها بكلامك.</p>
     ${today ? `<button class="mtoday" data-mission="${today.id}"><span class="me2">${today.e}</span><span style="min-width:0;flex:1;text-align:start"><span class="small" style="font-weight:800;color:var(--brand-ink)">⭐ مهمة اليوم</span><b class="en" style="display:block">${esc(today.t)}</b><span class="small muted">${esc(today.ar)}</span></span><span class="btn sm primary" aria-hidden="true">ابدأ</span></button>` : ''}
+    <label class="psearch msearch">${uiIc('search')}<input class="input" id="mq" type="search" enterkeyhint="search" autocomplete="off" placeholder="ابحث عن مهمة: مطار، قهوة…" value="${esc(MQ)}" aria-label="بحث في المهمات"></label>
     <div class="mcats" role="tablist">${MCATS.map(([id, t, e]) => { const n = id === 'all' ? MISSIONS.length : MISSIONS.filter(m => m.cat === id).length; return n ? `<button role="tab" aria-selected="${MCAT === id}" class="mcat ${MCAT === id ? 'on' : ''}" data-mcat="${id}">${e} ${t} <i>${n}</i></button>` : ''; }).join('')}</div>
     <div class="mstat" role="tablist" aria-label="حالة المهمات">${[['all','كل المهمات'],['new','جديدة'],['going','بدأتها'],['done','أكملتها ⭐⭐⭐']].map(([id, t]) => `<button role="tab" aria-selected="${MSTAT === id}" class="topic ${MSTAT === id ? 'on' : ''}" data-mstat="${id}">${t}</button>`).join('')}</div>
-    ${shown.length ? '' : emptyHTML('🎯', 'لا توجد مهمات هنا', 'غيّر القسم أو الحالة لتشوف مهمات أخرى.')}
-    <div class="missions ${MALL ? 'mall' : ''}">${shown.map(m => { const lock = m.min > lv, s = best[m.id] || 0;
+    <div id="mres">${MQ.trim() ? `<div class="small muted mqn" role="status">${shown.length ? `${shown.length} ${shown.length === 1 ? 'مهمة' : 'مهمات'} لـ «${esc(MQ.trim())}»` : ''}</div>` : ''}
+    ${shown.length ? '' : MQ.trim() ? emptyHTML('🔎', 'ما لقينا مهمة بهذا الاسم', 'جرّب كلمة ثانية، أو غيّر القسم أو الحالة.') : emptyHTML('🎯', 'لا توجد مهمات هنا', 'غيّر القسم أو الحالة لتشوف مهمات أخرى.')}
+    <div class="missions ${MALL || MQ.trim() ? 'mall' : ''}">${shown.map(m => { const lock = m.min > lv, s = best[m.id] || 0;
       return `<button class="mission ${lock ? 'mlock' : ''} ${s >= 3 ? 'mdone' : ''}" ${lock ? `data-mlock="${m.min}"` : `data-mission="${m.id}"`}><span class="me2">${lock ? '🔒' : m.e}</span><b class="en">${esc(m.t)}</b><span class="small muted">${esc(m.ar)}</span>${lock ? `<span class="small muted">من المستوى ${m.min}</span>` : `<span class="mstars">${'★'.repeat(s)}${'☆'.repeat(3 - s)}</span>`}</button>`; }).join('')}</div>
-    <div class="chips" style="margin-top:10px;justify-content:center">${inCat.length > 6 ? `<button class="btn sm ${inCat.length > 12 ? '' : 'm6'}" id="mAll">${MALL ? 'عرض أقل' : `عرض الكل (${inCat.length})`}</button>` : ''}<button class="btn sm primary" id="mRand">🎲 مهمة عشوائية</button></div>`;
+    <div class="chips" style="margin-top:10px;justify-content:center">${inCat.length > 6 ? `<button class="btn sm ${inCat.length > 12 ? '' : 'm6'}" id="mAll">${MALL ? 'عرض أقل' : `عرض الكل (${inCat.length})`}</button>` : ''}<button class="btn sm primary" id="mRand">🎲 مهمة عشوائية</button></div></div>`;
 }
 function missionCard(k){ return `<section class="card" id="mcard">${missionCardInner(k)}</section>`; }
 function wireMissionCard(k){
@@ -5171,6 +5447,8 @@ function wireMissionCard(k){
   c.querySelectorAll('[data-mlock]').forEach(b => b.onclick = () => hoopoeSays(`هذي المهمة تفتح لك من المستوى ${b.dataset.mlock} 🔒`, 'think', 2600));
   c.querySelectorAll('[data-mcat]').forEach(b => b.onclick = () => { MCAT = b.dataset.mcat; MALL = false; try{ localStorage.setItem('hh:mcat', MCAT); }catch(e){} c.innerHTML = missionCardInner(k); wireMissionCard(k); });
   c.querySelectorAll('[data-mstat]').forEach(b => b.onclick = () => { MSTAT = b.dataset.mstat; MALL = false; c.innerHTML = missionCardInner(k); wireMissionCard(k); });
+  /* typing redraws only the results, so the keyboard stays open */
+  const q = c.querySelector('#mq'); if(q) q.oninput = () => { MQ = q.value; MALL = false; const tmp = document.createElement('div'); tmp.innerHTML = missionCardInner(k); const now = c.querySelector('#mres'), nx = tmp.querySelector('#mres'); if(now && nx){ now.replaceWith(nx); wireMissionCard(k); } };
   const a = c.querySelector('#mAll'); if(a) a.onclick = () => { MALL = !MALL; c.innerHTML = missionCardInner(k); wireMissionCard(k); if(!MALL) c.scrollIntoView({block:'start', behavior:'smooth'}); };
   const r = c.querySelector('#mRand'); if(r) r.onclick = () => { const lv = DB.kids[k].level, pool = MISSIONS.filter(m => m.min <= lv && (MCAT === 'all' || m.cat === MCAT)); if(pool.length) startMission(k, pool[Math.floor(Math.random() * pool.length)].id); };
 }
@@ -6227,7 +6505,7 @@ function gDetailHTML(k, x){
   return `<div class="gsum">${head}<div class="stat">${gStat('حضر', `<span style="color:var(--good)">${m.att}</span>`)}${gStat('غاب', `<span style="color:var(--bad)">${m.miss}</span>`)}${gStat('دقائق محادثة', m.mins)}${gStat('معدل الحصص', pctFix(m.avg == null ? '—' : m.avg + '%'))}</div>
     <div class="stat">${gStat('نسبة كلماته', pctFix(m.talk == null ? '—' : m.talk + '%'))}${gStat('الثقة', pctFix(m.conf == null ? '—' : m.conf + '%'))}${gStat('الاختبارات', pctFix(m.qavg == null ? '—' : m.qavg + '%'))}${gStat('كلمات جديدة', m.words)}</div>
     ${(DB.monthly || {})[k] && DB.monthly[k][m.mk] ? `<p class="rc-note">${bidiAr(DB.monthly[k][m.mk])}</p>` : ''}
-    ${m.cur ? `<button class="btn" data-gmonth>نسخة الطباعة مع ملاحظة المعلم</button>` : ''}</div>`;
+    <div class="chips"><button class="btn" data-gmonth="${m.mk}">${uiIc('doc')} التقرير الشهري للطباعة مع ملاحظة المعلم</button></div></div>`;
 }
 function gShareText(k, x){
   const kid = DB.kids[k], p = gRowParts(x), d = new Date(x.at).toLocaleDateString(LOC, {weekday:'long', day:'numeric', month:'long'});
@@ -6248,16 +6526,32 @@ function gOpenReport(k, rows, i){
         <div class="rnav-t"><b>${p.kind}</b><span class="small muted num">${i + 1} من ${rows.length}</span></div>
         <button class="btn sm" data-rn="1" ${i === rows.length - 1 ? 'disabled' : ''}><span>الأقدم</span>${uiIc('chev')}</button><button class="pbtn" data-shx aria-label="إغلاق">${uiIc('x')}</button></header>
       <div class="rbody1" id="gRepBox">${gDetailHTML(k, x)}</div>
-      <footer class="rfoot"><a class="btn sm primary" href="https://wa.me/?text=${encodeURIComponent(txt)}" target="_blank" rel="noopener">مشاركة على واتساب</a><button class="btn sm" data-rcopy>نسخ الملخص</button><button class="btn sm" data-rprint>طباعة</button></footer></div>`;
+      <footer class="rfoot"><a class="btn sm primary" href="https://wa.me/?text=${encodeURIComponent(txt)}" target="_blank" rel="noopener">مشاركة على واتساب</a><button class="btn sm" data-rcopy>نسخ الملخص</button><button class="btn sm" data-rpdf>${uiIc('doc')} تنزيل PDF</button><button class="btn sm" data-rprint>طباعة</button></footer></div>`;
     ov.querySelector('[data-shx]').onclick = close;
     ov.querySelectorAll('[data-rn]').forEach(b => b.onclick = () => { i += Number(b.dataset.rn); draw(); });
     ov.querySelector('[data-rcopy]').onclick = () => copyText(txt, 'تم نسخ الملخص');
     ov.querySelector('[data-rprint]').onclick = () => { document.body.classList.add('gprint'); window.print(); setTimeout(() => document.body.classList.remove('gprint'), 500); };
-    const gm = ov.querySelector('[data-gmonth]'); if(gm) gm.onclick = () => monthlyReport(k);
+    ov.querySelector('[data-rpdf]').onclick = () => gPdf(k, x);
+    const gm = ov.querySelector('[data-gmonth]'); if(gm) gm.onclick = () => monthlyReport(k, gm.dataset.gmonth);
     ov.querySelector('.rbody1').scrollTop = 0; };
   ov.addEventListener('click', e => { if(e.target === ov) close(); });
   document.addEventListener('keydown', key); draw();
 }
+/* PDF with the Hudhud identity: the report is laid out on a print-only page (Dubai font, brand colours, logo, light colours even in
+   dark mode) and saved with the browser's own "Save as PDF" (iPad / iPhone: Print → Share → Save to Files). The browser draws the
+   text itself, so Arabic letters stay joined and right-to-left; no canvas library is used. */
+function hhPdf(title, sub, bodyHTML){
+  const old = document.getElementById('hhPdf'); if(old) old.remove();
+  const el = document.createElement('div'); el.id = 'hhPdf'; el.dir = 'rtl'; el.setAttribute('aria-hidden', 'true');
+  el.innerHTML = `<header class="pdf-h">${LOGO}<div class="pdf-t"><b>${esc(title)}</b><span>${esc(sub)}</span></div></header><main class="pdf-b">${bodyHTML}</main>
+    <footer class="pdf-f"><span>هدهد · ينقل المعرفة</span><span class="num">${new Date().toLocaleDateString(LOC, {day:'numeric', month:'long', year:'numeric'})}</span></footer>`;
+  el.querySelectorAll('details').forEach(d => d.open = true); document.body.appendChild(el);
+  const t0 = document.title, done = () => { document.body.classList.remove('hhpdf'); document.title = t0; window.removeEventListener('afterprint', done); };
+  document.title = `هدهد - ${title} - ${sub}`.replace(/[\\/:*?"<>|]+/g, ' ');   /* Safari and Chrome name the PDF after the page title */
+  document.body.classList.add('hhpdf'); window.addEventListener('afterprint', done);
+  try{ window.print(); }catch(e){ done(); }
+}
+function gPdf(k, x){ const p = gRowParts(x), d = new Date(x.at).toLocaleDateString(LOC, {day:'numeric', month:'long', year:'numeric'}); hhPdf(`${DB.kids[k].ar} · ${p.plain}`, d, gDetailHTML(k, x)); }
 /* progress summary: three small trends from data the guardian already has */
 function gSpark(vals, color){ const v = vals.filter(x => x != null); if(v.length < 2) return '<svg class="gspark" viewBox="0 0 120 36" aria-hidden="true"></svg>';
   const pts = v.map((y, i) => [4 + i * (112 / (v.length - 1)), 32 - Math.max(0, Math.min(100, y)) * .28]);
@@ -6270,6 +6564,7 @@ function gTrendHTML(k){
   return `<div class="gtrends">${tile('معدل النتيجة', reps.map(r => r.score), '#F05A38', 'آخر 4 حصص مقارنة بما قبلها')}${tile('نسبة كلامه في الحصة', reps.map(r => r.talkPct), '#3B7BE8', 'الهدف 40% أو أكثر')}${tile('الحضور', wk.map(x => x.att + x.miss ? Math.round(x.att / (x.att + x.miss) * 100) : null), '#14B8A6', 'آخر 4 أسابيع مقارنة بما قبلها')}</div>`;
 }
 function renderGuardian(gid){
+  document.body.classList.remove('kteen');
   const g = (DB.guardians || {})[gid]; if(!g){ setWho(null); return renderLogin(); }
   const kids = gKids(gid); if(!kids.length){ $('#app').innerHTML = `<div class="center">${prefsHTML()}<div class="card panel" style="text-align:center">${LOGO}<h2>لا يوجد أطفال مرتبطون بحسابك بعد</h2><button class="btn" id="out">خروج</button></div></div>`; $('#out').onclick = logout; return; }
   if(!kids.includes(G_KID)) G_KID = kids[0];

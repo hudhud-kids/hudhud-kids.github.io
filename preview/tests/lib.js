@@ -1,6 +1,6 @@
 const {chromium} = require('/tmp/claude-0/-home-claude/d0ca3ca7-3301-587b-8d1a-16088114cd22/scratchpad/t/node_modules/playwright');
 const seed = require('./seed.js');
-const PORT = 8784, URL = `http://localhost:${PORT}/index.html`;
+const PORT = Number(process.env.PORT) || 8784, URL = `http://localhost:${PORT}/index.html`;
 const SIGNUPS = [{id:'s1', status:'pending', at:'2026-11-14T09:20:00+03:00', kid:null, data:{g_name:'عبدالله الحربي', rel:'الأب', city:'بريدة', phone:'0561112233', days:[0,2,4], time:'17:30', device:'iPad', notes:'يفضّل معلمة للبنت.', kids:[{ar:'جود', en:'Jood', boy:false, birth:'2017-04-10', grade:'ثالث ابتدائي', eng:'مبتدئ'},{ar:'تركي', en:'Turki', boy:true, birth:'2014-09-01', grade:'سادس ابتدائي', eng:'متوسط'}]}},
   {id:'s2', status:'pending', at:'2026-11-13T21:05:00+03:00', kid:null, data:{g_name:'أم ريان', rel:'الأم', city:'الرياض', phone:'0544455667', days:[1,3], time:'16:00', kids:[{ar:'ريان', en:'Rayan', boy:true, birth:'2015-01-20', grade:'خامس', eng:'مبتدئ'}]}}];
 // open a page with fixed clock (Sat 14 Nov 2026 17:10 Riyadh), demo mode, seeded data. opts.cloud => pretend cloud+signups are on
