@@ -1,7 +1,7 @@
 /* Hudhud service worker: offline shell + push notifications */
-const V = 'hh-v18';
+const V = 'hh-v19';
 const CORE = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'icon-180.png',
-  'fonts/dubai-regular.woff2', 'fonts/dubai-medium.woff2', 'fonts/dubai-bold.woff2', 'content/i18n-en.json', 'content/index.json'];
+  'nosleep.mp4', 'fonts/dubai-regular.woff2', 'fonts/dubai-medium.woff2', 'fonts/dubai-bold.woff2', 'content/i18n-en.json', 'content/index.json'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => Promise.all(CORE.map(u => c.add(u).catch(() => {})))).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

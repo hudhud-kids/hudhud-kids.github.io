@@ -140,6 +140,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .state{margin-top:4px;font-weight:700;font-size:.95rem;min-height:1.6em;color:var(--muted)}
 .askb{margin:6px auto 0;max-width:560px;background:var(--brand-soft,#fdeee8);border-radius:14px;padding:8px 12px;font-size:1rem;line-height:1.5;text-align:start}.askb .askl{font-size:.8rem;color:var(--muted);font-weight:700}.askb .en{font-weight:700;text-align:left;font-size:1.05rem}.askb .ar{font-size:.9rem;color:var(--muted);margin-top:2px}
 .side{display:flex;flex-direction:column;min-height:0;min-width:0;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));gap:12px;overflow:auto}
+.sub .kw{opacity:.38;transition:opacity .18s}.sub .kw.on{opacity:1}
 .sub{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:16px 18px;direction:ltr;text-align:left;font-family:var(--en);font-size:1.45rem;font-weight:600;line-height:1.45;min-height:96px}
 .sub .ar{direction:rtl;text-align:right;font-family:var(--font);font-size:1rem;color:var(--muted);font-weight:500;border-top:1px dashed var(--line);margin-top:8px;padding-top:8px}
 .you{align-self:flex-end;max-width:90%;background:var(--brand);color:#fff;border-radius:18px 18px 4px 18px;padding:10px 16px;direction:ltr;text-align:left;font-family:var(--en);font-size:1.2rem;min-height:48px}
@@ -3952,6 +3953,7 @@ function renderRoom(){
     <div class="ctrl">
       <button class="btn sm" id="rep"><span class="ic">🔊</span><span>${teacherOf(L.kid).female ? 'أعيدي' : 'أعِد'}</span></button>
       <button class="micbig wait" id="mic" aria-label="تكلم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      <button class="btn sm" id="spd" aria-label="سرعة المعلم"><span class="ic">${speedOf(L.kid).ic}</span><span>${speedOf(L.kid).ar}</span></button>
       <button class="btn sm" id="kb"><span class="ic">⌨️</span><span>كتابة</span></button><button class="btn sm" id="cam"><span class="ic">📷</span><span>كاميرا</span></button>
       <button class="btn sm" id="wrap" hidden>اختم الحصة</button>
       <form class="typer" id="typer" hidden><input class="input en" id="msg" placeholder="Type in English…" autocomplete="off" enterkeyhint="send"><button class="btn primary" type="submit">إرسال</button></form>
@@ -3961,7 +3963,8 @@ function renderRoom(){
   $('#cam').onclick = () => { const p = DB.profiles[L.kid]; if(camStream){ stopCam(); p.camOff = true; } else { p.camOff = false; startCam(); } save(); };
   if(!(DB.profiles[L.kid]||{}).camOff) startCam();
   updateTalk();
-  $('#rep').onclick = () => { if(L.lastSay){ interrupt(false); sayAll(L.lastSay, true); } };
+  $('#rep').onclick = () => { if(!L.lastSay) return; if(L.dg && L.dg.ws && L.dg.ws.readyState === 1){ dgHush(L); try{ L.dg.ws.send(JSON.stringify({type:'InjectAgentMessage', message:L.lastSay})); }catch(e){} return; } interrupt(false); sayAll(L.lastSay, true); };
+  $('#spd').onclick = speedTap;
   $('#mic').onclick = onMicTap;
   $('#tbox').onclick = () => { if(L.dg) return; if(L.state === 'speaking' && Date.now() - (L.speakAt || 0) > 2000) { interrupt(true); } };
   $('#kb').onclick = () => { const t = $('#typer'); t.hidden = !t.hidden; if(!t.hidden){ stopListening(); $('#msg').focus(); } };
@@ -4121,8 +4124,13 @@ function ackStop(){ if(!ACK_ON) return; ACK_ON = false; try{ azEl().pause(); }ca
 function liveSetup(){ if(!L) return; ackPrefetch(); wakeOn(); if(streamSttOn()){ loadSpeechSDK().catch(() => {}); azAuth().catch(() => {}); sttWarm(); } }
 /* keep the iPad screen awake during a lesson (it slept mid-lesson); the browser drops the lock when the app is hidden */
 let WAKE = null;
-async function wakeOn(){ try{ if(!L || L.done || document.hidden || !navigator.wakeLock || (WAKE && !WAKE.released)) return; const w = await navigator.wakeLock.request('screen'); if(!L || L.done){ try{ w.release(); }catch(e){} return; } WAKE = w; }catch(e){} }
-function wakeOff(){ const w = WAKE; WAKE = null; if(w){ try{ const p = w.release(); if(p && p.catch) p.catch(() => {}); }catch(e){} } }
+let NOSLEEP = null;
+function noSleepOn(){ try{ if(!NOSLEEP){ const v = document.createElement('video'); v.src = 'nosleep.mp4'; v.muted = true; v.loop = true; v.setAttribute('playsinline', ''); v.setAttribute('muted', '');
+    v.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0.01;pointer-events:none;left:0;bottom:0'; document.body.appendChild(v); NOSLEEP = v; }
+  const p = NOSLEEP.play(); if(p && p.catch) p.catch(() => {}); }catch(e){} }
+function noSleepOff(){ try{ if(NOSLEEP) NOSLEEP.pause(); }catch(e){} }
+async function wakeOn(){ noSleepOn(); try{ if(!L || L.done || document.hidden || !navigator.wakeLock || (WAKE && !WAKE.released)) return; const w = await navigator.wakeLock.request('screen'); if(!L || L.done){ try{ w.release(); }catch(e){} return; } WAKE = w; }catch(e){} }
+function wakeOff(){ noSleepOff(); const w = WAKE; WAKE = null; if(w){ try{ const p = w.release(); if(p && p.catch) p.catch(() => {}); }catch(e){} } }
 document.addEventListener('visibilitychange', () => { if(!document.hidden && typeof L !== 'undefined' && L && !L.done) wakeOn(); });
 
 /* ---- teacher turn (streaming) ---- */
@@ -4289,6 +4297,15 @@ function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right)
    The teacher prompt and its tags are the same as the normal lesson: the relay removes the tags from what is spoken and
    hands them to the app as one "lesson_event" function call, which this file applies (slides, stars, board, end). */
 const DG_URL = 'wss://agent.deepgram.com/v1/agent/converse';
+/* the teacher's speaking speed, chosen by the child during the lesson: slow / normal / fast */
+const T_SPEEDS = [{id:'slow', ar:'بطيء', ic:'🐢', f:.82}, {id:'normal', ar:'عادي', ic:'🚶', f:1}, {id:'fast', ar:'سريع', ic:'🐇', f:1.15}];
+function speedOf(k){ const id = ((DB.profiles || {})[k] || {}).speed; return T_SPEEDS.find(x => x.id === id) || T_SPEEDS[1]; }
+function dgSpeed(k){ return Math.max(.7, Math.min(1.5, Math.round((DB.kids[k].level <= 6 ? .9 : 1) * speedOf(k).f * 100) / 100)); }
+function speedTap(){ if(!L) return; const k = L.kid, cur = speedOf(k), nx = T_SPEEDS[(T_SPEEDS.indexOf(cur) + 1) % T_SPEEDS.length];
+  DB.profiles = DB.profiles || {}; DB.profiles[k] = Object.assign({}, DB.profiles[k], {speed:nx.id}); save();
+  const b = $('#spd'); if(b) b.innerHTML = `<span class="ic">${nx.ic}</span><span>${nx.ar}</span>`; toast(`${nx.ic} سرعة المعلم: ${nx.ar}`);
+  const d = L.dg; if(d && d.ws && d.ws.readyState === 1){ const t = teacherOf(k);
+    try{ d.ws.send(JSON.stringify({type:'UpdateSpeak', speak:{provider:{type:'deepgram', model:t.female ? 'aura-2-iris-en' : 'aura-2-aries-en', speed:dgSpeed(k)}}})); }catch(e){} } }
 function dgOn(k){ return !DEMO && relayOn() && ((DB.profiles || {})[k] || {}).engine !== 'classic' && typeof WebSocket !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
 function dgNote(lesson, msg){ try{ liveFeed(lesson, 'x', '⚠ ' + msg); }catch(e){} console.warn('dg', msg); }
 function dgStatus(lesson){ const v = lesson.v2; if(!v) return `minute ${elapsedMin()}`;
@@ -4298,6 +4315,7 @@ function dgPrompt(lesson){ return lesson.rules + `
 VOICE MODE: the child talks to you live; their words come to you as text from speech recognition. There is no header in front of their messages: the CURRENT STATUS below replaces it and is kept up to date by the app.
 Children often pause in the middle of a sentence: if their message looks unfinished, say only "Go on!" and wait.
 Remember: give hints (a sentence start like "My name is ..."), never the full answer for them to copy.
+KEEP EVERY REPLY SHORT: at most 2 short sentences (about 25 words) before your question. React in a few words, give ONE tip at most, then ask. Long explanations bore children; the child should talk more than you.
 CURRENT STATUS: ${dgStatus(lesson)}`; }
 async function dgStart(lesson){
   const k = lesson.kid, t = teacherOf(k), level = DB.kids[k].level;
@@ -4330,7 +4348,7 @@ async function dgStart(lesson){
           endpoint:{url:RELAY + 'llm', headers:{'x-hh-token':CLOUD.token}},
           prompt:dgPrompt(lesson), functions:fns},
         context:lesson.history.length ? {messages:lesson.history.slice(-30).map(h => ({type:'History', role:h.role, content:String(h.content).replace(/\[[A-Z]+(:[^\]]*)?\]/g, '').replace(/^Student: /, '').trim() || '...'}))} : undefined,
-        speak:{provider:{type:'deepgram', model:t.female ? 'aura-2-iris-en' : 'aura-2-aries-en', speed:level <= 6 ? 0.9 : 1.0}}
+        speak:{provider:{type:'deepgram', model:t.female ? 'aura-2-iris-en' : 'aura-2-aries-en', speed:dgSpeed(k)}}
       }}));
   };
   ws.onmessage = ev => { if(L !== lesson || lesson.dg !== d) return; if(typeof ev.data !== 'string'){ dgPlay(lesson, ev.data); return; }
@@ -4354,17 +4372,42 @@ async function dgMic(lesson){ const d = lesson.dg, ac = d.ac, src = ac.createMed
     carry = all.slice(Math.floor(n * ratio)); if(n) d.ws.send(out.buffer); };
   const sp = ac.createScriptProcessor(2048, 1, 1); sp.onaudioprocess = e => send(new Float32Array(e.inputBuffer.getChannelData(0)));
   const mute = ac.createGain(); mute.gain.value = 0; src.connect(sp); sp.connect(mute); mute.connect(ac.destination); d.mic = {src, sp, mute}; }
-function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac) return; const i16 = new Int16Array(buf); if(!i16.length) return;
+function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac) return;
+  // 16-bit samples: a frame that ends in the middle of a sample keeps that byte for the next one (a misaligned sample = crackle)
+  let u8 = new Uint8Array(buf); if(d.odd){ const m = new Uint8Array(u8.length + 1); m[0] = d.odd[0]; m.set(u8, 1); u8 = m; d.odd = null; }
+  if(u8.length % 2){ d.odd = u8.slice(-1); u8 = u8.slice(0, -1); }
+  const i16 = new Int16Array(u8.buffer, u8.byteOffset, u8.length / 2); if(!i16.length) return;
   const ab = ac.createBuffer(1, i16.length, 24000), ch = ab.getChannelData(0); for(let i = 0; i < i16.length; i++) ch[i] = i16[i] / 32768;
   const s = ac.createBufferSource(); s.buffer = ab; s.connect(ac.destination);
-  const at = Math.max(ac.currentTime + 0.03, d.playEnd); s.start(at); d.playEnd = at + ab.duration; d.play.push(s);
+  // a little head start when the voice (re)starts, so small network delays between frames do not leave gaps (clicks)
+  const fresh = d.playEnd <= ac.currentTime + 0.005, at = fresh ? ac.currentTime + 0.12 : d.playEnd; s.start(at); d.playEnd = at + ab.duration; d.play.push(s);
+  if(fresh){ d.vT0 = at; d.vDur = 0; } d.vDur += ab.duration;
+  const k = d.kara; if(k && !k.done){ if(!k.t0) k.t0 = at; k.dur += ab.duration; karaLoop(lesson); }
   s.onended = () => { d.play = d.play.filter(x => x !== s); if(!d.play.length && d.audioDone) dgSpoke(lesson); };
   if(lesson.state !== 'speaking'){ setState('speaking'); if(lesson.firstWave){ lesson.firstWave = false; setPose('wave', 2800); } }
   if(ac.state !== 'running'){ try{ ac.resume(); }catch(e){} }
   if(!lesson.mouthT) mouthWalk('abababababababababababababababab', 70); }
-function dgHush(lesson){ const d = lesson.dg; d.play.forEach(s => { try{ s.onended = null; s.stop(); }catch(e){} }); d.play = []; d.playEnd = 0; stopMouth(); setMouth('rest'); }
+function dgHush(lesson){ const d = lesson.dg; d.play.forEach(s => { try{ s.onended = null; s.stop(); }catch(e){} }); d.play = []; d.playEnd = 0; d.odd = null; stopMouth(); setMouth('rest');
+  if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; } }
+/* karaoke subtitles: the teacher's words start dim and light up as they are spoken; the current line stays on screen */
+function karaShow(lesson, text){ const d = lesson.dg, sub = $('#sub'); if(!sub) return;
+  const k = d.kara && !d.kara.done && d.kara.turn === d.turn ? d.kara : (d.kara = {turn:d.turn, words:[], chars:[], total:0, t0:(d.play.length && d.vT0) || 0, dur:d.play.length ? (d.vDur || 0) : 0, done:false, last:-1});
+  if(!k.words.length) sub.innerHTML = '';
+  String(text).split(/\s+/).filter(Boolean).forEach(w => { const sp = document.createElement('span'); sp.className = 'kw'; sp.textContent = w + ' ';
+    sub.appendChild(sp); k.total += w.length + 1; k.words.push(sp); k.chars.push(k.total); });
+  karaLoop(lesson); }
+function karaLoop(lesson){ const d = lesson.dg; if(!d || !d.kara || d.karaRaf) return;
+  const step = () => { d.karaRaf = 0; const k = d.kara; if(!k || k.done || L !== lesson || !d.ac) return;
+    // seconds per character: measured from the audio received so far (the audio arrives faster than it plays)
+    const played = k.t0 ? Math.max(0, d.ac.currentTime - k.t0) : 0, spc = k.dur > 0.5 && k.total ? Math.max(.035, Math.min(.12, k.dur / k.total)) : .07 / dgSpeed(lesson.kid);
+    const upto = played / spc; let i = k.last;
+    while(i + 1 < k.words.length && k.chars[i + 1] - (k.words[i + 1].textContent.length) <= upto){ i++; k.words[i].classList.add('on'); }
+    if(i !== k.last){ k.last = i; const w = k.words[i]; const r = w.getBoundingClientRect();
+      if(r.bottom > innerHeight - 110 || r.top < 70){ try{ w.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){ w.scrollIntoView(); } } }
+    if(i < k.words.length - 1 || d.play.length) d.karaRaf = requestAnimationFrame(step); };
+  d.karaRaf = requestAnimationFrame(step); }
 /* the teacher's voice has finished playing */
-function dgSpoke(lesson){ const d = lesson.dg; d.audioDone = false; stopMouth(); setMouth('rest'); lesson.tAudioEnd = Date.now();
+function dgSpoke(lesson){ const d = lesson.dg; d.audioDone = false; if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; } stopMouth(); setMouth('rest'); lesson.tAudioEnd = Date.now();
   if(lesson.endSeen){ finishLesson(); return; }
   setState(d.muted ? 'idle' : 'listening'); lesson.listenStart = Date.now(); }
 function dgEvent(lesson, m){ const d = lesson.dg;
@@ -4378,13 +4421,13 @@ function dgEvent(lesson, m){ const d = lesson.dg;
     case 'AgentAudioDone': d.audioDone = true; if(!d.play.length) dgSpoke(lesson); break;
     case 'ConversationText': {
       const txt = String(m.content || '').trim(); if(!txt || /^\(/.test(txt)) break;
-      if(m.role === 'user'){ const u = 'Student: ' + txt; lesson.talking = false; lesson.sw += countWords(txt); updateTalk(); lesson.history.push({role:'user', content:u}); liveFeed(lesson, 'k', u);
+      if(m.role === 'user'){ d.turn = (d.turn || 0) + 1; if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; } const u = 'Student: ' + txt; lesson.talking = false; lesson.sw += countWords(txt); updateTalk(); lesson.history.push({role:'user', content:u}); liveFeed(lesson, 'k', u);
         const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('note', 'live'); you.textContent = txt; } setState('thinking'); }
       else { // Deepgram sends the teacher's turn sentence by sentence: keep them together as one turn
         const last = lesson.history[lesson.history.length - 1]; lesson.tw += countWords(txt); updateTalk(); liveFeed(lesson, 't', txt);
         if(last && last.role === 'assistant' && !last.tagged){ last.content += ' ' + txt; lesson.lastSay = (lesson.lastSay ? lesson.lastSay + ' ' : '') + txt; }
         else { lesson.history.push({role:'assistant', content:txt}); lesson.lastSay = txt; }
-        const sub = $('#sub'); if(sub) sub.innerHTML = esc(lesson.lastSay); askShow(lesson.lastSay, ''); }
+        karaShow(lesson, txt); askShow(lesson.lastSay, ''); }
       break; }
     case 'FunctionCallRequest': (m.functions || []).forEach(f => { let a = {}; try{ a = JSON.parse(f.arguments || '{}'); }catch(e){}
       if(f.name === 'lesson_event') dgTags(lesson, String(a.tags || ''));
@@ -6008,7 +6051,7 @@ function azUnlock(){ if(!azOn()) return; try{ const a = azEl(); a.src = 'data:au
 function speakOneAZ(text, slow, done){
   const gen = ++AZ_GEN; let finished = false, guard = null;
   const fin = () => { if(finished) return; finished = true; clearTimeout(guard); stopMouth(); if(L) setMouth('rest'); done && done(); };
-  const rate = slow ? .75 : (DB.kids[L.kid].level <= 6 ? .92 : 1), vn = kidVoices(L.kid).teacher;
+  const rate = slow ? .75 : Math.round((DB.kids[L.kid].level <= 6 ? .92 : 1) * speedOf(L.kid).f * 100) / 100, vn = kidVoices(L.kid).teacher;
   guard = setTimeout(() => { if(!finished && gen === AZ_GEN){ AZ_GEN++; finished = true; hcAdd('fbVoice'); speakOneWS(text, slow, done); } }, 7000);
   azFetch(text, vn, rate).then(url => { if(finished || gen !== AZ_GEN) return;
     // the sound must START within 4 s (iPad sometimes never starts or ends an <audio>): otherwise use the device voice
@@ -6923,7 +6966,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15k';
+const APP_VER = '2026-11-15l';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
