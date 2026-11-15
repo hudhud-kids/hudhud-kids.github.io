@@ -4206,13 +4206,15 @@ async function teacherTurn(userText, attempt){
     const asks = /\?/.test(spoken) || /\b(say|tell me|try|repeat|finish|complete|answer|use|describe|read|guess|choose|pick|your turn|now you)\b/i.test(spoken);
     if(spoken && !asks && !attempt && !lesson.done && !lesson.endSeen && !(DEMO || DB.apiKey === 'demo')){ lesson.ctl = null; lesson.streamDone = true; pump();
       lesson.askAfter = () => teacherTurn('(You did not ask the child anything. Ask the next question of the current step now, short and clear, with a hint but not the answer.)', 1); return; }
+    if(!spoken) try{ liveFeed(lesson, 'x', '⚠ empty reply: ' + full.slice(0, 120)); }catch(x){}
     if(!spoken && !attempt && !lesson.done){ lesson.ctl = null; lesson.streamDone = true; setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn('(Your last reply had no words for the child. Speak now: react briefly, then say clearly what the child should do next, with a hint but not the answer.)', 1); }, 300); return; }
     lesson.ctl = null; lesson.streamDone = true; pump();
   }catch(e){
     if(L !== lesson) return;
     lesson.ctl = null; lesson.streamDone = true;
-    if(e && e.name === 'AbortError') return; // interrupted by the child: keep their message (the next one is merged with it)
+    if(e && e.name === 'AbortError'){ try{ liveFeed(lesson, 'x', '⚠ reply cancelled · got ' + full.length); }catch(x){} return; } // interrupted by the child: keep their message (the next one is merged with it)
     undo();
+    try{ liveFeed(lesson, 'x', '⚠ turn ' + (attempt ? 'retry ' : '') + (e && (e.status || e.name)) + ' ' + String((e && (e.body || e.message)) || e).slice(0, 160) + ' · got ' + full.length); }catch(x){}
     // one quiet automatic retry for a dropped/stalled connection or a busy service, before bothering the child
     const soft = !e || e.status === 'timeout' || e.status === 429 || e.status === 529 || e.status >= 500 || e instanceof TypeError;
     if(soft && !attempt && !full && navigator.onLine !== false){ hcAdd('retries'); console.warn('teacher retry', e); setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn(userText, 1); }, 1200); return; }
@@ -6906,7 +6908,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15d';
+const APP_VER = '2026-11-15e';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
