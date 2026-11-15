@@ -140,6 +140,37 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .state{margin-top:4px;font-weight:700;font-size:.95rem;min-height:1.6em;color:var(--muted)}
 .askb{margin:6px auto 0;max-width:560px;background:var(--brand-soft,#fdeee8);border-radius:14px;padding:8px 12px;font-size:1rem;line-height:1.5;text-align:start}.askb .askl{font-size:.8rem;color:var(--muted);font-weight:700}.askb .en{font-weight:700;text-align:left;font-size:1.05rem}.askb .ar{font-size:.9rem;color:var(--muted);margin-top:2px}
 .side{display:flex;flex-direction:column;min-height:0;min-width:0;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));gap:12px;overflow:auto}
+.fx{position:absolute;left:50%;top:58%;font-size:4.6rem;line-height:1;z-index:6;pointer-events:none;transform:translate(-50%,-50%);filter:drop-shadow(0 6px 10px rgba(0,0,0,.18))}
+.fx-clap{animation:fxClap .28s ease-in-out 5,fxOut 1.7s ease forwards}
+.fx-pop{animation:fxPop 1.6s cubic-bezier(.2,1.4,.4,1) forwards}
+.fx-shake{animation:fxShake .25s ease-in-out 5,fxOut 1.7s ease forwards}
+@keyframes fxClap{50%{transform:translate(-50%,-50%) scale(1.35) rotate(-10deg)}}
+@keyframes fxShake{25%{transform:translate(-56%,-50%) rotate(-8deg)}75%{transform:translate(-44%,-50%) rotate(8deg)}}
+@keyframes fxPop{0%{transform:translate(-50%,-30%) scale(.2);opacity:0}25%{transform:translate(-50%,-60%) scale(1.25);opacity:1}80%{opacity:1}100%{transform:translate(-50%,-110%) scale(1);opacity:0}}
+@keyframes fxOut{0%,80%{opacity:1}100%{opacity:0}}
+.tbox.hop svg{animation:tHop .6s ease}
+@keyframes tHop{25%{transform:translateY(-14px)}55%{transform:translateY(2px)}}
+.streak{position:absolute;top:3%;right:3%;z-index:6;background:#FF7A1A;color:#fff;font-weight:800;font-family:var(--en);font-size:1.3rem;padding:4px 14px;border-radius:999px;box-shadow:0 6px 16px rgba(255,122,26,.4)}
+.streak.pulse{animation:fxPop2 .5s ease}
+@keyframes fxPop2{40%{transform:scale(1.35)}}
+.wheelbtn{position:absolute;bottom:4%;left:50%;transform:translateX(-50%);z-index:7;border:0;border-radius:999px;padding:10px 18px;font:inherit;font-weight:800;font-size:1.05rem;color:#fff;background:linear-gradient(135deg,#8B5CF6,#EC4899);box-shadow:0 8px 20px rgba(139,92,246,.45);animation:wb 1.4s ease-in-out infinite}
+.wheelbtn.spin{animation:wspin .25s linear infinite}
+@keyframes wb{50%{transform:translateX(-50%) scale(1.07)}}
+@keyframes wspin{to{transform:translateX(-50%) rotate(360deg)}}
+.choices{background:var(--surface);border:2px dashed var(--brand);border-radius:var(--r);padding:12px;margin-top:10px}
+.ch-l{font-weight:800;margin-bottom:8px}
+.ch-row{display:flex;flex-wrap:wrap;gap:10px;direction:ltr}
+.chbtn{flex:1 1 40%;min-height:56px;border:2px solid var(--line);border-radius:16px;background:#fff;font-family:var(--en);font-weight:700;font-size:1.15rem;padding:10px 12px;cursor:pointer;color:#222;transition:transform .12s}
+.chbtn:active{transform:scale(.95)}
+.chbtn.sm{flex:0 0 auto;min-height:48px}
+.chbtn.picked{background:var(--brand);color:#fff;border-color:var(--brand);transform:scale(1.05)}
+.chbtn.used{opacity:.3}
+.chbtn.undo{flex:0 0 auto}
+.ord-built{min-height:2em;font-size:1.25rem;font-weight:800;margin:4px 0 10px;direction:ltr;text-align:left}
+.album{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:8px;margin-top:10px}
+.stk{aspect-ratio:1;display:grid;place-items:center;font-size:1.9rem;border-radius:14px;background:var(--line);opacity:.5}
+.stk.on{background:#FFF4D6;opacity:1}
+:root[data-theme="dark"] .chbtn{background:#2a2420;color:#fff}
 .sub .kw{opacity:.38;transition:opacity .18s}.sub .kw.on{opacity:1}
 .sub{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:16px 18px;direction:ltr;text-align:left;font-family:var(--en);font-size:1.45rem;font-weight:600;line-height:1.45;min-height:96px}
 .sub .ar{direction:rtl;text-align:right;font-family:var(--font);font-size:1rem;color:var(--muted);font-weight:500;border-top:1px dashed var(--line);margin-top:8px;padding-top:8px}
@@ -1225,6 +1256,7 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp
 /* teacher report card shared by the parent and guardian pages: brand header with score ring, three stats,
    the note (English phrases isolated so they never scramble the Arabic), new words, and corrections as before/after rows */
 function bidiAr(t){ return String(t || '').split(/([A-Za-z](?:[A-Za-z0-9'’,.!?…:;"\-\s]*[A-Za-z0-9.!?…'’"])?)/).map((p, i) => i % 2 ? `<bdi dir="ltr" class="enr">${esc(p.trim())}</bdi>${/\s$/.test(p) ? ' ' : ''}` : esc(p)).join(''); }
+function bestLine(r){ return r && r.bestSentence ? `<div class="gift" style="margin:8px 0">⭐ أفضل جملة في الحصة: <span class="en" style="font-weight:800">“${esc(r.bestSentence)}”</span></div>` : ''; }
 function reportCardHTML(r){
   const sc = Math.max(0, Math.min(100, Number(r.score) || 0)), fx = (r.mistakes || []).filter(m => m && m.right), words = (r.newWords || []).filter(Boolean);
   const fixLi = m => `<li><div class="w">${esc(m.wrong)}</div><div class="r">${esc(m.right)}</div></li>`;
@@ -1260,6 +1292,7 @@ function reportCardHTML(r){
     <div class="rc-stats"><div><b>⏱️ ${Number(r.minutes) || 0}</b><span>دقيقة</span></div><div><b>${num(r.avgWords) != null ? `<bdi dir="ltr">${num(r.avgWords)}</bdi>` : '—'}</b><span>كلمة في كل رد</span></div><div><b style="color:var(--gold);direction:ltr">${(() => { const st = Math.max(1, Math.min(3, Number(r.stars) || Math.round(sc / 34) || 1)); return '★'.repeat(st) + '☆'.repeat(3 - st); })()}</b><span>التقييم</span></div></div>
     ${r.v2 ? `<div class="rc-v2"><span>📚 التعابير <b><bdi dir="ltr">${Number(r.v2.exp)||0}/${Number(r.v2.of)||6}</bdi></b></span><span>🎭 المواقف <b><bdi dir="ltr">${Number(r.v2.so)||0}/3</bdi></b></span>${r.v2.stars ? `<span>⭐ نجوم الحصة <b><bdi dir="ltr">${Number(r.v2.stars)}</bdi></b></span>` : ''}<span>🎯 هدف الدرس <b>${{yes:'تحقق ✓', partly:'جزئياً', no:'يحتاج إعادة'}[r.v2.exit] || '—'}</b>${r.v2.judge && r.v2.judge.exit ? ' · <small>بتقييم مستقل</small>' : ''}</span>${(r.v2.rec || []).length ? `<span>🔁 مراجعة تعابير سابقة <b><bdi dir="ltr">${(r.v2.recUsed || []).length}/${r.v2.rec.length}</bdi></b></span>` : ''}${r.v2.fn ?`<span class="en">${esc(r.v2.fn)}</span>` : ''}${r.v2.review ? '<span>🔁 حصة مراجعة</span>' : ''}</div>` : ''}
     ${sec('💬', 'ملخص المعلمة', p(r.parentNote))}
+    ${bestLine(r)}
     ${sec('🗣️', 'حصته من كلمات الحصة', p(r.talkNote))}
     ${sec('💪', 'الثقة في الكلام', (() => { const m = r.confMeasured; return p(r.confidenceNote) + (m ? `<div class="rc-meas">${m.medDelayMs != null ? `<span>⏳ يبدأ الرد بعد <bdi dir="ltr">${(m.medDelayMs / 1000).toFixed(1)}</bdi> ث</span>` : ''}<span>💬 <bdi dir="ltr">${num(m.avgWords) || 0}</bdi> كلمة بالرد</span><span>✅ جمل كاملة <bdi dir="ltr">${num(m.fullPct) || 0}%</bdi></span>${m.silent ? `<span>🤫 سكت <bdi dir="ltr">${num(m.silent)}</bdi> مرة</span>` : ''}</div>` : ''); })())}
     ${r.pron && (r.pron.items || []).length ? sec('🗣️', 'نطق تعابير اليوم', `<div class="rc-pron">${r.pron.items.slice(0, 6).map(x => `<span class="${num(x.score) >= 80 ? 'good' : num(x.score) >= 60 ? 'mid' : 'bad'}"><bdi dir="ltr">${esc(x.w)}</bdi> <b><bdi dir="ltr">${Math.round(num(x.score) || 0)}%</bdi></b></span>`).join('')}</div>`) : ''}
@@ -1437,7 +1470,7 @@ function v2Slide(){
     try{ toast(b.dataset.theme === 'b' ? `${alt.e} اخترت: ${alt.ar}` : '🎭 اخترت موقف الدرس'); }catch(e){} v2Slide(); });
 }
 function v2Role(d){ const names = [...new Set([...(d.p1||[]), ...(d.p2||[])].map(l => l.s))]; return names[1] || names[0] || ''; }
-function v2Star(n){ if(!L || !L.v2) return; const v = L.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)]; v.stars = (v.stars||0) + (n||1);
+function v2Star(n){ if(!L || !L.v2) return; const v = L.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)]; v.stars = (v.stars||0) + (n||1); streakUp();
   if(v.fmt === 'game'){ let add = 10 * (n||1); if(stp.k === 'prize'){ add = v.got.prize && !v.prizeWon ? 50 : 0; if(add) v.prizeWon = true; } else if(stp.k !== 'exp') add = 5 * (n||1);
     if(add){ v.pts = (v.pts||0) + add; try{ toast(`🏆 ‎+${add}`); }catch(e){} } }
   burst(); v2Slide(); }
@@ -1513,6 +1546,13 @@ ${{classic:'',
   game:`TODAY'S FORMAT: GAME SHOW. You are the host of the "Hudhud Quiz Show" and the child is the star player. The word games are quiz rounds: Quick fire = ${V2_QUIZ[0].how}; Finish it = ${V2_QUIZ[1].how}; Which one? = ${V2_QUIZ[2].how}. Each good full sentence earns 10 points (the app counts them from your [GOT] and [STAR] and shows the score; the header tells you the total): announce points with energy ("Ten points!"). After round 3 comes the Grand prize question: ONE question that needs a full sentence using 2 of today's expressions together; if right, [GOT] (50 points) and a big celebration, then [NEXT]. Then continue with the role-play and the rest in the same cheerful show tone. Never use words about betting, gambling, jackpots, casinos, lotteries or money; only points and stars.`}[fmt] || ''}
 
 BE FUN — the child must never feel this is a worksheet:
+- FUN TOOLS (the app turns these tags into things the child can touch; use them, children love them):
+  * [CHOICE:option 1|option 2|option 3] shows 2-4 big buttons the child can tap to answer your question. Use it at least once in every word-game or quiz round, and whenever a child is stuck (instead of telling the answer). Options are short (1-6 words), only ONE is right, and you never say which one.
+  * [ORDER:word|word|word|word] shows the words of a sentence mixed up; the child taps them in order to build the sentence. Use it once or twice per lesson with a 4-8 word sentence that uses today's expression; say "Build the sentence!" and do not say the sentence yourself.
+  * When you first teach an expression, show it on the board: [BOARD:expression|one emoji|Arabic meaning].
+- ONCE per lesson, tell a 3-sentence mini-story about something the child loves (their interests above) using today's words, stop at a cliff-hanger and ask "What happens next?".
+- The app runs a Fun Wheel: when the header or a message says the child spun it, do the challenge with lots of fun, then continue.
+- Before your goodbye at the end, tell ONE short, clean, kid-friendly English joke or riddle that fits their level.
 - BUILD A REAL BOND (children learn more from a teacher they like and trust): once or twice per lesson, at a natural moment (the warm-up, or after a good answer; never in the exit check), ask ONE short personal question about the child: hobbies, favourite game, food, show or sport, what they like or dislike, their day, school, pets, weekend plans. React with real interest and a short follow-up, share one tiny friendly thing about yourself ("I love rainy days too!"), then use what they told you in your later examples. Bring up things they told you in earlier lessons (above) ("Last time you told me you love football. Did you play this week?"). Praise effort specifically, never make them feel embarrassed, say their name sometimes (not every sentence). If their answers get short or tired, add energy with a tiny game or a silly example about something they love. Keep these chats short (one or two turns) and come back to the lesson.
 - Be playful and surprising: little jokes, silly examples, sound effects in words ("Wow!", "Boom!"), mini challenges, and examples about what THIS child loves (their interests above). Vary your praise; never repeat the same phrase twice in a row.
 - React to WHAT the child said (the content), with real curiosity, before you correct or move on.
@@ -1536,9 +1576,14 @@ CORRECTION: errors in today's expressions or function → recast and ask them to
 
 ${safetyRules()}
 
-FORMAT (strict): start DIRECTLY with the spoken text (nothing before it). After the spoken text, tags each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [REC:expression] [FLAG:short reason] [END], and ALWAYS finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
-No markdown, no emojis, no Arabic letters in the spoken text.`;
+FORMAT (strict): start DIRECTLY with the spoken text (nothing before it). After the spoken text, tags each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [REC:expression] [FLAG:short reason] [CHOICE:a|b|c] [ORDER:w|w|w] [BOARD:expression|emoji|Arabic] [END], and ALWAYS finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
+No markdown, no emojis, no Arabic letters in the spoken text.${tstyleRule(k)}`;
 }
+/* the teacher's personality, chosen by the child in the profile */
+function tstyleRule(k){ const st = ((DB.profiles || {})[k] || {}).tstyle || 'fun';
+  return st === 'calm' ? '\nPERSONALITY: calm, gentle and warm. Soft praise, patient pace, fewer jokes, never loud.'
+    : st === 'coach' ? '\nPERSONALITY: an energetic sports coach. Short punchy praise ("Boom! That is a goal!"), challenges, countdowns, team spirit.'
+    : '\nPERSONALITY: super fun and full of energy. Jokes, silly voices described in words, big reactions ("Wooow!", "No way!"), lots of praise and surprises.'; }
 /* ---- spaced recycling: DB.progress[k].learned = {expression: {lvl, key, at, ok, miss, due}} ----
    a correct use moves the next review to 2, 5, 12, then 30 days (by the number of correct uses); a miss brings it back tomorrow */
 const REC_DAYS = [2, 5, 12, 30], REC_MAX = 300;
@@ -1738,6 +1783,7 @@ function renderProfile(k, first){
     <div style="display:grid;justify-items:center;gap:8px"><div id="pv">${tmp ? `<img class="avatar lg" src="${esc(tmp)}" alt="">` : `<div class="avatar lg">${esc(DB.kids[k].ar.slice(0,1))}</div>`}</div>
       <label class="btn sm" for="ph">اختر صورتك</label><input id="ph" type="file" accept="image/*" hidden></div>
     <div class="field"><label for="tc">معلمك</label><select class="input" id="tc">${Object.entries(TEACHERS).map(([id,t]) => `<option value="${id}" ${(((DB.profiles[k]||{}).teacher) || (DB.kids[k].boy?'adam':'noor')) === id ? 'selected' : ''}>${t.ar} (${t.name})</option>`).join('')}</select></div>
+    <div class="field"><label for="tst">شخصية المعلم</label><select class="input" id="tst">${[['fun','مرح جداً ومليان طاقة 🎉'],['calm','هادئ ولطيف 🌿'],['coach','مدرّب حماسي 💪']].map(([v,t]) => `<option value="${v}" ${(((DB.profiles[k]||{}).tstyle) || 'fun') === v ? 'selected' : ''}>${t}</option>`).join('')}</select></div>
     <div class="field"><label for="nk">اسمك المستعار</label><input class="input" id="nk" maxlength="20" value="${esc((DB.profiles[k]||{}).nick||'')}" placeholder="مثلاً: Captain ${esc(DB.kids[k].en)}"></div>
     ${first ? '' : `<div class="field"><label id="lookL">شكل الصفحات</label><div class="chips plook" role="radiogroup" aria-labelledby="lookL">${PLOOKS.map(([v, t, e]) => `<button type="button" role="radio" aria-checked="${look === v}" class="topic ${look === v ? 'on' : ''}" data-look="${v}">${e} ${t}</button>`).join('')}</div><div class="small muted" id="lookH"></div></div>
     <div class="field"><label>اللغة والوضع الليلي</label><div class="chips pprefs">${prefsHTML().replace(/<button /g, '<button type="button" ')}<span class="small muted">EN للإنجليزية · الدائرة للفاتح أو الليلي</span></div></div>`}
@@ -1758,7 +1804,7 @@ function renderProfile(k, first){
     img.src = url;
   });
   if(!first) $('#cn').onclick = () => go(k);
-  $('#pf').addEventListener('submit', e => { e.preventDefault(); const n = $('#nk').value.trim(); if(n.length < 2){ $('#pe').textContent = 'اكتب اسماً مستعاراً من حرفين على الأقل.'; return; } DB.profiles[k] = Object.assign({}, DB.profiles[k], {nick:n, avatar:tmp, teacher:$('#tc').value, look}); save(); go(k); });
+  $('#pf').addEventListener('submit', e => { e.preventDefault(); const n = $('#nk').value.trim(); if(n.length < 2){ $('#pe').textContent = 'اكتب اسماً مستعاراً من حرفين على الأقل.'; return; } DB.profiles[k] = Object.assign({}, DB.profiles[k], {nick:n, avatar:tmp, teacher:$('#tc').value, look, tstyle:($('#tst') || {}).value || 'fun'}); save(); go(k); });
 }
 
 /* =============== KID SHELL + TABS =============== */
@@ -1808,7 +1854,7 @@ function renderKid(k){
   $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
   document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { TAB = b.dataset.tab; renderKid(k); });
   ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins, room:tabRoom, shop:tabShop})[TAB](k);
-  pendingQuizCard(k);
+  pendingQuizCard(k); if(TAB === 'wins') stickerAlbum(k);
   checkNewBadges(k); maybeCelebrate(k); setTimeout(() => checkCheers(k), 1200);
 }
 
@@ -3962,10 +4008,11 @@ function renderRoom(){
       <div class="ttl">${L.trial ? `<span class="chip brand" style="font-family:var(--font)">${L.mission ? 'مهمة' : L.freeReview ? 'مراجعة مجانية' : 'تجريبي'}</span> ` : ''}${esc(L.plan.t)}</div>
       <div class="talk" id="talk"></div><div class="timer" id="timer">00:00</div></header>
     <div class="rbody">
-      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="selfcam" id="selfcam" hidden><video playsinline muted autoplay></video><span>${esc(nick(L.kid))}</span></div><div class="burst" id="burst"></div><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div><div class="askb" id="askb" hidden></div></div></div>
+      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="selfcam" id="selfcam" hidden><video playsinline muted autoplay></video><span>${esc(nick(L.kid))}</span></div><div class="burst" id="burst"></div><div class="streak" id="streak" hidden></div><button class="wheelbtn" id="wheel" hidden type="button">🎡 لف عجلة المرح!</button><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div><div class="askb" id="askb" hidden></div></div></div>
       <div class="side">
         ${L.v2 ? '<div class="slide" id="slide"></div>' : ''}
         <div class="sub" id="sub" aria-live="polite"><span class="muted" style="font-family:var(--font)">…</span></div>
+        <div class="choices" id="choices" hidden></div>
         <div class="you" id="you" hidden></div>
         <div class="cards"><div id="boardBox"></div><div id="fixBox"></div></div>
       </div>
@@ -3984,7 +4031,7 @@ function renderRoom(){
   if(!(DB.profiles[L.kid]||{}).camOff) startCam();
   updateTalk();
   $('#rep').onclick = () => { if(!L.lastSay) return; if(L.dg && L.dg.ws && L.dg.ws.readyState === 1){ dgHush(L); try{ L.dg.ws.send(JSON.stringify({type:'InjectAgentMessage', message:L.lastSay})); }catch(e){} return; } interrupt(false); sayAll(L.lastSay, true); };
-  $('#spd').onclick = speedTap;
+  $('#spd').onclick = speedTap; $('#wheel').onclick = wheelSpin;
   $('#mic').onclick = onMicTap;
   $('#tbox').onclick = () => { if(L.dg) return; if(L.state === 'speaking' && Date.now() - (L.speakAt || 0) > 2000) { interrupt(true); } };
   $('#kb').onclick = () => { const t = $('#typer'); t.hidden = !t.hidden; if(!t.hidden){ stopListening(); $('#msg').focus(); } };
@@ -3997,6 +4044,7 @@ function renderRoom(){
 function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt.getTime())/1000), t = $('#timer');
   if(t){ t.textContent = `${pad(Math.floor(s/60))}:${pad(s%60)} / 25:00`; t.classList.toggle('over', s > LESSON_MIN*60); }
   const w = $('#wrap'); if(w) w.hidden = !(s >= 24*60 && !L.done);
+  wheelTick(s);
   // safety net: a step that runs FAR over its time moves on by itself, but never while the child is listening/talking,
   // the teacher is thinking/speaking, or right after; only after the room has been quiet for a while
   if(L.v2 && !L.v2.doneAll){ const v = L.v2, stp = v.steps[v.i], now = Date.now();
@@ -4040,6 +4088,7 @@ function setMood(m){ if(!L) return; const ok = ['happy','excited','proud','laugh
   const b = $('#tbox'); if(!b) return; ok.forEach(x => b.classList.toggle('m-'+x, x === m));
   const RX = {proud:['Excellent!','Amazing!','Perfect!','Great job!'], excited:['Wow!','Yay!','Awesome!'], laughing:['Haha!','So funny!'], surprised:['Oh!','Really?!'], encouraging:['You can do it!','Nice try!','Almost!']};
   if(RX[m] && (m === 'proud' || m === 'excited' || Math.random() < .6)) react(RX[m][Math.floor(Math.random()*RX[m].length)]);
+  if(m === 'laughing') fx('laugh'); else if(m === 'surprised') fx('wow'); else if(m === 'excited' && Math.random() < .5) fx('party');
   if(m === 'proud' || m === 'excited'){ burst(); setPose('wave', 2200); }
   if(m === 'laughing') burst(); }
 function setMouth(n){ document.querySelectorAll('#tbox .mouth > *').forEach(p => p.classList.toggle('on', p.dataset.m === n)); }
@@ -4155,7 +4204,9 @@ document.addEventListener('visibilitychange', () => { if(!document.hidden && typ
 
 /* ---- teacher turn (streaming) ---- */
 function parseTags(full){
-  const out = {mood:null, board:null, fix:null, ar:'', stage:null, end:false, goals:[], next:false, got:false, exit:null};
+  const out = {mood:null, board:null, fix:null, ar:'', stage:null, end:false, goals:[], next:false, got:false, exit:null, choice:null, order:null};
+  { const c = full.match(/\[CHOICE:([^\]]+)\]/i); if(c) out.choice = c[1].split('|').map(x => x.trim()).filter(Boolean).slice(0, 4);
+    const o = full.match(/\[ORDER:([^\]]+)\]/i); if(o) out.order = o[1].split('|').map(x => x.trim()).filter(Boolean).slice(0, 10); }
   if(/\[NEXT\]/i.test(full)) out.next = true; if(/\[GOT\]/i.test(full)) out.got = true; out.star = (full.match(/\[STAR\]/gi) || []).length;
   const ex = full.match(/\[EXIT:(yes|partly|no)\]/i); if(ex) out.exit = ex[1].toLowerCase();
   const m = full.match(/\[MOOD:([a-z]+)\]/i); if(m) out.mood = m[1].toLowerCase();
@@ -4167,7 +4218,7 @@ function parseTags(full){
   return out;
 }
 /* the spoken part = the reply WITHOUT its tags, wherever the model put them (a reply that started with [GOT] or [NEXT] used to be cut to nothing, so the teacher went silent) */
-function spokenOf(full){ let s = String(full || '').replace(/\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC)\b[^\]]*\]/gi, ' ');
+function spokenOf(full){ let s = String(full || '').replace(/\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC|CHOICE|ORDER)\b[^\]]*\]/gi, ' ');
   s = s.replace(/\[[^\]]*$/, ''); return s.replace(/[ \t]+/g, ' ').replace(/\s*\n\s*/g, ' ').replace(/^\s+/, ''); }
 function cleanForHistory(full){ return full.trim() || '[MOOD:happy] ...'; }
 
@@ -4216,6 +4267,7 @@ async function teacherTurn(userText, attempt){
     if(tags.board && tags.board.word){ showBoard(tags.board); (lesson.boardWords = lesson.boardWords || []).push(tags.board.word); }
     showFix(tags.fix);
     if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
+    funTags(lesson, tags);
     if(lesson.mission && tags.goals.length){ tags.goals.forEach(g => { if(g >= 1 && g <= 3 && !lesson.mission.done[g-1]){ lesson.mission.done[g-1] = true; burst(); toast(`🎯 حققت الهدف ${g}!`); } }); drawMissionPanel(); }
     if(lesson.v2){ const v = lesson.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)];
       if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
@@ -4311,6 +4363,74 @@ function showBoard(b){ const el = $('#boardBox'); if(!el) return; boardWrite(b.e
 function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right){ return; }
   el.innerHTML = `<div class="fix"><div class="small" style="font-weight:800">انتبه للتصحيح</div><div class="wr en">${esc(f.wrong)}</div><div class="rt">${esc(f.right)}</div>${f.tip?`<div class="small">${esc(f.tip)}</div>`:''}</div>`; }
 
+
+/* =============== FUN LAYER: teacher reactions, sounds, streaks, touch answers, the Fun Wheel, stickers =============== */
+/* tiny sounds made in code (no files): claps, a chime, a rising "fire" run, a boing */
+function sfx(kind){ try{ const ac = recAC(), t0 = ac.currentTime + .02, out = ac.createGain(); out.gain.value = .22; out.connect(ac.destination);
+  const tone = (f, t, d, type, f2) => { const o = ac.createOscillator(), g = ac.createGain(); o.type = type || 'sine'; o.frequency.setValueAtTime(f, t); if(f2) o.frequency.exponentialRampToValueAtTime(f2, t + d);
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.9, t + .01); g.gain.exponentialRampToValueAtTime(.0001, t + d); o.connect(g); g.connect(out); o.start(t); o.stop(t + d + .02); };
+  const clap = t => { const n = Math.floor(ac.sampleRate * .07), b = ac.createBuffer(1, n, ac.sampleRate), d = b.getChannelData(0); for(let i = 0; i < n; i++) d[i] = (Math.random()*2-1) * Math.pow(1 - i/n, 3);
+    const src = ac.createBufferSource(), bp = ac.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 1500; bp.Q.value = .8; src.buffer = b; src.connect(bp); bp.connect(out); src.start(t); };
+  if(kind === 'clap'){ for(let i = 0; i < 6; i++) clap(t0 + i * .14 + Math.random() * .03); }
+  else if(kind === 'chime' || kind === 'party'){ [784, 988, 1319].forEach((f, i) => tone(f, t0 + i * .09, .35, 'triangle')); }
+  else if(kind === 'fire'){ [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, t0 + i * .07, .25, 'square')); out.gain.value = .12; }
+  else if(kind === 'wow'){ tone(400, t0, .35, 'sine', 900); }
+  else if(kind === 'laugh'){ [0, .12, .24].forEach(d => tone(620 - d * 400, t0 + d, .1, 'triangle')); }
+  else if(kind === 'tap'){ tone(1200, t0, .06, 'sine'); }
+  else if(kind === 'spin'){ for(let i = 0; i < 14; i++) tone(900, t0 + i * (.05 + i * .008), .03, 'square'); out.gain.value = .08; }
+  setTimeout(() => { try{ out.disconnect(); }catch(e){} }, 2500); }catch(e){} }
+/* the teacher's body language: big animated reaction + a hop, with its sound */
+const FX = {clap:['👏','clap'], laugh:['😂','shake'], wow:['🤩','pop'], fire:['🔥','pop'], party:['🎉','pop'], love:['💛','pop'], think:['🤔','shake']};
+function fx(kind){ if(!L) return; const b = $('#tbox'); if(!b) return; const f = FX[kind] || FX.clap;
+  const el = document.createElement('div'); el.className = 'fx fx-' + f[1]; el.textContent = f[0]; b.appendChild(el); setTimeout(() => el.remove(), 1700);
+  b.classList.remove('hop'); void b.offsetWidth; b.classList.add('hop'); setTimeout(() => b.classList.remove('hop'), 700);
+  if(kind === 'clap' || kind === 'party') setPose(Math.random() < .5 ? 'thumb' : 'open', 1600);
+  sfx(kind === 'think' ? 'tap' : kind); }
+/* answer streak: 3 good answers in a row = fire */
+function streakUp(){ if(!L) return; L.streak = (L.streak || 0) + 1; const n = L.streak, el = $('#streak');
+  if(el){ el.hidden = n < 2; el.textContent = `🔥 ×${n}`; el.classList.remove('pulse'); void el.offsetWidth; el.classList.add('pulse'); }
+  if(n >= 3 && n % 2 === 1){ fx('fire'); toast(`🔥 ${n} إجابات صح ورا بعض!`); } else fx('clap'); }
+function streakReset(){ if(!L) return; L.streak = 0; const el = $('#streak'); if(el) el.hidden = true; }
+function funTags(lesson, tags){ if(L !== lesson) return;
+  if(tags.fix && tags.fix.right) streakReset();
+  if(tags.choice && tags.choice.length > 1) showChoices(tags.choice);
+  else if(tags.order && tags.order.length > 2) showOrder(tags.order);
+  else hideChoices(); }
+/* touch answers: the child taps instead of (or as well as) speaking */
+function hideChoices(){ const c = $('#choices'); if(c){ c.hidden = true; c.innerHTML = ''; } }
+function answerByTap(text){ if(!L || !text) return; sfx('tap'); hideChoices(); studentSaid(text); }
+function showChoices(opts){ const c = $('#choices'); if(!c) return;
+  c.innerHTML = `<div class="ch-l">👆 المس الإجابة أو قلها</div><div class="ch-row">${opts.map((o, i) => `<button type="button" class="chbtn" data-i="${i}">${esc(o)}</button>`).join('')}</div>`;
+  c.hidden = false; c.querySelectorAll('.chbtn').forEach(b => b.onclick = () => { b.classList.add('picked'); setTimeout(() => answerByTap(opts[Number(b.dataset.i)]), 250); });
+  try{ c.scrollIntoView({block:'nearest', behavior:'smooth'}); }catch(e){} }
+function showOrder(words){ const c = $('#choices'); if(!c) return; const mix = words.map((w, i) => ({w, i})).sort(() => Math.random() - .5); let built = [];
+  if(mix.every((x, n) => x.i === n) && mix.length > 1) mix.push(mix.shift());
+  const draw = () => { c.innerHTML = `<div class="ch-l">🧩 رتّب الجملة: المس الكلمات بالترتيب</div><div class="ord-built en">${built.map(x => esc(x.w)).join(' ') || '…'}</div>
+    <div class="ch-row">${mix.map((x, n) => `<button type="button" class="chbtn sm ${built.includes(x) ? 'used' : ''}" data-n="${n}" ${built.includes(x) ? 'disabled' : ''}>${esc(x.w)}</button>`).join('')}<button type="button" class="chbtn undo" id="ordUndo">↩︎</button></div>`;
+    c.querySelectorAll('[data-n]').forEach(b => b.onclick = () => { sfx('tap'); built.push(mix[Number(b.dataset.n)]); if(built.length === mix.length){ const t = built.map(x => x.w).join(' '); draw(); setTimeout(() => answerByTap(t), 350); } else draw(); });
+    const u = $('#ordUndo'); if(u) u.onclick = () => { built.pop(); draw(); }; };
+  c.hidden = false; draw(); try{ c.scrollIntoView({block:'nearest', behavior:'smooth'}); }catch(e){} }
+/* the Fun Wheel: about every 7 minutes (not in the first 4 minutes or the exit check) a button appears; the result becomes a challenge */
+const WHEEL = [['say it like a robot','🤖 قلها مثل الروبوت'], ['whisper it like a secret','🤫 قلها همس'], ['say it super fast','⚡ قلها بسرعة البرق'], ['say it like a lion','🦁 قلها مثل الأسد'],
+  ['say it in slow motion','🐢 قلها بالتصوير البطيء'], ['sing it','🎤 غنّها'], ['say it like a news reporter','📺 قلها مثل المذيع'], ['say it with a big smile and a silly face','😜 قلها بوجه مضحك']];
+function wheelTick(s){ const b = $('#wheel'); if(!b || !L || L.done) return; const v = L.v2, stp = v && v.steps[Math.min(v.i, v.steps.length - 1)];
+  const due = s > 4 * 60 && s < (LESSON_MIN - 2) * 60 && (!L.wheelAt || Date.now() - L.wheelAt > 7 * 60e3) && !(stp && ['exit', 'obj'].includes(stp.k)) && L.state !== 'thinking';
+  if(due && b.hidden){ b.hidden = false; sfx('chime'); } }
+function wheelSpin(){ if(!L) return; const b = $('#wheel'); L.wheelAt = Date.now(); const pick = WHEEL[Math.floor(Math.random() * WHEEL.length)];
+  b.disabled = true; b.classList.add('spin'); sfx('spin');
+  setTimeout(() => { b.classList.remove('spin'); b.disabled = false; b.hidden = true; toast(`🎡 ${pick[1]}!`); fx('party');
+    const msg = `(The child spun the Fun Wheel and got: "${pick[0]}". Make it a big fun moment: ask them to say one of today's expressions that way, react with lots of fun, then continue the lesson.)`;
+    if(L.dg && dgSay(L, msg)) return; teacherTurn(msg); }, 1900); }
+/* stickers: one per finished lesson, collected in an album on the "wins" tab */
+const STICKERS = '🦊🐼🦁🐯🐸🐵🦄🐙🦋🐢🐬🦉🐧🐨🦖🐝🦜🐳🦒🐘🦩🐿️🦔🐞🦀🐠🦚🦓🐻‍❄️🐲'.match(/\p{Extended_Pictographic}(‍\p{Extended_Pictographic})*️?/gu);
+function awardSticker(k, title){ const p = DB.progress[k]; p.stickers = p.stickers || []; const have = new Set(p.stickers.map(x => x.e));
+  const left = STICKERS.filter(e => !have.has(e)), e = (left.length ? left : STICKERS)[Math.floor(Math.random() * (left.length || STICKERS.length))];
+  const st = {e, title:String(title || ''), at:new Date().toISOString()}; p.stickers.push(st); save(); return st; }
+function stickerAlbum(k){ const g = document.querySelector('#tabBody .grid') || $('#tabBody'); if(!g) return; const mine = (DB.progress[k].stickers || []);
+  const sec = document.createElement('section'); sec.className = 'card';
+  sec.innerHTML = `<h2>🗂️ ألبوم الملصقات <span class="small muted num">${mine.length}/${STICKERS.length}</span></h2><div class="small muted">كل حصة تخلصها تعطيك ملصق جديد</div>
+    <div class="album">${STICKERS.map(e => { const m = mine.find(x => x.e === e); return `<div class="stk ${m ? 'on' : ''}" title="${m ? esc(m.title) : ''}">${m ? e : '❔'}</div>`; }).join('')}</div>`;
+  g.prepend(sec); }
 /* =============== DEEPGRAM VOICE LESSON (trial engine, per child: DB.profiles[k].engine === 'dg') ===============
    One WebSocket to Deepgram's Voice Agent does the listening (Flux: knows when the child finished), the thinking (Claude,
    through our relay /ai/llm, so the key stays on the server) and the speaking (Aura-2), with natural barge-in.
@@ -4465,6 +4585,7 @@ function dgTags(lesson, full){ const tags = parseTags(full);
   if(tags.ar) askShow(lesson.lastSay || '', tags.ar);
   if(tags.board && tags.board.word){ showBoard(tags.board); (lesson.boardWords = lesson.boardWords || []).push(tags.board.word); }
   showFix(tags.fix); if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
+  funTags(lesson, tags);
   if(lesson.v2){ const v = lesson.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)];
     if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
     if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide();
@@ -4602,7 +4723,7 @@ ${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer lengt
 "levelFit":"easy" or "right" or "hard" (was this lesson's level right for the child?),"levelNote":"1-2 Arabic sentences explaining why",
 "strengths":["2-3 short Arabic phrases: what the child did well today"],
 "homePractice":"one or two concrete Arabic sentences: exactly what to practise at home this week, with an English example sentence",
-"kidNote":"one short cheerful English sentence for the child","nextFocus":"one short line in English: what the next lesson should focus on","interests":["short English phrases about the child's life, likes and hobbies they mentioned (empty if none)"],
+"kidNote":"one short cheerful English sentence for the child","bestSentence":"the best full English sentence the child said today, in their own words (fix only a tiny slip)","nextFocus":"one short line in English: what the next lesson should focus on","interests":["short English phrases about the child's life, likes and hobbies they mentioned (empty if none)"],
 "quiz":[5 questions about THIS lesson at the child's level, mainly sentence building:
   2 of {"type":"order","words":["the","words","of","a","correct","sentence","in","order"],"answer":"the full correct sentence","ar":"short Arabic instruction"} (5-9 words, using today's patterns),
   2 of {"type":"mc","q":"fill the gap or choose the best reply","options":["...","...","..."],"answer":index},
@@ -4620,7 +4741,7 @@ ${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer lengt
   if(!(rep.quiz||[]).length) rep.quiz = lessonQuizFromBank(DB.kids[k].level, plan.ui, plan.li) || [];
   const report = {score:sc0.score, stars:Math.max(1,Math.min(3,Number(rep.stars)||1)),
     newWords:(Array.isArray(rep.newWords)?rep.newWords:[]).slice(0,12).map(String), mistakes:(Array.isArray(rep.mistakes)?rep.mistakes:[]).slice(0,8).map(m => ({wrong:String(m.wrong||''), right:String(m.right||'')})),
-    parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!'), talkPct:talkPctOf(lesson), talkGoal:talkGoal(k),
+    parentNote:String(rep.parentNote||''), kidNote:String(rep.kidNote||'Great job today!'), bestSentence:String(rep.bestSentence||'').slice(0, 200), talkPct:talkPctOf(lesson), talkGoal:talkGoal(k),
     avgWords:(() => { const t = lesson.history.filter(h => h.role === 'user' && !/\]\s*\(/.test(h.content)).length; return t ? Math.round(lesson.sw / t * 10) / 10 : null; })(),
     confidence:meas ? meas.score : rep.confidence == null ? null : Math.max(0, Math.min(100, Number(rep.confidence) || 0)), confidenceNote:String(rep.confidenceNote||''), talkNote:String(rep.talkNote||''),
     levelFit:['easy','right','hard'].includes(rep.levelFit) ? rep.levelFit : null, levelNote:String(rep.levelNote||''), strengths:(Array.isArray(rep.strengths)?rep.strengths:[]).slice(0,4).map(String), homePractice:String(rep.homePractice||''),
@@ -4658,10 +4779,13 @@ ${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer lengt
     p.xp = (p.xp||0) + 50; save();
   }
   if(!lesson.trial || lesson.freeReview){ if(typeof probationCheck === 'function') try{ probationCheck(k, report); }catch(e){} }
+  const stk = !lesson.trial || lesson.freeReview ? awardSticker(k, plan.t) : null;
   ov.innerHTML =`<div class="card"><div style="text-align:center"><div class="stars" style="font-size:2.3rem">${'★'.repeat(report.stars)}${'☆'.repeat(3-report.stars)}</div><h2>أحسنت! ${report.score}%</h2><p class="en" style="margin:.3em 0 0">${esc(report.kidNote)}</p></div>
     ${report.talkPct != null ? `<div class="chip ${report.talkPct >= talkGoal(k) ? 'good' : 'brand'}" style="text-align:center">🗣️ قلت ${report.talkPct}% من كلمات الحصة · هدفك ${talkGoal(k)}%</div>` : ''}
     ${lesson.freeReview ? '<div class="chip good" style="text-align:center">🎁 حصة مراجعة مجانية: لم تُحتسب في الرصيد · +50 نقطة</div>' : lesson.trial ? '<div class="chip brand" style="text-align:center">حصة تجريبية: لم تُحتسب في الرصيد</div>' : `<div class="chip good" style="text-align:center;font-size:1rem">✓ ${priceNow(k)} ريال صارت خضراء · +50 نقطة</div>`}
     ${cert ? `<div class="gift">🎓 أكملت وحدة <span class="en">${esc(cert.unit)}</span>! شهادتك جاهزة</div>` : ''}
+    ${report.bestSentence ? `<div class="gift" style="text-align:center">⭐ أفضل جملة قلتها اليوم<div class="en" style="font-weight:800;margin-top:4px">“${esc(report.bestSentence)}”</div></div>` : ''}
+    ${stk ? `<div class="gift" style="text-align:center">🎁 ملصق جديد لألبومك! <span style="font-size:2rem">${stk.e}</span></div>` : ''}
     ${book ? `<div class="gift">🎁 هدية جديدة! فتحت كتاب: <span class="en">${esc(book[0])}</span></div>` : ''}
     ${(() => { const kit = kitFor(DB.kids[k].level, plan.ui, plan.li); return kit && kit.grammar ? `<div class="gram"><div style="font-weight:800">📘 قاعدة الدرس: <span class="en">${esc(kit.grammar.title)}</span></div><div class="small">${esc(kit.grammar.ar)}</div><div class="en small" style="direction:ltr;text-align:left">${(kit.grammar.examples||[]).map(esc).join('<br>')}</div></div>` : ''; })()}
     ${report.newWords.length ? `<div><div style="font-weight:800">كلمات تدربت عليها</div><div class="wordchips">${report.newWords.map(w => `<span>${esc(w)}</span>`).join('')}</div></div>` : ''}
@@ -6989,7 +7113,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15n';
+const APP_VER = '2026-11-15o';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:' || document.querySelector('.ov, .reader')) return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L && !document.querySelector('.ov, .reader')) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });

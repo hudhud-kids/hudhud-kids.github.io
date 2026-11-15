@@ -258,7 +258,7 @@ async function llmRoute(req: Request) {
 
 // ---------- tags out of the voice: "[GOT] [NEXT] [MOOD:happy]" are not read aloud; they become one lesson_event call ----------
 const AR = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]+/g;
-const TAG = /\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC)\b[^\]]*\]/gi;
+const TAG = /\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC|CHOICE|ORDER)\b[^\]]*\]/gi;
 export function splitTags(t: string) {
   const tags = (t.match(TAG) || []).join(" ");
   const spoken = t.replace(TAG, " ").replace(/\[[^\]]*$/, "").replace(AR, " ").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, " ").trim();
