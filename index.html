@@ -1441,6 +1441,15 @@ function v2Star(n){ if(!L || !L.v2) return; const v = L.v2, stp = v.steps[Math.m
   if(v.fmt === 'game'){ let add = 10 * (n||1); if(stp.k === 'prize'){ add = v.got.prize && !v.prizeWon ? 50 : 0; if(add) v.prizeWon = true; } else if(stp.k !== 'exp') add = 5 * (n||1);
     if(add){ v.pts = (v.pts||0) + add; try{ toast(`🏆 ‎+${add}`); }catch(e){} } }
   burst(); v2Slide(); }
+/* the teacher sometimes moves on in words ("Now for the exit check") without the [NEXT] tag: the slide follows her words */
+const V2_CUES = [['exit', /\b(exit check|last step|final step|last question|final question)\b/i], ['cul', /\b(culture|fun fact)\b/i],
+  ['so', /\b(speak[- ]out|your turn to speak)\b/i], ['dlg', /\b(role[- ]?play|act it out|play the scene)\b|\b(I'm|I am) [A-Z][a-z]+\b[\s\S]{0,160}\b(now )?(you are|you're) [A-Z][a-z]+\b/i], ['prize', /\b(grand prize|prize question)\b/i]];
+function v2Follow(text){ if(!L || !L.v2 || !text) return; const v = L.v2; if(v.doneAll) return;
+  for(const [k, re] of V2_CUES){ if(!re.test(text)) continue;
+    const j = v.steps.findIndex((x, n) => n > v.i && x.k === k); if(j < 0) continue;
+    // only skip ahead to a step that comes right after the current group (never jump over a whole section)
+    if(v.steps.slice(v.i + 1, j).some(x => !['exp','prize','dlg','so','cul'].includes(x.k) && x.k !== k)) continue;
+    while(v.i < j && !v.doneAll) v2Advance(false); if(L.dg) dgSync(L); return; } }
 function v2Advance(auto){ if(!L || !L.v2) return; const v = L.v2; if(v.i >= v.steps.length - 1){ v.doneAll = true; v2Slide(); return; } v.i++; v.at = Date.now(); if(auto) v.auto = (v.auto||0) + 1; v2Slide(); }
 /* the note at the start of every child message: step, time, quick challenges, the child's topic choice, mission goals / quiz points.
    Time: a gentle "wrap up soon" once when a step runs over, "please move on now" only after a big overrun. */
@@ -1504,6 +1513,7 @@ ${{classic:'',
   game:`TODAY'S FORMAT: GAME SHOW. You are the host of the "Hudhud Quiz Show" and the child is the star player. The word games are quiz rounds: Quick fire = ${V2_QUIZ[0].how}; Finish it = ${V2_QUIZ[1].how}; Which one? = ${V2_QUIZ[2].how}. Each good full sentence earns 10 points (the app counts them from your [GOT] and [STAR] and shows the score; the header tells you the total): announce points with energy ("Ten points!"). After round 3 comes the Grand prize question: ONE question that needs a full sentence using 2 of today's expressions together; if right, [GOT] (50 points) and a big celebration, then [NEXT]. Then continue with the role-play and the rest in the same cheerful show tone. Never use words about betting, gambling, jackpots, casinos, lotteries or money; only points and stars.`}[fmt] || ''}
 
 BE FUN — the child must never feel this is a worksheet:
+- BUILD A REAL BOND (children learn more from a teacher they like and trust): once or twice per lesson, at a natural moment (the warm-up, or after a good answer; never in the exit check), ask ONE short personal question about the child: hobbies, favourite game, food, show or sport, what they like or dislike, their day, school, pets, weekend plans. React with real interest and a short follow-up, share one tiny friendly thing about yourself ("I love rainy days too!"), then use what they told you in your later examples. Bring up things they told you in earlier lessons (above) ("Last time you told me you love football. Did you play this week?"). Praise effort specifically, never make them feel embarrassed, say their name sometimes (not every sentence). If their answers get short or tired, add energy with a tiny game or a silly example about something they love. Keep these chats short (one or two turns) and come back to the lesson.
 - Be playful and surprising: little jokes, silly examples, sound effects in words ("Wow!", "Boom!"), mini challenges, and examples about what THIS child loves (their interests above). Vary your praise; never repeat the same phrase twice in a row.
 - React to WHAT the child said (the content), with real curiosity, before you correct or move on.
 - Stars: write [STAR] after an especially good full sentence, a brave try, or a won challenge (about once every 2–3 child turns, never twice in one turn). The app shows the stars to the child; you can mention them ("That's another star!").
@@ -4189,7 +4199,7 @@ async function teacherTurn(userText, attempt){
     const spoken = spokenRaw.trim();
     const tags = parseTags(full);
     if(!moodSet && tags.mood) setMood(tags.mood);
-    lesson.lastSay = spoken; lesson.tw += countWords(spoken); updateTalk();
+    lesson.lastSay = spoken; lesson.tw += countWords(spoken); updateTalk(); if(!tags.next) v2Follow(spoken);
     lesson.history.push({role:'assistant', content:cleanForHistory(full)}); liveFeed(lesson, 't', spoken);
     if(sub) sub.innerHTML = esc(spoken) + (tags.ar ? `<div class="ar">${esc(tags.ar)}</div>` : '');
     askShow(spoken, tags.ar);
@@ -4315,6 +4325,7 @@ function dgPrompt(lesson){ return lesson.rules + `
 VOICE MODE: the child talks to you live; their words come to you as text from speech recognition. There is no header in front of their messages: the CURRENT STATUS below replaces it and is kept up to date by the app.
 Children often pause in the middle of a sentence: if their message looks unfinished, say only "Go on!" and wait.
 Remember: give hints (a sentence start like "My name is ..."), never the full answer for them to copy.
+TAGS STILL MATTER IN VOICE MODE: the app removes your tags before the voice reads your reply, so your earlier replies in this conversation look as if they had no tags. Keep writing them at the end of EVERY reply exactly as the rules say ([GOT], [STAR], [NEXT], [FIX:...], [EXIT:...], [END], [MOOD:...]): the slides, stars and the report only move when you write them. When you move to the next step, you MUST write [NEXT].
 KEEP EVERY REPLY SHORT: at most 2 short sentences (about 25 words) before your question. React in a few words, give ONE tip at most, then ask. Long explanations bore children; the child should talk more than you.
 CURRENT STATUS: ${dgStatus(lesson)}`; }
 async function dgStart(lesson){
@@ -4427,7 +4438,7 @@ function dgEvent(lesson, m){ const d = lesson.dg;
         const last = lesson.history[lesson.history.length - 1]; lesson.tw += countWords(txt); updateTalk(); liveFeed(lesson, 't', txt);
         if(last && last.role === 'assistant' && !last.tagged){ last.content += ' ' + txt; lesson.lastSay = (lesson.lastSay ? lesson.lastSay + ' ' : '') + txt; }
         else { lesson.history.push({role:'assistant', content:txt}); lesson.lastSay = txt; }
-        karaShow(lesson, txt); askShow(lesson.lastSay, ''); }
+        karaShow(lesson, txt); askShow(lesson.lastSay, ''); v2Follow(txt); }
       break; }
     case 'FunctionCallRequest': (m.functions || []).forEach(f => { let a = {}; try{ a = JSON.parse(f.arguments || '{}'); }catch(e){}
       if(f.name === 'lesson_event') dgTags(lesson, String(a.tags || ''));
@@ -6966,7 +6977,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15l';
+const APP_VER = '2026-11-15m';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
