@@ -3863,6 +3863,7 @@ function startLesson(k, trial, opt){
   demoN = 0;
   renderRoom(); v2Slide();
   L.tick = setInterval(tickRoom, 1000); tickRoom();
+  if(dgOn(k)){ L.firstWave = true; dgStart(L); return; }
   teacherTurn(L.history.length ? '(The student came back to the class. Welcome them back and continue.)' : '(The student just joined the class. Greet them warmly by nickname and start chatting.)');
 }
 /* ---- lesson resume: a reload, a crash or iOS closing the app mid-lesson used to lose the whole conversation.
@@ -3962,10 +3963,10 @@ function renderRoom(){
   updateTalk();
   $('#rep').onclick = () => { if(L.lastSay){ interrupt(false); sayAll(L.lastSay, true); } };
   $('#mic').onclick = onMicTap;
-  $('#tbox').onclick = () => { if(L.state === 'speaking' && Date.now() - (L.speakAt || 0) > 2000) { interrupt(true); } };
+  $('#tbox').onclick = () => { if(L.dg) return; if(L.state === 'speaking' && Date.now() - (L.speakAt || 0) > 2000) { interrupt(true); } };
   $('#kb').onclick = () => { const t = $('#typer'); t.hidden = !t.hidden; if(!t.hidden){ stopListening(); $('#msg').focus(); } };
   $('#typer').addEventListener('submit', e => { e.preventDefault(); const v = $('#msg').value.trim(); if(!v) return; $('#msg').value = ''; studentSaid(v); });
-  $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } if(L.review){ finishReview(); return; } teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
+  $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } if(L.review){ finishReview(); return; } if(L.dg && dgSay(L, '(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)')) return; teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
   setState('idle'); setMood('happy');
   L.firstWave = true; blinkLoop(); idleGlance();
   liveSetup();
@@ -3978,7 +3979,7 @@ function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt
   if(L.v2 && !L.v2.doneAll){ const v = L.v2, stp = v.steps[v.i], now = Date.now();
     const busy = ['listening','speaking','thinking'].includes(L.state) || L.speaking || !!L.ctl || (L.talking && !!L.rec) || (L.queue && L.queue.length);
     if(busy || !v.idleAt) v.idleAt = now;
-    if(!busy && (now - v.at)/1000 > stp.sec + 180 && now - v.idleAt > 25000){ v.idleAt = now; v2Advance(true); } } }
+    if(!busy && (now - v.at)/1000 > stp.sec + 180 && now - v.idleAt > 25000){ v.idleAt = now; v2Advance(true); if(L.dg) dgSync(L); } } }
 
 const STATE_TXT = {idle:'', thinking:'المعلمة تفكر…', speaking:'المعلمة تتكلم · اضغط عليها لتقاطعها', listening:'دورك! تكلم بالإنجليزي 🎤', tap:'اضغط زر المايكروفون 🎤 وتكلّم'};
 const STATE_TXT_M = {thinking:'المعلم يفكر…', speaking:'المعلم يتكلم · اضغط عليه لتقاطعه'};
@@ -4280,9 +4281,151 @@ function showBoard(b){ const el = $('#boardBox'); if(!el) return; boardWrite(b.e
 function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right){ return; }
   el.innerHTML = `<div class="fix"><div class="small" style="font-weight:800">انتبه للتصحيح</div><div class="wr en">${esc(f.wrong)}</div><div class="rt">${esc(f.right)}</div>${f.tip?`<div class="small">${esc(f.tip)}</div>`:''}</div>`; }
 
+/* =============== DEEPGRAM VOICE LESSON (trial engine, per child: DB.profiles[k].engine === 'dg') ===============
+   One WebSocket to Deepgram's Voice Agent does the listening (Flux: knows when the child finished), the thinking (Claude,
+   through our relay /ai/llm, so the key stays on the server) and the speaking (Aura-2), with natural barge-in.
+   The teacher prompt and its tags are the same as the normal lesson: the relay removes the tags from what is spoken and
+   hands them to the app as one "lesson_event" function call, which this file applies (slides, stars, board, end). */
+const DG_URL = 'wss://agent.deepgram.com/v1/agent/converse';
+function dgOn(k){ return !DEMO && relayOn() && ((DB.profiles || {})[k] || {}).engine === 'dg' && typeof WebSocket !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
+function dgNote(lesson, msg){ try{ liveFeed(lesson, 'x', '⚠ ' + msg); }catch(e){} console.warn('dg', msg); }
+function dgStatus(lesson){ const v = lesson.v2; if(!v) return `minute ${elapsedMin()}`;
+  return `[minute ${elapsedMin()} of ${LESSON_MIN} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}]`; }
+function dgPrompt(lesson){ return lesson.rules + `
+
+VOICE MODE: the child talks to you live; their words come to you as text from speech recognition. There is no header in front of their messages: the CURRENT STATUS below replaces it and is kept up to date by the app.
+CURRENT STATUS: ${dgStatus(lesson)}`; }
+async function dgStart(lesson){
+  const k = lesson.kid, t = teacherOf(k), level = DB.kids[k].level;
+  const old = lesson.dg; lesson.dg = {ws:null, ac:null, mic:null, play:[], playEnd:0, muted:!!(old && old.muted), open:false, closing:false, retried:!!(old && old.retried)};
+  const d = lesson.dg;
+  // the audio context is made now, inside the child's tap (iOS only lets sound start from a tap)
+  const AC = window.AudioContext || window.webkitAudioContext, ac = new AC(); d.ac = ac; try{ ac.resume(); }catch(e){}
+  setState('thinking');
+  let tok;
+  try{ const r = await fetch(RELAY + 'dgtoken', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token})});
+    if(!r.ok) throw new Error('dgtoken ' + r.status); tok = (await r.json()).token; }
+  catch(e){ dgNote(lesson, 'token ' + (e.message || e)); dgFallback(lesson); return; }
+  if(L !== lesson || lesson.dg !== d) return;
+  // audio: one context for the microphone (16 kHz PCM to Deepgram) and the teacher's voice (24 kHz PCM from Deepgram)
+  let stream;
+  try{ stream = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true, noiseSuppression:true, autoGainControl:true, channelCount:1}}); }
+  catch(e){ dgNote(lesson, 'mic ' + (e.name || e)); alertBox('اسمح للميكروفون من إعدادات سفاري حتى تبدأ الحصة.'); dgFallback(lesson); return; }
+  try{ await ac.resume(); }catch(e){}
+  d.stream = stream;
+  const ws = new WebSocket(DG_URL, ['bearer', tok]); ws.binaryType = 'arraybuffer'; d.ws = ws;
+  const fns = [{name:'lesson_event', description:'Internal: used by the app. Never call it yourself.', parameters:{type:'object', properties:{tags:{type:'string', description:'lesson tags'}}, required:['tags']}}];
+  ws.onopen = () => {
+    ws.send(JSON.stringify({type:'Settings', tags:['hudhud', k],
+      audio:{input:{encoding:'linear16', sample_rate:16000}, output:{encoding:'linear16', sample_rate:24000, container:'none'}},
+      agent:{
+        listen:{provider:{type:'deepgram', version:'v2', model:'flux-general-en', eot_threshold:0.75, eot_timeout_ms:level <= 6 ? 6000 : 5000,
+          keyterms:[nick(k)].concat(typeof livePhrases === 'function' ? livePhrases() : []).filter(Boolean).slice(0, 40)}},
+        think:{provider:{type:'anthropic', model:'claude-haiku-5-5', temperature:0.8},
+          endpoint:{url:RELAY + 'llm', headers:{'x-hh-token':CLOUD.token}},
+          prompt:dgPrompt(lesson), functions:fns},
+        context:lesson.history.length ? {messages:lesson.history.slice(-30).map(h => ({type:'History', role:h.role, content:String(h.content).replace(/\[[A-Z]+(:[^\]]*)?\]/g, '').replace(/^Student: /, '').trim() || '...'}))} : undefined,
+        speak:{provider:{type:'deepgram', model:t.female ? 'aura-2-iris-en' : 'aura-2-aries-en', speed:level <= 6 ? 0.9 : 1.0}}
+      }}));
+  };
+  ws.onmessage = ev => { if(L !== lesson || lesson.dg !== d) return; if(typeof ev.data !== 'string'){ dgPlay(lesson, ev.data); return; }
+    let m; try{ m = JSON.parse(ev.data); }catch(e){ return; } dgEvent(lesson, m); };
+  ws.onerror = () => dgNote(lesson, 'socket error');
+  ws.onclose = ev => { if(L !== lesson || lesson.done || d.closing || lesson.dg !== d) return; dgNote(lesson, 'closed ' + ev.code + ' ' + (ev.reason || ''));
+    if(!d.open){ dgFallback(lesson); return; }
+    // dropped mid-lesson: reconnect once quietly, with the conversation so far
+    if(!d.retried){ d.retried = true; dgStop(lesson); setTimeout(() => { if(L === lesson && !lesson.done) dgStart(lesson); }, 800); }
+    else { setState('idle'); const sub = $('#sub'); if(sub) sub.innerHTML = '<div class="ar">انقطع الاتصال بالمعلم. اضغط «حاول مرة ثانية».</div><div style="text-align:right;margin-top:8px"><button class="btn sm" id="retry" type="button">حاول مرة ثانية</button></div>';
+      const b = $('#retry'); if(b) b.onclick = () => { d.retried = false; dgStop(lesson); dgStart(lesson); }; } };
+  d.ka = setInterval(() => { if(ws.readyState === 1 && d.muted) ws.send(JSON.stringify({type:'KeepAlive'})); }, 5000);
+  d.st = setInterval(() => dgSync(lesson), 30000);
+}
+/* the microphone starts once Deepgram applied the settings: 16 kHz mono 16-bit PCM in ~40 ms frames */
+async function dgMic(lesson){ const d = lesson.dg, ac = d.ac, src = ac.createMediaStreamSource(d.stream), ratio = ac.sampleRate / 16000;
+  let carry = new Float32Array(0);
+  const send = f => { if(!d.ws || d.ws.readyState !== 1 || d.muted) return;
+    const all = new Float32Array(carry.length + f.length); all.set(carry); all.set(f, carry.length);
+    const n = Math.floor(all.length / ratio), out = new Int16Array(n);
+    for(let i = 0; i < n; i++){ const s = Math.max(-1, Math.min(1, all[Math.floor(i * ratio)])); out[i] = s < 0 ? s * 0x8000 : s * 0x7fff; }
+    carry = all.slice(Math.floor(n * ratio)); if(n) d.ws.send(out.buffer); };
+  const sp = ac.createScriptProcessor(2048, 1, 1); sp.onaudioprocess = e => send(new Float32Array(e.inputBuffer.getChannelData(0)));
+  const mute = ac.createGain(); mute.gain.value = 0; src.connect(sp); sp.connect(mute); mute.connect(ac.destination); d.mic = {src, sp, mute}; }
+function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac) return; const i16 = new Int16Array(buf); if(!i16.length) return;
+  const ab = ac.createBuffer(1, i16.length, 24000), ch = ab.getChannelData(0); for(let i = 0; i < i16.length; i++) ch[i] = i16[i] / 32768;
+  const s = ac.createBufferSource(); s.buffer = ab; s.connect(ac.destination);
+  const at = Math.max(ac.currentTime + 0.03, d.playEnd); s.start(at); d.playEnd = at + ab.duration; d.play.push(s);
+  s.onended = () => { d.play = d.play.filter(x => x !== s); if(!d.play.length && d.audioDone) dgSpoke(lesson); };
+  if(lesson.state !== 'speaking'){ setState('speaking'); if(lesson.firstWave){ lesson.firstWave = false; setPose('wave', 2800); } }
+  if(!lesson.mouthT) mouthWalk('abababababababababababababababab', 70); }
+function dgHush(lesson){ const d = lesson.dg; d.play.forEach(s => { try{ s.onended = null; s.stop(); }catch(e){} }); d.play = []; d.playEnd = 0; stopMouth(); setMouth('rest'); }
+/* the teacher's voice has finished playing */
+function dgSpoke(lesson){ const d = lesson.dg; d.audioDone = false; stopMouth(); setMouth('rest'); lesson.tAudioEnd = Date.now();
+  if(lesson.endSeen){ finishLesson(); return; }
+  setState(d.muted ? 'idle' : 'listening'); lesson.listenStart = Date.now(); }
+function dgEvent(lesson, m){ const d = lesson.dg;
+  switch(m.type){
+    case 'SettingsApplied': d.open = true; dgMic(lesson).catch(e => dgNote(lesson, 'mic ' + e));
+      d.ws.send(JSON.stringify({type:'InjectUserMessage', content: lesson.history.length ? '(The student came back to the class. Welcome them back and continue where we were.)' : '(The student just joined the class. Greet them warmly by nickname and start the lesson.)'}));
+      break;
+    case 'UserStartedSpeaking': dgHush(lesson); setState('listening'); lesson.talking = true; break;
+    case 'AgentThinking': setState('thinking'); break;
+    case 'AgentStartedSpeaking': lesson.talking = false; break;
+    case 'AgentAudioDone': d.audioDone = true; if(!d.play.length) dgSpoke(lesson); break;
+    case 'ConversationText': {
+      const txt = String(m.content || '').trim(); if(!txt || /^\(/.test(txt)) break;
+      if(m.role === 'user'){ const u = 'Student: ' + txt; lesson.talking = false; lesson.sw += countWords(txt); updateTalk(); lesson.history.push({role:'user', content:u}); liveFeed(lesson, 'k', u);
+        const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('note', 'live'); you.textContent = txt; } setState('thinking'); }
+      else { lesson.lastSay = txt; lesson.tw += countWords(txt); updateTalk(); lesson.history.push({role:'assistant', content:txt}); liveFeed(lesson, 't', txt);
+        const sub = $('#sub'); if(sub) sub.innerHTML = esc(txt); askShow(txt, ''); }
+      break; }
+    case 'FunctionCallRequest': (m.functions || []).forEach(f => { let a = {}; try{ a = JSON.parse(f.arguments || '{}'); }catch(e){}
+      if(f.name === 'lesson_event') dgTags(lesson, String(a.tags || ''));
+      if(f.client_side !== false) d.ws.send(JSON.stringify({type:'FunctionCallResponse', id:f.id, name:f.name, content:'ok'})); }); break;
+    case 'Error': dgNote(lesson, 'error ' + (m.code || '') + ' ' + (m.description || '')); break;
+    case 'Warning': console.warn('dg warning', m); break;
+  }
+}
+/* the same effects as the tags of a normal teacher turn */
+function dgTags(lesson, full){ const tags = parseTags(full);
+  if(tags.mood) setMood(tags.mood);
+  const last = lesson.history[lesson.history.length - 1]; if(last && last.role === 'assistant') last.content += '\n' + full.replace(/\[MOOD:[^\]]*\]/gi, '').trim();
+  const sub = $('#sub'); if(sub && tags.ar) sub.innerHTML = esc(lesson.lastSay || '') + `<div class="ar">${esc(tags.ar)}</div>`;
+  if(tags.ar) askShow(lesson.lastSay || '', tags.ar);
+  if(tags.board && tags.board.word){ showBoard(tags.board); (lesson.boardWords = lesson.boardWords || []).push(tags.board.word); }
+  showFix(tags.fix); if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
+  if(lesson.v2){ const v = lesson.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)];
+    if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
+    if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide();
+    if(tags.exit) v.exit = tags.exit;
+    let adv = !!tags.next; if(!adv && stp.k === 'exp' && (stp.pair || [stp.i]).every(x => v.got['exp' + x])) adv = true;
+    if(adv){ v2Advance(false); dgSync(lesson); }
+    if(tags.end && v.doneAll) lesson.endSeen = true; }
+  if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
+  if(elapsedMin() >= LESSON_MIN + 4) lesson.endSeen = true;
+  if(lesson.endSeen && !lesson.dg.play.length && lesson.state !== 'speaking') setTimeout(() => { if(L === lesson && !lesson.done) finishLesson(); }, 1500);
+}
+/* keep the teacher's view of the lesson (step, minute, time left) current */
+function dgSync(lesson){ const d = lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1 || !d.open) return;
+  try{ d.ws.send(JSON.stringify({type:'UpdatePrompt', prompt:dgPrompt(lesson)})); }catch(e){} }
+function dgStop(lesson){ const d = lesson && lesson.dg; if(!d) return; d.closing = true; clearInterval(d.ka); clearInterval(d.st);
+  dgHush(lesson);
+  try{ if(d.mic){ d.mic.sp.onaudioprocess = null; d.mic.src.disconnect(); d.mic.sp.disconnect(); } }catch(e){}
+  try{ d.stream && d.stream.getTracks().forEach(t => t.stop()); }catch(e){}
+  try{ d.ws && d.ws.close(); }catch(e){} try{ d.ac && d.ac.close(); }catch(e){} }
+/* typed answers and app messages go into the same conversation */
+function dgSay(lesson, text){ const d = lesson && lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1) return false;
+  d.ws.send(JSON.stringify({type:'InjectUserMessage', content:text})); setState('thinking'); return true; }
+/* Deepgram could not start (no key yet, blocked, …): the normal lesson engine takes over */
+function dgFallback(lesson){ if(L !== lesson || lesson.done) return; dgStop(lesson); lesson.dg = null;
+  teacherTurn(lesson.history.length ? '(The student came back to the class. Welcome them back and continue.)' : '(The student just joined the class. Greet them warmly by nickname and start chatting.)'); }
+/* the mic button: mute / unmute the child (the conversation itself never needs a tap) */
+function dgMicTap(lesson){ const d = lesson.dg; if(!d) return; d.muted = !d.muted;
+  if(d.muted){ setState('idle'); toast('🔇 المايكروفون مقفول'); } else { setState(d.play.length ? 'speaking' : 'listening'); toast('🎤 المايكروفون مفتوح'); } }
+
 /* ---- listening ---- */
 function onMicTap(){
   if(!L || L.done) return;
+  if(L.dg){ dgMicTap(L); return; }
   // second tap while listening = stop now: send what was said, or (if nothing) stop and wait for the next tap
   if(L.state === 'listening'){ if(!L.rec){ startListening(true); return; } L.manualStop = true; stopListening(true); setState('thinking'); return; }
   if(L.net){ netRetry(L); return; } // waiting for the internet: a tap tries again now
@@ -4343,6 +4486,7 @@ function stopListening(submit){
   if(L.state === 'listening') setState('idle');
 }
 function studentSaid(text){
+  if(L && L.dg && dgSay(L, text)){ const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; } return; }
   if(L){ L.sw += countWords(text); updateTalk(); hcAdd('turns'); }
   const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; }
   if(L){ L.turnT = {end:L.tSpeechEnd || 0, text:Date.now(), conf:L.tConf}; L.tSpeechEnd = 0; L.tConf = undefined; setState('thinking'); ackPlay(); }
@@ -4351,7 +4495,7 @@ function studentSaid(text){
 
 /* ---- finish ---- */
 async function finishLesson(){
-  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; stopListening(); setState('idle'); clearInterval(lesson.tick); wakeOff();
+  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; dgStop(lesson); stopListening(); setState('idle'); clearInterval(lesson.tick); wakeOff();
   const k = lesson.kid, mins = elapsedMin(), plan = lesson.plan;
   lessonWrap(lesson);
   const ov = document.createElement('div'); ov.className = 'ov';
@@ -4552,8 +4696,8 @@ function lessonUtterance(u){ try{
 function lessonPaOn(){ return typeof paOn === 'function' && paOn(); }
 function lessonPronSummary(lesson){ const a = (lesson && lesson.pron) || []; if(!a.length) return null;
   return {avg:Math.round(a.reduce((s, x) => s + (Number(x.score) || 0), 0) / a.length), items:a.map(x => ({w:x.w, score:x.score}))}; }
-function leaveRoomQuiet(){ wakeOff(); stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
-function leaveRoom(){ wakeOff(); stopCam(); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
+function leaveRoomQuiet(){ wakeOff(); stopCam(); if(L) dgStop(L); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
+function leaveRoom(){ wakeOff(); stopCam(); if(L) dgStop(L); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
@@ -6762,7 +6906,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15c';
+const APP_VER = '2026-11-15d';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });

@@ -5,6 +5,10 @@
 // Daily caps (schema_9): per child and per family, requests/day and a rough token budget (sum of max_tokens).
 // Defaults below; a family can override them with the row "limits/@all" = {kidDay, famDay, kidTok, famTok}.
 // Over a cap -> 429 {error:{type:"daily_limit", scope:"kid"|"family"}}. Counters: tk_ai_usage, failures: tk_ai_err.
+// POST /ai/dgtoken {t}      -> {token}: a 60-second Deepgram Voice Agent token (server secret DEEPGRAM_API_KEY); the browser opens
+//                              wss://agent.deepgram.com/v1/agent/converse with it (Sec-WebSocket-Protocol: bearer, <token>)
+// POST /ai/llm  (header x-hh-token = the child's session token) -> the Anthropic Messages API in Anthropic format, for
+//                              Deepgram's "think" step (BYO LLM): Deepgram calls it from its servers; the family's key stays here.
 // POST /ai/health (header x-hh-health = env HH_HEALTH_SECRET; 404 when that env is not set) -> {ok, checks:{sessions, rows, key, usage}, ms}:
 // the same service-role reads a real lesson request needs, spending nothing. Called by the notify watchdog (DEPLOY_10).
 import { createClient } from "npm:@supabase/supabase-js@2.45.4";
@@ -156,6 +160,7 @@ async function handle(req: Request) {
   const route = new URL(req.url).pathname.split("/").pop();
   if (route === "health") return await healthRoute(req, sb, Deno.env.get("HH_HEALTH_SECRET") || undefined);
   if (req.method !== "POST") return json(req, { error: "method" }, 405);
+  if (route === "llm") return await llmRoute(req);
   let b: any; try { b = await req.json(); } catch { return json(req, { error: "bad_json" }, 400); }
   const s = await session(b && b.t); if (!s) return json(req, { error: "bad_session" }, 401);
 
@@ -182,6 +187,16 @@ async function handle(req: Request) {
     return new Response(r.body, { status: r.status, headers: { ...cors(req), "content-type": r.headers.get("content-type") || "application/json", "cache-control": "no-store" } });
   }
 
+  if (route === "dgtoken") {
+    const key = Deno.env.get("DEEPGRAM_API_KEY"); if (!key) return json(req, { error: "no_deepgram" }, 412);
+    if (limited("dg|" + b.t, 10)) return json(req, { error: { type: "rate_limit", message: "too many requests" } }, 429);
+    let r: Response;
+    try { r = await fetch("https://api.deepgram.com/v1/auth/grant", { method: "POST", headers: { Authorization: "Token " + key, "content-type": "application/json" }, body: JSON.stringify({ ttl_seconds: 60 }) }); }
+    catch { noteErr("dgtoken", 502); return json(req, { error: "deepgram unreachable" }, 502); }
+    if (!r.ok) { noteErr("dgtoken", r.status); return json(req, { error: "deepgram " + r.status }, 502); }
+    const j = await r.json(); return json(req, { token: j.access_token, expires: j.expires_in });
+  }
+
   if (route === "aztoken") {
     const c = azC.get(s.fam); if (c && Date.now() - c.at < 8 * 60e3) return json(req, { token: c.token, region: c.region });
     const az = await famRow(s.fam, "azure"); if (!az || !az.key || !az.region) return json(req, { error: "no_azure" }, 412);
@@ -194,4 +209,95 @@ async function handle(req: Request) {
     return json(req, { token, region: az.region });
   }
   return json(req, { error: "route" }, 404);
+}
+
+// ---------- Deepgram "think" step: Anthropic-format pass-through, authenticated by the child's session token ----------
+const LLM_MODEL = "claude-haiku-5-5";
+async function llmRoute(req: Request) {
+  const t = req.headers.get("x-hh-token") || ""; const s = await session(t);
+  if (!s) return new Response(JSON.stringify({ type: "error", error: { type: "authentication_error", message: "bad_session" } }), { status: 401, headers: { "content-type": "application/json" } });
+  let body: any; try { body = await req.json(); } catch { return new Response('{"error":"bad_json"}', { status: 400 }); }
+  if (limited(t, 40)) return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "too many requests" } }), { status: 429, headers: { "content-type": "application/json" } });
+  const key = await famRow(s.fam, "apiKey"); if (!key || typeof key !== "string") return new Response('{"error":"no_key"}', { status: 412 });
+  if (isOurToolResult(body)) return emptyTurn(!!body.stream);
+  body.model = MODELS.has(body.model) ? body.model : LLM_MODEL;
+  body.max_tokens = Math.min(Number(body.max_tokens) || 300, 600);
+  const day = today(), kid = who(s), lim = await limitsOf(s.fam), { k, f } = await usage(s.fam, kid, day);
+  if ((s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok)) || f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok)
+    return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "daily limit" } }), { status: 429, headers: { "content-type": "application/json" } });
+  k.n++; k.dn++; k.tok += body.max_tokens; k.dtok += body.max_tokens; f.n++; f.tok += body.max_tokens; tick();
+  let r: Response;
+  try {
+    r = await fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" }, body: JSON.stringify(body) });
+  } catch { noteErr("llm", 502); return new Response('{"error":"upstream"}', { status: 502 }); }
+  if (r.status >= 400) { noteErr("llm", r.status); return new Response(r.body, { status: r.status, headers: { "content-type": r.headers.get("content-type") || "application/json" } }); }
+  if (!body.stream) { // whole reply: move the tags out of the spoken text into a lesson_event tool call
+    const j: any = await r.json(); const txt = (j.content || []).filter((c: any) => c.type === "text").map((c: any) => c.text).join("");
+    const { spoken, tags } = splitTags(txt);
+    j.content = (j.content || []).filter((c: any) => c.type !== "text"); if (spoken) j.content.unshift({ type: "text", text: spoken });
+    if (tags) { j.content.push({ type: "tool_use", id: "toolu_hh" + crypto.randomUUID().replace(/-/g, "").slice(0, 20), name: "lesson_event", input: { tags } }); j.stop_reason = "tool_use"; }
+    return new Response(JSON.stringify(j), { status: 200, headers: { "content-type": "application/json" } });
+  }
+  return new Response(r.body!.pipeThrough(tagStream()), { status: 200, headers: { "content-type": "text/event-stream", "cache-control": "no-store" } });
+}
+
+// ---------- tags out of the voice: "[GOT] [NEXT] [MOOD:happy]" are not read aloud; they become one lesson_event call ----------
+const AR = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]+/g;
+const TAG = /\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC)\b[^\]]*\]/gi;
+export function splitTags(t: string) {
+  const tags = (t.match(TAG) || []).join(" ");
+  const spoken = t.replace(TAG, " ").replace(/\[[^\]]*$/, "").replace(AR, " ").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, " ").trim();
+  return { spoken, tags };
+}
+// the answer to our own lesson_event call needs no model: an empty turn (the teacher already spoke)
+export function isOurToolResult(body: any) {
+  const m = (body.messages || [])[body.messages.length - 1]; if (!m || m.role !== "user" || !Array.isArray(m.content)) return false;
+  return m.content.length > 0 && m.content.every((c: any) => c.type === "tool_result" && String(c.tool_use_id || "").startsWith("toolu_hh"));
+}
+export function emptyTurn(stream: boolean) {
+  const id = "msg_hh" + Date.now();
+  if (!stream) return new Response(JSON.stringify({ id, type: "message", role: "assistant", model: LLM_MODEL, content: [], stop_reason: "end_turn", stop_sequence: null, usage: { input_tokens: 0, output_tokens: 0 } }), { status: 200, headers: { "content-type": "application/json" } });
+  const ev = (e: string, d: unknown) => `event: ${e}\ndata: ${JSON.stringify(d)}\n\n`;
+  const s = ev("message_start", { type: "message_start", message: { id, type: "message", role: "assistant", model: LLM_MODEL, content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 0, output_tokens: 0 } } })
+    + ev("message_delta", { type: "message_delta", delta: { stop_reason: "end_turn", stop_sequence: null }, usage: { output_tokens: 0 } }) + ev("message_stop", { type: "message_stop" });
+  return new Response(s, { status: 200, headers: { "content-type": "text/event-stream" } });
+}
+/* rewrites the Anthropic event stream: text is passed on without tags/Arabic (held back from the first "[" to the end),
+   and the tags are added as a tool_use block "lesson_event" with stop_reason "tool_use" */
+export function tagStream() {
+  const enc = new TextEncoder(), dec = new TextDecoder(); let buf = "", held = "", textIdx = -1, maxIdx = -1, sentAny = false;
+  const ev = (e: string, d: unknown) => enc.encode(`event: ${e}\ndata: ${JSON.stringify(d)}\n\n`);
+  const clean = (t: string) => t.replace(AR, " ");
+  return new TransformStream<Uint8Array, Uint8Array>({
+    transform(chunk, ctl) {
+      buf += dec.decode(chunk, { stream: true }); let i;
+      while ((i = buf.indexOf("\n\n")) >= 0) {
+        const raw = buf.slice(0, i); buf = buf.slice(i + 2);
+        const line = raw.split("\n").find((l) => l.startsWith("data:")); if (!line) continue;
+        let d: any; try { d = JSON.parse(line.slice(5).trim()); } catch { continue; }
+        const name = d.type;
+        if (typeof d.index === "number") maxIdx = Math.max(maxIdx, d.index);
+        if (name === "content_block_start" && d.content_block?.type === "text") { textIdx = d.index; ctl.enqueue(ev(name, d)); continue; }
+        if (name === "content_block_delta" && d.delta?.type === "text_delta" && d.index === textIdx) {
+          let t: string = d.delta.text || "";
+          if (held || t.includes("[")) { const k = held ? 0 : t.indexOf("["); const now = t.slice(0, k); held += t.slice(k); t = now; }
+          t = clean(t); if (t) { sentAny = true; ctl.enqueue(ev(name, { ...d, delta: { type: "text_delta", text: t } })); }
+          continue;
+        }
+        if (name === "content_block_stop" && d.index === textIdx) {
+          const { spoken, tags } = splitTags(held);
+          if (spoken) ctl.enqueue(ev("content_block_delta", { type: "content_block_delta", index: textIdx, delta: { type: "text_delta", text: (sentAny ? " " : "") + spoken } }));
+          ctl.enqueue(ev(name, d)); held = tags; continue; // held now = the tags to hand over
+        }
+        if (name === "message_delta" && held) {
+          const idx = maxIdx + 1, id = "toolu_hh" + crypto.randomUUID().replace(/-/g, "").slice(0, 20);
+          ctl.enqueue(ev("content_block_start", { type: "content_block_start", index: idx, content_block: { type: "tool_use", id, name: "lesson_event", input: {} } }));
+          ctl.enqueue(ev("content_block_delta", { type: "content_block_delta", index: idx, delta: { type: "input_json_delta", partial_json: JSON.stringify({ tags: held }) } }));
+          ctl.enqueue(ev("content_block_stop", { type: "content_block_stop", index: idx }));
+          held = ""; ctl.enqueue(ev(name, { ...d, delta: { ...d.delta, stop_reason: "tool_use" } })); continue;
+        }
+        ctl.enqueue(ev(name, d));
+      }
+    },
+  });
 }
