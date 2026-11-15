@@ -159,6 +159,7 @@ async function handle(req: Request) {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors(req) });
   const route = new URL(req.url).pathname.split("/").pop();
   if (route === "health") return await healthRoute(req, sb, Deno.env.get("HH_HEALTH_SECRET") || undefined);
+  if (route === "selftest") return await selfTest(req);
   if (req.method !== "POST") return json(req, { error: "method" }, 405);
   if (route === "llm") return await llmRoute(req);
   let b: any; try { b = await req.json(); } catch { return json(req, { error: "bad_json" }, 400); }
@@ -335,4 +336,47 @@ export function tidy(body: any) {
   body.messages = out; if (sys.length) body.system = sys.join("\n\n");
   delete body.temperature; delete body.top_p; delete body.top_k;
   return body;
+}
+
+// ---------- self test: the REAL lesson path, end to end, with real calls (header x-hh-health = HH_HEALTH_SECRET) ----------
+// 1) a live lesson turn exactly as the app sends it (Sonnet 5.5, tuned like tuneBody) -> must come back with spoken text
+// 2) the voice path as Deepgram calls /ai/llm (Haiku 5.5, stream, tools) through tidy + tagStream -> spoken text + tags
+// 3) a Deepgram token. Each check reports ok, ms and a short reason; nothing personal is sent.
+async function selfTest(req: Request) {
+  const secret = Deno.env.get("HH_HEALTH_SECRET"); const h = { "content-type": "application/json", "cache-control": "no-store" };
+  if (!secret) return new Response('{"error":"route"}', { status: 404, headers: h });
+  if (!sameSecret(req.headers.get("x-hh-health") || "", secret)) return new Response('{"error":"forbidden"}', { status: 403, headers: h });
+  const t0 = Date.now(), checks: Record<string, any> = {};
+  const { data: ss } = await sb.from("tk_sessions").select("family_id").order("seen_at", { ascending: false }).limit(1);
+  const fam = ss && ss[0] && ss[0].family_id; const key = fam ? await famRow(fam, "apiKey") : null;
+  const sys = "You are Teacher Adam, a warm English teacher for a 10-year-old Saudi child in a live voice lesson. Reply in 1-3 short sentences and end with a question. After the spoken text add the tags [GOT] [NEXT] when the child answered correctly, and finish with [MOOD:happy].";
+  const msgs = [{ role: "user", content: "(The student just joined the class. Greet them.)" }, { role: "assistant", content: "Hello Ahmed! I'm Teacher Adam. What's your name?\n[MOOD:happy]" }, { role: "user", content: "[minute 1 · step 1/9] Student: My name is Ahmed." }];
+  const ant = (b: any) => fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: { "content-type": "application/json", "x-api-key": String(key), "anthropic-version": "2023-06-01" }, body: JSON.stringify(b), signal: AbortSignal.timeout(25000) });
+  const check = async (name: string, f: () => Promise<any>) => { const s0 = Date.now(); try { checks[name] = { ...(await f()), ms: Date.now() - s0 }; } catch (e) { checks[name] = { ok: false, why: String((e as any)?.message || e).slice(0, 200), ms: Date.now() - s0 }; } };
+  if (!key) checks.key = { ok: false, why: "no apiKey row" };
+  else {
+    await check("lessonTurn", async () => {
+      const r = await ant({ model: "claude-sonnet-5-5", max_tokens: 250, thinking: { type: "between_tools" }, output_config: { effort: "high" }, system: sys, messages: msgs });
+      const j: any = await r.json(); if (r.status !== 200) return { ok: false, why: `${r.status} ${JSON.stringify(j.error || j).slice(0, 200)}` };
+      const txt = (j.content || []).filter((c: any) => c.type === "text").map((c: any) => c.text).join(""); const sp = splitTags(txt).spoken;
+      return { ok: sp.length > 3, why: sp ? "" : "empty reply (" + j.stop_reason + ")", say: sp.slice(0, 80) };
+    });
+    await check("voiceTurn", async () => {
+      const body: any = tidy({ model: LLM_MODEL, max_tokens: 300, stream: true, system: sys, messages: msgs.map((m) => ({ role: m.role, content: m.content.replace(/^\[minute[^\]]*\]\s*/, "").replace(/^Student: /, "").replace(/\n?\[MOOD:[^\]]*\]/, "") })),
+        tools: [{ name: "lesson_event", description: "Internal: used by the app. Never call it yourself.", input_schema: { type: "object", properties: { tags: { type: "string" } }, required: ["tags"] } }] });
+      body.thinking = { type: "disabled" }; body.output_config = { effort: "medium" };
+      const r = await ant(body); if (r.status !== 200) return { ok: false, why: `${r.status} ${(await r.text()).slice(0, 200)}` };
+      const out = await new Response(r.body!.pipeThrough(tagStream())).text(); let say = "", tags = "", stop = "";
+      for (const b of out.split("\n\n")) { const l = b.split("\n").find((x) => x.startsWith("data:")); if (!l) continue; let d: any; try { d = JSON.parse(l.slice(5)); } catch { continue; }
+        if (d.delta?.type === "text_delta") say += d.delta.text; if (d.delta?.partial_json) tags += d.delta.partial_json; if (d.type === "message_delta") stop = d.delta?.stop_reason || ""; }
+      return { ok: say.trim().length > 3 && !/\[/.test(say), why: say.trim() ? (/\[/.test(say) ? "tags spoken" : "") : "empty reply (" + stop + ")", say: say.trim().slice(0, 80), tags: tags.slice(0, 80) };
+    });
+  }
+  await check("deepgram", async () => {
+    const k = Deno.env.get("DEEPGRAM_API_KEY"); if (!k) return { ok: false, why: "no DEEPGRAM_API_KEY" };
+    const r = await fetch("https://api.deepgram.com/v1/auth/grant", { method: "POST", headers: { Authorization: "Token " + k, "content-type": "application/json" }, body: JSON.stringify({ ttl_seconds: 30 }), signal: AbortSignal.timeout(10000) });
+    return { ok: r.ok, why: r.ok ? "" : "grant " + r.status };
+  });
+  const ok = Object.values(checks).every((c: any) => c.ok);
+  return new Response(JSON.stringify({ ok, checks, ms: Date.now() - t0 }), { status: 200, headers: h });
 }

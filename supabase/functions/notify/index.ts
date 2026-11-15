@@ -77,6 +77,7 @@ async function run() {
   if (e1) throw new Error("rows: " + e1.message);
   const { data: subs, error: e2 } = await sb.from("tk_push_subs").select("*"); if (e2) throw new Error("subs: " + e2.message);
   let down = { alert: false, stamp: "" }; try { down = await relayDown(nowMs); } catch (_e) { /* the watchdog must never stop the reminders */ }
+  let deep = { alert: false, stamp: "", why: "" }; try { deep = await selfTestTick(nowMs); } catch (_e) { /* never stops the reminders */ }
   const fam: Record<string, any> = {};
   for (const r of rows || []) { const f = fam[r.family_id] = fam[r.family_id] || { kids: {}, sched: {}, guardians: {}, cheers: {}, livefeed: {}, progress: {}, balance: {}, prices: {}, live: {}, perLesson: 10, attendance: [], reports: [] };
     const [top, sub] = r.path.split("/"); if (sub === "") continue;
@@ -176,6 +177,10 @@ async function run() {
     for (const fid of new Set((subs || []).filter((s: any) => s.role === "parent").map((s: any) => s.family_id)))
       msgs.push({ fam: fid as string, key: `aidown:${down.stamp}`, to: (x: any) => x.family_id === fid && x.role === "parent", title: "⚠️ خدمة المعلمة متوقفة", body: "خدمة المعلمة ما ترد من 3 دقائق، والحصص ما تشتغل الآن. افتح لوحة الإدارة وتأكد من الخدمة." });
   }
+  if (deep.alert) {
+    for (const fid of new Set((subs || []).filter((s: any) => s.role === "parent").map((s: any) => s.family_id)))
+      msgs.push({ fam: fid as string, key: `aideep:${deep.stamp}`, to: (x: any) => x.family_id === fid && x.role === "parent", title: "⚠️ فحص المعلم فشل", body: "الفحص التلقائي للحصة فشل مرتين: " + deep.why.slice(0, 120) });
+  }
   if (!msgs.length) return Response.json({ sent: 0 });
   const { data: done } = await sb.from("tk_push_log").select("key").in("key", msgs.map((m) => m.fam + "|" + m.key));
   const already = new Set((done || []).map((d: any) => d.key));
@@ -192,4 +197,27 @@ async function run() {
   }
   await sb.from("tk_push_log").delete().lt("created_at", new Date(nowMs - 3 * 864e5).toISOString());
   return Response.json({ sent, candidates: msgs.length });
+}
+
+// Real end-to-end self test of the lesson path (POST /ai/selftest, needs HH_HEALTH_SECRET): every hour at minute 7, or at
+// once when someone sets tk_health row "selftest".detail to "run" (from the SQL editor). Result JSON goes in that row's detail.
+// Two failures in a row -> one push to the parents (at most every 6 hours).
+export async function selfTestTick(nowMs: number, db: any = sb, f: typeof fetch = fetch, base = Deno.env.get("SUPABASE_URL")!, secret = Deno.env.get("HH_HEALTH_SECRET") || "") {
+  const none = { alert: false, stamp: "", why: "" }; if (!secret) return none;
+  const { data: cur, error } = await db.from("tk_health").select("*").eq("id", "selftest").maybeSingle(); if (error) return none;
+  const asked = !!cur && /^run/.test(cur.detail || ""), hourly = new Date(nowMs).getUTCMinutes() === 7;
+  if (!asked && !hourly) return none;
+  let ok = false, detail = "";
+  try {
+    const r = await f(base + "/functions/v1/ai/selftest", { method: "POST", headers: { "content-type": "application/json", "x-hh-health": secret }, body: "{}", signal: AbortSignal.timeout(60000) });
+    const txt = await r.text(); detail = txt.slice(0, 1800); let j: any = null; try { j = JSON.parse(txt); } catch { /* not JSON */ }
+    ok = r.status === 200 && !!j && j.ok === true;
+  } catch (e) { detail = "selftest: " + String((e as any)?.message || e).slice(0, 200); }
+  const now = new Date(nowMs).toISOString();
+  if (ok) { await db.from("tk_health").upsert({ id: "selftest", fails: 0, last_ok: now, detail, last_fail: cur ? cur.last_fail : null, last_alert: cur ? cur.last_alert : null }); return none; }
+  const fails = (asked ? (cur.fails || 0) : ((cur && cur.fails) || 0)) + 1;
+  const due = fails >= 2 && (!cur || !cur.last_alert || nowMs - Date.parse(cur.last_alert) >= 6 * 3600e3);
+  await db.from("tk_health").upsert({ id: "selftest", fails, last_fail: now, detail, last_ok: cur ? cur.last_ok : null, last_alert: due ? now : (cur ? cur.last_alert : null) });
+  let why = ""; try { const j = JSON.parse(detail); why = Object.entries(j.checks || {}).filter(([, v]: any) => !v.ok).map(([k, v]: any) => k + ": " + (v.why || "")).join(" | "); } catch { why = detail; }
+  return { alert: due, stamp: now.slice(0, 13), why };
 }
