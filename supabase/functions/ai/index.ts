@@ -5,6 +5,8 @@
 // Daily caps (schema_9): per child and per family, requests/day and a rough token budget (sum of max_tokens).
 // Defaults below; a family can override them with the row "limits/@all" = {kidDay, famDay, kidTok, famTok}.
 // Over a cap -> 429 {error:{type:"daily_limit", scope:"kid"|"family"}}. Counters: tk_ai_usage, failures: tk_ai_err.
+// POST /ai/health (header x-hh-health = env HH_HEALTH_SECRET; 404 when that env is not set) -> {ok, checks:{sessions, rows, key, usage}, ms}:
+// the same service-role reads a real lesson request needs, spending nothing. Called by the notify watchdog (DEPLOY_10).
 import { createClient } from "npm:@supabase/supabase-js@2.45.4";
 
 const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
@@ -104,14 +106,56 @@ function noteErr(route: string, status: number) {
 }
 setInterval(() => { if (pending || errC.size) flush(); }, 30e3);
 
+// ---------- health: the real request path's reads (no caches), booleans only: never keys, tokens or row values ----------
+type Checks = { sessions: boolean; rows: boolean; key: boolean | null; usage: boolean };
+export async function healthCheck(db: any): Promise<{ ok: boolean; checks: Checks; ms: number }> {
+  const t0 = Date.now(), checks: Checks = { sessions: false, rows: false, key: false, usage: false };
+  const fine = async (f: () => Promise<any>) => { try { const r = await f(); return !!r && !r.error; } catch { return false; } };
+  let fam: string | null = null;
+  checks.sessions = await fine(async () => {
+    const r = await db.from("tk_sessions").select("family_id,role,kid_id,seen_at").order("seen_at", { ascending: false }).limit(1);
+    if (r && !r.error && Array.isArray(r.data) && r.data.length) fam = r.data[0].family_id || null;
+    return r;
+  });
+  if (fam) {
+    let has = false;
+    checks.rows = await fine(async () => {
+      const r = await db.from("tk_rows").select("value").eq("family_id", fam).eq("path", "apiKey").maybeSingle();
+      has = !!r && !r.error && !!r.data && typeof r.data.value === "string" && r.data.value.length > 0;
+      return r;
+    });
+    checks.key = checks.rows && has;
+  } else {
+    // no session to take a family from (or the sessions read failed): still prove tk_rows is readable; the key is unknown
+    checks.rows = await fine(() => db.from("tk_rows").select("path").limit(1));
+    checks.key = checks.sessions ? null : false;
+  }
+  // tk_ai_usage: the select the caps use, plus the bump RPC with nothing to add (it writes no rows)
+  checks.usage = (await fine(() => db.from("tk_ai_usage").select("n,tok").limit(1))) && (await fine(() => db.rpc("tk_ai_bump", { u: [], e: [] })));
+  return { ok: checks.sessions && checks.rows && checks.key !== false && checks.usage, checks, ms: Date.now() - t0 };
+}
+function sameSecret(a: string, b: string) { // constant-time compare
+  const x = new TextEncoder().encode(a), y = new TextEncoder().encode(b); let d = x.length ^ y.length;
+  for (let i = 0; i < Math.max(x.length, y.length); i++) d |= (x[i] || 0) ^ (y[i] || 0);
+  return d === 0;
+}
+export async function healthRoute(req: Request, db: any, secret: string | undefined): Promise<Response> {
+  const h = { "content-type": "application/json", "cache-control": "no-store" };
+  if (!secret) return new Response(JSON.stringify({ error: "route" }), { status: 404, headers: h });
+  if (req.method !== "POST") return new Response(JSON.stringify({ error: "method" }), { status: 405, headers: h });
+  if (!sameSecret(req.headers.get("x-hh-health") || "", secret)) return new Response(JSON.stringify({ error: "forbidden" }), { status: 403, headers: h });
+  return new Response(JSON.stringify(await healthCheck(db)), { status: 200, headers: h });
+}
+
 Deno.serve(async (req) => {
   try { return await handle(req); }
   catch (e) { noteErr("crash", 500); console.error(e); return json(req, { error: { type: "server", message: "relay error" } }, 500); }
 });
 async function handle(req: Request) {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors(req) });
-  if (req.method !== "POST") return json(req, { error: "method" }, 405);
   const route = new URL(req.url).pathname.split("/").pop();
+  if (route === "health") return await healthRoute(req, sb, Deno.env.get("HH_HEALTH_SECRET") || undefined);
+  if (req.method !== "POST") return json(req, { error: "method" }, 405);
   let b: any; try { b = await req.json(); } catch { return json(req, { error: "bad_json" }, 400); }
   const s = await session(b && b.t); if (!s) return json(req, { error: "bad_session" }, 401);
 

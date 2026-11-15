@@ -35,22 +35,39 @@ Deno.serve(async (req) => {
 // AI relay watchdog: the "ai" function must answer a request with an unknown session with 401 JSON within 5 s
 // (that exercises the function and its database lookup without spending anything). State lives in tk_health (schema_8).
 // Returns true when the family admins should be told now: 3 failures in a row, at most one alert per hour.
-async function relayDown(nowMs: number): Promise<{ alert: boolean; stamp: string }> {
+// With env HH_HEALTH_SECRET it also calls POST /ai/health (DEPLOY_10), which runs the real path's service-role reads
+// (tk_sessions, tk_rows apiKey, tk_ai_usage): a non-200 or ok:false is a failure, and tk_health.detail names the failing checks.
+// Without the env the watchdog behaves exactly as before (bad-session check only).
+export async function relayDown(nowMs: number, db: any = sb, f: typeof fetch = fetch, base = Deno.env.get("SUPABASE_URL")!, secret = Deno.env.get("HH_HEALTH_SECRET") || ""): Promise<{ alert: boolean; stamp: string }> {
   let ok = false, detail = "";
   try {
-    const r = await fetch(Deno.env.get("SUPABASE_URL")! + "/functions/v1/ai/claude", { method: "POST", headers: { "content-type": "application/json" },
+    const r = await f(base + "/functions/v1/ai/claude", { method: "POST", headers: { "content-type": "application/json" },
       body: JSON.stringify({ t: "00000000-0000-0000-0000-000000000000", body: {} }), signal: AbortSignal.timeout(5000) });
     const txt = await r.text(); let j: any = null; try { j = JSON.parse(txt); } catch { /* not JSON */ }
     ok = r.status === 401 && !!j && j.error === "bad_session";
     if (!ok) detail = `status ${r.status}: ${txt.slice(0, 120)}`;
   } catch (e) { detail = String((e && (e as any).message) || e).slice(0, 160); }
+  if (secret) {
+    let hd = "";
+    try {
+      const r = await f(base + "/functions/v1/ai/health", { method: "POST", headers: { "content-type": "application/json", "x-hh-health": secret },
+        body: "{}", signal: AbortSignal.timeout(8000) });
+      const txt = await r.text(); let j: any = null; try { j = JSON.parse(txt); } catch { /* not JSON */ }
+      if (r.status !== 200) hd = `health status ${r.status}`;
+      else if (!j || j.ok !== true) {
+        const bad = j && j.checks && typeof j.checks === "object" ? Object.keys(j.checks).filter((k) => j.checks[k] === false) : [];
+        hd = "health failed: " + (bad.length ? bad.join(",") : "bad answer");
+      }
+    } catch (e) { hd = "health: " + String((e && (e as any).message) || e).slice(0, 120); }
+    if (hd) { ok = false; detail = detail ? detail.slice(0, 160) + " | " + hd : hd; }
+  }
   const now = new Date(nowMs).toISOString();
-  const { data: cur, error } = await sb.from("tk_health").select("*").eq("id", "ai").maybeSingle();
+  const { data: cur, error } = await db.from("tk_health").select("*").eq("id", "ai").maybeSingle();
   if (error) return { alert: false, stamp: "" }; // table missing (schema_8 not applied yet): the watchdog stays quiet
-  if (ok) { if (!cur || cur.fails) await sb.from("tk_health").upsert({ id: "ai", fails: 0, last_ok: now, detail: "" }); else if (!cur.last_ok || nowMs - Date.parse(cur.last_ok) > 10 * 60e3) await sb.from("tk_health").update({ last_ok: now }).eq("id", "ai"); return { alert: false, stamp: "" }; }
+  if (ok) { if (!cur || cur.fails) await db.from("tk_health").upsert({ id: "ai", fails: 0, last_ok: now, detail: "" }); else if (!cur.last_ok || nowMs - Date.parse(cur.last_ok) > 10 * 60e3) await db.from("tk_health").update({ last_ok: now }).eq("id", "ai"); return { alert: false, stamp: "" }; }
   const fails = ((cur && cur.fails) || 0) + 1;
   const due = fails >= 3 && (!cur || !cur.last_alert || nowMs - Date.parse(cur.last_alert) >= 3600e3);
-  await sb.from("tk_health").upsert({ id: "ai", fails, last_fail: now, detail, last_ok: cur ? cur.last_ok : null, last_alert: due ? now : (cur ? cur.last_alert : null) });
+  await db.from("tk_health").upsert({ id: "ai", fails, last_fail: now, detail, last_ok: cur ? cur.last_ok : null, last_alert: due ? now : (cur ? cur.last_alert : null) });
   return { alert: due, stamp: now.slice(0, 13) };
 }
 async function run() {
