@@ -4289,13 +4289,15 @@ function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right)
    The teacher prompt and its tags are the same as the normal lesson: the relay removes the tags from what is spoken and
    hands them to the app as one "lesson_event" function call, which this file applies (slides, stars, board, end). */
 const DG_URL = 'wss://agent.deepgram.com/v1/agent/converse';
-function dgOn(k){ return !DEMO && relayOn() && ((DB.profiles || {})[k] || {}).engine === 'dg' && typeof WebSocket !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
+function dgOn(k){ return !DEMO && relayOn() && ((DB.profiles || {})[k] || {}).engine !== 'classic' && typeof WebSocket !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
 function dgNote(lesson, msg){ try{ liveFeed(lesson, 'x', '⚠ ' + msg); }catch(e){} console.warn('dg', msg); }
 function dgStatus(lesson){ const v = lesson.v2; if(!v) return `minute ${elapsedMin()}`;
   return `[minute ${elapsedMin()} of ${LESSON_MIN} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}]`; }
 function dgPrompt(lesson){ return lesson.rules + `
 
 VOICE MODE: the child talks to you live; their words come to you as text from speech recognition. There is no header in front of their messages: the CURRENT STATUS below replaces it and is kept up to date by the app.
+Children often pause in the middle of a sentence: if their message looks unfinished, say only "Go on!" and wait.
+Remember: give hints (a sentence start like "My name is ..."), never the full answer for them to copy.
 CURRENT STATUS: ${dgStatus(lesson)}`; }
 async function dgStart(lesson){
   const k = lesson.kid, t = teacherOf(k), level = DB.kids[k].level;
@@ -4322,7 +4324,7 @@ async function dgStart(lesson){
     ws.send(JSON.stringify({type:'Settings', tags:['hudhud', k],
       audio:{input:{encoding:'linear16', sample_rate:16000}, output:{encoding:'linear16', sample_rate:24000, container:'none'}},
       agent:{
-        listen:{provider:{type:'deepgram', version:'v2', model:'flux-general-en', eot_threshold:0.75, eot_timeout_ms:level <= 6 ? 6000 : 5000,
+        listen:{provider:{type:'deepgram', version:'v2', model:'flux-general-en', eot_threshold:0.85, eot_timeout_ms:level <= 6 ? 6000 : 5000,
           keyterms:[nick(k)].concat(typeof livePhrases === 'function' ? livePhrases() : []).filter(Boolean).slice(0, 40)}},
         think:{provider:{type:'anthropic', model:'claude-haiku-5-5', temperature:0.8},
           endpoint:{url:RELAY + 'llm', headers:{'x-hh-token':CLOUD.token}},
@@ -6921,7 +6923,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15j';
+const APP_VER = '2026-11-15k';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
