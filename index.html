@@ -4289,7 +4289,7 @@ function showFix(f){ const el = $('#fixBox'); if(!el) return; if(!f || !f.right)
    The teacher prompt and its tags are the same as the normal lesson: the relay removes the tags from what is spoken and
    hands them to the app as one "lesson_event" function call, which this file applies (slides, stars, board, end). */
 const DG_URL = 'wss://agent.deepgram.com/v1/agent/converse';
-function dgOn(k){ return !DEMO && relayOn() && ((DB.profiles || {})[k] || {}).engine === 'dg' && typeof WebSocket !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
+function dgOn(k){ return !DEMO && relayOn() && ((DB.profiles || {})[k] || {}).engine !== 'classic' && typeof WebSocket !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
 function dgNote(lesson, msg){ try{ liveFeed(lesson, 'x', '⚠ ' + msg); }catch(e){} console.warn('dg', msg); }
 function dgStatus(lesson){ const v = lesson.v2; if(!v) return `minute ${elapsedMin()}`;
   return `[minute ${elapsedMin()} of ${LESSON_MIN} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}]`; }
@@ -6921,7 +6921,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15h';
+const APP_VER = '2026-11-15i';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:') return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
