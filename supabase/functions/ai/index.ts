@@ -171,6 +171,7 @@ async function handle(req: Request) {
     const body = b.body || {};
     if (!MODELS.has(body.model)) return json(req, { error: { type: "bad_model", message: "model not allowed" } }, 400);
     body.max_tokens = Math.min(Number(body.max_tokens) || 400, 4000);
+    thinkDefaults(body);
     const day = today(), kid = who(s), lim = await limitsOf(s.fam), { k, f } = await usage(s.fam, kid, day);
     const over = s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok) ? "kid"
       : (f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok) ? "family" : "";
@@ -191,11 +192,14 @@ async function handle(req: Request) {
   if (route === "dgtoken") {
     const key = Deno.env.get("DEEPGRAM_API_KEY"); if (!key) return json(req, { error: "no_deepgram" }, 412);
     if (limited("dg|" + b.t, 10)) return json(req, { error: { type: "rate_limit", message: "too many requests" } }, 429);
+    { const day = today(), kid = who(s), lim = await limitsOf(s.fam), { k, f } = await usage(s.fam, kid, day);
+      if ((s.role === "kid" && k.n >= lim.kidDay) || f.n >= lim.famDay) return json(req, { error: { type: "daily_limit", message: "daily limit" } }, 429);
+      k.n++; k.dn++; f.n++; tick(); }
     let r: Response;
     try { r = await fetch("https://api.deepgram.com/v1/auth/grant", { method: "POST", headers: { Authorization: "Token " + key, "content-type": "application/json" }, body: JSON.stringify({ ttl_seconds: 60 }) }); }
     catch { noteErr("dgtoken", 502); return json(req, { error: "deepgram unreachable" }, 502); }
     if (!r.ok) { noteErr("dgtoken", r.status); return json(req, { error: "deepgram " + r.status }, 502); }
-    const j = await r.json(); return json(req, { token: j.access_token, expires: j.expires_in });
+    const j = await r.json(); return json(req, { token: j.access_token, expires: j.expires_in, llm: await llmTok(s) });
   }
 
   if (route === "aztoken") {
@@ -215,13 +219,14 @@ async function handle(req: Request) {
 // ---------- Deepgram "think" step: Anthropic-format pass-through, authenticated by the child's session token ----------
 const LLM_MODEL = "claude-sonnet-5-5";
 async function llmRoute(req: Request) {
-  const t = req.headers.get("x-hh-token") || ""; const s = await session(t);
+  const lt = req.headers.get("x-hh-llm") || "", t = lt ? "llm|" + lt.slice(-16) : (req.headers.get("x-hh-token") || "");
+  const s = lt ? await llmTokCheck(lt) : await session(t);
   if (!s) return new Response(JSON.stringify({ type: "error", error: { type: "authentication_error", message: "bad_session" } }), { status: 401, headers: { "content-type": "application/json" } });
   let body: any; try { body = await req.json(); } catch { return new Response('{"error":"bad_json"}', { status: 400 }); }
   if (limited(t, 40)) return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "too many requests" } }), { status: 429, headers: { "content-type": "application/json" } });
   const key = await famRow(s.fam, "apiKey"); if (!key || typeof key !== "string") return new Response('{"error":"no_key"}', { status: 412 });
   if (isOurToolResult(body)) return emptyTurn(!!body.stream);
-  body.model = MODELS.has(body.model) ? body.model : LLM_MODEL;
+  body.model = LLM_MODEL; // always the lesson model: this route is not a general Claude proxy
   body.max_tokens = Math.min(Number(body.max_tokens) || 300, 600);
   // no up-front thinking for a live voice reply: it is slow, and it counts inside max_tokens (an empty reply otherwise)
   if (/haiku-5/.test(body.model)) { body.thinking = { type: "disabled" }; body.output_config = { effort: "medium" }; }
@@ -230,7 +235,7 @@ async function llmRoute(req: Request) {
   if ((s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok)) || f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok)
     return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "daily limit" } }), { status: 429, headers: { "content-type": "application/json" } });
   k.n++; k.dn++; k.tok += body.max_tokens; k.dtok += body.max_tokens; f.n++; f.tok += body.max_tokens; tick();
-  tidy(body); tagNudge(body);
+  tidy(body); tagNudge(body); cacheSystem(body);
   const call = (b: any) => fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" }, body: JSON.stringify(b) });
   let r: Response;
   try {
@@ -239,7 +244,7 @@ async function llmRoute(req: Request) {
       const why = await r.text(); console.error("llm 400", why.slice(0, 600), JSON.stringify(Object.keys(body)), JSON.stringify((body.messages || []).map((m: any) => m.role + ":" + (typeof m.content === "string" ? "s" : (m.content || []).map((c: any) => c.type).join("+")))).slice(0, 600));
       const lean: any = { model: body.model, max_tokens: body.max_tokens, system: body.system, messages: body.messages, stream: body.stream };
       if (body.tools) lean.tools = body.tools;
-      if (/haiku-5/.test(body.model)) lean.thinking = { type: "disabled" };
+      thinkDefaults(lean);
       r = await call(lean);
       if (r.status === 400) { const w2 = await r.text(); console.error("llm 400 again", w2.slice(0, 600)); noteErr("llm", 400); return new Response(w2, { status: 400, headers: { "content-type": "application/json" } }); }
       body = lean;
@@ -266,7 +271,7 @@ export function splitTags(t: string) {
 }
 // the answer to our own lesson_event call needs no model: an empty turn (the teacher already spoke)
 export function isOurToolResult(body: any) {
-  const m = (body.messages || [])[body.messages.length - 1]; if (!m || m.role !== "user" || !Array.isArray(m.content)) return false;
+  const ms = Array.isArray(body && body.messages) ? body.messages : []; const m = ms[ms.length - 1]; if (!m || m.role !== "user" || !Array.isArray(m.content)) return false;
   return m.content.length > 0 && m.content.every((c: any) => c.type === "tool_result" && String(c.tool_use_id || "").startsWith("toolu_hh"));
 }
 export function emptyTurn(stream: boolean) {
@@ -280,7 +285,7 @@ export function emptyTurn(stream: boolean) {
 /* rewrites the Anthropic event stream: text is passed on without tags/Arabic (held back from the first "[" to the end),
    and the tags are added as a tool_use block "lesson_event" with stop_reason "tool_use" */
 export function tagStream() {
-  const enc = new TextEncoder(), dec = new TextDecoder(); let buf = "", held = "", textIdx = -1, maxIdx = -1, sentAny = false;
+  const enc = new TextEncoder(), dec = new TextDecoder(); let buf = "", held = "", textIdx = -1, maxIdx = -1, sentAny = false; const skip = new Set<number>();
   const ev = (e: string, d: unknown) => enc.encode(`event: ${e}\ndata: ${JSON.stringify(d)}\n\n`);
   const clean = (t: string) => t.replace(AR, " ");
   return new TransformStream<Uint8Array, Uint8Array>({
@@ -293,6 +298,8 @@ export function tagStream() {
         const name = d.type;
         if (typeof d.index === "number") maxIdx = Math.max(maxIdx, d.index);
         if (name === "content_block_start" && d.content_block?.type === "text") { textIdx = d.index; ctl.enqueue(ev(name, d)); continue; }
+        if (name === "content_block_start" && d.content_block?.type === "tool_use") { skip.add(d.index); continue; }
+        if ((name === "content_block_delta" || name === "content_block_stop") && skip.has(d.index)) continue;
         if (name === "content_block_delta" && d.delta?.type === "text_delta" && d.index === textIdx) {
           let t: string = d.delta.text || "";
           if (held || t.includes("[")) { const k = held ? 0 : t.indexOf("["); const now = t.slice(0, k); held += t.slice(k); t = now; }
@@ -301,9 +308,12 @@ export function tagStream() {
         }
         if (name === "content_block_stop" && d.index === textIdx) {
           const { spoken, tags } = splitTags(held);
-          if (spoken) ctl.enqueue(ev("content_block_delta", { type: "content_block_delta", index: textIdx, delta: { type: "text_delta", text: (sentAny ? " " : "") + spoken } }));
+          // nothing to say at all (only tags, or only Arabic): a short neutral line, so the child is never left in silence
+          const say = spoken || (sentAny ? "" : (tags ? "Great, let's go on!" : "Sorry, can you say that again?"));
+          if (say) { sentAny = true; ctl.enqueue(ev("content_block_delta", { type: "content_block_delta", index: textIdx, delta: { type: "text_delta", text: (spoken && sentAny ? " " : "") + say } })); }
           ctl.enqueue(ev(name, d)); held = tags; continue; // held now = the tags to hand over
         }
+        if (name === "message_delta" && !held && skip.size && d.delta?.stop_reason === "tool_use") { ctl.enqueue(ev(name, { ...d, delta: { ...d.delta, stop_reason: "end_turn" } })); continue; }
         if (name === "message_delta" && held) {
           const idx = maxIdx + 1, id = "toolu_hh" + crypto.randomUUID().replace(/-/g, "").slice(0, 20);
           ctl.enqueue(ev("content_block_start", { type: "content_block_start", index: idx, content_block: { type: "tool_use", id, name: "lesson_event", input: {} } }));
@@ -331,6 +341,16 @@ export function tidy(body: any) {
     const last = out[out.length - 1];
     if (last && last.role === m.role) last.content = last.content.concat(c); else out.push({ role: m.role === "assistant" ? "assistant" : "user", content: c });
   }
+  // a tool_use must be answered by a tool_result in the next message (and the other way round), or the API refuses
+  for (let i = 0; i < out.length; i++) {
+    const m = out[i];
+    if (m.role === "assistant") { const nx = out[i + 1]; const ids = new Set((nx && nx.role === "user" ? nx.content : []).filter((c: any) => c.type === "tool_result").map((c: any) => c.tool_use_id));
+      m.content = m.content.filter((c: any) => c.type !== "tool_use" || ids.has(c.id)); }
+    else { const pv = out[i - 1]; const ids = new Set((pv && pv.role === "assistant" ? pv.content : []).filter((c: any) => c.type === "tool_use").map((c: any) => c.id));
+      m.content = m.content.filter((c: any) => c.type !== "tool_result" || ids.has(c.tool_use_id)); }
+  }
+  for (let i = out.length - 1; i >= 0; i--) if (!out[i].content.length) out.splice(i, 1);
+  for (let i = out.length - 1; i > 0; i--) if (out[i].role === out[i - 1].role) { out[i - 1].content = out[i - 1].content.concat(out[i].content); out.splice(i, 1); }
   if (!out.length || out[0].role !== "user") out.unshift({ role: "user", content: [{ type: "text", text: "(The lesson starts.)" }] });
   if (out[out.length - 1].role === "assistant") out.push({ role: "user", content: [{ type: "text", text: "(continue)" }] });
   body.messages = out; if (sys.length) body.system = sys.join("\n\n");
@@ -396,4 +416,36 @@ export function tagNudge(body: any) {
   if (last && last.role === "user" && Array.isArray(last.content) && !last.content.some((c: any) => c.type === "tool_result"))
     last.content.push({ type: "text", text: "(App reminder: after your short spoken reply, write your tags on new lines: [GOT] or [STAR] when the child did it right, [NEXT] when this step is finished, [CHOICE:...] or [ORDER:...] when useful, and always [MOOD:...] last. Follow CURRENT STATUS.)" });
   return body;
+}
+
+/* thinking limits for the 5.x models: thinking counts inside max_tokens, so a short reply could come back empty */
+export function thinkDefaults(b: any) {
+  if (b.thinking || b.output_config) return b; const m = String(b.model || "");
+  if (/haiku-5/.test(m)) { b.thinking = { type: "disabled" }; b.output_config = { effort: "medium" }; }
+  else if (/sonnet-5/.test(m)) { b.thinking = { type: "between_tools" }; b.output_config = { effort: "high" }; }
+  else if (/(opus|fable)-5/.test(m)) { b.output_config = { effort: "low" }; b.max_tokens = Math.min(4000, (Number(b.max_tokens) || 1000) + 1500); }
+  return b;
+}
+/* the voice prompt = fixed rules + a status line that changes every 30 s: cache the fixed part */
+export function cacheSystem(b: any) {
+  if (typeof b.system !== "string") return b; const i = b.system.lastIndexOf("\nCURRENT STATUS:");
+  if (i < 2000) return b;
+  b.system = [{ type: "text", text: b.system.slice(0, i), cache_control: { type: "ephemeral" } }, { type: "text", text: b.system.slice(i + 1) }];
+  return b;
+}
+/* a short-lived token for Deepgram's calls to /llm (45 minutes, only this route): the child's login never leaves the app */
+const enc8 = new TextEncoder();
+async function hmac(data: string) {
+  const key = await crypto.subtle.importKey("raw", enc8.encode((Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "") + "|hh-llm"), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const sig = new Uint8Array(await crypto.subtle.sign("HMAC", key, enc8.encode(data)));
+  return btoa(String.fromCharCode(...sig)).replace(/[+/=]/g, (c) => c === "+" ? "-" : c === "/" ? "_" : "");
+}
+async function llmTok(s: { fam: string; role: string; kid: string | null }) {
+  const p = btoa(JSON.stringify({ f: s.fam, r: s.role, k: s.kid, e: Date.now() + 45 * 60e3 })).replace(/=+$/, "");
+  return p + "." + await hmac(p);
+}
+async function llmTokCheck(t: string) {
+  const [p, sig] = String(t || "").split("."); if (!p || !sig) return null;
+  if (!sameSecret(sig, await hmac(p))) return null;
+  try { const o = JSON.parse(atob(p)); if (!o.e || Date.now() > o.e) return null; return { fam: o.f, role: o.r, kid: o.k, at: Date.now() }; } catch { return null; }
 }

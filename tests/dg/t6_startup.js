@@ -1,0 +1,12 @@
+const {start, check, info, sleep} = require('./lib');
+const only = process.argv[2]; const T = {};
+const snap = p => p.evaluate(() => ({state:L && L.state, dg:!!(L && L.dg), open:!!(L && L.dg && L.dg.open), engineFallback:!!(L && !L.dg), st:document.querySelector('#state').innerText, sub:document.querySelector('#sub').innerText.slice(0, 40)}));
+T.tokenHang = async () => { const t = await start({tokenHang:true, settle:200}); await sleep(30000); const r = await snap(t.p); info('dgtoken request hangs (no response) for 30 s', r);
+  check('start falls back / shows a message when the token request hangs', r.engineFallback || !/thinking|تفكر/.test(r.state + r.st), 'fetch(RELAY+"dgtoken") has no timeout/AbortSignal (aztoken has 8 s): child stares at "thinking" until the OS gives up (minutes)'); await t.close(); };
+T.noOpen = async () => { const t = await start({cfg:{noOpen:true}, settle:200}); await sleep(30000); const r = await snap(t.p); info('WebSocket stays CONNECTING for 30 s (captive wifi, blocked wss)', r);
+  check('start falls back when the socket never opens', r.engineFallback, 'no connect timeout: dg waits forever'); await t.close(); };
+T.noSettings = async () => { const t = await start({cfg:{noSettings:true}, settle:200}); await sleep(30000); const r = await snap(t.p); info('socket opens but SettingsApplied never arrives for 30 s', r);
+  check('start falls back when Settings is never applied', r.engineFallback, 'd.open stays false and no timer'); await t.close(); };
+T.token401 = async () => { const t = await start({tokenStatus:502, settle:2500}); const r = await snap(t.p); info('dgtoken 502 (Deepgram key invalid)', r);
+  check('falls back to classic teacher at once on token failure', r.engineFallback); await t.close(); };
+(async () => { for(const k of Object.keys(T)){ if(only && only !== k) continue; console.log('--- ' + k); try{ await T[k](); }catch(e){ console.log('ERROR', k, e.message.slice(0, 300)); process.exitCode = 1; } } })();

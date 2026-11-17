@@ -1,5 +1,5 @@
 /* Hudhud service worker: offline shell + push notifications */
-const V = 'hh-v23';
+const V = 'hh-v24';
 const CORE = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'icon-180.png',
   'nosleep.mp4', 'fonts/dubai-regular.woff2', 'fonts/dubai-medium.woff2', 'fonts/dubai-bold.woff2', 'content/i18n-en.json', 'content/index.json'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => Promise.all(CORE.map(u => c.add(u).catch(() => {})))).then(() => self.skipWaiting())); });
@@ -7,6 +7,7 @@ self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Pr
 self.addEventListener('fetch', e => {
   const r = e.request; if(r.method !== 'GET') return;
   const u = new URL(r.url); if(u.origin !== location.origin) return;
+  if(u.pathname.endsWith('/version.json')) return; // version checks always go to the network and are never stored
   const put = res => { if(res && res.ok){ const cp = res.clone(); caches.open(V).then(c => c.put(r, cp)); } return res; };
   if(r.mode === 'navigate' || /\/(index\.html)?$/.test(u.pathname)){
     e.respondWith(fetch(r).then(put).catch(() => caches.match(r).then(m => m || caches.match('index.html')))); return; }

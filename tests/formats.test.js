@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8781;
       DB.progress[WHO].onboarded = true; DB.kids[WHO].level = lv; DB.progress[WHO].pos = pos; DB.progress[WHO].unitTest = null; await loadContent(lv);
       let n = 0; window.__sys = null;
       window.streamClaude = async function*(body){ n++; window.__sys = body.system[0].text; window.__last = body.messages[body.messages.length-1].content[0].text;
+        if(L && L.v2 && L.v2.doneAll) L.startedAt = new Date(Date.now() - 22 * 60e3); // [END] counts from minute 21 (trial: 5)
         yield (L && L.v2 && L.v2.doneAll) ? '[MOOD:happy] Bye, superstar!\n[END]' : '[MOOD:happy] Great job!\n[GOT]\n[STAR]\n[NEXT]'; };
       window.speakOne = (t, s, d) => setTimeout(d, 5);
       startLesson(WHO, true); const lsn = L, fmt = L.v2.fmt, steps = L.v2.steps.map(s => s.k).join(','), slides = new Set();

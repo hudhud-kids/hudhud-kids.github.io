@@ -131,7 +131,7 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .rbody{flex:1;min-height:0;display:grid;grid-template-columns:minmax(300px,46%) 1fr;gap:0}
 @media (max-width:780px), (orientation:portrait) and (max-width:1100px){.rbody{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
 .tbox{width:min(520px,100%)}
-@media (orientation:portrait) and (min-width:700px) and (max-width:1100px){.tbox{width:min(500px,72vw)!important}.stage{padding:16px}.side{padding-top:4px}.sub{font-size:1.6rem}}
+@media (orientation:portrait) and (min-width:700px) and (max-width:1100px){.tbox{width:min(330px,42vw)!important;max-width:32vh!important;max-width:32dvh!important}.stage{padding:16px}.side{padding-top:4px}.sub{font-size:1.6rem}}
 .stage{display:grid;place-items:center;padding:12px 16px;position:relative}
 .tbox{position:relative;display:grid;justify-items:center}
 @media (max-width:780px){.tbox{width:min(240px,62vw)}.stage{padding:6px 16px}.sub{font-size:1.2rem;min-height:70px}}
@@ -153,8 +153,9 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .streak{position:absolute;top:3%;right:3%;z-index:6;background:#FF7A1A;color:#fff;font-weight:800;font-family:var(--en);font-size:1.3rem;padding:4px 14px;border-radius:999px;box-shadow:0 6px 16px rgba(255,122,26,.4)}
 .streak.pulse{animation:fxPop2 .5s ease}
 @keyframes fxPop2{40%{transform:scale(1.35)}}
-.wheelbtn{position:absolute;bottom:4%;left:50%;transform:translateX(-50%);z-index:7;border:0;border-radius:999px;padding:10px 18px;font:inherit;font-weight:800;font-size:1.05rem;color:#fff;background:linear-gradient(135deg,#8B5CF6,#EC4899);box-shadow:0 8px 20px rgba(139,92,246,.45);animation:wb 1.4s ease-in-out infinite}
+.wheelbtn{white-space:nowrap;position:absolute;top:3%;left:50%;transform:translateX(-50%);z-index:7;border:0;border-radius:999px;padding:10px 18px;font:inherit;font-weight:800;font-size:1.05rem;color:#fff;background:linear-gradient(135deg,#8B5CF6,#EC4899);box-shadow:0 8px 20px rgba(139,92,246,.45);animation:wb 1.4s ease-in-out infinite}
 .wheelbtn.spin{animation:wspin .25s linear infinite}
+@media (max-width:600px){.wheelbtn{font-size:.82rem;padding:6px 12px;top:auto;bottom:6%}}
 @keyframes wb{50%{transform:translateX(-50%) scale(1.07)}}
 @keyframes wspin{to{transform:translateX(-50%) rotate(360deg)}}
 .choices{background:var(--surface);border:2px dashed var(--brand);border-radius:var(--r);padding:12px;margin-top:10px}
@@ -171,6 +172,11 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .stk{aspect-ratio:1;display:grid;place-items:center;font-size:1.9rem;border-radius:14px;background:var(--line);opacity:.5}
 .stk.on{background:#FFF4D6;opacity:1}
 :root[data-theme="dark"] .chbtn{background:#2a2420;color:#fff}
+.en{unicode-bidi:plaintext}
+.ctrl .micbig.hint{animation:micHint .9s ease 2}
+@keyframes micHint{30%{transform:scale(1.15)}60%{transform:scale(.95)}}
+.ctrl .micbig.muted{background:#9aa0a6!important;box-shadow:0 0 0 4px rgba(154,160,166,.35)}
+@media (orientation:portrait) and (max-width:1100px){.room.dgm .askb{display:none}}
 .sub .kw{opacity:.38;transition:opacity .18s}.sub .kw.on{opacity:1}
 .sub{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:16px 18px;direction:ltr;text-align:left;font-family:var(--en);font-size:1.45rem;font-weight:600;line-height:1.45;min-height:96px}
 .sub .ar{direction:rtl;text-align:right;font-family:var(--font);font-size:1rem;color:var(--muted);font-weight:500;border-top:1px dashed var(--line);margin-top:8px;padding-top:8px}
@@ -244,7 +250,8 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .ctrl>.btn.sm .ic{font-size:1.1em}
 @media (max-width:780px) and (orientation:portrait){
   .rbody{grid-template-rows:auto minmax(0,1fr)}
-  .tbox{width:min(210px,56vw);max-width:30vh;max-width:30dvh;min-width:120px}
+  .tbox{width:min(190px,50vw);max-width:25vh;max-width:25dvh;min-width:110px}
+  .room.dgm .askb{display:none}
   .stage{padding:4px 16px 0}.tname{font-size:.9rem;margin-top:-4px}.state{font-size:.85rem;min-height:1.3em;margin-top:0}
   .rbar{padding-block:6px;gap:6px;padding-top:max(6px,env(safe-area-inset-top,0px))}.rbar .ttl{min-width:0}
   .side{padding-top:6px;gap:10px}
@@ -544,7 +551,7 @@ body.printing > *:not(.ov){display:none!important}
 .dl{max-width:85%;padding:10px 14px;border-radius:16px;direction:ltr;text-align:left;cursor:pointer;font-size:1.1rem}
 .dl.a{justify-self:start;background:var(--sky-soft)} .dl.b{justify-self:end;background:var(--brand-soft)}
 .gram{background:var(--sky-soft);border-radius:14px;padding:12px;display:grid;gap:6px}
-.selfcam{position:absolute;left:4%;bottom:12%;width:24%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.18);background:#2B1B0F;max-width:100%}
+.selfcam{position:absolute;left:8px;top:8px;width:min(22%,150px);aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.18);background:#2B1B0F;max-width:100%}
 .selfcam video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1);display:block}
 .selfcam span{position:absolute;left:6px;bottom:4px;color:#fff;font-size:.72rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 .talk{background:var(--bg);border-radius:99px;padding:4px 12px;font-weight:700;font-size:.9rem}
@@ -1370,7 +1377,22 @@ function lessonPlan(k){
 }
 
 /* =============== LESSON v2: a fixed 7-stage script shown as slides =============== */
-function scriptFor(level, ui, li){ const c = CONTENT[level]; return c && c.v === 2 && c.scripts ? c.scripts[`${ui}-${li}`] || null : null; }
+function scriptFor(level, ui, li){ const c = CONTENT[level]; const sc = c && c.v === 2 && c.scripts ? c.scripts[`${ui}-${li}`] || null : null;
+  return sc ? freshNames(sc, `${level}-${ui}-${li}`) : null; }
+/* the dialogues use the same few names in a third of all lessons (Reem, Noura, Omar, Faisal): each lesson gets its own pair
+   from a wider pool (same for the whole lesson, so a resumed lesson keeps them) */
+const NAME_POOL = {f:['Lina','Huda','Joud','Layan','Dana','Maha','Razan','Aseel','Ghala','Mira','Jana','Shahad','Rahaf','Dalia'], m:['Khalid','Yousef','Turki','Nawaf','Saad','Hamad','Ziyad','Rayan','Bader','Majed','Fahad','Sultan','Mishal','Hassan']};
+const NAME_SWAP = [['Reem','f'],['Noura','f'],['Omar','m'],['Faisal','m']];
+const FRESH_C = new Map();
+function freshNames(sc, seed){ if(FRESH_C.has(seed)) return FRESH_C.get(seed);
+  let h = 0; for(const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  let txt = JSON.stringify(sc); const used = new Set(), kidNames = Object.values(DB.kids || {}).map(x => String(x.en || '').toLowerCase());
+  NAME_SWAP.forEach(([old, g], n) => { if(!new RegExp('\\b' + old + '\\b').test(txt)) return; const pool = NAME_POOL[g];
+    for(let t = 0; t < pool.length; t++){ const cand = pool[(h + n * 7 + t) % pool.length];
+      if(used.has(cand) || kidNames.includes(cand.toLowerCase()) || new RegExp('\\b' + cand + '\\b').test(txt)) continue;
+      used.add(cand); txt = txt.replace(new RegExp('\\b' + old + '\\b', 'g'), cand); break; } });
+  let out = sc; try{ out = JSON.parse(txt); }catch(e){}
+  FRESH_C.set(seed, out); return out; }
 const V2_STAGES = ['الهدف','البداية','لعبة التعابير','تمثيل الحوار','دورك: موقف','ثقافة','الختام'];
 const V2_GAMES = [{en:'Guess it', ar:'🔍 خمّنها', how:'describe a funny situation without saying the expression; the child guesses which of the 2 expressions fits, then makes their own sentence with it; then the same for the other one'},
   {en:'This or that', ar:'⚖️ هذا أو ذاك', how:'give two fun choices (would-you-rather style) that need the expressions; the child picks and explains with a full sentence using each expression'},
@@ -1392,11 +1414,12 @@ function v2Format(plan, k){
   if(p && p.repeatOf === `${DB.kids[k].level}-${ui}-${li}`) f = {classic:'story', story:'game', game:'classic', mission:'story'}[f];   // a repeated lesson feels new
   return f; }
 /* the order of the 3 word games changes from lesson to lesson */
-function v2GameOrder(plan, list){ const P = [[0,1,2],[1,2,0],[2,0,1],[0,2,1],[2,1,0],[1,0,2]], o = P[((plan.ui||0) * 6 + (plan.li||0)) % 6]; return o.map(i => list[i]); }
+const v2Tries = plan => { const p = (typeof L !== 'undefined' && L && DB.progress[L.kid]) || (WHO && DB.progress[WHO]) || {}; return p.repeatOf ? 3 : 0; };
+function v2GameOrder(plan, list){ const P = [[0,1,2],[1,2,0],[2,0,1],[0,2,1],[2,1,0],[1,0,2]], o = P[((plan.ui||0) * 6 + (plan.li||0) + v2Tries(plan)) % 6]; return o.map(i => list[i]); }
 /* topic choice at the warm-up: the script's speak-out situation, or a theme the child loves (interests, else a fun fixed one) */
 const V2_ALT = [['gaming','🎮','الألعاب'],['football','⚽','كرة القدم'],['space','🚀','الفضاء'],['food','🍕','الأكل'],['animals','🐼','الحيوانات']];
 const V2_EMO = [[/game|minecraft|roblox|fortnite|playstation|xbox|nintendo|video/i,'🎮'],[/football|soccer|ball|sport|padel|basket/i,'⚽'],[/space|planet|star|rocket|astro/i,'🚀'],[/food|pizza|cook|cake|burger|eat/i,'🍕'],[/animal|cat|dog|horse|camel|bird|pet|zoo/i,'🐼'],[/draw|art|paint|colou?r/i,'🎨'],[/car|race|drive/i,'🏎️'],[/swim|sea|beach/i,'🏊'],[/read|book|story/i,'📚'],[/music|sing|song/i,'🎵'],[/travel|trip|plane/i,'✈️'],[/robot|code|computer|tech/i,'🤖']];
-function v2AltTheme(k, plan){ const n = (plan.ui||0) * 6 + (plan.li||0), ints = (((DB.progress[k]||{}).interests) || []).map(String).filter(x => x.trim() && x.length <= 60);
+function v2AltTheme(k, plan){ const n = (plan.ui||0) * 6 + (plan.li||0) + ((DB.progress[k] || {}).repeatOf ? 2 : 0), ints = (((DB.progress[k]||{}).interests) || []).map(String).filter(x => x.trim() && x.length <= 60);
   if(ints.length){ const t = ints[n % ints.length]; return {en:t, ar:'من اهتماماتك', e:(V2_EMO.find(([re]) => re.test(t)) || [0, '⭐'])[1]}; }
   const a = V2_ALT[n % V2_ALT.length]; return {en:a[0], ar:a[2], e:a[1]}; }
 const v2First = s => { const t = String(s || '').split(/(?<=[.!?])\s+/)[0]; return t.length > 90 ? t.slice(0, 87) + '…' : t; };
@@ -1429,7 +1452,8 @@ function v2Goals(v){ const sc = v.sc, ex = sc.expressions || [], got = v.got || 
     {ar:'مثّل دورك في المشهد', en:`Play ${v2Role(sc.dialogue||{}) || 'your part'} in the scene`, ok:!!(got.dlg1 || got.dlg2)},
     {ar:'أنجز المهمة الكبيرة', en:th ? `Speak out about ${th.en}` : (v2First((sc.speakout||{}).scene) || 'Speak out'), ok:nSo >= Math.min(2, nPr || 2)}]; }
 function v2Hi(text, sc){ let h = esc(text); (sc.expressions||[]).map(e => e.w).sort((a, b) => b.length - a.length).forEach(w => { const ww = esc(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); if(ww.length > 2) h = h.replace(new RegExp(`(${ww})`, 'gi'), '<b class="sl-x">$1</b>'); }); return h; }
-function v2Slide(){
+function v2Slide(){ try{ return v2SlideInner(); }catch(e){ console.warn('slide', e); } }
+function v2SlideInner(){
   const el = document.getElementById('slide'); if(!el || !L || !L.v2) return; const v = L.v2, {sc, steps} = v, i = Math.min(v.i, steps.length-1), stp = steps[i], fmt = v.fmt || 'classic';
   const dots = V2_STAGES.map((n, x) => `<i class="${x < stp.st ? 'ok' : x === stp.st ? 'on' : ''}" title="${n}"></i>`).join('');
   const d = sc.dialogue || {}, so = sc.speakout || {}, sEmo = d.scene_emoji || sc.scene_emoji || '';
@@ -1474,15 +1498,17 @@ function v2Star(n){ if(!L || !L.v2) return; const v = L.v2, stp = v.steps[Math.m
   if(v.fmt === 'game'){ let add = 10 * (n||1); if(stp.k === 'prize'){ add = v.got.prize && !v.prizeWon ? 50 : 0; if(add) v.prizeWon = true; } else if(stp.k !== 'exp') add = 5 * (n||1);
     if(add){ v.pts = (v.pts||0) + add; try{ toast(`🏆 ‎+${add}`); }catch(e){} } }
   burst(); v2Slide(); }
-/* the teacher sometimes moves on in words ("Now for the exit check") without the [NEXT] tag: the slide follows her words */
-const V2_CUES = [['exit', /\b(exit check|last step|final step|last question|final question)\b/i], ['cul', /\b(culture|fun fact)\b/i],
-  ['so', /\b(speak[- ]out|your turn to speak)\b/i], ['dlg', /\b(role[- ]?play|act it out|play the scene)\b|\b(I'm|I am) [A-Z][a-z]+\b[\s\S]{0,160}\b(now )?(you are|you're) [A-Z][a-z]+\b/i], ['prize', /\b(grand prize|prize question)\b/i]];
+/* the teacher sometimes moves on in words ("Now, the exit check") without writing [NEXT]: the slide may follow her, but only
+   to the very next section and only on clear section names (a word like "culture" or "last question" inside a step is not enough) */
+const V2_CUES = [['exit', /\b(the exit check|exit check time)\b/i], ['cul', /\b(culture (time|corner|step)|time for (some )?culture)\b/i],
+  ['so', /\b(speak[- ]out (time|step)|time to speak out)\b/i], ['dlg', /\b(role[- ]?play time|let'?s (do|start) (a|the|our) role[- ]?play|time for (a|the|our) role[- ]?play)\b/i],
+  ['prize', /\b(grand prize question|the grand prize)\b/i]];
 function v2Follow(text){ if(!L || !L.v2 || !text) return; const v = L.v2; if(v.doneAll) return;
-  for(const [k, re] of V2_CUES){ if(!re.test(text)) continue;
-    const j = v.steps.findIndex((x, n) => n > v.i && x.k === k); if(j < 0) continue;
-    // only skip ahead to a step that comes right after the current group (never jump over a whole section)
-    if(v.steps.slice(v.i + 1, j).some(x => !['exp','prize','dlg','so','cul'].includes(x.k) && x.k !== k)) continue;
-    while(v.i < j && !v.doneAll) v2Advance(false); if(L.dg) dgSync(L); return; } }
+  const cur = v.steps[v.i], nx = v.steps.findIndex((x, n) => n > v.i && x.k !== cur.k); if(nx < 0) return;
+  for(const [k, re] of V2_CUES){ if(k !== v.steps[nx].k || !re.test(text)) continue;
+    while(v.i < nx && !v.doneAll) v2Advance(false); if(L.dg) dgSync(L); return; } }
+/* [END] is accepted from minute 21 (a trial lesson from minute 5); the room also ends itself at minute 29 */
+function endAllowed(lesson){ return lesson.trial ? elapsedMin() >= 5 : elapsedMin() >= LESSON_MIN - 4; }
 function v2Advance(auto){ if(!L || !L.v2) return; const v = L.v2; if(v.i >= v.steps.length - 1){ v.doneAll = true; v2Slide(); return; } v.i++; v.at = Date.now(); if(auto) v.auto = (v.auto||0) + 1; v2Slide(); }
 /* the note at the start of every child message: step, time, quick challenges, the child's topic choice, mission goals / quiz points.
    Time: a gentle "wrap up soon" once when a step runs over, "please move on now" only after a big overrun. */
@@ -1521,7 +1547,7 @@ function buildRulesV2(k, plan, sc, v){
   return `You are ${teacherOf(k).name} (a ${teacherOf(k).female ? 'woman' : 'man'}), a warm, funny, energetic English teacher giving a LIVE one-to-one VOICE class to a Saudi child on an iPad. Everything you write in the spoken part is read aloud by text-to-speech, and the child answers by speaking (speech-to-text).
 
 STUDENT: ${kid.en}, nickname "${nk}", ${age} years old, ${kid.boy ? 'boy' : 'girl'}, Hudhud level ${kid.level} (CEFR ${cefr}). First language Arabic.
-UNIT: "${plan.unit}" · language function of the unit: ${u.fn || ''} · grammar: ${(u.grammar||[]).join('; ')}. Lesson ${plan.li+1} of 6: "${plan.t}".${plan.review ? '\nTHIS IS A REVIEW LESSON before the unit test: recycle the whole unit, use new examples, be patient.' : ''}${prog.repeatOf === `${kid.level}-${plan.ui}-${plan.li}` ? '\nThe child did not master this lesson last time: same objective, but use NEW examples and situations in the warm-up and speak out.' : ''}
+UNIT: "${plan.unit}" · language function of the unit: ${u.fn || ''} · grammar: ${(u.grammar||[]).join('; ')}. Lesson ${plan.li+1} of 6: "${plan.t}".${plan.review ? '\nTHIS IS A REVIEW LESSON before the unit test: recycle the whole unit, use new examples, be patient.' : ''}${prog.repeatOf === `${kid.level}-${plan.ui}-${plan.li}` ? '\nSECOND TRY OF THIS LESSON: the child met these expressions last time and did not master them yet. Say it positively ("We are back to some of your favourite phrases, with new missions!"). Check what they already know quickly (one quick question each), then spend the time on NEW situations, NEW role-play names and slightly harder questions. Never reuse the examples, stories or questions of a normal run of this lesson; the child must not feel it is the same lesson again.' : ''}
 What you know about the child (use it to make it personal): ${(prog.interests||[]).join('; ') || 'nothing yet, find out what they love'}. Recent mistakes to recycle: ${(prog.mistakes||[]).slice(0,5).map(m => `"${m.wrong}" -> "${m.right}"`).join('; ') || 'none'}.${rec.length ? `
 RECYCLE TODAY (expressions from EARLIER lessons that are due for review): ${rec.map(r => `"${r.w}"`).join(', ')}. Weave them naturally into the warm-up and the speak out (a question that invites one, or use it yourself and ask the child to use it too); never make it a drill or a separate step. Each time the child uses one of them correctly in a sentence, add [REC:the expression] on its own line (once per expression).` : ''}
 
@@ -1532,14 +1558,17 @@ THE ${steps.length} STEPS, in order (every student message starts with the curre
 ${steps.map((x, i) => `${i+1}. ${x.en} (about ${x.sec}s)`).join('\n')}
 
 HOW TO RUN EACH STEP:
-- Objective: say the objective in your own friendly words, connect it to the child, then [NEXT] in the same turn.
+- Objective: in ONE or TWO short sentences say the objective in your own friendly words and connect it to the child, then [NEXT] and ask the warm-up question in the same turn.
 - Warm-up: ask the warm-up question (personalise it). After one full-sentence answer, react, then [NEXT]. The slide also shows two topic cards for the speak out later: (A) the lesson's own situation, (B) "${alt.en}". You may say once: "Tap the topic you like!" The header tells you when they tap one (TOPIC CARD).
 - Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. In your FIRST reply of the round, already give the first clue or question (for example: "You say it when you meet someone for the first time. Which expression is it?") and do NOT say the answer. The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
 - Role-play part I: set the scene in one exciting sentence. YOU play the first speaker, the CHILD plays ${v2Role(sc.dialogue||{}) || 'the other character'} (the slide shows their lines as a guide). Say your line, then let the child say theirs IN THEIR OWN WORDS — they do not need to read it exactly; react in character, improvise a little, keep it moving. Then [NEXT]. Part II: continue the scene the same way, then step out of the role and ask the 2 questions on the slide; add [GOT] if both answers were right and in sentences, then [NEXT].
 - Speak out n: play the situation with the child and ask the question on the slide (in role). The child must answer with 2 or more sentences using the unit function. Ask one follow-up question. If they did it: [GOT] [NEXT]. If they are stuck, tell them to tap the hint button, or give the first words.
-- Culture: ${small || culShort ? 'keep it tiny (short culture step today): tell ONLY the first point as one fun fact (one or two short sentences), then ask ONLY the first question; one answer is enough; then [NEXT].' : 'read the title, tell the 3 points in a lively way (short), then ask the 2 questions; one opinion with a reason is enough; then [NEXT].'}
+- Culture: ${small || culShort ? 'keep it tiny (short culture step today): tell ONLY the first point as one fun fact (one or two short sentences), then ask ONLY the first question; one answer is enough; then [NEXT].' : 'tell ONE surprising point from it in one or two short sentences and ask the first question; next turn, give one more point if they are curious and ask the second question; one opinion with a reason is enough; then [NEXT]. If the child says they already know this topic, ask THEM to teach you one thing about it instead.'}
 - Exit check: ask the exit prompt and give NO help. Then write [EXIT:yes] if they said 2 correct sentences with the function, [EXIT:partly] if one or with errors, [EXIT:no] if not; then [NEXT].
-- After the last step: specific praise about what they said today, goodbye, then [END].
+- After the last step: if the header says time is up (or all steps are done at minute 21 or later), give specific praise about what they said today, the joke or riddle, goodbye, then [END]. Never write [END] before that.
+- ONE QUESTION PER TURN. When a step has two questions (culture, role-play part II, speak out), ask the second one in your next turn.
+- When the child is stuck: 1st try = a hint (a sentence start), 2nd try = [CHOICE:...] with 2-3 options, 3rd try = say the answer, let them repeat it, then move on with [NEXT]. Do not give the answer and [NEXT] in the same turn before that.
+- EXTRAS ARE SMALL: the mini-story, the bond question, the fun challenge and the wheel are 30-second moments each; never more than 2 of them in one step, and always come back to the step.
 - Never write [NEXT] twice in one turn. Never skip ahead by yourself. If the header says "time to wrap up this step soon", finish the step naturally within a turn or two (do not rush the child). If it says "please move on now", wrap the step up in one sentence and add [NEXT].
 - TOPIC CARD: if the child chose "${alt.en}" (B), play ALL speak-out questions inside that theme: same language function and the same kind of question as on the slide, only the situation changes (the slide question is then just a guide). If they chose A or nothing, use the script's situation.
 ${{classic:'',
@@ -1856,10 +1885,25 @@ function renderKid(k){
   $('#out').onclick = logout; $('#edit').onclick = () => renderProfile(k, false);
   document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { TAB = b.dataset.tab; renderKid(k); });
   ({home:tabHome, plan:tabPlan, library:tabLibrary, wins:tabWins, room:tabRoom, shop:tabShop})[TAB](k);
-  pendingQuizCard(k); if(TAB === 'wins') stickerAlbum(k);
+  pendingQuizCard(k); if(TAB === 'wins') stickerAlbum(k); setTimeout(() => retryReport(k), 4000);
   checkNewBadges(k); maybeCelebrate(k); setTimeout(() => checkCheers(k), 1200);
 }
 
+/* a lesson report that could not be written after the lesson is written now (once per app start, at most 5 tries) */
+let REPORT_RETRY_DONE = false;
+async function retryReport(k){ const p = DB.progress[k], due = p && p.reportDue; if(!due || REPORT_RETRY_DONE || DEMO || !navigator.onLine) return; REPORT_RETRY_DONE = true;
+  if(due.tries >= 5 || Date.now() - Date.parse(due.at) > 14 * 864e5){ delete p.reportDue; save(); return; }
+  due.tries = (due.tries || 0) + 1; save();
+  try{ const txt = await callClaude({model:REPORT_MODEL, max_tokens:3000, messages:[{role:'user', content:due.prompt}]});
+    const a = txt.indexOf('{'), b = txt.lastIndexOf('}'), rep = JSON.parse(txt.slice(a, b + 1));
+    const r = DB.reports.find(x => x.kid === k && x.at === due.at); if(!r){ delete p.reportDue; save(); return; }
+    ['parentNote','talkNote','confidenceNote','levelFit','levelNote','homePractice','kidNote','bestSentence','nextFocus'].forEach(f => { if(rep[f] != null) r[f] = String(rep[f]); });
+    if(Array.isArray(rep.newWords)) r.newWords = rep.newWords.slice(0, 12).map(String);
+    if(Array.isArray(rep.mistakes)) r.mistakes = rep.mistakes.slice(0, 8).map(m => ({wrong:String(m.wrong || ''), right:String(m.right || '')}));
+    if(Array.isArray(rep.strengths)) r.strengths = rep.strengths.slice(0, 3).map(String);
+    if(Number.isFinite(Number(rep.score))) r.score = Math.max(0, Math.min(100, Math.round(Number(rep.score))));
+    delete p.reportDue; save();
+  }catch(e){ console.warn('report retry', e); } }
 /* a lesson quiz that was not finished (the app closed, a reload…) waits on the home screen for 3 days */
 function pendingQuizCard(k){ const p = DB.progress[k] || {}, pq = p.pendingQuiz, body = $('#tabBody'); if(!pq || !body || TAB !== 'home') return;
   if(Date.now() - Date.parse(pq.at) > 3 * 864e5 || (p.quizzes || []).some(q => q.slot === pq.slot)){ delete p.pendingQuiz; save(); return; }
@@ -3417,7 +3461,7 @@ async function micStream(fresh){
 /* release the mic a little after the last use so iOS switches audio back to the speaker */
 function micRelease(){ clearTimeout(MIC_IDLE_T); const busy = (typeof L !== 'undefined' && L) || document.querySelector('.reader, .ov');
   MIC_IDLE_T = setTimeout(() => { if((typeof L !== 'undefined' && L) || document.querySelector('.reader, .ov')){ micRelease(); return; } micDrop(); setAudioSession('playback'); }, busy ? 20000 : 1500); }
-document.addEventListener('visibilitychange', () => { if(document.hidden) micDrop(); });
+document.addEventListener('visibilitychange', () => { if(document.hidden && !(typeof L !== 'undefined' && L && L.dg)) micDrop(); });
 /* ONE shared AudioContext for the mic. iOS keeps a new AudioContext "suspended" unless it is resumed inside a tap; the lesson
    starts listening by itself after the teacher speaks (no tap), so a fresh context never ran there and the mic "froze".
    This one is resumed on every touch, and recording has a real timer + watchdog instead of relying on audio callbacks. */
@@ -3944,13 +3988,17 @@ const SNAP_KEY = 'hh:lesson', SNAP_MAX_MS = 40 * 60e3;
 function lessonSnap(lesson){
   if(DEMO || !lesson || lesson.done || lesson.mission || lesson.review) return;
   try{ const v = lesson.v2;
+    // two children on one iPad: another child's unfinished lesson is kept aside, not overwritten
+    try{ const o = JSON.parse(localStorage.getItem(SNAP_KEY) || 'null'); if(o && o.kid !== lesson.kid && Date.now() - o.at < SNAP_MAX_MS) localStorage.setItem(SNAP_KEY + ':prev', JSON.stringify(o)); }catch(e){}
     localStorage.setItem(SNAP_KEY, JSON.stringify({v:1, at:Date.now(), kid:lesson.kid, trial:!!lesson.trial, freeReview:!!lesson.freeReview, slot:lesson.slot, n:lesson.n, plan:lesson.plan, rules:lesson.rules,
       startedAt:lesson.startedAt.getTime(), history:lesson.history, histFrom:lesson.histFrom || 0, sw:lesson.sw, tw:lesson.tw, lastSay:lesson.lastSay, giftsBefore:lesson.giftsBefore,
       lat:lesson.lat || [], hc:lesson.hc || {}, boardWords:lesson.boardWords || [], fixes:lesson.fixes || [], v2:v ? Object.assign({}, v, {sc:null}) : null}));
   }catch(e){ console.warn('lesson snapshot', e); }
 }
-function snapRead(){ try{ return JSON.parse(localStorage.getItem(SNAP_KEY) || 'null'); }catch(e){ return null; } }
-function snapClear(lesson){ try{ if(lesson){ const s = snapRead(); if(s && s.kid !== lesson.kid) return; } localStorage.removeItem(SNAP_KEY); }catch(e){} }
+function snapRead(){ try{ return JSON.parse(localStorage.getItem(SNAP_KEY) || 'null') || JSON.parse(localStorage.getItem(SNAP_KEY + ':prev') || 'null'); }catch(e){ return null; } }
+function snapClear(lesson){ try{
+  for(const key of [SNAP_KEY, SNAP_KEY + ':prev']){ const s = JSON.parse(localStorage.getItem(key) || 'null'); if(!s) continue; if(lesson && s.kid !== lesson.kid) continue; localStorage.removeItem(key); }
+}catch(e){} }
 /* the lesson is over (report time): nothing to resume any more, and what the lesson changed is saved now */
 function lessonWrap(lesson){ snapClear(lesson); sttCool(); clearTimeout(lesson.netT); lesson.net = null; lessonFlush(); }
 /* the room is being left (finished, or the child chose to leave) */
@@ -4006,7 +4054,7 @@ async function lessonResume(s){
 }
 
 function renderRoom(){
-  $('#app').innerHTML = `<div class="room">
+  $('#app').innerHTML = `<div class="room ${L.dg || (!L.mission && !L.review && dgOn(L.kid)) ? 'dgm' : ''}">
     <header class="rbar"><button class="btn sm" id="exit">خروج</button>
       <div class="ttl">${L.trial ? `<span class="chip brand" style="font-family:var(--font)">${L.mission ? 'مهمة' : L.freeReview ? 'مراجعة مجانية' : 'تجريبي'}</span> ` : ''}${esc(L.plan.t)}</div>
       <div class="talk" id="talk"></div><div class="timer" id="timer">00:00</div></header>
@@ -4033,13 +4081,13 @@ function renderRoom(){
   $('#cam').onclick = () => { const p = DB.profiles[L.kid]; if(camStream){ stopCam(); p.camOff = true; } else { p.camOff = false; startCam(); } save(); };
   if(!(DB.profiles[L.kid]||{}).camOff) startCam();
   updateTalk();
-  $('#rep').onclick = () => { if(!L.lastSay) return; if(L.dg && L.dg.ws && L.dg.ws.readyState === 1){ dgHush(L); try{ L.dg.ws.send(JSON.stringify({type:'InjectAgentMessage', message:L.lastSay})); }catch(e){} return; } interrupt(false); sayAll(L.lastSay, true); };
+  $('#rep').onclick = () => { if(!L.lastSay) return; if(L.dg && L.dg.ws && L.dg.ws.readyState === 1){ dgHush(L, true); try{ L.dg.ws.send(JSON.stringify({type:'InjectAgentMessage', message:L.lastSay})); }catch(e){} return; } interrupt(false); sayAll(L.lastSay, true); };
   $('#spd').onclick = speedTap; $('#wheel').onclick = wheelSpin;
   $('#mic').onclick = onMicTap;
   $('#tbox').onclick = () => { if(L.dg) return; if(L.state === 'speaking' && Date.now() - (L.speakAt || 0) > 2000) { interrupt(true); } };
   $('#kb').onclick = () => { const t = $('#typer'); t.hidden = !t.hidden; if(!t.hidden){ stopListening(); $('#msg').focus(); } };
   $('#typer').addEventListener('submit', e => { e.preventDefault(); const v = $('#msg').value.trim(); if(!v) return; $('#msg').value = ''; studentSaid(v); });
-  $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } if(L.review){ finishReview(); return; } if(L.dg && dgSay(L, '(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)')) return; teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
+  $('#wrap').onclick = () => { interrupt(false); if(L.mission){ finishMission(); return; } if(L.review){ finishReview(); return; } if(L.dg && dgInject(L, '(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)')){ L.endSeen = true; L.wrapAt = Date.now(); return; } teacherTurn('(Time is up. Do the wrapup now: specific praise, what we learned, goodbye, and add [END].)'); };
   setState('idle'); setMood('happy');
   L.firstWave = true; blinkLoop(); idleGlance();
   liveSetup();
@@ -4048,10 +4096,15 @@ function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt
   if(t){ t.textContent = `${pad(Math.floor(s/60))}:${pad(s%60)} / 25:00`; t.classList.toggle('over', s > LESSON_MIN*60); }
   const w = $('#wrap'); if(w) w.hidden = !(s >= 24*60 && !L.done);
   wheelTick(s);
+  if(L.dg) dgIdle(L);
+  if(L.wrapAt && Date.now() - L.wrapAt > 45e3 && !L.done){ finishLesson(); return; }
+  // the room ends itself 4 minutes after time, whatever happens (a forgotten iPad must not keep the lesson open)
+  if(!L.done && !L.mission && !L.review && s >= (LESSON_MIN + 4) * 60 && L.state !== 'speaking'){ finishLesson(); return; }
   // safety net: a step that runs FAR over its time moves on by itself, but never while the child is listening/talking,
   // the teacher is thinking/speaking, or right after; only after the room has been quiet for a while
   if(L.v2 && !L.v2.doneAll){ const v = L.v2, stp = v.steps[v.i], now = Date.now();
-    const busy = ['listening','speaking','thinking'].includes(L.state) || L.speaking || !!L.ctl || (L.talking && !!L.rec) || (L.queue && L.queue.length);
+    const quietListen = L.state === 'listening' && !L.talking && (!L.listenStart || now - L.listenStart > 25000);
+    const busy = (['listening','speaking','thinking'].includes(L.state) && !quietListen) || L.speaking || !!L.ctl || (L.talking && !!L.rec) || (L.queue && L.queue.length);
     if(busy || !v.idleAt) v.idleAt = now;
     if(!busy && (now - v.at)/1000 > stp.sec + 180 && now - v.idleAt > 25000){ v.idleAt = now; v2Advance(true); if(L.dg) dgSync(L); } } }
 
@@ -4282,7 +4335,7 @@ async function teacherTurn(userText, attempt){
       if(adv) v2Advance(false);
       // the script is finished: the lesson may end even a little before the usual minimum
       if(tags.end && v.doneAll && elapsedMin() >= LESSON_MIN - 4) lesson.endSeen = true; }
-    if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
+    if(tags.end && endAllowed(lesson)) lesson.endSeen = true;
     if(lesson.v2 && elapsedMin() >= LESSON_MIN + 4) lesson.endSeen = true; // never run far past 25 minutes
     lesson.netN = 0; lessonSnap(lesson); lessonPull();
     // a reply that asks the child nothing leaves them waiting ("what does he want?"): make the teacher ask now
@@ -4404,123 +4457,167 @@ function hideChoices(){ const c = $('#choices'); if(c){ c.hidden = true; c.inner
 function answerByTap(text){ if(!L || !text) return; sfx('tap'); hideChoices(); studentSaid(text); }
 function showChoices(opts){ const c = $('#choices'); if(!c) return;
   c.innerHTML = `<div class="ch-l">👆 المس الإجابة أو قلها</div><div class="ch-row">${opts.map((o, i) => `<button type="button" class="chbtn" data-i="${i}">${esc(o)}</button>`).join('')}</div>`;
-  c.hidden = false; c.querySelectorAll('.chbtn').forEach(b => b.onclick = () => { b.classList.add('picked'); setTimeout(() => answerByTap(opts[Number(b.dataset.i)]), 250); });
-  try{ c.scrollIntoView({block:'nearest', behavior:'smooth'}); }catch(e){} }
+  let done = false; c.hidden = false;
+  c.querySelectorAll('.chbtn').forEach(b => b.onclick = () => { if(done) return; done = true; b.classList.add('picked'); setTimeout(() => answerByTap(opts[Number(b.dataset.i)]), 250); });
+  sideShow(c, 'end'); }
 function showOrder(words){ const c = $('#choices'); if(!c) return; const mix = words.map((w, i) => ({w, i})).sort(() => Math.random() - .5); let built = [];
   if(mix.every((x, n) => x.i === n) && mix.length > 1) mix.push(mix.shift());
   const draw = () => { c.innerHTML = `<div class="ch-l">🧩 رتّب الجملة: المس الكلمات بالترتيب</div><div class="ord-built en">${built.map(x => esc(x.w)).join(' ') || '…'}</div>
     <div class="ch-row">${mix.map((x, n) => `<button type="button" class="chbtn sm ${built.includes(x) ? 'used' : ''}" data-n="${n}" ${built.includes(x) ? 'disabled' : ''}>${esc(x.w)}</button>`).join('')}<button type="button" class="chbtn undo" id="ordUndo">↩︎</button></div>`;
-    c.querySelectorAll('[data-n]').forEach(b => b.onclick = () => { sfx('tap'); built.push(mix[Number(b.dataset.n)]); if(built.length === mix.length){ const t = built.map(x => x.w).join(' '); draw(); setTimeout(() => answerByTap(t), 350); } else draw(); });
+    c.querySelectorAll('[data-n]').forEach(b => b.onclick = () => { if(built.length >= mix.length) return; sfx('tap'); built.push(mix[Number(b.dataset.n)]); if(built.length === mix.length){ const t = built.map(x => x.w).join(' '); draw(); setTimeout(() => answerByTap(t), 350); } else draw(); });
     const u = $('#ordUndo'); if(u) u.onclick = () => { built.pop(); draw(); }; };
-  c.hidden = false; draw(); try{ c.scrollIntoView({block:'nearest', behavior:'smooth'}); }catch(e){} }
+  c.hidden = false; draw(); sideShow(c, 'end'); }
 /* the Fun Wheel: about every 7 minutes (not in the first 4 minutes or the exit check) a button appears; the result becomes a challenge */
 const WHEEL = [['say it like a robot','🤖 قلها مثل الروبوت'], ['whisper it like a secret','🤫 قلها همس'], ['say it super fast','⚡ قلها بسرعة البرق'], ['say it like a lion','🦁 قلها مثل الأسد'],
   ['say it in slow motion','🐢 قلها بالتصوير البطيء'], ['sing it','🎤 غنّها'], ['say it like a news reporter','📺 قلها مثل المذيع'], ['say it with a big smile and a silly face','😜 قلها بوجه مضحك']];
 function wheelTick(s){ const b = $('#wheel'); if(!b || !L || L.done) return; const v = L.v2, stp = v && v.steps[Math.min(v.i, v.steps.length - 1)];
   const due = s > 4 * 60 && s < (LESSON_MIN - 2) * 60 && (!L.wheelAt || Date.now() - L.wheelAt > 7 * 60e3) && !(stp && ['exit', 'obj'].includes(stp.k)) && L.state !== 'thinking';
-  if(due && b.hidden){ b.hidden = false; sfx('chime'); } }
+  if(due && b.hidden){ b.hidden = false; sfx('chime'); }
+  if(!b.hidden && !b.disabled && stp && ['exit', 'obj'].includes(stp.k)) b.hidden = true; }
 function wheelSpin(){ if(!L) return; const b = $('#wheel'); L.wheelAt = Date.now(); const pick = WHEEL[Math.floor(Math.random() * WHEEL.length)];
   b.disabled = true; b.classList.add('spin'); sfx('spin');
   setTimeout(() => { b.classList.remove('spin'); b.disabled = false; b.hidden = true; toast(`🎡 ${pick[1]}!`); fx('party');
     const msg = `(The child spun the Fun Wheel and got: "${pick[0]}". Make it a big fun moment: ask them to say one of today's expressions that way, react with lots of fun, then continue the lesson.)`;
-    if(L.dg && dgSay(L, msg)) return; teacherTurn(msg); }, 1900); }
+    if(L.dg && dgInject(L, msg)) return; teacherTurn(msg); }, 1900); }
 /* stickers: one per finished lesson, collected in an album on the "wins" tab */
 const STICKERS = '🦊🐼🦁🐯🐸🐵🦄🐙🦋🐢🐬🦉🐧🐨🦖🐝🦜🐳🦒🐘🦩🐿️🦔🐞🦀🐠🦚🦓🐻‍❄️🐲'.match(/\p{Extended_Pictographic}(‍\p{Extended_Pictographic})*️?/gu);
 function awardSticker(k, title){ const p = DB.progress[k]; p.stickers = p.stickers || []; const have = new Set(p.stickers.map(x => x.e));
-  const left = STICKERS.filter(e => !have.has(e)), e = (left.length ? left : STICKERS)[Math.floor(Math.random() * (left.length || STICKERS.length))];
-  const st = {e, title:String(title || ''), at:new Date().toISOString()}; p.stickers.push(st); save(); return st; }
+  const left = STICKERS.filter(e => !have.has(e));
+  // album full: every further lesson adds a golden star to it
+  const e = left.length ? left[Math.floor(Math.random() * left.length)] : '🌟';
+  const st = {e, title:String(title || ''), at:new Date().toISOString(), gold:!left.length}; p.stickers.push(st); save(); return st; }
 function stickerAlbum(k){ const g = document.querySelector('#tabBody .grid') || $('#tabBody'); if(!g) return; const mine = (DB.progress[k].stickers || []);
   const sec = document.createElement('section'); sec.className = 'card';
-  sec.innerHTML = `<h2>🗂️ ألبوم الملصقات <span class="small muted num">${mine.length}/${STICKERS.length}</span></h2><div class="small muted">كل حصة تخلصها تعطيك ملصق جديد</div>
+  const gold = mine.filter(x => x.gold).length, got = new Set(mine.filter(x => !x.gold).map(x => x.e)).size;
+  sec.innerHTML = `<h2>🗂️ ألبوم الملصقات <span class="small muted num">${got}/${STICKERS.length}</span>${gold ? ` <span class="small">🌟 ×${gold}</span>` : ''}</h2><div class="small muted">كل حصة تخلصها تعطيك ملصق جديد</div>
     <div class="album">${STICKERS.map(e => { const m = mine.find(x => x.e === e); return `<div class="stk ${m ? 'on' : ''}" title="${m ? esc(m.title) : ''}">${m ? e : '❔'}</div>`; }).join('')}</div>`;
   g.prepend(sec); }
-/* =============== DEEPGRAM VOICE LESSON (trial engine, per child: DB.profiles[k].engine === 'dg') ===============
+/* =============== DEEPGRAM VOICE LESSON (the default engine; DB.profiles[k].engine === 'classic' switches a child back) ===============
    One WebSocket to Deepgram's Voice Agent does the listening (Flux: knows when the child finished), the thinking (Claude,
    through our relay /ai/llm, so the key stays on the server) and the speaking (Aura-2), with natural barge-in.
    The teacher prompt and its tags are the same as the normal lesson: the relay removes the tags from what is spoken and
-   hands them to the app as one "lesson_event" function call, which this file applies (slides, stars, board, end). */
+   hands them to the app as one "lesson_event" function call, which this file applies (slides, stars, board, end).
+   Safety nets (each one answers a real failure): startup timeouts, a "thinking" watchdog, refused messages are re-sent,
+   silence nudges and a pause card, up to 4 quiet reconnects, the mic comes back after the app was in the background,
+   the lesson is snapshotted for resume, and the room ends itself 4 minutes after time even with no event. */
 const DG_URL = 'wss://agent.deepgram.com/v1/agent/converse';
 /* the teacher's speaking speed, chosen by the child during the lesson: slow / normal / fast */
 const T_SPEEDS = [{id:'slow', ar:'بطيء', ic:'🐢', f:.82}, {id:'normal', ar:'عادي', ic:'🚶', f:1}, {id:'fast', ar:'سريع', ic:'🐇', f:1.15}];
 function speedOf(k){ const id = ((DB.profiles || {})[k] || {}).speed; return T_SPEEDS.find(x => x.id === id) || T_SPEEDS[1]; }
 function dgSpeed(k){ return Math.max(.7, Math.min(1.5, Math.round((DB.kids[k].level <= 6 ? .9 : 1) * speedOf(k).f * 100) / 100)); }
+function dgVoice(k){ return teacherOf(k).female ? 'aura-2-iris-en' : 'aura-2-aries-en'; }
 function speedTap(){ if(!L) return; const k = L.kid, cur = speedOf(k), nx = T_SPEEDS[(T_SPEEDS.indexOf(cur) + 1) % T_SPEEDS.length];
   DB.profiles = DB.profiles || {}; DB.profiles[k] = Object.assign({}, DB.profiles[k], {speed:nx.id}); save();
   const b = $('#spd'); if(b) b.innerHTML = `<span class="ic">${nx.ic}</span><span>${nx.ar}</span>`; toast(`${nx.ic} سرعة المعلم: ${nx.ar}`);
-  const d = L.dg; if(d && d.ws && d.ws.readyState === 1){ const t = teacherOf(k);
-    try{ d.ws.send(JSON.stringify({type:'UpdateSpeak', speak:{provider:{type:'deepgram', model:t.female ? 'aura-2-iris-en' : 'aura-2-aries-en', speed:dgSpeed(k)}}})); }catch(e){} } }
+  const d = L.dg; if(d && d.ws && d.ws.readyState === 1){
+    try{ d.ws.send(JSON.stringify({type:'UpdateSpeak', speak:{provider:{type:'deepgram', model:dgVoice(k), speed:dgSpeed(k)}}})); }catch(e){} } }
 function dgOn(k){ return !DEMO && relayOn() && ((DB.profiles || {})[k] || {}).engine !== 'classic' && typeof WebSocket !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
 function dgNote(lesson, msg){ try{ liveFeed(lesson, 'x', '⚠ ' + msg); }catch(e){} console.warn('dg', msg); }
+/* the status line; one-shot cues (fun challenge, topic card, "wrap up soon") stay in it until the child's next turn,
+   because the prompt is refreshed every 30 s and a cue could otherwise be replaced before any reply used it */
 function dgStatus(lesson){ const v = lesson.v2; if(!v) return `minute ${elapsedMin()}`;
-  return `[minute ${elapsedMin()} of ${LESSON_MIN} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${v2Header()}]`; }
-function dgPrompt(lesson){ return lesson.rules + `
+  const h = v2Header(), cues = (h.match(/ · \[(FUN CHALLENGE|TOPIC CARD)[^\]]*\]| · time to wrap up this step soon/g) || []).join('');
+  if(cues) lesson.dgCues = cues;
+  const keep = lesson.dgCues && !h.includes(lesson.dgCues) ? lesson.dgCues : '';
+  return `[minute ${elapsedMin()} of ${LESSON_MIN} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${keep}${h}]`; }
+function dgPrompt(lesson){ return lesson.rules.replace(/ \(every student message starts with[^)]*\)/i, '') + `
 
 VOICE MODE: the child talks to you live; their words come to you as text from speech recognition. There is no header in front of their messages: the CURRENT STATUS below replaces it and is kept up to date by the app.
-Children often pause in the middle of a sentence: if their message looks unfinished, say only "Go on!" and wait.
+Children often pause in the middle of a sentence: if their message looks clearly unfinished, say only "Go on!" (with only the [MOOD:...] tag) and wait.
 Remember: give hints (a sentence start like "My name is ..."), never the full answer for them to copy.
 TAGS STILL MATTER IN VOICE MODE: the app removes your tags before the voice reads your reply, so your earlier replies in this conversation look as if they had no tags. Keep writing them at the end of EVERY reply exactly as the rules say ([GOT], [STAR], [NEXT], [FIX:...], [EXIT:...], [END], [MOOD:...]): the slides, stars and the report only move when you write them. When you move to the next step, you MUST write [NEXT].
-KEEP EVERY REPLY SHORT: at most 2 short sentences (about 25 words) before your question. React in a few words, give ONE tip at most, then ask. Long explanations bore children; the child should talk more than you.
+KEEP EVERY REPLY SHORT: at most 2 short sentences (about 25 words) before ONE question. React in a few words, give ONE tip at most, then ask. Long explanations bore children; the child should talk more than you.
 CURRENT STATUS: ${dgStatus(lesson)}`; }
+
+/* helpers for every await at startup: never wait for ever */
+const dgTimeout = (p, ms, what) => Promise.race([p, new Promise((_, no) => setTimeout(() => no(new Error(what + ' timeout')), ms))]);
 async function dgStart(lesson){
-  const k = lesson.kid, t = teacherOf(k), level = DB.kids[k].level;
-  const old = lesson.dg; lesson.dg = {ws:null, ac:null, mic:null, play:[], playEnd:0, muted:!!(old && old.muted), open:false, closing:false, retried:!!(old && old.retried)};
-  const d = lesson.dg;
+  const k = lesson.kid, level = DB.kids[k].level;
+  const old = lesson.dg; if(old) dgStop(lesson);
+  const d = lesson.dg = {ws:null, ac:null, mic:null, play:[], playEnd:0, muted:!!(old && old.muted), open:false, closing:false, out:[], since:Date.now(), turn:old ? old.turn || 0 : 0};
   // the audio context is made now, inside the child's tap (iOS only lets sound start from a tap)
   const ac = recAC(); d.ac = ac; setAudioSession('play-and-record');
-  setState('thinking');
+  setState('thinking'); dgBtns(lesson);
+  // waiting for the app to be on screen again: iOS refuses the mic in the background
+  if(document.hidden){ d.waitVisible = true; return; }
   let tok;
-  try{ const r = await fetch(RELAY + 'dgtoken', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token})});
-    if(!r.ok) throw new Error('dgtoken ' + r.status); tok = (await r.json()).token; }
-  catch(e){ dgNote(lesson, 'token ' + (e.message || e)); dgFallback(lesson); return; }
+  try{ const r = await dgTimeout(fetch(RELAY + 'dgtoken', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token})}), 8000, 'token');
+    if(!r.ok) throw new Error('dgtoken ' + r.status); const j = await r.json(); tok = j.token; d.llmTok = j.llm || ''; }
+  // the server said no (no key, limit): the normal teacher at once; a network hiccup: one more try
+  catch(e){ dgNote(lesson, 'token ' + (e.message || e)); if(/dgtoken \d/.test(String(e.message))) dgFallback(lesson); else dgRetryOrFallback(lesson, d); return; }
   if(L !== lesson || lesson.dg !== d) return;
-  // audio: one context for the microphone (16 kHz PCM to Deepgram) and the teacher's voice (24 kHz PCM from Deepgram)
   let stream;
   // the app's shared mic (it sets the iOS audio session to play-and-record first; a "playback" session refused the mic)
-  try{ stream = await micStream(); }
-  catch(e){ dgNote(lesson, 'mic ' + (e.name || e) + ' ' + (e.message || '')); if(e && e.name === 'NotAllowedError') alertBox('اسمح للميكروفون من إعدادات سفاري حتى تبدأ الحصة.'); dgFallback(lesson); return; }
+  try{ stream = await dgTimeout(micStream(), 8000, 'mic'); }
+  catch(e){ dgNote(lesson, 'mic ' + (e.name || e) + ' ' + (e.message || ''));
+    if(e && e.name === 'NotAllowedError' && !document.hidden) alertBox('اسمح للميكروفون من إعدادات سفاري حتى تبدأ الحصة.');
+    dgFallback(lesson); return; }
+  if(L !== lesson || lesson.dg !== d) return;
   try{ await ac.resume(); }catch(e){}
   d.stream = stream;
-  const ws = new WebSocket(DG_URL, ['bearer', tok]); ws.binaryType = 'arraybuffer'; d.ws = ws;
+  let ws; try{ ws = new WebSocket(DG_URL, ['bearer', tok]); }catch(e){ dgNote(lesson, 'socket ' + e); dgRetryOrFallback(lesson, d); return; }
+  ws.binaryType = 'arraybuffer'; d.ws = ws;
+  d.openT = setTimeout(() => { if(lesson.dg === d && !d.open){ dgNote(lesson, 'no settings after 10s'); try{ ws.close(); }catch(e){} dgRetryOrFallback(lesson, d); } }, 10000);
   const fns = [{name:'lesson_event', description:'Internal: used by the app. Never call it yourself.', parameters:{type:'object', properties:{tags:{type:'string', description:'lesson tags'}}, required:['tags']}}];
   ws.onopen = () => {
-    ws.send(JSON.stringify({type:'Settings', tags:['hudhud', k],
+    ws.send(JSON.stringify({type:'Settings', tags:['hudhud'],
       audio:{input:{encoding:'linear16', sample_rate:16000}, output:{encoding:'linear16', sample_rate:24000, container:'none'}},
       agent:{
-        listen:{provider:{type:'deepgram', version:'v2', model:'flux-general-en', eot_threshold:0.85, eot_timeout_ms:level <= 6 ? 6000 : 5000,
+        listen:{provider:{type:'deepgram', version:'v2', model:'flux-general-en', eot_threshold:level <= 6 ? 0.9 : 0.85, eot_timeout_ms:level <= 6 ? 6000 : 5000,
           keyterms:[nick(k)].concat(typeof livePhrases === 'function' ? livePhrases() : []).filter(Boolean).slice(0, 40)}},
         think:{provider:{type:'anthropic', model:'claude-sonnet-5-5', temperature:0.8},
-          endpoint:{url:RELAY + 'llm', headers:{'x-hh-token':CLOUD.token}},
+          // a short-lived token that only opens /ai/llm (not the child's login)
+          endpoint:{url:RELAY + 'llm', headers:{'x-hh-llm':d.llmTok || '', 'x-hh-token':d.llmTok ? '' : CLOUD.token}},
           prompt:dgPrompt(lesson), functions:fns},
-        context:lesson.history.length ? {messages:lesson.history.slice(-30).map(h => ({type:'History', role:h.role, content:String(h.content).replace(/\[[A-Z]+(:[^\]]*)?\]/g, '').replace(/^Student: /, '').trim() || '...'}))} : undefined,
-        speak:{provider:{type:'deepgram', model:t.female ? 'aura-2-iris-en' : 'aura-2-aries-en', speed:dgSpeed(k)}}
+        context:lesson.history.length ? {messages:lesson.history.slice(-30).map(h => ({type:'History', role:h.role,
+          content:String(h.content).replace(/^(\[[^\]]*\]\s*)+/, '').replace(/\[[A-Z]+(:[^\]]*)?\]/g, '').replace(/^Student: /, '').trim() || '...'}))} : undefined,
+        speak:{provider:{type:'deepgram', model:dgVoice(k), speed:dgSpeed(k)}}
       }}));
   };
   ws.onmessage = ev => { if(L !== lesson || lesson.dg !== d) return; if(typeof ev.data !== 'string'){ dgPlay(lesson, ev.data); return; }
     let m; try{ m = JSON.parse(ev.data); }catch(e){ return; } dgEvent(lesson, m); };
   ws.onerror = () => dgNote(lesson, 'socket error');
   ws.onclose = ev => { if(L !== lesson || lesson.done || d.closing || lesson.dg !== d) return; dgNote(lesson, 'closed ' + ev.code + ' ' + (ev.reason || ''));
-    if(!d.open){ dgFallback(lesson); return; }
-    // dropped mid-lesson: reconnect once quietly, with the conversation so far
-    if(!d.retried){ d.retried = true; dgStop(lesson); setTimeout(() => { if(L === lesson && !lesson.done) dgStart(lesson); }, 800); }
-    else { dgNote(lesson, 'switching to the normal teacher'); dgFallback(lesson); } };
-  d.ka = setInterval(() => { if(ws.readyState === 1 && d.muted) ws.send(JSON.stringify({type:'KeepAlive'})); }, 5000);
+    clearTimeout(d.openT); dgRetryOrFallback(lesson, d); };
+  d.ka = setInterval(() => { if(ws.readyState === 1 && (d.muted || lesson.paused)) try{ ws.send(JSON.stringify({type:'KeepAlive'})); }catch(e){} }, 5000);
   d.st = setInterval(() => dgSync(lesson), 30000);
 }
-/* the microphone starts once Deepgram applied the settings: 16 kHz mono 16-bit PCM in ~40 ms frames */
-async function dgMic(lesson){ const d = lesson.dg, ac = d.ac, src = ac.createMediaStreamSource(d.stream), ratio = ac.sampleRate / 16000;
+/* a dropped or failed connection: up to 4 quiet reconnects (0.8 s, 2 s, 5 s, 8 s) with the conversation so far; the count
+   resets after 3 stable minutes. Only then does the old engine take over. A connection that never opened goes straight there. */
+function dgRetryOrFallback(lesson, d){ if(L !== lesson || lesson.done) return;
+  if(d && d.open && Date.now() - d.since > 180e3) lesson.dgDrops = 0;
+  const n = lesson.dgDrops = (lesson.dgDrops || 0) + 1;
+  if(n > 4 || (d && !d.open && n > 1)){ dgNote(lesson, 'switching to the normal teacher'); dgFallback(lesson); return; }
+  dgStop(lesson); setState('thinking');
+  setTimeout(() => { if(L === lesson && !lesson.done && !lesson.paused) dgStart(lesson); }, [800, 2000, 5000, 8000][n - 1] || 8000); }
+/* the microphone starts once Deepgram applied the settings: 16 kHz mono 16-bit PCM; a low-pass first so sounds above 8 kHz
+   do not fold back into the speech band (that hiss hurts recognition of s, f, th) */
+async function dgMic(lesson){ const d = lesson.dg, ac = d.ac;
+  try{ if(d.mic){ d.mic.sp.onaudioprocess = null; d.mic.src.disconnect(); d.mic.sp.disconnect(); } }catch(e){}
+  const src = ac.createMediaStreamSource(d.stream), ratio = ac.sampleRate / 16000;
+  const lp1 = ac.createBiquadFilter(), lp2 = ac.createBiquadFilter(); lp1.type = lp2.type = 'lowpass'; lp1.frequency.value = lp2.frequency.value = 7000; lp1.Q.value = lp2.Q.value = .7;
   let carry = new Float32Array(0);
-  const send = f => { if(!d.ws || d.ws.readyState !== 1 || d.muted) return;
+  const send = f => { if(!d.ws || d.ws.readyState !== 1 || d.muted || lesson.paused) return;
     const all = new Float32Array(carry.length + f.length); all.set(carry); all.set(f, carry.length);
     const n = Math.floor(all.length / ratio), out = new Int16Array(n);
     for(let i = 0; i < n; i++){ const s = Math.max(-1, Math.min(1, all[Math.floor(i * ratio)])); out[i] = s < 0 ? s * 0x8000 : s * 0x7fff; }
-    carry = all.slice(Math.floor(n * ratio)); if(n) d.ws.send(out.buffer); };
+    carry = all.slice(Math.floor(n * ratio)); if(n) try{ d.ws.send(out.buffer); }catch(e){} };
   const sp = ac.createScriptProcessor(2048, 1, 1); sp.onaudioprocess = e => send(new Float32Array(e.inputBuffer.getChannelData(0)));
-  const mute = ac.createGain(); mute.gain.value = 0; src.connect(sp); sp.connect(mute); mute.connect(ac.destination); d.mic = {src, sp, mute}; }
-function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac) return;
+  const mute = ac.createGain(); mute.gain.value = 0; src.connect(lp1); lp1.connect(lp2); lp2.connect(sp); sp.connect(mute); mute.connect(ac.destination); d.mic = {src, sp, mute, lp1, lp2}; }
+/* the app came back to the screen: the mic tracks may have been ended by iOS; get them again, and reconnect if the socket
+   was lost while hidden */
+async function dgVisible(lesson){ const d = lesson && lesson.dg; if(!d || lesson.done) return;
+  if(d.waitVisible){ d.waitVisible = false; dgStart(lesson); return; }
+  if(!d.ws || d.ws.readyState > 1){ dgRetryOrFallback(lesson, d); return; }
+  const dead = !d.stream || d.stream.getTracks().some(t => t.readyState !== 'live');
+  if(dead && d.open){ try{ d.stream = await micStream(true); await dgMic(lesson); dgNote(lesson, 'mic restored'); }catch(e){ dgNote(lesson, 'mic restore ' + (e.name || e)); dgRetryOrFallback(lesson, d); } } }
+document.addEventListener('visibilitychange', () => { if(!document.hidden && typeof L !== 'undefined' && L && L.dg) dgVisible(L); });
+function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac || d.hushed) return;
   // 16-bit samples: a frame that ends in the middle of a sample keeps that byte for the next one (a misaligned sample = crackle)
   let u8 = new Uint8Array(buf); if(d.odd){ const m = new Uint8Array(u8.length + 1); m[0] = d.odd[0]; m.set(u8, 1); u8 = m; d.odd = null; }
   if(u8.length % 2){ d.odd = u8.slice(-1); u8 = u8.slice(0, -1); }
   const i16 = new Int16Array(u8.buffer, u8.byteOffset, u8.length / 2); if(!i16.length) return;
+  dgHeard(lesson);
   const ab = ac.createBuffer(1, i16.length, 24000), ch = ab.getChannelData(0); for(let i = 0; i < i16.length; i++) ch[i] = i16[i] / 32768;
   const s = ac.createBufferSource(); s.buffer = ab; s.connect(ac.destination);
   // a little head start when the voice (re)starts, so small network delays between frames do not leave gaps (clicks)
@@ -4531,91 +4628,164 @@ function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac) return;
   if(lesson.state !== 'speaking'){ setState('speaking'); if(lesson.firstWave){ lesson.firstWave = false; setPose('wave', 2800); } }
   if(ac.state !== 'running'){ try{ ac.resume(); }catch(e){} }
   if(!lesson.mouthT) mouthWalk('abababababababababababababababab', 70); }
-function dgHush(lesson){ const d = lesson.dg; d.play.forEach(s => { try{ s.onended = null; s.stop(); }catch(e){} }); d.play = []; d.playEnd = 0; d.odd = null; stopMouth(); setMouth('rest');
+/* stop the teacher's voice now; frames of the cut turn that are still on their way are dropped until the next turn */
+function dgHush(lesson, drop){ const d = lesson.dg; if(!d) return; d.play.forEach(s => { try{ s.onended = null; s.stop(); }catch(e){} }); d.play = []; d.playEnd = 0; d.odd = null; stopMouth(); setMouth('rest');
+  if(drop) d.hushed = true;
   if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; } }
-/* karaoke subtitles: the teacher's words start dim and light up as they are spoken; the current line stays on screen */
+/* karaoke subtitles: the teacher's words start dim and light up as they are spoken; the current line stays in view */
 function karaShow(lesson, text){ const d = lesson.dg, sub = $('#sub'); if(!sub) return;
   const k = d.kara && !d.kara.done && d.kara.turn === d.turn ? d.kara : (d.kara = {turn:d.turn, words:[], chars:[], total:0, t0:(d.play.length && d.vT0) || 0, dur:d.play.length ? (d.vDur || 0) : 0, done:false, last:-1});
   if(!k.words.length) sub.innerHTML = '';
   String(text).split(/\s+/).filter(Boolean).forEach(w => { const sp = document.createElement('span'); sp.className = 'kw'; sp.textContent = w + ' ';
     sub.appendChild(sp); k.total += w.length + 1; k.words.push(sp); k.chars.push(k.total); });
   karaLoop(lesson); }
+/* scroll only the lesson's side panel (never the page) so the element is visible, without hiding the slide header if possible */
+function sideShow(el, where){ if(!el) return; const side = el.closest('.side'); if(!side) return;
+  const r = el.getBoundingClientRect(), sr = side.getBoundingClientRect();
+  if(r.top >= sr.top + 8 && r.bottom <= sr.bottom - 8) return;
+  const top = side.scrollTop + (r.top - sr.top) - (where === 'end' ? sr.height - r.height - 12 : sr.height / 3);
+  try{ side.scrollTo({top:Math.max(0, top), behavior:'smooth'}); }catch(e){ side.scrollTop = Math.max(0, top); } }
 function karaLoop(lesson){ const d = lesson.dg; if(!d || !d.kara || d.karaRaf) return;
   const step = () => { d.karaRaf = 0; const k = d.kara; if(!k || k.done || L !== lesson || !d.ac) return;
     // seconds per character: measured from the audio received so far (the audio arrives faster than it plays)
     const played = k.t0 ? Math.max(0, d.ac.currentTime - k.t0) : 0, spc = k.dur > 0.5 && k.total ? Math.max(.035, Math.min(.12, k.dur / k.total)) : .07 / dgSpeed(lesson.kid);
     const upto = played / spc; let i = k.last;
     while(i + 1 < k.words.length && k.chars[i + 1] - (k.words[i + 1].textContent.length) <= upto){ i++; k.words[i].classList.add('on'); }
-    if(i !== k.last){ k.last = i; const w = k.words[i]; const r = w.getBoundingClientRect();
-      if(r.bottom > innerHeight - 110 || r.top < 70){ try{ w.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){ w.scrollIntoView(); } } }
+    if(i !== k.last){ k.last = i; sideShow(k.words[i]); }
     if(i < k.words.length - 1 || d.play.length) d.karaRaf = requestAnimationFrame(step); };
   d.karaRaf = requestAnimationFrame(step); }
 /* the teacher's voice has finished playing */
 function dgSpoke(lesson){ const d = lesson.dg; d.audioDone = false; if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; } stopMouth(); setMouth('rest'); lesson.tAudioEnd = Date.now();
-  if(lesson.endSeen){ finishLesson(); return; }
-  setState(d.muted ? 'idle' : 'listening'); lesson.listenStart = Date.now(); }
+  if(lesson.endSeen && !d.out.length){ finishLesson(); return; }   // a queued goodbye request is said first
+  // the teacher moved on in words but wrote no tag at all in this turn: let the slide follow her (one step at most)
+  if(!d.turnTagged && lesson.lastSay) v2Follow(lesson.lastSay);
+  d.turnTagged = false;
+  setState(d.muted ? 'idle' : 'listening'); lesson.listenStart = Date.now(); d.nudges = d.nudges || 0;
+  dgOut(lesson); }
+/* the teacher is answering (voice or text arrived): the watchdog can rest */
+function dgHeard(lesson){ const d = lesson.dg; if(!d) return; clearTimeout(d.thinkT); d.thinkT = null; d.thinkFails = 0; }
+/* "thinking" for 10 s without a word: ask once more; a second silence means the connection is not healthy */
+function dgWatch(lesson){ const d = lesson.dg; if(!d) return; clearTimeout(d.thinkT);
+  d.thinkT = setTimeout(() => { if(L !== lesson || lesson.dg !== d || lesson.done) return;
+    if(lesson.state !== 'thinking') return;
+    d.thinkFails = (d.thinkFails || 0) + 1; dgNote(lesson, 'no reply after 14s (' + d.thinkFails + ')');
+    if(d.thinkFails >= 2){ d.thinkFails = 0; dgNote(lesson, 'switching to the normal teacher'); dgFallback(lesson); return; }
+    dgInject(lesson, '(Your last reply did not reach the child. Say your last question again, short and clear.)'); }, 10000); }
+/* messages from the app (typed or tapped answers, the wheel, time is up): Deepgram refuses them while someone is talking,
+   so they wait in a small queue and are sent when the turn is free */
+function dgInject(lesson, text){ const d = lesson.dg; if(!d) return false; d.out.push(text); dgOut(lesson); return true; }
+function dgOut(lesson){ const d = lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1 || !d.open || !d.out.length) return;
+  if(d.play.length || lesson.state === 'speaking' || lesson.talking) return;   // wait for the turn to be free
+  const text = d.out[0]; d.sent = text;
+  try{ d.ws.send(JSON.stringify({type:'InjectUserMessage', content:text})); }catch(e){ return; }
+  setState('thinking'); dgWatch(lesson); }
 function dgEvent(lesson, m){ const d = lesson.dg;
   switch(m.type){
-    case 'SettingsApplied': d.open = true; dgMic(lesson).catch(e => dgNote(lesson, 'mic ' + e));
-      d.ws.send(JSON.stringify({type:'InjectUserMessage', content: lesson.history.length ? '(The student came back to the class. Welcome them back in one short sentence and continue the current step where we were.)' : '(The student just joined the class. Greet them warmly by nickname and start the lesson.)'}));
-      break;
-    case 'UserStartedSpeaking': dgHush(lesson); setState('listening'); lesson.talking = true; break;
-    case 'AgentThinking': setState('thinking'); break;
-    case 'AgentStartedSpeaking': lesson.talking = false; break;
+    case 'SettingsApplied': d.open = true; d.since = Date.now(); clearTimeout(d.openT); dgMic(lesson).catch(e => dgNote(lesson, 'mic ' + e));
+      if(!d.greeted){ d.greeted = true;
+        d.out.unshift(lesson.history.length ? '(The connection came back. Do NOT greet again: say "Okay, let\'s continue!" and repeat the current question of this step, short.)' : '(The student just joined the class. Greet them warmly by nickname and start the lesson.)'); }
+      dgOut(lesson); break;
+    case 'UserStartedSpeaking': dgHush(lesson, true); setState('listening'); lesson.talking = true; d.userAt = Date.now(); hideChoices(); break;
+    case 'AgentThinking': setState('thinking'); dgWatch(lesson); break;
+    case 'AgentStartedSpeaking': lesson.talking = false; d.hushed = false; dgHeard(lesson); break;
     case 'AgentAudioDone': d.audioDone = true; if(!d.play.length) dgSpoke(lesson); break;
+    case 'InjectionRefused': dgNote(lesson, 'message waits: ' + (m.message || '')); setTimeout(() => dgOut(lesson), 1500); break;
     case 'ConversationText': {
-      const txt = String(m.content || '').trim(); if(!txt || /^\(/.test(txt)) break;
-      if(m.role === 'user'){ d.turn = (d.turn || 0) + 1; if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; } const u = 'Student: ' + txt; lesson.talking = false; lesson.sw += countWords(txt); updateTalk(); lesson.history.push({role:'user', content:u}); liveFeed(lesson, 'k', u);
-        const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('note', 'live'); you.textContent = txt; } setState('thinking'); }
+      const txt = String(m.content || '').trim(); if(!txt) break;
+      if(m.role === 'user'){
+        if(d.sent && txt === d.sent){ d.out.shift(); d.sent = null; break; }        // the echo of our own message
+        if(/^\(/.test(txt)) break;
+        if(d.out.length && d.out[0] === txt){ d.out.shift(); d.sent = null; }
+        d.turn = (d.turn || 0) + 1; d.nudges = 0; lesson.dgCues = '';
+        if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; }
+        if(d.typed && d.typed.text === txt && Date.now() - d.typed.at < 5000){ d.typed = null; setState('thinking'); dgWatch(lesson); break; }   // already in history
+        dgChildSaid(lesson, txt, {delayMs:d.userAt && lesson.tAudioEnd ? Math.max(0, d.userAt - lesson.tAudioEnd) : null, durMs:d.userAt ? Date.now() - d.userAt : null});
+        setState('thinking'); dgWatch(lesson); }
       else { // Deepgram sends the teacher's turn sentence by sentence: keep them together as one turn
+        dgHeard(lesson); if(d.sent && d.out[0] === d.sent){ d.out.shift(); d.sent = null; }
         const last = lesson.history[lesson.history.length - 1]; lesson.tw += countWords(txt); updateTalk(); liveFeed(lesson, 't', txt);
         if(last && last.role === 'assistant' && !last.tagged){ last.content += ' ' + txt; lesson.lastSay = (lesson.lastSay ? lesson.lastSay + ' ' : '') + txt; }
         else { lesson.history.push({role:'assistant', content:txt}); lesson.lastSay = txt; }
-        karaShow(lesson, txt); askShow(lesson.lastSay, ''); v2Follow(txt); }
+        karaShow(lesson, txt); askShow(lesson.lastSay, ''); }
       break; }
     case 'FunctionCallRequest': (m.functions || []).forEach(f => { let a = {}; try{ a = JSON.parse(f.arguments || '{}'); }catch(e){}
-      if(f.name === 'lesson_event') dgTags(lesson, String(a.tags || ''));
-      if(f.client_side !== false) d.ws.send(JSON.stringify({type:'FunctionCallResponse', id:f.id, name:f.name, content:'ok'})); }); break;
-    case 'Error': dgNote(lesson, 'error ' + (m.code || '') + ' ' + (m.description || '')); break;
+      if(f.name === 'lesson_event'){ d.turnTagged = true; dgTags(lesson, String(a.tags || '')); }
+      if(f.client_side !== false) try{ d.ws.send(JSON.stringify({type:'FunctionCallResponse', id:f.id, name:f.name, content:'ok'})); }catch(e){} }); break;
+    case 'Error': dgNote(lesson, 'error ' + (m.code || '') + ' ' + (m.description || ''));
+      // the thinking step failed (relay/LLM error): ask again once at once, the watchdog handles the rest
+      if(/THINK|LLM|FUNCTION/i.test(String(m.code || '') + ' ' + String(m.description || '')) && lesson.state === 'thinking'){
+        d.thinkFails = (d.thinkFails || 0) + 1;
+        if(d.thinkFails >= 2){ d.thinkFails = 0; dgFallback(lesson); }
+        else setTimeout(() => dgInject(lesson, '(Something went wrong with your last reply. Say your last question again, short.)'), 600); }
+      break;
     case 'Warning': console.warn('dg warning', m); break;
   }
 }
+/* one child turn (spoken or typed): the history line carries the step, like the classic engine, so the judge, the
+   measured confidence and the report see it */
+function dgChildSaid(lesson, txt, meta){ const v = lesson.v2, stp = v && v.steps[Math.min(v.i, v.steps.length - 1)];
+  const head = `[minute ${elapsedMin()}]${v ? ` [step ${v.i + 1}/${v.steps.length}: ${stp.en}]` : ''} `, u = 'Student: ' + txt;
+  lesson.talking = false; lesson.sw += countWords(txt); updateTalk(); lesson.history.push({role:'user', content:head + u}); liveFeed(lesson, 'k', u);
+  const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('note', 'live'); you.textContent = txt; }
+  hideChoices();
+  try{ if(typeof lessonUtterance === 'function') lessonUtterance({text:txt, delayMs:meta && meta.delayMs, durMs:meta && meta.durMs}); }catch(e){}
+  lessonSnap(lesson); }
 /* the same effects as the tags of a normal teacher turn */
 function dgTags(lesson, full){ const tags = parseTags(full);
   if(tags.mood) setMood(tags.mood);
   const last = lesson.history[lesson.history.length - 1]; if(last && last.role === 'assistant'){ last.content += '\n' + full.replace(/\[MOOD:[^\]]*\]/gi, '').trim(); last.tagged = true; }
-  const sub = $('#sub'); if(sub && tags.ar) sub.innerHTML = esc(lesson.lastSay || '') + `<div class="ar">${esc(tags.ar)}</div>`;
+  const sub = $('#sub'); if(sub && tags.ar){ const ar = document.createElement('div'); ar.className = 'ar'; ar.textContent = tags.ar; sub.appendChild(ar); }
   if(tags.ar) askShow(lesson.lastSay || '', tags.ar);
   if(tags.board && tags.board.word){ showBoard(tags.board); (lesson.boardWords = lesson.boardWords || []).push(tags.board.word); }
   showFix(tags.fix); if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
   funTags(lesson, tags);
   if(lesson.v2){ const v = lesson.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)];
     if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
-    if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide();
+    try{ if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide(); }catch(e){ console.warn('slide', e); }
     if(tags.exit) v.exit = tags.exit;
     let adv = !!tags.next; if(!adv && stp.k === 'exp' && (stp.pair || [stp.i]).every(x => v.got['exp' + x])) adv = true;
-    if(adv){ v2Advance(false); dgSync(lesson); }
-    if(tags.end && v.doneAll && elapsedMin() >= LESSON_MIN - 4) lesson.endSeen = true; }
-  if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
+    if(adv){ try{ v2Advance(false); }catch(e){ console.warn('advance', e); } dgSync(lesson); } }
+  if(tags.end && endAllowed(lesson)) lesson.endSeen = true;
   if(elapsedMin() >= LESSON_MIN + 4) lesson.endSeen = true;
-  if(lesson.endSeen && !lesson.dg.play.length && lesson.state !== 'speaking') setTimeout(() => { if(L === lesson && !lesson.done) finishLesson(); }, 1500);
+  lessonSnap(lesson);
+  if(lesson.endSeen && lesson.dg && !lesson.dg.play.length && !lesson.dg.out.length && lesson.state !== 'speaking') setTimeout(() => { if(L === lesson && !lesson.done) finishLesson(); }, 1500);
 }
 /* keep the teacher's view of the lesson (step, minute, time left) current */
 function dgSync(lesson){ const d = lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1 || !d.open) return;
   try{ d.ws.send(JSON.stringify({type:'UpdatePrompt', prompt:dgPrompt(lesson)})); }catch(e){} }
-function dgStop(lesson){ const d = lesson && lesson.dg; if(!d) return; d.closing = true; clearInterval(d.ka); clearInterval(d.st);
+function dgStop(lesson){ const d = lesson && lesson.dg; if(!d) return; d.closing = true; clearInterval(d.ka); clearInterval(d.st); clearTimeout(d.thinkT); clearTimeout(d.openT);
   dgHush(lesson);
   try{ if(d.mic){ d.mic.sp.onaudioprocess = null; d.mic.src.disconnect(); d.mic.sp.disconnect(); } }catch(e){}
-  try{ d.ws && d.ws.close(); }catch(e){} try{ micRelease(); }catch(e){} }
-/* typed answers and app messages go into the same conversation */
-function dgSay(lesson, text){ const d = lesson && lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1) return false;
-  d.ws.send(JSON.stringify({type:'InjectUserMessage', content:text})); setState('thinking'); return true; }
-/* Deepgram could not start (no key yet, blocked, …): the normal lesson engine takes over */
-function dgFallback(lesson){ if(L !== lesson || lesson.done) return; dgStop(lesson); lesson.dg = null;
-  teacherTurn(lesson.history.length ? '(The student came back to the class. Welcome them back and continue.)' : '(The student just joined the class. Greet them warmly by nickname and start chatting.)'); }
-/* the mic button: mute / unmute the child (the conversation itself never needs a tap) */
-function dgMicTap(lesson){ const d = lesson.dg; if(!d) return; d.muted = !d.muted;
-  if(d.muted){ setState('idle'); toast('🔇 المايكروفون مقفول'); } else { setState(d.play.length ? 'speaking' : 'listening'); toast('🎤 المايكروفون مفتوح'); } }
+  try{ d.ws && d.ws.close(); }catch(e){} }
+/* typed answers, tapped answers and app messages go into the same conversation */
+function dgSay(lesson, text){ const d = lesson && lesson.dg; if(!d) return false;
+  if(!/^\(/.test(text)){ d.typed = {text, at:Date.now()}; d.turn = (d.turn || 0) + 1; d.nudges = 0; lesson.dgCues = ''; dgChildSaid(lesson, text, null); }
+  return dgInject(lesson, text); }
+/* Deepgram could not start or keeps dropping: the normal lesson engine takes over */
+function dgFallback(lesson){ if(L !== lesson || lesson.done) return; dgStop(lesson); lesson.dg = null; dgBtns(lesson); micRelease();
+  teacherTurn(lesson.history.length ? '(The connection changed. Do not greet again: say "Okay, let\'s continue!" and repeat the current question, short.)' : '(The student just joined the class. Greet them warmly by nickname and start chatting.)'); }
+/* silence: a nudge after 12 s, 25 s and 45 s of quiet; after ~3 minutes with nothing from the child, a pause card */
+function dgIdle(lesson){ const d = lesson.dg; if(!d || !d.open || lesson.paused || lesson.done || d.muted) return;
+  if(lesson.state !== 'listening' || lesson.talking || d.play.length || d.out.length) return;
+  const quiet = Date.now() - (lesson.listenStart || Date.now()), waits = [12e3, 25e3, 45e3];
+  if(d.nudges < waits.length && quiet > waits[d.nudges]){ d.nudges++; lesson.listenStart = Date.now(); dgInject(lesson, '(student was silent)'); return; }
+  if(d.nudges >= waits.length && quiet > 60e3) dgPause(lesson); }
+function dgPause(lesson){ const d = lesson.dg; if(!d) return; lesson.paused = true; dgStop(lesson); lesson.dg = Object.assign(d, {closing:true}); setState('idle');
+  const sub = $('#sub'); if(sub) sub.innerHTML = '<div class="ar" style="font-size:1.1rem">⏸️ الحصة متوقفة لأنك ما تكلمت فترة. جاهز نكمل؟</div><div style="text-align:center;margin-top:10px"><button class="btn primary big" id="resumeBtn" type="button">▶️ نكمل الحصة</button></div>';
+  const b = $('#resumeBtn'); if(b) b.onclick = () => { lesson.paused = false; lesson.dgDrops = 0; dgStart(lesson); }; }
+/* the mic button in voice mode: you just talk. A tap shows that; a long press (or a tap while muted) turns the mic off/on */
+function dgMicTap(lesson){ const d = lesson.dg; if(!d) return;
+  if(lesson.paused){ lesson.paused = false; dgStart(lesson); return; }
+  if(d.muted){ dgMute(lesson, false); return; }
+  toast('🎤 تكلم بس! المعلم يسمعك بدون ما تضغط'); const b = $('#mic'); if(b){ b.classList.remove('hint'); void b.offsetWidth; b.classList.add('hint'); } }
+function dgMute(lesson, on){ const d = lesson.dg; if(!d) return; d.muted = on;
+  if(on){ setState('idle'); toast('🔇 المايكروفون مقفول. اضغط عليه لتفتحه'); } else { setState(d.play.length ? 'speaking' : 'listening'); lesson.listenStart = Date.now(); toast('🎤 المايكروفون مفتوح'); }
+  const b = $('#mic'); if(b) b.classList.toggle('muted', on); }
+/* buttons that behave differently in voice mode (long press on the mic = mute) */
+function dgBtns(lesson){ const b = $('#mic'); if(!b || b.dgBound) return; b.dgBound = true; let t = null;
+  b.addEventListener('pointerdown', () => { if(!L || !L.dg) return; t = setTimeout(() => { t = 'long'; if(L && L.dg) dgMute(L, !L.dg.muted); }, 700); });
+  const up = e => { if(t === 'long'){ e.preventDefault(); e.stopImmediatePropagation(); } clearTimeout(t); setTimeout(() => { t = null; }, 0); };
+  b.addEventListener('pointerup', up, true); b.addEventListener('pointercancel', up, true); b.addEventListener('click', e => { if(t === 'long'){ e.preventDefault(); e.stopImmediatePropagation(); } }, true); }
 
 /* ---- listening ---- */
 function onMicTap(){
@@ -4690,7 +4860,7 @@ function studentSaid(text){
 
 /* ---- finish ---- */
 async function finishLesson(){
-  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; dgStop(lesson); stopListening(); setState('idle'); clearInterval(lesson.tick); wakeOff();
+  const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; if(lesson.dg){ dgStop(lesson); micRelease(); } stopListening(); setState('idle'); clearInterval(lesson.tick); wakeOff();
   const k = lesson.kid, mins = elapsedMin(), plan = lesson.plan;
   lessonWrap(lesson);
   const ov = document.createElement('div'); ov.className = 'ov';
@@ -4706,9 +4876,7 @@ async function finishLesson(){
   const meas = measureConfidence(lesson), flags = lessonTags(lesson, 'FLAG').slice(0, 5), recUsed = lessonV2RecUsed(lesson);
   const judgeP = lesson.v2 ? judgeLesson(lesson, repAbort.signal).catch(e => { console.warn('judge', e); return null; }) : Promise.resolve(null);
   let rep = null;
-  try{
-    const txt = await callClaude({model:REPORT_MODEL, max_tokens:3000, messages:[{role:'user', content:
-`You are an expert English teacher for Arab children. Assess this one-to-one speaking lesson and write a short quiz.
+  const repPrompt = `You are an expert English teacher for Arab children. Assess this one-to-one speaking lesson and write a short quiz.
 Student: ${DB.kids[k].en}, ${ageOf(DB.kids[k].birth)} years old, level ${DB.kids[k].level} (CEFR ${LEVEL_CEFR[DB.kids[k].level]}).
 Lesson: "${plan.t}" (unit "${plan.unit}"). Goal: ${plan.goal}. Sentence patterns: ${plan.pattern}.
 ${lesson.v2 ? `Stage results recorded by the app (7-stage lesson): expressions used correctly ${Object.keys(lesson.v2.got).filter(x => x.startsWith('exp')).length}/${lesson.v2.sc.expressions.length}, speak-out questions done ${Object.keys(lesson.v2.got).filter(x => x.startsWith('so')).length}/3, exit check: ${lesson.v2.exit || 'not reached'}, steps reached ${lesson.v2.i + 1}/${lesson.v2.steps.length}.\n` : ''}Transcript (STUDENT lines are speech-to-text):
@@ -4730,12 +4898,15 @@ ${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer lengt
 "quiz":[5 questions about THIS lesson at the child's level, mainly sentence building:
   2 of {"type":"order","words":["the","words","of","a","correct","sentence","in","order"],"answer":"the full correct sentence","ar":"short Arabic instruction"} (5-9 words, using today's patterns),
   2 of {"type":"mc","q":"fill the gap or choose the best reply","options":["...","...","..."],"answer":index},
-  1 of {"type":"mc","q":"Which sentence is correct?","options":["...","...","..."],"answer":index}]}`}]}, repAbort.signal);
+  1 of {"type":"mc","q":"Which sentence is correct?","options":["...","...","..."],"answer":index}]}`;
+  try{
+    const txt = await callClaude({model:REPORT_MODEL, max_tokens:3000, messages:[{role:'user', content:repPrompt}]}, repAbort.signal);
     const a = txt.indexOf('{'), b = txt.lastIndexOf('}'); rep = JSON.parse(txt.slice(a, b+1));
   }catch(e){ console.warn(e); }
   const judge = await judgeP;
   clearTimeout(repTimer);
-  if(!rep) rep = {score:0, stars:2, newWords:[], mistakes:[], parentNote:'لم يُكتب التقرير بسبب مشكلة اتصال، لكن الحصة سُجّلت.', kidNote:'Great job today!', nextFocus:'', quiz:[]};
+  const repFailed = !rep;
+  if(!rep) rep = {score:0, stars:2, newWords:[], mistakes:[], parentNote:'لم يُكتب التقرير بسبب مشكلة اتصال، وسيُكمل تلقائياً عند فتح التطبيق مرة ثانية.', kidNote:'Great job today!', nextFocus:'', quiz:[]};
   // the judge's verdict replaces the teacher's [EXIT] for progression; the teacher's stays as v2.exitTeacher
   if(lesson.v2){ lesson.v2.exitTeacher = lesson.v2.exit || null; if(judge && judge.exit) lesson.v2.exit = judge.exit; }
   const sc0 = lessonScore(rep, lesson, judge);
@@ -4763,6 +4934,8 @@ ${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer lengt
   if(!lesson.trial){
     const att = att0;
     DB.reports.push(Object.assign({}, att, report));
+    // the report could not be written (connection): keep what is needed to write it later, when the app opens again
+    if(repFailed) DB.progress[k].reportDue = {at:att.at, slot:att.slot, prompt:repPrompt.slice(0, 40000), tries:0};
     const p = DB.progress[k], lkey = `${DB.kids[k].level}-${plan.ui}-${plan.li}`;
     if(plan.review){ /* review before the unit test: position stays; the test can be taken again */ if(p.unitTest && p.unitTest.review === 'due') p.unitTest.review = 'done'; }
     else if(lesson.v2 && lesson.v2.exit === 'no' && p.repeatOf !== lkey){ p.repeatOf = lkey; }
@@ -4896,8 +5069,8 @@ function lessonUtterance(u){ try{
 function lessonPaOn(){ return typeof paOn === 'function' && paOn(); }
 function lessonPronSummary(lesson){ const a = (lesson && lesson.pron) || []; if(!a.length) return null;
   return {avg:Math.round(a.reduce((s, x) => s + (Number(x.score) || 0), 0) / a.length), items:a.map(x => ({w:x.w, score:x.score}))}; }
-function leaveRoomQuiet(){ wakeOff(); stopCam(); if(L) dgStop(L); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
-function leaveRoom(){ wakeOff(); stopCam(); if(L) dgStop(L); liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
+function leaveRoomQuiet(){ wakeOff(); stopCam(); if(L){ dgStop(L); if(L.dg) micRelease(); } liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
+function leaveRoom(){ wakeOff(); stopCam(); if(L){ dgStop(L); if(L.dg) micRelease(); } liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
   const ov = document.createElement('div'); ov.className = 'ov';
@@ -7116,7 +7289,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-17a';
+const APP_VER = '2026-11-17b';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:' || document.querySelector('.ov, .reader')) return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L && !document.querySelector('.ov, .reader')) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
