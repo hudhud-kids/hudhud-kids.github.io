@@ -181,6 +181,8 @@ async function run() {
     for (const fid of new Set((subs || []).filter((s: any) => s.role === "parent").map((s: any) => s.family_id)))
       msgs.push({ fam: fid as string, key: `aideep:${deep.stamp}`, to: (x: any) => x.family_id === fid && x.role === "parent", title: "⚠️ فحص المعلم فشل", body: "الفحص التلقائي للحصة فشل مرتين: " + deep.why.slice(0, 120) });
   }
+  // AI usage alert: once a day per child (and per family) when 80% and again at 100% of the daily cap, every 5 minutes
+  if (now.getUTCMinutes() % 5 === 2) { try { for (const m of await usageAlerts(nowMs)) msgs.push(m); } catch (_e) { /* never stops the reminders */ } }
   if (!msgs.length) return Response.json({ sent: 0 });
   const { data: done } = await sb.from("tk_push_log").select("key").in("key", msgs.map((m) => m.fam + "|" + m.key));
   const already = new Set((done || []).map((d: any) => d.key));
@@ -220,4 +222,34 @@ export async function selfTestTick(nowMs: number, db: any = sb, f: typeof fetch 
   await db.from("tk_health").upsert({ id: "selftest", fails, last_fail: now, detail, last_ok: cur ? cur.last_ok : null, last_alert: due ? now : (cur ? cur.last_alert : null) });
   let why = ""; try { const j = JSON.parse(detail); why = Object.entries(j.checks || {}).filter(([, v]: any) => !v.ok).map(([k, v]: any) => k + ": " + (v.why || "")).join(" | "); } catch { why = detail; }
   return { alert: due, stamp: now.slice(0, 13), why };
+}
+
+// Daily AI caps (same defaults as the relay; a family can override with the row "limits/@all").
+// Returns parent pushes for every child / family at 80% or 100% of a cap today (Riyadh day); the push-log key keeps each one daily.
+export const USE_DEF = { kidDay: 4000, famDay: 20000, kidTok: 6_000_000, famTok: 24_000_000 };
+export async function usageAlerts(nowMs: number, db: any = sb) {
+  const day = new Date(nowMs + TZ).toISOString().slice(0, 10), out: any[] = [];
+  const { data: use } = await db.from("tk_ai_usage").select("family_id,kid_id,n,tok").eq("day", day);
+  if (!use || !use.length) return out;
+  const fams = [...new Set(use.map((u: any) => u.family_id))];
+  const { data: rows } = await db.from("tk_rows").select("family_id,path,value").in("family_id", fams).or("path.eq.limits/@all,path.like.kids/%");
+  const num = (x: any, d: number) => (Number(x) > 0 ? Number(x) : d);
+  for (const fid of fams) {
+    const lr = (rows || []).find((r: any) => r.family_id === fid && r.path === "limits/@all"), o: any = lr && lr.value && typeof lr.value === "object" ? lr.value : {};
+    const lim = { kidDay: num(o.kidDay, USE_DEF.kidDay), famDay: num(o.famDay, USE_DEF.famDay), kidTok: num(o.kidTok, USE_DEF.kidTok), famTok: num(o.famTok, USE_DEF.famTok) };
+    const nm = (k: string) => { const r = (rows || []).find((x: any) => x.family_id === fid && x.path === "kids/" + k); const v: any = r && r.value; return (v && (v.ar || v.en)) || k; };
+    const toP = (x: any) => x.family_id === fid && x.role === "parent";
+    const lvl = (p: number) => (p >= 1 ? 100 : p >= 0.8 ? 80 : 0);
+    let fn = 0, ft = 0;
+    for (const u of use.filter((x: any) => x.family_id === fid)) {
+      fn += Number(u.n) || 0; ft += Number(u.tok) || 0;
+      if (!u.kid_id || u.kid_id.startsWith("@")) continue;
+      const pc = lvl(Math.max((Number(u.n) || 0) / lim.kidDay, (Number(u.tok) || 0) / lim.kidTok)); if (!pc) continue;
+      out.push({ fam: fid, key: `use${pc}:${u.kid_id}:${day}`, to: toP, title: pc === 100 ? `⛔ حد المعلم اليومي اكتمل لـ${nm(u.kid_id)}` : `⚠️ ${nm(u.kid_id)}: 80% من حد المعلم اليومي`,
+        body: pc === 100 ? "الحصص متوقفة لين بكرة." : "إذا اكتمل الحد تتوقف الحصص لين بكرة." });
+    }
+    const fp = lvl(Math.max(fn / lim.famDay, ft / lim.famTok));
+    if (fp) out.push({ fam: fid, key: `usef${fp}:${day}`, to: toP, title: fp === 100 ? "⛔ العائلة وصلت حد استخدام المعلم اليوم" : "⚠️ العائلة استخدمت 80% من حد المعلم اليوم", body: fp === 100 ? "كل الحصص متوقفة لين بكرة." : "قرّبتوا من الحد اليومي للعائلة." });
+  }
+  return out;
 }

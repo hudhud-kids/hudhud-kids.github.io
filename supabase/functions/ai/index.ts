@@ -46,11 +46,13 @@ async function famRow(fam: string, path: string) {
   const v = data ? data.value : null; keyC.set(k, { v, at: Date.now() }); return v;
 }
 function limited(t: string, perMin: number) {
-  const now = Date.now(), a = (rate.get(t) || []).filter((x) => now - x < 60e3); a.push(now); rate.set(t, a); return a.length > perMin;
+  const now = Date.now(), a = (rate.get(t) || []).filter((x) => now - x < 60e3); a.push(now); rate.set(t, a);
+  if (rate.size > 5000) for (const [key, v] of rate) if (!v.length || now - v[v.length - 1] > 120e3) rate.delete(key); // never grows for ever
+  return a.length > perMin;
 }
 
 // ---------- daily caps: counted in memory, flushed to tk_ai_usage in batches (every ~20 requests or 30 s) ----------
-const DEF = { kidDay: 1500, famDay: 6000, kidTok: 2_000_000, famTok: 8_000_000 };
+const DEF = { kidDay: 4000, famDay: 20000, kidTok: 6_000_000, famTok: 24_000_000 }; // a voice lesson makes ~100 calls
 type Ctr = { n: number; tok: number; dn: number; dtok: number; at: number }; // n/tok = known total (DB + unflushed), dn/dtok = unflushed
 const kidC = new Map<string, Ctr>(), famC = new Map<string, Ctr>(), errC = new Map<string, number>();
 let pending = 0, lastFlush = Date.now(), flushing: Promise<void> | null = null;
@@ -170,13 +172,18 @@ async function handle(req: Request) {
     const key = await famRow(s.fam, "apiKey"); if (!key || typeof key !== "string") return json(req, { error: { type: "no_key", message: "no api key" } }, 412);
     const body = b.body || {};
     if (!MODELS.has(body.model)) return json(req, { error: { type: "bad_model", message: "model not allowed" } }, 400);
+    if (s.role === "kid" && /fable/.test(body.model)) return json(req, { error: { type: "bad_model", message: "model not allowed" } }, 400);
+    const size = JSON.stringify(body).length;
+    if (size > 160_000) return json(req, { error: { type: "too_large", message: "request too large" } }, 413);
+    if (s.role === "kid") { delete body.tools; delete body.tool_choice; }   // the app never gives a child's call tools
     body.max_tokens = Math.min(Number(body.max_tokens) || 400, 4000);
     thinkDefaults(body);
     const day = today(), kid = who(s), lim = await limitsOf(s.fam), { k, f } = await usage(s.fam, kid, day);
     const over = s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok) ? "kid"
       : (f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok) ? "family" : "";
     if (over) return json(req, { error: { type: "daily_limit", scope: over, message: over === "kid" ? "daily limit reached for this child" : "daily limit reached for this family" } }, 429);
-    k.n++; k.dn++; k.tok += body.max_tokens; k.dtok += body.max_tokens; f.n++; f.tok += body.max_tokens; tick();
+    { const cost = body.max_tokens + Math.ceil(size / 3);   // output budget + an estimate of the input
+      k.n++; k.dn++; k.tok += cost; k.dtok += cost; f.n++; f.tok += cost; tick(); }
     let r: Response;
     try {
       r = await fetch("https://api.anthropic.com/v1/messages", {
@@ -230,7 +237,7 @@ async function llmRoute(req: Request) {
   body.max_tokens = Math.min(Number(body.max_tokens) || 300, 600);
   // no up-front thinking for a live voice reply: it is slow, and it counts inside max_tokens (an empty reply otherwise)
   if (/haiku-5/.test(body.model)) { body.thinking = { type: "disabled" }; body.output_config = { effort: "medium" }; }
-  else if (/sonnet-5/.test(body.model)) { body.thinking = { type: "between_tools" }; body.output_config = { effort: "high" }; }
+  else if (/sonnet-5/.test(body.model)) { body.thinking = { type: "between_tools" }; body.output_config = { effort: "medium" }; }
   const day = today(), kid = who(s), lim = await limitsOf(s.fam), { k, f } = await usage(s.fam, kid, day);
   if ((s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok)) || f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok)
     return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "daily limit" } }), { status: 429, headers: { "content-type": "application/json" } });
@@ -266,7 +273,7 @@ const AR = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]+/g;
 const TAG = /\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC|CHOICE|ORDER)\b[^\]]*\]/gi;
 export function splitTags(t: string) {
   const tags = (t.match(TAG) || []).join(" ");
-  const spoken = t.replace(TAG, " ").replace(/\[[^\]]*$/, "").replace(AR, " ").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, " ").trim();
+  const spoken = t.replace(TAG, " ").replace(/\[[^\]]{0,80}\]/g, " ").replace(/\[[^\]]*$/, "").replace(/[*_#`~]+/g, "").replace(AR, " ").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, " ").trim();
   return { spoken, tags };
 }
 // the answer to our own lesson_event call needs no model: an empty turn (the teacher already spoke)
@@ -386,7 +393,7 @@ async function selfTest(req: Request) {
         tools: [{ name: "lesson_event", description: "Internal: used by the app. Never call it yourself.", input_schema: { type: "object", properties: { tags: { type: "string" } }, required: ["tags"] } }] });
       // the same shape as a real voice call: a long fixed prompt + status line (cached), thinking limits
       body.system = sys + "\n" + "Teaching notes: keep it friendly and short. ".repeat(60) + "\nCURRENT STATUS: [minute 3 of 25 · step 2/12: Warm-up]";
-      tagNudge(body); cacheSystem(body); body.thinking = { type: "between_tools" }; body.output_config = { effort: "high" };
+      tagNudge(body); cacheSystem(body); body.thinking = { type: "between_tools" }; body.output_config = { effort: "medium" };
       const r = await ant(body); if (r.status !== 200) return { ok: false, why: `${r.status} ${(await r.text()).slice(0, 200)}` };
       const out = await new Response(r.body!.pipeThrough(tagStream())).text(); let say = "", tags = "", stop = "";
       for (const b of out.split("\n\n")) { const l = b.split("\n").find((x) => x.startsWith("data:")); if (!l) continue; let d: any; try { d = JSON.parse(l.slice(5)); } catch { continue; }
@@ -420,7 +427,7 @@ export function tagNudge(body: any) {
   }
   const last = ms[ms.length - 1];
   if (last && last.role === "user" && Array.isArray(last.content) && !last.content.some((c: any) => c.type === "tool_result"))
-    last.content.push({ type: "text", text: "(App reminder: after your short spoken reply, write your tags on new lines: [GOT] or [STAR] when the child did it right, [NEXT] when this step is finished, [CHOICE:...] or [ORDER:...] when useful, and always [MOOD:...] last. Follow CURRENT STATUS.)" });
+    last.content.push({ type: "text", text: "(App reminder: after your short spoken reply, write your tags on new lines: [GOT] once for each target expression the child used correctly (one expression = one [GOT]), [STAR] for an especially good answer, [NEXT] when this step is finished, [CHOICE:...] or [ORDER:...] when useful, and always [MOOD:...] last. Follow CURRENT STATUS.)" });
   return body;
 }
 

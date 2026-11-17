@@ -1,5 +1,5 @@
 /* Hudhud service worker: offline shell + push notifications */
-const V = 'hh-v24';
+const V = 'hh-v25';
 const CORE = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'icon-180.png',
   'nosleep.mp4', 'fonts/dubai-regular.woff2', 'fonts/dubai-medium.woff2', 'fonts/dubai-bold.woff2', 'content/i18n-en.json', 'content/index.json'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => Promise.all(CORE.map(u => c.add(u).catch(() => {})))).then(() => self.skipWaiting())); });
@@ -10,7 +10,12 @@ self.addEventListener('fetch', e => {
   if(u.pathname.endsWith('/version.json')) return; // version checks always go to the network and are never stored
   const put = res => { if(res && res.ok){ const cp = res.clone(); caches.open(V).then(c => c.put(r, cp)); } return res; };
   if(r.mode === 'navigate' || /\/(index\.html)?$/.test(u.pathname)){
-    e.respondWith(fetch(r).then(put).catch(() => caches.match(r).then(m => m || caches.match('index.html')))); return; }
+    // network first, but a hanging connection (weak Wi-Fi) falls back to the cached shell after 4 s instead of a blank screen
+    const cached = () => caches.match(r).then(m => m || caches.match('index.html'));
+    e.respondWith(new Promise(done => { let over = false;
+      const t = setTimeout(() => cached().then(m => { if(m && !over){ over = true; done(m); } }), 4000);
+      fetch(r).then(put).then(res => { clearTimeout(t); if(!over){ over = true; done(res); } })
+        .catch(() => { clearTimeout(t); cached().then(m => { if(!over){ over = true; done(m || Response.error()); } }); }); })); return; }
   // lessons and placement banks: network first, so an edited lesson reaches the child on the very next visit (cache-first showed
   // it only on the second one); a slow or missing connection falls back to the cached copy after 2.5 s
   if(/\/content\//.test(u.pathname)){

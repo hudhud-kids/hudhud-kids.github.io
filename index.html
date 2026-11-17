@@ -173,6 +173,8 @@ textarea.input{min-height:110px;direction:ltr;font-size:.8rem}
 .stk.on{background:#FFF4D6;opacity:1}
 :root[data-theme="dark"] .chbtn{background:#2a2420;color:#fff}
 .en{unicode-bidi:plaintext}
+.aibadge{font-size:.7rem;font-weight:700;background:rgba(80,120,255,.12);color:#3858c8;border-radius:99px;padding:1px 7px;margin-inline-start:4px;white-space:nowrap}
+@media (max-width:600px){.rbar .ttl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}.rbar{flex-wrap:nowrap}.rbar .chip.trialchip{display:none}}
 .ctrl .micbig.hint{animation:micHint .9s ease 2}
 @keyframes micHint{30%{transform:scale(1.15)}60%{transform:scale(.95)}}
 .ctrl .micbig.muted{background:#9aa0a6!important;box-shadow:0 0 0 4px rgba(154,160,166,.35)}
@@ -1391,6 +1393,10 @@ function freshNames(sc, seed){ if(FRESH_C.has(seed)) return FRESH_C.get(seed);
     for(let t = 0; t < pool.length; t++){ const cand = pool[(h + n * 7 + t) % pool.length];
       if(used.has(cand) || kidNames.includes(cand.toLowerCase()) || new RegExp('\\b' + cand + '\\b').test(txt)) continue;
       used.add(cand); txt = txt.replace(new RegExp('\\b' + old + '\\b', 'g'), cand); break; } });
+  // birthdays (not celebrated in every family) become family occasions; the wording stays natural
+  txt = txt.replace(/Happy birthday/g, 'Congratulations').replace(/happy birthday/g, 'congratulations')
+    .replace(/birthday (party|parties)/gi, (m, x) => 'family ' + x).replace(/birthday (cake|present|gift|card)s?/gi, (m, x) => (x.toLowerCase() === 'cake' ? 'big cake' : 'gift') + (/s$/i.test(m) ? 's' : ''))
+    .replace(/Birthday/g, 'Special day').replace(/birthday/g, 'special day');
   let out = sc; try{ out = JSON.parse(txt); }catch(e){}
   FRESH_C.set(seed, out); return out; }
 const V2_STAGES = ['الهدف','البداية','لعبة التعابير','تمثيل الحوار','دورك: موقف','ثقافة','الختام'];
@@ -1427,17 +1433,18 @@ const v2First = s => { const t = String(s || '').split(/(?<=[.!?])\s+/)[0]; retu
    classic/mission 23.3 min (levels 1-6: 22.1), story 23.3 (short warm-up + short culture), game show 22.6 (short culture). V2_PLAN_MAX guards longer scripts. */
 const V2_PLAN_MAX = 24 * 60;
 function v2Steps(sc, o){
-  o = o || {}; const fmt = o.fmt || 'classic', games = o.games || V2_GAMES, quiz = o.quiz || V2_QUIZ, small = (o.level || 99) <= 6;
+  o = o || {}; const fmt = o.fmt || 'classic', games = o.games || V2_GAMES, quiz = o.quiz || V2_QUIZ, small = (o.level || 99) <= 6, young = (o.level || 99) <= 4;
   const st = [{k:'obj', st:0, sec:30, en:fmt === 'mission' ? 'Mission briefing (objective + the 3 goals)' : fmt === 'game' ? 'Quiz show opening (objective)' : 'Objective'},
     {k:'warm', st:1, sec:fmt === 'story' ? 60 : 100, en:'Warm-up (the child may tap a topic card)'}];
   if(fmt === 'story') st.push({k:'story', st:1, sec:110, lab:'القصة', en:'Mini-story with a cliff-hanger, then the child predicts'});
-  const ex = sc.expressions || [];
+  // levels 1-4 (ages 6-8): 4 expressions, one role-play part, two speak-out questions — more repetition, less new language
+  const ex = young ? (sc.expressions || []).slice(0, 4) : (sc.expressions || []);
   for(let r = 0; r * 2 < ex.length; r++){ const pair = ex.slice(r*2, r*2+2).map(e => e.w), g = (fmt === 'game' ? quiz : games)[r % 3];
     st.push({k:'exp', i:r, pair:[r*2, r*2+1].filter(x => x < ex.length), game:g, st:2, sec:fmt === 'game' ? 95 : 105, lab:fmt === 'game' ? 'جولة المسابقة' : '', en:`${fmt === 'game' ? 'Quiz round' : 'Word game'} ${r+1} (${g.en}): ${pair.join(' + ')}`}); }
   if(fmt === 'game' && ex.length > 1) st.push({k:'prize', st:2, sec:60, lab:'سؤال الجائزة الكبرى', en:'Grand prize question: one sentence with 2 of today\'s expressions'});
-  st.push({k:'dlg', part:1, st:3, sec:140, en:fmt === 'story' ? 'Role-play part I: find out what happens (child acts a character)' : 'Role-play part I (child acts a character)'},
-    {k:'dlg', part:2, st:3, sec:140, en:fmt === 'story' ? 'Role-play part II + was the prediction right? + 2 questions' : 'Role-play part II + 2 questions'});
-  ((sc.speakout||{}).prompts||[]).forEach((p, i) => st.push({k:'so', i, st:4, sec:140, en:`Speak out question ${i+1}${fmt === 'mission' ? ' (mission goal 3)' : ''}`}));
+  st.push({k:'dlg', part:1, st:3, sec:young ? 160 : 140, en:fmt === 'story' ? 'Role-play part I: find out what happens (child acts a character)' : 'Role-play part I (child acts a character)'});
+  if(!young) st.push({k:'dlg', part:2, st:3, sec:140, en:fmt === 'story' ? 'Role-play part II + was the prediction right? + 2 questions' : 'Role-play part II + 2 questions'});
+  ((sc.speakout||{}).prompts||[]).slice(0, young ? 2 : 9).forEach((p, i) => st.push({k:'so', i, st:4, sec:140, en:`Speak out question ${i+1}${fmt === 'mission' ? ' (mission goal 3)' : ''}`}));
   // story and game show have an extra step, so their culture is the short one (ONE fact + ONE question) at every level
   st.push(small || fmt === 'story' || fmt === 'game' ? {k:'cul', st:5, sec:80, short:true, en:'Culture: ONE fun fact + ONE question'} : {k:'cul', st:5, sec:150, en:'Culture'}, {k:'exit', st:6, sec:100, en:'Exit check'});
   // safety net for a longer script: shave the middle steps evenly until the plan fits
@@ -1508,7 +1515,8 @@ function v2Follow(text){ if(!L || !L.v2 || !text) return; const v = L.v2; if(v.d
   for(const [k, re] of V2_CUES){ if(k !== v.steps[nx].k || !re.test(text)) continue;
     while(v.i < nx && !v.doneAll) v2Advance(false); if(L.dg) dgSync(L); return; } }
 /* [END] is accepted from minute 21 (a trial lesson from minute 5); the room also ends itself at minute 29 */
-function endAllowed(lesson){ return lesson.trial ? elapsedMin() >= 5 : elapsedMin() >= LESSON_MIN - 4; }
+function endAllowed(lesson){ if(lesson.trial) return elapsedMin() >= 5; if(elapsedMin() >= LESSON_MIN) return true;
+  const v = lesson.v2; return elapsedMin() >= LESSON_MIN - 4 && (!v || v.doneAll || v.i >= v.steps.length - 2); }
 function v2Advance(auto){ if(!L || !L.v2) return; const v = L.v2; if(v.i >= v.steps.length - 1){ v.doneAll = true; v2Slide(); return; } v.i++; v.at = Date.now(); if(auto) v.auto = (v.auto||0) + 1; v2Slide(); }
 /* the note at the start of every child message: step, time, quick challenges, the child's topic choice, mission goals / quiz points.
    Time: a gentle "wrap up soon" once when a step runs over, "please move on now" only after a big overrun. */
@@ -1517,6 +1525,7 @@ function v2Header(){ if(!L || !L.v2) return ''; const v = L.v2, stp = v.steps[Ma
   if(v.doneAll) return elapsedMin() < LESSON_MIN - 4
     ? ` · [all ${v.steps.length} steps done EARLY (minute ${elapsedMin()} of ${LESSON_MIN}): do NOT end and do NOT say goodbye yet. Keep the child talking with extra practice of today's expressions: a quick quiz with [CHOICE:...], a [ORDER:...] sentence, a mini-story about their interests, or a role-play with a new situation. Give [STAR] for good answers. End only when the header says time is up.]`
     : ` · [all ${v.steps.length} steps done: praise specifically, say goodbye, then [END]]`;
+  if(v.exitJump && stp.k === 'exit' && !v.exitCued){ v.exitCued = true; return ` · [TIME: the app moved to the EXIT CHECK because the lesson is almost over. Finish your sentence in a few words and ask the exit prompt now (no help). · step ${v.i+1}/${v.steps.length}: ${stp.en}]`; }
   let ch = '';
   if(!['obj','exit','prize'].includes(stp.k) && Date.now() - (v.chAt || v.t0 || 0) > 5*60e3 && v.i > 1){ v.chAt = Date.now(); v.ch = (v.ch||0) + 1;
     ch = ' · [FUN CHALLENGE NOW: before going on, do ONE 30-second quick challenge with today\'s words: ' + ['would you rather', 'guess what I am thinking of (3 clues)', 'fastest full sentence', 'silly picture: describe something funny I imagine'][v.ch % 4] + '. Give a [STAR] if they do it well, then continue this step]';
@@ -1560,11 +1569,11 @@ ${steps.map((x, i) => `${i+1}. ${x.en} (about ${x.sec}s)`).join('\n')}
 HOW TO RUN EACH STEP:
 - Objective: in ONE or TWO short sentences say the objective in your own friendly words and connect it to the child, then [NEXT] and ask the warm-up question in the same turn.
 - Warm-up: ask the warm-up question (personalise it). After one full-sentence answer, react, then [NEXT]. The slide also shows two topic cards for the speak out later: (A) the lesson's own situation, (B) "${alt.en}". You may say once: "Tap the topic you like!" The header tells you when they tap one (TOPIC CARD).
-- Word game n (2 expressions on the slide): make it a GAME, not a drill. Say each expression with a quick, fun meaning, then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. In your FIRST reply of the round, already give the first clue or question (for example: "You say it when you meet someone for the first time. Which expression is it?") and do NOT say the answer. The frames on the slide are only a help. When the child has used BOTH expressions correctly in full sentences: celebrate, add [GOT] and [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
+- Word game n (2 expressions on the slide): make it a GAME, not a drill. For "Guess it" give the clue FIRST and explain the meaning only after the child's guess; for the other games say each expression with a quick, fun meaning first. Then play the game named in the step: Guess it = ${V2_GAMES[0].how}; This or that = ${V2_GAMES[1].how}; Story chain = ${V2_GAMES[2].how}. In your FIRST reply of the round, already give the first clue or question (for example: "You say it when you meet someone for the first time. Which expression is it?") and do NOT say the answer. The frames on the slide are only a help. Each time the child uses ONE of the round's expressions correctly in a full sentence, add [GOT] (one [GOT] per expression, never two in one turn). When both are done, celebrate and add [NEXT]. If one is wrong: model it in a fun way and let them try again; after 2 tries move on with [NEXT] (no [GOT]).
 - Role-play part I: set the scene in one exciting sentence. YOU play the first speaker, the CHILD plays ${v2Role(sc.dialogue||{}) || 'the other character'} (the slide shows their lines as a guide). Say your line, then let the child say theirs IN THEIR OWN WORDS — they do not need to read it exactly; react in character, improvise a little, keep it moving. Then [NEXT]. Part II: continue the scene the same way, then step out of the role and ask the 2 questions on the slide; add [GOT] if both answers were right and in sentences, then [NEXT].
 - Speak out n: play the situation with the child and ask the question on the slide (in role). The child must answer with 2 or more sentences using the unit function. Ask one follow-up question. If they did it: [GOT] [NEXT]. If they are stuck, tell them to tap the hint button, or give the first words.
 - Culture: ${small || culShort ? 'keep it tiny (short culture step today): tell ONLY the first point as one fun fact (one or two short sentences), then ask ONLY the first question; one answer is enough; then [NEXT].' : 'tell ONE surprising point from it in one or two short sentences and ask the first question; next turn, give one more point if they are curious and ask the second question; one opinion with a reason is enough; then [NEXT]. If the child says they already know this topic, ask THEM to teach you one thing about it instead.'}
-- Exit check: ask the exit prompt and give NO help. Then write [EXIT:yes] if they said 2 correct sentences with the function, [EXIT:partly] if one or with errors, [EXIT:no] if not; then [NEXT].
+- Exit check: ask the exit prompt and give NO help (no hints, no choices; you may repeat the question once in simpler words). Then write [EXIT:yes] if they said 2 correct sentences with the function, [EXIT:partly] if one or with errors, [EXIT:no] if not; then [NEXT].
 - After the last step: if the header says time is up (or all steps are done at minute 21 or later), give specific praise about what they said today, the joke or riddle, goodbye, then [END]. Never write [END] before that.
 - ONE QUESTION PER TURN. When a step has two questions (culture, role-play part II, speak out), ask the second one in your next turn.
 - When the child is stuck: 1st try = a hint (a sentence start), 2nd try = [CHOICE:...] with 2-3 options, 3rd try = say the answer, let them repeat it, then move on with [NEXT]. Do not give the answer and [NEXT] in the same turn before that.
@@ -1594,7 +1603,7 @@ GIVE THE CHILD THE SPEAKING TIME:
 - Your turns are SHORT: a quick reaction + ONE question or instruction, about 25 words. Once in a while you may tell a 2-sentence funny mini-story to set up a game.
 - The child must FINISH sentences: if a sentence is incomplete, ask them to finish it before moving on.
 - Never answer your own question, never two questions at once.
-- NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want and give a HINT, never the answer: a sentence start with a gap ("My name is ...?"), the first word, or a clue. If the answer is wrong, say what is not right yet and let them try again. After 2 failed tries give two choices ("Is it A or B?"). Say the full correct answer only after 3 failed tries, then let the child say it.
+- NEVER leave the child guessing (the only exception is the exit check: there, give no hints; if they are stuck, repeat the question once in simpler words). If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want and give a HINT, never the answer: a sentence start with a gap ("My name is ...?"), the first word, or a clue. If the answer is wrong, say what is not right yet and let them try again. After 2 failed tries give two choices ("Is it A or B?"). Say the full correct answer only after 3 failed tries, then let the child say it.
 - NEVER put the answer inside your question (wrong: "What's your name? Say: My name is Mohammad." right: "What's your name? Start with: My name is ...").
 - EVERY reply must END with a question or a clear instruction to the child. Never end on an announcement ("Let's play a game!", "Get ready!"): say the game's first question in the same reply. When you add [NEXT], start the next step in the SAME reply with its first question.
 
@@ -1607,7 +1616,7 @@ CORRECTION: errors in today's expressions or function → recast and ask them to
 
 ${safetyRules()}
 
-FORMAT (strict): start DIRECTLY with the spoken text (nothing before it). After the spoken text, tags each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [REC:expression] [FLAG:short reason] [CHOICE:a|b|c] [ORDER:w|w|w] [BOARD:expression|emoji|Arabic] [END], and ALWAYS finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
+${kid.level >= 16 ? 'ADVANCED LEVEL, YOUNG LEARNER: the script is advanced, but the learner is a child or teenager. Speak in clear, natural sentences (not academic), explain an idiom with a fun everyday example before asking for it, and accept a shorter answer that uses it correctly. If a dialogue line is long, act out only its key sentence.\n' : ''}FORMAT (strict): start DIRECTLY with the spoken text (nothing before it). After the spoken text, tags each on its own line: [STAR] [GOT] [NEXT] [EXIT:yes|partly|no] [FIX:wrong|right|short Arabic tip] [AR:word = Arabic] [REC:expression] [FLAG:short reason] [CHOICE:a|b|c] [ORDER:w|w|w] [BOARD:expression|emoji|Arabic] [END], and ALWAYS finish with the mood tag on the last line: [MOOD:happy|excited|proud|laughing|surprised|thinking|encouraging]
 No markdown, no emojis, no Arabic letters in the spoken text.${tstyleRule(k)}`;
 }
 /* the teacher's personality, chosen by the child in the profile */
@@ -1889,6 +1898,17 @@ function renderKid(k){
   checkNewBadges(k); maybeCelebrate(k); setTimeout(() => checkCheers(k), 1200);
 }
 
+/* the child hardly spoke (left the iPad, could not hear, …): no charge, no points, no new lesson; the parent sees why */
+function lessonNotTaken(lesson, turns){ const k = lesson.kid, plan = lesson.plan;
+  try{ if(lesson.slot && !String(lesson.slot).includes('-free')) cancelSlot(k, lesson.slot); }catch(e){}
+  DB.live[k] = null;
+  (DB.reports = DB.reports || []).push({kid:k, slot:lesson.slot, lessonNo:lesson.n, title:plan.t, unit:plan.unit, level:DB.kids[k].level, at:new Date().toISOString(), minutes:elapsedMin(),
+    notTaken:true, score:0, stars:0, newWords:[], mistakes:[], kidNote:'', talkPct:talkPctOf(lesson),
+    parentNote:`لم تكتمل الحصة: تكلّم الطفل ${turns} ${turns === 1 ? 'مرة' : 'مرات'} فقط. لم تُخصم الحصة ولم ينتقل للدرس التالي؛ سيبدأ الدرس نفسه في الحصة القادمة.`});
+  save(); try{ liveFeed(lesson, 'x', '⚠ lesson not taken (child spoke ' + turns + ' times): not charged'); liveEnd(lesson); }catch(e){}
+  const ov = document.querySelector('.ov') || document.body.appendChild(Object.assign(document.createElement('div'), {className:'ov'}));
+  ov.innerHTML = `<div class="card" style="text-align:center"><h2>الحصة ما اكتملت 🙂</h2><p>ما سمعنا صوتك كفاية هالمرة، فما انحسبت الحصة. نكمل نفس الدرس المرة الجاية!</p><button class="btn primary big" id="ntOk" type="button">رجوع</button></div>`;
+  $('#ntOk').onclick = () => { ov.remove(); leaveRoomQuiet(); go(k); }; }
 /* a lesson report that could not be written after the lesson is written now (once per app start, at most 5 tries) */
 let REPORT_RETRY_DONE = false;
 async function retryReport(k){ const p = DB.progress[k], due = p && p.reportDue; if(!due || REPORT_RETRY_DONE || DEMO || !navigator.onLine) return; REPORT_RETRY_DONE = true;
@@ -3923,7 +3943,7 @@ GIVE THE CHILD THE SPEAKING TIME (very important):
 - Make the child FINISH: when a sentence is incomplete, or the child skips the pattern, or changes the topic before finishing, do not move on. Say "Finish your sentence: I'd describe myself as... because..." or give the first words and wait. Only ask a new question after the child has said one complete sentence.
 - Ask for one more sentence before you add anything: "Great! Can you give me an example?", "And then?", "Say it again with because".
 - Never answer your own question, never give two questions at once, and never fill a silence with a long explanation.
-- NEVER leave the child guessing. If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want and give a HINT, never the answer: a sentence start with a gap ("My name is ...?"), the first word, or a clue. If the answer is wrong, say what is not right yet and let them try again. After 2 failed tries give two choices ("Is it A or B?"). Say the full correct answer only after 3 failed tries, then let the child say it.
+- NEVER leave the child guessing (the only exception is the exit check: there, give no hints; if they are stuck, repeat the question once in simpler words). If the answer is wrong, unclear, off-task, or the child is silent or says "I don't know": say in one short sentence exactly what you want and give a HINT, never the answer: a sentence start with a gap ("My name is ...?"), the first word, or a clue. If the answer is wrong, say what is not right yet and let them try again. After 2 failed tries give two choices ("Is it A or B?"). Say the full correct answer only after 3 failed tries, then let the child say it.
 - NEVER put the answer inside your question (wrong: "What's your name? Say: My name is Mohammad." right: "What's your name? Start with: My name is ...").
 - EVERY reply must END with a question or a clear instruction to the child. Never end on an announcement ("Let's play a game!", "Get ready!"): say the game's first question in the same reply. When you add [NEXT], start the next step in the SAME reply with its first question.
 
@@ -3995,7 +4015,8 @@ function lessonSnap(lesson){
       lat:lesson.lat || [], hc:lesson.hc || {}, boardWords:lesson.boardWords || [], fixes:lesson.fixes || [], v2:v ? Object.assign({}, v, {sc:null}) : null}));
   }catch(e){ console.warn('lesson snapshot', e); }
 }
-function snapRead(){ try{ return JSON.parse(localStorage.getItem(SNAP_KEY) || 'null') || JSON.parse(localStorage.getItem(SNAP_KEY + ':prev') || 'null'); }catch(e){ return null; } }
+function snapRead(kid){ try{ const a = JSON.parse(localStorage.getItem(SNAP_KEY) || 'null'), b = JSON.parse(localStorage.getItem(SNAP_KEY + ':prev') || 'null');
+  if(kid) return [a, b].find(x => x && x.kid === kid) || null; return a || b; }catch(e){ return null; } }
 function snapClear(lesson){ try{
   for(const key of [SNAP_KEY, SNAP_KEY + ':prev']){ const s = JSON.parse(localStorage.getItem(key) || 'null'); if(!s) continue; if(lesson && s.kid !== lesson.kid) continue; localStorage.removeItem(key); }
 }catch(e){} }
@@ -4011,8 +4032,8 @@ function lessonLeft(lesson){
 /* returns 'shown' | 'busy' (try again shortly) | false (nothing to resume) */
 function resumeCheck(){
   if(DEMO || !DB || !DB.kids) return false;
-  const s = snapRead(); if(!s) return false;
-  const drop = () => { snapClear(); return false; };
+  const s = snapRead(WHO) || snapRead(); if(!s) return false;
+  const drop = () => { snapClear({kid:s.kid}); return false; };
   if(s.v !== 1 || !s.kid || !s.plan || !Array.isArray(s.history) || !s.history.length || Date.now() - s.at > SNAP_MAX_MS) return drop();
   if(WHO !== s.kid) return false;   // someone else is signed in: it simply expires
   if(!DB.kids[s.kid]) return drop();
@@ -4039,7 +4060,7 @@ async function lessonResume(s){
   const sc = s.v2 ? scriptFor(DB.kids[k].level, s.plan.ui, s.plan.li) : null;
   if(s.v2 && !sc){ snapClear(); enterLesson(k, s.trial); return; } // the lesson content is not available any more: start it normally
   const away = Date.now() - s.at;
-  L = {kid:k, trial:!!s.trial, slot:s.slot, n:s.n, plan:s.plan, history:s.history, histFrom:s.histFrom || 0, startedAt:new Date(s.startedAt + (s.trial ? away : 0)), state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
+  L = {kid:k, trial:!!s.trial, slot:s.slot, n:s.n, plan:s.plan, history:s.history, histFrom:s.histFrom || 0, startedAt:new Date(s.startedAt + away), state:'idle', mood:'happy', done:false, endSeen:false, ctl:null,
        queue:[], speaking:false, streamDone:true, lastSay:s.lastSay || '', rec:null, listenStart:0, nudgeT:null, silT:null, mouthT:null, giftsBefore:s.giftsBefore || 0, typing:false, sw:s.sw || 0, tw:s.tw || 0, freeReview:!!s.freeReview,
        lat:s.lat || [], hc:s.hc || {}, boardWords:s.boardWords || [], fixes:s.fixes || [], rules:s.rules, resumed:true};
   hcAdd('resumes');
@@ -4056,10 +4077,10 @@ async function lessonResume(s){
 function renderRoom(){
   $('#app').innerHTML = `<div class="room ${L.dg || (!L.mission && !L.review && dgOn(L.kid)) ? 'dgm' : ''}">
     <header class="rbar"><button class="btn sm" id="exit">خروج</button>
-      <div class="ttl">${L.trial ? `<span class="chip brand" style="font-family:var(--font)">${L.mission ? 'مهمة' : L.freeReview ? 'مراجعة مجانية' : 'تجريبي'}</span> ` : ''}${esc(L.plan.t)}</div>
+      <div class="ttl">${L.trial ? `<span class="chip brand trialchip" style="font-family:var(--font)">${L.mission ? 'مهمة' : L.freeReview ? 'مراجعة مجانية' : 'تجريبي'}</span> ` : ''}${esc(L.plan.t)}</div>
       <div class="talk" id="talk"></div><div class="timer" id="timer">00:00</div></header>
     <div class="rbody">
-      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="selfcam" id="selfcam" hidden><video playsinline muted autoplay></video><span>${esc(nick(L.kid))}</span></div><div class="burst" id="burst"></div><div class="streak" id="streak" hidden></div><button class="wheelbtn" id="wheel" hidden type="button">🎡 لف عجلة المرح!</button><div class="tname">${teacherOf(L.kid).name}</div><div class="state" id="state"></div><div class="askb" id="askb" hidden></div></div></div>
+      <div class="stage"><div class="tbox" id="tbox">${TEACHER}<div class="selfcam" id="selfcam" hidden><video playsinline muted autoplay></video><span>${esc(nick(L.kid))}</span></div><div class="burst" id="burst"></div><div class="streak" id="streak" hidden></div><button class="wheelbtn" id="wheel" hidden type="button">🎡 لف عجلة المرح!</button><div class="tname">${teacherOf(L.kid).name} <span class="aibadge" title="معلم بالذكاء الاصطناعي">🤖 معلم ذكي</span></div><div class="state" id="state"></div><div class="askb" id="askb" hidden></div></div></div>
       <div class="side">
         ${L.v2 ? '<div class="slide" id="slide"></div>' : ''}
         <div class="sub" id="sub" aria-live="polite"><span class="muted" style="font-family:var(--font)">…</span></div>
@@ -4098,6 +4119,8 @@ function tickRoom(){ if(!L) return; const s = Math.floor((Date.now()-L.startedAt
   wheelTick(s);
   if(L.dg) dgIdle(L);
   if(L.wrapAt && Date.now() - L.wrapAt > 45e3 && !L.done){ finishLesson(); return; }
+  if(L.v2 && !L.v2.doneAll && !L.v2.exitJump && !L.trial && s >= (LESSON_MIN - 6) * 60 && !['speaking','thinking'].includes(L.state)){ const v = L.v2, xi = v.steps.findIndex(x => x.k === 'exit');
+    if(xi > v.i){ v.exitJump = true; v.i = xi; v.at = Date.now(); v2Slide(); if(L.dg) dgSync(L); } }
   // the room ends itself 4 minutes after time, whatever happens (a forgotten iPad must not keep the lesson open)
   if(!L.done && !L.mission && !L.review && s >= (LESSON_MIN + 4) * 60 && L.state !== 'speaking'){ finishLesson(); return; }
   // safety net: a step that runs FAR over its time moves on by itself, but never while the child is listening/talking,
@@ -4326,7 +4349,7 @@ async function teacherTurn(userText, attempt){
     funTags(lesson, tags);
     if(lesson.mission && tags.goals.length){ tags.goals.forEach(g => { if(g >= 1 && g <= 3 && !lesson.mission.done[g-1]){ lesson.mission.done[g-1] = true; burst(); toast(`🎯 حققت الهدف ${g}!`); } }); drawMissionPanel(); }
     if(lesson.v2){ const v = lesson.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)];
-      if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
+      if(tags.got){ if(stp.k === 'exp'){ const nx = (stp.pair || [stp.i]).find(x => !v.got['exp' + x]); if(nx != null) v.got['exp' + nx] = true; } else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
       if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide();
       if(tags.exit) v.exit = tags.exit;
       // both words of a word-game round are done: move on even if the teacher forgot [NEXT]
@@ -4352,6 +4375,10 @@ async function teacherTurn(userText, attempt){
     undo();
     try{ liveFeed(lesson, 'x', '⚠ turn ' + (attempt ? 'retry ' : '') + (e && (e.status || e.name)) + ' ' + String((e && (e.body || e.message)) || e).slice(0, 160) + ' · got ' + full.length); }catch(x){}
     // one quiet automatic retry for a dropped/stalled connection or a busy service, before bothering the child
+    // the family's daily limit: no retry loop; a clear message, and the lesson is not charged (the child could not finish)
+    if(e && e.status === 429 && /daily_limit/.test(e.body || '')){ setState('idle'); hcAdd('relayErr');
+      if(sub) sub.innerHTML = '<div class="ar">وصلنا لحد الاستخدام اليومي للمنصة 🙏 كمّل حصتك بكرة، وما راح تنحسب عليك هالحصة. أخبر ولي الأمر.</div>';
+      try{ liveFeed(lesson, 'x', '⚠ daily limit reached'); }catch(x){} return; }
     const soft = !e || e.status === 'timeout' || e.status === 429 || e.status === 529 || e.status >= 500 || e instanceof TypeError;
     if(soft && !attempt && !full && navigator.onLine !== false){ hcAdd('retries'); console.warn('teacher retry', e); setTimeout(() => { if(L === lesson && !lesson.done) teacherTurn(userText, 1); }, 1200); return; }
     hcAdd('relayErr');
@@ -4469,7 +4496,7 @@ function showOrder(words){ const c = $('#choices'); if(!c) return; const mix = w
   c.hidden = false; draw(); sideShow(c, 'end'); }
 /* the Fun Wheel: about every 7 minutes (not in the first 4 minutes or the exit check) a button appears; the result becomes a challenge */
 const WHEEL = [['say it like a robot','🤖 قلها مثل الروبوت'], ['whisper it like a secret','🤫 قلها همس'], ['say it super fast','⚡ قلها بسرعة البرق'], ['say it like a lion','🦁 قلها مثل الأسد'],
-  ['say it in slow motion','🐢 قلها بالتصوير البطيء'], ['sing it','🎤 غنّها'], ['say it like a news reporter','📺 قلها مثل المذيع'], ['say it with a big smile and a silly face','😜 قلها بوجه مضحك']];
+  ['say it in slow motion','🐢 قلها بالتصوير البطيء'], ['say it like a pirate','🏴‍☠️ قلها مثل القرصان'], ['say it like a news reporter','📺 قلها مثل المذيع'], ['say it with a big smile and a silly face','😜 قلها بوجه مضحك']];
 function wheelTick(s){ const b = $('#wheel'); if(!b || !L || L.done) return; const v = L.v2, stp = v && v.steps[Math.min(v.i, v.steps.length - 1)];
   const due = s > 4 * 60 && s < (LESSON_MIN - 2) * 60 && (!L.wheelAt || Date.now() - L.wheelAt > 7 * 60e3) && !(stp && ['exit', 'obj'].includes(stp.k)) && L.state !== 'thinking';
   if(due && b.hidden){ b.hidden = false; sfx('chime'); }
@@ -4500,7 +4527,7 @@ function stickerAlbum(k){ const g = document.querySelector('#tabBody .grid') || 
    Safety nets (each one answers a real failure): startup timeouts, a "thinking" watchdog, refused messages are re-sent,
    silence nudges and a pause card, up to 4 quiet reconnects, the mic comes back after the app was in the background,
    the lesson is snapshotted for resume, and the room ends itself 4 minutes after time even with no event. */
-const DG_URL = 'wss://agent.deepgram.com/v1/agent/converse';
+const DG_URL = 'wss://agent.deepgram.com/v1/agent/converse?mip_opt_out=true';
 /* the teacher's speaking speed, chosen by the child during the lesson: slow / normal / fast */
 const T_SPEEDS = [{id:'slow', ar:'بطيء', ic:'🐢', f:.82}, {id:'normal', ar:'عادي', ic:'🚶', f:1}, {id:'fast', ar:'سريع', ic:'🐇', f:1.15}];
 function speedOf(k){ const id = ((DB.profiles || {})[k] || {}).speed; return T_SPEEDS.find(x => x.id === id) || T_SPEEDS[1]; }
@@ -4516,17 +4543,17 @@ function dgNote(lesson, msg){ try{ liveFeed(lesson, 'x', '⚠ ' + msg); }catch(e
 /* the status line; one-shot cues (fun challenge, topic card, "wrap up soon") stay in it until the child's next turn,
    because the prompt is refreshed every 30 s and a cue could otherwise be replaced before any reply used it */
 function dgStatus(lesson){ const v = lesson.v2; if(!v) return `minute ${elapsedMin()}`;
-  const h = v2Header(), cues = (h.match(/ · \[(FUN CHALLENGE|TOPIC CARD)[^\]]*\]| · time to wrap up this step soon/g) || []).join('');
+  const h = v2Header(), cues = (h.match(/ · \[(FUN CHALLENGE|TOPIC CARD|TIME: the app moved)[^\]]*\]| · time to wrap up this step soon/g) || []).join('');
   if(cues) lesson.dgCues = cues;
   const keep = lesson.dgCues && !h.includes(lesson.dgCues) ? lesson.dgCues : '';
   return `[minute ${elapsedMin()} of ${LESSON_MIN} · child talk ${talkPct()}% · goal ${talkGoal(lesson.kid)}%${keep}${h}]`; }
 function dgPrompt(lesson){ return lesson.rules.replace(/ \(every student message starts with[^)]*\)/i, '') + `
 
 VOICE MODE: the child talks to you live; their words come to you as text from speech recognition. There is no header in front of their messages: the CURRENT STATUS below replaces it and is kept up to date by the app.
-Children often pause in the middle of a sentence: if their message looks clearly unfinished, say only "Go on!" (with only the [MOOD:...] tag) and wait.
+Children often pause in the middle of a sentence: ONLY if their message stops in the middle (it ends with "and", "but", "because", "the", "a", "to", "my" or similar), say "Go on!" (with only the [MOOD:...] tag) and wait. A short but complete answer ("Yes.", "Football.") is NOT unfinished: react to it normally.
 Remember: give hints (a sentence start like "My name is ..."), never the full answer for them to copy.
 TAGS STILL MATTER IN VOICE MODE: the app removes your tags before the voice reads your reply, so your earlier replies in this conversation look as if they had no tags. Keep writing them at the end of EVERY reply exactly as the rules say ([GOT], [STAR], [NEXT], [FIX:...], [EXIT:...], [END], [MOOD:...]): the slides, stars and the report only move when you write them. When you move to the next step, you MUST write [NEXT].
-KEEP EVERY REPLY SHORT: at most 2 short sentences (about 25 words) before ONE question. React in a few words, give ONE tip at most, then ask. Long explanations bore children; the child should talk more than you.
+KEEP EVERY REPLY SHORT: usually 2 short sentences (about 25 words, up to 40 when you start a new step or game) before ONE question. React in a few words, give ONE tip at most, then ask. Long explanations bore children; the child should talk more than you.
 CURRENT STATUS: ${dgStatus(lesson)}`; }
 
 /* helpers for every await at startup: never wait for ever */
@@ -4542,7 +4569,8 @@ async function dgStart(lesson){
   if(document.hidden){ d.waitVisible = true; return; }
   let tok;
   try{ const r = await dgTimeout(fetch(RELAY + 'dgtoken', {method:'POST', headers:{'content-type':'application/json', 'apikey':SUPA_KEY}, body:JSON.stringify({t:CLOUD.token})}), 8000, 'token');
-    if(!r.ok) throw new Error('dgtoken ' + r.status); const j = await r.json(); tok = j.token; d.llmTok = j.llm || ''; }
+    if(!r.ok) throw new Error('dgtoken ' + r.status + (r.status === 429 ? ' daily_limit' : '')); const j = await r.json(); tok = j.token; d.llmTok = j.llm || '';
+    if(!d.llmTok) throw new Error('dgtoken 0 no llm token'); }
   // the server said no (no key, limit): the normal teacher at once; a network hiccup: one more try
   catch(e){ dgNote(lesson, 'token ' + (e.message || e)); if(/dgtoken \d/.test(String(e.message))) dgFallback(lesson); else dgRetryOrFallback(lesson, d); return; }
   if(L !== lesson || lesson.dg !== d) return;
@@ -4567,7 +4595,7 @@ async function dgStart(lesson){
           keyterms:[nick(k)].concat(typeof livePhrases === 'function' ? livePhrases() : []).filter(Boolean).slice(0, 40)}},
         think:{provider:{type:'anthropic', model:'claude-sonnet-5-5', temperature:0.8},
           // a short-lived token that only opens /ai/llm (not the child's login)
-          endpoint:{url:RELAY + 'llm', headers:{'x-hh-llm':d.llmTok || '', 'x-hh-token':d.llmTok ? '' : CLOUD.token}},
+          endpoint:{url:RELAY + 'llm', headers:{'x-hh-llm':d.llmTok}},
           prompt:dgPrompt(lesson), functions:fns},
         context:lesson.history.length ? {messages:lesson.history.slice(-30).map(h => ({type:'History', role:h.role,
           content:String(h.content).replace(/^(\[[^\]]*\]\s*)+/, '').replace(/\[[A-Z]+(:[^\]]*)?\]/g, '').replace(/^Student: /, '').trim() || '...'}))} : undefined,
@@ -4587,9 +4615,10 @@ async function dgStart(lesson){
 function dgRetryOrFallback(lesson, d){ if(L !== lesson || lesson.done) return;
   if(d && d.open && Date.now() - d.since > 180e3) lesson.dgDrops = 0;
   const n = lesson.dgDrops = (lesson.dgDrops || 0) + 1;
-  if(n > 4 || (d && !d.open && n > 1)){ dgNote(lesson, 'switching to the normal teacher'); dgFallback(lesson); return; }
+  if(n > 4 || (d && !d.open && n > 1)){   // never opened: one quick retry, then the classic teacher (the child waits under 25 s)
+    dgNote(lesson, 'switching to the normal teacher'); dgFallback(lesson); return; }
   dgStop(lesson); setState('thinking');
-  setTimeout(() => { if(L === lesson && !lesson.done && !lesson.paused) dgStart(lesson); }, [800, 2000, 5000, 8000][n - 1] || 8000); }
+  setTimeout(() => { if(L === lesson && !lesson.done && !lesson.paused) dgStart(lesson); }, (d && !d.open ? [1000] : [800, 2000, 5000, 8000])[n - 1] || 8000); }
 /* the microphone starts once Deepgram applied the settings: 16 kHz mono 16-bit PCM; a low-pass first so sounds above 8 kHz
    do not fold back into the speech band (that hiss hurts recognition of s, f, th) */
 async function dgMic(lesson){ const d = lesson.dg, ac = d.ac;
@@ -4606,7 +4635,8 @@ async function dgMic(lesson){ const d = lesson.dg, ac = d.ac;
   const mute = ac.createGain(); mute.gain.value = 0; src.connect(lp1); lp1.connect(lp2); lp2.connect(sp); sp.connect(mute); mute.connect(ac.destination); d.mic = {src, sp, mute, lp1, lp2}; }
 /* the app came back to the screen: the mic tracks may have been ended by iOS; get them again, and reconnect if the socket
    was lost while hidden */
-async function dgVisible(lesson){ const d = lesson && lesson.dg; if(!d || lesson.done) return;
+async function dgVisible(lesson){ const d = lesson && lesson.dg; if(!d || lesson.done || lesson.paused) return;
+  if(d.ac && d.ac.state !== 'running'){ try{ d.ac.resume(); }catch(e){} }
   if(d.waitVisible){ d.waitVisible = false; dgStart(lesson); return; }
   if(!d.ws || d.ws.readyState > 1){ dgRetryOrFallback(lesson, d); return; }
   const dead = !d.stream || d.stream.getTracks().some(t => t.readyState !== 'live');
@@ -4617,7 +4647,7 @@ function dgPlay(lesson, buf){ const d = lesson.dg, ac = d.ac; if(!ac || d.hushed
   let u8 = new Uint8Array(buf); if(d.odd){ const m = new Uint8Array(u8.length + 1); m[0] = d.odd[0]; m.set(u8, 1); u8 = m; d.odd = null; }
   if(u8.length % 2){ d.odd = u8.slice(-1); u8 = u8.slice(0, -1); }
   const i16 = new Int16Array(u8.buffer, u8.byteOffset, u8.length / 2); if(!i16.length) return;
-  dgHeard(lesson);
+  dgHeard(lesson); d.frameAt = Date.now();
   const ab = ac.createBuffer(1, i16.length, 24000), ch = ab.getChannelData(0); for(let i = 0; i < i16.length; i++) ch[i] = i16[i] / 32768;
   const s = ac.createBufferSource(); s.buffer = ab; s.connect(ac.destination);
   // a little head start when the voice (re)starts, so small network delays between frames do not leave gaps (clicks)
@@ -4674,31 +4704,39 @@ function dgWatch(lesson){ const d = lesson.dg; if(!d) return; clearTimeout(d.thi
 /* messages from the app (typed or tapped answers, the wheel, time is up): Deepgram refuses them while someone is talking,
    so they wait in a small queue and are sent when the turn is free */
 function dgInject(lesson, text){ const d = lesson.dg; if(!d) return false; d.out.push(text); dgOut(lesson); return true; }
-function dgOut(lesson){ const d = lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1 || !d.open || !d.out.length) return;
+function dgOut(lesson, retry){ const d = lesson.dg; if(!d || !d.ws || d.ws.readyState !== 1 || !d.open || !d.out.length || lesson.paused) return;
+  dgUnstick(lesson);
   if(d.play.length || lesson.state === 'speaking' || lesson.talking) return;   // wait for the turn to be free
   const text = d.out[0]; d.sent = text;
   try{ d.ws.send(JSON.stringify({type:'InjectUserMessage', content:text})); }catch(e){ return; }
-  setState('thinking'); dgWatch(lesson); }
+  setState('thinking'); if(!retry) dgWatch(lesson); }
+/* "the child is talking" set by a noise that never became words: forget it after 15 s */
+function dgUnstick(lesson){ const d = lesson.dg; if(d && lesson.talking && d.userAt && Date.now() - d.userAt > 15e3){ lesson.talking = false; if(lesson.state === 'listening') lesson.listenStart = Date.now(); } }
 function dgEvent(lesson, m){ const d = lesson.dg;
   switch(m.type){
     case 'SettingsApplied': d.open = true; d.since = Date.now(); clearTimeout(d.openT); dgMic(lesson).catch(e => dgNote(lesson, 'mic ' + e));
       if(!d.greeted){ d.greeted = true;
         d.out.unshift(lesson.history.length ? '(The connection came back. Do NOT greet again: say "Okay, let\'s continue!" and repeat the current question of this step, short.)' : '(The student just joined the class. Greet them warmly by nickname and start the lesson.)'); }
       dgOut(lesson); break;
-    case 'UserStartedSpeaking': dgHush(lesson, true); setState('listening'); lesson.talking = true; d.userAt = Date.now(); hideChoices(); break;
+    case 'UserStartedSpeaking': dgHush(lesson, true); setState('listening'); lesson.talking = true; d.userAt = Date.now(); break;
     case 'AgentThinking': setState('thinking'); dgWatch(lesson); break;
-    case 'AgentStartedSpeaking': lesson.talking = false; d.hushed = false; dgHeard(lesson); break;
+    case 'AgentStartedSpeaking': lesson.talking = false; d.hushed = false; d.refused = 0; dgHeard(lesson); break;
     case 'AgentAudioDone': d.audioDone = true; if(!d.play.length) dgSpoke(lesson); break;
-    case 'InjectionRefused': dgNote(lesson, 'message waits: ' + (m.message || '')); setTimeout(() => dgOut(lesson), 1500); break;
+    case 'InjectionRefused': d.refused = (d.refused || 0) + 1; dgNote(lesson, 'message waits (' + d.refused + '): ' + (m.message || ''));
+      if(d.refused >= 4){ d.refused = 0;   // something is stuck on the server side: a fresh connection; stuck again on the fresh one -> the classic engine
+        const now = Date.now(); lesson.dgRefRe = (lesson.dgRefRe || []).filter(t => now - t < 120e3).concat(now);
+        if(lesson.dgRefRe.length >= 2){ dgNote(lesson, 'messages keep being refused: classic engine'); dgFallback(lesson); break; }
+        dgRetryOrFallback(lesson, d); break; }
+      setTimeout(() => dgOut(lesson, true), 1500 * d.refused); break;
     case 'ConversationText': {
       const txt = String(m.content || '').trim(); if(!txt) break;
       if(m.role === 'user'){
         if(d.sent && txt === d.sent){ d.out.shift(); d.sent = null; break; }        // the echo of our own message
         if(/^\(/.test(txt)) break;
         if(d.out.length && d.out[0] === txt){ d.out.shift(); d.sent = null; }
-        d.turn = (d.turn || 0) + 1; d.nudges = 0; lesson.dgCues = '';
+        d.turn = (d.turn || 0) + 1; d.nudges = 0; lesson.dgCues = ''; d.turnTagged = false;
         if(d.kara){ d.kara.words.forEach(w => w.classList.add('on')); d.kara.done = true; }
-        if(d.typed && d.typed.text === txt && Date.now() - d.typed.at < 5000){ d.typed = null; setState('thinking'); dgWatch(lesson); break; }   // already in history
+        if(d.typed && normExp(d.typed.text) === normExp(txt) && Date.now() - d.typed.at < 6000){ d.typed = null; lesson.talking = false; setState('thinking'); dgWatch(lesson); break; }   // already in history
         dgChildSaid(lesson, txt, {delayMs:d.userAt && lesson.tAudioEnd ? Math.max(0, d.userAt - lesson.tAudioEnd) : null, durMs:d.userAt ? Date.now() - d.userAt : null});
         setState('thinking'); dgWatch(lesson); }
       else { // Deepgram sends the teacher's turn sentence by sentence: keep them together as one turn
@@ -4740,7 +4778,7 @@ function dgTags(lesson, full){ const tags = parseTags(full);
   showFix(tags.fix); if(tags.fix && tags.fix.right) (lesson.fixes = lesson.fixes || []).push(tags.fix);
   funTags(lesson, tags);
   if(lesson.v2){ const v = lesson.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)];
-    if(tags.got){ if(stp.k === 'exp') (stp.pair || [stp.i]).forEach(x => v.got['exp' + x] = true); else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
+    if(tags.got){ if(stp.k === 'exp'){ const nx = (stp.pair || [stp.i]).find(x => !v.got['exp' + x]); if(nx != null) v.got['exp' + nx] = true; } else v.got[stp.k === 'so' ? 'so' + stp.i : stp.k + (stp.part||'')] = true; }
     try{ if(tags.got || tags.star) v2Star((tags.got ? 1 : 0) + Math.min(2, tags.star)); else v2Slide(); }catch(e){ console.warn('slide', e); }
     if(tags.exit) v.exit = tags.exit;
     let adv = !!tags.next; if(!adv && stp.k === 'exp' && (stp.pair || [stp.i]).every(x => v.got['exp' + x])) adv = true;
@@ -4759,18 +4797,23 @@ function dgStop(lesson){ const d = lesson && lesson.dg; if(!d) return; d.closing
   try{ d.ws && d.ws.close(); }catch(e){} }
 /* typed answers, tapped answers and app messages go into the same conversation */
 function dgSay(lesson, text){ const d = lesson && lesson.dg; if(!d) return false;
+  if(lesson.paused){ lesson.paused = false; lesson.dgDrops = 0; dgStart(lesson); }
   if(!/^\(/.test(text)){ d.typed = {text, at:Date.now()}; d.turn = (d.turn || 0) + 1; d.nudges = 0; lesson.dgCues = ''; dgChildSaid(lesson, text, null); }
   return dgInject(lesson, text); }
 /* Deepgram could not start or keeps dropping: the normal lesson engine takes over */
 function dgFallback(lesson){ if(L !== lesson || lesson.done) return; dgStop(lesson); lesson.dg = null; dgBtns(lesson); micRelease();
   teacherTurn(lesson.history.length ? '(The connection changed. Do not greet again: say "Okay, let\'s continue!" and repeat the current question, short.)' : '(The student just joined the class. Greet them warmly by nickname and start chatting.)'); }
 /* silence: a nudge after 12 s, 25 s and 45 s of quiet; after ~3 minutes with nothing from the child, a pause card */
-function dgIdle(lesson){ const d = lesson.dg; if(!d || !d.open || lesson.paused || lesson.done || d.muted) return;
+function dgIdle(lesson){ const d = lesson.dg; if(!d || !d.open || lesson.paused || lesson.done) return;
+  dgUnstick(lesson);
+  // the "voice finished" event got lost: no frame for 3 s and nothing left to play
+  if(lesson.state === 'speaking' && !d.play.length && d.frameAt && Date.now() - d.frameAt > 3000){ d.audioDone = false; dgSpoke(lesson); return; }
+  if(d.muted) return;
   if(lesson.state !== 'listening' || lesson.talking || d.play.length || d.out.length) return;
   const quiet = Date.now() - (lesson.listenStart || Date.now()), waits = [12e3, 25e3, 45e3];
   if(d.nudges < waits.length && quiet > waits[d.nudges]){ d.nudges++; lesson.listenStart = Date.now(); dgInject(lesson, '(student was silent)'); return; }
   if(d.nudges >= waits.length && quiet > 60e3) dgPause(lesson); }
-function dgPause(lesson){ const d = lesson.dg; if(!d) return; lesson.paused = true; dgStop(lesson); lesson.dg = Object.assign(d, {closing:true}); setState('idle');
+function dgPause(lesson){ const d = lesson.dg; if(!d) return; lesson.paused = true; hideChoices(); d.out = []; dgStop(lesson); lesson.dg = Object.assign(d, {closing:true}); setState('idle');
   const sub = $('#sub'); if(sub) sub.innerHTML = '<div class="ar" style="font-size:1.1rem">⏸️ الحصة متوقفة لأنك ما تكلمت فترة. جاهز نكمل؟</div><div style="text-align:center;margin-top:10px"><button class="btn primary big" id="resumeBtn" type="button">▶️ نكمل الحصة</button></div>';
   const b = $('#resumeBtn'); if(b) b.onclick = () => { lesson.paused = false; lesson.dgDrops = 0; dgStart(lesson); }; }
 /* the mic button in voice mode: you just talk. A tap shows that; a long press (or a tap while muted) turns the mic off/on */
@@ -4851,6 +4894,7 @@ function stopListening(submit){
   if(L.state === 'listening') setState('idle');
 }
 function studentSaid(text){
+  text = String(text || '').replace(/\[[^\]]*\]/g, ' ').replace(/^[\s(\[{<]+/, '').replace(/\s+/g, ' ').trim(); if(!text) return;
   if(L && L.dg && dgSay(L, text)){ const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; } return; }
   if(L){ L.sw += countWords(text); updateTalk(); hcAdd('turns'); }
   const you = $('#you'); if(you){ you.hidden = false; you.classList.remove('live', 'note'); you.textContent = text; }
@@ -4863,6 +4907,8 @@ async function finishLesson(){
   const lesson = L; if(!lesson || lesson.done) return; lesson.done = true; if(lesson.dg){ dgStop(lesson); micRelease(); } stopListening(); setState('idle'); clearInterval(lesson.tick); wakeOff();
   const k = lesson.kid, mins = elapsedMin(), plan = lesson.plan;
   lessonWrap(lesson);
+  { const turns = Math.max((lesson.hc && lesson.hc.turns) || 0, lesson.history.filter(h => h.role === 'user' && /Student: /.test(String(h.content))).length);
+    if(!lesson.trial && !lesson.freeReview && !lesson.mission && !lesson.review && (turns < 4 || (lesson.sw || 0) < 15)){ lessonNotTaken(lesson, turns); return; } }
   const ov = document.createElement('div'); ov.className = 'ov';
   ov.innerHTML = `<div class="card" style="text-align:center"><h2>انتهت الحصة 🎉</h2><p class="muted" style="margin:0">المعلمة تكتب تقريرك وتجهّز اختبار الدرس…</p></div>`;
   document.body.appendChild(ov);
@@ -4873,7 +4919,7 @@ async function finishLesson(){
     if(!DB.attendance.some(a => a.kid === k && a.slot === lesson.slot)) DB.attendance.push(att0); DB.live[k] = null; save(); }
   const repAbort = new AbortController(), repTimer = setTimeout(() => repAbort.abort(), 75000);
   // measured by the app (not guessed by a model): confidence numbers, safety flags, recycled expressions; the strict judge runs in parallel with the report
-  const meas = measureConfidence(lesson), flags = lessonTags(lesson, 'FLAG').slice(0, 5), recUsed = lessonV2RecUsed(lesson);
+  const meas = measureConfidence(lesson), flags = lessonTags(lesson, 'FLAG').concat(safetyScan(lesson)).slice(0, 5), recUsed = lessonV2RecUsed(lesson);
   const judgeP = lesson.v2 ? judgeLesson(lesson, repAbort.signal).catch(e => { console.warn('judge', e); return null; }) : Promise.resolve(null);
   let rep = null;
   const repPrompt = `You are an expert English teacher for Arab children. Assess this one-to-one speaking lesson and write a short quiz.
@@ -4938,7 +4984,7 @@ ${meas ? '' : `"confidence":0-100 (how confidently the child spoke: answer lengt
     if(repFailed) DB.progress[k].reportDue = {at:att.at, slot:att.slot, prompt:repPrompt.slice(0, 40000), tries:0};
     const p = DB.progress[k], lkey = `${DB.kids[k].level}-${plan.ui}-${plan.li}`;
     if(plan.review){ /* review before the unit test: position stays; the test can be taken again */ if(p.unitTest && p.unitTest.review === 'due') p.unitTest.review = 'done'; }
-    else if(lesson.v2 && lesson.v2.exit === 'no' && p.repeatOf !== lkey){ p.repeatOf = lkey; }
+    else if(lesson.v2 && (lesson.v2.exit === 'no' || !lesson.v2.exit) && p.repeatOf !== lkey){ p.repeatOf = lkey; }
     else { p.pos = (p.pos||0)+1; p.repeatOf = null;
       if(lesson.v2 && plan.li === (plan.perUnit||6) - 1 && ((CONTENT[DB.kids[k].level]||{}).unitTests||{})[plan.ui]) p.unitTest = {level:DB.kids[k].level, ui:plan.ui, passed:false, at:new Date().toISOString()}; }
     p.mistakes = report.mistakes.concat(p.mistakes||[]).slice(0,12); p.words = report.newWords.concat(p.words||[]).slice(0,40); p.focus = String(rep.nextFocus||''); seedSRS(k); report.mistakes.forEach(m => addSRS(k, m.right, 'كنت تقول: ' + m.wrong)); report.newWords.forEach(w => addSRS(k, w, ''));
@@ -4985,6 +5031,11 @@ function lessonChildTurns(lesson){ const v = lesson && lesson.v2, out = [];
       out.push({text:m[1].trim(), step:i, k:v && i != null && v.steps[i] ? v.steps[i].k : null}); }); });
   return out; }
 /* tags the teacher wrote, read from the stored assistant messages (e.g. FLAG, REC) */
+/* a small word list on the child's own lines, in case the teacher did not write [FLAG] (the parent sees it in the report) */
+const SAFETY_RE = /\b(hits? me|hurts? me|beats? me|kill (my ?self|me)|want to die|hate my ?self|nobody loves me|touch(ed|es)? me|bull(y|ied|ying)|scared (at|of going) (home|school)|keep (it|this) (a )?secret|send (me )?(a )?(photo|picture|pic)s?)\b/i;
+function safetyScan(lesson){ const out = [];
+  ((lesson && lesson.history) || []).forEach(h => { if(h.role !== 'user') return; const m = String(h.content || '').match(SAFETY_RE); if(m) out.push('child said: "' + m[0] + '" (please check)'); });
+  return [...new Set(out)].slice(0, 2); }
 function lessonTags(lesson, tag){ const re = new RegExp(`\\[${tag}:([^\\]\\n]+)\\]`, 'gi'), out = [];
   ((lesson && lesson.history) || []).forEach(h => { if(h.role !== 'assistant') return; let x; while((x = re.exec(String(h.content || '')))){ const t = x[1].trim(); if(t && !out.includes(t)) out.push(t); } });
   return out; }
@@ -5069,7 +5120,7 @@ function lessonUtterance(u){ try{
 function lessonPaOn(){ return typeof paOn === 'function' && paOn(); }
 function lessonPronSummary(lesson){ const a = (lesson && lesson.pron) || []; if(!a.length) return null;
   return {avg:Math.round(a.reduce((s, x) => s + (Number(x.score) || 0), 0) / a.length), items:a.map(x => ({w:x.w, score:x.score}))}; }
-function leaveRoomQuiet(){ wakeOff(); stopCam(); if(L){ dgStop(L); if(L.dg) micRelease(); } liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
+function leaveRoomQuiet(){ wakeOff(); stopCam(); try{ hideChoices(); }catch(e){} if(L){ dgStop(L); if(L.dg) micRelease(); } liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } L = null; }
 function leaveRoom(){ wakeOff(); stopCam(); if(L){ dgStop(L); if(L.dg) micRelease(); } liveEnd(L); if(L){ clearInterval(L.tick); clearTimeout(L.blinkT); clearTimeout(L.glanceT); clearTimeout(L.poseT); clearTimeout(L.gestT); interrupt(false); stopListening(); stopMouth(); } const k = L ? L.kid : null; L = null; go(WHO === 'parent' ? 'parent' : k); }
 function confirmExit(){
   const counts = !L.trial && !L.done;
@@ -7289,7 +7340,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-17b';
+const APP_VER = '2026-11-17c';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:' || document.querySelector('.ov, .reader')) return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L && !document.querySelector('.ov, .reader')) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });

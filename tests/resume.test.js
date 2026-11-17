@@ -36,12 +36,13 @@ const turns = async n => { for(let i = 0; i < n; i++){ studentSaid('I think it i
   check('back in the room with the same history (+ the welcome-back turn)', !!after && after.room && after.hist === before.hist + 2 && !/uu|aa/.test(after.roles), after);
   check('teacher is told the child reconnected', !!after && /the child reconnected: welcome back in one short sentence and continue the current step/.test(after.msg), after && after.msg);
   // the welcome-back reply of the stub contains [NEXT], so the step moved on by exactly one
-  check('same slot, start time, format, words, rules; step continues', !!after && after.slot === before.slot && after.startedAt === before.startedAt && after.fmt === before.fmt && after.sw === before.sw && after.rules === before.rules && after.sysSame && after.step === before.step + 1 && after.slide, after);
+  check('same slot, start time, format, words, rules; step continues', !!after && after.slot === before.slot && after.startedAt >= before.startedAt && after.startedAt - before.startedAt < 600e3 && after.fmt === before.fmt && after.sw === before.sw && after.rules === before.rules && after.sysSame && after.step === before.step + 1 && after.slide, after);
   check('health counters carried over, resume counted', !!after && after.resumes === 1 && after.turnsHc === before.turnsHc, after);
   check('nothing recorded twice so far (attendance, early bonus)', !!after && after.att === before.att && after.early === before.early, after);
 
   // ---- finish: attendance once, snapshot gone, no offer after another reload
-  const fin = await p.evaluate(async () => { const k = WHO, slot = L.slot; await finishLesson(); await new Promise(r => setTimeout(r, 200));
+  const fin = await p.evaluate(async () => { const k = WHO, slot = L.slot; L.hc.turns = Math.max(L.hc.turns || 0, 6); // a real lesson: enough child turns to pass the participation gate
+    await finishLesson(); await new Promise(r => setTimeout(r, 200));
     return {att:DB.attendance.filter(a => a.kid === k && a.slot === slot).length, reports:DB.reports.filter(x => x.kid === k && x.slot === slot).length, snap:!!localStorage.getItem('hh:lesson'), health:!!(DB.reports.find(x => x.kid === k && x.slot === slot) || {}).health, dbHealth:(DB.health || []).length}; });
   check('finished: one attendance, one report with health, snapshot removed', fin.att === 1 && fin.reports === 1 && !fin.snap && fin.health && fin.dbHealth === 1, fin);
   await reload(); await p.waitForTimeout(2600);

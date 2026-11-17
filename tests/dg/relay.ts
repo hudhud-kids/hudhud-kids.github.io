@@ -42,7 +42,7 @@ const A = async () => {
   ck("model's own tool_use (no tags in text): its id is toolu_hh* so the follow-up tool_result is answered locally", r.tools.every(x => x.startsWith("toolu_hh")) , r.tools);
   // 6 bracket in plain text
   r = await run(stream([{ type: "text", parts: ["Say [pause] then count. Ready?\n[MOOD:happy]"] }]));
-  ck("non-tag bracket [pause] stays in spoken text", /Say\s+\[pause\] then count\. Ready\?/.test(r.say), r.say);
+  ck("non-tag bracket [pause] is never read aloud", /Say\s+then count\. Ready\?/.test(r.say) && !/\[/.test(r.say), r.say);
   // 7 Arabic in spoken part is removed; [AR] tag preserved
   r = await run(stream([{ type: "text", parts: ["Say hello مرحبا to him.\n[AR:hello = مرحبا]\n[MOOD:happy]"] }]));
   ck("Arabic stripped from speech, [AR] kept in tags", !/[؀-ۿ]/.test(r.say) && /AR:hello/.test(r.tags), r);
@@ -65,7 +65,7 @@ const A = async () => {
   // splitTags
   ck("splitTags ignores [BOARD:..|..] pipe", splitTags("Look! [BOARD:giraffe|🦒|زرافة] [MOOD:happy]").tags.includes("BOARD"));
   const a = splitTags("Say [FIX:I play|I played|tip] now"); ck("splitTags mid-text tag keeps both sides", a.spoken === "Say now", a);
-  ck("splitTags: unknown tag [HINT:x] spoken verbatim", splitTags("Try [HINT:go] now").spoken.includes("[HINT"), splitTags("Try [HINT:go] now"));
+  ck("splitTags: unknown tag [HINT:x] is not read aloud", !splitTags("Try [HINT:go] now").spoken.includes("[HINT"), splitTags("Try [HINT:go] now"));
   ck("splitTags: lower-case [mood:happy] handled", splitTags("Hi [mood:happy]").tags !== "");
   // tidy
   let b: any = tidy({ system: "S", messages: [{ role: "assistant", content: "Hi" }, { role: "user", content: "x" }, { role: "user", content: "y" }, { role: "assistant", content: "ok" }] });

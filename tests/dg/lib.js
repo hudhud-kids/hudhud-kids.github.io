@@ -28,7 +28,7 @@ exports.start = async (o = {}) => {
   const ctx = await b.newContext({viewport:{width:o.w || 1180, height:o.h || 820}, permissions:['microphone']}); const p = await ctx.newPage(); const errs = [];
   p.on('pageerror', e => errs.push('PE ' + e.message)); p.on('console', m => { if(m.type() === 'error') errs.push(m.text().slice(0, 200)); });
   await p.route(/supabase|anthropic|cdn\.jsdelivr|unpkg/, r => r.abort());
-  await p.route('**/functions/v1/ai/dgtoken', r => o.tokenHang ? null : o.tokenStatus ? r.fulfill({status:o.tokenStatus, body:'{}'}) : r.fulfill({status:200, contentType:'application/json', body:JSON.stringify({token:'jwt'})}));
+  await p.route('**/functions/v1/ai/dgtoken', r => o.tokenHang ? null : o.tokenStatus ? r.fulfill({status:o.tokenStatus, body:'{}'}) : r.fulfill({status:200, contentType:'application/json', body:JSON.stringify({token:'jwt', llm:'llmtok'})}));
   if(o.cfg) await p.addInitScript(c => { window.__initCfg = c; }, o.cfg);
   await p.addInitScript(MOCK);
   await p.goto(BASE + 'index.html#demo-kid'); await p.waitForTimeout(1300);

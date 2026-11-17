@@ -3,7 +3,7 @@ const AR = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]+/g;
 const TAG = /\[(MOOD|BOARD|FIX|AR|STAGE|END|GOAL|NEXT|GOT|EXIT|STAR|FLAG|REC|CHOICE|ORDER)\b[^\]]*\]/gi;
 export function splitTags(t: string) {
   const tags = (t.match(TAG) || []).join(" ");
-  const spoken = t.replace(TAG, " ").replace(/\[[^\]]*$/, "").replace(AR, " ").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, " ").trim();
+  const spoken = t.replace(TAG, " ").replace(/\[[^\]]{0,80}\]/g, " ").replace(/\[[^\]]*$/, "").replace(/[*_#`~]+/g, "").replace(AR, " ").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, " ").trim();
   return { spoken, tags };
 }
 // the answer to our own lesson_event call needs no model: an empty turn (the teacher already spoke)
@@ -107,7 +107,7 @@ export function tagNudge(body: any) {
   }
   const last = ms[ms.length - 1];
   if (last && last.role === "user" && Array.isArray(last.content) && !last.content.some((c: any) => c.type === "tool_result"))
-    last.content.push({ type: "text", text: "(App reminder: after your short spoken reply, write your tags on new lines: [GOT] or [STAR] when the child did it right, [NEXT] when this step is finished, [CHOICE:...] or [ORDER:...] when useful, and always [MOOD:...] last. Follow CURRENT STATUS.)" });
+    last.content.push({ type: "text", text: "(App reminder: after your short spoken reply, write your tags on new lines: [GOT] once for each target expression the child used correctly (one expression = one [GOT]), [STAR] for an especially good answer, [NEXT] when this step is finished, [CHOICE:...] or [ORDER:...] when useful, and always [MOOD:...] last. Follow CURRENT STATUS.)" });
   return body;
 }
 
