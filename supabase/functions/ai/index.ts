@@ -213,7 +213,7 @@ async function handle(req: Request) {
 }
 
 // ---------- Deepgram "think" step: Anthropic-format pass-through, authenticated by the child's session token ----------
-const LLM_MODEL = "claude-haiku-5-5";
+const LLM_MODEL = "claude-sonnet-5-5";
 async function llmRoute(req: Request) {
   const t = req.headers.get("x-hh-token") || ""; const s = await session(t);
   if (!s) return new Response(JSON.stringify({ type: "error", error: { type: "authentication_error", message: "bad_session" } }), { status: 401, headers: { "content-type": "application/json" } });
@@ -230,7 +230,7 @@ async function llmRoute(req: Request) {
   if ((s.role === "kid" && (k.n >= lim.kidDay || k.tok + body.max_tokens > lim.kidTok)) || f.n >= lim.famDay || f.tok + body.max_tokens > lim.famTok)
     return new Response(JSON.stringify({ type: "error", error: { type: "rate_limit_error", message: "daily limit" } }), { status: 429, headers: { "content-type": "application/json" } });
   k.n++; k.dn++; k.tok += body.max_tokens; k.dtok += body.max_tokens; f.n++; f.tok += body.max_tokens; tick();
-  tidy(body);
+  tidy(body); tagNudge(body);
   const call = (b: any) => fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" }, body: JSON.stringify(b) });
   let r: Response;
   try {
@@ -364,12 +364,13 @@ async function selfTest(req: Request) {
     await check("voiceTurn", async () => {
       const body: any = tidy({ model: LLM_MODEL, max_tokens: 300, stream: true, system: sys, messages: msgs.map((m) => ({ role: m.role, content: m.content.replace(/^\[minute[^\]]*\]\s*/, "").replace(/^Student: /, "").replace(/\n?\[MOOD:[^\]]*\]/, "") })),
         tools: [{ name: "lesson_event", description: "Internal: used by the app. Never call it yourself.", input_schema: { type: "object", properties: { tags: { type: "string" } }, required: ["tags"] } }] });
-      body.thinking = { type: "disabled" }; body.output_config = { effort: "medium" };
+      tagNudge(body); body.thinking = { type: "between_tools" }; body.output_config = { effort: "high" };
       const r = await ant(body); if (r.status !== 200) return { ok: false, why: `${r.status} ${(await r.text()).slice(0, 200)}` };
       const out = await new Response(r.body!.pipeThrough(tagStream())).text(); let say = "", tags = "", stop = "";
       for (const b of out.split("\n\n")) { const l = b.split("\n").find((x) => x.startsWith("data:")); if (!l) continue; let d: any; try { d = JSON.parse(l.slice(5)); } catch { continue; }
         if (d.delta?.type === "text_delta") say += d.delta.text; if (d.delta?.partial_json) tags += d.delta.partial_json; if (d.type === "message_delta") stop = d.delta?.stop_reason || ""; }
-      return { ok: say.trim().length > 3 && !/\[/.test(say), why: say.trim() ? (/\[/.test(say) ? "tags spoken" : "") : "empty reply (" + stop + ")", say: say.trim().slice(0, 80), tags: tags.slice(0, 80) };
+      const ok = say.trim().length > 3 && !/\[/.test(say) && /\[/.test(tags);
+      return { ok, why: !say.trim() ? "empty reply (" + stop + ")" : /\[/.test(say) ? "tags spoken" : !/\[/.test(tags) ? "no tags (slides would not move)" : "", say: say.trim().slice(0, 80), tags: tags.slice(0, 80) };
     });
   }
   await check("deepgram", async () => {
@@ -379,4 +380,20 @@ async function selfTest(req: Request) {
   });
   const ok = Object.values(checks).every((c: any) => c.ok);
   return new Response(JSON.stringify({ ok, checks, ms: Date.now() - t0 }), { status: 200, headers: h });
+}
+
+/* Voice mode: the voice never reads the tags, so the model's own earlier replies come back WITHOUT them and it copies that
+   and stops writing tags (the slides then stop moving). Show it its past replies with a tag line, and remind it in the
+   newest message. */
+export function tagNudge(body: any) {
+  const ms = body.messages || [];
+  for (const m of ms) {
+    if (m.role !== "assistant" || !Array.isArray(m.content)) continue;
+    const t = [...m.content].reverse().find((c: any) => c.type === "text");
+    if (t && !/\[[A-Z]+/.test(t.text)) t.text = String(t.text).trimEnd() + "\n[MOOD:happy]";
+  }
+  const last = ms[ms.length - 1];
+  if (last && last.role === "user" && Array.isArray(last.content) && !last.content.some((c: any) => c.type === "tool_result"))
+    last.content.push({ type: "text", text: "(App reminder: after your short spoken reply, write your tags on new lines: [GOT] or [STAR] when the child did it right, [NEXT] when this step is finished, [CHOICE:...] or [ORDER:...] when useful, and always [MOOD:...] last. Follow CURRENT STATUS.)" });
+  return body;
 }

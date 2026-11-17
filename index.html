@@ -1488,7 +1488,9 @@ function v2Advance(auto){ if(!L || !L.v2) return; const v = L.v2; if(v.i >= v.st
    Time: a gentle "wrap up soon" once when a step runs over, "please move on now" only after a big overrun. */
 function v2Header(){ if(!L || !L.v2) return ''; const v = L.v2, stp = v.steps[Math.min(v.i, v.steps.length-1)], used = Math.round((Date.now() - v.at)/1000);
   if(elapsedMin() >= LESSON_MIN) return ' · [TIME IS UP (25 minutes): in this reply give short specific praise, say goodbye, and add [END]]';
-  if(v.doneAll) return ` · [all ${v.steps.length} steps done: praise specifically, say goodbye, then [END]]`;
+  if(v.doneAll) return elapsedMin() < LESSON_MIN - 4
+    ? ` · [all ${v.steps.length} steps done EARLY (minute ${elapsedMin()} of ${LESSON_MIN}): do NOT end and do NOT say goodbye yet. Keep the child talking with extra practice of today's expressions: a quick quiz with [CHOICE:...], a [ORDER:...] sentence, a mini-story about their interests, or a role-play with a new situation. Give [STAR] for good answers. End only when the header says time is up.]`
+    : ` · [all ${v.steps.length} steps done: praise specifically, say goodbye, then [END]]`;
   let ch = '';
   if(!['obj','exit','prize'].includes(stp.k) && Date.now() - (v.chAt || v.t0 || 0) > 5*60e3 && v.i > 1){ v.chAt = Date.now(); v.ch = (v.ch||0) + 1;
     ch = ' · [FUN CHALLENGE NOW: before going on, do ONE 30-second quick challenge with today\'s words: ' + ['would you rather', 'guess what I am thinking of (3 clues)', 'fastest full sentence', 'silly picture: describe something funny I imagine'][v.ch % 4] + '. Give a [STAR] if they do it well, then continue this step]';
@@ -3999,6 +4001,7 @@ async function lessonResume(s){
   demoN = 0;
   renderRoom(); v2Slide();
   L.tick = setInterval(tickRoom, 1000); tickRoom();
+  if(dgOn(k)){ dgStart(L); return; }
   teacherTurn('(the child reconnected: welcome back in one short sentence and continue the current step)');
 }
 
@@ -4278,7 +4281,7 @@ async function teacherTurn(userText, attempt){
       if(!adv && stp.k === 'exp' && (stp.pair || [stp.i]).every(x => v.got['exp' + x])) adv = true;
       if(adv) v2Advance(false);
       // the script is finished: the lesson may end even a little before the usual minimum
-      if(tags.end && v.doneAll) lesson.endSeen = true; }
+      if(tags.end && v.doneAll && elapsedMin() >= LESSON_MIN - 4) lesson.endSeen = true; }
     if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
     if(lesson.v2 && elapsedMin() >= LESSON_MIN + 4) lesson.endSeen = true; // never run far past 25 minutes
     lesson.netN = 0; lessonSnap(lesson); lessonPull();
@@ -4485,7 +4488,7 @@ async function dgStart(lesson){
       agent:{
         listen:{provider:{type:'deepgram', version:'v2', model:'flux-general-en', eot_threshold:0.85, eot_timeout_ms:level <= 6 ? 6000 : 5000,
           keyterms:[nick(k)].concat(typeof livePhrases === 'function' ? livePhrases() : []).filter(Boolean).slice(0, 40)}},
-        think:{provider:{type:'anthropic', model:'claude-haiku-5-5', temperature:0.8},
+        think:{provider:{type:'anthropic', model:'claude-sonnet-5-5', temperature:0.8},
           endpoint:{url:RELAY + 'llm', headers:{'x-hh-token':CLOUD.token}},
           prompt:dgPrompt(lesson), functions:fns},
         context:lesson.history.length ? {messages:lesson.history.slice(-30).map(h => ({type:'History', role:h.role, content:String(h.content).replace(/\[[A-Z]+(:[^\]]*)?\]/g, '').replace(/^Student: /, '').trim() || '...'}))} : undefined,
@@ -4554,7 +4557,7 @@ function dgSpoke(lesson){ const d = lesson.dg; d.audioDone = false; if(d.kara){ 
 function dgEvent(lesson, m){ const d = lesson.dg;
   switch(m.type){
     case 'SettingsApplied': d.open = true; dgMic(lesson).catch(e => dgNote(lesson, 'mic ' + e));
-      d.ws.send(JSON.stringify({type:'InjectUserMessage', content: lesson.history.length ? '(The student came back to the class. Welcome them back and continue where we were.)' : '(The student just joined the class. Greet them warmly by nickname and start the lesson.)'}));
+      d.ws.send(JSON.stringify({type:'InjectUserMessage', content: lesson.history.length ? '(The student came back to the class. Welcome them back in one short sentence and continue the current step where we were.)' : '(The student just joined the class. Greet them warmly by nickname and start the lesson.)'}));
       break;
     case 'UserStartedSpeaking': dgHush(lesson); setState('listening'); lesson.talking = true; break;
     case 'AgentThinking': setState('thinking'); break;
@@ -4592,7 +4595,7 @@ function dgTags(lesson, full){ const tags = parseTags(full);
     if(tags.exit) v.exit = tags.exit;
     let adv = !!tags.next; if(!adv && stp.k === 'exp' && (stp.pair || [stp.i]).every(x => v.got['exp' + x])) adv = true;
     if(adv){ v2Advance(false); dgSync(lesson); }
-    if(tags.end && v.doneAll) lesson.endSeen = true; }
+    if(tags.end && v.doneAll && elapsedMin() >= LESSON_MIN - 4) lesson.endSeen = true; }
   if(tags.end && (lesson.trial || elapsedMin() >= MIN_MINUTES)) lesson.endSeen = true;
   if(elapsedMin() >= LESSON_MIN + 4) lesson.endSeen = true;
   if(lesson.endSeen && !lesson.dg.play.length && lesson.state !== 'speaking') setTimeout(() => { if(L === lesson && !lesson.done) finishLesson(); }, 1500);
@@ -7113,7 +7116,7 @@ function wirePushBtn(){ document.querySelectorAll('[data-push]').forEach(b => b.
   }catch(e){ console.warn(e); b.disabled = false; b.textContent = '🔔 فعّل الإشعارات على هذا الجهاز'; alertBox(e && e.message === 'denied' ? 'لازم تسمح بالإشعارات لما يسألك الجهاز. إذا رفضتها قبل، فعّلها من إعدادات الجهاز ← الإشعارات.' : 'تعذّر تفعيل الإشعارات على هذا الجهاز. تأكد إنك فاتح هدهد من أيقونة الشاشة الرئيسية.'); }
 }); }
 /* an app left open in the background keeps old code: when it comes back (and no lesson is running), load the new version */
-const APP_VER = '2026-11-15o';
+const APP_VER = '2026-11-17a';
 function verCheck(){ if(DEMO || L || location.protocol !== 'https:' || document.querySelector('.ov, .reader')) return;
   fetch('version.json?t=' + Date.now(), {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.v && j.v !== APP_VER && !L && !document.querySelector('.ov, .reader')) location.reload(); }).catch(() => {}); }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') verCheck(); });
