@@ -384,7 +384,9 @@ async function selfTest(req: Request) {
     await check("voiceTurn", async () => {
       const body: any = tidy({ model: LLM_MODEL, max_tokens: 300, stream: true, system: sys, messages: msgs.map((m) => ({ role: m.role, content: m.content.replace(/^\[minute[^\]]*\]\s*/, "").replace(/^Student: /, "").replace(/\n?\[MOOD:[^\]]*\]/, "") })),
         tools: [{ name: "lesson_event", description: "Internal: used by the app. Never call it yourself.", input_schema: { type: "object", properties: { tags: { type: "string" } }, required: ["tags"] } }] });
-      tagNudge(body); body.thinking = { type: "between_tools" }; body.output_config = { effort: "high" };
+      // the same shape as a real voice call: a long fixed prompt + status line (cached), thinking limits
+      body.system = sys + "\n" + "Teaching notes: keep it friendly and short. ".repeat(60) + "\nCURRENT STATUS: [minute 3 of 25 · step 2/12: Warm-up]";
+      tagNudge(body); cacheSystem(body); body.thinking = { type: "between_tools" }; body.output_config = { effort: "high" };
       const r = await ant(body); if (r.status !== 200) return { ok: false, why: `${r.status} ${(await r.text()).slice(0, 200)}` };
       const out = await new Response(r.body!.pipeThrough(tagStream())).text(); let say = "", tags = "", stop = "";
       for (const b of out.split("\n\n")) { const l = b.split("\n").find((x) => x.startsWith("data:")); if (!l) continue; let d: any; try { d = JSON.parse(l.slice(5)); } catch { continue; }
@@ -393,6 +395,10 @@ async function selfTest(req: Request) {
       return { ok, why: !say.trim() ? "empty reply (" + stop + ")" : /\[/.test(say) ? "tags spoken" : !/\[/.test(tags) ? "no tags (slides would not move)" : "", say: say.trim().slice(0, 80), tags: tags.slice(0, 80) };
     });
   }
+  await check("llmToken", async () => {
+    const tk = await llmTok({ fam: "selftest", role: "kid", kid: "selftest" }), back = await llmTokCheck(tk), bad = await llmTokCheck(tk.slice(0, -2) + "xx");
+    return { ok: !!back && back.fam === "selftest" && !bad, why: back ? (bad ? "forged token accepted" : "") : "own token rejected" };
+  });
   await check("deepgram", async () => {
     const k = Deno.env.get("DEEPGRAM_API_KEY"); if (!k) return { ok: false, why: "no DEEPGRAM_API_KEY" };
     const r = await fetch("https://api.deepgram.com/v1/auth/grant", { method: "POST", headers: { Authorization: "Token " + k, "content-type": "application/json" }, body: JSON.stringify({ ttl_seconds: 30 }), signal: AbortSignal.timeout(10000) });
